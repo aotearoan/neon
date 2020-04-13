@@ -1,0 +1,68 @@
+body {
+  font-family: $body-font-family;
+  font-size: 16px;
+  line-height: $line-height-ratio;
+}
+
+p {
+  font-family: $paragraph-font-family;
+  margin: 0 0 2 * $base-space;
+  max-width: $max-paragraph-width;
+  line-height: $line-height-ratio;
+}
+
+.neon-number {
+  font-variant: tabular-nums;
+}
+
+.neon-link {
+  cursor: pointer;
+}
+
+h1 {
+  font-family: $heading-font-family;
+  font-weight: 900;
+  margin: 0 0 7 * $base-space;
+  font-size: $h1-size;
+  line-height: $line-height-headings-ratio;
+}
+
+h2 {
+  font-family: $heading-font-family;
+  font-weight: 800;
+  margin: 0 0 6 * $base-space;
+  font-size: $h2-size;
+  line-height: $line-height-headings-ratio;
+}
+
+h3 {
+  font-family: $heading-font-family;
+  font-weight: 700;
+  margin: 0 0 5 * $base-space;
+  font-size: $h3-size;
+  line-height: $line-height-headings-ratio;
+}
+
+h4 {
+  font-family: $heading-font-family;
+  font-weight: 600;
+  margin: 0 0 4 * $base-space;
+  font-size: $h4-size;
+  line-height: $line-height-headings-ratio;
+}
+
+h5 {
+  font-family: $heading-font-family;
+  font-weight: 500;
+  margin: 0 0 3 * $base-space;
+  font-size: $h5-size;
+  line-height: $line-height-headings-ratio;
+}
+
+h6 {
+  font-family: $heading-font-family;
+  font-weight: 400;
+  margin: 0 0 2 * $base-space;
+  font-size: $h6-size;
+  line-height: $line-height-headings-ratio;
+}

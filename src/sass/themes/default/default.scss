@@ -1,0 +1,9 @@
+@import 'fonts';
+@import 'variables';
+
+.neon-theme--default {
+  @import 'variables';
+  @import 'color-palette';
+  @import '../../common/common';
+  @import '../../common/common-colors';
+}

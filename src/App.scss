@@ -1,0 +1,9 @@
+@import 'src/sass/themes/default/default';
+
+.app {
+  @import './views/Home';
+
+  body {
+    padding: 9 * $base-space;
+  }
+}

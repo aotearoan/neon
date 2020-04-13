@@ -1,0 +1,82 @@
+@function hsb($h-hsb, $s-hsb, $b-hsb, $a: 1) {
+  @if $b-hsb == 0 {
+    @return hsla(0, 0, 0, $a)
+  } @else {
+    $l-hsl: ($b-hsb/2) * (2 - ($s-hsb/100));
+    $s-hsl: ($b-hsb * $s-hsb) / if($l-hsl < 50, $l-hsl * 2, 200 - $l-hsl * 2);
+    @return hsla($h-hsb, $s-hsl, $l-hsl, $a);
+  }
+}
+/* color palettes taken directly from mineral UI */
+
+/* neutral palette */
+$color-neutral-10: hsb(0, 0, 95)!default;
+$color-neutral-20: hsb(0, 0, 87)!default;
+$color-neutral-30: hsb(0, 0, 78)!default;
+$color-neutral-40: hsb(0, 0, 68)!default;
+$color-neutral-50: hsb(0, 0, 56)!default;
+$color-neutral-60: hsb(0, 0, 45)!default;
+$color-neutral-70: hsb(0, 0, 36)!default;
+$color-neutral-80: hsb(0, 0, 28)!default;
+$color-neutral-90: hsb(0, 0, 21)!default;
+$color-neutral-100: hsb(0, 0, 15)!default;
+
+/* primary palette */
+$color-primary-10: hsb(270, 4, 98)!default;
+$color-primary-20: hsb(270, 13, 98)!default;
+$color-primary-30: hsb(270, 24, 97)!default;
+$color-primary-40: hsb(270, 36, 95)!default;
+$color-primary-50: hsb(270, 50, 91)!default;
+$color-primary-60: hsb(270, 60, 84)!default;
+$color-primary-70: hsb(270, 68, 74)!default;
+$color-primary-80: hsb(270, 73, 62)!default;
+$color-primary-90: hsb(270, 72, 46)!default;
+$color-primary-100: hsb(270, 66, 32)!default;
+
+/* info palette */
+$color-info-10: hsb(200, 7, 98)!default;
+$color-info-20: hsb(200, 25, 98)!default;
+$color-info-30: hsb(200, 43, 97)!default;
+$color-info-40: hsb(200, 65, 93)!default;
+$color-info-50: hsb(200, 84, 84)!default;
+$color-info-60: hsb(200, 93, 70)!default;
+$color-info-70: hsb(200, 96, 57)!default;
+$color-info-80: hsb(200, 95, 44)!default;
+$color-info-90: hsb(200, 89, 32)!default;
+$color-info-100: hsb(200, 79, 22)!default;
+
+/* success palette */
+$color-success-10: hsb(144, 10, 98)!default;
+$color-success-20: hsb(144, 42, 96)!default;
+$color-success-30: hsb(144, 69, 89)!default;
+$color-success-40: hsb(144, 85, 79)!default;
+$color-success-50: hsb(144, 94, 65)!default;
+$color-success-60: hsb(144, 98, 52)!default;
+$color-success-70: hsb(144, 95, 42)!default;
+$color-success-80: hsb(144, 92, 33)!default;
+$color-success-90: hsb(144, 86, 25)!default;
+$color-success-100: hsb(144, 78, 18)!default;
+
+/* warn palette */
+$color-warn-10: hsb(33, 9, 99)!default;
+$color-warn-20: hsb(33, 30, 98)!default;
+$color-warn-30: hsb(33, 52, 96)!default;
+$color-warn-40: hsb(33, 73, 91)!default;
+$color-warn-50: hsb(33, 92, 81)!default;
+$color-warn-60: hsb(33, 100, 68)!default;
+$color-warn-70: hsb(33, 98, 54)!default;
+$color-warn-80: hsb(33, 93, 41)!default;
+$color-warn-90: hsb(33, 86, 30)!default;
+$color-warn-100: hsb(33, 77, 20)!default;
+
+/* error palette */
+$color-error-10: hsb(360, 4, 98)!default;
+$color-error-20: hsb(360, 15, 98)!default;
+$color-error-30: hsb(360, 27, 98)!default;
+$color-error-40: hsb(360, 43, 98)!default;
+$color-error-50: hsb(360, 66, 96)!default;
+$color-error-60: hsb(360, 88, 87)!default;
+$color-error-70: hsb(360, 93, 72)!default;
+$color-error-80: hsb(360, 90, 56)!default;
+$color-error-90: hsb(360, 80, 40)!default;
+$color-error-100: hsb(360, 67, 27)!default;

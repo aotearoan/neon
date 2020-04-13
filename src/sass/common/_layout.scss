@@ -1,0 +1,19 @@
+& {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  margin: 0;
+  min-height: calc(100 * var(--vh, 1vh));
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+}
+
+span {
+  display: inline-flex;
+}

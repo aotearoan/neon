@@ -1,32 +1,24 @@
 <template>
   <div id="app">
+    <img src="logo.svg">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <ul v-if="themes.length > 1" class="neon-menu">
+        <li v-for="theme in themes" :key="theme">
+          <a class="neon-link" @click="switchTheme(theme)">{{ theme }}</a>
+        </li>
+      </ul>
+      <ul class="neon-menu">
+        <li v-for="mode in modes" :key="mode">
+          <a class="neon-link" @click="switchMode(mode)">{{ mode }}</a>
+        </li>
+      </ul>
     </div>
     <router-view/>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+  @import './App';
 </style>
+
+<script lang="ts" src="./App.ts"></script>
