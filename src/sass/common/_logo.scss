@@ -1,0 +1,19 @@
+.neon-logo {
+  background-size: auto;
+  align-self: center;
+
+  @include responsive(desktop) {
+    height: $size-l;
+    width: $logo-width-multiplier * $size-l;
+  }
+
+  @include responsive(tablet) {
+    height: $size-m;
+    width: $logo-width-multiplier * $size-m;
+  }
+
+  @include responsive(mobile) {
+    height: $size-s;
+    width: $logo-width-multiplier * $size-s;
+  }
+}

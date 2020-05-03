@@ -1,7 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
 hr {
   display: flex;
   width: 100%;
-  border-radius: $base-space;
+  border-radius: $border-radius;
+  border: none;
 }
 
 ul {

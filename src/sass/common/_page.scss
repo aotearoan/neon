@@ -1,0 +1,20 @@
+.neon-page {
+  position: relative;
+  left: 0;
+  width: 100%;
+
+  @include responsive(desktop) {
+    margin-top: $top-nav-height-desktop;
+    @include height(100, $top-nav-height-desktop);
+  }
+
+  @include responsive(tablet) {
+    margin-top: $top-nav-height-tablet;
+    @include height(100, $top-nav-height-tablet);
+  }
+
+  @include responsive(mobile) {
+    margin-top: $top-nav-height-mobile;
+    @include height(100, $top-nav-height-mobile);
+  }
+}

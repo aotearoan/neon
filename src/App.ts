@@ -1,4 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator';
+import { NeonLogo, NeonPage, NeonTopNav } from './components';
 
 export enum Theme {
   DEFAULT = 'default',
@@ -9,10 +10,16 @@ export enum Mode {
   DARK = 'dark',
 }
 
-@Component
+@Component({
+  components: {
+    NeonLogo,
+    NeonPage,
+    NeonTopNav,
+  },
+})
 export default class App extends Vue {
   public theme = Theme.DEFAULT;
-  public mode = Mode.LIGHT;
+  public selectedMode = Mode.DARK;
 
   get themes() {
     return [Theme.DEFAULT];
@@ -31,10 +38,10 @@ export default class App extends Vue {
   }
 
   private switchMode(mode: Mode) {
-    if (this.mode !== mode) {
-      document.documentElement.classList.remove(`neon-mode--${this.mode}`);
+    if (this.selectedMode !== mode) {
+      document.documentElement.classList.remove(`neon-mode--${this.selectedMode}`);
       document.documentElement.classList.add(`neon-mode--${mode}`);
-      this.mode = mode;
+      this.selectedMode = mode;
     }
   }
 }

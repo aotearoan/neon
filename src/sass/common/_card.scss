@@ -1,0 +1,30 @@
+.neon-card {
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+
+  .neon-card-header,
+  .neon-card-body {
+    @include padding;
+
+    &:not(:last-child) {
+      margin-bottom: $card-section-margin;
+    }
+  }
+
+  .neon-card-header {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+    }
+  }
+
+  .neon-card-body {
+    &--full-width {
+      padding: 0;
+    }
+  }
+}

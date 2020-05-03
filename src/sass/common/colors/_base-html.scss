@@ -1,0 +1,48 @@
+&{
+  background-color: $background-color-primary;
+}
+
+*::selection {
+  background-color: $background-color-primary;
+}
+
+body {
+  background-color: $background-color;
+  color: $color-text;
+}
+
+.neon-color-text {
+  color: $color-text;
+}
+
+.neon-color-inverse {
+  color: $color-inverse;
+}
+
+.neon-color-text-primary {
+  color: $color-text-primary;
+}
+
+.neon-color-text-info {
+  color: $color-text-info;
+}
+
+.neon-color-text-success {
+  color: $color-text-success;
+}
+
+.neon-color-text-warn {
+  color: $color-text-warn;
+}
+
+.neon-color-text-error {
+  color: $color-text-error;
+}
+
+.neon-link {
+  color: $color-text-primary;
+}
+
+hr {
+  border-top: $border;
+}

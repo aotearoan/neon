@@ -1,9 +1,17 @@
 @import 'src/sass/themes/default/default';
 
 .app {
-  @import './views/Home';
+  @import 'src/views/home/Home';
 
   body {
-    padding: 9 * $base-space;
+    .title {
+      margin-left: 8 * $base-space;
+      font-family: $body-font-family;
+      font-weight: lighter;
+    }
+
+  }
+
+  &.neon {
   }
 }

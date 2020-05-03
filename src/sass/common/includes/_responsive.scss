@@ -1,0 +1,12 @@
+$breakpoints: (
+  mobile: 'screen and (max-width: 414px)',
+  larger-than-mobile: 'screen and (min-width: 415px)',
+  tablet: 'screen and (max-width: 1024px)',
+  desktop: 'screen and (min-width: 1025px)',
+)!default;
+
+@mixin responsive($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}

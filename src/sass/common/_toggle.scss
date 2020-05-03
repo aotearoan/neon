@@ -1,0 +1,12 @@
+.neon-toggle {
+  @extend .neon-row;
+
+  label {
+    padding: 2 * $base-space 3 * $base-space;
+    border-radius: $border-radius;
+  }
+
+  input {
+    display: none;
+  }
+}

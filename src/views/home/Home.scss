@@ -1,0 +1,27 @@
+.colors {
+  flex-direction: row;
+}
+
+.color-list {
+  &:not(:last-child) {
+    margin-right: 4 * $base-space;
+  }
+
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  .color-item {
+    padding: 2 * $base-space 3 * $base-space;
+    min-width: 150px;
+    min-height: 41px;
+    flex-direction: row;
+  }
+}
+
+.dark-text {
+  color: black;
+}
+
+.light-text {
+  color: white;
+}

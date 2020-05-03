@@ -2,17 +2,40 @@
 $base-space: 4px!default;
 $max-paragraph-width: 700px!default;
 
+// reference colors for generating color palettes
+$color-primary: #9c64e5!default; // purple
+$color-info: #0084ff!default; // blue
+$color-success: #00993d!default; // green
+$color-warn: #bb6f00!default; // rust
+$color-error: #ec4145!default; // red
+
+// vertical layout spacing, used for margins and paddings of layout components
+$spacing-vertical-mobile: 2 * $base-space!default;
+// ratio of horizontal to vertical spacing
+$spacing-horizontal-multiplier: 1.5!default;
+// ratio of tablet to mobile spacing
+$spacing-multiplier-tablet: 1.5!default;
+// ratio of desktop to mobile spacing
+$spacing-multiplier-desktop: 2!default;
+
+// standard sizes
+$size-s: 8 * $base-space!default;
+$size-m: 10 * $base-space!default;
+$size-l: 12 * $base-space!default;
+
 /* borders */
 $border-radius: .5 * $base-space!default;
+$border-width: 1px!default;
+$border-style: solid!default;
 
 /* typography */
 $base-font-size: 16px!default;
 $h6-size: 28px!default;
 $h5-size: 32px!default;
-$h4-size: 38px!default;
-$h3-size: 46px!default;
-$h2-size: 56px!default;
-$h1-size: 68px!default;
+$h4-size: 36px!default;
+$h3-size: 40px!default;
+$h2-size: 48px!default;
+$h1-size: 56px!default;
 
 $line-height-headings-ratio: 1.125!default;
 $line-height-ratio: 1.6180!default;
@@ -20,3 +43,25 @@ $line-height-ratio: 1.6180!default;
 $body-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 $heading-font-family: 'Imbue', sans-serif;
 $paragraph-font-family: 'Lora', serif;
+
+$logo-width-multiplier: 4.4!default;
+$logo-light: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" viewBox="0 0 8520 1930" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.5;"><path d="M41.512,1876.68l56.25,-113.766c280.118,-566.402 558.024,-1128.06 843.75,-1706.49l-900,1820.26Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M1434.84,1406.43l675,-1350l-675,1350Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M941.512,56.428l493.323,1350l-493.323,-1350Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M6403.8,1873.04l56.25,-113.766c280.117,-566.402 558.023,-1128.06 843.75,-1706.49l-900,1820.26Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M7797.12,1402.78l675,-1350l-675,1350Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M7303.8,52.779l493.322,1350l-493.322,-1350Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M2086.4,989.475l900,-900l-900,900Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M2086.81,989.475l1087.09,900l-1087.09,-900Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M4442.65,969.097l900,-900l-900,900Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M4443.06,969.097l1087.09,900l-1087.09,-900Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M6436.4,965.42l-899.448,900.552l899.448,-900.552Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M6426.61,956.045l-1081.39,-880.583l1081.39,880.583Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M4079.73,977.92l-1081.39,-880.583l1081.39,880.583Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M60.074,993.199l8421.4,-16.21l-8421.4,16.21Z" style="fill:none;stroke:%23ff02ff;stroke-width:76.22px;stroke-linecap:round;"/></svg>')!default;
+$logo-dark: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" viewBox="0 0 8520 1930" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.5;"><path d="M41.512,1876.68l56.25,-113.766c280.118,-566.402 558.024,-1128.06 843.75,-1706.49l-900,1820.26Z" style="fill:none;stroke:%23f2f2f2;stroke-width:76.22px;"/><path d="M1434.84,1406.43l675,-1350l-675,1350Z" style="fill:none;stroke:%23f2f2f2;stroke-width:76.22px;"/><path d="M941.512,56.428l493.323,1350l-493.323,-1350Z" style="fill:none;stroke:%23f2f2f2;stroke-width:76.22px;"/><path d="M6403.8,1873.04l56.25,-113.766c280.117,-566.402 558.023,-1128.06 843.75,-1706.49l-900,1820.26Z" style="fill:none;stroke:%23f2f2f2;stroke-width:76.22px;"/><path d="M7797.12,1402.78l675,-1350l-675,1350Z" style="fill:none;stroke:%23f2f2f2;stroke-width:76.22px;"/><path d="M7303.8,52.779l493.322,1350l-493.322,-1350Z" style="fill:none;stroke:%23f2f2f2;stroke-width:76.22px;"/><path d="M2086.4,989.475l900,-900l-900,900Z" style="fill:none;stroke:%23f2f2f2;stroke-width:76.22px;"/><path d="M2086.81,989.475l1087.09,900l-1087.09,-900Z" style="fill:none;stroke:%23f2f2f2;stroke-width:76.22px;"/><path d="M4442.65,969.097l900,-900l-900,900Z" style="fill:none;stroke:%23f2f2f2;stroke-width:76.22px;"/><path d="M4443.06,969.097l1087.09,900l-1087.09,-900Z" style="fill:none;stroke:%23f2f2f2;stroke-width:76.22px;"/><path d="M6436.4,965.42l-899.448,900.552l899.448,-900.552Z" style="fill:none;stroke:%23f2f2f2;stroke-width:76.22px;"/><path d="M6426.61,956.045l-1081.39,-880.583l1081.39,880.583Z" style="fill:none;stroke:%23f2f2f2;stroke-width:76.22px;"/><path d="M4079.73,977.92l-1081.39,-880.583l1081.39,880.583Z" style="fill:none;stroke:%23f2f2f2;stroke-width:76.22px;"/><path d="M60.074,993.199l8421.4,-16.21l-8421.4,16.21Z" style="fill:none;stroke:%23ff02ff;stroke-width:76.22px;stroke-linecap:round;"/></svg>')!default;
+
+/* box shadows */
+$box-shadow: 0 2px 2px rgba(0, 0, 0, 0.014),
+0 4px 4px rgba(0, 0, 0, 0.028),
+0 6px 6px rgba(0, 0, 0, 0.03),
+0 8px 8px rgba(0, 0, 0, 0.042);
+
+/* top nav */
+$top-nav-height-mobile: $size-s + 4 * $base-space!default;
+$top-nav-height-tablet: $size-m + 6 * $base-space!default;
+$top-nav-height-desktop: $size-l + 8 * $base-space!default;
+
+/* card */
+$card-border: none!default;
+$card-box-shadow: none!default;
+$card-section-border: none!default;
+$card-section-box-shadow: $box-shadow!default;
+$card-section-margin: .5 * $base-space!default;

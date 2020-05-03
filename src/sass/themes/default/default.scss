@@ -3,7 +3,6 @@
 
 .neon-theme--default {
   @import 'variables';
-  @import 'color-palette';
   @import '../../common/common';
-  @import '../../common/common-colors';
+  @import 'src/sass/common/colors/colors';
 }

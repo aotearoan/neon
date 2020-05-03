@@ -1,12 +1,12 @@
 & {
-  margin: 0;
-  padding: 0;
+  @include zero-spacing;
 }
 
 body {
   display: flex;
   margin: 0;
-  min-height: calc(100 * var(--vh, 1vh));
+  @include height(100);
+  overscroll-behavior: none;
 }
 
 div {
@@ -16,4 +16,18 @@ div {
 
 span {
   display: inline-flex;
+}
+
+.neon-row,
+.neon-horizontal {
+  flex-direction: row;
+  align-items: center;
+
+  @include responsive(mobile) {
+    flex-direction: column;
+  }
+}
+
+.neon-app {
+  width: 100%;
 }

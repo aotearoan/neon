@@ -1,0 +1,11 @@
+.neon-grid {
+  width: 100%;
+  height: 100%;
+  @include padding(true);
+  display: grid;
+
+  .neon-grid-area {
+    @include margin(true);
+    display: flex;
+  }
+}

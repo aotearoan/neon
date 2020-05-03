@@ -1,0 +1,74 @@
+@import 'responsive';
+
+// mobile spacing
+$spacing-horizontal-mobile: $spacing-vertical-mobile * $spacing-horizontal-multiplier;
+// tablet spacing
+$spacing-vertical-tablet: $spacing-vertical-mobile * $spacing-multiplier-tablet;
+$spacing-horizontal-tablet: $spacing-horizontal-mobile * $spacing-multiplier-tablet;
+// dezktop spacing
+$spacing-vertical-desktop: $spacing-vertical-mobile * $spacing-multiplier-desktop;
+$spacing-horizontal-desktop: $spacing-horizontal-mobile * $spacing-multiplier-desktop;
+
+$spacing: (
+  mobile: ($spacing-vertical-mobile, $spacing-horizontal-mobile),
+  tablet: ($spacing-vertical-tablet, $spacing-horizontal-tablet),
+  desktop: ($spacing-vertical-desktop, $spacing-horizontal-desktop),
+);
+
+@mixin spacing($paddingOrMargin, $breakpoint, $square: false) {
+  @include responsive($breakpoint) {
+    @if($square) {
+      #{$paddingOrMargin}: nth(map-get($spacing, $breakpoint), 1) nth(map-get($spacing, $breakpoint), 1);
+    } @else {
+      #{$paddingOrMargin}: nth(map-get($spacing, $breakpoint), 1) nth(map-get($spacing, $breakpoint), 2);
+    }
+  }
+}
+
+@mixin zero-spacing {
+  margin: 0;
+  padding: 0;
+}
+
+// padding mixins
+@mixin padding-mobile($square: false) {
+  @include spacing('padding', mobile, $square)
+}
+
+@mixin padding-tablet($square: false) {
+  @include spacing('padding', tablet, $square)
+}
+
+@mixin padding-desktop($square: false) {
+  @include spacing('padding', desktop, $square)
+}
+
+@mixin padding($square: false) {
+  @include padding-desktop($square);
+  @include padding-tablet($square);
+  @include padding-mobile($square);
+}
+
+// margin mixins
+@mixin margin-mobile($square: false) {
+  @include spacing('margin', mobile, $square)
+}
+
+@mixin margin-tablet($square: false) {
+  @include spacing('margin', tablet, $square)
+}
+
+@mixin margin-desktop($square: false) {
+  @include spacing('margin', desktop, $square)
+}
+
+@mixin margin($square: false) {
+  @include margin-desktop($square);
+  @include margin-tablet($square);
+  @include margin-mobile($square);
+}
+
+// height
+@mixin height($n, $offset: 0) {
+  min-height: calc(#{$n} * var(--vh, 1vh) - #{$offset});
+}
