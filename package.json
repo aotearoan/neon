@@ -1,7 +1,31 @@
 {
-  "name": "neon",
+  "name": "@aotearoan/neon",
+  "description": "Neon is a design system for use with VueJS. It supports light and dark modes and can be extended to support multiple themes",
   "version": "0.1.0",
-  "private": true,
+  "main": "dist/@aotearoan/neon.umd.js",
+  "types": "dist/@aotearoan/neon.d.ts",
+  "files": [
+    "src/components/*",
+    "src/sass/*",
+    "dist/@leonteq/*.js",
+    "dist/@leonteq/*.ts",
+    "dist/@leonteq/components/**",
+    "package.json",
+    "*.scss"
+  ],
+  "keywords": [
+    "sass",
+    "css",
+    "vue",
+    "design",
+    "system",
+    "component",
+    "library",
+    "dark",
+    "light",
+    "theme",
+    "mode"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -44,6 +68,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "jsdom": "^16.2.2",
     "jsdom-global": "^3.0.2",
+    "lint-staged": "^10.2.6",
     "node-sass": "^4.12.0",
     "prettier": "2.0.5",
     "sass-loader": "^8.0.2",
@@ -51,6 +76,26 @@
     "stylelint-prettier": "^1.1.2",
     "stylelint-scss": "^3.13.0",
     "typescript": "~3.8.3",
+    "use-global-hook": "^0.1.12",
     "vue-template-compiler": "^2.6.11"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "node --max_old_space_size=4096 node_modules/@vue/cli-service/bin/vue-cli-service.js lint --fix",
+      "git add"
+    ],
+    "*.{css,scss}": [
+      "stylelint ./src/**/*.scss --fix",
+      "git add"
+    ]
+  },
+  "author": "Andrew Erickson <andrew@aotearoan.com>",
+  "license": "MIT",
+  "repository": "https://github.com/aotearoan/neon.git",
+  "bugs": {
+    "url": "https://github.com/aotearoan/neon/issues"
   }
 }
