@@ -1,7 +1,7 @@
 {
   "name": "@aotearoan/neon",
   "description": "Neon is a design system for use with VueJS. It supports light and dark modes and can be extended to support multiple themes",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/@aotearoan/neon.umd.js",
   "types": "dist/@aotearoan/neon.d.ts",
   "files": [
@@ -84,12 +84,10 @@
   },
   "lint-staged": {
     "*.{js,ts,vue}": [
-      "node --max_old_space_size=4096 node_modules/@vue/cli-service/bin/vue-cli-service.js lint --fix",
-      "git add"
+      "node --max_old_space_size=4096 node_modules/@vue/cli-service/bin/vue-cli-service.js lint --fix"
     ],
     "*.{css,scss}": [
-      "stylelint ./src/**/*.scss --fix",
-      "git add"
+      "stylelint ./src/**/*.scss --fix"
     ]
   },
   "author": "Andrew Erickson <andrew@aotearoan.com>",
