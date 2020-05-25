@@ -27,7 +27,9 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: yarn install --frozen-lockfile
       - run: yarn run build
-      - run: npm publish --access public
+      - run: npm pack
+      - run: VERSION=$(jq -r .version package.json)
+      - run: npm publish aotearoan-neon-${VERSION}.tgz --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
 
@@ -42,6 +44,8 @@ jobs:
           registry-url: https://npm.pkg.github.com/
       - run: yarn install --frozen-lockfile
       - run: yarn run build
-      - run: npm publish --access public
+      - run: npm pack
+      - run: VERSION=$(jq -r .version package.json)
+      - run: npm publish aotearoan-neon-${VERSION}.tgz --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

@@ -1,11 +1,10 @@
 {
   "name": "@aotearoan/neon",
   "description": "Neon is a design system for use with VueJS. It supports light and dark modes and can be extended to support multiple themes",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "main": "dist/@aotearoan/neon.umd.js",
   "types": "dist/@aotearoan/neon.d.ts",
   "files": [
-    "src/components/*",
     "src/sass/*",
     "dist/@aotearoan/*.js",
     "dist/@aotearoan/*.ts",
@@ -29,6 +28,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name @aotearoan/neon ./src/components.ts",
+    "prepare": "tsc --emitDeclarationOnly",
     "lint": "vue-cli-service lint",
     "lint:scss": "stylelint ./src/**/*.scss",
     "test:unit": "vue-cli-service test:unit",
@@ -47,6 +47,7 @@
     "@aotearoan/sass-farbig": "^1.0.10",
     "@types/jest": "^24.0.19",
     "@types/jsdom-global": "^3.0.2",
+    "@types/vue": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
     "@vue/cli-plugin-eslint": "^4.3.0",
