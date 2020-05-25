@@ -7,9 +7,9 @@
   "files": [
     "src/components/*",
     "src/sass/*",
-    "dist/@leonteq/*.js",
-    "dist/@leonteq/*.ts",
-    "dist/@leonteq/components/**",
+    "dist/@aotearoan/*.js",
+    "dist/@aotearoan/*.ts",
+    "dist/@aotearoan/components/**",
     "package.json",
     "*.scss"
   ],
