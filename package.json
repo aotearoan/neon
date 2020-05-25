@@ -1,15 +1,16 @@
 {
   "name": "@aotearoan/neon",
   "description": "Neon is a design system for use with VueJS. It supports light and dark modes and can be extended to support multiple themes",
-  "version": "0.1.11",
+  "version": "0.2.0",
   "main": "dist/@aotearoan/neon.umd.js",
-  "types": "dist/@aotearoan/neon.d.ts",
+  "types": "dist/@aotearoan/components.d.ts",
   "files": [
     "src/sass/*",
-    "dist/@aotearoan/*.js",
-    "dist/@aotearoan/*.ts",
+    "dist/@aotearoan/neon*",
+    "dist/@aotearoan/components.d.ts",
     "dist/@aotearoan/components/**",
     "package.json",
+    "*-init.scss",
     "*-theme.scss"
   ],
   "keywords": [
@@ -35,13 +36,15 @@
     "prettier": "npx prettier --write src/."
   },
   "dependencies": {
-    "mathsass": "^0.11.0",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-i18n": "^8.17.4",
     "vue-property-decorator": "^8.4.1",
     "vue-router": "^3.1.6"
+  },
+  "peerDependencies": {
+    "@aotearoan/sass-farbig": "^1.0.11"
   },
   "devDependencies": {
     "@aotearoan/sass-farbig": "^1.0.10",

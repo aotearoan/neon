@@ -8,12 +8,12 @@ import { NeonGrid, NeonGridArea } from '@/components';
     NeonGridArea,
   },
 })
-export default class TopNav extends Vue {
+export default class SwitchExample extends Vue {
   get layouts() {
     return [
       {
         breakpoint: NeonResponsive.All,
-        grid: [['top-nav-content']],
+        grid: [['switch-content']],
       },
     ];
   }

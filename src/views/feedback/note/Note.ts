@@ -1,7 +1,18 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonFunctionalColor, NeonResponsive } from '@/components';
+import { NeonFunctionalColor } from '@/components/common/NeonFunctionalColor';
+import { NeonResponsive } from '@/components/layout/grid/NeonResponsive';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonGrid, NeonGridArea, NeonNote } from '@/components';
 
-@Component
+@Component({
+  components: {
+    NeonGrid,
+    NeonGridArea,
+    NeonCard,
+    NeonCardHeader,
+    NeonCardBody,
+    NeonNote,
+  },
+})
 export default class Note extends Vue {
   private noteColors = Object.values(NeonFunctionalColor);
 

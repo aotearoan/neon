@@ -1,17 +1,37 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonLogo, NeonMode, NeonPage, NeonTopNav, NeonTreeMenu, NeonTreeMenuModel } from './components';
+import VueI18n from 'vue-i18n';
+import { RegisterIcons } from './components/design/icon/RegisterIcons';
 import { Menu } from './Menu';
+import { NeonMode } from '@/components/common/NeonMode';
+import { NeonTreeMenuModel } from '@/components/navigation/tree-menu/NeonTreeMenuModel';
+import {
+  NeonFooter,
+  NeonLogo,
+  NeonPage,
+  NeonSideNav,
+  NeonSwitch,
+  NeonTopNav,
+  NeonTreeMenu,
+  NeonTreeMenuItem,
+} from '@/components';
 
 export enum Theme {
   Default = 'default',
 }
 
+RegisterIcons.register();
+Vue.use(VueI18n);
+
 @Component({
   components: {
-    NeonLogo,
-    NeonPage,
     NeonTopNav,
+    NeonLogo,
+    NeonSwitch,
+    NeonPage,
+    NeonSideNav,
     NeonTreeMenu,
+    NeonTreeMenuItem,
+    NeonFooter,
   },
 })
 export default class App extends Vue {

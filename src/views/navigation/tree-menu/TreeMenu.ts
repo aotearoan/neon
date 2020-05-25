@@ -1,7 +1,26 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonResponsive } from '@/components';
+import { NeonResponsive } from '@/components/layout/grid/NeonResponsive';
+import {
+  NeonCard,
+  NeonCardBody,
+  NeonCardHeader,
+  NeonGrid,
+  NeonGridArea,
+  NeonTreeMenu,
+  NeonTreeMenuItem,
+} from '@/components';
 
-@Component
+@Component({
+  components: {
+    NeonGrid,
+    NeonGridArea,
+    NeonCard,
+    NeonCardHeader,
+    NeonCardBody,
+    NeonTreeMenu,
+    NeonTreeMenuItem,
+  },
+})
 export default class TreeMenu extends Vue {
   get model() {
     return [

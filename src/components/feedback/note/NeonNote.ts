@@ -1,7 +1,14 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
+import NeonIcon from '@/components/design/icon/NeonIcon.vue';
+import NeonButton from '@/components/user-input/button/NeonButton.vue';
 
-@Component({})
+@Component({
+  components: {
+    NeonIcon,
+    NeonButton,
+  },
+})
 export default class NeonNote extends Vue {
   @Prop({ default: NeonFunctionalColor.Primary })
   public color!: NeonFunctionalColor;

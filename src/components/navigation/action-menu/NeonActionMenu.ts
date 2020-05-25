@@ -1,7 +1,12 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { NeonActionMenuModel } from './NeonActionMenuModel';
+import NeonLink from '@/components/navigation/link/NeonLink.vue';
 
-@Component
+@Component({
+  components: {
+    NeonLink,
+  },
+})
 export default class NeonActionMenu extends Vue {
   @Prop({ required: true })
   model!: NeonActionMenuModel[];

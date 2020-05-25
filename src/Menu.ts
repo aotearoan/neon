@@ -138,7 +138,7 @@ export class Menu {
         },
         {
           path: 'switch',
-          page: 'Switch',
+          page: 'SwitchExample',
           component: 'NeonSwitch',
         },
       ],

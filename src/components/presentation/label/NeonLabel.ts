@@ -3,8 +3,13 @@ import { TranslateResult } from 'vue-i18n';
 import { NeonLabelSize } from './NeonLabelSize';
 import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
 import { NeonIconPosition } from '../../design/icon/NeonIconPosition';
+import NeonIcon from '@/components/design/icon/NeonIcon.vue';
 
-@Component({})
+@Component({
+  components: {
+    NeonIcon,
+  },
+})
 export default class NeonLabel extends Vue {
   @Prop()
   public label?: TranslateResult;

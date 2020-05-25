@@ -1,8 +1,13 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { NeonTreeMenuModel } from './NeonTreeMenuModel';
+import NeonTreeMenuItem from '@/components/navigation/tree-menu/item/NeonTreeMenuItem.vue';
 
-@Component
-export default class NeonIndex extends Vue {
+@Component({
+  components: {
+    NeonTreeMenuItem,
+  },
+})
+export default class NeonTreeMenu extends Vue {
   @Prop({ required: true })
   model!: NeonTreeMenuModel[];
 }

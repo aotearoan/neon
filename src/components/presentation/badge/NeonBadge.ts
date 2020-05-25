@@ -2,8 +2,13 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 import { TranslateResult } from 'vue-i18n';
 import { NeonSize } from '../../common/NeonSize';
 import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
+import NeonIcon from '@/components/design/icon/NeonIcon.vue';
 
-@Component({})
+@Component({
+  components: {
+    NeonIcon,
+  },
+})
 export default class NeonBadge extends Vue {
   @Prop()
   public label?: TranslateResult;

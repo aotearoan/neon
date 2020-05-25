@@ -4,8 +4,15 @@ import { NeonSize } from '../../common/NeonSize';
 import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
 import { NeonButtonStyle } from './NeonButtonStyle';
 import { NeonIconPosition } from '../../design/icon/NeonIconPosition';
+import NeonIcon from '@/components/design/icon/NeonIcon.vue';
+import NeonLink from '@/components/navigation/link/NeonLink.vue';
 
-@Component({})
+@Component({
+  components: {
+    NeonLink,
+    NeonIcon,
+  },
+})
 export default class NeonButton extends Vue {
   @Prop()
   public href?: string;

@@ -1,7 +1,19 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonFunctionalColor, NeonLabelSize, NeonResponsive } from '@/components';
+import { NeonFunctionalColor } from '@/components/common/NeonFunctionalColor';
+import { NeonLabelSize } from '@/components/presentation/label/NeonLabelSize';
+import { NeonResponsive } from '@/components/layout/grid/NeonResponsive';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonGrid, NeonGridArea, NeonLabel } from '@/components';
 
-@Component
+@Component({
+  components: {
+    NeonGrid,
+    NeonGridArea,
+    NeonCard,
+    NeonCardHeader,
+    NeonCardBody,
+    NeonLabel,
+  },
+})
 export default class Label extends Vue {
   get colors() {
     return Object.values(NeonFunctionalColor);

@@ -1,7 +1,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component({})
-export default class NeonLabel extends Vue {
+export default class NeonLink extends Vue {
   @Prop()
   public href?: string;
 
