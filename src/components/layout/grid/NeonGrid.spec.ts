@@ -4,10 +4,12 @@ import { NeonResponsive } from '@/components/layout/grid/NeonResponsive';
 
 describe('NeonGrid', () => {
   const id = 'grid1';
-  const layouts = [{
-    breakpoint: NeonResponsive.All,
-    grid: [['area1']],
-  }];
+  const layouts = [
+    {
+      breakpoint: NeonResponsive.All,
+      grid: [['area1']],
+    },
+  ];
 
   it('renders default slot contents', () => {
     // given

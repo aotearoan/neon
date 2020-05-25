@@ -4,7 +4,7 @@
       <!-- @slot: side-nav sticky contents -->
       <slot name="sticky"></slot>
     </div>
-    <hr v-if="$slots.sticky && $slots.scrolling"/>
+    <hr v-if="$slots.sticky && $slots.scrolling" />
     <div class="neon-side-nav__scrolling" v-if="$slots.scrolling">
       <!-- @slot: side-nav scrolling contents -->
       <slot name="scrolling"></slot>

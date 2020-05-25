@@ -1,5 +1,4 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component
-export default class NeonCardHeader extends Vue {
-}
+export default class NeonCardHeader extends Vue {}

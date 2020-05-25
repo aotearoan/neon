@@ -6,7 +6,7 @@ export default class Note extends Vue {
   private noteColors = Object.values(NeonFunctionalColor);
 
   private closeNote(color: NeonFunctionalColor) {
-    this.noteColors = this.noteColors.filter(c => c !== color);
+    this.noteColors = this.noteColors.filter((c) => c !== color);
   }
 
   get layouts() {

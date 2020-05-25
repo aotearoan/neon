@@ -10,13 +10,17 @@ const routes: Array<RouteConfig> = [
     name: 'Home',
     component: () => import(/* webpackChunkName: "home" */ './views/home/Home.vue'),
   },
-  ...Menu.menu.flatMap(item => item.children
-    ? item.children.map(child => ({
-      path: `/${item.path}/${child.path}`,
-      name: child.name || child.page,
-      component: () => import(`./views/${item.path}/${child.path}/${child.page}.vue`),
-    } as RouteConfig))
-    : [],
+  ...Menu.menu.flatMap((item) =>
+    item.children
+      ? item.children.map(
+          (child) =>
+            ({
+              path: `/${item.path}/${child.path}`,
+              name: child.name || child.page,
+              component: () => import(`./views/${item.path}/${child.path}/${child.page}.vue`),
+            } as RouteConfig),
+        )
+      : [],
   ),
 ];
 

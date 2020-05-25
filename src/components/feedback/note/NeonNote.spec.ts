@@ -13,7 +13,7 @@ describe('NeonNote', () => {
     // given
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const wrapper: any = mount(NeonNote, {
-      propsData: { },
+      propsData: {},
     });
     // when / then
     expect(wrapper.vm.iconName).toBeUndefined();

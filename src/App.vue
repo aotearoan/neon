@@ -16,22 +16,20 @@
     <neon-page>
       <neon-side-nav>
         <template #sticky>
-          <input type="text" v-model="indexFilter"/>
+          <input type="text" v-model="indexFilter" />
         </template>
         <template #scrolling>
           <neon-tree-menu :model="filteredModel"></neon-tree-menu>
         </template>
       </neon-side-nav>
-      <router-view/>
-      <neon-footer>
-        &copy; copyright aotearoan {{ new Date().getFullYear() }}
-      </neon-footer>
+      <router-view />
+      <neon-footer> &copy; copyright aotearoan {{ new Date().getFullYear() }} </neon-footer>
     </neon-page>
   </div>
 </template>
 
 <style lang="scss">
-  @import './App';
+@import './App';
 </style>
 
 <script lang="ts" src="./App.ts"></script>

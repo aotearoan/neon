@@ -31,7 +31,7 @@ export class NeonGrid extends Vue {
   public constructor() {
     super();
     // used to hide missing items from grid
-    this.allGridAreas = new Set<string>(this.layouts.map(layout => layout.grid.flat()).flat());
+    this.allGridAreas = new Set<string>(this.layouts.map((layout) => layout.grid.flat()).flat());
   }
 
   public created() {
@@ -63,7 +63,7 @@ export class NeonGrid extends Vue {
   }
 
   public generateStyles() {
-    return this.layouts.map(layout => this.generateStyle(layout)).join('\n');
+    return this.layouts.map((layout) => this.generateStyle(layout)).join('\n');
   }
 
   public generateStyle(layout: NeonGridModel) {
@@ -78,7 +78,7 @@ export class NeonGrid extends Vue {
     let gridStyles = `  .neon-grid {
     grid-template-areas: `;
 
-    gridStyles = gridStyles + grid.map(row => `"${row.join(' ')}"`).join('\n') + ';';
+    gridStyles = gridStyles + grid.map((row) => `"${row.join(' ')}"`).join('\n') + ';';
     gridStyles = gridStyles + '\n  }\n';
 
     const processed: string[] = [];
@@ -106,8 +106,8 @@ export class NeonGrid extends Vue {
         .join('');
 
     const gridAreas = new Set<string>(grid.flat().flat());
-    const toHide = Array.from(this.allGridAreas).filter(area => !gridAreas.has(area));
-    gridStyles = gridStyles + toHide.map(area => `.${area} { display: none!important; }`);
+    const toHide = Array.from(this.allGridAreas).filter((area) => !gridAreas.has(area));
+    gridStyles = gridStyles + toHide.map((area) => `.${area} { display: none!important; }`);
     return gridStyles;
   }
 

@@ -69,7 +69,7 @@ const components: { [s: string]: VueConstructor } = {
   NeonTopNav,
 };
 
-Object.keys(components).forEach(k => Vue.component(k, components[k]));
+Object.keys(components).forEach((k) => Vue.component(k, components[k]));
 
 export {
   NeonActionMenu,

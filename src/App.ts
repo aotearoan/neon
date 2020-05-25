@@ -51,22 +51,22 @@ export default class App extends Vue {
   }
 
   private indexModel(): NeonTreeMenuModel[] {
-    return Menu.menu.map(item => ({
+    return Menu.menu.map((item) => ({
       label: item.name || item.page || item.path,
       key: item.path,
       children: item.children
-        ? item.children.map(child => ({
-          label: child.name || child.page || child.path,
-          key: child.path,
-          href: `/${item.path}/${child.path}`,
-        }))
+        ? item.children.map((child) => ({
+            label: child.name || child.page || child.path,
+            key: child.path,
+            href: `/${item.path}/${child.path}`,
+          }))
         : [],
     }));
   }
 
   get filteredModel(): NeonTreeMenuModel[] {
     const items: NeonTreeMenuModel[] = [];
-    this.indexModel().forEach(item => {
+    this.indexModel().forEach((item) => {
       const filteredItem = this.filterModel(item);
       if (filteredItem) {
         items.push(filteredItem);
@@ -81,7 +81,7 @@ export default class App extends Vue {
     } else {
       const children: NeonTreeMenuModel[] = [];
       if (item.children) {
-        item.children.forEach(child => {
+        item.children.forEach((child) => {
           const filteredChild = this.filterModel(child);
           if (filteredChild) {
             children.push(filteredChild);
@@ -91,9 +91,9 @@ export default class App extends Vue {
 
       return children.length > 0
         ? { ...item, children }
-        : (item.label.toString().toLowerCase().indexOf(this.indexFilter) >= 0)
-          ? item
-          : undefined;
+        : item.label.toString().toLowerCase().indexOf(this.indexFilter) >= 0
+        ? item
+        : undefined;
     }
   }
 }
