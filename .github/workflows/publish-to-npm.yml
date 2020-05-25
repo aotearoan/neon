@@ -28,8 +28,9 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn run build
       - run: npm pack
-      - run: VERSION=$(jq -r .version package.json)
-      - run: npm publish aotearoan-neon-${VERSION}.tgz --access public
+      - run: |
+          VERSION=$(jq -r .version package.json)
+          npm publish aotearoan-neon-${VERSION}.tgz --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
 
@@ -45,7 +46,8 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn run build
       - run: npm pack
-      - run: VERSION=$(jq -r .version package.json)
-      - run: npm publish aotearoan-neon-$VERSION.tgz --access public
+      - run: |
+          VERSION=$(jq -r .version package.json)
+          npm publish aotearoan-neon-${VERSION}.tgz --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
