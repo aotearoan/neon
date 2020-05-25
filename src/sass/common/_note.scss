@@ -32,11 +32,19 @@ blockquote,
 
   &__close {
     align-self: flex-start;
-    @include margin;
 
     &.neon-button {
-      margin-top: 3 * $base-space;
-      margin-bottom: 3 * $base-space;
+      @include responsive(desktop) {
+        margin: 3 * $base-space;
+      }
+
+      @include responsive(tablet) {
+        margin: 2 * $base-space;
+      }
+
+      @include responsive(mobile) {
+        margin: $base-space;
+      }
     }
   }
 }
