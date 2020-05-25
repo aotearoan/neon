@@ -1,0 +1,45 @@
+.neon-tree-menu {
+  &__link {
+    display: flex;
+    width: 100%;
+    letter-spacing: 0.25px;
+    border-radius: $border-radius;
+    padding-left: 2 * $base-space;
+    padding-top: 0.5 * $base-space;
+    padding-bottom: 0.5 * $base-space;
+    text-decoration: none;
+    user-select: none;
+    font-size: $font-size-s;
+
+    &.neon-tree-menu__link--no-click {
+      cursor: default;
+    }
+  }
+
+  .neon-tree-menu-item {
+    &--depth-0 {
+      font-weight: 600;
+      margin-bottom: 2 * $base-space;
+
+      & > .neon-tree-menu__link {
+        font-size: $base-font-size;
+      }
+    }
+
+    &--depth-1 {
+      font-weight: 400;
+
+      a.neon-link.neon-tree-menu__link {
+        padding-left: 4 * $base-space;
+      }
+    }
+
+    &--depth-2 {
+      font-weight: 200;
+
+      a.neon-link.neon-tree-menu__link {
+        padding-left: 8 * $base-space;
+      }
+    }
+  }
+}

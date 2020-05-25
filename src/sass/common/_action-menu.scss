@@ -1,0 +1,18 @@
+.neon-action-menu {
+  &__link {
+    display: flex;
+    width: 100%;
+    letter-spacing: 0.5px;
+    border-radius: $border-radius;
+    padding-left: 2 * $base-space;
+    padding-top: $base-space;
+    padding-bottom: $base-space;
+    font-size: $font-size-s;
+    font-weight: 300;
+    user-select: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

@@ -3,6 +3,6 @@ import { NeonOrientation } from '../../common/NeonOrientation';
 
 @Component
 export default class NeonCard extends Vue {
-  @Prop({ default: NeonOrientation.VERTICAL })
+  @Prop({ default: NeonOrientation.Vertical })
   public orientation!: NeonOrientation;
 }

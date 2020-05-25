@@ -7,28 +7,38 @@ hr {
   width: 100%;
   border-radius: $border-radius;
   border: none;
+  @include margin-vertical;
 }
 
 ul {
+  margin: 0;
+  padding-left: 0;
 
+  li {
+    list-style-type: none;
+  }
+
+  &:not(.no-style) li {
+    display: flex;
+    flex-direction: column;
+
+    :before {
+      content: '•';
+      padding-right: 3 * $base-space;
+      display: inline-flex;
+      align-items: center;
+      font-size: $font-size-l;
+      line-height: $line-height-ratio;
+    }
+  }
 }
 
-nav {
-
+pre {
+  @include padding;
+  border-radius: $border-radius;
 }
 
-footer {
-
-}
-
-article {
-
-}
-
-section {
-
-}
-
-table {
-
+.neon--disabled {
+  cursor: not-allowed !important;
+  box-shadow: none !important;
 }

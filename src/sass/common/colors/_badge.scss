@@ -1,0 +1,11 @@
+.neon-badge {
+  &--with-icon,
+  &--with-label {
+    @each $color, $palette in $functional-colors {
+      &.neon-badge--#{$color} {
+        color: $background-color-card;
+        background-color: map-get($palette, $color-label);
+      }
+    }
+  }
+}

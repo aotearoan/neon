@@ -1,0 +1,44 @@
+@import 'includes/layout';
+
+.neon-side-nav {
+  @include padding;
+  z-index: $z-index-above;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  @include responsive(desktop) {
+    width: $side-nav-width;
+    @include min-height(100);
+    @include height(100);
+  }
+
+  @include responsive(tablet) {
+    display: none;
+  }
+
+  &__scrolling {
+    overflow-y: auto;
+  }
+}
+
+.neon-top-nav + .neon-page {
+  .neon-side-nav {
+    border-top-right-radius: $border-radius;
+
+    @include responsive(desktop) {
+      @include min-height(100, $top-nav-height-desktop + $card-section-margin);
+      @include height(100, $top-nav-height-desktop + $card-section-margin);
+    }
+
+    @include responsive(tablet) {
+      @include min-height(100, $top-nav-height-tablet + $card-section-margin);
+      @include height(100, $top-nav-height-tablet + $card-section-margin);
+    }
+
+    @include responsive(mobile) {
+      @include min-height(100, $top-nav-height-mobile + $card-section-margin);
+      @include height(100, $top-nav-height-mobile + $card-section-margin);
+    }
+  }
+}

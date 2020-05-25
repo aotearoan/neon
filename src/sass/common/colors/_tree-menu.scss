@@ -1,0 +1,22 @@
+.neon-tree-menu {
+  a.neon-tree-menu__link.neon-link {
+    &,
+    &:hover,
+    &:active {
+      color: $color-text;
+    }
+
+    &.router-link-active {
+      &,
+      &:active {
+        background-color: $color-link;
+        color: $color-inverse;
+        transition: background-color ease-in-out $animation-speed, color ease-in-out $animation-speed;
+      }
+    }
+
+    &:not(.router-link-active):not(.neon-tree-menu__link--no-click):hover {
+      background-color: $color-tree-menu-hover;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.neon-switch {
+  &__switch {
+    background-color: $background-color-switch-off;
+    box-shadow: inset 0 0 2px 0.75px rgba($shadow-color-switch-off, 0.5);
+  }
+
+  &__indicator {
+    background-color: $background-color-switch-indicator;
+    box-shadow: 0 0 2px 1px rgba($shadow-color-switch-off, 0.5);
+  }
+
+  &--checked {
+    .neon-switch__switch {
+      background-color: $background-color-switch-on;
+      box-shadow: inset 0 0 2px 0.75px rgba($shadow-color-switch-on, 0.5);
+    }
+
+    .neon-switch__indicator {
+      box-shadow: 0 0 2px 1px rgba($shadow-color-switch-on, 0.5);
+    }
+  }
+}

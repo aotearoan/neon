@@ -2,4 +2,30 @@
   @include padding;
   width: 100%;
   display: flex;
+  align-items: center;
+
+  $padding-correction-multiplier: 1.5;
+
+  @include responsive(desktop) {
+    height: $footer-height-desktop;
+    padding-left: $padding-correction-multiplier * $spacing-horizontal-desktop;
+    padding-right: $padding-correction-multiplier * $spacing-horizontal-desktop;
+  }
+
+  @include responsive(tablet) {
+    height: $footer-height-tablet;
+    padding-left: $padding-correction-multiplier * $spacing-horizontal-tablet;
+    padding-right: $padding-correction-multiplier * $spacing-horizontal-tablet;
+  }
+
+  @include responsive(mobile) {
+    height: $footer-height-mobile;
+    padding-left: $padding-correction-multiplier * $spacing-horizontal-mobile;
+    padding-right: $padding-correction-multiplier * $spacing-horizontal-mobile;
+  }
+}
+
+.neon-side-nav + .neon-grid + .neon-footer {
+  border-top-left-radius: $border-radius-card-section;
+  @include side-nav-offset($card-section-margin);
 }

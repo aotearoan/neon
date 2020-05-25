@@ -1,4 +1,4 @@
 export enum NeonOrientation {
-  VERTICAL = 'vertical',
-  HORIZONTAL = 'horizontal',
+  Vertical = 'vertical',
+  Horizontal = 'horizontal',
 }

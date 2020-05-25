@@ -1,0 +1,62 @@
+@mixin switch-size($size) {
+  $switch-height: 0.75 * $size;
+
+  .neon-switch__switch {
+    height: $switch-height;
+    width: 2 * $switch-height;
+    padding-left: $switch-height / 9;
+    padding-right: $switch-height / 9;
+    overflow: hidden;
+  }
+
+  .neon-switch__indicator {
+    height: 0.8 * $switch-height;
+    width: 0.8 * $switch-height;
+    left: 0;
+    transition: left $animation-speed ease-in;
+  }
+
+  &.neon-switch--checked {
+    .neon-switch__indicator {
+      left: 1 * $switch-height;
+    }
+  }
+}
+
+.neon-switch {
+  &__label {
+    user-select: none;
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &--s {
+    @include switch-size($size-s);
+  }
+
+  &--m {
+    @include switch-size($size-m);
+  }
+
+  &--l {
+    @include switch-size($size-l);
+  }
+
+  &__switch {
+    margin: 0 2 * $base-space;
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    border-radius: $border-radius;
+  }
+
+  &__indicator {
+    display: flex;
+    position: relative;
+    border-radius: $border-radius;
+  }
+}

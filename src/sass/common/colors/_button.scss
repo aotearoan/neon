@@ -1,0 +1,124 @@
+$transparency-button-disabled: 0.3;
+
+@mixin solid-button($palette, $from-color, $to-color) {
+  background: linear-gradient(map-get($palette, $from-color), map-get($palette, $to-color));
+
+  &:hover:not(:disabled) {
+    background: linear-gradient(lighten(map-get($palette, $from-color), 1), lighten(map-get($palette, $to-color), 1));
+  }
+
+  &:active:not(:disabled) {
+    background: darken(map-get($palette, $to-color), 1);
+  }
+
+  &:focus:not(:disabled) {
+    box-shadow: 0 0 0 4px rgba(map-get($palette, $to-color), 0.3);
+  }
+}
+
+@mixin outline-button($color) {
+  border: 1px solid $color;
+  color: $color;
+
+  &:hover:not(:disabled),
+  &:active:not(:disabled) {
+    color: $color-inverse;
+  }
+
+  &:hover:not(:disabled) {
+    background: $color;
+  }
+
+  &:active:not(:disabled) {
+    background: darken($color, 4);
+    border-color: darken($color, 4);
+  }
+
+  &:focus:not(:disabled) {
+    box-shadow: 0 0 0 4px rgba($color, $transparency-button-disabled);
+  }
+}
+
+@mixin text-button($color, $background-color-hover, $background-color-active) {
+  color: $color;
+
+  &:hover:not(:disabled) {
+    background: $background-color-hover;
+  }
+
+  &:active:not(:disabled) {
+    background: $background-color-active;
+  }
+
+  &:focus:not(:disabled) {
+    box-shadow: 0 0 0 4px rgba($color, $transparency-button-disabled);
+  }
+}
+
+.neon-button {
+  @each $color, $palette in $functional-colors {
+    &--#{$color} {
+      &.neon-button--solid {
+        @if ($color == neutral) {
+          color: rgba($color-text, 0.5);
+          @include solid-button(
+            $palette,
+            $background-neutral-solid-button-light,
+            $background-neutral-solid-button-dark
+          );
+        } @else {
+          @include solid-button($palette, $background-solid-button-light, $background-solid-button-dark);
+        }
+      }
+
+      &.neon-button--outline {
+        @if ($color == neutral) {
+          @include outline-button(map-get($palette, $color-neutral-outline-button));
+        } @else {
+          @include outline-button(map-get($palette, $background-solid-button-dark));
+        }
+      }
+
+      &.neon-button--text {
+        @include text-button(
+          map-get($palette, $color-text-button),
+          $background-color-text-button-hover,
+          $background-color-text-button-active
+        );
+      }
+    }
+  }
+
+  &--solid {
+    border: none;
+    box-shadow: $box-shadow;
+    color: $color-button-solid;
+
+    &:active {
+      box-shadow: inset $box-shadow;
+    }
+
+    &.neon-button--disabled {
+      color: $color-disabled-light;
+      background: $color-disabled-dark;
+    }
+  }
+
+  &--outline {
+    background: transparent;
+
+    &.neon-button--disabled {
+      color: rgba($color-disabled-light, 0.5);
+      border-color: rgba($color-disabled-light, 0.5);
+    }
+  }
+
+  &--text {
+    background-color: transparent;
+    border: none;
+
+    &.neon-button--disabled {
+      color: rgba($color-disabled-light, 0.5);
+    }
+  }
+}

@@ -1,11 +1,33 @@
+@import 'includes/layout';
+
 .neon-grid {
   width: 100%;
-  height: 100%;
+  @include min-height(100);
   @include padding(true);
   display: grid;
 
   .neon-grid-area {
     @include margin(true);
     display: flex;
+  }
+}
+
+.neon-side-nav + .neon-grid {
+  @include side-nav-offset;
+}
+
+.neon-top-nav + .neon-page {
+  .neon-grid {
+    @include responsive(desktop) {
+      @include min-height(100, $top-nav-height-desktop + $footer-height-desktop);
+    }
+
+    @include responsive(tablet) {
+      @include min-height(100, $top-nav-height-tablet + $footer-height-tablet);
+    }
+
+    @include responsive(mobile) {
+      @include min-height(100, $top-nav-height-mobile + $footer-height-mobile);
+    }
   }
 }

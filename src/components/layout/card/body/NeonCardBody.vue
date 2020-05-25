@@ -1,5 +1,5 @@
 <template>
-  <div class="neon-card-body" :class="{ fullWidth: 'neon-card-body--full-width' }">
+  <div class="neon-card-body" :class="{ 'neon-card-body--full-width': fullWidth }">
     <!-- @slot: card body contents -->
     <slot></slot>
   </div>

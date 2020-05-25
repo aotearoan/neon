@@ -5,7 +5,7 @@
 body {
   display: flex;
   margin: 0;
-  @include height(100);
+  @include min-height(100);
   overscroll-behavior: none;
 }
 
@@ -21,11 +21,18 @@ span {
 .neon-row,
 .neon-horizontal {
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
+  @include margin-vertical;
 
   @include responsive(mobile) {
     flex-direction: column;
   }
+}
+
+.neon-space-evenly {
+  width: 100%;
+  justify-content: space-evenly;
 }
 
 .neon-app {

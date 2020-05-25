@@ -5,6 +5,7 @@
   .neon-card-header,
   .neon-card-body {
     @include padding;
+    border-radius: $border-radius-card-section;
 
     &:not(:last-child) {
       margin-bottom: $card-section-margin;

@@ -1,0 +1,29 @@
+.neon-top-nav {
+  @include padding;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  z-index: $z-index-above;
+
+  $padding-correction-multiplier: 1.5;
+
+  @include responsive(desktop) {
+    max-height: $top-nav-height-desktop;
+    padding-right: $padding-correction-multiplier * $spacing-horizontal-desktop;
+  }
+
+  @include responsive(tablet) {
+    max-height: $top-nav-height-tablet;
+    padding-left: $padding-correction-multiplier * $spacing-horizontal-tablet;
+    padding-right: $padding-correction-multiplier * $spacing-horizontal-tablet;
+  }
+
+  @include responsive(mobile) {
+    max-height: $top-nav-height-mobile;
+    padding-left: $padding-correction-multiplier * $spacing-horizontal-mobile;
+    padding-right: $padding-correction-multiplier * $spacing-horizontal-mobile;
+  }
+}

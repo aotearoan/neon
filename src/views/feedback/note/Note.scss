@@ -1,0 +1,5 @@
+.notes {
+  & > *:not(:last-child) {
+    margin-bottom: 4 * $base-space;
+  }
+}

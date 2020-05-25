@@ -75,12 +75,11 @@ export class NeonGrid extends Vue {
 
   public generateGridCSS(grid: string[][]) {
     // add template
-    let gridStyles = `.neon-grid {
-        grid-template-areas:
-    `;
+    let gridStyles = `  .neon-grid {
+    grid-template-areas: `;
 
-    gridStyles = gridStyles + grid.map(row => `          "${row.join(' ')}"`).join('\n') + ';';
-    gridStyles = gridStyles + '\n      }\n';
+    gridStyles = gridStyles + grid.map(row => `"${row.join(' ')}"`).join('\n') + ';';
+    gridStyles = gridStyles + '\n  }\n';
 
     const processed: string[] = [];
 
@@ -98,9 +97,9 @@ export class NeonGrid extends Vue {
               processed.push(column);
 
               return `
-      .${column} {
-         grid-area: ${column};
-       }`;
+  .${column} {
+    grid-area: ${column};
+  }`;
             })
             .join('\n');
         })

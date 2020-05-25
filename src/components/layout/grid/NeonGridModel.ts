@@ -1,4 +1,4 @@
-import { NeonResponsive } from './NeonResponsive';
+import { NeonResponsive } from '@/components';
 
 export class NeonGridModel {
   public breakpoint!: NeonResponsive;

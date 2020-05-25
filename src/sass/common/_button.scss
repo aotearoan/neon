@@ -1,0 +1,72 @@
+@import 'includes/layout';
+
+@mixin button-size($size, $font-size, $icon-size) {
+  height: $size;
+  font-size: $font-size;
+  line-height: 1;
+  padding: 0 0.75 * ($size - $font-size);
+
+  .neon-icon {
+    width: $icon-size;
+    height: $icon-size;
+  }
+
+  &.neon-button--icon-only {
+    min-width: $size;
+    padding: 0;
+
+    &.neon-button--circular {
+      border-radius: 50%;
+    }
+  }
+}
+
+.neon-button {
+  &--s {
+    @include button-size($size-s, $font-size-s, $font-size-xs);
+  }
+
+  &--m {
+    @include button-size($size-m, $base-font-size, $font-size-s);
+  }
+
+  &--l {
+    @include button-size($size-l, $base-font-size, $font-size-s);
+  }
+
+  border-radius: $border-radius;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  outline: none;
+  user-select: none;
+
+  &:active:not(:disabled) {
+    .neon-button__label,
+    .neon-icon {
+      position: relative;
+      top: 1px;
+    }
+  }
+
+  &--full-width {
+    width: 100%;
+    justify-content: center;
+  }
+
+  &--icon-left {
+    .neon-icon {
+      margin-right: 2 * $base-space;
+    }
+  }
+
+  &--icon-right {
+    .neon-icon {
+      order: 1;
+      margin-left: 2 * $base-space;
+    }
+  }
+}

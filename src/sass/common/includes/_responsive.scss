@@ -3,7 +3,7 @@ $breakpoints: (
   larger-than-mobile: 'screen and (min-width: 415px)',
   tablet: 'screen and (max-width: 1024px)',
   desktop: 'screen and (min-width: 1025px)',
-)!default;
+) !default;
 
 @mixin responsive($breakpoint) {
   @media #{map-get($breakpoints, $breakpoint)} {

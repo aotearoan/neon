@@ -1,0 +1,54 @@
+@import 'includes/layout';
+
+.neon-label {
+  &--xs {
+    height: $size-xs;
+    min-width: $size-xs;
+    font-size: $font-size-s;
+
+    .neon-icon {
+      width: $font-size-xs;
+      height: $font-size-xs;
+    }
+  }
+
+  &--s {
+    height: $size-s;
+    min-width: $size-s;
+
+    font-size: $base-font-size;
+
+    .neon-icon {
+      width: $font-size-s;
+      height: $font-size-s;
+    }
+  }
+
+  text-transform: uppercase;
+  border-radius: $border-radius;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  padding: 0 3 * $base-space;
+
+  &--with-icon {
+    &:not(.neon-label--with-label) {
+      padding: 0;
+    }
+
+    &.neon-label--with-label {
+      &.neon-label--icon-left .neon-icon {
+        margin-right: 2 * $base-space;
+      }
+
+      &.neon-label--icon-right .neon-icon {
+        order: 1;
+        margin-left: 2 * $base-space;
+      }
+    }
+  }
+}

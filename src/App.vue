@@ -2,25 +2,31 @@
   <div id="app" class="neon-app">
     <neon-top-nav>
       <neon-logo></neon-logo>
-      <div id="nav">
-        <ul v-if="themes.length > 1" class="neon-menu">
-          <li v-for="theme in themes" :key="theme">
-            <a class="neon-link" @click="switchTheme(theme)">{{ theme }}</a>
-          </li>
-        </ul>
+      <div>
+        <div id="nav">
+          <ul v-if="themes.length > 1" class="neon-menu no-style">
+            <li v-for="theme in themes" :key="theme">
+              <a class="neon-link" @click="switchTheme(theme)">{{ theme }}</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="neon-toggle">
-        <label v-for="mode in modes" :key="mode" :for="`modeToggle_${mode}`">{{ mode }}
-          <input :id="`modeToggle_${mode}`" :checked="selectedMode === mode" type="radio" name="mode-toggle" class="neon-link" @click="switchMode(mode)">
-        </label>
-      </div>
+      <NeonSwitch :value="selectedMode" :model="modes" color="primary" @input="switchMode"></NeonSwitch>
     </neon-top-nav>
     <neon-page>
+      <neon-side-nav>
+        <template #sticky>
+          <input type="text" v-model="indexFilter"/>
+        </template>
+        <template #scrolling>
+          <neon-tree-menu :model="filteredModel"></neon-tree-menu>
+        </template>
+      </neon-side-nav>
       <router-view/>
+      <neon-footer>
+        &copy; copyright aotearoan {{ new Date().getFullYear() }}
+      </neon-footer>
     </neon-page>
-    <neon-footer>
-      &copy; copyright aotearoan {{ new Date().getFullYear() }}
-    </neon-footer>
   </div>
 </template>
 

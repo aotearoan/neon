@@ -1,0 +1,15 @@
+.neon-label {
+  @each $color, $palette in $functional-colors {
+    &--#{$color} {
+      &.neon-label--solid {
+        color: $background-color-card;
+        background-color: map-get($palette, $color-label);
+      }
+
+      &.neon-label--outline {
+        color: map-get($palette, $color-label);
+        border: 1px solid map-get($palette, $color-label);
+      }
+    }
+  }
+}

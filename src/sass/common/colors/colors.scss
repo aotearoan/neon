@@ -8,6 +8,15 @@ $success-palette: generate-palette($color-success);
 $warn-palette: generate-palette($color-warn);
 $error-palette: generate-palette($color-error);
 
+$functional-colors: (
+  neutral: $neutral-palette,
+  primary: $primary-palette,
+  info: $info-palette,
+  success: $success-palette,
+  warn: $warn-palette,
+  error: $error-palette,
+);
+
 @include generate-color-classes('neon-neutral', $neutral-palette);
 @include generate-color-classes('neon-primary', $primary-palette);
 @include generate-color-classes('neon-info', $info-palette);

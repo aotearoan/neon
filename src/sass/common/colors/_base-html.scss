@@ -1,14 +1,19 @@
-&{
+& {
   background-color: $background-color-primary;
 }
 
 *::selection {
-  background-color: $background-color-primary;
+  background-color: rgba($background-color-selection, 0.99);
+  color: $color-inverse;
 }
 
 body {
   background-color: $background-color;
   color: $color-text;
+}
+
+label {
+  color: $label-color;
 }
 
 .neon-color-text {
@@ -39,10 +44,18 @@ body {
   color: $color-text-error;
 }
 
-.neon-link {
-  color: $color-text-primary;
-}
-
 hr {
   border-top: $border;
+}
+
+ul {
+  li {
+    &:before {
+      color: $color-text-primary;
+    }
+  }
+}
+
+pre {
+  background-color: $background-color-pre;
 }

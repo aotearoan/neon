@@ -1,0 +1,9 @@
+.neon-icon {
+  @each $color, $palette in $functional-colors {
+    &--#{$color} {
+      svg path {
+        fill: map-get($palette, $color-icon);
+      }
+    }
+  }
+}

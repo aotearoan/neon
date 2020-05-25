@@ -1,0 +1,17 @@
+.neon-action-menu {
+  &__link {
+    &:not(.neon-action-menu__link--selected):not(.neon-action-menu__link--disabled):hover {
+      background-color: $color-action-menu-hover;
+    }
+
+    &.neon-action-menu__link--selected {
+      background-color: $color-link;
+      color: $color-inverse;
+      transition: background-color ease-in-out $animation-speed, color ease-in-out $animation-speed;
+    }
+
+    &.neon-action-menu__link--disabled {
+      color: $color-disabled-light;
+    }
+  }
+}

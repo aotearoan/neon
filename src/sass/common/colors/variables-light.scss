@@ -2,6 +2,7 @@ $background-color-card: $color-neutral-l5;
 $background-color: $color-neutral-l4;
 
 $color-text: $color-text-light;
+$color-text-gray: $color-neutral-d1;
 $color-inverse: $color-text-dark;
 $color-text-primary: $color-primary-d1;
 $color-text-info: $color-info-d1;
@@ -21,3 +22,57 @@ $border: $border-width $border-style $border-color;
 $hr-color: $border-color;
 
 $logo: $logo-light;
+
+$label-color: $color-neutral-d2;
+
+$color-disabled-light: $color-neutral-l1;
+$color-disabled-dark: $color-neutral-l4;
+
+// switch
+$background-color-switch-off: $color-neutral-l3;
+$shadow-color-switch-off: $color-neutral-l2;
+$background-color-switch-on: $color-primary-l3;
+$shadow-color-switch-on: $color-primary-l2;
+$background-color-switch-indicator: $color-neutral-l5;
+
+// solid button
+$background-solid-button-light: d1;
+$background-solid-button-dark: d2;
+$color-button-solid: $color-neutral-l5;
+
+// neutral button
+$background-neutral-solid-button-light: l4;
+$background-neutral-solid-button-dark: l3;
+$color-neutral-outline-button: default;
+
+// text button
+$color-text-button: d1;
+$background-color-text-button-hover: lighten($color-neutral-l4, 1);
+$background-color-text-button-active: $color-neutral-l4;
+
+// label
+$color-label: d1;
+
+// note
+$border-color-note: d1;
+$background-color-note: l5;
+$color-note: $color-neutral-d1;
+
+// link
+$color-link: $color-primary-d2;
+$color-link-hover: $color-primary-d1;
+
+// icon
+$color-icon: d1;
+
+// tree menu
+$color-tree-menu-hover: $color-neutral-l4;
+
+// action menu
+$color-action-menu-hover: $color-neutral-l4;
+
+// selection
+$background-color-selection: $color-primary-d1;
+
+// pre
+$background-color-pre: $color-neutral-l3;

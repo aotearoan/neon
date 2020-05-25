@@ -1,7 +1,28 @@
 @import 'src/sass/themes/default/default';
 
 .app {
+  @import 'src/views/design/color/Color';
+  @import 'src/views/design/icons/Icons';
+  @import 'src/views/design/logo/Logo';
+  @import 'src/views/design/typography/Typography';
+  @import 'src/views/feedback/note/Note';
   @import 'src/views/home/Home';
+  @import 'src/views/layout/card/Card';
+  @import 'src/views/layout/footer/Footer';
+  @import 'src/views/layout/grid/Grid';
+  @import 'src/views/layout/page/Page';
+  @import 'src/views/layout/side-nav/SideNav';
+  @import 'src/views/layout/top-nav/TopNav';
+  @import 'src/views/models/Models';
+  @import 'src/views/navigation/Navigation';
+  @import 'src/views/navigation/action-menu/ActionMenu';
+  @import 'src/views/navigation/link/Link';
+  @import 'src/views/navigation/tree-menu/TreeMenu';
+  @import 'src/views/presentation/badge/Badge';
+  @import 'src/views/presentation/label/Label';
+  @import 'src/views/user-input/button/Button';
+  @import 'src/views/user-input/checkbox/Checkbox';
+  @import 'src/views/user-input/switch/Switch';
 
   body {
     .title {
@@ -9,9 +30,9 @@
       font-family: $body-font-family;
       font-weight: lighter;
     }
-
   }
 
-  &.neon {
+  header {
+    justify-content: space-between;
   }
 }

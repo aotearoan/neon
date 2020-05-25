@@ -1,0 +1,54 @@
+@import 'includes/layout';
+
+$badge-icon-size: 0.667;
+
+@mixin badge-size($size, $font-size) {
+  font-size: $font-size;
+
+  &,
+  .neon-badge__image {
+    width: $size;
+    height: $size;
+  }
+
+  .neon-icon {
+    width: $badge-icon-size * $size;
+    height: $badge-icon-size * $size;
+  }
+}
+
+.neon-badge {
+  &--s {
+    @include badge-size($size-s, $font-size-s);
+  }
+
+  &--m {
+    @include badge-size($size-m, $base-font-size);
+  }
+
+  &--l {
+    @include badge-size($size-l, $h6-size);
+  }
+
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+
+  &--square {
+    &,
+    .neon-badge__image {
+      border-radius: $border-radius;
+    }
+  }
+
+  &--circular {
+    &,
+    .neon-badge__image {
+      border-radius: 50%;
+    }
+  }
+}

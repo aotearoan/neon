@@ -15,13 +15,9 @@ p {
   font-variant: tabular-nums;
 }
 
-.neon-link {
-  cursor: pointer;
-}
-
 h1 {
   font-family: $heading-font-family;
-  font-weight: 900;
+  font-weight: $h1-weight;
   margin: 0 0 7 * $base-space;
   font-size: $h1-size;
   line-height: $line-height-headings-ratio;
@@ -29,7 +25,7 @@ h1 {
 
 h2 {
   font-family: $heading-font-family;
-  font-weight: 800;
+  font-weight: $h2-weight;
   margin: 0 0 6 * $base-space;
   font-size: $h2-size;
   line-height: $line-height-headings-ratio;
@@ -37,7 +33,7 @@ h2 {
 
 h3 {
   font-family: $heading-font-family;
-  font-weight: 700;
+  font-weight: $h3-weight;
   margin: 0 0 5 * $base-space;
   font-size: $h3-size;
   line-height: $line-height-headings-ratio;
@@ -45,7 +41,7 @@ h3 {
 
 h4 {
   font-family: $heading-font-family;
-  font-weight: 600;
+  font-weight: $h4-weight;
   margin: 0 0 4 * $base-space;
   font-size: $h4-size;
   line-height: $line-height-headings-ratio;
@@ -53,7 +49,7 @@ h4 {
 
 h5 {
   font-family: $heading-font-family;
-  font-weight: 500;
+  font-weight: $h5-weight;
   margin: 0 0 3 * $base-space;
   font-size: $h5-size;
   line-height: $line-height-headings-ratio;
@@ -61,8 +57,12 @@ h5 {
 
 h6 {
   font-family: $heading-font-family;
-  font-weight: 400;
+  font-weight: $h6-weight;
   margin: 0 0 2 * $base-space;
   font-size: $h6-size;
   line-height: $line-height-headings-ratio;
+}
+
+label {
+  font-size: $font-size-s;
 }
