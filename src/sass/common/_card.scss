@@ -1,9 +1,11 @@
 .neon-card {
   border-radius: $border-radius;
   box-shadow: $box-shadow;
+  position: relative;
 
   .neon-card-header,
   .neon-card-body {
+    position: relative;
     @include padding;
     border-radius: $border-radius-card-section;
 
@@ -20,6 +22,7 @@
     h5,
     h6 {
       margin: 0;
+      line-height: 1;
     }
   }
 

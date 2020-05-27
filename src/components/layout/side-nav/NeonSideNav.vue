@@ -1,5 +1,5 @@
 <template>
-  <div class="neon-side-nav">
+  <div class="neon-side-nav" :class="{ 'neon-side-nav--full-width': fullWidth }">
     <div class="neon-side-nav__sticky" v-if="$slots.sticky">
       <!-- @slot: side-nav sticky contents -->
       <slot name="sticky"></slot>

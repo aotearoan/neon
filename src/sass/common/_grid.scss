@@ -9,6 +9,7 @@
   .neon-grid-area {
     @include margin(true);
     display: flex;
+    border-radius: $border-radius;
   }
 }
 

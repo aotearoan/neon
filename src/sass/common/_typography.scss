@@ -65,4 +65,7 @@ h6 {
 
 label {
   font-size: $font-size-s;
+  margin-bottom: 2 * $base-space;
+  text-transform: uppercase;
+  user-select: none;
 }

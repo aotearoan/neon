@@ -1,11 +1,15 @@
 @import 'includes/layout';
 
 .neon-side-nav {
-  @include padding;
   z-index: $z-index-above;
   position: fixed;
   bottom: 0;
   left: 0;
+  @include padding;
+
+  &--full-width {
+    padding: 0;
+  }
 
   @include responsive(desktop) {
     width: $side-nav-width;

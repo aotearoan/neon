@@ -1,9 +1,10 @@
 .neon-action-menu {
   &__link {
     display: flex;
-    width: 100%;
+    width: calc(100% + #{2 * $base-space});
     letter-spacing: 0.5px;
     border-radius: $border-radius;
+    margin: 0.5 * $base-space -2 * $base-space;
     padding-left: 2 * $base-space;
     padding-top: $base-space;
     padding-bottom: $base-space;

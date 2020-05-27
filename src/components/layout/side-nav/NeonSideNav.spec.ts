@@ -41,4 +41,13 @@ describe('NeonSideNav', () => {
     // when / then
     expect(wrapper.find('.neon-side-nav hr').element).toBeDefined();
   });
+
+  it('renders full width class', () => {
+    // given
+    const wrapper = mount(NeonSideNav, {
+      propsData: { fullWidth: true },
+    });
+    // when / then
+    expect(wrapper.find('.neon-side-nav--full-width').element).toBeDefined();
+  });
 });

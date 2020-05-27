@@ -28,6 +28,8 @@ import NeonTopNav from './components/layout/top-nav/NeonTopNav.vue';
 import { NeonActionMenuModel } from './components/navigation/action-menu/NeonActionMenuModel';
 import { NeonButtonStyle } from './components/user-input/button/NeonButtonStyle';
 import { NeonCheckboxStyle } from './components/user-input/checkbox/NeonCheckboxStyle';
+import { NeonDateUtils } from './components/common/NeonDateUtils';
+import { NeonFormattedDate } from './components/common/NeonFormattedDate';
 import { NeonFunctionalColor } from './components/common/NeonFunctionalColor';
 import { NeonGridModel } from './components/layout/grid/NeonGridModel';
 import { NeonIconPosition } from './components/design/icon/NeonIconPosition';
@@ -82,6 +84,8 @@ export {
   NeonCardHeader,
   NeonCheckbox,
   NeonCheckboxStyle,
+  NeonDateUtils,
+  NeonFormattedDate,
   NeonFooter,
   NeonFunctionalColor,
   NeonGrid,

@@ -1,6 +1,6 @@
 @import 'includes/layout';
 
-@mixin button-size($size, $font-size, $icon-size) {
+@mixin button-size($size, $font-size, $icon-size, $icon-only-size) {
   height: $size;
   font-size: $font-size;
   line-height: 1;
@@ -18,20 +18,25 @@
     &.neon-button--circular {
       border-radius: 50%;
     }
+
+    .neon-icon {
+      width: $icon-only-size;
+      height: $icon-only-size;
+    }
   }
 }
 
 .neon-button {
   &--s {
-    @include button-size($size-s, $font-size-s, $font-size-xs);
+    @include button-size($size-s, $font-size-s, $font-size-xs, $base-font-size);
   }
 
   &--m {
-    @include button-size($size-m, $base-font-size, $font-size-s);
+    @include button-size($size-m, $base-font-size, $font-size-s, $font-size-l);
   }
 
   &--l {
-    @include button-size($size-l, $base-font-size, $font-size-s);
+    @include button-size($size-l, $base-font-size, $font-size-s, $h6-size);
   }
 
   border-radius: $border-radius;
@@ -69,4 +74,8 @@
       margin-left: 2 * $base-space;
     }
   }
+}
+
+.neon-button + .neon-button {
+  margin-left: 2 * $base-space;
 }

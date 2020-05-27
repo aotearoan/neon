@@ -34,6 +34,12 @@
   justify-content: center;
   user-select: none;
   padding: 0 3 * $base-space;
+  min-width: fit-content;
+  width: fit-content;
+
+  &__label {
+    white-space: nowrap;
+  }
 
   &--with-icon {
     &:not(.neon-label--with-label) {
@@ -51,4 +57,8 @@
       }
     }
   }
+}
+
+.neon-label + .neon-label {
+  margin-left: 2 * $base-space;
 }
