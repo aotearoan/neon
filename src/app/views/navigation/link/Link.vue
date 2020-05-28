@@ -1,7 +1,7 @@
 <template>
   <neon-grid id="link" :layouts="layouts">
     <neon-grid-area id="link-content">
-      <neon-card>
+      <neon-card orientation="horizontal" horizontal-breakpoint="tablet">
         <neon-card-header>
           <h1>Links</h1>
         </neon-card-header>
