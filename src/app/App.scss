@@ -1,0 +1,24 @@
+@import 'src/sass/themes/default/variables';
+@import 'src/sass/themes/default/theme';
+@import 'src/app/sass/fonts';
+
+.app {
+  @import 'src/app/views/design/color/Color';
+  @import 'src/app/views/design/icons/Icons';
+  @import 'src/app/views/design/typography/Typography';
+  @import 'src/app/views/feedback/note/Note';
+  @import 'src/app/views/home/Home';
+  @import 'src/app/views/user-input/button/Button';
+
+  body {
+    .title {
+      margin-left: 8 * $base-space;
+      font-family: $body-font-family;
+      font-weight: lighter;
+    }
+  }
+
+  header {
+    justify-content: space-between;
+  }
+}
