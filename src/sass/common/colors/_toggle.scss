@@ -1,0 +1,52 @@
+@import 'toggle-color-mixins';
+
+.neon-toggle {
+  &--toggle {
+    @include toggle-colors;
+  }
+
+  &--radio-buttons {
+    .neon-toggle__label {
+      color: $color-radio-button-label;
+    }
+
+    @each $color, $palette in $functional-colors {
+      &.neon-toggle--#{$color} {
+        $toggle-color: map-get($palette, $color-toggle);
+
+        .neon-toggle__radio-button {
+          border: 1px solid $border-color;
+          background: $background-radio-button;
+        }
+
+        .neon-toggle__label--checked {
+          color: $color-text;
+
+          .neon-toggle__radio-button {
+            border: 1px solid $toggle-color;
+
+            &-indicator {
+              background-color: $toggle-color;
+              box-shadow: $box-shadow;
+            }
+          }
+        }
+
+        &.neon-toggle--disabled,
+        .neon-toggle__label--disabled {
+          color: $color-disabled-light;
+
+          .neon-toggle__radio-button {
+            background: $color-disabled-dark;
+            color: $color-disabled-light;
+            border-color: $color-disabled-dark;
+
+            &-indicator {
+              background-color: $color-disabled-light;
+            }
+          }
+        }
+      }
+    }
+  }
+}

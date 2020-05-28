@@ -1,0 +1,42 @@
+@mixin toggle-colors() {
+  @each $color, $palette in $functional-colors {
+    &.neon-toggle--#{$color} {
+      $toggle-color: map-get($palette, $color-toggle);
+      border: 1px solid $toggle-color;
+      color: $toggle-color;
+
+      label {
+        transition: background-color ease-in-out $animation-speed, color ease-in-out $animation-speed;
+        &.neon-toggle__label--checked,
+        &:hover:not(.neon-toggle__label--disabled) {
+          background-color: $toggle-color;
+          color: $color-inverse;
+        }
+
+        & + label {
+          border-left: 1px solid $toggle-color;
+        }
+      }
+
+      &.neon-toggle--disabled {
+        border-color: $color-disabled-light;
+
+        .neon-toggle__label {
+          color: $color-disabled-light;
+          border-color: $color-disabled-light;
+        }
+      }
+
+      .neon-toggle__label--disabled {
+        color: $color-disabled-light;
+      }
+
+      &.neon-toggle--disabled .neon-toggle__label--checked,
+      .neon-toggle__label--disabled.neon-toggle__label--checked {
+        color: $color-disabled-dark;
+        border-color: $color-disabled-dark;
+        background-color: $color-disabled-light;
+      }
+    }
+  }
+}

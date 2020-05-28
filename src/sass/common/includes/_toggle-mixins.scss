@@ -1,0 +1,89 @@
+@mixin toggle-size($font-size, $size) {
+  label {
+    font-size: $font-size;
+    letter-spacing: $component-letter-spacing-s;
+    line-height: 1;
+    height: $size;
+
+    &.neon-toggle__label--with-icon {
+      width: $size;
+      padding: 0;
+
+      .neon-icon {
+        width: $font-size;
+        height: $font-size;
+      }
+    }
+  }
+}
+
+@mixin radio-button-size($font-size, $size) {
+  @include toggle-size($font-size, $size);
+
+  .neon-toggle__radio-button {
+    width: $font-size;
+    height: $font-size;
+  }
+
+  .neon-toggle__label--checked {
+    .neon-toggle__radio-button {
+      &-indicator {
+        width: floor(0.625 * $font-size);
+        height: floor(0.625 * $font-size);
+      }
+    }
+  }
+}
+
+@mixin toggle-layout {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  &.neon-toggle--s {
+    @include toggle-size($font-size-s, $size-s);
+  }
+
+  &.neon-toggle--m {
+    @include toggle-size($font-size-s, $size-m);
+  }
+
+  &.neon-toggle--l {
+    @include toggle-size($base-font-size, $size-l);
+  }
+}
+
+@mixin radio-button-layout {
+  .neon-toggle__label {
+    letter-spacing: $component-letter-spacing-s;
+  }
+
+  .neon-toggle__radio-button {
+    border-radius: 50%;
+    margin-right: 3 * $base-space;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .neon-toggle__label--checked {
+    .neon-toggle__radio-button {
+      &-indicator {
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &.neon-toggle--s {
+    @include radio-button-size($font-size-s, $size-s);
+  }
+
+  &.neon-toggle--m {
+    @include radio-button-size($font-size-s, $size-m);
+  }
+
+  &.neon-toggle--l {
+    @include radio-button-size($base-font-size, $size-l);
+  }
+}

@@ -1,12 +1,27 @@
+@import 'includes/toggle-mixins';
+
 .neon-toggle {
-  @extend .neon-row;
-
-  label {
-    padding: 2 * $base-space 3 * $base-space;
-    border-radius: $border-radius;
-  }
-
   input {
     display: none;
+  }
+
+  label {
+    user-select: none;
+    padding: 2 * $base-space 3 * $base-space;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--toggle {
+    @include toggle-layout;
+  }
+
+  &--radio-buttons {
+    @include radio-button-layout;
+  }
+
+  &--horizontal {
+    flex-direction: row;
   }
 }

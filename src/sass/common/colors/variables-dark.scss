@@ -25,7 +25,7 @@ $logo: $logo-dark;
 
 $label-color: $color-neutral-l1;
 
-$color-disabled-light: $color-neutral-d1;
+$color-disabled-light: $color-neutral-d2;
 $color-disabled-dark: $color-neutral-d4;
 
 // switch
@@ -76,3 +76,10 @@ $background-color-selection: $color-primary-default;
 
 // pre
 $background-color-pre: $color-neutral-d3;
+
+// toggle
+$color-toggle: l1;
+
+// radio buttons
+$background-radio-button: linear-gradient(0deg, $color-neutral-d3 0%, $color-neutral-d5 100%);
+$color-radio-button-label: $color-neutral-l1;

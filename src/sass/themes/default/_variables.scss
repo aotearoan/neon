@@ -48,10 +48,12 @@ $h1-weight: 900 !default;
 $line-height-headings-ratio: 1.125 !default;
 $line-height-ratio: 1.618 !default;
 
-$body-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+$system-font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
   'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-$heading-font-family: 'Playfair', sans-serif;
-$paragraph-font-family: 'Lora', serif;
+
+$body-font-family: $system-font-stack !default;
+$heading-font-family: $body-font-family !default;
+$paragraph-font-family: $body-font-family !default;
 
 $logo-width-multiplier: 4.4 !default;
 $logo-light: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" viewBox="0 0 8520 1930" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.5;"><path d="M41.512,1876.68l56.25,-113.766c280.118,-566.402 558.024,-1128.06 843.75,-1706.49l-900,1820.26Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M1434.84,1406.43l675,-1350l-675,1350Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M941.512,56.428l493.323,1350l-493.323,-1350Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M6403.8,1873.04l56.25,-113.766c280.117,-566.402 558.023,-1128.06 843.75,-1706.49l-900,1820.26Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M7797.12,1402.78l675,-1350l-675,1350Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M7303.8,52.779l493.322,1350l-493.322,-1350Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M2086.4,989.475l900,-900l-900,900Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M2086.81,989.475l1087.09,900l-1087.09,-900Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M4442.65,969.097l900,-900l-900,900Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M4443.06,969.097l1087.09,900l-1087.09,-900Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M6436.4,965.42l-899.448,900.552l899.448,-900.552Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M6426.61,956.045l-1081.39,-880.583l1081.39,880.583Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M4079.73,977.92l-1081.39,-880.583l1081.39,880.583Z" style="fill:none;stroke:%23262626;stroke-width:76.22px;"/><path d="M60.074,993.199l8421.4,-16.21l-8421.4,16.21Z" style="fill:none;stroke:%23ff02ff;stroke-width:76.22px;stroke-linecap:round;"/></svg>') !default;
@@ -65,6 +67,9 @@ $size-xs: 6 * $base-space !default;
 $size-s: 8 * $base-space !default;
 $size-m: 10 * $base-space !default;
 $size-l: 12 * $base-space !default;
+
+$component-letter-spacing-s: 0.25px !default;
+$component-letter-spacing-m: 0.5px !default;
 
 /* box shadows */
 $box-shadow: 0 2px 2px rgba(0, 0, 0, 0.014), 0 4px 4px rgba(0, 0, 0, 0.028), 0 6px 6px rgba(0, 0, 0, 0.03) !default;

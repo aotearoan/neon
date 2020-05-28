@@ -13,8 +13,6 @@ import NeonFooter from './components/layout/footer/NeonFooter.vue';
 import NeonGrid from './components/layout/grid/NeonGrid.vue';
 import NeonGridArea from './components/layout/grid/grid-area/NeonGridArea.vue';
 import NeonIcon from './components/design/icon/NeonIcon.vue';
-import NeonTreeMenu from './components/navigation/tree-menu/NeonTreeMenu.vue';
-import NeonTreeMenuItem from './components/navigation/tree-menu/item/NeonTreeMenuItem.vue';
 import NeonLabel from './components/presentation/label/NeonLabel.vue';
 import NeonLink from './components/navigation/link/NeonLink.vue';
 import NeonLogo from './components/design/logo/NeonLogo.vue';
@@ -22,7 +20,10 @@ import NeonNote from './components/feedback/note/NeonNote.vue';
 import NeonPage from './components/layout/page/NeonPage.vue';
 import NeonSideNav from './components/layout/side-nav/NeonSideNav.vue';
 import NeonSwitch from './components/user-input/switch/NeonSwitch.vue';
+import NeonToggle from './components/user-input/toggle/NeonToggle.vue';
 import NeonTopNav from './components/layout/top-nav/NeonTopNav.vue';
+import NeonTreeMenu from './components/navigation/tree-menu/NeonTreeMenu.vue';
+import NeonTreeMenuItem from './components/navigation/tree-menu/item/NeonTreeMenuItem.vue';
 
 /* models and utils */
 import { NeonActionMenuModel } from './components/navigation/action-menu/NeonActionMenuModel';
@@ -34,12 +35,14 @@ import { NeonFunctionalColor } from './components/common/NeonFunctionalColor';
 import { NeonGridModel } from './components/layout/grid/NeonGridModel';
 import { NeonIconPosition } from './components/design/icon/NeonIconPosition';
 import { NeonIconRegistry } from './components/design/icon/NeonIconRegistry';
-import { NeonTreeMenuModel } from './components/navigation/tree-menu/NeonTreeMenuModel';
 import { NeonMode } from './components/common/NeonMode';
 import { NeonOrientation } from './components/common/NeonOrientation';
 import { NeonResponsive } from './components/layout/grid/NeonResponsive';
 import { NeonLabelSize } from './components/presentation/label/NeonLabelSize';
 import { NeonSize } from './components/common/NeonSize';
+import { NeonToggleModel } from './components/user-input/toggle/NeonToggleModel';
+import { NeonToggleStyle } from './components/user-input/toggle/NeonToggleStyle';
+import { NeonTreeMenuModel } from './components/navigation/tree-menu/NeonTreeMenuModel';
 
 /* register default provided icons */
 import { RegisterIcons } from './components/design/icon/RegisterIcons';
@@ -59,8 +62,6 @@ const components: { [s: string]: VueConstructor } = {
   NeonGrid,
   NeonGridArea,
   NeonIcon,
-  NeonTreeMenu,
-  NeonTreeMenuItem,
   NeonLabel,
   NeonLink,
   NeonLogo,
@@ -68,7 +69,10 @@ const components: { [s: string]: VueConstructor } = {
   NeonPage,
   NeonSideNav,
   NeonSwitch,
+  NeonToggle,
   NeonTopNav,
+  NeonTreeMenu,
+  NeonTreeMenuItem,
 };
 
 Object.keys(components).forEach((k) => Vue.component(k, components[k]));
@@ -94,9 +98,6 @@ export {
   NeonIcon,
   NeonIconPosition,
   NeonIconRegistry,
-  NeonTreeMenu,
-  NeonTreeMenuItem,
-  NeonTreeMenuModel,
   NeonLabel,
   NeonLabelSize,
   NeonLink,
@@ -109,5 +110,11 @@ export {
   NeonSideNav,
   NeonSize,
   NeonSwitch,
+  NeonToggle,
+  NeonToggleModel,
+  NeonToggleStyle,
   NeonTopNav,
+  NeonTreeMenu,
+  NeonTreeMenuItem,
+  NeonTreeMenuModel,
 };
