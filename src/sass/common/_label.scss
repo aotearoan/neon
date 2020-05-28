@@ -27,7 +27,7 @@
   text-transform: uppercase;
   border-radius: $border-radius;
   font-weight: 300;
-  letter-spacing: 0.5px;
+  letter-spacing: $component-letter-spacing-m;
   display: flex;
   flex-direction: row;
   align-items: center;

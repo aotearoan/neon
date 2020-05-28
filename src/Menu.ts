@@ -139,7 +139,14 @@ export class Menu {
         {
           path: 'switch',
           page: 'SwitchExample',
+          name: 'Switch',
           component: 'NeonSwitch',
+        },
+        {
+          path: 'toggle',
+          page: 'Toggle',
+          name: 'Toggle / Radio buttons',
+          component: 'NeonToggle',
         },
       ],
     },

@@ -41,7 +41,7 @@
 
   border-radius: $border-radius;
   font-weight: 400;
-  letter-spacing: 0.5px;
+  letter-spacing: $component-letter-spacing-m;
   display: flex;
   align-items: center;
   justify-content: center;
