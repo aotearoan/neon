@@ -44,16 +44,16 @@ export default class App extends Vue {
   }
 
   get modes() {
-    return {
-      off: {
+    return [
+      {
         key: NeonMode.Light,
-        label: 'Light',
+        icon: 'sun',
       },
-      on: {
+      {
         key: NeonMode.Dark,
-        label: 'Dark',
+        icon: 'moon',
       },
-    };
+    ];
   }
 
   private switchTheme(theme: Theme) {

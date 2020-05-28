@@ -11,7 +11,8 @@
           </ul>
         </div>
       </div>
-      <neon-switch :value="selectedMode" :model="modes" color="primary" @input="switchMode"></neon-switch>
+      <neon-toggle name="dark-mode-toggle" :value="selectedMode" :model="modes" color="primary" @input="switchMode">
+      </neon-toggle>
     </neon-top-nav>
     <neon-page>
       <neon-side-nav>

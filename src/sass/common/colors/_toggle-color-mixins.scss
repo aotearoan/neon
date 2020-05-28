@@ -2,15 +2,20 @@
   @each $color, $palette in $functional-colors {
     &.neon-toggle--#{$color} {
       $toggle-color: map-get($palette, $color-toggle);
+      $toggle-color-selected: map-get($palette, $color-toggle-selected);
       border: 1px solid $toggle-color;
       color: $toggle-color;
 
       label {
         transition: background-color ease-in-out $animation-speed, color ease-in-out $animation-speed;
-        &.neon-toggle__label--checked,
-        &:hover:not(.neon-toggle__label--disabled) {
+
+        &.neon-toggle__label--checked {
           background-color: $toggle-color;
           color: $color-inverse;
+        }
+
+        &:hover:not(.neon-toggle__label--disabled):not(.neon-toggle__label--checked) {
+          background-color: $toggle-color-selected;
         }
 
         & + label {
