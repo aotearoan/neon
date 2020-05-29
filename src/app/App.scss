@@ -20,5 +20,20 @@
 
   header {
     justify-content: space-between;
+
+    .logo-wrapper {
+      align-items: flex-end;
+    }
+
+    .tagline {
+      margin-left: 4 * $base-space;
+      font-size: $font-size-l;
+      opacity: 0.9;
+      font-style: oblique;
+      letter-spacing: 1px;
+      font-weight: 200;
+      line-height: 1;
+      user-select: none;
+    }
   }
 }

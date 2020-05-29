@@ -1,7 +1,10 @@
 <template>
   <div id="app" class="neon-app">
     <neon-top-nav>
-      <neon-logo></neon-logo>
+      <span class="logo-wrapper">
+        <neon-logo></neon-logo>
+        <span class="tagline">A VueJs design library</span>
+      </span>
       <div>
         <div id="nav">
           <ul v-if="themes.length > 1" class="neon-menu no-style">
@@ -11,8 +14,7 @@
           </ul>
         </div>
       </div>
-      <neon-toggle name="dark-mode-toggle" :value="selectedMode" :model="modes" color="primary" @input="switchMode">
-      </neon-toggle>
+      <neon-toggle name="dark-mode-toggle" :value="selectedMode" :model="modes" @input="switchMode"> </neon-toggle>
     </neon-top-nav>
     <neon-page>
       <neon-side-nav>
