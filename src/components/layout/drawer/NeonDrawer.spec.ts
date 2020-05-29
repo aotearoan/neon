@@ -103,7 +103,7 @@ describe('NeonDrawer', () => {
     });
   });
 
-  it('does not emits close event on click inside drawer container', (done) => {
+  it('does not emit close event on click inside drawer container', (done) => {
     // given
     const wrapper = mount(NeonDrawer, {
       propsData: { open: true },

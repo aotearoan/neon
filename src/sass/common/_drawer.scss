@@ -3,7 +3,6 @@
 .neon-drawer {
   &__container {
     position: fixed;
-    display: flex;
     margin: 0;
     z-index: $z-index-modal-over-top-nav;
     @include padding;
@@ -88,7 +87,6 @@
 
   &--with-overlay {
     .neon-drawer__overlay {
-      display: flex;
       opacity: 0;
       z-index: $z-index-below;
       position: fixed;

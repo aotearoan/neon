@@ -17,6 +17,7 @@ import NeonIcon from './components/design/icon/NeonIcon.vue';
 import NeonLabel from './components/presentation/label/NeonLabel.vue';
 import NeonLink from './components/navigation/link/NeonLink.vue';
 import NeonLogo from './components/design/logo/NeonLogo.vue';
+import NeonModal from './components/layout/modal/NeonModal.vue';
 import NeonNote from './components/feedback/note/NeonNote.vue';
 import NeonPage from './components/layout/page/NeonPage.vue';
 import NeonSideNav from './components/layout/side-nav/NeonSideNav.vue';
@@ -68,6 +69,7 @@ const components: { [s: string]: VueConstructor } = {
   NeonLabel,
   NeonLink,
   NeonLogo,
+  NeonModal,
   NeonNote,
   NeonPage,
   NeonSideNav,
@@ -106,6 +108,7 @@ export {
   NeonLabelSize,
   NeonLink,
   NeonLogo,
+  NeonModal,
   NeonMode,
   NeonNote,
   NeonOrientation,

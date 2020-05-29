@@ -1,0 +1,42 @@
+@import 'includes/layout';
+
+.neon-modal {
+  align-items: center;
+  justify-content: center;
+
+  &,
+  .neon-modal__container,
+  .neon-modal__overlay {
+    position: fixed;
+    opacity: 0;
+    z-index: $z-index-below;
+  }
+
+  &,
+  .neon-modal__overlay {
+    top: 0;
+    left: 0;
+    @include width(100);
+    @include min-height(100);
+    @include height(100);
+  }
+
+  &.neon-modal--open {
+    opacity: 1;
+
+    .neon-modal__container,
+    .neon-modal__overlay {
+      opacity: 1;
+      transition: opacity ease-in-out 0.5 * $animation-speed-fast;
+    }
+
+    &,
+    .neon-modal__container {
+      z-index: $z-index-modal-over-top-nav;
+    }
+
+    .neon-modal__overlay {
+      z-index: $z-index-overlay-over-top-nav;
+    }
+  }
+}

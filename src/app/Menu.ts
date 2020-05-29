@@ -72,6 +72,12 @@ export class Menu {
           component: 'NeonGrid',
         },
         {
+          path: 'modal',
+          page: 'Modal',
+          keywords: 'dialog',
+          component: 'NeonModal',
+        },
+        {
           path: 'page',
           page: 'Page',
           component: 'NeonPage',
