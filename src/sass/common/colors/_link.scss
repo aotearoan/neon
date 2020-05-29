@@ -2,7 +2,7 @@ a[href]:not(.neon-link--no-style),
 .neon-link:not(.neon-link--no-style) {
   &:not(.neon-button) {
     color: $color-link;
-    transition: color ease-in-out $animation-speed;
+    transition: color ease-in-out $animation-speed-slow;
 
     &:active,
     &:hover {

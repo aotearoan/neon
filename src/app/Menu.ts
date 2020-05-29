@@ -3,6 +3,7 @@ import { TranslateResult } from 'vue-i18n';
 export interface MenuModel {
   path: string;
   page?: string;
+  keywords?: string;
   name?: TranslateResult;
   component?: string;
   children?: MenuModel[];
@@ -53,6 +54,12 @@ export class Menu {
           path: 'card',
           page: 'Card',
           component: 'NeonCard',
+        },
+        {
+          path: 'drawer',
+          page: 'Drawer',
+          keywords: 'slide out panel',
+          component: 'NeonDrawer',
         },
         {
           path: 'footer',

@@ -102,20 +102,20 @@ $spacing: (
 }
 
 // height
-@mixin min-height($n, $offset: 0) {
+@mixin min-height($n, $offset: 0px) {
   min-height: calc(#{$n} * var(--vh, 1vh) - #{$offset});
 }
 
-@mixin height($n, $offset: 0) {
+@mixin height($n, $offset: 0px) {
   height: calc(#{$n} * var(--vh, 1vh) - #{$offset});
 }
 
 // width
-@mixin width($n, $offset: 0) {
+@mixin width($n, $offset: 0px) {
   width: calc(#{$n} * var(--vw, 1vw) - #{$offset});
 }
 
-@mixin side-nav-offset($offset: 0) {
+@mixin side-nav-offset($offset: 0px) {
   @include responsive(desktop) {
     margin-left: $side-nav-width + $offset;
     @include width(100, $side-nav-width + $offset);

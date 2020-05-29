@@ -13,7 +13,7 @@
     height: 0.8 * $switch-height;
     width: 0.8 * $switch-height;
     left: 0;
-    transition: left $animation-speed ease-in;
+    transition: left $animation-speed-slow ease-in;
   }
 
   &.neon-switch--checked {

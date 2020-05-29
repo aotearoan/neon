@@ -1,0 +1,10 @@
+.neon-drawer {
+  &__container {
+    background-color: $background-color-card;
+    box-shadow: $box-shadow;
+  }
+
+  &__overlay {
+    background-color: rgba(black, 0.5);
+  }
+}

@@ -12,7 +12,8 @@ $spacing-multiplier-tablet: 1.5 !default;
 $spacing-multiplier-desktop: 2 !default;
 
 /* animation */
-$animation-speed: 0.3s !default;
+$animation-speed-slow: 0.3s !default;
+$animation-speed-fast: 0.225s !default;
 
 /* base colors */
 $color-primary: #9c64e5 !default; // purple

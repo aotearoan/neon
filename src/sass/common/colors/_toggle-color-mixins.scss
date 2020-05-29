@@ -7,7 +7,7 @@
       color: $toggle-color;
 
       label {
-        transition: background-color ease-in-out $animation-speed, color ease-in-out $animation-speed;
+        transition: background-color ease-in-out $animation-speed-slow, color ease-in-out $animation-speed-slow;
 
         &.neon-toggle__label--checked {
           background-color: $toggle-color;

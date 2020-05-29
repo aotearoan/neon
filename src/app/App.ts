@@ -74,10 +74,12 @@ export default class App extends Vue {
     return Menu.menu.map((item) => ({
       label: item.name || item.page || item.path,
       key: item.path,
+      keywords: item.keywords,
       children: item.children
         ? item.children.map((child) => ({
             label: child.name || child.page || child.path,
             key: child.path,
+            keywords: child.keywords,
             href: `/${item.path}/${child.path}`,
           }))
         : [],
@@ -109,9 +111,10 @@ export default class App extends Vue {
         });
       }
 
+      const searchString = item.label.toString() + (item.keywords ? item.keywords.toString() : '');
       return children.length > 0
         ? { ...item, children }
-        : item.label.toString().toLowerCase().indexOf(this.indexFilter) >= 0
+        : searchString.toLowerCase().indexOf(this.indexFilter) >= 0
         ? item
         : undefined;
     }

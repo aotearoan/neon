@@ -1,0 +1,114 @@
+@import 'includes/layout';
+
+.neon-drawer {
+  &__container {
+    position: fixed;
+    display: flex;
+    margin: 0;
+    z-index: $z-index-modal-over-top-nav;
+    @include padding;
+    transition: margin-left ease-in-out $animation-speed-fast, margin-right ease-in-out $animation-speed-fast,
+      margin-top ease-in-out $animation-speed-fast, margin-bottm ease-in-out $animation-speed-fast;
+
+    &--full-width {
+      padding: 0;
+    }
+  }
+
+  &--left,
+  &--right {
+    .neon-drawer__container {
+      top: 0;
+      width: $side-nav-width;
+      @include min-height(100);
+      @include height(100);
+    }
+  }
+
+  &--left {
+    .neon-drawer__container {
+      left: 0;
+    }
+
+    &:not(.neon-drawer--open) .neon-drawer__container {
+      margin-left: -100%;
+    }
+  }
+
+  &--right {
+    .neon-drawer__container {
+      right: 0;
+    }
+
+    &:not(.neon-drawer--open) .neon-drawer__container {
+      margin-right: -100%;
+    }
+  }
+
+  &--top,
+  &--bottom {
+    .neon-drawer__container {
+      left: 0;
+      @include width(100);
+    }
+  }
+
+  &--top {
+    .neon-drawer__container {
+      top: 0;
+      z-index: $z-index-modal-under-top-nav;
+
+      @include responsive(desktop) {
+        margin-top: $top-nav-height-desktop;
+      }
+
+      @include responsive(tablet) {
+        margin-top: $top-nav-height-tablet;
+      }
+
+      @include responsive(mobile) {
+        margin-top: $top-nav-height-mobile;
+      }
+    }
+
+    &:not(.neon-drawer--open) .neon-drawer__container {
+      margin-top: -100%;
+    }
+  }
+
+  &--bottom {
+    .neon-drawer__container {
+      bottom: 0;
+    }
+
+    &:not(.neon-drawer--open) .neon-drawer__container {
+      margin-bottom: -100%;
+    }
+  }
+
+  &--with-overlay {
+    .neon-drawer__overlay {
+      display: flex;
+      opacity: 0;
+      z-index: $z-index-below;
+      position: fixed;
+      top: 0;
+      left: 0;
+      @include width(100);
+      @include min-height(100);
+      @include height(100);
+    }
+
+    &.neon-drawer--open {
+      .neon-drawer__overlay {
+        opacity: 1;
+        z-index: $z-index-overlay-over-top-nav;
+        transition: opacity ease-in-out 0.5 * $animation-speed-fast;
+      }
+
+      &.neon-drawer--top .neon-drawer__overlay {
+        z-index: $z-index-overlay-under-top-nav;
+      }
+    }
+  }
+}

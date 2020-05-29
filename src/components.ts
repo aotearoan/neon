@@ -9,6 +9,7 @@ import NeonCard from './components/layout/card/NeonCard.vue';
 import NeonCardBody from './components/layout/card/body/NeonCardBody.vue';
 import NeonCardHeader from './components/layout/card/header/NeonCardHeader.vue';
 import NeonCheckbox from './components/user-input/checkbox/NeonCheckbox.vue';
+import NeonDrawer from './components/layout/drawer/NeonDrawer.vue';
 import NeonFooter from './components/layout/footer/NeonFooter.vue';
 import NeonGrid from './components/layout/grid/NeonGrid.vue';
 import NeonGridArea from './components/layout/grid/grid-area/NeonGridArea.vue';
@@ -37,6 +38,7 @@ import { NeonIconPosition } from './components/design/icon/NeonIconPosition';
 import { NeonIconRegistry } from './components/design/icon/NeonIconRegistry';
 import { NeonMode } from './components/common/NeonMode';
 import { NeonOrientation } from './components/common/NeonOrientation';
+import { NeonPosition } from './components/common/NeonPosition';
 import { NeonResponsive } from './components/layout/grid/NeonResponsive';
 import { NeonLabelSize } from './components/presentation/label/NeonLabelSize';
 import { NeonSize } from './components/common/NeonSize';
@@ -58,6 +60,7 @@ const components: { [s: string]: VueConstructor } = {
   NeonCardBody,
   NeonCardHeader,
   NeonCheckbox,
+  NeonDrawer,
   NeonFooter,
   NeonGrid,
   NeonGridArea,
@@ -89,6 +92,7 @@ export {
   NeonCheckbox,
   NeonCheckboxStyle,
   NeonDateUtils,
+  NeonDrawer,
   NeonFormattedDate,
   NeonFooter,
   NeonFunctionalColor,
@@ -106,6 +110,7 @@ export {
   NeonNote,
   NeonOrientation,
   NeonPage,
+  NeonPosition,
   NeonResponsive,
   NeonSideNav,
   NeonSize,
