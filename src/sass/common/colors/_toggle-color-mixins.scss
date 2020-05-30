@@ -9,7 +9,7 @@
       &.neon-toggle__label--checked,
       &:hover:not(.neon-toggle__label--disabled):not(.neon-toggle__label--checked) {
         background-color: $toggle-color;
-        color: $color-inverse;
+        color: $color-toggle-selected;
       }
 
       & + label {

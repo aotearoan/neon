@@ -25,4 +25,11 @@ export default class Button extends Vue {
   get buttonStyles() {
     return Object.values(NeonButtonStyle);
   }
+
+  private buttonName(buttonStyle: string) {
+    return buttonStyle
+      .split('-')
+      .map((s, index) => (index === 0 ? `${s.substr(0, 1).toUpperCase()}${s.substr(1)}` : s))
+      .join(' ');
+  }
 }

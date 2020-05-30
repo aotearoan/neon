@@ -10,3 +10,7 @@
     margin-bottom: 4 * $base-space;
   }
 }
+
+.link-buttons {
+  @include padding;
+}

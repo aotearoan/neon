@@ -22,7 +22,7 @@ $transparency-button-disabled: 0.3;
 
   &:hover:not(:disabled),
   &:active:not(:disabled) {
-    color: $color-inverse;
+    color: $color-button-text;
   }
 
   &:hover:not(:disabled) {
@@ -101,7 +101,7 @@ $transparency-button-disabled: 0.3;
   &--solid {
     border: none;
     box-shadow: $box-shadow;
-    color: $color-inverse;
+    color: $color-button-text;
 
     &:active {
       box-shadow: inset $box-shadow;

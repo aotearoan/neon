@@ -71,6 +71,12 @@
   }
 }
 
-.neon-button + .neon-button:not(.neon-button--full-width) {
-  margin-left: 2 * $base-space;
+.neon-button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  .neon-button + .neon-button {
+    margin-left: 2 * $base-space;
+  }
 }

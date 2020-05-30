@@ -43,6 +43,7 @@ $background-color-switch-indicator: $color-neutral-d5;
 // solid button
 $background-solid-button-light: l2;
 $background-solid-button-dark: l1;
+$color-button-text: $color-neutral-d5;
 
 // high-contrast buttons
 $background-high-contrast-solid-button-light: $color-text;
@@ -88,6 +89,7 @@ $background-color-pre: $color-neutral-d3;
 
 // toggle
 $color-toggle: l1;
+$color-toggle-selected: $color-neutral-d5;
 
 // radio buttons
 $background-radio-button: linear-gradient(0deg, $color-neutral-d3 0%, $color-neutral-d5 100%);
