@@ -29,7 +29,7 @@
         <pre>selected = {{ selected }}</pre>
       </neon-card-body>
       <neon-card-header>
-        <h2>Icon toggle</h2>
+        <h1>Icon toggle</h1>
       </neon-card-header>
       <neon-card-body>
         <div class="collection">

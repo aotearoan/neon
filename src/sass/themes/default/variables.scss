@@ -28,23 +28,24 @@ $border-width: 1px !default;
 $border-style: solid !default;
 
 /* typography */
+$font-style-headings: oblique !default;
 $font-size-xs: 12px !default;
 $font-size-s: 14px !default;
 $base-font-size: 16px !default;
 $font-size-l: 18px !default;
-$h6-size: 20px !default;
-$h5-size: 24px !default;
-$h4-size: 28px !default;
-$h3-size: 32px !default;
-$h2-size: 36px !default;
-$h1-size: 40px !default;
+$h6-size: 16px !default;
+$h5-size: 20px !default;
+$h4-size: 24px !default;
+$h3-size: 28px !default;
+$h2-size: 32px !default;
+$h1-size: 36px !default;
 
-$h6-weight: 700 !default;
-$h5-weight: 740 !default;
-$h4-weight: 780 !default;
-$h3-weight: 820 !default;
-$h2-weight: 860 !default;
-$h1-weight: 900 !default;
+$h6-weight: 400 !default;
+$h5-weight: bold !default;
+$h4-weight: bold !default;
+$h3-weight: bold !default;
+$h2-weight: bold !default;
+$h1-weight: bold !default;
 
 $line-height-headings-ratio: 1.125 !default;
 $line-height-ratio: 1.618 !default;

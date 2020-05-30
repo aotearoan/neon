@@ -4,7 +4,7 @@
       <h1>Buttons</h1>
     </neon-card-header>
     <neon-card-body class="buttons" v-for="buttonStyle in buttonStyles" :key="buttonStyle">
-      <h4>{{ buttonStyle }} buttons</h4>
+      <h2>{{ buttonStyle }} buttons</h2>
       <div v-for="size in sizes" :key="size" class="neon-horizontal neon-space-evenly">
         <neon-button
           v-for="color in colors"
@@ -19,7 +19,7 @@
       </div>
     </neon-card-body>
     <neon-card-body class="buttons">
-      <h4>Icon only buttons</h4>
+      <h2>Icon only buttons</h2>
       <div v-for="size in sizes" :key="size" class="neon-horizontal neon-space-evenly">
         <neon-button
           v-for="color in colors"
@@ -33,7 +33,7 @@
       </div>
     </neon-card-body>
     <neon-card-body class="buttons">
-      <h4>Circular icon buttons</h4>
+      <h2>Circular icon buttons</h2>
       <div v-for="size in sizes" :key="size" class="neon-horizontal neon-space-evenly">
         <neon-button
           v-for="color in colors"
@@ -48,7 +48,7 @@
       </div>
     </neon-card-body>
     <neon-card-body class="buttons">
-      <h4>Buttons with icons</h4>
+      <h2>Buttons with icons</h2>
       <div v-for="size in sizes" :key="`button-with-icon-${size}`" class="neon-horizontal neon-space-evenly">
         <neon-button
           v-for="color in colors"
@@ -62,7 +62,7 @@
       </div>
     </neon-card-body>
     <neon-card-body class="buttons">
-      <h4>Link buttons</h4>
+      <h2>Link buttons</h2>
       <neon-note><strong>Note:</strong> add an href to buttons and they will be rendered as links</neon-note>
       <div class="neon-horizontal neon-space-evenly">
         <neon-button label="Link button" href="."></neon-button>
@@ -71,7 +71,7 @@
       </div>
     </neon-card-body>
     <neon-card-body class="buttons">
-      <h4>Full width buttons</h4>
+      <h2>Full width buttons</h2>
       <div class="full-width-buttons">
         <neon-button
           v-for="color in colors"

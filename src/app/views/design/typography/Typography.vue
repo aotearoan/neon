@@ -4,7 +4,6 @@
       <h1>Typography</h1>
     </neon-card-header>
     <neon-card-body>
-      <h1>H1 heading</h1>
       <h2>H2 heading</h2>
       <h3>H3 heading</h3>
       <h4>H4 heading</h4>
