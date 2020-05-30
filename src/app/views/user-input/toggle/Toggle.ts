@@ -1,20 +1,8 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonResponsive } from '@/components/layout/grid/NeonResponsive';
-import {
-  NeonCard,
-  NeonCardBody,
-  NeonCardHeader,
-  NeonFunctionalColor,
-  NeonGrid,
-  NeonGridArea,
-  NeonSize,
-  NeonToggle,
-} from '@/components';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonFunctionalColor, NeonSize, NeonToggle } from '@/components';
 
 @Component({
   components: {
-    NeonGrid,
-    NeonGridArea,
     NeonCard,
     NeonCardHeader,
     NeonCardBody,
@@ -63,14 +51,5 @@ export default class Toggle extends Vue {
 
   get sizes() {
     return Object.values(NeonSize);
-  }
-
-  get layouts() {
-    return [
-      {
-        breakpoint: NeonResponsive.All,
-        grid: [['toggle-content'], ['radio-buttons-content']],
-      },
-    ];
   }
 }

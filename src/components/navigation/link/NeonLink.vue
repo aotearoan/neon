@@ -5,6 +5,7 @@
     class="neon-link neon-link--router-link"
     :class="{ 'neon-link--no-style': noStyle }"
     v-on="$listeners"
+    @click.native="onClick"
     v-bind="$attrs"
   >
     <span class="neon-link__label">
@@ -18,6 +19,7 @@
     class="neon-link neon-link--external-link"
     :class="{ 'neon-link--no-style': noStyle }"
     v-on="$listeners"
+    @click="onClick"
     v-bind="$attrs"
   >
     <span class="neon-link__label">

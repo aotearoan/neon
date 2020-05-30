@@ -1,7 +1,10 @@
 <template>
-  <neon-grid id="home" :layouts="layouts">
-    <neon-grid-area id="home-content"> </neon-grid-area>
-  </neon-grid>
+  <neon-card>
+    <neon-card-header>
+      <h1>Home</h1>
+    </neon-card-header>
+    <neon-card-body></neon-card-body>
+  </neon-card>
 </template>
 
 <script lang="ts" src="./Home.ts"></script>

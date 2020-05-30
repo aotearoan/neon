@@ -1,12 +1,9 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { NeonFunctionalColor } from '@/components/common/NeonFunctionalColor';
-import { NeonResponsive } from '@/components/layout/grid/NeonResponsive';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonGrid, NeonGridArea, NeonNote } from '@/components';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonNote } from '@/components';
 
 @Component({
   components: {
-    NeonGrid,
-    NeonGridArea,
     NeonCard,
     NeonCardHeader,
     NeonCardBody,
@@ -18,14 +15,5 @@ export default class Note extends Vue {
 
   private closeNote(color: NeonFunctionalColor) {
     this.noteColors = this.noteColors.filter((c) => c !== color);
-  }
-
-  get layouts() {
-    return [
-      {
-        breakpoint: NeonResponsive.All,
-        grid: [['note-content']],
-      },
-    ];
   }
 }

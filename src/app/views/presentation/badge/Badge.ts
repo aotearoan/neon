@@ -1,13 +1,10 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { NeonSize } from '@/components/common/NeonSize';
 import { NeonFunctionalColor } from '@/components/common/NeonFunctionalColor';
-import { NeonResponsive } from '@/components/layout/grid/NeonResponsive';
-import { NeonBadge, NeonCard, NeonCardBody, NeonCardHeader, NeonGrid, NeonGridArea } from '@/components';
+import { NeonBadge, NeonCard, NeonCardBody, NeonCardHeader } from '@/components';
 
 @Component({
   components: {
-    NeonGrid,
-    NeonGridArea,
     NeonCard,
     NeonCardHeader,
     NeonCardBody,
@@ -21,14 +18,5 @@ export default class Badge extends Vue {
 
   get colors() {
     return Object.values(NeonFunctionalColor);
-  }
-
-  get layouts() {
-    return [
-      {
-        breakpoint: NeonResponsive.All,
-        grid: [['badge-content']],
-      },
-    ];
   }
 }

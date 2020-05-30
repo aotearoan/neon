@@ -25,7 +25,23 @@
           <neon-tree-menu :model="filteredModel"></neon-tree-menu>
         </template>
       </neon-side-nav>
-      <router-view />
+      <neon-grid id="content" :layouts="layouts" class="content">
+        <neon-grid-area id="responsive-menu">
+          <neon-button icon="menu" label="Menu" color="primary" @click="menuOpen = true" :full-width="true" />
+          <neon-drawer :open="menuOpen" @close="menuOpen = false">
+            <div class="neon-side-nav__sticky">
+              <input type="text" v-model="indexFilter" />
+            </div>
+            <hr />
+            <div class="neon-side-nav__scrolling">
+              <neon-tree-menu :model="filteredModel" @click="onMenuClick"></neon-tree-menu>
+            </div>
+          </neon-drawer>
+        </neon-grid-area>
+        <neon-grid-area id="drawer-content">
+          <router-view />
+        </neon-grid-area>
+      </neon-grid>
       <neon-footer> &copy; copyright aotearoan {{ new Date().getFullYear() }} </neon-footer>
     </neon-page>
   </div>

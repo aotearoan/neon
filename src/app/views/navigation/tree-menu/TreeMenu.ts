@@ -1,19 +1,8 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonResponsive } from '@/components/layout/grid/NeonResponsive';
-import {
-  NeonCard,
-  NeonCardBody,
-  NeonCardHeader,
-  NeonGrid,
-  NeonGridArea,
-  NeonTreeMenu,
-  NeonTreeMenuItem,
-} from '@/components';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonTreeMenu, NeonTreeMenuItem } from '@/components';
 
 @Component({
   components: {
-    NeonGrid,
-    NeonGridArea,
     NeonCard,
     NeonCardHeader,
     NeonCardBody,
@@ -79,15 +68,6 @@ export default class TreeMenu extends Vue {
         label: 'Menu 3 (With href)',
         key: 'menu-3',
         href: '/menu-3',
-      },
-    ];
-  }
-
-  get layouts() {
-    return [
-      {
-        breakpoint: NeonResponsive.All,
-        grid: [['tree-menu-content']],
       },
     ];
   }

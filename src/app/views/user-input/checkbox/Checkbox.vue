@@ -1,7 +1,10 @@
 <template>
-  <neon-grid id="checkbox" :layouts="layouts">
-    <neon-grid-area id="checkbox-content"> </neon-grid-area>
-  </neon-grid>
+  <neon-card>
+    <neon-card-header>
+      <h1>Checkbox</h1>
+    </neon-card-header>
+    <neon-card-body></neon-card-body>
+  </neon-card>
 </template>
 
 <script lang="ts" src="./Checkbox.ts"></script>

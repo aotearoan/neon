@@ -13,4 +13,8 @@ export default class NeonTreeMenuItem extends Vue {
 
   @Prop({ default: 0 })
   depth!: number;
+
+  private onClick(key: string) {
+    this.$emit('click', key);
+  }
 }

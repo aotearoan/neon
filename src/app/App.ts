@@ -5,9 +5,13 @@ import { Menu } from './Menu';
 import { NeonMode } from '@/components/common/NeonMode';
 import { NeonTreeMenuModel } from '@/components/navigation/tree-menu/NeonTreeMenuModel';
 import {
+  NeonDrawer,
   NeonFooter,
+  NeonGrid,
+  NeonGridArea,
   NeonLogo,
   NeonPage,
+  NeonResponsive,
   NeonSideNav,
   NeonSwitch,
   NeonTopNav,
@@ -32,12 +36,16 @@ Vue.use(VueI18n);
     NeonTreeMenu,
     NeonTreeMenuItem,
     NeonFooter,
+    NeonGrid,
+    NeonGridArea,
+    NeonDrawer,
   },
 })
 export default class App extends Vue {
   public theme = Theme.Default;
   public selectedMode = NeonMode.Dark;
   private indexFilter = '';
+  private menuOpen = false;
 
   get themes() {
     return [Theme.Default];
@@ -118,5 +126,24 @@ export default class App extends Vue {
         ? item
         : undefined;
     }
+  }
+
+  private onMenuClick() {
+    setTimeout(() => {
+      this.menuOpen = false;
+    }, 225);
+  }
+
+  get layouts() {
+    return [
+      {
+        breakpoint: NeonResponsive.Desktop,
+        grid: [['content']],
+      },
+      {
+        breakpoint: NeonResponsive.Desktop,
+        grid: [['responsive-menu'], ['content']],
+      },
+    ];
   }
 }

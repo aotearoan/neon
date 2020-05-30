@@ -11,4 +11,8 @@ export default class NeonLink extends Vue {
   private get routerUrl() {
     return this.href && this.href.indexOf('//') === -1 ? this.href : undefined;
   }
+
+  private onClick() {
+    this.$emit('click');
+  }
 }

@@ -1,11 +1,8 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonResponsive } from '@/components/layout/grid/NeonResponsive';
-import { NeonButton, NeonCard, NeonCardBody, NeonCardHeader, NeonDrawer, NeonGrid, NeonGridArea } from '@/components';
+import { NeonButton, NeonCard, NeonCardBody, NeonCardHeader, NeonDrawer } from '@/components';
 
 @Component({
   components: {
-    NeonGrid,
-    NeonGridArea,
     NeonButton,
     NeonDrawer,
     NeonCard,
@@ -33,14 +30,5 @@ export default class Drawer extends Vue {
                 rump venison short loin corned beef. Ground round turkey bresaola meatball pork loin, buffalo chuck pork
                 ribeye kielbasa.
               </p>`;
-  }
-
-  get layouts() {
-    return [
-      {
-        breakpoint: NeonResponsive.All,
-        grid: [['drawer-content']],
-      },
-    ];
   }
 }

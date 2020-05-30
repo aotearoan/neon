@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { mount, RouterLinkStub } from '@vue/test-utils';
+import { mount, RouterLinkStub, shallowMount } from '@vue/test-utils';
 import NeonTreeMenuItem from './NeonTreeMenuItem.vue';
 import NeonLink from '../../link/NeonLink.vue';
 
@@ -63,5 +63,23 @@ describe('NeonTreeMenuItem', () => {
     });
     // when / then
     expect(wrapper.find('.neon-tree-menu__link--no-click').element).toBeDefined();
+  });
+
+  it('emits click event', () => {
+    // given
+    const model = {
+      label: 'Option 1',
+      key: 'option-1',
+    };
+    const wrapper = shallowMount(NeonLink, {
+      propsData: { model },
+      stubs: {
+        RouterLink: RouterLinkStub,
+      },
+    });
+    // when
+    wrapper.find('.neon-link').trigger('click');
+    // then
+    expect(wrapper.emitted().click).toBeTruthy();
   });
 });

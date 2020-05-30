@@ -1,11 +1,8 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonResponsive } from '@/components/layout/grid/NeonResponsive';
-import { NeonActionMenu, NeonCard, NeonCardBody, NeonCardHeader, NeonGrid, NeonGridArea } from '@/components';
+import { NeonActionMenu, NeonCard, NeonCardBody, NeonCardHeader } from '@/components';
 
 @Component({
   components: {
-    NeonGrid,
-    NeonGridArea,
     NeonCard,
     NeonCardHeader,
     NeonCardBody,
@@ -30,13 +27,4 @@ export default class ActionMenu extends Vue {
       disabled: true,
     },
   ];
-
-  get layouts() {
-    return [
-      {
-        breakpoint: NeonResponsive.All,
-        grid: [['action-menu-content']],
-      },
-    ];
-  }
 }

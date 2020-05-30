@@ -1,20 +1,11 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonResponsive } from '@/components/layout/grid/NeonResponsive';
-import { NeonGrid, NeonGridArea } from '@/components';
+import { NeonCard, NeonCardBody, NeonCardHeader } from '@/components';
 
 @Component({
   components: {
-    NeonGrid,
-    NeonGridArea,
+    NeonCard,
+    NeonCardBody,
+    NeonCardHeader,
   },
 })
-export default class Logo extends Vue {
-  get layouts() {
-    return [
-      {
-        breakpoint: NeonResponsive.All,
-        grid: [['logo-content']],
-      },
-    ];
-  }
-}
+export default class Logo extends Vue {}

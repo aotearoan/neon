@@ -10,4 +10,8 @@ import NeonTreeMenuItem from '@/components/navigation/tree-menu/item/NeonTreeMen
 export default class NeonTreeMenu extends Vue {
   @Prop({ required: true })
   model!: NeonTreeMenuModel[];
+
+  private onClick(key: string) {
+    this.$emit('click', key);
+  }
 }

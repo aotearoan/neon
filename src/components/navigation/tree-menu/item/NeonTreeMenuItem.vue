@@ -5,10 +5,17 @@
       :href="model.href"
       class="neon-tree-menu__link"
       :class="{ 'neon-tree-menu__link--no-click': !model.href }"
+      @click="onClick(model.key)"
       >{{ model.label }}</neon-link
     >
     <ul v-if="model.children && model.children.length > 0" class="neon-tree-menu__children no-style">
-      <neon-tree-menu-item v-for="child in model.children" :key="child.key" :model="child" :depth="depth + 1" />
+      <neon-tree-menu-item
+        v-for="child in model.children"
+        :key="child.key"
+        :model="child"
+        :depth="depth + 1"
+        @click="child.href && onClick(child.key)"
+      />
     </ul>
   </li>
 </template>

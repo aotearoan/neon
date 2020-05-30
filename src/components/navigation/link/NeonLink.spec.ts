@@ -74,4 +74,18 @@ describe('NeonLink', () => {
     // when / then
     expect(wrapper.find('.neon-link--no-style').element).toBeDefined();
   });
+
+  it('emits click event', () => {
+    // given
+    const wrapper = shallowMount(NeonLink, {
+      propsData: { href: '/xd' },
+      stubs: {
+        RouterLink: RouterLinkStub,
+      },
+    });
+    // when
+    wrapper.find('.neon-link').trigger('click');
+    // then
+    expect(wrapper.emitted().click).toBeTruthy();
+  });
 });

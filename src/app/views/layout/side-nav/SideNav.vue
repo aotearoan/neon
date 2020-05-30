@@ -1,7 +1,10 @@
 <template>
-  <neon-grid id="side-nav" :layouts="layouts">
-    <neon-grid-area id="side-nav-content"> </neon-grid-area>
-  </neon-grid>
+  <neon-card>
+    <neon-card-header>
+      <h1>Side Nav</h1>
+    </neon-card-header>
+    <neon-card-body></neon-card-body>
+  </neon-card>
 </template>
 
 <script lang="ts" src="./SideNav.ts"></script>
