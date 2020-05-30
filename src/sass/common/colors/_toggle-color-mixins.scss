@@ -1,47 +1,50 @@
-@mixin toggle-colors() {
-  @each $color, $palette in $functional-colors {
-    &.neon-toggle--#{$color} {
-      $toggle-color: map-get($palette, $color-toggle);
-      $toggle-color-selected: map-get($palette, $color-toggle-selected);
-      border: 1px solid $toggle-color;
-      color: $toggle-color;
+@mixin toggle-color($color, $toggle-color) {
+  &:not(.neon-toggle--disabled).neon-toggle--#{$color} {
+    border: 1px solid $toggle-color;
+    color: $toggle-color;
 
-      label {
-        transition: background-color ease-in-out $animation-speed-slow, color ease-in-out $animation-speed-slow;
+    label {
+      transition: background-color ease-in-out $animation-speed-slow, color ease-in-out $animation-speed-slow;
 
-        &.neon-toggle__label--checked {
-          background-color: $toggle-color;
-          color: $color-inverse;
-        }
-
-        &:hover:not(.neon-toggle__label--disabled):not(.neon-toggle__label--checked) {
-          background-color: $toggle-color-selected;
-        }
-
-        & + label {
-          border-left: 1px solid $toggle-color;
-        }
+      &.neon-toggle__label--checked,
+      &:hover:not(.neon-toggle__label--disabled):not(.neon-toggle__label--checked) {
+        background-color: $toggle-color;
+        color: $color-inverse;
       }
 
-      &.neon-toggle--disabled {
-        border-color: $color-disabled-light;
-
-        .neon-toggle__label {
-          color: $color-disabled-light;
-          border-color: $color-disabled-light;
-        }
-      }
-
-      .neon-toggle__label--disabled {
-        color: $color-disabled-light;
-      }
-
-      &.neon-toggle--disabled .neon-toggle__label--checked,
-      .neon-toggle__label--disabled.neon-toggle__label--checked {
-        color: $color-disabled-dark;
-        border-color: $color-disabled-dark;
-        background-color: $color-disabled-light;
+      & + label {
+        border-left: 1px solid $toggle-color;
       }
     }
+  }
+}
+
+@mixin toggle-colors() {
+  @each $color, $palette in $functional-colors {
+    @if ($color == high-contrast) {
+      @include toggle-color($color, $color-text);
+    } @else {
+      @include toggle-color($color, map-get($palette, $color-toggle));
+    }
+  }
+
+  &.neon-toggle--disabled {
+    border: 1px solid $color-disabled-light;
+
+    .neon-toggle__label {
+      color: $color-disabled-light;
+      border-color: $color-disabled-light;
+    }
+  }
+
+  .neon-toggle__label--disabled {
+    color: $color-disabled-light;
+  }
+
+  &.neon-toggle--disabled .neon-toggle__label--checked,
+  .neon-toggle__label--disabled.neon-toggle__label--checked {
+    color: $color-disabled-dark;
+    border-color: $color-disabled-dark;
+    background-color: $color-disabled-light;
   }
 }

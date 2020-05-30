@@ -33,11 +33,6 @@
       </p>
       <span class="neon-number">-9876.543210</span>
       <span class="neon-number">-1234.567890</span>
-      <span class="neon-color-text-primary">This is the primary color</span>
-      <span class="neon-color-text-info">This is the info color</span>
-      <span class="neon-color-text-success">This is the success color</span>
-      <span class="neon-color-text-warn">This is the warn color</span>
-      <span class="neon-color-text-error">This is the error color</span>
     </neon-card-body>
   </neon-card>
 </template>

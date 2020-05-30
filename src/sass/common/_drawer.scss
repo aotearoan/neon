@@ -5,9 +5,9 @@
     position: fixed;
     margin: 0;
     z-index: $z-index-modal-over-top-nav;
-    @include padding;
-    transition: margin-left ease-in-out $animation-speed-fast, margin-right ease-in-out $animation-speed-fast,
-      margin-top ease-in-out $animation-speed-fast, margin-bottm ease-in-out $animation-speed-fast;
+    @include padding($multiplier: 0.75);
+    transition: margin-left ease-in-out $animation-speed-slow, margin-right ease-in-out $animation-speed-slow,
+      margin-top ease-in-out $animation-speed-slow, margin-bottom ease-in-out $animation-speed-slow;
 
     &--full-width {
       padding: 0;

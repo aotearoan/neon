@@ -3,17 +3,17 @@
   align-self: center;
 
   @include responsive(desktop) {
-    height: $size-l;
-    width: $logo-width-multiplier * $size-l;
-  }
-
-  @include responsive(tablet) {
     height: $size-m;
     width: $logo-width-multiplier * $size-m;
   }
 
-  @include responsive(mobile) {
+  @include responsive(tablet) {
     height: $size-s;
     width: $logo-width-multiplier * $size-s;
+  }
+
+  @include responsive(mobile) {
+    height: $size-xs;
+    width: $logo-width-multiplier * $size-xs;
   }
 }

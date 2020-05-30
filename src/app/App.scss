@@ -36,7 +36,7 @@
       line-height: 1;
       user-select: none;
 
-      @include responsive(mobile) {
+      @include responsive(tablet) {
         display: none;
       }
     }
@@ -53,5 +53,27 @@
   h5,
   h6 {
     font-style: oblique;
+  }
+
+  .collection {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 6 * $base-space;
+
+    .collection-sub-list {
+      flex-direction: column;
+      width: 280px;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      & > div + div {
+        margin-top: 4 * $base-space;
+      }
+
+      &:not(:last-child) {
+        margin-right: 8 * $base-space;
+        margin-bottom: 4 * $base-space;
+      }
+    }
   }
 }

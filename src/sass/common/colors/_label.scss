@@ -1,14 +1,22 @@
+@mixin label-colors($label-color, $label-solid-background-color) {
+  &.neon-label--solid {
+    color: $label-solid-background-color;
+    background-color: $label-color;
+  }
+
+  &.neon-label--outline {
+    color: $label-color;
+    border: 1px solid $label-color;
+  }
+}
+
 .neon-label {
   @each $color, $palette in $functional-colors {
     &--#{$color} {
-      &.neon-label--solid {
-        color: $background-color-card;
-        background-color: map-get($palette, $color-label);
-      }
-
-      &.neon-label--outline {
-        color: map-get($palette, $color-label);
-        border: 1px solid map-get($palette, $color-label);
+      @if ($color == high-contrast) {
+        @include label-colors($color-text, $color-inverse);
+      } @else {
+        @include label-colors(map-get($palette, $color-label), $background-color-card);
       }
     }
   }

@@ -2,9 +2,13 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
+  margin-top: -4 * $base-space;
+  margin-bottom: 8 * $base-space;
 }
 
 .color-list {
+  margin-top: 4 * $base-space;
+
   &:not(:last-child) {
     margin-right: 4 * $base-space;
   }

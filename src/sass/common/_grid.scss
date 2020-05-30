@@ -3,11 +3,11 @@
 .neon-grid {
   width: 100%;
   @include min-height(100);
-  @include padding(true);
+  @include padding(0.5, true);
   display: grid;
 
   .neon-grid-area {
-    @include margin(true);
+    @include margin(0.5, true);
     display: flex;
     border-radius: $border-radius;
   }

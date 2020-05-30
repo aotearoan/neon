@@ -24,10 +24,6 @@ span {
   flex-wrap: wrap;
   align-items: center;
   @include margin-vertical;
-
-  @include responsive(mobile) {
-    flex-direction: column;
-  }
 }
 
 .neon-space-evenly {

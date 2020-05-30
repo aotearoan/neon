@@ -49,7 +49,7 @@ describe('NeonButton', () => {
     const wrapper = mount(NeonButton, {
       propsData: { icon },
     });
-    expect(wrapper.find('.neon-button--neutral').element).toBeDefined();
+    expect(wrapper.find('.neon-button--low-contrast').element).toBeDefined();
   });
 
   it('renders color', () => {

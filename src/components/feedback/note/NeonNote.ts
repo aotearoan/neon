@@ -10,7 +10,7 @@ import NeonButton from '@/components/user-input/button/NeonButton.vue';
   },
 })
 export default class NeonNote extends Vue {
-  @Prop({ default: NeonFunctionalColor.Primary })
+  @Prop({ default: NeonFunctionalColor.LowContrast })
   public color!: NeonFunctionalColor;
 
   @Prop()

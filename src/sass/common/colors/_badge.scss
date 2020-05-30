@@ -3,8 +3,13 @@
   &--with-label {
     @each $color, $palette in $functional-colors {
       &.neon-badge--#{$color} {
-        color: $background-color-card;
-        background-color: map-get($palette, $color-label);
+        @if ($color == high-contrast) {
+          color: $color-inverse;
+          background-color: $color-text;
+        } @else {
+          color: $background-color-card;
+          background-color: map-get($palette, $color-label);
+        }
       }
     }
   }

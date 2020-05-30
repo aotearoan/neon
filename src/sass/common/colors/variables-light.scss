@@ -4,6 +4,9 @@ $background-color: $color-neutral-l4;
 $color-text: $color-text-light;
 $color-text-gray: $color-neutral-d1;
 $color-inverse: $color-text-dark;
+$color-text-low-contrast: $color-low-contrast-d1;
+$color-text-neutral: $color-neutral-d1;
+$color-text-high-contrast: $color-high-contrast-d1;
 $color-text-primary: $color-primary-d1;
 $color-text-info: $color-info-d1;
 $color-text-success: $color-success-d1;
@@ -25,7 +28,7 @@ $logo: $logo-light;
 
 $label-color: $color-neutral-d1;
 
-$color-disabled-light: $color-neutral-l1;
+$color-disabled-light: $color-neutral-l2;
 $color-disabled-dark: $color-neutral-l4;
 
 // switch
@@ -38,12 +41,16 @@ $background-color-switch-indicator: $color-neutral-l5;
 // solid button
 $background-solid-button-light: d1;
 $background-solid-button-dark: d2;
-$color-button-solid: $color-neutral-l5;
 
-// neutral button
-$background-neutral-solid-button-light: l4;
-$background-neutral-solid-button-dark: l3;
-$color-neutral-outline-button: default;
+// high-contrast buttons
+$background-high-contrast-solid-button-light: $color-high-contrast-d1;
+$background-high-contrast-solid-button-dark: $color-text;
+
+// low-contrast buttons
+$background-low-contrast-solid-button-light: $color-low-contrast-l5;
+$background-low-contrast-solid-button-dark: $color-low-contrast-l4;
+$color-low-contrast-solid-button: $color-low-contrast-d4;
+$color-low-contrast-outline-button: $color-low-contrast-l2;
 
 // text button
 $color-text-button: d1;
@@ -79,8 +86,7 @@ $background-color-pre: $color-neutral-l3;
 
 // toggle
 $color-toggle: d1;
-$color-toggle-selected: l3;
 
 // radio buttons
 $background-radio-button: linear-gradient(0deg, $color-neutral-l5 0%, $color-neutral-l3 100%);
-$color-radio-button-label: $color-neutral-d1;
+$color-radio-button-label: $color-neutral-d3;

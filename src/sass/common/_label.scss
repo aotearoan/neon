@@ -26,7 +26,6 @@
 
   text-transform: uppercase;
   border-radius: $border-radius;
-  font-weight: 300;
   letter-spacing: $component-letter-spacing-m;
   display: flex;
   flex-direction: row;
@@ -57,8 +56,4 @@
       }
     }
   }
-}
-
-.neon-label + .neon-label {
-  margin-left: 2 * $base-space;
 }

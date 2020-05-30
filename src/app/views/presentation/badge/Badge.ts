@@ -16,7 +16,17 @@ export default class Badge extends Vue {
     return Object.values(NeonSize);
   }
 
-  get colors() {
-    return Object.values(NeonFunctionalColor);
+  get neutralColors() {
+    return [NeonFunctionalColor.LowContrast, NeonFunctionalColor.Neutral, NeonFunctionalColor.HighContrast];
+  }
+
+  get functionalColors() {
+    return [
+      NeonFunctionalColor.Primary,
+      NeonFunctionalColor.Info,
+      NeonFunctionalColor.Success,
+      NeonFunctionalColor.Warn,
+      NeonFunctionalColor.Error,
+    ];
   }
 }

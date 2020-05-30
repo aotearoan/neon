@@ -23,7 +23,7 @@ export default class NeonButton extends Vue {
   @Prop({ default: NeonSize.Medium })
   public size!: NeonSize;
 
-  @Prop({ default: NeonFunctionalColor.Neutral })
+  @Prop({ default: NeonFunctionalColor.LowContrast })
   public color!: NeonFunctionalColor;
 
   @Prop()

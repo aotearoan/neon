@@ -47,7 +47,7 @@
     "@aotearoan/sass-farbig": "^1.0.11"
   },
   "devDependencies": {
-    "@aotearoan/sass-farbig": "^1.0.10",
+    "@aotearoan/sass-farbig": "^2.0.0",
     "@types/jest": "^24.0.19",
     "@types/jsdom-global": "^3.0.2",
     "@types/vue": "^2.0.0",

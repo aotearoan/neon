@@ -10,7 +10,17 @@ import { NeonCard, NeonCardBody, NeonCardHeader } from '@/components';
   },
 })
 export default class Color extends Vue {
-  get colors() {
-    return Object.values(NeonFunctionalColor);
+  get neutralColors() {
+    return [NeonFunctionalColor.LowContrast, NeonFunctionalColor.Neutral, NeonFunctionalColor.HighContrast];
+  }
+
+  get functionalColors() {
+    return [
+      NeonFunctionalColor.Primary,
+      NeonFunctionalColor.Info,
+      NeonFunctionalColor.Success,
+      NeonFunctionalColor.Warn,
+      NeonFunctionalColor.Error,
+    ];
   }
 }

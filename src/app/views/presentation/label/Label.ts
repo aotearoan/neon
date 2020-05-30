@@ -12,6 +12,20 @@ import { NeonCard, NeonCardBody, NeonCardHeader, NeonLabel } from '@/components'
   },
 })
 export default class Label extends Vue {
+  get neutralColors() {
+    return [NeonFunctionalColor.LowContrast, NeonFunctionalColor.Neutral, NeonFunctionalColor.HighContrast];
+  }
+
+  get functionalColors() {
+    return [
+      NeonFunctionalColor.Primary,
+      NeonFunctionalColor.Info,
+      NeonFunctionalColor.Success,
+      NeonFunctionalColor.Warn,
+      NeonFunctionalColor.Error,
+    ];
+  }
+
   get colors() {
     return Object.values(NeonFunctionalColor);
   }

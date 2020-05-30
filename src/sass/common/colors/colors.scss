@@ -2,6 +2,8 @@
 @import '~@aotearoan/sass-farbig';
 
 $neutral-palette: neutral-palette();
+$low-contrast-palette: low-contrast-palette();
+$high-contrast-palette: high-contrast-palette();
 $primary-palette: generate-palette($color-primary);
 $info-palette: generate-palette($color-info);
 $success-palette: generate-palette($color-success);
@@ -10,6 +12,8 @@ $error-palette: generate-palette($color-error);
 
 $functional-colors: (
   neutral: $neutral-palette,
+  low-contrast: $low-contrast-palette,
+  high-contrast: $high-contrast-palette,
   primary: $primary-palette,
   info: $info-palette,
   success: $success-palette,
@@ -18,6 +22,8 @@ $functional-colors: (
 );
 
 @include generate-color-classes('neon-neutral', $neutral-palette);
+@include generate-color-classes('neon-low-contrast', $low-contrast-palette);
+@include generate-color-classes('neon-high-contrast', $high-contrast-palette);
 @include generate-color-classes('neon-primary', $primary-palette);
 @include generate-color-classes('neon-info', $info-palette);
 @include generate-color-classes('neon-success', $success-palette);
@@ -29,19 +35,39 @@ $color-neutral-l4: map-get($neutral-palette, l4);
 $color-neutral-l3: map-get($neutral-palette, l3);
 $color-neutral-l2: map-get($neutral-palette, l2);
 $color-neutral-l1: map-get($neutral-palette, l1);
-$color-neutral-default: map-get($neutral-palette, default);
 $color-neutral-d1: map-get($neutral-palette, d1);
 $color-neutral-d2: map-get($neutral-palette, d2);
 $color-neutral-d3: map-get($neutral-palette, d3);
 $color-neutral-d4: map-get($neutral-palette, d4);
 $color-neutral-d5: map-get($neutral-palette, d5);
 
+$color-low-contrast-l5: map-get($low-contrast-palette, l5);
+$color-low-contrast-l4: map-get($low-contrast-palette, l4);
+$color-low-contrast-l3: map-get($low-contrast-palette, l3);
+$color-low-contrast-l2: map-get($low-contrast-palette, l2);
+$color-low-contrast-l1: map-get($low-contrast-palette, l1);
+$color-low-contrast-d1: map-get($low-contrast-palette, d1);
+$color-low-contrast-d2: map-get($low-contrast-palette, d2);
+$color-low-contrast-d3: map-get($low-contrast-palette, d3);
+$color-low-contrast-d4: map-get($low-contrast-palette, d4);
+$color-low-contrast-d5: map-get($low-contrast-palette, d5);
+
+$color-high-contrast-l5: map-get($high-contrast-palette, l5);
+$color-high-contrast-l4: map-get($high-contrast-palette, l4);
+$color-high-contrast-l3: map-get($high-contrast-palette, l3);
+$color-high-contrast-l2: map-get($high-contrast-palette, l2);
+$color-high-contrast-l1: map-get($high-contrast-palette, l1);
+$color-high-contrast-d1: map-get($high-contrast-palette, d1);
+$color-high-contrast-d2: map-get($high-contrast-palette, d2);
+$color-high-contrast-d3: map-get($high-contrast-palette, d3);
+$color-high-contrast-d4: map-get($high-contrast-palette, d4);
+$color-high-contrast-d5: map-get($high-contrast-palette, d5);
+
 $color-primary-l5: map-get($primary-palette, l5);
 $color-primary-l4: map-get($primary-palette, l4);
 $color-primary-l3: map-get($primary-palette, l3);
 $color-primary-l2: map-get($primary-palette, l2);
 $color-primary-l1: map-get($primary-palette, l1);
-$color-primary-default: map-get($primary-palette, default);
 $color-primary-d1: map-get($primary-palette, d1);
 $color-primary-d2: map-get($primary-palette, d2);
 $color-primary-d3: map-get($primary-palette, d3);
@@ -53,7 +79,6 @@ $color-info-l4: map-get($info-palette, l4);
 $color-info-l3: map-get($info-palette, l3);
 $color-info-l2: map-get($info-palette, l2);
 $color-info-l1: map-get($info-palette, l1);
-$color-info-default: map-get($info-palette, default);
 $color-info-d1: map-get($info-palette, d1);
 $color-info-d2: map-get($info-palette, d2);
 $color-info-d3: map-get($info-palette, d3);
@@ -65,7 +90,6 @@ $color-success-l4: map-get($success-palette, l4);
 $color-success-l3: map-get($success-palette, l3);
 $color-success-l2: map-get($success-palette, l2);
 $color-success-l1: map-get($success-palette, l1);
-$color-success-default: map-get($success-palette, default);
 $color-success-d1: map-get($success-palette, d1);
 $color-success-d2: map-get($success-palette, d2);
 $color-success-d3: map-get($success-palette, d3);
@@ -77,7 +101,6 @@ $color-warn-l4: map-get($warn-palette, l4);
 $color-warn-l3: map-get($warn-palette, l3);
 $color-warn-l2: map-get($warn-palette, l2);
 $color-warn-l1: map-get($warn-palette, l1);
-$color-warn-default: map-get($warn-palette, default);
 $color-warn-d1: map-get($warn-palette, d1);
 $color-warn-d2: map-get($warn-palette, d2);
 $color-warn-d3: map-get($warn-palette, d3);
@@ -89,7 +112,6 @@ $color-error-l4: map-get($error-palette, l4);
 $color-error-l3: map-get($error-palette, l3);
 $color-error-l2: map-get($error-palette, l2);
 $color-error-l1: map-get($error-palette, l1);
-$color-error-default: map-get($error-palette, default);
 $color-error-d1: map-get($error-palette, d1);
 $color-error-d2: map-get($error-palette, d2);
 $color-error-d3: map-get($error-palette, d3);

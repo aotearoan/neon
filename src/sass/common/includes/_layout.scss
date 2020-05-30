@@ -36,12 +36,18 @@ $spacing: (
   }
 }
 
-@mixin spacing($paddingOrMargin, $breakpoint, $square: false) {
+@mixin spacing($paddingOrMargin, $breakpoint, $multiplier: 1, $square: false) {
   @include responsive($breakpoint) {
     @if ($square) {
-      #{$paddingOrMargin}: nth(map-get($spacing, $breakpoint), 1) nth(map-get($spacing, $breakpoint), 1);
+      #{$paddingOrMargin}: $multiplier *
+        nth(map-get($spacing, $breakpoint), 1)
+        $multiplier *
+        nth(map-get($spacing, $breakpoint), 1);
     } @else {
-      #{$paddingOrMargin}: nth(map-get($spacing, $breakpoint), 1) nth(map-get($spacing, $breakpoint), 2);
+      #{$paddingOrMargin}: $multiplier *
+        nth(map-get($spacing, $breakpoint), 1)
+        $multiplier *
+        nth(map-get($spacing, $breakpoint), 2);
     }
   }
 }
@@ -52,22 +58,22 @@ $spacing: (
 }
 
 // padding mixins
-@mixin padding-mobile($square: false) {
-  @include spacing('padding', mobile, $square);
+@mixin padding-mobile($multiplier: 1, $square: false) {
+  @include spacing('padding', mobile, $multiplier, $square);
 }
 
-@mixin padding-tablet($square: false) {
-  @include spacing('padding', tablet, $square);
+@mixin padding-tablet($multiplier: 1, $square: false) {
+  @include spacing('padding', tablet, $multiplier, $square);
 }
 
-@mixin padding-desktop($square: false) {
-  @include spacing('padding', desktop, $square);
+@mixin padding-desktop($multiplier: 1, $square: false) {
+  @include spacing('padding', desktop, $multiplier, $square);
 }
 
-@mixin padding($square: false) {
-  @include padding-desktop($square);
-  @include padding-tablet($square);
-  @include padding-mobile($square);
+@mixin padding($multiplier: 1, $square: false) {
+  @include padding-desktop($multiplier, $square);
+  @include padding-tablet($multiplier, $square);
+  @include padding-mobile($multiplier, $square);
 }
 
 @mixin padding-horizontal {
@@ -77,16 +83,16 @@ $spacing: (
 }
 
 // margin mixins
-@mixin margin-mobile($square: false) {
-  @include spacing('margin', mobile, $square);
+@mixin margin-mobile($multiplier: 1, $square: false) {
+  @include spacing('margin', mobile, $multiplier, $square);
 }
 
-@mixin margin-tablet($square: false) {
-  @include spacing('margin', tablet, $square);
+@mixin margin-tablet($multiplier: 1, $square: false) {
+  @include spacing('margin', tablet, $multiplier, $square);
 }
 
-@mixin margin-desktop($square: false) {
-  @include spacing('margin', desktop, $square);
+@mixin margin-desktop($multiplier: 1, $square: false) {
+  @include spacing('margin', desktop, $multiplier, $square);
 }
 
 @mixin margin-vertical {
@@ -95,10 +101,10 @@ $spacing: (
   @include spacing-vertical('margin', mobile);
 }
 
-@mixin margin($square: false) {
-  @include margin-desktop($square);
-  @include margin-tablet($square);
-  @include margin-mobile($square);
+@mixin margin($multiplier: 1, $square: false) {
+  @include margin-desktop($multiplier, $square);
+  @include margin-tablet($multiplier, $square);
+  @include margin-mobile($multiplier, $square);
 }
 
 // height

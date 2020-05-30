@@ -18,11 +18,6 @@
     &.neon-button--circular {
       border-radius: 50%;
     }
-
-    .neon-icon {
-      width: $icon-only-size;
-      height: $icon-only-size;
-    }
   }
 }
 
@@ -76,6 +71,6 @@
   }
 }
 
-.neon-button + .neon-button {
+.neon-button + .neon-button:not(.neon-button--full-width) {
   margin-left: 2 * $base-space;
 }

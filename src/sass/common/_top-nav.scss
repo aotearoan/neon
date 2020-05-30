@@ -1,5 +1,5 @@
 .neon-top-nav {
-  @include padding;
+  @include padding($multiplier: 0.75);
   width: 100%;
   position: fixed;
   top: 0;
@@ -8,22 +8,15 @@
   align-items: center;
   z-index: $z-index-top-nav;
 
-  $padding-correction-multiplier: 1.5;
-
   @include responsive(desktop) {
     max-height: $top-nav-height-desktop;
-    padding-right: $padding-correction-multiplier * $spacing-horizontal-desktop;
   }
 
   @include responsive(tablet) {
     max-height: $top-nav-height-tablet;
-    padding-left: $padding-correction-multiplier * $spacing-horizontal-tablet;
-    padding-right: $padding-correction-multiplier * $spacing-horizontal-tablet;
   }
 
   @include responsive(mobile) {
     max-height: $top-nav-height-mobile;
-    padding-left: $padding-correction-multiplier * $spacing-horizontal-mobile;
-    padding-right: $padding-correction-multiplier * $spacing-horizontal-mobile;
   }
 }

@@ -1,18 +1,18 @@
 $transparency-button-disabled: 0.3;
 
-@mixin solid-button($palette, $from-color, $to-color) {
-  background: linear-gradient(map-get($palette, $from-color), map-get($palette, $to-color));
+@mixin solid-button($from-color, $to-color) {
+  background: linear-gradient($from-color, $to-color);
 
   &:hover:not(:disabled) {
-    background: linear-gradient(lighten(map-get($palette, $from-color), 1), lighten(map-get($palette, $to-color), 1));
+    background: linear-gradient(lighten($from-color, 1), lighten($to-color, 1));
   }
 
   &:active:not(:disabled) {
-    background: darken(map-get($palette, $to-color), 1);
+    background: darken($to-color, 1);
   }
 
   &:focus:not(:disabled) {
-    box-shadow: 0 0 0 4px rgba(map-get($palette, $to-color), 0.3);
+    box-shadow: 0 0 0 4px rgba($to-color, 0.3);
   }
 }
 
@@ -59,21 +59,30 @@ $transparency-button-disabled: 0.3;
   @each $color, $palette in $functional-colors {
     &--#{$color} {
       &.neon-button--solid {
-        @if ($color == neutral) {
-          color: rgba($color-text, 0.5);
+        @if ($color == high-contrast) {
           @include solid-button(
-            $palette,
-            $background-neutral-solid-button-light,
-            $background-neutral-solid-button-dark
+            $background-high-contrast-solid-button-light,
+            $background-high-contrast-solid-button-dark
+          );
+        } @else if($color == low-contrast) {
+          color: $color-low-contrast-solid-button;
+          @include solid-button(
+            $background-low-contrast-solid-button-light,
+            $background-low-contrast-solid-button-dark
           );
         } @else {
-          @include solid-button($palette, $background-solid-button-light, $background-solid-button-dark);
+          @include solid-button(
+            map-get($palette, $background-solid-button-light),
+            map-get($palette, $background-solid-button-dark)
+          );
         }
       }
 
       &.neon-button--outline {
-        @if ($color == neutral) {
-          @include outline-button(map-get($palette, $color-neutral-outline-button));
+        @if ($color == high-contrast) {
+          @include outline-button($color-text);
+        } @else if($color == low-contrast) {
+          @include outline-button($color-low-contrast-outline-button);
         } @else {
           @include outline-button(map-get($palette, $background-solid-button-dark));
         }
@@ -92,7 +101,7 @@ $transparency-button-disabled: 0.3;
   &--solid {
     border: none;
     box-shadow: $box-shadow;
-    color: $color-button-solid;
+    color: $color-inverse;
 
     &:active {
       box-shadow: inset $box-shadow;
