@@ -1,5 +1,6 @@
 @import 'src/sass/themes/default/variables';
 @import 'src/sass/themes/default/theme';
+
 @import 'src/app/sass/fonts';
 
 .app {
@@ -34,6 +35,10 @@
       font-weight: 200;
       line-height: 1;
       user-select: none;
+
+      @include responsive(mobile) {
+        display: none;
+      }
     }
   }
 

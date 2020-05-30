@@ -30,7 +30,7 @@
     }
 
     &:not(.neon-drawer--open) .neon-drawer__container {
-      margin-left: -100%;
+      margin-left: -200%;
     }
   }
 
@@ -40,7 +40,7 @@
     }
 
     &:not(.neon-drawer--open) .neon-drawer__container {
-      margin-right: -100%;
+      margin-right: -200%;
     }
   }
 
@@ -71,7 +71,7 @@
     }
 
     &:not(.neon-drawer--open) .neon-drawer__container {
-      margin-top: -100%;
+      margin-top: -200%;
     }
   }
 
@@ -81,7 +81,7 @@
     }
 
     &:not(.neon-drawer--open) .neon-drawer__container {
-      margin-bottom: -100%;
+      margin-bottom: -200%;
     }
   }
 
