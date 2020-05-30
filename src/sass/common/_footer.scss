@@ -26,6 +26,6 @@
 }
 
 .neon-side-nav + .neon-grid + .neon-footer {
-  border-top-left-radius: $border-radius-card-section;
-  @include side-nav-offset($card-section-margin);
+  border-top-left-radius: $border-radius;
+  @include side-nav-offset($margin-left-footer);
 }

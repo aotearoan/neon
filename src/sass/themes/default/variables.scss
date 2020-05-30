@@ -81,17 +81,15 @@ $top-nav-height-tablet: $size-m + 6 * $base-space !default;
 $top-nav-height-desktop: $size-l + 8 * $base-space !default;
 
 /* footer */
+$margin-left-footer: $base-space !default;
 $footer-height-mobile: $size-s + 4 * $base-space !default;
 $footer-height-tablet: $size-m + 6 * $base-space !default;
 $footer-height-desktop: $size-l + 8 * $base-space !default;
 
 /* side nav */
 $side-nav-width: 80 * $base-space !default;
+$margin-top-side-nav: 0.5 * $base-space !default;
 
 /* card */
-$border-radius-card-section: $border-radius !default;
 $card-border: none !default;
 $card-box-shadow: none !default;
-$card-section-border: none !default;
-$card-section-box-shadow: $box-shadow !default;
-$card-section-margin: 0.5 * $base-space !default;

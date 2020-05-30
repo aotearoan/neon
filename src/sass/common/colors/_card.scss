@@ -2,18 +2,8 @@
   border: $card-border;
   box-shadow: $card-box-shadow;
 
-  .neon-card-header {
-    background-color: $background-color-card;
-    box-shadow: $box-shadow;
-    border-bottom: $card-section-border;
-  }
-
+  .neon-card-header,
   .neon-card-body {
     background-color: $background-color-card;
-    box-shadow: $box-shadow;
-
-    &:not(:last-child) {
-      border-bottom: $card-section-border;
-    }
   }
 }

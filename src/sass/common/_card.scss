@@ -3,7 +3,6 @@
 
   .neon-card-header,
   .neon-card-body {
-    margin-right: $card-section-margin;
     margin-bottom: 0;
 
     &:last-child {
@@ -15,17 +14,13 @@
 .neon-card {
   border-radius: $border-radius;
   box-shadow: $box-shadow;
+  overflow: hidden;
   position: relative;
 
   .neon-card-header,
   .neon-card-body {
     @include padding;
     position: relative;
-    border-radius: $border-radius-card-section;
-
-    &:not(:last-child) {
-      margin-bottom: $card-section-margin;
-    }
   }
 
   .neon-card-header {
