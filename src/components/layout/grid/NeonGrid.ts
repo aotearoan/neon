@@ -1,18 +1,10 @@
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import { NeonGridModel } from './NeonGridModel';
-import { NeonResponsive } from './NeonResponsive';
+import { NeonResponsiveUtils } from '../../common/NeonResponsiveUtils';
 
 @Component
 export class NeonGrid extends Vue {
   private static styleIdPrefix = 'neon-grid-styles-';
-
-  public static readonly breakpoints: Record<NeonResponsive, string> = Object.freeze({
-    [NeonResponsive.All]: '', // only use all on it's own, never in combination with other breakpoints
-    [NeonResponsive.Desktop]: '(min-width: 1025px)',
-    [NeonResponsive.Tablet]: '(max-width: 1024px)',
-    [NeonResponsive.LargerThanMobile]: '(min-width: 415px)',
-    [NeonResponsive.Mobile]: '(max-width: 414px)',
-  });
 
   private allGridAreas: Set<string>;
 
@@ -68,7 +60,7 @@ export class NeonGrid extends Vue {
 
   public generateStyle(layout: NeonGridModel) {
     const grid = layout.grid;
-    const breakpoint = NeonGrid.breakpoints[layout.breakpoint];
+    const breakpoint = NeonResponsiveUtils.breakpoints[layout.breakpoint];
     const breakpointQuery = breakpoint.length > 0 ? ` and ${breakpoint}` : '';
     return `@media screen${breakpointQuery} {\n` + this.generateGridCSS(grid) + '\n}';
   }

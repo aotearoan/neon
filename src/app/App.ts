@@ -12,12 +12,14 @@ import {
   NeonLogo,
   NeonPage,
   NeonResponsive,
+  NeonResponsiveUtils,
   NeonSideNav,
   NeonSwitch,
   NeonTopNav,
   NeonTreeMenu,
   NeonTreeMenuItem,
 } from '@/components';
+import { NeonModeUtils } from '@/components/common/NeonModeUtils';
 
 export enum Theme {
   Default = 'default',
@@ -46,6 +48,18 @@ export default class App extends Vue {
   public selectedMode = NeonMode.Dark;
   private indexFilter = '';
   private menuOpen = false;
+  private isMobile = false;
+
+  public mounted() {
+    NeonModeUtils.addListener('app-mode-listener', this.switchMode);
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
+  }
+
+  public beforeDestroy() {
+    NeonModeUtils.removeListener('app-mode-listener');
+    window.removeEventListener('resize', this.handleResize);
+  }
 
   get themes() {
     return [Theme.Default];
@@ -73,6 +87,7 @@ export default class App extends Vue {
   }
 
   private switchMode(mode: NeonMode) {
+    console.log(mode);
     document.documentElement.classList.remove(`neon-mode--${this.selectedMode}`);
     document.documentElement.classList.add(`neon-mode--${mode}`);
     this.selectedMode = mode;
@@ -145,5 +160,9 @@ export default class App extends Vue {
         grid: [['responsive-menu'], ['content']],
       },
     ];
+  }
+
+  private handleResize() {
+    this.isMobile = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.Mobile]).matches;
   }
 }

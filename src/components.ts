@@ -41,6 +41,7 @@ import { NeonMode } from './components/common/NeonMode';
 import { NeonOrientation } from './components/common/NeonOrientation';
 import { NeonPosition } from './components/common/NeonPosition';
 import { NeonResponsive } from './components/layout/grid/NeonResponsive';
+import { NeonResponsiveUtils } from './components/common/NeonResponsiveUtils';
 import { NeonLabelSize } from './components/presentation/label/NeonLabelSize';
 import { NeonSize } from './components/common/NeonSize';
 import { NeonToggleModel } from './components/user-input/toggle/NeonToggleModel';
@@ -115,6 +116,7 @@ export {
   NeonPage,
   NeonPosition,
   NeonResponsive,
+  NeonResponsiveUtils,
   NeonSideNav,
   NeonSize,
   NeonSwitch,

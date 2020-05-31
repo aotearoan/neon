@@ -20,6 +20,7 @@
         :value="selectedMode"
         :model="modes"
         @input="switchMode"
+        :size="isMobile ? 's' : 'm'"
       >
       </neon-toggle>
     </neon-top-nav>

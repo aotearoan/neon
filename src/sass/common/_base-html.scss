@@ -13,18 +13,22 @@ hr {
 ul {
   margin: 0;
   padding-left: 0;
+  display: flex;
+  flex-direction: column;
 
-  li {
+  > li {
     list-style-type: none;
   }
 
-  &:not(.no-style) li {
-    display: flex;
-    flex-direction: column;
+  &:not(.no-style) > li {
+    display: inline;
+    max-width: $max-paragraph-width;
+    padding-left: 5 * $base-space;
 
-    :before {
+    &:before {
       content: '•';
       padding-right: 3 * $base-space;
+      margin-left: -5 * $base-space;
       display: inline-flex;
       align-items: center;
       font-size: $font-size-l;

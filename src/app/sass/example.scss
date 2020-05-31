@@ -2,7 +2,6 @@
   &__code {
     border-radius: $border-radius;
     overflow: hidden;
-    max-width: $max-paragraph-width;
     @include margin-top;
 
     span {

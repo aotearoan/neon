@@ -20,6 +20,12 @@ export class Menu {
           page: 'Color',
         },
         {
+          path: 'dark-mode',
+          page: 'DarkMode',
+          name: 'Dark Mode',
+          keywords: 'color scheme',
+        },
+        {
           path: 'icons',
           page: 'Icons',
           component: 'NeonIcon',
