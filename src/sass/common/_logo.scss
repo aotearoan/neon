@@ -1,6 +1,5 @@
 .neon-logo {
   background-size: auto;
-  align-self: center;
 
   @include responsive(desktop) {
     height: $size-m;

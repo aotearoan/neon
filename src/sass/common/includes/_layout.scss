@@ -36,6 +36,12 @@ $spacing: (
   }
 }
 
+@mixin spacing-top($paddingOrMargin, $breakpoint) {
+  @include responsive($breakpoint) {
+    #{$paddingOrMargin}-top: nth(map-get($spacing, $breakpoint), 1);
+  }
+}
+
 @mixin spacing($paddingOrMargin, $breakpoint, $multiplier: 1, $square: false) {
   @include responsive($breakpoint) {
     @if ($square) {
@@ -99,6 +105,12 @@ $spacing: (
   @include spacing-vertical('margin', desktop);
   @include spacing-vertical('margin', tablet);
   @include spacing-vertical('margin', mobile);
+}
+
+@mixin margin-top {
+  @include spacing-top('margin', desktop);
+  @include spacing-top('margin', tablet);
+  @include spacing-top('margin', mobile);
 }
 
 @mixin margin($multiplier: 1, $square: false) {

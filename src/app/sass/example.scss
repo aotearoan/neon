@@ -1,0 +1,27 @@
+.example {
+  &__code {
+    border-radius: $border-radius;
+    overflow: hidden;
+    max-width: $max-paragraph-width;
+    @include margin-top;
+
+    span {
+      display: inline;
+    }
+
+    pre {
+      display: block;
+      background-color: inherit !important;
+    }
+
+    .CodeMirror {
+      height: fit-content;
+      min-height: 30 * $base-space;
+      max-height: 75 * $base-space;
+    }
+  }
+
+  &__output {
+    max-width: $max-paragraph-width;
+  }
+}

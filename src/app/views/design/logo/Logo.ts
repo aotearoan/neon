@@ -1,5 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonLogo } from '@/components';
+import { NeonButton, NeonCard, NeonCardBody, NeonCardHeader, NeonLogo } from '@/components';
 
 @Component({
   components: {
@@ -7,6 +7,9 @@ import { NeonCard, NeonCardBody, NeonCardHeader, NeonLogo } from '@/components';
     NeonCardBody,
     NeonCardHeader,
     NeonLogo,
+    NeonButton,
   },
 })
-export default class Logo extends Vue {}
+export default class Logo extends Vue {
+  private example = `<neon-logo />`;
+}

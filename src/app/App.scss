@@ -2,6 +2,9 @@
 @import 'src/sass/themes/default/theme';
 
 @import 'src/app/sass/fonts';
+@import 'src/app/sass/example';
+@import '~codemirror/lib/codemirror';
+@import '~codemirror/theme/lucario';
 
 .app {
   @import 'src/app/views/design/color/Color';
@@ -74,6 +77,24 @@
         margin-right: 8 * $base-space;
         margin-bottom: 4 * $base-space;
       }
+    }
+  }
+
+  .neon-card + .neon-card {
+    @include margin-top;
+  }
+
+  @import 'src/sass/common/colors/colors';
+
+  &.neon-mode--dark {
+    .example__wrapper {
+      background-color: $color-neutral-d4;
+    }
+  }
+
+  &.neon-mode--light {
+    .example__wrapper {
+      background-color: $color-neutral-l4;
     }
   }
 }
