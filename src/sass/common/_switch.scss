@@ -1,7 +1,7 @@
 @mixin switch-style($size) {
   height: $size;
 
-  $switch-height: 0.75 * $size;
+  $switch-height: 0.625 * $size;
 
   &.neon-switch--switch {
     .neon-switch__switch {
@@ -28,8 +28,6 @@
 }
 
 @mixin checkbox-style($size) {
-  height: $size;
-
   $checkbox-height: 0.625 * $size;
 
   .neon-switch__checkbox {
@@ -115,14 +113,17 @@
     }
 
     &.neon-switch--s {
-      @include checkbox-style($size-s);
+      height: $size-s;
+      @include checkbox-style(0.85 * $size-s);
     }
 
     &.neon-switch--m {
-      @include checkbox-style($size-m);
+      height: $size-m;
+      @include checkbox-style($size-s);
     }
 
     &.neon-switch--l {
+      height: $size-l;
       @include checkbox-style($size-m);
     }
   }
