@@ -2,6 +2,7 @@
 
 .neon-grid {
   width: 100%;
+  max-width: $max-page-width;
   @include min-height(100);
   @include padding(0.5, true);
   display: grid;
@@ -15,6 +16,7 @@
 
 .neon-side-nav + .neon-grid {
   @include side-nav-offset;
+  max-width: calc(#{$max-page-width - $side-nav-width});
 }
 
 .neon-top-nav + .neon-page {

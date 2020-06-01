@@ -1,7 +1,9 @@
 <template>
   <header class="neon-top-nav">
-    <!-- @slot: top navigation contents -->
-    <slot></slot>
+    <div class="neon-top-nav__container">
+      <!-- @slot: top navigation contents -->
+      <slot></slot>
+    </div>
   </header>
 </template>
 

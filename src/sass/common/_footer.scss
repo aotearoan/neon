@@ -1,31 +1,33 @@
 .neon-footer {
-  @include padding;
   width: 100%;
   display: flex;
   align-items: center;
 
-  $padding-correction-multiplier: 1.5;
+  &__container {
+    @include padding(1, true);
+    display: flex;
+    width: 100%;
+    max-width: $max-page-width + 4 * $base-space + $margin-left-footer;
 
-  @include responsive(desktop) {
-    height: $footer-height-desktop;
-    padding-left: $padding-correction-multiplier * $spacing-horizontal-desktop;
-    padding-right: $padding-correction-multiplier * $spacing-horizontal-desktop;
-  }
+    @include responsive(desktop) {
+      height: $footer-height-desktop;
+    }
 
-  @include responsive(tablet) {
-    height: $footer-height-tablet;
-    padding-left: $padding-correction-multiplier * $spacing-horizontal-tablet;
-    padding-right: $padding-correction-multiplier * $spacing-horizontal-tablet;
-  }
+    @include responsive(tablet) {
+      height: $footer-height-tablet;
+    }
 
-  @include responsive(mobile) {
-    height: $footer-height-mobile;
-    padding-left: $padding-correction-multiplier * $spacing-horizontal-mobile;
-    padding-right: $padding-correction-multiplier * $spacing-horizontal-mobile;
+    @include responsive(mobile) {
+      height: $footer-height-mobile;
+    }
   }
 }
 
 .neon-side-nav + .neon-grid + .neon-footer {
   border-top-left-radius: $border-radius;
   @include side-nav-offset($margin-left-footer);
+
+  .neon-footer__container {
+    max-width: $max-page-width - $side-nav-width - $margin-left-footer;
+  }
 }

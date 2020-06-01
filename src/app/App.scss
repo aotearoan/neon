@@ -23,7 +23,9 @@
   }
 
   header {
-    justify-content: space-between;
+    .neon-top-nav__container {
+      justify-content: space-between;
+    }
 
     .logo-wrapper {
       align-items: flex-end;

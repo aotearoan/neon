@@ -1,7 +1,9 @@
 <template>
   <footer class="neon-footer">
-    <!-- @slot: footer contents -->
-    <slot></slot>
+    <div class="neon-footer__container">
+      <!-- @slot: footer contents -->
+      <slot></slot>
+    </div>
   </footer>
 </template>
 
