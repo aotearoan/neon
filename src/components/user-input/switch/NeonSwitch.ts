@@ -3,7 +3,6 @@ import { NeonSize } from '../../common/NeonSize';
 import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
 import { NeonSwitchStyle } from './NeonSwitchStyle';
 import { TranslateResult } from 'vue-i18n';
-import { NeonHorizontalPosition } from '../../common/NeonHorizontalPosition';
 
 @Component({})
 export default class NeonSwitch extends Vue {
@@ -12,9 +11,6 @@ export default class NeonSwitch extends Vue {
 
   @Prop({ required: true })
   public label!: TranslateResult;
-
-  @Prop({ default: NeonHorizontalPosition.Left })
-  public labelPosition!: NeonHorizontalPosition;
 
   @Prop({ default: NeonSize.Medium })
   public size!: NeonSize;
