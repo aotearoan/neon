@@ -33,10 +33,12 @@ $color-disabled-dark: $color-neutral-l4;
 
 // switch
 $background-color-switch-off: $color-neutral-l3;
-$shadow-color-switch-off: $color-neutral-l2;
-$background-color-switch-on: $color-primary-l3;
-$shadow-color-switch-on: $color-primary-l2;
+$background-color-switch-on: d1;
 $background-color-switch-indicator: $color-neutral-l5;
+
+// checkbox
+$background-color-checkbox: d1;
+$border-color-checkbox: d2;
 
 // solid button
 $background-solid-button-light: d1;
@@ -92,3 +94,6 @@ $color-toggle-selected: $color-neutral-l5;
 // radio buttons
 $background-radio-button: linear-gradient(0deg, $color-neutral-l5 0%, $color-neutral-l3 100%);
 $color-radio-button-label: $color-neutral-d3;
+
+// input
+$input-border-color: $color-neutral-l2;

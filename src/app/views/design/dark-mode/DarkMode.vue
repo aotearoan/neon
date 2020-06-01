@@ -5,8 +5,7 @@
     </neon-card-header>
     <neon-card-body>
       <p>
-        Use <strong class="neon-monospaced">NeonModeUtils</strong> to listen to native color scheme switching. The API
-        is:
+        Use <span class="neon-monospaced">NeonModeUtils</span> to listen to native color scheme switching. The API is:
       </p>
       <ul>
         <li>

@@ -8,7 +8,6 @@ import NeonButton from './components/user-input/button/NeonButton.vue';
 import NeonCard from './components/layout/card/NeonCard.vue';
 import NeonCardBody from './components/layout/card/body/NeonCardBody.vue';
 import NeonCardHeader from './components/layout/card/header/NeonCardHeader.vue';
-import NeonCheckbox from './components/user-input/checkbox/NeonCheckbox.vue';
 import NeonDrawer from './components/layout/drawer/NeonDrawer.vue';
 import NeonFooter from './components/layout/footer/NeonFooter.vue';
 import NeonGrid from './components/layout/grid/NeonGrid.vue';
@@ -30,12 +29,11 @@ import NeonTreeMenuItem from './components/navigation/tree-menu/item/NeonTreeMen
 /* models and utils */
 import { NeonActionMenuModel } from './components/navigation/action-menu/NeonActionMenuModel';
 import { NeonButtonStyle } from './components/user-input/button/NeonButtonStyle';
-import { NeonCheckboxStyle } from './components/user-input/checkbox/NeonCheckboxStyle';
 import { NeonDateUtils } from './components/common/NeonDateUtils';
 import { NeonFormattedDate } from './components/common/NeonFormattedDate';
 import { NeonFunctionalColor } from './components/common/NeonFunctionalColor';
 import { NeonGridModel } from './components/layout/grid/NeonGridModel';
-import { NeonIconPosition } from './components/design/icon/NeonIconPosition';
+import { NeonHorizontalPosition } from './components/common/NeonHorizontalPosition';
 import { NeonIconRegistry } from './components/design/icon/NeonIconRegistry';
 import { NeonMode } from './components/common/NeonMode';
 import { NeonOrientation } from './components/common/NeonOrientation';
@@ -44,6 +42,7 @@ import { NeonResponsive } from './components/layout/grid/NeonResponsive';
 import { NeonResponsiveUtils } from './components/common/NeonResponsiveUtils';
 import { NeonLabelSize } from './components/presentation/label/NeonLabelSize';
 import { NeonSize } from './components/common/NeonSize';
+import { NeonSwitchStyle } from './components/user-input/switch/NeonSwitchStyle';
 import { NeonToggleModel } from './components/user-input/toggle/NeonToggleModel';
 import { NeonToggleStyle } from './components/user-input/toggle/NeonToggleStyle';
 import { NeonTreeMenuModel } from './components/navigation/tree-menu/NeonTreeMenuModel';
@@ -61,7 +60,6 @@ const components: { [s: string]: VueConstructor } = {
   NeonCard,
   NeonCardBody,
   NeonCardHeader,
-  NeonCheckbox,
   NeonDrawer,
   NeonFooter,
   NeonGrid,
@@ -92,8 +90,6 @@ export {
   NeonCard,
   NeonCardBody,
   NeonCardHeader,
-  NeonCheckbox,
-  NeonCheckboxStyle,
   NeonDateUtils,
   NeonDrawer,
   NeonFormattedDate,
@@ -103,7 +99,7 @@ export {
   NeonGridArea,
   NeonGridModel,
   NeonIcon,
-  NeonIconPosition,
+  NeonHorizontalPosition,
   NeonIconRegistry,
   NeonLabel,
   NeonLabelSize,
@@ -120,6 +116,7 @@ export {
   NeonSideNav,
   NeonSize,
   NeonSwitch,
+  NeonSwitchStyle,
   NeonToggle,
   NeonToggleModel,
   NeonToggleStyle,

@@ -151,14 +151,9 @@ export class Menu {
           component: 'NeonButton',
         },
         {
-          path: 'checkbox',
-          page: 'Checkbox',
-          component: 'NeonCheckbox',
-        },
-        {
           path: 'switch',
           page: 'SwitchExample',
-          name: 'Switch',
+          name: 'Switch / Checkbox',
           component: 'NeonSwitch',
         },
         {

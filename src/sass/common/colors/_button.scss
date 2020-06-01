@@ -17,7 +17,7 @@ $transparency-button-disabled: 0.3;
 }
 
 @mixin outline-button($color) {
-  border: 1px solid $color;
+  border: $border-width $border-style $color;
   color: $color;
 
   &:hover:not(:disabled),
@@ -104,7 +104,7 @@ $transparency-button-disabled: 0.3;
     color: $color-button-text;
 
     &:active {
-      box-shadow: inset $box-shadow;
+      box-shadow: $inset-shadow;
     }
 
     &.neon-button--disabled {

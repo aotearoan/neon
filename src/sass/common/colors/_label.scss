@@ -6,7 +6,7 @@
 
   &.neon-label--outline {
     color: $label-color;
-    border: 1px solid $label-color;
+    border: $border-width $border-style $label-color;
   }
 }
 

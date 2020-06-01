@@ -1,17 +1,35 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { NeonSwitchModel } from './NeonSwitchModel';
 import { NeonSize } from '../../common/NeonSize';
+import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
+import { NeonSwitchStyle } from './NeonSwitchStyle';
+import { TranslateResult } from 'vue-i18n';
+import { NeonHorizontalPosition } from '../../common/NeonHorizontalPosition';
 
 @Component({})
 export default class NeonSwitch extends Vue {
   @Prop({ required: true })
-  public value!: string;
+  public value!: boolean;
 
   @Prop({ required: true })
-  public model!: NeonSwitchModel;
+  public label!: TranslateResult;
+
+  @Prop({ default: NeonHorizontalPosition.Left })
+  public labelPosition!: NeonHorizontalPosition;
 
   @Prop({ default: NeonSize.Medium })
   public size!: NeonSize;
+
+  @Prop({ default: NeonFunctionalColor.Primary })
+  public color!:
+    | NeonFunctionalColor.LowContrast
+    | NeonFunctionalColor.Primary
+    | NeonFunctionalColor.Info
+    | NeonFunctionalColor.Success
+    | NeonFunctionalColor.Warn
+    | NeonFunctionalColor.Error;
+
+  @Prop({ default: NeonSwitchStyle.Switch })
+  public switchStyle!: NeonSwitchStyle;
 
   @Prop()
   public disabled?: boolean;
@@ -22,20 +40,8 @@ export default class NeonSwitch extends Vue {
     return { listeners, input: this.onInput };
   }
 
-  private get checked() {
-    return this.on.key === this.value;
-  }
-
-  private get off() {
-    return this.model.off;
-  }
-
-  private get on() {
-    return this.model.on;
-  }
-
   private onInput(event: InputEvent) {
     const checked = (event.target as HTMLInputElement).checked;
-    this.$emit('input', checked ? this.on.key : this.off.key);
+    this.$emit('input', checked);
   }
 }

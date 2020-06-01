@@ -46,7 +46,7 @@
             </div>
           </neon-drawer>
         </neon-grid-area>
-        <neon-grid-area id="drawer-content">
+        <neon-grid-area id="section-content">
           <router-view />
         </neon-grid-area>
       </neon-grid>

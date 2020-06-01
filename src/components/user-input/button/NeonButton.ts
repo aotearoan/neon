@@ -3,7 +3,7 @@ import { TranslateResult } from 'vue-i18n';
 import { NeonSize } from '../../common/NeonSize';
 import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
 import { NeonButtonStyle } from './NeonButtonStyle';
-import { NeonIconPosition } from '../../design/icon/NeonIconPosition';
+import { NeonHorizontalPosition } from '../../common/NeonHorizontalPosition';
 import NeonIcon from '@/components/design/icon/NeonIcon.vue';
 import NeonLink from '@/components/navigation/link/NeonLink.vue';
 
@@ -29,8 +29,8 @@ export default class NeonButton extends Vue {
   @Prop()
   public icon?: string;
 
-  @Prop({ default: NeonIconPosition.Left })
-  public iconPosition!: NeonIconPosition;
+  @Prop({ default: NeonHorizontalPosition.Left })
+  public iconPosition!: NeonHorizontalPosition;
 
   @Prop({ default: NeonButtonStyle.Solid })
   public buttonStyle!: NeonButtonStyle;

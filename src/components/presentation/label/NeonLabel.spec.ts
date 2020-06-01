@@ -4,7 +4,7 @@ import NeonIcon from '../../design/icon/NeonIcon.vue';
 import NeonLabel from './NeonLabel.vue';
 import { NeonLabelSize } from './NeonLabelSize';
 import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
-import { NeonIconPosition } from '../../design/icon/NeonIconPosition';
+import { NeonHorizontalPosition } from '../../common/NeonHorizontalPosition';
 
 Vue.component('NeonIcon', NeonIcon);
 
@@ -84,7 +84,7 @@ describe('NeonLabel', () => {
   it('renders icon position right', () => {
     const icon = 'check';
     const wrapper = mount(NeonLabel, {
-      propsData: { icon, iconPosition: NeonIconPosition.Right },
+      propsData: { icon, iconPosition: NeonHorizontalPosition.Right },
     });
     expect(wrapper.find('.neon-label--icon-right').element).toBeDefined();
   });

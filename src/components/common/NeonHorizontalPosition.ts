@@ -1,4 +1,4 @@
-export enum NeonIconPosition {
+export enum NeonHorizontalPosition {
   Left = 'left',
   Right = 'right',
 }

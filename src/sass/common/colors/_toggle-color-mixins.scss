@@ -1,6 +1,6 @@
 @mixin toggle-color($color, $toggle-color) {
   &:not(.neon-toggle--disabled).neon-toggle--#{$color} {
-    border: 1px solid $toggle-color;
+    border: $border-width $border-style $toggle-color;
     color: $toggle-color;
 
     label {
@@ -29,7 +29,7 @@
   }
 
   &.neon-toggle--disabled {
-    border: 1px solid $color-disabled-light;
+    border: $border-width $border-style $color-disabled-light;
 
     .neon-toggle__label {
       color: $color-disabled-light;

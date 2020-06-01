@@ -63,9 +63,11 @@ h6 {
   line-height: $line-height-headings-ratio;
 }
 
-label:not(.no-style) {
-  font-size: $font-size-s;
-  margin-bottom: 2 * $base-space;
-  text-transform: uppercase;
-  user-select: none;
+label {
+  &:not(.no-style) {
+    font-size: $font-size-s;
+    text-transform: uppercase;
+    user-select: none;
+    margin-bottom: 2 * $base-space;
+  }
 }

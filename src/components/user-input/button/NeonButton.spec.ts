@@ -5,7 +5,7 @@ import NeonLink from '../../navigation/link/NeonLink.vue';
 import NeonButton from './NeonButton.vue';
 import { NeonSize } from '../../common/NeonSize';
 import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
-import { NeonIconPosition } from '../../design/icon/NeonIconPosition';
+import { NeonHorizontalPosition } from '../../common/NeonHorizontalPosition';
 import { NeonButtonStyle } from './NeonButtonStyle';
 
 Vue.component('NeonIcon', NeonIcon);
@@ -89,7 +89,7 @@ describe('NeonButton', () => {
     const icon = 'check';
     const label = 'xd';
     const wrapper = mount(NeonButton, {
-      propsData: { icon, label, iconPosition: NeonIconPosition.Right },
+      propsData: { icon, label, iconPosition: NeonHorizontalPosition.Right },
     });
     expect(wrapper.find('.neon-button--icon-right').element).toBeDefined();
   });

@@ -31,6 +31,14 @@ span {
   justify-content: space-evenly;
 }
 
+.neon-spaced-apart {
+  justify-content: flex-start;
+
+  & > *:not(:last-child) {
+    margin-right: 4 * $base-space;
+  }
+}
+
 .neon-space-between {
   width: 100%;
   justify-content: space-between;

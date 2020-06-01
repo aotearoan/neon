@@ -87,7 +87,6 @@ export default class App extends Vue {
   }
 
   private switchMode(mode: NeonMode) {
-    console.log(mode);
     document.documentElement.classList.remove(`neon-mode--${this.selectedMode}`);
     document.documentElement.classList.add(`neon-mode--${mode}`);
     this.selectedMode = mode;
@@ -153,11 +152,11 @@ export default class App extends Vue {
     return [
       {
         breakpoint: NeonResponsive.Desktop,
-        grid: [['content']],
+        grid: [['section-content']],
       },
       {
         breakpoint: NeonResponsive.Desktop,
-        grid: [['responsive-menu'], ['content']],
+        grid: [['responsive-menu'], ['section-content']],
       },
     ];
   }

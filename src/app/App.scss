@@ -89,14 +89,14 @@
   @import 'src/sass/common/colors/colors';
 
   &.neon-mode--dark {
-    .example__wrapper {
-      background-color: $color-neutral-d4;
+    .neon-monospaced {
+      color: $color-primary-l1;
     }
   }
 
   &.neon-mode--light {
-    .example__wrapper {
-      background-color: $color-neutral-l4;
+    .neon-monospaced {
+      color: $color-primary-d1;
     }
   }
 }

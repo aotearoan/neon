@@ -1,29 +1,30 @@
 <template>
-  <div
-    class="neon-switch"
+  <label
+    class="neon-switch no-style"
     :class="[
+      `neon-switch--${switchStyle}`,
       `neon-switch--${size}`,
+      `neon-switch--${color}`,
       {
-        'neon-switch--disabled': disabled,
-        'neon-switch--checked': checked,
+        'neon-switch--disabled neon--disabled': disabled,
+        'neon-switch--checked': value,
       },
     ]"
   >
-    <label class="neon-switch__label">
-      <span>{{ off.label }}</span>
-      <span class="neon-switch__switch">
-        <span class="neon-switch__indicator"></span>
-      </span>
-      <input
-        type="checkbox"
-        class="neon-switch__input"
-        :checked="checked"
-        :disabled="disabled"
-        v-on="sanitizedListeners"
-      />
-      <span>{{ on.label }}</span>
-    </label>
-  </div>
+    <neon-icon v-if="switchStyle === 'checkbox'" class="neon-switch__checkbox" name="check" />
+    <span class="neon-switch__label">{{ label }}</span>
+    <span v-if="switchStyle === 'switch'" class="neon-switch__switch">
+      <span class="neon-switch__indicator"></span>
+    </span>
+    <input
+      type="checkbox"
+      class="neon-switch__input"
+      :checked="value"
+      :disabled="disabled"
+      v-on="sanitizedListeners"
+      v-bind="$attrs"
+    />
+  </label>
 </template>
 
 <script lang="ts" src="./NeonSwitch.ts" />

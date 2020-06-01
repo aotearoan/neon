@@ -11,5 +11,5 @@ import { NeonButton, NeonCard, NeonCardBody, NeonCardHeader, NeonLogo } from '@/
   },
 })
 export default class Logo extends Vue {
-  private example = `<neon-logo />`;
+  private template = `<neon-logo />`;
 }

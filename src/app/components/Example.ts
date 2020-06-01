@@ -12,8 +12,12 @@ export default class Example extends Vue {
   @Prop({ required: true })
   public title!: string;
 
+  @Prop({ default: {} })
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  public data!: Record<string, any>;
+
   @Prop({ required: true })
-  public example!: string;
+  public template!: string;
 
   private options = {
     theme: 'lucario',

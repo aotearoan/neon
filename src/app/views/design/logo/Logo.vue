@@ -13,7 +13,7 @@
         </p>
       </neon-card-body>
     </neon-card>
-    <example title="Example" :example="example"></example>
+    <example title="Example" :template="template"></example>
   </div>
 </template>
 
