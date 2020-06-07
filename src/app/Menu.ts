@@ -154,14 +154,26 @@ export class Menu {
           path: 'drop-zone',
           page: 'DropZone',
           name: 'Drop Zone',
-          keywords: 'drag upload',
+          keywords: 'drag upload file input',
           component: 'NeonDropZone',
+        },
+        {
+          path: 'file',
+          page: 'File',
+          keywords: 'input multiple',
+          component: 'NeonFile',
         },
         {
           path: 'input',
           page: 'Input',
           name: 'Input / Textarea',
           component: 'NeonInput',
+        },
+        {
+          path: 'password',
+          page: 'Password',
+          keywords: 'input',
+          component: 'NeonPassword',
         },
         {
           path: 'switch',

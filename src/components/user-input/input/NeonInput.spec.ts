@@ -19,6 +19,24 @@ describe('NeonInput', () => {
     expect((wrapper.find('.neon-input__textfield').element as HTMLInputElement).placeholder).toEqual(placeholder);
   });
 
+  it('renders placeholder visible class', () => {
+    const value = '';
+    const placeholder = 'test label';
+    const wrapper = shallowMount(NeonInput, {
+      propsData: { value, placeholder },
+    });
+    expect(wrapper.find('.neon-input--placeholder-visible').element).toBeDefined();
+  });
+
+  it('does not renders placeholder visible class when value is set', () => {
+    const value = '1';
+    const placeholder = 'test label';
+    const wrapper = shallowMount(NeonInput, {
+      propsData: { value, placeholder },
+    });
+    expect(wrapper.find('.neon-input--placeholder-visible').element).toBeUndefined();
+  });
+
   it('renders value', () => {
     const value = 'test';
     const wrapper = shallowMount(NeonInput, {
@@ -134,7 +152,6 @@ describe('NeonInput', () => {
   it('emits focus/blur events', () => {
     // given
     const value = 'test';
-    const newValue = 'new value';
     const wrapper = shallowMount(NeonInput, {
       propsData: { value },
     });
@@ -167,5 +184,18 @@ describe('NeonInput', () => {
     wrapper.find('.neon-icon').trigger('click');
     // then
     expect(wrapper.emitted()['icon-clicked'][0]).toBeDefined();
+  });
+
+  it('clears input when no icon and clicked', () => {
+    // given
+    const value = 'test';
+    const wrapper = mount(NeonInput, {
+      propsData: { value },
+    });
+    // when
+    wrapper.find('.neon-icon').trigger('click');
+    // then
+    expect(wrapper.emitted()['icon-clicked']).toBeUndefined();
+    expect(wrapper.emitted().input[0]).toEqual(['']);
   });
 });

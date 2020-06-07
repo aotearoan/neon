@@ -10,6 +10,7 @@ import NeonCardBody from './components/layout/card/body/NeonCardBody.vue';
 import NeonCardHeader from './components/layout/card/header/NeonCardHeader.vue';
 import NeonDrawer from './components/layout/drawer/NeonDrawer.vue';
 import NeonDropZone from './components/user-input/drop-zone/NeonDropZone.vue';
+import NeonFile from './components/user-input/file/NeonFile.vue';
 import NeonFooter from './components/layout/footer/NeonFooter.vue';
 import NeonGrid from './components/layout/grid/NeonGrid.vue';
 import NeonGridArea from './components/layout/grid/grid-area/NeonGridArea.vue';
@@ -21,6 +22,7 @@ import NeonLogo from './components/design/logo/NeonLogo.vue';
 import NeonModal from './components/layout/modal/NeonModal.vue';
 import NeonNote from './components/feedback/note/NeonNote.vue';
 import NeonPage from './components/layout/page/NeonPage.vue';
+import NeonPassword from './components/user-input/password/NeonPassword.vue';
 import NeonSideNav from './components/layout/side-nav/NeonSideNav.vue';
 import NeonSwitch from './components/user-input/switch/NeonSwitch.vue';
 import NeonToggle from './components/user-input/toggle/NeonToggle.vue';
@@ -67,6 +69,7 @@ const components: { [s: string]: VueConstructor } = {
   NeonCardHeader,
   NeonDrawer,
   NeonDropZone,
+  NeonFile,
   NeonFooter,
   NeonGrid,
   NeonGridArea,
@@ -78,6 +81,7 @@ const components: { [s: string]: VueConstructor } = {
   NeonModal,
   NeonNote,
   NeonPage,
+  NeonPassword,
   NeonSideNav,
   NeonSwitch,
   NeonToggle,
@@ -100,6 +104,7 @@ export {
   NeonDateUtils,
   NeonDrawer,
   NeonDropZone,
+  NeonFile,
   NeonFormattedDate,
   NeonFooter,
   NeonFunctionalColor,
@@ -122,6 +127,7 @@ export {
   NeonNote,
   NeonOrientation,
   NeonPage,
+  NeonPassword,
   NeonPosition,
   NeonResponsive,
   NeonResponsiveUtils,

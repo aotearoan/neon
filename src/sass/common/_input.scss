@@ -28,11 +28,11 @@
   }
 
   &.neon-input--with-icon {
-    .neon-icon {
+    .neon-icon:not(.neon--disabled) {
       cursor: pointer;
 
       &:active {
-        top: 0.25 * $size + 1px;
+        top: 0.5 * ($size - $font-size) + 1px;
       }
     }
   }
@@ -61,5 +61,12 @@
     padding: $base-space 2 * $base-space;
     line-height: 1;
     outline: none;
+  }
+
+  &:not(.neon-input--placeholder-visible) {
+    input[type='password'] {
+      font-weight: bold;
+      letter-spacing: 2 * $component-letter-spacing-m;
+    }
   }
 }

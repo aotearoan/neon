@@ -1,0 +1,64 @@
+@mixin single-file-size($font-size, $size) {
+  .neon-file__file {
+    font-size: $font-size;
+    height: $size;
+    @include padding(0.5);
+  }
+}
+
+.neon-file {
+  &__input {
+    display: none;
+  }
+
+  &__list {
+    margin-bottom: 4 * $base-space;
+  }
+
+  &__file {
+    cursor: pointer;
+    border-radius: $border-radius;
+    padding: $base-space 1.5 * $base-space;
+    font-size: $font-size-s;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .neon-icon {
+      width: 2.5 * $base-space;
+      height: 2.5 * $base-space;
+    }
+
+    & + .neon-file__file {
+      margin-top: $base-space;
+    }
+  }
+
+  &--single {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+
+    .neon-file__list {
+      margin-right: 2 * $base-space;
+      flex-grow: 1;
+      margin-bottom: 0;
+
+      .neon-file__file {
+      }
+    }
+
+    &.neon-file--s {
+      @include single-file-size($font-size-s, $size-s);
+    }
+
+    &.neon-file--m {
+      @include single-file-size($font-size-s, $size-m);
+    }
+
+    &.neon-file--l {
+      @include single-file-size($base-font-size, $size-l);
+    }
+  }
+}
