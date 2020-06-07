@@ -47,3 +47,9 @@ span {
 .neon-app {
   width: 100%;
 }
+
+.neon-vertically-spaced {
+  & > *:not(:last-child) {
+    margin-bottom: 4 * $base-space;
+  }
+}

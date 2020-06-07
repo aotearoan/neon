@@ -5,7 +5,7 @@
     </neon-card-header>
     <neon-card-body>
       <div class="example__output">
-        <v-runtime-template :template-props="data" :template="template" />
+        <v-runtime-template :template-props="data || {}" :template="template" />
       </div>
       <div class="example__code">
         <codemirror v-model="template" :options="options"></codemirror>

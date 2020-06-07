@@ -1,26 +1,33 @@
-import { NeonMode } from '@/components/common/NeonMode';
+import { NeonMode } from './NeonMode';
 
 export class NeonModeUtils {
   private static callbacks: Record<string, (value: NeonMode) => void> = {};
   private static defaultMode: NeonMode = NeonMode.Dark;
+  private static mode: NeonMode | null = null;
 
-  public static setDefault(defaultMode: NeonMode) {
-    NeonModeUtils.defaultMode = defaultMode;
+  public static getMode() {
+    return NeonModeUtils.mode;
+  }
+
+  public static init(defaultMode?: NeonMode) {
+    if (defaultMode) {
+      NeonModeUtils.defaultMode = defaultMode;
+    }
+
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches;
+
+    if (isDarkMode) {
+      NeonModeUtils.mode = NeonMode.Dark;
+    } else if (isLightMode) {
+      NeonModeUtils.mode = NeonMode.Light;
+    } else {
+      NeonModeUtils.mode = NeonModeUtils.defaultMode;
+    }
   }
 
   public static addListener(key: string, callback: (value: NeonMode) => void) {
     if (window.matchMedia) {
-      const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches;
-
-      if (isDarkMode) {
-        callback(NeonMode.Dark);
-      } else if (isLightMode) {
-        callback(NeonMode.Light);
-      } else {
-        callback(NeonModeUtils.defaultMode);
-      }
-
       if (
         Object.keys(NeonModeUtils.callbacks).length === 0 &&
         typeof MediaQueryList !== 'undefined' &&

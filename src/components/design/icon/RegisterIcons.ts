@@ -90,5 +90,11 @@ export class RegisterIcons {
       'user',
       '<svg width="100%" height="100%" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g transform="matrix(1.49508,0,0,1.49433,-5.92945,-5.92324)"><path fill="currentColor" d="M12,12C14.21,12 16,10.21 16,8C16,5.79 14.21,4 12,4C9.79,4 8,5.79 8,8C8,10.21 9.79,12 12,12ZM12,14C9.33,14 4,15.34 4,18L4,19C4,19.55 4.45,20 5,20L19,20C19.55,20 20,19.55 20,19L20,18C20,15.34 14.67,14 12,14Z"/></g></svg>',
     );
+
+    // animated icons
+    NeonIconRegistry.addIcon(
+      'loading',
+      '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 30"><g transform="matrix(1.3316,0,0,1.31919,-0.0169904,1.7904)"><rect x="0" y="0" width="4" height="20" fill="currentColor"><animate attributeName="opacity" attributeType="XML" values="1; .2; 1" begin="0s" dur="0.6s" repeatCount="indefinite"></animate></rect></g><g transform="matrix(1.3316,0,0,1.31919,-0.0169904,1.7904)"><rect x="7" y="0" width="4" height="20" fill="currentColor"><animate attributeName="opacity" attributeType="XML" values="1; .2; 1" begin="0.2s" dur="0.6s" repeatCount="indefinite"></animate></rect></g><g transform="matrix(1.3316,0,0,1.31919,-0.0169904,1.7904)"><rect x="14" y="0" width="4" height="20" fill="currentColor"><animate attributeName="opacity" attributeType="XML" values="1; .2; 1" begin="0.4s" dur="0.6s" repeatCount="indefinite"></animate></rect></g></svg>',
+    );
   }
 }

@@ -1,0 +1,65 @@
+@mixin input-size($size, $font-size) {
+  .neon-input__text,
+  .neon-input__textarea {
+    font-size: $font-size;
+  }
+
+  .neon-input__text {
+    height: $size;
+  }
+
+  &.neon-input--state-loading,
+  &.neon-input--state-success,
+  &.neon-input--state-error,
+  &.neon-input--with-icon {
+    .neon-input__text {
+      padding-right: $size;
+    }
+
+    .neon-icon {
+      position: absolute;
+      width: $font-size;
+      height: $font-size;
+      right: 0.5 * ($size - $font-size);
+      top: 0.5 * ($size - $font-size);
+      cursor: default;
+      outline: none;
+    }
+  }
+
+  &.neon-input--with-icon {
+    .neon-icon {
+      cursor: pointer;
+
+      &:active {
+        top: 0.25 * $size + 1px;
+      }
+    }
+  }
+}
+
+.neon-input {
+  width: 100%;
+  position: relative;
+
+  &--s {
+    @include input-size($size-s, $font-size-s);
+  }
+
+  &--m {
+    @include input-size($size-m, $base-font-size);
+  }
+
+  &--l {
+    @include input-size($size-l, $base-font-size);
+  }
+
+  &__text,
+  &__textarea {
+    border-radius: $border-radius;
+    border: $border-width $border-style;
+    padding: $base-space 2 * $base-space;
+    line-height: 1;
+    outline: none;
+  }
+}

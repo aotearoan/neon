@@ -1,4 +1,4 @@
-import { NeonResponsive } from '@/components/layout/grid/NeonResponsive';
+import { NeonResponsive } from '../layout/grid/NeonResponsive';
 
 export class NeonResponsiveUtils {
   public static readonly breakpoints: Record<NeonResponsive, string> = Object.freeze({

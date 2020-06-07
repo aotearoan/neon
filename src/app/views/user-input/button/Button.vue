@@ -73,6 +73,34 @@
         <neon-button label="Link button" href="." button-style="outline"></neon-button>
         <neon-button label="Link button" href="." button-style="text"></neon-button>
       </div>
+      <h2>Button states</h2>
+      <neon-note color="info">
+        <span
+          ><strong>Note:</strong> add button states (<span class="neon-monospaced">loading, success, error</span>) to
+          indicate the result of actions. Buttons will be disabled until it is set back to the
+          <span class="neon-monospaced">ready</span> state.</span
+        ></neon-note
+      >
+      <div class="link-buttons neon-button-group">
+        <neon-button state="loading" color="primary" label="Loading"></neon-button>
+        <neon-button state="loading" color="primary" label="Loading button with icon" icon="plus"></neon-button>
+        <neon-button state="success" color="primary" label="Success" button-style="outline"></neon-button>
+        <neon-button
+          state="success"
+          color="primary"
+          label="Success button with icon"
+          button-style="outline"
+          icon="plus"
+        ></neon-button>
+        <neon-button state="error" color="primary" label="Error" button-style="text"></neon-button>
+        <neon-button
+          state="error"
+          color="primary"
+          label="Error button with icon"
+          button-style="text"
+          icon="plus"
+        ></neon-button>
+      </div>
       <h2>Full width buttons</h2>
       <div class="full-width-buttons">
         <neon-button

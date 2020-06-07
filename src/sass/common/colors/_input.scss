@@ -1,0 +1,39 @@
+.neon-input {
+  &__text,
+  &__textarea {
+    border-color: $border-color-input;
+    color: $color-text;
+    background-color: $background-color-input;
+    box-shadow: $inset-shadow;
+
+    &::placeholder {
+      color: $color-placeholder;
+    }
+  }
+
+  &--focused {
+    @each $color, $palette in $functional-colors {
+      &.neon-input--#{$color} {
+        .neon-input__text,
+        .neon-input__textarea {
+          border-color: map-get($palette, $border-color-input-selected);
+          background-color: $background-color-input-active;
+        }
+      }
+    }
+  }
+
+  &--disabled {
+    .neon-input__text,
+    .neon-input__textarea {
+      box-shadow: none;
+      border-color: $color-disabled-dark;
+      background-color: $color-disabled-dark;
+
+      &,
+      &::placeholder {
+        color: $color-disabled-light;
+      }
+    }
+  }
+}

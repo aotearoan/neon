@@ -9,9 +9,9 @@
       </p>
       <ul>
         <li>
-          <strong class="neon-monospaced">setDefault(mode: NeonMode)</strong> - set the default mode in the case there
-          is no native support for color schemes. The initial value is
-          <span class="neon-monospaced">NeonMode.Dark</span>.
+          <strong class="neon-monospaced">init(defaultMode?: NeonMode)</strong> - initialise the mode from the users
+          preferences. Optionally set the default mode in the case there is no native support for color schemes. The
+          initial value is <span class="neon-monospaced">NeonMode.Dark</span>.
         </li>
         <li>
           <strong class="neon-monospaced">addListener(key: string, callback: (mode: NeonMode) => void)</strong> - listen

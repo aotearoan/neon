@@ -35,7 +35,7 @@
     }
 
     &.neon-switch--disabled {
-      color: $color-disabled-light !important;
+      color: $color-switch-label-disabled !important;
 
       .neon-switch__switch,
       .neon-switch__indicator {
@@ -43,11 +43,11 @@
       }
 
       .neon-switch__switch {
-        background-color: $color-disabled-light !important;
+        background-color: $background-color-switch-disabled !important;
       }
 
       .neon-switch__indicator {
-        background-color: $color-disabled-dark !important;
+        background-color: $background-color-switch-indicator-disabled !important;
       }
     }
   }
@@ -56,7 +56,7 @@
     @each $color, $palette in $functional-colors {
       &.neon-switch--#{$color}:not(.neon-switch--disabled) {
         .neon-switch__checkbox {
-          border-color: $input-border-color;
+          border-color: $border-color-input;
           box-shadow: $inset-shadow;
           color: $color-inverse;
         }

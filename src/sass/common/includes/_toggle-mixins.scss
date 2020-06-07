@@ -3,7 +3,7 @@
     font-size: $font-size;
     letter-spacing: $component-letter-spacing-s;
     line-height: 1;
-    height: $size;
+    height: $size - 2 * $border-width;
 
     &.neon-toggle__label--with-icon {
       width: $size;

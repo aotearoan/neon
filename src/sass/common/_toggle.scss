@@ -1,6 +1,9 @@
 @import 'includes/toggle-mixins';
 
 .neon-toggle {
+  width: fit-content;
+  height: fit-content;
+
   input {
     display: none;
   }

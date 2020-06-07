@@ -27,7 +27,7 @@
     <neon-page>
       <neon-side-nav>
         <template #sticky>
-          <input type="text" v-model="indexFilter" />
+          <neon-input type="text" v-model="indexFilter" placeholder="Filter" />
         </template>
         <template #scrolling>
           <neon-tree-menu :model="filteredModel"></neon-tree-menu>
@@ -38,7 +38,7 @@
           <neon-button icon="menu" label="Menu" color="primary" @click="menuOpen = true" :full-width="true" />
           <neon-drawer :open="menuOpen" @close="menuOpen = false">
             <div class="neon-side-nav__sticky">
-              <input type="text" v-model="indexFilter" />
+              <neon-input type="text" v-model="indexFilter" placeholder="Filter" />
             </div>
             <hr />
             <div class="neon-side-nav__scrolling">

@@ -18,6 +18,7 @@ import {
   NeonTopNav,
   NeonTreeMenu,
   NeonTreeMenuItem,
+  NeonInput,
 } from '@/components';
 import { NeonModeUtils } from '@/components/common/NeonModeUtils';
 
@@ -41,6 +42,7 @@ Vue.use(VueI18n);
     NeonGrid,
     NeonGridArea,
     NeonDrawer,
+    NeonInput,
   },
 })
 export default class App extends Vue {
@@ -51,6 +53,7 @@ export default class App extends Vue {
   private isMobile = false;
 
   public mounted() {
+    NeonModeUtils.init();
     NeonModeUtils.addListener('app-mode-listener', this.switchMode);
     window.addEventListener('resize', this.handleResize);
     this.handleResize();

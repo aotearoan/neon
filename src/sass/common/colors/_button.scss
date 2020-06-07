@@ -130,4 +130,8 @@ $transparency-button-disabled: 0.3;
       color: rgba($color-disabled-light, 0.5);
     }
   }
+
+  &--no-outline {
+    box-shadow: none !important;
+  }
 }

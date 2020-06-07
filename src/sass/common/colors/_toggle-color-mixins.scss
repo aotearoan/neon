@@ -29,11 +29,11 @@
   }
 
   &.neon-toggle--disabled {
-    border: $border-width $border-style $color-disabled-light;
+    border: $border-width $border-style $color-disabled-dark;
 
     .neon-toggle__label {
       color: $color-disabled-light;
-      border-color: $color-disabled-light;
+      border-color: $color-disabled-dark;
     }
   }
 
@@ -43,8 +43,8 @@
 
   &.neon-toggle--disabled .neon-toggle__label--checked,
   .neon-toggle__label--disabled.neon-toggle__label--checked {
-    color: $color-disabled-dark;
+    color: $color-disabled-light;
     border-color: $color-disabled-dark;
-    background-color: $color-disabled-light;
+    background-color: $color-disabled-dark;
   }
 }

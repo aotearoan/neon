@@ -1,5 +1,5 @@
-$background-color-card: $color-neutral-d5;
-$background-color: $color-neutral-d4;
+$background-color-card: $color-neutral-d4;
+$background-color: $color-neutral-d5;
 
 $color-text: $color-text-dark;
 $color-text-gray: $color-neutral-l1;
@@ -31,12 +31,16 @@ $logo: $logo-dark;
 $label-color: $color-neutral-l1;
 
 $color-disabled-light: $color-neutral-d2;
-$color-disabled-dark: $color-neutral-d4;
+$color-disabled-dark: rgba($color-neutral-d3, 0.5);
 
 // switch
 $background-color-switch-off: $color-neutral-d2;
 $background-color-switch-on: l1;
-$background-color-switch-indicator: $color-neutral-d5;
+$background-color-switch-indicator: $color-neutral-d4;
+
+$color-switch-label-disabled: $color-disabled-light;
+$background-color-switch-disabled: $color-disabled-light;
+$background-color-switch-indicator-disabled: rgba($background-color-switch-indicator, 0.75);
 
 // checkbox
 $background-color-checkbox: l2;
@@ -52,15 +56,15 @@ $background-high-contrast-solid-button-light: $color-text;
 $background-high-contrast-solid-button-dark: $color-high-contrast-l1;
 
 // low-contrast buttons
-$background-low-contrast-solid-button-light: $color-low-contrast-d4;
+$background-low-contrast-solid-button-light: $color-low-contrast-d3;
 $background-low-contrast-solid-button-dark: $color-low-contrast-d5;
 $color-low-contrast-solid-button: $color-low-contrast-l4;
 $color-low-contrast-outline-button: $color-low-contrast-d3;
 
 // text button
 $color-text-button: l1;
-$background-color-text-button-hover: darken($color-neutral-d4, 1);
-$background-color-text-button-active: $color-neutral-d4;
+$background-color-text-button-hover: $color-neutral-d3;
+$background-color-text-button-active: rgba($color-neutral-d3, 0.5);
 
 // label
 $color-label: l1;
@@ -78,10 +82,10 @@ $color-link-hover: $color-primary-l1;
 $color-icon: l1;
 
 // tree menu
-$color-tree-menu-hover: $color-neutral-d4;
+$color-tree-menu-hover: $color-neutral-d5;
 
 // action menu
-$color-action-menu-hover: $color-neutral-d4;
+$color-action-menu-hover: $color-neutral-d5;
 
 // selection
 $background-color-selection: $color-primary-l1;
@@ -98,4 +102,11 @@ $background-radio-button: linear-gradient(0deg, $color-neutral-d3 0%, $color-neu
 $color-radio-button-label: $color-neutral-l3;
 
 // input
-$input-border-color: $color-neutral-d2;
+$border-color-input: $color-neutral-d2;
+$background-color-input: rgba($color-neutral-d5, 0.5);
+$background-color-input-active: $color-neutral-d5;
+$border-color-input-selected: l1;
+$color-placeholder: $color-neutral-d2;
+
+// drop zone
+$color-drop-zone: $color-neutral-l1;

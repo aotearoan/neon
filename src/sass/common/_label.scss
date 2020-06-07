@@ -2,9 +2,10 @@
 
 .neon-label {
   &--xs {
-    height: $size-xs;
-    min-width: $size-xs;
+    height: $size-xs - $base-space;
+    min-width: $size-xs - $base-space;
     font-size: $font-size-s;
+    padding: 0 $base-space;
 
     .neon-icon {
       width: $font-size-xs;

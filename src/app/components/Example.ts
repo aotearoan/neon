@@ -12,9 +12,9 @@ export default class Example extends Vue {
   @Prop({ required: true })
   public title!: string;
 
-  @Prop({ default: {} })
+  @Prop()
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  public data!: Record<string, any>;
+  public data?: Record<string, any>;
 
   @Prop({ required: true })
   public template!: string;

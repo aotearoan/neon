@@ -10,6 +10,7 @@
     position: fixed;
     opacity: 0;
     z-index: $z-index-below;
+    pointer-events: none;
   }
 
   &,
@@ -37,6 +38,7 @@
 
     .neon-modal__overlay {
       z-index: $z-index-overlay-over-top-nav;
+      pointer-events: auto;
     }
   }
 }

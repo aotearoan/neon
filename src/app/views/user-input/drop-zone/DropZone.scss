@@ -1,0 +1,23 @@
+.drop-zone-examples {
+  .neon-drop-zone {
+    width: 100%;
+
+    h4 {
+      line-height: 1;
+      margin: 0;
+    }
+  }
+
+  .neon-drop-zone--circular {
+    margin-top: 4 * $base-space;
+    width: 45%;
+
+    & + .neon-drop-zone--circular {
+      margin-left: 4 * $base-space;
+    }
+  }
+
+  pre {
+    width: 100%;
+  }
+}

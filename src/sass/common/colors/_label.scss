@@ -2,6 +2,7 @@
   &.neon-label--solid {
     color: $label-solid-background-color;
     background-color: $label-color;
+    border: $border-width $border-style $label-color;
   }
 
   &.neon-label--outline {

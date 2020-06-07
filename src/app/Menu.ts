@@ -151,6 +151,19 @@ export class Menu {
           component: 'NeonButton',
         },
         {
+          path: 'drop-zone',
+          page: 'DropZone',
+          name: 'Drop Zone',
+          keywords: 'drag upload',
+          component: 'NeonDropZone',
+        },
+        {
+          path: 'input',
+          page: 'Input',
+          name: 'Input / Textarea',
+          component: 'NeonInput',
+        },
+        {
           path: 'switch',
           page: 'SwitchExample',
           name: 'Switch / Checkbox',

@@ -7,6 +7,7 @@ import { NeonSize } from '../../common/NeonSize';
 import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
 import { NeonHorizontalPosition } from '../../common/NeonHorizontalPosition';
 import { NeonButtonStyle } from './NeonButtonStyle';
+import { NeonState } from '../../common/NeonState';
 
 Vue.component('NeonIcon', NeonIcon);
 Vue.component('NeonLink', NeonLink);
@@ -25,7 +26,39 @@ describe('NeonButton', () => {
     const wrapper = mount(NeonButton, {
       propsData: { icon },
     });
-    expect(wrapper.find('.neon-button--icon-only').element).toBeDefined();
+    expect(wrapper.find('.neon-button--with-icon.neon-button--icon-only').element).toBeDefined();
+  });
+
+  it('renders with outline by default', () => {
+    const icon = 'check';
+    const wrapper = mount(NeonButton, {
+      propsData: { icon },
+    });
+    expect(wrapper.find('.neon-button--no-outline').element).toBeUndefined();
+  });
+
+  it('renders no outline class', () => {
+    const icon = 'check';
+    const wrapper = mount(NeonButton, {
+      propsData: { icon, outline: false },
+    });
+    expect(wrapper.find('.neon-button--no-outline').element).toBeDefined();
+  });
+
+  it('renders ready state by default', () => {
+    const icon = 'check';
+    const wrapper = mount(NeonButton, {
+      propsData: { icon },
+    });
+    expect(wrapper.find('.neon-button--state-ready').element).toBeDefined();
+  });
+
+  it('renders state', () => {
+    const icon = 'check';
+    const wrapper = mount(NeonButton, {
+      propsData: { icon, state: NeonState.Loading },
+    });
+    expect(wrapper.find('.neon-button--state-loading').element).toBeDefined();
   });
 
   it('renders default size', () => {
@@ -82,7 +115,7 @@ describe('NeonButton', () => {
     const wrapper = mount(NeonButton, {
       propsData: { icon, label },
     });
-    expect(wrapper.find('.neon-button--icon-left').element).toBeDefined();
+    expect(wrapper.find('.neon-button--with-icon.neon-button--icon-left').element).toBeDefined();
   });
 
   it('renders icon position right', () => {
@@ -91,7 +124,7 @@ describe('NeonButton', () => {
     const wrapper = mount(NeonButton, {
       propsData: { icon, label, iconPosition: NeonHorizontalPosition.Right },
     });
-    expect(wrapper.find('.neon-button--icon-right').element).toBeDefined();
+    expect(wrapper.find('.neon-button--with-icon.neon-button--icon-right').element).toBeDefined();
   });
 
   it('renders as button', () => {

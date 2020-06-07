@@ -18,6 +18,11 @@
     &.neon-button--circular {
       border-radius: 50%;
     }
+
+    .neon-icon {
+      width: $icon-only-size;
+      height: $icon-only-size;
+    }
   }
 }
 
@@ -68,6 +73,24 @@
       order: 1;
       margin-left: 2 * $base-space;
     }
+  }
+
+  &--state-loading,
+  &--state-success,
+  &--state-error {
+    &:not(.neon-button--with-icon) {
+      .neon-button__label {
+        opacity: 0.15;
+      }
+
+      .neon-icon {
+        position: absolute;
+      }
+    }
+  }
+
+  &--state-loading {
+    cursor: progress;
   }
 }
 

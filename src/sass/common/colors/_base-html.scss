@@ -71,3 +71,15 @@ ul {
 pre {
   background-color: $background-color-pre;
 }
+
+.neon-square {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  &:after {
+    content: '';
+    padding-bottom: 100%;
+  }
+}
