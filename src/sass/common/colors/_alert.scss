@@ -1,0 +1,37 @@
+$notificationTypes: (
+  error: $color-error-d1,
+  warning: $color-warn-d1,
+  info: $color-info-d1,
+  success: $color-success-d1,
+);
+
+$notificationIcons: (
+  error: $icon-error,
+  warning: $icon-warn,
+  info: $icon-info,
+  success: $icon-success,
+);
+
+.snotifyToast {
+  box-shadow: 0.5 * $base-space 0.5 * $base-space 2 * $base-space $color-neutral-d4;
+
+  &__title {
+    color: $color-text-dark;
+  }
+
+  &__body {
+    color: $color-text-dark;
+  }
+}
+
+@each $type, $color in $notificationTypes {
+  .snotify-#{$type} {
+    background-color: $color;
+  }
+}
+
+@each $type, $icon in $notificationIcons {
+  .snotify-icon--#{$type} {
+    background: $icon;
+  }
+}

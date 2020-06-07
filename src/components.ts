@@ -3,6 +3,7 @@ import VueI18n from 'vue-i18n';
 
 /* components */
 import NeonActionMenu from './components/navigation/action-menu/NeonActionMenu.vue';
+import NeonAlert from './components/feedback/alert/NeonAlert.vue';
 import NeonBadge from './components/presentation/badge/NeonBadge.vue';
 import NeonButton from './components/user-input/button/NeonButton.vue';
 import NeonCard from './components/layout/card/NeonCard.vue';
@@ -32,6 +33,7 @@ import NeonTreeMenuItem from './components/navigation/tree-menu/item/NeonTreeMen
 
 /* models and utils */
 import { NeonActionMenuModel } from './components/navigation/action-menu/NeonActionMenuModel';
+import { NeonAlertService } from './components/feedback/alert/NeonAlert';
 import { NeonButtonStyle } from './components/user-input/button/NeonButtonStyle';
 import { NeonDateUtils } from './components/common/NeonDateUtils';
 import { NeonFormattedDate } from './components/common/NeonFormattedDate';
@@ -62,6 +64,7 @@ Vue.use(VueI18n);
 
 const components: { [s: string]: VueConstructor } = {
   NeonActionMenu,
+  NeonAlert,
   NeonBadge,
   NeonButton,
   NeonCard,
@@ -95,6 +98,8 @@ Object.keys(components).forEach((k) => Vue.component(k, components[k]));
 export {
   NeonActionMenu,
   NeonActionMenuModel,
+  NeonAlert,
+  NeonAlertService,
   NeonBadge,
   NeonButton,
   NeonButtonStyle,

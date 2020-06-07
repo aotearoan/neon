@@ -33,6 +33,13 @@ describe('NeonFile', () => {
     expect(wrapper.find('.neon-file--m').element).toBeDefined();
   });
 
+  it('renders size', () => {
+    const wrapper = mount(NeonFile, {
+      propsData: { size: NeonSize.Small },
+    });
+    expect(wrapper.find('.neon-file--s').element).toBeDefined();
+  });
+
   it('renders disabled', () => {
     const wrapper = mount(NeonFile, {
       propsData: { disabled: true },

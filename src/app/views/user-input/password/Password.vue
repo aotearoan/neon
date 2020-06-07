@@ -13,7 +13,7 @@
         </p>
       </neon-card-body>
     </neon-card>
-    <example title="Password" :data="data" :template="passwordExample"></example>
+    <example title="Example" :data="data" :template="passwordExample"></example>
   </div>
 </template>
 

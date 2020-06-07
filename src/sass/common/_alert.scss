@@ -1,0 +1,238 @@
+$width-alert-icon: 5 * $base-space;
+$width-alert-close-icon: $font-size-s;
+$padding-alert-horizontal: 3 * $base-space;
+$padding-alert-vertical: 4 * $base-space;
+$width-alert-text: $width-alert - $width-alert-icon - 4 * $padding-alert-horizontal - $width-alert-close-icon;
+$width-alert-text-mobile: $width-alert-mobile - $width-alert-icon - 4 * $padding-alert-horizontal -
+  $width-alert-close-icon;
+
+.snotifyToast {
+  animation-fill-mode: both;
+}
+.snotify-rightTop .fadeIn {
+  animation-name: fadeInRight;
+}
+
+.snotify-rightTop .fadeOut {
+  animation-name: fadeOutRight;
+}
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0) scaleX(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0) scaleX(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@-webkit-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@-webkit-keyframes appear {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: calc(var(--vh, 1vh) * 50);
+  }
+}
+
+@keyframes appear {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: calc(var(--vh, 1vh) * 95);
+  }
+}
+
+@-webkit-keyframes disappear {
+  0% {
+    opacity: 0;
+    max-height: calc(var(--vh, 1vh) * 95);
+  }
+  100% {
+    opacity: 0;
+    max-height: 0;
+  }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 0;
+    max-height: calc(var(--vh, 1vh) * 95);
+  }
+  100% {
+    opacity: 0;
+    max-height: 0;
+  }
+}
+
+.snotify {
+  display: block;
+  position: fixed;
+  width: $width-alert;
+  z-index: $z-index-modal-over-top-nav;
+  box-sizing: border-box;
+  pointer-events: none;
+
+  @include responsive(mobile) {
+    width: $width-alert-mobile;
+  }
+}
+
+.snotify * {
+  box-sizing: border-box;
+}
+
+.snotify-rightTop {
+  right: 2 * $base-space;
+  top: 2 * $base-space;
+}
+
+.snotify-leftTop {
+  left: 2 * $base-space;
+  top: 2 * $base-space;
+}
+
+.snotify-rightBottom {
+  right: 2 * $base-space;
+  bottom: 2 * $base-space;
+}
+
+.snotify-leftBottom {
+  left: 2 * $base-space;
+  bottom: 2 * $base-space;
+}
+
+.snotify-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  z-index: $z-index-modal-over-top-nav;
+  transition: opacity 0.3s;
+}
+
+.snotifyToast {
+  display: block;
+  cursor: pointer;
+  height: 100%;
+  margin: $base-space;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: auto;
+  border-radius: $border-radius;
+}
+
+.snotifyToast--in {
+  animation-name: appear;
+}
+
+.snotifyToast--out {
+  animation-name: disappear;
+}
+
+.snotifyToast__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  padding-top: $padding-alert-vertical;
+  padding-left: $padding-alert-horizontal + $width-alert-icon;
+  padding-bottom: $padding-alert-vertical;
+  padding-right: $padding-alert-horizontal;
+  min-height: $min-height-alert;
+  font-size: $base-font-size;
+
+  @include responsive(mobile) {
+    min-height: $min-height-alert-mobile;
+    padding-top: 0.5 * $padding-alert-vertical;
+    padding-bottom: 0.5 * $padding-alert-vertical;
+  }
+}
+
+.snotifyToast__noIcon {
+  padding: $base-space 4 * $base-space $base-space 4 * $base-space;
+}
+
+.snotifyToast__title {
+  line-height: 1;
+  font-size: $h5-size;
+  font-weight: 500;
+  padding-left: $padding-alert-horizontal;
+  margin-bottom: $base-space;
+
+  @include responsive(mobile) {
+    margin-bottom: 0;
+  }
+}
+
+.snotifyToast__body {
+  font-size: $font-size-s;
+  padding-left: $padding-alert-horizontal;
+  width: $width-alert-text;
+
+  @include responsive(mobile) {
+    width: $width-alert-text-mobile;
+  }
+}
+
+.snotifyToast-show {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.snotifyToast-remove {
+  max-height: 0;
+  overflow: hidden;
+  transform: translate(0, 50%);
+  opacity: 0;
+}
+
+/***************
+ ** Modifiers **
+ **************/
+.snotify-icon {
+  position: absolute;
+  top: $padding-alert-vertical;
+  left: $padding-alert-horizontal;
+  display: flex;
+  width: $width-alert-icon;
+  height: $width-alert-icon;
+  border-radius: 100%;
+}

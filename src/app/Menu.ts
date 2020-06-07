@@ -46,6 +46,11 @@ export class Menu {
       name: 'Feedback',
       children: [
         {
+          path: 'alert',
+          page: 'Alert',
+          component: 'NeonAlert',
+        },
+        {
           path: 'note',
           page: 'Note',
           component: 'NeonNote',
