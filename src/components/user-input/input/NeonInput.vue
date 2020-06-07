@@ -3,9 +3,10 @@
     class="neon-input"
     :class="[
       {
-        'neon-input--with-icon': icon,
+        'neon-input--with-icon': icon || (value && value.length > 0),
         'neon-input--disabled': disabled,
         'neon-input--focused': focused,
+        'neon-input--placeholder-visible': placeholder && (!value || value.length === 0),
       },
       `neon-input--${size}`,
       `neon-input--${color}`,
@@ -28,11 +29,12 @@
       v-on="sanitizedListeners"
     />
     <neon-icon
-      v-if="state !== 'ready' || icon"
+      v-if="iconVisible"
       :name="iconName"
       :tabindex="disabled ? false : 0"
       :disabled="disabled"
       :color="iconColor"
+      :class="{ 'neon--disabled': disabled }"
       @click.native="iconClicked"
       @keyup.enter.native="iconClicked"
     />

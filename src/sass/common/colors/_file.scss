@@ -1,0 +1,25 @@
+.neon-file {
+  @each $color, $palette in $functional-colors {
+    &--#{$color} {
+      .neon-file__file {
+        color: rgba(map-get($palette, $color-file-list), 0.875);
+        background-color: rgba(map-get($palette, $color-file-list), 0.125);
+
+        &:hover {
+          color: map-get($palette, $color-file-list);
+          background-color: rgba(map-get($palette, $color-file-list), 0.25);
+        }
+      }
+    }
+
+    &--disabled {
+      .neon-file__file {
+        &,
+        &:hover {
+          background-color: $color-disabled-dark;
+          color: $color-disabled-light;
+        }
+      }
+    }
+  }
+}

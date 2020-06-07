@@ -7,11 +7,11 @@ import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
 @Component({})
 export default class NeonInput extends Vue {
   $refs!: {
-    ltqInput: HTMLInputElement;
+    neonInput: HTMLInputElement;
   };
 
-  @Prop({ required: true })
-  private value!: string;
+  @Prop()
+  private value?: string;
 
   @Prop({ default: NeonInputType.Text })
   private type!: NeonInputType;
@@ -48,6 +48,10 @@ export default class NeonInput extends Vue {
     return sanitized;
   }
 
+  get iconVisible() {
+    return this.state !== 'ready' || this.icon || (this.value && this.value.length > 0);
+  }
+
   get iconName() {
     switch (this.state) {
       case NeonState.Loading:
@@ -57,7 +61,13 @@ export default class NeonInput extends Vue {
       case NeonState.Error:
         return 'times';
       default:
-        return this.icon;
+        if (this.icon) {
+          return this.icon;
+        } else if (this.value && this.value.length > 0) {
+          return 'times-circle';
+        }
+
+        return undefined;
     }
   }
 
@@ -75,7 +85,7 @@ export default class NeonInput extends Vue {
   }
 
   public focus() {
-    this.$refs.ltqInput.focus();
+    this.$refs.neonInput.focus();
   }
 
   private onFocus() {
@@ -90,7 +100,11 @@ export default class NeonInput extends Vue {
 
   private iconClicked() {
     if (!this.disabled) {
-      this.$emit('icon-clicked');
+      if (this.icon) {
+        this.$emit('icon-clicked');
+      } else if (this.value && this.value.length > 0) {
+        this.$emit('input', '');
+      }
     }
   }
 
@@ -114,5 +128,9 @@ export default class NeonInput extends Vue {
           return '';
       }
     }
+  }
+
+  public click() {
+    this.$refs.neonInput.click();
   }
 }
