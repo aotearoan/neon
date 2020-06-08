@@ -29,6 +29,7 @@
     .neon-modal__overlay {
       opacity: 1;
       transition: opacity ease-in-out 0.5 * $animation-speed-fast;
+      pointer-events: auto;
     }
 
     &,
@@ -38,7 +39,6 @@
 
     .neon-modal__overlay {
       z-index: $z-index-overlay-over-top-nav;
-      pointer-events: auto;
     }
   }
 }
