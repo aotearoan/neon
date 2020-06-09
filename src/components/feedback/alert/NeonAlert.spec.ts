@@ -8,17 +8,19 @@ describe('NeonAlert', () => {
     NeonAlertService._instance.$snotify.error = jest.fn();
   });
 
+  const instance = new NeonAlertService();
+
   describe('info()', () => {
     it('title only', () => {
       // when
-      NeonAlertService.info('test title');
+      instance.info('test title');
       // then
       expect(NeonAlertService._instance.$snotify.info).toHaveBeenCalledWith('', 'test title');
     });
 
     it('title and body', () => {
       // when
-      NeonAlertService.info('test title', 'body');
+      instance.info('test title', 'body');
       // then
       expect(NeonAlertService._instance.$snotify.info).toHaveBeenCalledWith('body', 'test title');
     });
@@ -27,14 +29,14 @@ describe('NeonAlert', () => {
   describe('success()', () => {
     it('title only', () => {
       // when
-      NeonAlertService.success('test title');
+      instance.success('test title');
       // then
       expect(NeonAlertService._instance.$snotify.success).toHaveBeenCalledWith('', 'test title');
     });
 
     it('title and body', () => {
       // when
-      NeonAlertService.success('test title', 'body');
+      instance.success('test title', 'body');
       // then
       expect(NeonAlertService._instance.$snotify.success).toHaveBeenCalledWith('body', 'test title');
     });
@@ -43,14 +45,14 @@ describe('NeonAlert', () => {
   describe('warning()', () => {
     it('title only', () => {
       // when
-      NeonAlertService.warning('test title');
+      instance.warning('test title');
       // then
       expect(NeonAlertService._instance.$snotify.warning).toHaveBeenCalledWith('', 'test title');
     });
 
     it('title and body', () => {
       // when
-      NeonAlertService.warning('test title', 'body');
+      instance.warning('test title', 'body');
       // then
       expect(NeonAlertService._instance.$snotify.warning).toHaveBeenCalledWith('body', 'test title');
     });
@@ -59,14 +61,14 @@ describe('NeonAlert', () => {
   describe('error()', () => {
     it('title only', () => {
       // when
-      NeonAlertService.error('test title');
+      instance.error('test title');
       // then
       expect(NeonAlertService._instance.$snotify.error).toHaveBeenCalledWith('', 'test title');
     });
 
     it('title and body', () => {
       // when
-      NeonAlertService.error('test title', 'body');
+      instance.error('test title', 'body');
       // then
       expect(NeonAlertService._instance.$snotify.error).toHaveBeenCalledWith('body', 'test title');
     });

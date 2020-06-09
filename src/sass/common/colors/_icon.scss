@@ -3,7 +3,8 @@
     &--#{$color} {
       svg {
         path,
-        rect {
+        rect,
+        circle {
           fill: map-get($palette, $color-icon);
         }
       }

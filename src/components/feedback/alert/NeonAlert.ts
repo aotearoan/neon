@@ -17,20 +17,24 @@ export class NeonAlertService extends Vue {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   static _instance: any = new NeonAlertService();
 
-  public static info(title: string, message = '') {
-    NeonAlertService._instance.$snotify.info(message, title);
+  public info(title: string, message = '') {
+    this.instance.$snotify.info(message, title);
   }
 
-  public static success(title: string, message = '') {
-    NeonAlertService._instance.$snotify.success(message, title);
+  public success(title: string, message = '') {
+    this.instance.$snotify.success(message, title);
   }
 
-  public static warning(title: string, message = '') {
-    NeonAlertService._instance.$snotify.warning(message, title);
+  public warning(title: string, message = '') {
+    this.instance.$snotify.warning(message, title);
   }
 
-  public static error(title: string, message = '') {
-    NeonAlertService._instance.$snotify.error(message, title);
+  public error(title: string, message = '') {
+    this.instance.$snotify.error(message, title);
+  }
+
+  get instance() {
+    return NeonAlertService._instance;
   }
 }
 

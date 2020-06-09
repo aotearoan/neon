@@ -3,7 +3,13 @@
   box-shadow: $card-box-shadow;
 
   .neon-card-header,
-  .neon-card-body {
+  .neon-card-body,
+  .neon-card-footer {
     background-color: $background-color-card;
+
+    &:not(:last-child) {
+      border-bottom: $card-section-border;
+      border-bottom-color: $border-color;
+    }
   }
 }

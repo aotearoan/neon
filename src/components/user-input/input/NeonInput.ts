@@ -49,7 +49,7 @@ export default class NeonInput extends Vue {
   }
 
   get iconVisible() {
-    return this.state !== 'ready' || this.icon || (this.value && this.value.length > 0);
+    return this.state !== 'ready' || this.icon || (this.value && !this.disabled && this.value.length > 0);
   }
 
   get iconName() {

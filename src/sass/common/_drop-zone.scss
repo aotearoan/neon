@@ -15,4 +15,9 @@
   &--state-loading {
     cursor: progress;
   }
+
+  &__container {
+    justify-content: center;
+    align-items: center;
+  }
 }

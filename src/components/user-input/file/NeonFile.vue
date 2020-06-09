@@ -4,10 +4,10 @@
     :class="[
       `neon-file--${color}`,
       `neon-file--${size}`,
-      { 'neon-file--disabled': disabled, 'neon-file--single': !multiple },
+      { 'neon-file--disabled': disabled, 'neon-file--single': !multiple, 'neon-file--direct-upload': directUpload },
     ]"
   >
-    <ul class="no-style neon-file__list">
+    <ul class="no-style neon-file__list" v-if="!directUpload">
       <li
         v-for="file in files"
         :key="file.name"
@@ -31,7 +31,7 @@
     />
     <div class="neon-button-group neon-file__actions">
       <neon-button
-        v-if="multiple"
+        v-if="multiple && !directUpload"
         :disabled="disabled || files.length === 0"
         :size="size"
         button-style="text"
@@ -41,6 +41,7 @@
       <neon-button
         :disabled="disabled"
         :color="color"
+        :state="state"
         :size="size"
         :label="label"
         :icon="icon"

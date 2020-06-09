@@ -61,6 +61,12 @@
     padding: $base-space 2 * $base-space;
     line-height: 1;
     outline: none;
+    font-family: $body-font-family;
+    width: 100%;
+
+    &::placeholder {
+      font-family: $body-font-family;
+    }
   }
 
   &:not(.neon-input--placeholder-visible) {

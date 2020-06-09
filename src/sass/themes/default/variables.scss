@@ -40,7 +40,7 @@ $h3-size: 28px !default;
 $h2-size: 32px !default;
 $h1-size: 36px !default;
 
-$h6-weight: 400 !default;
+$h6-weight: bold !default;
 $h5-weight: bold !default;
 $h4-weight: bold !default;
 $h3-weight: bold !default;
@@ -97,6 +97,7 @@ $margin-top-side-nav: 0.5 * $base-space !default;
 
 /* card */
 $card-border: none !default;
+$card-section-border: $border-width $border-style !default;
 $card-box-shadow: none !default;
 
 /* checkbox */

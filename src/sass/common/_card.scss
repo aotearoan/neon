@@ -2,7 +2,8 @@
   flex-direction: row;
 
   .neon-card-header,
-  .neon-card-body {
+  .neon-card-body,
+  .neon-card-footer {
     margin-bottom: 0;
 
     &:last-child {
@@ -18,9 +19,20 @@
   position: relative;
 
   .neon-card-header,
-  .neon-card-body {
+  .neon-card-body,
+  .neon-card-footer {
     @include padding;
     position: relative;
+  }
+
+  .neon-card-footer {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    .neon-button + .neon-button {
+      margin-left: 4 * $base-space;
+    }
   }
 
   .neon-card-header {

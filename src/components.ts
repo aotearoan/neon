@@ -8,6 +8,7 @@ import NeonBadge from './components/presentation/badge/NeonBadge.vue';
 import NeonButton from './components/user-input/button/NeonButton.vue';
 import NeonCard from './components/layout/card/NeonCard.vue';
 import NeonCardBody from './components/layout/card/body/NeonCardBody.vue';
+import NeonCardFooter from './components/layout/card/footer/NeonCardFooter.vue';
 import NeonCardHeader from './components/layout/card/header/NeonCardHeader.vue';
 import NeonDrawer from './components/layout/drawer/NeonDrawer.vue';
 import NeonDropZone from './components/user-input/drop-zone/NeonDropZone.vue';
@@ -69,6 +70,7 @@ const components: { [s: string]: VueConstructor } = {
   NeonButton,
   NeonCard,
   NeonCardBody,
+  NeonCardFooter,
   NeonCardHeader,
   NeonDrawer,
   NeonDropZone,
@@ -105,6 +107,7 @@ export {
   NeonButtonStyle,
   NeonCard,
   NeonCardBody,
+  NeonCardFooter,
   NeonCardHeader,
   NeonDateUtils,
   NeonDrawer,

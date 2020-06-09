@@ -1,6 +1,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { NeonSize } from '../../common/NeonSize';
 import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
+import { NeonState } from '../../common/NeonState';
 import { TranslateResult } from 'vue-i18n';
 
 @Component({})
@@ -15,6 +16,9 @@ export default class NeonFile extends Vue {
   public disabled!: boolean;
 
   @Prop({ default: false })
+  public directUpload!: boolean;
+
+  @Prop({ default: false })
   public multiple!: boolean;
 
   @Prop()
@@ -22,6 +26,9 @@ export default class NeonFile extends Vue {
 
   @Prop({ default: NeonSize.Medium })
   public size!: NeonSize.Small | NeonSize.Medium | NeonSize.Large;
+
+  @Prop({ default: NeonState.Ready })
+  public state!: NeonState;
 
   @Prop({ default: NeonFunctionalColor.Primary })
   public color!: NeonFunctionalColor;
@@ -61,5 +68,8 @@ export default class NeonFile extends Vue {
 
   private emit() {
     this.$emit('input', this.files);
+    if (this.directUpload) {
+      this.files = [];
+    }
   }
 }

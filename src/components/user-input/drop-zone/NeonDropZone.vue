@@ -12,7 +12,9 @@
     ]"
   >
     <!-- @slot: drop zone contents (e.g. images, text etc...) -->
-    <slot></slot>
+    <div class="neon-drop-zone__container">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
