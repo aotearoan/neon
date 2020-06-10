@@ -90,6 +90,7 @@
       opacity: 0;
       z-index: $z-index-below;
       position: fixed;
+      pointer-events: none;
       top: 0;
       left: 0;
       @include width(100);
@@ -100,6 +101,7 @@
     &.neon-drawer--open {
       .neon-drawer__overlay {
         opacity: 1;
+        pointer-events: auto;
         z-index: $z-index-overlay-over-top-nav;
         transition: opacity ease-in-out 0.5 * $animation-speed-fast;
       }

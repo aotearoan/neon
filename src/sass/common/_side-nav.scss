@@ -28,21 +28,9 @@
 
 .neon-top-nav + .neon-page {
   .neon-side-nav {
-    border-top-right-radius: $border-radius;
-
     @include responsive(desktop) {
-      @include min-height(100, $top-nav-height-desktop + $margin-top-side-nav);
-      @include height(100, $top-nav-height-desktop + $margin-top-side-nav);
-    }
-
-    @include responsive(tablet) {
-      @include min-height(100, $top-nav-height-tablet + $margin-top-side-nav);
-      @include height(100, $top-nav-height-tablet + $margin-top-side-nav);
-    }
-
-    @include responsive(mobile) {
-      @include min-height(100, $top-nav-height-mobile + $margin-top-side-nav);
-      @include height(100, $top-nav-height-mobile + $margin-top-side-nav);
+      @include min-height(100, $top-nav-height-desktop);
+      @include height(100, $top-nav-height-desktop);
     }
   }
 }

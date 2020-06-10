@@ -16,14 +16,14 @@
   }
 
   @include responsive(desktop) {
-    max-height: $top-nav-height-desktop;
+    height: $top-nav-height-desktop;
   }
 
   @include responsive(tablet) {
-    max-height: $top-nav-height-tablet;
+    height: $top-nav-height-tablet;
   }
 
   @include responsive(mobile) {
-    max-height: $top-nav-height-mobile;
+    height: $top-nav-height-mobile;
   }
 }

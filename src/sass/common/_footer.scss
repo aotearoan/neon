@@ -1,33 +1,38 @@
 .neon-footer {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 
   &__container {
-    @include padding(1, true);
     display: flex;
     width: 100%;
-    max-width: $max-page-width + 4 * $base-space + $margin-left-footer;
+    max-width: $max-page-width + 4 * $base-space;
+    line-height: 1;
 
     @include responsive(desktop) {
+      font-size: $base-font-size;
       height: $footer-height-desktop;
+      padding: 0 $spacing-vertical-desktop;
     }
 
     @include responsive(tablet) {
+      font-size: $font-size-s;
       height: $footer-height-tablet;
+      padding: 0 $spacing-vertical-tablet;
     }
 
     @include responsive(mobile) {
+      font-size: $font-size-s;
       height: $footer-height-mobile;
+      padding: 0 $spacing-vertical-mobile;
     }
   }
 }
 
 .neon-side-nav + .neon-grid + .neon-footer {
-  border-top-left-radius: $border-radius;
-  @include side-nav-offset($margin-left-footer);
+  @include side-nav-offset;
 
   .neon-footer__container {
-    max-width: $max-page-width - $side-nav-width - $margin-left-footer;
+    max-width: $max-page-width - $side-nav-width;
   }
 }
