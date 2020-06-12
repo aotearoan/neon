@@ -144,6 +144,13 @@ export class Menu {
           page: 'Label',
           component: 'NeonLabel',
         },
+        {
+          path: 'notification-counter',
+          page: 'NotificationCounter',
+          name: 'Notification Counter',
+          keywords: 'badge',
+          component: 'NeonNotificationCounter',
+        },
       ],
     },
     {

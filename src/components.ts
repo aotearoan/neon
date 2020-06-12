@@ -23,6 +23,7 @@ import NeonLink from './components/navigation/link/NeonLink.vue';
 import NeonLogo from './components/design/logo/NeonLogo.vue';
 import NeonModal from './components/layout/modal/NeonModal.vue';
 import NeonNote from './components/feedback/note/NeonNote.vue';
+import NeonNotificationCounter from './components/presentation/notification-counter/NeonNotificationCounter.vue';
 import NeonPage from './components/layout/page/NeonPage.vue';
 import NeonPassword from './components/user-input/password/NeonPassword.vue';
 import NeonSideNav from './components/layout/side-nav/NeonSideNav.vue';
@@ -85,6 +86,7 @@ const components: { [s: string]: VueConstructor } = {
   NeonLogo,
   NeonModal,
   NeonNote,
+  NeonNotificationCounter,
   NeonPage,
   NeonPassword,
   NeonSideNav,
@@ -133,6 +135,7 @@ export {
   NeonMode,
   NeonModeUtils,
   NeonNote,
+  NeonNotificationCounter,
   NeonOrientation,
   NeonPage,
   NeonPassword,

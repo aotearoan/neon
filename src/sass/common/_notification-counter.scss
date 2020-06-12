@@ -1,0 +1,16 @@
+.neon-notification-counter {
+  background-color: #cc0000;
+  color: white;
+  width: 23px;
+  height: 23px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  font-size: 12px;
+  z-index: 1;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  user-select: none;
+  font-weight: 500;
+}
