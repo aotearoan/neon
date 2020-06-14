@@ -7,7 +7,7 @@ export default class NeonPage extends Vue {
     this.handleResize();
   }
 
-  public destroyed() {
+  public beforeDestroy() {
     window.removeEventListener('resize', this.handleResize);
   }
 

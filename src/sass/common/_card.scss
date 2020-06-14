@@ -15,7 +15,6 @@
 .neon-card {
   border-radius: $border-radius;
   box-shadow: $box-shadow;
-  overflow: hidden;
   position: relative;
 
   .neon-card-header,
@@ -36,6 +35,9 @@
   }
 
   .neon-card-header {
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+
     h1,
     h2,
     h3,
@@ -51,6 +53,16 @@
     &--full-width {
       padding: 0;
     }
+
+    &:last-child {
+      border-bottm-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+  }
+
+  .neon-card-footer {
+    border-bottm-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
   }
 
   &.neon-card--horizontal {

@@ -1,10 +1,13 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import { NeonClosableUtils } from '../../common/NeonClosebleUtils';
 
 @Component
 export default class NeonModal extends Vue {
   $refs!: {
     modal: HTMLDivElement;
   };
+
+  private closableUtils?: NeonClosableUtils;
 
   @Prop({ required: true })
   public open!: boolean;
@@ -14,17 +17,13 @@ export default class NeonModal extends Vue {
 
   public mounted() {
     if (this.dismissable) {
-      document.addEventListener('keyup', this.escapeKeyListener);
-      document.addEventListener('mousedown', this.handleOutsideClick);
-      document.addEventListener('touchstart', this.handleOutsideClick);
+      this.closableUtils = new NeonClosableUtils(this.$refs.modal, this.close);
     }
   }
 
   public beforeDestroy() {
-    if (this.dismissable) {
-      document.removeEventListener('keyup', this.escapeKeyListener);
-      document.removeEventListener('mousedown', this.handleOutsideClick);
-      document.removeEventListener('touchstart', this.handleOutsideClick);
+    if (this.dismissable && this.closableUtils) {
+      this.closableUtils.destroy();
     }
   }
 
@@ -34,20 +33,6 @@ export default class NeonModal extends Vue {
      * @type {void}
      */
     this.$emit('close');
-  }
-
-  private escapeKeyListener(event: KeyboardEvent) {
-    if (event.key === 'Escape' && this.open) {
-      this.close();
-    }
-  }
-
-  private handleOutsideClick(event: MouseEvent | TouchEvent) {
-    const target = event.target && (event.target as Element);
-    if (target && !this.$refs.modal.contains(target) && this.open) {
-      this.close();
-    }
-    return true;
   }
 
   public close() {

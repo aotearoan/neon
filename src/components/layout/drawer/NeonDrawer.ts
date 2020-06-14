@@ -1,11 +1,14 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { NeonPosition } from '../../common/NeonPosition';
+import { NeonClosableUtils } from '@/components/common/NeonClosebleUtils';
 
 @Component
 export default class NeonDrawer extends Vue {
   $refs!: {
     drawer: HTMLDivElement;
   };
+
+  private closableUtils?: NeonClosableUtils;
 
   @Prop()
   public fullWidth?: boolean;
@@ -20,15 +23,11 @@ export default class NeonDrawer extends Vue {
   public overlay!: boolean;
 
   public mounted() {
-    document.addEventListener('keyup', this.escapeKeyListener);
-    document.addEventListener('mousedown', this.handleOutsideClick);
-    document.addEventListener('touchstart', this.handleOutsideClick);
+    this.closableUtils = new NeonClosableUtils(this.$refs.drawer, this.close);
   }
 
   public beforeDestroy() {
-    document.removeEventListener('keyup', this.escapeKeyListener);
-    document.removeEventListener('mousedown', this.handleOutsideClick);
-    document.removeEventListener('touchstart', this.handleOutsideClick);
+    this.closableUtils && this.closableUtils.destroy();
   }
 
   public onClose() {
@@ -37,20 +36,6 @@ export default class NeonDrawer extends Vue {
      * @type {void}
      */
     this.$emit('close');
-  }
-
-  private escapeKeyListener(event: KeyboardEvent) {
-    if (event.key === 'Escape' && this.open) {
-      this.close();
-    }
-  }
-
-  private handleOutsideClick(event: MouseEvent | TouchEvent) {
-    const target = event.target && (event.target as Element);
-    if (target && !this.$refs.drawer.contains(target) && this.open) {
-      this.close();
-    }
-    return true;
   }
 
   public close() {

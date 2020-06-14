@@ -174,7 +174,7 @@ describe('NeonInput', () => {
     expect(wrapper.find('.neon-icon')).toBeDefined();
   });
 
-  it('emits icon clicked event', () => {
+  it('emits icon click event', () => {
     // given
     const value = 'test';
     const wrapper = mount(NeonInput, {
@@ -183,7 +183,7 @@ describe('NeonInput', () => {
     // when
     wrapper.find('.neon-icon').trigger('click');
     // then
-    expect(wrapper.emitted()['icon-clicked'][0]).toBeDefined();
+    expect(wrapper.emitted()['icon-click'][0]).toBeDefined();
   });
 
   it('clears input when no icon and clicked', () => {
@@ -195,7 +195,7 @@ describe('NeonInput', () => {
     // when
     wrapper.find('.neon-icon').trigger('click');
     // then
-    expect(wrapper.emitted()['icon-clicked']).toBeUndefined();
+    expect(wrapper.emitted()['icon-click']).toBeUndefined();
     expect(wrapper.emitted().input[0]).toEqual(['']);
   });
 });

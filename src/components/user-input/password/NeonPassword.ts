@@ -12,6 +12,6 @@ export default class NeonPassword extends Vue {
 
   private iconClicked() {
     this.show = !this.show;
-    this.$emit('icon-clicked');
+    this.$emit('icon-click');
   }
 }

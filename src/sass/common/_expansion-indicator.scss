@@ -1,0 +1,48 @@
+%chevron-line-base {
+  stroke-width: 1;
+  stroke-linecap: round;
+  transition: transform 0.4s, stroke 0.4s;
+}
+
+.neon-expansion-indicator__line1 {
+  @extend %chevron-line-base;
+  transform-origin: 8px 8px;
+}
+
+.neon-expansion-indicator__line2 {
+  @extend %chevron-line-base;
+  transform-origin: 8px 8px;
+}
+
+.neon-expansion-indicator {
+  display: flex;
+  font-size: $base-font-size;
+  position: relative;
+
+  &__container {
+    transition: transform 0.4s;
+    transform: translateY(2px);
+  }
+
+  &__line1 {
+    transform: rotate(35deg);
+  }
+
+  &__line2 {
+    transform: rotate(-35deg);
+  }
+
+  &--expanded {
+    .neon-expansion-indicator__container {
+      transform: translateY(-2px);
+    }
+
+    .neon-expansion-indicator__line1 {
+      transform: rotate(-35deg);
+    }
+
+    .neon-expansion-indicator__line2 {
+      transform: rotate(35deg);
+    }
+  }
+}

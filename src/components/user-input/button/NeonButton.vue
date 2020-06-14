@@ -13,6 +13,12 @@
   >
     <neon-icon v-if="icon || state !== 'ready'" :name="iconName" />
     <span v-if="label" class="neon-button__label">{{ label }}</span>
+    <neon-expansion-indicator
+      v-if="indicator"
+      :color="color"
+      class="neon-button__indicator"
+      :expanded="indicatorExpanded"
+    />
   </button>
 </template>
 

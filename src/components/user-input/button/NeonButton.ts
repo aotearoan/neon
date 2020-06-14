@@ -30,6 +30,12 @@ export default class NeonButton extends Vue {
   @Prop()
   public icon?: string;
 
+  @Prop()
+  public indicator?: boolean;
+
+  @Prop()
+  public indicatorExpanded?: boolean;
+
   @Prop({ default: NeonHorizontalPosition.Left })
   public iconPosition!: NeonHorizontalPosition;
 
@@ -62,7 +68,7 @@ export default class NeonButton extends Vue {
         'neon-button--circular': this.circular,
         'neon-button--no-outline': !this.outline,
         'neon-button--full-width': this.fullWidth,
-        'neon-button--with-icon neon-button--icon-only': !this.label && this.icon,
+        'neon-button--with-icon neon-button--icon-only': !this.label && this.icon && !this.indicator,
         'neon-button--with-icon neon-button--icon-left': this.label && this.icon && this.iconPosition === 'left',
         'neon-button--with-icon neon-button--icon-right': this.label && this.icon && this.iconPosition === 'right',
       },

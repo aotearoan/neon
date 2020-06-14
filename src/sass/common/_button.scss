@@ -55,6 +55,10 @@
       position: relative;
       top: 1px;
     }
+
+    .neon-button__indicator {
+      top: 1px;
+    }
   }
 
   &--full-width {
@@ -91,6 +95,10 @@
 
   &--state-loading {
     cursor: progress;
+  }
+
+  &__indicator {
+    margin-left: 2 * $base-space;
   }
 }
 

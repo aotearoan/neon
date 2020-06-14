@@ -62,8 +62,11 @@ $color-low-contrast-outline-button: $color-low-contrast-d3;
 
 // text button
 $color-text-button: l1;
-$background-color-text-button-hover: $color-neutral-d3;
-$background-color-text-button-active: rgba($color-neutral-d3, 0.5);
+/* hover/active styles */
+$background-color-hover: $color-neutral-d3;
+$background-color-active: rgba($color-neutral-d3, 0.5);
+$background-color-text-button-hover: $background-color-hover;
+$background-color-text-button-active: $background-color-active;
 
 // label
 $color-label: l1;
@@ -118,3 +121,6 @@ $icon-error: $icon-error-dark;
 $icon-warn: $icon-warn-dark;
 $icon-success: $icon-success-dark;
 $icon-info: $icon-info-dark;
+
+// dropdown menu
+$background-color-dropdown-menu-hover: $background-color-hover;

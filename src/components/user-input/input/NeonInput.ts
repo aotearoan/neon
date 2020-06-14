@@ -101,7 +101,7 @@ export default class NeonInput extends Vue {
   private iconClicked() {
     if (!this.disabled) {
       if (this.icon) {
-        this.$emit('icon-clicked');
+        this.$emit('icon-click');
       } else if (this.value && this.value.length > 0) {
         this.$emit('input', '');
       }

@@ -30,7 +30,7 @@ export class NeonGrid extends Vue {
     this.init();
   }
 
-  public destroyed() {
+  public beforeDestroy() {
     this.destroy();
   }
 

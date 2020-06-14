@@ -38,6 +38,13 @@ $badge-icon-size: 0.667;
   align-items: center;
   user-select: none;
 
+  &__label,
+  svg {
+    display: flex;
+    position: relative;
+    top: 0;
+  }
+
   &--square {
     &,
     .neon-badge__image {

@@ -2,20 +2,22 @@
   position: relative;
   left: 0;
   width: 100%;
-  z-index: $z-index-top-nav;
+  z-index: $z-index-modal-under-top-nav;
 
-  @include responsive(desktop) {
-    margin-top: $top-nav-height-desktop;
-    @include min-height(100, $top-nav-height-desktop);
-  }
+  .neon-top-nav + .neon-page__container {
+    @include responsive(desktop) {
+      padding-top: $top-nav-height-desktop;
+      @include min-height(100, $top-nav-height-desktop);
+    }
 
-  @include responsive(tablet) {
-    margin-top: $top-nav-height-tablet;
-    @include min-height(100, $top-nav-height-tablet);
-  }
+    @include responsive(tablet) {
+      padding-top: $top-nav-height-tablet;
+      @include min-height(100, $top-nav-height-tablet);
+    }
 
-  @include responsive(mobile) {
-    margin-top: $top-nav-height-mobile;
-    @include min-height(100, $top-nav-height-mobile);
+    @include responsive(mobile) {
+      padding-top: $top-nav-height-mobile;
+      @include min-height(100, $top-nav-height-mobile);
+    }
   }
 }

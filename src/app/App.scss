@@ -107,3 +107,9 @@
   display: flex;
   width: fit-content;
 }
+
+.neon-dropdown__content {
+  p {
+    white-space: nowrap;
+  }
+}

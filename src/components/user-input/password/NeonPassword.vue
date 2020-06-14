@@ -5,7 +5,7 @@
     :icon="show ? 'visibility-on' : 'visibility-off'"
     v-bind="$attrs"
     v-on="sanitizedListeners"
-    @icon-clicked="iconClicked"
+    @icon-click="iconClicked"
   />
 </template>
 

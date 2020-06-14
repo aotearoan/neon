@@ -26,11 +26,9 @@
   }
 }
 
-.neon-top-nav + .neon-page {
-  .neon-side-nav {
-    @include responsive(desktop) {
-      @include min-height(100, $top-nav-height-desktop);
-      @include height(100, $top-nav-height-desktop);
-    }
+.neon-top-nav + .neon-page__container .neon-side-nav {
+  @include responsive(desktop) {
+    @include min-height(100, $top-nav-height-desktop);
+    @include height(100, $top-nav-height-desktop);
   }
 }

@@ -140,6 +140,26 @@ export class Menu {
           component: 'NeonBadge',
         },
         {
+          path: 'dropdown',
+          page: 'Dropdown',
+          keywords: 'popup',
+          component: 'NeonDropdown',
+        },
+        {
+          path: 'dropdown-menu',
+          page: 'DropdownMenu',
+          name: 'Dropdown Menu',
+          keywords: 'select',
+          component: 'NeonDropdownMenu',
+        },
+        {
+          path: 'expansion-indicator',
+          page: 'ExpansionIndicator',
+          name: 'Expansion Indicator',
+          keywords: 'dropdown select menu',
+          component: 'NeonExpansionIndicator',
+        },
+        {
           path: 'label',
           page: 'Label',
           component: 'NeonLabel',

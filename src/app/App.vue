@@ -1,56 +1,60 @@
 <template>
   <div id="app" class="neon-app">
-    <neon-top-nav>
-      <span class="logo-wrapper">
-        <neon-logo></neon-logo>
-        <span class="tagline">A VueJs design library</span>
-      </span>
-      <div>
-        <div id="nav">
-          <ul v-if="themes.length > 1" class="neon-menu no-style">
-            <li v-for="theme in themes" :key="theme">
-              <a class="neon-link" @click="switchTheme(theme)">{{ theme }}</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <neon-toggle
-        name="dark-mode-toggle"
-        color="low-contrast"
-        :value="selectedMode"
-        :model="modes"
-        @input="switchMode"
-        :size="isMobile ? 's' : 'm'"
-      >
-      </neon-toggle>
-    </neon-top-nav>
     <neon-page>
-      <neon-side-nav>
-        <template #sticky>
-          <neon-input type="text" v-model="indexFilter" placeholder="Filter" />
-        </template>
-        <template #scrolling>
-          <neon-tree-menu :model="filteredModel"></neon-tree-menu>
-        </template>
-      </neon-side-nav>
-      <neon-grid id="content" :layouts="layouts" class="content">
-        <neon-grid-area id="responsive-menu">
-          <neon-button icon="menu" label="Menu" color="primary" @click="menuOpen = true" :full-width="true" />
-          <neon-drawer :open="menuOpen" @close="menuOpen = false">
-            <div class="neon-side-nav__sticky">
-              <neon-input type="text" v-model="indexFilter" placeholder="Filter" />
+      <template #top-nav>
+        <neon-top-nav>
+          <span class="logo-wrapper">
+            <neon-logo></neon-logo>
+            <span class="tagline">A VueJs design library</span>
+          </span>
+          <div>
+            <div id="nav">
+              <ul v-if="themes.length > 1" class="neon-menu no-style">
+                <li v-for="theme in themes" :key="theme">
+                  <a class="neon-link" @click="switchTheme(theme)">{{ theme }}</a>
+                </li>
+              </ul>
             </div>
-            <hr />
-            <div class="neon-side-nav__scrolling">
-              <neon-tree-menu :model="filteredModel" @click="onMenuClick"></neon-tree-menu>
-            </div>
-          </neon-drawer>
-        </neon-grid-area>
-        <neon-grid-area id="section-content">
-          <router-view />
-        </neon-grid-area>
-      </neon-grid>
-      <neon-footer> &copy; copyright aotearoan {{ new Date().getFullYear() }} </neon-footer>
+          </div>
+          <neon-toggle
+            name="dark-mode-toggle"
+            color="low-contrast"
+            :value="selectedMode"
+            :model="modes"
+            @input="switchMode"
+            :size="isMobile ? 's' : 'm'"
+          >
+          </neon-toggle>
+        </neon-top-nav>
+      </template>
+      <template #content>
+        <neon-side-nav>
+          <template #sticky>
+            <neon-input type="text" v-model="indexFilter" placeholder="Filter" />
+          </template>
+          <template #scrolling>
+            <neon-tree-menu :model="filteredModel"></neon-tree-menu>
+          </template>
+        </neon-side-nav>
+        <neon-grid id="content" :layouts="layouts" class="content">
+          <neon-grid-area id="responsive-menu">
+            <neon-button icon="menu" label="Menu" color="primary" @click="menuOpen = true" :full-width="true" />
+            <neon-drawer :open="menuOpen" @close="menuOpen = false">
+              <div class="neon-side-nav__sticky">
+                <neon-input type="text" v-model="indexFilter" placeholder="Filter" />
+              </div>
+              <hr />
+              <div class="neon-side-nav__scrolling">
+                <neon-tree-menu :model="filteredModel" @click="onMenuClick"></neon-tree-menu>
+              </div>
+            </neon-drawer>
+          </neon-grid-area>
+          <neon-grid-area id="section-content">
+            <router-view />
+          </neon-grid-area>
+        </neon-grid>
+        <neon-footer> &copy; copyright aotearoan {{ new Date().getFullYear() }} </neon-footer>
+      </template>
     </neon-page>
   </div>
 </template>

@@ -1,7 +1,10 @@
 <template>
   <div class="neon-page">
-    <!-- @slot: page contents -->
-    <slot></slot>
+    <slot name="top-nav"></slot>
+    <div class="neon-page__container">
+      <!-- @slot: page contents -->
+      <slot name="content"></slot>
+    </div>
   </div>
 </template>
 

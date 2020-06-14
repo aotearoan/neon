@@ -1,0 +1,144 @@
+@mixin dropdown-size($size) {
+  .neon-dropdown__content {
+    &--top-left,
+    &--top-right {
+      bottom: $size + $base-space;
+    }
+
+    &--bottom-left,
+    &--bottom-right {
+      top: $size + $base-space;
+    }
+
+    &--left-top,
+    &--left-bottom {
+      right: calc(100% + #{$base-space});
+    }
+
+    &--right-top,
+    &--right-bottom {
+      left: calc(100% + #{$base-space});
+    }
+  }
+}
+
+.neon-dropdown {
+  position: relative;
+  width: fit-content;
+
+  &__content {
+    position: absolute;
+    z-index: $z-index-modal-over-top-nav;
+    border-radius: $border-radius;
+    overflow: hidden;
+    min-width: calc(100% - 2 * #{$border-width});
+
+    & > .neon-card-body {
+      @include padding(0.75);
+    }
+
+    &--bottom-left,
+    &--top-left {
+      left: 0;
+    }
+
+    &--bottom-right,
+    &--top-right {
+      right: 0;
+    }
+
+    &--left-top,
+    &--right-top {
+      top: 0;
+    }
+
+    &--right-bottom,
+    &--left-bottom {
+      bottom: 0;
+    }
+  }
+
+  &__content-close {
+    display: none;
+  }
+
+  &--fullscreen {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include width(100);
+    @include height(100);
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    @include responsive(mobile) {
+      @include height(100);
+    }
+
+    .neon-dropdown__content-close {
+      display: flex;
+      align-self: flex-end;
+      top: 0.5 * $base-space;
+      right: 0.5 * $base-space;
+    }
+  }
+
+  &--s {
+    @include dropdown-size($size-s);
+  }
+
+  &--m {
+    @include dropdown-size($size-m);
+  }
+
+  &--l {
+    @include dropdown-size($size-l);
+  }
+
+  &__click-blocker {
+    display: none;
+  }
+
+  &--open {
+    .neon-dropdown__click-blocker {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+  }
+
+  &__badge {
+    outline: none;
+    flex-direction: row;
+    align-items: center;
+
+    .neon-expansion-indicator {
+      margin-left: 2 * $base-space;
+    }
+
+    .neon-badge {
+      box-shadow: $box-shadow;
+      opacity: 0.9;
+      position: relative;
+    }
+
+    &:hover {
+      .neon-badge {
+        opacity: 1;
+      }
+    }
+
+    &:active {
+      .neon-badge__label,
+      svg {
+        top: 1px;
+      }
+    }
+  }
+}

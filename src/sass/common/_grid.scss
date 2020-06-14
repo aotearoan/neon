@@ -19,7 +19,7 @@
   max-width: calc(#{$max-page-width - $side-nav-width});
 }
 
-.neon-top-nav + .neon-page {
+.neon-top-nav + .neon-page__container {
   .neon-grid {
     @include responsive(desktop) {
       @include min-height(100, $top-nav-height-desktop + $footer-height-desktop);

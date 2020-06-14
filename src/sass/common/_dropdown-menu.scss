@@ -1,0 +1,54 @@
+@mixin menu-item-size($size, $font-size) {
+  .neon-link,
+  .neon-dropdown-menu__item-container {
+    $menu-item-vertical-padding: 0.5 * ($size - $font-size);
+    padding: $menu-item-vertical-padding 1.5 * $menu-item-vertical-padding;
+    font-size: $font-size;
+  }
+
+  .neon-icon {
+    width: $font-size;
+    height: $font-size;
+  }
+}
+
+.neon-dropdown-menu {
+  &__item {
+    display: flex;
+    flex-direction: row;
+    user-select: none;
+    cursor: pointer;
+
+    .neon-link,
+    &-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+
+    &-label {
+      white-space: nowrap;
+    }
+
+    .neon-icon {
+      margin-right: 3 * $base-space;
+    }
+
+    .neon-link {
+      text-decoration: none;
+    }
+
+    &--s {
+      @include menu-item-size($size-s, $font-size-s);
+    }
+
+    &--m {
+      @include menu-item-size($size-m, $base-font-size);
+    }
+
+    &--l {
+      @include menu-item-size($size-l, $base-font-size);
+    }
+  }
+}

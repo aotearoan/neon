@@ -1,0 +1,24 @@
+.neon-dropdown-menu {
+  &__item {
+    &--separator-before {
+      &:not(:first-child) {
+        border-top: $border-width $border-style $border-color;
+      }
+    }
+
+    .neon-link {
+      color: $color-text;
+    }
+
+    &--disabled {
+      &,
+      .neon-link {
+        color: $color-disabled-light;
+      }
+    }
+
+    &:hover:not(.neon-dropdown-menu__item--disabled) {
+      background-color: $background-color-dropdown-menu-hover;
+    }
+  }
+}

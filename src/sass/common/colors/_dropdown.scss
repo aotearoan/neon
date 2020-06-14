@@ -1,0 +1,12 @@
+.neon-dropdown {
+  &__content {
+    background-color: $background-color-card;
+    box-shadow: $box-shadow-dropdown;
+  }
+
+  &--open {
+    .neon-dropdown__content {
+      border: $border-width $border-style $border-color;
+    }
+  }
+}

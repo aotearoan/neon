@@ -11,7 +11,10 @@ import NeonCardBody from './components/layout/card/body/NeonCardBody.vue';
 import NeonCardFooter from './components/layout/card/footer/NeonCardFooter.vue';
 import NeonCardHeader from './components/layout/card/header/NeonCardHeader.vue';
 import NeonDrawer from './components/layout/drawer/NeonDrawer.vue';
+import NeonDropdown from './components/presentation/dropdown/NeonDropdown.vue';
+import NeonDropdownMenu from './components/presentation/dropdown-menu/NeonDropdownMenu.vue';
 import NeonDropZone from './components/user-input/drop-zone/NeonDropZone.vue';
+import NeonExpansionIndicator from './components/presentation/expansion-indicator/NeonExpansionIndicator.vue';
 import NeonFile from './components/user-input/file/NeonFile.vue';
 import NeonFooter from './components/layout/footer/NeonFooter.vue';
 import NeonGrid from './components/layout/grid/NeonGrid.vue';
@@ -36,8 +39,15 @@ import NeonTreeMenuItem from './components/navigation/tree-menu/item/NeonTreeMen
 /* models and utils */
 import { NeonActionMenuModel } from './components/navigation/action-menu/NeonActionMenuModel';
 import { NeonAlertService } from './components/feedback/alert/NeonAlert';
+import { NeonAvailableSpace } from './components/common/NeonAvailableSpace';
 import { NeonButtonStyle } from './components/user-input/button/NeonButtonStyle';
+import { NeonClosableUtils } from './components/common/NeonClosebleUtils';
 import { NeonDateUtils } from './components/common/NeonDateUtils';
+import { NeonDropdownMenuItem } from './components/presentation/dropdown-menu/NeonDropdownMenuItem';
+import { NeonDropdownPlacement } from './components/presentation/dropdown/NeonDropdownPlacement';
+import { NeonDropdownPlacementObject } from './components/presentation/dropdown/NeonDropdownPlacementObject';
+import { NeonDropdownPlacementUtils } from './components/presentation/dropdown/NeonDropdownPlacementUtils';
+import { NeonDropdownStyle } from './components/presentation/dropdown/NeonDropdownStyle';
 import { NeonFormattedDate } from './components/common/NeonFormattedDate';
 import { NeonFunctionalColor } from './components/common/NeonFunctionalColor';
 import { NeonGridModel } from './components/layout/grid/NeonGridModel';
@@ -48,6 +58,8 @@ import { NeonState } from './components/common/NeonState';
 import { NeonMode } from './components/common/NeonMode';
 import { NeonModeUtils } from './components/common/NeonModeUtils';
 import { NeonOrientation } from './components/common/NeonOrientation';
+import { NeonPlacement } from './components/common/NeonPlacement';
+import { NeonPlacementUtils } from './components/common/NeonPlacementUtils';
 import { NeonPosition } from './components/common/NeonPosition';
 import { NeonResponsive } from './components/layout/grid/NeonResponsive';
 import { NeonResponsiveUtils } from './components/common/NeonResponsiveUtils';
@@ -74,7 +86,10 @@ const components: { [s: string]: VueConstructor } = {
   NeonCardFooter,
   NeonCardHeader,
   NeonDrawer,
+  NeonDropdown,
+  NeonDropdownMenu,
   NeonDropZone,
+  NeonExpansionIndicator,
   NeonFile,
   NeonFooter,
   NeonGrid,
@@ -104,6 +119,7 @@ export {
   NeonActionMenuModel,
   NeonAlert,
   NeonAlertService,
+  NeonAvailableSpace,
   NeonBadge,
   NeonButton,
   NeonButtonStyle,
@@ -111,9 +127,18 @@ export {
   NeonCardBody,
   NeonCardFooter,
   NeonCardHeader,
+  NeonClosableUtils,
   NeonDateUtils,
   NeonDrawer,
+  NeonDropdown,
+  NeonDropdownMenu,
+  NeonDropdownMenuItem,
+  NeonDropdownPlacement,
+  NeonDropdownPlacementObject,
+  NeonDropdownPlacementUtils,
+  NeonDropdownStyle,
   NeonDropZone,
+  NeonExpansionIndicator,
   NeonFile,
   NeonFormattedDate,
   NeonFooter,
@@ -129,7 +154,6 @@ export {
   NeonLabel,
   NeonLabelSize,
   NeonLink,
-  NeonState,
   NeonLogo,
   NeonModal,
   NeonMode,
@@ -139,11 +163,14 @@ export {
   NeonOrientation,
   NeonPage,
   NeonPassword,
+  NeonPlacement,
+  NeonPlacementUtils,
   NeonPosition,
   NeonResponsive,
   NeonResponsiveUtils,
   NeonSideNav,
   NeonSize,
+  NeonState,
   NeonSwitch,
   NeonSwitchStyle,
   NeonToggle,

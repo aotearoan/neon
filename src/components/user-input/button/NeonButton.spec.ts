@@ -3,6 +3,7 @@ import { mount, RouterLinkStub } from '@vue/test-utils';
 import NeonIcon from '../../design/icon/NeonIcon.vue';
 import NeonLink from '../../navigation/link/NeonLink.vue';
 import NeonButton from './NeonButton.vue';
+import NeonExpansionIndicator from '../../presentation/expansion-indicator/NeonExpansionIndicator.vue';
 import { NeonSize } from '../../common/NeonSize';
 import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
 import { NeonHorizontalPosition } from '../../common/NeonHorizontalPosition';
@@ -11,6 +12,7 @@ import { NeonState } from '../../common/NeonState';
 
 Vue.component('NeonIcon', NeonIcon);
 Vue.component('NeonLink', NeonLink);
+Vue.component('NeonExpansionIndicator', NeonExpansionIndicator);
 
 describe('NeonButton', () => {
   it('renders label', () => {
@@ -159,6 +161,22 @@ describe('NeonButton', () => {
       propsData: { icon, circular: true },
     });
     expect(wrapper.find('.neon-button--circular').element).toBeDefined();
+  });
+
+  it('renders indicator', () => {
+    const icon = 'check';
+    const wrapper = mount(NeonButton, {
+      propsData: { indicator: true },
+    });
+    expect(wrapper.find('.neon-button__indicator').element).toBeDefined();
+  });
+
+  it('renders indicator expanded', () => {
+    const icon = 'check';
+    const wrapper = mount(NeonButton, {
+      propsData: { indicator: true, indicatorExpanded: true },
+    });
+    expect(wrapper.find('.neon-expansion-indicator--expanded').element).toBeDefined();
   });
 
   it('renders disabled', () => {

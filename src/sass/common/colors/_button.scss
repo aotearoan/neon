@@ -3,6 +3,13 @@ $transparency-button-disabled: 0.3;
 @mixin solid-button($from-color, $to-color) {
   background: linear-gradient($from-color, $to-color);
 
+  &:not(:disabled) {
+    .neon-expansion-indicator__line1,
+    .neon-expansion-indicator__line2 {
+      stroke: $color-button-text;
+    }
+  }
+
   &:hover:not(:disabled) {
     background: linear-gradient(lighten($from-color, 1), lighten($to-color, 1));
   }
@@ -66,10 +73,18 @@ $transparency-button-disabled: 0.3;
           );
         } @else if($color == low-contrast) {
           color: $color-low-contrast-solid-button;
+
           @include solid-button(
             $background-low-contrast-solid-button-light,
             $background-low-contrast-solid-button-dark
           );
+
+          &:not(:disabled) {
+            .neon-expansion-indicator__line1,
+            .neon-expansion-indicator__line2 {
+              stroke: $color-low-contrast-solid-button;
+            }
+          }
         } @else {
           @include solid-button(
             map-get($palette, $background-solid-button-light),
@@ -133,5 +148,13 @@ $transparency-button-disabled: 0.3;
 
   &--no-outline {
     box-shadow: none !important;
+  }
+
+  &--disabled {
+    .neon-button__indicator {
+      line {
+        stroke: $color-disabled-light;
+      }
+    }
   }
 }
