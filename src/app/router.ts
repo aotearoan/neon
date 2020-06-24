@@ -12,16 +12,33 @@ const routes: Array<RouteConfig> = [
   },
   ...Menu.menu.flatMap((item) =>
     item.children
-      ? item.children.map(
-          (child) =>
-            ({
-              path: `/${item.path}/${child.path}`,
-              name: child.name || child.page,
-              component: () => import(`./views/${item.path}/${child.path}/${child.page}.vue`),
-            } as RouteConfig),
-        )
+      ? item.children
+          .filter((child) => child.page)
+          .map(
+            (child) =>
+              ({
+                path: `/${item.path}/${child.path}`,
+                name: child.name || child.page,
+                component: () => import(`./views/${item.path}/${child.path}/${child.page}.vue`),
+              } as RouteConfig),
+          )
       : [],
   ),
+  {
+    path: '/enums/:enum',
+    name: 'Enums',
+    component: () => import(/* webpackChunkName: "source" */ './views/source/Source.vue'),
+  },
+  {
+    path: '/models/:model',
+    name: 'Models',
+    component: () => import(/* webpackChunkName: "source" */ './views/source/Source.vue'),
+  },
+  {
+    path: '/utils/:util',
+    name: 'Utils',
+    component: () => import(/* webpackChunkName: "source" */ './views/source/Source.vue'),
+  },
 ];
 
 const router = new VueRouter({

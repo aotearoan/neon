@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import { NeonPosition } from '../../common/NeonPosition';
+import { NeonPosition } from '../../../common/enums/NeonPosition';
 import NeonDrawer from './NeonDrawer.vue';
 
 describe('NeonDrawer', () => {

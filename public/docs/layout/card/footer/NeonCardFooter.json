@@ -1,0 +1,11 @@
+{
+  "displayName": "NeonCardFooter",
+  "exportName": "default",
+  "description": "",
+  "tags": {},
+  "slots": [
+    {
+      "name": "default"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "exportName": "default",
+  "displayName": "NeonTreeMenu",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "model",
+      "tags": {},
+      "type": {
+        "name": "Array",
+        "elements": [
+          {
+            "name": "NeonTreeMenuModel"
+          }
+        ]
+      },
+      "required": true
+    }
+  ],
+  "events": [
+    {
+      "name": "click",
+      "type": {
+        "names": [
+          "undefined"
+        ]
+      }
+    }
+  ]
+}

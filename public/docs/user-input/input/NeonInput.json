@@ -1,0 +1,129 @@
+{
+  "exportName": "default",
+  "displayName": "NeonInput",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "value",
+      "tags": {},
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "type",
+      "tags": {},
+      "type": {
+        "name": "NeonInputType"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonInputType.Text"
+      }
+    },
+    {
+      "name": "placeholder",
+      "tags": {},
+      "type": {
+        "name": "string"
+      },
+      "required": false
+    },
+    {
+      "name": "size",
+      "tags": {},
+      "type": {
+        "name": "union",
+        "elements": [
+          {
+            "name": "TSTypeReference"
+          },
+          {
+            "name": "TSTypeReference"
+          },
+          {
+            "name": "TSTypeReference"
+          }
+        ]
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "color",
+      "tags": {},
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Primary"
+      }
+    },
+    {
+      "name": "state",
+      "tags": {},
+      "type": {
+        "name": "NeonState"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonState.Ready"
+      }
+    },
+    {
+      "name": "rows",
+      "tags": {},
+      "type": {
+        "name": "number"
+      }
+    },
+    {
+      "name": "icon",
+      "tags": {},
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "pattern",
+      "tags": {},
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "disabled",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "focus"
+    },
+    {
+      "name": "blur"
+    },
+    {
+      "name": "icon-click"
+    },
+    {
+      "name": "input",
+      "type": {
+        "names": [
+          "undefined"
+        ]
+      }
+    }
+  ]
+}

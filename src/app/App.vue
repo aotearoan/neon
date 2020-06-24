@@ -16,15 +16,27 @@
               </ul>
             </div>
           </div>
-          <neon-toggle
-            name="dark-mode-toggle"
-            color="low-contrast"
-            :value="selectedMode"
-            :model="modes"
-            @input="switchMode"
-            :size="isMobile ? 's' : 'm'"
-          >
-          </neon-toggle>
+          <span>
+            <neon-button
+              class="github-link"
+              href="https://github.com/aotearoan/neon"
+              icon="github"
+              label="GitHub"
+              color="primary"
+              button-style="text"
+              :circular="true"
+              :size="isMobile ? 's' : 'm'"
+            />
+            <neon-toggle
+              name="dark-mode-toggle"
+              color="low-contrast"
+              :value="selectedMode"
+              :model="modes"
+              @input="switchMode"
+              :size="isMobile ? 's' : 'm'"
+            >
+            </neon-toggle>
+          </span>
         </neon-top-nav>
       </template>
       <template #content>

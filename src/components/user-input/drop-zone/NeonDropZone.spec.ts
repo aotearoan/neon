@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
 import NeonDropZone from './NeonDropZone.vue';
-import { NeonState } from '../../common/NeonState';
+import { NeonState } from '../../../common/enums/NeonState';
 
 describe('NeonDropZone', () => {
   it('renders slot', () => {

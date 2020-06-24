@@ -1,0 +1,117 @@
+{
+  "description": "<p>A toggle component for selecting one value from a range of options. This is equivalent to a radio button group. It can be styled as a <em>Toggle</em> or as <em>Radio buttons</em>.",
+  "tags": {},
+  "exportName": "default",
+  "displayName": "NeonToggle",
+  "props": [
+    {
+      "name": "name",
+      "tags": {},
+      "description": "The name of the radio button group.",
+      "type": {
+        "name": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "value",
+      "tags": {},
+      "description": "The key of the selected option.",
+      "type": {
+        "name": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "model",
+      "tags": {},
+      "description": "The list of options to present to the user. See <a href=\"/models/NeonToggleModel\">NeonToggleModel</a>.",
+      "type": {
+        "name": "Array",
+        "elements": [
+          {
+            "name": "NeonToggleModel"
+          }
+        ]
+      },
+      "required": true
+    },
+    {
+      "name": "toggleStyle",
+      "tags": {},
+      "description": "The style of toggle to display to the user. See <a href=\"/enums/NeonToggleStyle\">NeonToggleStyle</a>.",
+      "type": {
+        "name": "NeonToggleStyle"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonToggleStyle.Toggle"
+      }
+    },
+    {
+      "name": "size",
+      "tags": {},
+      "description": "The size of the toggle. See <a href=\"/enums/NeonSize\">NeonSize</a>.",
+      "type": {
+        "name": "NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "orientation",
+      "tags": {},
+      "description": "The orientation of the toggle if the style is a radio button group. See <a href=\"/enums/NeonOrientation\">NeonOrientation</a>.",
+      "type": {
+        "name": "NeonOrientation"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonOrientation.Vertical"
+      }
+    },
+    {
+      "name": "color",
+      "tags": {},
+      "description": "The color of the toggle. See <a href=\"/enums/NeonFunctionalColor\">NeonFunctionalColor</a>.",
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Neutral"
+      }
+    },
+    {
+      "name": "disabled",
+      "tags": {},
+      "description": "Whether or not the toggle is disabled.",
+      "type": {
+        "name": "boolean"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "input",
+      "description": "Event triggered when the selected value changes.",
+      "type": {
+        "names": [
+          "undefined"
+        ]
+      },
+      "properties": [
+        {
+          "type": {
+            "names": [
+              "boolean"
+            ]
+          },
+          "description": "The key of the selected <a href=\"/models/NeonToggleModel\">NeonToggleModel</a>."
+        }
+      ]
+    }
+  ]
+}

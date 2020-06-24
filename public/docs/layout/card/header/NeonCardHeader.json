@@ -1,0 +1,11 @@
+{
+  "displayName": "NeonCardHeader",
+  "exportName": "default",
+  "description": "",
+  "tags": {},
+  "slots": [
+    {
+      "name": "default"
+    }
+  ]
+}

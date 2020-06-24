@@ -4,11 +4,11 @@ import NeonIcon from '../../design/icon/NeonIcon.vue';
 import NeonLink from '../../navigation/link/NeonLink.vue';
 import NeonButton from './NeonButton.vue';
 import NeonExpansionIndicator from '../../presentation/expansion-indicator/NeonExpansionIndicator.vue';
-import { NeonSize } from '../../common/NeonSize';
-import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
-import { NeonHorizontalPosition } from '../../common/NeonHorizontalPosition';
-import { NeonButtonStyle } from './NeonButtonStyle';
-import { NeonState } from '../../common/NeonState';
+import { NeonSize } from '../../../common/enums/NeonSize';
+import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { NeonHorizontalPosition } from '../../../common/enums/NeonHorizontalPosition';
+import { NeonButtonStyle } from '../../../common/enums/NeonButtonStyle';
+import { NeonState } from '../../../common/enums/NeonState';
 
 Vue.component('NeonIcon', NeonIcon);
 Vue.component('NeonLink', NeonLink);
@@ -164,7 +164,6 @@ describe('NeonButton', () => {
   });
 
   it('renders indicator', () => {
-    const icon = 'check';
     const wrapper = mount(NeonButton, {
       propsData: { indicator: true },
     });
@@ -172,7 +171,6 @@ describe('NeonButton', () => {
   });
 
   it('renders indicator expanded', () => {
-    const icon = 'check';
     const wrapper = mount(NeonButton, {
       propsData: { indicator: true, indicatorExpanded: true },
     });

@@ -222,9 +222,137 @@ export class Menu {
       ],
     },
     {
-      path: 'common',
+      path: 'enums',
+      name: 'Enums',
+      children: [
+        {
+          path: 'NeonButtonStyle',
+        },
+        {
+          path: 'NeonDropdownPlacement',
+        },
+        {
+          path: 'NeonDropdownStyle',
+        },
+        {
+          path: 'NeonFunctionalColor',
+        },
+        {
+          path: 'NeonHorizontalPosition',
+        },
+        {
+          path: 'NeonInputType',
+        },
+        {
+          path: 'NeonLabelSize',
+        },
+        {
+          path: 'NeonMode',
+        },
+        {
+          path: 'NeonOrientation',
+        },
+        {
+          path: 'NeonPlacement',
+        },
+        {
+          path: 'NeonPosition',
+        },
+        {
+          path: 'NeonResponsive',
+        },
+        {
+          path: 'NeonSize',
+        },
+        {
+          path: 'NeonState',
+        },
+        {
+          path: 'NeonSwitchStyle',
+        },
+        {
+          path: 'NeonToggleStyle',
+        },
+      ],
+    },
+    {
+      path: 'models',
       name: 'Models',
-      component: 'NeonModels',
+      children: [
+        {
+          path: 'NeonActionMenuModel',
+        },
+        {
+          path: 'NeonAvailableSpace',
+        },
+        {
+          path: 'NeonDropdownMenuItem',
+        },
+        {
+          path: 'NeonDropdownPlacementObject',
+        },
+        {
+          path: 'NeonFormattedDate',
+        },
+        {
+          path: 'NeonGridModel',
+        },
+        {
+          path: 'NeonToggleModel',
+        },
+        {
+          path: 'NeonTreeMenuModel',
+        },
+      ],
+    },
+    {
+      path: 'utils',
+      name: 'Utils',
+      children: [
+        {
+          path: 'NeonClosableUtils',
+        },
+        {
+          path: 'NeonDateUtils',
+        },
+        {
+          path: 'NeonDropdownPlacementUtils',
+        },
+        {
+          path: 'NeonIconRegistry',
+        },
+        {
+          path: 'NeonModeUtils',
+        },
+        {
+          path: 'NeonPlacementUtils',
+        },
+        {
+          path: 'NeonResponsiveUtils',
+        },
+        {
+          path: 'RegisterIcons',
+        },
+      ],
     },
   ];
+
+  public static getComponentConfig(componentName: string): MenuModel | null {
+    function findComponent(item: MenuModel, parentPath = ''): MenuModel | null {
+      const path = `${parentPath ? parentPath + '/' : ''}${item.path}`;
+      if (item.component === componentName) {
+        return { ...item, path };
+      } else if (item.children) {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const [head, ...tail] = item.children
+          .map((child) => findComponent(child, path))
+          .filter((child) => child !== null);
+        return head || null;
+      }
+      return null;
+    }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [head, ...tail] = Menu.menu.map((item) => findComponent(item)).filter((item) => item !== null);
+    return head;
+  }
 }

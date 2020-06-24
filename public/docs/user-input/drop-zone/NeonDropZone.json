@@ -1,0 +1,56 @@
+{
+  "displayName": "NeonDropZone",
+  "exportName": "default",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "state",
+      "tags": {},
+      "type": {
+        "name": "union",
+        "elements": [
+          {
+            "name": "TSTypeReference"
+          },
+          {
+            "name": "TSTypeReference"
+          }
+        ]
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonState.Ready"
+      }
+    },
+    {
+      "name": "disabled",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      }
+    },
+    {
+      "name": "circular",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "files",
+      "type": {
+        "names": [
+          "undefined"
+        ]
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "default"
+    }
+  ]
+}

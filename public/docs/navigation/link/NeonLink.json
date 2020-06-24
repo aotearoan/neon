@@ -1,0 +1,33 @@
+{
+  "exportName": "default",
+  "displayName": "NeonLink",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "href",
+      "tags": {},
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "noStyle",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "click"
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "the link's content"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "displayName": "NeonExpansionIndicator",
+  "exportName": "default",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "expanded",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      }
+    },
+    {
+      "name": "color",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 import { Component, Vue } from 'vue-property-decorator';
 import VueI18n from 'vue-i18n';
-import { RegisterIcons } from '@/components/design/icon/RegisterIcons';
+import { RegisterIcons } from '@/common/utils/RegisterIcons';
 import { Menu } from './Menu';
-import { NeonMode } from '@/components/common/NeonMode';
-import { NeonTreeMenuModel } from '@/components/navigation/tree-menu/NeonTreeMenuModel';
+import { NeonMode } from '@/common/enums/NeonMode';
+import { NeonTreeMenuModel } from '@/common/models/NeonTreeMenuModel';
 import {
   NeonDrawer,
   NeonFooter,
@@ -20,7 +20,7 @@ import {
   NeonTreeMenuItem,
   NeonInput,
 } from '@/components';
-import { NeonModeUtils } from '@/components/common/NeonModeUtils';
+import { NeonModeUtils } from '@/common/utils/NeonModeUtils';
 
 export enum Theme {
   Default = 'default',

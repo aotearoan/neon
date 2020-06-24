@@ -1,0 +1,116 @@
+{
+  "exportName": "default",
+  "displayName": "NeonFile",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "disabled",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "directUpload",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "multiple",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "accept",
+      "tags": {},
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "size",
+      "tags": {},
+      "type": {
+        "name": "union",
+        "elements": [
+          {
+            "name": "TSTypeReference"
+          },
+          {
+            "name": "TSTypeReference"
+          },
+          {
+            "name": "TSTypeReference"
+          }
+        ]
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "state",
+      "tags": {},
+      "type": {
+        "name": "NeonState"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonState.Ready"
+      }
+    },
+    {
+      "name": "color",
+      "tags": {},
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Primary"
+      }
+    },
+    {
+      "name": "label",
+      "tags": {},
+      "type": {
+        "name": "TranslateResult"
+      }
+    },
+    {
+      "name": "icon",
+      "tags": {},
+      "type": {
+        "name": "string"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "input",
+      "type": {
+        "names": [
+          "undefined"
+        ]
+      }
+    }
+  ]
+}

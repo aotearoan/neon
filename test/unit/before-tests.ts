@@ -1,2 +1,2 @@
-import { RegisterIcons } from '../../src/components/design/icon/RegisterIcons';
+import { RegisterIcons } from '../../src/common/utils/RegisterIcons';
 RegisterIcons.register();

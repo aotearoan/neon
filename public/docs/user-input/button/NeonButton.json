@@ -1,0 +1,130 @@
+{
+  "exportName": "default",
+  "displayName": "NeonButton",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "href",
+      "tags": {},
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "label",
+      "tags": {},
+      "type": {
+        "name": "TranslateResult"
+      }
+    },
+    {
+      "name": "size",
+      "tags": {},
+      "type": {
+        "name": "NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "color",
+      "tags": {},
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    },
+    {
+      "name": "icon",
+      "tags": {},
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "indicator",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      }
+    },
+    {
+      "name": "indicatorExpanded",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      }
+    },
+    {
+      "name": "iconPosition",
+      "tags": {},
+      "type": {
+        "name": "NeonHorizontalPosition"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonHorizontalPosition.Left"
+      }
+    },
+    {
+      "name": "buttonStyle",
+      "tags": {},
+      "type": {
+        "name": "NeonButtonStyle"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonButtonStyle.Solid"
+      }
+    },
+    {
+      "name": "state",
+      "tags": {},
+      "type": {
+        "name": "NeonState"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonState.Ready"
+      }
+    },
+    {
+      "name": "disabled",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      }
+    },
+    {
+      "name": "outline",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    },
+    {
+      "name": "circular",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      }
+    },
+    {
+      "name": "fullWidth",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      }
+    }
+  ]
+}

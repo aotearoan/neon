@@ -1,0 +1,19 @@
+.source-page {
+  .CodeMirror-cursors {
+    display: none;
+  }
+
+  .CodeMirror {
+    border-radius: $border-radius;
+
+    span {
+      display: inline;
+    }
+
+    .CodeMirror-code {
+      pre.CodeMirror-line {
+        background-color: transparent;
+      }
+    }
+  }
+}

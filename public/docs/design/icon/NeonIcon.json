@@ -1,0 +1,23 @@
+{
+  "displayName": "NeonIcon",
+  "exportName": "default",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "name",
+      "tags": {},
+      "type": {
+        "name": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "color",
+      "tags": {},
+      "type": {
+        "name": "NeonFunctionalColor"
+      }
+    }
+  ]
+}

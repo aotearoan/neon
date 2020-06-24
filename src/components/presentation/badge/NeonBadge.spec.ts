@@ -2,8 +2,8 @@ import Vue from 'vue';
 import { mount } from '@vue/test-utils';
 import NeonIcon from '../../design/icon/NeonIcon.vue';
 import NeonBadge from './NeonBadge.vue';
-import { NeonSize } from '../../common/NeonSize';
-import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
+import { NeonSize } from '../../../common/enums/NeonSize';
+import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 
 Vue.component('NeonIcon', NeonIcon);
 

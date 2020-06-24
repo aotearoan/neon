@@ -1,0 +1,39 @@
+{
+  "exportName": "default",
+  "displayName": "NeonActionMenu",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "model",
+      "tags": {},
+      "type": {
+        "name": "Array",
+        "elements": [
+          {
+            "name": "NeonActionMenuModel"
+          }
+        ]
+      },
+      "required": true
+    },
+    {
+      "name": "value",
+      "tags": {},
+      "type": {
+        "name": "string"
+      },
+      "required": true
+    }
+  ],
+  "events": [
+    {
+      "name": "input",
+      "type": {
+        "names": [
+          "undefined"
+        ]
+      }
+    }
+  ]
+}

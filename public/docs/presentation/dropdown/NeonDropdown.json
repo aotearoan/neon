@@ -1,0 +1,119 @@
+{
+  "displayName": "NeonDropdown",
+  "exportName": "default",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "value",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      },
+      "required": true
+    },
+    {
+      "name": "label",
+      "tags": {},
+      "type": {
+        "name": "TranslateResult"
+      }
+    },
+    {
+      "name": "icon",
+      "tags": {},
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "indicator",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    },
+    {
+      "name": "disabled",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      }
+    },
+    {
+      "name": "size",
+      "tags": {},
+      "type": {
+        "name": "NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "color",
+      "tags": {},
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    },
+    {
+      "name": "dropdownStyle",
+      "tags": {},
+      "type": {
+        "name": "NeonDropdownStyle"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonDropdownStyle.SolidButton"
+      }
+    },
+    {
+      "name": "placement",
+      "tags": {},
+      "description": "Placement of the dropdown contents.",
+      "type": {
+        "name": "NeonDropdownPlacement"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonDropdownPlacement.BottomLeft"
+      }
+    },
+    {
+      "name": "placementContainer",
+      "tags": {},
+      "description": "Restrict placement to within this container.",
+      "type": {
+        "name": "HTMLElement"
+      },
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "input",
+      "description": "close event is emitted when the modal is closed.",
+      "type": {
+        "names": [
+          "undefined"
+        ]
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "This slot is for the dropdown contents."
+    }
+  ]
+}

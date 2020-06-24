@@ -1,0 +1,29 @@
+.api-docs {
+  &__event-badge {
+    border-color: $border-color;
+
+    .api-docs__event-returns-label {
+      border-color: $border-color;
+    }
+  }
+
+  &__card {
+    border-color: $border-color;
+
+    .api-docs__card-header {
+      border-color: $border-color;
+    }
+
+    .api-docs__card-description {
+      border-color: $border-color;
+    }
+
+    dl {
+      border-color: $border-color;
+    }
+
+    dt {
+      color: $label-color;
+    }
+  }
+}

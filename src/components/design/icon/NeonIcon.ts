@@ -1,6 +1,6 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { NeonIconRegistry } from './NeonIconRegistry';
-import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
+import { NeonIconRegistry } from '../../../common/utils/NeonIconRegistry';
+import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 
 @Component
 export default class NeonIcon extends Vue {

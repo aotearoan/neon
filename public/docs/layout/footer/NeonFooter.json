@@ -1,0 +1,11 @@
+{
+  "displayName": "NeonFooter",
+  "exportName": "default",
+  "description": "",
+  "tags": {},
+  "slots": [
+    {
+      "name": "default"
+    }
+  ]
+}

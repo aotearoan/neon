@@ -1,0 +1,23 @@
+{
+  "displayName": "NeonSideNav",
+  "exportName": "default",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "fullWidth",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "sticky"
+    },
+    {
+      "name": "scrolling"
+    }
+  ]
+}

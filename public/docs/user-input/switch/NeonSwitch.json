@@ -1,0 +1,91 @@
+{
+  "description": "<p>\nA Switch or Checkbox component used to indicate an on/off state. This is equivalent to a checkbox. The switch supports\nboth <em>Switch</em> and <em>Checkbox</em> styles which can be used in different scenarios.\n</p>",
+  "tags": {},
+  "exportName": "default",
+  "displayName": "NeonSwitch",
+  "props": [
+    {
+      "name": "value",
+      "tags": {},
+      "description": "The switch model.",
+      "type": {
+        "name": "boolean"
+      },
+      "required": true
+    },
+    {
+      "name": "label",
+      "tags": {},
+      "description": "The switch label",
+      "type": {
+        "name": "TranslateResult"
+      },
+      "required": true
+    },
+    {
+      "name": "size",
+      "tags": {},
+      "description": "The size of the switch. See <a href=\"/enums/NeonSize\">NeonSize</a>.",
+      "type": {
+        "name": "NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "color",
+      "tags": {},
+      "description": "The switch color. See <a href=\"/enums/NeonFunctionalColor\">NeonFunctionalColor</a>.",
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Primary"
+      }
+    },
+    {
+      "name": "switchStyle",
+      "tags": {},
+      "description": "Style the switch as a <em>Switch</em> or a <em>Checkbox</em>. See <a href=\"/enums/NeonSwitchStyle\">NeonSwitchStyle</a>.",
+      "type": {
+        "name": "NeonSwitchStyle"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSwitchStyle.Switch"
+      }
+    },
+    {
+      "name": "disabled",
+      "tags": {},
+      "description": "Disabled state of the switch.",
+      "type": {
+        "name": "boolean"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "input",
+      "description": "Event triggered when the switch is toggled checked or unchecked.",
+      "type": {
+        "names": [
+          "undefined"
+        ]
+      },
+      "properties": [
+        {
+          "type": {
+            "names": [
+              "boolean"
+            ]
+          },
+          "description": "The checked state of the switch."
+        }
+      ]
+    }
+  ]
+}

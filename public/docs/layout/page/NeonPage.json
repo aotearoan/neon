@@ -1,0 +1,14 @@
+{
+  "displayName": "NeonPage",
+  "exportName": "default",
+  "description": "",
+  "tags": {},
+  "slots": [
+    {
+      "name": "top-nav"
+    },
+    {
+      "name": "content"
+    }
+  ]
+}

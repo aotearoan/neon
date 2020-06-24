@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import { mount, shallowMount } from '@vue/test-utils';
-import { NeonSize } from '../../common/NeonSize';
-import { NeonSwitchStyle } from './NeonSwitchStyle';
-import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
+import { NeonSize } from '../../../common/enums/NeonSize';
+import { NeonSwitchStyle } from '../../../common/enums/NeonSwitchStyle';
+import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import NeonSwitch from './NeonSwitch.vue';
 import NeonIcon from '../../design/icon/NeonIcon.vue';
 

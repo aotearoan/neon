@@ -1,5 +1,5 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { NeonFunctionalColor } from '@/components/common/NeonFunctionalColor';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 @Component
 export default class NeonExpansionIndicator extends Vue {

@@ -1,4 +1,4 @@
-@mixin switch-style($size) {
+@mixin switch-style($size, $indicator-size) {
   height: $size;
 
   $switch-height: 0.625 * $size;
@@ -13,8 +13,8 @@
     }
 
     .neon-switch__indicator {
-      height: 0.8 * $switch-height;
-      width: 0.8 * $switch-height;
+      height: $indicator-size;
+      width: $indicator-size;
       left: 0;
       transition: left $animation-speed-slow ease-in;
     }
@@ -66,15 +66,15 @@
 
   &--switch {
     &.neon-switch--s {
-      @include switch-style($size-s);
+      @include switch-style($size-s, 16px);
     }
 
     &.neon-switch--m {
-      @include switch-style($size-m);
+      @include switch-style($size-m, 21px);
     }
 
     &.neon-switch--l {
-      @include switch-style($size-l);
+      @include switch-style($size-l, 26px);
     }
 
     .neon-switch__switch {
@@ -82,13 +82,13 @@
       display: inline-flex;
       position: relative;
       align-items: center;
-      border-radius: $border-radius;
+      border-radius: 4 * $base-space;
     }
 
     .neon-switch__indicator {
       display: flex;
       position: relative;
-      border-radius: $border-radius;
+      border-radius: 50%;
     }
   }
 

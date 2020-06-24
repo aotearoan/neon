@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
 import NeonIcon from './NeonIcon.vue';
-import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
+import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 
 describe('NeonIcon', () => {
   const name = 'check';

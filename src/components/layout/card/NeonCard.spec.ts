@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils';
 import NeonCard from './NeonCard.vue';
-import { NeonOrientation } from '../../common/NeonOrientation';
-import { NeonResponsive } from '../../layout/grid/NeonResponsive';
+import { NeonOrientation } from '../../../common/enums/NeonOrientation';
+import { NeonResponsive } from '../../../common/enums/NeonResponsive';
 
 describe('NeonCard', () => {
   it('renders orientation class', () => {

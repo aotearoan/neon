@@ -2,9 +2,9 @@ import Vue from 'vue';
 import { mount } from '@vue/test-utils';
 import NeonIcon from '../../design/icon/NeonIcon.vue';
 import NeonLabel from './NeonLabel.vue';
-import { NeonLabelSize } from './NeonLabelSize';
-import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
-import { NeonHorizontalPosition } from '../../common/NeonHorizontalPosition';
+import { NeonLabelSize } from '../../../common/enums/NeonLabelSize';
+import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { NeonHorizontalPosition } from '../../../common/enums/NeonHorizontalPosition';
 
 Vue.component('NeonIcon', NeonIcon);
 

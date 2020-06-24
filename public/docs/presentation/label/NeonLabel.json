@@ -1,0 +1,62 @@
+{
+  "exportName": "default",
+  "displayName": "NeonLabel",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "label",
+      "tags": {},
+      "type": {
+        "name": "TranslateResult"
+      }
+    },
+    {
+      "name": "icon",
+      "tags": {},
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "iconPosition",
+      "tags": {},
+      "type": {
+        "name": "NeonHorizontalPosition"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonHorizontalPosition.Left"
+      }
+    },
+    {
+      "name": "outline",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      }
+    },
+    {
+      "name": "size",
+      "tags": {},
+      "type": {
+        "name": "NeonLabelSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonLabelSize.Small"
+      }
+    },
+    {
+      "name": "color",
+      "tags": {},
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Neutral"
+      }
+    }
+  ]
+}

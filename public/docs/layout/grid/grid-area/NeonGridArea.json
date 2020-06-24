@@ -1,0 +1,23 @@
+{
+  "displayName": "NeonGridArea",
+  "exportName": "default",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "id",
+      "tags": {},
+      "description": "identifier of the grid area (this should match a named area in the grid layout)",
+      "type": {
+        "name": "string"
+      },
+      "required": true
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "This slot is for grid area content"
+    }
+  ]
+}

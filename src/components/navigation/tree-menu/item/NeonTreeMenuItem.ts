@@ -1,5 +1,5 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { NeonTreeMenuModel } from '../NeonTreeMenuModel';
+import { NeonTreeMenuModel } from '../../../../common/models/NeonTreeMenuModel';
 import NeonLink from '@/components/navigation/link/NeonLink.vue';
 
 @Component({

@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils';
 import NeonGrid from './NeonGrid.vue';
-import { NeonResponsive } from '../../layout/grid/NeonResponsive';
+import { NeonResponsive } from '../../../common/enums/NeonResponsive';
 
 describe('NeonGrid', () => {
   const id = 'grid1';

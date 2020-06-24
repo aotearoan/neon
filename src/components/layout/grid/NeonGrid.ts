@@ -1,6 +1,6 @@
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
-import { NeonGridModel } from './NeonGridModel';
-import { NeonResponsiveUtils } from '../../common/NeonResponsiveUtils';
+import { NeonGridModel } from '../../../common/models/NeonGridModel';
+import { NeonResponsiveUtils } from '../../../common/utils/NeonResponsiveUtils';
 
 @Component
 export class NeonGrid extends Vue {

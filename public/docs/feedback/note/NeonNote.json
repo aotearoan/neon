@@ -1,0 +1,47 @@
+{
+  "exportName": "default",
+  "displayName": "NeonNote",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "color",
+      "tags": {},
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    },
+    {
+      "name": "closable",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      }
+    },
+    {
+      "name": "icon",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "close-note"
+    }
+  ],
+  "slots": [
+    {
+      "name": "default"
+    }
+  ]
+}

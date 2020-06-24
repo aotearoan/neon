@@ -1,0 +1,15 @@
+{
+  "displayName": "NeonNotificationCounter",
+  "exportName": "default",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "count",
+      "tags": {},
+      "type": {
+        "name": "number"
+      }
+    }
+  ]
+}

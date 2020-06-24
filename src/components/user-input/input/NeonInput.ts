@@ -1,8 +1,8 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { NeonInputType } from './NeonInputType';
-import { NeonState } from '../../common/NeonState';
-import { NeonSize } from '../../common/NeonSize';
-import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
+import { NeonInputType } from '../../../common/enums/NeonInputType';
+import { NeonState } from '../../../common/enums/NeonState';
+import { NeonSize } from '../../../common/enums/NeonSize';
+import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 
 @Component({})
 export default class NeonInput extends Vue {

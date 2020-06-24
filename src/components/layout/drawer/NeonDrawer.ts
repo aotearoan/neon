@@ -1,6 +1,6 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { NeonPosition } from '../../common/NeonPosition';
-import { NeonClosableUtils } from '@/components/common/NeonClosebleUtils';
+import { NeonPosition } from '../../../common/enums/NeonPosition';
+import { NeonClosableUtils } from '@/common/utils/NeonClosableUtils';
 
 @Component
 export default class NeonDrawer extends Vue {

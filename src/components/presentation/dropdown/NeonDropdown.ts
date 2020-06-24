@@ -1,11 +1,11 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { NeonDropdownPlacement } from './NeonDropdownPlacement';
-import { NeonDropdownPlacementUtils } from './NeonDropdownPlacementUtils';
-import { NeonClosableUtils } from '../../common/NeonClosebleUtils';
+import { NeonDropdownPlacement } from '../../../common/enums/NeonDropdownPlacement';
+import { NeonDropdownPlacementUtils } from '../../../common/utils/NeonDropdownPlacementUtils';
+import { NeonClosableUtils } from '../../../common/utils/NeonClosableUtils';
 import { TranslateResult } from 'vue-i18n';
-import { NeonSize } from '../../common/NeonSize';
-import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
-import { NeonDropdownStyle } from '@/components/presentation/dropdown/NeonDropdownStyle';
+import { NeonSize } from '../../../common/enums/NeonSize';
+import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { NeonDropdownStyle } from '@/common/enums/NeonDropdownStyle';
 
 @Component
 export default class NeonDropdown extends Vue {

@@ -2,10 +2,10 @@ import Vue from 'vue';
 import { mount, shallowMount } from '@vue/test-utils';
 import NeonIcon from '../../design/icon/NeonIcon.vue';
 import NeonInput from './NeonInput.vue';
-import { NeonInputType } from './NeonInputType';
-import { NeonSize } from '../../common/NeonSize';
-import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
-import { NeonState } from '../../common/NeonState';
+import { NeonInputType } from '../../../common/enums/NeonInputType';
+import { NeonSize } from '../../../common/enums/NeonSize';
+import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { NeonState } from '../../../common/enums/NeonState';
 
 Vue.component('NeonIcon', NeonIcon);
 

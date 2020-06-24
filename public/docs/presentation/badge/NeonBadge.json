@@ -1,0 +1,58 @@
+{
+  "exportName": "default",
+  "displayName": "NeonBadge",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "label",
+      "tags": {},
+      "type": {
+        "name": "TranslateResult"
+      }
+    },
+    {
+      "name": "image",
+      "tags": {},
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "icon",
+      "tags": {},
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "circular",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      }
+    },
+    {
+      "name": "size",
+      "tags": {},
+      "type": {
+        "name": "NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "color",
+      "tags": {},
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Neutral"
+      }
+    }
+  ]
+}

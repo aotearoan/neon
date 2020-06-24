@@ -1,0 +1,43 @@
+{
+  "displayName": "NeonCard",
+  "exportName": "default",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "orientation",
+      "tags": {},
+      "type": {
+        "name": "NeonOrientation"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonOrientation.Vertical"
+      }
+    },
+    {
+      "name": "horizontalBreakpoint",
+      "tags": {},
+      "type": {
+        "name": "union",
+        "elements": [
+          {
+            "name": "TSTypeReference"
+          },
+          {
+            "name": "TSTypeReference"
+          }
+        ]
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonResponsive.Mobile"
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "default"
+    }
+  ]
+}

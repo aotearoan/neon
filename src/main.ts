@@ -7,12 +7,10 @@ import App from './app/App.vue';
 import './registerServiceWorker';
 import router from './app/router';
 import VRuntimeTemplate from 'v-runtime-template';
-import Example from './app/components/Example.vue';
 
 Vue.config.productionTip = false;
 Vue.use(VueCodemirror);
 Vue.component('VRuntimeTemplate', VRuntimeTemplate);
-Vue.component('Example', Example);
 
 new Vue({
   router,

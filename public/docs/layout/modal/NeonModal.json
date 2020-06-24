@@ -1,0 +1,43 @@
+{
+  "displayName": "NeonModal",
+  "exportName": "default",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "open",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      },
+      "required": true
+    },
+    {
+      "name": "dismissable",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "close",
+      "description": "close event is emitted when the element is closed.",
+      "type": {
+        "names": [
+          "void"
+        ]
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "default"
+    }
+  ]
+}

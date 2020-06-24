@@ -1,0 +1,61 @@
+{
+  "displayName": "NeonDrawer",
+  "exportName": "default",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "fullWidth",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      }
+    },
+    {
+      "name": "open",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      },
+      "required": true
+    },
+    {
+      "name": "position",
+      "tags": {},
+      "type": {
+        "name": "NeonPosition"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonPosition.Left"
+      }
+    },
+    {
+      "name": "overlay",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "close",
+      "description": "close event is emitted when the element is closed.",
+      "type": {
+        "names": [
+          "void"
+        ]
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "default"
+    }
+  ]
+}

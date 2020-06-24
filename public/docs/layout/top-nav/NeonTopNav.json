@@ -1,0 +1,11 @@
+{
+  "displayName": "NeonTopNav",
+  "exportName": "default",
+  "description": "",
+  "tags": {},
+  "slots": [
+    {
+      "name": "default"
+    }
+  ]
+}

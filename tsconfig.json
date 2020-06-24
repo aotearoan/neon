@@ -15,7 +15,8 @@
     "declarationDir": "./dist/@aotearoan",
     "types": [
       "webpack-env",
-      "jest"
+      "jest",
+      "node"
     ],
     "paths": {
       "@/*": [
@@ -34,7 +35,9 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx",
+    "node_modules/@types/node/globals.d.ts",
+    "node_modules/@types/node/globals.d.ts"
   ],
   "exclude": [
     "node_modules"

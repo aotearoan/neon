@@ -1,0 +1,18 @@
+table {
+  thead {
+    tr {
+      th {
+        border-bottom: $border-width $border-style $label-color;
+        color: $label-color;
+      }
+    }
+  }
+
+  tbody {
+    tr:hover {
+      background-color: rgba($color-text-low-contrast, 0.125);
+    }
+  }
+
+  border-bottom: $border-width $border-style $label-color;
+}

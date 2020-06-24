@@ -1,12 +1,12 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { TranslateResult } from 'vue-i18n';
-import { NeonSize } from '../../common/NeonSize';
-import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
-import { NeonButtonStyle } from './NeonButtonStyle';
-import { NeonHorizontalPosition } from '../../common/NeonHorizontalPosition';
+import { NeonSize } from '../../../common/enums/NeonSize';
+import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { NeonButtonStyle } from '../../../common/enums/NeonButtonStyle';
+import { NeonHorizontalPosition } from '../../../common/enums/NeonHorizontalPosition';
 import NeonIcon from '../../design/icon/NeonIcon.vue';
 import NeonLink from '../../navigation/link/NeonLink.vue';
-import { NeonState } from '../../common/NeonState';
+import { NeonState } from '../../../common/enums/NeonState';
 
 @Component({
   components: {

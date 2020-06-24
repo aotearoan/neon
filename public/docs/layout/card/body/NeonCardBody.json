@@ -1,0 +1,24 @@
+{
+  "displayName": "NeonCardBody",
+  "exportName": "default",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "fullWidth",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "default"
+    }
+  ]
+}

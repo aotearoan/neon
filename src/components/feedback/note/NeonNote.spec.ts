@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { mount } from '@vue/test-utils';
 import NeonNote from './NeonNote.vue';
-import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
+import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import NeonButton from '../../user-input/button/NeonButton.vue';
 import NeonIcon from '../../design/icon/NeonIcon.vue';
 

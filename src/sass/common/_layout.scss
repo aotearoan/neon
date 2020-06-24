@@ -24,6 +24,11 @@ span {
   flex-wrap: wrap;
   align-items: center;
   @include margin-vertical;
+
+  @include responsive(tablet) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .neon-space-evenly {

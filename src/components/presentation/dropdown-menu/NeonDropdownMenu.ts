@@ -1,6 +1,6 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { NeonDropdownMenuItem } from './NeonDropdownMenuItem';
-import { NeonSize } from '../../common/NeonSize';
+import { NeonDropdownMenuItem } from '../../../common/models/NeonDropdownMenuItem';
+import { NeonSize } from '../../../common/enums/NeonSize';
 
 @Component
 export default class NeonDropdownMenu extends Vue {

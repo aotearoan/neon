@@ -1,8 +1,8 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { TranslateResult } from 'vue-i18n';
-import { NeonLabelSize } from './NeonLabelSize';
-import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
-import { NeonHorizontalPosition } from '../../common/NeonHorizontalPosition';
+import { NeonLabelSize } from '../../../common/enums/NeonLabelSize';
+import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { NeonHorizontalPosition } from '../../../common/enums/NeonHorizontalPosition';
 import NeonIcon from '@/components/design/icon/NeonIcon.vue';
 
 @Component({

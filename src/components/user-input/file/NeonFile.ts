@@ -1,7 +1,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { NeonSize } from '../../common/NeonSize';
-import { NeonFunctionalColor } from '../../common/NeonFunctionalColor';
-import { NeonState } from '../../common/NeonState';
+import { NeonSize } from '../../../common/enums/NeonSize';
+import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { NeonState } from '../../../common/enums/NeonState';
 import { TranslateResult } from 'vue-i18n';
 
 @Component({})

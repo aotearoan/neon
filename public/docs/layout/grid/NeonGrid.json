@@ -1,0 +1,35 @@
+{
+  "displayName": "NeonGrid",
+  "exportName": "default",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "layouts",
+      "tags": {},
+      "description": "The grid layouts",
+      "type": {
+        "name": "Array",
+        "elements": [
+          {
+            "name": "NeonGridModel"
+          }
+        ]
+      }
+    },
+    {
+      "name": "id",
+      "tags": {},
+      "description": "id of the grid, should be unique on the page",
+      "type": {
+        "name": "string"
+      },
+      "required": true
+    }
+  ],
+  "slots": [
+    {
+      "name": "default"
+    }
+  ]
+}

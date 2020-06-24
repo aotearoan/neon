@@ -1,5 +1,5 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { NeonClosableUtils } from '../../common/NeonClosebleUtils';
+import { NeonClosableUtils } from '../../../common/utils/NeonClosableUtils';
 
 @Component
 export default class NeonModal extends Vue {
