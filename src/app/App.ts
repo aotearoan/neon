@@ -1,9 +1,9 @@
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Watch } from 'vue-property-decorator';
 import VueI18n from 'vue-i18n';
 import { RegisterIcons } from '@/common/utils/RegisterIcons';
 import { Menu } from './Menu';
 import { NeonMode } from '@/common/enums/NeonMode';
-import { NeonTreeMenuModel } from '@/common/models/NeonTreeMenuModel';
+import { NeonTreeMenuLinkModel, NeonTreeMenuSectionModel } from '@/common/models/NeonTreeMenuModel';
 import {
   NeonDrawer,
   NeonFooter,
@@ -17,10 +17,10 @@ import {
   NeonSwitch,
   NeonTopNav,
   NeonTreeMenu,
-  NeonTreeMenuItem,
   NeonInput,
 } from '@/components';
 import { NeonModeUtils } from '@/common/utils/NeonModeUtils';
+import { Route } from 'vue-router';
 
 export enum Theme {
   Default = 'default',
@@ -37,7 +37,6 @@ Vue.use(VueI18n);
     NeonPage,
     NeonSideNav,
     NeonTreeMenu,
-    NeonTreeMenuItem,
     NeonFooter,
     NeonGrid,
     NeonGridArea,
@@ -48,6 +47,7 @@ Vue.use(VueI18n);
 export default class App extends Vue {
   public theme = Theme.Default;
   public selectedMode = NeonMode.Dark;
+  private indexModel: NeonTreeMenuSectionModel[] = [];
   private indexFilter = '';
   private menuOpen = false;
   private isMobile = false;
@@ -57,6 +57,20 @@ export default class App extends Vue {
     NeonModeUtils.addListener('app-mode-listener', this.switchMode);
     window.addEventListener('resize', this.handleResize);
     this.handleResize();
+
+    this.indexModel = Menu.menu.map((item) => ({
+      label: item.name || item.page || item.path,
+      key: item.path,
+      group: item.group,
+      children: item.children
+        ? item.children.map((child) => ({
+            label: child.name || child.page || child.path,
+            key: child.path,
+            keywords: child.keywords,
+            href: `/${item.path}/${child.path}`,
+          }))
+        : [],
+    }));
   }
 
   public beforeDestroy() {
@@ -95,57 +109,82 @@ export default class App extends Vue {
     this.selectedMode = mode;
   }
 
-  private indexModel(): NeonTreeMenuModel[] {
-    return Menu.menu.map((item) => ({
-      label: item.name || item.page || item.path,
-      key: item.path,
-      keywords: item.keywords,
-      children: item.children
-        ? item.children.map((child) => ({
-            label: child.name || child.page || child.path,
-            key: child.path,
-            keywords: child.keywords,
-            href: `/${item.path}/${child.path}`,
-          }))
-        : [],
-    }));
+  @Watch('$route', { immediate: true })
+  private watchRoute(to: Route) {
+    const key = to.path.split('/')[1];
+    this.indexModel
+      .filter((item) => item.key === key)
+      .forEach((item) => {
+        item.expanded = true;
+      });
+    this.indexModel = [...this.indexModel];
   }
 
-  get filteredModel(): NeonTreeMenuModel[] {
-    const items: NeonTreeMenuModel[] = [];
-    this.indexModel().forEach((item) => {
-      const filteredItem = this.filterModel(item);
-      if (filteredItem) {
-        items.push(filteredItem);
-      }
-    });
-    return items;
-  }
+  get filteredModel(): NeonTreeMenuSectionModel[] {
+    const items: NeonTreeMenuSectionModel[] = [];
 
-  private filterModel(item: NeonTreeMenuModel): NeonTreeMenuModel | undefined {
-    if (!this.indexFilter || this.indexFilter.length === 0) {
-      return item;
+    if (this.indexFilter && this.indexFilter.length > 0) {
+      this.indexModel.forEach((item) => {
+        const filteredItem = this.filterSection(item);
+        if (filteredItem) {
+          items.push(filteredItem);
+        }
+      });
     } else {
-      const children: NeonTreeMenuModel[] = [];
-      if (item.children) {
-        item.children.forEach((child) => {
-          const filteredChild = this.filterModel(child);
-          if (filteredChild) {
-            children.push(filteredChild);
-          }
-        });
-      }
-
-      const searchString = item.label.toString() + (item.keywords ? item.keywords.toString() : '');
-      return children.length > 0
-        ? { ...item, children }
-        : searchString.toLowerCase().indexOf(this.indexFilter) >= 0
-        ? item
-        : undefined;
+      items.push(...this.indexModel);
     }
+
+    // filter out repeated group labels (it's necessary to include them before each section for filtering purposes)
+    return items.map((item, index) => {
+      const previousItem = items[index - 1];
+      return previousItem && previousItem.group && previousItem.group === item.group
+        ? { ...item, group: undefined }
+        : item;
+    });
   }
 
-  private onMenuClick() {
+  get expandAll() {
+    return this.indexFilter && this.indexFilter.length > 0;
+  }
+
+  private filterSection(item: NeonTreeMenuSectionModel): NeonTreeMenuSectionModel | undefined {
+    const children: NeonTreeMenuLinkModel[] = [];
+    if (item.children) {
+      item.children.forEach((child) => {
+        const filteredChild = this.filterLink(child);
+        if (filteredChild) {
+          children.push(filteredChild);
+        }
+      });
+    }
+
+    return children.length > 0
+      ? { ...item, children }
+      : item.label.toString().toLowerCase().indexOf(this.indexFilter) >= 0
+      ? item
+      : undefined;
+  }
+
+  private filterLink(item: NeonTreeMenuLinkModel): NeonTreeMenuLinkModel | undefined {
+    const searchString = item.label.toString() + (item.keywords ? item.keywords.toString() : '');
+    return searchString.toLowerCase().indexOf(this.indexFilter) >= 0 ? item : undefined;
+  }
+
+  private toggleExpand(key: string) {
+    this.indexModel
+      .filter((item) => item.key === key)
+      .forEach((item) => {
+        item.expanded = !item.expanded;
+      });
+    this.indexModel = [...this.indexModel];
+  }
+
+  private onSideNavMenuClick(key: string) {
+    this.toggleExpand(key);
+  }
+
+  private onInlineMenuClick(key: string) {
+    this.toggleExpand(key);
     setTimeout(() => {
       this.menuOpen = false;
     }, 225);

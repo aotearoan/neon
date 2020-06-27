@@ -1,45 +1,59 @@
 .neon-tree-menu {
+  &__section-link,
   &__link {
     display: flex;
     width: 100%;
     letter-spacing: $component-letter-spacing-s;
     border-radius: $border-radius;
-    padding-left: 2 * $base-space;
     padding-top: 0.5 * $base-space;
     padding-bottom: 0.5 * $base-space;
-    margin: 0.5 * $base-space 0;
+    margin: 0;
     text-decoration: none;
     user-select: none;
-    font-size: $font-size-s;
+    cursor: pointer;
+  }
 
-    &.neon-tree-menu__link--no-click {
-      cursor: default;
+  .neon-tree-menu__section {
+    font-weight: 600;
+
+    & > .neon-tree-menu__link {
+      font-size: $base-font-size;
+    }
+
+    .neon-tree-menu__links {
+      margin-bottom: 2 * $base-space;
+      display: none;
+    }
+
+    &--expanded {
+      .neon-tree-menu__links {
+        display: flex;
+      }
+    }
+
+    &--separator-before {
+      margin-top: 6 * $base-space;
+
+      hr {
+        margin-top: 0;
+        margin-bottom: 2 * $base-space;
+      }
     }
   }
 
-  .neon-tree-menu-item {
-    &--depth-0 {
-      font-weight: 600;
-      margin-bottom: 2 * $base-space;
+  .neon-tree-menu__link-item {
+    font-weight: 300;
 
-      & > .neon-tree-menu__link {
-        font-size: $base-font-size;
-      }
+    .neon-tree-menu__link {
+      margin-bottom: 0.5 * $base-space;
+      padding-left: 4 * $base-space;
     }
+  }
 
-    &--depth-1 {
-      font-weight: 400;
-
-      a.neon-link.neon-tree-menu__link {
-        padding-left: 4 * $base-space;
-      }
-    }
-
-    &--depth-2 {
-      font-weight: 200;
-
-      a.neon-link.neon-tree-menu__link {
-        padding-left: 8 * $base-space;
+  &.neon-tree-menu--expand-all {
+    .neon-tree-menu__section {
+      .neon-tree-menu__links {
+        display: flex;
       }
     }
   }

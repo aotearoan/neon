@@ -1,7 +1,33 @@
 <template>
-  <nav class="neon-tree-menu">
+  <nav v-if="model" class="neon-tree-menu" :class="{ 'neon-tree-menu--expand-all': expandAll }">
     <ul class="no-style">
-      <neon-tree-menu-item v-for="item in model" :key="item.key" :model="item" @click="onClick(item.key)" />
+      <li
+        v-for="section in model"
+        :key="section.key + section.expanded"
+        class="neon-tree-menu__section"
+        :class="{
+          'neon-tree-menu__section--expanded': section.expanded,
+          'neon-tree-menu__section--separator-before': section.group,
+        }"
+      >
+        <label v-if="section.group">{{ section.group }}</label>
+        <hr v-if="section.group" />
+        <neon-link :no-style="true" class="neon-tree-menu__section-link" @click.native="onClick(section.key)">{{
+          section.label
+        }}</neon-link>
+        <ul class="no-style neon-tree-menu__links">
+          <li class="neon-tree-menu__link-item">
+            <neon-link
+              v-for="link in section.children"
+              :key="link.key"
+              :no-style="true"
+              :href="link.href"
+              class="neon-tree-menu__link"
+              >{{ link.label }}</neon-link
+            >
+          </li>
+        </ul>
+      </li>
     </ul>
   </nav>
 </template>

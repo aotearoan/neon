@@ -5,13 +5,24 @@
   "tags": {},
   "props": [
     {
+      "name": "expandAll",
+      "tags": {},
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
       "name": "model",
       "tags": {},
       "type": {
         "name": "Array",
         "elements": [
           {
-            "name": "NeonTreeMenuModel"
+            "name": "NeonTreeMenuSectionModel"
           }
         ]
       },

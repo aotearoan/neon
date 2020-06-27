@@ -6,6 +6,7 @@ export interface MenuModel {
   keywords?: string;
   name?: TranslateResult;
   component?: string;
+  group?: TranslateResult;
   children?: MenuModel[];
 }
 
@@ -14,6 +15,7 @@ export class Menu {
     {
       path: 'design',
       name: 'Design',
+      group: 'Components',
       children: [
         {
           path: 'color',
@@ -44,6 +46,7 @@ export class Menu {
     {
       path: 'feedback',
       name: 'Feedback',
+      group: 'Components',
       children: [
         {
           path: 'alert',
@@ -60,6 +63,7 @@ export class Menu {
     {
       path: 'layout',
       name: 'Layout',
+      group: 'Components',
       children: [
         {
           path: 'card',
@@ -110,6 +114,7 @@ export class Menu {
     {
       path: 'navigation',
       name: 'Navigation',
+      group: 'Components',
       children: [
         {
           path: 'action-menu',
@@ -133,6 +138,7 @@ export class Menu {
     {
       path: 'presentation',
       name: 'Presentation',
+      group: 'Components',
       children: [
         {
           path: 'badge',
@@ -176,6 +182,7 @@ export class Menu {
     {
       path: 'user-input',
       name: 'User Input',
+      group: 'Components',
       children: [
         {
           path: 'button',
@@ -224,6 +231,7 @@ export class Menu {
     {
       path: 'enums',
       name: 'Enums',
+      group: 'Supporting classes',
       children: [
         {
           path: 'NeonButtonStyle',
@@ -278,6 +286,7 @@ export class Menu {
     {
       path: 'models',
       name: 'Models',
+      group: 'Supporting classes',
       children: [
         {
           path: 'NeonActionMenuModel',
@@ -308,6 +317,7 @@ export class Menu {
     {
       path: 'utils',
       name: 'Utils',
+      group: 'Supporting classes',
       children: [
         {
           path: 'NeonClosableUtils',

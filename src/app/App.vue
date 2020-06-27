@@ -45,7 +45,7 @@
             <neon-input type="text" v-model="indexFilter" placeholder="Filter" />
           </template>
           <template #scrolling>
-            <neon-tree-menu :model="filteredModel"></neon-tree-menu>
+            <neon-tree-menu :model="filteredModel" :expand-all="expandAll" @click="onSideNavMenuClick" />
           </template>
         </neon-side-nav>
         <neon-grid id="content" :layouts="layouts" class="content">
@@ -57,7 +57,7 @@
               </div>
               <hr />
               <div class="neon-side-nav__scrolling">
-                <neon-tree-menu :model="filteredModel" @click="onMenuClick"></neon-tree-menu>
+                <neon-tree-menu :model="filteredModel" :expand-all="expandAll" @click="onInlineMenuClick" />
               </div>
             </neon-drawer>
           </neon-grid-area>

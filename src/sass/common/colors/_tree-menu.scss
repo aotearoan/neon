@@ -11,7 +11,7 @@
       &:active {
         background-color: $color-link;
         color: $color-inverse;
-        transition: background-color ease-in-out $animation-speed-slow, color ease-in-out $animation-speed-slow;
+        transition: background-color ease-in-out $animation-speed-fast, color ease-in-out $animation-speed-fast;
       }
     }
 

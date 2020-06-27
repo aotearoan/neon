@@ -34,7 +34,6 @@ import NeonSwitch from './components/user-input/switch/NeonSwitch.vue';
 import NeonToggle from './components/user-input/toggle/NeonToggle.vue';
 import NeonTopNav from './components/layout/top-nav/NeonTopNav.vue';
 import NeonTreeMenu from './components/navigation/tree-menu/NeonTreeMenu.vue';
-import NeonTreeMenuItem from './components/navigation/tree-menu/item/NeonTreeMenuItem.vue';
 
 /* models and utils */
 import { NeonActionMenuModel } from './common/models/NeonActionMenuModel';
@@ -68,7 +67,7 @@ import { NeonSize } from './common/enums/NeonSize';
 import { NeonSwitchStyle } from './common/enums/NeonSwitchStyle';
 import { NeonToggleModel } from './common/models/NeonToggleModel';
 import { NeonToggleStyle } from './common/enums/NeonToggleStyle';
-import { NeonTreeMenuModel } from './common/models/NeonTreeMenuModel';
+import { NeonTreeMenuLinkModel, NeonTreeMenuSectionModel } from './common/models/NeonTreeMenuModel';
 
 /* register default provided icons */
 import { RegisterIcons } from './common/utils/RegisterIcons';
@@ -109,7 +108,6 @@ const components: { [s: string]: VueConstructor } = {
   NeonToggle,
   NeonTopNav,
   NeonTreeMenu,
-  NeonTreeMenuItem,
 };
 
 Object.keys(components).forEach((k) => Vue.component(k, components[k]));
@@ -178,6 +176,6 @@ export {
   NeonToggleStyle,
   NeonTopNav,
   NeonTreeMenu,
-  NeonTreeMenuItem,
-  NeonTreeMenuModel,
+  NeonTreeMenuLinkModel,
+  NeonTreeMenuSectionModel,
 };

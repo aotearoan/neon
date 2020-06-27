@@ -55,6 +55,10 @@
     }
   }
 
+  .neon-side-nav > hr {
+    display: none;
+  }
+
   .content {
     grid-template-rows: auto 1fr;
   }
