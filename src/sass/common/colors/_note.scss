@@ -11,6 +11,16 @@
       border: $border-width $border-style map-get($palette, $border-color-note);
     }
   }
+
+  .neon-button.neon-button--s.neon-button--icon-only {
+    min-width: $size-xs;
+    width: $size-xs;
+    height: $size-xs;
+
+    &:focus:not(:disabled) {
+      box-shadow: none;
+    }
+  }
 }
 
 blockquote {

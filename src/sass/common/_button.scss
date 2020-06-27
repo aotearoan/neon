@@ -49,6 +49,10 @@
   outline: none;
   user-select: none;
 
+  .neon-button__label {
+    white-space: nowrap;
+  }
+
   &:active:not(:disabled) {
     .neon-button__label,
     .neon-icon {

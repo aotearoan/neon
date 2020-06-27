@@ -33,17 +33,24 @@ blockquote,
   &__close {
     align-self: flex-start;
 
+    &.neon-button.neon-button--s.neon-button--icon-only {
+      .neon-icon {
+        width: 3 * $base-space;
+        height: 3 * $base-space;
+      }
+    }
+
     &.neon-button {
       @include responsive(desktop) {
-        margin: 3 * $base-space;
-      }
-
-      @include responsive(tablet) {
         margin: 2 * $base-space;
       }
 
-      @include responsive(mobile) {
+      @include responsive(tablet) {
         margin: $base-space;
+      }
+
+      @include responsive(mobile) {
+        margin: 0.5 * $base-space;
       }
     }
   }
