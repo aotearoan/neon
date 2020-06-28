@@ -10,7 +10,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "baseUrl": ".",
+    "baseUrl": "/neon/",
     "declaration": true,
     "declarationDir": "./dist/@aotearoan",
     "types": [

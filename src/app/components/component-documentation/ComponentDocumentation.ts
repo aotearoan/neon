@@ -1,8 +1,8 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import Example from '@/app/components/example/Example.vue';
-import ApiDocs from '@/app/components/api-docs/ApiDocs.vue';
+import Example from '../example/Example.vue';
+import ApiDocs from '../api-docs/ApiDocs.vue';
 import { ExampleModel } from '../example/ExampleModel';
-import { NeonCard, NeonCardBody, NeonCardHeader } from '@/components';
+import { NeonCard, NeonCardBody, NeonCardHeader } from '../../../components';
 
 @Component({
   components: {

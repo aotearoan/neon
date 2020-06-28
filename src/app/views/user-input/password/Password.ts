@@ -1,7 +1,7 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonInput } from '@/components';
-import { Menu, MenuModel } from '@/app/Menu';
-import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonInput } from '../../../../components';
+import { Menu, MenuModel } from '../../../Menu';
+import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
 
 @Component({
   components: {

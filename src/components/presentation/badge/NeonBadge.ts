@@ -2,7 +2,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 import { TranslateResult } from 'vue-i18n';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import NeonIcon from '@/components/design/icon/NeonIcon.vue';
+import NeonIcon from '../../design/icon/NeonIcon.vue';
 
 @Component({
   components: {

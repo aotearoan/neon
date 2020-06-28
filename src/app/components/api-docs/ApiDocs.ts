@@ -1,5 +1,5 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader } from '@/components';
+import { NeonCard, NeonCardBody, NeonCardHeader } from '../../../components';
 
 export interface DocumentationModel {
   props: PropertyModel[];

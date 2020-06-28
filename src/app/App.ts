@@ -1,9 +1,9 @@
 import { Component, Vue, Watch } from 'vue-property-decorator';
 import VueI18n from 'vue-i18n';
-import { RegisterIcons } from '@/common/utils/RegisterIcons';
+import { RegisterIcons } from '../common/utils/RegisterIcons';
 import { Menu } from './Menu';
-import { NeonMode } from '@/common/enums/NeonMode';
-import { NeonTreeMenuLinkModel, NeonTreeMenuSectionModel } from '@/common/models/NeonTreeMenuModel';
+import { NeonMode } from '../common/enums/NeonMode';
+import { NeonTreeMenuLinkModel, NeonTreeMenuSectionModel } from '../common/models/NeonTreeMenuModel';
 import {
   NeonDrawer,
   NeonFooter,
@@ -18,8 +18,8 @@ import {
   NeonTopNav,
   NeonTreeMenu,
   NeonInput,
-} from '@/components';
-import { NeonModeUtils } from '@/common/utils/NeonModeUtils';
+} from '../components';
+import { NeonModeUtils } from '../common/utils/NeonModeUtils';
 import { Route } from 'vue-router';
 
 export enum Theme {
@@ -201,10 +201,6 @@ export default class App extends Vue {
         grid: [['responsive-menu'], ['section-content']],
       },
     ];
-  }
-
-  get home() {
-    return process.env.VUE_APP_BASE_URL;
   }
 
   get version() {

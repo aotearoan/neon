@@ -1,6 +1,6 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonIconRegistry } from '@/common/utils/NeonIconRegistry';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonIcon } from '@/components';
+import { NeonIconRegistry } from '../../../../common/utils/NeonIconRegistry';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonIcon } from '../../../../components';
 
 @Component({
   components: {

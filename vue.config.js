@@ -11,7 +11,7 @@ module.exports = {
     hot: true,
     port: 8081,
   },
-  publicPath: '.',
+  publicPath: '/neon/',
   chainWebpack: (config) => {
     config.plugins.delete('pwa');
     config.plugins.delete('workbox');

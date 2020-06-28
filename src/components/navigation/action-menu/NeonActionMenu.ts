@@ -1,6 +1,6 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { NeonActionMenuModel } from '../../../common/models/NeonActionMenuModel';
-import NeonLink from '@/components/navigation/link/NeonLink.vue';
+import NeonLink from '../../navigation/link/NeonLink.vue';
 
 @Component({
   components: {

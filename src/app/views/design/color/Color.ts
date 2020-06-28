@@ -1,6 +1,6 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonCard, NeonCardBody, NeonCardHeader } from '@/components';
+import { NeonFunctionalColor } from '../../../../common/enums/NeonFunctionalColor';
+import { NeonCard, NeonCardBody, NeonCardHeader } from '../../../../components';
 
 @Component({
   components: {

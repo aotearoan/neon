@@ -5,7 +5,7 @@ import { NeonClosableUtils } from '../../../common/utils/NeonClosableUtils';
 import { TranslateResult } from 'vue-i18n';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonDropdownStyle } from '@/common/enums/NeonDropdownStyle';
+import { NeonDropdownStyle } from '../../../common/enums/NeonDropdownStyle';
 
 @Component
 export default class NeonDropdown extends Vue {

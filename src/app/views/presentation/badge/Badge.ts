@@ -1,7 +1,7 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonSize } from '@/common/enums/NeonSize';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonBadge, NeonCard, NeonCardBody, NeonCardHeader } from '@/components';
+import { NeonSize } from '../../../../common/enums/NeonSize';
+import { NeonFunctionalColor } from '../../../../common/enums/NeonFunctionalColor';
+import { NeonBadge, NeonCard, NeonCardBody, NeonCardHeader } from '../../../../components';
 
 @Component({
   components: {
@@ -13,7 +13,7 @@ import { NeonBadge, NeonCard, NeonCardBody, NeonCardHeader } from '@/components'
 })
 export default class Badge extends Vue {
   get imgUrl() {
-    return `${process.env.VUE_APP_BASE_URL}images/doge.jpg`;
+    return `/images/doge.jpg`;
   }
 
   get sizes() {
