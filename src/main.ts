@@ -4,7 +4,6 @@ import VueCodemirror from 'vue-codemirror';
 import 'codemirror/mode/vue/vue.js';
 
 import App from './app/App.vue';
-import './registerServiceWorker';
 import router from './app/router';
 import VRuntimeTemplate from 'v-runtime-template';
 
