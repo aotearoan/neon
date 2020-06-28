@@ -8,8 +8,9 @@
         <p>
           Neon is a library of Vue components and SASS styles for helping you build web applications fast with a
           consistent design. Neon supports multiple themes as well as light and dark modes within each theme. Neon can
-          be used, as is, out of the box or you may choose to modify the styling to suit your projects. See
-          <neon-link href="for-developers/getting-started">How to Neon</neon-link> to get started.
+          be used, as is, out of the box or you may choose to modify the styling to suit your projects. For more
+          information, see
+          <neon-link :href="`${baseUrl}for-developers/getting-started`">Getting Started</neon-link>.
         </p>
       </neon-card-body>
     </neon-card>
@@ -49,7 +50,7 @@
               <li><strong>warn - </strong>the color palette used to indicate warnings</li>
               <li><strong>error - </strong>the color palette used to indicate dangerous or failed actions</li>
             </ul>
-            See <neon-link href="/design/color">Colors</neon-link> for more.
+            See <neon-link :href="`${baseUrl}design/color`">Colors</neon-link> for more.
           </li>
           <li>
             <strong>Multiple themes - </strong>most design systems provide a single theme which is a concept from native

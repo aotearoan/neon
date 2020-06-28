@@ -13,7 +13,7 @@
           label="XD"
           :circular="size === 'l'"
         ></neon-badge>
-        <neon-badge :circular="size === 'l'" :size="size" image="/images/doge.jpg"></neon-badge>
+        <neon-badge :circular="size === 'l'" :size="size" :image="imgUrl"></neon-badge>
         <neon-badge :circular="size === 'l'" :size="size" icon="user"></neon-badge>
       </div>
       <div v-for="size in sizes" :key="`badge-color-${size}`" class="neon-horizontal neon-space-evenly">

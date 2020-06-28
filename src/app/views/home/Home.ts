@@ -8,4 +8,8 @@ import { NeonCard, NeonCardBody, NeonCardHeader } from '@/components';
     NeonCardHeader,
   },
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  private get baseUrl() {
+    return process.env.VUE_APP_BASE_URL;
+  }
+}

@@ -12,6 +12,10 @@ import { NeonBadge, NeonCard, NeonCardBody, NeonCardHeader } from '@/components'
   },
 })
 export default class Badge extends Vue {
+  get imgUrl() {
+    return `${process.env.VUE_APP_BASE_URL}images/doge.jpg`;
+  }
+
   get sizes() {
     return Object.values(NeonSize);
   }

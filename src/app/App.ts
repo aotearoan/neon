@@ -203,6 +203,10 @@ export default class App extends Vue {
     ];
   }
 
+  get home() {
+    return process.env.VUE_APP_BASE_URL;
+  }
+
   private handleResize() {
     this.isMobile = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.Mobile]).matches;
   }

@@ -52,7 +52,7 @@ export default class App extends Vue {}
         <pre>&lt;html class="app neon neon-theme--default neon-mode--dark"&gt;</pre>
         <p>
           For more information on dynamically changing the mode see
-          <neon-link href="/design/dark-mode">Dark mode</neon-link>
+          <neon-link :href="`${baseUrl}design/dark-mode`">Dark mode</neon-link>
         </p>
       </neon-card-body>
     </neon-card>
