@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="apiModel">
     <neon-card v-if="apiModel.description || $slots.default">
       <neon-card-header>
         <h1>{{ componentTitle }}</h1>

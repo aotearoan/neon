@@ -27,7 +27,7 @@ export default class Source extends Vue {
     const path = to.path;
     this.className = path.split('/').pop() || null;
     if (this.className) {
-      fetch(`/files/${path}.ts`).then((response) => {
+      fetch(`${process.env.VUE_APP_RESOURCE_URL}files/${path}.ts`).then((response) => {
         response.text().then((file) => {
           this.template = file;
         });

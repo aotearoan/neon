@@ -52,7 +52,7 @@ export default class ApiDocs extends Vue {
   public path!: string;
 
   public mounted() {
-    fetch(`/docs/${this.path}/${this.componentName}.json`).then((response) => {
+    fetch(`${process.env.VUE_APP_RESOURCE_URL}docs/${this.path}/${this.componentName}.json`).then((response) => {
       response.json().then((api) => {
         this.apiModel = api;
       });
