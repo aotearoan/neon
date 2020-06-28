@@ -67,7 +67,9 @@
             <router-view />
           </neon-grid-area>
         </neon-grid>
-        <neon-footer> &copy; copyright aotearoan {{ new Date().getFullYear() }} </neon-footer>
+        <neon-footer
+          >{{ version !== '0' ? `v${version}` : '' }} &copy; copyright aotearoan {{ new Date().getFullYear() }}
+        </neon-footer>
       </template>
     </neon-page>
   </div>
