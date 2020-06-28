@@ -53,6 +53,12 @@ export default class App extends Vue {
   private isMobile = false;
 
   public mounted() {
+    const path = localStorage.getItem('path');
+    if (path) {
+      localStorage.removeItem('path');
+      this.$router.push({ path });
+    }
+
     NeonModeUtils.init();
     NeonModeUtils.addListener('app-mode-listener', this.switchMode);
     window.addEventListener('resize', this.handleResize);
