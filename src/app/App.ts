@@ -56,7 +56,7 @@ export default class App extends Vue {
     const path = localStorage.getItem('path');
     if (path) {
       localStorage.removeItem('path');
-      this.$router.push({ path });
+      this.$router.push({ path: path.substr((process.env.VUE_APP_BASE_URL || '/').length) });
     }
 
     NeonModeUtils.init();
