@@ -29,6 +29,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name @aotearoan/neon ./src/components.ts",
+    "build-pages": "vue-cli-service build",
     "prepare": "tsc --emitDeclarationOnly",
     "lint": "vue-cli-service lint",
     "lint:scss": "stylelint ./src/**/*.scss",
