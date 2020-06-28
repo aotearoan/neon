@@ -4,6 +4,8 @@ const version = JSON.parse(packageJson).version || '0';
 
 module.exports = {
   runtimeCompiler: true,
+  filenameHashing: false,
+  productionSourceMap: false,
   devServer: {
     host: '0.0.0.0',
     hot: true,
