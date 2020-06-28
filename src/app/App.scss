@@ -13,7 +13,6 @@
   @import 'src/app/views/design/icons/Icons';
   @import 'src/app/views/design/typography/Typography';
   @import 'src/app/views/feedback/note/Note';
-  @import 'src/app/views/home/Home';
   @import 'src/app/views/source/Source';
   @import 'src/app/views/user-input/button/Button';
   @import 'src/app/views/user-input/drop-zone/DropZone';
@@ -37,6 +36,10 @@
 
     .logo-wrapper {
       align-items: flex-end;
+    }
+
+    .homepage-link {
+      display: flex;
     }
 
     .tagline {

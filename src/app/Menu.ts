@@ -13,6 +13,19 @@ export interface MenuModel {
 export class Menu {
   public static menu: MenuModel[] = [
     {
+      path: 'for-developers',
+      name: 'For Developers',
+      group: 'Introduction',
+      children: [
+        {
+          path: 'getting-started',
+          page: 'GettingStarted',
+          name: 'Getting Started',
+          keywords: 'installation instructions yarn npm',
+        },
+      ],
+    },
+    {
       path: 'design',
       name: 'Design',
       group: 'Components',
@@ -223,7 +236,7 @@ export class Menu {
         {
           path: 'toggle',
           page: 'Toggle',
-          name: 'Toggle / Radio buttons',
+          name: 'Toggle / Radio Buttons',
           component: 'NeonToggle',
         },
       ],

@@ -1,34 +1,42 @@
 # neon
 
-## Project setup
-```
-yarn install
-```
+## Documentation & Demo
+Full documentation is available on the [demo site](https://aotearoan.github.io/neon/).
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+## Installation
+Install the package with one of the following commands:
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+<pre>npm install @aotearoan/neon</pre>
+<pre>yarn add @aotearoan/neon</pre>
 
-### Run your tests
-```
-yarn run test
-```
+## Usage
 
-### Lints and fixes files
-```
-yarn run lint
-```
+### Javascript/Typescript
+Import components and supporting classes like so:
+<pre>
+import { Component, Vue } from 'vue-property-decorator';
+import { NeonLogo } from '@aotearoan/neon';
 
-### Run your unit tests
-```
-yarn run test:unit
-```
+@Component({
+  components: {
+    NeonLogo,
+  },
+})
+export default class App extends Vue {}
+</pre>
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### SASS
+First select a theme:
+<ul>
+  <li>default</li>
+</ul>
+
+There are two imports necessary to use a theme, the variables and the theme itself. These are split into two files to allow developers to override the variables for customization. Here is how to import the <em>default</em> theme:
+<pre>
+@import '~@aotearoan/neon/default-variables';
+@import 'src/sass/overrides';
+@import '~@aotearoan/neon/default-theme';
+</pre>
+
+Finally, the theme and mode (light/dark) need to be set on the document, e.g. to set the <em>default</em> theme and <em>dark</em> mode:
+<pre>&lt;html class="app neon neon-theme--default neon-mode--dark"&gt;</pre>

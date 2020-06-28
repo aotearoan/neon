@@ -4,7 +4,9 @@
       <template #top-nav>
         <neon-top-nav>
           <span class="logo-wrapper">
-            <neon-logo></neon-logo>
+            <neon-link href="/" class="homepage-link">
+              <neon-logo></neon-logo>
+            </neon-link>
             <span class="tagline">A VueJs design library</span>
           </span>
           <div>
