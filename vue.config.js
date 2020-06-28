@@ -3,5 +3,7 @@ module.exports = {
   devServer: {
     port: 8081,
   },
-  publicPath: './neon/',
+  publicPath: process.env.NODE_ENV === 'production'
+    ? './neon/'
+    : '/',
 };
