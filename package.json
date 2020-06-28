@@ -1,7 +1,7 @@
 {
   "name": "@aotearoan/neon",
   "description": "Neon is a design library of components for use with VueJS. It supports light and dark modes and can be extended to support multiple themes",
-  "version": "0.18.1",
+  "version": "0.18.2",
   "main": "dist/@aotearoan/neon.umd.js",
   "types": "dist/@aotearoan/components.d.ts",
   "files": [
@@ -30,7 +30,7 @@
   "scripts": {
     "serve": "node doc-gen.js && vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name @aotearoan/neon ./src/components.ts",
-    "build-pages": "vue-cli-service build",
+    "build-pages": "vue-cli-service build --skip-plugins pwa,workbox",
     "prepare": "tsc --emitDeclarationOnly",
     "lint": "vue-cli-service lint",
     "lint:scss": "stylelint ./src/**/*.scss",
