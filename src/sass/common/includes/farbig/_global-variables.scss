@@ -1,0 +1,19 @@
+$color-text-dark: hcl(0, 0, 0) !default; // dark text color
+$color-text-light: hcl(0, 0, 100) !default; // light text color
+
+// hcl saturation and brightness curves used to generate color palettes
+$chroma-curve: (
+  14,
+  25,
+  37,
+  50,
+  64,
+  64,
+  50,
+  37,
+  25,
+  14
+) !default; // 64% chroma is the limit for readability with light text for l1 step at luminance 44%
+$luminance-curve: (94, 88, 81, 73, 64, 44, 35, 27, 20, 14) !default;
+$low-contrast-luminance-curve: (88, 81, 72, 60, 48, 68, 55, 44, 35, 28) !default;
+$high-contrast-luminance-curve: (100, 95, 90, 85, 80, 20, 15, 10, 5, 0) !default;

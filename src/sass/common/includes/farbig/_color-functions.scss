@@ -1,0 +1,179 @@
+// ported from chroma.js
+$degrees-2-radians: $PI / 180;
+$radians-2-degrees: 180 / $PI;
+
+// D65 standard referent
+$lab-Xn: 0.95047;
+$lab-Yn: 1;
+$lab-Zn: 1.08883;
+$lab-t0: 0.137931034; // 4 / 29
+$lab-t1: 0.206896552; // 6 / 29
+$lab-t2: 0.12841855; // 3 * t1 * t1
+$lab-t3: 0.008856452; // t1 * t1 * t1
+
+@function xyz2rgb($r) {
+  @if ($r <= 0.00304) {
+    @return 255 * 12.92 * $r;
+  } @else {
+    @return 255 * (1.055 * pow($r, 1 / 2.4) - 0.055);
+  }
+}
+
+@function rgb_xyz($v) {
+  $v1: $v / 255;
+  @if ($v1 <= 0.04045) {
+    @return $v1 / 12.92;
+  } @else {
+    @return pow(($v1 + 0.055) / 1.055, 2.4);
+  }
+}
+
+@function xyz2lab($t) {
+  @if ($t > $lab-t3) {
+    @return pow($t, 1 / 3);
+  } @else {
+    @return $t / $lab-t2 + $lab-t0;
+  }
+}
+
+@function lab2xyz($t) {
+  @if ($t > $lab-t1) {
+    @return $t * $t * $t;
+  } @else {
+    @return $lab-t2 * ($t - $lab-t0);
+  }
+}
+
+@function rgb2xyz($r, $g, $b) {
+  $r1: rgb_xyz($r);
+  $g1: rgb_xyz($g);
+  $b1: rgb_xyz($b);
+  $x: xyz2lab((0.4124564 * $r1 + 0.3575761 * $g1 + 0.1804375 * $b1) / $lab-Xn);
+  $y: xyz2lab((0.2126729 * $r1 + 0.7151522 * $g1 + 0.072175 * $b1) / $lab-Yn);
+  $z: xyz2lab((0.0193339 * $r1 + 0.119192 * $g1 + 0.9503041 * $b1) / $lab-Zn);
+  @return ($x, $y, $z);
+}
+
+@function lab2rgb($L, $a, $b) {
+  $y0: ($L + 16) / 116;
+  $x0: $y0 + $a / 500;
+  $z0: $y0 - $b / 200;
+
+  $y1: $lab-Yn * lab2xyz($y0);
+  $x1: $lab-Xn * lab2xyz($x0);
+  $z1: $lab-Zn * lab2xyz($z0);
+
+  $r: xyz2rgb(3.2404542 * $x1 - 1.5371385 * $y1 - 0.4985314 * $z1); // D65 -> sRGB
+  $g: xyz2rgb(-0.969266 * $x1 + 1.8760108 * $y1 + 0.041556 * $z1);
+  $b_: xyz2rgb(0.0556434 * $x1 - 0.2040259 * $y1 + 1.0572252 * $z1);
+
+  @return rgb($r, $g, $b_);
+}
+
+@function rgb2lab($r, $g, $b) {
+  $xyz: rgb2xyz($r, $g, $b);
+  $x: nth($xyz, 1);
+  $y: nth($xyz, 2);
+  $z: nth($xyz, 3);
+  $L: 116 * $y - 16;
+  @return (max($L, 0), 500 * ($x - $y), 200 * ($y - $z));
+}
+
+@function hcl2lab($h, $c, $l) {
+  $hue: $h * $degrees-2-radians;
+  @return ($l, cos($hue) * $c, sin($hue) * $c);
+}
+
+@function lab2hcl($L, $a, $b) {
+  $c: sqrt($a * $a + $b * $b);
+  $h: (atan2($b, $a) * $radians-2-degrees + 360) % 360;
+  @return (round($h), $c, $L);
+}
+
+@function rgb2hcl($r, $g, $b) {
+  $Lab: rgb2lab($r, $g, $b);
+  @return lab2hcl(nth($Lab, 1), nth($Lab, 2), nth($Lab, 3));
+}
+
+@function hcl($h, $c, $l) {
+  $Lab: hcl2lab($h, $c, $l);
+  @return lab2rgb(nth($Lab, 1), nth($Lab, 2), nth($Lab, 3));
+}
+
+@function lch($l, $c, $h) {
+  @return hcl($h, $c, $l);
+}
+
+@function luminanceByChannel($c) {
+  @if ($c <= 0.03928) {
+    @return $c / 12.92;
+  } @else {
+    @return pow(($c + 0.055) / 1.055, 2.4);
+  }
+}
+
+@function relativeLuminance($color) {
+  $r: luminanceByChannel(red($color) / 255);
+  $g: luminanceByChannel(green($color) / 255);
+  $b: luminanceByChannel(blue($color) / 255);
+  @return 0.2126 * $r + 0.7152 * $g + 0.0722 * $b;
+}
+
+@function contrast-ratio($background-color, $text-color) {
+  $lum1: relativeLuminance($background-color);
+  $lum2: relativeLuminance($text-color);
+
+  $lightest: max($lum1, $lum2);
+  $darkest: min($lum1, $lum2);
+
+  $contrast: ($lightest + 0.05) / ($darkest + 0.05);
+
+  @return floor($contrast * 100) / 100;
+}
+
+@function generate-palette($color) {
+  $r: red($color);
+  $g: green($color);
+  $b: blue($color);
+  $hcl: rgb2hcl($r, $g, $b);
+  $hue: nth($hcl, 1);
+  @return (
+    l5: hcl($hue, nth($chroma-curve, 1), nth($luminance-curve, 1)),
+    l4: hcl($hue, nth($chroma-curve, 2), nth($luminance-curve, 2)),
+    l3: hcl($hue, nth($chroma-curve, 3), nth($luminance-curve, 3)),
+    l2: hcl($hue, nth($chroma-curve, 4), nth($luminance-curve, 4)),
+    l1: hcl($hue, nth($chroma-curve, 5), nth($luminance-curve, 5)),
+    d1: hcl($hue, nth($chroma-curve, 6), nth($luminance-curve, 6)),
+    d2: hcl($hue, nth($chroma-curve, 7), nth($luminance-curve, 7)),
+    d3: hcl($hue, nth($chroma-curve, 8), nth($luminance-curve, 8)),
+    d4: hcl($hue, nth($chroma-curve, 9), nth($luminance-curve, 9)),
+    d5: hcl($hue, nth($chroma-curve, 10), nth($luminance-curve, 10))
+  );
+}
+
+@function neutral-palette() {
+  @return generate-neutral-palette($luminance-curve);
+}
+
+@function low-contrast-palette() {
+  @return generate-neutral-palette($low-contrast-luminance-curve);
+}
+
+@function high-contrast-palette() {
+  @return generate-neutral-palette($high-contrast-luminance-curve);
+}
+
+@function generate-neutral-palette($luminance-curve) {
+  @return (
+    l5: hcl(0, 0, nth($luminance-curve, 1)),
+    l4: hcl(0, 0, nth($luminance-curve, 2)),
+    l3: hcl(0, 0, nth($luminance-curve, 3)),
+    l2: hcl(0, 0, nth($luminance-curve, 4)),
+    l1: hcl(0, 0, nth($luminance-curve, 5)),
+    d1: hcl(0, 0, nth($luminance-curve, 6)),
+    d2: hcl(0, 0, nth($luminance-curve, 7)),
+    d3: hcl(0, 0, nth($luminance-curve, 8)),
+    d4: hcl(0, 0, nth($luminance-curve, 9)),
+    d5: hcl(0, 0, nth($luminance-curve, 10))
+  );
+}

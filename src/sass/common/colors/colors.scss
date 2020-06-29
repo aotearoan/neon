@@ -1,19 +1,21 @@
 // generate color palette
-@import '~@aotearoan/sass-farbig';
+@import '../includes/farbig/farbig';
 
-$neutral-palette: neutral-palette();
-$low-contrast-palette: low-contrast-palette();
-$high-contrast-palette: high-contrast-palette();
-$primary-palette: generate-palette($color-primary);
-$info-palette: generate-palette($color-info);
-$success-palette: generate-palette($color-success);
-$warn-palette: generate-palette($color-warn);
-$error-palette: generate-palette($color-error);
+$neutral-palette: neutral-palette() !default;
+$low-contrast-palette: low-contrast-palette() !default;
+$high-contrast-palette: high-contrast-palette() !default;
+$brand-palette: generate-palette($color-brand) !default;
+$primary-palette: generate-palette($color-primary) !default;
+$info-palette: generate-palette($color-info) !default;
+$success-palette: generate-palette($color-success) !default;
+$warn-palette: generate-palette($color-warn) !default;
+$error-palette: generate-palette($color-error) !default;
 
 $functional-colors: (
   neutral: $neutral-palette,
   low-contrast: $low-contrast-palette,
   high-contrast: $high-contrast-palette,
+  brand: $brand-palette,
   primary: $primary-palette,
   info: $info-palette,
   success: $success-palette,
@@ -24,6 +26,7 @@ $functional-colors: (
 @include generate-color-classes('neon-neutral', $neutral-palette);
 @include generate-color-classes('neon-low-contrast', $low-contrast-palette);
 @include generate-color-classes('neon-high-contrast', $high-contrast-palette);
+@include generate-color-classes('neon-brand', $brand-palette);
 @include generate-color-classes('neon-primary', $primary-palette);
 @include generate-color-classes('neon-info', $info-palette);
 @include generate-color-classes('neon-success', $success-palette);
@@ -62,6 +65,17 @@ $color-high-contrast-d2: map-get($high-contrast-palette, d2);
 $color-high-contrast-d3: map-get($high-contrast-palette, d3);
 $color-high-contrast-d4: map-get($high-contrast-palette, d4);
 $color-high-contrast-d5: map-get($high-contrast-palette, d5);
+
+$color-brand-l5: map-get($brand-palette, l5);
+$color-brand-l4: map-get($brand-palette, l4);
+$color-brand-l3: map-get($brand-palette, l3);
+$color-brand-l2: map-get($brand-palette, l2);
+$color-brand-l1: map-get($brand-palette, l1);
+$color-brand-d1: map-get($brand-palette, d1);
+$color-brand-d2: map-get($brand-palette, d2);
+$color-brand-d3: map-get($brand-palette, d3);
+$color-brand-d4: map-get($brand-palette, d4);
+$color-brand-d5: map-get($brand-palette, d5);
 
 $color-primary-l5: map-get($primary-palette, l5);
 $color-primary-l4: map-get($primary-palette, l4);

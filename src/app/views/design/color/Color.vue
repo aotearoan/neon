@@ -10,7 +10,7 @@
           <div
             v-for="i in 5"
             :key="`l${i}`"
-            class="color-item dark-text"
+            class="color-item neon-dark-text"
             :ref="`${color}l${6 - i}`"
             :class="`neon-${color}-bg-color-l${6 - i}`"
           >
@@ -19,7 +19,7 @@
           <div
             v-for="i in 5"
             :key="`d${i}`"
-            class="color-item light-text"
+            class="color-item neon-light-text"
             :ref="`${color}d${i}`"
             :class="`neon-${color}-bg-color-d${i}`"
           >
@@ -33,7 +33,7 @@
           <div
             v-for="i in 5"
             :key="`l${i}`"
-            class="color-item dark-text"
+            class="color-item neon-dark-text"
             :ref="`${color}l${6 - i}`"
             :class="`neon-${color}-bg-color-l${6 - i}`"
           >
@@ -42,7 +42,7 @@
           <div
             v-for="i in 5"
             :key="`d${i}`"
-            class="color-item light-text"
+            class="color-item neon-light-text"
             :ref="`${color}d${i}`"
             :class="`neon-${color}-bg-color-d${i}`"
           >
@@ -54,6 +54,7 @@
       <div class="neon-color-text-low-contrast">This is the low contrast color</div>
       <div class="neon-color-text-neutral">This is the neutral color</div>
       <div class="neon-color-text-high-contrast">This is the high-contrast color</div>
+      <div class="neon-color-text-brand">This is the brand color</div>
       <div class="neon-color-text-primary">This is the primary color</div>
       <div class="neon-color-text-info">This is the info color</div>
       <div class="neon-color-text-success">This is the success color</div>

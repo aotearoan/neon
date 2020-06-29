@@ -26,6 +26,7 @@ export default class Badge extends Vue {
 
   get functionalColors() {
     return [
+      NeonFunctionalColor.Brand,
       NeonFunctionalColor.Primary,
       NeonFunctionalColor.Info,
       NeonFunctionalColor.Success,

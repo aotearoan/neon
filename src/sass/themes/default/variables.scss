@@ -17,8 +17,9 @@ $animation-speed-slow: 0.3s !default;
 $animation-speed-fast: 0.225s !default;
 
 /* base colors */
-$color-primary: #9c64e5 !default; // purple
-$color-info: #0084ff !default; // blue
+$color-brand: #9c64e5 !default; // purple
+$color-primary: #555dc0 !default; // blue
+$color-info: $color-primary !default; // same as primary
 $color-success: #00993d !default; // green
 $color-warn: #bb6f00 !default; // rust
 $color-error: #ec4145 !default; // red
@@ -119,3 +120,7 @@ $icon-info-dark: url('data:image/svg+xml;charset=UTF-8,<svg width="100%" height=
 
 /* dropdown */
 $box-shadow-dropdown: $box-shadow-strong !default;
+
+/* notification counter */
+$background-color-notification-counter-dark: #cc0000 !default;
+$background-color-notification-counter-light: #cc0000 !default;

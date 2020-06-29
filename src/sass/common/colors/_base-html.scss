@@ -24,6 +24,14 @@ label:not(.no-style) {
   color: $color-inverse;
 }
 
+.neon-dark-text {
+  color: $color-text-dark;
+}
+
+.neon-light-text {
+  color: $color-text-light;
+}
+
 .neon-color-text-low-contrast {
   color: $color-text-low-contrast;
 }
@@ -34,6 +42,10 @@ label:not(.no-style) {
 
 .neon-color-text-high-contrast {
   color: $color-text-high-contrast;
+}
+
+.neon-color-text-brand {
+  color: $color-text-brand;
 }
 
 .neon-color-text-primary {

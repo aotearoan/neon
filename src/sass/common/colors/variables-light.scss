@@ -1,11 +1,12 @@
 $background-color-card: $color-neutral-l5;
 $background-color: $color-neutral-l4;
 
-$color-text: $color-text-light;
-$color-inverse: $color-text-dark;
+$color-text: $color-text-dark;
+$color-inverse: $color-text-light;
 $color-text-low-contrast: $color-low-contrast-d1;
 $color-text-neutral: $color-neutral-d1;
 $color-text-high-contrast: $color-high-contrast-d1;
+$color-text-brand: $color-brand-d1;
 $color-text-primary: $color-primary-d1;
 $color-text-info: $color-info-d1;
 $color-text-success: $color-success-d1;
@@ -121,3 +122,6 @@ $icon-info: $icon-info-light;
 
 // dropdown menu
 $background-color-dropdown-menu-hover: $background-color-hover;
+
+// notification counter
+$background-color-notification-counter: $background-color-notification-counter-light;
