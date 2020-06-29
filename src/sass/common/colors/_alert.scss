@@ -16,11 +16,11 @@ $notificationIcons: (
   box-shadow: 0.5 * $base-space 0.5 * $base-space 2 * $base-space $color-neutral-d4;
 
   &__title {
-    color: $color-text-dark;
+    color: $color-text-light;
   }
 
   &__body {
-    color: $color-text-dark;
+    color: $color-text-light;
   }
 }
 
