@@ -1,11 +1,5 @@
 <template>
-  <component-documentation
-    v-if="menuModel"
-    :examples="examples"
-    :path="menuModel.path"
-    :component-name="menuModel.component"
-    :component-title="menuModel.name || menuModel.page"
-  >
+  <component-documentation v-if="menuModel" :examples="examples" :model="menuModel">
     <p>
       The <span class="neon-monospaced">NeonFile</span> component is an alternative to
       <span class="neon-monospaced">&lt;input type="file" /&gt;</span>. It displayed a button which opens the file

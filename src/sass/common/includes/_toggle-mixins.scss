@@ -1,7 +1,8 @@
 @mixin toggle-size($font-size, $size) {
   label {
     font-size: $font-size;
-    letter-spacing: $component-letter-spacing-s;
+    font-weight: 300;
+    letter-spacing: $component-letter-spacing-m;
     line-height: 1;
     height: $size - 2 * $border-width;
 
@@ -28,8 +29,8 @@
   .neon-toggle__label--checked {
     .neon-toggle__radio-button {
       &-indicator {
-        width: floor(0.625 * $font-size);
-        height: floor(0.625 * $font-size);
+        width: floor(0.5 * $font-size);
+        height: floor(0.5 * $font-size);
       }
     }
   }

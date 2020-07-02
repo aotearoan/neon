@@ -18,7 +18,7 @@
               </ul>
             </div>
           </div>
-          <span>
+          <span class="top-nav-actions">
             <neon-button
               class="github-link"
               href="https://github.com/aotearoan/neon"

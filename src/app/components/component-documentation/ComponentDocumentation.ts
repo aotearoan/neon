@@ -5,6 +5,7 @@ import ApiDescription from '../api-description/ApiDescription.vue';
 import { ExampleModel } from '../example/ExampleModel';
 import { NeonCard, NeonCardBody, NeonCardHeader } from '../../../components';
 import { DocumentationModel } from '../ApiModel';
+import { MenuModel } from '../../Menu';
 
 @Component({
   components: {
@@ -20,16 +21,22 @@ export default class ComponentDocumentation extends Vue {
   private apiModel: DocumentationModel | null = null;
 
   @Prop({ required: true })
-  public componentName!: string;
-
-  @Prop({ required: true })
-  public componentTitle!: string;
-
-  @Prop({ required: true })
-  public path!: string;
+  public model!: MenuModel;
 
   @Prop({ default: [] })
   public examples!: ExampleModel[];
+
+  get path() {
+    return this.model.path;
+  }
+
+  get componentName() {
+    return this.model.component;
+  }
+
+  get componentTitle() {
+    return this.model.name || this.model.page;
+  }
 
   public mounted() {
     fetch(`${process.env.VUE_APP_RESOURCE_URL}docs/${this.path}/${this.componentName}.json`).then((response) => {

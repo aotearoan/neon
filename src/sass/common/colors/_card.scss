@@ -1,5 +1,5 @@
 .neon-card {
-  border: $card-border;
+  border: $border-width $border-style $border-color;
   box-shadow: $card-box-shadow;
 
   .neon-card-header,
