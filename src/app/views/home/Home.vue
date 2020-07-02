@@ -69,8 +69,9 @@
             for Javascript developers to work with styles. Neon takes a different approach, where styles are not bundled
             with components but rather imported via SASS. This means themes are fully (and easily) customizable by
             overriding SASS defaults so you can override single variables or even create your own themes. Neon also uses
-            BEM class naming so it is easy to target and modify styles if you want, this is encouraged in Neon (NEON
-            uses SEMVER so if we change a class name you'll know about it).
+            <neon-link href="http://getbem.com/">BEM</neon-link> class naming so it is easy to target and modify styles
+            if you want, this is encouraged in Neon (Neon uses <neon-link href="https://semver.org/">SEMVER</neon-link>
+            so if we change a class name you'll know about it).
           </li>
           <li>
             <strong>Proper semantic HTML components - </strong>another thing a lot of component libraries do poorly is

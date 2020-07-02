@@ -9,14 +9,10 @@ import { DocumentationModel } from '../ApiModel';
     NeonCardHeader,
   },
 })
-export default class ApiDocs extends Vue {
+export default class ApiDescription extends Vue {
   @Prop({ required: true })
   public apiModel!: DocumentationModel;
 
   @Prop({ required: true })
-  public componentName!: string;
-
-  private requiredProps() {
-    return this.apiModel && this.apiModel.props.some((prop) => prop.required);
-  }
+  public componentTitle!: string;
 }

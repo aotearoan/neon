@@ -1,5 +1,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { NeonCard, NeonCardBody, NeonCardHeader, NeonFile } from '../../../../components';
+import { Menu, MenuModel } from '../../../Menu';
+import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
 
 @Component({
   components: {
@@ -7,9 +9,12 @@ import { NeonCard, NeonCardBody, NeonCardHeader, NeonFile } from '../../../../co
     NeonCardBody,
     NeonCardHeader,
     NeonFile,
+    ComponentDocumentation,
   },
 })
 export default class File extends Vue {
+  private menuModel: MenuModel | null = null;
+
   private data = {
     files: [],
   };
@@ -20,4 +25,16 @@ export default class File extends Vue {
   <neon-file @input="files = $event" :multiple="true" label="Add SVG files" />
   <neon-file @input="files = $event" :direct-upload="true" :multiple="true" label="Direct upload" />
 </div>`;
+
+  private examples = [
+    {
+      title: 'File example',
+      template: this.fileExamples,
+      data: this.data,
+    },
+  ];
+
+  public mounted() {
+    this.menuModel = Menu.getComponentConfig('NeonFile');
+  }
 }

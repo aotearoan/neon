@@ -1,8 +1,11 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { NeonCard, NeonCardBody, NeonCardHeader, NeonInput } from '../../../../components';
+import { Menu, MenuModel } from '../../../Menu';
+import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
 
 @Component({
   components: {
+    ComponentDocumentation,
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
@@ -10,6 +13,8 @@ import { NeonCard, NeonCardBody, NeonCardHeader, NeonInput } from '../../../../c
   },
 })
 export default class Input extends Vue {
+  private menuModel: MenuModel | null = null;
+
   private data = {
     indexFilter: '',
   };
@@ -38,4 +43,31 @@ export default class Input extends Vue {
   <neon-input type="text" rows="5" v-model="indexFilter" placeholder="Type here" />
   <neon-input disabled="disabled" rows="5" type="text" v-model="indexFilter" placeholder="Type here" />
 </div>`;
+
+  private examples = [
+    {
+      title: 'Input sizes',
+      template: this.inputSizeExamples,
+      data: this.data,
+    },
+    {
+      title: 'Input colors',
+      template: this.inputColorExamples,
+      data: this.data,
+    },
+    {
+      title: 'Input states',
+      template: this.inputStateExamples,
+      data: this.data,
+    },
+    {
+      title: 'Textarea examples',
+      template: this.textareaExamples,
+      data: this.data,
+    },
+  ];
+
+  public mounted() {
+    this.menuModel = Menu.getComponentConfig('NeonInput');
+  }
 }

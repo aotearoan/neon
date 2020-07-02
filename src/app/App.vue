@@ -64,7 +64,9 @@
             </neon-drawer>
           </neon-grid-area>
           <neon-grid-area id="section-content">
-            <router-view />
+            <transition name="fade" mode="out-in">
+              <router-view />
+            </transition>
           </neon-grid-area>
         </neon-grid>
         <neon-footer
