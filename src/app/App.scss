@@ -32,9 +32,15 @@
       .github-link {
         margin-right: 6 * $base-space;
       }
+
+      .top-nav-actions {
+        display: flex;
+      }
     }
 
     .logo-wrapper {
+      display: flex;
+      flex-direction: row;
       align-items: flex-end;
     }
 

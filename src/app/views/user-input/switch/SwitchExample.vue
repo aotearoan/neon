@@ -1,12 +1,5 @@
 <template>
-  <component-documentation
-    v-if="menuModel"
-    :examples="examples"
-    :path="menuModel.path"
-    :component-name="menuModel.component"
-    :component-title="menuModel.name || menuModel.page"
-  >
-  </component-documentation>
+  <component-documentation v-if="menuModel" :examples="examples" :model="menuModel"></component-documentation>
 </template>
 
 <script lang="ts" src="./SwitchExample.ts"></script>

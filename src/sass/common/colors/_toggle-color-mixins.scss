@@ -1,19 +1,38 @@
 @mixin toggle-color($color, $toggle-color) {
   &:not(.neon-toggle--disabled).neon-toggle--#{$color} {
-    border: $border-width $border-style $toggle-color;
-    color: $toggle-color;
+    color: rgba($color-text, 0.7);
 
     label {
-      transition: background-color ease-in-out $animation-speed-slow, color ease-in-out $animation-speed-slow;
+      border-top: $border-width $border-style $border-color;
+      border-bottom: $border-width $border-style $border-color;
 
-      &.neon-toggle__label--checked,
-      &:hover:not(.neon-toggle__label--disabled):not(.neon-toggle__label--checked) {
-        background-color: $toggle-color;
-        color: $color-toggle-selected;
+      &:first-child {
+        border-left: $border-width $border-style $border-color;
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+      }
+
+      &:last-child {
+        border-right: $border-width $border-style $border-color;
+        border-top-right-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
       }
 
       & + label {
-        border-left: 1px solid $toggle-color;
+        border-left: $border-width $border-style $border-color;
+      }
+
+      &.neon-toggle__label--checked {
+        border: $border-width $border-style $toggle-color;
+        background-color: rgba($toggle-color, 0.125);
+
+        & + label {
+          border-left: none;
+        }
+      }
+
+      &:hover:not(.neon-toggle__label--disabled):not(.neon-toggle__label--checked) {
+        background-color: rgba($border-color, 0.375);
       }
     }
   }
