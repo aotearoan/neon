@@ -9,12 +9,15 @@
 .color-list {
   margin-top: 4 * $base-space;
 
+  &-section {
+    border-radius: $border-radius;
+    overflow: hidden;
+    margin-bottom: $base-space;
+  }
+
   &:not(:last-child) {
     margin-right: 4 * $base-space;
   }
-
-  border-radius: $border-radius;
-  overflow: hidden;
 
   .color-item {
     padding: 2 * $base-space 3 * $base-space;

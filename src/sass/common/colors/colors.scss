@@ -1,16 +1,3 @@
-// generate color palette
-@import '../includes/farbig/farbig';
-
-$neutral-palette: neutral-palette() !default;
-$low-contrast-palette: low-contrast-palette() !default;
-$high-contrast-palette: high-contrast-palette() !default;
-$brand-palette: generate-palette($color-brand) !default;
-$primary-palette: generate-palette($color-primary) !default;
-$info-palette: generate-palette($color-info) !default;
-$success-palette: generate-palette($color-success) !default;
-$warn-palette: generate-palette($color-warn) !default;
-$error-palette: generate-palette($color-error) !default;
-
 $functional-colors: (
   neutral: $neutral-palette,
   low-contrast: $low-contrast-palette,
@@ -131,13 +118,3 @@ $color-error-d2: map-get($error-palette, d2);
 $color-error-d3: map-get($error-palette, d3);
 $color-error-d4: map-get($error-palette, d4);
 $color-error-d5: map-get($error-palette, d5);
-
-&.neon-mode--light {
-  @import 'variables-light';
-  @import 'color-components';
-}
-
-&.neon-mode--dark {
-  @import 'variables-dark';
-  @import 'color-components';
-}

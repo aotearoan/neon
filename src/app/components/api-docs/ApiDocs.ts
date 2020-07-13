@@ -1,5 +1,5 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader } from '../../../components';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonExpansionIndicator } from '../../../components';
 import { DocumentationModel } from '../ApiModel';
 
 @Component({
@@ -7,9 +7,12 @@ import { DocumentationModel } from '../ApiModel';
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
+    NeonExpansionIndicator,
   },
 })
 export default class ApiDocs extends Vue {
+  private expanded = false;
+
   @Prop({ required: true })
   public apiModel!: DocumentationModel;
 

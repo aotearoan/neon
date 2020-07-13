@@ -1,6 +1,7 @@
 .api-docs {
   &__event-badge {
     border-color: $border-color;
+    background-color: rgba($background-color, 0.25);
 
     .api-docs__event-returns-label {
       border-color: $border-color;
@@ -9,6 +10,7 @@
 
   &__card {
     border-color: $border-color;
+    background-color: rgba($background-color, 0.25);
 
     .api-docs__card-header {
       border-color: $border-color;

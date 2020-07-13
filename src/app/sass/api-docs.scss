@@ -22,10 +22,6 @@
       padding-top: 4 * $base-space;
     }
 
-    h5 {
-      font-style: normal;
-    }
-
     label {
       margin-bottom: 0;
     }
@@ -62,7 +58,7 @@
 
     dl {
       display: flex;
-      align-items: flex-start;
+      align-items: baseline;
       margin: 0 6 * $base-space;
 
       dt {
@@ -72,6 +68,7 @@
       }
 
       dd {
+        line-height: $line-height-ratio * $base-font-size;
         margin-left: 3 * $base-space;
 
         & + dt {
@@ -81,13 +78,13 @@
     }
 
     .api-docs__card-header {
-      padding-top: 3px;
       flex-direction: row;
-      align-items: flex-start;
+      align-items: center;
       border-right: $border-width $border-style;
       padding-right: 6 * $base-space;
 
-      h5 {
+      h3 {
+        letter-spacing: $component-letter-spacing-m;
         margin-bottom: 0;
       }
     }
@@ -122,7 +119,6 @@
         padding-bottom: 3 * $base-space;
         margin-bottom: 3 * $base-space;
         justify-content: space-between;
-        align-items: center;
       }
 
       .api-docs__card-description {

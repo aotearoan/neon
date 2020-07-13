@@ -1,154 +1,150 @@
-@import 'src/sass/themes/default/variables';
-@import 'src/sass/themes/default/theme';
-
-@import 'src/app/sass/fonts';
-@import 'src/app/sass/example';
-@import 'src/app/sass/component-docs';
-@import 'src/app/sass/api-docs';
-@import '~codemirror/lib/codemirror';
-@import '~codemirror/theme/lucario';
-
+// This structure allows you to not only use the theme and light/dark modes,
+// but to also use the defined variables, mixins and functions in your own components and pages.
 .app {
-  @import 'src/app/views/design/color/Color';
-  @import 'src/app/views/design/icons/Icons';
-  @import 'src/app/views/design/typography/Typography';
-  @import 'src/app/views/feedback/note/Note';
-  @import 'src/app/views/source/Source';
-  @import 'src/app/views/user-input/button/Button';
-  @import 'src/app/views/user-input/drop-zone/DropZone';
+  &.neon-theme--classic {
+    @import '../../themes/classic/theme';
 
-  body {
-    .title {
-      margin-left: 8 * $base-space;
-      font-family: $body-font-family;
-      font-weight: lighter;
+    &.neon-mode--dark {
+      @import '../../themes/classic/dark';
+
+      // application dark mode SASS
+      @import '../app/sass/api-docs-colors';
+
+      .neon-monospaced {
+        color: $color-primary-l1;
+      }
     }
-  }
 
-  header {
-    .neon-top-nav__container {
-      justify-content: space-between;
+    &.neon-mode--light {
+      @import '../../themes/classic/light';
 
-      .github-link {
-        margin-right: 6 * $base-space;
+      // application light mode SASS
+      @import '../app/sass/api-docs-colors';
+
+      .neon-monospaced {
+        color: $color-primary-d1;
+      }
+    }
+
+    // application classic theme SASS
+    @import '../app/sass/fonts';
+    @import '../app/sass/example';
+    @import '../app/sass/component-docs';
+    @import '../app/sass/api-docs';
+    @import '~codemirror/lib/codemirror';
+    @import '~codemirror/theme/lucario';
+
+    @import '../app/views/design/color/Color';
+    @import '../app/views/design/icons/Icons';
+    @import '../app/views/design/typography/Typography';
+    @import '../app/views/feedback/note/Note';
+    @import '../app/views/source/Source';
+    @import '../app/views/user-input/button/Button';
+    @import '../app/views/user-input/drop-zone/DropZone';
+
+    body {
+      .title {
+        margin-left: 8 * $base-space;
+        font-family: $body-font-family;
+        font-weight: lighter;
+      }
+    }
+
+    header {
+      .neon-top-nav__container {
+        justify-content: space-between;
+
+        .github-link {
+          margin-right: 6 * $base-space;
+        }
+
+        .top-nav-actions {
+          display: flex;
+        }
       }
 
-      .top-nav-actions {
+      .logo-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+      }
+
+      .homepage-link {
         display: flex;
       }
-    }
 
-    .logo-wrapper {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-end;
-    }
+      .tagline {
+        margin-left: 4 * $base-space;
+        font-size: $font-size-l;
+        opacity: 0.9;
+        font-style: oblique;
+        letter-spacing: 1px;
+        font-weight: 200;
+        line-height: 1;
+        user-select: none;
 
-    .homepage-link {
-      display: flex;
-    }
-
-    .tagline {
-      margin-left: 4 * $base-space;
-      font-size: $font-size-l;
-      opacity: 0.9;
-      font-style: oblique;
-      letter-spacing: 1px;
-      font-weight: 200;
-      line-height: 1;
-      user-select: none;
-
-      @include responsive(tablet) {
-        display: none;
+        @include responsive(tablet) {
+          display: none;
+        }
       }
     }
-  }
 
-  .neon-side-nav > hr {
-    display: none;
-  }
+    .neon-side-nav > hr {
+      display: none;
+    }
 
-  .content {
-    grid-template-rows: auto 1fr;
-  }
+    .content {
+      grid-template-rows: auto 1fr;
+    }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-style: $font-style-headings;
-  }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-style: $font-style-headings;
+    }
 
-  .collection {
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-bottom: 6 * $base-space;
-
-    .collection-sub-list {
+    .collection {
       flex-direction: column;
-      width: 280px;
-      justify-content: flex-start;
-      align-items: flex-start;
 
-      & > * + * {
-        margin-top: 4 * $base-space;
+      & > *:not(:last-child) {
+        margin-bottom: 4 * $base-space;
       }
 
       &:not(:last-child) {
-        margin-right: 8 * $base-space;
-        margin-bottom: 4 * $base-space;
+        margin-bottom: 6 * $base-space;
       }
     }
-  }
 
-  .neon-card + .neon-card {
-    @include margin-top;
-  }
+    .neon-card + .neon-card {
+      @include margin-top;
+    }
 
-  &.neon-mode--dark {
-    @import 'src/sass/common/colors/colors';
-    @import 'src/sass/common/colors/variables-dark';
-    @import 'src/app/sass/api-docs-colors';
+    .positioned-element {
+      position: relative;
+      display: flex;
+      width: fit-content;
+    }
 
-    .neon-monospaced {
-      color: $color-primary-l1;
+    .neon-dropdown__content {
+      p {
+        white-space: nowrap;
+      }
+    }
+
+    .fade-enter-active,
+    .fade-leave-active {
+      transition-duration: $animation-speed-slow;
+      transition-property: height, opacity;
+      transition-timing-function: ease;
+      overflow: hidden;
+    }
+
+    .fade-enter,
+    .fade-leave-active {
+      opacity: 0;
     }
   }
-
-  &.neon-mode--light {
-    @import 'src/sass/common/colors/colors';
-    @import 'src/sass/common/colors/variables-light';
-    @import 'src/app/sass/api-docs-colors';
-
-    .neon-monospaced {
-      color: $color-primary-d1;
-    }
-  }
-}
-
-.positioned-element {
-  position: relative;
-  display: flex;
-  width: fit-content;
-}
-
-.neon-dropdown__content {
-  p {
-    white-space: nowrap;
-  }
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition-duration: $animation-speed-slow;
-  transition-property: height, opacity;
-  transition-timing-function: ease;
-  overflow: hidden;
-}
-
-.fade-enter,
-.fade-leave-active {
-  opacity: 0;
 }

@@ -25,6 +25,7 @@ blockquote,
 
   &__container {
     @include padding;
+    width: 100%;
     justify-items: flex-start;
     align-items: flex-start;
     flex-direction: row;

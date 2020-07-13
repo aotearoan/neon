@@ -4,52 +4,125 @@
       <h1>Colors</h1>
     </neon-card-header>
     <neon-card-body>
-      <h2>Neutral palettes</h2>
+      <h2>Introduction</h2>
+      <p>
+        Neon uses the concept of <strong>Functional colors</strong> where colors are not just colors but they have some
+        semantic meaning. E.g. a brand color or a warning color. Each Functional color palette is generated from a
+        reference color. From this the light and dark color steps are generated (l1-l5 & d1-d5).
+      </p>
+      <p>
+        Another important feature of the palette generator is ensuring accessible contrast ratios of the colors when
+        used in combination with white or black text in light and dark modes.
+      </p>
+      <p>
+        It is possible to override the reference colors that any palette is generated from by overriding the color
+        variables in the theme's variable file. E.g. to override the primary color set the variable
+        <strong>$color-primary</strong> in your SASS overrides file.
+      </p>
+      <p>
+        Alternatively, if you would like to change an entire palette you can do so by overriding the palette map, e.g.
+        to override the info palette in your overrides SASS file set:
+      </p>
+      <pre>
+        $info-palette: (
+          l5: #f6e9ff,
+          l4: #ebd4ff,
+          l3: #ddbcfe,
+          l2: #cba1fa,
+          l1: #b683f3,
+          d1: #7f50ba,
+          d2: #644190,
+          d3: #4d346b,
+          d4: #39294c,
+          d5: #292033,
+        );
+      </pre>
+    </neon-card-body>
+    <neon-card-body>
+      <h2>Color palettes</h2>
+      <h3>Neutral colors</h3>
       <div class="colors neutral-colors">
         <div v-for="color in neutralColors" :key="color" class="color-list">
-          <div
-            v-for="i in 5"
-            :key="`l${i}`"
-            class="color-item neon-dark-text"
-            :ref="`${color}l${6 - i}`"
-            :class="`neon-${color}-bg-color-l${6 - i}`"
-          >
-            {{ `${color}-l${6 - i}` }}
+          <div class="color-list-section">
+            <div
+              v-for="i in 5"
+              :key="`l${i}`"
+              class="color-item neon-dark-text"
+              :ref="`${color}l${6 - i}`"
+              :class="`neon-${color}-bg-color-l${6 - i}`"
+            >
+              {{ `${color}: l${6 - i}` }}
+            </div>
           </div>
-          <div
-            v-for="i in 5"
-            :key="`d${i}`"
-            class="color-item neon-light-text"
-            :ref="`${color}d${i}`"
-            :class="`neon-${color}-bg-color-d${i}`"
-          >
-            {{ `${color}-d${i}` }}
+          <div class="color-list-section">
+            <div
+              v-for="i in 5"
+              :key="`d${i}`"
+              class="color-item neon-light-text"
+              :ref="`${color}d${i}`"
+              :class="`neon-${color}-bg-color-d${i}`"
+            >
+              {{ `${color}: d${i}` }}
+            </div>
           </div>
         </div>
       </div>
-      <h2>Functional color palettes</h2>
+      <h3>Brand color palettes</h3>
+      <div class="colors">
+        <div v-for="color in brandColors" :key="color" class="color-list">
+          <div class="color-list-section">
+            <div
+              v-for="i in 5"
+              :key="`l${i}`"
+              class="color-item neon-dark-text"
+              :ref="`${color}l${6 - i}`"
+              :class="`neon-${color}-bg-color-l${6 - i}`"
+            >
+              {{ `${color}: l${6 - i}` }}
+            </div>
+          </div>
+          <div class="color-list-section">
+            <div
+              v-for="i in 5"
+              :key="`d${i}`"
+              class="color-item neon-light-text"
+              :ref="`${color}d${i}`"
+              :class="`neon-${color}-bg-color-d${i}`"
+            >
+              {{ `${color}: d${i}` }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <h3>Functional color palettes</h3>
       <div class="colors">
         <div v-for="color in functionalColors" :key="color" class="color-list">
-          <div
-            v-for="i in 5"
-            :key="`l${i}`"
-            class="color-item neon-dark-text"
-            :ref="`${color}l${6 - i}`"
-            :class="`neon-${color}-bg-color-l${6 - i}`"
-          >
-            {{ `${color}-l${6 - i}` }}
+          <div class="color-list-section">
+            <div
+              v-for="i in 5"
+              :key="`l${i}`"
+              class="color-item neon-dark-text"
+              :ref="`${color}l${6 - i}`"
+              :class="`neon-${color}-bg-color-l${6 - i}`"
+            >
+              {{ `${color}: l${6 - i}` }}
+            </div>
           </div>
-          <div
-            v-for="i in 5"
-            :key="`d${i}`"
-            class="color-item neon-light-text"
-            :ref="`${color}d${i}`"
-            :class="`neon-${color}-bg-color-d${i}`"
-          >
-            {{ `${color}-d${i}` }}
+          <div class="color-list-section">
+            <div
+              v-for="i in 5"
+              :key="`d${i}`"
+              class="color-item neon-light-text"
+              :ref="`${color}d${i}`"
+              :class="`neon-${color}-bg-color-d${i}`"
+            >
+              {{ `${color}: d${i}` }}
+            </div>
           </div>
         </div>
       </div>
+    </neon-card-body>
+    <neon-card-body>
       <h2>Text colors</h2>
       <div class="neon-color-text-low-contrast">This is the low contrast color</div>
       <div class="neon-color-text-neutral">This is the neutral color</div>
