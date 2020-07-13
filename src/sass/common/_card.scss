@@ -35,6 +35,8 @@
   }
 
   .neon-card-header {
+    flex-direction: row;
+    justify-content: space-between;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
 

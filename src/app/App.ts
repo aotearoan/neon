@@ -23,7 +23,7 @@ import { NeonModeUtils } from '../common/utils/NeonModeUtils';
 import { Route } from 'vue-router';
 
 export enum Theme {
-  Default = 'default',
+  Classic = 'classic',
 }
 
 RegisterIcons.register();
@@ -45,7 +45,7 @@ Vue.use(VueI18n);
   },
 })
 export default class App extends Vue {
-  public theme = Theme.Default;
+  public theme = Theme.Classic;
   public selectedMode = NeonMode.Dark;
   private indexModel: NeonTreeMenuSectionModel[] = [];
   private indexFilter = '';
@@ -85,7 +85,7 @@ export default class App extends Vue {
   }
 
   get themes() {
-    return [Theme.Default];
+    return [Theme.Classic];
   }
 
   get modes() {
@@ -203,7 +203,7 @@ export default class App extends Vue {
         grid: [['section-content']],
       },
       {
-        breakpoint: NeonResponsive.Desktop,
+        breakpoint: NeonResponsive.Tablet,
         grid: [['responsive-menu'], ['section-content']],
       },
     ];

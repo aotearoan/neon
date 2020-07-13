@@ -32,24 +32,46 @@ export default class App extends Vue {}
         <h2>SASS</h2>
         <p>First select a theme:</p>
         <ul>
-          <li>default</li>
+          <li>classic</li>
         </ul>
         <p>
-          There are two imports necessary to use a theme, the variables and the theme itself. These are split into two
-          files to allow developers to override the variables for customization.
+          To use a theme without any customization simply import the basic theme file, e.g. to import the classic theme:
         </p>
-        <p>Here is how to import the <em>default</em> theme:</p>
         <pre>
-@import '~@aotearoan/neon/default-variables';
-@import 'src/sass/overrides';
-@import '~@aotearoan/neon/default-theme';
+@import '~@aotearoan/neon/themes/classic';
+</pre
+        >
+        <p>If, however you would like to override/customize the theme then you need to include the following:</p>
+        <pre>
+.app {
+  &.neon-theme--classic {
+    // override colors, palettes and other basic variables here BEFORE importing the theme, e.g. $color-primary: #bada55
+    @import '~@aotearoan/neon/themes/classic/theme';
+
+    // include custom app SASS here (you can use neon's defined variables, mixins and functions)
+
+    &.neon-mode--dark {
+      // override dark mode specific variables here, e.g. $border-color: #bada55
+      @import '~@aotearoan/neon/themes/classic/dark';
+
+      // include custom app dark mode SASS here (you can use neon's defined variables, mixins and functions)
+    }
+
+    &.neon-mode--light {
+      // override light mode specific variables here, e.g. $border-color: #bada55
+      @import '~@aotearoan/neon/themes/classic/light';
+
+      // include custom app light mode SASS here (you can use neon's defined variables, mixins and functions)
+    }
+  }
+}
 </pre
         >
         <p>
           Finally, the theme and mode (light/dark) need to be set on the document, e.g. to set the
-          <em>default</em> theme and <em>dark</em> mode:
+          <em>classic</em> theme and <em>dark</em> mode:
         </p>
-        <pre>&lt;html class="app neon neon-theme--default neon-mode--dark"&gt;</pre>
+        <pre>&lt;html class="app neon neon-theme--classic neon-mode--dark"&gt;</pre>
         <p>
           For more information on dynamically changing the mode see
           <neon-link href="/design/dark-mode">Dark mode</neon-link>

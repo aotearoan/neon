@@ -32,7 +32,7 @@
   }
 
   &--m {
-    @include button-size($size-m, $base-font-size, $font-size-s, $font-size-l);
+    @include button-size($size-m, $base-font-size, $font-size-xs, $font-size-l);
   }
 
   &--l {
@@ -101,7 +101,7 @@
     cursor: progress;
   }
 
-  &__indicator {
+  &__indicator:not(:first-child) {
     margin-left: 2 * $base-space;
   }
 }

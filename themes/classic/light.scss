@@ -1,0 +1,127 @@
+$background-color-card: $color-neutral-l5 !default;
+$background-color: $color-neutral-l4 !default;
+
+$color-text: $color-text-dark !default;
+$color-inverse: $color-text-light !default;
+$color-text-low-contrast: $color-low-contrast-d1 !default;
+$color-text-neutral: $color-neutral-d1 !default;
+$color-text-high-contrast: $color-high-contrast-d1 !default;
+$color-text-brand: $color-brand-d1 !default;
+$color-text-primary: $color-primary-d1 !default;
+$color-text-info: $color-info-d1 !default;
+$color-text-success: $color-success-d1 !default;
+$color-text-warn: $color-warn-d1 !default;
+$color-text-error: $color-error-d1 !default;
+
+$background-color-neutral: $color-neutral-l1 !default;
+$background-color-primary: $color-primary-l1 !default;
+$background-color-info: $color-info-l1 !default;
+$background-color-success: $color-success-l1 !default;
+$background-color-warn: $color-warn-l1 !default;
+$background-color-error: $color-error-l1 !default;
+
+$border-color: $color-neutral-l3 !default;
+$border: $border-width $border-style $border-color !default;
+$hr-color: $border-color !default;
+
+$logo: $logo-light !default;
+
+$label-color: $color-neutral-d1 !default;
+
+$color-disabled-light: $color-neutral-l2 !default;
+$color-disabled-dark: $color-neutral-l4 !default;
+
+// switch
+$background-color-switch-off: $color-neutral-l3 !default;
+$background-color-switch-on: d1 !default;
+$background-color-switch-indicator: $color-neutral-l5 !default;
+
+$color-switch-label-disabled: $color-disabled-light !default;
+$background-color-switch-disabled: rgba($color-disabled-light, 0.5) !default;
+$background-color-switch-indicator-disabled: $background-color-switch-indicator !default;
+
+// checkbox
+$background-color-checkbox: d1 !default;
+$border-color-checkbox: d2 !default;
+
+// solid button
+$background-solid-button-light: d1 !default;
+$background-solid-button-dark: d2 !default;
+$color-button-text: $color-neutral-l5 !default;
+
+// high-contrast buttons
+$background-high-contrast-solid-button-light: $color-high-contrast-d1 !default;
+$background-high-contrast-solid-button-dark: $color-text !default;
+
+// low-contrast buttons
+$background-low-contrast-solid-button-light: $color-low-contrast-l5 !default;
+$background-low-contrast-solid-button-dark: $color-low-contrast-l4 !default;
+$color-low-contrast-solid-button: $color-low-contrast-d4 !default;
+$color-low-contrast-outline-button: $color-low-contrast-l2 !default;
+
+// text button
+$color-text-button: d1 !default;
+$background-color-text-button-hover: lighten($color-neutral-l4, 1) !default;
+$background-color-text-button-active: $color-neutral-l4 !default;
+
+// label
+$color-label: d1 !default;
+
+// note
+$border-color-note: d1 !default;
+$background-color-note: l5 !default;
+$color-note: $color-neutral-d1 !default;
+
+// link
+$color-link: $color-primary-d2 !default;
+$color-link-hover: $color-primary-d1 !default;
+
+// icon
+$color-icon: d1 !default;
+
+// tree menu
+$color-tree-menu-hover: $color-neutral-l4 !default;
+
+// action menu
+$color-action-menu-hover: $color-neutral-l4 !default;
+
+// selection
+$background-color-selection: $color-primary-d1 !default;
+
+// pre
+$background-color-pre: $color-neutral-l3 !default;
+
+// toggle
+$color-toggle: d1 !default;
+$color-toggle-selected: $color-neutral-l5 !default;
+
+// radio buttons
+$background-radio-button: linear-gradient(0deg, $color-neutral-l5 0%, $color-neutral-l3 100%) !default;
+$color-radio-button-label: $color-neutral-d3 !default;
+
+// input
+$border-color-input: $color-neutral-l2 !default;
+$background-color-input: rgba($color-text-light, 0.5) !default;
+$background-color-input-active: $color-text-light !default;
+$border-color-input-selected: d1 !default;
+$color-placeholder: $color-neutral-l1 !default;
+
+// drop zone
+$color-drop-zone: $color-text !default;
+
+// file
+$color-file-list: d1 !default;
+
+// alerts
+$icon-error: $icon-error-light !default;
+$icon-warn: $icon-warn-light !default;
+$icon-success: $icon-success-light !default;
+$icon-info: $icon-info-light !default;
+
+// dropdown menu
+$background-color-dropdown-menu-hover: $background-color-text-button-hover !default;
+
+// notification counter
+$background-color-notification-counter: #cc0000 !default;
+
+@import '../../src/sass/common/colors/color-components';

@@ -14,14 +14,11 @@ export default class Color extends Vue {
     return [NeonFunctionalColor.LowContrast, NeonFunctionalColor.Neutral, NeonFunctionalColor.HighContrast];
   }
 
+  get brandColors() {
+    return [NeonFunctionalColor.Brand, NeonFunctionalColor.Primary];
+  }
+
   get functionalColors() {
-    return [
-      NeonFunctionalColor.Brand,
-      NeonFunctionalColor.Primary,
-      NeonFunctionalColor.Info,
-      NeonFunctionalColor.Success,
-      NeonFunctionalColor.Warn,
-      NeonFunctionalColor.Error,
-    ];
+    return [NeonFunctionalColor.Info, NeonFunctionalColor.Success, NeonFunctionalColor.Warn, NeonFunctionalColor.Error];
   }
 }

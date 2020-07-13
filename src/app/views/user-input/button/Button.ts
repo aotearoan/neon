@@ -35,11 +35,11 @@ export default class Button extends Vue {
 </div>`;
 
   private styleExamples = `<div class="collection">
-  <neon-button button-style="solid" label="Solid" />
-  <neon-button button-style="outline" label="Outline" />
-  <neon-button button-style="text" label="Text" />
+  <neon-button button-style="solid" label="Solid button" />
+  <neon-button button-style="outline" label="Outline button" />
+  <neon-button button-style="text" label="Text button" />
   <neon-note color="info">
-    <strong>Note:</strong> add an <em>href</em> to buttons and they will be rendered as links
+    <span><strong>Note:</strong> add an <em>href</em> to buttons and they will be rendered as links</span>
   </neon-note>
   <neon-button href="." label="Link button" />
   <neon-button :full-width="true" style="outline" label="Full width button" />
@@ -59,7 +59,7 @@ export default class Button extends Vue {
   <neon-note color="info">
     <span>
       <strong>Note:</strong> add button states (<span class="neon-monospaced">loading, success, error</span>) to
-      indicate the result of actions. Buttons will be disabled until it is set back to the
+      indicate the result of actions. Buttons will be disabled until set back to the
       <span class="neon-monospaced">ready</span> state.
     </span>
   </neon-note>
@@ -68,12 +68,11 @@ export default class Button extends Vue {
   <neon-button :disabled="true" label="Disabled text" button-style="text" />
   <neon-button state="loading" color="primary" label="Loading" />
   <neon-button state="loading" color="primary" label="Loading button with icon" icon="plus" />
-  <neon-button state="success" color="primary" label="Success" button-style="outline" />
+  <neon-button state="success" color="primary" label="Success" />
   <neon-button
     state="success"
     color="primary"
     label="Success button with icon"
-    button-style="outline"
     icon="plus"
   />
   <neon-button state="error" color="primary" label="Error" button-style="text" />
@@ -81,7 +80,6 @@ export default class Button extends Vue {
     state="error"
     color="primary"
     label="Error button with icon"
-    button-style="text"
     icon="plus"
   />
 </div>`;

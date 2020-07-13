@@ -6,7 +6,7 @@
     <neon-card-body>
       <h2>Solid labels</h2>
       <div class="collection">
-        <div v-for="size in labelSizes" :key="`label-${size}-solid`" class="collection-sub-list">
+        <div v-for="size in labelSizes" :key="`label-${size}-solid`">
           <neon-label
             v-for="color in colors"
             :key="`label-${color}-${size}-solid`"
@@ -18,7 +18,7 @@
       </div>
       <h2>Outline labels</h2>
       <div class="collection">
-        <div v-for="size in labelSizes" :key="`label-${size}-outline`" class="collection-sub-list">
+        <div v-for="size in labelSizes" :key="`label-${size}-outline`">
           <neon-label
             v-for="color in colors"
             :key="`label-${color}-${size}-outline`"
@@ -31,7 +31,7 @@
       </div>
       <h2>With icons</h2>
       <div class="collection">
-        <div v-for="size in labelSizes" :key="`label-${size}-outline-with-icon`" class="collection-sub-list">
+        <div v-for="size in labelSizes" :key="`label-${size}-outline-with-icon`">
           <neon-label
             v-for="color in colors"
             :key="`label-${color}-${size}-outline-with-icon`"
@@ -46,7 +46,7 @@
       </div>
       <h2>Icon only</h2>
       <div class="collection">
-        <div v-for="size in labelSizes" :key="`label-${size}-solid-icon-only`" class="collection-sub-list">
+        <div v-for="size in labelSizes" :key="`label-${size}-solid-icon-only`">
           <neon-label
             v-for="color in colors"
             :key="`label-${color}-${size}-outline-with-icon`"
