@@ -229,11 +229,11 @@ $lab-t3: 0.008856452; // t1 * t1 * t1
       l3: hcl($hue - 20, nth($chroma-curve, 3), nth($luminance-curve, 3)),
       l2: hcl($hue - 15, nth($chroma-curve, 4), nth($luminance-curve, 4)),
       l1: hcl($hue - 10, nth($chroma-curve, 5), nth($luminance-curve, 5)),
-      d1: hcl($hue, nth($chroma-curve, 6), nth($luminance-curve, 6)),
-      d2: hcl($hue - 5, nth($chroma-curve, 7), nth($luminance-curve, 7)),
+      d1: hcl($hue - 10, nth($chroma-curve, 6), nth($luminance-curve, 6)),
+      d2: hcl($hue - 10, nth($chroma-curve, 7), nth($luminance-curve, 7)),
       d3: hcl($hue - 10, nth($chroma-curve, 8), nth($luminance-curve, 8)),
-      d4: hcl($hue - 15, nth($chroma-curve, 9), nth($luminance-curve, 9)),
-      d5: hcl($hue - 20, nth($chroma-curve, 10), nth($luminance-curve, 10))
+      d4: hcl($hue - 10, nth($chroma-curve, 9), nth($luminance-curve, 9)),
+      d5: hcl($hue - 10, nth($chroma-curve, 10), nth($luminance-curve, 10))
     );
   } @else {
     @return (
