@@ -1,3 +1,5 @@
+@import './code-mirror';
+
 .example {
   &__code {
     border-radius: $border-radius;
@@ -18,17 +20,7 @@
       min-height: 30 * $base-space;
       max-height: 75 * $base-space;
 
-      @include responsive(desktop) {
-        @include width(100, $side-nav-width + 2 * $spacing-vertical-desktop + 2 * $spacing-horizontal-desktop);
-      }
-
-      @include responsive(tablet) {
-        @include width(100, 2 * $spacing-vertical-tablet + 2 * $spacing-horizontal-tablet);
-      }
-
-      @include responsive(mobile) {
-        @include width(100, 2 * $spacing-vertical-mobile + 2 * $spacing-horizontal-mobile);
-      }
+      @include code-mirror-width;
     }
   }
 }

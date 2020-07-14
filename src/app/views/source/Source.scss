@@ -1,9 +1,15 @@
+@import '../../sass/code-mirror';
+
 .source-page {
   .CodeMirror-cursors {
     display: none;
   }
 
   .CodeMirror {
+    @include code-mirror-width;
+    height: fit-content;
+    min-height: 30 * $base-space;
+    max-height: 175 * $base-space;
     border-radius: $border-radius;
 
     span {

@@ -1,0 +1,13 @@
+@mixin code-mirror-width {
+  @include responsive(desktop) {
+    @include width(100, $side-nav-width + 2 * $spacing-vertical-desktop + 2 * $spacing-horizontal-desktop);
+  }
+
+  @include responsive(tablet) {
+    @include width(100, 2 * $spacing-vertical-tablet + 2 * $spacing-horizontal-tablet);
+  }
+
+  @include responsive(mobile) {
+    @include width(100, 2 * $spacing-vertical-mobile + 2 * $spacing-horizontal-mobile);
+  }
+}
