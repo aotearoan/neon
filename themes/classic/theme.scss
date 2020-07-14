@@ -1,4 +1,4 @@
-@import '../../src/sass/common/includes/farbig/farbig';
+@import '../../src/sass/includes/farbig/farbig';
 
 /* base colors */
 $color-brand: #5b0a9b !default;
@@ -19,7 +19,7 @@ $success-palette: generate-palette($color-success) !default;
 $warn-palette: generate-palette($color-warn) !default;
 $error-palette: generate-palette($color-error) !default;
 
-@import '../../src/sass/common/colors/colors';
+@import '../../src/sass/colors/colors';
 
 /* layout */
 $base-space: 4px !default;
@@ -139,5 +139,5 @@ $icon-info-dark: url('data:image/svg+xml;charset=UTF-8,<svg width="100%" height=
 /* dropdown */
 $box-shadow-dropdown: $box-shadow-strong !default;
 
-@import '../../src/sass/common/includes/includes';
-@import '../../src/sass/common/common';
+@import '../../src/sass/includes/includes';
+@import 'src/sass/common';
