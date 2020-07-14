@@ -24,7 +24,7 @@ blockquote,
   }
 
   &__container {
-    @include padding;
+    @include padding(0.85);
     width: 100%;
     justify-items: flex-start;
     align-items: flex-start;
@@ -33,13 +33,6 @@ blockquote,
 
   &__close {
     align-self: flex-start;
-
-    &.neon-button.neon-button--s.neon-button--icon-only {
-      .neon-icon {
-        width: 3 * $base-space;
-        height: 3 * $base-space;
-      }
-    }
 
     &.neon-button {
       @include responsive(desktop) {
@@ -62,5 +55,5 @@ blockquote,
 }
 
 blockquote {
-  @include padding;
+  @include padding(0.85);
 }

@@ -89,7 +89,8 @@ $color-action-menu-hover: $color-neutral-l4 !default;
 $background-color-selection: $color-primary-d1 !default;
 
 // pre
-$background-color-pre: $color-neutral-l3 !default;
+$color-pre: $color-primary-d3 !default;
+$background-color-pre: rgba($color-neutral-l3, 0.25) !default;
 
 // toggle
 $color-toggle: d1 !default;

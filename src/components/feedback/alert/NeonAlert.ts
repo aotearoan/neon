@@ -13,9 +13,9 @@ Vue.use(Snotify, {
 });
 
 @Component
-export class NeonAlertService extends Vue {
+export default class NeonAlert extends Vue {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  static _instance: any = new NeonAlertService();
+  static _instance: any = new NeonAlert();
 
   public info(title: string, message = '') {
     this.instance.$snotify.info(message, title);
@@ -34,8 +34,8 @@ export class NeonAlertService extends Vue {
   }
 
   get instance() {
-    return NeonAlertService._instance;
+    return NeonAlert._instance;
   }
 }
 
-export default NeonAlertService;
+export const NeonAlertService = new NeonAlert();

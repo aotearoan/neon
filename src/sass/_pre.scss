@@ -1,0 +1,21 @@
+.neon-pre {
+  position: relative;
+
+  pre {
+    margin-top: 0;
+  }
+
+  &__copy {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.25;
+    transition: opacity ease-in-out $animation-speed-fast;
+
+    &:hover {
+      background: none !important;
+      cursor: pointer;
+      opacity: 1;
+    }
+  }
+}

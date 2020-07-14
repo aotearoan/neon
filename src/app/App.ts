@@ -5,6 +5,7 @@ import { Menu } from './Menu';
 import { NeonMode } from '../common/enums/NeonMode';
 import { NeonTreeMenuLinkModel, NeonTreeMenuSectionModel } from '../common/models/NeonTreeMenuModel';
 import {
+  NeonAlert,
   NeonDrawer,
   NeonFooter,
   NeonGrid,
@@ -31,6 +32,7 @@ Vue.use(VueI18n);
 
 @Component({
   components: {
+    NeonAlert,
     NeonTopNav,
     NeonLogo,
     NeonSwitch,

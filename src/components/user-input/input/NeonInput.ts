@@ -64,7 +64,7 @@ export default class NeonInput extends Vue {
         if (this.icon) {
           return this.icon;
         } else if (this.value && this.value.length > 0) {
-          return 'times-circle';
+          return 'times';
         }
 
         return undefined;

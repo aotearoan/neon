@@ -4,9 +4,9 @@
 Full documentation is available on the [demo site](https://aotearoan.github.io/neon/).
 
 ## Installation
-Install the package with one of the following commands:
-
+Install with NPM:
 <pre>npm install @aotearoan/neon</pre>
+or yarn:
 <pre>yarn add @aotearoan/neon</pre>
 
 ## Usage

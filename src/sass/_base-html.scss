@@ -26,7 +26,7 @@ ul {
     padding-left: 5 * $base-space;
 
     &:before {
-      content: '•';
+      content: '—';
       padding-right: 3 * $base-space;
       margin-left: -5 * $base-space;
       display: inline-flex;
@@ -35,12 +35,30 @@ ul {
       line-height: $line-height-ratio;
     }
   }
+
+  & + p {
+    margin-top: 4 * $base-space;
+  }
 }
 
 pre {
   @include padding;
   border-radius: $border-radius;
   white-space: pre-wrap;
+}
+
+p + pre,
+p + .neon-pre {
+  margin-top: 0;
+}
+
+p + ul {
+  margin-top: -2 * $base-space;
+}
+
+pre + p,
+.neon-pre + p {
+  margin-top: 3 * $base-space;
 }
 
 .neon--disabled {

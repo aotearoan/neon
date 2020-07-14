@@ -1,14 +1,14 @@
 @import 'includes/layout';
 
-@mixin button-size($size, $font-size, $icon-size, $icon-only-size) {
+@mixin button-size($size, $font-size, $icon-only-size) {
   height: $size;
   font-size: $font-size;
   line-height: 1;
   padding: 0 0.75 * ($size - $font-size);
 
   .neon-icon {
-    width: $icon-size;
-    height: $icon-size;
+    width: $font-size;
+    height: $font-size;
   }
 
   &.neon-button--icon-only {
@@ -28,15 +28,15 @@
 
 .neon-button {
   &--s {
-    @include button-size($size-s, $font-size-s, $font-size-xs, $base-font-size);
+    @include button-size($size-s, $font-size-s, $font-size-l);
   }
 
   &--m {
-    @include button-size($size-m, $base-font-size, $font-size-xs, $font-size-l);
+    @include button-size($size-m, $base-font-size, $h6-size);
   }
 
   &--l {
-    @include button-size($size-l, $base-font-size, $font-size-s, $h6-size);
+    @include button-size($size-l, $base-font-size, $h5-size);
   }
 
   border-radius: $border-radius;
@@ -103,6 +103,11 @@
 
   &__indicator:not(:first-child) {
     margin-left: 2 * $base-space;
+  }
+
+  .neon-link__label {
+    display: flex;
+    justify-content: center;
   }
 }
 

@@ -29,6 +29,7 @@ import NeonNote from './components/feedback/note/NeonNote.vue';
 import NeonNotificationCounter from './components/presentation/notification-counter/NeonNotificationCounter.vue';
 import NeonPage from './components/layout/page/NeonPage.vue';
 import NeonPassword from './components/user-input/password/NeonPassword.vue';
+import NeonPre from './components/presentation/pre/NeonPre.vue';
 import NeonSideNav from './components/layout/side-nav/NeonSideNav.vue';
 import NeonSwitch from './components/user-input/switch/NeonSwitch.vue';
 import NeonToggle from './components/user-input/toggle/NeonToggle.vue';
@@ -40,6 +41,7 @@ import { NeonActionMenuModel } from './common/models/NeonActionMenuModel';
 import { NeonAlertService } from './components/feedback/alert/NeonAlert';
 import { NeonAvailableSpace } from './common/models/NeonAvailableSpace';
 import { NeonButtonStyle } from './common/enums/NeonButtonStyle';
+import { NeonClipboardService, NeonClipboardSupport } from './common/utils/NeonClipboardService';
 import { NeonClosableUtils } from './common/utils/NeonClosableUtils';
 import { NeonDateUtils } from './common/utils/NeonDateUtils';
 import { NeonDropdownMenuItem } from './common/models/NeonDropdownMenuItem';
@@ -103,6 +105,7 @@ const components: { [s: string]: VueConstructor } = {
   NeonNotificationCounter,
   NeonPage,
   NeonPassword,
+  NeonPre,
   NeonSideNav,
   NeonSwitch,
   NeonToggle,
@@ -125,6 +128,8 @@ export {
   NeonCardBody,
   NeonCardFooter,
   NeonCardHeader,
+  NeonClipboardService,
+  NeonClipboardSupport,
   NeonClosableUtils,
   NeonDateUtils,
   NeonDrawer,
@@ -164,6 +169,7 @@ export {
   NeonPlacement,
   NeonPlacementUtils,
   NeonPosition,
+  NeonPre,
   NeonResponsive,
   NeonResponsiveUtils,
   NeonSideNav,

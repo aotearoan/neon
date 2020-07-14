@@ -23,8 +23,9 @@
         Alternatively, if you would like to change an entire palette you can do so by overriding the palette map, e.g.
         to override the info palette in your overrides SASS file set:
       </p>
-      <pre>
-        $info-palette: (
+      <neon-pre>
+        <pre>
+$info-palette: (
           l5: #f6e9ff,
           l4: #ebd4ff,
           l3: #ddbcfe,
@@ -35,8 +36,9 @@
           d3: #4d346b,
           d4: #39294c,
           d5: #292033,
-        );
-      </pre>
+        );</pre
+        >
+      </neon-pre>
     </neon-card-body>
     <neon-card-body>
       <h2>Color palettes</h2>

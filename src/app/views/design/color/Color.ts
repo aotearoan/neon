@@ -1,12 +1,13 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { NeonFunctionalColor } from '../../../../common/enums/NeonFunctionalColor';
-import { NeonCard, NeonCardBody, NeonCardHeader } from '../../../../components';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonPre } from '../../../../components';
 
 @Component({
   components: {
     NeonCard,
     NeonCardHeader,
     NeonCardBody,
+    NeonPre,
   },
 })
 export default class Color extends Vue {

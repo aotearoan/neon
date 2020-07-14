@@ -31,7 +31,7 @@
             />
             <neon-toggle
               name="dark-mode-toggle"
-              color="low-contrast"
+              color="neutral"
               :value="selectedMode"
               :model="modes"
               @input="switchMode"
@@ -74,6 +74,7 @@
         </neon-footer>
       </template>
     </neon-page>
+    <neon-alert />
   </div>
 </template>
 

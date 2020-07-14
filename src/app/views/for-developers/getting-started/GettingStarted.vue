@@ -5,9 +5,14 @@
         <h1>Installation</h1>
       </neon-card-header>
       <neon-card-body>
-        <p>Install the package with one of the following commands:</p>
-        <pre>npm install @aotearoan/neon</pre>
-        <pre>yarn add @aotearoan/neon</pre>
+        <p>Install with NPM:</p>
+        <neon-pre>
+          <pre>npm install @aotearoan/neon</pre>
+        </neon-pre>
+        <p>or yarn:</p>
+        <neon-pre>
+          <pre>yarn add @aotearoan/neon</pre>
+        </neon-pre>
       </neon-card-body>
     </neon-card>
     <neon-card>
@@ -17,7 +22,8 @@
       <neon-card-body>
         <h2>Javascript/Typescript</h2>
         <p>Import components and supporting classes like so:</p>
-        <pre>
+        <neon-pre>
+          <pre>
 import { Component, Vue } from 'vue-property-decorator';
 import { NeonLogo } from '@aotearoan/neon';
 
@@ -26,23 +32,26 @@ import { NeonLogo } from '@aotearoan/neon';
     NeonLogo,
   },
 })
-export default class App extends Vue {}
-</pre
-        >
+export default class App extends Vue {}</pre
+          >
+        </neon-pre>
+      </neon-card-body>
+      <neon-card-body>
         <h2>SASS</h2>
         <p>First select a theme:</p>
         <ul>
           <li>classic</li>
         </ul>
         <p>
-          To use a theme without any customization simply import the basic theme file, e.g. to import the classic theme:
+          To use a theme without any customization simply import the basic theme file, e.g. to import the
+          <em>classic</em> theme:
         </p>
-        <pre>
-@import '~@aotearoan/neon/themes/classic';
-</pre
-        >
+        <neon-pre>
+          <pre>@import '~@aotearoan/neon/themes/classic';</pre>
+        </neon-pre>
         <p>If, however you would like to override/customize the theme then you need to include the following:</p>
-        <pre>
+        <neon-pre>
+          <pre>
 .app {
   &.neon-theme--classic {
     // override colors, palettes and other basic variables here BEFORE importing the theme, e.g. $color-primary: #bada55
@@ -64,17 +73,19 @@ export default class App extends Vue {}
       // include custom app light mode SASS here (you can use neon's defined variables, mixins and functions)
     }
   }
-}
-</pre
-        >
+}</pre
+          >
+        </neon-pre>
         <p>
           Finally, the theme and mode (light/dark) need to be set on the document, e.g. to set the
           <em>classic</em> theme and <em>dark</em> mode:
         </p>
-        <pre>&lt;html class="app neon neon-theme--classic neon-mode--dark"&gt;</pre>
+        <neon-pre>
+          <pre>&lt;html class="app neon neon-theme--classic neon-mode--dark"&gt;</pre>
+        </neon-pre>
         <p>
           For more information on dynamically changing the mode see
-          <neon-link href="/design/dark-mode">Dark mode</neon-link>
+          <neon-link href="/design/dark-mode">Dark mode</neon-link>.
         </p>
       </neon-card-body>
     </neon-card>
