@@ -190,6 +190,13 @@ export class Menu {
           keywords: 'badge',
           component: 'NeonNotificationCounter',
         },
+        {
+          path: 'pre',
+          page: 'Pre',
+          name: 'Pre',
+          keywords: 'pre code block formatting preformatting',
+          component: 'NeonPre',
+        },
       ],
     },
     {
