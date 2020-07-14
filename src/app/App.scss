@@ -89,8 +89,14 @@
       }
     }
 
-    .neon-side-nav > hr {
-      display: none;
+    .neon-side-nav {
+      &__sticky {
+        padding-bottom: 4 * $base-space;
+      }
+
+      & > hr {
+        display: none;
+      }
     }
 
     .content {
