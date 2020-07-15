@@ -4,7 +4,7 @@ import Snotify, { SnotifyPosition } from 'vue-snotify';
 
 Vue.use(Snotify, {
   toast: {
-    timeout: 2500,
+    timeout: 3000,
     position: SnotifyPosition.rightTop,
     showProgressBar: false,
     CloseOnClick: true,

@@ -177,11 +177,9 @@ $width-alert-text-mobile: $width-alert-mobile - $width-alert-icon - 4 * $padding
   padding-left: $padding-alert-horizontal + $width-alert-icon;
   padding-bottom: $padding-alert-vertical;
   padding-right: $padding-alert-horizontal;
-  min-height: $min-height-alert;
   font-size: $base-font-size;
 
   @include responsive(mobile) {
-    min-height: $min-height-alert-mobile;
     padding-top: 0.5 * $padding-alert-vertical;
     padding-bottom: 0.5 * $padding-alert-vertical;
   }
@@ -196,7 +194,6 @@ $width-alert-text-mobile: $width-alert-mobile - $width-alert-icon - 4 * $padding
   font-size: $h5-size;
   font-weight: 300;
   padding-left: $padding-alert-horizontal;
-  margin-bottom: $base-space;
 
   @include responsive(mobile) {
     margin-bottom: 0;
@@ -207,6 +204,7 @@ $width-alert-text-mobile: $width-alert-mobile - $width-alert-icon - 4 * $padding
   font-size: $font-size-s;
   padding-left: $padding-alert-horizontal;
   width: $width-alert-text;
+  margin-top: $base-space;
 
   @include responsive(mobile) {
     width: $width-alert-text-mobile;
