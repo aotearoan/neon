@@ -156,7 +156,7 @@ $width-alert-text-mobile: $width-alert-mobile - $width-alert-icon - 4 * $padding
   overflow: hidden;
   pointer-events: auto;
   border-radius: 2 * $border-radius;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(20px);
 }
 
 .snotifyToast--in {
