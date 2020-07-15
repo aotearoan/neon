@@ -25,6 +25,12 @@
     <span class="neon-link__label">
       <!-- @slot the link's content -->
       <slot></slot>
+      <neon-icon
+        v-if="externalIndicator"
+        name="link-external"
+        color="low-contrast"
+        class="neon-link__external-indicator"
+      />
     </span>
   </a>
 </template>

@@ -5,8 +5,11 @@ export default class NeonLink extends Vue {
   @Prop()
   public href?: string;
 
-  @Prop()
-  public noStyle?: boolean;
+  @Prop({ default: false })
+  public noStyle!: boolean;
+
+  @Prop({ default: false })
+  public externalIndicator!: boolean;
 
   private get routerUrl() {
     return this.href && this.href.indexOf('//') === -1 ? this.href : undefined;
