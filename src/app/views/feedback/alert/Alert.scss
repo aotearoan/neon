@@ -1,0 +1,7 @@
+.alert-buttons {
+  flex-direction: row;
+
+  .neon-button:not(:last-child) {
+    margin-right: 4 * $base-space;
+  }
+}
