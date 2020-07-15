@@ -1,7 +1,7 @@
 $width-alert-icon: 5 * $base-space;
 $width-alert-close-icon: $font-size-s;
 $padding-alert-horizontal: 3 * $base-space;
-$padding-alert-vertical: 4 * $base-space;
+$padding-alert-vertical: 3 * $base-space;
 $width-alert-text: $width-alert - $width-alert-icon - 4 * $padding-alert-horizontal - $width-alert-close-icon;
 $width-alert-text-mobile: $width-alert-mobile - $width-alert-icon - 4 * $padding-alert-horizontal -
   $width-alert-close-icon;
@@ -155,7 +155,8 @@ $width-alert-text-mobile: $width-alert-mobile - $width-alert-icon - 4 * $padding
   opacity: 0;
   overflow: hidden;
   pointer-events: auto;
-  border-radius: $border-radius;
+  border-radius: 2 * $border-radius;
+  backdrop-filter: blur(8px);
 }
 
 .snotifyToast--in {
@@ -193,7 +194,7 @@ $width-alert-text-mobile: $width-alert-mobile - $width-alert-icon - 4 * $padding
 .snotifyToast__title {
   line-height: 1;
   font-size: $h5-size;
-  font-weight: 500;
+  font-weight: 300;
   padding-left: $padding-alert-horizontal;
   margin-bottom: $base-space;
 

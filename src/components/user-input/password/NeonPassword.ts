@@ -1,9 +1,9 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 /**
- * <p>The <span class="neon-monospaced">NeonPassword</span> component is the equivalent of an
- * <span class="neon-monospaced">&lt;input type="password" /&gt;</span>. It supports the same properties as
- * <a href="/user-input/input"><span class="neon-monospaced">NeonInput</span></a> with the exception of the icon which is used to toggle the
+ * <p>The <strong>NeonPassword</strong> component is the equivalent of an
+ * <strong>&lt;input type="password" /&gt;</strong>. It supports the same properties as
+ * <a href="/user-input/input"><strong>NeonInput</strong></a> with the exception of the icon which is used to toggle the
  * display of the password.
  * </p>
  */

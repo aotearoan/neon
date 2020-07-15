@@ -1,10 +1,3 @@
-$notificationTypes: (
-  error: $color-error-d1,
-  warning: $color-warn-d1,
-  info: $color-info-d1,
-  success: $color-success-d1,
-);
-
 $notificationIcons: (
   error: $icon-error,
   warning: $icon-warn,
@@ -13,20 +6,24 @@ $notificationIcons: (
 );
 
 .snotifyToast {
-  box-shadow: 0.5 * $base-space 0.5 * $base-space 2 * $base-space $color-neutral-d4;
-
-  &__title {
-    color: $color-text-light;
-  }
+  box-shadow: 0.5 * $base-space 0.5 * $base-space 2 * $base-space $alert-box-shadow-color;
 
   &__body {
-    color: $color-text-light;
+    color: $color-text;
   }
 }
 
-@each $type, $color in $notificationTypes {
+@each $type, $color in $alert-background-colors {
   .snotify-#{$type} {
     background-color: $color;
+  }
+}
+
+@each $type, $color in $alert-title-colors {
+  .snotify-#{$type} {
+    .snotifyToast__title {
+      color: $color;
+    }
   }
 }
 

@@ -1,9 +1,8 @@
 <template>
   <component-documentation v-if="menuModel" :examples="examples" :model="menuModel">
     <p>
-      The <span class="neon-monospaced">NeonInput</span> component covers the basic input types:
-      <span class="neon-monospaced">email, tel, text & url</span> as well as
-      <span class="neon-monospaced">textarea</span>. There are custom components defined for the other input types.
+      The <strong>NeonInput</strong> component covers the basic input types: <strong>email, tel, text & url</strong> as
+      well as <strong>textarea</strong>. There are custom components defined for the other input types.
     </p>
   </component-documentation>
 </template>

@@ -4,14 +4,12 @@
       <h1>Dark mode</h1>
     </neon-card-header>
     <neon-card-body>
-      <p>
-        Use <span class="neon-monospaced">NeonModeUtils</span> to listen to native color scheme switching. The API is:
-      </p>
+      <p>Use <strong>NeonModeUtils</strong> to listen to native color scheme switching. The API is:</p>
       <ul>
         <li>
           <strong class="neon-monospaced">init(defaultMode?: NeonMode)</strong> - initialise the mode from the users
           preferences. Optionally set the default mode in the case there is no native support for color schemes. The
-          initial value is <span class="neon-monospaced">NeonMode.Dark</span>.
+          initial value is <strong>NeonMode.Dark</strong>.
         </li>
         <li>
           <strong class="neon-monospaced">addListener(key: string, callback: (mode: NeonMode) => void)</strong> - listen
