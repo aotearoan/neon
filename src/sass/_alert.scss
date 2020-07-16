@@ -9,6 +9,7 @@ $width-alert-text-mobile: $width-alert-mobile - $width-alert-icon - 4 * $padding
 .snotifyToast {
   animation-fill-mode: both;
 }
+
 .snotify-rightTop .fadeIn {
   animation-name: fadeInRight;
 }
@@ -19,7 +20,7 @@ $width-alert-text-mobile: $width-alert-mobile - $width-alert-icon - 4 * $padding
 
 @-webkit-keyframes fadeInRight {
   0% {
-    opacity: 0;
+    opacity: 1;
     transform: translate3d(100%, 0, 0) scaleX(1.2);
   }
   100% {
@@ -30,7 +31,7 @@ $width-alert-text-mobile: $width-alert-mobile - $width-alert-icon - 4 * $padding
 
 @keyframes fadeInRight {
   0% {
-    opacity: 0;
+    opacity: 1;
     transform: translate3d(100%, 0, 0) scaleX(1.2);
   }
   100% {
@@ -61,7 +62,7 @@ $width-alert-text-mobile: $width-alert-mobile - $width-alert-icon - 4 * $padding
 
 @-webkit-keyframes appear {
   0% {
-    max-height: 0;
+    max-height: calc(var(--vh, 1vh) * 50);
   }
   100% {
     max-height: calc(var(--vh, 1vh) * 50);
@@ -70,7 +71,7 @@ $width-alert-text-mobile: $width-alert-mobile - $width-alert-icon - 4 * $padding
 
 @keyframes appear {
   0% {
-    max-height: 0;
+    max-height: calc(var(--vh, 1vh) * 95);
   }
   100% {
     max-height: calc(var(--vh, 1vh) * 95);
@@ -156,7 +157,6 @@ $width-alert-text-mobile: $width-alert-mobile - $width-alert-icon - 4 * $padding
   overflow: hidden;
   pointer-events: auto;
   border-radius: 2 * $border-radius;
-  backdrop-filter: blur(20px);
 }
 
 .snotifyToast--in {

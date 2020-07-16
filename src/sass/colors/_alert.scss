@@ -15,7 +15,12 @@ $notificationIcons: (
 
 @each $type, $color in $alert-background-colors {
   .snotify-#{$type} {
-    background-color: $color;
+    background-color: rgba($color-inverse, 0.85);
+
+    @supports (backdrop-filter: none) {
+      background-color: $color;
+      backdrop-filter: blur(20px);
+    }
   }
 }
 
