@@ -26,7 +26,7 @@ import NeonLink from './components/navigation/link/NeonLink.vue';
 import NeonLogo from './components/design/logo/NeonLogo.vue';
 import NeonModal from './components/layout/modal/NeonModal.vue';
 import NeonNote from './components/feedback/note/NeonNote.vue';
-import NeonNotificationCounter from './components/presentation/notification-counter/NeonNotificationCounter.vue';
+import NeonNotificationCounter from './components/feedback/notification-counter/NeonNotificationCounter.vue';
 import NeonPage from './components/layout/page/NeonPage.vue';
 import NeonPassword from './components/user-input/password/NeonPassword.vue';
 import NeonPre from './components/presentation/pre/NeonPre.vue';

@@ -13,15 +13,20 @@ export default class NotificationCounter extends Vue {
   private menuModel: MenuModel | null = null;
 
   private example = `<div class="collection">
-  <span class="positioned-element">No value<neon-notification-counter /></span>
-  <span class="positioned-element">With value<neon-notification-counter count="9" /></span>
-  <span class="positioned-element">Large number<neon-notification-counter count="42" /></span>
+  <neon-switch label="Activate notifications" v-model="active" />
+  <span class="positioned-element">No value<neon-notification-counter :active="active" /></span>
+  <span class="positioned-element">With value<neon-notification-counter count="9" :active="active" /></span>
+  <span class="positioned-element">Large number<neon-notification-counter count="42" :active="active" /></span>
+  <span class="positioned-element">With color<neon-notification-counter count="9" color="brand" :active="active" /></span>
 </div>`;
 
   private examples = [
     {
       title: 'Notification counters',
       template: this.example,
+      data: {
+        active: true,
+      },
     },
   ];
 

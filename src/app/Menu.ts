@@ -71,6 +71,13 @@ export class Menu {
           page: 'Note',
           component: 'NeonNote',
         },
+        {
+          path: 'notification-counter',
+          page: 'NotificationCounter',
+          name: 'Notification Counter',
+          keywords: 'badge label alert',
+          component: 'NeonNotificationCounter',
+        },
       ],
     },
     {
@@ -182,13 +189,6 @@ export class Menu {
           path: 'label',
           page: 'Label',
           component: 'NeonLabel',
-        },
-        {
-          path: 'notification-counter',
-          page: 'NotificationCounter',
-          name: 'Notification Counter',
-          keywords: 'badge',
-          component: 'NeonNotificationCounter',
         },
         {
           path: 'pre',
