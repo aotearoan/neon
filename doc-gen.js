@@ -35,6 +35,7 @@ glob(commonSource + '**/!(*.spec).ts', {}, (err, files) => {
     const parts = f.replace(commonSource, '').split('/');
     const fileName = parts.pop();
     const filePath = `${commonDest}${parts.join('/')}/`;
+    fs.mkdir(filePath, { recursive: true }, () => {});
     console.log(`copied from ${f} to ${filePath}${fileName}`);
     fs.copyFile(f, `${filePath}${fileName}`, () => {});
   });

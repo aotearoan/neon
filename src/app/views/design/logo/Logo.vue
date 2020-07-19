@@ -7,13 +7,12 @@
       <neon-card-body>
         <p>
           The light & dark logos can be provided by overriding the
-          <strong class="neon-monospaced">$logo-light</strong> and
-          <strong class="neon-monospaced">$logo-dark</strong> SASS variables. To do so you need to provide the CSS
-          background URL of the image which may also be inlined as base64 or a UTF-8 SVG.
+          <strong>$logo-light</strong> and <strong>$logo-dark</strong> SASS variables. To do so you need to provide the
+          CSS background URL of the image which may also be inlined as base64 or a UTF-8 SVG.
         </p>
       </neon-card-body>
+      <example :model="example"></example>
     </neon-card>
-    <example title="Example" :template="template"></example>
   </div>
 </template>
 

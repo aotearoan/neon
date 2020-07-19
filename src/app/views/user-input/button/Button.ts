@@ -57,7 +57,7 @@ export default class Button extends Vue {
 
   private stateExamples = `<div class="collection">
   <neon-note color="info">
-    <strong>
+    <span>
       <strong>Note:</strong> add button states (<strong>loading, success, error</strong>) to
       indicate the result of actions. Buttons will be disabled until set back to the
       <strong>ready</strong> state.

@@ -12,7 +12,7 @@ import NeonCardFooter from './components/layout/card/footer/NeonCardFooter.vue';
 import NeonCardHeader from './components/layout/card/header/NeonCardHeader.vue';
 import NeonDrawer from './components/layout/drawer/NeonDrawer.vue';
 import NeonDropdown from './components/presentation/dropdown/NeonDropdown.vue';
-import NeonDropdownMenu from './components/presentation/dropdown-menu/NeonDropdownMenu.vue';
+import NeonDropdownMenu from './components/navigation/dropdown-menu/NeonDropdownMenu.vue';
 import NeonDropZone from './components/user-input/drop-zone/NeonDropZone.vue';
 import NeonExpansionIndicator from './components/presentation/expansion-indicator/NeonExpansionIndicator.vue';
 import NeonFile from './components/user-input/file/NeonFile.vue';

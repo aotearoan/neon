@@ -26,9 +26,10 @@
                 ribeye kielbasa.
               </p>
             </neon-card-body>
-            <neon-card-body>
-              <neon-button label="close" @click="open = false" />
-            </neon-card-body>
+            <neon-card-footer>
+              <neon-button label="Cancel" @click="open = false" />
+              <neon-button label="Accept" color="primary" @click="open = false" />
+            </neon-card-footer>
           </neon-card>
         </neon-modal>
       </div>

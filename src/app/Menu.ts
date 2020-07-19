@@ -88,6 +88,7 @@ export class Menu {
         {
           path: 'card',
           page: 'Card',
+          keywords: 'section container',
           component: 'NeonCard',
         },
         {
@@ -143,6 +144,13 @@ export class Menu {
           component: 'NeonActionMenu',
         },
         {
+          path: 'dropdown-menu',
+          page: 'DropdownMenu',
+          name: 'Dropdown Menu',
+          keywords: 'select',
+          component: 'NeonDropdownMenu',
+        },
+        {
           path: 'link',
           page: 'Link',
           component: 'NeonLink',
@@ -170,13 +178,6 @@ export class Menu {
           page: 'Dropdown',
           keywords: 'popup',
           component: 'NeonDropdown',
-        },
-        {
-          path: 'dropdown-menu',
-          page: 'DropdownMenu',
-          name: 'Dropdown Menu',
-          keywords: 'select',
-          component: 'NeonDropdownMenu',
         },
         {
           path: 'expansion-indicator',

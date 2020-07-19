@@ -7,7 +7,7 @@
   .neon-card-footer {
     background-color: $background-color-card;
 
-    &:not(:last-child) {
+    &:not(:last-child):not(.neon-card-body--full-width) {
       border-bottom: $card-section-border;
       border-bottom-color: $border-color;
     }

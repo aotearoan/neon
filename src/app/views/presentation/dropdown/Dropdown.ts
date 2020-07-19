@@ -1,5 +1,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { NeonCard, NeonCardBody, NeonCardHeader, NeonDropdown } from '../../../../components';
+import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import { Menu, MenuModel } from '../../../Menu';
 
 @Component({
   components: {
@@ -7,9 +9,12 @@ import { NeonCard, NeonCardBody, NeonCardHeader, NeonDropdown } from '../../../.
     NeonCardHeader,
     NeonCardBody,
     NeonDropdown,
+    ComponentDocumentation,
   },
 })
 export default class Dropdown extends Vue {
+  private menuModel: MenuModel | null = null;
+
   private data = {
     sOpen: false,
     mOpen: false,
@@ -144,4 +149,31 @@ export default class Dropdown extends Vue {
     </neon-card-body>
   </neon-dropdown>
 </div>`;
+
+  private examples = [
+    {
+      title: 'Dropdown sizes',
+      template: this.sizeExamples,
+      data: this.data,
+    },
+    {
+      title: 'Dropdown styles',
+      template: this.styleExamples,
+      data: this.data,
+    },
+    {
+      title: 'Dropdown colors',
+      template: this.colorExamples,
+      data: this.data,
+    },
+    {
+      title: 'Dropdown positions',
+      template: this.positionExamples,
+      data: this.data,
+    },
+  ];
+
+  public mounted() {
+    this.menuModel = Menu.getComponentConfig('NeonDropdown');
+  }
 }

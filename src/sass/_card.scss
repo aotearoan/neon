@@ -52,10 +52,6 @@
   }
 
   .neon-card-body {
-    &--full-width {
-      padding: 0;
-    }
-
     &:last-child {
       border-bottom-left-radius: $border-radius;
       border-bottom-right-radius: $border-radius;
@@ -77,6 +73,34 @@
     &.neon-card--horizontal-breakpoint-tablet {
       @include responsive(desktop) {
         @include horizontal-card-responsive;
+      }
+    }
+  }
+
+  .neon-card-body--full-width {
+    padding: 0;
+    margin-left: -$border-width;
+    margin-right: -$border-width;
+
+    &:not(:first-child) {
+      margin-top: -1px;
+    }
+
+    & > * {
+      max-width: 100%;
+    }
+
+    &:first-child {
+      & > * {
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+      }
+    }
+
+    &:last-child {
+      & > * {
+        border-bottom-left-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
       }
     }
   }

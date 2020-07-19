@@ -1,5 +1,6 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonButton, NeonCard, NeonCardBody, NeonCardHeader, NeonLogo } from '../../../../components';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonLogo } from '../../../../components';
+import Example from '../../../components/example/Example.vue';
 
 @Component({
   components: {
@@ -7,9 +8,12 @@ import { NeonButton, NeonCard, NeonCardBody, NeonCardHeader, NeonLogo } from '..
     NeonCardBody,
     NeonCardHeader,
     NeonLogo,
-    NeonButton,
+    Example,
   },
 })
 export default class Logo extends Vue {
-  private template = `<neon-logo />`;
+  private example = {
+    title: 'Logo example',
+    template: `<neon-logo />`,
+  };
 }

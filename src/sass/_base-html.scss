@@ -23,12 +23,13 @@ ul {
   &:not(.no-style) > li {
     display: inline;
     max-width: $max-paragraph-width;
-    padding-left: 5 * $base-space;
+    padding-left: 7 * $base-space;
+    margin-top: 2 * $base-space;
 
     &:before {
       content: '—';
       padding-right: 3 * $base-space;
-      margin-left: -5 * $base-space;
+      margin-left: -7 * $base-space;
       display: inline-flex;
       align-items: center;
       font-size: $font-size-l;
