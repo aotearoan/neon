@@ -49,7 +49,8 @@ ul {
 pre {
   @include padding;
   border-radius: $border-radius;
-  white-space: pre-wrap;
+  overflow-x: auto;
+  white-space: pre-line;
 }
 
 p + pre,

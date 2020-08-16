@@ -126,6 +126,7 @@ export default class App extends Vue {
 
   @Watch('$route', { immediate: true })
   private watchRoute(to: Route) {
+    this.menuOpen = false;
     const key = to.path.split('/')[1];
     this.indexModel
       .filter((item) => item.key === key)
@@ -202,9 +203,6 @@ export default class App extends Vue {
 
   private onInlineMenuClick(key: string) {
     this.toggleExpand(key);
-    setTimeout(() => {
-      this.menuOpen = false;
-    }, 225);
   }
 
   get layouts() {
