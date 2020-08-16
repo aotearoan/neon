@@ -1,26 +1,20 @@
 import { Component, Vue, Watch } from 'vue-property-decorator';
 import { NeonCard, NeonCardBody, NeonCardHeader } from '../../../components';
 import { Route } from 'vue-router';
+import AppPre from '../../components/pre/AppPre.vue';
 
 @Component({
   components: {
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
+    AppPre,
   },
 })
 export default class Source extends Vue {
   private className: string | null = null;
 
   private template: string | null = null;
-
-  private options = {
-    theme: 'lucario',
-    mode: 'text/typescript',
-    readOnly: true,
-    lineNumbers: true,
-    line: true,
-  };
 
   @Watch('$route', { immediate: true })
   private onRoute(to: Route) {

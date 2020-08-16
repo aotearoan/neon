@@ -14,7 +14,7 @@ export default class Example extends Vue {
   public model!: ExampleModel;
 
   private options = {
-    theme: 'lucario',
+    theme: 'mbo',
     mode: 'text/x-vue',
     lineNumbers: true,
     line: true,

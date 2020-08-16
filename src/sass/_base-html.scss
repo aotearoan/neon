@@ -53,8 +53,7 @@ pre {
   white-space: pre-line;
 }
 
-p + pre,
-p + .neon-pre {
+p + pre {
   margin-top: 0;
 }
 
@@ -62,8 +61,7 @@ p + ul {
   margin-top: -2 * $base-space;
 }
 
-pre + p,
-.neon-pre + p {
+pre + p {
   margin-top: 3 * $base-space;
 }
 

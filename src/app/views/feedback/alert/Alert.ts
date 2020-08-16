@@ -1,5 +1,6 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonAlertService, NeonButton, NeonCard, NeonCardBody, NeonCardHeader, NeonPre } from '../../../../components';
+import { NeonAlertService, NeonButton, NeonCard, NeonCardBody, NeonCardHeader } from '../../../../components';
+import AppPre from '../../../components/pre/AppPre.vue';
 
 @Component({
   components: {
@@ -7,7 +8,7 @@ import { NeonAlertService, NeonButton, NeonCard, NeonCardBody, NeonCardHeader, N
     NeonCard,
     NeonCardHeader,
     NeonCardBody,
-    NeonPre,
+    AppPre,
   },
 })
 export default class Alert extends Vue {

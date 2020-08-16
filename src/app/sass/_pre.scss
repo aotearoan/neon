@@ -1,4 +1,12 @@
-.neon-pre {
+p + .app-pre {
+  margin-top: 0;
+}
+
+.app-pre + p {
+  margin-top: 3 * $base-space;
+}
+
+.app-pre {
   position: relative;
 
   pre {
@@ -9,7 +17,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    opacity: 0.25;
+    opacity: 0.5;
     transition: opacity ease-in-out $animation-speed-fast;
 
     &:hover {

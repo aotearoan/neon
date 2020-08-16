@@ -93,7 +93,7 @@ $background-color-selection: $color-primary-l1 !default;
 
 // pre
 $color-pre: $color-primary-l3 !default;
-$background-color-pre: rgba($color-neutral-d3, 0.5) !default;
+$background-color-pre: darken($color-neutral-d3, 3) !default;
 
 // toggle
 $color-toggle: l1 !default;

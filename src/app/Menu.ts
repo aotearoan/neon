@@ -191,13 +191,6 @@ export class Menu {
           page: 'Logo',
           component: 'NeonLogo',
         },
-        {
-          path: 'pre',
-          page: 'Pre',
-          name: 'Pre',
-          keywords: 'pre code block formatting preformatting',
-          component: 'NeonPre',
-        },
       ],
     },
     {

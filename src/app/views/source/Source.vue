@@ -4,7 +4,7 @@
       <h1>{{ className }}</h1>
     </neon-card-header>
     <neon-card-body>
-      <codemirror v-model="template" :options="options"></codemirror>
+      <app-pre language="typescript">{{ template }}</app-pre>
     </neon-card-body>
   </neon-card>
 </template>

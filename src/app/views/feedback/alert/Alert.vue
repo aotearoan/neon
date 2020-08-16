@@ -10,22 +10,20 @@
           <strong>NeonAlert</strong> component only once on your page (usually just outside your main
           <strong>&lt;router-view /&gt;</strong>):
         </p>
-        <neon-pre>
-          <pre>&lt;neon-alert&gt;&lt;/neon-alert&gt;</pre>
-        </neon-pre>
+        <app-pre language="html">{{ `&lt;neon-alert&gt;&lt;/neon-alert&gt;` }}</app-pre>
         <p>Then use the following static methods on <strong>NeonAlertService</strong> to display alerts:</p>
-        <neon-pre>
-          <pre>NeonAlertService.info('alert title', 'Optional detailed message');</pre>
-        </neon-pre>
-        <neon-pre>
-          <pre>NeonAlertService.success('alert title', 'Optional detailed message');</pre>
-        </neon-pre>
-        <neon-pre>
-          <pre>NeonAlertService.warning('alert title', 'Optional detailed message');</pre>
-        </neon-pre>
-        <neon-pre>
-          <pre>NeonAlertService.error('alert title', 'Optional detailed message');</pre>
-        </neon-pre>
+        <app-pre language="typescript">{{
+          `NeonAlertService.info('alert title', 'Optional detailed message');`
+        }}</app-pre>
+        <app-pre language="typescript">{{
+          `NeonAlertService.success('alert title', 'Optional detailed message');`
+        }}</app-pre>
+        <app-pre language="typescript">{{
+          `NeonAlertService.warning('alert title', 'Optional detailed message');`
+        }}</app-pre>
+        <app-pre language="typescript">{{
+          `NeonAlertService.error('alert title', 'Optional detailed message');`
+        }}</app-pre>
       </neon-card-body>
     </neon-card>
     <neon-card class="examples">

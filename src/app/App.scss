@@ -8,8 +8,8 @@
       @import '../../themes/classic/dark';
 
       // application dark mode SASS
-      @import '../app/sass/api-docs-colors';
-      @import '../app/views/home/Home-colors';
+      @import 'sass/api-docs-colors';
+      @import 'views/home/Home-colors';
 
       .neon-monospaced {
         color: $color-primary-l1;
@@ -57,14 +57,19 @@
           }
         }
       }
+
+      .CodeMirror,
+      .CodeMirror-gutters {
+        background-color: $background-color-pre !important;
+      }
     }
 
     &.neon-mode--light {
       @import '../../themes/classic/light';
 
       // application light mode SASS
-      @import '../app/sass/api-docs-colors';
-      @import '../app/views/home/Home-colors';
+      @import 'sass/api-docs-colors';
+      @import 'views/home/Home-colors';
 
       .neon-app--simple-page {
         background: radial-gradient(circle at top 25% right 15%, rgba($color-warn-l1, 0.75) 3%, transparent 3%),
@@ -102,25 +107,31 @@
       .neon-monospaced {
         color: $color-primary-d1;
       }
+
+      .CodeMirror,
+      .CodeMirror-gutters {
+        background-color: $background-color-pre !important;
+      }
     }
 
     // application classic theme SASS
-    @import '../app/sass/fonts';
-    @import '../app/sass/example';
-    @import '../app/sass/component-docs';
-    @import '../app/sass/api-docs';
+    @import 'sass/fonts';
+    @import 'sass/example';
+    @import 'sass/pre';
+    @import 'sass/component-docs';
+    @import 'sass/api-docs';
     @import '~codemirror/lib/codemirror';
-    @import '~codemirror/theme/lucario';
+    @import '~codemirror/theme/mbo';
 
-    @import '../app/views/design/color/Color';
+    @import 'views/design/color/Color';
     @import 'views/presentation/icons/Icons';
-    @import '../app/views/design/typography/Typography';
-    @import '../app/views/feedback/note/Note';
-    @import '../app/views/source/Source';
-    @import '../app/views/user-input/button/Button';
-    @import '../app/views/user-input/drop-zone/DropZone';
-    @import '../app/views/feedback/alert/Alert';
-    @import '../app/views/home/Home';
+    @import 'views/design/typography/Typography';
+    @import 'views/feedback/note/Note';
+    @import 'views/source/Source';
+    @import 'views/user-input/button/Button';
+    @import 'views/user-input/drop-zone/DropZone';
+    @import 'views/feedback/alert/Alert';
+    @import 'views/home/Home';
 
     body {
       .title {
