@@ -19,18 +19,18 @@
         background: linear-gradient(
               calc(360deg * var(--hours) / 24),
               rgba($color-success-d1, 0.5) 10%,
-              rgba($color-primary-d4, 0.5) 90%
+              rgba($color-info-d4, 0.5) 90%
             )
             fixed,
           linear-gradient(
             calc(360deg * var(--minutes) / 60),
             rgba($color-brand-d2, 0.5) 50%,
-            rgba($color-primary-d2, 0.5) 50%
+            rgba($color-info-d2, 0.5) 50%
           ),
           linear-gradient(
               calc(360deg * var(--seconds) / 60),
               rgba($color-brand-d3, 0.5) 33%,
-              rgba($color-primary-d3, 0.5) 33%
+              rgba($color-info-d3, 0.5) 33%
             )
             fixed;
 
@@ -75,8 +75,7 @@
         background: radial-gradient(circle at top 25% right 15%, rgba($color-warn-l1, 0.75) 3%, transparent 3%),
           radial-gradient(circle at top 65% right 5%, rgba($color-success-l1, 0.75) 10%, transparent 10%) fixed,
           radial-gradient(circle at bottom 7% left 25%, rgba($color-brand-l1, 0.75) 10%, transparent 10%),
-          radial-gradient(circle at top 30% left -10%, rgba($color-info-d2, 0.75) 30%, transparent 30%) fixed,
-          $color-success-l4;
+          radial-gradient(circle at top 30% left -10%, rgba($color-info-d2, 0.75) 30%, transparent 30%) fixed, white;
 
         .simple-page-header {
           background-color: $color-inverse;
