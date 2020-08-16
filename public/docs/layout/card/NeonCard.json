@@ -19,19 +19,11 @@
       "name": "horizontalBreakpoint",
       "tags": {},
       "type": {
-        "name": "union",
-        "elements": [
-          {
-            "name": "TSTypeReference"
-          },
-          {
-            "name": "TSTypeReference"
-          }
-        ]
+        "name": "NeonResponsive"
       },
       "defaultValue": {
         "func": false,
-        "value": "NeonResponsive.Mobile"
+        "value": "NeonResponsive.MobileLarge"
       }
     }
   ],

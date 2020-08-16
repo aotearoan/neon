@@ -12,17 +12,18 @@ export class NeonModeUtils {
   public static init(defaultMode?: NeonMode) {
     if (defaultMode) {
       NeonModeUtils.defaultMode = defaultMode;
-    }
-
-    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches;
-
-    if (isDarkMode) {
-      NeonModeUtils.mode = NeonMode.Dark;
-    } else if (isLightMode) {
-      NeonModeUtils.mode = NeonMode.Light;
-    } else {
       NeonModeUtils.mode = NeonModeUtils.defaultMode;
+    } else {
+      const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches;
+
+      if (isDarkMode) {
+        NeonModeUtils.mode = NeonMode.Dark;
+      } else if (isLightMode) {
+        NeonModeUtils.mode = NeonMode.Light;
+      } else {
+        NeonModeUtils.mode = NeonModeUtils.defaultMode;
+      }
     }
   }
 
@@ -41,6 +42,7 @@ export class NeonModeUtils {
       }
 
       NeonModeUtils.callbacks[key] = callback;
+      callback(NeonModeUtils.mode || NeonModeUtils.defaultMode);
     }
   }
 
