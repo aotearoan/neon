@@ -15,7 +15,7 @@
     align-items: center;
   }
 
-  @include responsive(desktop) {
+  @include responsive(larger-than-tablet) {
     height: $top-nav-height-desktop;
   }
 
@@ -23,7 +23,7 @@
     height: $top-nav-height-tablet;
   }
 
-  @include responsive(mobile) {
+  @include responsive(mobile-large) {
     height: $top-nav-height-mobile;
   }
 }

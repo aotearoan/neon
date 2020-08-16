@@ -5,7 +5,7 @@
   z-index: $z-index-modal-under-top-nav;
 
   .neon-top-nav + .neon-page__container {
-    @include responsive(desktop) {
+    @include responsive(larger-than-tablet) {
       padding-top: $top-nav-height-desktop;
       @include min-height(100, $top-nav-height-desktop);
     }
@@ -15,7 +15,7 @@
       @include min-height(100, $top-nav-height-tablet);
     }
 
-    @include responsive(mobile) {
+    @include responsive(mobile-large) {
       padding-top: $top-nav-height-mobile;
       @include min-height(100, $top-nav-height-mobile);
     }

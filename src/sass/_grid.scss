@@ -21,7 +21,7 @@
 
 .neon-top-nav + .neon-page__container {
   .neon-grid {
-    @include responsive(desktop) {
+    @include responsive(larger-than-tablet) {
       @include min-height(100, $top-nav-height-desktop + $footer-height-desktop);
     }
 
@@ -29,7 +29,7 @@
       @include min-height(100, $top-nav-height-tablet + $footer-height-tablet);
     }
 
-    @include responsive(mobile) {
+    @include responsive(mobile-large) {
       @include min-height(100, $top-nav-height-mobile + $footer-height-mobile);
     }
   }

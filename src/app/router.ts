@@ -8,6 +8,7 @@ const routes: Array<RouteConfig> = [
   {
     path: '/',
     name: 'Home',
+    meta: { simpleLayout: true },
     component: () => import(/* webpackChunkName: "home" */ './views/home/Home.vue'),
   },
   ...Menu.menu.flatMap((item) =>

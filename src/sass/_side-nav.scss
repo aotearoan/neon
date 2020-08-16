@@ -11,7 +11,7 @@
     padding: 0;
   }
 
-  @include responsive(desktop) {
+  @include responsive(larger-than-tablet) {
     width: $side-nav-width;
     @include min-height(100);
     @include height(100);
@@ -27,7 +27,7 @@
 }
 
 .neon-top-nav + .neon-page__container .neon-side-nav {
-  @include responsive(desktop) {
+  @include responsive(larger-than-tablet) {
     @include min-height(100, $top-nav-height-desktop);
     @include height(100, $top-nav-height-desktop);
   }

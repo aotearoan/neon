@@ -14,11 +14,23 @@ $spacing: (
     $spacing-vertical-mobile,
     $spacing-horizontal-mobile,
   ),
+  mobile-large: (
+    $spacing-vertical-mobile,
+    $spacing-horizontal-mobile,
+  ),
   tablet: (
     $spacing-vertical-tablet,
     $spacing-horizontal-tablet,
   ),
+  larger-than-tablet: (
+    $spacing-vertical-desktop,
+    $spacing-horizontal-desktop,
+  ),
   desktop: (
+    $spacing-vertical-desktop,
+    $spacing-horizontal-desktop,
+  ),
+  desktop-large: (
     $spacing-vertical-desktop,
     $spacing-horizontal-desktop,
   ),
@@ -65,7 +77,7 @@ $spacing: (
 
 // padding mixins
 @mixin padding-mobile($multiplier: 1, $square: false) {
-  @include spacing('padding', mobile, $multiplier, $square);
+  @include spacing('padding', mobile-large, $multiplier, $square);
 }
 
 @mixin padding-tablet($multiplier: 1, $square: false) {
@@ -73,7 +85,7 @@ $spacing: (
 }
 
 @mixin padding-desktop($multiplier: 1, $square: false) {
-  @include spacing('padding', desktop, $multiplier, $square);
+  @include spacing('padding', larger-than-tablet, $multiplier, $square);
 }
 
 @mixin padding($multiplier: 1, $square: false) {
@@ -83,14 +95,14 @@ $spacing: (
 }
 
 @mixin padding-horizontal {
-  @include spacing-horizontal('padding', desktop);
+  @include spacing-horizontal('padding', larger-than-tablet);
   @include spacing-horizontal('padding', tablet);
-  @include spacing-horizontal('padding', mobile);
+  @include spacing-horizontal('padding', mobile-large);
 }
 
 // margin mixins
 @mixin margin-mobile($multiplier: 1, $square: false) {
-  @include spacing('margin', mobile, $multiplier, $square);
+  @include spacing('margin', mobile-large, $multiplier, $square);
 }
 
 @mixin margin-tablet($multiplier: 1, $square: false) {
@@ -98,19 +110,19 @@ $spacing: (
 }
 
 @mixin margin-desktop($multiplier: 1, $square: false) {
-  @include spacing('margin', desktop, $multiplier, $square);
+  @include spacing('margin', larger-than-tablet, $multiplier, $square);
 }
 
 @mixin margin-vertical {
-  @include spacing-vertical('margin', desktop);
+  @include spacing-vertical('margin', larger-than-tablet);
   @include spacing-vertical('margin', tablet);
-  @include spacing-vertical('margin', mobile);
+  @include spacing-vertical('margin', mobile-large);
 }
 
 @mixin margin-top {
-  @include spacing-top('margin', desktop);
+  @include spacing-top('margin', larger-than-tablet);
   @include spacing-top('margin', tablet);
-  @include spacing-top('margin', mobile);
+  @include spacing-top('margin', mobile-large);
 }
 
 @mixin margin($multiplier: 1, $square: false) {
@@ -134,7 +146,7 @@ $spacing: (
 }
 
 @mixin side-nav-offset($offset: 0px) {
-  @include responsive(desktop) {
+  @include responsive(larger-than-tablet) {
     margin-left: $side-nav-width + $offset;
     @include width(100, $side-nav-width + $offset);
   }

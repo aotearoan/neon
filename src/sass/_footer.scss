@@ -9,7 +9,7 @@
     max-width: $max-page-width + 4 * $base-space;
     line-height: 1;
 
-    @include responsive(desktop) {
+    @include responsive(larger-than-tablet) {
       font-size: $base-font-size;
       height: $footer-height-desktop;
       padding: 0 $spacing-vertical-desktop;
@@ -21,7 +21,7 @@
       padding: 0 $spacing-vertical-tablet;
     }
 
-    @include responsive(mobile) {
+    @include responsive(mobile-large) {
       font-size: $font-size-s;
       height: $footer-height-mobile;
       padding: 0 $spacing-vertical-mobile;

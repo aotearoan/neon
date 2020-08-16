@@ -23,7 +23,7 @@ $error-palette: generate-palette($color-error) !default;
 
 /* layout */
 $base-space: 4px !default;
-$max-paragraph-width: 700px !default;
+$max-paragraph-width: 70ch !default;
 $max-page-width: 1920px !default;
 
 // vertical layout spacing, used for margins and paddings of layout components
@@ -56,13 +56,15 @@ $h4-size: $h5-size * $typography-scale !default;
 $h3-size: $h4-size * $typography-scale !default;
 $h2-size: $h3-size * $typography-scale !default;
 $h1-size: $h2-size * $typography-scale !default;
+$h0-size: $h1-size * $typography-scale !default; // AKA branding font size, used for landing page & banners etc...
 
-$h6-weight: 500 !default;
-$h5-weight: 500 !default;
-$h4-weight: 500 !default;
-$h3-weight: 200 !default;
-$h2-weight: 200 !default;
-$h1-weight: 200 !default;
+$h6-weight: 700 !default;
+$h5-weight: 700 !default;
+$h4-weight: 800 !default;
+$h3-weight: 800 !default;
+$h2-weight: 900 !default;
+$h1-weight: 900 !default;
+$h0-weight: 900 !default;
 
 $line-height-headings-ratio: 1.125 !default;
 $line-height-ratio: 1.618 !default;
@@ -71,7 +73,7 @@ $system-font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helve
   'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
 
 $body-font-family: $system-font-stack !default;
-$body-font-weight: 300 !default;
+$body-font-weight: 400 !default;
 
 $heading-font-family: $body-font-family !default;
 $font-style-headings: normal !default;
@@ -91,6 +93,8 @@ $size-xs: 6 * $base-space !default;
 $size-s: 8 * $base-space !default;
 $size-m: 10 * $base-space !default;
 $size-l: 12 * $base-space !default;
+// buttons only
+$size-xl: 16 * $base-space !default;
 
 $component-letter-spacing-s: 0.25px !default;
 $component-letter-spacing-m: 0.5px !default;
@@ -127,6 +131,9 @@ $width-alert-mobile: 0.5 * $width-alert !default;
 
 /* dropdown */
 $box-shadow-dropdown: $box-shadow-strong !default;
+
+/* buttons */
+$border-radius-button-xl: 8px !default;
 
 @import '../../src/sass/includes/includes';
 @import 'src/sass/common';

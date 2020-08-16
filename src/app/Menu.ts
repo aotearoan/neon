@@ -28,7 +28,7 @@ export class Menu {
     {
       path: 'design',
       name: 'Design',
-      group: 'Components',
+      group: 'Introduction',
       children: [
         {
           path: 'color',
@@ -39,16 +39,6 @@ export class Menu {
           page: 'DarkMode',
           name: 'Dark Mode',
           keywords: 'color scheme',
-        },
-        {
-          path: 'icons',
-          page: 'Icons',
-          component: 'NeonIcon',
-        },
-        {
-          path: 'logo',
-          page: 'Logo',
-          component: 'NeonLogo',
         },
         {
           path: 'typography',
@@ -187,9 +177,19 @@ export class Menu {
           component: 'NeonExpansionIndicator',
         },
         {
+          path: 'icons',
+          page: 'Icons',
+          component: 'NeonIcon',
+        },
+        {
           path: 'label',
           page: 'Label',
           component: 'NeonLabel',
+        },
+        {
+          path: 'logo',
+          page: 'Logo',
+          component: 'NeonLogo',
         },
         {
           path: 'pre',

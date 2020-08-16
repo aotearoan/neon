@@ -35,7 +35,7 @@ blockquote,
     align-self: flex-start;
 
     &.neon-button {
-      @include responsive(desktop) {
+      @include responsive(larger-than-tablet) {
         margin: 2 * $base-space;
       }
 
@@ -43,7 +43,7 @@ blockquote,
         margin: $base-space;
       }
 
-      @include responsive(mobile) {
+      @include responsive(mobile-large) {
         margin: 0.5 * $base-space;
       }
     }

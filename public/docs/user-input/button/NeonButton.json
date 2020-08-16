@@ -22,11 +22,11 @@
       "name": "size",
       "tags": {},
       "type": {
-        "name": "NeonSize"
+        "name": "NeonButtonSize"
       },
       "defaultValue": {
         "func": false,
-        "value": "NeonSize.Medium"
+        "value": "NeonButtonSize.Medium"
       }
     },
     {

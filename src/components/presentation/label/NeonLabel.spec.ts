@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { mount } from '@vue/test-utils';
-import NeonIcon from '../../design/icon/NeonIcon.vue';
+import NeonIcon from '../icon/NeonIcon.vue';
 import NeonLabel from './NeonLabel.vue';
 import { NeonLabelSize } from '../../../common/enums/NeonLabelSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';

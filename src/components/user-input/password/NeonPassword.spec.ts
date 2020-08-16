@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { mount } from '@vue/test-utils';
-import NeonIcon from '../../design/icon/NeonIcon.vue';
+import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 import NeonInput from '../input/NeonInput.vue';
 import NeonPassword from './NeonPassword.vue';
 import { NeonInputType } from '../../../common/enums/NeonInputType';

@@ -53,15 +53,21 @@ export default class App extends Vue {
   private indexFilter = '';
   private menuOpen = false;
   private isMobile = false;
+  private simplePage = true;
 
   public mounted() {
+    const date = new Date();
+    document.documentElement.style.setProperty('--hours', `${date.getHours()}`);
+    document.documentElement.style.setProperty('--minutes', `${date.getMinutes()}`);
+    document.documentElement.style.setProperty('--seconds', `${date.getSeconds()}`);
     const path = localStorage.getItem('path');
     if (path) {
       localStorage.removeItem('path');
       this.$router.push({ path: path.replace('neon', '') });
     }
 
-    NeonModeUtils.init();
+    const savedMode = (localStorage.getItem('mode') as NeonMode) || undefined;
+    NeonModeUtils.init(savedMode);
     NeonModeUtils.addListener('app-mode-listener', this.switchMode);
     window.addEventListener('resize', this.handleResize);
     this.handleResize();
@@ -115,6 +121,7 @@ export default class App extends Vue {
     document.documentElement.classList.remove(`neon-mode--${this.selectedMode}`);
     document.documentElement.classList.add(`neon-mode--${mode}`);
     this.selectedMode = mode;
+    localStorage.setItem('mode', this.selectedMode);
   }
 
   @Watch('$route', { immediate: true })
@@ -126,6 +133,8 @@ export default class App extends Vue {
         item.expanded = true;
       });
     this.indexModel = [...this.indexModel];
+    this.simplePage = to.meta.simpleLayout;
+    window.scrollTo(0, 0);
   }
 
   get filteredModel(): NeonTreeMenuSectionModel[] {
@@ -201,7 +210,7 @@ export default class App extends Vue {
   get layouts() {
     return [
       {
-        breakpoint: NeonResponsive.Desktop,
+        breakpoint: NeonResponsive.LargerThanTablet,
         grid: [['section-content']],
       },
       {
@@ -216,6 +225,6 @@ export default class App extends Vue {
   }
 
   private handleResize() {
-    this.isMobile = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.Mobile]).matches;
+    this.isMobile = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.MobileLarge]).matches;
   }
 }

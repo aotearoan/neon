@@ -1,6 +1,6 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import NeonIcon from '../../design/icon/NeonIcon.vue';
+import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 import NeonButton from '../../user-input/button/NeonButton.vue';
 
 @Component({

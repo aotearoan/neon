@@ -7,6 +7,6 @@ export default class NeonCard extends Vue {
   @Prop({ default: NeonOrientation.Vertical })
   public orientation!: NeonOrientation;
 
-  @Prop({ default: NeonResponsive.Mobile })
-  public horizontalBreakpoint!: NeonResponsive.Mobile | NeonResponsive.Tablet;
+  @Prop({ default: NeonResponsive.MobileLarge })
+  public horizontalBreakpoint!: NeonResponsive;
 }

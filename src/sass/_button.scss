@@ -39,6 +39,11 @@
     @include button-size($size-l, $base-font-size, $h5-size);
   }
 
+  &--xl {
+    @include button-size($size-xl, $h5-size, $h3-size);
+    border-radius: $border-radius-button-xl;
+  }
+
   border-radius: $border-radius;
   font-weight: 400;
   letter-spacing: $component-letter-spacing-m;
@@ -65,7 +70,7 @@
     }
   }
 
-  &--full-width {
+  &.neon-button--full-width {
     width: 100%;
     justify-content: center;
   }

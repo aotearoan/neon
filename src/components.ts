@@ -19,11 +19,11 @@ import NeonFile from './components/user-input/file/NeonFile.vue';
 import NeonFooter from './components/layout/footer/NeonFooter.vue';
 import NeonGrid from './components/layout/grid/NeonGrid.vue';
 import NeonGridArea from './components/layout/grid/grid-area/NeonGridArea.vue';
-import NeonIcon from './components/design/icon/NeonIcon.vue';
+import NeonIcon from './components/presentation/icon/NeonIcon.vue';
 import NeonInput from './components/user-input/input/NeonInput.vue';
 import NeonLabel from './components/presentation/label/NeonLabel.vue';
 import NeonLink from './components/navigation/link/NeonLink.vue';
-import NeonLogo from './components/design/logo/NeonLogo.vue';
+import NeonLogo from './components/presentation/logo/NeonLogo.vue';
 import NeonModal from './components/layout/modal/NeonModal.vue';
 import NeonNote from './components/feedback/note/NeonNote.vue';
 import NeonNotificationCounter from './components/feedback/notification-counter/NeonNotificationCounter.vue';
@@ -40,6 +40,7 @@ import NeonTreeMenu from './components/navigation/tree-menu/NeonTreeMenu.vue';
 import { NeonActionMenuModel } from './common/models/NeonActionMenuModel';
 import { NeonAlertService } from './components/feedback/alert/NeonAlert';
 import { NeonAvailableSpace } from './common/models/NeonAvailableSpace';
+import { NeonButtonSize } from './common/enums/NeonButtonSize';
 import { NeonButtonStyle } from './common/enums/NeonButtonStyle';
 import { NeonClipboardService, NeonClipboardSupport } from './common/utils/NeonClipboardService';
 import { NeonClosableUtils } from './common/utils/NeonClosableUtils';
@@ -123,6 +124,7 @@ export {
   NeonAvailableSpace,
   NeonBadge,
   NeonButton,
+  NeonButtonSize,
   NeonButtonStyle,
   NeonCard,
   NeonCardBody,

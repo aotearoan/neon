@@ -75,7 +75,7 @@ $color-note: $color-neutral-d1 !default;
 // link
 $color-link: $color-primary-d1 !default;
 $color-link-hover: $color-primary-d2 !default;
-$color-link-visited: lighten($color-primary-d1, 20%) !default;
+$color-link-visited: $color-neutral-d1 !default;
 
 // icon
 $color-icon: d1 !default;

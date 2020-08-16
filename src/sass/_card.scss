@@ -65,13 +65,13 @@
 
   &.neon-card--horizontal {
     &.neon-card--horizontal-breakpoint-mobile {
-      @include responsive(larger-than-mobile) {
+      @include responsive(larger-than-mobile-large) {
         @include horizontal-card-responsive;
       }
     }
 
     &.neon-card--horizontal-breakpoint-tablet {
-      @include responsive(desktop) {
+      @include responsive(larger-than-tablet) {
         @include horizontal-card-responsive;
       }
     }

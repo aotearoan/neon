@@ -9,9 +9,53 @@
 
       // application dark mode SASS
       @import '../app/sass/api-docs-colors';
+      @import '../app/views/home/Home-colors';
 
       .neon-monospaced {
         color: $color-primary-l1;
+      }
+
+      .neon-app--simple-page {
+        background: linear-gradient(
+              calc(360deg * var(--hours) / 24),
+              rgba($color-success-d1, 0.5) 10%,
+              rgba($color-primary-d4, 0.5) 90%
+            )
+            fixed,
+          linear-gradient(
+            calc(360deg * var(--minutes) / 60),
+            rgba($color-brand-d2, 0.5) 50%,
+            rgba($color-primary-d2, 0.5) 50%
+          ),
+          linear-gradient(
+              calc(360deg * var(--seconds) / 60),
+              rgba($color-brand-d3, 0.5) 33%,
+              rgba($color-primary-d3, 0.5) 33%
+            )
+            fixed;
+
+        .simple-page-header {
+          background-color: $color-inverse;
+
+          @supports (backdrop-filter: none) {
+            background-color: rgba($color-inverse, 0.0125);
+            backdrop-filter: blur(10px);
+          }
+        }
+
+        .toggle-dark-mode {
+          background-color: rgba($color-success-d4, 0.375);
+
+          .neon-toggle__label:first-child {
+            border-top-color: $color-success-d2;
+            border-left-color: $color-success-d2 !important;
+            border-bottom-color: $color-success-d2;
+
+            &:hover {
+              background-color: rgba($color-success-d2, 0.375) !important;
+            }
+          }
+        }
       }
     }
 
@@ -20,6 +64,40 @@
 
       // application light mode SASS
       @import '../app/sass/api-docs-colors';
+      @import '../app/views/home/Home-colors';
+
+      .neon-app--simple-page {
+        background: radial-gradient(circle at top 25% right 15%, rgba($color-warn-l1, 0.75) 3%, transparent 3%),
+          radial-gradient(circle at top 65% right 5%, rgba($color-success-l1, 0.75) 10%, transparent 10%) fixed,
+          radial-gradient(circle at bottom 7% left 25%, rgba($color-brand-l1, 0.75) 10%, transparent 10%),
+          radial-gradient(circle at top 30% left -10%, rgba($color-info-d2, 0.75) 30%, transparent 30%) fixed,
+          $color-success-l4;
+
+        .simple-page-header {
+          background-color: $color-inverse;
+
+          @supports (backdrop-filter: none) {
+            background-color: rgba($color-inverse, 0.125);
+            backdrop-filter: blur(10px);
+          }
+        }
+
+        .toggle-dark-mode {
+          .neon-toggle__label:last-child {
+            border-top-color: $color-success-l3;
+            border-right-color: $color-success-l3 !important;
+            border-bottom-color: $color-success-l3;
+
+            &:hover {
+              background-color: rgba($color-success-l3, 0.375) !important;
+            }
+          }
+        }
+
+        .tagline {
+          text-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+        }
+      }
 
       .neon-monospaced {
         color: $color-primary-d1;
@@ -35,13 +113,14 @@
     @import '~codemirror/theme/lucario';
 
     @import '../app/views/design/color/Color';
-    @import '../app/views/design/icons/Icons';
+    @import 'views/presentation/icons/Icons';
     @import '../app/views/design/typography/Typography';
     @import '../app/views/feedback/note/Note';
     @import '../app/views/source/Source';
     @import '../app/views/user-input/button/Button';
     @import '../app/views/user-input/drop-zone/DropZone';
     @import '../app/views/feedback/alert/Alert';
+    @import '../app/views/home/Home';
 
     body {
       .title {
@@ -141,17 +220,36 @@
       }
     }
 
-    .fade-enter-active,
+    .fade-enter-active {
+      transition: opacity ease-in-out $animation-speed-slow;
+      overflow: hidden;
+    }
+
     .fade-leave-active {
-      transition-duration: $animation-speed-slow;
-      transition-property: height, opacity;
-      transition-timing-function: ease;
       overflow: hidden;
     }
 
     .fade-enter,
     .fade-leave-active {
       opacity: 0;
+    }
+
+    .neon-app--simple-page {
+      .simple-page-header {
+        z-index: $z-index-top-nav;
+        position: fixed;
+        right: 0;
+        top: 0;
+        @include margin(0.5);
+        @include padding(0.5);
+        border-radius: 8px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .neon-footer__container {
+        text-align: center;
+      }
     }
   }
 }

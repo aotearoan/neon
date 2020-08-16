@@ -192,7 +192,7 @@ $width-alert-text-mobile: $width-alert-mobile - $width-alert-icon - 4 * $padding
 .snotifyToast__title {
   line-height: 1;
   font-size: $h5-size;
-  font-weight: 300;
+  font-weight: 400;
   padding-left: $padding-alert-horizontal;
 
   @include responsive(mobile) {

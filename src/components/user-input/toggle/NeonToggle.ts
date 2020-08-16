@@ -4,7 +4,7 @@ import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonToggleStyle } from '../../../common/enums/NeonToggleStyle';
 import { NeonOrientation } from '../../../common/enums/NeonOrientation';
-import NeonIcon from '../../design/icon/NeonIcon.vue';
+import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 
 /**
  * <p>A toggle component for selecting one value from a range of options. This is equivalent to a radio button group. It can be styled as a <em>Toggle</em> or as <em>Radio buttons</em>.

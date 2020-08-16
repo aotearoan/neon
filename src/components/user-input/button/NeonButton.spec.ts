@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import { mount, RouterLinkStub } from '@vue/test-utils';
-import NeonIcon from '../../design/icon/NeonIcon.vue';
+import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 import NeonLink from '../../navigation/link/NeonLink.vue';
 import NeonButton from './NeonButton.vue';
 import NeonExpansionIndicator from '../../presentation/expansion-indicator/NeonExpansionIndicator.vue';
-import { NeonSize } from '../../../common/enums/NeonSize';
+import { NeonButtonSize } from '../../../common/enums/NeonButtonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonHorizontalPosition } from '../../../common/enums/NeonHorizontalPosition';
 import { NeonButtonStyle } from '../../../common/enums/NeonButtonStyle';
@@ -74,7 +74,7 @@ describe('NeonButton', () => {
   it('renders size', () => {
     const icon = 'check';
     const wrapper = mount(NeonButton, {
-      propsData: { icon, size: NeonSize.Small },
+      propsData: { icon, size: NeonButtonSize.Small },
     });
     expect(wrapper.find('.neon-button--s').element).toBeDefined();
   });

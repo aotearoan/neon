@@ -1,7 +1,7 @@
 @mixin toggle-size($font-size, $size) {
   label {
     font-size: $font-size;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: $component-letter-spacing-s;
     line-height: 1;
     height: $size - 2 * $border-width;

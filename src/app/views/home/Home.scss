@@ -1,0 +1,89 @@
+.homepage {
+  .neon-logo {
+    $logo-height: 150px;
+    height: $logo-height;
+    width: $logo-height * $logo-width-multiplier;
+    max-width: 100%;
+    align-self: center;
+    margin-top: 40 * $base-space;
+    margin-bottom: 5 * $base-space;
+
+    @include responsive(tablet) {
+      height: 0.5 * $logo-height;
+      width: 0.5 * $logo-height * $logo-width-multiplier;
+    }
+  }
+
+  .tagline {
+    color: $color-success;
+    text-align: center;
+    font-size: $h1-size;
+    font-weight: 900;
+    font-style: oblique;
+    letter-spacing: 1px;
+    text-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  h1 {
+    font-size: $h0-size;
+    font-weight: $h0-weight;
+    text-align: center;
+    margin-top: 30 * $base-space;
+  }
+
+  .powered-by {
+    font-size: $h4-size;
+    font-weight: $h4-weight;
+    margin-top: 10 * $base-space;
+    text-align: center;
+  }
+
+  p {
+    font-size: $h5-size;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .neon-button {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8 * $base-space;
+  }
+
+  .highlights {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+
+    .highlight {
+      @include padding;
+      align-items: center;
+      width: 100 * $base-space;
+      @include margin(1, true);
+
+      h2 {
+        font-size: $h4-size;
+        font-weight: $h4-weight;
+        text-align: center;
+      }
+
+      p {
+        font-size: $base-font-size;
+      }
+
+      @include responsive(mobile-large) {
+        width: 82 * $base-space;
+      }
+    }
+
+    .highlight-icon {
+      width: 32 * $base-space;
+      height: 32 * $base-space;
+      margin: 4 * $base-space;
+    }
+  }
+}

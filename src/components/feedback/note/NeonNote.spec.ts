@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils';
 import NeonNote from './NeonNote.vue';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import NeonButton from '../../user-input/button/NeonButton.vue';
-import NeonIcon from '../../design/icon/NeonIcon.vue';
+import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 
 Vue.component('NeonButton', NeonButton);
 Vue.component('NeonIcon', NeonIcon);

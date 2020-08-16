@@ -10,6 +10,26 @@
         semantic meaning. E.g. a brand color or a warning color. Each Functional color palette is generated from a
         reference color. From this the light and dark color steps are generated (l1-l5 & d1-d5).
       </p>
+      <ul>
+        <li><strong>brand - </strong>the palette for the main brand color.</li>
+        <li><strong>primary - </strong>the palette for the primary color used in an application.</li>
+        <li><strong>neutral - </strong>the grayscale palette used across all components.</li>
+        <li>
+          <strong>high-contrast - </strong>a higher contrast grayscale palette which can be used for higher impact
+          components without adding color.
+        </li>
+        <li>
+          <strong>low-contrast - </strong>a lower contrast grayscale palette which can be used for more subtle
+          components which don't draw too much attention.
+        </li>
+        <li>
+          <strong>info - </strong>the color palette used to convey information in components (e.g. buttons, alerts,
+          notes)
+        </li>
+        <li><strong>success - </strong>the color palette used to indicate successful or positive actions</li>
+        <li><strong>warn - </strong>the color palette used to indicate warnings</li>
+        <li><strong>error - </strong>the color palette used to indicate dangerous or failed actions</li>
+      </ul>
       <p>
         Another important feature of the palette generator is ensuring accessible contrast ratios of the colors when
         used in combination with white or black text in light and dark modes.

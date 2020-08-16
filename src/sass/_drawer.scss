@@ -57,7 +57,7 @@
       top: 0;
       z-index: $z-index-modal-under-top-nav;
 
-      @include responsive(desktop) {
+      @include responsive(larger-than-tablet) {
         margin-top: $top-nav-height-desktop;
       }
 
@@ -65,7 +65,7 @@
         margin-top: $top-nav-height-tablet;
       }
 
-      @include responsive(mobile) {
+      @include responsive(mobile-large) {
         margin-top: $top-nav-height-mobile;
       }
     }

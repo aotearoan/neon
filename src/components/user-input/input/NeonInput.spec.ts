@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { mount, shallowMount } from '@vue/test-utils';
-import NeonIcon from '../../design/icon/NeonIcon.vue';
+import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 import NeonInput from './NeonInput.vue';
 import { NeonInputType } from '../../../common/enums/NeonInputType';
 import { NeonSize } from '../../../common/enums/NeonSize';

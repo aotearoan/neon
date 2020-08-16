@@ -1,7 +1,18 @@
 <template>
-  <div id="app" class="neon-app">
+  <div id="app" class="neon-app" :class="{ 'neon-app--simple-page': simplePage }">
+    <header v-if="simplePage" class="simple-page-header">
+      <neon-toggle
+        name="dark-mode-toggle"
+        color="success"
+        :value="selectedMode"
+        :model="modes"
+        @input="switchMode"
+        :size="isMobile ? 's' : 'm'"
+        class="toggle-dark-mode"
+      />
+    </header>
     <neon-page>
-      <template #top-nav>
+      <template #top-nav v-if="!simplePage">
         <neon-top-nav>
           <span class="logo-wrapper">
             <neon-link href="/" class="homepage-link">
@@ -42,7 +53,7 @@
         </neon-top-nav>
       </template>
       <template #content>
-        <neon-side-nav>
+        <neon-side-nav v-if="!simplePage">
           <template #sticky>
             <neon-input type="text" v-model="indexFilter" placeholder="Filter" />
           </template>
@@ -51,7 +62,7 @@
           </template>
         </neon-side-nav>
         <neon-grid id="content" :layouts="layouts" class="content">
-          <neon-grid-area id="responsive-menu">
+          <neon-grid-area id="responsive-menu" v-if="!simplePage">
             <neon-button icon="menu" label="Menu" color="primary" @click="menuOpen = true" :full-width="true" />
             <neon-drawer :open="menuOpen" @close="menuOpen = false">
               <div class="neon-side-nav__sticky">

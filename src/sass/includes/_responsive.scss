@@ -1,8 +1,12 @@
 $breakpoints: (
   mobile: 'screen and (max-width: 414px)',
   larger-than-mobile: 'screen and (min-width: 415px)',
+  mobile-large: 'screen and (max-width: 599px)',
+  larger-than-mobile-large: 'screen and (min-width: 600px)',
   tablet: 'screen and (max-width: 1024px)',
-  desktop: 'screen and (min-width: 1025px)',
+  larger-than-tablet: 'screen and (min-width: 1025px)',
+  desktop: 'screen and (max-width: 1339px)',
+  desktop-large: 'screen and (min-width: 1440px)',
 ) !default;
 
 @mixin responsive($breakpoint) {
