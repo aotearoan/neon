@@ -13,9 +13,11 @@
     cursor: pointer;
   }
 
-  .neon-tree-menu__section {
-    font-weight: 600;
+  .neon-tree-menu__section-link {
+    font-weight: 800;
+  }
 
+  .neon-tree-menu__section {
     & > .neon-tree-menu__link {
       font-size: $base-font-size;
     }

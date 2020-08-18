@@ -10,4 +10,4 @@ import { NeonCard, NeonCardBody, NeonCardHeader, NeonLink, NeonNote } from '../.
     NeonNote,
   },
 })
-export default class Themes extends Vue {}
+export default class TechnicalDetails extends Vue {}

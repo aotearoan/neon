@@ -24,7 +24,7 @@
             <div id="nav">
               <ul v-if="themes.length > 1" class="neon-menu no-style">
                 <li v-for="theme in themes" :key="theme">
-                  <a class="neon-link" @click="switchTheme(theme)">{{ theme }}</a>
+                  <neon-link @click="switchTheme(theme)">{{ theme }}</neon-link>
                 </li>
               </ul>
             </div>
@@ -80,8 +80,10 @@
             </transition>
           </neon-grid-area>
         </neon-grid>
-        <neon-footer
-          >{{ version !== '0' ? `v${version}` : '' }} &copy; copyright aotearoan {{ new Date().getFullYear() }}
+        <neon-footer>
+          <span
+            >{{ version !== '0' ? `v${version}` : '' }} &copy; copyright aotearoan {{ new Date().getFullYear() }}</span
+          >
         </neon-footer>
       </template>
     </neon-page>

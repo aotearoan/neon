@@ -21,7 +21,13 @@ export class Menu {
           path: 'getting-started',
           page: 'GettingStarted',
           name: 'Getting Started',
-          keywords: 'installation instructions yarn npm',
+          keywords: 'installation sass css scss instructions yarn npm',
+        },
+        {
+          path: 'technical-details',
+          page: 'TechnicalDetails',
+          name: 'Technical Details',
+          keywords: 'vue stack browser support internet explorer chrome safari firefox',
         },
       ],
     },
@@ -43,12 +49,12 @@ export class Menu {
         {
           path: 'themes',
           page: 'Themes',
-          name: 'Themes',
           keywords: 'style styling customization',
         },
         {
           path: 'typography',
           page: 'Typography',
+          keywords: 'font stack headings text',
         },
       ],
     },

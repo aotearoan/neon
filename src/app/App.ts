@@ -19,6 +19,7 @@ import {
   NeonTopNav,
   NeonTreeMenu,
   NeonInput,
+  NeonLink,
 } from '../components';
 import { NeonModeUtils } from '../common/utils/NeonModeUtils';
 import { Route } from 'vue-router';
@@ -44,6 +45,7 @@ Vue.use(VueI18n);
     NeonGridArea,
     NeonDrawer,
     NeonInput,
+    NeonLink,
   },
 })
 export default class App extends Vue {

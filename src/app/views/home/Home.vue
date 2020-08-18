@@ -137,9 +137,10 @@
         />
       </div>
     </div>
-    <div class="powered-by">
-      <span class="powered-by">This site was developed using Neon o‿o</span>
-    </div>
+    <span class="powered-by neon-color-text-neutral">
+      No {{ Math.floor(Math.random() * 10) % 2 === 0 ? 'React' : 'Angular' }} developers were harmed making Neon.<br />This
+      site was developed using <neon-link href="https://vuejs.org/">VueJS</neon-link> and Neon o‿o
+    </span>
   </div>
 </template>
 

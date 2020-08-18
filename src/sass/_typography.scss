@@ -7,7 +7,7 @@ body {
 
 p {
   font-family: $paragraph-font-family;
-  margin: 0 0 2 * $base-space;
+  margin: 0 0 4 * $base-space;
   max-width: $max-paragraph-width;
   line-height: $line-height-ratio;
 }
