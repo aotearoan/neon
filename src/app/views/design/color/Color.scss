@@ -7,16 +7,22 @@
 }
 
 .color-list {
-  margin-top: 4 * $base-space;
+  max-width: $max-paragraph-width;
+  flex-direction: row;
+
+  &:not(:last-of-type) {
+    margin-bottom: 6 * $base-space;
+  }
 
   &-section {
     border-radius: $border-radius;
     overflow: hidden;
     margin-bottom: $base-space;
-  }
+    width: 200px;
 
-  &:not(:last-child) {
-    margin-right: 4 * $base-space;
+    & + .color-list-section {
+      margin-left: $base-space;
+    }
   }
 
   .color-item {
@@ -24,5 +30,15 @@
     min-width: 150px;
     min-height: 41px;
     flex-direction: row;
+  }
+}
+
+.color-palettes {
+  p {
+    margin-bottom: 2 * $base-space;
+  }
+
+  .neon-note {
+    max-width: $max-paragraph-width;
   }
 }

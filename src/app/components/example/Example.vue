@@ -1,5 +1,5 @@
 <template>
-  <neon-card-body class="example">
+  <neon-card-body class="example" :class="{ 'example--inline': inline }" :full-width="inline">
     <h3 v-if="model.title">{{ model.title }}</h3>
     <div class="example__output">
       <v-runtime-template :template-props="model.data || {}" :template="model.template" />

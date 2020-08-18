@@ -13,6 +13,9 @@ export default class Example extends Vue {
   @Prop({ required: true })
   public model!: ExampleModel;
 
+  @Prop({ default: false })
+  public inline!: boolean;
+
   private options = {
     theme: 'mbo',
     mode: 'text/x-vue',

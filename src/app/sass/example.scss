@@ -2,9 +2,9 @@
 
 .example {
   &__code {
-    border-radius: $border-radius;
     overflow: hidden;
-    @include margin-top;
+    border-radius: $border-radius !important;
+    margin-top: $base-space;
 
     span {
       display: inline;
@@ -21,6 +21,16 @@
       max-height: 75 * $base-space;
 
       @include code-mirror-width;
+    }
+  }
+
+  &__output {
+    border-radius: $border-radius !important;
+  }
+
+  &--inline {
+    .example__output {
+      padding: 0;
     }
   }
 }

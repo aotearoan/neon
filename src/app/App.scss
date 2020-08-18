@@ -9,11 +9,9 @@
 
       // application dark mode SASS
       @import 'sass/api-docs-colors';
-      @import 'views/home/Home-colors';
 
-      .neon-monospaced {
-        color: $color-primary-l1;
-      }
+      @import 'views/design/color/Color-colors';
+      @import 'views/home/Home-colors';
 
       .neon-app--simple-page {
         background: linear-gradient(
@@ -69,6 +67,8 @@
 
       // application light mode SASS
       @import 'sass/api-docs-colors';
+
+      @import 'views/design/color/Color-colors';
       @import 'views/home/Home-colors';
 
       .neon-app--simple-page {
@@ -98,10 +98,6 @@
             }
           }
         }
-      }
-
-      .neon-monospaced {
-        color: $color-primary-d1;
       }
 
       .CodeMirror,
