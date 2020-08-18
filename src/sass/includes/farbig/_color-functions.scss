@@ -175,7 +175,7 @@ $lab-t3: 0.008856452; // t1 * t1 * t1
   $chroma: nth($hcl, 2);
   $luminance: nth($hcl, 3);
   // check contrast and adjust lightness up if contrast ratio too low
-  @while (contrast-ratio($reference-color, #000) < 4.5) {
+  @while (contrast-ratio($reference-color, $color-text-dark) < 4.5) {
     $luminance: $luminance + 1;
     $reference-color: hcl($hue, $chroma, $luminance);
   }
@@ -193,7 +193,7 @@ $lab-t3: 0.008856452; // t1 * t1 * t1
   $chroma: nth($hcl, 2);
   $luminance: nth($hcl, 3);
   // check contrast and adjust lightness down if contrast ratio too low
-  @while (contrast-ratio($reference-color, #fff) < 4.5) {
+  @while (contrast-ratio($reference-color, $color-text-light) < 4.5) {
     $luminance: $luminance - 1;
     $reference-color: hcl($hue, $chroma, $luminance);
   }

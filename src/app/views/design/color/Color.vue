@@ -32,7 +32,7 @@
       </ul>
       <p>
         Another important feature of the palette generator is ensuring accessible contrast ratios of the colors when
-        used in combination with white or black text in light and dark modes.
+        used in combination with text in light and dark modes.
       </p>
       <p>
         It is possible to override the reference colors that any palette is generated from by overriding the color

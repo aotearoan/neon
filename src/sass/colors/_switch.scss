@@ -16,7 +16,7 @@
 
     .neon-switch__indicator {
       background-color: $background-color-switch-indicator;
-      box-shadow: 0 0 2px 1px rgba(black, 0.125);
+      box-shadow: 0 0 2px 1px rgba($color-neutral-d5, 0.125);
     }
 
     @each $color, $palette in $functional-colors {
@@ -28,7 +28,7 @@
           }
 
           .neon-switch__indicator {
-            box-shadow: 0 0 2px 1px rgba(black, 0.125);
+            box-shadow: 0 0 2px 1px rgba($color-neutral-d5, 0.125);
           }
         }
       }

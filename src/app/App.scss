@@ -75,7 +75,8 @@
         background: radial-gradient(circle at top 25% right 15%, rgba($color-warn-l1, 0.75) 3%, transparent 3%),
           radial-gradient(circle at top 65% right 5%, rgba($color-success-l1, 0.75) 10%, transparent 10%) fixed,
           radial-gradient(circle at bottom 7% left 25%, rgba($color-brand-l1, 0.75) 10%, transparent 10%),
-          radial-gradient(circle at top 30% left -10%, rgba($color-info-d2, 0.75) 30%, transparent 30%) fixed, white;
+          radial-gradient(circle at top 30% left -10%, rgba($color-info-d2, 0.75) 30%, transparent 30%) fixed,
+          $color-neutral-l5;
 
         .simple-page-header {
           background-color: $color-inverse;
