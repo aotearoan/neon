@@ -41,6 +41,12 @@ export class Menu {
           keywords: 'color scheme',
         },
         {
+          path: 'themes',
+          page: 'Themes',
+          name: 'Themes',
+          keywords: 'style styling customization',
+        },
+        {
           path: 'typography',
           page: 'Typography',
         },

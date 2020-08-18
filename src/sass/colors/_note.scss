@@ -16,9 +16,15 @@
     min-width: $size-xs;
     width: $size-xs;
     height: $size-xs;
+    opacity: 0.75;
 
     &:focus:not(:disabled) {
       box-shadow: none;
+    }
+
+    &:hover {
+      background-color: transparent;
+      opacity: 1;
     }
   }
 }

@@ -48,6 +48,15 @@ blockquote,
       }
     }
   }
+
+  & + p {
+    margin-top: 4 * $base-space;
+  }
+}
+
+p + blockquote,
+p + .neon-note {
+  margin-top: 3 * $base-space;
 }
 
 .neon-note {
