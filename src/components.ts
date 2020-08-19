@@ -4,6 +4,7 @@ import VueI18n from 'vue-i18n';
 /* components */
 import NeonActionMenu from './components/navigation/action-menu/NeonActionMenu.vue';
 import NeonAlert from './components/feedback/alert/NeonAlert.vue';
+import NeonAnchor from './components/navigation/anchor/NeonAnchor.vue';
 import NeonBadge from './components/presentation/badge/NeonBadge.vue';
 import NeonButton from './components/user-input/button/NeonButton.vue';
 import NeonCard from './components/layout/card/NeonCard.vue';
@@ -80,6 +81,7 @@ Vue.use(VueI18n);
 const components: { [s: string]: VueConstructor } = {
   NeonActionMenu,
   NeonAlert,
+  NeonAnchor,
   NeonBadge,
   NeonButton,
   NeonCard,
@@ -119,6 +121,7 @@ export {
   NeonActionMenuModel,
   NeonAlert,
   NeonAlertService,
+  NeonAnchor,
   NeonAvailableSpace,
   NeonBadge,
   NeonButton,

@@ -10,6 +10,10 @@ p {
   margin: 0 0 4 * $base-space;
   max-width: $max-paragraph-width;
   line-height: $line-height-ratio;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .neon-number {

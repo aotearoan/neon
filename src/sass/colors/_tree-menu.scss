@@ -1,22 +1,25 @@
 .neon-tree-menu {
-  a.neon-tree-menu__link.neon-link {
-    &,
-    &:hover,
-    &:active {
-      color: $color-text;
-    }
-
-    &.router-link-active {
+  a.neon-tree-menu__link,
+  a.neon-tree-menu__anchor {
+    &.neon-link {
       &,
+      &:hover,
       &:active {
-        background-color: $color-link;
-        color: $color-inverse;
-        transition: background-color ease-in-out $animation-speed-fast, color ease-in-out $animation-speed-fast;
+        color: $color-text;
       }
-    }
 
-    &:not(.router-link-active):not(.neon-tree-menu__link--no-click):hover {
-      background-color: $color-tree-menu-hover;
+      &.router-link-exact-active {
+        &,
+        &:active {
+          color: $color-link;
+          opacity: 1;
+        }
+      }
+
+      &:not(.neon-tree-menu__link--no-click):hover {
+        color: $color-link;
+        opacity: 0.75;
+      }
     }
   }
 }

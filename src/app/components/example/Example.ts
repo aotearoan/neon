@@ -19,7 +19,7 @@ export default class Example extends Vue {
   private options = {
     theme: 'mbo',
     mode: 'text/x-vue',
-    lineNumbers: true,
+    lineNumbers: false,
     line: true,
   };
 }

@@ -1,6 +1,7 @@
 import { TranslateResult } from 'vue-i18n';
 
 export interface MenuModel {
+  anchors?: string[];
   path: string;
   page?: string;
   keywords?: string;
@@ -22,6 +23,7 @@ export class Menu {
           page: 'GettingStarted',
           name: 'Getting Started',
           keywords: 'installation sass css scss instructions yarn npm',
+          anchors: ['Installation', 'Typescript', 'SASS'],
         },
         {
           path: 'technical-details',
@@ -39,6 +41,7 @@ export class Menu {
         {
           path: 'color',
           page: 'Color',
+          anchors: ['Introduction', 'Brand palettes', 'Functional palettes', 'Neutral palettes', 'Color classes'],
         },
         {
           path: 'dark-mode',

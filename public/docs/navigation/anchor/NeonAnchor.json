@@ -1,0 +1,15 @@
+{
+  "exportName": "default",
+  "displayName": "NeonAnchor",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "id",
+      "tags": {},
+      "type": {
+        "name": "string"
+      }
+    }
+  ]
+}

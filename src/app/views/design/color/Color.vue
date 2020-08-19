@@ -4,6 +4,7 @@
       <h1>Colors</h1>
     </neon-card-header>
     <neon-card-body>
+      <neon-anchor id="introduction" />
       <h2>Introduction</h2>
       <p>
         Neon uses the concept of <strong>Functional colors</strong> where colors have semantic meaning, e.g. a brand
@@ -46,6 +47,7 @@ $info-palette: (\n
       }}</app-pre>
     </neon-card-body>
     <neon-card-body class="color-palettes">
+      <neon-anchor id="brand-palettes" />
       <h2>Brand palettes</h2>
       <h3>brand</h3>
       <p>The palette for the main brand color.</p>
@@ -101,6 +103,7 @@ $info-palette: (\n
       </div>
     </neon-card-body>
     <neon-card-body class="color-palettes">
+      <neon-anchor id="functional-palettes" />
       <h2>Functional palettes</h2>
       <h3>info</h3>
       <p>The color palette used to convey information in components (e.g. buttons, alerts, notes).</p>
@@ -208,6 +211,7 @@ $info-palette: (\n
       </div>
     </neon-card-body>
     <neon-card-body class="color-palettes">
+      <neon-anchor id="neutral-palettes" />
       <h2>Neutral palettes</h2>
       <h3>neutral</h3>
       <p>Used the most often, this is the default grayscale palette used across all components.</p>
@@ -301,6 +305,7 @@ $info-palette: (\n
       >
     </neon-card-body>
     <neon-card-body>
+      <neon-anchor id="color-classes" />
       <h2>Color classes</h2>
       <p>
         Neon provides convenience classes for text colors as well as the full complement of background colors for each

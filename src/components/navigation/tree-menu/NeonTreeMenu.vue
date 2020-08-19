@@ -16,15 +16,22 @@
           section.label
         }}</neon-link>
         <ul class="no-style neon-tree-menu__links">
-          <li class="neon-tree-menu__link-item">
-            <neon-link
-              v-for="link in section.children"
-              :key="link.key"
-              :no-style="true"
-              :href="link.href"
-              class="neon-tree-menu__link"
-              >{{ link.label }}</neon-link
+          <li v-for="link in section.children" :key="link.key" class="neon-tree-menu__link-item">
+            <neon-link :no-style="true" :href="link.href" class="neon-tree-menu__link">{{ link.label }}</neon-link>
+            <ul
+              v-if="link.anchors && link.anchors.length > 0"
+              class="no-style neon-tree-menu__anchors"
+              :class="{ 'neon-tree-menu__anchors--expanded': expandAll || url === link.href }"
             >
+              <li v-for="anchor in link.anchors" :key="anchor">
+                <neon-link
+                  class="neon-link--no-style neon-tree-menu__anchor"
+                  :href="`${link.href}#${fragment(anchor)}`"
+                  @click="scrollTo(fragment(anchor))"
+                  >{{ anchor }}</neon-link
+                >
+              </li>
+            </ul>
           </li>
         </ul>
       </li>

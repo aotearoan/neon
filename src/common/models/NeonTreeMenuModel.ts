@@ -13,4 +13,5 @@ export interface NeonTreeMenuLinkModel {
   key: string;
   keywords?: TranslateResult;
   href?: string;
+  anchors?: string[];
 }

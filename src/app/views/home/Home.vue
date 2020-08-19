@@ -71,7 +71,7 @@
         <h2>Light and dark modes</h2>
         <p>
           With growing support for light and dark modes in browsers design systems also need to provide this option.
-          Neon provides light and dark modes FOR ALL THEMES.
+          Neon provides light and dark modes for all themes.
         </p>
         <neon-button
           href="/design/dark-mode"

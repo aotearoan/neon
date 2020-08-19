@@ -1,6 +1,7 @@
 .neon-tree-menu {
   &__section-link,
-  &__link {
+  &__link,
+  &__anchor {
     display: flex;
     width: 100%;
     letter-spacing: $component-letter-spacing-s;
@@ -43,11 +44,16 @@
   }
 
   .neon-tree-menu__link-item {
-    font-weight: 400;
-
     .neon-tree-menu__link {
+      font-weight: 500;
       margin-bottom: 0.5 * $base-space;
       padding-left: 4 * $base-space;
+    }
+
+    .neon-tree-menu__anchor {
+      margin-bottom: 0.5 * $base-space;
+      padding-left: 8 * $base-space;
+      font-size: $font-size-s;
     }
   }
 
@@ -61,5 +67,13 @@
 
   & > ul > li:first-child {
     margin-top: 2 * $base-space;
+  }
+
+  &__anchors {
+    display: none;
+
+    &--expanded {
+      display: flex;
+    }
   }
 }

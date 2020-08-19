@@ -13,7 +13,7 @@
       size="s"
       :circular="true"
       class="neon-note__close"
-      color="high-contrast"
+      :color="color"
     ></neon-button>
   </div>
 </template>

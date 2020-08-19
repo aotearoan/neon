@@ -84,6 +84,7 @@ export default class App extends Vue {
             key: child.path,
             keywords: child.keywords,
             href: `/${item.path}/${child.path}`,
+            anchors: child.anchors,
           }))
         : [],
     }));
@@ -186,7 +187,10 @@ export default class App extends Vue {
   }
 
   private filterLink(item: NeonTreeMenuLinkModel): NeonTreeMenuLinkModel | undefined {
-    const searchString = item.label.toString() + (item.keywords ? item.keywords.toString() : '');
+    const searchString =
+      item.label.toString() +
+      (item.keywords ? item.keywords.toString() : '') +
+      (item.anchors ? item.anchors.join(' ') : '');
     return searchString.toLowerCase().indexOf(this.indexFilter) >= 0 ? item : undefined;
   }
 

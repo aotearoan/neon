@@ -2,10 +2,6 @@
 
 .example {
   &__code {
-    overflow: hidden;
-    border-radius: $border-radius !important;
-    margin-top: $base-space;
-
     span {
       display: inline;
     }
@@ -19,6 +15,11 @@
       height: fit-content;
       min-height: 30 * $base-space;
       max-height: 75 * $base-space;
+      padding-top: $base-space;
+      padding-left: 1.5 * $base-space;
+      margin-top: 2 * $base-space;
+      overflow: hidden;
+      border-radius: $border-radius !important;
 
       @include code-mirror-width;
     }

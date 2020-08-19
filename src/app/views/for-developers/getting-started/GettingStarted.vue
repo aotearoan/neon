@@ -2,20 +2,18 @@
   <div>
     <neon-card>
       <neon-card-header>
-        <h1>Installation</h1>
+        <h1>Getting Started</h1>
       </neon-card-header>
       <neon-card-body>
+        <neon-anchor id="installation" />
+        <h2>Installation</h2>
         <p>Install with NPM:</p>
         <app-pre language="bash">{{ `npm install @aotearoan/neon` }}</app-pre>
         <p>or yarn:</p>
         <app-pre language="bash">{{ `yarn add @aotearoan/neon` }}</app-pre>
       </neon-card-body>
-    </neon-card>
-    <neon-card>
-      <neon-card-header>
-        <h1>Usage</h1>
-      </neon-card-header>
       <neon-card-body>
+        <neon-anchor id="typescript" />
         <h2>Javascript/Typescript</h2>
         <p>Import components and supporting classes like so:</p>
         <app-pre language="typescript">{{
@@ -28,6 +26,7 @@
         }}</app-pre>
       </neon-card-body>
       <neon-card-body>
+        <neon-anchor id="sass" />
         <h2>SASS</h2>
         <p>First select a theme:</p>
         <ul>

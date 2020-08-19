@@ -68,7 +68,6 @@
               <div class="neon-side-nav__sticky">
                 <neon-input type="text" v-model="indexFilter" placeholder="Filter" />
               </div>
-              <hr />
               <div class="neon-side-nav__scrolling">
                 <neon-tree-menu :model="filteredModel" :expand-all="expandAll" @click="onInlineMenuClick" />
               </div>
