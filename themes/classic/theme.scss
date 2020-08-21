@@ -56,7 +56,8 @@ $h4-size: $h5-size * $typography-scale !default;
 $h3-size: $h4-size * $typography-scale !default;
 $h2-size: $h3-size * $typography-scale !default;
 $h1-size: $h2-size * $typography-scale !default;
-$h0-size: $h1-size * $typography-scale !default; // AKA branding font size, used for landing page & banners etc...
+// AKA branding font size, used for landing page & banners etc...
+$h0-size: $h1-size * $typography-scale * $typography-scale !default;
 
 $h6-weight: 700 !default;
 $h5-weight: 700 !default;

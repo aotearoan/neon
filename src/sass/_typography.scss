@@ -16,8 +16,20 @@ p {
   }
 }
 
+span {
+  max-width: $max-paragraph-width;
+}
+
 .neon-number {
   font-variant: tabular-nums;
+}
+
+.neon-text-h0 {
+  font-family: $heading-font-family;
+  font-weight: $h0-weight;
+  margin: 0 0 6 * $base-space;
+  font-size: $h0-size;
+  line-height: $line-height-headings-ratio;
 }
 
 h1 {

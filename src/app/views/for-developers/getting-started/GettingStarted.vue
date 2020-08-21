@@ -21,7 +21,7 @@
             import { Component, Vue } from 'vue-property-decorator';\n
             import { NeonLogo } from '@aotearoan/neon';\n
 \n
-            @Component({ components: { NeonLogo, }, })\n
+            @Component({ components: { NeonLogo } })\n
             export default class App extends Vue {}`
         }}</app-pre>
       </neon-card-body>

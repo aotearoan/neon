@@ -19,13 +19,6 @@ export default class NeonTreeMenu extends Vue {
     return anchor.toLowerCase().replace(/\s/g, '-');
   }
 
-  private scrollTo(id: string) {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView();
-    }
-  }
-
   @Watch('$route.path')
   private onRouteChange(path: string) {
     this.url = path;

@@ -60,10 +60,8 @@ $info-palette: (\n
             :ref="`brandl${6 - i}`"
             :class="`neon-brand-bg-color-l${6 - i}`"
           >
-            {{ `brand: l${6 - i}` }}
+            {{ `l${6 - i}` }}
           </div>
-        </div>
-        <div class="color-list-section">
           <div
             v-for="i in 5"
             :key="`d${i}`"
@@ -71,7 +69,7 @@ $info-palette: (\n
             :ref="`brandd${i}`"
             :class="`neon-brand-bg-color-d${i}`"
           >
-            {{ `brand: d${i}` }}
+            {{ `d${i}` }}
           </div>
         </div>
       </div>
@@ -86,10 +84,8 @@ $info-palette: (\n
             :ref="`primaryl${6 - i}`"
             :class="`neon-primary-bg-color-l${6 - i}`"
           >
-            {{ `primary: l${6 - i}` }}
+            {{ `l${6 - i}` }}
           </div>
-        </div>
-        <div class="color-list-section">
           <div
             v-for="i in 5"
             :key="`d${i}`"
@@ -97,7 +93,7 @@ $info-palette: (\n
             :ref="`primaryd${i}`"
             :class="`neon-primary-bg-color-d${i}`"
           >
-            {{ `primary: d${i}` }}
+            {{ `d${i}` }}
           </div>
         </div>
       </div>
@@ -116,10 +112,8 @@ $info-palette: (\n
             :ref="`infol${6 - i}`"
             :class="`neon-info-bg-color-l${6 - i}`"
           >
-            {{ `info: l${6 - i}` }}
+            {{ `l${6 - i}` }}
           </div>
-        </div>
-        <div class="color-list-section">
           <div
             v-for="i in 5"
             :key="`d${i}`"
@@ -127,7 +121,7 @@ $info-palette: (\n
             :ref="`infod${i}`"
             :class="`neon-info-bg-color-d${i}`"
           >
-            {{ `info: d${i}` }}
+            {{ `d${i}` }}
           </div>
         </div>
       </div>
@@ -142,10 +136,8 @@ $info-palette: (\n
             :ref="`successl${6 - i}`"
             :class="`neon-success-bg-color-l${6 - i}`"
           >
-            {{ `success: l${6 - i}` }}
+            {{ `l${6 - i}` }}
           </div>
-        </div>
-        <div class="color-list-section">
           <div
             v-for="i in 5"
             :key="`d${i}`"
@@ -153,7 +145,7 @@ $info-palette: (\n
             :ref="`successd${i}`"
             :class="`neon-success-bg-color-d${i}`"
           >
-            {{ `success: d${i}` }}
+            {{ `d${i}` }}
           </div>
         </div>
       </div>
@@ -168,10 +160,8 @@ $info-palette: (\n
             :ref="`warnl${6 - i}`"
             :class="`neon-warn-bg-color-l${6 - i}`"
           >
-            {{ `warn: l${6 - i}` }}
+            {{ `l${6 - i}` }}
           </div>
-        </div>
-        <div class="color-list-section">
           <div
             v-for="i in 5"
             :key="`d${i}`"
@@ -179,7 +169,7 @@ $info-palette: (\n
             :ref="`warnd${i}`"
             :class="`neon-warn-bg-color-d${i}`"
           >
-            {{ `warn: d${i}` }}
+            {{ `d${i}` }}
           </div>
         </div>
       </div>
@@ -194,10 +184,8 @@ $info-palette: (\n
             :ref="`errorl${6 - i}`"
             :class="`neon-error-bg-color-l${6 - i}`"
           >
-            {{ `error: l${6 - i}` }}
+            {{ `l${6 - i}` }}
           </div>
-        </div>
-        <div class="color-list-section">
           <div
             v-for="i in 5"
             :key="`d${i}`"
@@ -205,7 +193,7 @@ $info-palette: (\n
             :ref="`errord${i}`"
             :class="`neon-error-bg-color-d${i}`"
           >
-            {{ `error: d${i}` }}
+            {{ `d${i}` }}
           </div>
         </div>
       </div>
@@ -224,10 +212,8 @@ $info-palette: (\n
             :ref="`neutrall${6 - i}`"
             :class="`neon-neutral-bg-color-l${6 - i}`"
           >
-            {{ `neutral: l${6 - i}` }}
+            {{ `l${6 - i}` }}
           </div>
-        </div>
-        <div class="color-list-section">
           <div
             v-for="i in 5"
             :key="`d${i}`"
@@ -235,7 +221,7 @@ $info-palette: (\n
             :ref="`neutrald${i}`"
             :class="`neon-neutral-bg-color-d${i}`"
           >
-            {{ `neutral: d${i}` }}
+            {{ `d${i}` }}
           </div>
         </div>
       </div>
@@ -253,10 +239,8 @@ $info-palette: (\n
             :ref="`high-contrastl${6 - i}`"
             :class="`neon-high-contrast-bg-color-l${6 - i}`"
           >
-            {{ `high-contrast: l${6 - i}` }}
+            {{ `l${6 - i}` }}
           </div>
-        </div>
-        <div class="color-list-section">
           <div
             v-for="i in 5"
             :key="`d${i}`"
@@ -264,7 +248,7 @@ $info-palette: (\n
             :ref="`high-contrastd${i}`"
             :class="`neon-high-contrast-bg-color-d${i}`"
           >
-            {{ `high-contrast: d${i}` }}
+            {{ `d${i}` }}
           </div>
         </div>
       </div>
@@ -282,10 +266,8 @@ $info-palette: (\n
             :ref="`low-contrastl${6 - i}`"
             :class="`neon-low-contrast-bg-color-l${6 - i}`"
           >
-            {{ `low-contrast: l${6 - i}` }}
+            {{ `l${6 - i}` }}
           </div>
-        </div>
-        <div class="color-list-section">
           <div
             v-for="i in 5"
             :key="`d${i}`"
@@ -293,7 +275,7 @@ $info-palette: (\n
             :ref="`low-contrastd${i}`"
             :class="`neon-low-contrast-bg-color-d${i}`"
           >
-            {{ `low-contrast: d${i}` }}
+            {{ `d${i}` }}
           </div>
         </div>
       </div>

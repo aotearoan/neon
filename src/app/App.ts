@@ -138,7 +138,22 @@ export default class App extends Vue {
       });
     this.indexModel = [...this.indexModel];
     this.simplePage = to.meta.simpleLayout;
-    window.scrollTo(0, 0);
+
+    setTimeout(() => {
+      console.log(1);
+      if (to.hash) {
+        console.log(2);
+        const el = document.getElementById(to.hash.substring(1));
+        if (el) {
+          console.log(3);
+          el.scrollIntoView();
+        } else {
+          window.scrollTo(0, 0);
+        }
+      } else {
+        window.scrollTo(0, 0);
+      }
+    }, 250);
   }
 
   get filteredModel(): NeonTreeMenuSectionModel[] {

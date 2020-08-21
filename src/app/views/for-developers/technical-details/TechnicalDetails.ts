@@ -1,8 +1,9 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonLink, NeonNote } from '../../../../components';
+import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader, NeonLink, NeonNote } from '../../../../components';
 
 @Component({
   components: {
+    NeonAnchor,
     NeonCard,
     NeonCardHeader,
     NeonCardBody,

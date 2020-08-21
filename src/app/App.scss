@@ -254,5 +254,9 @@
         text-align: center;
       }
     }
+
+    .neon-note {
+      max-width: $max-paragraph-width;
+    }
   }
 }

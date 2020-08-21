@@ -4,6 +4,7 @@
       <h1>Technical Details</h1>
     </neon-card-header>
     <neon-card-body>
+      <neon-anchor id="browser-support" />
       <h2>Browser Support</h2>
       <p>
         Neon aims to support all popular modern browsers.
@@ -20,6 +21,7 @@
       <p></p>
     </neon-card-body>
     <neon-card-body>
+      <neon-anchor id="framework-support" />
       <h2>Framework Support</h2>
       <p>
         Currently Neon is built using VueJS 2.0 therefore the supported VueJS version is also 2.0. Neon is built using

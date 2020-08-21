@@ -27,7 +27,6 @@
                 <neon-link
                   class="neon-link--no-style neon-tree-menu__anchor"
                   :href="`${link.href}#${fragment(anchor)}`"
-                  @click="scrollTo(fragment(anchor))"
                   >{{ anchor }}</neon-link
                 >
               </li>
