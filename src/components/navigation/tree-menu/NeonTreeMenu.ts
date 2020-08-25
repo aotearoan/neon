@@ -19,7 +19,7 @@ export default class NeonTreeMenu extends Vue {
     return anchor.toLowerCase().replace(/\s/g, '-');
   }
 
-  @Watch('$route.path')
+  @Watch('$route.path', { immediate: true })
   private onRouteChange(path: string) {
     this.url = path;
   }
