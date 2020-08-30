@@ -7,7 +7,7 @@
 
   @each $color, $palette in $functional-colors {
     &--#{$color} {
-      background-color: rgba(map-get($palette, $background-color-note), 0.5);
+      background-color: rgba(map-get($palette, $background-color-note), 0.125);
       border: $border-width $border-style map-get($palette, $border-color-note);
     }
   }
@@ -36,6 +36,6 @@ blockquote {
     color: $color-text;
   }
 
-  background-color: rgba(map-get($primary-palette, $background-color-note), 0.5);
+  background-color: rgba(map-get($primary-palette, $background-color-note), 0.125);
   border: $border-width $border-style map-get($primary-palette, $border-color-note);
 }

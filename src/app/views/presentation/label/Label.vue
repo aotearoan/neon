@@ -25,7 +25,20 @@
             :color="color"
             :size="size"
             :label="color"
-            :outline="true"
+            label-style="outline"
+          ></neon-label>
+        </div>
+      </div>
+      <h2>Background color labels</h2>
+      <div class="collection">
+        <div v-for="size in labelSizes" :key="`label-${size}-outline`" class="neon-vertically-spaced">
+          <neon-label
+            v-for="color in colors"
+            :key="`label-${color}-${size}-outline`"
+            :color="color"
+            :size="size"
+            :label="color"
+            label-style="background"
           ></neon-label>
         </div>
       </div>
@@ -38,7 +51,7 @@
             :color="color"
             :size="size"
             :label="color"
-            :outline="true"
+            label-style="outline"
             icon="check"
             :icon-position="color === 'primary' ? 'right' : 'left'"
           ></neon-label>

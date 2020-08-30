@@ -8,9 +8,11 @@ table {
     }
   }
 
-  tbody {
-    tr:hover {
-      background-color: rgba($color-text-low-contrast, 0.125);
+  &.neon-table--hover {
+    tbody {
+      tr:hover {
+        background-color: rgba($color-text-low-contrast, 0.125);
+      }
     }
   }
 

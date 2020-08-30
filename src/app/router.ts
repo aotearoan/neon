@@ -1,6 +1,7 @@
 import Vue from 'vue';
-import VueRouter, { RouteConfig } from 'vue-router';
+import VueRouter, { Route, RouteConfig } from 'vue-router';
 import { Menu } from './Menu';
+import { Position } from 'vue-router/types/router';
 
 Vue.use(VueRouter);
 
@@ -46,6 +47,7 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.VUE_APP_BASE_URL,
   routes,
+  scrollBehavior: (to: Route, from: Route, savedPosition: void | Position) => savedPosition || { x: 0, y: 0 },
 });
 
 export default router;

@@ -294,7 +294,7 @@ $info-palette: (\n
         palette
       </p>
       <h3>Text colors</h3>
-      <example :model="example" :inline="true"></example>
+      <example :example="example" />
     </neon-card-body>
   </neon-card>
 </template>

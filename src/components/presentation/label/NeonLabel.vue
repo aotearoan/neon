@@ -4,7 +4,7 @@
     :class="[
       `neon-label--${color}`,
       `neon-label--${size}`,
-      outline ? 'neon-label--outline' : 'neon-label--solid',
+      `neon-label--${labelStyle}`,
       icon ? `neon-label--icon-${iconPosition}` : '',
       {
         'neon-label--with-icon': icon,

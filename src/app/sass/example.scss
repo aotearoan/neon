@@ -22,6 +22,13 @@
       border-radius: $border-radius !important;
 
       @include code-mirror-width;
+
+      pre.CodeMirror-line,
+      pre.CodeMirror-line-like {
+        font-family: $font-family-monospaced;
+        font-variant-ligatures: discretionary-ligatures;
+        font-variation-settings: $monospaced-font-variation-settings;
+      }
     }
   }
 
@@ -29,9 +36,23 @@
     border-radius: $border-radius !important;
   }
 
-  &--inline {
-    .example__output {
-      padding: 0;
+  h3 {
+    margin-bottom: 8 * $base-space !important;
+  }
+
+  &.neon-card-body--full-width {
+    & > h3 {
+      @include margin;
+      margin-bottom: 8 * $base-space !important;
+    }
+
+    .example__code {
+      @include margin;
+      margin-top: 0;
+    }
+
+    .example__title {
+      @include padding;
     }
   }
 }

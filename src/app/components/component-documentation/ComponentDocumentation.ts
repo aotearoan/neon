@@ -1,27 +1,47 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import Example from '../example/Example.vue';
+import Examples from '../examples/Examples.vue';
 import ApiDocs from '../api-docs/ApiDocs.vue';
-import ApiDescription from '../api-description/ApiDescription.vue';
 import { ExampleModel } from '../example/ExampleModel';
-import { NeonCard, NeonCardBody, NeonCardHeader } from '../../../components';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonTab, NeonTabs } from '../../../components';
 import { DocumentationModel } from '../ApiModel';
 import { MenuModel } from '../../Menu';
 
 @Component({
   components: {
-    ApiDescription,
     ApiDocs,
-    Example,
+    Examples,
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
+    NeonTab,
+    NeonTabs,
   },
 })
 export default class ComponentDocumentation extends Vue {
   private apiModel: DocumentationModel | null = null;
 
+  private tabs = [
+    {
+      key: 'description',
+      label: 'Description',
+    },
+    {
+      key: 'api',
+      label: 'API',
+    },
+    {
+      key: 'examples',
+      label: 'Examples',
+    },
+  ];
+
+  private selected = this.tabs[0].key;
+
   @Prop({ required: true })
   public model!: MenuModel;
+
+  @Prop({ required: true })
+  public headline?: string;
 
   @Prop({ default: [] })
   public examples!: ExampleModel[];

@@ -1,0 +1,89 @@
+.neon-tabs {
+  &__menu-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 500;
+  }
+
+  &__menu-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: calc(100% + #{$border-width});
+    user-select: none;
+    cursor: pointer;
+
+    & + .neon-tabs__menu-item {
+      margin-left: 6 * $base-space;
+    }
+  }
+
+  &--s {
+    .neon-tabs__menu-items {
+      height: $size-s;
+      font-size: $base-font-size;
+
+      svg {
+        width: $base-font-size;
+        height: $base-font-size;
+        margin-right: $base-space;
+      }
+    }
+  }
+
+  &--m {
+    .neon-tabs__menu-items {
+      height: $size-m;
+      font-size: $font-size-l;
+
+      svg {
+        width: $font-size-l;
+        height: $font-size-l;
+        margin-right: 2 * $base-space;
+      }
+    }
+  }
+
+  &--l {
+    .neon-tabs__menu-items {
+      height: $size-l;
+      font-size: $font-size-l;
+
+      svg {
+        width: $font-size-l;
+        height: $font-size-l;
+        margin-right: 2 * $base-space;
+      }
+    }
+  }
+}
+
+.neon-tab {
+  display: none;
+  @include padding-vertical;
+
+  &--selected {
+    display: flex;
+  }
+}
+
+@include responsive(mobile-large) {
+  .neon-tabs__menu-items {
+    display: none;
+  }
+
+  .neon-tab {
+    display: flex;
+  }
+}
+
+.neon-card-body--full-width {
+  .neon-tabs__menu-items {
+    @include padding-horizontal;
+  }
+
+  .neon-tab {
+    @include padding;
+  }
+}

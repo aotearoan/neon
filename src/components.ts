@@ -32,6 +32,8 @@ import NeonPage from './components/layout/page/NeonPage.vue';
 import NeonPassword from './components/user-input/password/NeonPassword.vue';
 import NeonSideNav from './components/layout/side-nav/NeonSideNav.vue';
 import NeonSwitch from './components/user-input/switch/NeonSwitch.vue';
+import NeonTab from './components/presentation/tab/NeonTab.vue';
+import NeonTabs from './components/presentation/tabs/NeonTabs.vue';
 import NeonToggle from './components/user-input/toggle/NeonToggle.vue';
 import NeonTopNav from './components/layout/top-nav/NeonTopNav.vue';
 import NeonTreeMenu from './components/navigation/tree-menu/NeonTreeMenu.vue';
@@ -56,7 +58,8 @@ import { NeonGridModel } from './common/models/NeonGridModel';
 import { NeonHorizontalPosition } from './common/enums/NeonHorizontalPosition';
 import { NeonIconRegistry } from './common/utils/NeonIconRegistry';
 import { NeonInputType } from './common/enums/NeonInputType';
-import { NeonState } from './common/enums/NeonState';
+import { NeonLabelSize } from './common/enums/NeonLabelSize';
+import { NeonLabelStyle } from './common/enums/NeonLabelStyle';
 import { NeonMode } from './common/enums/NeonMode';
 import { NeonModeUtils } from './common/utils/NeonModeUtils';
 import { NeonOrientation } from './common/enums/NeonOrientation';
@@ -65,9 +68,10 @@ import { NeonPlacementUtils } from './common/utils/NeonPlacementUtils';
 import { NeonPosition } from './common/enums/NeonPosition';
 import { NeonResponsive } from './common/enums/NeonResponsive';
 import { NeonResponsiveUtils } from './common/utils/NeonResponsiveUtils';
-import { NeonLabelSize } from './common/enums/NeonLabelSize';
 import { NeonSize } from './common/enums/NeonSize';
+import { NeonState } from './common/enums/NeonState';
 import { NeonSwitchStyle } from './common/enums/NeonSwitchStyle';
+import { NeonTabModel } from './common/models/NeonTabModel';
 import { NeonToggleModel } from './common/models/NeonToggleModel';
 import { NeonToggleStyle } from './common/enums/NeonToggleStyle';
 import { NeonTreeMenuLinkModel, NeonTreeMenuSectionModel } from './common/models/NeonTreeMenuModel';
@@ -109,6 +113,8 @@ const components: { [s: string]: VueConstructor } = {
   NeonPassword,
   NeonSideNav,
   NeonSwitch,
+  NeonTab,
+  NeonTabs,
   NeonToggle,
   NeonTopNav,
   NeonTreeMenu,
@@ -159,6 +165,7 @@ export {
   NeonIconRegistry,
   NeonLabel,
   NeonLabelSize,
+  NeonLabelStyle,
   NeonLink,
   NeonLogo,
   NeonModal,
@@ -179,6 +186,9 @@ export {
   NeonState,
   NeonSwitch,
   NeonSwitchStyle,
+  NeonTab,
+  NeonTabModel,
+  NeonTabs,
   NeonToggle,
   NeonToggleModel,
   NeonToggleStyle,

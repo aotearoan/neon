@@ -3,7 +3,7 @@
     <header v-if="simplePage" class="simple-page-header">
       <neon-toggle
         name="dark-mode-toggle"
-        color="success"
+        color="primary"
         :value="selectedMode"
         :model="modes"
         @input="switchMode"

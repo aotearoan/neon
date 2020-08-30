@@ -11,11 +11,15 @@ table {
         font-weight: 500;
         text-transform: uppercase;
         text-align: left;
-        padding: 0 2 * $base-space;
+        padding: 0 6 * $base-space 0 0;
         letter-spacing: $component-letter-spacing-m;
 
         &.neon--number {
           text-align: right;
+        }
+
+        &:last-child {
+          padding-right: 0;
         }
       }
     }
@@ -24,9 +28,10 @@ table {
   tbody {
     tr {
       td {
+        $padding-td-vertical: 0.5 * ($size-m - $line-height-ratio * $base-font-size);
         vertical-align: top;
         text-align: left;
-        padding: 0.5 * ($size-m - $line-height-ratio * $base-font-size) 3 * $base-space;
+        padding: $padding-td-vertical 6 * $base-space $padding-td-vertical 0;
         font-weight: 400;
         letter-spacing: $component-letter-spacing-m;
 
@@ -34,27 +39,13 @@ table {
           text-align: right;
           font-variant: tabular-nums;
         }
-      }
 
-      &:hover {
-        &:not(:first-child) {
-          td:first-child {
-            border-top-left-radius: $border-radius;
-          }
-
-          td:last-child {
-            border-top-right-radius: $border-radius;
-          }
+        &:last-child {
+          padding-right: 0;
         }
 
-        &:not(:last-child) {
-          td:first-child {
-            border-bottom-left-radius: $border-radius;
-          }
-
-          td:last-child {
-            border-bottom-right-radius: $border-radius;
-          }
+        .neon-label--xs {
+          margin-top: 0.5 * ($line-height-ratio * $base-font-size - ($size-xs - $base-space));
         }
       }
     }

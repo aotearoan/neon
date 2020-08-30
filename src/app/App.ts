@@ -144,11 +144,7 @@ export default class App extends Vue {
         const el = document.getElementById(to.hash.substring(1));
         if (el) {
           el.scrollIntoView();
-        } else {
-          window.scrollTo(0, 0);
         }
-      } else {
-        window.scrollTo(0, 0);
       }
     }, 250);
   }

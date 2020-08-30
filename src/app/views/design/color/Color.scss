@@ -25,7 +25,8 @@
     min-width: 12 * $base-space;
     min-height: 12 * $base-space;
     flex-direction: row;
-    font-family: monospace;
+    font-family: $font-family-monospaced;
+    font-variation-settings: $monospaced-font-variation-settings;
     justify-content: center;
     align-items: center;
 

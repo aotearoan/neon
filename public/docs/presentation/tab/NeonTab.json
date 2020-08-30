@@ -1,0 +1,34 @@
+{
+  "displayName": "NeonTab",
+  "exportName": "default",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "selected",
+      "tags": {},
+      "description": "True if the current tab is the visible tab.",
+      "type": {
+        "name": "boolean"
+      },
+      "required": true
+    },
+    {
+      "name": "toggleOnIf",
+      "tags": {},
+      "description": "By default, use CSS display property to show/hide tab contents. This flag will enable using v-if instead.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "default"
+    }
+  ]
+}

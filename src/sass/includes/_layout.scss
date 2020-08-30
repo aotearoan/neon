@@ -100,6 +100,12 @@ $spacing: (
   @include spacing-horizontal('padding', mobile-large);
 }
 
+@mixin padding-vertical {
+  @include spacing-vertical('padding', larger-than-tablet);
+  @include spacing-vertical('padding', tablet);
+  @include spacing-vertical('padding', mobile-large);
+}
+
 // margin mixins
 @mixin margin-mobile($multiplier: 1, $square: false) {
   @include spacing('margin', mobile-large, $multiplier, $square);

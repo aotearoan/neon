@@ -1,31 +1,13 @@
 .api-docs {
-  .api-docs__event-badge {
-    border-color: $border-color;
-    background-color: rgba($background-color, 0.25);
-
-    .api-docs__event-returns-label {
-      border-color: $border-color;
-    }
+  &__name {
+    color: map-get($info-palette, $color-api-docs-property-name);
   }
 
-  .api-docs__card {
-    border-color: $border-color;
-    background-color: rgba($background-color, 0.25);
-
-    .api-docs__card-header {
-      border-color: $border-color;
-    }
-
-    .api-docs__card-description {
-      border-color: $border-color;
-    }
-
-    dl {
-      border-color: $border-color;
-    }
-
-    dt {
-      color: $label-color;
+  @include responsive(desktop) {
+    &__responsive {
+      .api-docs__attribute:first-child {
+        border-bottom: $border-width $border-style $border-color;
+      }
     }
   }
 }

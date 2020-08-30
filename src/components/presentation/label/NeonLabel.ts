@@ -4,6 +4,7 @@ import { NeonLabelSize } from '../../../common/enums/NeonLabelSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonHorizontalPosition } from '../../../common/enums/NeonHorizontalPosition';
 import NeonIcon from '../icon/NeonIcon.vue';
+import { NeonLabelStyle } from '../../../common/enums/NeonLabelStyle';
 
 @Component({
   components: {
@@ -20,8 +21,8 @@ export default class NeonLabel extends Vue {
   @Prop({ default: NeonHorizontalPosition.Left })
   public iconPosition?: NeonHorizontalPosition;
 
-  @Prop()
-  public outline?: boolean;
+  @Prop({ default: NeonLabelStyle.Solid })
+  public labelStyle!: NeonLabelStyle;
 
   @Prop({ default: NeonLabelSize.Small })
   public size!: NeonLabelSize;

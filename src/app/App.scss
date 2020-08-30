@@ -1,5 +1,9 @@
 // This structure allows you to not only use the theme and light/dark modes,
 // but to also use the defined variables, mixins and functions in your own components and pages.
+@import 'sass/fonts';
+$monospaced-font-variation-settings: 'wdth' 100, 'wght' 350;
+$font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', Courier, monospace;
+
 .app {
   &.neon-theme--classic {
     @import '../../themes/classic/theme';
@@ -7,8 +11,12 @@
     &.neon-mode--dark {
       @import '../../themes/classic/dark';
 
+      $color-api-docs-property-name: l3;
+      $background-color-component-header: rgba($background-color-card, 0.25);
+
       // application dark mode SASS
       @import 'sass/api-docs-colors';
+      @import 'sass/component-docs-colors';
 
       @import 'views/design/color/Color-colors';
       @import 'views/home/Home-colors';
@@ -16,7 +24,7 @@
       .neon-app--simple-page {
         background: linear-gradient(
               calc(360deg * var(--hours) / 24),
-              rgba($color-success-d1, 0.5) 10%,
+              rgba($color-primary-d1, 0.5) 10%,
               rgba($color-info-d4, 0.5) 90%
             )
             fixed,
@@ -42,15 +50,15 @@
         }
 
         .toggle-dark-mode {
-          background-color: rgba($color-success-d4, 0.375);
+          background-color: rgba($color-primary-d4, 0.375);
 
           .neon-toggle__label:first-child {
-            border-top-color: $color-success-d2;
-            border-left-color: $color-success-d2 !important;
-            border-bottom-color: $color-success-d2;
+            border-top-color: $color-primary-d2;
+            border-left-color: $color-primary-d2 !important;
+            border-bottom-color: $color-primary-d2;
 
             &:hover {
-              background-color: rgba($color-success-d2, 0.375) !important;
+              background-color: rgba($color-primary-d2, 0.375) !important;
             }
           }
         }
@@ -65,15 +73,19 @@
     &.neon-mode--light {
       @import '../../themes/classic/light';
 
+      $color-api-docs-property-name: d2;
+      $background-color-component-header: rgba($background-color-card, 0.75);
+
       // application light mode SASS
       @import 'sass/api-docs-colors';
+      @import 'sass/component-docs-colors';
 
       @import 'views/design/color/Color-colors';
       @import 'views/home/Home-colors';
 
       .neon-app--simple-page {
         background: radial-gradient(circle at top 25% right 15%, rgba($color-warn-l1, 0.75) 3%, transparent 3%),
-          radial-gradient(circle at top 65% right 5%, rgba($color-success-l1, 0.75) 10%, transparent 10%) fixed,
+          radial-gradient(circle at top 65% right 5%, rgba($color-primary-l1, 0.75) 10%, transparent 10%) fixed,
           radial-gradient(circle at bottom 7% left 25%, rgba($color-brand-l1, 0.75) 10%, transparent 10%),
           radial-gradient(circle at top 30% left -10%, rgba($color-info-d2, 0.75) 30%, transparent 30%) fixed,
           $color-neutral-l5;
@@ -89,12 +101,12 @@
 
         .toggle-dark-mode {
           .neon-toggle__label:last-child {
-            border-top-color: $color-success-l3;
-            border-right-color: $color-success-l3 !important;
-            border-bottom-color: $color-success-l3;
+            border-top-color: $color-primary-l3;
+            border-right-color: $color-primary-l3 !important;
+            border-bottom-color: $color-primary-l3;
 
             &:hover {
-              background-color: rgba($color-success-l3, 0.375) !important;
+              background-color: rgba($color-primary-l3, 0.375) !important;
             }
           }
         }
@@ -107,7 +119,6 @@
     }
 
     // application classic theme SASS
-    @import 'sass/fonts';
     @import 'sass/example';
     @import 'sass/pre';
     @import 'sass/component-docs';
@@ -255,6 +266,7 @@
       }
     }
 
+    blockquote,
     .neon-note {
       max-width: $max-paragraph-width;
     }

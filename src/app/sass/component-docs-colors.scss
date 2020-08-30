@@ -1,0 +1,6 @@
+.component-documentation {
+  &__header {
+    background-color: $background-color-component-header;
+    border-bottom: $border-width $border-style $border-color;
+  }
+}

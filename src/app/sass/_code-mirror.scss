@@ -1,5 +1,6 @@
 @mixin code-mirror-width {
   @include responsive(larger-than-tablet) {
+    max-width: 100%;
     @include width(100, $side-nav-width + 2 * $spacing-vertical-desktop + 2 * $spacing-horizontal-desktop);
   }
 

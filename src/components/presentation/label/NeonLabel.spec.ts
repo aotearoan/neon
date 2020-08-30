@@ -5,6 +5,7 @@ import NeonLabel from './NeonLabel.vue';
 import { NeonLabelSize } from '../../../common/enums/NeonLabelSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonHorizontalPosition } from '../../../common/enums/NeonHorizontalPosition';
+import { NeonLabelStyle } from '../../../common/enums/NeonLabelStyle';
 
 Vue.component('NeonIcon', NeonIcon);
 
@@ -68,7 +69,7 @@ describe('NeonLabel', () => {
   it('renders outline style', () => {
     const icon = 'check';
     const wrapper = mount(NeonLabel, {
-      propsData: { icon, outline: true },
+      propsData: { icon, labelStyle: NeonLabelStyle.Outline },
     });
     expect(wrapper.find('.neon-label--outline').element).toBeDefined();
   });

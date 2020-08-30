@@ -5,149 +5,86 @@
     }
   }
 
-  .api-docs__event-badge {
-    max-width: 90 * $base-space;
-    border: $border-width $border-style;
-    border-radius: $border-radius;
-    width: fit-content;
-    @include padding;
-
-    & + .api-docs__event-badge {
-      margin-left: 4 * $base-space;
-    }
-
-    .api-docs__event-returns-label {
-      border-top: $border-width $border-style;
-      margin-top: 2 * $base-space;
-      padding-top: 4 * $base-space;
-    }
-
-    label {
-      margin-bottom: 0;
-    }
-
-    @include responsive(tablet) {
-      width: 100%;
-      max-width: 100%;
-
-      & + .api-docs__event-badge {
-        margin-left: 0;
-      }
-    }
+  &__title {
+    font-size: $h5-size;
+    margin-bottom: 0;
   }
 
-  .api-docs__event-property {
-    &-type {
-      font-weight: 400;
-      letter-spacing: $component-letter-spacing-m;
-    }
-
-    &-dash {
-      padding-left: 2 * $base-space;
-      padding-right: 2 * $base-space;
-    }
+  &__name,
+  &__type,
+  &__default {
+    font-family: $font-family-monospaced;
+    font-variant-ligatures: discretionary-ligatures;
+    font-variation-settings: $monospaced-font-variation-settings;
   }
 
-  .api-docs__card {
-    border: $border-width $border-style;
+  &__name {
+    font-variation-settings: 'wght' 450;
+  }
+
+  &__description {
+    font-weight: 200;
+    letter-spacing: normal;
+  }
+
+  table {
+    border-bottom: none;
     width: 100%;
-    @include padding;
-    border-radius: $border-radius;
-    flex-direction: row;
-    align-items: stretch;
 
-    dl {
+    td:last-child {
+      width: 100%;
+    }
+  }
+
+  @include responsive(desktop-large) {
+    &__desktop {
       display: flex;
-      align-items: baseline;
-      margin: 0 6 * $base-space;
-
-      dt {
-        text-transform: uppercase;
-        font-size: $font-size-s;
-        line-height: $line-height-ratio * $base-font-size;
-      }
-
-      dd {
-        line-height: $line-height-ratio * $base-font-size;
-        margin-left: 3 * $base-space;
-
-        & + dt {
-          margin-left: 5 * $base-space;
-        }
-      }
     }
 
-    .api-docs__card-header {
-      flex-direction: row;
-      align-items: center;
-      border-right: $border-width $border-style;
-      padding-right: 6 * $base-space;
+    &__responsive {
+      display: none;
+    }
+  }
 
-      h3 {
-        letter-spacing: $component-letter-spacing-m;
-        margin-bottom: 0;
-      }
+  @include responsive(desktop) {
+    &__desktop {
+      display: none;
     }
 
-    .api-docs__card-name {
-      font-style: normal;
-      line-height: 1;
-    }
+    &__responsive {
+      display: flex;
 
-    .neon-label {
-      margin-left: 6 * $base-space;
-    }
-
-    .api-docs__card-description {
-      display: inline;
-      border-left: $border-width $border-style;
-      padding-left: 6 * $base-space;
-      max-width: $max-paragraph-width;
-    }
-
-    & + .api-docs__card {
-      margin-top: 6 * $base-space;
-    }
-
-    @media screen and (max-width: 1300px) {
-      flex-direction: column;
-
-      .api-docs__card-header {
-        border-right: none;
-        padding-right: 0;
-        padding-top: 0;
-        padding-bottom: 3 * $base-space;
-        margin-bottom: 3 * $base-space;
-        justify-content: space-between;
-      }
-
-      .api-docs__card-description {
-        border-left: none;
-        padding-left: 0;
-      }
-
-      dl {
-        flex-wrap: wrap;
-        max-width: 360px;
-        padding: 0;
-        margin: 0;
-        align-items: center;
-        margin-bottom: 3 * $base-space;
-        padding-bottom: 3 * $base-space;
-
-        dt {
-          line-height: $line-height-ratio * $base-font-size;
-          width: 25%;
-          padding-right: 4 * $base-space;
+      .api-docs {
+        &__title {
+          margin-bottom: 2 * $base-space;
         }
 
-        dd {
-          line-height: $line-height-ratio;
-          width: 75%;
-          margin-left: 0;
+        &__attribute {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding-top: $base-space;
 
-          & + dt {
-            margin-left: 0;
+          label {
+            margin-bottom: 0;
+            margin-right: 2 * $base-space;
+          }
+
+          .neon-label {
+            margin-left: 2 * $base-space;
+          }
+        }
+
+        &__name {
+          font-size: $font-size-l;
+          padding-bottom: $base-space;
+        }
+
+        &__property,
+        &__event,
+        &__slot {
+          &:not(:first-of-type) {
+            margin-top: 4 * $base-space;
           }
         }
       }

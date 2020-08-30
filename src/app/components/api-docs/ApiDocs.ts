@@ -1,6 +1,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { NeonCard, NeonCardBody, NeonCardHeader, NeonExpansionIndicator } from '../../../components';
-import { DocumentationModel } from '../ApiModel';
+import { DocumentationModel, EventModel, PropertyModel, PropTypeModel } from '../ApiModel';
+import { enumList, modelList } from '../../SupportingClasses';
 
 @Component({
   components: {
@@ -21,5 +22,45 @@ export default class ApiDocs extends Vue {
 
   private requiredProps() {
     return this.apiModel && this.apiModel.props.some((prop) => prop.required);
+  }
+
+  private isArray(prop: PropertyModel) {
+    return prop.type && prop.type.name === 'Array';
+  }
+
+  private typeName(prop: PropertyModel) {
+    if (prop && prop.type) {
+      const type: PropTypeModel = prop.type;
+
+      if (this.isArray(prop)) {
+        return type.elements && type.elements[0].name;
+      }
+
+      return type.name && type.name;
+    }
+
+    return undefined;
+  }
+
+  private typeLink(prop: PropertyModel) {
+    return this.lookupLink(this.typeName(prop));
+  }
+
+  private eventTypeName(event: EventModel) {
+    return (event && event.type && event.type.names[0]) || undefined;
+  }
+
+  private eventTypeLink(event: EventModel) {
+    return this.lookupLink(this.eventTypeName(event));
+  }
+
+  private lookupLink(typeName?: string) {
+    if (typeName) {
+      const isEnum = enumList.indexOf(typeName) >= 0;
+      const isModel = modelList.indexOf(typeName) >= 0;
+
+      return isEnum ? `/enums/${typeName}` : isModel ? `/models/${typeName}` : undefined;
+    }
+    return undefined;
   }
 }

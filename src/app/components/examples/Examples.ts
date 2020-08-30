@@ -1,18 +1,17 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { NeonCard, NeonCardBody, NeonCardHeader } from '../../../components';
-import { DocumentationModel } from '../ApiModel';
+import { ExampleModel } from '../example/ExampleModel';
+import Example from '../example/Example.vue';
 
 @Component({
   components: {
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
+    Example,
   },
 })
-export default class ApiDescription extends Vue {
+export default class Examples extends Vue {
   @Prop({ required: true })
-  public apiModel!: DocumentationModel;
-
-  @Prop({ required: true })
-  public componentTitle!: string;
+  public examples!: ExampleModel[];
 }

@@ -1,17 +1,21 @@
 <template>
-  <div>
-    <api-description v-if="apiModel" :api-model="apiModel" :component-title="componentTitle">
+  <div class="component-documentation">
+    <div class="component-documentation__header">
+      <div class="component-documentation__header-container">
+        <h1 class="component-documentation__title">{{ componentTitle }}</h1>
+        <span v-if="headline" class="component-documentation__headline">{{ headline }}</span>
+        <neon-tabs :tabs="tabs" v-model="selected" />
+      </div>
+    </div>
+    <neon-tab :tab="tabs[0]" :selected="selected === tabs[0].key" :toggleOnIf="true">
       <slot></slot>
-    </api-description>
-    <neon-card v-if="examples" class="examples">
-      <neon-card-header>
-        <h1>{{ examples.length > 1 ? 'Examples' : 'Example' }}</h1>
-      </neon-card-header>
-      <example v-for="example in examples" :key="example.title" :model="example" />
-    </neon-card>
-    <api-docs v-if="apiModel" :api-model="apiModel" :path="path" :component-name="componentName">
-      <slot></slot>
-    </api-docs>
+    </neon-tab>
+    <neon-tab :tab="tabs[1]" :selected="selected === tabs[1].key" :toggleOnIf="true">
+      <api-docs v-if="apiModel" :api-model="apiModel" :path="path" :component-name="componentName" />
+    </neon-tab>
+    <neon-tab :tab="tabs[2]" :selected="selected === tabs[2].key" :toggleOnIf="true">
+      <examples :examples="examples" />
+    </neon-tab>
   </div>
 </template>
 

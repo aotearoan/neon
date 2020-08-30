@@ -11,7 +11,7 @@
           CSS background URL of the image which may also be inlined as base64 or a UTF-8 SVG.
         </p>
       </neon-card-body>
-      <example :model="example"></example>
+      <examples :examples="[example]" />
     </neon-card>
   </div>
 </template>

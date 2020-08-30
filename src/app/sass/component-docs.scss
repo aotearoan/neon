@@ -1,3 +1,49 @@
-.examples:not(:first-child) {
-  margin-top: 8 * $base-space;
+@mixin comp-doc-header-margin($margin) {
+  margin-top: -1 * $margin;
+  padding-top: $margin;
+  margin-left: -1 * $margin;
+  margin-right: -1 * $margin;
+  padding-left: $margin;
+  padding-right: $margin;
+}
+
+.component-documentation {
+  &__header {
+    @include comp-doc-header-margin(6 * $base-space);
+
+    @include responsive(tablet) {
+      @include comp-doc-header-margin(4.5 * $base-space);
+    }
+
+    @include responsive(mobile-large) {
+      @include comp-doc-header-margin(3 * $base-space);
+    }
+
+    .neon-tabs {
+      position: relative;
+      top: $border-width;
+    }
+  }
+
+  &__header-container,
+  .neon-tab {
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
+  }
+
+  &__title {
+    margin-bottom: 2 * $base-space;
+  }
+
+  &__headline {
+    margin-bottom: 8 * $base-space;
+    font-weight: 300;
+    font-size: $h6-size;
+    opacity: 0.66;
+  }
+
+  .examples:not(:first-child) {
+    margin-top: 8 * $base-space;
+  }
 }

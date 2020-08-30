@@ -1,4 +1,5 @@
 import { TranslateResult } from 'vue-i18n';
+import { enumList, modelList, utilsList } from './SupportingClasses';
 
 export interface MenuModel {
   anchors?: string[];
@@ -203,6 +204,16 @@ export class Menu {
           page: 'Logo',
           component: 'NeonLogo',
         },
+        {
+          path: 'tab',
+          page: 'Tab',
+          component: 'NeonTab',
+        },
+        {
+          path: 'tabs',
+          page: 'Tabs',
+          component: 'NeonTabs',
+        },
       ],
     },
     {
@@ -258,118 +269,19 @@ export class Menu {
       path: 'enums',
       name: 'Enums',
       group: 'Supporting classes',
-      children: [
-        {
-          path: 'NeonButtonStyle',
-        },
-        {
-          path: 'NeonDropdownPlacement',
-        },
-        {
-          path: 'NeonDropdownStyle',
-        },
-        {
-          path: 'NeonFunctionalColor',
-        },
-        {
-          path: 'NeonHorizontalPosition',
-        },
-        {
-          path: 'NeonInputType',
-        },
-        {
-          path: 'NeonLabelSize',
-        },
-        {
-          path: 'NeonMode',
-        },
-        {
-          path: 'NeonOrientation',
-        },
-        {
-          path: 'NeonPlacement',
-        },
-        {
-          path: 'NeonPosition',
-        },
-        {
-          path: 'NeonResponsive',
-        },
-        {
-          path: 'NeonSize',
-        },
-        {
-          path: 'NeonState',
-        },
-        {
-          path: 'NeonSwitchStyle',
-        },
-        {
-          path: 'NeonToggleStyle',
-        },
-      ],
+      children: enumList.map((e) => ({ path: e })),
     },
     {
       path: 'models',
       name: 'Models',
       group: 'Supporting classes',
-      children: [
-        {
-          path: 'NeonActionMenuModel',
-        },
-        {
-          path: 'NeonAvailableSpace',
-        },
-        {
-          path: 'NeonDropdownMenuItem',
-        },
-        {
-          path: 'NeonDropdownPlacementObject',
-        },
-        {
-          path: 'NeonFormattedDate',
-        },
-        {
-          path: 'NeonGridModel',
-        },
-        {
-          path: 'NeonToggleModel',
-        },
-        {
-          path: 'NeonTreeMenuModel',
-        },
-      ],
+      children: modelList.map((e) => ({ path: e })),
     },
     {
       path: 'utils',
       name: 'Utils',
       group: 'Supporting classes',
-      children: [
-        {
-          path: 'NeonClosableUtils',
-        },
-        {
-          path: 'NeonDateUtils',
-        },
-        {
-          path: 'NeonDropdownPlacementUtils',
-        },
-        {
-          path: 'NeonIconRegistry',
-        },
-        {
-          path: 'NeonModeUtils',
-        },
-        {
-          path: 'NeonPlacementUtils',
-        },
-        {
-          path: 'NeonResponsiveUtils',
-        },
-        {
-          path: 'RegisterIcons',
-        },
-      ],
+      children: utilsList.map((e) => ({ path: e })),
     },
   ];
 

@@ -10,7 +10,7 @@
     </p>
     <neon-button
       href="/for-developers/getting-started"
-      color="success"
+      color="primary"
       size="xl"
       button-style="solid"
       label="Get started"
@@ -31,7 +31,7 @@
         </p>
         <neon-button
           href="/design/color"
-          color="success"
+          color="primary"
           button-style="outline"
           label="Learn more about Colors"
           size="l"
@@ -47,7 +47,7 @@
         </p>
         <neon-button
           href="/for-developers/getting-started"
-          color="success"
+          color="primary"
           button-style="outline"
           label="Start using Components"
           size="l"
@@ -64,7 +64,7 @@
           differentiate applications from one another on the web. Neon provides multiple themes to suit a wider variety
           of tastes and styles.
         </p>
-        <neon-button href="/design/themes" color="success" button-style="outline" label="More about Themes" size="l" />
+        <neon-button href="/design/themes" color="primary" button-style="outline" label="More about Themes" size="l" />
       </div>
       <div class="highlight">
         <neon-icon name="contrast" class="highlight-icon" />
@@ -75,7 +75,7 @@
         </p>
         <neon-button
           href="/design/dark-mode"
-          color="success"
+          color="primary"
           button-style="outline"
           label="Find out more about dark mode"
           size="l"
@@ -92,7 +92,7 @@
         </p>
         <neon-button
           href="/design/customization"
-          color="success"
+          color="primary"
           button-style="outline"
           label="Find out about Customization"
           size="l"
@@ -112,7 +112,7 @@
         </p>
         <neon-button
           href="/presentation/icons"
-          color="success"
+          color="primary"
           button-style="outline"
           label="Learn more about Icons"
           size="l"
@@ -130,7 +130,7 @@
         </p>
         <neon-button
           href="/layout/grid"
-          color="success"
+          color="primary"
           button-style="outline"
           label="Show me how to use Grid"
           size="l"

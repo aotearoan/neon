@@ -3,42 +3,129 @@
     <neon-card-header>
       <h1>{{ componentName }} API</h1>
     </neon-card-header>
-    <neon-card-body>
+    <neon-card-body class="api-docs__desktop">
       <section class="api-docs__section" v-if="apiModel.props && apiModel.props.length > 0">
-        <h2>Properties</h2>
-        <div class="api-docs__card" v-for="prop in apiModel.props" :key="prop.name">
-          <div class="api-docs__card-header">
-            <h3 class="api-docs__card-name">{{ prop.name }}</h3>
-            <neon-label v-if="prop.required" :outline="true" size="xs" color="primary" label="required" />
+        <h2 class="api-docs__title">Properties</h2>
+        <table>
+          <thead>
+            <tr>
+              <th colspan="2">Name</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="prop in apiModel.props" :key="prop.name">
+              <td class="api-docs__name" :colspan="prop.required ? 1 : 2">{{ prop.name }}</td>
+              <td v-if="prop.required">
+                <neon-label label-style="background" size="xs" color="brand" label="required" />
+              </td>
+              <td class="api-docs__type">
+                <neon-link v-if="typeLink(prop)" :href="typeLink(prop)"
+                  >{{ typeName(prop) }}{{ isArray(prop) ? '[]' : '' }}</neon-link
+                >
+                <span v-else>{{ typeName(prop) }}{{ isArray(prop) ? '[]' : '' }}</span>
+              </td>
+              <td class="api-docs__default">
+                <span v-if="prop.defaultValue">{{ prop.defaultValue.value }}</span>
+              </td>
+              <td class="api-docs__description">
+                <span v-if="prop.description" v-html="prop.description"></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="api-docs__section" v-if="apiModel.events && apiModel.events.length > 0">
+        <h2 class="api-docs__title">Events</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="event in apiModel.events" :key="event.name">
+              <td class="api-docs__name">{{ event.name }}</td>
+              <td class="api-docs__type">
+                <neon-link v-if="eventTypeLink(event)" :href="eventTypeLink(event)">{{
+                  eventTypeName(event)
+                }}</neon-link>
+                <span v-else>{{ eventTypeName(event) }}</span>
+              </td>
+              <td class="api-docs__description">
+                <span v-if="event.description" v-html="event.description"></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="api-docs__section" v-if="apiModel.slots && apiModel.slots.length > 0">
+        <h2 class="api-docs__title">Slots</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="slot in apiModel.slots" :key="slot.name">
+              <td class="api-docs__name">{{ slot.name }}</td>
+              <td class="api-docs__description">
+                <span v-if="slot.description" v-html="slot.description"></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </neon-card-body>
+    <neon-card-body class="api-docs__responsive">
+      <section class="api-docs__section" v-if="apiModel.props && apiModel.props.length > 0">
+        <h2 class="api-docs__title">Properties</h2>
+        <div v-for="prop in apiModel.props" :key="prop.name" class="api-docs__property">
+          <div class="api-docs__attribute">
+            <span class="api-docs__name">{{ prop.name }}</span>
+            <neon-label v-if="prop.required" label-style="background" size="xs" color="brand" label="required" />
           </div>
-          <dl>
-            <dt>Type</dt>
-            <dd class="api-docs__card-type">{{ prop.type.name }}</dd>
-            <dt v-if="prop.defaultValue">Default</dt>
-            <dd v-if="prop.defaultValue" class="api-docs__card-default">{{ prop.defaultValue.value }}</dd>
-          </dl>
-          <span v-if="prop.description" v-html="prop.description" class="api-docs__card-description"></span>
+          <div class="api-docs__attribute">
+            <label>Type</label>
+            <neon-link v-if="typeLink(prop)" :href="typeLink(prop)" class="api-docs__type"
+              >{{ typeName(prop) }}{{ isArray(prop) ? '[]' : '' }}</neon-link
+            >
+            <span v-else class="api-docs__type">{{ typeName(prop) }}{{ isArray(prop) ? '[]' : '' }}</span>
+          </div>
+          <div v-if="prop.defaultValue" class="api-docs__attribute">
+            <label>Default</label>
+            <span class="api-docs__default">{{ prop.defaultValue.value }}</span>
+          </div>
+          <div class="api-docs__attribute">
+            <span v-if="prop.description" v-html="prop.description" class="api-docs__description"></span>
+          </div>
         </div>
       </section>
       <section class="api-docs__section" v-if="apiModel.events && apiModel.events.length > 0">
-        <h2>Events</h2>
-        <div class="api-docs__event-badge" v-for="event in apiModel.events" :key="event.name">
-          <h3 class="api-docs__event-badge-name">{{ event.name }}</h3>
-          <div class="api-docs__event-badge-description neon-color-text-neutral">
-            <em v-html="event.description"></em>
+        <h2 class="api-docs__title">Events</h2>
+        <div v-for="event in apiModel.events" :key="event.name" class="api-docs__event">
+          <div class="api-docs__attribute api-docs__name">{{ event.name }}</div>
+          <div class="api-docs__attribute">
+            <label>Type</label>
+            <neon-link v-if="eventTypeLink(event)" :href="eventTypeLink(event)" class="api-docs__type">{{
+              eventTypeName(event)
+            }}</neon-link>
+            <span v-else class="api-docs__type">{{ eventTypeName(event) }}</span>
           </div>
-          <label v-if="event.properties && event.properties.length > 0" class="api-docs__event-returns-label"
-            >Returns</label
-          >
-          <ul class="no-style">
-            <li v-for="(prop, index) in event.properties" :key="index" class="api-docs__event-property">
-              <span>
-                <strong class="api-docs__event-property-type">{{ prop.type.names[0] }}</strong>
-                <span class="neon-color-text-neutral api-docs__event-property-dash">—</span>
-                <span class="neon-color-text-neutral" v-html="prop.description"></span>
-              </span>
-            </li>
-          </ul>
+          <div v-if="event.description" v-html="event.description" class="api-docs__attribute api-docs__description" />
+        </div>
+      </section>
+      <section class="api-docs__section" v-if="apiModel.slots && apiModel.slots.length > 0">
+        <h2 class="api-docs__title">Slots</h2>
+        <div v-for="slot in apiModel.slots" :key="slot.name" class="api-docs__slot">
+          <div class="api-docs__attribute api-docs__name">{{ slot.name }}</div>
+          <div class="api-docs__attribute api-docs__description" v-if="slot.description" v-html="slot.description" />
         </div>
       </section>
     </neon-card-body>
