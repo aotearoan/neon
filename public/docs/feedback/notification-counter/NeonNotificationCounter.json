@@ -1,12 +1,13 @@
 {
+  "description": "A component for displaying notification counts to the user.",
+  "tags": {},
   "displayName": "NeonNotificationCounter",
   "exportName": "default",
-  "description": "",
-  "tags": {},
   "props": [
     {
       "name": "active",
       "tags": {},
+      "description": "Whether or not the notification is active",
       "type": {
         "name": "boolean"
       },
@@ -16,17 +17,23 @@
       }
     },
     {
-      "name": "count",
+      "name": "color",
       "tags": {},
+      "description": "The notification color",
       "type": {
-        "name": "number"
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Error"
       }
     },
     {
-      "name": "color",
+      "name": "count",
       "tags": {},
+      "description": "The count of notifications to display, if greater than 9 <em>9+</em> is displayed",
       "type": {
-        "name": "NeonFunctionalColor"
+        "name": "number"
       }
     }
   ]

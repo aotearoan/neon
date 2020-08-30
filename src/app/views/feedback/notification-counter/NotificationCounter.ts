@@ -12,6 +12,8 @@ import { Menu, MenuModel } from '../../../Menu';
 export default class NotificationCounter extends Vue {
   private menuModel: MenuModel | null = null;
 
+  private headline = 'A component for notifying the user of new items';
+
   private example = `<div class="collection">
   <neon-switch label="Activate notifications" v-model="active" />
   <span class="positioned-element">No value<neon-notification-counter :active="active" /></span>

@@ -1,9 +1,4 @@
 .neon-notification-counter {
-  &--default {
-    background-color: $background-color-notification-counter;
-    color: $color-text-light;
-  }
-
   @each $color, $palette in $functional-colors {
     &--#{$color} {
       color: $color-inverse;
