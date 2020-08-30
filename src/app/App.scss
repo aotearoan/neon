@@ -185,7 +185,7 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
         font-style: oblique;
         letter-spacing: 1px;
         font-weight: 200;
-        line-height: 1;
+        line-height: 1.125;
         user-select: none;
 
         @include responsive(tablet) {

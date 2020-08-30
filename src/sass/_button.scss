@@ -3,7 +3,7 @@
 @mixin button-size($size, $font-size, $icon-only-size) {
   height: $size;
   font-size: $font-size;
-  line-height: 1;
+  line-height: 1.125;
   padding: 0 0.75 * ($size - $font-size);
 
   .neon-icon {
