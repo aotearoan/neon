@@ -36,7 +36,7 @@ export default class Note extends Vue {
 </neon-note>`,
     },
     {
-      title: 'Note with close button',
+      title: 'Note with close',
       template: `<neon-note v-if="noteOpen" :closable="true" @close-note="noteOpen = false">
   <span><strong>Note:</strong>Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue bottle activated charcoal bicycle rights adaptogen.</span>
 </neon-note>`,
