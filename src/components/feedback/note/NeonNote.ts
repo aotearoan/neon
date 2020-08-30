@@ -3,6 +3,9 @@ import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 import NeonButton from '../../user-input/button/NeonButton.vue';
 
+/**
+ * NeonNote is a component for displaying important information to the user, such as - notes, hints or quotes.
+ */
 @Component({
   components: {
     NeonIcon,
@@ -10,12 +13,21 @@ import NeonButton from '../../user-input/button/NeonButton.vue';
   },
 })
 export default class NeonNote extends Vue {
+  /**
+   * The color of the note. In the case of the colors info, success, warn and error an icon will also be displayed to further enhance user comprehension.
+   */
   @Prop({ default: NeonFunctionalColor.LowContrast })
   public color!: NeonFunctionalColor;
 
-  @Prop()
-  public closable?: boolean;
+  /**
+   * Whether or not the note has a close button
+   */
+  @Prop({ default: false })
+  public closable!: boolean;
 
+  /**
+   * Display the associated icon for info, success, warn and error colors.
+   */
   @Prop({ default: true })
   public icon!: boolean;
 
@@ -38,6 +50,10 @@ export default class NeonNote extends Vue {
   }
 
   private closeNote() {
+    /**
+     * emitted when the user clicks the close button on the note
+     * @type {void}
+     */
     this.$emit('close-note');
   }
 }

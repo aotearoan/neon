@@ -1,12 +1,13 @@
 {
+  "description": "NeonNote is a component for displaying important information to the user, such as - notes, hints or quotes.",
+  "tags": {},
   "exportName": "default",
   "displayName": "NeonNote",
-  "description": "",
-  "tags": {},
   "props": [
     {
       "name": "color",
       "tags": {},
+      "description": "The color of the note. In the case of the colors info, success, warn and error an icon will also be displayed to further enhance user comprehension.",
       "type": {
         "name": "NeonFunctionalColor"
       },
@@ -18,13 +19,19 @@
     {
       "name": "closable",
       "tags": {},
+      "description": "Whether or not the note has a close button",
       "type": {
         "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
       }
     },
     {
       "name": "icon",
       "tags": {},
+      "description": "Display the associated icon for info, success, warn and error colors.",
       "type": {
         "name": "boolean"
       },
@@ -36,12 +43,19 @@
   ],
   "events": [
     {
-      "name": "close-note"
+      "name": "close-note",
+      "description": "emitted when the user clicks the close button on the note",
+      "type": {
+        "names": [
+          "void"
+        ]
+      }
     }
   ],
   "slots": [
     {
-      "name": "default"
+      "name": "default",
+      "description": "the contents of the note"
     }
   ]
 }

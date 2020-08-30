@@ -2,7 +2,7 @@
   <div class="neon-note" :class="`neon-note--${color}`">
     <div class="neon-note__container">
       <neon-icon v-if="iconName" class="neon-note__icon" :name="iconName" :color="color" />
-      <!-- @slot: note contents -->
+      <!-- @slot the contents of the note -->
       <slot></slot>
     </div>
     <neon-button

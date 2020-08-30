@@ -58,6 +58,16 @@
     }
   }
 
+  &--vertical {
+    display: flex;
+    flex-direction: column;
+
+    & > *:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: 3 * $base-space;
+    }
+  }
+
   &--horizontal {
     display: flex;
     flex-direction: row;

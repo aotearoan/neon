@@ -12,7 +12,7 @@
         <span v-if="tab.label" class="neon-tabs__menu-label">{{ tab.label }}</span>
       </div>
     </div>
-    <!-- @slot Slot for adding tabs (neon-tab) -->
+    <!-- @slot Add tabs here (NeonTab). NOTE: Tabs can also be added outside of the component if required -->
     <slot></slot>
   </div>
 </template>
