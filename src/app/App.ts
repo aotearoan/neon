@@ -222,12 +222,8 @@ export default class App extends Vue {
   get layouts() {
     return [
       {
-        breakpoint: NeonResponsive.LargerThanTablet,
+        breakpoint: NeonResponsive.All,
         grid: [['section-content']],
-      },
-      {
-        breakpoint: NeonResponsive.Tablet,
-        grid: [['responsive-menu'], ['section-content']],
       },
     ];
   }

@@ -3,7 +3,7 @@
     <div v-if="example.title" class="example__title">
       <h3>{{ example.title }}</h3>
     </div>
-    <div class="example__output">
+    <div class="example__output" :class="{ 'example__output--full-width': example.fullWidth }">
       <v-runtime-template :template-props="example.data || {}" :template="example.template" />
     </div>
     <div class="example__code">

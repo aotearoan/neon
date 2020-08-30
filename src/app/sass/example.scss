@@ -34,10 +34,11 @@
 
   &__output {
     border-radius: $border-radius !important;
+    margin-bottom: 4 * $base-space !important;
   }
 
   h3 {
-    margin-bottom: 8 * $base-space !important;
+    margin-bottom: 4 * $base-space !important;
   }
 
   &.neon-card-body--full-width {
@@ -48,11 +49,30 @@
 
     .example__code {
       @include margin;
-      margin-top: 0;
+      margin-top: 0 !important;
     }
 
     .example__title {
       @include padding;
+      padding-bottom: 0 !important;
+    }
+  }
+
+  &--horizontal {
+    display: flex;
+    flex-direction: row;
+
+    & > *:not(:last-child) {
+      margin-right: 4 * $base-space;
+    }
+
+    @include responsive(mobile-large) {
+      flex-direction: column;
+
+      & > *:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 3 * $base-space;
+      }
     }
   }
 }

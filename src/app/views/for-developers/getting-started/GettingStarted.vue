@@ -71,7 +71,7 @@
         <app-pre language="html">{{ `&lt;html class="app neon neon-theme--classic neon-mode--dark"&gt;` }}</app-pre>
         <p>
           For more information on dynamically changing the mode see
-          <neon-link href="/design/dark-mode">Dark mode</neon-link>.
+          <neon-link href="/design/theming#dark-mode">Dark mode</neon-link>.
         </p>
       </neon-card-body>
     </neon-card>

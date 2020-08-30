@@ -12,6 +12,9 @@ Vue.use(Snotify, {
   },
 });
 
+/**
+ * NeonAlert is a component for presenting temporary notifications to the user. Place the component once inside your app and then use the provided methods to invoke alerts.
+ */
 @Component
 export default class NeonAlert extends Vue {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

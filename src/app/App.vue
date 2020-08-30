@@ -15,6 +15,21 @@
       <template #top-nav v-if="!simplePage">
         <neon-top-nav>
           <span class="logo-wrapper">
+            <neon-button
+              icon="menu"
+              color="primary"
+              button-style="outline"
+              :size="isMobile ? 's' : 'm'"
+              @click="menuOpen = true"
+            />
+            <neon-drawer :open="menuOpen" @close="menuOpen = false">
+              <div class="neon-side-nav__sticky">
+                <neon-input type="text" v-model="indexFilter" placeholder="Filter" />
+              </div>
+              <div class="neon-side-nav__scrolling">
+                <neon-tree-menu :model="filteredModel" :expand-all="expandAll" @click="onInlineMenuClick" />
+              </div>
+            </neon-drawer>
             <neon-link href="/" class="homepage-link">
               <neon-logo></neon-logo>
             </neon-link>
@@ -62,17 +77,6 @@
           </template>
         </neon-side-nav>
         <neon-grid id="content" :layouts="layouts" class="content">
-          <neon-grid-area id="responsive-menu" v-if="!simplePage">
-            <neon-button icon="menu" label="Menu" color="primary" @click="menuOpen = true" :full-width="true" />
-            <neon-drawer :open="menuOpen" @close="menuOpen = false">
-              <div class="neon-side-nav__sticky">
-                <neon-input type="text" v-model="indexFilter" placeholder="Filter" />
-              </div>
-              <div class="neon-side-nav__scrolling">
-                <neon-tree-menu :model="filteredModel" :expand-all="expandAll" @click="onInlineMenuClick" />
-              </div>
-            </neon-drawer>
-          </neon-grid-area>
           <neon-grid-area id="section-content">
             <transition name="fade" mode="out-in">
               <router-view />

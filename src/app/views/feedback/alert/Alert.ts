@@ -1,6 +1,8 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { NeonAlertService, NeonButton, NeonCard, NeonCardBody, NeonCardHeader } from '../../../../components';
 import AppPre from '../../../components/pre/AppPre.vue';
+import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import { Menu, MenuModel } from '../../../Menu';
 
 @Component({
   components: {
@@ -9,22 +11,43 @@ import AppPre from '../../../components/pre/AppPre.vue';
     NeonCardHeader,
     NeonCardBody,
     AppPre,
+    ComponentDocumentation,
   },
 })
 export default class Alert extends Vue {
-  private infoAlert() {
-    NeonAlertService.info('Info alert', 'This is an example of an info alert.');
-  }
+  private menuModel: MenuModel | null = null;
 
-  private successAlert() {
-    NeonAlertService.success('Success alert', 'This is an example of a success alert.');
-  }
+  private headline = 'Display temporary notifications to the user';
 
-  private warnAlert() {
-    NeonAlertService.warning('Warning alert', 'This is an example of a warning alert.');
-  }
+  private data = {
+    infoAlert: () => {
+      NeonAlertService.info('Info alert', 'This is an example of an info alert.');
+    },
+    successAlert: () => {
+      NeonAlertService.success('Success alert', 'This is an example of a success alert.');
+    },
+    warnAlert: () => {
+      NeonAlertService.warning('Warning alert', 'This is an example of a warning alert.');
+    },
+    errorAlert: () => {
+      NeonAlertService.error('Error alert', 'This is an example of an error alert.');
+    },
+  };
 
-  private errorAlert() {
-    NeonAlertService.error('Error alert', 'This is an example of an error alert.');
+  private examples = [
+    {
+      title: 'Different types of alert',
+      template: `<div class="example--horizontal">
+  <neon-button color="info" label="Info" @click="infoAlert()" />
+  <neon-button color="success" label="Success" @click="successAlert()" />
+  <neon-button color="warn" label="Warning" @click="warnAlert()" />
+  <neon-button color="error" label="Error" @click="errorAlert()" />
+</div>`,
+      data: this.data,
+    },
+  ];
+
+  public mounted() {
+    this.menuModel = Menu.getComponentConfig('NeonAlert');
   }
 }

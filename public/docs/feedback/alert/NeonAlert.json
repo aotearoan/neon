@@ -1,6 +1,6 @@
 {
+  "description": "NeonAlert is a component for presenting temporary notifications to the user. Place the component once inside your app and then use the provided methods to invoke alerts.",
+  "tags": {},
   "displayName": "NeonAlert",
-  "exportName": "default",
-  "description": "",
-  "tags": {}
+  "exportName": "default"
 }

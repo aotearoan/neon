@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <component-documentation v-if="menuModel" :examples="examples" :model="menuModel" :headline="headline">
     <neon-card>
       <neon-card-header>
-        <h1>Alerts</h1>
+        <h2>Description</h2>
       </neon-card-header>
       <neon-card-body>
         <p>
@@ -26,18 +26,7 @@
         }}</app-pre>
       </neon-card-body>
     </neon-card>
-    <neon-card class="examples">
-      <neon-card-header>
-        <h1>Examples</h1>
-      </neon-card-header>
-      <neon-card-body class="alert-buttons">
-        <neon-button color="info" label="Info Alert" @click="infoAlert()" />
-        <neon-button color="success" label="Success Alert" @click="successAlert()" />
-        <neon-button color="warn" label="Warn Alert" @click="warnAlert()" />
-        <neon-button color="error" label="Error Alert" @click="errorAlert()" />
-      </neon-card-body>
-    </neon-card>
-  </div>
+  </component-documentation>
 </template>
 
 <script lang="ts" src="./Alert.ts"></script>

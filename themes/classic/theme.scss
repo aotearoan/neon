@@ -113,9 +113,9 @@ $top-nav-height-tablet: $size-m + 6 * $base-space !default;
 $top-nav-height-desktop: $size-l + 8 * $base-space !default;
 
 /* footer */
-$footer-height-mobile: $font-size-s + 2 * $base-space !default;
-$footer-height-tablet: $font-size-s + 4 * $base-space !default;
-$footer-height-desktop: $base-font-size + 6 * $base-space !default;
+$footer-height-mobile: $font-size-s + 8 * $base-space !default;
+$footer-height-tablet: $font-size-s + 8 * $base-space !default;
+$footer-height-desktop: $base-font-size + 12 * $base-space !default;
 
 /* side nav */
 $side-nav-width: 80 * $base-space !default;

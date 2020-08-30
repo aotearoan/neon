@@ -5,6 +5,7 @@
 
   &__container {
     display: flex;
+    justify-content: center;
     width: 100%;
     max-width: $max-page-width + 4 * $base-space;
     line-height: 1;

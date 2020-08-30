@@ -10,7 +10,7 @@
   .neon-grid-area {
     @include margin(0.5, true);
     display: flex;
-    border-radius: $border-radius;
+    overflow: hidden;
   }
 }
 
@@ -31,6 +31,22 @@
 
     @include responsive(mobile-large) {
       @include min-height(100, $top-nav-height-mobile + $footer-height-mobile);
+    }
+  }
+}
+
+.neon-grid {
+  .neon-grid-area {
+    @include responsive(larger-than-tablet) {
+      max-width: calc(100% - #{$spacing-vertical-desktop});
+    }
+
+    @include responsive(tablet) {
+      max-width: calc(100% - #{$spacing-vertical-tablet});
+    }
+
+    @include responsive(mobile-large) {
+      max-width: calc(100% - #{$spacing-vertical-mobile});
     }
   }
 }

@@ -12,7 +12,6 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
       @import '../../themes/classic/dark';
 
       $color-api-docs-property-name: l3;
-      $background-color-component-header: rgba($background-color-card, 0.25);
 
       // application dark mode SASS
       @import 'sass/api-docs-colors';
@@ -74,7 +73,7 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
       @import '../../themes/classic/light';
 
       $color-api-docs-property-name: d2;
-      $background-color-component-header: rgba($background-color-card, 0.75);
+      $background-color-component-header: darken($background-color-card, 2);
 
       // application light mode SASS
       @import 'sass/api-docs-colors';
@@ -150,6 +149,10 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
 
         .github-link {
           margin-right: 6 * $base-space;
+
+          @include responsive(mobile-large) {
+            margin-right: 4 * $base-space;
+          }
         }
 
         .top-nav-actions {
@@ -160,7 +163,15 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
       .logo-wrapper {
         display: flex;
         flex-direction: row;
-        align-items: flex-end;
+        align-items: center;
+
+        .neon-button {
+          margin-right: 4 * $base-space;
+
+          @include responsive(larger-than-tablet) {
+            display: none;
+          }
+        }
       }
 
       .homepage-link {

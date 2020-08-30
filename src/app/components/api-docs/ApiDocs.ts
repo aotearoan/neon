@@ -1,5 +1,5 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonExpansionIndicator } from '../../../components';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonNote } from '../../../components';
 import { DocumentationModel, EventModel, PropertyModel, PropTypeModel } from '../ApiModel';
 import { enumList, modelList } from '../../SupportingClasses';
 
@@ -8,7 +8,7 @@ import { enumList, modelList } from '../../SupportingClasses';
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
-    NeonExpansionIndicator,
+    NeonNote,
   },
 })
 export default class ApiDocs extends Vue {
@@ -62,5 +62,21 @@ export default class ApiDocs extends Vue {
       return isEnum ? `/enums/${typeName}` : isModel ? `/models/${typeName}` : undefined;
     }
     return undefined;
+  }
+
+  private get hasDocs() {
+    return this.hasProps || this.hasEvents || this.hasSlots;
+  }
+
+  private get hasProps() {
+    return this.apiModel.props && this.apiModel.props.length > 0;
+  }
+
+  private get hasEvents() {
+    return this.apiModel.events && this.apiModel.events.length > 0;
+  }
+
+  private get hasSlots() {
+    return this.apiModel.slots && this.apiModel.slots.length > 0;
   }
 }

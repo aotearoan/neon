@@ -1,7 +1,7 @@
 <template>
   <div class="app-pre" ref="wrapper">
-    <!-- @slot pass a pre element here and it will gain formatting and clipboard copy support -->
-    <vue-code-highlight :language="language">
+    <vue-code-highlight :language="language" class="app-pre__container">
+      <!-- @slot pass a pre element here and it will gain formatting and clipboard copy support -->
       <slot></slot>
     </vue-code-highlight>
     <neon-button

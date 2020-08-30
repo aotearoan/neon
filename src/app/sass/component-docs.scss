@@ -1,22 +1,30 @@
-@mixin comp-doc-header-margin($margin) {
-  margin-top: -1 * $margin;
-  padding-top: $margin;
-  margin-left: -1 * $margin;
-  margin-right: -1 * $margin;
-  padding-left: $margin;
-  padding-right: $margin;
-}
+$height-component-header-desktop: 151px;
+$height-component-header-mobile: 77px;
 
 .component-documentation {
+  margin-top: $height-component-header-desktop;
+
+  @include responsive(mobile-large) {
+    margin-top: $height-component-header-mobile;
+  }
+
   &__header {
-    @include comp-doc-header-margin(6 * $base-space);
+    position: fixed;
+    z-index: 1;
+    @include padding(1, true);
+    padding-bottom: 0 !important;
+    top: $top-nav-height-desktop;
+    left: $side-nav-width;
+    width: calc(100vw - #{$side-nav-width});
 
     @include responsive(tablet) {
-      @include comp-doc-header-margin(4.5 * $base-space);
+      top: $top-nav-height-tablet;
+      left: 0;
+      width: 100vw;
     }
 
     @include responsive(mobile-large) {
-      @include comp-doc-header-margin(3 * $base-space);
+      top: $top-nav-height-mobile;
     }
 
     .neon-tabs {
@@ -32,8 +40,16 @@
     margin: auto;
   }
 
+  .neon-tab {
+    padding-bottom: 0;
+  }
+
   &__title {
     margin-bottom: 2 * $base-space;
+
+    @include responsive(mobile-large) {
+      margin-bottom: 0;
+    }
   }
 
   &__headline {
@@ -41,6 +57,10 @@
     font-weight: 300;
     font-size: $h6-size;
     opacity: 0.66;
+
+    @include responsive(mobile-large) {
+      margin-bottom: 2 * $base-space;
+    }
   }
 
   .examples:not(:first-child) {
