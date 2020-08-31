@@ -4,7 +4,7 @@
     v-if="responsiveView || !toggleOnIf || selected"
     :class="{ 'neon-tab--selected': toggleOnIf || selected }"
   >
-    <!-- @slot: The tab contents -->
+    <!-- @slot The tab content -->
     <slot></slot>
   </div>
 </template>

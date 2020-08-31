@@ -1,12 +1,13 @@
 {
+  "description": "An HTML anchor component which handles VueRouter links (internal), href links (external) and clickable links (no href).",
+  "tags": {},
   "exportName": "default",
   "displayName": "NeonLink",
-  "description": "",
-  "tags": {},
   "props": [
     {
       "name": "href",
       "tags": {},
+      "description": "The href of the link, this can be an internal (relative or absolute) or an external link.",
       "type": {
         "name": "string"
       }
@@ -14,6 +15,7 @@
     {
       "name": "noStyle",
       "tags": {},
+      "description": "set to true if you would like a completely unstyled link. This is useful for creating a complex component which may use NeonLink.",
       "type": {
         "name": "boolean"
       },
@@ -25,6 +27,7 @@
     {
       "name": "externalIndicator",
       "tags": {},
+      "description": "Display an external link icon to the right of the link indicating clicking it will take the user to another site.",
       "type": {
         "name": "boolean"
       },
@@ -36,13 +39,19 @@
   ],
   "events": [
     {
-      "name": "click"
+      "name": "click",
+      "description": "emitted when the user clicks on the link. This is only useful when there is no <em>href</em> provided otherwise page navigation supersedes this event.",
+      "type": {
+        "names": [
+          "void"
+        ]
+      }
     }
   ],
   "slots": [
     {
       "name": "default",
-      "description": "the link's content"
+      "description": "the content of the link"
     }
   ]
 }

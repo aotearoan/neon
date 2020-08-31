@@ -2,6 +2,9 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 import { NeonPosition } from '../../../common/enums/NeonPosition';
 import { NeonClosableUtils } from '../../../common/utils/NeonClosableUtils';
 
+/**
+ * A drawer is a slide out panel for representing data which may be secondary or not fit on the main screen. Examples are a responsive navigation menu, more details of a selected item on the page. Drawers can be opened from top, bottom, left or right and an overlay covers the screen to focus more attention on the drawer contents.
+ */
 @Component
 export default class NeonDrawer extends Vue {
   $refs!: {
@@ -10,15 +13,27 @@ export default class NeonDrawer extends Vue {
 
   private closableUtils?: NeonClosableUtils;
 
-  @Prop()
-  public fullWidth?: boolean;
+  /**
+   * If true, remove the padding applied to the drawer.
+   */
+  @Prop({ default: false })
+  public fullWidth!: boolean;
 
+  /**
+   * Set the drawer to visible.
+   */
   @Prop({ required: true })
   public open!: boolean;
 
+  /**
+   * The location of the drawer.
+   */
   @Prop({ default: NeonPosition.Left })
-  public position?: NeonPosition;
+  public position!: NeonPosition;
 
+  /**
+   * Display a semi-transparent overlay under the drawer, but over the rest of the page.
+   */
   @Prop({ default: true })
   public overlay!: boolean;
 
@@ -32,7 +47,7 @@ export default class NeonDrawer extends Vue {
 
   public onClose() {
     /**
-     * close event is emitted when the element is closed.
+     * Emitted when the drawer is closed.
      * @type {void}
      */
     this.$emit('close');

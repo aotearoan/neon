@@ -9,7 +9,7 @@
     v-bind="$attrs"
   >
     <span class="neon-link__label">
-      <!-- @slot the link's content -->
+      <!-- @slot the content of the link -->
       <slot></slot>
     </span>
   </router-link>
@@ -23,7 +23,7 @@
     v-bind="$attrs"
   >
     <span class="neon-link__label">
-      <!-- @slot the link's content -->
+      <!-- @slot the content of the link -->
       <slot></slot>
       <neon-icon
         v-if="externalIndicator"

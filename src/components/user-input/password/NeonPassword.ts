@@ -20,9 +20,9 @@ export default class NeonPassword extends Vue {
   private iconClicked() {
     this.show = !this.show;
     /**
-     * Event triggered when the show/hide password icon is clicked
+     * Emitted when the show/hide password icon is clicked
      *
-     * @event icon-click
+     * @type {void}
      */
     this.$emit('icon-click');
   }

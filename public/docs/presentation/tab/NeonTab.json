@@ -1,8 +1,8 @@
 {
+  "description": "The NeonTab component that defines individual tabs for use with the NeonTabs component.",
+  "tags": {},
   "displayName": "NeonTab",
   "exportName": "default",
-  "description": "",
-  "tags": {},
   "props": [
     {
       "name": "selected",
@@ -28,7 +28,8 @@
   ],
   "slots": [
     {
-      "name": "default"
+      "name": "default",
+      "description": "The tab content"
     }
   ]
 }

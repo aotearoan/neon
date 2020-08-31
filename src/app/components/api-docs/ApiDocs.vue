@@ -4,7 +4,7 @@
       <h1>{{ componentName }} API</h1>
     </neon-card-header>
     <neon-card-body v-if="!hasDocs || apiModel.description">
-      <p v-if="apiModel.description">{{ apiModel.description }}</p>
+      <p v-if="apiModel.description" v-html="apiModel.description"></p>
       <neon-note v-if="!hasDocs" color="info"
         ><strong>Note:</strong>The Vue API for this component contains no properties, events or slots</neon-note
       >
@@ -25,7 +25,7 @@
             <tr v-for="prop in apiModel.props" :key="prop.name">
               <td class="api-docs__name" :colspan="prop.required ? 1 : 2">{{ prop.name }}</td>
               <td v-if="prop.required">
-                <neon-label label-style="background" size="xs" color="brand" label="required" />
+                <neon-label size="xs" color="brand" label="required" />
               </td>
               <td class="api-docs__type">
                 <neon-link v-if="typeLink(prop)" :href="typeLink(prop)"
@@ -95,7 +95,7 @@
         <div v-for="prop in apiModel.props" :key="prop.name" class="api-docs__property">
           <div class="api-docs__attribute">
             <span class="api-docs__name">{{ prop.name }}</span>
-            <neon-label v-if="prop.required" label-style="background" size="xs" color="brand" label="required" />
+            <neon-label v-if="prop.required" size="xs" color="brand" label="required" />
           </div>
           <div class="api-docs__attribute">
             <label>Type</label>

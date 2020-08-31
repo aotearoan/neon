@@ -25,7 +25,7 @@
     {
       "name": "size",
       "tags": {},
-      "description": "The size of the switch. See <a href=\"/enums/NeonSize\">NeonSize</a>.",
+      "description": "The size of the switch.",
       "type": {
         "name": "NeonSize"
       },
@@ -37,7 +37,7 @@
     {
       "name": "color",
       "tags": {},
-      "description": "The switch color. See <a href=\"/enums/NeonFunctionalColor\">NeonFunctionalColor</a>.",
+      "description": "The switch color.",
       "type": {
         "name": "NeonFunctionalColor"
       },
@@ -49,7 +49,7 @@
     {
       "name": "switchStyle",
       "tags": {},
-      "description": "Style the switch as a <em>Switch</em> or a <em>Checkbox</em>. See <a href=\"/enums/NeonSwitchStyle\">NeonSwitchStyle</a>.",
+      "description": "Style the switch as a <em>Switch</em> or a <em>Checkbox</em>.",
       "type": {
         "name": "NeonSwitchStyle"
       },
@@ -64,28 +64,22 @@
       "description": "Disabled state of the switch.",
       "type": {
         "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
       }
     }
   ],
   "events": [
     {
       "name": "input",
-      "description": "Event triggered when the switch is toggled checked or unchecked.",
+      "description": "Emitted when the switch is toggled checked or unchecked.",
       "type": {
         "names": [
-          "undefined"
+          "boolean"
         ]
-      },
-      "properties": [
-        {
-          "type": {
-            "names": [
-              "boolean"
-            ]
-          },
-          "description": "The checked state of the switch."
-        }
-      ]
+      }
     }
   ]
 }

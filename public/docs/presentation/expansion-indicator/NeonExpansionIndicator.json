@@ -1,19 +1,25 @@
 {
+  "description": "Custom animated chevron component which is used in dropdowns and expansion panels. This may be useful in creating higher level components but is unlikely to be used on it's own.",
+  "tags": {},
   "displayName": "NeonExpansionIndicator",
   "exportName": "default",
-  "description": "",
-  "tags": {},
   "props": [
     {
       "name": "expanded",
       "tags": {},
+      "description": "Whether or not the chevron is <em>open</em>.",
       "type": {
         "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
       }
     },
     {
       "name": "color",
       "tags": {},
+      "description": "The color of the chevron.",
       "type": {
         "name": "boolean"
       },

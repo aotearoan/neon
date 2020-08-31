@@ -1,6 +1,9 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { NeonState } from '../../../common/enums/NeonState';
 
+/**
+ * Defines a file drop zone.
+ */
 @Component
 export default class NeonDropZone extends Vue {
   $refs!: {
@@ -9,12 +12,21 @@ export default class NeonDropZone extends Vue {
 
   private active = false;
 
+  /**
+   * The state of the drop zone, used to indicate loading.
+   */
   @Prop({ default: NeonState.Ready })
-  state?: NeonState.Ready | NeonState.Loading;
+  state!: NeonState.Ready | NeonState.Loading;
 
-  @Prop()
-  disabled?: boolean;
+  /**
+   * The disabled state of the drop zone
+   */
+  @Prop({ default: false })
+  disabled!: boolean;
 
+  /**
+   * Display the drop zone as a circle instead of square
+   */
   @Prop()
   circular?: boolean;
 
@@ -48,6 +60,10 @@ export default class NeonDropZone extends Vue {
   private transferData(event: DragEvent) {
     if (!(this.state === 'loading') && !this.disabled && event != null && event.dataTransfer) {
       event.preventDefault();
+      /**
+       * Emitted when files are dropped on the drop zone
+       * @type {FileList} the list of dropped files
+       */
       this.$emit('files', event.dataTransfer.files);
       this.active = false;
     }

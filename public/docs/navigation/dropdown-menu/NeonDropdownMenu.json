@@ -1,12 +1,13 @@
 {
+  "description": "A dropdown menu consisting of a button to open the menu and a list of menu items. Clicking on a menu item will result in navigating to the provided URL or notifying the parent component via the @click event.",
+  "tags": {},
   "displayName": "NeonDropdownMenu",
   "exportName": "default",
-  "description": "",
-  "tags": {},
   "props": [
     {
       "name": "size",
       "tags": {},
+      "description": "The size of the dropdown - Small, Medium or Large.",
       "type": {
         "name": "NeonSize"
       },
@@ -18,6 +19,7 @@
     {
       "name": "model",
       "tags": {},
+      "description": "A list of menu items to render in the dropdown menu.",
       "type": {
         "name": "Array",
         "elements": [
@@ -32,9 +34,10 @@
   "events": [
     {
       "name": "click",
+      "description": "emitted when the user clicks on a menu item.",
       "type": {
         "names": [
-          "undefined"
+          "NeonDropdownMenuItem"
         ]
       }
     }

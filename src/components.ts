@@ -59,7 +59,6 @@ import { NeonHorizontalPosition } from './common/enums/NeonHorizontalPosition';
 import { NeonIconRegistry } from './common/utils/NeonIconRegistry';
 import { NeonInputType } from './common/enums/NeonInputType';
 import { NeonLabelSize } from './common/enums/NeonLabelSize';
-import { NeonLabelStyle } from './common/enums/NeonLabelStyle';
 import { NeonMode } from './common/enums/NeonMode';
 import { NeonModeUtils } from './common/utils/NeonModeUtils';
 import { NeonOrientation } from './common/enums/NeonOrientation';
@@ -165,7 +164,6 @@ export {
   NeonIconRegistry,
   NeonLabel,
   NeonLabelSize,
-  NeonLabelStyle,
   NeonLink,
   NeonLogo,
   NeonModal,

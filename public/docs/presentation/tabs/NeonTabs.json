@@ -1,8 +1,8 @@
 {
+  "description": "A component for displaying tabbed content.",
+  "tags": {},
   "displayName": "NeonTabs",
   "exportName": "default",
-  "description": "",
-  "tags": {},
   "props": [
     {
       "name": "tabs",
@@ -55,7 +55,7 @@
   "events": [
     {
       "name": "input",
-      "description": "input event emitted when the selected tab is changed.",
+      "description": "Emitted when the selected tab is changed.",
       "type": {
         "names": [
           "string"

@@ -1,14 +1,15 @@
 {
+  "description": "A \"page\" component, this is defined as a wrapper around the contents (NeonGrid, etc) and footer which provides the correct responsive layout accounting for NeonTopNav and NeonSideNav components being used.",
+  "tags": {},
   "displayName": "NeonPage",
   "exportName": "default",
-  "description": "",
-  "tags": {},
   "slots": [
     {
       "name": "top-nav"
     },
     {
-      "name": "content"
+      "name": "content",
+      "description": "the page contents"
     }
   ]
 }

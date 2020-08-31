@@ -1,12 +1,13 @@
 {
+  "description": "Equivalent of, and wrapper around, an HTML input. Also supports <strong>textarea</strong>.",
+  "tags": {},
   "exportName": "default",
   "displayName": "NeonInput",
-  "description": "",
-  "tags": {},
   "props": [
     {
       "name": "value",
       "tags": {},
+      "description": "The value of the input",
       "type": {
         "name": "string"
       }
@@ -14,6 +15,7 @@
     {
       "name": "type",
       "tags": {},
+      "description": "The type of input this is. NOTE: Neon provides custom components as alternatives in the following cases:\n* file (use <a href=\"/user-input/file\">NeonFile</a>)\n* password (use <a href=\"/user-input/password\">NeonPassword</a>)",
       "type": {
         "name": "NeonInputType"
       },
@@ -25,14 +27,15 @@
     {
       "name": "placeholder",
       "tags": {},
+      "description": "Placeholder text to display in the input",
       "type": {
         "name": "string"
-      },
-      "required": false
+      }
     },
     {
       "name": "size",
       "tags": {},
+      "description": "Size of the input",
       "type": {
         "name": "union",
         "elements": [
@@ -55,6 +58,7 @@
     {
       "name": "color",
       "tags": {},
+      "description": "Color of the input",
       "type": {
         "name": "NeonFunctionalColor"
       },
@@ -66,6 +70,7 @@
     {
       "name": "state",
       "tags": {},
+      "description": "The state of the input",
       "type": {
         "name": "NeonState"
       },
@@ -77,6 +82,7 @@
     {
       "name": "rows",
       "tags": {},
+      "description": "The number of rows to display in the case of a textarea",
       "type": {
         "name": "number"
       }
@@ -84,6 +90,7 @@
     {
       "name": "icon",
       "tags": {},
+      "description": "The name of a clickable icon to display inside the input. This is used for clearing contents or e.g. in the case of NeonPassword toggle showing/hiding the password.",
       "type": {
         "name": "string"
       }
@@ -91,6 +98,7 @@
     {
       "name": "pattern",
       "tags": {},
+      "description": "A regular expression for filtering valid values in the input",
       "type": {
         "name": "string"
       }
@@ -98,6 +106,7 @@
     {
       "name": "disabled",
       "tags": {},
+      "description": "The disabled state of the input",
       "type": {
         "name": "boolean"
       },
@@ -109,19 +118,38 @@
   ],
   "events": [
     {
-      "name": "focus"
+      "name": "focus",
+      "description": "Emitted when the input has gained focus",
+      "type": {
+        "names": [
+          "void"
+        ]
+      }
     },
     {
-      "name": "blur"
+      "name": "blur",
+      "description": "Emitted when the input has lost focus",
+      "type": {
+        "names": [
+          "void"
+        ]
+      }
     },
     {
-      "name": "icon-click"
+      "name": "icon-click",
+      "description": "Emitted when the icon is clicked",
+      "type": {
+        "names": [
+          "void"
+        ]
+      }
     },
     {
       "name": "input",
+      "description": "Emitted when the input value is changed",
       "type": {
         "names": [
-          "undefined"
+          "string"
         ]
       }
     }

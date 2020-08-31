@@ -4,7 +4,7 @@
     :class="[`neon-card--${orientation}`, `neon-card--horizontal-breakpoint-${horizontalBreakpoint}`]"
     v-on="$listeners"
   >
-    <!-- @slot: card contents -->
+    <!-- @slot card contents -->
     <slot></slot>
   </div>
 </template>

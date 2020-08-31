@@ -1,6 +1,6 @@
 <template>
   <div class="neon-card-footer">
-    <!-- @slot: card body contents -->
+    <!-- @slot card footer content -->
     <slot></slot>
   </div>
 </template>

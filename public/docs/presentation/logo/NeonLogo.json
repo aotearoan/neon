@@ -1,6 +1,6 @@
 {
+  "description": "Component for displaying the SASS configured logo.",
+  "tags": {},
   "displayName": "NeonLogo",
-  "exportName": "default",
-  "description": "",
-  "tags": {}
+  "exportName": "default"
 }

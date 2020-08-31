@@ -1,12 +1,13 @@
 {
+  "description": "Labels are used to tag or draw emphasis to properties of an item in the UI. Labels can be text only icon only or contain both text and icons.",
+  "tags": {},
   "exportName": "default",
   "displayName": "NeonLabel",
-  "description": "",
-  "tags": {},
   "props": [
     {
       "name": "label",
       "tags": {},
+      "description": "The label text",
       "type": {
         "name": "TranslateResult"
       }
@@ -14,6 +15,7 @@
     {
       "name": "icon",
       "tags": {},
+      "description": "The name of the label icon",
       "type": {
         "name": "string"
       }
@@ -21,6 +23,7 @@
     {
       "name": "iconPosition",
       "tags": {},
+      "description": "The icon position if there is also text in the label. This is either left or right.",
       "type": {
         "name": "NeonHorizontalPosition"
       },
@@ -30,19 +33,9 @@
       }
     },
     {
-      "name": "labelStyle",
-      "tags": {},
-      "type": {
-        "name": "NeonLabelStyle"
-      },
-      "defaultValue": {
-        "func": false,
-        "value": "NeonLabelStyle.Solid"
-      }
-    },
-    {
       "name": "size",
       "tags": {},
+      "description": "The label size",
       "type": {
         "name": "NeonLabelSize"
       },
@@ -54,6 +47,7 @@
     {
       "name": "color",
       "tags": {},
+      "description": "The label color",
       "type": {
         "name": "NeonFunctionalColor"
       },

@@ -1,6 +1,6 @@
 <template>
   <div class="neon-card-header">
-    <!-- @slot: card header contents -->
+    <!-- @slot card header content -->
     <slot></slot>
   </div>
 </template>

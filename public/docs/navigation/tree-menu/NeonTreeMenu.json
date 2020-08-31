@@ -1,23 +1,13 @@
 {
+  "description": "Four level tree menu. This is useful for displaying a hierarchical navigation in NeonSideNav. The top level of the menu is the group (optional). The second level is expandable on click but will not navigate to a page. The third level is the page links and the fourth level is the fragment on that page.",
+  "tags": {},
   "exportName": "default",
   "displayName": "NeonTreeMenu",
-  "description": "",
-  "tags": {},
   "props": [
-    {
-      "name": "expandAll",
-      "tags": {},
-      "type": {
-        "name": "boolean"
-      },
-      "defaultValue": {
-        "func": false,
-        "value": "false"
-      }
-    },
     {
       "name": "model",
       "tags": {},
+      "description": "The tree model defining the menu.",
       "type": {
         "name": "Array",
         "elements": [
@@ -27,14 +17,27 @@
         ]
       },
       "required": true
+    },
+    {
+      "name": "expandAll",
+      "tags": {},
+      "description": "Expand all nodes in the tree, this is useful for providing filtering (e.g. the Neon showcase side navigation menu).",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
     }
   ],
   "events": [
     {
       "name": "click",
+      "description": "Emitted when the user clicks on a menu item",
       "type": {
         "names": [
-          "undefined"
+          "string"
         ]
       }
     }

@@ -1,12 +1,13 @@
 {
+  "description": "Defines a file drop zone.",
+  "tags": {},
   "displayName": "NeonDropZone",
   "exportName": "default",
-  "description": "",
-  "tags": {},
   "props": [
     {
       "name": "state",
       "tags": {},
+      "description": "The state of the drop zone, used to indicate loading.",
       "type": {
         "name": "union",
         "elements": [
@@ -26,13 +27,19 @@
     {
       "name": "disabled",
       "tags": {},
+      "description": "The disabled state of the drop zone",
       "type": {
         "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
       }
     },
     {
       "name": "circular",
       "tags": {},
+      "description": "Display the drop zone as a circle instead of square",
       "type": {
         "name": "boolean"
       }
@@ -41,9 +48,10 @@
   "events": [
     {
       "name": "files",
+      "description": "Emitted when files are dropped on the drop zone",
       "type": {
         "names": [
-          "undefined"
+          "FileList"
         ]
       }
     }

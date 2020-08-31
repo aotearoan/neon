@@ -25,19 +25,19 @@ export default class NeonSwitch extends Vue {
   public label!: TranslateResult;
 
   /**
-   * The size of the switch. See <a href="/enums/NeonSize">NeonSize</a>.
+   * The size of the switch.
    */
   @Prop({ default: NeonSize.Medium })
   public size!: NeonSize;
 
   /**
-   * The switch color. See <a href="/enums/NeonFunctionalColor">NeonFunctionalColor</a>.
+   * The switch color.
    */
   @Prop({ default: NeonFunctionalColor.Primary })
   public color!: NeonFunctionalColor;
 
   /**
-   * Style the switch as a <em>Switch</em> or a <em>Checkbox</em>. See <a href="/enums/NeonSwitchStyle">NeonSwitchStyle</a>.
+   * Style the switch as a <em>Switch</em> or a <em>Checkbox</em>.
    */
   @Prop({ default: NeonSwitchStyle.Switch })
   public switchStyle!: NeonSwitchStyle;
@@ -45,8 +45,8 @@ export default class NeonSwitch extends Vue {
   /**
    * Disabled state of the switch.
    */
-  @Prop()
-  public disabled?: boolean;
+  @Prop({ default: false })
+  public disabled!: boolean;
 
   private get sanitizedListeners() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -57,10 +57,9 @@ export default class NeonSwitch extends Vue {
   private onInput(event: InputEvent) {
     const checked = (event.target as HTMLInputElement).checked;
     /**
-     * Event triggered when the switch is toggled checked or unchecked.
+     * Emitted when the switch is toggled checked or unchecked.
      *
-     * @event input
-     * @property {boolean} - The checked state of the switch.
+     * @type {boolean} The checked state of the switch.
      */
     this.$emit('input', checked);
   }

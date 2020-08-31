@@ -25,7 +25,7 @@
     {
       "name": "model",
       "tags": {},
-      "description": "The list of options to present to the user. See <a href=\"/models/NeonToggleModel\">NeonToggleModel</a>.",
+      "description": "The list of options to present to the user.",
       "type": {
         "name": "Array",
         "elements": [
@@ -39,7 +39,7 @@
     {
       "name": "toggleStyle",
       "tags": {},
-      "description": "The style of toggle to display to the user. See <a href=\"/enums/NeonToggleStyle\">NeonToggleStyle</a>.",
+      "description": "The style of toggle to display to the user.",
       "type": {
         "name": "NeonToggleStyle"
       },
@@ -51,7 +51,7 @@
     {
       "name": "size",
       "tags": {},
-      "description": "The size of the toggle. See <a href=\"/enums/NeonSize\">NeonSize</a>.",
+      "description": "The size of the toggle.",
       "type": {
         "name": "NeonSize"
       },
@@ -63,7 +63,7 @@
     {
       "name": "orientation",
       "tags": {},
-      "description": "The orientation of the toggle if the style is a radio button group. See <a href=\"/enums/NeonOrientation\">NeonOrientation</a>.",
+      "description": "The orientation of the toggle if the style is a radio button group.",
       "type": {
         "name": "NeonOrientation"
       },
@@ -75,7 +75,7 @@
     {
       "name": "color",
       "tags": {},
-      "description": "The color of the toggle. See <a href=\"/enums/NeonFunctionalColor\">NeonFunctionalColor</a>.",
+      "description": "The color of the toggle.",
       "type": {
         "name": "NeonFunctionalColor"
       },
@@ -90,28 +90,22 @@
       "description": "Whether or not the toggle is disabled.",
       "type": {
         "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
       }
     }
   ],
   "events": [
     {
       "name": "input",
-      "description": "Event triggered when the selected value changes.",
+      "description": "Emitted when the selected value changes.",
       "type": {
         "names": [
-          "undefined"
+          "boolean"
         ]
-      },
-      "properties": [
-        {
-          "type": {
-            "names": [
-              "boolean"
-            ]
-          },
-          "description": "The key of the selected <a href=\"/models/NeonToggleModel\">NeonToggleModel</a>."
-        }
-      ]
+      }
     }
   ]
 }

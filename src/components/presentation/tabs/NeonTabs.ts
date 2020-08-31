@@ -3,6 +3,9 @@ import { NeonTabModel } from '../../../common/models/NeonTabModel';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonSize } from '../../../common/enums/NeonSize';
 
+/**
+ * A component for displaying tabbed content.
+ */
 @Component
 export default class NeonTabs extends Vue {
   /**
@@ -31,8 +34,8 @@ export default class NeonTabs extends Vue {
 
   private onClick(key: string) {
     /**
-     * input event emitted when the selected tab is changed.
-     * @type {string}
+     * Emitted when the selected tab is changed.
+     * @type {string} The key of the selected tab.
      */
     this.$emit('input', key);
   }

@@ -49,7 +49,7 @@
           :outline="false"
           @click="close()"
         />
-        <!-- @slot This slot is for the dropdown contents. -->
+        <!-- @slot The content of the open dropdown -->
         <slot></slot>
       </template>
     </div>

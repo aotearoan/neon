@@ -1,12 +1,13 @@
 {
+  "description": "Card component used for the layout of content within a grid or page.",
+  "tags": {},
   "displayName": "NeonCard",
   "exportName": "default",
-  "description": "",
-  "tags": {},
   "props": [
     {
       "name": "orientation",
       "tags": {},
+      "description": "Change the orientation of a card to horizontal. This is useful for creating long narrow cards spanning the full page. NOTE: For responsiveness, horizontal cards are automatically transformed to vertical cards at lower screen sizes.",
       "type": {
         "name": "NeonOrientation"
       },
@@ -18,6 +19,7 @@
     {
       "name": "horizontalBreakpoint",
       "tags": {},
+      "description": "The breakpoint to switch horizontal cards to vertical cards.",
       "type": {
         "name": "NeonResponsive"
       },
@@ -29,7 +31,8 @@
   ],
   "slots": [
     {
-      "name": "default"
+      "name": "default",
+      "description": "card contents"
     }
   ]
 }

@@ -28,31 +28,31 @@ export default class NeonToggle extends Vue {
   public value!: string;
 
   /**
-   * The list of options to present to the user. See <a href="/models/NeonToggleModel">NeonToggleModel</a>.
+   * The list of options to present to the user.
    */
   @Prop({ required: true })
   public model!: NeonToggleModel[];
 
   /**
-   * The style of toggle to display to the user. See <a href="/enums/NeonToggleStyle">NeonToggleStyle</a>.
+   * The style of toggle to display to the user.
    */
   @Prop({ default: NeonToggleStyle.Toggle })
   public toggleStyle!: NeonToggleStyle;
 
   /**
-   * The size of the toggle. See <a href="/enums/NeonSize">NeonSize</a>.
+   * The size of the toggle.
    */
   @Prop({ default: NeonSize.Medium })
   public size!: NeonSize;
 
   /**
-   * The orientation of the toggle if the style is a radio button group. See <a href="/enums/NeonOrientation">NeonOrientation</a>.
+   * The orientation of the toggle if the style is a radio button group.
    */
   @Prop({ default: NeonOrientation.Vertical })
   public orientation!: NeonOrientation;
 
   /**
-   * The color of the toggle. See <a href="/enums/NeonFunctionalColor">NeonFunctionalColor</a>.
+   * The color of the toggle.
    */
   @Prop({ default: NeonFunctionalColor.Neutral })
   public color!: NeonFunctionalColor;
@@ -60,8 +60,8 @@ export default class NeonToggle extends Vue {
   /**
    * Whether or not the toggle is disabled.
    */
-  @Prop()
-  public disabled?: boolean;
+  @Prop({ default: false })
+  public disabled!: boolean;
 
   private get sanitizedListeners() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -72,10 +72,8 @@ export default class NeonToggle extends Vue {
   private onInput(event: InputEvent) {
     const key = (event.target as HTMLInputElement).value;
     /**
-     * Event triggered when the selected value changes.
-     *
-     * @event input
-     * @property {boolean} - The key of the selected <a href="/models/NeonToggleModel">NeonToggleModel</a>.
+     * Emitted when the selected value changes.
+     * @type {boolean} The key of the selected model item.
      */
     this.$emit('input', key);
   }

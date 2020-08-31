@@ -1,19 +1,25 @@
 {
+  "description": "A drawer is a slide out panel for representing data which may be secondary or not fit on the main screen. Examples are a responsive navigation menu, more details of a selected item on the page. Drawers can be opened from top, bottom, left or right and an overlay covers the screen to focus more attention on the drawer contents.",
+  "tags": {},
   "displayName": "NeonDrawer",
   "exportName": "default",
-  "description": "",
-  "tags": {},
   "props": [
     {
       "name": "fullWidth",
       "tags": {},
+      "description": "If true, remove the padding applied to the drawer.",
       "type": {
         "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
       }
     },
     {
       "name": "open",
       "tags": {},
+      "description": "Set the drawer to visible.",
       "type": {
         "name": "boolean"
       },
@@ -22,6 +28,7 @@
     {
       "name": "position",
       "tags": {},
+      "description": "The location of the drawer.",
       "type": {
         "name": "NeonPosition"
       },
@@ -33,6 +40,7 @@
     {
       "name": "overlay",
       "tags": {},
+      "description": "Display a semi-transparent overlay under the drawer, but over the rest of the page.",
       "type": {
         "name": "boolean"
       },
@@ -45,7 +53,7 @@
   "events": [
     {
       "name": "close",
-      "description": "close event is emitted when the element is closed.",
+      "description": "Emitted when the drawer is closed.",
       "type": {
         "names": [
           "void"
@@ -55,7 +63,8 @@
   ],
   "slots": [
     {
-      "name": "default"
+      "name": "default",
+      "description": "drawer contents"
     }
   ]
 }

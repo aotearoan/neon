@@ -7,7 +7,6 @@ export const enumList: string[] = [
   'NeonHorizontalPosition',
   'NeonInputType',
   'NeonLabelSize',
-  'NeonLabelStyle',
   'NeonMode',
   'NeonOrientation',
   'NeonPlacement',

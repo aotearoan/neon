@@ -7,6 +7,11 @@ import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonDropdownStyle } from '../../../common/enums/NeonDropdownStyle';
 
+/**
+ * A general purpose dropdown component. This component consists of a button, to trigger the dropdown to open, and the dropdown content which is displayed above the page when the user clicks the button. This can be useful for secondary (perhaps more complex) actions for which there is not enough space on the page or the action is asynchronous allowing the user to perform the action and continue what they were doing. Examples are providing links to copy and letting the user send feedback.
+ *
+ * NeonDropdown is the basis for the NeonDropdownMenu component and the NeonSelect form component.
+ */
 @Component
 export default class NeonDropdown extends Vue {
   $refs!: {
@@ -17,29 +22,53 @@ export default class NeonDropdown extends Vue {
   private dropdownPlacement: NeonDropdownPlacement;
   private closableUtils?: NeonClosableUtils;
 
+  /**
+   * Whether or not the dropdown is currently open.
+   */
   @Prop({ required: true })
   public value!: boolean;
 
+  /**
+   * The label for the dropdown button.
+   */
   @Prop()
   public label?: TranslateResult;
 
+  /**
+   * An icon to display on the dropdown button. This will be to the left of any label, but can also be used on it's own.
+   */
   @Prop()
   public icon?: string;
 
+  /**
+   * Show the dropdown button's indicator (chevron).
+   */
   @Prop({ default: true })
   public indicator!: boolean;
 
-  @Prop()
-  public disabled?: boolean;
+  /**
+   * Disable the dropdown button
+   */
+  @Prop({ default: false })
+  public disabled!: boolean;
 
+  /**
+   * The size of the dropdown button - Small, Medium or Large.
+   */
   @Prop({ default: NeonSize.Medium })
-  public size?: NeonSize;
+  public size!: NeonSize;
 
+  /**
+   * The color of the dropdown button
+   */
   @Prop({ default: NeonFunctionalColor.LowContrast })
-  public color?: NeonFunctionalColor;
+  public color!: NeonFunctionalColor;
 
+  /**
+   * The style of the dropdown button
+   */
   @Prop({ default: NeonDropdownStyle.SolidButton })
-  public dropdownStyle?: NeonDropdownStyle;
+  public dropdownStyle!: NeonDropdownStyle;
 
   /**
    * Placement of the dropdown contents.
@@ -78,10 +107,10 @@ export default class NeonDropdown extends Vue {
 
   public onClose() {
     /**
-     * close event is emitted when the modal is closed.
+     * Emitted when the dropdown is closed.
      * @type {void}
      */
-    this.$emit('input', false);
+    this.$emit('input');
   }
 
   public close() {
@@ -91,6 +120,10 @@ export default class NeonDropdown extends Vue {
   }
 
   public toggleOpen() {
+    /**
+     * Emitted when the dropdown button is toggled.
+     * @type {boolean} the open state of the dropdown.
+     */
     this.$emit('input', !this.value);
     setTimeout(this.recalculatePlacement);
   }

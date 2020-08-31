@@ -1,12 +1,13 @@
 {
+  "description": "A modal dialog component. This will be rendered above the content of the main window and can either be dismissed by the user or configured to require user interaction before dismissal.",
+  "tags": {},
   "displayName": "NeonModal",
   "exportName": "default",
-  "description": "",
-  "tags": {},
   "props": [
     {
       "name": "open",
       "tags": {},
+      "description": "Whether or not the modal is currently open.",
       "type": {
         "name": "boolean"
       },
@@ -15,6 +16,7 @@
     {
       "name": "dismissable",
       "tags": {},
+      "description": "Whether or not the user is allowed to dismiss the modal by clicking outside of the modal or pressing escape.",
       "type": {
         "name": "boolean"
       },
@@ -27,7 +29,7 @@
   "events": [
     {
       "name": "close",
-      "description": "close event is emitted when the element is closed.",
+      "description": "Emitted when the modal is closed.",
       "type": {
         "names": [
           "void"
@@ -37,7 +39,8 @@
   ],
   "slots": [
     {
-      "name": "default"
+      "name": "default",
+      "description": "modal contents"
     }
   ]
 }

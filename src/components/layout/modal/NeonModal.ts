@@ -1,6 +1,9 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { NeonClosableUtils } from '../../../common/utils/NeonClosableUtils';
 
+/**
+ * A modal dialog component. This will be rendered above the content of the main window and can either be dismissed by the user or configured to require user interaction before dismissal.
+ */
 @Component
 export default class NeonModal extends Vue {
   $refs!: {
@@ -9,9 +12,15 @@ export default class NeonModal extends Vue {
 
   private closableUtils?: NeonClosableUtils;
 
+  /**
+   * Whether or not the modal is currently open.
+   */
   @Prop({ required: true })
   public open!: boolean;
 
+  /**
+   * Whether or not the user is allowed to dismiss the modal by clicking outside of the modal or pressing escape.
+   */
   @Prop({ default: true })
   public dismissable!: boolean;
 
@@ -29,7 +38,7 @@ export default class NeonModal extends Vue {
 
   public onClose() {
     /**
-     * close event is emitted when the element is closed.
+     * Emitted when the modal is closed.
      * @type {void}
      */
     this.$emit('close');

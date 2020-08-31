@@ -1,12 +1,13 @@
 {
+  "description": "An action menu is designed for the NeonSideNav component and is designed to behave like tabs where selecting a different item switches the contents in the main page.",
+  "tags": {},
   "exportName": "default",
   "displayName": "NeonActionMenu",
-  "description": "",
-  "tags": {},
   "props": [
     {
       "name": "model",
       "tags": {},
+      "description": "The list of action items to display in the menu.",
       "type": {
         "name": "Array",
         "elements": [
@@ -20,6 +21,7 @@
     {
       "name": "value",
       "tags": {},
+      "description": "The key of the selected model action item.",
       "type": {
         "name": "string"
       },
@@ -29,9 +31,10 @@
   "events": [
     {
       "name": "input",
+      "description": "emitted when the user clicks on a new action menu item.",
       "type": {
         "names": [
-          "undefined"
+          "string"
         ]
       }
     }

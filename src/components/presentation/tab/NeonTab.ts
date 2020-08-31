@@ -2,6 +2,9 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 import { NeonResponsiveUtils } from '../../../common/utils/NeonResponsiveUtils';
 import { NeonResponsive } from '../../../common/enums/NeonResponsive';
 
+/**
+ * The NeonTab component that defines individual tabs for use with the NeonTabs component.
+ */
 @Component
 export default class NeonTab extends Vue {
   private responsiveView = false;

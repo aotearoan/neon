@@ -11,7 +11,7 @@
       `neon-drop-zone--state-${state}`,
     ]"
   >
-    <!-- @slot: drop zone contents (e.g. images, text etc...) -->
+    <!-- @slot Drop zone content (e.g. images, text etc...) -->
     <div class="neon-drop-zone__container">
       <slot></slot>
     </div>

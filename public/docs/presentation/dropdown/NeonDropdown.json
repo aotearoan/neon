@@ -1,12 +1,13 @@
 {
+  "description": "A general purpose dropdown component. This component consists of a button, to trigger the dropdown to open, and the dropdown content which is displayed above the page when the user clicks the button. This can be useful for secondary (perhaps more complex) actions for which there is not enough space on the page or the action is asynchronous allowing the user to perform the action and continue what they were doing. Examples are providing links to copy and letting the user send feedback.\n\nNeonDropdown is the basis for the NeonDropdownMenu component and the NeonSelect form component.",
+  "tags": {},
   "displayName": "NeonDropdown",
   "exportName": "default",
-  "description": "",
-  "tags": {},
   "props": [
     {
       "name": "value",
       "tags": {},
+      "description": "Whether or not the dropdown is currently open.",
       "type": {
         "name": "boolean"
       },
@@ -15,6 +16,7 @@
     {
       "name": "label",
       "tags": {},
+      "description": "The label for the dropdown button.",
       "type": {
         "name": "TranslateResult"
       }
@@ -22,6 +24,7 @@
     {
       "name": "icon",
       "tags": {},
+      "description": "An icon to display on the dropdown button. This will be to the left of any label, but can also be used on it's own.",
       "type": {
         "name": "string"
       }
@@ -29,6 +32,7 @@
     {
       "name": "indicator",
       "tags": {},
+      "description": "Show the dropdown button's indicator (chevron).",
       "type": {
         "name": "boolean"
       },
@@ -40,13 +44,19 @@
     {
       "name": "disabled",
       "tags": {},
+      "description": "Disable the dropdown button",
       "type": {
         "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
       }
     },
     {
       "name": "size",
       "tags": {},
+      "description": "The size of the dropdown button - Small, Medium or Large.",
       "type": {
         "name": "NeonSize"
       },
@@ -58,6 +68,7 @@
     {
       "name": "color",
       "tags": {},
+      "description": "The color of the dropdown button",
       "type": {
         "name": "NeonFunctionalColor"
       },
@@ -69,6 +80,7 @@
     {
       "name": "dropdownStyle",
       "tags": {},
+      "description": "The style of the dropdown button",
       "type": {
         "name": "NeonDropdownStyle"
       },
@@ -102,10 +114,10 @@
   "events": [
     {
       "name": "input",
-      "description": "close event is emitted when the modal is closed.",
+      "description": "Emitted when the dropdown button is toggled.",
       "type": {
         "names": [
-          "undefined"
+          "boolean"
         ]
       }
     }
@@ -113,7 +125,7 @@
   "slots": [
     {
       "name": "default",
-      "description": "This slot is for the dropdown contents."
+      "description": "The content of the open dropdown"
     }
   ]
 }
