@@ -10,12 +10,13 @@
       "description": "The label text",
       "type": {
         "name": "TranslateResult"
-      }
+      },
+      "required": true
     },
     {
       "name": "icon",
       "tags": {},
-      "description": "The name of the label icon",
+      "description": "The name of the optional label icon",
       "type": {
         "name": "string"
       }
