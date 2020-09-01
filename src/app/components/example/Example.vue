@@ -7,7 +7,7 @@
       <v-runtime-template :template-props="example.data || {}" :template="example.template" />
     </div>
     <div class="example__code">
-      <codemirror v-model="example.template" :options="options"></codemirror>
+      <editor v-if="example.template" v-model="example.template" />
     </div>
   </div>
 </template>

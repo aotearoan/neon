@@ -1,8 +1,8 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { NeonAlertService, NeonButton, NeonCard, NeonCardBody, NeonCardHeader } from '../../../../components';
-import AppPre from '../../../components/pre/AppPre.vue';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
 import { Menu, MenuModel } from '../../../Menu';
+import Editor from '../../../components/editor/Editor.vue';
 
 @Component({
   components: {
@@ -10,8 +10,8 @@ import { Menu, MenuModel } from '../../../Menu';
     NeonCard,
     NeonCardHeader,
     NeonCardBody,
-    AppPre,
     ComponentDocumentation,
+    Editor,
   },
 })
 export default class Alert extends Vue {

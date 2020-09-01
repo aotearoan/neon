@@ -1,14 +1,14 @@
 import { Component, Vue, Watch } from 'vue-property-decorator';
 import { NeonCard, NeonCardBody, NeonCardHeader } from '../../../components';
 import { Route } from 'vue-router';
-import AppPre from '../../components/pre/AppPre.vue';
+import Editor from '../../components/editor/Editor.vue';
 
 @Component({
   components: {
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
-    AppPre,
+    Editor,
   },
 })
 export default class Source extends Vue {

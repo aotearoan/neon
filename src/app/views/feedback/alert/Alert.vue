@@ -10,20 +10,28 @@
           <strong>NeonAlert</strong> component only once on your page (usually just outside your main
           <strong>&lt;router-view /&gt;</strong>):
         </p>
-        <app-pre language="html">{{ `&lt;neon-alert&gt;&lt;/neon-alert&gt;` }}</app-pre>
+        <editor :read-only="true" value="&lt;neon-alert&gt;&lt;/neon-alert&gt;" language="html" />
         <p>Then use the following static methods on <strong>NeonAlertService</strong> to display alerts:</p>
-        <app-pre language="typescript">{{
-          `NeonAlertService.info('alert title', 'Optional detailed message');`
-        }}</app-pre>
-        <app-pre language="typescript">{{
-          `NeonAlertService.success('alert title', 'Optional detailed message');`
-        }}</app-pre>
-        <app-pre language="typescript">{{
-          `NeonAlertService.warning('alert title', 'Optional detailed message');`
-        }}</app-pre>
-        <app-pre language="typescript">{{
-          `NeonAlertService.error('alert title', 'Optional detailed message');`
-        }}</app-pre>
+        <editor
+          :read-only="true"
+          value="NeonAlertService.info('alert title', 'Optional detailed message');"
+          language="typescript"
+        />
+        <editor
+          :read-only="true"
+          value="NeonAlertService.success('alert title', 'Optional detailed message');"
+          language="typescript"
+        />
+        <editor
+          :read-only="true"
+          value="NeonAlertService.warning('alert title', 'Optional detailed message');"
+          language="typescript"
+        />
+        <editor
+          :read-only="true"
+          value="NeonAlertService.error('alert title', 'Optional detailed message');"
+          language="typescript"
+        />
       </neon-card-body>
     </neon-card>
   </component-documentation>

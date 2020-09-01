@@ -1,7 +1,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader } from '../../../../components';
-import AppPre from '../../../components/pre/AppPre.vue';
 import Example from '../../../components/example/Example.vue';
+import Editor from '../../../components/editor/Editor.vue';
 
 @Component({
   components: {
@@ -9,8 +9,8 @@ import Example from '../../../components/example/Example.vue';
     NeonCard,
     NeonCardHeader,
     NeonCardBody,
-    AppPre,
     Example,
+    Editor,
   },
 })
 export default class Color extends Vue {
@@ -29,4 +29,17 @@ export default class Color extends Vue {
   <div class="neon-color-text-low-contrast">This is the low contrast text color</div>
 </div>`,
   };
+
+  private colorPalette = `$info-palette: (
+  l5: #f6e9ff,
+  l4: #ebd4ff,
+  l3: #ddbcfe,
+  l2: #cba1fa,
+  l1: #b683f3,
+  d1: #7f50ba,
+  d2: #644190,
+  d3: #4d346b,
+  d4: #39294c,
+  d5: #292033,
+);`;
 }

@@ -46,7 +46,7 @@ ul {
   }
 }
 
-pre {
+pre:not(.prism-editor__editor) {
   @include padding;
   border-radius: $border-radius;
   overflow-x: auto;

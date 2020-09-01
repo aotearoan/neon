@@ -1,25 +1,23 @@
-@import '../../sass/code-mirror';
-
 .source-page {
-  .CodeMirror-cursors {
-    display: none;
-  }
-
-  .CodeMirror {
-    @include code-mirror-width;
-    height: fit-content;
-    min-height: 30 * $base-space;
-    max-height: 175 * $base-space;
-    border-radius: $border-radius;
-
-    span {
-      display: inline;
+  .editor__wrapper {
+    @include responsive(larger-than-tablet) {
+      max-height: calc(
+        100vh - #{$top-nav-height-desktop + $footer-height-desktop + $h1-size * 1.125 + 6 * $spacing-vertical-desktop +
+          3 * $border-width}
+      );
     }
 
-    .CodeMirror-code {
-      pre.CodeMirror-line {
-        background-color: transparent;
-      }
+    @include responsive(tablet) {
+      max-height: calc(
+        100vh - #{$top-nav-height-tablet + $footer-height-tablet + $h1-size * 1.125 + 6 * $spacing-vertical-tablet + 3 *
+          $border-width}
+      );
+    }
+    @include responsive(mobile-large) {
+      max-height: calc(
+        100vh - #{$top-nav-height-mobile + $footer-height-mobile + $h1-size * 1.125 + 6 * $spacing-vertical-mobile + 3 *
+          $border-width}
+      );
     }
   }
 }

@@ -1,37 +1,4 @@
-@import './code-mirror';
-
 .example {
-  &__code {
-    span {
-      display: inline;
-    }
-
-    pre {
-      display: block;
-      background-color: inherit !important;
-    }
-
-    .CodeMirror {
-      height: fit-content;
-      min-height: 30 * $base-space;
-      max-height: 75 * $base-space;
-      padding-top: $base-space;
-      padding-left: 1.5 * $base-space;
-      margin-top: 2 * $base-space;
-      overflow: hidden;
-      border-radius: $border-radius !important;
-
-      @include code-mirror-width;
-
-      pre.CodeMirror-line,
-      pre.CodeMirror-line-like {
-        font-family: $font-family-monospaced;
-        font-variant-ligatures: discretionary-ligatures;
-        font-variation-settings: $monospaced-font-variation-settings;
-      }
-    }
-  }
-
   &__output {
     border-radius: $border-radius !important;
     margin-bottom: 4 * $base-space !important;
@@ -45,11 +12,6 @@
     & > h3 {
       @include margin;
       margin-bottom: 8 * $base-space !important;
-    }
-
-    .example__code {
-      @include margin;
-      margin-top: 0 !important;
     }
 
     .example__title {

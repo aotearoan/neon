@@ -35,7 +35,6 @@ export const utilsList: string[] = [
   'NeonClosableUtils',
   'NeonDateUtils',
   'NeonDropdownPlacementUtils',
-  'NeonIconRegistry.spec',
   'NeonIconRegistry',
   'NeonModeUtils',
   'NeonPlacementUtils',

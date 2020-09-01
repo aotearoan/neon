@@ -14,6 +14,7 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
       $color-api-docs-property-name: l3;
 
       // application dark mode SASS
+      @import 'sass/editor-colors';
       @import 'sass/api-docs-colors';
       @import 'sass/component-docs-colors';
 
@@ -62,11 +63,6 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
           }
         }
       }
-
-      .CodeMirror,
-      .CodeMirror-gutters {
-        background-color: $background-color-pre !important;
-      }
     }
 
     &.neon-mode--light {
@@ -76,6 +72,7 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
       $background-color-component-header: darken($background-color-card, 2);
 
       // application light mode SASS
+      @import 'sass/editor-colors';
       @import 'sass/api-docs-colors';
       @import 'sass/component-docs-colors';
 
@@ -110,20 +107,13 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
           }
         }
       }
-
-      .CodeMirror,
-      .CodeMirror-gutters {
-        background-color: $background-color-pre !important;
-      }
     }
 
     // application classic theme SASS
+    @import 'sass/editor';
     @import 'sass/example';
-    @import 'sass/pre';
     @import 'sass/component-docs';
     @import 'sass/api-docs';
-    @import '~codemirror/lib/codemirror';
-    @import '~codemirror/theme/mbo';
 
     @import 'views/design/color/Color';
     @import 'views/presentation/icons/Icons';

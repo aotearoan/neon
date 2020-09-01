@@ -4,7 +4,7 @@
       <h1>{{ className }}</h1>
     </neon-card-header>
     <neon-card-body>
-      <app-pre language="typescript">{{ template }}</app-pre>
+      <editor language="typescript" :value="template" :read-only="true" />
     </neon-card-body>
   </neon-card>
 </template>

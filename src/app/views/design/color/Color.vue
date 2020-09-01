@@ -29,22 +29,7 @@
         Alternatively, if you would like to change an entire palette you can do so by overriding the palette map, e.g.
         to override the info palette in SASS set:
       </p>
-      <app-pre language="scss">{{
-        `
-$info-palette: (\n
-          l5: #f6e9ff,\n
-          l4: #ebd4ff,\n
-          l3: #ddbcfe,\n
-          l2: #cba1fa,\n
-          l1: #b683f3,\n
-          d1: #7f50ba,\n
-          d2: #644190,\n
-          d3: #4d346b,\n
-          d4: #39294c,\n
-          d5: #292033,\n
-        );\n
-`
-      }}</app-pre>
+      <editor language="scss" :read-only="true" :value="colorPalette" />
     </neon-card-body>
     <neon-card-body class="color-palettes">
       <neon-anchor id="brand-palettes" />

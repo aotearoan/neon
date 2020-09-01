@@ -1,0 +1,12 @@
+.editor {
+  background-color: $background-color-pre;
+  color: $color-text-light;
+
+  .prism-editor {
+    &__textarea {
+      &::selection {
+        background-color: rgba($color-primary, 0.33);
+      }
+    }
+  }
+}

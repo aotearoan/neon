@@ -1,15 +1,16 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { ExampleModel } from './ExampleModel';
+import Editor from '../editor/Editor.vue';
 
-@Component({})
+@Component({
+  components: {
+    Editor,
+  },
+})
 export default class Example extends Vue {
   @Prop({ required: true })
   public example!: ExampleModel;
 
-  private options = {
-    theme: 'mbo',
-    mode: 'text/x-vue',
-    lineNumbers: false,
-    line: true,
-  };
+  @Prop({ default: 'html' })
+  public language!: string;
 }
