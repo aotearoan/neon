@@ -17,11 +17,11 @@ export default class NeonLabel extends Vue {
   /**
    * The label text
    */
-  @Prop()
-  public label?: TranslateResult;
+  @Prop({ required: true })
+  public label!: TranslateResult;
 
   /**
-   * The name of the label icon
+   * The name of the optional label icon
    */
   @Prop()
   public icon?: string;

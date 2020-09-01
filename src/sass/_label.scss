@@ -4,7 +4,7 @@
   &--xs {
     height: $size-xs - $base-space;
     min-width: $size-xs - $base-space;
-    font-size: $font-size-xs;
+    font-size: $font-size-xxs;
     padding: 0 $base-space;
 
     .neon-icon {
@@ -14,10 +14,10 @@
   }
 
   &--s {
-    height: $size-s;
-    min-width: $size-s;
+    height: $size-s - $base-space;
+    min-width: $size-s - $base-space;
 
-    font-size: $base-font-size;
+    font-size: $font-size-s;
 
     .neon-icon {
       width: $font-size-s;
@@ -33,10 +33,10 @@
   align-items: center;
   justify-content: center;
   user-select: none;
-  padding: 0 3 * $base-space;
+  padding: 0 2 * $base-space;
   min-width: fit-content;
   width: fit-content;
-  font-weight: 400;
+  font-weight: 600;
 
   &__label {
     white-space: nowrap;
@@ -50,12 +50,12 @@
 
     &.neon-label--with-label {
       &.neon-label--icon-left .neon-icon {
-        margin-right: 2 * $base-space;
+        margin-right: $base-space;
       }
 
       &.neon-label--icon-right .neon-icon {
         order: 1;
-        margin-left: 2 * $base-space;
+        margin-left: $base-space;
       }
     }
   }

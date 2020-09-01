@@ -15,7 +15,7 @@
           ></neon-label>
         </div>
       </div>
-      <h2>Icon only</h2>
+      <h2>Labels with icons</h2>
       <div class="collection">
         <div v-for="size in labelSizes" :key="`label-${size}-solid-icon-only`" class="neon-vertically-spaced">
           <neon-label
@@ -23,7 +23,8 @@
             :key="`label-${color}-${size}-outline-with-icon`"
             :color="color"
             :size="size"
-            icon="check"
+            :label="color"
+            icon="lock"
           ></neon-label>
         </div>
       </div>
