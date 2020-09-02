@@ -139,5 +139,8 @@ $box-shadow-dropdown: $box-shadow-strong !default;
 /* buttons */
 $border-radius-button-xl: 8px !default;
 
+/* tabs */
+$border-width-tabs: 2px !default;
+
 @import '../../src/sass/includes/includes';
 @import 'src/sass/common';

@@ -22,7 +22,6 @@ export default class Tabs extends Vue {
 
   private data = {
     selected: 'tab1',
-    selectedFullWidth: 'tab1',
     tabs: [
       {
         key: 'tab1',
@@ -44,21 +43,12 @@ export default class Tabs extends Vue {
     {
       title: 'Tabs inside a card body',
       template: `<neon-tabs :tabs="tabs" v-model="selected">
-  <neon-tab v-for="tab in tabs" :key="tab.key" :tab="tab" :selected="selected === tab.key">
+  <neon-tab v-for="(tab, index) in tabs" :key="tab.key" :tab="tab" :selected="selected === tab.key">
+    <h6>Tab {{ index + 1 }}</h6>
     <span>${this.tabContent}</span>
   </neon-tab>
 </neon-tabs>`,
       data: this.data,
-    },
-    {
-      title: 'Tabs inside a full width section',
-      template: `<neon-tabs :tabs="tabs" v-model="selectedFullWidth">
-  <neon-tab v-for="tab in tabs" :key="tab.key" :tab="tab" :selected="selectedFullWidth === tab.key">
-    <span>${this.tabContent}</span>
-  </neon-tab>
-</neon-tabs>`,
-      data: this.data,
-      fullWidth: true,
     },
   ];
 

@@ -1,10 +1,6 @@
 .neon-tabs {
-  &__menu-items {
-    border-bottom: $border-width $border-style $border-color;
-  }
-
-  .neon-tabs__menu-item--selected {
-    border-bottom: $border-width $border-style transparent;
+  .neon-tabs__menu-item {
+    border-bottom: $border-width-tabs $border-style transparent;
   }
 
   @each $color, $palette in $functional-colors {
