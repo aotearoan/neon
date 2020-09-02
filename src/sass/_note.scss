@@ -10,10 +10,6 @@ blockquote,
     display: inline;
   }
 
-  strong {
-    margin-right: 2 * $base-space;
-  }
-
   &__icon.neon-icon {
     margin-right: 4 * $base-space;
     $note-icon-size: 1.5 * $base-font-size;

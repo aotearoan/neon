@@ -1,3 +1,13 @@
+@mixin horizontal-card-responsive-borders {
+  .neon-card-header,
+  .neon-card-body,
+  .neon-card-footer {
+    &:not(:last-child) {
+      border-right: $border-width $border-style $border-color;
+    }
+  }
+}
+
 .neon-card {
   border: $border-width $border-style $border-color;
   box-shadow: $card-box-shadow;
@@ -10,6 +20,26 @@
     &:not(:last-child):not(.neon-card-body--full-width) {
       border-bottom: $card-section-border;
       border-bottom-color: $border-color;
+    }
+  }
+
+  &.neon-card--horizontal {
+    &.neon-card--horizontal-breakpoint-mobile-l {
+      @include responsive(larger-than-mobile-large) {
+        @include horizontal-card-responsive-borders;
+      }
+    }
+
+    &.neon-card--horizontal-breakpoint-mobile {
+      @include responsive(larger-than-mobile) {
+        @include horizontal-card-responsive-borders;
+      }
+    }
+
+    &.neon-card--horizontal-breakpoint-tablet {
+      @include responsive(larger-than-tablet) {
+        @include horizontal-card-responsive-borders;
+      }
     }
   }
 }

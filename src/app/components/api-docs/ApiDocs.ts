@@ -1,28 +1,19 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonNote } from '../../../components';
+import { NeonNote } from '../../../components';
 import { DocumentationModel, EventModel, PropertyModel, PropTypeModel } from '../ApiModel';
 import { enumList, modelList } from '../../SupportingClasses';
 
 @Component({
   components: {
-    NeonCard,
-    NeonCardBody,
-    NeonCardHeader,
     NeonNote,
   },
 })
 export default class ApiDocs extends Vue {
-  private expanded = false;
-
   @Prop({ required: true })
   public apiModel!: DocumentationModel;
 
   @Prop({ required: true })
   public componentName!: string;
-
-  private requiredProps() {
-    return this.apiModel && this.apiModel.props.some((prop) => prop.required);
-  }
 
   private isArray(prop: PropertyModel) {
     return prop.type && prop.type.name === 'Array';

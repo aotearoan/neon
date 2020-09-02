@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <div v-if="example.title" class="example__title">
-      <h3>{{ example.title }}</h3>
-    </div>
+  <div v-if="example.noCard">
+    <h3>{{ example.title }}</h3>
     <div class="example__output" :class="{ 'example__output--full-width': example.fullWidth }">
       <v-runtime-template :template-props="example.data || {}" :template="example.template" />
     </div>
@@ -10,6 +8,19 @@
       <editor v-if="example.template" v-model="example.template" />
     </div>
   </div>
+  <neon-card v-else>
+    <neon-card-header v-if="example.title" class="example__title">
+      <h3>{{ example.title }}</h3>
+    </neon-card-header>
+    <neon-card-body>
+      <div class="example__output" :class="{ 'example__output--full-width': example.fullWidth }">
+        <v-runtime-template :template-props="example.data || {}" :template="example.template" />
+      </div>
+      <div class="example__code">
+        <editor v-if="example.template" v-model="example.template" />
+      </div>
+    </neon-card-body>
+  </neon-card>
 </template>
 
 <script lang="ts" src="./Example.ts"></script>

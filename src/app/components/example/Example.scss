@@ -1,22 +1,16 @@
 .example {
+  & + .example {
+    margin-top: 8 * $base-space;
+  }
+
   &__output {
     border-radius: $border-radius !important;
     margin-bottom: 4 * $base-space !important;
   }
 
-  h3 {
-    margin-bottom: 4 * $base-space !important;
-  }
-
-  &.neon-card-body--full-width {
-    & > h3 {
-      @include margin;
-      margin-bottom: 8 * $base-space !important;
-    }
-
-    .example__title {
-      @include padding;
-      padding-bottom: 0 !important;
+  &__title {
+    h3 {
+      margin-bottom: 0 !important;
     }
   }
 
@@ -33,6 +27,7 @@
   &--horizontal {
     display: flex;
     flex-direction: row;
+    align-items: center;
 
     & > *:not(:last-child) {
       margin-right: 4 * $base-space;
@@ -40,11 +35,16 @@
 
     @include responsive(mobile-large) {
       flex-direction: column;
+      align-items: flex-start;
 
       & > *:not(:last-child) {
         margin-right: 0;
         margin-bottom: 3 * $base-space;
       }
     }
+  }
+
+  &--margin-top {
+    margin-top: 2 * $base-space;
   }
 }

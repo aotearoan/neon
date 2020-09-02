@@ -6,8 +6,12 @@
   @include responsive(desktop) {
     &__responsive {
       .api-docs__attribute:first-child {
-        border-bottom: $border-width $border-style $border-color;
+        border-bottom: $border-width $border-style $color-text-neutral;
       }
     }
+  }
+
+  &__description {
+    color: $color-text-high-contrast;
   }
 }

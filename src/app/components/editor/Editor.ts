@@ -15,10 +15,12 @@ import Normalizer from 'prismjs/plugins/normalize-whitespace/prism-normalize-whi
 import { NeonClipboardService } from '../../../common/utils/NeonClipboardService';
 import { NeonAlertService } from '../../../components/feedback/alert/NeonAlert';
 import NeonButton from '../../../components/user-input/button/NeonButton.vue';
+import NeonIcon from '../../../components/presentation/icon/NeonIcon.vue';
 
 @Component({
   components: {
     NeonButton,
+    NeonIcon,
     PrismEditor,
   },
 })

@@ -1,10 +1,16 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { ExampleModel } from './ExampleModel';
 import Editor from '../editor/Editor.vue';
+import NeonCardHeader from '../../../components/layout/card/header/NeonCardHeader.vue';
+import NeonCardBody from '../../../components/layout/card/body/NeonCardBody.vue';
+import NeonCard from '../../../components/layout/card/NeonCard.vue';
 
 @Component({
   components: {
     Editor,
+    NeonCard,
+    NeonCardBody,
+    NeonCardHeader,
   },
 })
 export default class Example extends Vue {

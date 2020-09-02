@@ -5,10 +5,26 @@
   .neon-card-body,
   .neon-card-footer {
     margin-bottom: 0;
+    border-bottom: none !important;
+    justify-content: center;
+
+    &:first-child {
+      border-bottom-left-radius: $border-radius;
+      border-top-right-radius: 0;
+    }
 
     &:last-child {
-      width: 100%;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: $border-radius;
     }
+  }
+
+  .neon-card-header {
+    align-items: center;
+  }
+
+  .neon-card-body {
+    flex: 1;
   }
 }
 
@@ -70,8 +86,14 @@
   }
 
   &.neon-card--horizontal {
-    &.neon-card--horizontal-breakpoint-mobile {
+    &.neon-card--horizontal-breakpoint-mobile-l {
       @include responsive(larger-than-mobile-large) {
+        @include horizontal-card-responsive;
+      }
+    }
+
+    &.neon-card--horizontal-breakpoint-mobile {
+      @include responsive(larger-than-mobile) {
         @include horizontal-card-responsive;
       }
     }

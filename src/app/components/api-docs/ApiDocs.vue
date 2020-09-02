@@ -1,17 +1,13 @@
 <template>
-  <neon-card class="api-docs" v-if="apiModel">
-    <neon-card-header>
-      <h1>{{ componentName }} API</h1>
-    </neon-card-header>
-    <neon-card-body v-if="!hasDocs || apiModel.description">
-      <p v-if="apiModel.description" v-html="apiModel.description"></p>
-      <neon-note v-if="!hasDocs" color="info"
-        ><strong>Note:</strong>The Vue API for this component contains no properties, events or slots</neon-note
-      >
-    </neon-card-body>
-    <neon-card-body class="api-docs__desktop" v-if="hasDocs">
+  <div class="api-docs" v-if="apiModel">
+    <h2>{{ componentName }} API</h2>
+    <p v-if="apiModel.description" v-html="apiModel.description"></p>
+    <neon-note v-if="!hasDocs" color="info"
+      ><strong>Note:</strong> The Vue API for this component contains no properties, events or slots</neon-note
+    >
+    <div class="api-docs__desktop" v-if="hasDocs">
       <section class="api-docs__section" v-if="hasProps">
-        <h2 class="api-docs__title">Properties</h2>
+        <h3 class="api-docs__title">Properties</h3>
         <table>
           <thead>
             <tr>
@@ -44,7 +40,7 @@
         </table>
       </section>
       <section class="api-docs__section" v-if="hasEvents">
-        <h2 class="api-docs__title">Events</h2>
+        <h3 class="api-docs__title">Events</h3>
         <table>
           <thead>
             <tr>
@@ -70,7 +66,7 @@
         </table>
       </section>
       <section class="api-docs__section" v-if="hasSlots">
-        <h2 class="api-docs__title">Slots</h2>
+        <h3 class="api-docs__title">Slots</h3>
         <table>
           <thead>
             <tr>
@@ -88,10 +84,10 @@
           </tbody>
         </table>
       </section>
-    </neon-card-body>
-    <neon-card-body class="api-docs__responsive" v-if="hasDocs">
+    </div>
+    <div class="api-docs__responsive" v-if="hasDocs">
       <section class="api-docs__section" v-if="hasProps">
-        <h2 class="api-docs__title">Properties</h2>
+        <h3 class="api-docs__title">Properties</h3>
         <div v-for="prop in apiModel.props" :key="prop.name" class="api-docs__property">
           <div class="api-docs__attribute">
             <span class="api-docs__name">{{ prop.name }}</span>
@@ -114,7 +110,7 @@
         </div>
       </section>
       <section class="api-docs__section" v-if="hasEvents">
-        <h2 class="api-docs__title">Events</h2>
+        <h3 class="api-docs__title">Events</h3>
         <div v-for="event in apiModel.events" :key="event.name" class="api-docs__event">
           <div class="api-docs__attribute api-docs__name">{{ event.name }}</div>
           <div class="api-docs__attribute">
@@ -128,14 +124,14 @@
         </div>
       </section>
       <section class="api-docs__section" v-if="hasSlots">
-        <h2 class="api-docs__title">Slots</h2>
+        <h3 class="api-docs__title">Slots</h3>
         <div v-for="slot in apiModel.slots" :key="slot.name" class="api-docs__slot">
           <div class="api-docs__attribute api-docs__name">{{ slot.name }}</div>
           <div class="api-docs__attribute api-docs__description" v-if="slot.description" v-html="slot.description" />
         </div>
       </section>
-    </neon-card-body>
-  </neon-card>
+    </div>
+  </div>
 </template>
 
 <script lang="ts" src="./ApiDocs.ts"></script>

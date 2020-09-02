@@ -4,7 +4,7 @@
       <h1>Labels</h1>
     </neon-card-header>
     <neon-card-body>
-      <div class="collection">
+      <div class="example--horizontal">
         <div v-for="size in labelSizes" :key="`label-${size}-solid`" class="neon-vertically-spaced">
           <neon-label
             v-for="color in colors"
@@ -16,7 +16,7 @@
         </div>
       </div>
       <h2>Labels with icons</h2>
-      <div class="collection">
+      <div class="example--horizontal">
         <div v-for="size in labelSizes" :key="`label-${size}-solid-icon-only`" class="neon-vertically-spaced">
           <neon-label
             v-for="color in colors"

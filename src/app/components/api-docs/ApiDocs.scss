@@ -1,12 +1,18 @@
 .api-docs {
+  & > h2 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   &__section {
     &:not(:first-child) {
-      margin-top: 8 * $base-space;
+      margin-top: 6 * $base-space;
     }
   }
 
   &__title {
-    font-size: $h5-size;
+    margin-top: 2 * $base-space;
     margin-bottom: 0;
   }
 
@@ -24,7 +30,6 @@
   }
 
   &__description {
-    font-weight: 200;
     letter-spacing: normal;
   }
 
@@ -58,6 +63,7 @@
       .api-docs {
         &__title {
           margin-bottom: 2 * $base-space;
+          margin-top: 0;
         }
 
         &__attribute {

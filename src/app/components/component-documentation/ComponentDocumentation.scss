@@ -1,5 +1,5 @@
 $height-component-header-desktop: 151px;
-$height-component-header-mobile: 77px;
+$height-component-header-mobile: 75px;
 
 .component-documentation {
   margin-top: $height-component-header-desktop;
@@ -29,7 +29,6 @@ $height-component-header-mobile: 77px;
 
     .neon-tabs {
       position: relative;
-      top: -$border-width;
     }
   }
 
@@ -40,8 +39,31 @@ $height-component-header-mobile: 77px;
     margin: auto;
   }
 
-  .neon-tab {
+  & > .neon-tab {
+    padding-top: 8 * $base-space;
     padding-bottom: 0;
+
+    &:nth-child(2) {
+      padding-top: 4 * $base-space;
+    }
+
+    & > h2,
+    .examples > h2,
+    .api-docs > h2 {
+      margin-top: 6 * $base-space;
+
+      @include responsive(mobile-large) {
+        margin-top: 2 * $base-space;
+      }
+    }
+
+    .api-docs:not(:first-child) > h2 {
+      margin-top: 8 * $base-space;
+
+      @include responsive(mobile-large) {
+        margin-top: 4 * $base-space;
+      }
+    }
   }
 
   &__title {
@@ -57,13 +79,38 @@ $height-component-header-mobile: 77px;
     font-weight: 300;
     font-size: $h6-size;
     opacity: 0.66;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     @include responsive(mobile-large) {
       margin-bottom: 2 * $base-space;
+      font-size: $base-font-size;
     }
   }
 
   .examples:not(:first-child) {
     margin-top: 8 * $base-space;
+  }
+
+  @include responsive(mobile-large) {
+    h1 {
+      font-size: $h2-size;
+    }
+    h2 {
+      font-size: $h3-size;
+    }
+    h3 {
+      font-size: $h4-size;
+    }
+    h4 {
+      font-size: $h5-size;
+    }
+    h5 {
+      font-size: $h6-size;
+    }
+    h6 {
+      font-size: $base-font-size;
+    }
   }
 }

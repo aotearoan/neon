@@ -11,7 +11,13 @@
       <slot></slot>
     </neon-tab>
     <neon-tab :tab="tabs[1]" :selected="selected === tabs[1].key" :toggleOnIf="true">
-      <api-docs v-if="apiModel" :api-model="apiModel" :path="path" :component-name="componentName" />
+      <api-docs v-if="apiModel" :api-model="apiModel" :component-name="componentName" />
+      <api-docs
+        v-for="subApiModel in subApiModels"
+        :key="subApiModel.name"
+        :api-model="subApiModel.api"
+        :component-name="subApiModel.name"
+      />
     </neon-tab>
     <neon-tab :tab="tabs[2]" :selected="selected === tabs[2].key" :toggleOnIf="true">
       <examples :examples="examples" />

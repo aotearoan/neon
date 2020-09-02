@@ -14,8 +14,8 @@ export default class NeonCard extends Vue {
   public orientation!: NeonOrientation;
 
   /**
-   * The breakpoint to switch horizontal cards to vertical cards.
+   * The breakpoint to switch horizontal cards to vertical cards. Accepts the values mobile, mobile-large and tablet.
    */
   @Prop({ default: NeonResponsive.MobileLarge })
-  public horizontalBreakpoint!: NeonResponsive;
+  public horizontalBreakpoint!: NeonResponsive.Mobile | NeonResponsive.MobileLarge | NeonResponsive.Tablet;
 }

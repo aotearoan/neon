@@ -60,7 +60,7 @@ export default class Toggle extends Vue {
   };
 
   private toggleTemplate = `<div>
-  <div class="collection neon-vertically-spaced">
+  <div class="example--horizontal neon-vertically-spaced">
     <div v-for="size in sizes" :key="\`toggle-\${size}\`" class="neon-vertically-spaced">
       <neon-toggle
         v-for="color in colors"
@@ -85,7 +85,7 @@ export default class Toggle extends Vue {
 </div>`;
 
   private iconTemplate = `<div>
-  <div class="collection neon-vertically-spaced">
+  <div class="example--horizontal neon-vertically-spaced">
     <div v-for="size in sizes" :key="\`toggle-icon-\${size}\`" class="neon-vertically-spaced">
       <neon-toggle
         v-for="color in colors"
@@ -110,7 +110,7 @@ export default class Toggle extends Vue {
 </div>`;
 
   private radioButtonsTemplate = `<div>
-  <div class="collection">
+  <div class="example--horizontal">
     <div v-for="size in sizes" :key="\`rb-\${size}\`" class="neon-vertically-spaced">
       <neon-toggle
         :name="\`rb-neutral-\${size}\`"

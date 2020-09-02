@@ -16,25 +16,33 @@ import { Menu, MenuModel } from '../../../Menu';
 export default class Button extends Vue {
   private menuModel: MenuModel | null = null;
 
-  private sizeExamples = `<div class="collection">
+  private headline = 'Styled HTML buttons';
+
+  private sizeExamples = `<div class="example--horizontal">
   <neon-button size="s" label="Small button" />
   <neon-button size="m" label="Medium button" />
   <neon-button size="l" label="Large button" />
 </div>`;
 
-  private colorExamples = `<div class="collection">
+  private neutralColorExamples = `<div class="example--horizontal example--wrap">
   <neon-button color="low-contrast" label="Low contrast" />
   <neon-button color="neutral" label="Neutral" />
   <neon-button color="high-contrast" label="High contrast" />
+</div>`;
+
+  private brandColorExamples = `<div class="example--horizontal example--wrap">
   <neon-button color="brand" label="Brand" />
   <neon-button color="primary" label="Primary" />
+</div>`;
+
+  private functionalColorExamples = `<div class="example--horizontal example--wrap">
   <neon-button color="info" label="Info" />
   <neon-button color="success" label="Success" />
   <neon-button color="warn" label="Warn" />
   <neon-button color="error" label="Error" />
 </div>`;
 
-  private styleExamples = `<div class="collection">
+  private styleExamples = `<div class="example--vertical">
   <neon-button button-style="solid" label="Solid button" />
   <neon-button button-style="outline" label="Outline button" />
   <neon-button button-style="text" label="Text button" />
@@ -45,17 +53,17 @@ export default class Button extends Vue {
   <neon-button :full-width="true" style="outline" label="Full width button" />
 </div>`;
 
-  private withIconExamples = `<div class="collection">
+  private withIconExamples = `<div class="example--horizontal">
   <neon-button icon="plus" label="With icon" />
   <neon-button icon="plus" icon-position="right" label="Positioned right" />
 </div>`;
 
-  private iconOnlyExamples = `<div class="collection">
+  private iconOnlyExamples = `<div class="example--horizontal">
   <neon-button icon="plus" />
   <neon-button :circular="true" icon="plus" />
 </div>`;
 
-  private stateExamples = `<div class="collection">
+  private stateExamples = `<div class="example--horizontal">
   <neon-note color="info">
     <span>
       <strong>Note:</strong> add button states (<strong>loading, success, error</strong>) to
@@ -90,8 +98,16 @@ export default class Button extends Vue {
       template: this.sizeExamples,
     },
     {
-      title: 'Button colors',
-      template: this.colorExamples,
+      title: 'Neutral colors',
+      template: this.neutralColorExamples,
+    },
+    {
+      title: 'Brand colors',
+      template: this.brandColorExamples,
+    },
+    {
+      title: 'Functional colors',
+      template: this.functionalColorExamples,
     },
     {
       title: 'Button styles',

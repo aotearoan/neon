@@ -13,7 +13,7 @@
       </p>
       <neon-note color="error">
         <span>
-          <strong>Note: </strong>For performance reasons, dynamically switching themes is not recommended. Include a
+          <strong>Note: </strong> For performance reasons, dynamically switching themes is not recommended. Include a
           single theme will keep CSS includes to a reasonable size.</span
         >
       </neon-note>

@@ -13,7 +13,7 @@
       </p>
       <neon-note color="info">
         <span
-          ><strong>Note:</strong>use the class <em class="neon-color-text-info">neon-text-h0</em> to display H0
+          ><strong>Note:</strong> use the class <em class="neon-color-text-info">neon-text-h0</em> to display H0
           text.</span
         >
       </neon-note>
@@ -32,7 +32,7 @@
       <h3>Paragraphs</h3>
       <neon-note color="info">
         <span
-          ><strong>Note:</strong>For improved readability, paragraph text is limited to a maximum width. The default
+          ><strong>Note:</strong> For improved readability, paragraph text is limited to a maximum width. The default
           width is 70ch but this is customizable in SASS.</span
         >
       </neon-note>

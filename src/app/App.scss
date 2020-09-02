@@ -14,9 +14,9 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
       $color-api-docs-property-name: l3;
 
       // application dark mode SASS
-      @import 'sass/editor-colors';
-      @import 'sass/api-docs-colors';
-      @import 'sass/component-docs-colors';
+      @import 'components/editor/Editor-colors';
+      @import 'components/api-docs/ApiDocs-colors';
+      @import 'components/component-documentation/ComponentDocumentation-colors';
 
       @import 'views/design/color/Color-colors';
       @import 'views/home/Home-colors';
@@ -72,9 +72,9 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
       $background-color-component-header: darken($background-color-card, 2);
 
       // application light mode SASS
-      @import 'sass/editor-colors';
-      @import 'sass/api-docs-colors';
-      @import 'sass/component-docs-colors';
+      @import 'components/editor/Editor-colors';
+      @import 'components/api-docs/ApiDocs-colors';
+      @import 'components/component-documentation/ComponentDocumentation-colors';
 
       @import 'views/design/color/Color-colors';
       @import 'views/home/Home-colors';
@@ -110,10 +110,11 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
     }
 
     // application classic theme SASS
-    @import 'sass/editor';
-    @import 'sass/example';
-    @import 'sass/component-docs';
-    @import 'sass/api-docs';
+    @import 'components/editor/Editor';
+    @import 'components/examples/Examples';
+    @import 'components/example/Example';
+    @import 'components/component-documentation/ComponentDocumentation';
+    @import 'components/api-docs/ApiDocs';
 
     @import 'views/design/color/Color';
     @import 'views/presentation/icons/Icons';
@@ -205,18 +206,6 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
     h5,
     h6 {
       font-style: $font-style-headings;
-    }
-
-    .collection {
-      flex-direction: column;
-
-      & > *:not(:last-child) {
-        margin-bottom: 4 * $base-space;
-      }
-
-      &:not(:last-child) {
-        margin-bottom: 6 * $base-space;
-      }
     }
 
     .neon-card + .neon-card {

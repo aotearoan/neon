@@ -1,12 +1,12 @@
 <template>
-  <neon-card v-if="examples" class="examples">
-    <neon-card-header>
-      <h2>Examples</h2>
-    </neon-card-header>
-    <neon-card-body v-for="example in examples" :key="example.title" class="example" :full-width="example.fullWidth">
+  <div v-if="examples" class="examples">
+    <h2 :class="{ 'examples__title--no-card': examples[0].noCard }">
+      {{ examples.length > 1 ? 'Examples' : 'Example' }}
+    </h2>
+    <div v-for="example in examples" :key="example.title" class="example" :full-width="example.fullWidth">
       <example :example="example" />
-    </neon-card-body>
-  </neon-card>
+    </div>
+  </div>
 </template>
 
 <script lang="ts" src="./Examples.ts"></script>

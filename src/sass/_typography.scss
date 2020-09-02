@@ -35,7 +35,7 @@ span {
 h1 {
   font-family: $heading-font-family;
   font-weight: $h1-weight;
-  margin: 0 0 5 * $base-space;
+  margin: 0 0 3 * $base-space;
   font-size: $h1-size;
   line-height: $line-height-headings-ratio;
 }
@@ -43,7 +43,7 @@ h1 {
 h2 {
   font-family: $heading-font-family;
   font-weight: $h2-weight;
-  margin: 0 0 4 * $base-space;
+  margin: 0 0 3 * $base-space;
   font-size: $h2-size;
   line-height: $line-height-headings-ratio;
 }
@@ -51,7 +51,7 @@ h2 {
 h3 {
   font-family: $heading-font-family;
   font-weight: $h3-weight;
-  margin: 0 0 3 * $base-space;
+  margin: 0 0 2 * $base-space;
   font-size: $h3-size;
   line-height: $line-height-headings-ratio;
 }

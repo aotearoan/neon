@@ -2,23 +2,26 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 import Examples from '../examples/Examples.vue';
 import ApiDocs from '../api-docs/ApiDocs.vue';
 import { ExampleModel } from '../example/ExampleModel';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonTab, NeonTabs } from '../../../components';
+import { NeonTab, NeonTabs } from '../../../components';
 import { DocumentationModel } from '../ApiModel';
 import { MenuModel } from '../../Menu';
+
+interface SubDocumentationModel {
+  api: DocumentationModel;
+  name: string;
+}
 
 @Component({
   components: {
     ApiDocs,
     Examples,
-    NeonCard,
-    NeonCardBody,
-    NeonCardHeader,
     NeonTab,
     NeonTabs,
   },
 })
 export default class ComponentDocumentation extends Vue {
   private apiModel: DocumentationModel | null = null;
+  private subApiModels: SubDocumentationModel[] = [];
 
   private tabs = [
     {
@@ -63,6 +66,16 @@ export default class ComponentDocumentation extends Vue {
       response.json().then((api) => {
         this.apiModel = api;
       });
+    });
+
+    (this.model.subComponents || []).forEach((subComp) => {
+      fetch(`${process.env.VUE_APP_RESOURCE_URL}docs/${this.path}/${subComp.path}/${subComp.name}.json`).then(
+        (response) => {
+          response.json().then((api) => {
+            this.subApiModels.push({ api, name: subComp.name });
+          });
+        },
+      );
     });
   }
 }

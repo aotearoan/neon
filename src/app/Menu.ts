@@ -8,8 +8,14 @@ export interface MenuModel {
   keywords?: string;
   name?: TranslateResult;
   component?: string;
+  subComponents?: SubComponent[];
   group?: TranslateResult;
   children?: MenuModel[];
+}
+
+export interface SubComponent {
+  path: string;
+  name: string;
 }
 
 export class Menu {
@@ -93,6 +99,20 @@ export class Menu {
           page: 'Card',
           keywords: 'section container',
           component: 'NeonCard',
+          subComponents: [
+            {
+              path: 'header',
+              name: 'NeonCardHeader',
+            },
+            {
+              path: 'body',
+              name: 'NeonCardBody',
+            },
+            {
+              path: 'footer',
+              name: 'NeonCardFooter',
+            },
+          ],
         },
         {
           path: 'drawer',

@@ -1,5 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonAlertService, NeonButton, NeonCard, NeonCardBody, NeonCardHeader } from '../../../../components';
+import { NeonAlertService, NeonButton } from '../../../../components';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
 import { Menu, MenuModel } from '../../../Menu';
 import Editor from '../../../components/editor/Editor.vue';
@@ -7,9 +7,6 @@ import Editor from '../../../components/editor/Editor.vue';
 @Component({
   components: {
     NeonButton,
-    NeonCard,
-    NeonCardHeader,
-    NeonCardBody,
     ComponentDocumentation,
     Editor,
   },

@@ -14,9 +14,11 @@ import ComponentDocumentation from '../../../components/component-documentation/
 export default class Card extends Vue {
   private menuModel: MenuModel | null = null;
 
+  private headline = 'A component for content layout within a page';
+
   private example = `<neon-card>
   <neon-card-header>
-    <h1>Card header</h1>
+    <h2>Card header</h2>
   </neon-card-header>
   <neon-card-body>
     <p>Card body</p>
@@ -36,10 +38,28 @@ export default class Card extends Vue {
   </neon-card-footer>
 </neon-card>`;
 
+  private horizontalExample = `<neon-card orientation="horizontal">
+  <neon-card-header>
+    <h2>Header</h2>
+  </neon-card-header>
+  <neon-card-body>
+    <p>Spicy jalapeno bacon ipsum dolor amet biltong porchetta cupim sausage pork loin. Ham porchetta brisket.</p>
+  </neon-card-body>
+  <neon-card-footer>
+    <neon-button label="Cancel" />
+    <neon-button label="Accept" color="primary" />
+  </neon-card-footer>
+</neon-card>`;
+
   private examples = [
     {
-      title: 'Card example',
+      title: 'Vertical card',
       template: this.example,
+      noCard: true,
+    },
+    {
+      title: 'Horizontal card',
+      template: this.horizontalExample,
       noCard: true,
     },
   ];
