@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <h3 class="api-docs__tab-title">API</h3>
+  <div class="api-docs__wrapper">
     <neon-card class="api-docs" v-if="apiModel">
       <neon-card-header>
         <h2 class="neon-h3">{{ componentName }} API</h2>

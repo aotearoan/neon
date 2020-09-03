@@ -32,6 +32,14 @@ $height-component-header-mobile: 83px;
     }
   }
 
+  &__tab-title {
+    display: none;
+
+    @include responsive(mobile-large) {
+      display: flex;
+    }
+  }
+
   &__header-container,
   .neon-tab {
     width: 100%;

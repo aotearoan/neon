@@ -1,9 +1,9 @@
 .api-docs {
-  &__tab-title {
-    display: none;
+  &__wrapper:not(:last-child) {
+    margin-bottom: 8 * $base-space;
 
     @include responsive(mobile-large) {
-      display: flex;
+      margin-bottom: 4 * $base-space;
     }
   }
 
