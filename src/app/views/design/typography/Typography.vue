@@ -23,6 +23,15 @@
         <h4>H4 heading</h4>
         <h5>H5 heading</h5>
         <h6>H6 heading</h6>
+        <h2 class="neon-h4 typography-scale">SASS Mixins and classes</h2>
+        <p>
+          One of the issues with headings in HTML is handling a mismatch between the page structure and the styles. E.g.
+          In a card component the title might semantically be an H1 but in the design it needs to look like an H3.
+        </p>
+        <p>
+          Neon provides classes and mixins named <em>neon-h0</em> to <em>neon-h6</em> to allow developers to override
+          the style of any element with the correct styles from the typography scale.
+        </p>
       </neon-card-body>
     </neon-card>
     <neon-card>
@@ -67,6 +76,8 @@
           To find out how to adjust text colors, see
           <neon-link href="/design/color#color-classes">Color classes</neon-link>.
         </p>
+        <h2 class="neon-h4">Monospaced text</h2>
+        <p class="neon-monospaced">Use the class <em>neon-monospaced</em> to display text in monospace.</p>
         <h2 class="neon-h4">Numbers</h2>
         <p>
           Use the <em>neon-number</em> class the represent numeric data as tabular nums so that the numbers align
