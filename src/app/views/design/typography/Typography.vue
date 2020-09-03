@@ -31,13 +31,13 @@
       </neon-card-header>
       <neon-card-body>
         <neon-anchor id="body-text" />
+        <h2 class="neon-h4">Paragraph text</h2>
         <neon-note color="info">
           <span
             ><strong>Note:</strong> For improved readability, paragraph text is limited to a maximum width. The default
             width is 70ch but this is customizable in SASS.</span
           >
         </neon-note>
-        <h2 class="neon-h4">Paragraph text</h2>
         <p>
           The default paragraph text. I'm baby coloring book kogi raw denim letterpress, normcore artisan pok pok.
           Cornhole vice lumbersexual affogato tumblr knausgaard. Raw denim squid semiotics mlkshk irony thundercats. Pug
