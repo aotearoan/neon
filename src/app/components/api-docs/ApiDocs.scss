@@ -1,19 +1,33 @@
 .api-docs {
+  &__tab-title {
+    display: none;
+
+    @include responsive(mobile-large) {
+      display: flex;
+    }
+  }
+
   & > h2 {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
+  &__desktop,
+  &__responsive {
+    margin-top: 2 * $base-space;
+  }
+
   &__section {
-    &:not(:first-child) {
-      margin-top: 6 * $base-space;
+    margin-bottom: 4 * $base-space;
+
+    &:last-child {
+      margin-bottom: 8 * $base-space;
     }
   }
 
   &__title {
-    margin-top: 2 * $base-space;
-    margin-bottom: 0;
+    margin-bottom: -2 * $base-space;
   }
 
   &__name,

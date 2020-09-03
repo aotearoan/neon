@@ -18,7 +18,7 @@ export default class Card extends Vue {
 
   private example = `<neon-card>
   <neon-card-header>
-    <h2>Card header</h2>
+    <h4>Card header</h4>
   </neon-card-header>
   <neon-card-body>
     <p>Card body</p>
@@ -40,14 +40,14 @@ export default class Card extends Vue {
 
   private horizontalExample = `<neon-card orientation="horizontal">
   <neon-card-header>
-    <h2>Header</h2>
+    <h4>Header</h4>
   </neon-card-header>
   <neon-card-body>
     <p>Spicy jalapeno bacon ipsum dolor amet biltong porchetta cupim sausage pork loin. Ham porchetta brisket.</p>
   </neon-card-body>
   <neon-card-footer>
-    <neon-button label="Cancel" />
-    <neon-button label="Accept" color="primary" />
+    <neon-button size="s" label="Cancel" />
+    <neon-button size="s" label="Accept" color="primary" />
   </neon-card-footer>
 </neon-card>`;
 

@@ -1,7 +1,7 @@
 <template>
-  <div v-if="example.noCard">
+  <div v-if="example.noCard" class="example--no-card">
     <h3>{{ example.title }}</h3>
-    <div class="example__output" :class="{ 'example__output--full-width': example.fullWidth }">
+    <div class="example__output">
       <v-runtime-template :template-props="example.data || {}" :template="example.template" />
     </div>
     <div class="example__code">
@@ -13,7 +13,7 @@
       <h3>{{ example.title }}</h3>
     </neon-card-header>
     <neon-card-body>
-      <div class="example__output" :class="{ 'example__output--full-width': example.fullWidth }">
+      <div class="example__output">
         <v-runtime-template :template-props="example.data || {}" :template="example.template" />
       </div>
       <div class="example__code">

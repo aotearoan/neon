@@ -1,6 +1,6 @@
 <template>
   <component-documentation v-if="menuModel" :examples="examples" :model="menuModel" :headline="headline">
-    <h2>Description</h2>
+    <h2 class="neon-h3">Description</h2>
     <p>
       <strong>NeonNote</strong> is designed to display notes, hints or quotes to the user. Notes are available in all
       colors and they can also be configured with a close button.

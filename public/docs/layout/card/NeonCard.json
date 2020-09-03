@@ -18,8 +18,15 @@
     },
     {
       "name": "horizontalBreakpoint",
-      "tags": {},
-      "description": "The breakpoint to switch horizontal cards to vertical cards. Accepts the values mobile, mobile-large and tablet.",
+      "tags": {
+        "type": [
+          {
+            "title": "type",
+            "description": "NeonResponsive"
+          }
+        ]
+      },
+      "description": "The breakpoint to switch horizontal cards to vertical cards. Accepts <em>Mobile | MobileLarge | Tablet</em> ONLY.",
       "type": {
         "name": "union",
         "elements": [

@@ -2,11 +2,11 @@
   <div>
     <neon-card>
       <neon-card-header>
-        <h1>Getting Started</h1>
+        <h1 class="neon-h3">Getting Started</h1>
       </neon-card-header>
       <neon-card-body>
         <neon-anchor id="installation" />
-        <h2>Installation</h2>
+        <h2 class="neon-h4">Installation</h2>
         <p>Install with NPM:</p>
         <editor :read-only="true" language="bash" value="npm install @aotearoan/neon" />
         <p>or yarn:</p>
@@ -14,14 +14,14 @@
       </neon-card-body>
       <neon-card-body>
         <neon-anchor id="typescript" />
-        <h2>Javascript/Typescript</h2>
+        <h2 class="neon-h4">Javascript/Typescript</h2>
         <p>Import components and supporting classes like so:</p>
         <editor :read-only="true" language="typescript" :value="importComponents" />
       </neon-card-body>
       <neon-card-body>
         <neon-anchor id="sass" />
-        <h2>SASS</h2>
-        <p>First select a theme:</p>
+        <h2 class="neon-h4">SASS</h2>
+        <span>First select a theme:</span>
         <ul>
           <li>classic</li>
         </ul>

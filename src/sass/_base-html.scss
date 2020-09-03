@@ -22,13 +22,13 @@ ul {
 
   > li {
     list-style-type: none;
+    margin: 0;
   }
 
   &:not(.no-style) > li {
     display: inline;
     max-width: $max-paragraph-width;
     padding-left: 7 * $base-space;
-    margin-top: 2 * $base-space;
 
     &:before {
       content: '—';
@@ -57,22 +57,31 @@ p + pre {
   margin-top: 0;
 }
 
-p + ul {
-  margin-top: -2 * $base-space;
+p + ul & > li {
+  margin-top: 2 * $base-space;
 }
 
 pre + p {
-  margin-top: 3 * $base-space;
+  margin-top: 2 * $base-space;
 }
 
+blockquote,
+.neon-note,
+table,
 p {
   & + h1,
+  & + .neon-h1,
   & + h2,
+  & + .neon-h2,
   & + h3,
+  & + .neon-h3,
   & + h4,
+  & + .neon-h4,
   & + h5,
-  & + h6 {
-    margin-top: 2 * $base-space;
+  & + .neon-h5,
+  & + h6,
+  & + .neon-h6 {
+    margin-top: 4 * $base-space;
   }
 }
 

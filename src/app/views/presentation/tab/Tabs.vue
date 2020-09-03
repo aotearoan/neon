@@ -2,7 +2,7 @@
   <component-documentation v-if="menuModel" :examples="examples" :model="menuModel" :headline="headline">
     <neon-card>
       <neon-card-header>
-        <h2>Description</h2>
+        <h2 class="neon-h3">Description</h2>
       </neon-card-header>
       <neon-card-body>
         <p>

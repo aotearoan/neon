@@ -1,11 +1,11 @@
 <template>
   <neon-card>
     <neon-card-header>
-      <h1>Colors</h1>
+      <h1 class="neon-h3">Colors</h1>
     </neon-card-header>
     <neon-card-body>
       <neon-anchor id="introduction" />
-      <h2>Introduction</h2>
+      <h2 class="neon-h4">Introduction</h2>
       <p>
         Neon uses the concept of <strong>Functional colors</strong> where colors have semantic meaning, e.g. a brand
         color or a warning color.
@@ -33,8 +33,8 @@
     </neon-card-body>
     <neon-card-body class="color-palettes">
       <neon-anchor id="brand-palettes" />
-      <h2>Brand palettes</h2>
-      <h3>brand</h3>
+      <h2 class="neon-h4">Brand palettes</h2>
+      <h3 class="neon-h5">brand</h3>
       <p>The palette for the main brand color.</p>
       <div class="color-list">
         <div class="color-list-section">
@@ -58,7 +58,7 @@
           </div>
         </div>
       </div>
-      <h3>primary</h3>
+      <h3 class="neon-h5">primary</h3>
       <p>The palette for the primary color used in an application.</p>
       <div class="color-list">
         <div class="color-list-section">
@@ -85,8 +85,8 @@
     </neon-card-body>
     <neon-card-body class="color-palettes">
       <neon-anchor id="functional-palettes" />
-      <h2>Functional palettes</h2>
-      <h3>info</h3>
+      <h2 class="neon-h4">Functional palettes</h2>
+      <h3 class="neon-h5">info</h3>
       <p>The color palette used to convey information in components (e.g. buttons, alerts, notes).</p>
       <div class="color-list">
         <div class="color-list-section">
@@ -110,7 +110,7 @@
           </div>
         </div>
       </div>
-      <h3>success</h3>
+      <h3 class="neon-h5">success</h3>
       <p>The color palette used to indicate successful or positive actions.</p>
       <div class="color-list">
         <div class="color-list-section">
@@ -134,7 +134,7 @@
           </div>
         </div>
       </div>
-      <h3>warn</h3>
+      <h3 class="neon-h5">warn</h3>
       <p>The color palette used to indicate warnings.</p>
       <div class="color-list">
         <div class="color-list-section">
@@ -158,7 +158,7 @@
           </div>
         </div>
       </div>
-      <h3>error</h3>
+      <h3 class="neon-h5">error</h3>
       <p>The color palette used to indicate dangerous or failed actions.</p>
       <div class="color-list">
         <div class="color-list-section">
@@ -185,8 +185,8 @@
     </neon-card-body>
     <neon-card-body class="color-palettes">
       <neon-anchor id="neutral-palettes" />
-      <h2>Neutral palettes</h2>
-      <h3>neutral</h3>
+      <h2 class="neon-h4">Neutral palettes</h2>
+      <h3 class="neon-h5">neutral</h3>
       <p>Used the most often, this is the default grayscale palette used across all components.</p>
       <div class="color-list">
         <div class="color-list-section">
@@ -210,7 +210,7 @@
           </div>
         </div>
       </div>
-      <h3>high-contrast</h3>
+      <h3 class="neon-h5">high-contrast</h3>
       <p>
         A higher contrast grayscale palette which can be used for greater accessibility and higher impact without adding
         color.
@@ -237,7 +237,7 @@
           </div>
         </div>
       </div>
-      <h3>low-contrast</h3>
+      <h3 class="neon-h5">low-contrast</h3>
       <p>
         A lower contrast grayscale palette which can be used for more subtle components which shouldn't draw the user's
         attention.
@@ -273,12 +273,12 @@
     </neon-card-body>
     <neon-card-body>
       <neon-anchor id="color-classes" />
-      <h2>Color classes</h2>
+      <h2 class="neon-h4">Color classes</h2>
       <p>
         Neon provides convenience classes for text colors as well as the full complement of background colors for each
         palette
       </p>
-      <h3>Text colors</h3>
+      <h3 class="neon-h5">Text colors</h3>
       <example :example="example" />
     </neon-card-body>
   </neon-card>

@@ -1,10 +1,10 @@
 <template>
   <component-documentation v-if="menuModel" :examples="examples" :model="menuModel" :headline="headline">
-    <h2>Description</h2>
+    <h2 class="neon-h3">Description</h2>
     <p>
       The <strong>NeonAlert</strong> component can be used to display notifications to the user. To use, include the
       <strong>NeonAlert</strong> component only once on your page (usually just outside your main
-      <strong>&lt;router-view /&gt;</strong>):
+      <em>&lt;router-view /&gt;</em>):
     </p>
     <editor :read-only="true" value="&lt;neon-alert&gt;&lt;/neon-alert&gt;" language="html" />
     <p>Then use the following static methods on <strong>NeonAlertService</strong> to display alerts:</p>

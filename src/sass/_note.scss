@@ -50,8 +50,22 @@ blockquote,
   }
 }
 
-p + blockquote {
-  margin-top: 3 * $base-space;
+.neon-h1,
+.neon-h2,
+.neon-h3,
+.neon-h4,
+.neon-h5,
+.neon-h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  & + blockquote,
+  & + .neon-note {
+    margin-top: 2 * $base-space;
+  }
 }
 
 .neon-note {

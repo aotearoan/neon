@@ -24,7 +24,7 @@
   }
 
   .neon-card-body {
-    flex: 1;
+    flex: 1 1 auto;
   }
 }
 
@@ -59,6 +59,12 @@
       border-top-right-radius: $border-radius;
     }
 
+    .neon-h1,
+    .neon-h2,
+    .neon-h3,
+    .neon-h4,
+    .neon-h5,
+    .neon-h6,
     h1,
     h2,
     h3,

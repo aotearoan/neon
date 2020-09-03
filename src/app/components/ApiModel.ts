@@ -5,11 +5,21 @@ export interface DocumentationModel {
   slots?: SlotModel[];
 }
 
+export interface TagModel {
+  title: string;
+  description: string;
+}
+
+export interface TagsModel {
+  type?: TagModel[];
+}
+
 export interface PropertyModel {
   name?: string;
   required?: boolean;
   type?: PropTypeModel;
   defaultValue?: PropDefaultModel;
+  tags?: TagsModel;
 }
 
 export interface EventModel {

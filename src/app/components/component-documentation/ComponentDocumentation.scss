@@ -1,11 +1,11 @@
-$height-component-header-desktop: 151px;
-$height-component-header-mobile: 75px;
+$height-component-header-desktop: 172px;
+$height-component-header-mobile: 83px;
 
 .component-documentation {
-  margin-top: $height-component-header-desktop;
+  margin-top: $height-component-header-desktop - $spacing-vertical-desktop;
 
   @include responsive(mobile-large) {
-    margin-top: $height-component-header-mobile;
+    margin-top: $height-component-header-mobile - $spacing-vertical-mobile;
   }
 
   &__header {
@@ -40,45 +40,29 @@ $height-component-header-mobile: 75px;
   }
 
   & > .neon-tab {
-    padding-top: 8 * $base-space;
+    padding-top: 0;
     padding-bottom: 0;
 
     &:nth-child(2) {
       padding-top: 4 * $base-space;
     }
 
-    & > h2,
-    .examples > h2,
-    .api-docs > h2 {
-      margin-top: 6 * $base-space;
-
-      @include responsive(mobile-large) {
-        margin-top: 2 * $base-space;
-      }
-    }
-
-    .api-docs:not(:first-child) > h2 {
-      margin-top: 8 * $base-space;
-
-      @include responsive(mobile-large) {
-        margin-top: 4 * $base-space;
+    @include responsive(mobile-large) {
+      &:nth-child(3),
+      &:nth-child(4) {
+        margin-top: 8 * $base-space;
       }
     }
   }
 
   &__title {
-    margin-bottom: 2 * $base-space;
-
-    @include responsive(mobile-large) {
-      margin-bottom: 0;
-    }
+    margin-bottom: 0;
   }
 
   &__headline {
     margin-bottom: 8 * $base-space;
     font-weight: 300;
     font-size: $h6-size;
-    opacity: 0.66;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -94,21 +78,36 @@ $height-component-header-mobile: 75px;
   }
 
   @include responsive(mobile-large) {
+    .neon-h0 {
+      font-size: $h1-size;
+    }
+
+    .neon-h1,
     h1 {
       font-size: $h2-size;
     }
+
+    .neon-h2,
     h2 {
       font-size: $h3-size;
     }
+
+    .neon-h3,
     h3 {
       font-size: $h4-size;
     }
+
+    .neon-h4,
     h4 {
       font-size: $h5-size;
     }
+
+    .neon-h5,
     h5 {
       font-size: $h6-size;
     }
+
+    .neon-h6,
     h6 {
       font-size: $base-font-size;
     }

@@ -16,6 +16,15 @@ p {
   }
 }
 
+em {
+  font-weight: $font-weight-em;
+}
+
+strong {
+  font-weight: $font-weight-strong;
+  letter-spacing: $component-letter-spacing-s;
+}
+
 span {
   max-width: $max-paragraph-width;
 }
@@ -24,60 +33,103 @@ span {
   font-variant: tabular-nums;
 }
 
-.neon-text-h0 {
+$typography-margin-unit: 2 * $base-space;
+
+@mixin neon-h0 {
   font-family: $heading-font-family;
   font-weight: $h0-weight;
-  margin: 0 0 6 * $base-space;
+  margin-bottom: $typography-margin-unit;
+  margin-top: 0;
   font-size: $h0-size;
   line-height: $line-height-headings-ratio;
 }
 
-h1 {
+.neon-h0 {
+  @include neon-h0;
+}
+
+@mixin neon-h1 {
   font-family: $heading-font-family;
   font-weight: $h1-weight;
-  margin: 0 0 3 * $base-space;
+  margin-bottom: $typography-margin-unit;
+  margin-top: 0;
   font-size: $h1-size;
   line-height: $line-height-headings-ratio;
 }
 
-h2 {
+.neon-h1,
+h1 {
+  @include neon-h1;
+}
+
+@mixin neon-h2 {
   font-family: $heading-font-family;
   font-weight: $h2-weight;
-  margin: 0 0 3 * $base-space;
+  margin-bottom: $typography-margin-unit;
+  margin-top: 0;
   font-size: $h2-size;
   line-height: $line-height-headings-ratio;
 }
 
-h3 {
+.neon-h2,
+h2 {
+  @include neon-h2;
+}
+
+@mixin neon-h3 {
   font-family: $heading-font-family;
   font-weight: $h3-weight;
-  margin: 0 0 2 * $base-space;
+  margin-bottom: $typography-margin-unit;
+  margin-top: 0;
   font-size: $h3-size;
   line-height: $line-height-headings-ratio;
 }
 
-h4 {
+.neon-h3,
+h3 {
+  @include neon-h3;
+}
+
+@mixin neon-h4 {
   font-family: $heading-font-family;
   font-weight: $h4-weight;
-  margin: 0 0 2 * $base-space;
+  margin-bottom: $typography-margin-unit;
+  margin-top: 0;
   font-size: $h4-size;
   line-height: $line-height-headings-ratio;
 }
 
-h5 {
+.neon-h4,
+h4 {
+  @include neon-h4;
+}
+
+@mixin neon-h5 {
   font-family: $heading-font-family;
   font-weight: $h5-weight;
-  margin: 0 0 $base-space;
+  margin-bottom: $typography-margin-unit;
+  margin-top: 0;
   font-size: $h5-size;
   line-height: $line-height-headings-ratio;
 }
 
-h6 {
+.neon-h5,
+h5 {
+  @include neon-h5;
+}
+
+@mixin neon-h6 {
   font-family: $heading-font-family;
   font-weight: $h6-weight;
-  margin: 0 0 $base-space;
+  margin-bottom: $typography-margin-unit;
+  margin-top: 0;
   font-size: $h6-size;
   line-height: $line-height-headings-ratio;
+}
+
+.neon-h6,
+h6 {
+  @include neon-h6;
 }
 
 label {

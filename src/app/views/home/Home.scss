@@ -27,8 +27,7 @@
   }
 
   h1 {
-    font-size: $h0-size;
-    font-weight: $h0-weight;
+    @include neon-h0;
     text-align: center;
     margin-top: 30 * $base-space;
   }

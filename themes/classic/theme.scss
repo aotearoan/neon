@@ -45,7 +45,7 @@ $border-width: 1px !default;
 $border-style: solid !default;
 
 /* typography */
-$typography-scale: 1.15 !default;
+$typography-scale: 1.2 !default; // Minor third https://type-scale.com/
 $base-font-size: 16px !default;
 
 $font-size-xxs: $base-font-size / ($typography-scale * $typography-scale * $typography-scale) !default;
@@ -62,13 +62,16 @@ $h1-size: $h2-size * $typography-scale !default;
 // AKA branding font size, used for landing page & banners etc...
 $h0-size: $h1-size * $typography-scale * $typography-scale !default;
 
-$h6-weight: 500 !default;
-$h5-weight: 500 !default;
+$h6-weight: 600 !default;
+$h5-weight: 600 !default;
 $h4-weight: 600 !default;
 $h3-weight: 600 !default;
-$h2-weight: 700 !default;
-$h1-weight: 700 !default;
-$h0-weight: 700 !default;
+$h2-weight: 600 !default;
+$h1-weight: 600 !default;
+$h0-weight: 600 !default;
+
+$font-weight-em: 200 !default;
+$font-weight-strong: 800 !default;
 
 $line-height-headings-ratio: 1.125 !default;
 $line-height-ratio: 1.618 !default;

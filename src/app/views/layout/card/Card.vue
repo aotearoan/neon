@@ -1,6 +1,6 @@
 <template>
   <component-documentation v-if="menuModel" :examples="examples" :model="menuModel" :headline="headline">
-    <h2>Description</h2>
+    <h2 class="neon-h3">Description</h2>
     <p>
       <strong>NeonCard</strong> is a key component for the layout of content within pages. Card consist of any number of
       <strong>NeonCardHeader</strong>, <strong>NeonCardBody</strong> and <strong>NeonCardFooter</strong> components.

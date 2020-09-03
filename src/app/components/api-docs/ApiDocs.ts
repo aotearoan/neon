@@ -20,7 +20,9 @@ export default class ApiDocs extends Vue {
   }
 
   private typeName(prop: PropertyModel) {
-    if (prop && prop.type) {
+    if (prop.tags && prop.tags.type) {
+      return prop.tags.type[0].description;
+    } else if (prop && prop.type) {
       const type: PropTypeModel = prop.type;
 
       if (this.isArray(prop)) {

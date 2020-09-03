@@ -69,7 +69,6 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
       @import '../../themes/classic/light';
 
       $color-api-docs-property-name: d2;
-      $background-color-component-header: darken($background-color-card, 2);
 
       // application light mode SASS
       @import 'components/editor/Editor-colors';
@@ -154,7 +153,11 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
       .logo-wrapper {
         display: flex;
         flex-direction: row;
-        align-items: center;
+        align-items: flex-end;
+
+        @include responsive(tablet) {
+          align-items: center;
+        }
 
         .neon-button {
           margin-right: 4 * $base-space;
@@ -175,7 +178,6 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
         opacity: 0.9;
         font-style: oblique;
         letter-spacing: 1px;
-        font-weight: 200;
         line-height: 1.125;
         user-select: none;
 
@@ -199,6 +201,12 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
       grid-template-rows: auto 1fr;
     }
 
+    .neon-h1,
+    .neon-h2,
+    .neon-h3,
+    .neon-h4,
+    .neon-h5,
+    .neon-h6,
     h1,
     h2,
     h3,

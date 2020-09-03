@@ -28,6 +28,7 @@ export default class Color extends Vue {
   <div class="neon-color-text-high-contrast">This is the high-contrast text color</div>
   <div class="neon-color-text-low-contrast">This is the low contrast text color</div>
 </div>`,
+    noCard: true,
   };
 
   private colorPalette = `$info-palette: (

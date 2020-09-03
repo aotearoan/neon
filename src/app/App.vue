@@ -33,7 +33,7 @@
             <neon-link href="/" class="homepage-link">
               <neon-logo></neon-logo>
             </neon-link>
-            <span class="tagline">A VueJs design library</span>
+            <span class="tagline neon-color-text-neutral">A VueJs design library</span>
           </span>
           <div>
             <div id="nav">
