@@ -4,7 +4,7 @@
       svg {
         path,
         rect,
-        circle {
+        circle:not(.neon--no-fill) {
           fill: map-get($palette, $color-icon);
         }
       }

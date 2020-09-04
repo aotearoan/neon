@@ -37,18 +37,7 @@
       "tags": {},
       "description": "Size of the input",
       "type": {
-        "name": "union",
-        "elements": [
-          {
-            "name": "TSTypeReference"
-          },
-          {
-            "name": "TSTypeReference"
-          },
-          {
-            "name": "TSTypeReference"
-          }
-        ]
+        "name": "NeonSize"
       },
       "defaultValue": {
         "func": false,

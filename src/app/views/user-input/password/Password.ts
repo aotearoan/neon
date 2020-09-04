@@ -15,6 +15,8 @@ import ComponentDocumentation from '../../../components/component-documentation/
 export default class Password extends Vue {
   private menuModel: MenuModel | null = null;
 
+  private headline = 'An HTML password input';
+
   private data = {
     value: '1234567',
   };

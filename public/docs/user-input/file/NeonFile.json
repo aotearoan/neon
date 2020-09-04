@@ -53,18 +53,7 @@
       "tags": {},
       "description": "The file component size",
       "type": {
-        "name": "union",
-        "elements": [
-          {
-            "name": "TSTypeReference"
-          },
-          {
-            "name": "TSTypeReference"
-          },
-          {
-            "name": "TSTypeReference"
-          }
-        ]
+        "name": "NeonSize"
       },
       "defaultValue": {
         "func": false,

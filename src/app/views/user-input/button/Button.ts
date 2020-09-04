@@ -63,7 +63,7 @@ export default class Button extends Vue {
   <neon-button :circular="true" icon="plus" />
 </div>`;
 
-  private stateExamples = `<div class="example--horizontal">
+  private stateExamples = `<div class="example--vertical">
   <neon-note color="info">
     <span>
       <strong>Note:</strong> add button states (<strong>loading, success, error</strong>) to

@@ -15,6 +15,8 @@ import ComponentDocumentation from '../../../components/component-documentation/
 export default class File extends Vue {
   private menuModel: MenuModel | null = null;
 
+  private headline = 'HTML file upload input';
+
   private data = {
     files: [],
   };

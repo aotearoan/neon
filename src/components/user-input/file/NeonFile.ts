@@ -43,7 +43,7 @@ export default class NeonFile extends Vue {
    * The file component size
    */
   @Prop({ default: NeonSize.Medium })
-  public size!: NeonSize.Small | NeonSize.Medium | NeonSize.Large;
+  public size!: NeonSize;
 
   /**
    * The state of the input, used to indicate loading, success and error states

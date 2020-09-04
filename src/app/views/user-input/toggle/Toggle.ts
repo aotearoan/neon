@@ -22,6 +22,7 @@ import ComponentDocumentation from '../../../components/component-documentation/
 export default class Toggle extends Vue {
   private menuModel: MenuModel | null = null;
 
+  private headline = 'For selecting one of several items';
   private data = {
     model: [
       {
@@ -35,7 +36,6 @@ export default class Toggle extends Vue {
       {
         key: 'key-3',
         label: 'Label 3',
-        disabled: true,
       },
     ],
     iconModel: [
@@ -50,113 +50,61 @@ export default class Toggle extends Vue {
       {
         key: 'right',
         icon: 'align-right',
-        disabled: true,
       },
     ],
-    selected: 'key-2',
+    selected1: 'key-2',
+    selected2: 'key-2',
+    selected3: 'key-2',
+    selected4: 'key-2',
+    selected5: 'key-2',
+    selected6: 'key-2',
+    selected7: 'left',
+    selected8: 'key-2',
+    selected9: 'key-2',
+    selected10: 'key-2',
     iconSelected: 'centered',
     colors: Object.values(NeonFunctionalColor),
     sizes: Object.values(NeonSize),
   };
 
-  private toggleTemplate = `<div>
-  <div class="example--horizontal neon-vertically-spaced">
-    <div v-for="size in sizes" :key="\`toggle-\${size}\`" class="neon-vertically-spaced">
-      <neon-toggle
-        v-for="color in colors"
-        :key="\`toggle-\${size}-\${color}\`"
-        :name="\`toggle-\${size}-\${color}\`"
-        :size="size"
-        :color="color"
-        :model="model"
-        v-model="selected"
-      />
-      <neon-toggle
-        :name="\`toggle-\${size}-disabled\`"
-        :size="size"
-        color="info"
-        :disabled="true"
-        :model="model"
-        v-model="selected"
-      />
-    </div>
-  </div>
-  <pre>selected = {{ selected }}</pre>
+  private toggleSizes = `<div class="neon-vertically-spaced">
+  <neon-toggle name="toggle-1" size="s" :model="model" v-model="selected1" />
+  <neon-toggle name="toggle-2" size="m" :model="model" v-model="selected2" />
+  <neon-toggle name="toggle-3" size="l" :model="model" v-model="selected3" />
 </div>`;
 
-  private iconTemplate = `<div>
-  <div class="example--horizontal neon-vertically-spaced">
-    <div v-for="size in sizes" :key="\`toggle-icon-\${size}\`" class="neon-vertically-spaced">
-      <neon-toggle
-        v-for="color in colors"
-        :key="\`toggle-icon-\${size}-\${color}\`"
-        :name="\`toggle-icon-\${size}-\${color}\`"
-        :size="size"
-        :color="color"
-        :model="iconModel"
-        v-model="iconSelected"
-      />
-      <neon-toggle
-        :name="\`toggle-icon-\${size}-disabled\`"
-        :size="size"
-        color="info"
-        :disabled="true"
-        :model="iconModel"
-        v-model="iconSelected"
-      />
-    </div>
-  </div>
-  <pre>selected = {{ iconSelected }}</pre>
+  private toggleColors = `<div class="neon-vertically-spaced">
+  <neon-toggle name="toggle-4" :model="model" v-model="selected4" />
+  <neon-toggle name="toggle-5" color="info" :model="model" v-model="selected5" />
+  <neon-toggle name="toggle-6" color="success" :model="model" v-model="selected6" />
 </div>`;
 
-  private radioButtonsTemplate = `<div>
-  <div class="example--horizontal">
-    <div v-for="size in sizes" :key="\`rb-\${size}\`" class="neon-vertically-spaced">
-      <neon-toggle
-        :name="\`rb-neutral-\${size}\`"
-        :size="size"
-        toggleStyle="radio-buttons"
-        color="neutral"
-        orientation="horizontal"
-        :model="model"
-        v-model="selected"
-      />
-      <neon-toggle
-        :name="\`rb-\${size}\`"
-        :size="size"
-        toggleStyle="radio-buttons"
-        color="primary"
-        :model="model"
-        v-model="selected"
-      />
-      <neon-toggle
-        :name="\`rb-\${size}-disabled\`"
-        :size="size"
-        toggleStyle="radio-buttons"
-        color="info"
-        :disabled="true"
-        :model="model"
-        v-model="selected"
-      />
-    </div>
-  </div>
-  <pre>selected = {{ selected }}</pre>
+  private toggleIcons = `<neon-toggle name="toggle-7" :model="iconModel" v-model="selected7" />`;
+
+  private radioButtons = `<div class="neon-vertically-spaced">
+  <neon-toggle name="toggle-8" orientation="horizontal" toggle-style="radio-buttons" :model="model" color="success" v-model="selected8" />
+  <neon-toggle name="toggle-9" toggle-style="radio-buttons" :model="model" v-model="selected9" />
 </div>`;
 
   private examples = [
     {
-      title: 'Toggle with labels',
-      template: this.toggleTemplate,
+      title: 'Toggle sizes',
+      template: this.toggleSizes,
+      data: this.data,
+    },
+    {
+      title: 'Toggle colors',
+      template: this.toggleColors,
       data: this.data,
     },
     {
       title: 'Toggle with icons',
-      template: this.iconTemplate,
+      template: this.toggleIcons,
       data: this.data,
     },
     {
       title: 'Radio buttons',
-      template: this.radioButtonsTemplate,
+      template: this.radioButtons,
       data: this.data,
     },
   ];

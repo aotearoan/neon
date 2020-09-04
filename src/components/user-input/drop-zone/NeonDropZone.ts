@@ -13,10 +13,10 @@ export default class NeonDropZone extends Vue {
   private active = false;
 
   /**
-   * The state of the drop zone, used to indicate loading.
+   * The state of the drop zone, used to indicate loading. ACCEPTS <em>Ready</em> and <em>Loading</em> states ONLY.
    */
   @Prop({ default: NeonState.Ready })
-  state!: NeonState.Ready | NeonState.Loading;
+  state!: NeonState;
 
   /**
    * The disabled state of the drop zone

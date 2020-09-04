@@ -36,11 +36,11 @@
     font-family: $font-family-monospaced;
     font-variant-ligatures: discretionary-ligatures;
     font-variation-settings: $monospaced-font-variation-settings;
+    white-space: nowrap;
   }
 
   &__name {
     font-variation-settings: 'wght' 550;
-    white-space: nowrap;
   }
 
   &__description {

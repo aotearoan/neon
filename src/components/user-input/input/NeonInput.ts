@@ -37,7 +37,7 @@ export default class NeonInput extends Vue {
    * Size of the input
    */
   @Prop({ default: NeonSize.Medium })
-  private size!: NeonSize.Small | NeonSize.Medium | NeonSize.Large;
+  private size!: NeonSize;
 
   /**
    * Color of the input

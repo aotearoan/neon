@@ -15,6 +15,8 @@ import ComponentDocumentation from '../../../components/component-documentation/
 export default class Input extends Vue {
   private menuModel: MenuModel | null = null;
 
+  private headline = 'HTML input and textarea component';
+
   private data = {
     indexFilter: '',
   };

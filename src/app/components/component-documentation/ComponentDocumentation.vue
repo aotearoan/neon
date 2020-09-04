@@ -11,7 +11,7 @@
       <slot></slot>
     </neon-tab>
     <neon-tab :tab="tabs[1]" :selected="selected === tabs[1].key" :toggleOnIf="true">
-      <h3 class="api-docs__tab-title">API</h3>
+      <h3 class="component-documentation__tab-title">API</h3>
       <api-docs v-if="apiModel" :api-model="apiModel" :component-name="componentName" />
       <api-docs
         v-for="subApiModel in subApiModels"

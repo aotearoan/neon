@@ -7,17 +7,9 @@
     {
       "name": "state",
       "tags": {},
-      "description": "The state of the drop zone, used to indicate loading.",
+      "description": "The state of the drop zone, used to indicate loading. ACCEPTS <em>Ready</em> and <em>Loading</em> states ONLY.",
       "type": {
-        "name": "union",
-        "elements": [
-          {
-            "name": "TSTypeReference"
-          },
-          {
-            "name": "TSTypeReference"
-          }
-        ]
+        "name": "NeonState"
       },
       "defaultValue": {
         "func": false,
