@@ -288,19 +288,19 @@ export class Menu {
     {
       path: 'enums',
       name: 'Enums',
-      group: 'Supporting classes',
+      group: 'Source',
       children: enumList.map((e) => ({ path: e })),
     },
     {
       path: 'models',
       name: 'Models',
-      group: 'Supporting classes',
+      group: 'Source',
       children: modelList.map((e) => ({ path: e })),
     },
     {
       path: 'utils',
       name: 'Utils',
-      group: 'Supporting classes',
+      group: 'Source',
       children: utilsList.map((e) => ({ path: e })),
     },
   ];
