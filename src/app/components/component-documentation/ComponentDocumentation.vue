@@ -8,6 +8,7 @@
       </div>
     </div>
     <neon-tab :tab="tabs[0]" :selected="selected === tabs[0].key" :toggleOnIf="true">
+      <h2 v-if="$slots.default" class="neon-h3">Description</h2>
       <slot></slot>
     </neon-tab>
     <neon-tab :tab="tabs[1]" :selected="selected === tabs[1].key" :toggleOnIf="true">

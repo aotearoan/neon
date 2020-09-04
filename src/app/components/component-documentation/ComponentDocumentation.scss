@@ -2,10 +2,14 @@ $height-component-header-desktop: 172px;
 $height-component-header-mobile: 83px;
 
 .component-documentation {
-  margin-top: $height-component-header-desktop - $spacing-vertical-desktop;
+  margin-top: $height-component-header-desktop - 0.5 * $spacing-vertical-desktop;
+
+  @include responsive(tablet) {
+    margin-top: $height-component-header-desktop - $spacing-vertical-tablet;
+  }
 
   @include responsive(mobile-large) {
-    margin-top: $height-component-header-mobile - $spacing-vertical-mobile;
+    margin-top: $height-component-header-mobile - 0.5 * $spacing-vertical-mobile;
   }
 
   &__header {
@@ -32,7 +36,9 @@ $height-component-header-mobile: 83px;
     }
   }
 
-  &__tab-title {
+  &__tab-title,
+  & > .neon-tab > h2,
+  .examples > h2 {
     display: none;
 
     @include responsive(mobile-large) {

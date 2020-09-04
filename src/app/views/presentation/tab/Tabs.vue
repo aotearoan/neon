@@ -1,9 +1,6 @@
 <template>
   <component-documentation v-if="menuModel" :examples="examples" :model="menuModel" :headline="headline">
     <neon-card>
-      <neon-card-header>
-        <h2 class="neon-h3">Description</h2>
-      </neon-card-header>
       <neon-card-body>
         <p>
           <strong>NeonTabs</strong> can be used to present tabbed content inside or outside cards. Each tab is defined

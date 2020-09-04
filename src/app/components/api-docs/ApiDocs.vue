@@ -15,7 +15,7 @@
             <table>
               <thead>
                 <tr>
-                  <th colspan="2">Name</th>
+                  <th>Name</th>
                   <th>Type</th>
                   <th>Default</th>
                   <th>Description</th>
@@ -23,9 +23,9 @@
               </thead>
               <tbody>
                 <tr v-for="prop in apiModel.props" :key="prop.name">
-                  <td class="api-docs__name" :colspan="prop.required ? 1 : 2">{{ prop.name }}</td>
-                  <td v-if="prop.required">
-                    <neon-label size="xs" color="brand" label="required" />
+                  <td class="api-docs__name">
+                    <span>{{ prop.name }}</span>
+                    <neon-label v-if="prop.required" size="xs" color="brand" label="required" />
                   </td>
                   <td class="api-docs__type">
                     <neon-link v-if="typeLink(prop)" :href="typeLink(prop)"

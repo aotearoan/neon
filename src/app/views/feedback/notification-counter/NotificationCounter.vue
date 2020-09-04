@@ -1,10 +1,13 @@
 <template>
   <component-documentation v-if="menuModel" :examples="examples" :model="menuModel" :headline="headline">
-    <h2 class="neon-h3">Description</h2>
-    <p>
-      Place a <strong>NeonNotificationCounter</strong> inside a positioned flex element and it will position the styled
-      counter in the top right hand corner of the parent.
-    </p>
+    <neon-card>
+      <neon-card-body>
+        <p>
+          Place a <strong>NeonNotificationCounter</strong> inside a positioned flex element and it will position the
+          styled counter in the top right hand corner of the parent.
+        </p>
+      </neon-card-body>
+    </neon-card>
   </component-documentation>
 </template>
 

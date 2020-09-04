@@ -52,8 +52,22 @@
     align-items: center;
     height: $size-l;
 
+    @include responsive(tablet) {
+      height: $size-m + $base-space;
+
+      .editor__copy {
+        height: $size-m;
+        width: $size-m;
+      }
+    }
+
     @include responsive(mobile-large) {
-      display: none;
+      height: $size-s + $base-space;
+
+      .editor__copy {
+        height: $size-s;
+        width: $size-s;
+      }
     }
   }
 

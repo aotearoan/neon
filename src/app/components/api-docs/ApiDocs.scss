@@ -30,7 +30,6 @@
     margin-bottom: -2 * $base-space;
   }
 
-  &__name,
   &__type,
   &__default {
     font-family: $font-family-monospaced;
@@ -40,7 +39,12 @@
   }
 
   &__name {
-    font-variation-settings: 'wght' 550;
+    display: flex;
+    flex-wrap: nowrap;
+
+    .neon-label {
+      margin-left: 2 * $base-space;
+    }
   }
 
   &__description {

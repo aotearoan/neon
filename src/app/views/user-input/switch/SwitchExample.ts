@@ -1,11 +1,13 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonSwitch } from '../../../../components';
+import { NeonCard, NeonCardBody, NeonSwitch } from '../../../../components';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
 import { Menu, MenuModel } from '../../../Menu';
 
 @Component({
   components: {
     ComponentDocumentation,
+    NeonCard,
+    NeonCardBody,
     NeonSwitch,
   },
 })

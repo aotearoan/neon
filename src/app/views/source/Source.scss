@@ -1,22 +1,25 @@
 .source-page {
-  .editor__wrapper {
+  .editor__container {
     @include responsive(larger-than-tablet) {
-      max-height: calc(
-        100vh - #{$top-nav-height-desktop + $footer-height-desktop + $h1-size * 1.125 + 6 * $spacing-vertical-desktop +
-          3 * $border-width}
+      @include max-height(
+        100,
+        $top-nav-height-desktop + $footer-height-desktop + $h3-size * 1.125 + 5.75 * $spacing-vertical-desktop + 3 *
+          $border-width
       );
     }
 
     @include responsive(tablet) {
-      max-height: calc(
-        100vh - #{$top-nav-height-tablet + $footer-height-tablet + $h1-size * 1.125 + 6 * $spacing-vertical-tablet + 3 *
-          $border-width}
+      @include max-height(
+        100,
+        $top-nav-height-tablet + $footer-height-tablet + $h3-size * 1.125 + 5.75 * $spacing-vertical-tablet + 3 *
+          $border-width
       );
     }
     @include responsive(mobile-large) {
-      max-height: calc(
-        100vh - #{$top-nav-height-mobile + $footer-height-mobile + $h1-size * 1.125 + 6 * $spacing-vertical-mobile + 3 *
-          $border-width}
+      @include max-height(
+        100,
+        $top-nav-height-mobile + $footer-height-mobile + $h4-size * 1.125 + 6.5 * $spacing-vertical-mobile + 3 *
+          $border-width
       );
     }
   }
