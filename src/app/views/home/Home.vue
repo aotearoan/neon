@@ -64,7 +64,7 @@
           differentiate applications from one another on the web. Neon provides multiple themes to suit a wider variety
           of tastes and styles.
         </p>
-        <neon-button href="/design/themes" color="primary" button-style="outline" label="More about Themes" size="l" />
+        <neon-button href="/design/theming" color="primary" button-style="outline" label="More about Themes" size="l" />
       </div>
       <div class="highlight">
         <neon-icon name="contrast" class="highlight-icon" />
@@ -74,7 +74,7 @@
           Neon provides light and dark modes for all themes.
         </p>
         <neon-button
-          href="/design/dark-mode"
+          href="/design/theming#dark-mode"
           color="primary"
           button-style="outline"
           label="Find out more about dark mode"
@@ -91,7 +91,7 @@
           <neon-link href="https://semver.org/">SEMVER</neon-link> so if a class changes you'll know about it.
         </p>
         <neon-button
-          href="/design/customization"
+          href="/for-developers/getting-started#sass"
           color="primary"
           button-style="outline"
           label="Find out about Customization"
@@ -111,7 +111,7 @@
           colors in both light and dark themes.
         </p>
         <neon-button
-          href="/presentation/icons"
+          href="/presentation/icon"
           color="primary"
           button-style="outline"
           label="Learn more about Icons"
