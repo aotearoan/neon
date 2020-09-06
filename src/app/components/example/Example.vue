@@ -12,11 +12,11 @@
     <neon-card-header v-if="example.title" class="example__title">
       <h3>{{ example.title }}</h3>
     </neon-card-header>
-    <neon-card-body>
-      <div class="example__output">
+    <neon-card-body :full-width="example.fixedContent">
+      <div class="example__output" :class="{ 'example__output--fixed-content': example.fixedContent }">
         <v-runtime-template :template-props="example.data || {}" :template="example.template" />
       </div>
-      <div class="example__code">
+      <div class="example__code" :class="{ 'example__code--fixed-content': example.fixedContent }">
         <editor v-if="example.template" v-model="example.template" />
       </div>
     </neon-card-body>

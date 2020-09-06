@@ -13,8 +13,20 @@ export default class NeonExpansionIndicator extends Vue {
   public expanded!: boolean;
 
   /**
+   * Display the expansion indicator in the inverse text color
+   */
+  @Prop({ default: false })
+  public inverse!: boolean;
+
+  /**
+   * Display the expansion indicator in the disabled color
+   */
+  @Prop({ default: false })
+  public disabled!: boolean;
+
+  /**
    * The color of the chevron.
    */
   @Prop({ default: NeonFunctionalColor.LowContrast })
-  public color!: boolean;
+  public color!: NeonFunctionalColor;
 }

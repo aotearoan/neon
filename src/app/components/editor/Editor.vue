@@ -10,12 +10,12 @@
         class="editor__copy"
         button-style="text"
         color="neutral"
-        size="l"
+        size="s"
         title="Copy"
         :outline="false"
         @click="copyText"
       />
-      <neon-icon v-if="readOnly" name="lock" class="editor__read-only" title="Read only" />
+      <neon-icon v-if="readOnly" name="lock" :disabled="true" class="editor__read-only" title="Read only" />
     </div>
   </div>
 </template>

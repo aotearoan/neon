@@ -1,3 +1,5 @@
+$fixed-content-height: 348px;
+
 .example {
   & + .example {
     margin-top: 8 * $base-space;
@@ -6,6 +8,73 @@
   &__output {
     border-radius: $border-radius !important;
     margin-bottom: 4 * $base-space !important;
+    position: relative;
+
+    &--fixed-content {
+      height: $fixed-content-height;
+      margin-bottom: 0 !important;
+      overflow-y: auto;
+
+      .neon-side-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100% !important;
+        min-height: 100% !important;
+
+        h6 {
+          margin-bottom: 0;
+        }
+      }
+
+      .neon-top-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .neon-page {
+        height: $fixed-content-height;
+        overflow-y: hidden;
+
+        &__container {
+          min-height: 100% !important;
+        }
+
+        .neon-side-nav {
+          top: $top-nav-height-desktop;
+
+          @include responsive(tablet) {
+            top: $top-nav-height-tablet;
+          }
+
+          @include responsive(mobile-large) {
+            top: $top-nav-height-mobile;
+          }
+        }
+
+        .neon-grid {
+          min-height: 100%;
+          width: calc(100% - #{$side-nav-width});
+
+          @include responsive(tablet) {
+            width: 100%;
+          }
+
+          .neon-grid-area {
+            border-radius: $border-radius;
+            @include padding;
+          }
+        }
+      }
+    }
+  }
+
+  &__code {
+    &--fixed-content {
+      @include margin;
+      margin-top: 0 !important;
+    }
   }
 
   &--no-card {

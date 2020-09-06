@@ -32,7 +32,7 @@
       <div v-if="toggleStyle === 'radio-buttons'" class="neon-toggle__radio-button">
         <div v-if="option.key === value" class="neon-toggle__radio-button-indicator"></div>
       </div>
-      <neon-icon v-if="option.icon" :name="option.icon" />
+      <neon-icon v-if="option.icon" :disabled="disabled || option.disabled" :name="option.icon" />
       <span v-if="option.label">{{ option.label }}</span>
     </label>
   </div>

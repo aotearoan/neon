@@ -32,7 +32,7 @@ import NeonPage from './components/layout/page/NeonPage.vue';
 import NeonPassword from './components/user-input/password/NeonPassword.vue';
 import NeonSideNav from './components/layout/side-nav/NeonSideNav.vue';
 import NeonSwitch from './components/user-input/switch/NeonSwitch.vue';
-import NeonTab from './components/presentation/tab/NeonTab.vue';
+import NeonTab from './components/presentation/tabs/tab/NeonTab.vue';
 import NeonTabs from './components/presentation/tabs/NeonTabs.vue';
 import NeonToggle from './components/user-input/toggle/NeonToggle.vue';
 import NeonTopNav from './components/layout/top-nav/NeonTopNav.vue';

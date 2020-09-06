@@ -6,9 +6,9 @@
       </neon-card-header>
       <neon-card-body>
         <p v-if="apiModel.description" v-html="apiModel.description"></p>
-        <neon-note v-if="!hasDocs" color="info"
-          ><strong>Note:</strong> The Vue API for this component contains no properties, events or slots</neon-note
-        >
+        <neon-note v-if="!hasDocs" color="info">
+          <span><strong>Note:</strong> The Vue API for this component contains no properties, events or slots</span>
+        </neon-note>
         <div class="api-docs__desktop" v-if="hasDocs">
           <section class="api-docs__section" v-if="hasProps">
             <h3 class="neon-h4 api-docs__title">Properties</h3>

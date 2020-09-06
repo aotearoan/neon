@@ -11,7 +11,6 @@ export interface NeonTreeMenuSectionModel {
 export interface NeonTreeMenuLinkModel {
   label: TranslateResult;
   key: string;
-  keywords?: TranslateResult;
   href?: string;
   anchors?: string[];
 }

@@ -1,12 +1,11 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonDropdownMenu } from '../../../../components';
+import { NeonCard, NeonCardBody, NeonDropdownMenu } from '../../../../components';
 import { Menu, MenuModel } from '../../../Menu';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
 
 @Component({
   components: {
     NeonCard,
-    NeonCardHeader,
     NeonCardBody,
     NeonDropdownMenu,
     ComponentDocumentation,
@@ -14,6 +13,8 @@ import ComponentDocumentation from '../../../components/component-documentation/
 })
 export default class DropdownMenu extends Vue {
   private menuModel: MenuModel | null = null;
+
+  private headline = 'Display navigation and actions in a dropdown';
 
   private data = {
     model: [

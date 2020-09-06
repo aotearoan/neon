@@ -1,10 +1,11 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import Examples from '../examples/Examples.vue';
 import ApiDocs from '../api-docs/ApiDocs.vue';
 import { ExampleModel } from '../example/ExampleModel';
 import { NeonTab, NeonTabs } from '../../../components';
 import { DocumentationModel } from '../ApiModel';
 import { MenuModel } from '../../Menu';
+import { Route } from 'vue-router';
 
 interface SubDocumentationModel {
   api: DocumentationModel;
@@ -49,6 +50,16 @@ export default class ComponentDocumentation extends Vue {
   @Prop({ default: [] })
   public examples!: ExampleModel[];
 
+  @Watch('$route', { immediate: true })
+  private onRouteChange(to: Route) {
+    if (to.hash) {
+      this.selected = to.hash.substring(1);
+    } else {
+      this.selected = this.tabs[0].key;
+      this.onChangeTab(this.selected);
+    }
+  }
+
   get path() {
     return this.model.path;
   }
@@ -77,5 +88,9 @@ export default class ComponentDocumentation extends Vue {
         },
       );
     });
+  }
+
+  private onChangeTab(key: string) {
+    this.$router.replace({ path: `#${key}` });
   }
 }

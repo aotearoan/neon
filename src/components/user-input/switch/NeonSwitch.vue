@@ -11,7 +11,13 @@
       },
     ]"
   >
-    <neon-icon v-if="switchStyle === 'checkbox'" class="neon-switch__checkbox" name="check" />
+    <neon-icon
+      v-if="switchStyle === 'checkbox'"
+      class="neon-switch__checkbox"
+      :inverse="color"
+      :disabled="disabled"
+      name="check"
+    />
     <span class="neon-switch__label">{{ label }}</span>
     <span v-if="switchStyle === 'switch'" class="neon-switch__switch">
       <span class="neon-switch__indicator"></span>

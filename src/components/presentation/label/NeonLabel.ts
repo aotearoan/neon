@@ -6,7 +6,7 @@ import { NeonHorizontalPosition } from '../../../common/enums/NeonHorizontalPosi
 import NeonIcon from '../icon/NeonIcon.vue';
 
 /**
- * Labels are used to tag or draw emphasis to properties of an item in the UI. Labels can be text only icon only or contain both text and icons.
+ * Labels are used to tag or emphasize properties of an item in the UI. Labels can be text only, icon only or contain both text and icons.
  */
 @Component({
   components: {

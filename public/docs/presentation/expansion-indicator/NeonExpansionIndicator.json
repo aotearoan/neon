@@ -17,11 +17,35 @@
       }
     },
     {
+      "name": "inverse",
+      "tags": {},
+      "description": "Display the expansion indicator in the inverse text color",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "disabled",
+      "tags": {},
+      "description": "Display the expansion indicator in the disabled color",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
       "name": "color",
       "tags": {},
       "description": "The color of the chevron.",
       "type": {
-        "name": "boolean"
+        "name": "NeonFunctionalColor"
       },
       "defaultValue": {
         "func": false,

@@ -3,13 +3,20 @@ import { NeonIconRegistry } from '../../../common/utils/NeonIconRegistry';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 
 /**
- * A component for rendering SVG images. These images are generally, but not limited to, <em>icons</em>. This component can render any SVG of any size. Size is not restricted in the NeonIcon component but rather in the components using the icons. Generally, when talking about icons, this component is only used to build other components. But you may also find it useful for rendering SVG images, e.g. illustrations.
+ * <p>A component for rendering SVG images. These images are generally, but not limited to, <em>icons</em>. This
+ * component can render any SVG of any size. Size is not restricted in the NeonIcon component but rather in the
+ * components using the icons. Generally, when talking about icons, this component is only used to build other
+ * components. But you may also find it useful for rendering SVG images, e.g. illustrations.</p>
  *
- * There is an icon registry where strings containing SVGs can be registered with a name and that name can but used with the NeonIcon component to render the image. If the paths in the SVG are given the attribute <strong>fill="currentColor"</strong> they will automatically take on the color provided to NeonIcon.
+ * <p>There is an icon registry where strings containing SVGs can be registered with a name and that name can be used
+ * with the NeonIcon component to render the image. Use the classes <em>neon-svg-fill</em> and <em>neon-svg--stroke</em>
+ * in the SVG elements to automatically apply the functional colors.</p>
  *
- * This provides the advantage of only registering the icons you actually need, dynamically switching colors in Typescript/CSS without using a large icon font and not having to duplicate icon images to support multiple color variations, including light and dark modes.
+ * <p>This provides the advantage of only registering the icons you actually need, dynamically switching colors in
+ * Typescript/CSS without using a large icon font and not having to duplicate icon images to support multiple
+ * color variations (including light and dark modes).</p>
  *
- * For more detailed information please see <a href="/design/icons">Icons</a>.
+ * For more detailed information please see <a href="/presentation/icon">Icons</a>.
  */
 @Component
 export default class NeonIcon extends Vue {
@@ -24,6 +31,18 @@ export default class NeonIcon extends Vue {
    */
   @Prop()
   public color?: NeonFunctionalColor;
+
+  /**
+   * Set the icon color to the inverse text color
+   */
+  @Prop({ default: false })
+  public inverse!: boolean;
+
+  /**
+   * Apply a disabled style to the icon
+   */
+  @Prop({ default: false })
+  public disabled!: boolean;
 
   get icon() {
     const icon = NeonIconRegistry.getIcon(this.name);

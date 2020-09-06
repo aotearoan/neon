@@ -33,9 +33,16 @@
         :label="label"
         :size="size"
         :color="color"
+        :disabled="disabled"
         :circular="dropdownStyle === 'circular-badge'"
       />
-      <neon-expansion-indicator v-if="indicator" class="neon-button__indicator" :expanded="value" />
+      <neon-expansion-indicator
+        v-if="indicator"
+        class="neon-button__indicator"
+        :disabled="disabled"
+        :color="color"
+        :expanded="value"
+      />
     </div>
     <div class="neon-dropdown__click-blocker" />
     <div ref="dropdownContent" class="neon-dropdown__content" :class="`neon-dropdown__content--${dropdownPlacement}`">

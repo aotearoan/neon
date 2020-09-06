@@ -1,10 +1,2 @@
 .neon-expansion-indicator {
-  @each $color, $palette in $functional-colors {
-    &--#{$color} {
-      .neon-expansion-indicator__line1,
-      .neon-expansion-indicator__line2 {
-        stroke: map-get($palette, $color-text-button);
-      }
-    }
-  }
 }

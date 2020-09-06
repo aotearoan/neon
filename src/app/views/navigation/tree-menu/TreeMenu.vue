@@ -1,12 +1,15 @@
 <template>
-  <neon-card>
-    <neon-card-header>
-      <h1>Tree Menu</h1>
-    </neon-card-header>
-    <neon-card-body>
-      <neon-tree-menu :model="model"></neon-tree-menu>
-    </neon-card-body>
-  </neon-card>
+  <component-documentation v-if="menuModel" :examples="examples" :model="menuModel" :headline="headline">
+    <neon-card>
+      <neon-card-body>
+        <p>
+          Use the <strong>NeonTreeMenu</strong> to display a multi-level tree in the
+          <strong>NeonSideNav</strong> component. The top level is an (optional) expansion panel, the second level is
+          the page group, third level the actual pages and the fourth level is (optional) page fragments.
+        </p>
+      </neon-card-body>
+    </neon-card>
+  </component-documentation>
 </template>
 
 <script lang="ts" src="./TreeMenu.ts"></script>

@@ -9,8 +9,9 @@ import { NeonHorizontalPosition } from '../../../common/enums/NeonHorizontalPosi
 Vue.component('NeonIcon', NeonIcon);
 
 describe('NeonLabel', () => {
+  const label = 'test label';
+
   it('renders label', () => {
-    const label = 'test label';
     const wrapper = mount(NeonLabel, {
       propsData: { label },
     });
@@ -20,7 +21,7 @@ describe('NeonLabel', () => {
   it('renders icon', () => {
     const icon = 'check';
     const wrapper = mount(NeonLabel, {
-      propsData: { icon },
+      propsData: { label, icon },
     });
     expect(wrapper.find('.neon-label--with-icon .neon-label__icon').element).toBeDefined();
   });
@@ -28,7 +29,7 @@ describe('NeonLabel', () => {
   it('renders default size', () => {
     const icon = 'check';
     const wrapper = mount(NeonLabel, {
-      propsData: { icon },
+      propsData: { label, icon },
     });
     expect(wrapper.find('.neon-label--s').element).toBeDefined();
   });
@@ -36,7 +37,7 @@ describe('NeonLabel', () => {
   it('renders size', () => {
     const icon = 'check';
     const wrapper = mount(NeonLabel, {
-      propsData: { icon, size: NeonLabelSize.ExtraSmall },
+      propsData: { label, icon, size: NeonLabelSize.ExtraSmall },
     });
     expect(wrapper.find('.neon-label--xs').element).toBeDefined();
   });
@@ -44,7 +45,7 @@ describe('NeonLabel', () => {
   it('renders default color', () => {
     const icon = 'check';
     const wrapper = mount(NeonLabel, {
-      propsData: { icon },
+      propsData: { label, icon },
     });
     expect(wrapper.find('.neon-label--neutral').element).toBeDefined();
   });
@@ -52,7 +53,7 @@ describe('NeonLabel', () => {
   it('renders color', () => {
     const icon = 'check';
     const wrapper = mount(NeonLabel, {
-      propsData: { icon, color: NeonFunctionalColor.Primary },
+      propsData: { label, icon, color: NeonFunctionalColor.Primary },
     });
     expect(wrapper.find('.neon-label--primary').element).toBeDefined();
   });
@@ -60,7 +61,7 @@ describe('NeonLabel', () => {
   it('renders icon position left', () => {
     const icon = 'check';
     const wrapper = mount(NeonLabel, {
-      propsData: { icon },
+      propsData: { label, icon },
     });
     expect(wrapper.find('.neon-label--icon-left').element).toBeDefined();
   });
@@ -68,7 +69,7 @@ describe('NeonLabel', () => {
   it('renders icon position right', () => {
     const icon = 'check';
     const wrapper = mount(NeonLabel, {
-      propsData: { icon, iconPosition: NeonHorizontalPosition.Right },
+      propsData: { label, icon, iconPosition: NeonHorizontalPosition.Right },
     });
     expect(wrapper.find('.neon-label--icon-right').element).toBeDefined();
   });

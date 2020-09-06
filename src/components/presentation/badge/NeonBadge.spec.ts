@@ -69,7 +69,7 @@ describe('NeonBadge', () => {
     const wrapper = mount(NeonBadge, {
       propsData: { icon },
     });
-    expect(wrapper.find('.neon-badge--neutral').element).toBeDefined();
+    expect(wrapper.find('.neon-badge--low-contrast').element).toBeDefined();
   });
 
   it('renders color', () => {

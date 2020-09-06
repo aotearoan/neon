@@ -1,7 +1,8 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 /**
- * A "page" component, this is defined as a wrapper around the contents (NeonGrid, etc) and footer which provides the correct responsive layout accounting for NeonTopNav and NeonSideNav components being used.
+ * A "page" component, this is defined as a wrapper around the contents (NeonGrid, etc) and footer which provides the
+ * correct responsive layout accounting for NeonTopNav and NeonSideNav components being used.
  */
 @Component
 export default class NeonPage extends Vue {

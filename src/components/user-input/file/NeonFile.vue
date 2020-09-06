@@ -16,7 +16,7 @@
         :class="{ 'neon--disabled': disabled }"
       >
         <span>{{ file.name }}</span>
-        <neon-icon name="times" />
+        <neon-icon name="times" :disabled="disabled" />
       </li>
     </ul>
     <neon-input

@@ -29,7 +29,7 @@ export default class NeonLink extends Vue {
 
   private onClick() {
     /**
-     * emitted when the user clicks on the link. This is only useful when there is no <em>href</em> provided otherwise page navigation supersedes this event.
+     * <p>Emitted when the user clicks on the link. This is only useful when there is no <em>href</em> provided otherwise page navigation supersedes this event.</p>
      * @type {void}
      */
     this.$emit('click');

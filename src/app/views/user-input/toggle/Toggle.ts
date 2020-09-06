@@ -1,19 +1,11 @@
 import { Component, Vue } from 'vue-property-decorator';
-import {
-  NeonCard,
-  NeonCardBody,
-  NeonCardHeader,
-  NeonFunctionalColor,
-  NeonSize,
-  NeonToggle,
-} from '../../../../components';
+import { NeonCard, NeonCardBody, NeonFunctionalColor, NeonSize, NeonToggle } from '../../../../components';
 import { Menu, MenuModel } from '../../../Menu';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
 
 @Component({
   components: {
     NeonCard,
-    NeonCardHeader,
     NeonCardBody,
     NeonToggle,
     ComponentDocumentation,

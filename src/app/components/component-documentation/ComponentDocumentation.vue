@@ -4,7 +4,7 @@
       <div class="component-documentation__header-container">
         <h1 class="component-documentation__title neon-h2">{{ componentTitle }}</h1>
         <span v-if="headline" class="component-documentation__headline neon-color-text-neutral">{{ headline }}</span>
-        <neon-tabs :tabs="tabs" v-model="selected" />
+        <neon-tabs :tabs="tabs" v-model="selected" @input="onChangeTab" />
       </div>
     </div>
     <neon-tab :tab="tabs[0]" :selected="selected === tabs[0].key" :toggleOnIf="true">

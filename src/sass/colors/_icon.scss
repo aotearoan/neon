@@ -1,13 +1,42 @@
+.neon-expansion-indicator,
 .neon-icon {
+  .neon-svg--fill {
+    fill: $color-text;
+  }
+
+  .neon-svg--stroke {
+    stroke: $color-text;
+  }
+
   @each $color, $palette in $functional-colors {
     &--#{$color} {
-      svg {
-        path,
-        rect,
-        circle:not(.neon--no-fill) {
-          fill: map-get($palette, $color-icon);
-        }
+      .neon-svg--fill {
+        fill: map-get($palette, $color-icon);
       }
+
+      .neon-svg--stroke {
+        stroke: map-get($palette, $color-icon);
+      }
+    }
+  }
+
+  &--inverse {
+    .neon-svg--fill {
+      fill: $color-inverse;
+    }
+
+    .neon-svg--stroke {
+      stroke: $color-inverse;
+    }
+  }
+
+  &--disabled {
+    .neon-svg--fill {
+      fill: $color-disabled-light !important;
+    }
+
+    .neon-svg--stroke {
+      stroke: $color-disabled-light !important;
     }
   }
 }

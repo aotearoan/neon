@@ -1,12 +1,11 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonDropdown } from '../../../../components';
+import { NeonCard, NeonCardBody, NeonDropdown } from '../../../../components';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
 import { Menu, MenuModel } from '../../../Menu';
 
 @Component({
   components: {
     NeonCard,
-    NeonCardHeader,
     NeonCardBody,
     NeonDropdown,
     ComponentDocumentation,
@@ -15,6 +14,7 @@ import { Menu, MenuModel } from '../../../Menu';
 export default class Dropdown extends Vue {
   private menuModel: MenuModel | null = null;
 
+  private headline = 'Display content in a popup over the page';
   private data = {
     sOpen: false,
     mOpen: false,
@@ -22,41 +22,62 @@ export default class Dropdown extends Vue {
     disabledOpen: false,
     withIconOpen: false,
     iconOnlyOpen: false,
+    noIndicatorOpen: false,
     textOpen: false,
-    textIconOpen: false,
+    solidButtonOpen: false,
     primaryOpen: false,
-    primaryTextOpen: false,
+    warnTextOpen: false,
     badgeSquareOpen: false,
     badgeCircularOpen: false,
-    tlOpen: false,
     trOpen: false,
     blOpen: false,
-    brOpen: false,
-    ltOpen: false,
-    lbOpen: false,
-    rtOpen: false,
-    rbOpen: false,
   };
 
-  private sizeExamples = `<div class="neon-vertically-spaced">
-  <neon-dropdown v-model="sOpen" size="s" label="Small dropdown">
+  private sizeExamples = `<div class="example--horizontal">
+  <neon-dropdown v-model="sOpen" size="s" label="Small">
     <neon-card-body>
       <p>Dropdown contents</p>
     </neon-card-body>
   </neon-dropdown>
-  <neon-dropdown v-model="mOpen" size="m" label="Medium dropdown">
+  <neon-dropdown v-model="mOpen" size="m" label="Medium">
     <neon-card-body>
       <p>Dropdown contents</p>
     </neon-card-body>
   </neon-dropdown>
-  <neon-dropdown v-model="lOpen" size="l" label="Large dropdown">
+  <neon-dropdown v-model="lOpen" size="l" label="Large">
     <neon-card-body>
       <p>Dropdown contents</p>
     </neon-card-body>
   </neon-dropdown>
 </div>`;
 
-  private styleExamples = `<div class="neon-vertically-spaced">
+  private buttonStyleExamples = `<div class="example--horizontal">
+  <neon-dropdown v-model="solidButtonOpen" dropdown-style="solid-button" label="Solid">
+    <neon-card-body>
+      <p>Dropdown contents</p>
+    </neon-card-body>
+  </neon-dropdown>
+  <neon-dropdown v-model="textOpen" dropdown-style="text-button" label="Text">
+    <neon-card-body>
+      <p>Dropdown contents</p>
+    </neon-card-body>
+  </neon-dropdown>
+</div>`;
+
+  private badgeStyleExamples = `<div class="example--horizontal">
+  <neon-dropdown v-model="badgeSquareOpen" dropdown-style="square-badge" label="XD">
+    <neon-card-body>
+      <p>Dropdown contents</p>
+    </neon-card-body>
+  </neon-dropdown>
+  <neon-dropdown v-model="badgeCircularOpen" dropdown-style="circular-badge" label="XD">
+    <neon-card-body>
+      <p>Dropdown contents</p>
+    </neon-card-body>
+  </neon-dropdown>
+</div>`;
+
+  private iconExamples = `<div class="example--horizontal">
   <neon-dropdown v-model="withIconOpen" icon="plus" label="With icon">
     <neon-card-body>
       <p>Dropdown contents</p>
@@ -67,83 +88,38 @@ export default class Dropdown extends Vue {
       <p>Dropdown contents</p>
     </neon-card-body>
   </neon-dropdown>
-  <neon-dropdown v-model="textOpen" dropdown-style="text-button" label="Text dropdown">
-    <neon-card-body>
-      <p>Dropdown contents</p>
-    </neon-card-body>
-  </neon-dropdown>
-  <neon-dropdown v-model="textIconOpen" dropdown-style="text-button" icon="plus">
-    <neon-card-body>
-      <p>Dropdown contents</p>
-    </neon-card-body>
-  </neon-dropdown>
   <neon-dropdown v-model="badgeSquareOpen" dropdown-style="square-badge" icon="user">
     <neon-card-body>
       <p>Dropdown contents</p>
     </neon-card-body>
   </neon-dropdown>
-  <neon-dropdown v-model="badgeCircularOpen" dropdown-style="circular-badge" label="XD">
-    <neon-card-body>
-      <p>Dropdown contents</p>
-    </neon-card-body>
-  </neon-dropdown>
-  <neon-dropdown v-model="disabledOpen" :disabled="true" label="Disabled">
+  <neon-dropdown v-model="noIndicatorOpen" label="No indicator" :indicator="false">
     <neon-card-body>
       <p>Dropdown contents</p>
     </neon-card-body>
   </neon-dropdown>
 </div>`;
 
-  private colorExamples = `<div class="neon-vertically-spaced">
+  private colorExamples = `<div class="example--horizontal">
   <neon-dropdown v-model="primaryOpen" color="primary" label="Primary">
     <neon-card-body>
       <p>Dropdown contents</p>
     </neon-card-body>
   </neon-dropdown>
-  <neon-dropdown v-model="primaryTextOpen" color="primary" dropdown-style="text-button" label="Primary text">
+  <neon-dropdown v-model="warnTextOpen" color="warn" dropdown-style="text-button" label="Warning">
     <neon-card-body>
       <p>Dropdown contents</p>
     </neon-card-body>
   </neon-dropdown>
 </div>`;
 
-  private positionExamples = `<div class="neon-vertically-spaced">
+  private positionExamples = `<div class="example--horizontal">
   <neon-dropdown v-model="blOpen" label="Bottom left aligned">
     <neon-card-body>
       <p>Bacon ipsum dolor amet t-bone ribeye</p>
     </neon-card-body>
   </neon-dropdown>
-  <neon-dropdown v-model="brOpen" placement="bottom-right" label="Bottom right aligned">
-    <neon-card-body>
-      <p>Bacon ipsum dolor amet t-bone ribeye</p>
-    </neon-card-body>
-  </neon-dropdown>
   <neon-dropdown v-model="trOpen" placement="top-right" label="Top right aligned">
-    <neon-card-body>
-      <p>Bacon ipsum dolor amet t-bone ribeye</p>
-    </neon-card-body>
-  </neon-dropdown>
-  <neon-dropdown v-model="tlOpen" placement="top-left" label="Top left aligned">
-    <neon-card-body>
-      <p>Bacon ipsum dolor amet t-bone ribeye</p>
-    </neon-card-body>
-  </neon-dropdown>
-  <neon-dropdown v-model="ltOpen" placement="left-top" label="Left top aligned">
-    <neon-card-body>
-      <p>Bacon ipsum dolor amet t-bone ribeye</p>
-    </neon-card-body>
-  </neon-dropdown>
-  <neon-dropdown v-model="lbOpen" placement="left-bottom" label="Left bottom aligned">
-    <neon-card-body>
-      <p>Bacon ipsum dolor amet t-bone ribeye</p>
-    </neon-card-body>
-  </neon-dropdown>
-  <neon-dropdown v-model="rtOpen" placement="right-top" label="Right top aligned">
-    <neon-card-body>
-      <p>Bacon ipsum dolor amet t-bone ribeye</p>
-    </neon-card-body>
-  </neon-dropdown>
-  <neon-dropdown v-model="rbOpen" placement="right-bottom" label="Right bottom aligned">
     <neon-card-body>
       <p>Bacon ipsum dolor amet t-bone ribeye</p>
     </neon-card-body>
@@ -157,13 +133,23 @@ export default class Dropdown extends Vue {
       data: this.data,
     },
     {
-      title: 'Dropdown styles',
-      template: this.styleExamples,
+      title: 'Dropdown colors',
+      template: this.colorExamples,
       data: this.data,
     },
     {
-      title: 'Dropdown colors',
-      template: this.colorExamples,
+      title: 'Dropdown with icons',
+      template: this.iconExamples,
+      data: this.data,
+    },
+    {
+      title: 'Dropdown button styles',
+      template: this.buttonStyleExamples,
+      data: this.data,
+    },
+    {
+      title: 'Dropdown badge styles',
+      template: this.badgeStyleExamples,
       data: this.data,
     },
     {

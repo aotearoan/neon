@@ -1,5 +1,5 @@
 {
-  "description": "A general purpose dropdown component. This component consists of a button, to trigger the dropdown to open, and the dropdown content which is displayed above the page when the user clicks the button. This can be useful for secondary (perhaps more complex) actions for which there is not enough space on the page or the action is asynchronous allowing the user to perform the action and continue what they were doing. Examples are providing links to copy and letting the user send feedback.\n\nNeonDropdown is the basis for the NeonDropdownMenu component and the NeonSelect form component.",
+  "description": "<p>A general purpose dropdown component. This component consists of a button, to trigger the dropdown to open, and\nthe dropdown content which is displayed above the page when the user clicks the button.</p>\n<p>This can be useful for secondary (perhaps more complex) actions for which there is not enough space on the page or\nthe action is asynchronous allowing the user to perform the action and continue what they were doing. Examples are\nproviding links to copy and letting the user send feedback.</p>\n<p><strong>NeonDropdown</strong> is the basis for the <strong>NeonDropdownMenu</strong> component and the\n<strong>NeonSelect</strong> form component.</p>",
   "tags": {},
   "displayName": "NeonDropdown",
   "exportName": "default",

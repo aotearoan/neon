@@ -1,33 +1,15 @@
 <template>
-  <neon-card>
-    <neon-card-header>
-      <h1>Badges</h1>
-    </neon-card-header>
-    <neon-card-body>
-      <div v-for="size in sizes" :key="`badge-neutral-${size}`" class="neon-horizontal neon-space-evenly">
-        <neon-badge
-          v-for="color in neutralColors"
-          :key="`badge-neutral-${color}-${size}`"
-          :color="color"
-          :size="size"
-          label="XD"
-          :circular="size === 'l'"
-        ></neon-badge>
-        <neon-badge :circular="size === 'l'" :size="size" :image="imgUrl"></neon-badge>
-        <neon-badge :circular="size === 'l'" :size="size" icon="user"></neon-badge>
-      </div>
-      <div v-for="size in sizes" :key="`badge-color-${size}`" class="neon-horizontal neon-space-evenly">
-        <neon-badge
-          v-for="color in functionalColors"
-          :key="`badge-color-${color}-${size}`"
-          :color="color"
-          :size="size"
-          label="XD"
-          :circular="size === 'l'"
-        ></neon-badge>
-      </div>
-    </neon-card-body>
-  </neon-card>
+  <component-documentation v-if="menuModel" :examples="examples" :model="menuModel" :headline="headline">
+    <neon-card>
+      <neon-card-body>
+        <p>
+          Badges are used to display two initials, an icon or an image. It can be useful as a user's avatar on the
+          button of dropdown menus and next to user comments but there are a multitude of uses for badges on a site.
+        </p>
+        <p>Badges are available in a range of sizes, shapes and colors.</p>
+      </neon-card-body>
+    </neon-card>
+  </component-documentation>
 </template>
 
 <script lang="ts" src="./Badge.ts"></script>

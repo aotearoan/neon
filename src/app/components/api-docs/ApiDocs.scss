@@ -41,6 +41,7 @@
   &__name {
     display: flex;
     flex-wrap: nowrap;
+    white-space: nowrap;
 
     .neon-label {
       margin-left: 2 * $base-space;

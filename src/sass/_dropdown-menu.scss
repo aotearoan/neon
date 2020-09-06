@@ -7,12 +7,17 @@
   }
 
   .neon-icon {
-    width: $font-size;
-    height: $font-size;
+    width: $font-size * $line-height-one;
+    height: $font-size * $line-height-one;
   }
 }
 
 .neon-dropdown-menu {
+  &__items {
+    max-height: 280px;
+    overflow-y: auto;
+  }
+
   &__item {
     display: flex;
     flex-direction: row;

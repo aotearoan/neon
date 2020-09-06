@@ -8,9 +8,13 @@ import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonDropdownStyle } from '../../../common/enums/NeonDropdownStyle';
 
 /**
- * A general purpose dropdown component. This component consists of a button, to trigger the dropdown to open, and the dropdown content which is displayed above the page when the user clicks the button. This can be useful for secondary (perhaps more complex) actions for which there is not enough space on the page or the action is asynchronous allowing the user to perform the action and continue what they were doing. Examples are providing links to copy and letting the user send feedback.
- *
- * NeonDropdown is the basis for the NeonDropdownMenu component and the NeonSelect form component.
+ * <p>A general purpose dropdown component. This component consists of a button, to trigger the dropdown to open, and
+ * the dropdown content which is displayed above the page when the user clicks the button.</p>
+ * <p>This can be useful for secondary (perhaps more complex) actions for which there is not enough space on the page or
+ * the action is asynchronous allowing the user to perform the action and continue what they were doing. Examples are
+ * providing links to copy and letting the user send feedback.</p>
+ * <p><strong>NeonDropdown</strong> is the basis for the <strong>NeonDropdownMenu</strong> component and the
+ * <strong>NeonSelect</strong> form component.</p>
  */
 @Component
 export default class NeonDropdown extends Vue {
@@ -120,12 +124,14 @@ export default class NeonDropdown extends Vue {
   }
 
   public toggleOpen() {
-    /**
-     * Emitted when the dropdown button is toggled.
-     * @type {boolean} the open state of the dropdown.
-     */
-    this.$emit('input', !this.value);
-    setTimeout(this.recalculatePlacement);
+    if (!this.disabled) {
+      /**
+       * Emitted when the dropdown button is toggled.
+       * @type {boolean} the open state of the dropdown.
+       */
+      this.$emit('input', !this.value);
+      setTimeout(this.recalculatePlacement);
+    }
   }
 
   private recalculatePlacement() {

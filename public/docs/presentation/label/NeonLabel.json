@@ -1,5 +1,5 @@
 {
-  "description": "Labels are used to tag or draw emphasis to properties of an item in the UI. Labels can be text only icon only or contain both text and icons.",
+  "description": "Labels are used to tag or emphasize properties of an item in the UI. Labels can be text only, icon only or contain both text and icons.",
   "tags": {},
   "exportName": "default",
   "displayName": "NeonLabel",

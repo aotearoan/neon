@@ -3,7 +3,7 @@
     font-size: $font-size;
     font-weight: 400;
     letter-spacing: $component-letter-spacing-s;
-    line-height: 1.125;
+    line-height: $line-height-one;
     height: $size - 2 * $border-width;
 
     &.neon-toggle__label--with-icon {
@@ -11,8 +11,8 @@
       padding: 0;
 
       .neon-icon {
-        width: $font-size;
-        height: $font-size;
+        width: $font-size * $line-height-one;
+        height: $font-size * $line-height-one;
       }
     }
   }

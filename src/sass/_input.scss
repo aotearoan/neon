@@ -18,8 +18,8 @@
 
     .neon-icon {
       position: absolute;
-      width: $font-size;
-      height: $font-size;
+      width: $font-size * $line-height-one;
+      height: $font-size * $line-height-one;
       right: 0.5 * ($size - $font-size);
       top: 0.5 * ($size - $font-size);
       cursor: default;
@@ -59,7 +59,7 @@
     border-radius: $border-radius;
     border: $border-width $border-style;
     padding: $base-space 2 * $base-space;
-    line-height: 1.125;
+    line-height: $line-height-one;
     outline: none;
     font-family: $body-font-family;
     width: 100%;

@@ -1,15 +1,16 @@
 <template>
-  <neon-card orientation="horizontal" horizontal-breakpoint="tablet">
-    <neon-card-header>
-      <h1>Links</h1>
-    </neon-card-header>
-    <neon-card-body class="links">
-      <p>This is some text with a <a href=".">link</a> embedded in it.</p>
-      <neon-link href=".">Router link</neon-link>
-      <neon-link href="http://www.getskeleton.com" :external-indicator="true" target="_blank">External link</neon-link>
-      <neon-link title="Link title" @click="handleClick">Link with click handler</neon-link>
-    </neon-card-body>
-  </neon-card>
+  <component-documentation v-if="menuModel" :examples="examples" :model="menuModel" :headline="headline">
+    <neon-card>
+      <neon-card-body>
+        <p>
+          Use the <strong>NeonLink</strong> component to display links to the user. These links can be internal router
+          links (relative href), external links (absolute href) or click handlers (not href and an @click event
+          handler).
+        </p>
+        <p>NOTE: HTML &lt;a&gt; links are styled in the same way as <strong>NeonLink</strong> components.</p>
+      </neon-card-body>
+    </neon-card>
+  </component-documentation>
 </template>
 
 <script lang="ts" src="./Link.ts"></script>

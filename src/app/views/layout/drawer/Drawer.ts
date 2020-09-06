@@ -1,5 +1,7 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonButton, NeonCard, NeonCardBody, NeonCardHeader, NeonDrawer } from '../../../../components';
+import { NeonButton, NeonCard, NeonCardBody, NeonDrawer } from '../../../../components';
+import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import { Menu, MenuModel } from '../../../Menu';
 
 @Component({
   components: {
@@ -7,17 +9,20 @@ import { NeonButton, NeonCard, NeonCardBody, NeonCardHeader, NeonDrawer } from '
     NeonDrawer,
     NeonCard,
     NeonCardBody,
-    NeonCardHeader,
+    ComponentDocumentation,
   },
 })
 export default class Drawer extends Vue {
-  private openLeft = false;
-  private openRight = false;
-  private openTop = false;
-  private openBottom = false;
+  private menuModel: MenuModel | null = null;
 
-  get contents() {
-    return `<h6>Drawer content goes here</h6>
+  private headline = 'Slide-out panel for content';
+
+  private data = {
+    openLeft: false,
+    openRight: false,
+    openTop: false,
+    openBottom: false,
+    contents: `<h6>Drawer content goes here</h6>
               <p>
                 Bacon ipsum dolor amet venison pig ball tip salami pork chop, drumstick tenderloin sirloin pork loin.
                 Shoulder ham venison pork leberkas. Shankle pork loin pork belly turducken rump landjaeger pastrami
@@ -29,6 +34,39 @@ export default class Drawer extends Vue {
                 prosciutto. Hamburger pancetta ribeye, ham ground round capicola shank beef. Flank shoulder strip steak
                 rump venison short loin corned beef. Ground round turkey bresaola meatball pork loin, buffalo chuck pork
                 ribeye kielbasa.
-              </p>`;
+              </p>`,
+  };
+
+  examples = [
+    {
+      title: 'Drawer examples',
+      template: `<div class="example--horizontal">
+  <!-- Left -->
+  <neon-button label="Open left" @click="openLeft = true"></neon-button>
+  <neon-drawer :open="openLeft" position="left" @close="openLeft = false">
+    <div v-html="contents"></div>
+  </neon-drawer>
+  <!-- Right -->
+  <neon-button label="Open right" @click="openRight = true"></neon-button>
+  <neon-drawer :open="openRight" position="right" @close="openRight = false">
+    <div v-html="contents"></div>
+  </neon-drawer>
+  <!-- Top (overlay = false) -->
+  <neon-button label="Open top" @click="openTop = true"></neon-button>
+  <neon-drawer :open="openTop" position="top" @close="openTop = false" :overlay="false">
+    <div v-html="contents"></div>
+  </neon-drawer>
+  <!-- Bottom (full-width = true) -->
+  <neon-button label="Open bottom" @click="openBottom = true"></neon-button>
+  <neon-drawer :open="openBottom" position="bottom" @close="openBottom = false" :full-width="true">
+    <div v-html="contents"></div>
+  </neon-drawer>
+</div>`,
+      data: this.data,
+    },
+  ];
+
+  public mounted() {
+    this.menuModel = Menu.getComponentConfig('NeonDrawer');
   }
 }

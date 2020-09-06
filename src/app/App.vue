@@ -68,7 +68,7 @@
         </neon-top-nav>
       </template>
       <template #content>
-        <neon-side-nav v-if="!simplePage">
+        <neon-side-nav v-if="!simplePage" class="app-side-nav">
           <template #sticky>
             <neon-input type="text" v-model="indexFilter" placeholder="Filter" />
           </template>

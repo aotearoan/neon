@@ -5,6 +5,15 @@
   "exportName": "default",
   "props": [
     {
+      "name": "open",
+      "tags": {},
+      "description": "Set the drawer to visible.",
+      "type": {
+        "name": "boolean"
+      },
+      "required": true
+    },
+    {
       "name": "fullWidth",
       "tags": {},
       "description": "If true, remove the padding applied to the drawer.",
@@ -15,15 +24,6 @@
         "func": false,
         "value": "false"
       }
-    },
-    {
-      "name": "open",
-      "tags": {},
-      "description": "Set the drawer to visible.",
-      "type": {
-        "name": "boolean"
-      },
-      "required": true
     },
     {
       "name": "position",

@@ -1,35 +1,14 @@
 <template>
-  <neon-card>
-    <neon-card-header>
-      <h1>Labels</h1>
-    </neon-card-header>
-    <neon-card-body>
-      <div class="example--horizontal">
-        <div v-for="size in labelSizes" :key="`label-${size}-solid`" class="neon-vertically-spaced">
-          <neon-label
-            v-for="color in colors"
-            :key="`label-${color}-${size}-solid`"
-            :color="color"
-            :size="size"
-            :label="color"
-          ></neon-label>
-        </div>
-      </div>
-      <h2>Labels with icons</h2>
-      <div class="example--horizontal">
-        <div v-for="size in labelSizes" :key="`label-${size}-solid-icon-only`" class="neon-vertically-spaced">
-          <neon-label
-            v-for="color in colors"
-            :key="`label-${color}-${size}-outline-with-icon`"
-            :color="color"
-            :size="size"
-            :label="color"
-            icon="lock"
-          ></neon-label>
-        </div>
-      </div>
-    </neon-card-body>
-  </neon-card>
+  <component-documentation v-if="menuModel" :examples="examples" :model="menuModel" :headline="headline">
+    <neon-card>
+      <neon-card-body>
+        <p>
+          Use <strong>NeonLabel</strong> to emphasize content in the UI. Labels can be text only, icon only or contain
+          both text and icons.
+        </p>
+      </neon-card-body>
+    </neon-card>
+  </component-documentation>
 </template>
 
 <script lang="ts" src="./Label.ts"></script>

@@ -1,29 +1,16 @@
 <template>
-  <neon-card>
-    <neon-card-header>
-      <h1>Drawer</h1>
-    </neon-card-header>
-    <neon-card-body>
-      <div class="neon-horizontal neon-space-evenly">
-        <neon-button label="Open left" @click="openLeft = true"></neon-button>
-        <neon-button label="Open right" @click="openRight = true"></neon-button>
-        <neon-button label="Open top" @click="openTop = true"></neon-button>
-        <neon-button label="Open bottom" @click="openBottom = true"></neon-button>
-        <neon-drawer :open="openLeft" position="left" @close="openLeft = false">
-          <div v-html="contents"></div>
-        </neon-drawer>
-        <neon-drawer :open="openRight" position="right" @close="openRight = false">
-          <div v-html="contents"></div>
-        </neon-drawer>
-        <neon-drawer :open="openTop" position="top" @close="openTop = false" :overlay="false">
-          <div v-html="contents"></div>
-        </neon-drawer>
-        <neon-drawer :open="openBottom" position="bottom" @close="openBottom = false" :full-width="true">
-          <div v-html="contents"></div>
-        </neon-drawer>
-      </div>
-    </neon-card-body>
-  </neon-card>
+  <component-documentation v-if="menuModel" :examples="examples" :model="menuModel" :headline="headline">
+    <neon-card>
+      <neon-card-body>
+        <p>
+          A drawer is a slide out panel for representing data which may be secondary or not fit on the main screen.
+          Examples are a responsive navigation menu, more details of a selected item on the page. Drawers can be opened
+          from top, bottom, left or right and an overlay covers the screen to focus more attention on the drawer
+          contents.
+        </p>
+      </neon-card-body>
+    </neon-card>
+  </component-documentation>
 </template>
 
 <script lang="ts" src="./Drawer.ts"></script>

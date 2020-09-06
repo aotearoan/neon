@@ -1,12 +1,11 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonExpansionIndicator } from '../../../../components';
+import { NeonCard, NeonCardBody, NeonExpansionIndicator } from '../../../../components';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
 import { Menu, MenuModel } from '../../../Menu';
 
 @Component({
   components: {
     NeonCard,
-    NeonCardHeader,
     NeonCardBody,
     NeonExpansionIndicator,
     ComponentDocumentation,
@@ -15,13 +14,16 @@ import { Menu, MenuModel } from '../../../Menu';
 export default class ExpansionIndicator extends Vue {
   private menuModel: MenuModel | null = null;
 
+  private headline = 'Indicate expanded / collapsed';
+
   private examples = [
     {
       title: 'Examples',
-      template: `<div>
+      template: `<div class="example--horizontal">
   <neon-expansion-indicator :expanded="false" />
   <neon-expansion-indicator :expanded="true" />
   <neon-expansion-indicator :expanded="false" color="primary" />
+  <neon-expansion-indicator :disabled="true" />
 </div>`,
     },
   ];

@@ -58,7 +58,6 @@
         .neon-switch__checkbox {
           border-color: $border-color-input;
           box-shadow: $inset-shadow;
-          color: $color-inverse;
         }
 
         &.neon-switch--checked {
@@ -75,8 +74,6 @@
     }
 
     &.neon-switch--disabled {
-      color: $color-disabled-light;
-
       .neon-switch__checkbox {
         box-shadow: none;
         border-color: $color-disabled-dark;

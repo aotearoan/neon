@@ -1,12 +1,30 @@
 .editor {
-  background-color: $background-color-pre;
-  color: $color-text-light;
-
   .prism-editor {
+    &__container {
+      background-color: $background-color-pre;
+      color: $color-text-light;
+    }
+
     &__textarea {
       &::selection {
         background-color: rgba($color-primary, 0.33);
       }
     }
+  }
+
+  .tag {
+    color: $color-error-l2;
+  }
+
+  .attr-name {
+    color: $color-warn-l2;
+  }
+
+  .attr-value {
+    color: $color-success-l2;
+  }
+
+  .punctuation {
+    color: $color-neutral-l2;
   }
 }

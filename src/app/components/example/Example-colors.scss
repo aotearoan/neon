@@ -1,0 +1,13 @@
+.example {
+  &__output {
+    &--fixed-content {
+      .neon-page {
+        .neon-grid {
+          .neon-grid-area {
+            border: $border-width $border-style $border-color;
+          }
+        }
+      }
+    }
+  }
+}

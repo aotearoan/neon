@@ -190,7 +190,7 @@ $width-alert-text-mobile: $width-alert-mobile - $width-alert-icon - 4 * $padding
 }
 
 .snotifyToast__title {
-  line-height: 1.125;
+  line-height: $line-height-one;
   font-size: $h5-size;
   font-weight: 400;
   padding-left: $padding-alert-horizontal;

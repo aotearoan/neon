@@ -8,7 +8,12 @@
         :class="{ 'neon-tabs__menu-item--selected': tab.key === value }"
         @click="onClick(tab.key)"
       >
-        <neon-icon v-if="tab.icon" class="neon-tabs__menu-icon" :name="tab.icon" />
+        <neon-icon
+          v-if="tab.icon"
+          class="neon-tabs__menu-icon"
+          :color="tab.key === value ? color : undefined"
+          :name="tab.icon"
+        />
         <span v-if="tab.label" class="neon-tabs__menu-label">{{ tab.label }}</span>
       </div>
     </div>

@@ -73,8 +73,9 @@ $h0-weight: 600 !default;
 $font-weight-em: 200 !default;
 $font-weight-strong: 800 !default;
 
-$line-height-headings-ratio: 1.125 !default;
+$line-height-headings-ratio: 1.2 !default;
 $line-height-ratio: 1.618 !default;
+$line-height-one: 1.125 !default; // hack for line-height: 1 to prevent cropping of content below the baseline e.g. 'g'
 
 $system-font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
   'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;

@@ -1,5 +1,5 @@
-$height-component-header-desktop: 172px;
-$height-component-header-mobile: 83px;
+$height-component-header-desktop: 175px;
+$height-component-header-mobile: 85px;
 
 .component-documentation {
   margin-top: $height-component-header-desktop - 0.5 * $spacing-vertical-desktop;
@@ -10,6 +10,10 @@ $height-component-header-mobile: 83px;
 
   @include responsive(mobile-large) {
     margin-top: $height-component-header-mobile - 0.5 * $spacing-vertical-mobile;
+  }
+
+  &__title {
+    margin-bottom: 0;
   }
 
   &__header {
@@ -67,10 +71,6 @@ $height-component-header-mobile: 83px;
         margin-top: 8 * $base-space;
       }
     }
-  }
-
-  &__title {
-    margin-bottom: 0;
   }
 
   &__headline {

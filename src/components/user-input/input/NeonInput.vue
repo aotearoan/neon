@@ -34,7 +34,6 @@
       :tabindex="disabled ? false : 0"
       :disabled="disabled"
       :color="iconColor"
-      :class="{ 'neon--disabled': disabled }"
       @click.native="iconClicked"
       @keyup.enter.native="iconClicked"
     />

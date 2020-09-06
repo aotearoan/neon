@@ -1,19 +1,18 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonTab, NeonTabs } from '../../../../components';
+import { NeonCard, NeonCardBody, NeonTab, NeonTabs } from '../../../../components';
 import { Menu, MenuModel } from '../../../Menu';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
 
 @Component({
   components: {
     NeonCard,
-    NeonCardHeader,
     NeonCardBody,
     NeonTab,
     NeonTabs,
     ComponentDocumentation,
   },
 })
-export default class Tab extends Vue {
+export default class Tabs extends Vue {
   private menuModel: MenuModel | null = null;
 
   private headline = 'Present content in tabbed panes';
@@ -41,7 +40,7 @@ export default class Tab extends Vue {
 
   private examples = [
     {
-      title: 'Tabs inside a card body',
+      title: 'Tabbed content',
       template: `<neon-tabs :tabs="tabs" v-model="selected">
   <neon-tab v-for="(tab, index) in tabs" :key="tab.key" :tab="tab" :selected="selected === tab.key">
     <h6>Tab {{ index + 1 }}</h6>
@@ -53,6 +52,6 @@ export default class Tab extends Vue {
   ];
 
   public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonTab');
+    this.menuModel = Menu.getComponentConfig('NeonTabs');
   }
 }

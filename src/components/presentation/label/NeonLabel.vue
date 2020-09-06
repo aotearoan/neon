@@ -11,7 +11,7 @@
       },
     ]"
   >
-    <neon-icon v-if="icon" class="neon-label__icon" :name="icon"></neon-icon>
+    <neon-icon v-if="icon" class="neon-label__icon" :color="color" :name="icon"></neon-icon>
     <span v-if="label" class="neon-label__label">{{ label }}</span>
   </div>
 </template>

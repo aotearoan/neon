@@ -1,5 +1,5 @@
 import { Component, Vue, Watch } from 'vue-property-decorator';
-import VueI18n from 'vue-i18n';
+import VueI18n, { TranslateResult } from 'vue-i18n';
 import { RegisterIcons } from '../common/utils/RegisterIcons';
 import { Menu } from './Menu';
 import { NeonMode } from '../common/enums/NeonMode';
@@ -26,6 +26,10 @@ import { Route } from 'vue-router';
 
 export enum Theme {
   Classic = 'classic',
+}
+
+export interface AppMenuLinkModel extends NeonTreeMenuLinkModel {
+  keywords?: TranslateResult;
 }
 
 RegisterIcons.register();
@@ -74,7 +78,7 @@ export default class App extends Vue {
     window.addEventListener('resize', this.handleResize);
     this.handleResize();
 
-    this.indexModel = Menu.menu.map((item) => ({
+    this.indexModel = Menu.menu().map((item) => ({
       label: item.name || item.page || item.path,
       key: item.path,
       group: item.group,
@@ -194,7 +198,7 @@ export default class App extends Vue {
       : undefined;
   }
 
-  private filterLink(item: NeonTreeMenuLinkModel): NeonTreeMenuLinkModel | undefined {
+  private filterLink(item: AppMenuLinkModel): NeonTreeMenuLinkModel | undefined {
     const searchString =
       item.label.toString() +
       (item.keywords ? item.keywords.toString() : '') +

@@ -3,12 +3,12 @@
 @mixin button-size($size, $font-size, $icon-only-size) {
   height: $size;
   font-size: $font-size;
-  line-height: 1.125;
+  line-height: $line-height-one;
   padding: 0 0.75 * ($size - $font-size);
 
   .neon-icon {
-    width: $font-size;
-    height: $font-size;
+    width: $font-size * $line-height-one;
+    height: $font-size * $line-height-one;
   }
 
   &.neon-button--icon-only {
@@ -93,11 +93,12 @@
   &--state-error {
     &:not(.neon-button--with-icon) {
       .neon-button__label {
-        opacity: 0.15;
+        opacity: 0.33;
       }
 
       .neon-icon {
         position: absolute;
+        z-index: 1;
       }
     }
   }

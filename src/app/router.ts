@@ -12,7 +12,7 @@ const routes: Array<RouteConfig> = [
     meta: { simpleLayout: true },
     component: () => import(/* webpackChunkName: "home" */ './views/home/Home.vue'),
   },
-  ...Menu.menu.flatMap((item) =>
+  ...Menu.menu().flatMap((item) =>
     item.children
       ? item.children
           .filter((child) => child.page)

@@ -46,6 +46,12 @@ export default class NeonBadge extends Vue {
   /**
    * The color of the badge. This is one of the provided NeonFunctionalColors.
    */
-  @Prop({ default: NeonFunctionalColor.Neutral })
+  @Prop({ default: NeonFunctionalColor.LowContrast })
   public color!: NeonFunctionalColor;
+
+  /**
+   * Display the badge in the disable style
+   */
+  @Prop({ default: false })
+  public disabled!: boolean;
 }

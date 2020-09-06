@@ -14,16 +14,16 @@ export default class NeonDrawer extends Vue {
   private closableUtils?: NeonClosableUtils;
 
   /**
-   * If true, remove the padding applied to the drawer.
-   */
-  @Prop({ default: false })
-  public fullWidth!: boolean;
-
-  /**
    * Set the drawer to visible.
    */
   @Prop({ required: true })
   public open!: boolean;
+
+  /**
+   * If true, remove the padding applied to the drawer.
+   */
+  @Prop({ default: false })
+  public fullWidth!: boolean;
 
   /**
    * The location of the drawer.

@@ -124,8 +124,11 @@
 
     .neon-badge {
       box-shadow: $box-shadow;
-      opacity: 0.9;
       position: relative;
+
+      &:not(.neon-badge--disabled) {
+        opacity: 0.9;
+      }
     }
 
     &:hover {
@@ -135,9 +138,11 @@
     }
 
     &:active {
-      .neon-badge__label,
-      svg {
-        top: 1px;
+      .neon-badge:not(.neon-badge--disabled) {
+        .neon-badge__label,
+        svg {
+          top: 1px;
+        }
       }
     }
   }

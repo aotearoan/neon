@@ -1,37 +1,55 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonSize } from '../../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../../common/enums/NeonFunctionalColor';
-import { NeonBadge, NeonCard, NeonCardBody, NeonCardHeader } from '../../../../components';
+import { NeonBadge, NeonCard, NeonCardBody } from '../../../../components';
+import { Menu, MenuModel } from '../../../Menu';
+import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
 
 @Component({
   components: {
     NeonCard,
-    NeonCardHeader,
     NeonCardBody,
     NeonBadge,
+    ComponentDocumentation,
   },
 })
 export default class Badge extends Vue {
-  get imgUrl() {
-    return `${process.env.VUE_APP_RESOURCE_URL}images/doge.jpg`;
-  }
+  private menuModel: MenuModel | null = null;
 
-  get sizes() {
-    return Object.values(NeonSize);
-  }
+  private headline = 'User avatar badges';
 
-  get neutralColors() {
-    return [NeonFunctionalColor.LowContrast, NeonFunctionalColor.Neutral, NeonFunctionalColor.HighContrast];
-  }
+  private examples = [
+    {
+      title: 'Badge sizes',
+      template: `<div class="example--horizontal">
+  <neon-badge size="s" label="SM" />
+  <neon-badge size="m" label="MD" />
+  <neon-badge size="l" label="LG" />
+</div>`,
+    },
+    {
+      title: 'Badge shapes',
+      template: `<div class="example--horizontal">
+  <neon-badge label="SQ" />
+  <neon-badge :circular="true" label="CI" />
+</div>`,
+    },
+    {
+      title: 'Badge styles',
+      template: `<div class="example--horizontal">
+  <neon-badge label="LB" />
+  <neon-badge icon="user" />
+  <neon-badge image="/images/doge.jpg" />
+</div>`,
+    },
+    {
+      title: 'Badge colors',
+      template: `<div class="example--horizontal">
+  <neon-badge label="LB" color="brand" />
+  <neon-badge icon="user" color="success" />
+</div>`,
+    },
+  ];
 
-  get functionalColors() {
-    return [
-      NeonFunctionalColor.Brand,
-      NeonFunctionalColor.Primary,
-      NeonFunctionalColor.Info,
-      NeonFunctionalColor.Success,
-      NeonFunctionalColor.Warn,
-      NeonFunctionalColor.Error,
-    ];
+  public mounted() {
+    this.menuModel = Menu.getComponentConfig('NeonBadge');
   }
 }

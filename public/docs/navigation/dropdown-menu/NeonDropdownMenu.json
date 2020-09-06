@@ -1,21 +1,9 @@
 {
-  "description": "A dropdown menu consisting of a button to open the menu and a list of menu items. Clicking on a menu item will result in navigating to the provided URL or notifying the parent component via the @click event.",
+  "description": "<p>A dropdown menu consisting of a button to open the menu and a list of menu items. Clicking on a menu item will result in navigating to the provided URL or notifying the parent component via the @click event.</p>\n<p><strong>Note:</strong> As well as the options described below, pass through attributes supported by <a href=\"/presentation/dropdown\">NeonDropdown</a> to change the style of the dropdown button.</p>",
   "tags": {},
   "displayName": "NeonDropdownMenu",
   "exportName": "default",
   "props": [
-    {
-      "name": "size",
-      "tags": {},
-      "description": "The size of the dropdown - Small, Medium or Large.",
-      "type": {
-        "name": "NeonSize"
-      },
-      "defaultValue": {
-        "func": false,
-        "value": "NeonSize.Medium"
-      }
-    },
     {
       "name": "model",
       "tags": {},
@@ -29,6 +17,18 @@
         ]
       },
       "required": true
+    },
+    {
+      "name": "size",
+      "tags": {},
+      "description": "The size of the dropdown - Small, Medium or Large.",
+      "type": {
+        "name": "NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
     }
   ],
   "events": [

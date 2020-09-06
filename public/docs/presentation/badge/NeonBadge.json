@@ -61,7 +61,19 @@
       },
       "defaultValue": {
         "func": false,
-        "value": "NeonFunctionalColor.Neutral"
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    },
+    {
+      "name": "disabled",
+      "tags": {},
+      "description": "Display the badge in the disable style",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
       }
     }
   ]

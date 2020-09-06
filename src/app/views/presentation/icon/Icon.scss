@@ -11,10 +11,16 @@
     label {
       margin-top: 4 * $base-space;
     }
+  }
 
-    .neon-icon {
-      width: 10 * $base-space;
-      height: 10 * $base-space;
-    }
+  .neon-icon {
+    width: 10 * $base-space;
+    height: 10 * $base-space;
+  }
+
+  label {
+    text-transform: lowercase;
+    font-size: $base-font-size;
+    user-select: all;
   }
 }

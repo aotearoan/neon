@@ -2,7 +2,7 @@
   &--with-icon,
   &--with-label {
     @each $color, $palette in $functional-colors {
-      &.neon-badge--#{$color} {
+      &.neon-badge--#{$color}:not(.neon-badge--disabled) {
         @if ($color == high-contrast) {
           color: $color-inverse;
           background-color: $color-text;
@@ -12,5 +12,11 @@
         }
       }
     }
+  }
+
+  &--disabled {
+    color: $color-disabled-light;
+    background-color: $color-disabled-dark;
+    cursor: not-allowed;
   }
 }

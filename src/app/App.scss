@@ -16,6 +16,7 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
       // application dark mode SASS
       @import 'components/editor/Editor-colors';
       @import 'components/api-docs/ApiDocs-colors';
+      @import 'components/example/Example-colors';
       @import 'components/component-documentation/ComponentDocumentation-colors';
 
       @import 'views/design/color/Color-colors';
@@ -73,6 +74,7 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
       // application light mode SASS
       @import 'components/editor/Editor-colors';
       @import 'components/api-docs/ApiDocs-colors';
+      @import 'components/example/Example-colors';
       @import 'components/component-documentation/ComponentDocumentation-colors';
 
       @import 'views/design/color/Color-colors';
@@ -116,7 +118,7 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
     @import 'components/api-docs/ApiDocs';
 
     @import 'views/design/color/Color';
-    @import 'views/presentation/icons/Icons';
+    @import 'views/presentation/icon/Icon';
     @import 'views/design/typography/Typography';
     @import 'views/feedback/note/Note';
     @import 'views/source/Source';
@@ -176,9 +178,8 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
         margin-left: 4 * $base-space;
         font-size: $font-size-l;
         opacity: 0.9;
-        font-style: oblique;
-        letter-spacing: 1px;
-        line-height: 1.125;
+        letter-spacing: $component-letter-spacing-s;
+        line-height: $line-height-one;
         user-select: none;
 
         @include responsive(tablet) {
@@ -187,18 +188,10 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
       }
     }
 
-    .neon-side-nav {
-      &__sticky {
-        padding-bottom: 4 * $base-space;
-      }
-
-      & > hr {
-        display: none;
-      }
-    }
-
-    .content {
-      grid-template-rows: auto 1fr;
+    .app-side-nav > hr {
+      border-top: none;
+      margin-top: 0;
+      margin-bottom: 2 * $base-space;
     }
 
     .neon-h1,

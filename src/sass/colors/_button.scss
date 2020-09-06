@@ -3,13 +3,6 @@ $transparency-button-disabled: 0.3;
 @mixin solid-button($from-color, $to-color) {
   background: linear-gradient($from-color, $to-color);
 
-  &:not(:disabled) {
-    .neon-expansion-indicator__line1,
-    .neon-expansion-indicator__line2 {
-      stroke: $color-button-text;
-    }
-  }
-
   &:hover:not(:disabled) {
     background: linear-gradient(lighten($from-color, 1), lighten($to-color, 1));
   }
@@ -27,9 +20,25 @@ $transparency-button-disabled: 0.3;
   border: $border-width $border-style $color;
   color: $color;
 
+  .neon-svg--fill {
+    fill: $color;
+  }
+
+  .neon-svg--stroke {
+    stroke: $color;
+  }
+
   &:hover:not(:disabled),
   &:active:not(:disabled) {
-    color: $color-button-text;
+    color: $color-inverse;
+
+    .neon-svg--fill {
+      fill: $color-inverse;
+    }
+
+    .neon-svg--stroke {
+      stroke: $color-inverse;
+    }
   }
 
   &:hover:not(:disabled) {
@@ -74,17 +83,18 @@ $transparency-button-disabled: 0.3;
         } @else if($color == low-contrast) {
           color: $color-low-contrast-solid-button;
 
+          .neon-svg--fill {
+            fill: $color-low-contrast-solid-button;
+          }
+
+          .neon-svg--stroke {
+            stroke: $color-low-contrast-solid-button;
+          }
+
           @include solid-button(
             $background-low-contrast-solid-button-light,
             $background-low-contrast-solid-button-dark
           );
-
-          &:not(:disabled) {
-            .neon-expansion-indicator__line1,
-            .neon-expansion-indicator__line2 {
-              stroke: $color-low-contrast-solid-button;
-            }
-          }
         } @else {
           @include solid-button(
             map-get($palette, $background-solid-button-light),
@@ -116,7 +126,7 @@ $transparency-button-disabled: 0.3;
   &--solid {
     border: none;
     box-shadow: $box-shadow;
-    color: $color-button-text;
+    color: $color-inverse;
 
     &:active {
       box-shadow: $inset-shadow;
@@ -132,8 +142,8 @@ $transparency-button-disabled: 0.3;
     background: transparent;
 
     &.neon-button--disabled {
-      color: rgba($color-disabled-light, 0.5);
-      border-color: rgba($color-disabled-light, 0.5);
+      color: $color-disabled-light;
+      border-color: $color-disabled-light;
     }
   }
 
@@ -142,19 +152,11 @@ $transparency-button-disabled: 0.3;
     border: none;
 
     &.neon-button--disabled {
-      color: rgba($color-disabled-light, 0.5);
+      color: $color-disabled-light;
     }
   }
 
   &--no-outline {
     box-shadow: none !important;
-  }
-
-  &--disabled {
-    .neon-button__indicator {
-      line {
-        stroke: $color-disabled-light;
-      }
-    }
   }
 }
