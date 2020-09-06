@@ -37,7 +37,7 @@
 .neon-grid {
   .neon-grid-area {
     @include responsive(larger-than-tablet) {
-      max-width: calc(100vw - #{$side-nav-width + 2 * $spacing-vertical-desktop});
+      max-width: calc(100vw - #{2 * $spacing-vertical-desktop});
     }
 
     @include responsive(tablet) {
@@ -46,6 +46,14 @@
 
     @include responsive(mobile-large) {
       max-width: calc(100vw - #{2 * $spacing-vertical-mobile});
+    }
+  }
+}
+
+.neon-side-nav + .neon-grid {
+  .neon-grid-area {
+    @include responsive(larger-than-tablet) {
+      max-width: calc(100vw - #{$side-nav-width + 2 * $spacing-vertical-desktop});
     }
   }
 }
