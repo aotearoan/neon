@@ -130,6 +130,12 @@ export class Menu {
             path: 'grid',
             page: 'Grid',
             component: 'NeonGrid',
+            subComponents: [
+              {
+                path: 'grid-area',
+                name: 'NeonGridArea',
+              },
+            ],
           },
           {
             path: 'modal',
