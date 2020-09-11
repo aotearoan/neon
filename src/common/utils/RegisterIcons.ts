@@ -40,11 +40,11 @@ export class RegisterIcons {
     );
     NeonIconRegistry.addIcon(
       'color-filter',
-      `<svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'><circle class="neon-svg--stroke" cx='256' cy='184' r='120' style='fill:none;stroke-linejoin:round;stroke-width:32px'/><circle class="neon-svg--stroke" cx='344' cy='328' r='120' style='fill:none;stroke-linejoin:round;stroke-width:32px'/><circle class="neon-svg--stroke" cx='168' cy='328' r='120' style='fill:none;stroke-linejoin:round;stroke-width:32px'/></svg>`,
+      `<svg xmlns='http://www.w3.org/2000/svg' width="100%" height="100%" viewBox='0 0 512 512'><circle class="neon-svg--stroke" cx='256' cy='184' r='120' style='fill:none;stroke-linejoin:round;stroke-width:32px'/><circle class="neon-svg--stroke" cx='344' cy='328' r='120' style='fill:none;stroke-linejoin:round;stroke-width:32px'/><circle class="neon-svg--stroke" cx='168' cy='328' r='120' style='fill:none;stroke-linejoin:round;stroke-width:32px'/></svg>`,
     );
     NeonIconRegistry.addIcon(
       'contrast',
-      `<svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'><circle class="neon-svg--stroke" cx='256' cy='256' r='208' style='fill:none;stroke-linejoin:round;stroke-width:32px'/><path class="neon-svg--fill" d='M256,464C141.12,464,48,370.88,48,256S141.12,48,256,48Z'/></svg>`,
+      `<svg xmlns='http://www.w3.org/2000/svg' width="100%" height="100%" viewBox='0 0 512 512'><circle class="neon-svg--stroke" cx='256' cy='256' r='208' style='fill:none;stroke-linejoin:round;stroke-width:32px'/><path class="neon-svg--fill" d='M256,464C141.12,464,48,370.88,48,256S141.12,48,256,48Z'/></svg>`,
     );
     NeonIconRegistry.addIcon(
       'copy',
@@ -52,7 +52,7 @@ export class RegisterIcons {
     );
     NeonIconRegistry.addIcon(
       'desktop',
-      `<svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'><rect class="neon-svg--stroke" x='32' y='64' width='448' height='320' rx='32' ry='32' style='fill:none;stroke-linejoin:round;stroke-width:32px'/><polygon class="neon-svg--stroke" points='304 448 296 384 216 384 208 448 304 448' style='fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/><line class="neon-svg--stroke" x1='368' y1='448' x2='144' y2='448' style='fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/><path class="neon-svg--fill" d='M32,304v48a32.09,32.09,0,0,0,32,32H448a32.09,32.09,0,0,0,32-32V304Zm224,64a16,16,0,1,1,16-16A16,16,0,0,1,256,368Z'/></svg>`,
+      `<svg xmlns='http://www.w3.org/2000/svg' width="100%" height="100%" viewBox='0 0 512 512'><rect class="neon-svg--stroke" x='32' y='64' width='448' height='320' rx='32' ry='32' style='fill:none;stroke-linejoin:round;stroke-width:32px'/><polygon class="neon-svg--stroke" points='304 448 296 384 216 384 208 448 304 448' style='fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/><line class="neon-svg--stroke" x1='368' y1='448' x2='144' y2='448' style='fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/><path class="neon-svg--fill" d='M32,304v48a32.09,32.09,0,0,0,32,32H448a32.09,32.09,0,0,0,32-32V304Zm224,64a16,16,0,1,1,16-16A16,16,0,0,1,256,368Z'/></svg>`,
     );
     NeonIconRegistry.addIcon(
       'download',
@@ -68,7 +68,7 @@ export class RegisterIcons {
     );
     NeonIconRegistry.addIcon(
       'hammer',
-      `<svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'><path class="neon-svg--stroke" d='M277.42,247a24.68,24.68,0,0,0-4.08-5.47L255,223.44a21.63,21.63,0,0,0-6.56-4.57,20.93,20.93,0,0,0-23.28,4.27c-6.36,6.26-18,17.68-39,38.43C146,301.3,71.43,367.89,37.71,396.29a16,16,0,0,0-1.09,23.54l39,39.43a16.13,16.13,0,0,0,23.67-.89c29.24-34.37,96.3-109,136-148.23,20.39-20.06,31.82-31.58,38.29-37.94A21.76,21.76,0,0,0,277.42,247Z' style='fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/><path class="neon-svg--stroke" d='M478.43,201l-34.31-34a5.44,5.44,0,0,0-4-1.59,5.59,5.59,0,0,0-4,1.59h0a11.41,11.41,0,0,1-9.55,3.27c-4.48-.49-9.25-1.88-12.33-4.86-7-6.86,1.09-20.36-5.07-29a242.88,242.88,0,0,0-23.08-26.72c-7.06-7-34.81-33.47-81.55-52.53a123.79,123.79,0,0,0-47-9.24c-26.35,0-46.61,11.76-54,18.51-5.88,5.32-12,13.77-12,13.77A91.29,91.29,0,0,1,202.35,77a79.53,79.53,0,0,1,23.28-1.49C241.19,76.8,259.94,84.1,270,92c16.21,13,23.18,30.39,24.27,52.83.8,16.69-15.23,37.76-30.44,54.94a7.85,7.85,0,0,0,.4,10.83l21.24,21.23a8,8,0,0,0,11.14.1c13.93-13.51,31.09-28.47,40.82-34.46s17.58-7.68,21.35-8.09A35.71,35.71,0,0,1,380.08,194a13.65,13.65,0,0,1,3.08,2.38c6.46,6.56,6.07,17.28-.5,23.74l-2,1.89a5.5,5.5,0,0,0,0,7.84l34.31,34a5.5,5.5,0,0,0,4,1.58,5.65,5.65,0,0,0,4-1.58L478.43,209A5.82,5.82,0,0,0,478.43,201Z' style='fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/></svg>`,
+      `<svg xmlns='http://www.w3.org/2000/svg' width="100%" height="100%" viewBox='0 0 512 512'><path class="neon-svg--stroke" d='M277.42,247a24.68,24.68,0,0,0-4.08-5.47L255,223.44a21.63,21.63,0,0,0-6.56-4.57,20.93,20.93,0,0,0-23.28,4.27c-6.36,6.26-18,17.68-39,38.43C146,301.3,71.43,367.89,37.71,396.29a16,16,0,0,0-1.09,23.54l39,39.43a16.13,16.13,0,0,0,23.67-.89c29.24-34.37,96.3-109,136-148.23,20.39-20.06,31.82-31.58,38.29-37.94A21.76,21.76,0,0,0,277.42,247Z' style='fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/><path class="neon-svg--stroke" d='M478.43,201l-34.31-34a5.44,5.44,0,0,0-4-1.59,5.59,5.59,0,0,0-4,1.59h0a11.41,11.41,0,0,1-9.55,3.27c-4.48-.49-9.25-1.88-12.33-4.86-7-6.86,1.09-20.36-5.07-29a242.88,242.88,0,0,0-23.08-26.72c-7.06-7-34.81-33.47-81.55-52.53a123.79,123.79,0,0,0-47-9.24c-26.35,0-46.61,11.76-54,18.51-5.88,5.32-12,13.77-12,13.77A91.29,91.29,0,0,1,202.35,77a79.53,79.53,0,0,1,23.28-1.49C241.19,76.8,259.94,84.1,270,92c16.21,13,23.18,30.39,24.27,52.83.8,16.69-15.23,37.76-30.44,54.94a7.85,7.85,0,0,0,.4,10.83l21.24,21.23a8,8,0,0,0,11.14.1c13.93-13.51,31.09-28.47,40.82-34.46s17.58-7.68,21.35-8.09A35.71,35.71,0,0,1,380.08,194a13.65,13.65,0,0,1,3.08,2.38c6.46,6.56,6.07,17.28-.5,23.74l-2,1.89a5.5,5.5,0,0,0,0,7.84l34.31,34a5.5,5.5,0,0,0,4,1.58,5.65,5.65,0,0,0,4-1.58L478.43,209A5.82,5.82,0,0,0,478.43,201Z' style='fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/></svg>`,
     );
     NeonIconRegistry.addIcon(
       'heart',
@@ -80,11 +80,11 @@ export class RegisterIcons {
     );
     NeonIconRegistry.addIcon(
       'html-logo',
-      `<svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'><path class="neon-svg--fill" d='M64,32,98.94,435.21,255.77,480,413,435.15,448,32ZM372,164H188l4,51H368L354.49,366.39,256,394.48l-98.68-28L150.54,289H198.8l3.42,39.29L256,343.07l53.42-14.92L315,264H148L135.41,114.41l240.79,0Z'/></svg>`,
+      `<svg xmlns='http://www.w3.org/2000/svg' width="100%" height="100%" viewBox='0 0 512 512'><path class="neon-svg--fill" d='M64,32,98.94,435.21,255.77,480,413,435.15,448,32ZM372,164H188l4,51H368L354.49,366.39,256,394.48l-98.68-28L150.54,289H198.8l3.42,39.29L256,343.07l53.42-14.92L315,264H148L135.41,114.41l240.79,0Z'/></svg>`,
     );
     NeonIconRegistry.addIcon(
       'images',
-      `<svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'><path class="neon-svg--stroke" d='M432,112V96a48.14,48.14,0,0,0-48-48H64A48.14,48.14,0,0,0,16,96V352a48.14,48.14,0,0,0,48,48H80' style='fill:none;stroke-linejoin:round;stroke-width:32px'/><rect class="neon-svg--stroke" x='96' y='128' width='400' height='336' rx='45.99' ry='45.99' style='fill:none;stroke-linejoin:round;stroke-width:32px'/><ellipse class="neon-svg--stroke" cx='372.92' cy='219.64' rx='30.77' ry='30.55' style='fill:none;stroke-miterlimit:10;stroke-width:32px'/><path class="neon-svg--stroke" d='M342.15,372.17,255,285.78a30.93,30.93,0,0,0-42.18-1.21L96,387.64' style='fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/><path class="neon-svg--stroke" d='M265.23,464,383.82,346.27a31,31,0,0,1,41.46-1.87L496,402.91' style='fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/></svg>`,
+      `<svg xmlns='http://www.w3.org/2000/svg' width="100%" height="100%" viewBox='0 0 512 512'><path class="neon-svg--stroke" d='M432,112V96a48.14,48.14,0,0,0-48-48H64A48.14,48.14,0,0,0,16,96V352a48.14,48.14,0,0,0,48,48H80' style='fill:none;stroke-linejoin:round;stroke-width:32px'/><rect class="neon-svg--stroke" x='96' y='128' width='400' height='336' rx='45.99' ry='45.99' style='fill:none;stroke-linejoin:round;stroke-width:32px'/><ellipse class="neon-svg--stroke" cx='372.92' cy='219.64' rx='30.77' ry='30.55' style='fill:none;stroke-miterlimit:10;stroke-width:32px'/><path class="neon-svg--stroke" d='M342.15,372.17,255,285.78a30.93,30.93,0,0,0-42.18-1.21L96,387.64' style='fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/><path class="neon-svg--stroke" d='M265.23,464,383.82,346.27a31,31,0,0,1,41.46-1.87L496,402.91' style='fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/></svg>`,
     );
     NeonIconRegistry.addIcon(
       'info-circle',
@@ -108,7 +108,7 @@ export class RegisterIcons {
     );
     NeonIconRegistry.addIcon(
       'palette',
-      `<svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'><path class="neon-svg--stroke" d='M430.11,347.9c-6.6-6.1-16.3-7.6-24.6-9-11.5-1.9-15.9-4-22.6-10-14.3-12.7-14.3-31.1,0-43.8l30.3-26.9c46.4-41,46.4-108.2,0-149.2-34.2-30.1-80.1-45-127.8-45-55.7,0-113.9,20.3-158.8,60.1-83.5,73.8-83.5,194.7,0,268.5,41.5,36.7,97.5,55,152.9,55.4h1.7c55.4,0,110-17.9,148.8-52.4C444.41,382.9,442,359,430.11,347.9Z' style='fill:none;stroke-miterlimit:10;stroke-width:32px'/><circle class="neon-svg--fill" cx='144' cy='208' r='32'/><circle class="neon-svg--fill" cx='152' cy='311' r='32'/><circle class="neon-svg--fill" cx='224' cy='144' r='32'/><circle class="neon-svg--fill" cx='256' cy='367' r='48'/><circle class="neon-svg--fill" cx='328' cy='144' r='32'/></svg>`,
+      `<svg xmlns='http://www.w3.org/2000/svg' width="100%" height="100%" viewBox='0 0 512 512'><path class="neon-svg--stroke" d='M430.11,347.9c-6.6-6.1-16.3-7.6-24.6-9-11.5-1.9-15.9-4-22.6-10-14.3-12.7-14.3-31.1,0-43.8l30.3-26.9c46.4-41,46.4-108.2,0-149.2-34.2-30.1-80.1-45-127.8-45-55.7,0-113.9,20.3-158.8,60.1-83.5,73.8-83.5,194.7,0,268.5,41.5,36.7,97.5,55,152.9,55.4h1.7c55.4,0,110-17.9,148.8-52.4C444.41,382.9,442,359,430.11,347.9Z' style='fill:none;stroke-miterlimit:10;stroke-width:32px'/><circle class="neon-svg--fill" cx='144' cy='208' r='32'/><circle class="neon-svg--fill" cx='152' cy='311' r='32'/><circle class="neon-svg--fill" cx='224' cy='144' r='32'/><circle class="neon-svg--fill" cx='256' cy='367' r='48'/><circle class="neon-svg--fill" cx='328' cy='144' r='32'/></svg>`,
     );
     NeonIconRegistry.addIcon(
       'plus',

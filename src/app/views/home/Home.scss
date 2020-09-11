@@ -1,38 +1,65 @@
 .homepage {
   align-items: center;
 
+  &__header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include padding-horizontal;
+    padding-bottom: 32 * $base-space !important;
+
+    @include responsive(tablet) {
+      padding-bottom: 16 * $base-space !important;
+    }
+  }
+
+  &__content {
+    align-items: center;
+    @include padding;
+  }
+
   .neon-logo {
-    $logo-height: 150px;
+    $logo-height: 100px;
     height: $logo-height;
     width: $logo-height * $logo-width-multiplier;
     max-width: 100%;
     align-self: center;
-    margin-top: 40 * $base-space;
+    margin-top: 32 * $base-space;
     margin-bottom: 5 * $base-space;
 
     @include responsive(tablet) {
-      height: 0.5 * $logo-height;
-      width: 0.5 * $logo-height * $logo-width-multiplier;
+      height: 0.75 * $logo-height;
+      width: 0.75 * $logo-height * $logo-width-multiplier;
+      margin-top: 16 * $base-space;
     }
   }
 
-  .tagline {
-    color: $color-primary;
+  &__tagline {
     text-align: center;
-    font-size: $h1-size;
-    font-weight: 900;
+    font-size: $h4-size;
+    font-family: $heading-font-family;
+    font-weight: 400;
     letter-spacing: $component-letter-spacing-s;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+
+    @include responsive(tablet) {
+      font-size: $h5-size;
+    }
   }
 
   h1 {
     @include neon-h0;
     text-align: center;
-    margin-top: 30 * $base-space;
+    margin-top: 16 * $base-space;
+
+    @include responsive(tablet) {
+      @include neon-h1;
+      margin-top: 16 * $base-space;
+    }
   }
 
   .powered-by {
-    font-size: $h6-size;
+    font-weight: 300;
     margin-top: 10 * $base-space;
     text-align: center;
   }
@@ -42,6 +69,10 @@
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+
+    @include responsive(tablet) {
+      font-size: $base-font-size;
+    }
   }
 
   .neon-button {
@@ -80,8 +111,8 @@
     }
 
     .highlight-icon {
-      width: 32 * $base-space;
-      height: 32 * $base-space;
+      width: 24 * $base-space;
+      height: 24 * $base-space;
       margin: 4 * $base-space;
     }
   }

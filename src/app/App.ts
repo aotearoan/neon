@@ -10,6 +10,8 @@ import {
   NeonFooter,
   NeonGrid,
   NeonGridArea,
+  NeonInput,
+  NeonLink,
   NeonLogo,
   NeonPage,
   NeonResponsive,
@@ -18,8 +20,6 @@ import {
   NeonSwitch,
   NeonTopNav,
   NeonTreeMenu,
-  NeonInput,
-  NeonLink,
 } from '../components';
 import { NeonModeUtils } from '../common/utils/NeonModeUtils';
 import { Route } from 'vue-router';
@@ -62,10 +62,6 @@ export default class App extends Vue {
   private simplePage = true;
 
   public mounted() {
-    const date = new Date();
-    document.documentElement.style.setProperty('--hours', `${date.getHours()}`);
-    document.documentElement.style.setProperty('--minutes', `${date.getMinutes()}`);
-    document.documentElement.style.setProperty('--seconds', `${date.getSeconds()}`);
     const path = localStorage.getItem('path');
     if (path) {
       localStorage.removeItem('path');
@@ -74,7 +70,7 @@ export default class App extends Vue {
 
     const savedMode = (localStorage.getItem('mode') as NeonMode) || undefined;
     NeonModeUtils.init(savedMode);
-    NeonModeUtils.addListener('app-mode-listener', this.switchMode);
+    NeonModeUtils.addListener('app-mode-listener', this.setMode);
     window.addEventListener('resize', this.handleResize);
     this.handleResize();
 
@@ -103,19 +99,6 @@ export default class App extends Vue {
     return [Theme.Classic];
   }
 
-  get modes() {
-    return [
-      {
-        key: NeonMode.Light,
-        icon: 'sun',
-      },
-      {
-        key: NeonMode.Dark,
-        icon: 'moon',
-      },
-    ];
-  }
-
   private switchTheme(theme: Theme) {
     if (this.theme !== theme) {
       document.documentElement.classList.remove(`neon-theme--${this.theme}`);
@@ -124,7 +107,11 @@ export default class App extends Vue {
     }
   }
 
-  private switchMode(mode: NeonMode) {
+  private switchMode() {
+    this.setMode(this.selectedMode === NeonMode.Dark ? NeonMode.Light : NeonMode.Dark);
+  }
+
+  private setMode(mode: NeonMode) {
     document.documentElement.classList.remove(`neon-mode--${this.selectedMode}`);
     document.documentElement.classList.add(`neon-mode--${mode}`);
     this.selectedMode = mode;

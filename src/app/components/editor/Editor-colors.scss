@@ -27,4 +27,10 @@
   .punctuation {
     color: $color-neutral-l2;
   }
+
+  &__read-only.neon-icon--disabled {
+    path.neon-svg--fill {
+      fill: $color-low-contrast-d5 !important;
+    }
+  }
 }

@@ -1,15 +1,9 @@
 <template>
   <div id="app" class="neon-app" :class="{ 'neon-app--simple-page': simplePage }">
     <header v-if="simplePage" class="simple-page-header">
-      <neon-toggle
-        name="dark-mode-toggle"
-        color="primary"
-        :value="selectedMode"
-        :model="modes"
-        @input="switchMode"
-        :size="isMobile ? 's' : 'm'"
-        class="toggle-dark-mode"
-      />
+      <neon-link @click="switchMode()">
+        <neon-icon class="dark-mode-toggle" name="contrast" />
+      </neon-link>
     </header>
     <neon-page>
       <template #top-nav v-if="!simplePage">
@@ -33,7 +27,7 @@
             <neon-link href="/" class="homepage-link">
               <neon-logo></neon-logo>
             </neon-link>
-            <span class="tagline neon-color-text-neutral">A VueJs design library</span>
+            <span class="tagline neon-color-text-brand">A VueJs Design Library for Web Applications</span>
           </span>
           <div>
             <div id="nav">
@@ -50,20 +44,20 @@
               href="https://github.com/aotearoan/neon"
               icon="github"
               label="GitHub"
-              color="primary"
+              color="high-contrast"
               button-style="text"
-              :circular="true"
-              :size="isMobile ? 's' : 'm'"
+              :outline="false"
+              :size="isMobile ? 's' : 'l'"
             />
-            <neon-toggle
+            <neon-button
               name="dark-mode-toggle"
-              color="neutral"
-              :value="selectedMode"
-              :model="modes"
-              @input="switchMode"
-              :size="isMobile ? 's' : 'm'"
-            >
-            </neon-toggle>
+              color="high-contrast"
+              icon="contrast"
+              button-style="text"
+              :outline="false"
+              @click="switchMode()"
+              :size="isMobile ? 's' : 'l'"
+            />
           </span>
         </neon-top-nav>
       </template>

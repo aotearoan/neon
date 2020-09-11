@@ -3,6 +3,8 @@
 @import 'sass/fonts';
 $monospaced-font-variation-settings: 'wdth' 100, 'wght' 450;
 $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', Courier, monospace;
+$heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
 
 .app {
   &.neon-theme--classic {
@@ -23,45 +25,8 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
       @import 'views/home/Home-colors';
 
       .neon-app--simple-page {
-        background: linear-gradient(
-              calc(360deg * var(--hours) / 24),
-              rgba($color-primary-d1, 0.5) 10%,
-              rgba($color-info-d4, 0.5) 90%
-            )
-            fixed,
-          linear-gradient(
-            calc(360deg * var(--minutes) / 60),
-            rgba($color-brand-d2, 0.5) 50%,
-            rgba($color-info-d2, 0.5) 50%
-          ),
-          linear-gradient(
-              calc(360deg * var(--seconds) / 60),
-              rgba($color-brand-d3, 0.5) 33%,
-              rgba($color-info-d3, 0.5) 33%
-            )
-            fixed;
-
-        .simple-page-header {
-          background-color: $color-inverse;
-
-          @supports (backdrop-filter: none) {
-            background-color: rgba($color-inverse, 0.0125);
-            backdrop-filter: blur(10px);
-          }
-        }
-
-        .toggle-dark-mode {
-          background-color: rgba($color-primary-d4, 0.375);
-
-          .neon-toggle__label:first-child {
-            border-top-color: $color-primary-d2;
-            border-left-color: $color-primary-d2 !important;
-            border-bottom-color: $color-primary-d2;
-
-            &:hover {
-              background-color: rgba($color-primary-d2, 0.375) !important;
-            }
-          }
+        .neon-footer {
+          background-color: transparent;
         }
       }
     }
@@ -81,31 +46,10 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
       @import 'views/home/Home-colors';
 
       .neon-app--simple-page {
-        background: radial-gradient(circle at top 25% right 15%, rgba($color-warn-l1, 0.75) 3%, transparent 3%),
-          radial-gradient(circle at top 65% right 5%, rgba($color-primary-l1, 0.75) 10%, transparent 10%) fixed,
-          radial-gradient(circle at bottom 7% left 25%, rgba($color-brand-l1, 0.75) 10%, transparent 10%),
-          radial-gradient(circle at top 30% left -10%, rgba($color-info-d2, 0.75) 30%, transparent 30%) fixed,
-          $color-neutral-l5;
+        background-color: $color-neutral-l3;
 
-        .simple-page-header {
-          background-color: $color-inverse;
-
-          @supports (backdrop-filter: none) {
-            background-color: rgba($color-inverse, 0.125);
-            backdrop-filter: blur(10px);
-          }
-        }
-
-        .toggle-dark-mode {
-          .neon-toggle__label:last-child {
-            border-top-color: $color-primary-l3;
-            border-right-color: $color-primary-l3 !important;
-            border-bottom-color: $color-primary-l3;
-
-            &:hover {
-              background-color: rgba($color-primary-l3, 0.375) !important;
-            }
-          }
+        .neon-footer {
+          background-color: transparent;
         }
       }
     }
@@ -139,14 +83,6 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
       .neon-top-nav__container {
         justify-content: space-between;
 
-        .github-link {
-          margin-right: 6 * $base-space;
-
-          @include responsive(mobile-large) {
-            margin-right: 4 * $base-space;
-          }
-        }
-
         .top-nav-actions {
           display: flex;
         }
@@ -177,10 +113,13 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
       .tagline {
         margin-left: 4 * $base-space;
         font-size: $font-size-l;
+        font-weight: 300;
         opacity: 0.9;
         letter-spacing: $component-letter-spacing-s;
         line-height: $line-height-one;
         user-select: none;
+        position: relative;
+        top: 3px;
 
         @include responsive(tablet) {
           display: none;
@@ -194,19 +133,24 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
       margin-bottom: 2 * $base-space;
     }
 
-    .neon-h1,
-    .neon-h2,
-    .neon-h3,
-    .neon-h4,
-    .neon-h5,
-    .neon-h6,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-style: $font-style-headings;
+    .example__output,
+    .no-style--font {
+      .neon-h0,
+      .neon-h1,
+      .neon-h2,
+      .neon-h3,
+      .neon-h4,
+      .neon-h5,
+      .neon-h6,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+          'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+      }
     }
 
     .neon-card + .neon-card {
@@ -240,12 +184,30 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
     }
 
     .neon-app--simple-page {
+      .dark-mode-toggle {
+        width: 8 * $base-space;
+        height: 8 * $base-space;
+
+        @include responsive(tablet) {
+          width: 6 * $base-space;
+          height: 6 * $base-space;
+        }
+      }
+
+      .neon-grid {
+        padding: 0;
+      }
+
+      .neon-grid-area {
+        max-width: 100vw !important;
+        margin: 0 !important;
+      }
+
       .simple-page-header {
         z-index: $z-index-top-nav;
-        position: fixed;
+        position: absolute;
         right: 0;
         top: 0;
-        @include margin(0.5);
         @include padding(0.5);
         border-radius: 8px;
         display: flex;

@@ -18,6 +18,9 @@
           Typescript/CSS without using a large icon font and not having to duplicate icon images to support multiple
           color variations (including light and dark modes).
         </p>
+        <neon-note color="warn">
+          <span><strong>Important:</strong> Set the width and height of SVGs to 100% so they scale correctly.</span>
+        </neon-note>
       </neon-card-body>
     </neon-card>
     <neon-card>

@@ -16,13 +16,15 @@
           <span><strong>Note:</strong> use the class <em>neon-h0</em> to display H0 text.</span>
         </neon-note>
         <h2 class="neon-h4 typography-scale">Typography scale</h2>
-        <span class="neon-h0">H0 heading</span>
-        <h1>H1 heading</h1>
-        <h2>H2 heading</h2>
-        <h3>H3 heading</h3>
-        <h4>H4 heading</h4>
-        <h5>H5 heading</h5>
-        <h6>H6 heading</h6>
+        <div class="no-style--font">
+          <span class="neon-h0">H0 heading</span>
+          <h1>H1 heading</h1>
+          <h2>H2 heading</h2>
+          <h3>H3 heading</h3>
+          <h4>H4 heading</h4>
+          <h5>H5 heading</h5>
+          <h6>H6 heading</h6>
+        </div>
         <h2 class="neon-h4 typography-scale">SASS Mixins and classes</h2>
         <p>
           One of the issues with headings in HTML is handling a mismatch between the page structure and the styles. E.g.

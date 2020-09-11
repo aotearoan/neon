@@ -62,8 +62,8 @@ $color-low-contrast-outline-button: $color-low-contrast-l2 !default;
 
 // text button
 $color-text-button: d1 !default;
-$background-color-text-button-hover: lighten($color-neutral-l4, 1) !default;
-$background-color-text-button-active: $color-neutral-l4 !default;
+$background-color-text-button-hover: rgba($color-neutral-l4, 0.33) !default;
+$background-color-text-button-active: rgba($color-neutral-l4, 0.75) !default;
 
 // label
 $color-label: d1 !default;
