@@ -14,6 +14,7 @@ $heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
       @import '../../themes/classic/dark';
 
       $color-api-docs-property-name: l3;
+      $color-404: rgba($color-brand-l1, 0.75);
 
       // application dark mode SASS
       @import 'components/editor/Editor-colors';
@@ -23,6 +24,7 @@ $heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
 
       @import 'views/design/color/Color-colors';
       @import 'views/home/Home-colors';
+      @import 'views/error/NotFound-colors';
 
       .neon-app--simple-page {
         .neon-footer {
@@ -35,6 +37,7 @@ $heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
       @import '../../themes/classic/light';
 
       $color-api-docs-property-name: d2;
+      $color-404: $color-brand-d3;
 
       // application light mode SASS
       @import 'components/editor/Editor-colors';
@@ -44,6 +47,7 @@ $heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
 
       @import 'views/design/color/Color-colors';
       @import 'views/home/Home-colors';
+      @import 'views/error/NotFound-colors';
 
       .neon-app--simple-page {
         background-color: $color-neutral-l3;
@@ -70,6 +74,7 @@ $heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
     @import 'views/user-input/drop-zone/DropZone';
     @import 'views/feedback/alert/Alert';
     @import 'views/home/Home';
+    @import 'views/error/NotFound';
 
     body {
       .title {

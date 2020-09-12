@@ -1,0 +1,29 @@
+.not-found {
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  @include responsive(mobile-large) {
+    height: 60%;
+  }
+
+  h1 {
+    font-size: 20vw;
+    font-weight: 900;
+
+    @include responsive(tablet) {
+      font-size: 30vw;
+    }
+  }
+
+  h2 {
+    font-weight: 900;
+  }
+
+  p {
+    font-size: $font-size-l;
+  }
+}

@@ -41,6 +41,11 @@ const routes: Array<RouteConfig> = [
     name: 'Utils',
     component: () => import(/* webpackChunkName: "source" */ './views/source/Source.vue'),
   },
+  {
+    path: '*',
+    name: 'notfound',
+    component: () => import(/* webpackChunkName: "source" */ './views/error/NotFound.vue'),
+  },
 ];
 
 const router = new VueRouter({
