@@ -7,7 +7,7 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component
 export default class NeonPage extends Vue {
   public created() {
-    window.addEventListener('resize', this.handleResize);
+    window.addEventListener('resize', this.handleResize, { passive: true });
     this.handleResize();
   }
 

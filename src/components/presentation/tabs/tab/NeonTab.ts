@@ -22,7 +22,7 @@ export default class NeonTab extends Vue {
   public toggleOnIf!: boolean;
 
   private mounted() {
-    window.addEventListener('resize', this.handleResize);
+    window.addEventListener('resize', this.handleResize, { passive: true });
     this.handleResize();
   }
 

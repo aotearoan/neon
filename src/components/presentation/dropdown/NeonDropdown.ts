@@ -93,10 +93,10 @@ export default class NeonDropdown extends Vue {
 
   public mounted() {
     this.closableUtils = new NeonClosableUtils(this.$refs.dropdownContent, this.close);
-    window.addEventListener('resize', this.recalculatePlacement);
-    window.addEventListener('scroll', this.recalculatePlacement);
+    window.addEventListener('resize', this.recalculatePlacement, { passive: true });
+    window.addEventListener('scroll', this.recalculatePlacement, { passive: true });
     if (this.placementContainer) {
-      this.placementContainer.addEventListener('scroll', this.recalculatePlacement);
+      this.placementContainer.addEventListener('scroll', this.recalculatePlacement, { passive: true });
     }
   }
 

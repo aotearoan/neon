@@ -71,7 +71,7 @@ export default class App extends Vue {
     const savedMode = (localStorage.getItem('mode') as NeonMode) || undefined;
     NeonModeUtils.init(savedMode);
     NeonModeUtils.addListener('app-mode-listener', this.setMode);
-    window.addEventListener('resize', this.handleResize);
+    window.addEventListener('resize', this.handleResize, { passive: true });
     this.handleResize();
 
     this.indexModel = Menu.menu().map((item) => ({
