@@ -3,16 +3,13 @@
     <ul class="no-style">
       <li
         v-for="section in model"
-        :key="section.key + section.expanded"
+        :key="section.key"
         class="neon-tree-menu__section"
         :class="{
           'neon-tree-menu__section--expanded': section.expanded,
-          'neon-tree-menu__section--separator-before': section.group,
         }"
       >
-        <label v-if="section.group">{{ section.group }}</label>
-        <hr v-if="section.group" />
-        <neon-link :no-style="true" class="neon-tree-menu__section-link" @click.native="onClick(section.key)">{{
+        <neon-link :no-style="true" class="neon-tree-menu__section-link" @click="onClick(section.key)">{{
           section.label
         }}</neon-link>
         <ul class="no-style neon-tree-menu__links">

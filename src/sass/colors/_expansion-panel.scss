@@ -1,0 +1,15 @@
+.neon-expansion-panel {
+  border-bottom: $border-width $border-style $border-color;
+
+  &--disabled {
+    .neon-expansion-panel__header {
+      color: $color-disabled-light;
+    }
+  }
+
+  &--bottom {
+    .neon-expansion-panel__header {
+      border-top: $border-width $border-style $border-color;
+    }
+  }
+}

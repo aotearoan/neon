@@ -20,8 +20,8 @@
       />
       <h1>Why Neon?</h1>
       <p>
-        Why yet another design system/component library? There are several issues with other component libraries which
-        Neon aims to solve.
+        Why yet another design system/component library?<br />There are several issues with other component libraries
+        which Neon aims to solve.
       </p>
       <div class="highlights">
         <div class="highlight">

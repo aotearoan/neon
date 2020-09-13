@@ -1,0 +1,87 @@
+{
+  "description": "<p>Expansion panels are used to show and hide content that may be less important or too large to display on screen\nall of the time. They can also be used to expand lists of items, e.g. <em>Show more</em>. The expansion panel consists\nof a button which, when clicked, toggles the open/closed state of the expansion panel and a slot for the content to\ndisplay on expansion.</p>",
+  "tags": {},
+  "exportName": "default",
+  "displayName": "NeonExpansionPanel",
+  "props": [
+    {
+      "name": "value",
+      "tags": {},
+      "description": "A boolean indicating whether or not the expansion panel is expanded.",
+      "type": {
+        "name": "boolean"
+      },
+      "required": true
+    },
+    {
+      "name": "label",
+      "tags": {},
+      "description": "The label of the expansion button",
+      "type": {
+        "name": "TranslateResult"
+      },
+      "required": true
+    },
+    {
+      "name": "icon",
+      "tags": {},
+      "description": "An icon to display to the left of the label",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "position",
+      "tags": {},
+      "description": "The position of the expansion button. This can be located above the content to expand or below it.",
+      "type": {
+        "name": "NeonVerticalPosition"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonVerticalPosition.Top"
+      }
+    },
+    {
+      "name": "size",
+      "tags": {},
+      "description": "The size of the expansion panel button.",
+      "type": {
+        "name": "NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "disabled",
+      "tags": {},
+      "description": "The disabled state of the expansion panel",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "input",
+      "description": "Emitted when the expansion panel button is clicked.",
+      "type": {
+        "names": [
+          "boolean"
+        ]
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "The expansion panel contents"
+    }
+  ]
+}

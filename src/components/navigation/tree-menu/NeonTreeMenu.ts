@@ -1,10 +1,17 @@
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import { NeonTreeMenuSectionModel } from '../../../common/models/NeonTreeMenuModel';
+import NeonLink from '../link/NeonLink.vue';
 
 /**
- * Four level tree menu. This is useful for displaying a hierarchical navigation in NeonSideNav. The top level of the menu is the group (optional). The second level is expandable on click but will not navigate to a page. The third level is the page links and the fourth level is the fragment on that page.
+ * Three level tree menu. This is useful for displaying a hierarchical navigation in NeonSideNav.The top level of the
+ * menu is expandable on click but will not navigate to a page. The second level is links to pages and the third level
+ * is the fragments on that page.
  */
-@Component({})
+@Component({
+  components: {
+    NeonLink,
+  },
+})
 export default class NeonTreeMenu extends Vue {
   private url: string | null = null;
 

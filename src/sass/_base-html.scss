@@ -96,6 +96,10 @@ p {
   font-variation-settings: $monospaced-font-variation-settings;
 }
 
+.neon-closable--open {
+  overflow: hidden;
+}
+
 textarea {
   font-family: $body-font-family;
 }

@@ -16,6 +16,7 @@ import NeonDropdown from './components/presentation/dropdown/NeonDropdown.vue';
 import NeonDropdownMenu from './components/navigation/dropdown-menu/NeonDropdownMenu.vue';
 import NeonDropZone from './components/user-input/drop-zone/NeonDropZone.vue';
 import NeonExpansionIndicator from './components/presentation/expansion-indicator/NeonExpansionIndicator.vue';
+import NeonExpansionPanel from './components/presentation/expansion-panel/NeonExpansionPanel.vue';
 import NeonFile from './components/user-input/file/NeonFile.vue';
 import NeonFooter from './components/layout/footer/NeonFooter.vue';
 import NeonGrid from './components/layout/grid/NeonGrid.vue';
@@ -74,6 +75,7 @@ import { NeonTabModel } from './common/models/NeonTabModel';
 import { NeonToggleModel } from './common/models/NeonToggleModel';
 import { NeonToggleStyle } from './common/enums/NeonToggleStyle';
 import { NeonTreeMenuLinkModel, NeonTreeMenuSectionModel } from './common/models/NeonTreeMenuModel';
+import { NeonVerticalPosition } from './common/enums/NeonVerticalPosition';
 
 /* register default provided icons */
 import { RegisterIcons } from './common/utils/RegisterIcons';
@@ -96,6 +98,7 @@ const components: { [s: string]: VueConstructor } = {
   NeonDropdownMenu,
   NeonDropZone,
   NeonExpansionIndicator,
+  NeonExpansionPanel,
   NeonFile,
   NeonFooter,
   NeonGrid,
@@ -150,6 +153,7 @@ export {
   NeonDropdownStyle,
   NeonDropZone,
   NeonExpansionIndicator,
+  NeonExpansionPanel,
   NeonFile,
   NeonFormattedDate,
   NeonFooter,
@@ -194,4 +198,5 @@ export {
   NeonTreeMenu,
   NeonTreeMenuLinkModel,
   NeonTreeMenuSectionModel,
+  NeonVerticalPosition,
 };

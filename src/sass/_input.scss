@@ -66,6 +66,7 @@
 
     &::placeholder {
       font-family: $body-font-family;
+      letter-spacing: $component-letter-spacing-s;
     }
   }
 

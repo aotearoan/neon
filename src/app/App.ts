@@ -7,6 +7,7 @@ import { NeonTreeMenuLinkModel, NeonTreeMenuSectionModel } from '../common/model
 import {
   NeonAlert,
   NeonDrawer,
+  NeonExpansionPanel,
   NeonFooter,
   NeonGrid,
   NeonGridArea,
@@ -26,6 +27,12 @@ import { Route } from 'vue-router';
 
 export enum Theme {
   Classic = 'classic',
+}
+
+export interface AppMenuGroup {
+  group: TranslateResult;
+  expanded: boolean;
+  children: NeonTreeMenuSectionModel[];
 }
 
 export interface AppMenuLinkModel extends NeonTreeMenuLinkModel {
@@ -50,12 +57,13 @@ Vue.use(VueI18n);
     NeonDrawer,
     NeonInput,
     NeonLink,
+    NeonExpansionPanel,
   },
 })
 export default class App extends Vue {
   public theme = Theme.Classic;
   public selectedMode = NeonMode.Dark;
-  private indexModel: NeonTreeMenuSectionModel[] = [];
+  private indexModel: AppMenuGroup[] = [];
   private indexFilter = '';
   private menuOpen = false;
   private isMobile = false;
@@ -74,19 +82,22 @@ export default class App extends Vue {
     window.addEventListener('resize', this.handleResize, { passive: true });
     this.handleResize();
 
-    this.indexModel = Menu.menu().map((item) => ({
-      label: item.name || item.page || item.path,
-      key: item.path,
-      group: item.group,
-      children: item.children
-        ? item.children.map((child) => ({
-            label: child.name || child.page || child.path,
-            key: child.path,
-            keywords: child.keywords,
-            href: `/${item.path}/${child.path}`,
-            anchors: child.anchors,
-          }))
-        : [],
+    this.indexModel = Menu.menu().map((group) => ({
+      group: group.group,
+      expanded: false,
+      children: group.children.map((item) => ({
+        label: item.name || item.page || item.path,
+        key: item.path,
+        children: item.children
+          ? item.children.map((child) => ({
+              label: child.name || child.page || child.path,
+              key: child.path,
+              keywords: child.keywords,
+              href: `/${item.path}/${child.path}`,
+              anchors: child.anchors,
+            }))
+          : [],
+      })),
     }));
   }
 
@@ -123,9 +134,15 @@ export default class App extends Vue {
     this.menuOpen = false;
     const key = to.path.split('/')[1];
     this.indexModel
-      .filter((item) => item.key === key)
-      .forEach((item) => {
-        item.expanded = true;
+      .filter((group) => group.children.find((item) => item.key === key))
+      .forEach((group) => {
+        group.expanded = true;
+        group.children
+          .filter((item) => item.key === key)
+          .forEach((item) => {
+            item.expanded = true;
+          });
+        group.children = [...group.children];
       });
     this.indexModel = [...this.indexModel];
     this.simplePage = to.meta.simpleLayout;
@@ -140,27 +157,33 @@ export default class App extends Vue {
     }, 250);
   }
 
-  get filteredModel(): NeonTreeMenuSectionModel[] {
-    const items: NeonTreeMenuSectionModel[] = [];
+  get filteredModel(): AppMenuGroup[] {
+    const groups: AppMenuGroup[] = [];
 
     if (this.indexFilter && this.indexFilter.length > 0) {
-      this.indexModel.forEach((item) => {
-        const filteredItem = this.filterSection(item);
-        if (filteredItem) {
-          items.push(filteredItem);
+      this.indexModel.forEach((group) => {
+        const children: NeonTreeMenuSectionModel[] = [];
+        group.children.forEach((item) => {
+          const filteredItem = this.filterSection(item);
+          if (filteredItem) {
+            children.push(filteredItem);
+          }
+        });
+
+        if (children.length > 0) {
+          const filteredGroup = {
+            group: group.group,
+            expanded: true,
+            children,
+          };
+          groups.push(filteredGroup);
         }
       });
     } else {
-      items.push(...this.indexModel);
+      groups.push(...this.indexModel);
     }
 
-    // filter out repeated group labels (it's necessary to include them before each section for filtering purposes)
-    return items.map((item, index) => {
-      const previousItem = items[index - 1];
-      return previousItem && previousItem.group && previousItem.group === item.group
-        ? { ...item, group: undefined }
-        : item;
-    });
+    return groups;
   }
 
   get expandAll() {
@@ -194,12 +217,14 @@ export default class App extends Vue {
   }
 
   private toggleExpand(key: string) {
-    this.indexModel
-      .filter((item) => item.key === key)
-      .forEach((item) => {
-        item.expanded = !item.expanded;
+    this.indexModel.forEach((group) => {
+      group.children.forEach((item) => {
+        if (item.key === key) {
+          item.expanded = !item.expanded;
+        }
       });
-    this.indexModel = [...this.indexModel];
+      group.children = [...group.children];
+    });
   }
 
   private onSideNavMenuClick(key: string) {

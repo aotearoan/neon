@@ -21,7 +21,7 @@ export default class TreeMenu extends Vue {
       {
         key: 'feedback',
         label: 'Feedback',
-        group: 'Components',
+        expanded: false,
         children: [
           {
             key: 'alert',
@@ -57,7 +57,7 @@ export default class TreeMenu extends Vue {
           {
             key: 'dropdown-menu',
             label: 'Dropdown Menu',
-            href: '/navigation/action-menu',
+            href: '/navigation/dropdown-menu',
             anchors: ['Description', 'API', 'Examples'],
           },
           {

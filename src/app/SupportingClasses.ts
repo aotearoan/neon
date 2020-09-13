@@ -16,6 +16,7 @@ export const enumList: string[] = [
   'NeonState',
   'NeonSwitchStyle',
   'NeonToggleStyle',
+  'NeonVerticalPosition',
 ];
 
 export const modelList: string[] = [

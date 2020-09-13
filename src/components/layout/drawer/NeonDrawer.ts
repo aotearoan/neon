@@ -1,4 +1,4 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import { NeonPosition } from '../../../common/enums/NeonPosition';
 import { NeonClosableUtils } from '../../../common/utils/NeonClosableUtils';
 
@@ -39,6 +39,13 @@ export default class NeonDrawer extends Vue {
 
   public mounted() {
     this.closableUtils = new NeonClosableUtils(this.$refs.drawer, this.close);
+  }
+
+  @Watch('open', { immediate: true })
+  private onOpen(open: boolean) {
+    if (open) {
+      this.closableUtils && this.closableUtils.open();
+    }
   }
 
   public beforeDestroy() {

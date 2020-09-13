@@ -7,7 +7,7 @@
   z-index: $z-index-top-nav;
 
   &__container {
-    @include padding($multiplier: 0.75);
+    @include padding(0.75);
     width: 100%;
     max-width: $max-page-width;
     display: flex;

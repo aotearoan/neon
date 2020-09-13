@@ -1,4 +1,4 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import { NeonClosableUtils } from '../../../common/utils/NeonClosableUtils';
 
 /**
@@ -27,6 +27,13 @@ export default class NeonModal extends Vue {
   public mounted() {
     if (this.dismissable) {
       this.closableUtils = new NeonClosableUtils(this.$refs.modal, this.close);
+    }
+  }
+
+  @Watch('open', { immediate: true })
+  private onOpen(open: boolean) {
+    if (open) {
+      this.closableUtils && this.closableUtils.open();
     }
   }
 

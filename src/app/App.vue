@@ -16,12 +16,20 @@
               :size="isMobile ? 's' : 'm'"
               @click="menuOpen = true"
             />
-            <neon-drawer :open="menuOpen" @close="menuOpen = false">
+            <neon-drawer :open="menuOpen" @close="menuOpen = false" :full-width="true" class="app-side-nav">
               <div class="neon-side-nav__sticky">
                 <neon-input type="text" v-model="indexFilter" placeholder="Filter" />
               </div>
               <div class="neon-side-nav__scrolling">
-                <neon-tree-menu :model="filteredModel" :expand-all="expandAll" @click="onInlineMenuClick" />
+                <neon-expansion-panel
+                  v-for="section in filteredModel"
+                  :label="section.group"
+                  :key="section.group"
+                  v-model="section.expanded"
+                  class="menu-expansion-panel"
+                >
+                  <neon-tree-menu :model="section.children" :expand-all="expandAll" @click="onSideNavMenuClick" />
+                </neon-expansion-panel>
               </div>
             </neon-drawer>
             <neon-link href="/" class="homepage-link">
@@ -62,12 +70,20 @@
         </neon-top-nav>
       </template>
       <template #content>
-        <neon-side-nav v-if="!simplePage" class="app-side-nav">
+        <neon-side-nav v-if="!simplePage" class="app-side-nav" :full-width="true">
           <template #sticky>
-            <neon-input type="text" v-model="indexFilter" placeholder="Filter" />
+            <neon-input type="text" v-model="indexFilter" placeholder="Filter..." />
           </template>
           <template #scrolling>
-            <neon-tree-menu :model="filteredModel" :expand-all="expandAll" @click="onSideNavMenuClick" />
+            <neon-expansion-panel
+              v-for="section in filteredModel"
+              :label="section.group"
+              :key="section.group"
+              v-model="section.expanded"
+              class="menu-expansion-panel"
+            >
+              <neon-tree-menu :model="section.children" :expand-all="expandAll" @click="onSideNavMenuClick" />
+            </neon-expansion-panel>
           </template>
         </neon-side-nav>
         <neon-grid id="content" :layouts="layouts" class="content">

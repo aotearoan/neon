@@ -31,6 +31,10 @@ $heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
           background-color: transparent;
         }
       }
+
+      .menu-expansion-panel:first-child {
+        border-top: $border-width $border-style $border-color;
+      }
     }
 
     &.neon-mode--light {
@@ -56,6 +60,10 @@ $heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
           background-color: transparent;
         }
       }
+
+      .menu-expansion-panel:first-child {
+        border-top: $border-width $border-style $border-color;
+      }
     }
 
     // application classic theme SASS
@@ -66,6 +74,7 @@ $heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
     @import 'components/api-docs/ApiDocs';
 
     @import 'views/design/color/Color';
+    @import 'views/presentation/expansion-panel/ExpansionPanel';
     @import 'views/presentation/icon/Icon';
     @import 'views/design/typography/Typography';
     @import 'views/feedback/note/Note';
@@ -132,10 +141,14 @@ $heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
       }
     }
 
-    .app-side-nav > hr {
-      border-top: none;
-      margin-top: 0;
-      margin-bottom: 2 * $base-space;
+    .app-side-nav {
+      .neon-side-nav__sticky {
+        @include padding(0.75);
+      }
+
+      & > hr {
+        display: none;
+      }
     }
 
     .example__output,

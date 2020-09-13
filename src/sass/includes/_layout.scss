@@ -36,15 +36,15 @@ $spacing: (
   ),
 );
 
-@mixin spacing-horizontal($paddingOrMargin, $breakpoint) {
+@mixin spacing-horizontal($paddingOrMargin, $breakpoint, $multiplier) {
   @include responsive($breakpoint) {
-    #{$paddingOrMargin}: 0 nth(map-get($spacing, $breakpoint), 2);
+    #{$paddingOrMargin}: $multiplier * nth(map-get($spacing, $breakpoint), 2);
   }
 }
 
-@mixin spacing-vertical($paddingOrMargin, $breakpoint) {
+@mixin spacing-vertical($paddingOrMargin, $breakpoint, $multiplier) {
   @include responsive($breakpoint) {
-    #{$paddingOrMargin}: nth(map-get($spacing, $breakpoint), 1) 0;
+    #{$paddingOrMargin}: $multiplier * nth(map-get($spacing, $breakpoint), 1);
   }
 }
 
@@ -94,16 +94,22 @@ $spacing: (
   @include padding-mobile($multiplier, $square);
 }
 
-@mixin padding-horizontal {
-  @include spacing-horizontal('padding', larger-than-tablet);
-  @include spacing-horizontal('padding', tablet);
-  @include spacing-horizontal('padding', mobile-large);
+@mixin padding-horizontal($multiplier: 1) {
+  @include spacing-horizontal('padding-left', larger-than-tablet, $multiplier);
+  @include spacing-horizontal('padding-left', tablet, $multiplier);
+  @include spacing-horizontal('padding-left', mobile-large, $multiplier);
+  @include spacing-horizontal('padding-right', larger-than-tablet, $multiplier);
+  @include spacing-horizontal('padding-right', tablet, $multiplier);
+  @include spacing-horizontal('padding-right', mobile-large, $multiplier);
 }
 
-@mixin padding-vertical {
-  @include spacing-vertical('padding', larger-than-tablet);
-  @include spacing-vertical('padding', tablet);
-  @include spacing-vertical('padding', mobile-large);
+@mixin padding-vertical($multiplier: 1) {
+  @include spacing-vertical('padding-top', larger-than-tablet, $multiplier);
+  @include spacing-vertical('padding-top', tablet, $multiplier);
+  @include spacing-vertical('padding-top', mobile-large, $multiplier);
+  @include spacing-vertical('padding-bottom', larger-than-tablet, $multiplier);
+  @include spacing-vertical('padding-bottom', tablet, $multiplier);
+  @include spacing-vertical('padding-bottom', mobile-large, $multiplier);
 }
 
 // margin mixins
@@ -119,10 +125,22 @@ $spacing: (
   @include spacing('margin', larger-than-tablet, $multiplier, $square);
 }
 
-@mixin margin-vertical {
-  @include spacing-vertical('margin', larger-than-tablet);
-  @include spacing-vertical('margin', tablet);
-  @include spacing-vertical('margin', mobile-large);
+@mixin margin-vertical($multiplier: 1) {
+  @include spacing-vertical('margin-top', larger-than-tablet, $multiplier);
+  @include spacing-vertical('margin-top', tablet, $multiplier);
+  @include spacing-vertical('margin-top', mobile-large, $multiplier);
+  @include spacing-vertical('margin-bottom', larger-than-tablet, $multiplier);
+  @include spacing-vertical('margin-bottom', tablet, $multiplier);
+  @include spacing-vertical('margin-bottom', mobile-large, $multiplier);
+}
+
+@mixin margin-horizontal($multiplier: 1) {
+  @include spacing-horizontal('margin-left', larger-than-tablet, $multiplier);
+  @include spacing-horizontal('margin-left', tablet, $multiplier);
+  @include spacing-horizontal('margin-left', mobile-large, $multiplier);
+  @include spacing-horizontal('margin-right', larger-than-tablet, $multiplier);
+  @include spacing-horizontal('margin-right', tablet, $multiplier);
+  @include spacing-horizontal('margin-right', mobile-large, $multiplier);
 }
 
 @mixin margin-top {

@@ -18,7 +18,7 @@ $height-component-header-mobile: 85px;
 
   &__header {
     position: fixed;
-    z-index: $z-index-overlay-over-top-nav;
+    z-index: $z-index-above;
     @include padding(1, true);
     padding-bottom: 0 !important;
     top: $top-nav-height-desktop;
