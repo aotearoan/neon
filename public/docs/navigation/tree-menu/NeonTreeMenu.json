@@ -1,5 +1,5 @@
 {
-  "description": "Four level tree menu. This is useful for displaying a hierarchical navigation in NeonSideNav. The top level of the menu is the group (optional). The second level is expandable on click but will not navigate to a page. The third level is the page links and the fourth level is the fragment on that page.",
+  "description": "Three level tree menu. This is useful for displaying a hierarchical navigation in NeonSideNav.The top level of the\nmenu is expandable on click but will not navigate to a page. The second level is links to pages and the third level\nis the fragments on that page.",
   "tags": {},
   "exportName": "default",
   "displayName": "NeonTreeMenu",

@@ -42,7 +42,7 @@ export default class NeonInput extends Vue {
   /**
    * Color of the input
    */
-  @Prop({ default: NeonFunctionalColor.Primary })
+  @Prop({ default: NeonFunctionalColor.LowContrast })
   private color!: NeonFunctionalColor;
 
   /**

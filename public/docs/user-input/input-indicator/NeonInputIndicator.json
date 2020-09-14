@@ -1,0 +1,36 @@
+{
+  "description": "Use input indicators to provide additional information for input fields. This can be useful to add the field units or\na connected label or icon.",
+  "tags": {},
+  "exportName": "default",
+  "displayName": "NeonInputIndicator",
+  "props": [
+    {
+      "name": "label",
+      "tags": {},
+      "description": "The label to display",
+      "type": {
+        "name": "TranslateResult"
+      }
+    },
+    {
+      "name": "icon",
+      "tags": {},
+      "description": "The icon to display",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "size",
+      "tags": {},
+      "description": "The size of the input indicator",
+      "type": {
+        "name": "NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    }
+  ]
+}

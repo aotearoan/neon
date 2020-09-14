@@ -5,7 +5,6 @@ export interface NeonTreeMenuSectionModel {
   key: string;
   children?: NeonTreeMenuLinkModel[];
   expanded?: boolean;
-  group?: TranslateResult;
 }
 
 export interface NeonTreeMenuLinkModel {

@@ -275,6 +275,13 @@ export class Menu {
                 component: 'NeonDropZone',
               },
               {
+                path: 'field-group',
+                page: 'FieldGroup',
+                name: 'Field Group',
+                keywords: 'input indicator combi button dropdown',
+                component: 'NeonFieldGroup',
+              },
+              {
                 path: 'file',
                 page: 'File',
                 keywords: 'input multiple',
@@ -285,6 +292,12 @@ export class Menu {
                 page: 'Input',
                 name: 'Input / Textarea',
                 component: 'NeonInput',
+              },
+              {
+                path: 'input-indicator',
+                page: 'InputIndicator',
+                name: 'Input Indicators',
+                component: 'NeonInputIndicator',
               },
               {
                 path: 'password',

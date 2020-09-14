@@ -1,0 +1,60 @@
+.neon-input-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  font-weight: 500;
+  letter-spacing: $component-letter-spacing-s;
+
+  &__label {
+    @include padding-horizontal(0.5);
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--s {
+    height: $size-s;
+
+    .neon-input-indicator__label,
+    .neon-icon {
+      min-width: $size-s;
+    }
+
+    .neon-icon {
+      width: $base-font-size;
+      height: $base-font-size;
+    }
+  }
+
+  &--m {
+    height: $size-m;
+
+    .neon-input-indicator__label,
+    .neon-icon {
+      min-width: $size-m;
+    }
+
+    .neon-icon {
+      width: $font-size-l;
+      height: $font-size-l;
+    }
+  }
+
+  &--l {
+    height: $size-l;
+
+    .neon-input-indicator__label,
+    .neon-icon {
+      min-width: $size-l;
+    }
+
+    .neon-icon {
+      width: $font-size-l;
+      height: $font-size-l;
+    }
+  }
+}

@@ -54,7 +54,7 @@ export default class NeonFile extends Vue {
   /**
    * The file component color
    */
-  @Prop({ default: NeonFunctionalColor.Primary })
+  @Prop({ default: NeonFunctionalColor.LowContrast })
   public color!: NeonFunctionalColor;
 
   /**

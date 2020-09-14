@@ -17,12 +17,14 @@ import NeonDropdownMenu from './components/navigation/dropdown-menu/NeonDropdown
 import NeonDropZone from './components/user-input/drop-zone/NeonDropZone.vue';
 import NeonExpansionIndicator from './components/presentation/expansion-indicator/NeonExpansionIndicator.vue';
 import NeonExpansionPanel from './components/presentation/expansion-panel/NeonExpansionPanel.vue';
+import NeonFieldGroup from './components/user-input/field-group/NeonFieldGroup.vue';
 import NeonFile from './components/user-input/file/NeonFile.vue';
 import NeonFooter from './components/layout/footer/NeonFooter.vue';
 import NeonGrid from './components/layout/grid/NeonGrid.vue';
 import NeonGridArea from './components/layout/grid/grid-area/NeonGridArea.vue';
 import NeonIcon from './components/presentation/icon/NeonIcon.vue';
 import NeonInput from './components/user-input/input/NeonInput.vue';
+import NeonInputIndicator from './components/user-input/input-indicator/NeonInputIndicator.vue';
 import NeonLabel from './components/presentation/label/NeonLabel.vue';
 import NeonLink from './components/navigation/link/NeonLink.vue';
 import NeonLogo from './components/presentation/logo/NeonLogo.vue';
@@ -99,12 +101,14 @@ const components: { [s: string]: VueConstructor } = {
   NeonDropZone,
   NeonExpansionIndicator,
   NeonExpansionPanel,
+  NeonFieldGroup,
   NeonFile,
   NeonFooter,
   NeonGrid,
   NeonGridArea,
   NeonIcon,
   NeonInput,
+  NeonInputIndicator,
   NeonLabel,
   NeonLink,
   NeonLogo,
@@ -154,6 +158,7 @@ export {
   NeonDropZone,
   NeonExpansionIndicator,
   NeonExpansionPanel,
+  NeonFieldGroup,
   NeonFile,
   NeonFormattedDate,
   NeonFooter,
@@ -163,6 +168,7 @@ export {
   NeonGridModel,
   NeonIcon,
   NeonInput,
+  NeonInputIndicator,
   NeonInputType,
   NeonHorizontalPosition,
   NeonIconRegistry,

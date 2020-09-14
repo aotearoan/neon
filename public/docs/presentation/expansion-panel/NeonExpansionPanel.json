@@ -55,6 +55,18 @@
       }
     },
     {
+      "name": "color",
+      "tags": {},
+      "description": "The color of the expansion panel button.",
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Neutral"
+      }
+    },
+    {
       "name": "disabled",
       "tags": {},
       "description": "The disabled state of the expansion panel",
