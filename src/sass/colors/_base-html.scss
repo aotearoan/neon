@@ -75,7 +75,7 @@ hr {
 ul {
   li {
     &:before {
-      color: $color-text-primary;
+      color: $color-text-low-contrast;
     }
   }
 }

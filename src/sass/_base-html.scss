@@ -31,8 +31,8 @@ ul {
     padding-left: 7 * $base-space;
 
     &:before {
-      content: '—';
-      padding-right: 3 * $base-space;
+      content: '•';
+      padding-right: 2 * $base-space;
       margin-left: -7 * $base-space;
       display: inline-flex;
       align-items: center;
