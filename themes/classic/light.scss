@@ -143,4 +143,9 @@ $color-tab-selected: d1 !default;
 // footer
 $background-color-footer: darken($color-neutral-l5, 2);
 
+// skeleton loader
+$color-loading-1: $color-high-contrast-l3;
+$color-loading-2: rgba($color-high-contrast-l2, 0.5);
+$color-loading-3: $color-high-contrast-l2;
+
 @import '../../src/sass/colors/color-components';

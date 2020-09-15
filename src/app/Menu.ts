@@ -97,6 +97,13 @@ export class Menu {
                 keywords: 'badge label alert',
                 component: 'NeonNotificationCounter',
               },
+              {
+                path: 'skeleton-loader',
+                page: 'SkeletonLoader',
+                name: 'Skeleton Loader',
+                keywords: 'spinner loading progress',
+                component: 'NeonSkeletonLoader',
+              },
             ],
           },
           {

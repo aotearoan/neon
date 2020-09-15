@@ -34,6 +34,7 @@ import NeonNotificationCounter from './components/feedback/notification-counter/
 import NeonPage from './components/layout/page/NeonPage.vue';
 import NeonPassword from './components/user-input/password/NeonPassword.vue';
 import NeonSideNav from './components/layout/side-nav/NeonSideNav.vue';
+import NeonSkeletonLoader from './components/feedback/skeleton-loader/NeonSkeletonLoader.vue';
 import NeonSwitch from './components/user-input/switch/NeonSwitch.vue';
 import NeonTab from './components/presentation/tabs/tab/NeonTab.vue';
 import NeonTabs from './components/presentation/tabs/NeonTabs.vue';
@@ -118,6 +119,7 @@ const components: { [s: string]: VueConstructor } = {
   NeonPage,
   NeonPassword,
   NeonSideNav,
+  NeonSkeletonLoader,
   NeonSwitch,
   NeonTab,
   NeonTabs,
@@ -191,6 +193,7 @@ export {
   NeonResponsiveUtils,
   NeonSideNav,
   NeonSize,
+  NeonSkeletonLoader,
   NeonState,
   NeonSwitch,
   NeonSwitchStyle,
