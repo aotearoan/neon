@@ -11,6 +11,7 @@ import NeonCard from './components/layout/card/NeonCard.vue';
 import NeonCardBody from './components/layout/card/body/NeonCardBody.vue';
 import NeonCardFooter from './components/layout/card/footer/NeonCardFooter.vue';
 import NeonCardHeader from './components/layout/card/header/NeonCardHeader.vue';
+import NeonChip from './components/user-input/chip/NeonChip.vue';
 import NeonDrawer from './components/layout/drawer/NeonDrawer.vue';
 import NeonDropdown from './components/presentation/dropdown/NeonDropdown.vue';
 import NeonDropdownMenu from './components/navigation/dropdown-menu/NeonDropdownMenu.vue';
@@ -48,6 +49,7 @@ import { NeonAlertService } from './components/feedback/alert/NeonAlert';
 import { NeonAvailableSpace } from './common/models/NeonAvailableSpace';
 import { NeonButtonSize } from './common/enums/NeonButtonSize';
 import { NeonButtonStyle } from './common/enums/NeonButtonStyle';
+import { NeonChipAction } from './common/enums/NeonChipAction';
 import { NeonClipboardService, NeonClipboardSupport } from './common/utils/NeonClipboardService';
 import { NeonClosableUtils } from './common/utils/NeonClosableUtils';
 import { NeonDateUtils } from './common/utils/NeonDateUtils';
@@ -96,6 +98,7 @@ const components: { [s: string]: VueConstructor } = {
   NeonCardBody,
   NeonCardFooter,
   NeonCardHeader,
+  NeonChip,
   NeonDrawer,
   NeonDropdown,
   NeonDropdownMenu,
@@ -145,6 +148,8 @@ export {
   NeonCardBody,
   NeonCardFooter,
   NeonCardHeader,
+  NeonChip,
+  NeonChipAction,
   NeonClipboardService,
   NeonClipboardSupport,
   NeonClosableUtils,

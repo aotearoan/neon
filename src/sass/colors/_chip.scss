@@ -1,0 +1,42 @@
+.neon-chip {
+  @each $color, $palette in $functional-colors {
+    &--#{$color} {
+      background-color: rgba(map-get($palette, $color-chip), 0.125);
+      color: map-get($palette, $color-chip);
+
+      .neon-chip__close {
+        path {
+          fill: map-get($palette, $color-chip);
+        }
+      }
+
+      &:hover:not(.neon-chip--disabled) {
+        background-color: rgba(map-get($palette, $color-chip), 0.25);
+      }
+
+      &:focus:not(.neon-chip--disabled) {
+        background-color: map-get($palette, $color-chip);
+        color: $color-inverse;
+
+        .neon-svg--fill {
+          fill: $color-inverse;
+        }
+
+        .neon-svg--stroke {
+          stroke: $color-inverse;
+        }
+      }
+    }
+  }
+
+  &--disabled {
+    background-color: $color-disabled-dark;
+    color: $color-disabled-light;
+
+    .neon-chip__close {
+      path {
+        fill: $color-disabled-light;
+      }
+    }
+  }
+}

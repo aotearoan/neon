@@ -148,4 +148,7 @@ $color-loading-1: $color-neutral-d3;
 $color-loading-2: $color-neutral-d2;
 $color-loading-3: rgba($color-neutral-d2, 0.5);
 
+// chip
+$color-chip: l1 !default;
+
 @import '../../src/sass/colors/color-components';

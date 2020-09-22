@@ -146,5 +146,8 @@ $border-radius-button-xl: 8px !default;
 /* tabs */
 $border-width-tabs: 2px !default;
 
+/* chips */
+$border-radius-chip: 50px !default;
+
 @import '../../src/sass/includes/includes';
 @import 'src/sass/common';

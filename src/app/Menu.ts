@@ -26,7 +26,7 @@ export class Menu {
   public static menu(): MenuGroup[] {
     const menu: MenuGroup[] = [
       {
-        group: 'Introduction',
+        group: 'Basics',
         children: [
           {
             path: 'for-developers',
@@ -273,6 +273,12 @@ export class Menu {
                 path: 'button',
                 page: 'Button',
                 component: 'NeonButton',
+              },
+              {
+                path: 'chip',
+                page: 'Chip',
+                keywords: 'tags tagging label filter clickable remove removable',
+                component: 'NeonChip',
               },
               {
                 path: 'drop-zone',
