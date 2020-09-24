@@ -1,39 +1,29 @@
-$notificationIcons: (
-  error: $icon-error,
-  warning: $icon-warn,
-  info: $icon-info,
-  success: $icon-success,
+$alert-colors: (
+  info: $info-palette,
+  success: $success-palette,
+  warn: $warn-palette,
+  error: $error-palette,
 );
 
-.snotifyToast {
-  box-shadow: 0.5 * $base-space 0.5 * $base-space 2 * $base-space $alert-box-shadow-color;
+.neon-alert {
+  &__message {
+    box-shadow: 0.5 * $base-space 0.5 * $base-space 2 * $base-space $box-shadow-color-alert;
 
-  &__body {
-    color: $color-text;
-  }
-}
+    @each $color, $palette in $alert-colors {
+      $alert-color: map-get($palette, $color-alert);
 
-@each $type, $color in $alert-background-colors {
-  .snotify-#{$type} {
-    background-color: rgba($color-inverse, 0.85);
+      &--#{$color} {
+        background-color: rgba($color-inverse, 0.85);
 
-    @supports (backdrop-filter: none) {
-      background-color: $color;
-      backdrop-filter: blur(20px);
+        @supports (backdrop-filter: none) {
+          background-color: rgba($alert-color, 0.1);
+          backdrop-filter: blur(20px);
+        }
+
+        .neon-alert__title {
+          color: $alert-color;
+        }
+      }
     }
-  }
-}
-
-@each $type, $color in $alert-title-colors {
-  .snotify-#{$type} {
-    .snotifyToast__title {
-      color: $color;
-    }
-  }
-}
-
-@each $type, $icon in $notificationIcons {
-  .snotify-icon--#{$type} {
-    background: $icon;
   }
 }

@@ -1,4 +1,6 @@
 export const enumList: string[] = [
+  'NeonAlertLevel',
+  'NeonAlertPlacement',
   'NeonButtonSize',
   'NeonButtonStyle',
   'NeonChipAction',
@@ -22,6 +24,7 @@ export const enumList: string[] = [
 
 export const modelList: string[] = [
   'NeonActionMenuModel',
+  'NeonAlertMessage',
   'NeonAvailableSpace',
   'NeonDropdownMenuItem',
   'NeonDropdownPlacementObject',
@@ -33,10 +36,12 @@ export const modelList: string[] = [
 ];
 
 export const utilsList: string[] = [
+  'NeonAlertService',
   'NeonClipboardService',
   'NeonClosableUtils',
   'NeonDateUtils',
   'NeonDropdownPlacementUtils',
+  'NeonEventBus',
   'NeonIconRegistry',
   'NeonModeUtils',
   'NeonPlacementUtils',

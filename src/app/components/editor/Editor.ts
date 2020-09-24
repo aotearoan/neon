@@ -13,7 +13,7 @@ import 'prismjs/themes/prism-tomorrow.css';
 import Normalizer from 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace';
 
 import { NeonClipboardService } from '../../../common/utils/NeonClipboardService';
-import { NeonAlertService } from '../../../components/feedback/alert/NeonAlert';
+import { NeonAlertService } from '../../../common/utils/NeonAlertService';
 import NeonButton from '../../../components/user-input/button/NeonButton.vue';
 import NeonIcon from '../../../components/presentation/icon/NeonIcon.vue';
 
@@ -54,7 +54,7 @@ export default class Editor extends Vue {
 
   private copyText() {
     this.clipboard.copyTo(this.value).then(() => {
-      NeonAlertService.info('Copied text');
+      NeonAlertService.info({ title: 'Copied text' });
     });
   }
 }

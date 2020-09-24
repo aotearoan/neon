@@ -1,5 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonAlertService, NeonButton, NeonCard, NeonCardBody } from '../../../../components';
+import { NeonAlertPlacement, NeonAlertService, NeonButton, NeonCard, NeonCardBody } from '../../../../components';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
 import { Menu, MenuModel } from '../../../Menu';
 import Editor from '../../../components/editor/Editor.vue';
@@ -19,19 +19,43 @@ export default class Alert extends Vue {
   private headline = 'Display temporary notifications to the user';
 
   private data = {
-    infoAlert: () => {
-      NeonAlertService.info('Info alert', 'This is an example of an info alert.');
+    infoAlert: (placement?: NeonAlertPlacement) => {
+      NeonAlertService.info({ title: 'Info alert', message: 'This is an example of an info alert.', placement });
     },
-    successAlert: () => {
-      NeonAlertService.success('Success alert', 'This is an example of a success alert.');
+    successAlert: (placement?: NeonAlertPlacement) => {
+      NeonAlertService.success({
+        title: 'Success alert',
+        message: 'This is an example of a success alert.',
+        placement,
+      });
     },
-    warnAlert: () => {
-      NeonAlertService.warning('Warning alert', 'This is an example of a warning alert.');
+    warnAlert: (placement?: NeonAlertPlacement) => {
+      NeonAlertService.warn({ title: 'Warn alert', message: 'This is an example of a warning alert.', placement });
     },
-    errorAlert: () => {
-      NeonAlertService.error('Error alert', 'This is an example of an error alert.');
+    errorAlert: (placement?: NeonAlertPlacement) => {
+      NeonAlertService.error({ title: 'Error alert', message: 'This is an example of an error alert.', placement });
     },
   };
+
+  private get infoExample() {
+    return `const alertMessage = { title: 'message title', message: 'Message' };
+NeonAlertService.info(alertMessage);`;
+  }
+
+  private get successExample() {
+    return `const alertMessage = { title: 'message title', message: 'Message' };
+NeonAlertService.success(alertMessage);`;
+  }
+
+  private get warnExample() {
+    return `const alertMessage = { title: 'message title', message: 'Message' };
+NeonAlertService.warn(alertMessage);`;
+  }
+
+  private get errorExample() {
+    return `const alertMessage = { title: 'message title', message: 'Message' };
+NeonAlertService.error(alertMessage);`;
+  }
 
   private examples = [
     {
@@ -41,6 +65,18 @@ export default class Alert extends Vue {
   <neon-button color="success" label="Success" @click="successAlert()" />
   <neon-button color="warn" label="Warning" @click="warnAlert()" />
   <neon-button color="error" label="Error" @click="errorAlert()" />
+</div>`,
+      data: this.data,
+    },
+    {
+      title: 'Alert placement',
+      template: `<div>
+  <div class="example--horizontal">
+    <neon-button label="Top left" @click="infoAlert('top-left')" />
+    <neon-button label="Top right" @click="infoAlert('top-right')" />
+    <neon-button label="Bottom left" @click="infoAlert('bottom-left')" />
+    <neon-button label="Bottom right" @click="infoAlert('bottom-right')" />
+  </div>
 </div>`,
       data: this.data,
     },

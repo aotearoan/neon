@@ -4,6 +4,7 @@ import VueI18n from 'vue-i18n';
 /* components */
 import NeonActionMenu from './components/navigation/action-menu/NeonActionMenu.vue';
 import NeonAlert from './components/feedback/alert/NeonAlert.vue';
+import NeonAlertContainer from './components/feedback/alert/container/NeonAlertContainer.vue';
 import NeonAnchor from './components/navigation/anchor/NeonAnchor.vue';
 import NeonBadge from './components/presentation/badge/NeonBadge.vue';
 import NeonButton from './components/user-input/button/NeonButton.vue';
@@ -45,7 +46,11 @@ import NeonTreeMenu from './components/navigation/tree-menu/NeonTreeMenu.vue';
 
 /* models and utils */
 import { NeonActionMenuModel } from './common/models/NeonActionMenuModel';
-import { NeonAlertService } from './components/feedback/alert/NeonAlert';
+import { NeonAlertMessage } from './common/models/NeonAlertMessage';
+import { NeonAlertModel } from './components/feedback/alert/NeonAlertModel';
+import { NeonAlertLevel } from './common/enums/NeonAlertLevel';
+import { NeonAlertPlacement } from './common/enums/NeonAlertPlacement';
+import { NeonAlertService } from './common/utils/NeonAlertService';
 import { NeonAvailableSpace } from './common/models/NeonAvailableSpace';
 import { NeonButtonSize } from './common/enums/NeonButtonSize';
 import { NeonButtonStyle } from './common/enums/NeonButtonStyle';
@@ -58,6 +63,7 @@ import { NeonDropdownPlacement } from './common/enums/NeonDropdownPlacement';
 import { NeonDropdownPlacementObject } from './common/models/NeonDropdownPlacementObject';
 import { NeonDropdownPlacementUtils } from './common/utils/NeonDropdownPlacementUtils';
 import { NeonDropdownStyle } from './common/enums/NeonDropdownStyle';
+import { NeonEventBus } from './common/utils/NeonEventBus';
 import { NeonFormattedDate } from './common/models/NeonFormattedDate';
 import { NeonFunctionalColor } from './common/enums/NeonFunctionalColor';
 import { NeonGridModel } from './common/models/NeonGridModel';
@@ -91,6 +97,7 @@ Vue.use(VueI18n);
 const components: { [s: string]: VueConstructor } = {
   NeonActionMenu,
   NeonAlert,
+  NeonAlertContainer,
   NeonAnchor,
   NeonBadge,
   NeonButton,
@@ -137,6 +144,11 @@ export {
   NeonActionMenu,
   NeonActionMenuModel,
   NeonAlert,
+  NeonAlertContainer,
+  NeonAlertLevel,
+  NeonAlertMessage,
+  NeonAlertModel,
+  NeonAlertPlacement,
   NeonAlertService,
   NeonAnchor,
   NeonAvailableSpace,
@@ -163,6 +175,7 @@ export {
   NeonDropdownPlacementUtils,
   NeonDropdownStyle,
   NeonDropZone,
+  NeonEventBus,
   NeonExpansionIndicator,
   NeonExpansionPanel,
   NeonFieldGroup,

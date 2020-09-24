@@ -149,5 +149,8 @@ $border-width-tabs: 2px !default;
 /* chips */
 $border-radius-chip: 50px !default;
 
+/* alerts */
+$width-alert: 320px !default;
+
 @import '../../src/sass/includes/includes';
 @import 'src/sass/common';
