@@ -34,7 +34,7 @@ export default class NeonAlert extends Vue {
    * Duration to display messages before removing them. This can also be set per alert message. Set the duration to 0 to
    * disable the duration timer, NOTE: this requires the user to dismiss the alert by clicking on it.
    */
-  @Prop({ default: 0 })
+  @Prop({ default: 2500 })
   duration!: number;
 
   public mounted() {
