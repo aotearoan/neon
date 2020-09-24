@@ -13,7 +13,7 @@ $alert-colors: (
       $alert-color: map-get($palette, $color-alert);
 
       &.neon-alert__message--#{$color} {
-        background-color: rgba($color-inverse, 0.85);
+        background-color: $color-inverse;
 
         @supports (backdrop-filter: none) {
           background-color: rgba($alert-color, 0.15);
