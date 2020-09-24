@@ -113,7 +113,7 @@ $color-drop-zone: $color-text !default;
 $color-file-list: d1 !default;
 
 // alerts
-$box-shadow-color-alert: $color-neutral-d2 !default;
+$box-shadow-color-alert: rgba($color-neutral-d1, 0.5) !default;
 $color-alert: d1 !default;
 
 // dropdown menu

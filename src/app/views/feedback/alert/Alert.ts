@@ -35,6 +35,36 @@ export default class Alert extends Vue {
     errorAlert: (placement?: NeonAlertPlacement) => {
       NeonAlertService.error({ title: 'Error alert', message: 'This is an example of an error alert.', placement });
     },
+    alertSingleAction: () => {
+      NeonAlertService.info({
+        title: 'Alert with single action',
+        message: 'This is an example of an alert with a single action.',
+        primaryAction: {
+          label: 'Dismiss',
+          callback: () => {
+            console.log('Dismiss clicked');
+          },
+        },
+      });
+    },
+    alertBothActions: () => {
+      NeonAlertService.info({
+        title: 'Alert with single action',
+        message: 'This is an example of an alert with a single action.',
+        primaryAction: {
+          label: 'Action',
+          callback: () => {
+            console.log('Action clicked');
+          },
+        },
+        secondaryAction: {
+          label: 'Cancel',
+          callback: () => {
+            console.log('Cancel clicked');
+          },
+        },
+      });
+    },
   };
 
   private get infoExample() {
@@ -76,6 +106,16 @@ NeonAlertService.error(alertMessage);`;
     <neon-button label="Top right" @click="infoAlert('top-right')" />
     <neon-button label="Bottom left" @click="infoAlert('bottom-left')" />
     <neon-button label="Bottom right" @click="infoAlert('bottom-right')" />
+  </div>
+</div>`,
+      data: this.data,
+    },
+    {
+      title: 'Alerts with actions',
+      template: `<div>
+  <div class="example--horizontal">
+    <neon-button label="Single action" @click="alertSingleAction()" />
+    <neon-button label="Both actions" @click="alertBothActions()" />
   </div>
 </div>`,
       data: this.data,

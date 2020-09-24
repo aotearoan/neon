@@ -46,6 +46,7 @@ import NeonTreeMenu from './components/navigation/tree-menu/NeonTreeMenu.vue';
 
 /* models and utils */
 import { NeonActionMenuModel } from './common/models/NeonActionMenuModel';
+import { NeonAlertAction } from './common/models/NeonAlertAction';
 import { NeonAlertMessage } from './common/models/NeonAlertMessage';
 import { NeonAlertModel } from './components/feedback/alert/NeonAlertModel';
 import { NeonAlertLevel } from './common/enums/NeonAlertLevel';
@@ -144,6 +145,7 @@ export {
   NeonActionMenu,
   NeonActionMenuModel,
   NeonAlert,
+  NeonAlertAction,
   NeonAlertContainer,
   NeonAlertLevel,
   NeonAlertMessage,

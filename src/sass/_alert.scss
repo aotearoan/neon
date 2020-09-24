@@ -51,35 +51,34 @@
     pointer-events: visible;
     touch-action: auto;
     height: 100%;
+    min-height: 20 * $base-space;
     margin: $base-space;
     overflow: hidden;
     border-radius: 2 * $border-radius;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: flex-start;
     position: relative;
     font-size: $base-font-size;
-    @include padding(0.5);
 
-    &--dismissable {
+    &--dismissable:not(.neon-alert__message--with-actions) {
       cursor: pointer;
     }
 
     .neon-icon {
+      min-width: 8 * $base-space;
       width: 8 * $base-space;
+      min-height: 8 * $base-space;
       height: 8 * $base-space;
-      margin-right: 3 * $base-space;
-
-      @include responsive(mobile-large) {
-        margin-right: 2 * $base-space;
-      }
+      margin: 2 * $base-space;
+      margin-left: 3 * $base-space;
+      align-self: center;
     }
   }
 
   &__title {
     line-height: $line-height-one;
-    font-size: $h6-size;
+    font-size: $base-font-size;
     font-weight: 500;
     font-family: $heading-font-family;
     letter-spacing: $component-letter-spacing-m;
@@ -87,6 +86,30 @@
 
   &__body {
     font-size: $font-size-s;
+  }
+
+  .neon-alert__actions {
+    margin-left: 2 * $base-space;
+
+    .neon-alert__action {
+      padding: 2 * $base-space;
+      font-size: $font-size-xs;
+      text-transform: uppercase;
+      letter-spacing: $component-letter-spacing-m;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      width: $width-alert-action;
+      justify-content: center;
+      font-weight: 600;
+    }
+  }
+
+  &__content {
+    padding-top: 2 * $base-space;
+    padding-bottom: 2 * $base-space;
+    justify-content: center;
+    flex: 1 1 auto;
   }
 }
 

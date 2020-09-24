@@ -19,7 +19,7 @@
     {
       "name": "duration",
       "tags": {},
-      "description": "Duration to display messages before removing them. This can also be set per alert message.",
+      "description": "Duration to display messages before removing them. This can also be set per alert message. Set the duration to 0 to\ndisable the duration timer, NOTE: this requires the user to dismiss the alert by clicking on it.",
       "type": {
         "name": "number"
       },

@@ -134,8 +134,8 @@ $card-box-shadow: $box-shadow !default;
 $border-width-checkbox: 1px !default;
 
 /* alerts */
-$width-alert: 90 * $base-space !default;
-$width-alert-mobile: 0.5 * $width-alert !default;
+$width-alert: 400px !default;
+$width-alert-action: 96px !default;
 
 /* dropdown */
 $box-shadow-dropdown: $box-shadow-strong !default;
@@ -148,9 +148,6 @@ $border-width-tabs: 2px !default;
 
 /* chips */
 $border-radius-chip: 50px !default;
-
-/* alerts */
-$width-alert: 320px !default;
 
 @import '../../src/sass/includes/includes';
 @import 'src/sass/common';

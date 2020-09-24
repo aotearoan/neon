@@ -24,6 +24,7 @@ export const enumList: string[] = [
 
 export const modelList: string[] = [
   'NeonActionMenuModel',
+  'NeonAlertAction',
   'NeonAlertMessage',
   'NeonAvailableSpace',
   'NeonDropdownMenuItem',

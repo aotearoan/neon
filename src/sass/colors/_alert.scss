@@ -6,22 +6,39 @@ $alert-colors: (
 );
 
 .neon-alert {
-  &__message {
+  .neon-alert__message {
     box-shadow: 0.5 * $base-space 0.5 * $base-space 2 * $base-space $box-shadow-color-alert;
 
     @each $color, $palette in $alert-colors {
       $alert-color: map-get($palette, $color-alert);
 
-      &--#{$color} {
+      &.neon-alert__message--#{$color} {
         background-color: rgba($color-inverse, 0.85);
 
         @supports (backdrop-filter: none) {
-          background-color: rgba($alert-color, 0.1);
+          background-color: rgba($alert-color, 0.15);
           backdrop-filter: blur(20px);
         }
 
         .neon-alert__title {
           color: $alert-color;
+        }
+
+        .neon-alert__actions {
+          border-left: $border-width $border-style rgba($alert-color, 0.25);
+
+          a {
+            color: rgba($alert-color, 0.5);
+
+            &:hover {
+              color: $alert-color;
+              text-decoration: none;
+            }
+          }
+        }
+
+        .neon-alert__action + .neon-alert__action {
+          border-top: $border-width $border-style rgba($alert-color, 0.25);
         }
       }
     }
