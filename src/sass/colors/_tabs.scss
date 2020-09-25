@@ -6,11 +6,17 @@
   @each $color, $palette in $functional-colors {
     &.neon-tabs--#{$color} {
       .neon-tabs__menu-item {
-        transition: color ease-in-out $animation-speed-fast;
-
         &:hover,
         &:active {
           color: rgba(map-get($palette, $color-tab-selected), 0.85);
+
+          .neon-svg--fill {
+            fill: rgba(map-get($palette, $color-tab-selected), 0.85);
+          }
+
+          .neon-svg--stroke {
+            stroke: rgba(map-get($palette, $color-tab-selected), 0.85);
+          }
         }
 
         &--selected {

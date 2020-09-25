@@ -1,8 +1,11 @@
 .neon-expansion-panel {
+  flex: 1 0 auto;
+
   &__header {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    flex: 1 0 auto;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
@@ -39,8 +42,14 @@
   }
 
   &--s {
+    &:not(.neon-expansion-panel--expanded) {
+      height: $size-s;
+      max-height: $size-s;
+    }
+
     .neon-expansion-panel__header {
       height: $size-s;
+      max-height: $size-s;
       font-size: $font-size-s;
 
       .neon-icon {
@@ -51,8 +60,14 @@
   }
 
   &--m {
+    &:not(.neon-expansion-panel--expanded) {
+      height: $size-m;
+      max-height: $size-m;
+    }
+
     .neon-expansion-panel__header {
       height: $size-m;
+      max-height: $size-m;
       font-size: $base-font-size;
 
       .neon-icon {
@@ -63,8 +78,14 @@
   }
 
   &--l {
+    &:not(.neon-expansion-panel--expanded) {
+      height: $size-l;
+      max-height: $size-l;
+    }
+
     .neon-expansion-panel__header {
       height: $size-l;
+      max-height: $size-l;
       font-size: $font-size-l;
 
       .neon-icon {

@@ -20,7 +20,6 @@ $editor-max-height: 400px;
     &__editor {
       @include padding(0.5);
       display: block;
-      background-color: transparent;
       opacity: 0.85;
     }
 

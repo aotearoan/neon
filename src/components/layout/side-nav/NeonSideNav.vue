@@ -7,7 +7,9 @@
     <hr v-if="$slots.sticky && $slots.scrolling" />
     <div class="neon-side-nav__scrolling" v-if="$slots.scrolling">
       <!-- @slot scrolling content -->
-      <slot name="scrolling"></slot>
+      <div class="neon-side-nav__scrolling-container">
+        <slot name="scrolling"></slot>
+      </div>
     </div>
   </div>
 </template>

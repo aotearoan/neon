@@ -30,7 +30,8 @@
       & > input {
         &:focus {
           margin-left: -$border-width;
-          width: calc(100% + #{$border-width});
+          margin-right: -$border-width;
+          width: calc(100% + #{2 * $border-width});
         }
       }
     }

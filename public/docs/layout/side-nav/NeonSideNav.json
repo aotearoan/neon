@@ -23,8 +23,7 @@
       "description": "sticky (fixed, non-scrolling) content"
     },
     {
-      "name": "scrolling",
-      "description": "scrolling content"
+      "name": "scrolling"
     }
   ]
 }

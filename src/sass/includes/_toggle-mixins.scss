@@ -4,16 +4,22 @@
     font-weight: 400;
     letter-spacing: $component-letter-spacing-s;
     line-height: $line-height-one;
-    height: $size - 2 * $border-width;
+    min-height: $size;
+    height: $size;
+    z-index: $z-index-default;
 
     &.neon-toggle__label--with-icon {
       width: $size;
       padding: 0;
 
       .neon-icon {
-        width: $font-size * $line-height-one;
-        height: $font-size * $line-height-one;
+        width: round($font-size * $line-height-one);
+        height: round($font-size * $line-height-one);
       }
+    }
+
+    &.neon-toggle__label--checked {
+      z-index: $z-index-above;
     }
   }
 }

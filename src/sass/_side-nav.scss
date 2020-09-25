@@ -21,8 +21,13 @@
     display: none;
   }
 
+  &__sticky {
+    flex: 1 0 auto;
+  }
+
   &__scrolling {
     overflow-y: auto;
+    height: 100%;
   }
 }
 

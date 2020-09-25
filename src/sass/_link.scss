@@ -20,7 +20,6 @@ a[href]:not(.neon-link--no-style),
     margin-right: 2 * $base-space;
     vertical-align: -2px;
     opacity: 0.5;
-    transition: opacity ease-in-out $animation-speed-fast;
   }
 
   &:hover {

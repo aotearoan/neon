@@ -21,11 +21,21 @@
         @click="!item.disabled && clickItem(item)"
       >
         <neon-link v-if="item.href && !item.disabled" :href="item.href" :disabled="item.disabled" :no-style="true">
-          <neon-icon class="neon-dropdown-menu__item-icon" v-if="item.icon" :name="item.icon" />
+          <neon-icon
+            class="neon-dropdown-menu__item-icon"
+            v-if="item.icon"
+            :name="item.icon"
+            :disabled="item.disabled"
+          />
           <span class="neon-dropdown-menu__item-label">{{ item.label }}</span>
         </neon-link>
         <div v-else class="neon-dropdown-menu__item-container">
-          <neon-icon class="neon-dropdown-menu__item-icon" v-if="item.icon" :name="item.icon" />
+          <neon-icon
+            class="neon-dropdown-menu__item-icon"
+            v-if="item.icon"
+            :name="item.icon"
+            :disabled="item.disabled"
+          />
           <span class="neon-dropdown-menu__item-label">{{ item.label }}</span>
         </div>
       </li>

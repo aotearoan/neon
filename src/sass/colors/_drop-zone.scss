@@ -6,7 +6,7 @@
     border-left-color ease-in-out $animation-speed-fast, border-top-color ease-in-out $animation-speed-fast,
     border-bottom-color ease-in-out $animation-speed-fast, border-right-color ease-in-out $animation-speed-fast;
 
-  &--active,
+  &--active:not(.neon-drop-zone--disabled),
   &:hover:not(.neon-drop-zone--disabled) {
     border-color: $color-drop-zone;
     color: $color-drop-zone;

@@ -27,6 +27,9 @@
 }
 
 .neon-button {
+  margin-left: 0;
+  margin-right: 0;
+
   &--s {
     @include button-size($size-s, $font-size-s, $font-size-l);
   }

@@ -3,32 +3,25 @@
     color: rgba($color-text, 0.7);
 
     label {
-      border-top: $border-width $border-style $border-color;
-      border-bottom: $border-width $border-style $border-color;
+      border: $border-width $border-style $border-color;
 
       &:first-child {
-        border-left: $border-width $border-style $border-color;
         border-top-left-radius: $border-radius;
         border-bottom-left-radius: $border-radius;
       }
 
       &:last-child {
-        border-right: $border-width $border-style $border-color;
         border-top-right-radius: $border-radius;
         border-bottom-right-radius: $border-radius;
       }
 
       & + label {
-        border-left: $border-width $border-style $border-color;
+        margin-left: -$border-width;
       }
 
       &.neon-toggle__label--checked {
-        border: $border-width $border-style $toggle-color;
+        border-color: $toggle-color;
         background-color: rgba($toggle-color, 0.125);
-
-        & + label {
-          border-left: none;
-        }
       }
 
       &:hover:not(.neon-toggle__label--disabled):not(.neon-toggle__label--checked) {

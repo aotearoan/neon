@@ -1,7 +1,8 @@
 .editor {
   .prism-editor {
+    background-color: $background-color-pre;
+
     &__container {
-      background-color: $background-color-pre;
       color: $color-text-light;
     }
 

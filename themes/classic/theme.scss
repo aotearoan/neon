@@ -48,19 +48,29 @@ $border-style: solid !default;
 $typography-scale: 1.2 !default; // Minor third https://type-scale.com/
 $base-font-size: 16px !default;
 
-$font-size-xxs: $base-font-size / ($typography-scale * $typography-scale * $typography-scale) !default;
-$font-size-xs: $base-font-size / ($typography-scale * $typography-scale) !default;
-$font-size-s: $base-font-size / $typography-scale !default;
-$font-size-l: $base-font-size * $typography-scale !default;
+$font-size-xxs: round($base-font-size / ($typography-scale * $typography-scale * $typography-scale)) !default;
+$font-size-xs: round($base-font-size / ($typography-scale * $typography-scale)) !default;
+$font-size-s: round($base-font-size / $typography-scale) !default;
+$font-size-l: round($base-font-size * $typography-scale) !default;
 
 $h6-size: $font-size-l !default;
-$h5-size: $h6-size * $typography-scale !default;
-$h4-size: $h5-size * $typography-scale !default;
-$h3-size: $h4-size * $typography-scale !default;
-$h2-size: $h3-size * $typography-scale !default;
-$h1-size: $h2-size * $typography-scale !default;
+$h5-size: round($base-font-size * $typography-scale * $typography-scale) !default;
+$h4-size: round($base-font-size * $typography-scale * $typography-scale * $typography-scale) !default;
+$h3-size: round(
+  $base-font-size * $typography-scale * $typography-scale * $typography-scale * $typography-scale
+) !default;
+$h2-size: round(
+  $base-font-size * $typography-scale * $typography-scale * $typography-scale * $typography-scale * $typography-scale
+) !default;
+$h1-size: round(
+  $base-font-size * $typography-scale * $typography-scale * $typography-scale * $typography-scale * $typography-scale *
+    $typography-scale
+) !default;
 // AKA branding font size, used for landing page & banners etc...
-$h0-size: $h1-size * $typography-scale * $typography-scale !default;
+$h0-size: round(
+  $base-font-size * $typography-scale * $typography-scale * $typography-scale * $typography-scale * $typography-scale *
+    $typography-scale * $typography-scale * $typography-scale
+) !default;
 
 $h6-weight: 500 !default;
 $h5-weight: 500 !default;
