@@ -7,9 +7,9 @@
     <div class="homepage__content">
       <h1>What is Neon?</h1>
       <p>
-        Neon is a library of Vue components and SASS styles for helping you build web applications fast with a
-        consistent design. Neon supports multiple themes as well as light and dark modes within each theme. Neon can be
-        used, as is, out of the box or modify the styling to suit your needs.
+        Neon is an incredibly lightweight library of Vue components and SASS styles for helping you build performant Vue
+        applications. Neon supports multiple themes as well light and dark modes within each theme. Use Neon out of the
+        box or modify it to suit your needs.
       </p>
       <neon-button
         href="/for-developers/getting-started"
@@ -141,8 +141,8 @@
         </div>
       </div>
       <span class="powered-by neon-color-text-neutral">
-        No {{ Math.floor(Math.random() * 10) % 2 === 0 ? 'React' : 'Angular' }} developers were harmed making Neon.<br />This
-        site was developed using <neon-link href="https://vuejs.org/">VueJS</neon-link> and Neon o‿o
+        No {{ developers }} developers were harmed making Neon.<br />This site was developed using
+        <neon-link href="https://vuejs.org/">VueJS</neon-link> and Neon o‿o
       </span>
     </div>
   </div>
