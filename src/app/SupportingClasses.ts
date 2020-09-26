@@ -32,6 +32,7 @@ export const modelList: string[] = [
   'NeonFormattedDate',
   'NeonGridModel',
   'NeonTabModel',
+  'NeonToastMessage',
   'NeonToggleModel',
   'NeonTreeMenuModel',
 ];
@@ -47,5 +48,6 @@ export const utilsList: string[] = [
   'NeonModeUtils',
   'NeonPlacementUtils',
   'NeonResponsiveUtils',
+  'NeonToastService',
   'RegisterIcons',
 ];

@@ -1,0 +1,31 @@
+$alert-colors: (
+  info: $info-palette,
+  success: $success-palette,
+  warn: $warn-palette,
+  error: $error-palette,
+);
+
+.neon-toast__message {
+  box-shadow: 0.5 * $base-space 0.5 * $base-space 2 * $base-space $box-shadow-color-alert;
+
+  @each $color, $palette in $alert-colors {
+    $alert-background-color: map-get($palette, $background-color-toast);
+    $alert-color: map-get($palette, $color-toast);
+
+    &.neon-toast__message--#{$color} {
+      background-color: $alert-background-color;
+
+      .neon-toast__title {
+        color: $alert-color;
+      }
+
+      .neon-svg--fill {
+        fill: $alert-color;
+      }
+
+      .neon-svg--stroke {
+        stroke: $alert-color;
+      }
+    }
+  }
+}

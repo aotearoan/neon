@@ -5,6 +5,7 @@ import VueI18n from 'vue-i18n';
 import NeonActionMenu from './components/navigation/action-menu/NeonActionMenu.vue';
 import NeonAlert from './components/feedback/alert/NeonAlert.vue';
 import NeonAlertContainer from './components/feedback/alert/container/NeonAlertContainer.vue';
+import NeonToastContainer from './components/feedback/alert/container/NeonToastContainer.vue';
 import NeonAnchor from './components/navigation/anchor/NeonAnchor.vue';
 import NeonBadge from './components/presentation/badge/NeonBadge.vue';
 import NeonButton from './components/user-input/button/NeonButton.vue';
@@ -84,6 +85,9 @@ import { NeonSize } from './common/enums/NeonSize';
 import { NeonState } from './common/enums/NeonState';
 import { NeonSwitchStyle } from './common/enums/NeonSwitchStyle';
 import { NeonTabModel } from './common/models/NeonTabModel';
+import { NeonToastMessage } from './common/models/NeonToastMessage';
+import { NeonToastModel } from './components/feedback/alert/NeonToastModel';
+import { NeonToastService } from './common/utils/NeonToastService';
 import { NeonToggleModel } from './common/models/NeonToggleModel';
 import { NeonToggleStyle } from './common/enums/NeonToggleStyle';
 import { NeonTreeMenuLinkModel, NeonTreeMenuSectionModel } from './common/models/NeonTreeMenuModel';
@@ -134,6 +138,7 @@ const components: { [s: string]: VueConstructor } = {
   NeonSwitch,
   NeonTab,
   NeonTabs,
+  NeonToastContainer,
   NeonToggle,
   NeonTopNav,
   NeonTreeMenu,
@@ -220,6 +225,9 @@ export {
   NeonTab,
   NeonTabModel,
   NeonTabs,
+  NeonToastMessage,
+  NeonToastModel,
+  NeonToastService,
   NeonToggle,
   NeonToggleModel,
   NeonToggleStyle,

@@ -83,6 +83,8 @@ export class Menu {
               {
                 path: 'alert',
                 page: 'Alert',
+                name: 'Alert / Toast',
+                keywords: 'notifications info error warning success',
                 component: 'NeonAlert',
               },
               {

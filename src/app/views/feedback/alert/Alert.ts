@@ -1,5 +1,13 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonAlertPlacement, NeonAlertService, NeonButton, NeonCard, NeonCardBody } from '../../../../components';
+import {
+  NeonAlertPlacement,
+  NeonAlertService,
+  NeonButton,
+  NeonCard,
+  NeonCardBody,
+  NeonToastService,
+  NeonVerticalPosition,
+} from '../../../../components';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
 import { Menu, MenuModel } from '../../../Menu';
 import Editor from '../../../components/editor/Editor.vue';
@@ -65,6 +73,18 @@ export default class Alert extends Vue {
         },
       });
     },
+    toastInfo: (placement?: NeonVerticalPosition) => {
+      NeonToastService.info({ title: 'This is an info toast', placement });
+    },
+    toastSuccess: (placement?: NeonVerticalPosition) => {
+      NeonToastService.success({ title: 'This is a success toast', placement });
+    },
+    toastWarn: (placement?: NeonVerticalPosition) => {
+      NeonToastService.warn({ title: 'This is a warning toast', placement });
+    },
+    toastError: (placement?: NeonVerticalPosition) => {
+      NeonToastService.error({ title: 'This is an error toast', placement });
+    },
   };
 
   private get infoExample() {
@@ -87,6 +107,26 @@ NeonAlertService.warn(alertMessage);`;
 NeonAlertService.error(alertMessage);`;
   }
 
+  private get infoToast() {
+    return `const toastMessage = { title: 'message title' };
+NeonToastService.info(toastMessage);`;
+  }
+
+  private get successToast() {
+    return `const toastMessage = { title: 'message title' };
+NeonToastService.success(toastMessage);`;
+  }
+
+  private get warnToast() {
+    return `const toastMessage = { title: 'message title' };
+NeonToastService.warn(toastMessage);`;
+  }
+
+  private get errorToast() {
+    return `const toastMessage = { title: 'message title' };
+NeonToastService.error(toastMessage);`;
+  }
+
   private examples = [
     {
       title: 'Different types of alert',
@@ -100,22 +140,34 @@ NeonAlertService.error(alertMessage);`;
     },
     {
       title: 'Alert placement',
-      template: `<div>
-  <div class="example--horizontal">
-    <neon-button label="Top left" @click="infoAlert('top-left')" />
-    <neon-button label="Top right" @click="infoAlert('top-right')" />
-    <neon-button label="Bottom left" @click="infoAlert('bottom-left')" />
-    <neon-button label="Bottom right" @click="infoAlert('bottom-right')" />
-  </div>
+      template: `<div class="example--horizontal">
+  <neon-button label="Top left" @click="infoAlert('top-left')" />
+  <neon-button label="Top right" @click="infoAlert('top-right')" />
+  <neon-button label="Bottom left" @click="infoAlert('bottom-left')" />
+  <neon-button label="Bottom right" @click="infoAlert('bottom-right')" />
 </div>`,
       data: this.data,
     },
     {
       title: 'Alerts with actions',
-      template: `<div>
+      template: `<div class="example--horizontal">
+  <neon-button label="Single action" @click="alertSingleAction()" />
+  <neon-button label="Both actions" @click="alertBothActions()" />
+</div>`,
+      data: this.data,
+    },
+    {
+      title: 'Toast alerts',
+      template: `<div class="example--vertical">
   <div class="example--horizontal">
-    <neon-button label="Single action" @click="alertSingleAction()" />
-    <neon-button label="Both actions" @click="alertBothActions()" />
+    <neon-button label="Toast top" @click="toastInfo()" />
+    <neon-button label="Toast bottom" @click="toastInfo('bottom')" />
+  </div>
+  <div class="example--horizontal">
+    <neon-button color="info" label="Toast info" @click="toastInfo()" />
+    <neon-button color="success" label="Toast success" @click="toastSuccess()" />
+    <neon-button color="warn" label="Toast warning" @click="toastWarn()" />
+    <neon-button color="error" label="Toast error" @click="toastError()" />
   </div>
 </div>`,
       data: this.data,

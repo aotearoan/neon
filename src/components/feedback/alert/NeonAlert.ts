@@ -6,7 +6,12 @@ import { NeonAlertLevel } from '../../../common/enums/NeonAlertLevel';
 import { NeonAlertPlacement } from '../../../common/enums/NeonAlertPlacement';
 import { NeonAlertService } from '../../../common/utils/NeonAlertService';
 import NeonAlertContainer from './container/NeonAlertContainer.vue';
+import NeonToastContainer from './container/NeonToastContainer.vue';
 import { NeonAlertModel } from './NeonAlertModel';
+import { NeonToastModel } from './NeonToastModel';
+import { NeonToastMessage } from '../../../common/models/NeonToastMessage';
+import { NeonToastService } from '../../../common/utils/NeonToastService';
+import { NeonVerticalPosition } from '../../../common/enums/NeonVerticalPosition';
 
 /**
  * NeonAlert is a component for presenting temporary notifications to the user. Place the component once inside your app
@@ -15,13 +20,19 @@ import { NeonAlertModel } from './NeonAlertModel';
 @Component({
   components: {
     NeonAlertContainer,
+    NeonToastContainer,
   },
 })
 export default class NeonAlert extends Vue {
+  // alerts
   private topLeft: NeonAlertModel[] = [];
   private topRight: NeonAlertModel[] = [];
   private bottomLeft: NeonAlertModel[] = [];
   private bottomRight: NeonAlertModel[] = [];
+  // toasts
+  private top: NeonToastModel[] = [];
+  private bottom: NeonToastModel[] = [];
+
   private internalId = 1;
 
   /**
@@ -38,36 +49,48 @@ export default class NeonAlert extends Vue {
   duration!: number;
 
   public mounted() {
-    NeonEventBus.on(NeonAlertService.generateEventKey(NeonAlertLevel.Info), this.onInfo);
-    NeonEventBus.on(NeonAlertService.generateEventKey(NeonAlertLevel.Success), this.onSuccess);
-    NeonEventBus.on(NeonAlertService.generateEventKey(NeonAlertLevel.Warn), this.onWarn);
-    NeonEventBus.on(NeonAlertService.generateEventKey(NeonAlertLevel.Error), this.onError);
+    // alerts
+    NeonEventBus.on(NeonAlertService.generateEventKey(NeonAlertLevel.Info), this.onInfoAlert);
+    NeonEventBus.on(NeonAlertService.generateEventKey(NeonAlertLevel.Success), this.onSuccessAlert);
+    NeonEventBus.on(NeonAlertService.generateEventKey(NeonAlertLevel.Warn), this.onWarnAlert);
+    NeonEventBus.on(NeonAlertService.generateEventKey(NeonAlertLevel.Error), this.onErrorAlert);
+    // toast
+    NeonEventBus.on(NeonToastService.generateEventKey(NeonAlertLevel.Info), this.onInfoToast);
+    NeonEventBus.on(NeonToastService.generateEventKey(NeonAlertLevel.Success), this.onSuccessToast);
+    NeonEventBus.on(NeonToastService.generateEventKey(NeonAlertLevel.Warn), this.onWarnToast);
+    NeonEventBus.on(NeonToastService.generateEventKey(NeonAlertLevel.Error), this.onErrorToast);
   }
 
   public beforeDestroy() {
-    NeonEventBus.off(NeonAlertService.generateEventKey(NeonAlertLevel.Info), this.onInfo);
-    NeonEventBus.off(NeonAlertService.generateEventKey(NeonAlertLevel.Success), this.onSuccess);
-    NeonEventBus.off(NeonAlertService.generateEventKey(NeonAlertLevel.Warn), this.onWarn);
-    NeonEventBus.off(NeonAlertService.generateEventKey(NeonAlertLevel.Error), this.onError);
+    // alerts
+    NeonEventBus.off(NeonAlertService.generateEventKey(NeonAlertLevel.Info), this.onInfoAlert);
+    NeonEventBus.off(NeonAlertService.generateEventKey(NeonAlertLevel.Success), this.onSuccessAlert);
+    NeonEventBus.off(NeonAlertService.generateEventKey(NeonAlertLevel.Warn), this.onWarnAlert);
+    NeonEventBus.off(NeonAlertService.generateEventKey(NeonAlertLevel.Error), this.onErrorAlert);
+    // toast
+    NeonEventBus.off(NeonToastService.generateEventKey(NeonAlertLevel.Info), this.onInfoToast);
+    NeonEventBus.off(NeonToastService.generateEventKey(NeonAlertLevel.Success), this.onSuccessToast);
+    NeonEventBus.off(NeonToastService.generateEventKey(NeonAlertLevel.Warn), this.onWarnToast);
+    NeonEventBus.off(NeonToastService.generateEventKey(NeonAlertLevel.Error), this.onErrorToast);
   }
 
-  private onInfo(alert: NeonAlertMessage) {
-    this.enqueueMessage(NeonAlertLevel.Info, alert);
+  private onInfoAlert(alert: NeonAlertMessage) {
+    this.enqueueAlert(NeonAlertLevel.Info, alert);
   }
 
-  private onSuccess(alert: NeonAlertMessage) {
-    this.enqueueMessage(NeonAlertLevel.Success, alert);
+  private onSuccessAlert(alert: NeonAlertMessage) {
+    this.enqueueAlert(NeonAlertLevel.Success, alert);
   }
 
-  private onWarn(alert: NeonAlertMessage) {
-    this.enqueueMessage(NeonAlertLevel.Warn, alert);
+  private onWarnAlert(alert: NeonAlertMessage) {
+    this.enqueueAlert(NeonAlertLevel.Warn, alert);
   }
 
-  private onError(alert: NeonAlertMessage) {
-    this.enqueueMessage(NeonAlertLevel.Error, alert);
+  private onErrorAlert(alert: NeonAlertMessage) {
+    this.enqueueAlert(NeonAlertLevel.Error, alert);
   }
 
-  private enqueueMessage(level: NeonAlertLevel, alert: NeonAlertMessage) {
+  private enqueueAlert(level: NeonAlertLevel, alert: NeonAlertMessage) {
     const id = this.internalId;
     this.internalId = this.internalId + 1;
     const message: NeonAlertModel = {
@@ -107,6 +130,56 @@ export default class NeonAlert extends Vue {
             break;
           case NeonAlertPlacement.BottomRight:
             this.bottomRight = this.bottomRight.filter((m) => m.id !== message.id);
+            break;
+        }
+      }, duration);
+    }
+  }
+
+  private onInfoToast(toast: NeonToastMessage) {
+    this.enqueueToast(NeonAlertLevel.Info, toast);
+  }
+
+  private onSuccessToast(toast: NeonToastMessage) {
+    this.enqueueToast(NeonAlertLevel.Success, toast);
+  }
+
+  private onWarnToast(toast: NeonToastMessage) {
+    this.enqueueToast(NeonAlertLevel.Warn, toast);
+  }
+
+  private onErrorToast(toast: NeonToastMessage) {
+    this.enqueueToast(NeonAlertLevel.Error, toast);
+  }
+
+  private enqueueToast(level: NeonAlertLevel, toast: NeonToastMessage) {
+    const id = this.internalId;
+    this.internalId = this.internalId + 1;
+    const message: NeonToastModel = {
+      dismissable: this.dismissable,
+      ...toast,
+      level,
+      id,
+    };
+
+    switch (toast.placement || NeonVerticalPosition.Top) {
+      case NeonVerticalPosition.Top:
+        this.top.unshift(message);
+        break;
+      case NeonVerticalPosition.Bottom:
+        this.bottom.push(message);
+        break;
+    }
+
+    const duration = toast.duration || this.duration;
+    if (duration > 0) {
+      setTimeout(() => {
+        switch (toast.placement || NeonVerticalPosition.Top) {
+          case NeonVerticalPosition.Top:
+            this.top = this.top.filter((m) => m.id !== message.id);
+            break;
+          case NeonVerticalPosition.Bottom:
+            this.bottom = this.bottom.filter((m) => m.id !== message.id);
             break;
         }
       }, duration);

@@ -1,0 +1,57 @@
+.neon-alert {
+  &--top {
+    top: 0;
+  }
+
+  &--bottom {
+    bottom: 0;
+  }
+
+  &--top,
+  &--bottom {
+    min-width: 100%;
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .neon-toast__message {
+    pointer-events: visible;
+    touch-action: auto;
+    height: $size-l;
+    min-width: $width-toast;
+    margin: $base-space;
+    overflow: hidden;
+    border-radius: 2 * $border-radius;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 3 * $base-space 3.5 * $base-space;
+
+    &--dismissable {
+      cursor: pointer;
+    }
+
+    .neon-toast__close {
+      min-width: $font-size-l;
+      width: $font-size-l;
+      min-height: $font-size-l;
+      height: $font-size-l;
+      margin-left: 3.5 * $base-space;
+      opacity: 0.5;
+    }
+
+    &:hover {
+      .neon-toast__close {
+        opacity: 1;
+      }
+    }
+  }
+
+  .neon-toast__title {
+    line-height: $line-height-one;
+    font-size: $base-font-size;
+    font-weight: 400;
+  }
+}
