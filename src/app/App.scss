@@ -222,8 +222,6 @@ $heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
       }
 
       .simple-page-header {
-        z-index: $z-index-top-nav;
-        position: absolute;
         right: 0;
         top: 0;
         @include padding(0.5);

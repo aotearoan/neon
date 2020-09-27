@@ -34,11 +34,20 @@
 
     &,
     .neon-modal__container {
-      z-index: $z-index-modal-over-top-nav;
-    }
+      z-index: $z-index-top;
 
-    .neon-modal__overlay {
-      z-index: $z-index-overlay-over-top-nav;
+      @include responsive(mobile-large) {
+        @include width(100);
+        @include min-height(100);
+
+        .neon-card {
+          @include min-height(100);
+
+          .neon-card-body {
+            flex: 1 1 auto;
+          }
+        }
+      }
     }
   }
 }

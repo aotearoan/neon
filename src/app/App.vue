@@ -70,7 +70,21 @@
         </neon-top-nav>
       </template>
       <template #content>
-        <neon-side-nav v-if="!simplePage" class="app-side-nav" :full-width="true">
+        <neon-grid id="content" :layouts="layouts" class="content">
+          <neon-grid-area id="section-content">
+            <transition name="fade" mode="out-in">
+              <router-view />
+            </transition>
+          </neon-grid-area>
+        </neon-grid>
+        <neon-footer>
+          <span
+            >{{ version !== '0' ? `v${version}` : '' }} &copy; copyright aotearoan {{ new Date().getFullYear() }}</span
+          >
+        </neon-footer>
+      </template>
+      <template #side-nav v-if="!simplePage">
+        <neon-side-nav class="app-side-nav" :full-width="true">
           <template #sticky>
             <neon-input type="text" v-model="indexFilter" placeholder="Filter..." />
           </template>
@@ -86,18 +100,6 @@
             </neon-expansion-panel>
           </template>
         </neon-side-nav>
-        <neon-grid id="content" :layouts="layouts" class="content">
-          <neon-grid-area id="section-content">
-            <transition name="fade" mode="out-in">
-              <router-view />
-            </transition>
-          </neon-grid-area>
-        </neon-grid>
-        <neon-footer>
-          <span
-            >{{ version !== '0' ? `v${version}` : '' }} &copy; copyright aotearoan {{ new Date().getFullYear() }}</span
-          >
-        </neon-footer>
       </template>
     </neon-page>
     <neon-alert />

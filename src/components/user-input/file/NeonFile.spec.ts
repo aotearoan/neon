@@ -16,7 +16,7 @@ describe('NeonFile', () => {
     const wrapper = mount(NeonFile, {
       propsData: {},
     });
-    expect(wrapper.find('.neon-file--primary').element).toBeDefined();
+    expect(wrapper.find('.neon-file--low-contrast').element).toBeDefined();
   });
 
   it('renders color', () => {

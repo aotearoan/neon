@@ -37,17 +37,6 @@
       }
     }
   ],
-  "events": [
-    {
-      "name": "click",
-      "description": "<p>Emitted when the user clicks on the link. This is only useful when there is no <em>href</em> provided otherwise page navigation supersedes this event.</p>",
-      "type": {
-        "names": [
-          "void"
-        ]
-      }
-    }
-  ],
   "slots": [
     {
       "name": "default",

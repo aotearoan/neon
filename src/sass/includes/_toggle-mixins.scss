@@ -24,12 +24,12 @@
   }
 }
 
-@mixin radio-button-size($font-size, $size) {
+@mixin radio-button-size($control-size, $font-size, $size) {
   @include toggle-size($font-size, $size);
 
   .neon-toggle__radio-button {
-    width: $font-size;
-    height: $font-size;
+    width: $control-size;
+    height: $control-size;
   }
 
   .neon-toggle__label--checked {
@@ -83,14 +83,14 @@
   }
 
   &.neon-toggle--s {
-    @include radio-button-size($font-size-s, $size-s);
+    @include radio-button-size(14px, $font-size-s, $size-s);
   }
 
   &.neon-toggle--m {
-    @include radio-button-size($font-size-s, $size-m);
+    @include radio-button-size(14px, $font-size-s, $size-m);
   }
 
   &.neon-toggle--l {
-    @include radio-button-size($base-font-size, $size-l);
+    @include radio-button-size(16px, $base-font-size, $size-l);
   }
 }

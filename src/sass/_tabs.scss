@@ -64,7 +64,6 @@
   @include padding-vertical;
 
   &--selected {
-    z-index: 0;
     display: flex;
   }
 }

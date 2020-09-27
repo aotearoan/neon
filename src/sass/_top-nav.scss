@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   display: flex;
-  z-index: $z-index-top-nav;
+  z-index: $z-index-above-3;
 
   &__container {
     @include padding(0.75);

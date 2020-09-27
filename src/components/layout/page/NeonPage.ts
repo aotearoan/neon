@@ -6,9 +6,17 @@ import { Component, Vue } from 'vue-property-decorator';
  */
 @Component
 export default class NeonPage extends Vue {
+  private withTopNav = false;
+  private withSideNav = false;
+
   public created() {
     window.addEventListener('resize', this.handleResize, { passive: true });
     this.handleResize();
+  }
+
+  public mounted() {
+    this.withTopNav = !!this.$slots['top-nav'];
+    this.withSideNav = !!this.$slots['side-nav'];
   }
 
   public beforeDestroy() {

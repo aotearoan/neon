@@ -1,7 +1,6 @@
 @import 'includes/layout';
 
 .neon-side-nav {
-  z-index: $z-index-above;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -31,7 +30,7 @@
   }
 }
 
-.neon-top-nav + .neon-page__container .neon-side-nav {
+.neon-page--with-top-nav .neon-side-nav {
   @include responsive(larger-than-tablet) {
     @include min-height(100, $top-nav-height-desktop);
     @include height(100, $top-nav-height-desktop);

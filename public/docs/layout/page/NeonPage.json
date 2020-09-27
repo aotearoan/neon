@@ -5,12 +5,16 @@
   "exportName": "default",
   "slots": [
     {
-      "name": "top-nav",
-      "description": "The <strong>NeonTopNav</strong> slot. This is required to ensure the correct responsive page layout."
-    },
-    {
       "name": "content",
       "description": "The main page content"
+    },
+    {
+      "name": "top-nav",
+      "description": "The <strong>NeonTopNav</strong> slot. This slot is required to ensure the correct responsive page layout."
+    },
+    {
+      "name": "side-nav",
+      "description": "The <strong>NeonSideNav</strong> slot. This slot is required to ensure the correct responsive page layout."
     }
   ]
 }

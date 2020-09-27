@@ -4,7 +4,7 @@
   &__container {
     position: fixed;
     margin: 0;
-    z-index: $z-index-modal-over-top-nav;
+    z-index: $z-index-top;
     @include padding($multiplier: 0.75);
     transition: margin-left ease-in-out $animation-speed-slow, margin-right ease-in-out $animation-speed-slow,
       margin-top ease-in-out $animation-speed-slow, margin-bottom ease-in-out $animation-speed-slow;
@@ -55,7 +55,6 @@
   &--top {
     .neon-drawer__container {
       top: 0;
-      z-index: $z-index-modal-under-top-nav;
 
       @include responsive(larger-than-tablet) {
         margin-top: $top-nav-height-desktop;
@@ -102,13 +101,20 @@
       .neon-drawer__overlay {
         opacity: 1;
         pointer-events: auto;
-        z-index: $z-index-overlay-over-top-nav;
+        z-index: $z-index-top;
         transition: opacity ease-in-out 0.5 * $animation-speed-fast;
       }
+    }
+  }
+}
 
-      &.neon-drawer--top .neon-drawer__overlay {
-        z-index: $z-index-overlay-under-top-nav;
-      }
+.neon-page--with-top-nav {
+  .neon-drawer--top {
+    .neon-drawer__overlay {
+      z-index: $z-index-above-2;
+    }
+    .neon-drawer__container {
+      z-index: $z-index-above-2;
     }
   }
 }

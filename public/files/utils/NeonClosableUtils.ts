@@ -36,13 +36,17 @@ export class NeonClosableUtils {
   private handleOutsideClick(event: MouseEvent | TouchEvent) {
     const target = event.target && (event.target as Element);
     if (target && !this.target.contains(target)) {
-      this.closeCallback();
-
-      if (this._open) {
-        document.body.classList.remove('neon-closable--open');
-        this._open = false;
-      }
+      this.close();
     }
     return true;
+  }
+
+  public close() {
+    this.closeCallback();
+
+    if (this._open) {
+      document.body.classList.remove('neon-closable--open');
+      this._open = false;
+    }
   }
 }

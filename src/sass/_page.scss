@@ -2,9 +2,8 @@
   position: relative;
   left: 0;
   width: 100%;
-  z-index: $z-index-modal-under-top-nav;
 
-  .neon-top-nav + .neon-page__container {
+  &--with-top-nav .neon-page__container {
     @include responsive(larger-than-tablet) {
       padding-top: $top-nav-height-desktop;
       @include min-height(100, $top-nav-height-desktop);

@@ -98,7 +98,7 @@ describe('NeonInput', () => {
     const wrapper = shallowMount(NeonInput, {
       propsData: { value },
     });
-    expect(wrapper.find('.neon-input--primary').element).toBeDefined();
+    expect(wrapper.find('.neon-input--low-contrast').element).toBeDefined();
   });
 
   it('renders color', () => {

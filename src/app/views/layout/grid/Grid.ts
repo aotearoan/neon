@@ -22,7 +22,7 @@ export default class Grid extends Vue {
       title: 'Grid example',
       template: `<neon-grid id="content" :layouts="layouts">
   <neon-grid-area id="section-content">
-    <span>Grid area</span>
+    <span>Grid area (scroll me)</span>
   </neon-grid-area>
 </neon-grid>`,
       data: {
