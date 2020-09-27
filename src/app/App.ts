@@ -234,10 +234,6 @@ export default class App extends Vue {
     this.toggleExpand(key);
   }
 
-  private onInlineMenuClick(key: string) {
-    this.toggleExpand(key);
-  }
-
   get layouts() {
     return [
       {

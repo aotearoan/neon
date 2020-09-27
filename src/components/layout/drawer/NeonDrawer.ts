@@ -45,6 +45,8 @@ export default class NeonDrawer extends Vue {
   private onOpen(open: boolean) {
     if (open) {
       this.closableUtils && this.closableUtils.open();
+    } else {
+      this.closableUtils && this.closableUtils.close();
     }
   }
 
