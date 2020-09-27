@@ -24,6 +24,20 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    user-select: none;
+    overflow: hidden;
+    max-width: 100%;
+    width: 100%;
+    flex: 1 1 auto;
+
+    span {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      flex: 1 1 auto;
+      width: 100%;
+      max-width: 100%;
+    }
 
     .neon-icon {
       width: 4 * $base-space;
@@ -39,11 +53,16 @@
     flex-direction: row;
     align-items: center;
     width: 100%;
+    max-width: 100%;
+    flex: 1 1 auto;
+    overflow: hidden;
 
     .neon-file__list {
       margin-right: 2 * $base-space;
-      flex-grow: 1;
+      flex: 1 1 auto;
       margin-bottom: 0;
+      max-width: 100%;
+      width: 100%;
 
       .neon-file__file {
       }

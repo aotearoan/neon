@@ -11,6 +11,7 @@
 
     .neon-switch__switch {
       background-color: $background-color-switch-off;
+      transition: background-color $animation-speed-fast ease-in;
       box-shadow: $inset-shadow;
     }
 

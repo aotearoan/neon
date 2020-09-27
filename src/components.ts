@@ -144,7 +144,12 @@ const components: { [s: string]: VueConstructor } = {
   NeonTreeMenu,
 };
 
-Object.keys(components).forEach((k) => Vue.component(k, components[k]));
+/**
+ * register all components.
+ */
+function registerComponents() {
+  Object.keys(components).forEach((k) => Vue.component(k, components[k]));
+}
 
 export {
   NeonActionMenu,
@@ -236,4 +241,5 @@ export {
   NeonTreeMenuLinkModel,
   NeonTreeMenuSectionModel,
   NeonVerticalPosition,
+  registerComponents,
 };

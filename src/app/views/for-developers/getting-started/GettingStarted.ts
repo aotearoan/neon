@@ -15,7 +15,10 @@ export default class GettingStarted extends Vue {
   private darkModeExample = `<html class="app neon neon-theme--classic neon-mode--dark">`;
 
   private importComponents = `import { Component, Vue } from 'vue-property-decorator';
-import { NeonLogo } from '@aotearoan/neon';
+import { NeonLogo, registerComponents } from '@aotearoan/neon';
+
+// NOTE: Optional. This automatically registers all components, alternatively, use Vue.component to register components individually.
+registerComponents();
 
 @Component({ components: { NeonLogo } })
 export default class App extends Vue {}`;

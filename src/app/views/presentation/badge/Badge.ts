@@ -37,8 +37,11 @@ export default class Badge extends Vue {
       template: `<div class="example--horizontal">
   <neon-badge label="LB" />
   <neon-badge icon="user" />
-  <neon-badge image="/images/doge.jpg" />
+  <neon-badge :image="baseUrl + 'images/doge.jpg'" />
 </div>`,
+      data: {
+        baseUrl: process.env.VUE_APP_BASE_URL,
+      },
     },
     {
       title: 'Badge colors',

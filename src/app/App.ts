@@ -21,9 +21,12 @@ import {
   NeonSwitch,
   NeonTopNav,
   NeonTreeMenu,
+  registerComponents,
 } from '../components';
 import { NeonModeUtils } from '../common/utils/NeonModeUtils';
 import { Route } from 'vue-router';
+
+registerComponents();
 
 export enum Theme {
   Classic = 'classic',

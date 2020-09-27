@@ -8,6 +8,10 @@
           content. A side nave had two slots, one for <em>sticky</em> content which remains visible at all times. The
           other is for <em>scrolling content</em> which is allowed to overflow below the bottom of the page.
         </p>
+        <p>
+          At the <em>tablet</em> breakpoint and below it is recommended to use <strong>NeonDrawer</strong> to display
+          the side navigation contents.
+        </p>
       </neon-card-body>
     </neon-card>
   </component-documentation>

@@ -26,18 +26,4 @@ export default class NeonLink extends Vue {
   private get routerUrl() {
     return this.href && this.href.indexOf('//') === -1 ? this.href : undefined;
   }
-
-  get sanitizedListeners(): Record<string, Function | Function[]> {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { click, ...sanitized } = this.$listeners;
-    return sanitized;
-  }
-
-  private onClick() {
-    /**
-     * <p>Emitted when the user clicks on the link. This is only useful when there is no <em>href</em> provided otherwise page navigation supersedes this event.</p>
-     * @type {void}
-     */
-    this.$emit('click');
-  }
 }
