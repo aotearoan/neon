@@ -30,7 +30,7 @@
   }
 }
 
-.neon-side-nav + .neon-grid + .neon-footer {
+.neon-page--with-side-nav .neon-footer {
   @include side-nav-offset;
 
   .neon-footer__container {

@@ -132,7 +132,7 @@ export default class App extends Vue {
     localStorage.setItem('mode', this.selectedMode);
   }
 
-  @Watch('$route', { immediate: true })
+  @Watch('$route', { immediate: false })
   private watchRoute(to: Route) {
     this.menuOpen = false;
     const key = to.path.split('/')[1];

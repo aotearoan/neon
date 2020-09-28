@@ -1,5 +1,6 @@
 .neon-expansion-panel {
   flex: 1 0 auto;
+  max-height: fit-content;
 
   &__header {
     display: flex;
