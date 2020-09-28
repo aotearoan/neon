@@ -85,6 +85,10 @@ pre {
   background-color: $background-color-pre;
 }
 
+pre:not(.prism-editor__editor) {
+  @include scrollbars;
+}
+
 .neon-square {
   display: flex;
   flex-direction: row;

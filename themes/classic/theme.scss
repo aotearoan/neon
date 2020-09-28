@@ -160,5 +160,9 @@ $border-width-tabs: 2px !default;
 /* chips */
 $border-radius-chip: 50px !default;
 
+/* scrollbars */
+$width-scrollbar: 6px !default;
+$border-radius-scrollbar: 4px !default;
+
 @import '../../src/sass/includes/includes';
 @import 'src/sass/common';

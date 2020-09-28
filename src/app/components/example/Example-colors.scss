@@ -1,6 +1,8 @@
 .example {
   &__output {
     &--fixed-content {
+      @include scrollbars;
+
       .neon-page {
         .neon-grid {
           .neon-grid-area {

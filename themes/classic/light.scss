@@ -135,4 +135,7 @@ $color-loading-3: $color-high-contrast-l2;
 // chip
 $color-chip: d1 !default;
 
+// scrollbars
+$color-scrollbar: rgba(black, 0.25) !default;
+
 @import '../../src/sass/colors/color-components';

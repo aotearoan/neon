@@ -6,6 +6,8 @@ $alert-colors: (
 );
 
 .neon-alert {
+  @include scrollbars;
+
   .neon-alert__message {
     box-shadow: 0.5 * $base-space 0.5 * $base-space 2 * $base-space $box-shadow-color-alert;
 

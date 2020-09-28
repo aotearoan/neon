@@ -4,6 +4,7 @@
 
     &__container {
       color: $color-text-light;
+      @include scrollbars;
     }
 
     &__textarea {

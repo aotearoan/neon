@@ -21,4 +21,8 @@
       background-color: $background-color-dropdown-menu-hover;
     }
   }
+
+  &__items {
+    @include scrollbars;
+  }
 }

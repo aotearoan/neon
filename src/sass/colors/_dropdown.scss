@@ -9,4 +9,8 @@
       border: $border-width $border-style $border-color;
     }
   }
+
+  &--fullscreen {
+    @include scrollbars;
+  }
 }

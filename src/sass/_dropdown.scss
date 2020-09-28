@@ -70,7 +70,7 @@
     left: 0;
     @include width(100);
     @include height(100);
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
 
     @include responsive(mobile) {
