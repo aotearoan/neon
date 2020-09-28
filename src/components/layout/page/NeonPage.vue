@@ -1,5 +1,8 @@
 <template>
-  <div class="neon-page" :class="{ 'neon-page--with-top-nav': withTopNav, 'neon-page--with-side-nav': withSideNav }">
+  <div
+    class="neon-page"
+    :class="{ 'neon-page--with-top-nav': $slots['top-nav'], 'neon-page--with-side-nav': $slots['side-nav'] }"
+  >
     <div class="neon-page__container">
       <!-- @slot The main page content -->
       <slot name="content"></slot>

@@ -1,12 +1,7 @@
 <template>
-  <div id="app" class="neon-app" :class="{ 'neon-app--simple-page': simplePage }">
-    <header v-if="simplePage" class="simple-page-header">
-      <neon-link @click="switchMode()">
-        <neon-icon class="dark-mode-toggle" name="contrast" />
-      </neon-link>
-    </header>
-    <neon-page>
-      <template #top-nav v-if="!simplePage">
+  <div v-if="!simplePage" id="app" class="neon-app neon-app--standard-page">
+    <neon-page v-if="!simplePage">
+      <template #top-nav>
         <neon-top-nav>
           <span class="logo-wrapper">
             <neon-button
@@ -83,7 +78,7 @@
           >
         </neon-footer>
       </template>
-      <template #side-nav v-if="!simplePage">
+      <template #side-nav>
         <neon-side-nav class="app-side-nav" :full-width="true">
           <template #sticky>
             <neon-input type="text" v-model="indexFilter" placeholder="Filter..." />
@@ -100,6 +95,30 @@
             </neon-expansion-panel>
           </template>
         </neon-side-nav>
+      </template>
+    </neon-page>
+    <neon-alert />
+  </div>
+  <div v-else id="app" class="neon-app neon-app--simple-page">
+    <header class="simple-page-header">
+      <neon-link @click="switchMode()">
+        <neon-icon class="dark-mode-toggle" name="contrast" />
+      </neon-link>
+    </header>
+    <neon-page>
+      <template #content>
+        <neon-grid id="content" :layouts="layouts" class="content">
+          <neon-grid-area id="section-content">
+            <transition name="fade" mode="out-in">
+              <router-view />
+            </transition>
+          </neon-grid-area>
+        </neon-grid>
+        <neon-footer>
+          <span
+            >{{ version !== '0' ? `v${version}` : '' }} &copy; copyright aotearoan {{ new Date().getFullYear() }}</span
+          >
+        </neon-footer>
       </template>
     </neon-page>
     <neon-alert />
