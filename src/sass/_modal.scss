@@ -50,4 +50,29 @@
       }
     }
   }
+
+  &__container {
+    @include responsive(larger-than-mobile-large) {
+      padding-left: 2 * $base-space;
+      padding-right: 2 * $base-space;
+    }
+  }
+
+  &__close.neon-button.neon-button--text.neon-button--low-contrast {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    margin: 0.5 * $base-space;
+
+    &:active:not(:disabled),
+    &:focus:not(:disabled) {
+      outline: none;
+      box-shadow: none;
+    }
+
+    @include responsive(larger-than-mobile-large) {
+      display: none;
+    }
+  }
 }

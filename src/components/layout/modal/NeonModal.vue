@@ -3,6 +3,15 @@
     <div class="neon-modal__container" ref="modal">
       <!-- @slot modal contents -->
       <slot></slot>
+      <neon-button
+        @click="close()"
+        button-style="text"
+        icon="times"
+        size="s"
+        :circular="true"
+        class="neon-modal__close"
+        color="low-contrast"
+      ></neon-button>
     </div>
     <div class="neon-modal__overlay"></div>
   </div>

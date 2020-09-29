@@ -29,7 +29,7 @@ export default class Modal extends Vue {
   <neon-modal :open="open" @close="open = false">
     <neon-card>
       <neon-card-header>
-        <h1>Modal title</h1>
+        <h3>Modal title</h3>
       </neon-card-header>
       <neon-card-body>
         <h6>Modal content goes here</h6>
