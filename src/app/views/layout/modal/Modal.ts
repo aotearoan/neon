@@ -15,7 +15,7 @@ import { Menu, MenuModel } from '../../../Menu';
 export default class Modal extends Vue {
   private menuModel: MenuModel | null = null;
 
-  private headline = 'Page footer component';
+  private headline = 'Display modal content over the page';
 
   private data = {
     open: false,
