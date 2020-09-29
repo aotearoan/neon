@@ -15,6 +15,7 @@ $heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
 
       $color-api-docs-property-name: l3;
       $color-404: rgba($color-brand-l1, 0.75);
+      $color-editor-lock: $color-text-low-contrast;
 
       // application dark mode SASS
       @import 'components/editor/Editor-colors';
@@ -42,6 +43,7 @@ $heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
 
       $color-api-docs-property-name: d2;
       $color-404: $color-brand-d3;
+      $color-editor-lock: $color-text-neutral;
 
       // application light mode SASS
       @import 'components/editor/Editor-colors';

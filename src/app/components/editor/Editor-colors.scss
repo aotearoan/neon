@@ -31,8 +31,9 @@
   }
 
   &__read-only.neon-icon--disabled {
+    opacity: 0.5;
     path.neon-svg--fill {
-      fill: $color-low-contrast-d5 !important;
+      fill: $color-editor-lock !important;
     }
   }
 }
