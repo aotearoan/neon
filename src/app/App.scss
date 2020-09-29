@@ -86,6 +86,7 @@ $heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
     @import 'views/feedback/alert/Alert';
     @import 'views/home/Home';
     @import 'views/error/NotFound';
+    @import 'views/feedback/splash-loader/SplashLoader';
 
     body {
       .title {
@@ -187,20 +188,6 @@ $heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
       p {
         white-space: nowrap;
       }
-    }
-
-    .fade-enter-active {
-      transition: opacity ease-in-out $animation-speed-slow;
-      overflow: hidden;
-    }
-
-    .fade-leave-active {
-      overflow: hidden;
-    }
-
-    .fade-enter,
-    .fade-leave-active {
-      opacity: 0;
     }
 
     .neon-app--simple-page {

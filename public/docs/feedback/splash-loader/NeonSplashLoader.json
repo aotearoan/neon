@@ -1,0 +1,56 @@
+{
+  "description": "Use <strong>NeonSplashLoader</strong> to indicate loading progress to the user. This can be used fullscreen for the\ninitial site loading as well as when UPDATING data, e.g. refreshing table data. For initial data loading please see\n<a href=\"/feedback/skeleton-loader\">NeonSkeletonLoader</a>.",
+  "tags": {},
+  "exportName": "default",
+  "displayName": "NeonSplashLoader",
+  "props": [
+    {
+      "name": "color",
+      "tags": {},
+      "description": "Color of the loading icon",
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Primary"
+      }
+    },
+    {
+      "name": "size",
+      "tags": {},
+      "description": "Loading icon size",
+      "type": {
+        "name": "NeonSplashLoaderSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSplashLoaderSize.Large"
+      }
+    },
+    {
+      "name": "overlay",
+      "tags": {},
+      "description": "Display the overlay over the page",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    },
+    {
+      "name": "fullscreen",
+      "tags": {},
+      "description": "Display fullscreen (position: fixed)",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    }
+  ]
+}

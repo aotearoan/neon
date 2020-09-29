@@ -38,6 +38,7 @@ import NeonPage from './components/layout/page/NeonPage.vue';
 import NeonPassword from './components/user-input/password/NeonPassword.vue';
 import NeonSideNav from './components/layout/side-nav/NeonSideNav.vue';
 import NeonSkeletonLoader from './components/feedback/skeleton-loader/NeonSkeletonLoader.vue';
+import NeonSplashLoader from './components/feedback/splash-loader/NeonSplashLoader.vue';
 import NeonSwitch from './components/user-input/switch/NeonSwitch.vue';
 import NeonTab from './components/presentation/tabs/tab/NeonTab.vue';
 import NeonTabs from './components/presentation/tabs/NeonTabs.vue';
@@ -82,6 +83,7 @@ import { NeonPosition } from './common/enums/NeonPosition';
 import { NeonResponsive } from './common/enums/NeonResponsive';
 import { NeonResponsiveUtils } from './common/utils/NeonResponsiveUtils';
 import { NeonSize } from './common/enums/NeonSize';
+import { NeonSplashLoaderSize } from './common/enums/NeonSplashLoaderSize';
 import { NeonState } from './common/enums/NeonState';
 import { NeonSwitchStyle } from './common/enums/NeonSwitchStyle';
 import { NeonTabModel } from './common/models/NeonTabModel';
@@ -135,6 +137,7 @@ const components: { [s: string]: VueConstructor } = {
   NeonPassword,
   NeonSideNav,
   NeonSkeletonLoader,
+  NeonSplashLoader,
   NeonSwitch,
   NeonTab,
   NeonTabs,
@@ -224,6 +227,8 @@ export {
   NeonSideNav,
   NeonSize,
   NeonSkeletonLoader,
+  NeonSplashLoader,
+  NeonSplashLoaderSize,
   NeonState,
   NeonSwitch,
   NeonSwitchStyle,

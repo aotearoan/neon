@@ -106,6 +106,13 @@ export class Menu {
                 keywords: 'spinner loading progress',
                 component: 'NeonSkeletonLoader',
               },
+              {
+                path: 'splash-loader',
+                page: 'SplashLoader',
+                name: 'Splash Loader',
+                keywords: 'spinner loading progress',
+                component: 'NeonSplashLoader',
+              },
             ],
           },
           {

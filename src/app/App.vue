@@ -67,7 +67,7 @@
       <template #content>
         <neon-grid id="content" :layouts="layouts" class="content">
           <neon-grid-area id="section-content">
-            <transition name="fade" mode="out-in">
+            <transition name="neon-fade-transition" mode="out-in">
               <router-view />
             </transition>
           </neon-grid-area>
@@ -109,7 +109,7 @@
       <template #content>
         <neon-grid id="content" :layouts="layouts" class="content">
           <neon-grid-area id="section-content">
-            <transition name="fade" mode="out-in">
+            <transition name="neon-fade-transition" mode="out-in">
               <router-view />
             </transition>
           </neon-grid-area>
