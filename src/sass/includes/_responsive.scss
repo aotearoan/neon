@@ -14,3 +14,9 @@ $breakpoints: (
     @content;
   }
 }
+
+@mixin touchscreen {
+  @media screen and (hover: none) {
+    @content;
+  }
+}

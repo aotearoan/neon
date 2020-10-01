@@ -148,4 +148,16 @@ export default class NeonDropdown extends Vue {
       }
     }
   }
+
+  public getPlacement(): NeonDropdownPlacement {
+    return this.dropdownPlacement;
+  }
+
+  private onBlur() {
+    /**
+     * Emitted when the dropdown button is blurred.
+     * @type {void}
+     */
+    this.$emit('blur');
+  }
 }

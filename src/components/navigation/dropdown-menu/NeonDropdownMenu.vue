@@ -1,10 +1,12 @@
 <template>
   <neon-dropdown
     class="neon-dropdown-menu"
+    :class="`neon-dropdown-menu--${color}`"
     :size="size"
     v-bind="sanitizedAttributes"
     v-model="open"
     v-on="sanitizedListeners"
+    :color="color"
   >
     <ul class="no-style neon-dropdown-menu__items">
       <li

@@ -37,6 +37,7 @@ import NeonNotificationCounter from './components/feedback/notification-counter/
 import NeonPage from './components/layout/page/NeonPage.vue';
 import NeonPassword from './components/user-input/password/NeonPassword.vue';
 import NeonSideNav from './components/layout/side-nav/NeonSideNav.vue';
+import NeonSelect from './components/user-input/select/NeonSelect.vue';
 import NeonSkeletonLoader from './components/feedback/skeleton-loader/NeonSkeletonLoader.vue';
 import NeonSplashLoader from './components/feedback/splash-loader/NeonSplashLoader.vue';
 import NeonSwitch from './components/user-input/switch/NeonSwitch.vue';
@@ -82,6 +83,8 @@ import { NeonPlacementUtils } from './common/utils/NeonPlacementUtils';
 import { NeonPosition } from './common/enums/NeonPosition';
 import { NeonResponsive } from './common/enums/NeonResponsive';
 import { NeonResponsiveUtils } from './common/utils/NeonResponsiveUtils';
+import { NeonSelectGroup } from './common/models/NeonSelectGroup';
+import { NeonSelectOption } from './common/models/NeonSelectOption';
 import { NeonSize } from './common/enums/NeonSize';
 import { NeonSplashLoaderSize } from './common/enums/NeonSplashLoaderSize';
 import { NeonState } from './common/enums/NeonState';
@@ -135,6 +138,7 @@ const components: { [s: string]: VueConstructor } = {
   NeonNotificationCounter,
   NeonPage,
   NeonPassword,
+  NeonSelect,
   NeonSideNav,
   NeonSkeletonLoader,
   NeonSplashLoader,
@@ -224,6 +228,9 @@ export {
   NeonPosition,
   NeonResponsive,
   NeonResponsiveUtils,
+  NeonSelect,
+  NeonSelectGroup,
+  NeonSelectOption,
   NeonSideNav,
   NeonSize,
   NeonSkeletonLoader,

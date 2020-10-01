@@ -1,5 +1,9 @@
 import { mount } from '@vue/test-utils';
 import NeonModal from './NeonModal.vue';
+import NeonButton from '../../user-input/button/NeonButton.vue';
+import Vue from 'vue';
+
+Vue.component('NeonButton', NeonButton);
 
 describe('NeonModal', () => {
   it('renders default slot contents', () => {

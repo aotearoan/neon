@@ -59,6 +59,8 @@
 
   .neon-button__label {
     white-space: nowrap;
+    flex: 1 1 auto;
+    text-align: left;
   }
 
   &:active:not(:disabled) {
@@ -76,6 +78,10 @@
   &.neon-button--full-width {
     width: 100%;
     justify-content: center;
+
+    .neon-button__label {
+      text-align: center;
+    }
   }
 
   &--icon-left {

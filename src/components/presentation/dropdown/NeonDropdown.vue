@@ -25,6 +25,7 @@
         :label="label"
         :icon="icon"
         @click="toggleOpen()"
+        @blur="onBlur()"
       />
     </div>
     <div v-else @click="toggleOpen()" ref="dropdownButton" tabindex="0" class="neon-dropdown__badge">

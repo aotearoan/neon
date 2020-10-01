@@ -6,6 +6,7 @@ import {
   NeonFieldGroup,
   NeonInput,
   NeonInputIndicator,
+  NeonSelect,
 } from '../../../../components';
 import { Menu, MenuModel } from '../../../Menu';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
@@ -19,6 +20,7 @@ import ComponentDocumentation from '../../../components/component-documentation/
     NeonInput,
     NeonInputIndicator,
     NeonFieldGroup,
+    NeonSelect,
   },
 })
 export default class FieldGroup extends Vue {
@@ -28,12 +30,41 @@ export default class FieldGroup extends Vue {
 
   private data = {
     indexFilter: '',
+    currency: 'NZD',
+    currencies: [
+      {
+        key: 'CAD',
+        label: 'CAD',
+        separatorBefore: true,
+      },
+      {
+        key: 'EUR',
+        label: 'EUR',
+        separatorBefore: true,
+      },
+      {
+        key: 'NZD',
+        label: 'NZD',
+        separatorBefore: true,
+      },
+      {
+        key: 'PLN',
+        label: 'PLN',
+        separatorBefore: true,
+      },
+      {
+        key: 'USD',
+        label: 'USD',
+        separatorBefore: true,
+      },
+    ],
   };
 
   private inputIndicatorExamples = `<div class="neon-vertically-spaced">
   <neon-field-group>
-    <neon-input-indicator size="s" label="$" />
+    <neon-input-indicator size="s" label="Salary" />
     <neon-input size="s" type="text" color="primary" v-model="indexFilter" placeholder="Enter amount" />
+    <neon-select size="s" color="primary" v-model="currency" :options="currencies" placeholder="Currency" />
   </neon-field-group>
   <neon-field-group>
     <neon-input type="text" color="primary" v-model="indexFilter" placeholder="Enter rate" />

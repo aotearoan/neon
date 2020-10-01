@@ -20,7 +20,7 @@ export class RegisterIcons {
     );
     NeonIconRegistry.addIcon(
       'check',
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%"><path class="neon-svg--fill" fill-rule="evenodd" d="M21.03 5.72a.75.75 0 010 1.06l-11.5 11.5a.75.75 0 01-1.072-.012l-5.5-5.75a.75.75 0 111.084-1.036l4.97 5.195L19.97 5.72a.75.75 0 011.06 0z"></path></svg>',
+      '<svg width="100%" height="100%" viewBox="0 0 24 24" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><path class="neon-svg--fill" d="M22.596,6.529c0.26,-0.278 0.404,-0.645 0.404,-1.025c0,-0.825 -0.679,-1.504 -1.505,-1.504c-0.381,0 -0.748,0.144 -1.026,0.404l-11.981,11.971l-4.957,-4.953c-0.278,-0.259 -0.645,-0.404 -1.026,-0.404c-0.826,0 -1.505,0.679 -1.505,1.504c-0,0.381 0.144,0.747 0.404,1.025l6.02,6.016c0.584,0.583 1.544,0.583 2.128,0l13.044,-13.034Z" style="fill-rule:nonzero;"/></svg>',
     );
     NeonIconRegistry.addIcon(
       'check-circle',

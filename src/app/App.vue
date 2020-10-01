@@ -86,6 +86,7 @@
           <template #scrolling>
             <neon-expansion-panel
               v-for="section in filteredModel"
+              size="l"
               :label="section.group"
               :key="section.group"
               v-model="section.expanded"

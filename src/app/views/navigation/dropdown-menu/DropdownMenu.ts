@@ -20,38 +20,55 @@ export default class DropdownMenu extends Vue {
     model: [
       {
         key: 'k1',
-        label: 'Label only',
+        label: 'Clickable option',
+        separatorBefore: true,
       },
       {
         key: 'k2',
-        label: 'With icon',
-        icon: 'user',
-        separatorBefore: true,
-      },
-      {
-        key: 'k3',
-        label: 'Disabled option',
-        icon: 'plus',
-        disabled: true,
-        separatorBefore: true,
-      },
-      {
-        key: 'k4',
         label: 'External link',
         href: 'http://getskeleton.com',
         separatorBefore: true,
       },
       {
-        key: 'k5',
+        key: 'k3',
         label: 'Internal link',
         href: '/presentation/dropdown',
         separatorBefore: true,
       },
       {
-        key: 'k6',
+        key: 'k4',
         label: 'Disabled link',
-        icon: 'download',
         href: '/presentation/dropdown',
+        separatorBefore: true,
+        disabled: true,
+      },
+    ],
+    modelWithIcons: [
+      {
+        key: 'k1',
+        label: 'Clickable option',
+        icon: 'user',
+        separatorBefore: true,
+      },
+      {
+        key: 'k2',
+        label: 'External link',
+        href: 'http://getskeleton.com',
+        icon: 'download',
+        separatorBefore: true,
+      },
+      {
+        key: 'k3',
+        label: 'Internal link',
+        href: '/presentation/dropdown',
+        icon: 'images',
+        separatorBefore: true,
+      },
+      {
+        key: 'k4',
+        label: 'Disabled link',
+        href: '/presentation/dropdown',
+        icon: 'lock',
         separatorBefore: true,
         disabled: true,
       },
@@ -60,11 +77,22 @@ export default class DropdownMenu extends Vue {
 
   private examples = [
     {
-      title: 'Dropdown menu examples',
+      title: 'Dropdown sizes',
       template: `<div class="neon-vertically-spaced">
-  <neon-dropdown-menu size="s" color="primary" label="Small menu" :model="model" />
-  <neon-dropdown-menu size="m" color="primary" label="Medium menu" :model="model" />
-  <neon-dropdown-menu size="l" color="primary" label="Large menu" :model="model" />
+  <neon-dropdown-menu size="s" label="Small menu" :model="model" />
+  <neon-dropdown-menu size="m" label="Medium menu" :model="model" />
+  <neon-dropdown-menu size="l" label="Large menu" :model="model" />
+</div>`,
+      data: this.data,
+    },
+    {
+      title: 'Dropdowns with colors and icons',
+      template: `<div class="neon-vertically-spaced">
+  <neon-dropdown-menu color="brand" label="Brand" :model="modelWithIcons" />
+  <neon-dropdown-menu color="primary" label="Primary" :model="modelWithIcons" />
+  <neon-dropdown-menu color="info" label="Info" :model="modelWithIcons" />
+  <neon-dropdown-menu color="warn" label="Warning" :model="modelWithIcons" />
+  <neon-dropdown-menu color="error" label="Error" :model="modelWithIcons" />
 </div>`,
       data: this.data,
     },

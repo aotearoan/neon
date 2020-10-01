@@ -328,6 +328,12 @@ export class Menu {
                 component: 'NeonPassword',
               },
               {
+                path: 'select',
+                page: 'Select',
+                keywords: 'dropdown',
+                component: 'NeonSelect',
+              },
+              {
                 path: 'switch',
                 page: 'SwitchExample',
                 name: 'Switch / Checkbox',

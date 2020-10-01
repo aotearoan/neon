@@ -120,6 +120,15 @@
           "boolean"
         ]
       }
+    },
+    {
+      "name": "blur",
+      "description": "Emitted when the dropdown button is blurred.",
+      "type": {
+        "names": [
+          "void"
+        ]
+      }
     }
   ],
   "slots": [

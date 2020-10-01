@@ -1,25 +1,12 @@
-@mixin menu-item-size($size, $font-size) {
-  .neon-link,
-  .neon-dropdown-menu__item-container {
-    $menu-item-vertical-padding: 0.5 * ($size - $font-size);
-    padding: $menu-item-vertical-padding 1.5 * $menu-item-vertical-padding;
-    font-size: $font-size;
-  }
-
-  .neon-icon {
-    width: $font-size * $line-height-one;
-    height: $font-size * $line-height-one;
-  }
-}
-
 .neon-dropdown-menu {
   &__items {
-    max-height: 280px;
+    max-height: $max-height-dropdown;
     overflow-y: auto;
   }
 
   &__item {
     display: flex;
+    flex: 1 0 auto;
     flex-direction: row;
     user-select: none;
     cursor: pointer;
@@ -44,16 +31,29 @@
       text-decoration: none;
     }
 
-    &--s {
-      @include menu-item-size($size-s, $font-size-s);
+    .neon-link,
+    .neon-dropdown-menu__item-container {
+      padding-left: 4 * $base-space;
+      padding-right: 4 * $base-space;
+      height: $size-m;
+      flex: 1 1 auto;
+      font-size: $font-size-s;
     }
 
-    &--m {
-      @include menu-item-size($size-m, $base-font-size);
+    .neon-icon {
+      width: $font-size-s;
+      height: $font-size-s;
     }
+  }
+}
 
-    &--l {
-      @include menu-item-size($size-l, $base-font-size);
+.neon-dropdown__content {
+  &--top-left,
+  &--top-right,
+  &--left-bottom,
+  &--right-bottom {
+    .neon-dropdown-menu__items {
+      flex-direction: column-reverse;
     }
   }
 }

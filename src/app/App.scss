@@ -87,6 +87,8 @@ $heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
     @import 'views/home/Home';
     @import 'views/error/NotFound';
     @import 'views/feedback/splash-loader/SplashLoader';
+    @import 'views/user-input/select/Select';
+    @import 'views/user-input/field-group/FieldGroup';
 
     body {
       .title {

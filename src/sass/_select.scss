@@ -1,0 +1,100 @@
+.neon-select {
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    width: fit-content;
+  }
+
+  &__options {
+    max-height: $max-height-dropdown;
+    overflow-y: auto;
+  }
+
+  &__option {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: row;
+    user-select: none;
+    cursor: pointer;
+
+    &-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+
+    &-label {
+      white-space: nowrap;
+    }
+
+    &-title {
+      display: flex;
+      flex: 1 0 auto;
+      user-select: none;
+      align-items: center;
+      font-weight: 800;
+      font-size: $font-size-xs;
+      text-transform: uppercase;
+      padding: 3 * $base-space 4 * $base-space $base-space;
+      letter-spacing: $component-letter-spacing-s;
+    }
+
+    .neon-switch {
+      pointer-events: none;
+      touch-action: none;
+    }
+
+    .neon-icon {
+      margin-right: 3 * $base-space;
+    }
+
+    .neon-select__option-container {
+      padding-left: 4 * $base-space;
+      padding-right: 4 * $base-space;
+      height: $size-m;
+      flex: 1 1 auto;
+      font-size: $font-size-s;
+    }
+
+    .neon-icon {
+      width: $font-size-s;
+      height: $font-size-s;
+    }
+  }
+
+  &--grouped:not(.neon-select--multiple) {
+    .neon-select__option {
+      padding-left: 4 * $base-space;
+    }
+  }
+
+  &:not(.neon-select--grouped) {
+    .neon-dropdown__content {
+      &--top-left,
+      &--top-right,
+      &--left-bottom,
+      &--right-bottom {
+        .neon-select__options {
+          flex-direction: column-reverse;
+        }
+      }
+    }
+  }
+
+  &__native {
+    display: none;
+
+    @include touchscreen {
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: $z-index-above;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+    }
+  }
+}

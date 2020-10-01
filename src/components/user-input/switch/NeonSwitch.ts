@@ -19,10 +19,10 @@ export default class NeonSwitch extends Vue {
   public value!: boolean;
 
   /**
-   * The switch label
+   * The switch label, the label can be optional only in the case the switch is part of a more complex component.
    */
-  @Prop({ required: true })
-  public label!: TranslateResult;
+  @Prop()
+  public label?: TranslateResult;
 
   /**
    * The size of the switch.

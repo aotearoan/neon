@@ -16,11 +16,10 @@
     {
       "name": "label",
       "tags": {},
-      "description": "The switch label",
+      "description": "The switch label, the label can be optional only in the case the switch is part of a more complex component.",
       "type": {
         "name": "TranslateResult"
-      },
-      "required": true
+      }
     },
     {
       "name": "size",

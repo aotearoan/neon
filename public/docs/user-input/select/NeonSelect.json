@@ -1,0 +1,140 @@
+{
+  "description": "<p>The <strong>NeonSelect</strong> is the equivalent of an HTML &lt;select&gt; form control. On touch devices\nNeonSelect will use the native select for input. <strong>NeonSelect</strong> supports grouping and multiselect.</p>\n<p><strong>Note:</strong> As well as the options described below, pass through attributes supported by\n<a href=\"/presentation/dropdown\">NeonDropdown</a> to change the style of the dropdown button.</p>",
+  "tags": {},
+  "exportName": "default",
+  "displayName": "NeonSelect",
+  "props": [
+    {
+      "name": "placeholder",
+      "tags": {},
+      "description": "Placeholder to display as button label when there is no option selected.",
+      "type": {
+        "name": "TranslateResult"
+      },
+      "required": true
+    },
+    {
+      "name": "placeholderIcon",
+      "tags": {},
+      "description": "Optional placeholder icon.",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "options",
+      "tags": {},
+      "description": "A list of options to render in the select.",
+      "type": {
+        "name": "Array",
+        "elements": [
+          {
+            "name": "NeonSelectOption"
+          }
+        ]
+      }
+    },
+    {
+      "name": "groupedOptions",
+      "tags": {},
+      "description": "A list of grouped options to render in the select.",
+      "type": {
+        "name": "Array",
+        "elements": [
+          {
+            "name": "NeonSelectGroup"
+          }
+        ]
+      }
+    },
+    {
+      "name": "value",
+      "tags": {},
+      "description": "Either a single string, indicating the key of the selected option or an array of selected keys in the case\nmultiple = true.",
+      "type": {
+        "name": "union",
+        "elements": [
+          {
+            "name": "string"
+          },
+          {
+            "name": "Array",
+            "elements": [
+              {
+                "name": "string"
+              }
+            ]
+          }
+        ]
+      },
+      "required": true
+    },
+    {
+      "name": "multiple",
+      "tags": {},
+      "description": "Allow multi-select.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "multiselectPlaceholder",
+      "tags": {},
+      "description": "Placeholder when multiple values are selected.",
+      "type": {
+        "name": "TranslateResult"
+      }
+    },
+    {
+      "name": "disabled",
+      "tags": {},
+      "description": "Disable the select",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "size",
+      "tags": {},
+      "description": "The size of the dropdown - Small, Medium or Large.",
+      "type": {
+        "name": "NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "color",
+      "tags": {},
+      "description": "The color of the select.",
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "input",
+      "description": "emitted when the user changes the selection.",
+      "type": {
+        "names": [
+          "string | string[]"
+        ]
+      }
+    }
+  ]
+}

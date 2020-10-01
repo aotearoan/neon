@@ -1,5 +1,5 @@
 {
-  "description": "<p>A dropdown menu consisting of a button to open the menu and a list of menu items. Clicking on a menu item will result in navigating to the provided URL or notifying the parent component via the @click event.</p>\n<p><strong>Note:</strong> As well as the options described below, pass through attributes supported by <a href=\"/presentation/dropdown\">NeonDropdown</a> to change the style of the dropdown button.</p>",
+  "description": "<p>A dropdown menu consisting of a button to open the menu and a list of menu items. Clicking on a menu item will\nresult in navigating to the provided URL or notifying the parent component via the @click event.</p>\n<p><strong>Note:</strong> As well as the options described below, pass through attributes supported by\n<a href=\"/presentation/dropdown\">NeonDropdown</a> to change the style of the dropdown button.</p>",
   "tags": {},
   "displayName": "NeonDropdownMenu",
   "exportName": "default",
@@ -28,6 +28,18 @@
       "defaultValue": {
         "func": false,
         "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "color",
+      "tags": {},
+      "description": "The dropdown color.",
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
       }
     }
   ],

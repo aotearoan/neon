@@ -45,7 +45,7 @@ $border-width: 1px !default;
 $border-style: solid !default;
 
 /* typography */
-$typography-scale: 1.2 !default; // Minor third https://type-scale.com/
+$typography-scale: 1.125 !default; // Major second https://type-scale.com/
 $base-font-size: 16px !default;
 
 $font-size-xxs: round($base-font-size / ($typography-scale * $typography-scale * $typography-scale)) !default;
@@ -150,6 +150,7 @@ $width-toast: 250px !default;
 
 /* dropdown */
 $box-shadow-dropdown: $box-shadow-strong !default;
+$max-height-dropdown: 280px !default;
 
 /* buttons */
 $border-radius-button-xl: 8px !default;

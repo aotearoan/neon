@@ -8,7 +8,11 @@
         </p>
         <p>
           Use <strong>NeonDropdownMenu</strong> to display options to the user behind a dropdown button. This is useful
-          when there is limited space, or the actions are secondary
+          when there is limited space, or the actions are secondary.
+        </p>
+        <p>
+          <strong>Note:</strong> As well as the options described below, pass through attributes supported by
+          <a href="/presentation/dropdown">NeonDropdown</a> to change the style of the dropdown button.
         </p>
       </neon-card-body>
     </neon-card>
