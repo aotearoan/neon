@@ -66,6 +66,18 @@ $heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
       .neon-side-nav__scrolling {
         border-top: $border-width $border-style $border-color;
       }
+
+      .app-side-nav {
+        .neon-input {
+          input {
+            background-color: $background-color-footer;
+
+            &:focus {
+              background-color: $background-color;
+            }
+          }
+        }
+      }
     }
 
     // application classic theme SASS
@@ -147,8 +159,13 @@ $heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
     }
 
     .app-side-nav {
-      .neon-side-nav__sticky {
-        @include padding(0.75);
+      .neon-input {
+        input {
+          border: none;
+          border-radius: 0;
+          box-shadow: none;
+          @include padding-horizontal(0.75);
+        }
       }
 
       & > hr {

@@ -81,7 +81,7 @@
       <template #side-nav>
         <neon-side-nav class="app-side-nav" :full-width="true">
           <template #sticky>
-            <neon-input type="text" v-model="indexFilter" placeholder="Filter..." />
+            <neon-input size="l" type="text" v-model="indexFilter" placeholder="Filter..." />
           </template>
           <template #scrolling>
             <neon-expansion-panel
