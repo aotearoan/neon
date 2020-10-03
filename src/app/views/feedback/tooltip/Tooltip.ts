@@ -45,6 +45,7 @@ export default class Tooltip extends Vue {
     {
       title: 'Tooltip placement',
       template: `<div>
+  <!-- top -->
   <p>Tooltip placement
   <neon-tooltip>
     <template #target>
@@ -54,6 +55,7 @@ export default class Tooltip extends Vue {
       <span>Tooltip content</span>
     </template>
   </neon-tooltip>.</p>
+  <!-- left -->
   <p>Tooltip placement
   <neon-tooltip placement="left">
     <template #target>
@@ -63,6 +65,7 @@ export default class Tooltip extends Vue {
       <span>Tooltip content</span>
     </template>
   </neon-tooltip>.</p>
+  <!-- bottom -->
   <p>Tooltip placement
   <neon-tooltip placement="bottom">
     <template #target>
@@ -72,6 +75,7 @@ export default class Tooltip extends Vue {
       <span>Tooltip content</span>
     </template>
   </neon-tooltip>.</p>
+  <!-- right -->
   <p>Tooltip placement
   <neon-tooltip placement="right">
     <template #target>
