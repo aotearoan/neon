@@ -47,8 +47,8 @@ export default class ComponentDocumentation extends Vue {
   @Prop({ required: true })
   public headline?: string;
 
-  @Prop({ default: [] })
-  public examples!: ExampleModel[];
+  @Prop()
+  public examples?: ExampleModel[];
 
   @Watch('$route', { immediate: true })
   private onRouteChange(to: Route) {
@@ -88,6 +88,10 @@ export default class ComponentDocumentation extends Vue {
         },
       );
     });
+
+    if (!this.examples) {
+      this.tabs = this.tabs.filter((t) => t.key !== 'examples');
+    }
   }
 
   private onChangeTab(key: string) {

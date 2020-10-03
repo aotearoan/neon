@@ -21,7 +21,7 @@
         :component-name="subApiModel.name"
       />
     </neon-tab>
-    <neon-tab :tab="tabs[2]" :selected="selected === tabs[2].key" :toggleOnIf="true">
+    <neon-tab v-if="examples" :tab="tabs[2]" :selected="selected === tabs[2].key" :toggleOnIf="true">
       <examples :examples="examples" />
     </neon-tab>
   </div>

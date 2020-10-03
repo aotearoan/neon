@@ -197,6 +197,11 @@ export class Menu {
                 component: 'NeonActionMenu',
               },
               {
+                path: 'anchor',
+                page: 'Anchor',
+                component: 'NeonAnchor',
+              },
+              {
                 path: 'dropdown-menu',
                 page: 'DropdownMenu',
                 name: 'Dropdown Menu',

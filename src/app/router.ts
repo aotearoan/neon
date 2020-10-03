@@ -54,7 +54,8 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.VUE_APP_BASE_URL,
   routes,
-  scrollBehavior: (to: Route, from: Route, savedPosition: void | Position) => savedPosition || { x: 0, y: 0 },
+  scrollBehavior: (to: Route, from: Route, savedPosition: void | Position) =>
+    to.path !== from.path ? savedPosition || { x: 0, y: 0 } : undefined,
 });
 
 export default router;

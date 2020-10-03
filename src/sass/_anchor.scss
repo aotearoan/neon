@@ -1,4 +1,4 @@
-.neon-top-nav + .neon-page__container {
+.neon-page--with-top-nav .neon-page__container {
   .neon-anchor {
     position: absolute;
     @include responsive(larger-than-tablet) {
