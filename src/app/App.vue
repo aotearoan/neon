@@ -16,15 +16,17 @@
                 <neon-input type="text" v-model="indexFilter" placeholder="Filter" />
               </div>
               <div class="neon-side-nav__scrolling">
-                <neon-expansion-panel
-                  v-for="section in filteredModel"
-                  :label="section.group"
-                  :key="section.group"
-                  v-model="section.expanded"
-                  class="menu-expansion-panel"
-                >
-                  <neon-tree-menu :model="section.children" :expand-all="expandAll" @click="onSideNavMenuClick" />
-                </neon-expansion-panel>
+                <div class="neon-side-nav__scrolling-container">
+                  <neon-expansion-panel
+                    v-for="section in filteredModel"
+                    :label="section.group"
+                    :key="section.group"
+                    v-model="section.expanded"
+                    class="menu-expansion-panel"
+                  >
+                    <neon-tree-menu :model="section.children" :expand-all="expandAll" @click="onSideNavMenuClick" />
+                  </neon-expansion-panel>
+                </div>
               </div>
             </neon-drawer>
             <neon-link href="/" class="homepage-link">
