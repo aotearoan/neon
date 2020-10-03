@@ -4,6 +4,7 @@ import Editor from '../editor/Editor.vue';
 import NeonCardHeader from '../../../components/layout/card/header/NeonCardHeader.vue';
 import NeonCardBody from '../../../components/layout/card/body/NeonCardBody.vue';
 import NeonCard from '../../../components/layout/card/NeonCard.vue';
+import NeonNote from '../../../components/feedback/note/NeonNote.vue';
 
 @Component({
   components: {
@@ -11,6 +12,7 @@ import NeonCard from '../../../components/layout/card/NeonCard.vue';
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
+    NeonNote,
   },
 })
 export default class Example extends Vue {

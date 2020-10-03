@@ -141,4 +141,7 @@ $color-scrollbar: rgba(black, 0.25) !default;
 // overlays
 $background-color-overlay: rgba($color-neutral-d5, 0.75) !default;
 
+// toggle chips
+$color-toggle-chip: d1 !default;
+
 @import '../../src/sass/colors/color-components';

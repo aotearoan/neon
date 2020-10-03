@@ -44,6 +44,7 @@ import NeonSwitch from './components/user-input/switch/NeonSwitch.vue';
 import NeonTab from './components/presentation/tabs/tab/NeonTab.vue';
 import NeonTabs from './components/presentation/tabs/NeonTabs.vue';
 import NeonToggle from './components/user-input/toggle/NeonToggle.vue';
+import NeonToggleChip from './components/user-input/toggle-chip/NeonToggleChip.vue';
 import NeonTopNav from './components/layout/top-nav/NeonTopNav.vue';
 import NeonTreeMenu from './components/navigation/tree-menu/NeonTreeMenu.vue';
 
@@ -147,6 +148,7 @@ const components: { [s: string]: VueConstructor } = {
   NeonTabs,
   NeonToastContainer,
   NeonToggle,
+  NeonToggleChip,
   NeonTopNav,
   NeonTreeMenu,
 };
@@ -246,6 +248,7 @@ export {
   NeonToastModel,
   NeonToastService,
   NeonToggle,
+  NeonToggleChip,
   NeonToggleModel,
   NeonToggleStyle,
   NeonTopNav,

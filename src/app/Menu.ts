@@ -350,6 +350,12 @@ export class Menu {
                 name: 'Toggle / Radio Buttons',
                 component: 'NeonToggle',
               },
+              {
+                path: 'toggle-chip',
+                page: 'ToggleChip',
+                name: 'Toggle Chip',
+                component: 'NeonToggleChip',
+              },
             ],
           },
         ],

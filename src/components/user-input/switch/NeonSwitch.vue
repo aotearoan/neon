@@ -14,7 +14,7 @@
     <neon-icon
       v-if="switchStyle === 'checkbox'"
       class="neon-switch__checkbox"
-      :inverse="color"
+      :inverse="true"
       :disabled="disabled"
       name="check"
     />

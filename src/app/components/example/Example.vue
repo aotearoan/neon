@@ -1,6 +1,9 @@
 <template>
   <div v-if="example.noCard" class="example--no-card">
     <h3>{{ example.title }}</h3>
+    <neon-note v-if="example.tip" color="info">
+      <span><strong>Tip:</strong>{{ ` ${example.tip}` }}</span>
+    </neon-note>
     <div class="example__output">
       <v-runtime-template :template-props="example.data || {}" :template="example.template" />
     </div>
@@ -13,6 +16,10 @@
       <h3>{{ example.title }}</h3>
     </neon-card-header>
     <neon-card-body :full-width="example.fixedContent">
+      <neon-note v-if="example.tip" color="info">
+        <span><strong>Tip:</strong>{{ ` ${example.tip}` }}</span>
+      </neon-note>
+      <br />
       <div class="example__output" :class="{ 'example__output--fixed-content': example.fixedContent }">
         <v-runtime-template :template-props="example.data || {}" :template="example.template" />
       </div>
