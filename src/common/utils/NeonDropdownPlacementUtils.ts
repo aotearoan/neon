@@ -29,10 +29,6 @@ export class NeonDropdownPlacementUtils {
       right: availableMajorSpace.left + triggerElement.offsetWidth,
     };
 
-    if (contentElement.offsetWidth > maxWidth || contentElement.offsetHeight > maxHeight) {
-      return NeonDropdownPlacement.Fullscreen;
-    }
-
     return NeonDropdownPlacementUtils.findPlacement(
       contentElement,
       availableMajorSpace,

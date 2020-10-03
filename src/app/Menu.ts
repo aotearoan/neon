@@ -113,6 +113,12 @@ export class Menu {
                 keywords: 'spinner loading progress',
                 component: 'NeonSplashLoader',
               },
+              {
+                path: 'tooltip',
+                page: 'Tooltip',
+                keywords: 'popup popover',
+                component: 'NeonTooltip',
+              },
             ],
           },
           {

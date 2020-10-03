@@ -136,16 +136,12 @@ export default class NeonDropdown extends Vue {
 
   private recalculatePlacement() {
     if (this.value) {
-      if (this.placement === NeonDropdownPlacement.Fullscreen) {
-        this.dropdownPlacement = this.placement;
-      } else {
-        this.dropdownPlacement = NeonDropdownPlacementUtils.calculatePlacement(
-          this.$refs.dropdownButton,
-          this.$refs.dropdownContent,
-          this.placement,
-          this.placementContainer,
-        );
-      }
+      this.dropdownPlacement = NeonDropdownPlacementUtils.calculatePlacement(
+        this.$refs.dropdownButton,
+        this.$refs.dropdownContent,
+        this.placement,
+        this.placementContainer,
+      );
     }
   }
 

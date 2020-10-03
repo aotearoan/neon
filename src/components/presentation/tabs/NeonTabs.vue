@@ -6,7 +6,7 @@
         :key="tab.key"
         class="neon-tabs__menu-item"
         :class="{ 'neon-tabs__menu-item--selected': tab.key === value }"
-        @click="onClick(tab.key)"
+        @click="tab.key !== value && onClick(tab.key)"
       >
         <neon-icon
           v-if="tab.icon"

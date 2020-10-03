@@ -20,6 +20,7 @@ export const enumList: string[] = [
   'NeonState',
   'NeonSwitchStyle',
   'NeonToggleStyle',
+  'NeonTooltipStyle',
   'NeonVerticalPosition',
 ];
 
@@ -52,5 +53,6 @@ export const utilsList: string[] = [
   'NeonPlacementUtils',
   'NeonResponsiveUtils',
   'NeonToastService',
+  'NeonTooltipPlacementUtils',
   'RegisterIcons',
 ];

@@ -6,8 +6,8 @@
   @each $color, $palette in $functional-colors {
     &.neon-tabs--#{$color} {
       .neon-tabs__menu-item {
-        &:hover,
-        &:active {
+        &:hover:not(.neon-tabs__menu-item--selected),
+        &:active:not(.neon-tabs__menu-item--selected) {
           color: rgba(map-get($palette, $color-tab-selected), 0.85);
 
           .neon-svg--fill {

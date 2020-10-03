@@ -1,0 +1,51 @@
+{
+  "displayName": "NeonTooltip",
+  "exportName": "default",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "placement",
+      "tags": {},
+      "description": "Placement of the tooltip contents.",
+      "type": {
+        "name": "NeonPlacement"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonPlacement.Top"
+      }
+    },
+    {
+      "name": "tooltipStyle",
+      "tags": {},
+      "description": "Style of the tooltip, use <em>Tooltip</em> for a simple tooltip, use <em>Popover</em> for larger more complex content.",
+      "type": {
+        "name": "NeonTooltipStyle"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonTooltipStyle.Tooltip"
+      }
+    },
+    {
+      "name": "placementContainer",
+      "tags": {},
+      "description": "Restrict placement to within this container.",
+      "type": {
+        "name": "HTMLElement"
+      },
+      "required": false
+    }
+  ],
+  "slots": [
+    {
+      "name": "content",
+      "description": "the tooltip content"
+    },
+    {
+      "name": "target",
+      "description": "the tooltip target, i.e. the text, icon or otherwise which when hovered over triggers the tooltip to open"
+    }
+  ]
+}

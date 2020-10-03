@@ -1,14 +1,7 @@
 import { NeonPlacement } from '../enums/NeonPlacement';
 import { NeonDropdownPlacement } from '../enums/NeonDropdownPlacement';
 
-export type MinorPlacement = NeonPlacement.Top | NeonPlacement.Bottom | NeonPlacement.Left | NeonPlacement.Right;
-
 export class NeonDropdownPlacementObject {
-  public static Fullscreen = new NeonDropdownPlacementObject(
-    NeonDropdownPlacement.Fullscreen,
-    NeonPlacement.Fullscreen,
-  );
-
   public static TopLeft = new NeonDropdownPlacementObject(
     NeonDropdownPlacement.TopLeft,
     NeonPlacement.Top,
@@ -58,7 +51,6 @@ export class NeonDropdownPlacementObject {
   );
 
   private static PLACEMENTS: { [key: string]: NeonDropdownPlacementObject } = {
-    fullscreen: NeonDropdownPlacementObject.Fullscreen,
     'top-left': NeonDropdownPlacementObject.TopLeft,
     'top-right': NeonDropdownPlacementObject.TopRight,
     'bottom-left': NeonDropdownPlacementObject.BottomLeft,
@@ -70,7 +62,6 @@ export class NeonDropdownPlacementObject {
   };
 
   private static FLIP_MAJOR: { [key: string]: NeonDropdownPlacementObject } = {
-    fullscreen: NeonDropdownPlacementObject.Fullscreen,
     'top-left': NeonDropdownPlacementObject.BottomLeft,
     'top-right': NeonDropdownPlacementObject.BottomRight,
     'bottom-left': NeonDropdownPlacementObject.TopLeft,
@@ -82,7 +73,6 @@ export class NeonDropdownPlacementObject {
   };
 
   private static FLIP_MINOR: { [key: string]: NeonDropdownPlacementObject } = {
-    fullscreen: NeonDropdownPlacementObject.Fullscreen,
     'top-left': NeonDropdownPlacementObject.TopRight,
     'top-right': NeonDropdownPlacementObject.TopLeft,
     'bottom-left': NeonDropdownPlacementObject.BottomRight,
@@ -95,20 +85,16 @@ export class NeonDropdownPlacementObject {
 
   public placement: NeonDropdownPlacement;
   public majorPlacement: NeonPlacement;
-  public minorPlacement?: MinorPlacement;
+  public minorPlacement?: NeonPlacement;
 
-  private constructor(
-    placement: NeonDropdownPlacement,
-    majorPlacement: NeonPlacement,
-    minorPlacement?: MinorPlacement,
-  ) {
+  private constructor(placement: NeonDropdownPlacement, majorPlacement: NeonPlacement, minorPlacement?: NeonPlacement) {
     this.placement = placement;
     this.majorPlacement = majorPlacement;
     this.minorPlacement = minorPlacement;
   }
 
   public static toNeonDropdownPlacementObject(placement: NeonDropdownPlacement): NeonDropdownPlacementObject {
-    return NeonDropdownPlacementObject.PLACEMENTS[placement] || NeonDropdownPlacementObject.Fullscreen;
+    return NeonDropdownPlacementObject.PLACEMENTS[placement];
   }
 
   public static flipMajor(placement: NeonDropdownPlacementObject) {

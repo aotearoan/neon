@@ -3,5 +3,4 @@ export enum NeonPlacement {
   Left = 'left',
   Bottom = 'bottom',
   Right = 'right',
-  Fullscreen = 'fullscreen',
 }

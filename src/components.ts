@@ -45,6 +45,7 @@ import NeonTab from './components/presentation/tabs/tab/NeonTab.vue';
 import NeonTabs from './components/presentation/tabs/NeonTabs.vue';
 import NeonToggle from './components/user-input/toggle/NeonToggle.vue';
 import NeonToggleChip from './components/user-input/toggle-chip/NeonToggleChip.vue';
+import NeonTooltip from './components/feedback/tooltip/NeonTooltip.vue';
 import NeonTopNav from './components/layout/top-nav/NeonTopNav.vue';
 import NeonTreeMenu from './components/navigation/tree-menu/NeonTreeMenu.vue';
 
@@ -96,6 +97,8 @@ import { NeonToastModel } from './components/feedback/alert/NeonToastModel';
 import { NeonToastService } from './common/utils/NeonToastService';
 import { NeonToggleModel } from './common/models/NeonToggleModel';
 import { NeonToggleStyle } from './common/enums/NeonToggleStyle';
+import { NeonTooltipPlacementUtils } from './common/utils/NeonTooltipPlacementUtils';
+import { NeonTooltipStyle } from './common/enums/NeonTooltipStyle';
 import { NeonTreeMenuLinkModel, NeonTreeMenuSectionModel } from './common/models/NeonTreeMenuModel';
 import { NeonVerticalPosition } from './common/enums/NeonVerticalPosition';
 
@@ -149,6 +152,7 @@ const components: { [s: string]: VueConstructor } = {
   NeonToastContainer,
   NeonToggle,
   NeonToggleChip,
+  NeonTooltip,
   NeonTopNav,
   NeonTreeMenu,
 };
@@ -251,6 +255,9 @@ export {
   NeonToggleChip,
   NeonToggleModel,
   NeonToggleStyle,
+  NeonTooltip,
+  NeonTooltipPlacementUtils,
+  NeonTooltipStyle,
   NeonTopNav,
   NeonTreeMenu,
   NeonTreeMenuLinkModel,

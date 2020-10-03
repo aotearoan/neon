@@ -1,5 +1,4 @@
 export enum NeonDropdownPlacement {
-  Fullscreen = 'fullscreen',
   TopLeft = 'top-left',
   TopRight = 'top-right',
   BottomLeft = 'bottom-left',

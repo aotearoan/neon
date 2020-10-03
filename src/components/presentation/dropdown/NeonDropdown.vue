@@ -48,15 +48,6 @@
     <div class="neon-dropdown__click-blocker" />
     <div ref="dropdownContent" class="neon-dropdown__content" :class="`neon-dropdown__content--${dropdownPlacement}`">
       <template v-if="value">
-        <neon-button
-          v-if="dropdownPlacement === 'fullscreen'"
-          class="neon-dropdown__content-close"
-          color="low-contrast"
-          icon="times"
-          buttonStyle="text"
-          :outline="false"
-          @click="close()"
-        />
         <!-- @slot The content of the open dropdown -->
         <slot></slot>
       </template>

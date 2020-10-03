@@ -4,6 +4,7 @@
     <neon-note v-if="example.tip" color="info">
       <span><strong>Tip:</strong>{{ ` ${example.tip}` }}</span>
     </neon-note>
+    <br v-if="example.tip" />
     <div class="example__output">
       <v-runtime-template :template-props="example.data || {}" :template="example.template" />
     </div>
@@ -19,7 +20,7 @@
       <neon-note v-if="example.tip" color="info">
         <span><strong>Tip:</strong>{{ ` ${example.tip}` }}</span>
       </neon-note>
-      <br />
+      <br v-if="example.tip" />
       <div class="example__output" :class="{ 'example__output--fixed-content': example.fixedContent }">
         <v-runtime-template :template-props="example.data || {}" :template="example.template" />
       </div>

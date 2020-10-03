@@ -9,7 +9,7 @@
 
     &__textarea {
       &::selection {
-        background-color: rgba($color-primary, 0.33);
+        background-color: rgba($background-color-selection, 0.5);
       }
     }
   }

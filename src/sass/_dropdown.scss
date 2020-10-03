@@ -62,29 +62,6 @@
     display: none;
   }
 
-  &--fullscreen {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    @include width(100);
-    @include height(100);
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    @include responsive(mobile) {
-      @include height(100);
-    }
-
-    .neon-dropdown__content-close {
-      display: flex;
-      align-self: flex-end;
-      top: 0.5 * $base-space;
-      right: 0.5 * $base-space;
-    }
-  }
-
   &--s {
     @include dropdown-size($size-s);
   }
