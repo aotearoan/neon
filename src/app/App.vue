@@ -32,7 +32,7 @@
             <neon-link href="/" class="homepage-link">
               <neon-logo></neon-logo>
             </neon-link>
-            <span class="tagline neon-color-text-brand">A VueJs Design Library for Web Applications</span>
+            <span class="tagline neon-color-text-brand">A VueJs Component Library for Web Applications</span>
           </span>
           <div>
             <div id="nav">
