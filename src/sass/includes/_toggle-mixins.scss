@@ -2,7 +2,7 @@
   label {
     font-size: $font-size;
     font-weight: 400;
-    letter-spacing: $component-letter-spacing-s;
+    letter-spacing: $letter-spacing-s;
     line-height: $line-height-one;
     min-height: $size;
     height: $size;
@@ -64,7 +64,7 @@
 
 @mixin radio-button-layout {
   .neon-toggle__label {
-    letter-spacing: $component-letter-spacing-s;
+    letter-spacing: $letter-spacing-s;
   }
 
   .neon-toggle__radio-button {

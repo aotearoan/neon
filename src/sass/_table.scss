@@ -12,7 +12,7 @@ table {
         text-transform: uppercase;
         text-align: left;
         padding: 0 6 * $base-space 0 0;
-        letter-spacing: $component-letter-spacing-m;
+        letter-spacing: $letter-spacing-m;
 
         &.neon--number {
           text-align: right;
@@ -33,7 +33,7 @@ table {
         text-align: left;
         padding: $padding-td-vertical 6 * $base-space $padding-td-vertical 0;
         font-weight: 400;
-        letter-spacing: $component-letter-spacing-m;
+        letter-spacing: $letter-spacing-m;
 
         &.neon--number {
           text-align: right;

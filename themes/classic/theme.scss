@@ -114,8 +114,9 @@ $size-l: 12 * $base-space !default;
 /* buttons only */
 $size-xl: 16 * $base-space !default;
 
-$component-letter-spacing-s: 0.25px !default;
-$component-letter-spacing-m: 0.5px !default;
+$letter-spacing-s: 0.25px !default;
+$letter-spacing-m: 0.5px !default;
+$letter-spacing-l: 1px !default;
 
 /* box shadows */
 $box-shadow: 0 2px 2px rgba(0, 0, 0, 0.014), 0 4px 4px rgba(0, 0, 0, 0.028), 0 6px 6px rgba(0, 0, 0, 0.03) !default;

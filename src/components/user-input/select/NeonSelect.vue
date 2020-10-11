@@ -12,7 +12,6 @@
       v-bind="sanitizedAttributes"
       v-model="open"
       v-on="sanitizedListeners"
-      @blur="open = false"
     >
       <ul class="no-style neon-select__options">
         <template v-for="group in computedOptions">

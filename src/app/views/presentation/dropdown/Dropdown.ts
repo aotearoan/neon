@@ -126,6 +126,14 @@ export default class Dropdown extends Vue {
   </neon-dropdown>
 </div>`;
 
+  private openOnHoverExample = `<div class="example--horizontal">
+  <neon-dropdown :open-on-hover="true" dropdown-style="text-button" label="Open on hover">
+    <neon-card-body>
+      <p>Bacon ipsum dolor amet t-bone ribeye</p>
+    </neon-card-body>
+  </neon-dropdown>
+</div>`;
+
   private examples = [
     {
       title: 'Dropdown sizes',
@@ -156,6 +164,10 @@ export default class Dropdown extends Vue {
       title: 'Dropdown positions',
       template: this.positionExamples,
       data: this.data,
+    },
+    {
+      title: 'Dropdown open on hover',
+      template: this.openOnHoverExample,
     },
   ];
 

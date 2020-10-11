@@ -123,6 +123,7 @@ $background-color-dropdown-menu-highlight: d1 !default;
 
 // tabs
 $color-tab-selected: d1 !default;
+$border-color-tabs-underline: transparentize($color-neutral-l3, 0.667) !default;
 
 // footer
 $background-color-footer: darken($color-neutral-l5, 2);

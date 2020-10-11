@@ -34,11 +34,11 @@
       flex: 1 0 auto;
       user-select: none;
       align-items: center;
-      font-weight: 800;
+      font-weight: 600;
       font-size: $font-size-xs;
       text-transform: uppercase;
       padding: 3 * $base-space 4 * $base-space $base-space;
-      letter-spacing: $component-letter-spacing-s;
+      letter-spacing: $letter-spacing-s;
     }
 
     .neon-switch {

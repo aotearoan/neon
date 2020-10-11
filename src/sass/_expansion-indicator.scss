@@ -1,7 +1,7 @@
 %chevron-line-base {
   stroke-width: 1;
   stroke-linecap: round;
-  transition: transform 0.4s, stroke 0.4s;
+  transition: all ease-in-out $animation-speed-fast;
 }
 
 .neon-expansion-indicator__line1 {
@@ -20,16 +20,24 @@
   position: relative;
 
   &__container {
-    transition: transform 0.4s;
+    transition: all ease-in-out $animation-speed-fast;
     transform: translateY(2px);
   }
 
   &__line1 {
     transform: rotate(35deg);
+
+    &.neon-svg--stroke {
+      transition: transform ease-in-out $animation-speed-fast !important;
+    }
   }
 
   &__line2 {
     transform: rotate(-35deg);
+
+    &.neon-svg--stroke {
+      transition: transform ease-in-out $animation-speed-fast !important;
+    }
   }
 
   &--expanded {

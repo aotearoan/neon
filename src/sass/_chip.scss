@@ -35,7 +35,7 @@
   border-radius: $border-radius-chip;
   width: fit-content;
   font-weight: 400;
-  letter-spacing: $component-letter-spacing-m;
+  letter-spacing: $letter-spacing-m;
 
   &--s {
     @include chip-size($size-s, $font-size-xs, 4 * $base-space, 3 * $base-space);

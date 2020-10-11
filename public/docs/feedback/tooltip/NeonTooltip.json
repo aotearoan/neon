@@ -1,8 +1,8 @@
 {
+  "description": "<p>\n  Use <strong>NeonTooltip</strong> to display tooltips or popovers. It is recommended that tooltip content should be\n  kept to a single line. Use the popover style for larger content.\n</p>\n<p>To use <strong>NeonTooltip</strong> provide the <em>target</em> and <em>content slots</em>.</p>",
+  "tags": {},
   "displayName": "NeonTooltip",
   "exportName": "default",
-  "description": "",
-  "tags": {},
   "props": [
     {
       "name": "placement",

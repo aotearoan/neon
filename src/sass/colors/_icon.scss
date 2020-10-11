@@ -2,10 +2,12 @@
 .neon-icon {
   .neon-svg--fill {
     fill: $color-text;
+    transition: fill ease-in-out $animation-speed-fast;
   }
 
   .neon-svg--stroke {
     stroke: $color-text;
+    transition: stroke ease-in-out $animation-speed-fast;
   }
 
   @each $color, $palette in $functional-colors {

@@ -44,6 +44,26 @@
       width: $font-size-s;
       height: $font-size-s;
     }
+
+    &--grouped {
+      .neon-dropdown-menu__item-container,
+      .neon-link {
+        padding-left: 8 * $base-space;
+        padding-right: 8 * $base-space;
+      }
+    }
+
+    &--group-title {
+      .neon-dropdown-menu__item-container {
+        font-weight: 500;
+        letter-spacing: $letter-spacing-s;
+        cursor: default;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
   }
 }
 

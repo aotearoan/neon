@@ -81,7 +81,7 @@
     font-size: $base-font-size;
     font-weight: 500;
     font-family: $heading-font-family;
-    letter-spacing: $component-letter-spacing-m;
+    letter-spacing: $letter-spacing-m;
   }
 
   &__body {
@@ -95,7 +95,7 @@
       padding: 2 * $base-space;
       font-size: $font-size-xs;
       text-transform: uppercase;
-      letter-spacing: $component-letter-spacing-m;
+      letter-spacing: $letter-spacing-m;
       height: 100%;
       display: flex;
       align-items: center;

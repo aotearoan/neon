@@ -38,6 +38,11 @@
   .neon-card-footer {
     @include padding;
     position: relative;
+
+    &:first-child {
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
   }
 
   .neon-card-footer {
@@ -53,11 +58,6 @@
   .neon-card-header {
     flex-direction: row;
     justify-content: space-between;
-
-    &:first-child {
-      border-top-left-radius: $border-radius;
-      border-top-right-radius: $border-radius;
-    }
 
     .neon-h1,
     .neon-h2,

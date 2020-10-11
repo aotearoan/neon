@@ -86,13 +86,21 @@ export default class NeonDropdown extends Vue {
   @Prop({ required: false })
   public placementContainer?: HTMLElement;
 
+  /**
+   * Instead of opening on click (default), open on hover.
+   */
+  @Prop({ default: false })
+  public openOnHover!: boolean;
+
   public constructor() {
     super();
     this.dropdownPlacement = this.placement;
   }
 
   public mounted() {
-    this.closableUtils = new NeonClosableUtils(this.$refs.dropdownContent, this.close);
+    if (!this.openOnHover) {
+      this.closableUtils = new NeonClosableUtils(this.$refs.dropdownContent, this.close);
+    }
     window.addEventListener('resize', this.recalculatePlacement, { passive: true });
     window.addEventListener('scroll', this.recalculatePlacement, { passive: true });
     if (this.placementContainer) {
@@ -101,7 +109,9 @@ export default class NeonDropdown extends Vue {
   }
 
   public beforeDestroy() {
-    this.closableUtils && this.closableUtils.destroy();
+    if (!this.openOnHover) {
+      this.closableUtils && this.closableUtils.destroy();
+    }
     window.removeEventListener('resize', this.recalculatePlacement);
     window.removeEventListener('scroll', this.recalculatePlacement);
     if (this.placementContainer) {
@@ -124,7 +134,7 @@ export default class NeonDropdown extends Vue {
   }
 
   public toggleOpen() {
-    if (!this.disabled) {
+    if (!this.disabled && !this.openOnHover) {
       /**
        * Emitted when the dropdown button is toggled.
        * @type {boolean} the open state of the dropdown.
@@ -155,5 +165,17 @@ export default class NeonDropdown extends Vue {
      * @type {void}
      */
     this.$emit('blur');
+  }
+
+  private onFocus() {
+    /**
+     * Emitted when the dropdown button is focussed.
+     * @type {void}
+     */
+    this.$emit('focus');
+  }
+
+  public get button() {
+    return this.$refs.dropdownButton;
   }
 }

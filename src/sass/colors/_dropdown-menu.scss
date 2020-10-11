@@ -1,5 +1,7 @@
 .neon-dropdown-menu {
   &__item {
+    transition: none;
+
     &--separator-before {
       border-top: $border-width $border-style $border-color;
 
@@ -26,8 +28,10 @@
 
   @each $color, $palette in $functional-colors {
     &--#{$color} {
-      .neon-dropdown-menu__item:hover:not(.neon-dropdown-menu__item--disabled) {
-        background-color: rgba(map-get($palette, $background-color-dropdown-menu-highlight), 0.25);
+      .neon-dropdown-menu__item {
+        &--highlighted:not(.neon-dropdown-menu__item--disabled):not(.neon-dropdown-menu__item--selected):not(.neon-dropdown-menu__item--group-title) {
+          background-color: rgba(map-get($palette, $background-color-dropdown-menu-highlight), 0.125);
+        }
       }
     }
   }

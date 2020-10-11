@@ -5,6 +5,7 @@
       {
         'neon-dropdown--with-indicator': indicator,
         'neon-dropdown--open': value,
+        'neon-dropdown--open-on-hover': openOnHover,
         'neon-dropdown--icon-only': icon && !label,
         'neon-dropdown--disabled': disabled,
       },
@@ -24,8 +25,10 @@
         :disabled="disabled"
         :label="label"
         :icon="icon"
+        tabindox="0"
         @click="toggleOpen()"
         @blur="onBlur()"
+        @focus="onFocus()"
       />
     </div>
     <div v-else @click="toggleOpen()" ref="dropdownButton" tabindex="0" class="neon-dropdown__badge">
@@ -47,7 +50,7 @@
     </div>
     <div class="neon-dropdown__click-blocker" />
     <div ref="dropdownContent" class="neon-dropdown__content" :class="`neon-dropdown__content--${dropdownPlacement}`">
-      <template v-if="value">
+      <template v-if="openOnHover || value">
         <!-- @slot The content of the open dropdown -->
         <slot></slot>
       </template>

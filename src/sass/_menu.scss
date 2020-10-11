@@ -1,0 +1,120 @@
+@mixin neon-menu-size($size, $font-size, $horizontal-spacing) {
+  .neon-menu__item {
+    height: $size;
+    font-size: $font-size;
+    padding-left: $horizontal-spacing;
+    padding-right: $horizontal-spacing;
+    border-radius: $border-radius;
+
+    .neon-link {
+      height: $size;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:focus,
+    a:focus {
+      outline: none;
+    }
+
+    &-icon,
+    .neon-dropdown .neon-dropdown__button .neon-icon {
+      width: $font-size;
+      height: $font-size;
+      margin-right: 2 * $base-space;
+      padding-right: 0;
+    }
+  }
+
+  .neon-dropdown .neon-dropdown__button {
+    font-size: $font-size;
+    padding-left: 0;
+    padding-right: 0;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active,
+    &:focus {
+      .neon-button__label,
+      .neon-button__indicator {
+        top: 0;
+      }
+    }
+  }
+}
+
+.neon-menu {
+  display: flex;
+  flex-direction: row;
+  user-select: none;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__responsive-menu {
+    font-family: $heading-font-family;
+
+    &:not(:first-child) {
+      margin-left: 5 * $base-space;
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__item {
+    font-weight: 400;
+    letter-spacing: $letter-spacing-m;
+    white-space: nowrap;
+
+    .neon-link {
+      text-decoration: none;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      cursor: pointer;
+
+      &__label {
+        display: flex;
+        align-items: center;
+        font-family: $heading-font-family;
+      }
+    }
+
+    &--disabled {
+      .neon-link {
+        cursor: not-allowed;
+      }
+    }
+
+    .neon-dropdown .neon-dropdown__button {
+      font-family: $heading-font-family;
+      font-weight: 400;
+      letter-spacing: $letter-spacing-m;
+    }
+  }
+
+  &--s {
+    @include neon-menu-size($size-s, $font-size-s, 5 * $base-space);
+  }
+
+  &--m {
+    @include neon-menu-size($size-m, $base-font-size, 5 * $base-space);
+  }
+
+  &--l {
+    @include neon-menu-size($size-l, $font-size-l, 5 * $base-space);
+  }
+}

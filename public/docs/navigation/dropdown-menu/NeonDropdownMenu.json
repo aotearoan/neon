@@ -1,8 +1,8 @@
 {
   "description": "<p>A dropdown menu consisting of a button to open the menu and a list of menu items. Clicking on a menu item will\nresult in navigating to the provided URL or notifying the parent component via the @click event.</p>\n<p><strong>Note:</strong> As well as the options described below, pass through attributes supported by\n<a href=\"/presentation/dropdown\">NeonDropdown</a> to change the style of the dropdown button.</p>",
   "tags": {},
-  "displayName": "NeonDropdownMenu",
   "exportName": "default",
+  "displayName": "NeonDropdownMenu",
   "props": [
     {
       "name": "model",
@@ -40,6 +40,18 @@
       "defaultValue": {
         "func": false,
         "value": "NeonFunctionalColor.LowContrast"
+      }
+    },
+    {
+      "name": "openOnHover",
+      "tags": {},
+      "description": "Instead of opening on click (default), open on hover.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
       }
     }
   ],

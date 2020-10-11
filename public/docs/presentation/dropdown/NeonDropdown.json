@@ -109,6 +109,18 @@
         "name": "HTMLElement"
       },
       "required": false
+    },
+    {
+      "name": "openOnHover",
+      "tags": {},
+      "description": "Instead of opening on click (default), open on hover.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
     }
   ],
   "events": [

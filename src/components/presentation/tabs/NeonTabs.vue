@@ -1,6 +1,6 @@
 <template>
   <div class="neon-tabs" :class="[`neon-tabs--${size}`, `neon-tabs--${color}`]">
-    <div class="neon-tabs__menu-items">
+    <div class="neon-tabs__menu-items" :class="{ 'neon-tabs__menu-items--underlined': underline }">
       <div
         v-for="tab in tabs"
         :key="tab.key"

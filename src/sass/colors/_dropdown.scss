@@ -4,7 +4,8 @@
     box-shadow: $box-shadow-dropdown;
   }
 
-  &--open {
+  &--open,
+  &--open-on-hover:hover {
     .neon-dropdown__content {
       border: $border-width $border-style $border-color;
     }

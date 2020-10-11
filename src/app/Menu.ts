@@ -220,6 +220,12 @@ export class Menu {
                 component: 'NeonLink',
               },
               {
+                path: 'menu',
+                page: 'Menu',
+                keywords: 'priority',
+                component: 'NeonMenu',
+              },
+              {
                 path: 'tree-menu',
                 page: 'TreeMenu',
                 name: 'Tree Menu',

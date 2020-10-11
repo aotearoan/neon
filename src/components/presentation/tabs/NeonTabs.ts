@@ -21,7 +21,7 @@ export default class NeonTabs extends Vue {
   public value!: string;
 
   /**
-   * The tab highlight color.
+   * The tab highlight color (excludes low-contrast).
    */
   @Prop({ default: NeonFunctionalColor.Primary })
   public color!: NeonFunctionalColor;
@@ -31,6 +31,12 @@ export default class NeonTabs extends Vue {
    */
   @Prop({ default: NeonSize.Medium })
   public size!: NeonSize;
+
+  /**
+   * Display a border underlining all tabs. When tabs are in an element with a border-bottom it is preferable to omit the tabs border-bottom
+   */
+  @Prop({ default: true })
+  public underline!: boolean;
 
   private onClick(key: string) {
     /**

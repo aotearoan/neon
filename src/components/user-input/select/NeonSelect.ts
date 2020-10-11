@@ -9,6 +9,7 @@ import NeonDropdownClass from '../../presentation/dropdown/NeonDropdown';
 import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 import NeonSwitch from '../switch/NeonSwitch.vue';
 import { NeonDropdownPlacement } from '../../../common/enums/NeonDropdownPlacement';
+import { NeonScrollUtils } from '../../../common/utils/NeonScrollUtils';
 
 /**
  * <p>The <strong>NeonSelect</strong> is the equivalent of an HTML &lt;select&gt; form control. On touch devices
@@ -230,6 +231,11 @@ export default class NeonSelect extends Vue {
             $event.preventDefault();
           }
           break;
+        case 'Tab':
+          if (!$event.ctrlKey && !$event.metaKey && !$event.altKey) {
+            this.open = false;
+          }
+          break;
       }
     }
   }
@@ -260,14 +266,10 @@ export default class NeonSelect extends Vue {
 
   private scrollOnNavigate() {
     const element = this.$el.querySelector('.neon-select__option--highlighted') as HTMLElement;
-    if (element) {
-      const parent = element.parentElement as HTMLElement;
-      if (element.offsetTop - parent.scrollTop > element.offsetHeight * 4) {
-        parent.scrollTop = element.offsetTop - element.offsetHeight * 4;
-      }
-      if (element.offsetTop < parent.scrollTop) {
-        parent.scrollTop = element.offsetTop;
-      }
-    }
+    NeonScrollUtils.scrollIntoView(element);
+  }
+
+  public get dropdown() {
+    return this.$refs.dropdown;
   }
 }

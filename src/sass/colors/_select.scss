@@ -32,7 +32,7 @@
         }
 
         &--highlighted:not(.neon-select__option--disabled):not(.neon-select__option--selected) {
-          background-color: rgba(map-get($palette, $background-color-dropdown-menu-highlight), 0.075);
+          background-color: rgba(map-get($palette, $background-color-dropdown-menu-highlight), 0.125);
         }
       }
     }

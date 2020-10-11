@@ -31,6 +31,7 @@ import NeonInputIndicator from './components/user-input/input-indicator/NeonInpu
 import NeonLabel from './components/presentation/label/NeonLabel.vue';
 import NeonLink from './components/navigation/link/NeonLink.vue';
 import NeonLogo from './components/presentation/logo/NeonLogo.vue';
+import NeonMenu from './components/navigation/menu/NeonMenu.vue';
 import NeonModal from './components/layout/modal/NeonModal.vue';
 import NeonNote from './components/feedback/note/NeonNote.vue';
 import NeonNotificationCounter from './components/feedback/notification-counter/NeonNotificationCounter.vue';
@@ -77,14 +78,18 @@ import { NeonHorizontalPosition } from './common/enums/NeonHorizontalPosition';
 import { NeonIconRegistry } from './common/utils/NeonIconRegistry';
 import { NeonInputType } from './common/enums/NeonInputType';
 import { NeonLabelSize } from './common/enums/NeonLabelSize';
+import { NeonMenuItem } from './common/models/NeonMenuItem';
+import { NeonMenuModel } from './common/models/NeonMenuModel';
 import { NeonMode } from './common/enums/NeonMode';
 import { NeonModeUtils } from './common/utils/NeonModeUtils';
 import { NeonOrientation } from './common/enums/NeonOrientation';
 import { NeonPlacement } from './common/enums/NeonPlacement';
 import { NeonPlacementUtils } from './common/utils/NeonPlacementUtils';
 import { NeonPosition } from './common/enums/NeonPosition';
+import { NeonPriorityMenuItem } from './components/navigation/menu/NeonPriorityMenuItem';
 import { NeonResponsive } from './common/enums/NeonResponsive';
 import { NeonResponsiveUtils } from './common/utils/NeonResponsiveUtils';
+import { NeonScrollUtils } from './common/utils/NeonScrollUtils';
 import { NeonSelectGroup } from './common/models/NeonSelectGroup';
 import { NeonSelectOption } from './common/models/NeonSelectOption';
 import { NeonSize } from './common/enums/NeonSize';
@@ -137,6 +142,7 @@ const components: { [s: string]: VueConstructor } = {
   NeonLabel,
   NeonLink,
   NeonLogo,
+  NeonMenu,
   NeonModal,
   NeonNote,
   NeonNotificationCounter,
@@ -221,6 +227,9 @@ export {
   NeonLabelSize,
   NeonLink,
   NeonLogo,
+  NeonMenu,
+  NeonMenuItem,
+  NeonMenuModel,
   NeonModal,
   NeonMode,
   NeonModeUtils,
@@ -232,8 +241,10 @@ export {
   NeonPlacement,
   NeonPlacementUtils,
   NeonPosition,
+  NeonPriorityMenuItem,
   NeonResponsive,
   NeonResponsiveUtils,
+  NeonScrollUtils,
   NeonSelect,
   NeonSelectGroup,
   NeonSelectOption,

@@ -50,6 +50,18 @@
         "func": false,
         "value": "NeonSize.Medium"
       }
+    },
+    {
+      "name": "underline",
+      "tags": {},
+      "description": "Display a border underlining all tabs. When tabs are in an element with a border-bottom it is preferable to omit the tabs border-bottom",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
     }
   ],
   "events": [
