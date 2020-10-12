@@ -43,7 +43,8 @@ export class Menu {
                 path: 'i18n',
                 page: 'I18n',
                 name: 'i18n',
-                keywords: 'internationalization internationalisation languages translations translationresult multilanguage multi-language',
+                keywords:
+                  'internationalization internationalisation languages translations translationresult multilanguage multi-language',
               },
               {
                 path: 'technical-details',
