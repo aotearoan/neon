@@ -40,6 +40,12 @@ export class Menu {
                 anchors: ['Installation', 'Typescript', 'SASS'],
               },
               {
+                path: 'i18n',
+                page: 'I18n',
+                name: 'i18n',
+                keywords: 'internationalization internationalisation languages translations translationresult multilanguage multi-language',
+              },
+              {
                 path: 'technical-details',
                 page: 'TechnicalDetails',
                 name: 'Technical Details',
