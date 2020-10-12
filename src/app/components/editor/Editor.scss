@@ -11,6 +11,10 @@ $editor-max-height: 400px;
   height: 100%;
   overflow: visible;
 
+  @include responsive(mobile-large) {
+    font-size: $font-size-s;
+  }
+
   .prism-editor {
     &__container {
       display: flex;
