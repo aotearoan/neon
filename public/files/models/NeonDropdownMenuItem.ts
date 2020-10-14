@@ -7,4 +7,8 @@ export interface NeonDropdownMenuItem {
   icon?: string;
   separatorBefore?: boolean;
   disabled?: boolean;
+  // is the title for a group of grouped items
+  isGroup?: boolean;
+  // is a child in a group
+  grouped?: boolean;
 }

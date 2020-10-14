@@ -11,7 +11,7 @@ p {
   max-width: $max-paragraph-width;
   line-height: $line-height-ratio;
 
-  &:last-child {
+  &:last-of-type {
     margin-bottom: 0;
   }
 }

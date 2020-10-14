@@ -26,6 +26,7 @@ $heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
       @import 'views/design/color/Color-colors';
       @import 'views/home/Home-colors';
       @import 'views/error/NotFound-colors';
+      @import 'views/design/layout/Layout-colors';
 
       .neon-app--simple-page {
         .neon-footer {
@@ -54,6 +55,7 @@ $heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
       @import 'views/design/color/Color-colors';
       @import 'views/home/Home-colors';
       @import 'views/error/NotFound-colors';
+      @import 'views/design/layout/Layout-colors';
 
       .neon-app--simple-page {
         background-color: $color-neutral-l3;
@@ -101,6 +103,7 @@ $heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
     @import 'views/feedback/splash-loader/SplashLoader';
     @import 'views/user-input/select/Select';
     @import 'views/user-input/field-group/FieldGroup';
+    @import 'views/design/layout/Layout';
 
     body {
       .title {

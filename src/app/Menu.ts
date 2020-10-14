@@ -47,9 +47,9 @@ export class Menu {
                   'internationalization internationalisation languages translations translationresult multilanguage multi-language',
               },
               {
-                path: 'technical-details',
-                page: 'TechnicalDetails',
-                name: 'Technical Details',
+                path: 'technical-requirements',
+                page: 'TechnicalRequirements',
+                name: 'Technical Requirements',
                 keywords: 'vue stack internet explorer chrome safari firefox',
                 anchors: ['Browser Support', 'Framework Support'],
               },
@@ -63,6 +63,18 @@ export class Menu {
                 path: 'color',
                 page: 'Color',
                 anchors: ['Introduction', 'Brand palettes', 'Functional palettes', 'Neutral palettes', 'Color classes'],
+              },
+              {
+                path: 'layout',
+                page: 'Layout',
+                anchors: ['Desktop layout', 'Responsive layout', 'Page content'],
+                keywords: 'mobile tablet grid responsiveness',
+              },
+              {
+                path: 'responsiveness',
+                page: 'Responsiveness',
+                anchors: ['Breakpoints', 'SASS Mixins', 'Typescript', 'Page content'],
+                keywords: 'mobile tablet grid layout',
               },
               {
                 path: 'theming',

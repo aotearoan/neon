@@ -11,4 +11,4 @@ import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader, NeonLink, NeonNote 
     NeonNote,
   },
 })
-export default class TechnicalDetails extends Vue {}
+export default class TechnicalRequirements extends Vue {}

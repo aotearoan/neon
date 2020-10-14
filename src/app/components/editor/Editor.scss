@@ -107,7 +107,7 @@ $editor-max-height: 400px;
 }
 
 p + .editor__wrapper {
-  margin-top: -2 * $base-space;
+  margin-top: 2 * $base-space;
 }
 
 .editor__wrapper {

@@ -1,6 +1,6 @@
 <template>
   <div v-if="example.noCard" class="example--no-card">
-    <h3>{{ example.title }}</h3>
+    <h3 v-if="example.title">{{ example.title }}</h3>
     <neon-note v-if="example.tip" color="info">
       <span><strong>Tip:</strong>{{ ` ${example.tip}` }}</span>
     </neon-note>

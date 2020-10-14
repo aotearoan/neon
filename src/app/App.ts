@@ -95,7 +95,10 @@ export default class App extends Vue {
           ? item.children.map((child) => ({
               label: child.name || child.page || child.path,
               key: child.path,
-              keywords: child.keywords,
+              keywords:
+                child.keywords +
+                (child.component ? ` ${child.component.toLowerCase()}` : '') +
+                (child.subComponents ? '' + child.subComponents.map((sc) => sc.name.toLowerCase()).join(' ') : ''),
               href: `/${item.path}/${child.path}`,
               anchors: child.anchors,
             }))
@@ -206,7 +209,7 @@ export default class App extends Vue {
 
     return children.length > 0
       ? { ...item, children }
-      : item.label.toString().toLowerCase().indexOf(this.indexFilter) >= 0
+      : item.label.toString().toLowerCase().indexOf(this.lowercaseFilter) >= 0
       ? item
       : undefined;
   }
@@ -216,7 +219,7 @@ export default class App extends Vue {
       item.label.toString() +
       (item.keywords ? item.keywords.toString() : '') +
       (item.anchors ? item.anchors.join(' ') : '');
-    return searchString.toLowerCase().indexOf(this.indexFilter) >= 0 ? item : undefined;
+    return searchString.toLowerCase().indexOf(this.lowercaseFilter) >= 0 ? item : undefined;
   }
 
   private toggleExpand(key: string) {
@@ -232,6 +235,10 @@ export default class App extends Vue {
 
   private onSideNavMenuClick(key: string) {
     this.toggleExpand(key);
+  }
+
+  get lowercaseFilter() {
+    return (this.indexFilter || '').toLowerCase();
   }
 
   get layouts() {

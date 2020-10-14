@@ -2,6 +2,7 @@ import { Component, Vue } from 'vue-property-decorator';
 import { NeonCard, NeonCardBody, NeonGrid, NeonGridArea, NeonResponsive } from '../../../../components';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
 import { Menu, MenuModel } from '../../../Menu';
+import Editor from '../../../components/editor/Editor.vue';
 
 @Component({
   components: {
@@ -10,6 +11,7 @@ import { Menu, MenuModel } from '../../../Menu';
     NeonGrid,
     NeonGridArea,
     ComponentDocumentation,
+    Editor,
   },
 })
 export default class Grid extends Vue {
@@ -36,6 +38,29 @@ export default class Grid extends Vue {
       fixedContent: true,
     },
   ];
+
+  private layoutExample = `const layouts = [
+  {
+    breakpoint: NeonResponsive.LargerThanTablet,
+    grid: [['area1', 'area2', 'area3', 'area4']],
+  },
+  {
+    breakpoint: NeonResponsive.Tablet,
+    grid: [
+      ['area1', 'area1', 'area2'],
+      ['area3', 'area4', 'area4'],
+    ],
+  },
+  {
+    breakpoint: NeonResponsive.MobileLarge,
+    grid: [
+      ['area1'],
+      ['area2'],
+      ['area3'],
+      ['area4'],
+    ],
+  },
+];`;
 
   public mounted() {
     this.menuModel = Menu.getComponentConfig('NeonGrid');

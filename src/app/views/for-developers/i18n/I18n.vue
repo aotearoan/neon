@@ -4,7 +4,6 @@
       <h1 class="neon-h3">i18n Internationalization</h1>
     </neon-card-header>
     <neon-card-body>
-      <neon-anchor id="browser-support" />
       <p>
         Neon uses the
         <neon-link href="https://kazupon.github.io/vue-i18n/" target="_blank" :external-indicator="true"

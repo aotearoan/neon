@@ -21,7 +21,7 @@
     {
       "name": "color",
       "tags": {},
-      "description": "The menu highlight color.",
+      "description": "The menu highlight color (excludes low-contrast and neutral).",
       "type": {
         "name": "NeonFunctionalColor"
       },

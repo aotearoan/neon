@@ -43,6 +43,18 @@
       }
     },
     {
+      "name": "disabled",
+      "tags": {},
+      "description": "Whether the dropdown button is disabled or not.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
       "name": "openOnHover",
       "tags": {},
       "description": "Instead of opening on click (default), open on hover.",

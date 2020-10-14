@@ -30,7 +30,7 @@
     {
       "name": "color",
       "tags": {},
-      "description": "The tab highlight color.",
+      "description": "The tab highlight color (excludes low-contrast).",
       "type": {
         "name": "NeonFunctionalColor"
       },

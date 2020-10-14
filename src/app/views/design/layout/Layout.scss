@@ -1,0 +1,28 @@
+.layout-example {
+  border-radius: $border-radius;
+  padding: 4 * $base-space;
+  margin: 2 * $base-space;
+  user-select: none;
+
+  &__label {
+    font-size: $font-size-s;
+    margin-left: 2 * $base-space;
+  }
+
+  &__content {
+    flex-direction: row;
+  }
+
+  &__side-nav {
+    width: 25%;
+
+    &-section {
+      height: 100%;
+    }
+  }
+
+  &__grid-wrapper {
+    flex: 1 0 auto;
+    width: 75%;
+  }
+}

@@ -1,0 +1,8 @@
+.layout-example {
+  border: 2px solid $color-text-neutral;
+
+  &__label,
+  &__link {
+    color: $color-text-neutral !important;
+  }
+}

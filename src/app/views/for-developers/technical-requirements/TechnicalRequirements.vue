@@ -1,7 +1,7 @@
 <template>
   <neon-card>
     <neon-card-header>
-      <h1 class="neon-h3">Technical Details</h1>
+      <h1 class="neon-h3">Technical Requirements</h1>
     </neon-card-header>
     <neon-card-body>
       <neon-anchor id="browser-support" />
@@ -30,4 +30,4 @@
   </neon-card>
 </template>
 
-<script lang="ts" src="./TechnicalDetails.ts"></script>
+<script lang="ts" src="./TechnicalRequirements.ts"></script>

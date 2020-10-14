@@ -141,6 +141,15 @@
           "void"
         ]
       }
+    },
+    {
+      "name": "focus",
+      "description": "Emitted when the dropdown button is focussed.",
+      "type": {
+        "names": [
+          "void"
+        ]
+      }
     }
   ],
   "slots": [
