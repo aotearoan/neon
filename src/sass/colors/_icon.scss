@@ -1,35 +1,23 @@
 .neon-expansion-indicator,
 .neon-icon {
+  @include svg-colors($color-text);
+
   .neon-svg--fill {
-    fill: $color-text;
     transition: fill ease-in-out $animation-speed-fast;
   }
 
   .neon-svg--stroke {
-    stroke: $color-text;
     transition: stroke ease-in-out $animation-speed-fast;
   }
 
   @each $color, $palette in $functional-colors {
     &--#{$color} {
-      .neon-svg--fill {
-        fill: map-get($palette, $color-icon);
-      }
-
-      .neon-svg--stroke {
-        stroke: map-get($palette, $color-icon);
-      }
+      @include svg-colors(map-get($palette, $color-icon));
     }
   }
 
   &--inverse {
-    .neon-svg--fill {
-      fill: $color-inverse;
-    }
-
-    .neon-svg--stroke {
-      stroke: $color-inverse;
-    }
+    @include svg-colors($color-inverse);
   }
 
   &--disabled {

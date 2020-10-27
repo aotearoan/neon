@@ -37,7 +37,7 @@ export default class ActionMenu extends Vue {
 
   private examples = [
     {
-      template: `<neon-action-menu :model="model" v-model="selected"></neon-action-menu>`,
+      template: `<neon-action-menu :model="model" color="primary" v-model="selected"></neon-action-menu>`,
       data: this.data,
     },
   ];

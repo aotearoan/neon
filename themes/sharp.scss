@@ -1,16 +1,16 @@
 // The basic configuration for the theme, use this if you do not want to override anything.
 .app {
-  &.neon-theme--classic {
-    @import './classic/theme';
+  &.neon-theme--sharp {
+    @import './sharp/theme';
     @import 'src/sass/common';
 
     &.neon-mode--dark {
-      @import './classic/dark';
+      @import './sharp/dark';
       @import 'src/sass/colors/color-components';
     }
 
     &.neon-mode--light {
-      @import './classic/light';
+      @import './sharp/light';
       @import 'src/sass/colors/color-components';
     }
   }

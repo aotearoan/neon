@@ -1,13 +1,13 @@
 /* theme variable */
-$theme: 'classic' !default;
+$theme: 'sharp' !default;
 
 /* base colors */
-$color-brand: #5b0a9b !default;
-$color-primary: #34b587 !default;
-$color-info: #3c8eff !default;
-$color-success: #34b587 !default;
-$color-warn: #ffb22a !default;
-$color-error: #ec4145 !default;
+$color-brand: #ee6c26 !default;
+$color-primary: #13c8e7 !default;
+$color-info: #0f38b0 !default;
+$color-success: #4cb534 !default;
+$color-warn: #f5b13c !default;
+$color-error: #e2050a !default;
 
 /* layout */
 $base-space: 4px !default;
@@ -28,7 +28,7 @@ $animation-speed-slow: 0.3s !default;
 $animation-speed-fast: 0.225s !default;
 
 /* borders */
-$border-radius: 4px !default;
+$border-radius: 0 !default;
 $border-width: 1px !default;
 $border-style: solid !default;
 
@@ -75,9 +75,9 @@ $h0-weight: 500 !default;
 $font-weight-em: 200 !default;
 $font-weight-strong: 800 !default;
 
-$letter-spacing-headings: 0 !default;
+$letter-spacing-headings: $letter-spacing-s !default;
 
-$line-height-headings-ratio: 1.2 !default;
+$line-height-headings-ratio: 1.5 !default;
 $line-height-ratio: 1.618 !default;
 $line-height-one: 1.125 !default; // hack for line-height: 1 to prevent cropping of content below the baseline e.g. 'g'
 
@@ -109,10 +109,9 @@ $size-l: 12 * $base-space !default;
 $size-xl: 16 * $base-space !default;
 
 /* box shadows */
-$box-shadow: 0 2px 2px rgba(0, 0, 0, 0.014), 0 4px 4px rgba(0, 0, 0, 0.028), 0 6px 6px rgba(0, 0, 0, 0.03) !default;
-$box-shadow-strong: 0 2px 2px rgba(0, 0, 0, 0.028), 0 4px 4px rgba(0, 0, 0, 0.056), 0 6px 6px rgba(0, 0, 0, 0.06) !default;
-$inset-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.014), inset 0 4px 4px rgba(0, 0, 0, 0.028),
-  inset 0 6px 6px rgba(0, 0, 0, 0.03) !default;
+$box-shadow: none !default;
+$box-shadow-strong: none !default;
+$inset-shadow: none !default;
 
 /* top nav */
 $top-nav-height-mobile: $size-s + 4 * $base-space !default;
@@ -137,7 +136,7 @@ $border-width-checkbox: 1px !default;
 /* alerts */
 $width-alert: 400px !default;
 $width-alert-action: 96px !default;
-$border-width-alert: $border-width !default;
+$border-width-alert: 2px !default;
 $width-toast: 250px !default;
 
 /* dropdown */
@@ -145,17 +144,17 @@ $box-shadow-dropdown: $box-shadow-strong !default;
 $max-height-dropdown: 280px !default;
 
 /* buttons */
-$border-radius-button-xl: 8px !default;
+$border-radius-button-xl: 0 !default;
 
 /* tabs */
 $border-width-tabs: 2px !default;
 
 /* chips */
-$border-radius-chip: 50px !default;
+$border-radius-chip: 0 !default;
 
 /* scrollbars */
 $width-scrollbar: 6px !default;
-$border-radius-scrollbar: 4px !default;
+$border-radius-scrollbar: 0 !default;
 
 /* tooltips */
 $tooltip-max-width: 144px !default;
@@ -164,15 +163,15 @@ $popover-max-width: 480px !default;
 $popover-max-height: 3 * $tooltip-max-width !default;
 
 /* drawer */
-$border-width-drawer: 0 !default;
-$border-radius-drawer: 12px !default;
+$border-width-drawer: $border-width !default;
+$border-radius-drawer: 0 !default;
 
 /* radio buttons */
-$border-radius-radio-button: 50% !default;
+$border-radius-radio-button: 0 !default;
 
 /* switch */
-$border-radius-switch: 4 * $base-space !default;
-$border-radius-switch-indicator: 50% !default;
+$border-radius-switch: 0 !default;
+$border-radius-switch-indicator: 0 !default;
 
 /* note */
-$border-width-note: $border-width !default;
+$border-width-note: 2px !default;

@@ -15,7 +15,7 @@
         $toggle-color: map-get($palette, $color-toggle);
 
         .neon-toggle__radio-button {
-          border: $border-width $border-style $border-color;
+          border: $border-width $border-style $border-color-toggle;
           background: $background-radio-button;
         }
 

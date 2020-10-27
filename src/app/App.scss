@@ -3,254 +3,52 @@
 @import 'sass/fonts';
 $monospaced-font-variation-settings: 'wdth' 100, 'wght' 450;
 $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', Courier, monospace;
-$heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
 
 .app {
   &.neon-theme--classic {
+    $heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
     @import '../../themes/classic/theme';
+    @import 'src/sass/common';
+    @import './sass/app';
 
     &.neon-mode--dark {
       @import '../../themes/classic/dark';
-
-      $color-api-docs-property-name: l3;
-      $color-404: rgba($color-brand-l1, 0.75);
-      $color-editor-lock: $color-text-low-contrast;
-
-      // application dark mode SASS
-      @import 'components/editor/Editor-colors';
-      @import 'components/api-docs/ApiDocs-colors';
-      @import 'components/example/Example-colors';
-      @import 'components/component-documentation/ComponentDocumentation-colors';
-
-      @import 'views/design/color/Color-colors';
-      @import 'views/home/Home-colors';
-      @import 'views/error/NotFound-colors';
-      @import 'views/design/layout/Layout-colors';
-
-      .neon-app--simple-page {
-        .neon-footer {
-          background-color: transparent;
-        }
-      }
-
-      .neon-side-nav__scrolling {
-        border-top: $border-width $border-style $border-color;
-      }
+      @import 'src/sass/colors/color-components';
+      @import './sass/dark';
     }
 
     &.neon-mode--light {
       @import '../../themes/classic/light';
+      @import 'src/sass/colors/color-components';
+      @import './sass/light';
+    }
+  }
 
-      $color-api-docs-property-name: d2;
-      $color-404: $color-brand-d3;
-      $color-editor-lock: $color-text-neutral;
+  &.neon-theme--sharp {
+    $heading-font-family: $font-family-monospaced, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
+    @import '../../themes/sharp/theme';
+    @import 'src/sass/common';
+    @import './sass/app';
 
-      // application light mode SASS
-      @import 'components/editor/Editor-colors';
-      @import 'components/api-docs/ApiDocs-colors';
-      @import 'components/example/Example-colors';
-      @import 'components/component-documentation/ComponentDocumentation-colors';
+    &.neon-mode--dark {
+      @import '../../themes/sharp/dark';
+      @import 'src/sass/colors/color-components';
+      @import './sass/dark';
 
-      @import 'views/design/color/Color-colors';
-      @import 'views/home/Home-colors';
-      @import 'views/error/NotFound-colors';
-      @import 'views/design/layout/Layout-colors';
-
-      .neon-app--simple-page {
-        background-color: $color-neutral-l3;
-
-        .neon-footer {
-          background-color: transparent;
-        }
-      }
-
-      .neon-side-nav__scrolling {
-        border-top: $border-width $border-style $border-color;
-      }
-
-      .app-side-nav {
-        .neon-input {
-          input {
-            background-color: $background-color-footer;
-
-            &:focus {
-              background-color: $background-color;
-            }
-          }
-        }
+      .neon-drawer .neon-side-nav__sticky {
+        border-bottom: $border-width $border-style $border-color;
       }
     }
 
-    // application classic theme SASS
-    @import 'components/editor/Editor';
-    @import 'components/examples/Examples';
-    @import 'components/example/Example';
-    @import 'components/component-documentation/ComponentDocumentation';
-    @import 'components/api-docs/ApiDocs';
+    &.neon-mode--light {
+      @import '../../themes/sharp/light';
+      @import 'src/sass/colors/color-components';
+      @import './sass/light';
 
-    @import 'views/design/color/Color';
-    @import 'views/presentation/expansion-panel/ExpansionPanel';
-    @import 'views/presentation/icon/Icon';
-    @import 'views/design/typography/Typography';
-    @import 'views/feedback/note/Note';
-    @import 'views/source/Source';
-    @import 'views/user-input/button/Button';
-    @import 'views/user-input/drop-zone/DropZone';
-    @import 'views/feedback/alert/Alert';
-    @import 'views/home/Home';
-    @import 'views/error/NotFound';
-    @import 'views/feedback/splash-loader/SplashLoader';
-    @import 'views/user-input/select/Select';
-    @import 'views/user-input/field-group/FieldGroup';
-    @import 'views/design/layout/Layout';
-
-    body {
-      .title {
-        margin-left: 8 * $base-space;
-        font-family: $body-font-family;
-        font-weight: lighter;
+      .neon-drawer .neon-side-nav__sticky {
+        border-bottom: $border-width $border-style $border-color;
       }
-    }
-
-    header {
-      .neon-top-nav__container {
-        justify-content: space-between;
-
-        .top-nav-actions {
-          display: flex;
-        }
-      }
-
-      .logo-wrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-
-        @include responsive(tablet) {
-          align-items: center;
-        }
-
-        .neon-button {
-          margin-right: 4 * $base-space;
-
-          @include responsive(larger-than-tablet) {
-            display: none;
-          }
-        }
-      }
-
-      .homepage-link {
-        display: flex;
-      }
-
-      .tagline {
-        margin-left: 4 * $base-space;
-        font-size: $font-size-l;
-        font-weight: 300;
-        opacity: 0.9;
-        letter-spacing: $letter-spacing-s;
-        line-height: $line-height-one;
-        user-select: none;
-        position: relative;
-        top: 3px;
-
-        @include responsive(tablet) {
-          display: none;
-        }
-      }
-    }
-
-    .app-side-nav {
-      .neon-input {
-        input {
-          border: none;
-          border-radius: 0;
-          box-shadow: none;
-          @include padding-horizontal(0.75);
-        }
-      }
-
-      & > hr {
-        display: none;
-      }
-    }
-
-    .example__output,
-    .no-style--font {
-      .neon-h0,
-      .neon-h1,
-      .neon-h2,
-      .neon-h3,
-      .neon-h4,
-      .neon-h5,
-      .neon-h6,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-          'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-      }
-    }
-
-    .neon-card + .neon-card {
-      @include margin-top;
-    }
-
-    .positioned-element {
-      position: relative;
-      display: flex;
-      width: fit-content;
-    }
-
-    .neon-dropdown__content {
-      p {
-        white-space: nowrap;
-      }
-    }
-
-    .neon-app--simple-page {
-      .dark-mode-toggle {
-        width: 8 * $base-space;
-        height: 8 * $base-space;
-
-        @include responsive(tablet) {
-          width: 6 * $base-space;
-          height: 6 * $base-space;
-        }
-      }
-
-      .neon-grid {
-        padding: 0;
-      }
-
-      .neon-grid-area {
-        max-width: 100vw !important;
-        margin: 0 !important;
-      }
-
-      .simple-page-header {
-        position: absolute;
-        right: 0;
-        top: 0;
-        z-index: $z-index-above;
-        @include padding(0.5);
-        border-radius: 8px;
-        display: flex;
-        justify-content: flex-end;
-      }
-
-      .neon-footer__container {
-        align-items: center;
-      }
-    }
-
-    blockquote,
-    .neon-note {
-      max-width: $max-paragraph-width;
     }
   }
 }

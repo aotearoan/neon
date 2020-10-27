@@ -31,6 +31,7 @@ export default class Dropdown extends Vue {
     badgeCircularOpen: false,
     trOpen: false,
     blOpen: false,
+    hoverOpen: false,
   };
 
   private sizeExamples = `<div class="example--horizontal">
@@ -127,7 +128,7 @@ export default class Dropdown extends Vue {
 </div>`;
 
   private openOnHoverExample = `<div class="example--horizontal">
-  <neon-dropdown :open-on-hover="true" dropdown-style="text-button" label="Open on hover">
+  <neon-dropdown :open-on-hover="true" v-model="hoverOpen" dropdown-style="text-button" label="Open on hover">
     <neon-card-body>
       <p>Bacon ipsum dolor amet t-bone ribeye</p>
     </neon-card-body>
@@ -168,6 +169,7 @@ export default class Dropdown extends Vue {
     {
       title: 'Dropdown open on hover',
       template: this.openOnHoverExample,
+      data: this.data,
     },
   ];
 

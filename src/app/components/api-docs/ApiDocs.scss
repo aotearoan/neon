@@ -22,7 +22,7 @@
     margin-bottom: 4 * $base-space;
 
     &:last-child {
-      margin-bottom: 8 * $base-space;
+      margin-bottom: 0;
     }
   }
 
@@ -81,8 +81,8 @@
 
       .api-docs {
         &__title {
-          margin-bottom: 2 * $base-space;
-          margin-top: 0;
+          margin-top: 2 * $base-space;
+          margin-bottom: 0;
         }
 
         &__attribute {

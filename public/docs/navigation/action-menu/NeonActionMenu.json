@@ -26,6 +26,18 @@
         "name": "string"
       },
       "required": true
+    },
+    {
+      "name": "color",
+      "tags": {},
+      "description": "The toggle chip color.",
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Primary"
+      }
     }
   ],
   "events": [

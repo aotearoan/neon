@@ -1,0 +1,19 @@
+$color-api-docs-property-name: l3;
+$color-404: rgba($color-brand-l1, 0.75);
+$color-editor-lock: $color-text-low-contrast;
+
+// application dark mode SASS
+@import '../components/editor/Editor-colors';
+@import '../components/api-docs/ApiDocs-colors';
+@import '../components/example/Example-colors';
+@import '../components/component-documentation/ComponentDocumentation-colors';
+
+@import '../views/design/color/Color-colors';
+@import '../views/error/NotFound-colors';
+@import '../views/design/layout/Layout-colors';
+
+.neon-top-nav + .neon-side-nav {
+  .neon-side-nav__scrolling {
+    border-top: $border-width $border-style $border-color;
+  }
+}

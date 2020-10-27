@@ -7,14 +7,14 @@
       <neon-anchor id="themes" />
       <h2 class="neon-h4">Themes</h2>
       <p>
-        In future Neon will support multiple themes to suit a wider variety of tastes and styles. Each theme is
-        available in both light and dark modes so you have the choice of using light mode, dark mode or dynamically
-        switching between the two.
+        Neon supports multiple themes to suit a wider variety of tastes and styles. Each theme is available in both
+        light and dark modes so you have the choice of using light mode, dark mode or allowing the user to dynamically
+        switch between the two.
       </p>
       <neon-note color="error">
         <span>
-          <strong>Note: </strong> For performance reasons, dynamically switching themes is not recommended. Include a
-          single theme will keep CSS includes to a reasonable size.</span
+          <strong>Note: </strong> For performance reasons, dynamically switching themes is not recommended. Including a
+          single theme will keep the CSS to a reasonable size.</span
         >
       </neon-note>
       <p>

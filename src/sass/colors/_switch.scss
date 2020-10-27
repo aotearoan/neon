@@ -1,3 +1,82 @@
+@mixin switch-color-classsic() {
+  .neon-switch__switch {
+    background-color: $color-switch-off;
+    transition: background-color $animation-speed-fast ease-in;
+    box-shadow: $inset-shadow;
+  }
+
+  .neon-switch__indicator {
+    background-color: $color-switch-indicator;
+    box-shadow: 0 0 2px 1px rgba($color-neutral-d5, 0.125);
+  }
+
+  @each $color, $palette in $functional-colors {
+    &.neon-switch--#{$color} {
+      &.neon-switch--checked {
+        .neon-switch__switch {
+          background-color: map-get($palette, $color-switch-on);
+          box-shadow: $inset-shadow;
+        }
+
+        .neon-switch__indicator {
+          box-shadow: 0 0 2px 1px rgba($color-neutral-d5, 0.125);
+        }
+      }
+    }
+  }
+
+  &.neon-switch--disabled {
+    .neon-switch__switch,
+    .neon-switch__indicator {
+      box-shadow: none !important;
+    }
+
+    .neon-switch__switch {
+      background-color: $color-switch-disabled !important;
+    }
+
+    .neon-switch__indicator {
+      background-color: $color-switch-indicator-disabled !important;
+    }
+  }
+}
+
+@mixin switch-color-sharp() {
+  .neon-switch__switch {
+    border: $border-width solid $color-switch-off;
+    transition: all $animation-speed-fast ease-in;
+  }
+
+  .neon-switch__indicator {
+    background-color: $color-switch-off;
+    transition: all $animation-speed-fast ease-in;
+  }
+
+  @each $color, $palette in $functional-colors {
+    &.neon-switch--#{$color} {
+      &.neon-switch--checked {
+        .neon-switch__switch {
+          border-color: map-get($palette, $color-switch-on);
+
+          .neon-switch__indicator {
+            background-color: map-get($palette, $color-switch-on);
+          }
+        }
+      }
+    }
+  }
+
+  &.neon-switch--disabled {
+    .neon-switch__switch {
+      border-color: rgba($color-disabled-light, 0.5) !important;
+    }
+
+    .neon-switch__indicator {
+      background-color: rgba($color-disabled-light, 0.5) !important;
+    }
+  }
+}
+
 .neon-switch {
   color: rgba($color-text, 0.75);
 
@@ -7,49 +86,10 @@
   }
 
   &--switch {
-    $color-box-shadow-switch: rgba($color-neutral-d2, 0.25);
-
-    .neon-switch__switch {
-      background-color: $background-color-switch-off;
-      transition: background-color $animation-speed-fast ease-in;
-      box-shadow: $inset-shadow;
-    }
-
-    .neon-switch__indicator {
-      background-color: $background-color-switch-indicator;
-      box-shadow: 0 0 2px 1px rgba($color-neutral-d5, 0.125);
-    }
-
-    @each $color, $palette in $functional-colors {
-      &.neon-switch--#{$color} {
-        &.neon-switch--checked {
-          .neon-switch__switch {
-            background-color: map-get($palette, $background-color-switch-on);
-            box-shadow: $inset-shadow;
-          }
-
-          .neon-switch__indicator {
-            box-shadow: 0 0 2px 1px rgba($color-neutral-d5, 0.125);
-          }
-        }
-      }
-    }
-
-    &.neon-switch--disabled {
-      color: $color-switch-label-disabled !important;
-
-      .neon-switch__switch,
-      .neon-switch__indicator {
-        box-shadow: none !important;
-      }
-
-      .neon-switch__switch {
-        background-color: $background-color-switch-disabled !important;
-      }
-
-      .neon-switch__indicator {
-        background-color: $background-color-switch-indicator-disabled !important;
-      }
+    @if ($theme == 'classic') {
+      @include switch-color-classsic;
+    } @else if($theme == 'sharp') {
+      @include switch-color-sharp;
     }
   }
 

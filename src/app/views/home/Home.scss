@@ -1,19 +1,6 @@
 .homepage {
   align-items: center;
 
-  &__header {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    @include padding-horizontal;
-    padding-bottom: 32 * $base-space !important;
-
-    @include responsive(tablet) {
-      padding-bottom: 16 * $base-space !important;
-    }
-  }
-
   &__content {
     align-items: center;
     @include padding;
@@ -31,19 +18,6 @@
     @include responsive(tablet) {
       height: 0.75 * $logo-height;
       width: 0.75 * $logo-height * $logo-width-multiplier;
-      margin-top: 16 * $base-space;
-    }
-  }
-
-  &__tagline {
-    text-align: center;
-    font-size: $h4-size;
-    font-family: $heading-font-family;
-    font-weight: 400;
-    letter-spacing: $letter-spacing-s;
-
-    @include responsive(tablet) {
-      font-size: $h5-size;
     }
   }
 

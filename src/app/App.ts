@@ -17,8 +17,11 @@ import {
   NeonPage,
   NeonResponsive,
   NeonResponsiveUtils,
+  NeonSelect,
+  NeonSelectOption,
   NeonSideNav,
   NeonSwitch,
+  NeonTheme,
   NeonTopNav,
   NeonTreeMenu,
   registerComponents,
@@ -27,10 +30,6 @@ import { NeonModeUtils } from '../common/utils/NeonModeUtils';
 import { Route } from 'vue-router';
 
 registerComponents();
-
-export enum Theme {
-  Classic = 'classic',
-}
 
 export interface AppMenuGroup {
   group: TranslateResult;
@@ -53,6 +52,7 @@ Vue.use(VueI18n);
     NeonSwitch,
     NeonPage,
     NeonSideNav,
+    NeonSelect,
     NeonTreeMenu,
     NeonFooter,
     NeonGrid,
@@ -64,13 +64,20 @@ Vue.use(VueI18n);
   },
 })
 export default class App extends Vue {
-  public theme = Theme.Classic;
+  public theme = NeonTheme.Classic;
+  public themeModel: NeonSelectOption[] = [
+    { key: '', label: 'Select theme', disabled: true },
+    ...Object.keys(NeonTheme).map((k, index) => ({
+      key: this.themes[index],
+      label: k,
+    })),
+  ];
+
   public selectedMode = NeonMode.Dark;
   private indexModel: AppMenuGroup[] = [];
   private indexFilter = '';
   private menuOpen = false;
   private isMobile = false;
-  private simplePage = true;
 
   public mounted() {
     const path = localStorage.getItem('path');
@@ -78,6 +85,8 @@ export default class App extends Vue {
       localStorage.removeItem('path');
       this.$router.push({ path: path.replace('neon', '') });
     }
+
+    this.switchTheme((localStorage.getItem('theme') as NeonTheme) || NeonTheme.Classic);
 
     const savedMode = (localStorage.getItem('mode') as NeonMode) || undefined;
     NeonModeUtils.init(savedMode);
@@ -113,14 +122,15 @@ export default class App extends Vue {
   }
 
   get themes() {
-    return [Theme.Classic];
+    return Object.values(NeonTheme);
   }
 
-  private switchTheme(theme: Theme) {
+  private switchTheme(theme: NeonTheme) {
     if (this.theme !== theme) {
       document.documentElement.classList.remove(`neon-theme--${this.theme}`);
       document.documentElement.classList.add(`neon-theme--${theme}`);
       this.theme = theme;
+      localStorage.setItem('theme', this.theme);
     }
   }
 
@@ -151,7 +161,6 @@ export default class App extends Vue {
         group.children = [...group.children];
       });
     this.indexModel = [...this.indexModel];
-    this.simplePage = to.meta.simpleLayout;
 
     setTimeout(() => {
       if (to.hash) {

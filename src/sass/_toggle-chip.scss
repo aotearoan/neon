@@ -87,7 +87,7 @@
     }
   }
 
-  &:active:not(.neon-toggle-chip--disabled) {
-    transform: scale(0.9);
+  &:active:not(.neon-toggle-chip--disabled):not(.neon-toggle-chip--show-check) {
+    transform: scale(0.95);
   }
 }

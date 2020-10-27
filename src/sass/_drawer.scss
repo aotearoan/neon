@@ -3,6 +3,7 @@
 .neon-drawer {
   &__container {
     position: fixed;
+    overflow: hidden;
     margin: 0;
     z-index: $z-index-top;
     @include padding($multiplier: 0.75);
@@ -84,26 +85,24 @@
     }
   }
 
-  &--with-overlay {
-    .neon-drawer__overlay {
-      opacity: 0;
-      z-index: $z-index-below;
-      position: fixed;
-      pointer-events: none;
-      top: 0;
-      left: 0;
-      @include width(100);
-      @include min-height(100);
-      @include height(100);
-    }
+  .neon-drawer__overlay {
+    opacity: 0;
+    z-index: $z-index-below;
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    @include width(100);
+    @include min-height(100);
+    @include height(100);
+  }
 
-    &.neon-drawer--open {
-      .neon-drawer__overlay {
-        opacity: 1;
-        pointer-events: auto;
-        z-index: $z-index-top;
-        transition: opacity ease-in-out 0.5 * $animation-speed-fast;
-      }
+  &.neon-drawer--open {
+    .neon-drawer__overlay {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: $z-index-top;
+      transition: opacity ease-in-out 0.5 * $animation-speed-fast;
     }
   }
 }

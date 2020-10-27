@@ -91,7 +91,7 @@ export default class ToggleChip extends Vue {
       data: this.data,
     },
     {
-      title: 'Disabled switch',
+      title: 'Disabled toggle chip',
       template: this.stateTemplate,
       data: this.data,
     },

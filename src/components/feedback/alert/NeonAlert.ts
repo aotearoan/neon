@@ -115,7 +115,7 @@ export default class NeonAlert extends Vue {
         break;
     }
 
-    const duration = alert.duration || this.duration;
+    const duration = alert.duration === undefined ? this.duration : alert.duration;
     if (duration > 0 && !alert.primaryAction) {
       setTimeout(() => {
         switch (alert.placement || NeonAlertPlacement.TopRight) {
@@ -171,7 +171,7 @@ export default class NeonAlert extends Vue {
         break;
     }
 
-    const duration = toast.duration || this.duration;
+    const duration = toast.duration === undefined ? this.duration : toast.duration;
     if (duration > 0) {
       setTimeout(() => {
         switch (toast.placement || NeonVerticalPosition.Top) {

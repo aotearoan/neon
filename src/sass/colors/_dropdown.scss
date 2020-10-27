@@ -7,7 +7,7 @@
   &--open,
   &--open-on-hover:hover {
     .neon-dropdown__content {
-      border: $border-width $border-style $border-color;
+      border: $border-width $border-style $border-color-dropdown;
     }
   }
 }

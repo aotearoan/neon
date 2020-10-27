@@ -5,7 +5,11 @@
     }
 
     &.neon-action-menu__link--selected {
-      background-color: $color-link;
+      @each $color, $palette in $functional-colors {
+        &.neon-action-menu__link--#{$color} {
+          background-color: map-get($palette, $color-action-menu-selected);
+        }
+      }
       color: $color-inverse;
       transition: background-color ease-in-out $animation-speed-slow, color ease-in-out $animation-speed-slow;
     }

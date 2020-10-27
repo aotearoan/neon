@@ -1,6 +1,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { NeonActionMenuModel } from '../../../common/models/NeonActionMenuModel';
 import NeonLink from '../../navigation/link/NeonLink.vue';
+import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 
 /**
  * An action menu is designed for the NeonSideNav component and is designed to behave like tabs where selecting a different item switches the contents in the main page.
@@ -22,6 +23,12 @@ export default class NeonActionMenu extends Vue {
    */
   @Prop({ required: true })
   value!: string;
+
+  /**
+   * The toggle chip color.
+   */
+  @Prop({ default: NeonFunctionalColor.Primary })
+  public color!: NeonFunctionalColor;
 
   private onClick(key: string) {
     if (this.value !== key) {

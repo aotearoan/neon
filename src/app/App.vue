@@ -1,13 +1,13 @@
 <template>
-  <div v-if="!simplePage" id="app" class="neon-app neon-app--standard-page">
-    <neon-page v-if="!simplePage">
+  <div id="app" class="neon-app neon-app--standard-page">
+    <neon-page>
       <template #top-nav>
         <neon-top-nav>
           <span class="logo-wrapper">
             <neon-button
               icon="menu"
               color="primary"
-              button-style="outline"
+              button-style="text"
               :size="isMobile ? 's' : 'm'"
               @click="menuOpen = true"
             />
@@ -34,15 +34,6 @@
             </neon-link>
             <span class="tagline neon-color-text-brand">A VueJs Component Library for Web Applications</span>
           </span>
-          <div>
-            <div id="nav">
-              <ul v-if="themes.length > 1" class="neon-menu no-style">
-                <li v-for="theme in themes" :key="theme">
-                  <neon-link @click="switchTheme(theme)">{{ theme }}</neon-link>
-                </li>
-              </ul>
-            </div>
-          </div>
           <span class="top-nav-actions">
             <neon-button
               class="github-link"
@@ -53,6 +44,17 @@
               button-style="text"
               :outline="false"
               :size="isMobile ? 's' : 'l'"
+            />
+            <neon-select
+              class="theme-toggle"
+              name="themeToggle"
+              :size="isMobile ? 's' : 'l'"
+              :options="themeModel"
+              placeholder="Theme..."
+              :value="theme"
+              @input="switchTheme"
+              dropdown-style="text-button"
+              color="high-contrast"
             />
             <neon-button
               name="dark-mode-toggle"
@@ -98,30 +100,6 @@
             </neon-expansion-panel>
           </template>
         </neon-side-nav>
-      </template>
-    </neon-page>
-    <neon-alert />
-  </div>
-  <div v-else id="app" class="neon-app neon-app--simple-page">
-    <header class="simple-page-header">
-      <neon-link @click="switchMode()">
-        <neon-icon class="dark-mode-toggle" name="contrast" />
-      </neon-link>
-    </header>
-    <neon-page>
-      <template #content>
-        <neon-grid id="content" :layouts="layouts" class="content">
-          <neon-grid-area id="section-content">
-            <transition name="neon-fade-transition" mode="out-in">
-              <router-view />
-            </transition>
-          </neon-grid-area>
-        </neon-grid>
-        <neon-footer>
-          <span
-            >{{ version !== '0' ? `v${version}` : '' }} &copy; copyright aotearoan {{ new Date().getFullYear() }}</span
-          >
-        </neon-footer>
       </template>
     </neon-page>
     <neon-alert />

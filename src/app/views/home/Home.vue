@@ -1,9 +1,5 @@
 <template>
   <div class="homepage">
-    <header class="homepage__header">
-      <neon-logo />
-      <span class="homepage__tagline">A VueJS Component Library for Web Applications</span>
-    </header>
     <div class="homepage__content">
       <h1>What is Neon?</h1>
       <p>

@@ -3,7 +3,7 @@
     transition: none;
 
     &--separator-before {
-      border-top: $border-width $border-style $border-color;
+      border-top: $border-width $border-style $border-color-dropdown;
 
       &:first-child {
         border-top: none;
@@ -45,7 +45,7 @@
     .neon-dropdown-menu__item {
       &--separator-before {
         &:first-child {
-          border-top: $border-width $border-style $border-color;
+          border-top: $border-width $border-style $border-color-dropdown;
         }
 
         &:last-child {

@@ -48,7 +48,7 @@ export default class Button extends Vue {
   <neon-note color="info">
     <span><strong>Note:</strong> add an <em>href</em> to buttons and they will be rendered as links</span>
   </neon-note>
-  <neon-button href="." label="Link button" />
+  <neon-button target="_blank" href="/" label="Link button" />
   <neon-button :full-width="true" style="outline" label="Full width button" />
 </div>`;
 

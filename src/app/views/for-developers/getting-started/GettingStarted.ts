@@ -25,7 +25,7 @@ export default class App extends Vue {}`;
 
   private allTheSass = `.app {
   &.neon-theme--classic {
-    // override colors, palettes and other basic variables here BEFORE importing the theme, e.g. $color-primary: #bada55
+    // override colors, palettes and other basic variables here BEFORE importing the theme, e.g. $border-radius: 4px
     @import '~@aotearoan/neon/themes/classic/theme';
 
     // include custom app SASS here (you can use neon's defined variables, mixins and functions)

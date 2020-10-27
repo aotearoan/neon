@@ -35,8 +35,8 @@
   .neon-toggle__label--checked {
     .neon-toggle__radio-button {
       &-indicator {
-        width: floor(0.5 * $font-size);
-        height: floor(0.5 * $font-size);
+        width: $control-size - 6px;
+        height: $control-size - 6px;
       }
     }
   }
@@ -68,7 +68,7 @@
   }
 
   .neon-toggle__radio-button {
-    border-radius: 50%;
+    border-radius: $border-radius-radio-button;
     margin-right: 3 * $base-space;
     align-items: center;
     justify-content: center;
@@ -77,7 +77,7 @@
   .neon-toggle__label--checked {
     .neon-toggle__radio-button {
       &-indicator {
-        border-radius: 50%;
+        border-radius: $border-radius-radio-button;
       }
     }
   }

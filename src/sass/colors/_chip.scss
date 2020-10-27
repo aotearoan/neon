@@ -16,15 +16,7 @@
 
       &:focus:not(.neon-chip--disabled) {
         background-color: map-get($palette, $color-chip);
-        color: $color-inverse;
-
-        .neon-svg--fill {
-          fill: $color-inverse;
-        }
-
-        .neon-svg--stroke {
-          stroke: $color-inverse;
-        }
+        @include color-with-svg($color-inverse);
       }
     }
   }

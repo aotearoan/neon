@@ -1,3 +1,7 @@
 .neon-logo {
   background: $logo center no-repeat;
+
+  &--inverse {
+    background: $logo-inverse center no-repeat;
+  }
 }

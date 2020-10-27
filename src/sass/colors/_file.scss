@@ -3,29 +3,14 @@
     &--#{$color} {
       .neon-file__file {
         $file-foreground-color: rgba(map-get($palette, $color-file-list), 0.875);
-        color: $file-foreground-color;
+        @include color-with-svg($file-foreground-color);
+
         background-color: rgba(map-get($palette, $color-file-list), 0.125);
-
-        .neon-svg--fill {
-          fill: $file-foreground-color;
-        }
-
-        .neon-svg--stroke {
-          stroke: $file-foreground-color;
-        }
 
         &:hover {
           $file-hover-color: map-get($palette, $color-file-list);
-          color: $file-hover-color;
+          @include color-with-svg($file-hover-color);
           background-color: rgba(map-get($palette, $color-file-list), 0.25);
-
-          .neon-svg--fill {
-            fill: $file-hover-color;
-          }
-
-          .neon-svg--stroke {
-            stroke: $file-hover-color;
-          }
         }
       }
     }

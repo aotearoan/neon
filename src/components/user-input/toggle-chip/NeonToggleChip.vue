@@ -7,6 +7,7 @@
       {
         'neon-toggle-chip--disabled neon--disabled': disabled,
         'neon-toggle-chip--checked': value,
+        'neon-toggle-chip--show-check': showCheck,
       },
     ]"
   >

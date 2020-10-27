@@ -1,10 +1,44 @@
 .neon-drawer {
+  &--with-overlay {
+    .neon-drawer__overlay {
+      background-color: $background-color-overlay;
+    }
+  }
+
   &__container {
     background-color: $background-color-card;
     box-shadow: $box-shadow;
   }
 
-  &__overlay {
-    background-color: $background-color-overlay;
+  &--left {
+    .neon-drawer__container {
+      border-right: $border-width-drawer $border-style $border-color;
+      border-top-right-radius: $border-radius-drawer;
+      border-bottom-right-radius: $border-radius-drawer;
+    }
+  }
+
+  &--right {
+    .neon-drawer__container {
+      border-left: $border-width-drawer $border-style $border-color;
+      border-top-left-radius: $border-radius-drawer;
+      border-bottom-left-radius: $border-radius-drawer;
+    }
+  }
+
+  &--top {
+    .neon-drawer__container {
+      border-bottom: $border-width-drawer $border-style $border-color;
+      border-bottom-left-radius: $border-radius-drawer;
+      border-bottom-right-radius: $border-radius-drawer;
+    }
+  }
+
+  &--bottom {
+    .neon-drawer__container {
+      border-top: $border-width-drawer $border-style $border-color;
+      border-top-left-radius: $border-radius-drawer;
+      border-top-right-radius: $border-radius-drawer;
+    }
   }
 }

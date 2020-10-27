@@ -15,16 +15,8 @@
   &__wrapper {
     .neon-dropdown:not(.neon-dropdown--disabled) {
       .neon-dropdown__button {
-        color: $color-text-neutral;
+        @include color-with-svg($color-text-neutral);
         transition: color ease-in-out $animation-speed-fast;
-
-        .neon-svg--fill {
-          fill: $color-text-neutral;
-        }
-
-        .neon-svg--stroke {
-          stroke: $color-text-neutral;
-        }
 
         &:hover:not(disabled),
         &:active:not(disabled) {
@@ -51,15 +43,7 @@
         &:active:not(.router-link-active) {
           & > .neon-link,
           .neon-dropdown__button {
-            color: rgba(map-get($palette, $color-tab-selected), 0.85);
-
-            .neon-svg--fill {
-              fill: rgba(map-get($palette, $color-tab-selected), 0.85);
-            }
-
-            .neon-svg--stroke {
-              stroke: rgba(map-get($palette, $color-tab-selected), 0.85);
-            }
+            @include color-with-svg(rgba(map-get($palette, $color-tab-selected), 0.85));
           }
         }
 
@@ -68,15 +52,7 @@
 
           & > .neon-link:not(.router-link-active),
           .neon-button:not(.router-link-active) {
-            color: $color-text;
-
-            .neon-svg--fill {
-              fill: $color-text;
-            }
-
-            .neon-svg--stroke {
-              stroke: $color-text;
-            }
+            @include color-with-svg($color-text);
           }
         }
       }
@@ -88,13 +64,7 @@
           color: map-get($palette, $color-tab-selected);
         }
 
-        .neon-svg--fill {
-          fill: rgba(map-get($palette, $color-tab-selected), 0.85);
-        }
-
-        .neon-svg--stroke {
-          stroke: rgba(map-get($palette, $color-tab-selected), 0.85);
-        }
+        @include svg-colors(rgba(map-get($palette, $color-tab-selected), 0.85));
       }
     }
   }

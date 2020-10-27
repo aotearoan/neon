@@ -38,7 +38,11 @@ export default class Alert extends Vue {
       });
     },
     warnAlert: (placement?: NeonAlertPlacement) => {
-      NeonAlertService.warn({ title: 'Warn alert', message: 'This is an example of a warning alert.', placement });
+      NeonAlertService.warn({
+        title: 'Warn alert',
+        message: 'This is an example of a warning alert.',
+        placement,
+      });
     },
     errorAlert: (placement?: NeonAlertPlacement) => {
       NeonAlertService.error({ title: 'Error alert', message: 'This is an example of an error alert.', placement });

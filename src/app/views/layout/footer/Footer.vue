@@ -1,5 +1,11 @@
 <template>
-  <component-documentation v-if="menuModel" :examples="examples" :model="menuModel" :headline="headline">
+  <component-documentation
+    v-if="menuModel"
+    :examples="examples"
+    :model="menuModel"
+    :headline="headline"
+    class="footer-examples"
+  >
     <neon-card>
       <neon-card-body>
         <p>

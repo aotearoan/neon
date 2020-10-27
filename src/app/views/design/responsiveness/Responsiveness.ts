@@ -16,7 +16,7 @@ export default class Responsiveness extends Vue {
   private sassExample = `@import '~@aotearoan/neon/themes/classic/theme';
 
 @include responsive(larger-than-tablet) {
-  // add larger-than-tablet responsive styling here
+  // add desired larger-than-tablet responsive styling here
 }`;
 
   private typescriptExample = `private responsiveView = false;

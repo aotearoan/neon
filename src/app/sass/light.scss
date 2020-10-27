@@ -1,0 +1,31 @@
+$color-api-docs-property-name: d2;
+$color-404: $color-brand-d3;
+$color-editor-lock: $color-text-neutral;
+
+// application light mode SASS
+@import '../components/editor/Editor-colors';
+@import '../components/api-docs/ApiDocs-colors';
+@import '../components/example/Example-colors';
+@import '../components/component-documentation/ComponentDocumentation-colors';
+
+@import '../views/design/color/Color-colors';
+@import '../views/error/NotFound-colors';
+@import '../views/design/layout/Layout-colors';
+
+.neon-top-nav + .neon-side-nav {
+  .neon-side-nav__scrolling {
+    border-top: $border-width $border-style $border-color;
+  }
+}
+
+.app-side-nav {
+  .neon-input {
+    input {
+      background-color: $background-color-footer;
+
+      &:focus {
+        background-color: $background-color;
+      }
+    }
+  }
+}

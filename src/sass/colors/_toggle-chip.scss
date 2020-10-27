@@ -1,15 +1,14 @@
 .neon-toggle-chip {
-  border-color: $border-color;
+  border-color: $border-color-toggle-chip;
   background-color: rgba($background-color, 0.125);
   color: rgba($color-text, 0.6);
-  transition: all ease-in-out $animation-speed-fast;
 
   @each $color, $palette in $functional-colors {
     &--#{$color}:not(.neon-toggle-chip--disabled) {
       &.neon-toggle-chip--checked {
         border-color: map-get($palette, $color-toggle-chip);
-        background-color: rgba(map-get($palette, $color-toggle-chip), 0.125);
-        color: $color-text;
+        background-color: rgba(map-get($palette, $color-toggle-chip), $opacity-toggle-chip);
+        @include color-with-svg($color-toggle-chip-text);
       }
     }
   }
@@ -17,6 +16,6 @@
   &--disabled {
     opacity: 0.85;
     color: $color-disabled-light;
-    border-color: $border-color;
+    border-color: $border-color-toggle-chip;
   }
 }

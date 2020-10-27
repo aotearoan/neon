@@ -18,27 +18,11 @@ $transparency-button-disabled: 0.3;
 
 @mixin outline-button($color) {
   border: $border-width $border-style $color;
-  color: $color;
-
-  .neon-svg--fill {
-    fill: $color;
-  }
-
-  .neon-svg--stroke {
-    stroke: $color;
-  }
+  @include color-with-svg($color);
 
   &:hover:not(:disabled),
   &:active:not(:disabled) {
-    color: $color-inverse;
-
-    .neon-svg--fill {
-      fill: $color-inverse;
-    }
-
-    .neon-svg--stroke {
-      stroke: $color-inverse;
-    }
+    @include color-with-svg($color-inverse);
   }
 
   &:hover:not(:disabled) {
@@ -81,15 +65,7 @@ $transparency-button-disabled: 0.3;
             $background-high-contrast-solid-button-dark
           );
         } @else if($color == low-contrast) {
-          color: $color-low-contrast-solid-button;
-
-          .neon-svg--fill {
-            fill: $color-low-contrast-solid-button;
-          }
-
-          .neon-svg--stroke {
-            stroke: $color-low-contrast-solid-button;
-          }
+          @include color-with-svg($color-low-contrast-solid-button);
 
           @include solid-button(
             $background-low-contrast-solid-button-light,

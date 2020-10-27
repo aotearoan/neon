@@ -7,12 +7,12 @@ body {
 
 p {
   font-family: $font-family-paragraph;
-  margin: 0 0 4 * $base-space;
+  margin: 0;
   max-width: $max-paragraph-width;
   line-height: $line-height-ratio;
 
-  &:last-of-type {
-    margin-bottom: 0;
+  & + p {
+    margin-top: 4 * $base-space;
   }
 }
 
@@ -42,6 +42,7 @@ $typography-margin-unit: 2 * $base-space;
   margin-top: 0;
   font-size: $h0-size;
   line-height: $line-height-headings-ratio;
+  letter-spacing: $letter-spacing-headings;
 }
 
 .neon-h0 {
@@ -55,6 +56,7 @@ $typography-margin-unit: 2 * $base-space;
   margin-top: 0;
   font-size: $h1-size;
   line-height: $line-height-headings-ratio;
+  letter-spacing: $letter-spacing-headings;
 }
 
 .neon-h1,
@@ -69,6 +71,7 @@ h1 {
   margin-top: 0;
   font-size: $h2-size;
   line-height: $line-height-headings-ratio;
+  letter-spacing: $letter-spacing-headings;
 }
 
 .neon-h2,
@@ -83,6 +86,7 @@ h2 {
   margin-top: 0;
   font-size: $h3-size;
   line-height: $line-height-headings-ratio;
+  letter-spacing: $letter-spacing-headings;
 }
 
 .neon-h3,
@@ -97,6 +101,7 @@ h3 {
   margin-top: 0;
   font-size: $h4-size;
   line-height: $line-height-headings-ratio;
+  letter-spacing: $letter-spacing-headings;
 }
 
 .neon-h4,
@@ -111,6 +116,7 @@ h4 {
   margin-top: 0;
   font-size: $h5-size;
   line-height: $line-height-headings-ratio;
+  letter-spacing: $letter-spacing-headings;
 }
 
 .neon-h5,
@@ -125,6 +131,7 @@ h5 {
   margin-top: 0;
   font-size: $h6-size;
   line-height: $line-height-headings-ratio;
+  letter-spacing: $letter-spacing-headings;
 }
 
 .neon-h6,

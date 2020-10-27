@@ -1,0 +1,14 @@
+@mixin color-with-svg($color) {
+  color: $color;
+  @include svg-colors($color);
+}
+
+@mixin svg-colors($color) {
+  .neon-svg--fill {
+    fill: $color;
+  }
+
+  .neon-svg--stroke {
+    stroke: $color;
+  }
+}

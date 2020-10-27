@@ -1,4 +1,19 @@
-@import 'includes/includes';
+/* generate color palettes */
+@import './includes/farbig/farbig';
+
+$neutral-palette: neutral-palette() !default;
+$low-contrast-palette: low-contrast-palette() !default;
+$high-contrast-palette: high-contrast-palette() !default;
+$brand-palette: generate-palette($color-brand) !default;
+$primary-palette: generate-palette($color-primary) !default;
+$info-palette: generate-palette($color-info) !default;
+$success-palette: generate-palette($color-success) !default;
+$warn-palette: generate-palette($color-warn) !default;
+$error-palette: generate-palette($color-error) !default;
+
+@import './colors/colors';
+@import './includes/includes';
+
 @import 'layout';
 @import 'typography';
 @import 'base-html';

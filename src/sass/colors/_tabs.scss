@@ -4,19 +4,9 @@
   }
 
   .neon-tabs__menu-item {
-    color: $color-text-low-contrast;
+    @include color-with-svg($color-text-low-contrast);
     transition: color ease-in-out $animation-speed-fast;
     border-bottom: $border-width-tabs $border-style transparent;
-  }
-
-  .neon-tabs__menu-icon {
-    .neon-svg--fill {
-      fill: $color-text-low-contrast;
-    }
-
-    .neon-svg--stroke {
-      stroke: $color-text-low-contrast;
-    }
   }
 
   @each $color, $palette in $functional-colors {
@@ -25,29 +15,13 @@
         &:hover:not(.neon-tabs__menu-item--selected),
         &:active:not(.neon-tabs__menu-item--selected) {
           $tabs-hover-color: rgba(map-get($palette, $color-tab-selected), 0.85);
-          color: $tabs-hover-color;
-
-          .neon-svg--fill {
-            fill: $tabs-hover-color;
-          }
-
-          .neon-svg--stroke {
-            stroke: $tabs-hover-color;
-          }
+          @include color-with-svg($tabs-hover-color);
         }
 
         &--selected {
           $tabs-selected-color: map-get($palette, $color-tab-selected);
-          color: map-get($palette, $color-tab-selected);
+          @include color-with-svg($tabs-selected-color);
           border-bottom-color: $tabs-selected-color;
-
-          .neon-svg--fill {
-            fill: $tabs-selected-color;
-          }
-
-          .neon-svg--stroke {
-            stroke: $tabs-selected-color;
-          }
         }
       }
     }

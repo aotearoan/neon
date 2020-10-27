@@ -97,6 +97,7 @@ import { NeonSplashLoaderSize } from './common/enums/NeonSplashLoaderSize';
 import { NeonState } from './common/enums/NeonState';
 import { NeonSwitchStyle } from './common/enums/NeonSwitchStyle';
 import { NeonTabModel } from './common/models/NeonTabModel';
+import { NeonTheme } from './common/enums/NeonTheme';
 import { NeonToastMessage } from './common/models/NeonToastMessage';
 import { NeonToastModel } from './components/feedback/alert/NeonToastModel';
 import { NeonToastService } from './common/utils/NeonToastService';
@@ -259,6 +260,7 @@ export {
   NeonTab,
   NeonTabModel,
   NeonTabs,
+  NeonTheme,
   NeonToastMessage,
   NeonToastModel,
   NeonToastService,

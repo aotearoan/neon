@@ -6,7 +6,7 @@ $alert-colors: (
 );
 
 .neon-toast__message {
-  box-shadow: 0.5 * $base-space 0.5 * $base-space 2 * $base-space $box-shadow-color-alert;
+  box-shadow: $box-shadow-alert;
 
   @each $color, $palette in $alert-colors {
     $alert-background-color: map-get($palette, $background-color-toast);
@@ -14,18 +14,7 @@ $alert-colors: (
 
     &.neon-toast__message--#{$color} {
       background-color: $alert-background-color;
-
-      .neon-toast__title {
-        color: $alert-color;
-      }
-
-      .neon-svg--fill {
-        fill: $alert-color;
-      }
-
-      .neon-svg--stroke {
-        stroke: $alert-color;
-      }
+      @include color-with-svg($alert-color);
     }
   }
 }
