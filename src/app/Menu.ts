@@ -1,6 +1,8 @@
 import { TranslateResult } from 'vue-i18n';
 import { enumList, modelList, utilsList } from './SupportingClasses';
 
+export const separateDescriptionTab = ['Alert', 'Grid', 'Icon'];
+
 export interface MenuGroup {
   group: TranslateResult;
   children: MenuModel[];
@@ -419,7 +421,10 @@ export class Menu {
         menuGroup.children.forEach((section) => {
           if (section.children) {
             section.children.forEach((page) => {
-              page.anchors = ['Description', 'API', 'Examples'];
+              page.anchors =
+                page.page && separateDescriptionTab.indexOf(page.page) >= 0
+                  ? ['Examples', 'Description', 'API']
+                  : ['Examples', 'API'];
             });
           }
         });

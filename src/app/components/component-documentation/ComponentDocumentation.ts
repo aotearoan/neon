@@ -4,7 +4,7 @@ import ApiDocs from '../api-docs/ApiDocs.vue';
 import { ExampleModel } from '../example/ExampleModel';
 import { NeonTab, NeonTabs } from '../../../components';
 import { DocumentationModel } from '../ApiModel';
-import { MenuModel } from '../../Menu';
+import { MenuModel, separateDescriptionTab } from '../../Menu';
 import { Route } from 'vue-router';
 
 interface SubDocumentationModel {
@@ -23,21 +23,6 @@ interface SubDocumentationModel {
 export default class ComponentDocumentation extends Vue {
   private apiModel: DocumentationModel | null = null;
   private subApiModels: SubDocumentationModel[] = [];
-
-  private tabs = [
-    {
-      key: 'description',
-      label: 'Description',
-    },
-    {
-      key: 'api',
-      label: 'API',
-    },
-    {
-      key: 'examples',
-      label: 'Examples',
-    },
-  ];
 
   private selected = this.tabs[0].key;
 
@@ -88,13 +73,51 @@ export default class ComponentDocumentation extends Vue {
         },
       );
     });
+  }
 
-    if (!this.examples) {
-      this.tabs = this.tabs.filter((t) => t.key !== 'examples');
+  private get tabs() {
+    if (this.model.page && separateDescriptionTab.indexOf(this.model.page) >= 0) {
+      return [
+        {
+          key: 'examples',
+          label: 'Examples',
+        },
+        {
+          key: 'description',
+          label: 'Description',
+        },
+        {
+          key: 'api',
+          label: 'API',
+        },
+      ];
     }
+
+    return [
+      {
+        key: 'examples',
+        label: 'Examples',
+      },
+      {
+        key: 'api',
+        label: 'API',
+      },
+    ];
   }
 
   private onChangeTab(key: string) {
     this.$router.replace({ path: `#${key}` });
+  }
+
+  private get examplesIndex() {
+    return this.tabs.findIndex((tab) => tab.key === 'examples');
+  }
+
+  private get descriptionIndex() {
+    return this.tabs.findIndex((tab) => tab.key === 'description');
+  }
+
+  private get apiIndex() {
+    return this.tabs.findIndex((tab) => tab.key === 'api');
   }
 }
