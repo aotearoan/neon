@@ -41,6 +41,7 @@
     <textarea
       v-if="rows"
       :rows="rows"
+      :id="id"
       :value="value"
       :disabled="disabled"
       :placeholder="computedPlaceholder()"
@@ -49,7 +50,7 @@
       @focus="onFocus"
       :class="{ 'neon--disabled': disabled }"
       class="neon-input__textfield neon-input__textarea"
-      v-bind="$attrs"
+      v-bind="sanitizedAttributes"
     ></textarea>
   </div>
 </template>
