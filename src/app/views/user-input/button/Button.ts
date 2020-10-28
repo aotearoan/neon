@@ -82,7 +82,7 @@ export default class Button extends Vue {
     label="Success button with icon"
     icon="plus"
   />
-  <neon-button state="error" color="primary" label="Error" button-style="text" />
+  <neon-button state="error" color="primary" label="Error" />
   <neon-button
     state="error"
     color="primary"

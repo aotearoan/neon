@@ -102,7 +102,7 @@
   &--state-error {
     &:not(.neon-button--with-icon) {
       .neon-button__label {
-        opacity: 0.33;
+        opacity: 0;
       }
 
       .neon-icon {
