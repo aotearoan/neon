@@ -5,6 +5,14 @@
   "displayName": "NeonInput",
   "props": [
     {
+      "name": "id",
+      "tags": {},
+      "description": "The id the input",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
       "name": "value",
       "tags": {},
       "description": "The value of the input",
@@ -79,7 +87,7 @@
     {
       "name": "icon",
       "tags": {},
-      "description": "The name of a clickable icon to display inside the input. This is used for clearing contents or e.g. in the case of NeonPassword toggle showing/hiding the password.",
+      "description": "The name of a clickable icon to display inside the input. This is used for clearing contents or e.g. in the case of\nNeonPassword toggle showing/hiding the password.",
       "type": {
         "name": "string"
       }

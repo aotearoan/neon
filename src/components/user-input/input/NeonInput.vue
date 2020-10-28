@@ -16,6 +16,7 @@
     <input
       v-if="!rows"
       ref="neonInput"
+      :id="id"
       :type="type"
       :value="value"
       :disabled="disabled"
@@ -25,7 +26,7 @@
       @focus="onFocus"
       class="neon-input__textfield neon-input__text"
       :class="{ 'neon--disabled': disabled }"
-      v-bind="$attrs"
+      v-bind="sanitizedAttributes"
       v-on="sanitizedListeners"
     />
     <neon-icon
