@@ -14,6 +14,12 @@ export default class NeonInput extends Vue {
   };
 
   /**
+   * The id the input
+   */
+  @Prop()
+  private id?: string;
+
+  /**
    * The value of the input
    */
   @Prop()
@@ -58,7 +64,8 @@ export default class NeonInput extends Vue {
   private rows?: number;
 
   /**
-   * The name of a clickable icon to display inside the input. This is used for clearing contents or e.g. in the case of NeonPassword toggle showing/hiding the password.
+   * The name of a clickable icon to display inside the input. This is used for clearing contents or e.g. in the case of
+   * NeonPassword toggle showing/hiding the password.
    */
   @Prop()
   private icon?: string;
@@ -76,6 +83,12 @@ export default class NeonInput extends Vue {
   private disabled!: boolean;
 
   private focused = false;
+
+  get sanitizedAttributes(): Record<string, string> {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { id, ...sanitized } = this.$attrs;
+    return sanitized;
+  }
 
   get sanitizedListeners(): Record<string, Function | Function[]> {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars

@@ -139,6 +139,10 @@ blockquote,
   margin-right: 4 * $base-space;
 }
 
+.menu-filter {
+  @include hidden;
+}
+
 @include responsive(mobile-large) {
   .github-link {
     display: none;

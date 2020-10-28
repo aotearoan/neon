@@ -8,12 +8,14 @@
               icon="menu"
               color="primary"
               button-style="text"
+              aria-label="Open menu"
               :size="isMobile ? 's' : 'm'"
               @click="menuOpen = true"
             />
             <neon-drawer :open="menuOpen" @close="menuOpen = false" :full-width="true" class="app-side-nav">
               <div class="neon-side-nav__sticky">
-                <neon-input type="text" v-model="indexFilter" placeholder="Filter" />
+                <label for="menuFilterDrawer" class="menu-filter">Filter menu</label>
+                <neon-input id="menuFilterDrawer" type="text" v-model="indexFilter" placeholder="Filter" />
               </div>
               <div class="neon-side-nav__scrolling">
                 <div class="neon-side-nav__scrolling-container">
@@ -29,7 +31,7 @@
                 </div>
               </div>
             </neon-drawer>
-            <neon-link href="/" class="homepage-link">
+            <neon-link href="/" class="homepage-link" aria-label="home">
               <neon-logo></neon-logo>
             </neon-link>
             <span class="tagline neon-color-text-brand">A VueJs Component Library for Web Applications</span>
@@ -62,6 +64,7 @@
               icon="contrast"
               button-style="text"
               :outline="false"
+              aria-label="light/dark toggle"
               @click="switchMode()"
               :size="isMobile ? 's' : 'l'"
             />
@@ -85,7 +88,8 @@
       <template #side-nav>
         <neon-side-nav class="app-side-nav" :full-width="true">
           <template #sticky>
-            <neon-input size="l" type="text" v-model="indexFilter" placeholder="Filter..." />
+            <label for="menuFilterSideNav" class="menu-filter">Filter menu</label>
+            <neon-input id="menuFilterSideNav" size="l" type="text" v-model="indexFilter" placeholder="Filter..." />
           </template>
           <template #scrolling>
             <neon-expansion-panel
