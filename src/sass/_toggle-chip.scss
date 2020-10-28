@@ -6,6 +6,7 @@
   cursor: pointer;
   border: $border-width $border-style;
   border-radius: $border-radius;
+  transition: all ease-in-out $animation-speed-fast;
 
   &__label {
     user-select: none;
@@ -21,7 +22,6 @@
     width: 0;
     margin-right: 0;
     opacity: 0;
-    transition: all ease-in-out $animation-speed-fast;
   }
 
   &--checked {

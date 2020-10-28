@@ -11,7 +11,7 @@
       },
     ]"
   >
-    <neon-icon v-if="showCheck" class="neon-toggle-chip__checked" :disabled="disabled" name="check" />
+    <neon-icon v-if="value && showCheck" class="neon-toggle-chip__checked" :disabled="disabled" name="check" />
     <span class="neon-toggle-chip__label">{{ label }}</span>
     <input
       type="checkbox"
