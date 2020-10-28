@@ -7,11 +7,21 @@
         <neon-tabs :tabs="tabs" v-model="selected" @input="onChangeTab" :underline="false" />
       </div>
     </div>
-    <neon-tab :tab="tabs[0]" :selected="selected === tabs[0].key" :toggleOnIf="true">
+    <neon-tab :tab="tabs[examplesIndex]" :selected="selected === tabs[examplesIndex].key" :toggleOnIf="true">
+      <h2 v-if="descriptionIndex === -1" class="neon-h3 component-documentation__description-heading">Description</h2>
+      <slot v-if="descriptionIndex === -1"></slot>
+      <examples :examples="examples" />
+    </neon-tab>
+    <neon-tab
+      v-if="descriptionIndex >= 0"
+      :tab="tabs[descriptionIndex]"
+      :selected="selected === tabs[descriptionIndex].key"
+      :toggleOnIf="true"
+    >
       <h2 v-if="$slots.default" class="neon-h3">Description</h2>
       <slot></slot>
     </neon-tab>
-    <neon-tab :tab="tabs[1]" :selected="selected === tabs[1].key" :toggleOnIf="true">
+    <neon-tab :tab="tabs[apiIndex]" :selected="selected === tabs[apiIndex].key" :toggleOnIf="true">
       <h3 class="component-documentation__tab-title">API</h3>
       <api-docs v-if="apiModel" :api-model="apiModel" :component-name="componentName" />
       <api-docs
@@ -20,9 +30,6 @@
         :api-model="subApiModel.api"
         :component-name="subApiModel.name"
       />
-    </neon-tab>
-    <neon-tab v-if="examples" :tab="tabs[2]" :selected="selected === tabs[2].key" :toggleOnIf="true">
-      <examples :examples="examples" />
     </neon-tab>
   </div>
 </template>

@@ -4,12 +4,20 @@ $height-component-header-mobile: 77px;
 .component-documentation {
   margin-top: $height-component-header-desktop - 0.5 * $spacing-vertical-desktop;
 
+  &__description-heading {
+    display: none;
+  }
+
   @include responsive(tablet) {
     margin-top: $height-component-header-desktop - $spacing-vertical-tablet;
   }
 
   @include responsive(mobile-large) {
     margin-top: $height-component-header-mobile - 0.5 * $spacing-vertical-mobile;
+
+    &__description-heading {
+      display: flex;
+    }
   }
 
   &__title {
