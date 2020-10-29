@@ -8,9 +8,16 @@
         'neon-drawer--with-overlay': overlay,
       },
     ]"
+    role="dialog"
+    aria-describedby="neonDrawerDesc"
   >
     <div class="neon-drawer__overlay"></div>
-    <div class="neon-drawer__container" :class="{ 'neon-drawer__container--full-width': fullWidth }" ref="drawer">
+    <div
+      class="neon-drawer__container"
+      :class="{ 'neon-drawer__container--full-width': fullWidth }"
+      ref="drawer"
+      id="neonDrawerDesc"
+    >
       <!-- @slot drawer contents -->
       <slot></slot>
     </div>
