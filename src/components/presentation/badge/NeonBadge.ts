@@ -54,4 +54,10 @@ export default class NeonBadge extends Vue {
    */
   @Prop({ default: false })
   public disabled!: boolean;
+
+  /**
+   * Badge image alt text.
+   */
+  @Prop({ default: 'Badge' })
+  public imageAlt!: TranslateResult;
 }

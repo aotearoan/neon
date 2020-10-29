@@ -32,7 +32,7 @@
               </div>
             </neon-drawer>
             <neon-link href="/" class="homepage-link" aria-label="home">
-              <neon-logo></neon-logo>
+              <neon-logo aria-label="Neon logo"></neon-logo>
             </neon-link>
             <span class="tagline neon-color-text-brand">A VueJs Component Library for Web Applications</span>
           </span>
