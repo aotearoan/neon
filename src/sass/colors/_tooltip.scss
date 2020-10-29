@@ -1,4 +1,28 @@
 .neon-tooltip {
+  &--outline-text {
+    &:focus {
+      color: $color-text-primary;
+      border-radius: $border-radius;
+      position: relative;
+
+      &:after {
+        content: '~';
+        font-weight: bold;
+        position: absolute;
+        bottom: -3 * $base-space;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  &--outline-border {
+    &:focus {
+      @include box-shadow-outline($color-text-primary);
+    }
+  }
+
   &__content {
     background: $color-text;
     color: $color-inverse;

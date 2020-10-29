@@ -4,6 +4,12 @@
   margin: 0;
   padding: 0;
   cursor: pointer;
+  width: fit-content;
+
+  &:focus {
+    outline: none;
+    position: relative;
+  }
 
   &__content-wrapper {
     z-index: $z-index-above-3;
