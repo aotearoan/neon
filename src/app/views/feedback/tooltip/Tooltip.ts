@@ -40,6 +40,17 @@ export default class Tooltip extends Vue {
       kielbasa ham hock sirloin ground round strip steak jowl jerky short ribs pork loin frankfurter.</p>
     </template>
   </neon-tooltip> to see the popover style.</p>
+  <br />
+  <neon-tooltip tooltip-style="popover" outline-style="border">
+    <template #target>
+      <neon-button size="s" label="Hover me" />
+    </template>
+    <template #content>
+      <span class="neon-h6" role="heading" aria-level="6">Popover content</span>
+      <p>Spicy jalapeno bacon ipsum dolor amet biltong porchetta cupim sausage pork loin. Ham porchetta brisket,
+      kielbasa ham hock sirloin ground round strip steak jowl jerky short ribs pork loin frankfurter.</p>
+    </template>
+  </neon-tooltip></p>
 </div>`,
     },
     {

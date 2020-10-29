@@ -1,0 +1,4 @@
+@mixin box-shadow-outline($outline-color) {
+  border-radius: $border-radius;
+  box-shadow: 0 0 0 4px rgba($outline-color, 0.3);
+}

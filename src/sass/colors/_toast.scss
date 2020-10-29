@@ -17,7 +17,7 @@ $alert-colors: (
       @include color-with-svg($alert-color);
 
       &:focus-within {
-        box-shadow: 0 0 0 4px rgba($alert-background-color, 0.3);
+        @include box-shadow-outline($alert-background-color);
       }
     }
   }

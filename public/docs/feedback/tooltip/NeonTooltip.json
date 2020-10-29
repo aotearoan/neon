@@ -5,6 +5,14 @@
   "exportName": "default",
   "props": [
     {
+      "name": "id",
+      "tags": {},
+      "description": "Id of the tooltip.",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
       "name": "placement",
       "tags": {},
       "description": "Placement of the tooltip contents.",
@@ -19,13 +27,25 @@
     {
       "name": "tooltipStyle",
       "tags": {},
-      "description": "Style of the tooltip, use <em>Tooltip</em> for a simple tooltip, use <em>Popover</em> for larger more complex content.",
+      "description": "Style of the tooltip, use <em>Tooltip</em> for a simple tooltip, use <em>Popover</em> for larger more complex\ncontent.",
       "type": {
         "name": "NeonTooltipStyle"
       },
       "defaultValue": {
         "func": false,
         "value": "NeonTooltipStyle.Tooltip"
+      }
+    },
+    {
+      "name": "outlineStyle",
+      "tags": {},
+      "description": "Style of the outline to use when the tooltip target has focus, use <em>text</em> for tooltips wrapping text and\n<em>border</em> for tooltips wrapping \"block\" elements, e.g. buttons.",
+      "type": {
+        "name": "NeonOutlineStyle"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonOutlineStyle.Text"
       }
     },
     {
