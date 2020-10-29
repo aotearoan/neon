@@ -2,6 +2,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 import NeonButton from '../../user-input/button/NeonButton.vue';
+import { TranslateResult } from 'vue-i18n';
 
 /**
  * NeonNote is a component for displaying important information to the user, such as - notes, hints or quotes.
@@ -30,6 +31,12 @@ export default class NeonNote extends Vue {
    */
   @Prop({ default: true })
   public icon!: boolean;
+
+  /**
+   * Note close button aria label.
+   */
+  @Prop({ default: 'Close note' })
+  public ariaLabelCloseNote!: TranslateResult;
 
   private get iconName() {
     if (this.icon) {
