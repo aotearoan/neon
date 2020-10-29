@@ -14,7 +14,7 @@
     ]"
   >
     <span v-if="label" class="neon-badge__label">{{ label }}</span>
-    <img v-else-if="image" class="neon-badge__image" :src="image" />
+    <img v-else-if="image" class="neon-badge__image" :alt="imageAlt" :src="image" />
     <neon-icon v-else-if="icon" :disabled="disabled" :inverse="color" :name="icon" class="neon-badge__icon"></neon-icon>
   </div>
 </template>

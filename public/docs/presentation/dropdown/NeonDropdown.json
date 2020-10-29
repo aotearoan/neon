@@ -22,6 +22,22 @@
       }
     },
     {
+      "name": "image",
+      "tags": {},
+      "description": "URL of image to display if the button style is a square or circular badge.",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "imageAlt",
+      "tags": {},
+      "description": "Badge image ALT text.",
+      "type": {
+        "name": "TranslateResult"
+      }
+    },
+    {
       "name": "icon",
       "tags": {},
       "description": "An icon to display on the dropdown button. This will be to the left of any label, but can also be used on it's own.",

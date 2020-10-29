@@ -75,6 +75,18 @@
         "func": false,
         "value": "false"
       }
+    },
+    {
+      "name": "imageAlt",
+      "tags": {},
+      "description": "Badge image alt text.",
+      "type": {
+        "name": "TranslateResult"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Badge'"
+      }
     }
   ]
 }

@@ -39,6 +39,18 @@ export default class NeonDropdown extends Vue {
   public label?: TranslateResult;
 
   /**
+   * URL of image to display if the button style is a square or circular badge.
+   */
+  @Prop()
+  public image?: string;
+
+  /**
+   * Badge image ALT text.
+   */
+  @Prop()
+  public imageAlt?: TranslateResult;
+
+  /**
    * An icon to display on the dropdown button. This will be to the left of any label, but can also be used on it's own.
    */
   @Prop()
