@@ -35,7 +35,7 @@ export default class Tooltip extends Vue {
       <strong>me</strong>
     </template>
     <template #content>
-      <span class="neon-h6">Popover content</span>
+      <span class="neon-h6" role="heading" aria-level="6">Popover content</span>
       <p>Spicy jalapeno bacon ipsum dolor amet biltong porchetta cupim sausage pork loin. Ham porchetta brisket,
       kielbasa ham hock sirloin ground round strip steak jowl jerky short ribs pork loin frankfurter.</p>
     </template>
