@@ -1,8 +1,6 @@
 import { TranslateResult } from 'vue-i18n';
 import { enumList, modelList, utilsList } from './SupportingClasses';
 
-export const separateDescriptionTab = ['Alert', 'Grid', 'Icon'];
-
 export interface MenuGroup {
   group: TranslateResult;
   children: MenuModel[];
@@ -107,6 +105,7 @@ export class Menu {
                 name: 'Alert / Toast',
                 keywords: 'notifications info error warning success',
                 component: 'NeonAlert',
+                anchors: ['Examples', 'Description', 'API'],
               },
               {
                 path: 'note',
@@ -181,6 +180,7 @@ export class Menu {
                 path: 'grid',
                 page: 'Grid',
                 component: 'NeonGrid',
+                anchors: ['Examples', 'Description', 'API'],
                 subComponents: [
                   {
                     path: 'grid-area',
@@ -288,6 +288,7 @@ export class Menu {
                 page: 'Icon',
                 name: 'Icons',
                 component: 'NeonIcon',
+                anchors: ['Examples', 'Description', 'API'],
               },
               {
                 path: 'label',
@@ -298,6 +299,12 @@ export class Menu {
                 path: 'logo',
                 page: 'Logo',
                 component: 'NeonLogo',
+              },
+              {
+                path: 'table',
+                page: 'Table',
+                component: 'NeonTable',
+                anchors: ['Examples'],
               },
               {
                 path: 'tabs',
@@ -421,10 +428,9 @@ export class Menu {
         menuGroup.children.forEach((section) => {
           if (section.children) {
             section.children.forEach((page) => {
-              page.anchors =
-                page.page && separateDescriptionTab.indexOf(page.page) >= 0
-                  ? ['Examples', 'Description', 'API']
-                  : ['Examples', 'API'];
+              if (!page.anchors) {
+                page.anchors = ['Examples', 'API'];
+              }
             });
           }
         });

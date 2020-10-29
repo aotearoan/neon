@@ -11,8 +11,8 @@
         </neon-note>
         <div class="api-docs__desktop" v-if="hasDocs">
           <section class="api-docs__section" v-if="hasProps">
-            <h3 class="neon-h4 api-docs__title">Properties</h3>
-            <table>
+            <h3 class="neon-h4 api-docs__title" id="props-label">Properties</h3>
+            <table aria-labelledby="props-label">
               <thead>
                 <tr>
                   <th>Name</th>
@@ -44,8 +44,8 @@
             </table>
           </section>
           <section class="api-docs__section" v-if="hasEvents">
-            <h3 class="neon-h4 api-docs__title">Events</h3>
-            <table>
+            <h3 class="neon-h4 api-docs__title" id="events-label">Events</h3>
+            <table aria-labelledby="events-label">
               <thead>
                 <tr>
                   <th>Name</th>
@@ -70,8 +70,8 @@
             </table>
           </section>
           <section class="api-docs__section" v-if="hasSlots">
-            <h3 class="neon-h4 api-docs__title">Slots</h3>
-            <table>
+            <h3 class="neon-h4 api-docs__title" id="slots-label">Slots</h3>
+            <table aria-labelledby="slots-label">
               <thead>
                 <tr>
                   <th>Name</th>

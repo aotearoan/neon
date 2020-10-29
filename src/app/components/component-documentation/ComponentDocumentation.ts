@@ -2,9 +2,9 @@ import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import Examples from '../examples/Examples.vue';
 import ApiDocs from '../api-docs/ApiDocs.vue';
 import { ExampleModel } from '../example/ExampleModel';
-import { NeonTab, NeonTabs } from '../../../components';
+import { NeonTab, NeonTabModel, NeonTabs } from '../../../components';
 import { DocumentationModel } from '../ApiModel';
-import { MenuModel, separateDescriptionTab } from '../../Menu';
+import { MenuModel } from '../../Menu';
 import { Route } from 'vue-router';
 
 interface SubDocumentationModel {
@@ -21,10 +21,26 @@ interface SubDocumentationModel {
   },
 })
 export default class ComponentDocumentation extends Vue {
+  private static readonly defaultTabs: NeonTabModel[] = [
+    {
+      key: 'examples',
+      label: 'Examples',
+    },
+    {
+      key: 'description',
+      label: 'Description',
+    },
+    {
+      key: 'api',
+      label: 'API',
+    },
+  ];
+
   private apiModel: DocumentationModel | null = null;
   private subApiModels: SubDocumentationModel[] = [];
+  private tabs: NeonTabModel[] = [];
 
-  private selected = this.tabs[0].key;
+  private selected: string | null = null;
 
   @Prop({ required: true })
   public model!: MenuModel;
@@ -35,13 +51,10 @@ export default class ComponentDocumentation extends Vue {
   @Prop()
   public examples?: ExampleModel[];
 
-  @Watch('$route', { immediate: true })
+  @Watch('$route')
   private onRouteChange(to: Route) {
     if (to.hash) {
       this.selected = to.hash.substring(1);
-    } else {
-      this.selected = this.tabs[0].key;
-      this.onChangeTab(this.selected);
     }
   }
 
@@ -58,10 +71,14 @@ export default class ComponentDocumentation extends Vue {
   }
 
   public mounted() {
-    fetch(`${process.env.VUE_APP_RESOURCE_URL}docs/${this.path}/${this.componentName}.json`).then((response) => {
-      response.json().then((api) => {
-        this.apiModel = api;
-      });
+    const url = `${process.env.VUE_APP_RESOURCE_URL}docs/${this.path}/${this.componentName}.json`;
+    fetch(url).then((response) => {
+      response.json().then(
+        (api) => {
+          this.apiModel = api;
+        },
+        () => console.info(`no component JSON at ${url}`),
+      );
     });
 
     (this.model.subComponents || []).forEach((subComp) => {
@@ -73,40 +90,18 @@ export default class ComponentDocumentation extends Vue {
         },
       );
     });
-  }
 
-  private get tabs() {
-    if (this.model.page && separateDescriptionTab.indexOf(this.model.page) >= 0) {
-      return [
-        {
-          key: 'examples',
-          label: 'Examples',
-        },
-        {
-          key: 'description',
-          label: 'Description',
-        },
-        {
-          key: 'api',
-          label: 'API',
-        },
-      ];
-    }
-
-    return [
-      {
-        key: 'examples',
-        label: 'Examples',
-      },
-      {
-        key: 'api',
-        label: 'API',
-      },
-    ];
+    const anchors = (this.model.anchors || []).map((anchor) => anchor.toLowerCase());
+    this.tabs = ComponentDocumentation.defaultTabs.filter((item) => anchors.indexOf(item.key) >= 0);
+    this.selected = this.tabs[0].key;
+    this.onChangeTab(this.selected);
   }
 
   private onChangeTab(key: string) {
-    this.$router.replace({ path: `#${key}` });
+    const path = `#${key}`;
+    if (this.$route.hash !== path) {
+      this.$router.replace({ path });
+    }
   }
 
   private get examplesIndex() {
