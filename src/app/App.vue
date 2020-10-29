@@ -71,20 +71,6 @@
           </span>
         </neon-top-nav>
       </template>
-      <template #content>
-        <neon-grid id="content" :layouts="layouts" class="content">
-          <neon-grid-area id="section-content">
-            <transition name="neon-fade-transition" mode="out-in">
-              <router-view />
-            </transition>
-          </neon-grid-area>
-        </neon-grid>
-        <neon-footer>
-          <span
-            >{{ version !== '0' ? `v${version}` : '' }} &copy; copyright aotearoan {{ new Date().getFullYear() }}</span
-          >
-        </neon-footer>
-      </template>
       <template #side-nav>
         <neon-side-nav class="app-side-nav" :full-width="true">
           <template #sticky>
@@ -104,6 +90,20 @@
             </neon-expansion-panel>
           </template>
         </neon-side-nav>
+      </template>
+      <template #content>
+        <neon-grid id="content" :layouts="layouts" class="content">
+          <neon-grid-area id="section-content">
+            <transition name="neon-fade-transition" mode="out-in">
+              <router-view />
+            </transition>
+          </neon-grid-area>
+        </neon-grid>
+        <neon-footer>
+          <span
+            >{{ version !== '0' ? `v${version}` : '' }} &copy; copyright aotearoan {{ new Date().getFullYear() }}</span
+          >
+        </neon-footer>
       </template>
     </neon-page>
     <neon-alert />
