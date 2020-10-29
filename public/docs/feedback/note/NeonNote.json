@@ -39,6 +39,18 @@
         "func": false,
         "value": "true"
       }
+    },
+    {
+      "name": "ariaLabelCloseNote",
+      "tags": {},
+      "description": "Note close button aria label.",
+      "type": {
+        "name": "TranslateResult"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Close note'"
+      }
     }
   ],
   "events": [
