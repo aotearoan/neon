@@ -21,6 +21,7 @@ const routes: Array<RouteConfig> = [
                 ({
                   path: `/${item.path}/${child.path}`,
                   name: child.name || child.page,
+                  meta: { title: child.name || child.page },
                   component: () => import(`./views/${item.path}/${child.path}/${child.page}.vue`),
                 } as RouteConfig),
             )
@@ -45,6 +46,7 @@ const routes: Array<RouteConfig> = [
   {
     path: '*',
     name: 'notfound',
+    meta: { title: '404' },
     component: () => import(/* webpackChunkName: "source" */ './views/error/NotFound.vue'),
   },
 ];
@@ -55,6 +57,14 @@ const router = new VueRouter({
   routes,
   scrollBehavior: (to: Route, from: Route, savedPosition: void | Position) =>
     to.path !== from.path ? savedPosition || { x: 0, y: 0 } : undefined,
+});
+
+router.afterEach((to: Route) => {
+  Vue.nextTick(() => {
+    document.title = `Neon: ${
+      to.params.enum || to.params.model || to.params.util || to.meta.title || 'A VueJS Component Library'
+    }`;
+  });
 });
 
 export default router;
