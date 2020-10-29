@@ -39,6 +39,8 @@
         :color="color"
         :disabled="disabled"
         :circular="dropdownStyle === 'circular-badge'"
+        :image="image"
+        :imageAlt="imageAlt"
       />
       <neon-expansion-indicator
         v-if="indicator"
