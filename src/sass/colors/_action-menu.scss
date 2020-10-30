@@ -1,7 +1,10 @@
 .neon-action-menu {
   &__link {
-    &:not(.neon-action-menu__link--selected):not(.neon-action-menu__link--disabled):hover {
-      background-color: $color-action-menu-hover;
+    &:not(.neon-action-menu__link--selected):not(.neon-action-menu__link--disabled) {
+      &:hover,
+      &:focus {
+        background-color: $color-action-menu-hover;
+      }
     }
 
     &.neon-action-menu__link--selected {

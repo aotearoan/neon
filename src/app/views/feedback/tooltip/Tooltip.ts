@@ -41,7 +41,7 @@ export default class Tooltip extends Vue {
     </template>
   </neon-tooltip> to see the popover style.</p>
   <br />
-  <neon-tooltip tooltip-style="popover" outline-style="border">
+  <neon-tooltip tooltip-style="popover" outline-style="border" outline-color="low-contrast">
     <template #target>
       <neon-button size="s" label="Hover me" />
     </template>

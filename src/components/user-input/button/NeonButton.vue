@@ -1,5 +1,16 @@
 <template>
-  <neon-link v-if="href" :href="href" v-bind="$attrs" v-on="$listeners" class="neon-button" :class="classes">
+  <neon-link
+    v-if="href"
+    :href="href"
+    v-bind="$attrs"
+    v-on="$listeners"
+    class="neon-button"
+    :class="classes"
+    outline-style="border"
+    role="button"
+    @keydown.space.native="click()"
+    @keypress.space.native.prevent=""
+  >
     <neon-icon
       v-if="icon || state !== 'ready'"
       :name="iconName"

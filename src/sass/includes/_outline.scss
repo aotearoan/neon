@@ -1,4 +1,40 @@
 @mixin box-shadow-outline($outline-color) {
-  border-radius: $border-radius;
   box-shadow: 0 0 0 4px rgba($outline-color, 0.3);
+}
+
+@mixin focus-outline-styles($outline-color) {
+  &:focus {
+    outline: none;
+  }
+
+  &--outline-text {
+    &:after {
+      content: '';
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      display: flex;
+      background-color: transparent;
+      border-radius: $border-radius;
+      transition: background-color $animation-speed-slow ease-in-out, color $animation-speed-slow ease-in-out;
+    }
+
+    &:focus {
+      color: $outline-color;
+      position: relative;
+
+      &:after {
+        background-color: $outline-color;
+      }
+    }
+  }
+
+  &--outline-border {
+    &:focus {
+      @include box-shadow-outline($outline-color);
+    }
+  }
 }

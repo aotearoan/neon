@@ -25,6 +25,18 @@
       }
     },
     {
+      "name": "outlineStyle",
+      "tags": {},
+      "description": "Style of the outline to use when the link has focus, use <em>text</em> for wrapping text content and\n<em>border</em> for tooltips wrapping \"block\" elements, e.g. buttons.",
+      "type": {
+        "name": "NeonOutlineStyle"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonOutlineStyle.Text"
+      }
+    },
+    {
       "name": "externalIndicator",
       "tags": {},
       "description": "Display an external link icon to the right of the link indicating clicking it will take the user to another site.",
@@ -34,6 +46,17 @@
       "defaultValue": {
         "func": false,
         "value": "false"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "click",
+      "description": "Emitted when the user triggers the link by clicking on it or hitting Enter when the link has focus.",
+      "type": {
+        "names": [
+          "void"
+        ]
       }
     }
   ],

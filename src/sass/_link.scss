@@ -13,6 +13,8 @@ a[href]:not(.neon-link--no-style),
 }
 
 .neon-link {
+  position: relative;
+
   &__external-indicator {
     width: $font-size-s;
     height: $font-size-s;

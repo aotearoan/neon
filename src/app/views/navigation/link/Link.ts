@@ -27,10 +27,10 @@ export default class Link extends Vue {
     {
       title: 'Link examples',
       template: `<div>
-  <p>This is some text with a <a href=".">link</a> embedded in it.</p>
-  <neon-link href=".">Router link</neon-link>
+  <p>This is some text with a <neon-link href="/">link</neon-link> embedded in it.</p>
+  <neon-link href="/">Router link</neon-link>
   <neon-link href="http://www.getskeleton.com" :external-indicator="true" target="_blank">External link</neon-link>
-  <neon-link aria-label="Link title" @click.native="toast()">Link with click handler</neon-link>
+  <neon-link aria-label="Link title" @click="toast()">Link with click handler</neon-link>
 </div>`,
       data: this.data,
     },

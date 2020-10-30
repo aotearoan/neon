@@ -1,25 +1,9 @@
 .neon-tooltip {
-  &--outline-text {
-    &:focus {
-      color: $color-text-primary;
-      border-radius: $border-radius;
-      position: relative;
-
-      &:after {
-        content: '~';
-        font-weight: bold;
-        position: absolute;
-        bottom: -3 * $base-space;
-        width: 100%;
-        display: flex;
-        justify-content: center;
+  @each $color, $palette in $functional-colors {
+    &--outline-color-#{$color} {
+      &.neon-tooltip {
+        @include focus-outline-styles(map-get($palette, $color-outline));
       }
-    }
-  }
-
-  &--outline-border {
-    &:focus {
-      @include box-shadow-outline($color-text-primary);
     }
   }
 

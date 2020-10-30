@@ -7,6 +7,7 @@
       `neon-tooltip--${tooltipStyle}`,
       `neon-tooltip--${tooltipPlacement}`,
       `neon-tooltip--outline-${outlineStyle}`,
+      `neon-tooltip--outline-color-${outlineColor}`,
     ]"
     ref="tooltip"
     @keydown.enter="toggleTooltip()"

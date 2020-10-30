@@ -15,3 +15,7 @@ a[href]:not(.neon-link--no-style),
     }
   }
 }
+
+.neon-link {
+  @include focus-outline-styles($color-link);
+}

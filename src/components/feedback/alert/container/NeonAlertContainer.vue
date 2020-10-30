@@ -30,30 +30,20 @@
           <div v-if="message.message" class="neon-alert__body" :id="`alertMessage${index}`">{{ message.message }}</div>
         </div>
         <div v-if="message.primaryAction" class="neon-alert__actions">
-          <div
-            class="neon-alert__actions"
-            @keydown.space="
-              !message.primaryAction &&
-                message.dismissable &&
-                closeMessage(message.id) &&
-                $event.preventDefault() &&
-                $event.stopPropagation()
-            "
-            @keydown.enter="
-              !message.primaryAction &&
-                message.dismissable &&
-                closeMessage(message.id) &&
-                $event.preventDefault() &&
-                $event.stopPropagation()
-            "
-          ></div>
           <neon-link
             v-if="message.primaryAction"
             tabindex="0"
+            outline-style="border"
+            role="button"
             @click="
               message.primaryAction.callback();
               closeMessage(message.id);
             "
+            @keydown.space.native="
+              message.primaryAction.callback();
+              closeMessage(message.id);
+            "
+            @keypress.space.prevent=""
             class="neon-alert__action"
           >
             <span class="neon-alert__action-label">{{ message.primaryAction.label }}</span>
@@ -61,10 +51,17 @@
           <neon-link
             v-if="message.secondaryAction"
             tabindex="0"
+            outline-style="border"
+            role="button"
             @click="
               message.secondaryAction.callback();
               closeMessage(message.id);
             "
+            @keydown.space.native="
+              message.secondaryAction.callback();
+              closeMessage(message.id);
+            "
+            @keypress.space.prevent=""
             class="neon-alert__action"
           >
             <span class="neon-alert__action-label">{{ message.secondaryAction.label }}</span>

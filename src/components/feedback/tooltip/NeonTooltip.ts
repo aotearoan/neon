@@ -4,6 +4,7 @@ import { NeonPlacement } from '../../../common/enums/NeonPlacement';
 import { NeonTooltipStyle } from '../../../common/enums/NeonTooltipStyle';
 import { NeonTooltipPlacementUtils } from '../../../common/utils/NeonTooltipPlacementUtils';
 import { NeonOutlineStyle } from '../../../common/enums/NeonOutlineStyle';
+import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 
 /**
  * <p>
@@ -47,6 +48,12 @@ export default class NeonTooltip extends Vue {
    */
   @Prop({ default: NeonOutlineStyle.Text })
   private outlineStyle!: NeonOutlineStyle;
+
+  /**
+   * Color of the tooltip target when it is focussed.
+   */
+  @Prop({ default: NeonFunctionalColor.Primary })
+  private outlineColor!: NeonFunctionalColor;
 
   /**
    * Restrict placement to within this container.

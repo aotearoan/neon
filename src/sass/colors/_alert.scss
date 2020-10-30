@@ -28,7 +28,7 @@ $alert-colors: (
           border: $border-width-alert $border-style $alert-color;
         }
 
-        &:focus-within {
+        &:focus-within:not(.neon-alert__message--with-actions) {
           @include box-shadow-outline($alert-color);
         }
 
@@ -45,6 +45,10 @@ $alert-colors: (
             &:hover {
               color: $alert-color;
               text-decoration: none;
+            }
+
+            &:focus {
+              @include box-shadow-outline($alert-color);
             }
           }
         }
