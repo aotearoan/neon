@@ -6,9 +6,8 @@
   cursor: pointer;
   width: fit-content;
 
-  &:focus {
-    outline: none;
-    position: relative;
+  &--outline-border {
+    border-radius: $border-radius;
   }
 
   &__content-wrapper {

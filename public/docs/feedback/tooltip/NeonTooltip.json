@@ -49,6 +49,18 @@
       }
     },
     {
+      "name": "outlineColor",
+      "tags": {},
+      "description": "Color of the tooltip target when it is focussed.",
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Primary"
+      }
+    },
+    {
       "name": "placementContainer",
       "tags": {},
       "description": "Restrict placement to within this container.",

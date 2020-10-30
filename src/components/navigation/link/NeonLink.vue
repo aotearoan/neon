@@ -3,9 +3,12 @@
     v-if="routerUrl"
     :to="routerUrl"
     class="neon-link neon-link--router-link"
-    :class="{ 'neon-link--no-style': noStyle }"
-    v-on="$listeners"
+    :class="[{ 'neon-link--no-style': noStyle }, `neon-link--outline-${outlineStyle}`]"
+    v-on="sanitizedListeners"
     v-bind="$attrs"
+    tabindex="0"
+    @click="onClick"
+    @keydown.enter="onClick"
   >
     <span class="neon-link__label">
       <!-- @slot the content of the link -->
@@ -16,9 +19,12 @@
     v-else-if="href"
     :href="href"
     class="neon-link neon-link--external-link"
-    :class="{ 'neon-link--no-style': noStyle }"
-    v-on="$listeners"
+    :class="[{ 'neon-link--no-style': noStyle }, `neon-link--outline-${outlineStyle}`]"
+    v-on="sanitizedListeners"
     v-bind="$attrs"
+    tabindex="0"
+    @click="onClick"
+    @keydown.enter="onClick"
   >
     <span class="neon-link__label">
       <!-- @slot the content of the link -->
@@ -31,7 +37,16 @@
       />
     </span>
   </a>
-  <a v-else class="neon-link" :class="{ 'neon-link--no-style': noStyle }" v-on="$listeners" v-bind="$attrs">
+  <a
+    v-else
+    class="neon-link"
+    :class="[{ 'neon-link--no-style': noStyle }, `neon-link--outline-${outlineStyle}`]"
+    v-on="sanitizedListeners"
+    v-bind="$attrs"
+    tabindex="0"
+    @click="onClick"
+    @keydown.enter="onClick"
+  >
     <span class="neon-link__label">
       <!-- @slot the content of the link -->
       <slot></slot>
