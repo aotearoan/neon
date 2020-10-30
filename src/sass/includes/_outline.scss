@@ -37,4 +37,39 @@
       @include box-shadow-outline($outline-color);
     }
   }
+
+  &--outline-bullet {
+    position: relative;
+
+    &:before {
+      transition: all $animation-speed-fast ease-in-out;
+      content: '';
+      opacity: 0;
+      position: absolute;
+      display: flex;
+      align-self: center;
+      right: 0;
+      border-radius: $border-radius;
+      width: 0;
+      height: 0;
+      background-color: transparent;
+    }
+
+    &:focus {
+      &:before {
+        width: 2 * $base-space;
+        height: 2 * $base-space;
+        background-color: $outline-color;
+        opacity: 1;
+      }
+    }
+  }
+
+  &--outline-background {
+    transition: all $animation-speed-fast ease-in-out;
+
+    &:focus {
+      background-color: rgba($outline-color, 0.125);
+    }
+  }
 }

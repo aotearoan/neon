@@ -55,6 +55,8 @@ export default class ComponentDocumentation extends Vue {
   private onRouteChange(to: Route) {
     if (to.hash) {
       this.selected = to.hash.substring(1);
+    } else {
+      this.selected = this.tabs[0].key;
     }
   }
 
@@ -94,7 +96,6 @@ export default class ComponentDocumentation extends Vue {
     const anchors = (this.model.anchors || []).map((anchor) => anchor.toLowerCase());
     this.tabs = ComponentDocumentation.defaultTabs.filter((item) => anchors.indexOf(item.key) >= 0);
     this.selected = this.tabs[0].key;
-    this.onChangeTab(this.selected);
   }
 
   private onChangeTab(key: string) {
