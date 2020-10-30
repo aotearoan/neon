@@ -9,12 +9,18 @@
           'neon-tree-menu__section--expanded': section.expanded,
         }"
       >
-        <neon-link :no-style="true" class="neon-tree-menu__section-link" @click="onClick(section.key)">{{
-          section.label
-        }}</neon-link>
+        <neon-link
+          :no-style="true"
+          outline-style="bullet"
+          class="neon-tree-menu__section-link"
+          @click="onClick(section.key)"
+          >{{ section.label }}</neon-link
+        >
         <ul class="no-style neon-tree-menu__links">
           <li v-for="link in section.children" :key="link.key" class="neon-tree-menu__link-item">
-            <neon-link :no-style="true" :href="link.href" class="neon-tree-menu__link">{{ link.label }}</neon-link>
+            <neon-link :no-style="true" outline-style="bullet" :href="link.href" class="neon-tree-menu__link">{{
+              link.label
+            }}</neon-link>
             <ul
               v-if="link.anchors && link.anchors.length > 0"
               class="no-style neon-tree-menu__anchors"
@@ -22,6 +28,7 @@
             >
               <li v-for="anchor in link.anchors" :key="anchor">
                 <neon-link
+                  outline-style="bullet"
                   class="neon-link--no-style neon-tree-menu__anchor"
                   :href="`${link.href}#${fragment(anchor)}`"
                   >{{ anchor }}</neon-link

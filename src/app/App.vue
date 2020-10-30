@@ -26,7 +26,12 @@
                     v-model="section.expanded"
                     class="menu-expansion-panel"
                   >
-                    <neon-tree-menu :model="section.children" :expand-all="expandAll" @click="onSideNavMenuClick" />
+                    <neon-tree-menu
+                      :model="section.children"
+                      :expand-all="expandAll"
+                      @click="onSideNavMenuClick"
+                      class="app-main-menu"
+                    />
                   </neon-expansion-panel>
                 </div>
               </div>
@@ -86,7 +91,12 @@
               v-model="section.expanded"
               class="menu-expansion-panel"
             >
-              <neon-tree-menu :model="section.children" :expand-all="expandAll" @click="onSideNavMenuClick" />
+              <neon-tree-menu
+                :model="section.children"
+                :expand-all="expandAll"
+                @click="onSideNavMenuClick"
+                class="app-main-menu"
+              />
             </neon-expansion-panel>
           </template>
         </neon-side-nav>
