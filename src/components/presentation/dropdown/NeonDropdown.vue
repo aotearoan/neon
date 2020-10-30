@@ -25,13 +25,14 @@
         :disabled="disabled"
         :label="label"
         :icon="icon"
-        tabindox="0"
         @click="toggleOpen()"
         @blur="onBlur()"
         @focus="onFocus()"
+        aria-haspopup="true"
+        :aria-expanded="value"
       />
     </div>
-    <div v-else @click="toggleOpen()" ref="dropdownButton" tabindex="0" class="neon-dropdown__badge">
+    <div v-else @click="toggleOpen()" ref="dropdownButton" role="button" tabindex="0" class="neon-dropdown__badge">
       <neon-badge
         :icon="icon"
         :label="label"

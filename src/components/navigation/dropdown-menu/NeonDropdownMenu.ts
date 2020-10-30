@@ -122,13 +122,6 @@ export default class NeonDropdownMenu extends Vue {
             this.open = false;
             break;
         }
-      } else if (document.activeElement && document.activeElement.parentElement === this.$refs.dropdown.button) {
-        switch ($event.code) {
-          case 'Enter':
-          case 'Space':
-            this.open = true;
-            break;
-        }
       }
     }
   }
