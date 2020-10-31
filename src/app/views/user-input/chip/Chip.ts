@@ -16,6 +16,11 @@ export default class Chip extends Vue {
 
   private headline = 'Removable chips for tagging and inputs';
 
+  private data = {
+    click: () => console.log('clicked!'),
+    remove: () => console.log('removed!'),
+  };
+
   private chipSizes = `<div class="neon-vertically-spaced">
   <neon-chip label="Small" size="s" />
   <neon-chip label="Medium" size="m" />
@@ -34,8 +39,8 @@ export default class Chip extends Vue {
 </div>`;
 
   private chipActions = `<div class="neon-vertically-spaced">
-  <neon-chip label="Clickable" color="info" />
-  <neon-chip action="remove" label="Removable" color="info" />
+  <neon-chip label="Clickable" action="click" color="info" @click="click" />
+  <neon-chip action="remove" label="Removable" color="info" @close="remove" />
   <neon-chip :disabled="true" action="remove" label="Disabled" color="info" />
 </div>`;
 
@@ -55,6 +60,7 @@ export default class Chip extends Vue {
     {
       title: 'Chip actions',
       template: this.chipActions,
+      data: this.data,
     },
     {
       title: 'Chip with icon',
