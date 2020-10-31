@@ -22,4 +22,11 @@
       }
     }
   }
+
+  &__section-link-label,
+  &__link-label,
+  &__anchor-label {
+    outline: none;
+    @include focus-text-outline($color-text-primary);
+  }
 }
