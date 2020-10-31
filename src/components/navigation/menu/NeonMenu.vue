@@ -1,6 +1,6 @@
 <template>
   <nav class="neon-menu__wrapper" ref="menu">
-    <ul class="neon-menu no-style" :class="[`neon-menu--${color}`, `neon-menu--${size}`]">
+    <ul class="neon-menu no-style" :class="[`neon-menu--${color}`, `neon-menu--${size}`]" role="menubar">
       <li
         v-for="item in menu"
         :key="item.key"
@@ -22,16 +22,15 @@
         />
         <neon-link
           v-else
+          outline-style="none"
           :href="item.href"
           @click.native="!item.disabled && onClick(item.key)"
-          @keydown.enter.native="
-            !item.disabled && onClick(item.key) && $event.preventDefault() && $event.stopPropagation()
-          "
-          @keydown.space.native="
-            !item.disabled && onClick(item.key) && $event.preventDefault() && $event.stopPropagation()
-          "
+          @keydown.enter="!item.disabled && onClick(item.key)"
+          @keydown.space.native="!item.disabled && onClick(item.key)"
+          @keypress.space.prevent=""
           :no-style="true"
           :tabindex="item.disabled ? -1 : 0"
+          role="menuitem"
         >
           <neon-icon v-if="item.icon" :name="item.icon" color="neutral" class="neon-menu__item-icon" />
           <span class="neon-menu__item-label">{{ item.label }}</span>
