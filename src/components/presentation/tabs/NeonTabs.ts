@@ -38,7 +38,13 @@ export default class NeonTabs extends Vue {
   @Prop({ default: true })
   public underline!: boolean;
 
-  private onClick(key: string) {
+  private onClick(key: string, changeFocus = false) {
+    if (changeFocus) {
+      const tab = document.getElementById(`${key}ButtonContainer`);
+      if (tab) {
+        tab.focus();
+      }
+    }
     /**
      * Emitted when the selected tab is changed.
      * @type {string} The key of the selected tab.

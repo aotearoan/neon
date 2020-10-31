@@ -78,7 +78,7 @@
   "slots": [
     {
       "name": "default",
-      "description": "Add tabs here (NeonTab). NOTE: Tabs can also be added outside of the component if required"
+      "description": "Add tabs here (NeonTab). NOTE: Tabs can also be added outside of the component if preferred"
     }
   ]
 }

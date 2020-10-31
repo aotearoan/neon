@@ -16,6 +16,12 @@ export default class NeonTab extends Vue {
   public selected!: boolean;
 
   /**
+   * Id of the tab (matches the key in NeonTabModel).
+   */
+  @Prop()
+  public id?: boolean;
+
+  /**
    * By default, use CSS display property to show/hide tab contents. This flag will enable using v-if instead.
    * */
   @Prop({ default: false })

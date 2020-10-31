@@ -14,6 +14,14 @@
       "required": true
     },
     {
+      "name": "id",
+      "tags": {},
+      "description": "Id of the tab (matches the key in NeonTabModel).",
+      "type": {
+        "name": "boolean"
+      }
+    },
+    {
       "name": "toggleOnIf",
       "tags": {},
       "description": "By default, use CSS display property to show/hide tab contents. This flag will enable using v-if instead.",

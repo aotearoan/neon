@@ -22,6 +22,21 @@
     & + .neon-tabs__menu-item {
       margin-left: 6 * $base-space;
     }
+
+    &:focus {
+      outline: none;
+    }
+
+    &-container {
+      pointer-events: none;
+      touch-action: none;
+      outline: none;
+      height: 100%;
+      align-items: center;
+      border-bottom: $border-width-tabs $border-style transparent;
+      border-top: $border-width-tabs $border-style transparent;
+      flex-direction: row;
+    }
   }
 
   &--s {
@@ -65,11 +80,29 @@
 }
 
 .neon-tab {
+  position: relative;
   display: none;
+  border-radius: $border-radius;
   @include padding-vertical;
 
   &--selected {
     display: flex;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: $base-space;
+    right: 0;
+    width: 2 * $base-space;
+    height: 2 * $base-space;
+    border-radius: $border-radius;
+    display: flex;
+    transition: all $animation-speed-fast ease-in-out;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 
