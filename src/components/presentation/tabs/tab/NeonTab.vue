@@ -3,6 +3,10 @@
     class="neon-tab"
     v-if="responsiveView || !toggleOnIf || selected"
     :class="{ 'neon-tab--selected': toggleOnIf || selected }"
+    role="tabpanel"
+    :id="id"
+    :aria-labelledby="id ? `${id}Button` : undefined"
+    tabindex="0"
   >
     <!-- @slot The tab content -->
     <slot></slot>
