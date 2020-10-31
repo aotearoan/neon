@@ -66,7 +66,6 @@ Vue.use(VueI18n);
 export default class App extends Vue {
   public theme = NeonTheme.Classic;
   public themeModel: NeonSelectOption[] = [
-    { key: '', label: 'Select theme', disabled: true },
     ...Object.keys(NeonTheme).map((k, index) => ({
       key: this.themes[index],
       label: k,

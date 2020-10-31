@@ -14,6 +14,15 @@
       v-on="sanitizedListeners"
     >
       <ul class="no-style neon-select__options">
+        <li
+          v-if="placeholderAsOption"
+          class="neon-select__option neon--disabled neon-select__option--disabled"
+          :class="`neon-select__option--${size}`"
+        >
+          <div class="neon-select__option-container">
+            <span class="neon-select__option-label">{{ placeholder }}</span>
+          </div>
+        </li>
         <template v-for="group in computedOptions">
           <li v-if="group.group !== ''" :key="group.group" class="neon-select__option-title">{{ group.group }}</li>
           <li

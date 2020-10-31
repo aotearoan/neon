@@ -40,6 +40,12 @@ export default class NeonSelect extends Vue {
   public placeholder!: TranslateResult;
 
   /**
+   * Display the placeholder as the first option in the select, this is useful as an alternative to a label.
+   */
+  @Prop({ default: false })
+  public placeholderAsOption!: boolean;
+
+  /**
    * Optional placeholder icon.
    */
   @Prop()

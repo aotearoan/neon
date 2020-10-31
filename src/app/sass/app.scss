@@ -142,9 +142,3 @@ blockquote,
 .menu-filter {
   @include hidden;
 }
-
-@include responsive(mobile-large) {
-  .github-link {
-    display: none;
-  }
-}
