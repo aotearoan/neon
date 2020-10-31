@@ -14,6 +14,18 @@
       "required": true
     },
     {
+      "name": "placeholderAsOption",
+      "tags": {},
+      "description": "Display the placeholder as the first option in the select, this is useful as an alternative to a label.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
       "name": "placeholderIcon",
       "tags": {},
       "description": "Optional placeholder icon.",

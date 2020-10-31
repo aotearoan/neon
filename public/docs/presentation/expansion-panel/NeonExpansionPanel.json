@@ -23,6 +23,14 @@
       "required": true
     },
     {
+      "name": "id",
+      "tags": {},
+      "description": "Provide an id to support aria-controls. The id will be placed on the expansion panel content wrapper and the\naria-controls on the header (triggering the expansion).",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
       "name": "icon",
       "tags": {},
       "description": "An icon to display to the left of the label",
