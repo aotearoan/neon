@@ -7,11 +7,13 @@
         `neon-chip--${size}`,
         `neon-chip--${color}`,
         `neon-chip--${action}`,
-        { 'neon-chip--disabled': disabled },
+        { 'neon-chip--disabled': disabled, 'neon-chip--active': active },
       ]"
+      :role="role"
       @click="clicked()"
       @keydown="keyDown"
-      :tabindex="!disabled && action !== 'none' ? 0 : undefined"
+      @keyup="keyUp"
+      :tabindex="!disabled ? 0 : undefined"
       ref="chip"
     >
       <neon-icon v-if="icon" :name="icon" class="neon-chip__icon" :color="color" />
