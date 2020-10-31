@@ -14,6 +14,14 @@
     cursor: pointer;
   }
 
+  .neon-tree-menu__section-link-label,
+  .neon-tree-menu__link-label,
+  .neon-tree-menu__anchor-label {
+    pointer-events: none;
+    touch-action: none;
+    outline: none;
+  }
+
   .neon-tree-menu__section-link {
     font-weight: 600;
   }

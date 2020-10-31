@@ -43,4 +43,11 @@ export default class NeonTreeMenu extends Vue {
   private onRouteChange(path: string) {
     this.url = path;
   }
+
+  private click($event: KeyboardEvent) {
+    const target = $event.target as HTMLSpanElement;
+    if (target && target.parentElement) {
+      target.parentElement.click();
+    }
+  }
 }

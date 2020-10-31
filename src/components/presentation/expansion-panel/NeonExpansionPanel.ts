@@ -32,6 +32,13 @@ export default class NeonExpansionPanel extends Vue {
   public label!: TranslateResult;
 
   /**
+   * Provide an id to support aria-controls. The id will be placed on the expansion panel content wrapper and the
+   * aria-controls on the header (triggering the expansion).
+   */
+  @Prop()
+  public id?: string;
+
+  /**
    * An icon to display to the left of the label
    */
   @Prop()

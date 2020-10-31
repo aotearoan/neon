@@ -2,12 +2,11 @@
   box-shadow: 0 0 0 4px rgba($outline-color, 0.3);
 }
 
-@mixin focus-outline-styles($outline-color) {
-  &:focus {
-    outline: none;
-  }
-
+@mixin focus-text-outline($outline-color) {
   &--outline-text {
+    display: inline-flex;
+    position: relative;
+
     &:after {
       content: '';
       font-weight: bold;
@@ -24,20 +23,23 @@
 
     &:focus {
       color: $outline-color;
-      position: relative;
 
       &:after {
         background-color: $outline-color;
       }
     }
   }
+}
 
+@mixin focus-border-outline($outline-color) {
   &--outline-border {
     &:focus {
       @include box-shadow-outline($outline-color);
     }
   }
+}
 
+@mixin focus-bullet-outline($outline-color) {
   &--outline-bullet {
     position: relative;
 
@@ -64,7 +66,9 @@
       }
     }
   }
+}
 
+@mixin focus-background-outline($outline-color) {
   &--outline-background {
     transition: all $animation-speed-fast ease-in-out;
 
@@ -72,4 +76,15 @@
       background-color: rgba($outline-color, 0.125);
     }
   }
+}
+
+@mixin focus-outline-styles($outline-color) {
+  &:focus {
+    outline: none;
+  }
+
+  @include focus-text-outline($outline-color);
+  @include focus-border-outline($outline-color);
+  @include focus-bullet-outline($outline-color);
+  @include focus-background-outline($outline-color);
 }

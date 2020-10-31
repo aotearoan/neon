@@ -12,4 +12,12 @@
       border-top: $border-width $border-style $border-color;
     }
   }
+
+  @each $color, $palette in $functional-colors {
+    &--#{$color} {
+      .neon-expansion-panel__label-container {
+        @include focus-text-outline(map-get($palette, $color-outline));
+      }
+    }
+  }
 }
