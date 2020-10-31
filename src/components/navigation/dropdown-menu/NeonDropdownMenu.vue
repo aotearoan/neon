@@ -13,7 +13,7 @@
     @blur="onBlur()"
     ref="dropdown"
   >
-    <ul class="no-style neon-dropdown-menu__items">
+    <ul class="no-style neon-dropdown-menu__items" role="menu">
       <li
         v-for="item in model"
         :key="item.key"
@@ -40,7 +40,13 @@
           />
           <span class="neon-dropdown-menu__item-label">{{ item.label }}</span>
         </div>
-        <neon-link v-else-if="item.href && !item.disabled" :href="item.href" :disabled="item.disabled" :no-style="true">
+        <neon-link
+          v-else-if="item.href && !item.disabled"
+          :href="item.href"
+          :disabled="item.disabled"
+          :no-style="true"
+          role="menuitem"
+        >
           <neon-icon
             class="neon-dropdown-menu__item-icon"
             v-if="item.icon"
@@ -49,7 +55,7 @@
           />
           <span class="neon-dropdown-menu__item-label">{{ item.label }}</span>
         </neon-link>
-        <div v-else class="neon-dropdown-menu__item-container" @click="clickItem(item)">
+        <div v-else class="neon-dropdown-menu__item-container" @click="clickItem(item)" role="menuitem">
           <neon-icon
             class="neon-dropdown-menu__item-icon"
             v-if="item.icon"

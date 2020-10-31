@@ -67,15 +67,16 @@ export default class Menu extends Vue {
         ],
       },
     ],
+    onClick: (value: string) => console.log(value),
   };
 
   private examples: ExampleModel[] = [
     {
       title: 'Menu sizes',
       template: `<div class="neon-vertically-spaced">
-  <neon-menu size="s" :menu="menu" />
-  <neon-menu size="m" :menu="menu" />
-  <neon-menu size="l" :menu="menu" />
+  <neon-menu size="s" :menu="menu" @click="onClick" />
+  <neon-menu size="m" :menu="menu" @click="onClick" />
+  <neon-menu size="l" :menu="menu" @click="onClick" />
 </div>`,
       data: this.data,
     },
