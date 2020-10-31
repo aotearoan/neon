@@ -56,7 +56,8 @@
   &:not(.neon-chip--disabled) {
     cursor: pointer;
 
-    &:active {
+    &:active,
+    &.neon-chip--active {
       transform: scale(0.95);
     }
   }
