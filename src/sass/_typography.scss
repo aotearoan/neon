@@ -142,6 +142,8 @@ h6 {
 label {
   &:not(.no-style) {
     font-size: $font-size-s;
+    font-weight: 500;
+    letter-spacing: $letter-spacing-m;
     text-transform: uppercase;
     user-select: none;
     margin-bottom: 2 * $base-space;
