@@ -30,6 +30,7 @@ import NeonInput from './components/user-input/input/NeonInput.vue';
 import NeonInputIndicator from './components/user-input/input-indicator/NeonInputIndicator.vue';
 import NeonLabel from './components/presentation/label/NeonLabel.vue';
 import NeonLink from './components/navigation/link/NeonLink.vue';
+import NeonList from './components/user-input/list/NeonList.vue';
 import NeonLogo from './components/presentation/logo/NeonLogo.vue';
 import NeonMenu from './components/navigation/menu/NeonMenu.vue';
 import NeonModal from './components/layout/modal/NeonModal.vue';
@@ -78,6 +79,7 @@ import { NeonHorizontalPosition } from './common/enums/NeonHorizontalPosition';
 import { NeonIconRegistry } from './common/utils/NeonIconRegistry';
 import { NeonInputType } from './common/enums/NeonInputType';
 import { NeonLabelSize } from './common/enums/NeonLabelSize';
+import { NeonListItem } from './common/models/NeonListItem';
 import { NeonMenuItem } from './common/models/NeonMenuItem';
 import { NeonMenuModel } from './common/models/NeonMenuModel';
 import { NeonMode } from './common/enums/NeonMode';
@@ -143,6 +145,7 @@ const components: { [s: string]: VueConstructor } = {
   NeonInputIndicator,
   NeonLabel,
   NeonLink,
+  NeonList,
   NeonLogo,
   NeonMenu,
   NeonModal,
@@ -228,6 +231,8 @@ export {
   NeonLabel,
   NeonLabelSize,
   NeonLink,
+  NeonList,
+  NeonListItem,
   NeonLogo,
   NeonMenu,
   NeonMenuItem,

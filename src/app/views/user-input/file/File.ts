@@ -23,7 +23,7 @@ export default class File extends Vue {
 
   private fileExamples = `<div class="neon-vertically-spaced">
   <neon-file @input="files = $event" label="Select file" />
-  <neon-file @input="files = $event" color="low-contrast" :multiple="true" label="Add files" icon="plus" />
+  <neon-file @input="files = $event" color="brand" :multiple="true" label="Add files" icon="plus" />
   <neon-file @input="files = $event" :multiple="true" label="Add SVG files" />
   <neon-file @input="files = $event" :direct-upload="true" :multiple="true" label="Direct upload" />
 </div>`;

@@ -368,6 +368,12 @@ export class Menu {
                 keywords: 'label',
               },
               {
+                path: 'list',
+                page: 'List',
+                component: 'NeonList',
+                keywords: 'chips',
+              },
+              {
                 path: 'password',
                 page: 'Password',
                 keywords: 'input',

@@ -1,0 +1,78 @@
+{
+  "description": "Renders a list of removable items. This can be used as an alternative to removable chips where a vertical list is\nmore appropriate.",
+  "tags": {},
+  "exportName": "default",
+  "displayName": "NeonList",
+  "props": [
+    {
+      "name": "value",
+      "tags": {},
+      "description": "The list items.",
+      "type": {
+        "name": "Array",
+        "elements": [
+          {
+            "name": "NeonListItem"
+          }
+        ]
+      },
+      "required": true
+    },
+    {
+      "name": "size",
+      "tags": {},
+      "description": "The file component size",
+      "type": {
+        "name": "NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "color",
+      "tags": {},
+      "description": "The file component color",
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    },
+    {
+      "name": "disabled",
+      "tags": {},
+      "description": "The disabled state of the component",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "input",
+      "description": "Emitted when an item is removed from the list",
+      "type": {
+        "names": [
+          "NeonListItem[]"
+        ]
+      }
+    },
+    {
+      "name": "close",
+      "description": "Emitted when an item is removed from the list",
+      "type": {
+        "names": [
+          "string"
+        ]
+      }
+    }
+  ]
+}

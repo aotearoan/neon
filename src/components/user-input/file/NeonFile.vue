@@ -7,18 +7,14 @@
       { 'neon-file--disabled': disabled, 'neon-file--single': !multiple, 'neon-file--direct-upload': directUpload },
     ]"
   >
-    <ul class="no-style neon-file__list" v-if="!directUpload">
-      <li
-        v-for="file in files"
-        :key="file.name"
-        @click="remove(file.name)"
-        class="neon-file__file"
-        :class="{ 'neon--disabled': disabled }"
-      >
-        <span>{{ file.name }}</span>
-        <neon-icon name="times" :disabled="disabled" />
-      </li>
-    </ul>
+    <neon-list
+      v-if="!directUpload"
+      :value="fileList"
+      @close="remove"
+      :disabled="disabled"
+      :color="color"
+      :size="size"
+    />
     <neon-input
       type="file"
       :multiple="multiple"
@@ -28,6 +24,7 @@
       class="neon-file__input"
       @change="onInput"
       ref="fileInput"
+      :id="id"
     />
     <div class="neon-button-group neon-file__actions">
       <neon-button
@@ -45,6 +42,7 @@
         :size="size"
         :label="label"
         :icon="icon"
+        :aria-controls="id ? id : undefined"
         @click="openFileDialog"
       />
     </div>
