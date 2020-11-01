@@ -59,11 +59,9 @@
 }
 
 @mixin checkbox-style($size) {
-  $checkbox-height: 0.625 * $size;
-
   .neon-switch__checkbox {
-    height: $checkbox-height;
-    width: $checkbox-height;
+    height: $size;
+    width: $size;
   }
 }
 
@@ -72,6 +70,10 @@
   flex-direction: row;
   align-items: center;
   width: fit-content;
+
+  &:focus {
+    outline: none;
+  }
 
   &__label {
     user-select: none;
@@ -97,18 +99,30 @@
 
   &--switch {
     &.neon-switch--s {
-      height: $size-s;
-      @include switch-style($size-s - 3 * $base-space);
+      $switch-height: $size-s - 3 * $base-space;
+      $switch-margin: 0.5 * ($size-s - $switch-height);
+      height: $switch-height;
+      margin-top: $switch-margin;
+      margin-bottom: $switch-margin;
+      @include switch-style($switch-height);
     }
 
     &.neon-switch--m {
-      height: $size-m;
-      @include switch-style($size-m - 4 * $base-space);
+      $switch-height: $size-m - 4 * $base-space;
+      $switch-margin: 0.5 * ($size-m - $switch-height);
+      height: $switch-height;
+      margin-top: $switch-margin;
+      margin-bottom: $switch-margin;
+      @include switch-style($switch-height);
     }
 
     &.neon-switch--l {
-      height: $size-l;
-      @include switch-style($size-l - 5 * $base-space);
+      $switch-height: $size-l - 5 * $base-space;
+      $switch-margin: 0.5 * ($size-l - $switch-height);
+      height: $switch-height;
+      margin-top: $switch-margin;
+      margin-bottom: $switch-margin;
+      @include switch-style($switch-height);
     }
 
     .neon-switch__switch {
@@ -117,6 +131,9 @@
       position: relative;
       align-items: center;
       border-radius: $border-radius-switch;
+      outline: none;
+      pointer-events: none;
+      touch-action: none;
     }
 
     .neon-switch__indicator {
@@ -132,6 +149,9 @@
       margin-right: 2 * $base-space;
       border: $border-width-checkbox $border-style;
       border-radius: $border-radius;
+      outline: none;
+      pointer-events: none;
+      touch-action: none;
 
       svg {
         display: none;
@@ -147,18 +167,30 @@
     }
 
     &.neon-switch--s {
-      height: $size-s;
-      @include checkbox-style(0.85 * $size-s);
+      $checkbox-height: 0.5 * $size-s;
+      $checkbox-margin: 0.5 * ($size-s - $checkbox-height);
+      height: $checkbox-height;
+      margin-top: $checkbox-margin;
+      margin-bottom: $checkbox-margin;
+      @include checkbox-style($checkbox-height);
     }
 
     &.neon-switch--m {
-      height: $size-m;
-      @include checkbox-style($size-s);
+      $checkbox-height: 0.5 * $size-m;
+      $checkbox-margin: 0.5 * ($size-m - $checkbox-height);
+      height: $checkbox-height;
+      margin-top: $checkbox-margin;
+      margin-bottom: $checkbox-margin;
+      @include checkbox-style($checkbox-height);
     }
 
     &.neon-switch--l {
-      height: $size-l;
-      @include checkbox-style($size-m);
+      $checkbox-height: 0.5 * $size-l;
+      $checkbox-margin: 0.5 * ($size-l - $checkbox-height);
+      height: $checkbox-height;
+      margin-top: $checkbox-margin;
+      margin-bottom: $checkbox-margin;
+      @include checkbox-style($checkbox-height);
     }
   }
 }
