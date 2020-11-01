@@ -1,5 +1,5 @@
 {
-  "description": "A file upload component. This is a wrapper around an HTML file input. It can display multiple files as well as providing a convenient UI for removing/clearing files from the list.",
+  "description": "A file upload component. This is a wrapper around an HTML file input. It can display multiple files as well as\nproviding a convenient UI for removing/clearing files from the list.",
   "tags": {},
   "exportName": "default",
   "displayName": "NeonFile",
@@ -7,7 +7,7 @@
     {
       "name": "disabled",
       "tags": {},
-      "description": "The diabled state of the component",
+      "description": "The disabled state of the component",
       "type": {
         "name": "boolean"
       },
@@ -43,7 +43,15 @@
     {
       "name": "accept",
       "tags": {},
-      "description": "HTML file input accept property for filtering the files the user is allowed to select. THis is a mime type, e.g. 'application/pdf'.",
+      "description": "HTML file input accept property for filtering the files the user is allowed to select. THis is a mime type,\ne.g. 'application/pdf'.",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "id",
+      "tags": {},
+      "description": "Provide an id to attach to the internal HTML input[file] (also adds an aria-controls link between the button and\nthe hidden input).",
       "type": {
         "name": "string"
       }

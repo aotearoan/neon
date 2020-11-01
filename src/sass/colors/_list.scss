@@ -1,13 +1,14 @@
-.neon-file {
+.neon-list {
   @each $color, $palette in $functional-colors {
     &--#{$color} {
-      .neon-file__file {
+      .neon-list__item {
         $file-foreground-color: rgba(map-get($palette, $color-file-list), 0.875);
         @include color-with-svg($file-foreground-color);
 
         background-color: rgba(map-get($palette, $color-file-list), 0.125);
 
-        &:hover {
+        &:hover,
+        &:focus {
           $file-hover-color: map-get($palette, $color-file-list);
           @include color-with-svg($file-hover-color);
           background-color: rgba(map-get($palette, $color-file-list), 0.25);
@@ -16,11 +17,12 @@
     }
 
     &--disabled {
-      .neon-file__file {
+      .neon-list__item {
         &,
+        &:focus,
         &:hover {
           background-color: $color-disabled-dark;
-          color: $color-disabled-light;
+          color: rgba($color-disabled-light, 0.75);
         }
       }
     }

@@ -1,0 +1,66 @@
+.neon-list {
+  &__item {
+    cursor: pointer;
+    border-radius: $border-radius;
+    font-size: $font-size-s;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    overflow: hidden;
+    max-width: 100%;
+    width: 100%;
+    flex: 1 1 auto;
+    outline: none;
+
+    span {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      flex: 1 1 auto;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .neon-icon {
+      width: 4 * $base-space;
+      height: 4 * $base-space;
+    }
+
+    & + .neon-list__item {
+      margin-top: $base-space;
+    }
+  }
+
+  &--s {
+    .neon-list__item {
+      padding: 0.25 * $base-space 1.5 * $base-space;
+    }
+  }
+
+  &--m {
+    .neon-list__item {
+      padding: 1.25 * $base-space 2 * $base-space;
+    }
+  }
+
+  &--l {
+    .neon-list__item {
+      font-size: $base-font-size;
+      padding: 1.375 * $base-space 3 * $base-space;
+    }
+  }
+
+  &--disabled {
+    .neon-list__item {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.neon-transition-list-item-leave-active {
+  transform: scale(0);
+  opacity: 0;
+  transition: all $animation-speed-slow ease-in-out;
+}

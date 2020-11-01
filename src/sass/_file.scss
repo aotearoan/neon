@@ -1,6 +1,5 @@
-@mixin single-file-size($font-size, $size) {
-  .neon-file__file {
-    font-size: $font-size;
+@mixin single-file-size($size) {
+  .neon-list__item {
     height: $size;
     @include padding(0.5);
   }
@@ -11,42 +10,8 @@
     display: none;
   }
 
-  &__list {
+  .neon-list {
     margin-bottom: 4 * $base-space;
-  }
-
-  &__file {
-    cursor: pointer;
-    border-radius: $border-radius;
-    padding: $base-space 1.5 * $base-space;
-    font-size: $font-size-s;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    user-select: none;
-    overflow: hidden;
-    max-width: 100%;
-    width: 100%;
-    flex: 1 1 auto;
-
-    span {
-      text-overflow: ellipsis;
-      overflow: hidden;
-      white-space: nowrap;
-      flex: 1 1 auto;
-      width: 100%;
-      max-width: 100%;
-    }
-
-    .neon-icon {
-      width: 4 * $base-space;
-      height: 4 * $base-space;
-    }
-
-    & + .neon-file__file {
-      margin-top: $base-space;
-    }
   }
 
   &--single {
@@ -55,29 +20,29 @@
     width: 100%;
     max-width: 100%;
     flex: 1 1 auto;
-    overflow: hidden;
 
-    .neon-file__list {
+    .neon-list {
       margin-right: 2 * $base-space;
       flex: 1 1 auto;
       margin-bottom: 0;
       max-width: 100%;
       width: 100%;
-
-      .neon-file__file {
-      }
     }
 
     &.neon-file--s {
-      @include single-file-size($font-size-s, $size-s);
+      @include single-file-size($size-s);
     }
 
     &.neon-file--m {
-      @include single-file-size($font-size-s, $size-m);
+      @include single-file-size($size-m);
     }
 
     &.neon-file--l {
-      @include single-file-size($base-font-size, $size-l);
+      @include single-file-size($size-l);
     }
+  }
+
+  .neon-button + .neon-button {
+    margin-left: 4 * $base-space;
   }
 }

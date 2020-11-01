@@ -4,12 +4,14 @@ import NeonButton from '../../user-input/button/NeonButton.vue';
 import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 import NeonInput from '../input/NeonInput.vue';
 import NeonFile from './NeonFile.vue';
+import NeonList from '../list/NeonList.vue';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonSize } from '../../../common/enums/NeonSize';
 
 Vue.component('NeonButton', NeonButton);
 Vue.component('NeonIcon', NeonIcon);
 Vue.component('NeonInput', NeonInput);
+Vue.component('NeonList', NeonList);
 
 describe('NeonFile', () => {
   it('renders default color', () => {

@@ -5,7 +5,8 @@ import { NeonState } from '../../../common/enums/NeonState';
 import { TranslateResult } from 'vue-i18n';
 
 /**
- * A file upload component. This is a wrapper around an HTML file input. It can display multiple files as well as providing a convenient UI for removing/clearing files from the list.
+ * A file upload component. This is a wrapper around an HTML file input. It can display multiple files as well as
+ * providing a convenient UI for removing/clearing files from the list.
  */
 @Component({})
 export default class NeonFile extends Vue {
@@ -16,7 +17,7 @@ export default class NeonFile extends Vue {
   private files: File[] = [];
 
   /**
-   * The diabled state of the component
+   * The disabled state of the component
    */
   @Prop({ default: false })
   public disabled!: boolean;
@@ -34,10 +35,18 @@ export default class NeonFile extends Vue {
   public multiple!: boolean;
 
   /**
-   * HTML file input accept property for filtering the files the user is allowed to select. THis is a mime type, e.g. 'application/pdf'.
+   * HTML file input accept property for filtering the files the user is allowed to select. THis is a mime type,
+   * e.g. 'application/pdf'.
    */
   @Prop()
   public accept?: string;
+
+  /**
+   * Provide an id to attach to the internal HTML input[file] (also adds an aria-controls link between the button and
+   * the hidden input).
+   */
+  @Prop()
+  public id?: string;
 
   /**
    * The file component size
@@ -69,6 +78,10 @@ export default class NeonFile extends Vue {
   @Prop()
   public icon?: string;
 
+  private get fileList() {
+    return this.files.map((file) => ({ key: file.name, label: file.name }));
+  }
+
   private remove(filename: string) {
     if (!this.disabled) {
       this.files = this.files.filter((f) => f.name !== filename);
@@ -90,7 +103,7 @@ export default class NeonFile extends Vue {
   private onInput(event: Event) {
     if (event !== null && event.target) {
       const files = (event.target as HTMLInputElement).files;
-      const newFiles = files ? Array.from(files) : [];
+      const newFiles = files ? Array.from(files).filter((file) => !this.files.find((f) => f.name === file.name)) : [];
       this.files = this.multiple ? [...this.files, ...newFiles] : newFiles;
       this.emit();
     }
