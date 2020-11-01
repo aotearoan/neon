@@ -31,7 +31,7 @@
                 </div>
               </div>
             </neon-drawer>
-            <neon-link href="/" class="homepage-link" aria-label="home">
+            <neon-link outline-style="none" href="/" class="homepage-link" aria-label="home">
               <neon-logo aria-label="Neon logo"></neon-logo>
             </neon-link>
             <span class="tagline neon-color-text-brand">A VueJs Component Library for Web Applications</span>
@@ -44,7 +44,6 @@
               :label="!isMobile ? 'GitHub' : undefined"
               color="high-contrast"
               button-style="text"
-              :outline="false"
               :size="isMobile ? 's' : 'l'"
             />
             <neon-select
@@ -64,7 +63,6 @@
               color="high-contrast"
               icon="contrast"
               button-style="text"
-              :outline="false"
               aria-label="light/dark toggle"
               @click="switchMode()"
               :size="isMobile ? 's' : 'l'"

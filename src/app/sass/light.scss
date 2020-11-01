@@ -29,3 +29,39 @@ $color-editor-lock: $color-text-neutral;
     }
   }
 }
+
+a[href]:not(.neon-link--no-style):not(.neon-link) {
+  display: inline-flex;
+  position: relative;
+
+  &:after {
+    content: '';
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    display: flex;
+    background-color: transparent;
+    border-radius: $border-radius;
+    transition: background-color $animation-speed-slow ease-in-out, color $animation-speed-slow ease-in-out;
+  }
+
+  &:focus {
+    outline: none;
+    color: $color-link;
+
+    &:after {
+      background-color: $color-link;
+    }
+  }
+
+  &:hover {
+    color: $color-link;
+
+    &:after {
+      background-color: $color-link;
+    }
+  }
+}
