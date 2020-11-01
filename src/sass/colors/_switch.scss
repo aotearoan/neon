@@ -3,6 +3,10 @@
     background-color: $color-switch-off;
     transition: background-color $animation-speed-fast ease-in;
     box-shadow: $inset-shadow;
+
+    &:focus {
+      box-shadow: 0 0 0 4px rgba($color-text-low-contrast, 0.3), $inset-shadow;
+    }
   }
 
   .neon-switch__indicator {
@@ -16,6 +20,10 @@
         .neon-switch__switch {
           background-color: map-get($palette, $color-switch-on);
           box-shadow: $inset-shadow;
+
+          &:focus {
+            box-shadow: 0 0 0 4px rgba(map-get($palette, $color-switch-on), 0.3), $inset-shadow;
+          }
         }
 
         .neon-switch__indicator {
@@ -45,6 +53,10 @@
   .neon-switch__switch {
     border: $border-width solid $color-switch-off;
     transition: all $animation-speed-fast ease-in;
+
+    &:focus {
+      box-shadow: 0 0 0 4px rgba($color-text-low-contrast, 0.3);
+    }
   }
 
   .neon-switch__indicator {
@@ -57,6 +69,10 @@
       &.neon-switch--checked {
         .neon-switch__switch {
           border-color: map-get($palette, $color-switch-on);
+
+          &:focus {
+            box-shadow: 0 0 0 4px rgba(map-get($palette, $color-switch-on), 0.3);
+          }
 
           .neon-switch__indicator {
             background-color: map-get($palette, $color-switch-on);
@@ -78,12 +94,7 @@
 }
 
 .neon-switch {
-  color: rgba($color-text, 0.75);
-
-  &--checked,
-  &:hover:not(.neon-switch--disabled) {
-    color: $color-text;
-  }
+  color: $color-text;
 
   &--switch {
     @if ($theme == 'classic') {
@@ -99,6 +110,10 @@
         .neon-switch__checkbox {
           border-color: $border-color-input;
           box-shadow: $inset-shadow;
+
+          &:focus {
+            box-shadow: 0 0 0 4px rgba($color-text-low-contrast, 0.3);
+          }
         }
 
         &.neon-switch--checked {
@@ -109,6 +124,10 @@
               map-get($palette, $border-color-checkbox) 0%,
               map-get($palette, $background-color-checkbox) 100%
             );
+
+            &:focus {
+              box-shadow: 0 0 0 4px rgba(map-get($palette, $background-color-checkbox), 0.3);
+            }
           }
         }
       }

@@ -10,6 +10,12 @@
         'neon-switch--checked': value,
       },
     ]"
+    tabindex="-1"
+    @keydown.enter="toggleSwitch"
+    @keydown.space="toggleSwitch"
+    @keydown.space.prevent=""
+    :role="switchStyle"
+    :aria-checked="value"
   >
     <neon-icon
       v-if="switchStyle === 'checkbox'"
@@ -17,9 +23,10 @@
       :inverse="true"
       :disabled="disabled"
       name="check"
+      :tabindex="!disabled ? 0 : undefined"
     />
     <span class="neon-switch__label">{{ label }}</span>
-    <span v-if="switchStyle === 'switch'" class="neon-switch__switch">
+    <span v-if="switchStyle === 'switch'" class="neon-switch__switch" :tabindex="!disabled ? 0 : undefined">
       <span class="neon-switch__indicator"></span>
     </span>
     <input

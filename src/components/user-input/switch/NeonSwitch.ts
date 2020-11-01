@@ -54,8 +54,17 @@ export default class NeonSwitch extends Vue {
     return { listeners, input: this.onInput };
   }
 
+  private toggleSwitch() {
+    if (!this.disabled) {
+      this.emitChecked(!this.value);
+    }
+  }
+
   private onInput(event: InputEvent) {
-    const checked = (event.target as HTMLInputElement).checked;
+    this.emitChecked((event.target as HTMLInputElement).checked);
+  }
+
+  private emitChecked(checked: boolean) {
     /**
      * Emitted when the switch is toggled checked or unchecked.
      *
