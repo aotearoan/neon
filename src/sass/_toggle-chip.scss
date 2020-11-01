@@ -8,6 +8,10 @@
   border-radius: $border-radius;
   transition: all ease-in-out $animation-speed-fast;
 
+  &:focus {
+    outline: none;
+  }
+
   &__label {
     user-select: none;
     display: flex;

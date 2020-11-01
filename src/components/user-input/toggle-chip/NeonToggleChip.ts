@@ -54,13 +54,21 @@ export default class NeonToggleChip extends Vue {
     return { listeners, input: this.onInput };
   }
 
+  private toggleChip() {
+    this.emitInput(!this.value);
+  }
+
   private onInput(event: InputEvent) {
     const on = (event.target as HTMLInputElement).checked;
+    this.emitInput(on);
+  }
+
+  private emitInput(value: boolean) {
     /**
      * Emitted when the toggle chip is toggled on or off.
      *
      * @type {boolean} The state of the switch.
      */
-    this.$emit('input', on);
+    this.$emit('input', value);
   }
 }
