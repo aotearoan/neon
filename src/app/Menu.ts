@@ -365,6 +365,7 @@ export class Menu {
                 page: 'InputIndicator',
                 name: 'Input Indicators',
                 component: 'NeonInputIndicator',
+                keywords: 'label',
               },
               {
                 path: 'password',

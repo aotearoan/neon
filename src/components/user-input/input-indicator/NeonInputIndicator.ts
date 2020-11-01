@@ -5,6 +5,8 @@ import { TranslateResult } from 'vue-i18n';
 /**
  * Use input indicators to provide additional information for input fields. This can be useful to add the field units or
  * a connected label or icon.
+ * <br />
+ * NOTE: An input indicator is an HTML <em>label</em> so attributes like, e.g. <em>for</em> are accepted.
  */
 @Component({})
 export default class NeonInputIndicator extends Vue {
