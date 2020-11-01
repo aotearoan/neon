@@ -29,17 +29,8 @@
       v-bind="sanitizedAttributes"
       v-on="sanitizedListeners"
     />
-    <neon-icon
-      v-if="iconVisible"
-      :name="iconName"
-      :tabindex="disabled ? false : 0"
-      :disabled="disabled"
-      :color="iconColor"
-      @click.native="iconClicked"
-      @keyup.enter.native="iconClicked"
-    />
     <textarea
-      v-if="rows"
+      v-else
       :rows="rows"
       :id="id"
       :value="value"
@@ -52,6 +43,17 @@
       class="neon-input__textfield neon-input__textarea"
       v-bind="sanitizedAttributes"
     ></textarea>
+    <neon-icon
+      v-if="iconVisible"
+      :name="iconName"
+      :tabindex="disabled ? false : 0"
+      :disabled="disabled"
+      :color="iconColor"
+      role="button"
+      @click.native="iconClicked"
+      @keydown.enter.native="iconClicked"
+      @keydown.space.native="iconClicked"
+    />
   </div>
 </template>
 

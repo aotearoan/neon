@@ -11,14 +11,20 @@
     }
   }
 
-  &--focused {
-    @each $color, $palette in $functional-colors {
-      &.neon-input--#{$color} {
+  @each $color, $palette in $functional-colors {
+    $input-color: map-get($palette, $border-color-input-selected);
+    &.neon-input--#{$color} {
+      &.neon-input--focused {
         .neon-input__text,
         .neon-input__textarea {
-          border-color: map-get($palette, $border-color-input-selected);
+          border-color: $input-color;
           background-color: $background-color-input-active;
         }
+      }
+
+      .neon-icon:focus {
+        background-color: rgba($input-color, 0.125);
+        box-shadow: 0 0 0 2px rgba($input-color, 0.125);
       }
     }
   }
