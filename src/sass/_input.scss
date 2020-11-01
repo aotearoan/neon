@@ -23,7 +23,11 @@
       right: 0.5 * ($size - $font-size);
       top: 0.5 * ($size - $font-size);
       cursor: default;
-      outline: none;
+      border-radius: 50%;
+
+      &:focus {
+        outline: none;
+      }
     }
   }
 

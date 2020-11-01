@@ -154,7 +154,7 @@ export default class NeonInput extends Vue {
     this.$emit('blur');
   }
 
-  private iconClicked() {
+  private iconClicked($event: Event) {
     if (!this.disabled) {
       if (this.icon) {
         /**
@@ -169,6 +169,8 @@ export default class NeonInput extends Vue {
          */
         this.$emit('input', '');
       }
+      $event.preventDefault();
+      $event.stopPropagation();
     }
   }
 
