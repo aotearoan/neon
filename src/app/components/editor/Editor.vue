@@ -12,7 +12,6 @@
         color="neutral"
         size="s"
         aria-label="Copy"
-        :outline="false"
         @click="copyText"
       />
       <neon-icon v-if="readOnly" name="lock" :disabled="true" class="editor__read-only" aria-label="Read only" />

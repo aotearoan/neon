@@ -18,4 +18,14 @@ a[href]:not(.neon-link--no-style),
 
 .neon-link {
   @include focus-outline-styles($color-link);
+
+  &--outline-text {
+    &:hover {
+      color: $color-link;
+
+      &:after {
+        background-color: $color-link;
+      }
+    }
+  }
 }
