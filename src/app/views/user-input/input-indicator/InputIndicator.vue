@@ -11,6 +11,7 @@
           Use <strong>NeonInputIndicator</strong> in combination with <strong>NeonFieldGroup</strong> to combine inputs,
           buttons and input indicators in any order.
         </p>
+        <p>An input indicator is an HTML <em>label</em> so attributes like, e.g. <em>for</em> are accepted.</p>
       </neon-card-body>
     </neon-card>
   </component-documentation>

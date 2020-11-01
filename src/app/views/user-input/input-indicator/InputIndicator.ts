@@ -38,8 +38,8 @@ export default class InputIndicator extends Vue {
     <neon-input-indicator size="s" label="%" />
   </neon-field-group>
   <neon-field-group>
-    <neon-input-indicator icon="user" />
-    <neon-input type="text" v-model="field2" placeholder="Username" />
+    <neon-input-indicator icon="user" aria-label="Username" for="userField" />
+    <neon-input id="userField" type="text" v-model="field2" placeholder="Username" />
   </neon-field-group>
   <neon-field-group>
     <neon-input-indicator size="l" icon="mail" />

@@ -1,5 +1,5 @@
 {
-  "description": "Use input indicators to provide additional information for input fields. This can be useful to add the field units or\na connected label or icon.",
+  "description": "Use input indicators to provide additional information for input fields. This can be useful to add the field units or\na connected label or icon.\n<br />\nNOTE: An input indicator is an HTML <em>label</em> so attributes like, e.g. <em>for</em> are accepted.",
   "tags": {},
   "exportName": "default",
   "displayName": "NeonInputIndicator",
