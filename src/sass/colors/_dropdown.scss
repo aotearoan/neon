@@ -10,4 +10,22 @@
       border: $border-width $border-style $border-color-dropdown;
     }
   }
+
+  &__badge {
+    &:focus {
+      outline: none;
+    }
+  }
+
+  @each $color, $palette in $functional-colors {
+    &--#{$color}:not(.neon-dropdown--disabled) {
+      .neon-dropdown__badge {
+        &:focus {
+          .neon-badge {
+            @include box-shadow-outline(map-get($palette, $color-label));
+          }
+        }
+      }
+    }
+  }
 }

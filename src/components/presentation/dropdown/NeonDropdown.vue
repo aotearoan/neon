@@ -19,7 +19,6 @@
         :button-style="dropdownStyle === 'text-button' ? 'text' : 'solid'"
         :color="color"
         :size="size"
-        :outline="dropdownStyle === 'solid-button'"
         :indicator="indicator"
         :indicator-expanded="value"
         :disabled="disabled"
@@ -32,7 +31,17 @@
         :aria-expanded="value"
       />
     </div>
-    <div v-else @click="toggleOpen()" ref="dropdownButton" role="button" tabindex="0" class="neon-dropdown__badge">
+    <div
+      v-else
+      @click="toggleOpen"
+      @keydown.enter="toggleOpen"
+      @keydown.space="toggleOpen"
+      @keypress.space.prevent=""
+      ref="dropdownButton"
+      role="button"
+      :tabindex="!disabled ? 0 : undefined"
+      class="neon-dropdown__badge"
+    >
       <neon-badge
         :icon="icon"
         :label="label"
