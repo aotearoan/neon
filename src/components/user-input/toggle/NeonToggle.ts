@@ -71,6 +71,14 @@ export default class NeonToggle extends Vue {
 
   private onInput(event: InputEvent) {
     const key = (event.target as HTMLInputElement).value;
+    this.emitInput(key);
+  }
+
+  private selectOption(option: NeonToggleModel) {
+    this.emitInput(option.key);
+  }
+
+  private emitInput(key: string) {
     /**
      * Emitted when the selected value changes.
      * @type {boolean} The key of the selected model item.

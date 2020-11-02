@@ -147,6 +147,6 @@ $background-color-overlay: rgba($color-neutral-d5, 0.75) !default;
 
 // toggle chips
 $color-toggle-chip: l1 !default;
-$color-toggle-chip-text: $color-inverse !default;
+$color-toggle-chip-text: $color-text !default;
 $border-color-toggle-chip: $color-neutral-d3 !default;
-$opacity-toggle-chip: 1 !default;
+$opacity-toggle-chip: 0.15 !default;

@@ -24,7 +24,8 @@
         background-color: rgba($toggle-color, 0.125);
       }
 
-      &:hover:not(.neon-toggle__label--disabled):not(.neon-toggle__label--checked) {
+      &:hover:not(.neon-toggle__label--disabled):not(.neon-toggle__label--checked),
+      &:focus:not(.neon-toggle__label--disabled):not(.neon-toggle__label--checked) {
         background-color: rgba($border-color-toggle, 0.375);
       }
     }

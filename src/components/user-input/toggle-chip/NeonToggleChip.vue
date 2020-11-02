@@ -11,7 +11,9 @@
       },
     ]"
     tabindex="0"
-    :aria-checked="value"
+    role="button"
+    :aria-pressed="value"
+    :aria-disabled="disabled"
     @keydown.enter="toggleChip"
     @keydown.space="toggleChip"
     @keypress.space.prevent=""

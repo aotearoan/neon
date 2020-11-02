@@ -6,6 +6,7 @@
       `neon-file--${size}`,
       { 'neon-file--disabled': disabled, 'neon-file--single': !multiple, 'neon-file--direct-upload': directUpload },
     ]"
+    :aria-disabled="disabled"
   >
     <neon-list
       v-if="!directUpload"
