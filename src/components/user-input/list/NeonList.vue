@@ -5,6 +5,7 @@
     class="no-style neon-list"
     :class="[`neon-list--${size}`, `neon-list--${color}`, { 'neon-list--disabled': disabled }]"
     role="group"
+    :aria-disabled="disabled"
   >
     <li
       v-for="item in value"

@@ -16,6 +16,7 @@
     @keydown.space.prevent=""
     :role="switchStyle"
     :aria-checked="value"
+    :aria-disabled="disabled"
   >
     <neon-icon
       v-if="switchStyle === 'checkbox'"

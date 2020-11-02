@@ -10,6 +10,7 @@
         { 'neon-chip--disabled': disabled, 'neon-chip--active': active },
       ]"
       :role="role"
+      :aria-disabled="disabled"
       @click="clicked()"
       @keydown="keyDown"
       @keyup="keyUp"

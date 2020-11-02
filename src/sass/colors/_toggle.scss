@@ -19,6 +19,15 @@
           background: $background-radio-button;
         }
 
+        .neon-toggle__label {
+          &:hover:not(neon-toggle__label--disabled),
+          &:focus:not(neon-toggle__label--disabled) {
+            .neon-toggle__radio-button {
+              background: rgba($border-color-toggle, 0.375);
+            }
+          }
+        }
+
         .neon-toggle__label--checked {
           color: $color-text;
 

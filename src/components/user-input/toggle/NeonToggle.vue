@@ -8,6 +8,7 @@
       `neon-toggle--${size}`,
       { 'neon-toggle--disabled neon--disabled': disabled },
     ]"
+    role="radiogroup"
   >
     <label
       v-for="option in model"
@@ -18,6 +19,13 @@
         'neon-toggle__label--checked': option.key === value,
         'neon-toggle__label--with-icon': option.icon,
       }"
+      :tabindex="!disabled && !option.disabled ? 0 : undefined"
+      @keydown.enter="selectOption(option)"
+      @keydown.space="selectOption(option)"
+      @keypress.space.prevent=""
+      role="radio"
+      aria-checked="option.key === value"
+      :aria-disabled="disabled || option.disabled"
     >
       <input
         type="radio"
@@ -28,6 +36,7 @@
         :disabled="disabled || option.disabled"
         v-on="sanitizedListeners"
         v-bind="$attrs"
+        :tabindex="-1"
       />
       <div v-if="toggleStyle === 'radio-buttons'" class="neon-toggle__radio-button">
         <div v-if="option.key === value" class="neon-toggle__radio-button-indicator"></div>
