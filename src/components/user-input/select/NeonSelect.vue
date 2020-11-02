@@ -12,6 +12,9 @@
       v-bind="sanitizedAttributes"
       v-model="open"
       v-on="sanitizedListeners"
+      role="listbox"
+      :aria-activedescendant="multiple ? value[0] : value"
+      :aria-multiselectable="multiple"
     >
       <ul class="no-style neon-select__options">
         <li
@@ -38,6 +41,8 @@
               },
               `neon-select__option--${size}`,
             ]"
+            role="option"
+            :aria-selected="multiple ? value.indexOf(option.key) >= 0 : option.key === value"
             @click="!option.disabled && clickOption(option)"
             @mouseover="changeHighlighted(option.key)"
           >
