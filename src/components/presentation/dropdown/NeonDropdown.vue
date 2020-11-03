@@ -61,11 +61,14 @@
       />
     </div>
     <div class="neon-dropdown__click-blocker" />
-    <div ref="dropdownContent" class="neon-dropdown__content" :class="`neon-dropdown__content--${dropdownPlacement}`">
-      <template v-if="openOnHover || value">
-        <!-- @slot The content of the open dropdown -->
-        <slot></slot>
-      </template>
+    <div
+      ref="dropdownContent"
+      v-show="openOnHover || value"
+      class="neon-dropdown__content"
+      :class="`neon-dropdown__content--${dropdownPlacement}`"
+    >
+      <!-- @slot The content of the open dropdown -->
+      <slot></slot>
     </div>
   </div>
 </template>

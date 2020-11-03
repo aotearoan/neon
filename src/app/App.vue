@@ -57,6 +57,7 @@
               @input="switchTheme"
               dropdown-style="text-button"
               color="high-contrast"
+              aria-label="Select theme"
             />
             <neon-button
               name="dark-mode-toggle"
