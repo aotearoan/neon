@@ -148,5 +148,11 @@
         ]
       }
     }
+  ],
+  "slots": [
+    {
+      "name": "option",
+      "description": "provide a custom template for an option.\n              Available properties: <strong>option</strong> (<em>NeonSelectOption</em>) and all properties provided to\n              the select component. This slot is purely for formatting the option, all accessibility actions still\n              apply."
+    }
   ]
 }

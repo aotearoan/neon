@@ -47,20 +47,26 @@
             @mouseover="changeHighlighted(option.key)"
           >
             <div class="neon-select__option-container">
-              <neon-switch
-                v-if="multiple"
-                :size="size === 'l' ? 'm' : 's'"
-                :color="color"
-                :value="value.indexOf(option.key) >= 0"
-                switch-style="checkbox"
-              />
-              <neon-icon
-                class="neon-select__option-icon"
-                v-if="option.icon"
-                :name="option.icon"
-                :disabled="option.disabled"
-              />
-              <span class="neon-select__option-label">{{ option.label }}</span>
+              <!-- @slot provide a custom template for an option.
+              Available properties: <strong>option</strong> (<em>NeonSelectOption</em>) and all properties provided to
+              the select component. This slot is purely for formatting the option, all accessibility actions still
+              apply. -->
+              <slot name="option">
+                <neon-switch
+                  v-if="multiple"
+                  :size="size === 'l' ? 'm' : 's'"
+                  :color="color"
+                  :value="value.indexOf(option.key) >= 0"
+                  switch-style="checkbox"
+                />
+                <neon-icon
+                  class="neon-select__option-icon"
+                  v-if="option.icon"
+                  :name="option.icon"
+                  :disabled="option.disabled"
+                />
+                <span class="neon-select__option-label">{{ option.label }}</span>
+              </slot>
             </div>
           </li>
         </template>
