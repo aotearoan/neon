@@ -42,6 +42,7 @@
               `neon-select__option--${size}`,
             ]"
             role="option"
+            :id="option.key"
             :aria-selected="multiple ? value.indexOf(option.key) >= 0 : option.key === value"
             @click="!option.disabled && clickOption(option)"
             @mouseover="changeHighlighted(option.key)"

@@ -46,6 +46,7 @@
           :disabled="item.disabled"
           :no-style="true"
           role="menuitem"
+          outline-style="none"
         >
           <neon-icon
             class="neon-dropdown-menu__item-icon"
