@@ -40,16 +40,13 @@
 @mixin text-button($color, $background-color-hover, $background-color-active) {
   color: $color;
 
-  &:hover:not(:disabled) {
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
     background: $background-color-hover;
   }
 
   &:active:not(:disabled) {
     background: $background-color-active;
-  }
-
-  &:focus:not(:disabled) {
-    @include box-shadow-outline($color);
   }
 }
 
