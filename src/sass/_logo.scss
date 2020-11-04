@@ -1,6 +1,4 @@
 .neon-logo {
-  background-size: auto;
-
   @include responsive(larger-than-tablet) {
     height: $size-m;
     width: $logo-width-multiplier * $size-m;
