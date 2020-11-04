@@ -15,5 +15,10 @@
         "value": "false"
       }
     }
+  ],
+  "slots": [
+    {
+      "name": "default"
+    }
   ]
 }
