@@ -6,10 +6,11 @@
     v-on="$listeners"
     class="neon-button"
     :class="classes"
-    outline-style="border"
+    outline-style="none"
     role="button"
     @keydown.space.native="click()"
     @keypress.space.native.prevent=""
+    :tabindex="!disabled ? 0 : -1"
   >
     <neon-icon
       v-if="icon || state !== 'ready'"
