@@ -95,7 +95,7 @@ export default class ComponentDocumentation extends Vue {
 
     const anchors = (this.model.anchors || []).map((anchor) => anchor.toLowerCase());
     this.tabs = ComponentDocumentation.defaultTabs.filter((item) => anchors.indexOf(item.key) >= 0);
-    this.selected = this.tabs[0].key;
+    this.selected = (this.$route.hash && this.$route.hash.substring(1)) || this.tabs[0].key;
   }
 
   private onChangeTab(key: string) {
