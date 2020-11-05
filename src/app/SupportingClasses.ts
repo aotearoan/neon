@@ -33,6 +33,7 @@ export const modelList: string[] = [
   'NeonAvailableSpace',
   'NeonDropdownMenuItem',
   'NeonDropdownPlacementObject',
+  'NeonFilterListItem',
   'NeonFormattedDate',
   'NeonGridModel',
   'NeonListItem',
