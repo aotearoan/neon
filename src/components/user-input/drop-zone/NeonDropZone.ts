@@ -31,7 +31,7 @@ export default class NeonDropZone extends Vue {
   circular?: boolean;
 
   private processDragOverOrEnter(event: DragEvent) {
-    if (event != null && event.dataTransfer) {
+    if (event?.dataTransfer) {
       event.preventDefault();
       event.dataTransfer.effectAllowed = 'copy';
       this.active = true;

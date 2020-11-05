@@ -43,7 +43,7 @@ export class NeonTooltipPlacementUtils {
     const firstMatching = placements.findIndex((placement) =>
       NeonTooltipPlacementUtils.validPlacement(contentElement, availableSpace, placement),
     );
-    return (placements[firstMatching] && placements[firstMatching]) || placements[0];
+    return placements[firstMatching] || placements[0];
   }
 
   private static validPlacement(

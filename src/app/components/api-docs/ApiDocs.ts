@@ -16,20 +16,20 @@ export default class ApiDocs extends Vue {
   public componentName!: string;
 
   private isArray(prop: PropertyModel) {
-    return prop.type && prop.type.name === 'Array';
+    return prop.type?.name === 'Array';
   }
 
   private typeName(prop: PropertyModel) {
-    if (prop.tags && prop.tags.type) {
+    if (prop.tags?.type) {
       return prop.tags.type[0].description;
-    } else if (prop && prop.type) {
+    } else if (prop.type) {
       const type: PropTypeModel = prop.type;
 
       if (this.isArray(prop)) {
-        return type.elements && type.elements[0].name;
+        return type.elements?.[0].name;
       }
 
-      return type.name && type.name;
+      return type.name;
     }
 
     return undefined;
@@ -40,7 +40,7 @@ export default class ApiDocs extends Vue {
   }
 
   private eventTypeName(event: EventModel) {
-    return (event && event.type && event.type.names[0]) || undefined;
+    return event.type?.names[0] || undefined;
   }
 
   private eventTypeLink(event: EventModel) {
@@ -62,14 +62,14 @@ export default class ApiDocs extends Vue {
   }
 
   private get hasProps() {
-    return this.apiModel.props && this.apiModel.props.length > 0;
+    return this.apiModel.props.length > 0;
   }
 
   private get hasEvents() {
-    return this.apiModel.events && this.apiModel.events.length > 0;
+    return this.apiModel.events.length > 0;
   }
 
   private get hasSlots() {
-    return this.apiModel.slots && this.apiModel.slots.length > 0;
+    return (this.apiModel.slots || []).length > 0;
   }
 }

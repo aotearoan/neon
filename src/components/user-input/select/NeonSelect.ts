@@ -128,7 +128,7 @@ export default class NeonSelect extends Vue {
   }
 
   get flattenedOptions(): NeonSelectOption[] {
-    return this.options || (this.groupedOptions && this.groupedOptions.flatMap((group) => group.options));
+    return this.options || this.groupedOptions?.flatMap((group) => group.options);
   }
 
   get sanitizedListeners(): Record<string, Function | Function[]> {
@@ -151,7 +151,7 @@ export default class NeonSelect extends Vue {
         return `${this.value.length} items selected`;
       } else {
         const selected = this.flattenedOptions.find((option) => option.key === this.value[0]);
-        return selected ? selected.label : '';
+        return selected?.label || '';
       }
     } else if (this.value) {
       const selected = this.flattenedOptions.find((option) => option.key === this.value);

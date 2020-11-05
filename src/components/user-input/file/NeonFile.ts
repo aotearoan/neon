@@ -101,7 +101,7 @@ export default class NeonFile extends Vue {
   }
 
   private onInput(event: Event) {
-    if (event !== null && event.target) {
+    if (event?.target) {
       const files = (event.target as HTMLInputElement).files;
       const newFiles = files ? Array.from(files).filter((file) => !this.files.find((f) => f.name === file.name)) : [];
       this.files = this.multiple ? [...this.files, ...newFiles] : newFiles;

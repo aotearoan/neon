@@ -46,7 +46,7 @@ export default class NeonTreeMenu extends Vue {
 
   private click($event: KeyboardEvent) {
     const target = $event.target as HTMLSpanElement;
-    if (target && target.parentElement) {
+    if (target?.parentElement) {
       target.parentElement.click();
     }
   }

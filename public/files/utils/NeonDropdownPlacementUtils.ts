@@ -49,7 +49,7 @@ export class NeonDropdownPlacementUtils {
     const firstMatching = placements.findIndex((placement) =>
       NeonDropdownPlacementUtils.validPlacement(contentElement, availableMajorSpace, availableMinorSpace, placement),
     );
-    return (placements[firstMatching] && placements[firstMatching].placement) || placements[0].placement;
+    return placements[firstMatching]?.placement || placements[0].placement;
   }
 
   private static validPlacement(
