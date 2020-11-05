@@ -32,7 +32,7 @@ export default class NeonLink extends Vue {
   public externalIndicator!: boolean;
 
   private get routerUrl() {
-    return this.href && this.href.indexOf('//') === -1 ? this.href : undefined;
+    return this.href?.indexOf('//') === -1 ? this.href : undefined;
   }
 
   private get sanitizedListeners() {
