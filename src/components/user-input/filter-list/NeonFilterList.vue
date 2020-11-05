@@ -12,7 +12,7 @@
     :aria-multiselectable="multiple"
   >
     <div
-      v-for="item in items"
+      v-for="item in visibleItems"
       :key="item.key"
       class="neon-list__item neon-filter-list__item"
       :class="[
@@ -39,6 +39,9 @@
         :disabled="item.disabled"
       />
     </div>
+    <neon-link v-if="displayShowAllToggle()" @click="toggleShowAll()" class="neon-filter-list__show-toggle">{{
+      toggleShowAllLabel
+    }}</neon-link>
   </div>
 </template>
 

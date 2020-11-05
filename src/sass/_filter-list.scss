@@ -33,4 +33,10 @@
       touch-action: none;
     }
   }
+
+  &__show-toggle {
+    align-self: center;
+    font-size: $font-size-s;
+    margin-top: 2 * $base-space;
+  }
 }

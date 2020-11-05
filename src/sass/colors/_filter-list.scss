@@ -15,9 +15,10 @@
   }
 
   @each $color, $palette in $functional-colors {
-    &--#{$color} {
+    &.neon-filter-list--#{$color} {
+      $list-hover-color: map-get($palette, $color-list-item);
+      $list-foreground-color: rgba($list-hover-color, 0.75);
       .neon-filter-list__item--selected:not(.neon-filter-list__item--disabled) {
-        $list-foreground-color: rgba(map-get($palette, $color-list-item), 0.75);
         background-color: rgba($list-foreground-color, 0.125);
         @if (not($color == 'low-contrast' or $color == 'neutral')) {
           @include color-with-svg($list-foreground-color);
@@ -25,10 +26,35 @@
 
         &:hover,
         &:focus {
-          $list-hover-color: map-get($palette, $color-list-item);
           background-color: rgba($list-hover-color, 0.25);
           @if (not($color == 'low-contrast' or $color == 'neutral')) {
             @include color-with-svg($list-hover-color);
+          }
+        }
+      }
+
+      .neon-filter-list__show-toggle {
+        @if (not($color == 'low-contrast' or $color == 'neutral')) {
+          color: $list-foreground-color;
+
+          &:hover,
+          &:focus {
+            color: $list-hover-color;
+
+            &:after {
+              background-color: $list-hover-color;
+            }
+          }
+        } @else {
+          color: rgba($color-text, 0.75);
+
+          &:hover,
+          &:focus {
+            color: $color-text;
+
+            &:after {
+              background-color: $color-text;
+            }
           }
         }
       }
