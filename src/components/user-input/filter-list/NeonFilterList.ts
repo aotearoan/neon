@@ -3,6 +3,7 @@ import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 import { NeonFilterListItem } from '../../../common/models/NeonFilterListItem';
+import { TranslateResult } from 'vue-i18n';
 
 /**
  * <p><strong>NeonFilterList</strong> is an alternative component to a select where the values are displayed in a
@@ -15,6 +16,8 @@ import { NeonFilterListItem } from '../../../common/models/NeonFilterListItem';
   },
 })
 export default class NeonFilterList extends Vue {
+  private showAll = false;
+
   /**
    * The list if items to display
    */
@@ -46,6 +49,25 @@ export default class NeonFilterList extends Vue {
   @Prop({ default: NeonFunctionalColor.LowContrast })
   public color!: NeonFunctionalColor;
 
+  /**
+   * The number of visible items. If there are more items they will be placed behind an expansion
+   * button which toggles displaying displayCount items and all items.
+   */
+  @Prop()
+  public displayCount?: number;
+
+  /**
+   * Label for the Show more toggle if <em>displayCount</em> is set. The default is 'Show {count} more'
+   */
+  @Prop()
+  public showMoreLabel?: TranslateResult;
+
+  /**
+   * Label for the expanded Show more toggle if <em>displayCount</em> is set. The default is 'Show less'.
+   */
+  @Prop()
+  public showLessLabel?: TranslateResult;
+
   private get selected(): Record<string, boolean> {
     const result: Record<string, boolean> = {};
     (this.multiple ? (this.value as string[]) : [this.value as string]).forEach((v) => (result[v] = true));
@@ -75,5 +97,31 @@ export default class NeonFilterList extends Vue {
      * (multi-select).
      */
     this.$emit('input', value);
+  }
+
+  private displayShowAllToggle() {
+    return this.displayCount && this.items.length > this.displayCount;
+  }
+
+  private toggleShowAll() {
+    this.showAll = !this.showAll;
+  }
+
+  private get visibleItems() {
+    return this.displayShowAllToggle() && !this.showAll
+      ? this.items.filter((item, index) => !this.displayCount || index < this.displayCount)
+      : this.items;
+  }
+
+  private computedShowMoreLabel() {
+    return this.showMoreLabel || this.$t('Show {count} more', { count: this.items.length - this.visibleItems.length });
+  }
+
+  private computedShowLessLabel() {
+    return this.showLessLabel || this.$t('Show less');
+  }
+
+  private get toggleShowAllLabel() {
+    return this.showAll ? this.computedShowLessLabel() : this.computedShowMoreLabel();
   }
 }

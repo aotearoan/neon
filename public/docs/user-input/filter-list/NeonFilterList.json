@@ -75,6 +75,30 @@
         "func": false,
         "value": "NeonFunctionalColor.LowContrast"
       }
+    },
+    {
+      "name": "displayCount",
+      "tags": {},
+      "description": "The number of visible items. If there are more items they will be placed behind an expansion\nbutton which toggles displaying displayCount items and all items.",
+      "type": {
+        "name": "number"
+      }
+    },
+    {
+      "name": "showMoreLabel",
+      "tags": {},
+      "description": "Label for the Show more toggle if <em>displayCount</em> is set. The default is 'Show {count} more'",
+      "type": {
+        "name": "TranslateResult"
+      }
+    },
+    {
+      "name": "showLessLabel",
+      "tags": {},
+      "description": "Label for the expanded Show more toggle if <em>displayCount</em> is set. The default is 'Show less'.",
+      "type": {
+        "name": "TranslateResult"
+      }
     }
   ],
   "events": [
