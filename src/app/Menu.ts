@@ -355,6 +355,13 @@ export class Menu {
                 component: 'NeonFile',
               },
               {
+                path: 'filter-list',
+                page: 'FilterList',
+                name: 'Filter List',
+                component: 'NeonFilterList',
+                keywords: 'select dropdown filter multiple',
+              },
+              {
                 path: 'input',
                 page: 'Input',
                 name: 'Input / Textarea',

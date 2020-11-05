@@ -22,6 +22,7 @@ import NeonExpansionIndicator from './components/presentation/expansion-indicato
 import NeonExpansionPanel from './components/presentation/expansion-panel/NeonExpansionPanel.vue';
 import NeonFieldGroup from './components/user-input/field-group/NeonFieldGroup.vue';
 import NeonFile from './components/user-input/file/NeonFile.vue';
+import NeonFilterList from './components/user-input/filter-list/NeonFilterList.vue';
 import NeonFooter from './components/layout/footer/NeonFooter.vue';
 import NeonGrid from './components/layout/grid/NeonGrid.vue';
 import NeonGridArea from './components/layout/grid/grid-area/NeonGridArea.vue';
@@ -72,6 +73,7 @@ import { NeonDropdownPlacementObject } from './common/models/NeonDropdownPlaceme
 import { NeonDropdownPlacementUtils } from './common/utils/NeonDropdownPlacementUtils';
 import { NeonDropdownStyle } from './common/enums/NeonDropdownStyle';
 import { NeonEventBus } from './common/utils/NeonEventBus';
+import { NeonFilterListItem } from './common/models/NeonFilterListItem';
 import { NeonFormattedDate } from './common/models/NeonFormattedDate';
 import { NeonFunctionalColor } from './common/enums/NeonFunctionalColor';
 import { NeonGridModel } from './common/models/NeonGridModel';
@@ -137,6 +139,7 @@ const components: { [s: string]: VueConstructor } = {
   NeonExpansionPanel,
   NeonFieldGroup,
   NeonFile,
+  NeonFilterList,
   NeonFooter,
   NeonGrid,
   NeonGridArea,
@@ -216,6 +219,8 @@ export {
   NeonExpansionPanel,
   NeonFieldGroup,
   NeonFile,
+  NeonFilterList,
+  NeonFilterListItem,
   NeonFormattedDate,
   NeonFooter,
   NeonFunctionalColor,

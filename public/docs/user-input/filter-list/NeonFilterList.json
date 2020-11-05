@@ -1,0 +1,91 @@
+{
+  "description": "<p><strong>NeonFilterList</strong> is an alternative component to a select where the values are displayed in a\nvisible list to the user. This component is particularly useful for presenting filters to the user and also provides\nthe option of displaying the item counts with each list item.</p>",
+  "tags": {},
+  "exportName": "default",
+  "displayName": "NeonFilterList",
+  "props": [
+    {
+      "name": "items",
+      "tags": {},
+      "description": "The list if items to display",
+      "type": {
+        "name": "Array",
+        "elements": [
+          {
+            "name": "NeonFilterListItem"
+          }
+        ]
+      },
+      "required": true
+    },
+    {
+      "name": "value",
+      "tags": {},
+      "description": "Either a single string, indicating the key of the selected item or an array of selected keys in the case\nmultiple = true.",
+      "type": {
+        "name": "union",
+        "elements": [
+          {
+            "name": "string"
+          },
+          {
+            "name": "Array",
+            "elements": [
+              {
+                "name": "string"
+              }
+            ]
+          }
+        ]
+      },
+      "required": true
+    },
+    {
+      "name": "multiple",
+      "tags": {},
+      "description": "Allow multi-select of items.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    },
+    {
+      "name": "size",
+      "tags": {},
+      "description": "The size of the list items - Small, Medium or Large.",
+      "type": {
+        "name": "NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "color",
+      "tags": {},
+      "description": "The color of the selected list items..",
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "input",
+      "description": "emitted when the user selects or toggles the selection of an item..",
+      "type": {
+        "names": [
+          "string | string[]"
+        ]
+      }
+    }
+  ]
+}
