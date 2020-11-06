@@ -29,4 +29,17 @@ a[href]:not(.neon-link--no-style),
       opacity: 1;
     }
   }
+
+  &.neon-link--outline-text.neon-link--external-link {
+    &:after {
+      width: calc(100% - #{6 * $base-space});
+    }
+
+    &:hover,
+    &:focus {
+      &:after {
+        width: calc(100% - #{6 * $base-space});
+      }
+    }
+  }
 }
