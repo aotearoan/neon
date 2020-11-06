@@ -60,6 +60,10 @@ export class Menu {
             name: 'Design',
             children: [
               {
+                path: 'accessibility',
+                page: 'Accessibility',
+              },
+              {
                 path: 'color',
                 page: 'Color',
                 anchors: ['Introduction', 'Brand palettes', 'Functional palettes', 'Neutral palettes', 'Color classes'],
