@@ -13,53 +13,56 @@
       `neon-dropdown--${color}`,
     ]"
   >
-    <div ref="dropdownButton" v-if="dropdownStyle === 'text-button' || dropdownStyle === 'solid-button'">
-      <neon-button
-        class="neon-dropdown__button"
-        :button-style="dropdownStyle === 'text-button' ? 'text' : 'solid'"
-        :color="color"
-        :size="size"
-        :indicator="indicator"
-        :indicator-expanded="value"
-        :disabled="disabled"
-        :label="label"
-        :icon="icon"
-        @click="toggleOpen()"
-        @blur="onBlur()"
-        @focus="onFocus()"
-        aria-haspopup="true"
-        :aria-expanded="value"
-      />
-    </div>
-    <div
-      v-else
-      @click="toggleOpen"
-      @keydown.enter="toggleOpen"
-      @keydown.space="toggleOpen"
-      @keypress.space.prevent=""
-      ref="dropdownButton"
-      role="button"
-      :tabindex="!disabled ? 0 : undefined"
-      class="neon-dropdown__badge"
-    >
-      <neon-badge
-        :icon="icon"
-        :label="label"
-        :size="size"
-        :color="color"
-        :disabled="disabled"
-        :circular="dropdownStyle === 'circular-badge'"
-        :image="image"
-        :imageAlt="imageAlt"
-      />
-      <neon-expansion-indicator
-        v-if="indicator"
-        class="neon-button__indicator"
-        :disabled="disabled"
-        :color="color"
-        :expanded="value"
-      />
-    </div>
+    <!-- @slot optionally replace the dropdown button with a custom control -->
+    <slot name="dropdown-button">
+      <div ref="dropdownButton" v-if="dropdownStyle === 'text-button' || dropdownStyle === 'solid-button'">
+        <neon-button
+          class="neon-dropdown__button"
+          :button-style="dropdownStyle === 'text-button' ? 'text' : 'solid'"
+          :color="color"
+          :size="size"
+          :indicator="indicator"
+          :indicator-expanded="value"
+          :disabled="disabled"
+          :label="label"
+          :icon="icon"
+          @click="toggleOpen()"
+          @blur="onBlur()"
+          @focus="onFocus()"
+          aria-haspopup="true"
+          :aria-expanded="value"
+        />
+      </div>
+      <div
+        v-else
+        @click="toggleOpen"
+        @keydown.enter="toggleOpen"
+        @keydown.space="toggleOpen"
+        @keypress.space.prevent=""
+        ref="dropdownButton"
+        role="button"
+        :tabindex="!disabled ? 0 : undefined"
+        class="neon-dropdown__badge"
+      >
+        <neon-badge
+          :icon="icon"
+          :label="label"
+          :size="size"
+          :color="color"
+          :disabled="disabled"
+          :circular="dropdownStyle === 'circular-badge'"
+          :image="image"
+          :imageAlt="imageAlt"
+        />
+        <neon-expansion-indicator
+          v-if="indicator"
+          class="neon-button__indicator"
+          :disabled="disabled"
+          :color="color"
+          :expanded="value"
+        />
+      </div>
+    </slot>
     <div class="neon-dropdown__click-blocker" />
     <div
       ref="dropdownContent"
