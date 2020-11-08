@@ -62,11 +62,11 @@ export default class ApiDocs extends Vue {
   }
 
   private get hasProps() {
-    return this.apiModel.props.length > 0;
+    return this.apiModel.props?.length > 0;
   }
 
   private get hasEvents() {
-    return this.apiModel.events.length > 0;
+    return this.apiModel.events?.length > 0;
   }
 
   private get hasSlots() {
