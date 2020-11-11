@@ -148,7 +148,7 @@ $border-radius-button-xl: 0 !default;
 $border-width-tabs: 2px !default;
 
 /* chips */
-$border-radius-chip: 0 !default;
+$border-radius-chip: $border-radius !default;
 
 /* scrollbars */
 $width-scrollbar: 6px !default;

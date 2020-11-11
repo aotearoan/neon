@@ -2,12 +2,12 @@
   .neon-dropdown__content {
     &--top-left,
     &--top-right {
-      bottom: $size + $offset;
+      bottom: calc(100% + #{$offset});
     }
 
     &--bottom-left,
     &--bottom-right {
-      top: $size + $offset;
+      top: calc(100% + #{$offset});
     }
 
     &--left-top,

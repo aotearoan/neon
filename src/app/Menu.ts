@@ -391,6 +391,12 @@ export class Menu {
                 component: 'NeonPassword',
               },
               {
+                path: 'search',
+                page: 'Search',
+                keywords: 'select',
+                component: 'NeonSearch',
+              },
+              {
                 path: 'select',
                 page: 'Select',
                 keywords: 'dropdown',
