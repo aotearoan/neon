@@ -148,10 +148,7 @@ export default class Search extends Vue {
       multiple = false,
     ) => {
       const fltr = filter.toLowerCase();
-      if (fltr === '') {
-        // only display options when the user starts typing
-        return [];
-      } else if (multiple) {
+      if (multiple) {
         return model
           .filter((m) => !(selected as NeonSearchOption[]).find((s) => s.key === m.key))
           .filter((item) => item.label.toString().toLowerCase().indexOf(fltr) >= 0);
@@ -165,21 +162,21 @@ export default class Search extends Vue {
 
   private examples = [
     {
-      title: `Multiple selection (type 'item')`,
+      title: `Multiple selection`,
       template: `<div class="neon-vertically-spaced">
   <neon-search :multiple="true" placeholder="Search" :options="filterOptions(modelWithIcons, searchMulti, filterMulti, true)" v-model="searchMulti" @filter-changed="filterMulti = $event" />
 </div>`,
       data: this.data,
     },
     {
-      title: `Colored chips (type 'item')`,
+      title: `Colored chips`,
       template: `<div class="neon-vertically-spaced">
   <neon-search :multiple="true" placeholder="Search" :options="filterOptions(coloredChips, searchMulti, filterMulti, true)" v-model="searchMulti" @filter-changed="filterMulti = $event" />
 </div>`,
       data: this.data,
     },
     {
-      title: `Search sizes (e.g. type 'avocado')`,
+      title: `Search sizes`,
       template: `<div class="neon-vertically-spaced">
   <neon-search size="s" placeholder="Search" :options="filterOptions(model, searchSmall, filterSmall)" v-model="searchSmall" @filter-changed="filterSmall = $event" />
   <neon-search size="m" placeholder="Search" :options="filterOptions(model, searchMedium, filterMedium)" v-model="searchMedium" @filter-changed="filterMedium = $event" />
@@ -188,7 +185,7 @@ export default class Search extends Vue {
       data: this.data,
     },
     {
-      title: `Search with colors and icons (e.g. type 'item')`,
+      title: `Search with colors and icons`,
       template: `<div class="neon-vertically-spaced">
   <neon-search color="brand" placeholder="Search" :options="filterOptions(modelWithIcons, searchBrand, filterBrand)" v-model="searchBrand" @filter-changed="filterBrand = $event" />
   <neon-search color="info" placeholder="Search" :options="filterOptions(modelWithIcons, searchInfo, filterInfo)" v-model="searchInfo" @filter-changed="filterInfo = $event" />

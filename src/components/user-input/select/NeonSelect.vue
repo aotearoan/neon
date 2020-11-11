@@ -48,11 +48,10 @@
             @mouseover="changeHighlighted(option.key)"
           >
             <div class="neon-select__option-container">
-              <!-- @slot provide a custom template for an option.
-              Available properties: <strong>option</strong> (<em>NeonSelectOption</em>) and all properties provided to
-              the select component. This slot is purely for formatting the option, all accessibility actions still
-              apply. -->
-              <slot name="option">
+              <!-- @slot provide a custom template for an option.<br />Bindings: <strong>option</strong>
+              (<em>NeonSelectOption</em>). This slot is purely for formatting the option, all accessibility actions
+              still apply. -->
+              <slot name="option" :option="option">
                 <neon-switch
                   v-if="multiple"
                   :size="size === 'l' ? 'm' : 's'"

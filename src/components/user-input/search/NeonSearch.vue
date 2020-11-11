@@ -80,11 +80,10 @@
             @mouseover="changeHighlighted(option.key)"
           >
             <div class="neon-search__option-container">
-              <!-- @slot provide a custom template for an option.
-            Available properties: <strong>option</strong> (<em>NeonSearchOption</em>) and all properties provided to
-            the search component. This slot is purely for formatting the option, all accessibility actions still
-            apply. -->
-              <slot name="option">
+              <!-- @slot provide a custom template for an option.<br />Bindings: <strong>option</strong>
+              (<em>NeonSearchOption</em>). This slot is purely for formatting the option, all accessibility actions
+              still apply. -->
+              <slot name="option" :option="option">
                 <neon-icon class="neon-search__option-icon" v-if="option.icon" :name="option.icon" />
                 <span class="neon-search__option-label">{{ option.label }}</span>
               </slot>

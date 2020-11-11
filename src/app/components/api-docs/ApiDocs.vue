@@ -134,7 +134,10 @@
           <section class="api-docs__section" v-if="hasSlots">
             <h3 class="neon-h4 api-docs__title">Slots</h3>
             <div v-for="slot in apiModel.slots" :key="slot.name" class="api-docs__slot">
-              <div class="api-docs__attribute api-docs__name">{{ slot.name }}</div>
+              <div class="api-docs__attribute api-docs__name">
+                <span>{{ slot.name }}</span>
+                <neon-label v-if="slot.scoped" size="xs" color="brand" label="scoped" />
+              </div>
               <div
                 class="api-docs__attribute api-docs__description"
                 v-if="slot.description"
