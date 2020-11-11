@@ -1,0 +1,5 @@
+.neon-color {
+  &__input:not(:focus-within) + .neon-color__indicator {
+    box-shadow: none !important;
+  }
+}

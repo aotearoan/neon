@@ -1,0 +1,71 @@
+.neon-color {
+  position: relative;
+  min-width: 40 * $base-space;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    z-index: 1;
+
+    input {
+      cursor: pointer;
+    }
+
+    .neon-icon {
+      display: none;
+    }
+  }
+
+  &__indicator {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0.5 * $border-radius;
+    margin: 2 * $base-space;
+  }
+
+  &--s {
+    .neon-color__input {
+      width: $size-s;
+    }
+    .neon-color__indicator {
+      width: $size-s - 3 * $base-space;
+      height: $size-s - 3 * $base-space;
+      margin: 1.5 * $base-space;
+    }
+
+    .neon-input .neon-icon {
+      right: $size-s + $base-space;
+    }
+  }
+
+  &--m {
+    .neon-color__input {
+      width: $size-m;
+    }
+
+    .neon-color__indicator {
+      width: $size-m - 4 * $base-space;
+      height: $size-m - 4 * $base-space;
+    }
+
+    .neon-input .neon-icon {
+      right: $size-m + $base-space;
+    }
+  }
+
+  &--l {
+    .neon-color__input {
+      width: $size-l;
+    }
+    .neon-color__indicator {
+      width: $size-l - 4 * $base-space;
+      height: $size-l - 4 * $base-space;
+    }
+
+    .neon-input .neon-icon {
+      right: $size-l + 2 * $base-space;
+    }
+  }
+}

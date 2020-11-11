@@ -65,7 +65,7 @@ export default class NeonInput extends Vue {
 
   /**
    * The name of a clickable icon to display inside the input. This is used for clearing contents or e.g. in the case of
-   * NeonPassword toggle showing/hiding the password.
+   * NeonPassword toggle showing/hiding the password. Defaults to <em>times</em> (for clearing the input's contents).
    */
   @Prop()
   private icon?: string;

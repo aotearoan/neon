@@ -20,7 +20,7 @@ const routes: Array<RouteConfig> = [
               (child) =>
                 ({
                   path: `/${item.path}/${child.path}`,
-                  name: child.name || child.page,
+                  name: `${item.path}-${child.name || child.page}`,
                   meta: { title: child.name || child.page },
                   component: () => import(`./views/${item.path}/${child.path}/${child.page}.vue`),
                 } as RouteConfig),
