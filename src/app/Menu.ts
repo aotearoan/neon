@@ -339,6 +339,12 @@ export class Menu {
                 component: 'NeonChip',
               },
               {
+                path: 'color',
+                page: 'Color',
+                keywords: 'colour picker',
+                component: 'NeonColor',
+              },
+              {
                 path: 'drop-zone',
                 page: 'DropZone',
                 name: 'Drop Zone',

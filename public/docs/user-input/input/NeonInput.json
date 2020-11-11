@@ -87,7 +87,7 @@
     {
       "name": "icon",
       "tags": {},
-      "description": "The name of a clickable icon to display inside the input. This is used for clearing contents or e.g. in the case of\nNeonPassword toggle showing/hiding the password.",
+      "description": "The name of a clickable icon to display inside the input. This is used for clearing contents or e.g. in the case of\nNeonPassword toggle showing/hiding the password. Defaults to <em>times</em> (for clearing the input's contents).",
       "type": {
         "name": "string"
       }

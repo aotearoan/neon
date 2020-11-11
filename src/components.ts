@@ -14,6 +14,7 @@ import NeonCardBody from './components/layout/card/body/NeonCardBody.vue';
 import NeonCardFooter from './components/layout/card/footer/NeonCardFooter.vue';
 import NeonCardHeader from './components/layout/card/header/NeonCardHeader.vue';
 import NeonChip from './components/user-input/chip/NeonChip.vue';
+import NeonColor from './components/user-input/color/NeonColor.vue';
 import NeonDrawer from './components/layout/drawer/NeonDrawer.vue';
 import NeonDropdown from './components/presentation/dropdown/NeonDropdown.vue';
 import NeonDropdownMenu from './components/navigation/dropdown-menu/NeonDropdownMenu.vue';
@@ -133,6 +134,7 @@ const components: { [s: string]: VueConstructor } = {
   NeonCardFooter,
   NeonCardHeader,
   NeonChip,
+  NeonColor,
   NeonDrawer,
   NeonDropdown,
   NeonDropdownMenu,
@@ -207,6 +209,7 @@ export {
   NeonClipboardService,
   NeonClipboardSupport,
   NeonClosableUtils,
+  NeonColor,
   NeonDateUtils,
   NeonDrawer,
   NeonDropdown,

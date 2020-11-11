@@ -21,7 +21,7 @@
       width: $font-size * $line-height-one;
       height: $font-size * $line-height-one;
       right: 0.5 * ($size - $font-size);
-      top: 0.5 * ($size - $font-size);
+      top: 0.5 * ($size - $font-size) - 1px;
       cursor: default;
       border-radius: 50%;
 
