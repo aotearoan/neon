@@ -48,7 +48,8 @@
     }
   }
 
-  &__description {
+  .api-docs__description {
+    display: inline !important;
     letter-spacing: normal;
   }
 

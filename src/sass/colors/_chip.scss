@@ -1,34 +1,32 @@
 .neon-chip {
+  border: $border-width $border-style $border-color-toggle-chip;
+  background-color: rgba($background-color, 0.125);
+  @include color-with-svg($border-color-toggle-chip);
+
+  &:not(.neon-chip--disabled) {
+    &:focus,
+    &:hover {
+      background-color: rgba($border-color-toggle-chip, 0.33);
+    }
+  }
+
   @each $color, $palette in $functional-colors {
-    &--#{$color} {
-      background-color: rgba(map-get($palette, $color-chip), 0.125);
-      color: map-get($palette, $color-chip);
+    &--#{$color}:not(.neon-chip--disabled) {
+      border-color: map-get($palette, $color-toggle-chip);
+      background-color: rgba(map-get($palette, $color-toggle-chip), $opacity-toggle-chip);
+      @include color-with-svg(map-get($palette, $color-toggle-chip));
 
-      .neon-chip__close {
-        path {
-          fill: map-get($palette, $color-chip);
-        }
-      }
-
-      &:hover:not(.neon-chip--disabled) {
-        background-color: rgba(map-get($palette, $color-chip), 0.25);
-      }
-
-      &:focus:not(.neon-chip--disabled) {
-        background-color: map-get($palette, $color-chip);
-        @include color-with-svg($color-inverse);
+      &:focus,
+      &:hover {
+        background-color: rgba(map-get($palette, $color-toggle-chip), 2 * $opacity-toggle-chip);
       }
     }
   }
 
   &--disabled {
-    background-color: $color-disabled-dark;
+    opacity: 0.85;
     color: $color-disabled-light;
-
-    .neon-chip__close {
-      path {
-        fill: $color-disabled-light;
-      }
-    }
+    @include color-with-svg($color-disabled-light);
+    border-color: $border-color-toggle-chip;
   }
 }

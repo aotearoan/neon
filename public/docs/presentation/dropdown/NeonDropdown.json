@@ -170,6 +170,10 @@
   ],
   "slots": [
     {
+      "name": "dropdown-button",
+      "description": "optionally replace the dropdown button with a custom control"
+    },
+    {
       "name": "default",
       "description": "The content of the open dropdown"
     }
