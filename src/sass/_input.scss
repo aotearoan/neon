@@ -80,4 +80,11 @@
       letter-spacing: 2 * $letter-spacing-m;
     }
   }
+
+  &__text[type='number'],
+  &__text[inputmode='tel'],
+  &__text[inputmode='decimal'],
+  &__text[inputmode='numeric'] {
+    font-variant: tabular-nums;
+  }
 }

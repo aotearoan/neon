@@ -28,18 +28,7 @@
       },
       "description": "The breakpoint to switch horizontal cards to vertical cards. Accepts <em>Mobile | MobileLarge | Tablet</em> ONLY.",
       "type": {
-        "name": "union",
-        "elements": [
-          {
-            "name": "TSTypeReference"
-          },
-          {
-            "name": "TSTypeReference"
-          },
-          {
-            "name": "TSTypeReference"
-          }
-        ]
+        "name": "NeonResponsive"
       },
       "defaultValue": {
         "func": false,

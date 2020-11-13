@@ -18,5 +18,5 @@ export default class NeonCard extends Vue {
    * @type NeonResponsive
    */
   @Prop({ default: NeonResponsive.MobileLarge })
-  public horizontalBreakpoint!: NeonResponsive.Mobile | NeonResponsive.MobileLarge | NeonResponsive.Tablet;
+  public horizontalBreakpoint!: NeonResponsive;
 }

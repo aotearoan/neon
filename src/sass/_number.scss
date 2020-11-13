@@ -1,0 +1,35 @@
+.neon-number {
+  &__wrapper {
+    &--s {
+      width: 4 * $size-s;
+    }
+
+    &--m {
+      width: 4 * $size-m;
+    }
+
+    &--l {
+      width: 4 * $size-l;
+    }
+
+    .neon-input__textfield {
+      font-variant: tabular-nums;
+      border-right: none;
+
+      &:focus {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      & {
+        -moz-appearance: textfield;
+      }
+    }
+  }
+}

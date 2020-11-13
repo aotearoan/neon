@@ -391,6 +391,12 @@ export class Menu {
                 keywords: 'chips',
               },
               {
+                path: 'number',
+                page: 'Number',
+                keywords: 'input',
+                component: 'NeonNumber',
+              },
+              {
                 path: 'password',
                 page: 'Password',
                 keywords: 'input',

@@ -30,6 +30,7 @@ export interface EventModel {
 
 export interface NameModel {
   name: string;
+  elements?: NameModel[];
 }
 
 export interface PropTypeModel {

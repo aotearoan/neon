@@ -38,6 +38,7 @@ import NeonMenu from './components/navigation/menu/NeonMenu.vue';
 import NeonModal from './components/layout/modal/NeonModal.vue';
 import NeonNote from './components/feedback/note/NeonNote.vue';
 import NeonNotificationCounter from './components/feedback/notification-counter/NeonNotificationCounter.vue';
+import NeonNumber from './components/user-input/number/NeonNumber.vue';
 import NeonPage from './components/layout/page/NeonPage.vue';
 import NeonPassword from './components/user-input/password/NeonPassword.vue';
 import NeonSideNav from './components/layout/side-nav/NeonSideNav.vue';
@@ -81,6 +82,7 @@ import { NeonFunctionalColor } from './common/enums/NeonFunctionalColor';
 import { NeonGridModel } from './common/models/NeonGridModel';
 import { NeonHorizontalPosition } from './common/enums/NeonHorizontalPosition';
 import { NeonIconRegistry } from './common/utils/NeonIconRegistry';
+import { NeonInputMode } from './common/enums/NeonInputMode';
 import { NeonInputType } from './common/enums/NeonInputType';
 import { NeonLabelSize } from './common/enums/NeonLabelSize';
 import { NeonListItem } from './common/models/NeonListItem';
@@ -158,6 +160,7 @@ const components: { [s: string]: VueConstructor } = {
   NeonModal,
   NeonNote,
   NeonNotificationCounter,
+  NeonNumber,
   NeonPage,
   NeonPassword,
   NeonSearch,
@@ -236,6 +239,7 @@ export {
   NeonIcon,
   NeonInput,
   NeonInputIndicator,
+  NeonInputMode,
   NeonInputType,
   NeonHorizontalPosition,
   NeonIconRegistry,
@@ -253,6 +257,7 @@ export {
   NeonModeUtils,
   NeonNote,
   NeonNotificationCounter,
+  NeonNumber,
   NeonOrientation,
   NeonOutlineStyle,
   NeonPage,
