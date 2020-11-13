@@ -1,0 +1,135 @@
+{
+  "description": "<p>\n  The <strong>NeonNumber</strong> component is the equivalent of an <strong>&lt;input type=\"number\" /&gt;</strong>\n  with -/+ spin buttons. This is intended for simple (unformatted) number inputs where there is a step, min and/or\n  max. For all other number inputs it is recommended to use\n  <a href=\"/user-input/input\"><strong>NeonInput</strong></a> directly and customize it to suit your needs.\n</p>\n<p><strong>NeonNumber</strong> supports all of the properties found on an HTML &lt;input&gt;.</p>",
+  "tags": {},
+  "exportName": "default",
+  "displayName": "NeonNumber",
+  "props": [
+    {
+      "name": "value",
+      "tags": {},
+      "description": "The value of the number input. Either a valid number or null.",
+      "type": {
+        "name": "union",
+        "elements": [
+          {
+            "name": "number"
+          },
+          {
+            "name": "null"
+          }
+        ]
+      },
+      "required": true
+    },
+    {
+      "name": "min",
+      "tags": {},
+      "description": "The minimum value the input can accept.",
+      "type": {
+        "name": "number"
+      }
+    },
+    {
+      "name": "max",
+      "tags": {},
+      "description": "The maximum value the input can accept.",
+      "type": {
+        "name": "number"
+      }
+    },
+    {
+      "name": "step",
+      "tags": {},
+      "description": "The step value for the spin buttons.",
+      "type": {
+        "name": "number"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "1"
+      }
+    },
+    {
+      "name": "color",
+      "tags": {},
+      "description": "The component color.",
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    },
+    {
+      "name": "size",
+      "tags": {},
+      "description": "The component size.",
+      "type": {
+        "name": "NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "disabled",
+      "tags": {},
+      "description": "Whether or not the component is disabled.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "inputmode",
+      "tags": {},
+      "description": "The HTML inputmode of the component. Either 'numeric' or 'decimal'.",
+      "type": {
+        "name": "NeonInputMode"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonInputMode.Numeric"
+      }
+    },
+    {
+      "name": "incrementLabel",
+      "tags": {},
+      "description": "ARIA label for the increment spinner button.",
+      "type": {
+        "name": "TranslateResult"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Increment'"
+      }
+    },
+    {
+      "name": "decrementLabel",
+      "tags": {},
+      "description": "ARIA label for the decrement spinner button.",
+      "type": {
+        "name": "TranslateResult"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Decrement'"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "input",
+      "type": {
+        "names": [
+          "undefined"
+        ]
+      }
+    }
+  ]
+}

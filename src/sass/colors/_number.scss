@@ -1,0 +1,56 @@
+.neon-number {
+  @each $color, $palette in $functional-colors {
+    $number-component-color: map-get($palette, $border-color-input-selected);
+    &__wrapper--#{$color}:not(.neon-number__wrapper--disabled) {
+      .neon-input__textfield {
+        border-color: $number-component-color;
+
+        &:focus {
+          border-right: $border-width $border-style $number-component-color;
+        }
+      }
+
+      .neon-button.neon-number__decrement:not(.neon-button--disabled),
+      .neon-button.neon-number__increment:not(.neon-button--disabled) {
+        background-color: rgba($number-component-color, 0.0625);
+
+        .neon-svg--fill {
+          fill: $color-text;
+        }
+
+        &:hover,
+        &:focus {
+          background-color: rgba($number-component-color, 0.25);
+          box-shadow: none;
+
+          .neon-svg--fill {
+            fill: $color-text;
+          }
+        }
+      }
+
+      .neon-button.neon-number__decrement.neon-button--disabled,
+      .neon-button.neon-number__increment.neon-button--disabled {
+        border-color: $number-component-color;
+      }
+    }
+  }
+
+  &__wrapper .neon-button--disabled {
+    &.neon-number__decrement,
+    &.neon-number__increment {
+      background-color: $color-disabled-dark;
+
+      .neon-svg--fill {
+        fill: $color-disabled-light;
+      }
+    }
+  }
+
+  &__wrapper--disabled .neon-button--disabled {
+    &.neon-number__decrement,
+    &.neon-number__increment {
+      border: $border-width $border-style $color-disabled-dark;
+    }
+  }
+}

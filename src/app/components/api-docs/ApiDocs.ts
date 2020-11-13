@@ -25,8 +25,18 @@ export default class ApiDocs extends Vue {
     } else if (prop.type) {
       const type: PropTypeModel = prop.type;
 
-      if (this.isArray(prop)) {
-        return type.elements?.[0].name;
+      if (this.isArray(prop) || prop.type.name === 'union') {
+        return type.elements
+          ?.map((e) => {
+            if (e.name === 'Array' && e.elements) {
+              const elementNames =
+                e.elements.length > 1 ? `(${e.elements.map((ae) => ae.name).join(' | ')}})` : e.elements[0].name;
+              return `${elementNames}[]`;
+            }
+
+            return e.name;
+          })
+          .join(' | ');
       }
 
       return type.name;

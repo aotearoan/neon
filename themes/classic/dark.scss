@@ -31,7 +31,8 @@ $color-outline: l1 !default;
 $label-color: $color-neutral-l1 !default;
 
 $color-disabled-light: $color-neutral-d2 !default;
-$color-disabled-dark: rgba($color-neutral-d3, 0.5) !default;
+// cannot use opacity for border colors so this needs to be hardcoded
+$color-disabled-dark: #383838 !default;
 
 // switch
 $color-switch-off: $color-neutral-d2 !default;
