@@ -16,7 +16,7 @@
 
   @each $color, $palette in $functional-colors {
     &.neon-switch--#{$color} {
-      &.neon-switch--checked {
+      &.neon-switch--checked:not(.neon-switch--disabled) {
         .neon-switch__switch {
           background-color: map-get($palette, $color-switch-on);
           box-shadow: $inset-shadow;
@@ -36,15 +36,15 @@
   &.neon-switch--disabled {
     .neon-switch__switch,
     .neon-switch__indicator {
-      box-shadow: none !important;
+      box-shadow: none;
     }
 
     .neon-switch__switch {
-      background-color: $color-switch-disabled !important;
+      background-color: $color-switch-disabled;
     }
 
     .neon-switch__indicator {
-      background-color: $color-switch-indicator-disabled !important;
+      background-color: $color-switch-indicator-disabled;
     }
   }
 }
@@ -66,7 +66,7 @@
 
   @each $color, $palette in $functional-colors {
     &.neon-switch--#{$color} {
-      &.neon-switch--checked {
+      &.neon-switch--checked:not(.neon-switch--disabled) {
         .neon-switch__switch {
           border-color: map-get($palette, $color-switch-on);
 
@@ -84,11 +84,11 @@
 
   &.neon-switch--disabled {
     .neon-switch__switch {
-      border-color: rgba($color-disabled-light, 0.5) !important;
+      border-color: rgba($color-disabled-light, 0.5);
     }
 
     .neon-switch__indicator {
-      background-color: rgba($color-disabled-light, 0.5) !important;
+      background-color: rgba($color-disabled-light, 0.5);
     }
   }
 }

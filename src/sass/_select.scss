@@ -18,6 +18,14 @@
     user-select: none;
     cursor: pointer;
 
+    &--disabled {
+      cursor: not-allowed;
+    }
+
+    &-placeholder {
+      cursor: default;
+    }
+
     &-container {
       display: flex;
       flex-direction: row;

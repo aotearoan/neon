@@ -193,4 +193,8 @@
       @include checkbox-style($checkbox-height);
     }
   }
+
+  &--disabled {
+    cursor: not-allowed;
+  }
 }

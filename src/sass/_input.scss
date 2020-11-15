@@ -32,7 +32,7 @@
   }
 
   &.neon-input--with-icon {
-    .neon-icon:not(.neon--disabled) {
+    .neon-icon {
       cursor: pointer;
 
       &:active {

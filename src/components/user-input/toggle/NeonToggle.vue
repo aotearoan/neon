@@ -6,7 +6,7 @@
       `neon-toggle--${color}`,
       `neon-toggle--${orientation}`,
       `neon-toggle--${size}`,
-      { 'neon-toggle--disabled neon--disabled': disabled },
+      { 'neon-toggle--disabled': disabled },
     ]"
     role="radiogroup"
   >
@@ -15,7 +15,7 @@
       :key="option.key"
       class="neon-toggle__label no-style"
       :class="{
-        'neon-toggle__label--disabled neon--disabled': disabled || option.disabled,
+        'neon-toggle__label--disabled': disabled || option.disabled,
         'neon-toggle__label--checked': option.key === value,
         'neon-toggle__label--with-icon': option.icon,
       }"

@@ -6,54 +6,52 @@
   }
 
   &--radio-buttons {
-    .neon-toggle__label {
-      color: $color-radio-button-label;
-    }
-
     @each $color, $palette in $functional-colors {
-      &.neon-toggle--#{$color} {
+      &.neon-toggle--#{$color}:not(.neon-toggle--disabled) {
         $toggle-color: map-get($palette, $color-toggle);
 
-        .neon-toggle__radio-button {
-          border: $border-width $border-style $border-color-toggle;
-          background: $background-radio-button;
-        }
+        .neon-toggle__label:not(.neon-toggle__label--disabled) {
+          .neon-toggle__radio-button {
+            border: $border-width $border-style $border-color-toggle;
+            background: $background-radio-button;
+          }
 
-        .neon-toggle__label {
-          &:hover:not(neon-toggle__label--disabled),
-          &:focus:not(neon-toggle__label--disabled) {
+          color: $color-radio-button-label;
+
+          &:hover,
+          &:focus {
             .neon-toggle__radio-button {
               background: rgba($border-color-toggle, 0.375);
             }
           }
-        }
 
-        .neon-toggle__label--checked {
-          color: $color-text;
+          &.neon-toggle__label--checked {
+            color: $color-text;
 
-          .neon-toggle__radio-button {
-            border: $border-width $border-style $toggle-color;
+            .neon-toggle__radio-button {
+              border: $border-width $border-style $toggle-color;
 
-            &-indicator {
-              background-color: $toggle-color;
-              box-shadow: $box-shadow;
+              &-indicator {
+                background-color: $toggle-color;
+                box-shadow: $box-shadow;
+              }
             }
           }
         }
+      }
+    }
 
-        &.neon-toggle--disabled,
-        .neon-toggle__label--disabled {
-          color: $color-disabled-light;
+    &.neon-toggle--disabled .neon-toggle__label,
+    .neon-toggle__label--disabled {
+      color: $color-disabled-light;
 
-          .neon-toggle__radio-button {
-            background: $color-disabled-dark;
-            color: $color-disabled-light;
-            border-color: $color-disabled-dark;
+      .neon-toggle__radio-button {
+        background: $color-disabled-dark;
+        color: $color-disabled-light;
+        border-color: $color-disabled-dark;
 
-            &-indicator {
-              background-color: $color-disabled-light;
-            }
-          }
+        &-indicator {
+          background-color: $color-disabled-light;
         }
       }
     }

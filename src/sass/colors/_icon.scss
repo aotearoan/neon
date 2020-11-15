@@ -11,7 +11,7 @@
   }
 
   @each $color, $palette in $functional-colors {
-    &--#{$color} {
+    &--#{$color}:not(.neon-icon--disabled) {
       @include svg-colors(map-get($palette, $color-icon));
     }
   }
@@ -22,11 +22,11 @@
 
   &--disabled {
     .neon-svg--fill {
-      fill: $color-disabled-light !important;
+      fill: $color-disabled-light;
     }
 
     .neon-svg--stroke {
-      stroke: $color-disabled-light !important;
+      stroke: $color-disabled-light;
     }
   }
 }

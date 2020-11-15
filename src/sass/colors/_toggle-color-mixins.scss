@@ -2,7 +2,7 @@
   &:not(.neon-toggle--disabled).neon-toggle--#{$color} {
     color: rgba($color-text, 0.7);
 
-    label {
+    .neon-toggle__label:not(.neon-toggle__label--disabled) {
       border: $border-width $border-style $border-color-toggle;
 
       &:first-child {
@@ -24,8 +24,8 @@
         background-color: rgba($toggle-color, 0.125);
       }
 
-      &:hover:not(.neon-toggle__label--disabled):not(.neon-toggle__label--checked),
-      &:focus:not(.neon-toggle__label--disabled):not(.neon-toggle__label--checked) {
+      &:hover:not(.neon-toggle__label--checked),
+      &:focus:not(.neon-toggle__label--checked) {
         background-color: rgba($border-color-toggle, 0.375);
       }
     }
@@ -52,6 +52,12 @@
 
   .neon-toggle__label--disabled {
     color: $color-disabled-light;
+    border-top: $border-width $border-style $color-disabled-dark;
+    border-bottom: $border-width $border-style $color-disabled-dark;
+  }
+
+  .neon-toggle__label:not(.neon-toggle__label--disabled) + .neon-toggle__label--disabled {
+    border-left: $border-width $border-style $border-color-toggle;
   }
 
   &.neon-toggle--disabled .neon-toggle__label--checked,

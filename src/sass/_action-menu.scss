@@ -1,5 +1,5 @@
 .neon-action-menu {
-  &__link {
+  .neon-action-menu__link {
     display: flex;
     width: calc(100% + #{2 * $base-space});
     letter-spacing: $letter-spacing-s;
@@ -18,6 +18,10 @@
 
     &:focus {
       outline: none;
+    }
+
+    &.neon-action-menu__link--disabled {
+      cursor: not-allowed;
     }
   }
 }

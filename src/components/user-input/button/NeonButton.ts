@@ -111,7 +111,7 @@ export default class NeonButton extends Vue {
       `neon-button--${this.buttonStyle}`,
       `neon-button--state-${this.state}`,
       {
-        'neon--disabled neon-button--disabled': this.disabled,
+        'neon-button--disabled': this.disabled,
         'neon-button--circular': this.circular,
         'neon-button--no-outline': !this.outline,
         'neon-button--full-width': this.fullWidth,

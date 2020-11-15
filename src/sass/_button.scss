@@ -124,6 +124,10 @@
     display: flex;
     justify-content: center;
   }
+
+  &--disabled {
+    cursor: not-allowed;
+  }
 }
 
 .neon-button-group {

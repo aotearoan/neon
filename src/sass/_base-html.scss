@@ -85,11 +85,6 @@ p {
   }
 }
 
-.neon--disabled {
-  cursor: not-allowed;
-  box-shadow: none;
-}
-
 .neon-monospaced {
   font-family: $font-family-monospaced;
   font-variant-ligatures: discretionary-ligatures;
