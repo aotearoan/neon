@@ -1,13 +1,18 @@
 <template>
   <neon-field-group
-    class="neon-number__wrapper"
+    class="neon-number"
     :class="[
-      `neon-number__wrapper--${size}`,
-      `neon-number__wrapper--${color}`,
-      { 'neon-number__wrapper--disabled': disabled },
+      `neon-number--${size}`,
+      `neon-number--${color}`,
+      {
+        'neon-number--disabled': disabled,
+        'neon-number--editable': editable,
+        'neon-number--with-buttons': spinButtons,
+      },
     ]"
   >
     <neon-button
+      v-if="spinButtons"
       :size="size"
       :color="color"
       :disabled="disabled || (min !== undefined && min == value)"
@@ -18,25 +23,30 @@
       :aria-label="decrementLabel"
     />
     <neon-input
-      type="number"
+      class="neon-number__input"
+      type="text"
       role="spinbutton"
       :aria-valuemax="max"
       :max="max"
       :aria-valuemin="min"
       :min="min"
-      :step="step"
-      aria-valuenow="value"
-      :value="value"
+      :step="computedStep"
+      :aria-valuenow="value"
+      :value="focus ? rawValue : formattedValue"
       :size="size"
       :color="color"
-      :disabled="disabled"
+      :disabled="disabled || !editable"
       :inputmode="inputmode"
       v-bind="sanitizedAttributes"
       v-on="sanitizedListeners"
-      @input="$emit('input', +$event)"
-      class="neon-number"
+      @input="valueChanged"
+      @focus="onFocus()"
+      @blur="onBlur()"
+      @keydown.up.prevent="increment()"
+      @keydown.down.prevent="decrement()"
     />
     <neon-button
+      v-if="spinButtons"
       :size="size"
       :color="color"
       :disabled="disabled || (max !== undefined && max == value)"

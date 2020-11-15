@@ -1,7 +1,7 @@
 .neon-number {
   @each $color, $palette in $functional-colors {
     $number-component-color: map-get($palette, $border-color-input-selected);
-    &__wrapper--#{$color}:not(.neon-number__wrapper--disabled) {
+    &--#{$color}.neon-number--with-buttons:not(.neon-number--disabled) {
       .neon-input__textfield {
         border-color: $number-component-color;
 
@@ -34,9 +34,15 @@
         border-color: $number-component-color;
       }
     }
+
+    &--#{$color}:not(.neon-number--with-buttons) {
+      .neon-input__textfield {
+        border-right: $border-width $border-style $border-color-input;
+      }
+    }
   }
 
-  &__wrapper .neon-button--disabled {
+  .neon-button--disabled {
     &.neon-number__decrement,
     &.neon-number__increment {
       background-color: $color-disabled-dark;
@@ -47,10 +53,24 @@
     }
   }
 
-  &__wrapper--disabled .neon-button--disabled {
-    &.neon-number__decrement,
-    &.neon-number__increment {
-      border: $border-width $border-style $color-disabled-dark;
+  &:not(.neon-number--editable) {
+    &:not(.neon-number--disabled) .neon-number__input .neon-input__textfield {
+      color: $color-text;
+      background-color: $background-color-input;
+      box-shadow: none;
+    }
+  }
+
+  &--disabled {
+    .neon-button--disabled {
+      &.neon-number__decrement,
+      &.neon-number__increment {
+        border: $border-width $border-style $color-disabled-dark;
+      }
+    }
+
+    &:not(.neon-number--with-buttons) .neon-input__textfield {
+      border-right: $border-width $border-style $color-disabled-dark;
     }
   }
 }

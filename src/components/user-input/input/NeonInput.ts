@@ -77,6 +77,12 @@ export default class NeonInput extends Vue {
   private pattern?: string;
 
   /**
+   * Tabindex to assign to the input.
+   */
+  @Prop({ default: 0 })
+  private tabindex!: number;
+
+  /**
    * The disabled state of the input
    */
   @Prop({ default: false })

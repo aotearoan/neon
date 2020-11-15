@@ -4,10 +4,9 @@
       <neon-card-body>
         <p>
           The <strong>NeonNumber</strong> component is the equivalent of an
-          <strong>&lt;input type="number" /&gt;</strong> with -/+ spin buttons. This is intended for simple
-          (unformatted) number inputs where there is a step, min and/or max. For all other number inputs it is
-          recommended to use <a href="/user-input/input"><strong>NeonInput</strong></a> directly and customize it to
-          suit your needs.
+          <strong>&lt;input type="number" /&gt;</strong>
+          with -/+ spin buttons. In addition, it supports formatting as a percentage or with a provided custom template
+          and also pasting of values in the user's locale, e.g. 6,543.12.
         </p>
         <p><strong>NeonNumber</strong> supports all of the properties found on an HTML &lt;input&gt;.</p>
       </neon-card-body>

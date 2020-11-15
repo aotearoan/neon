@@ -1,35 +1,43 @@
 .neon-number {
-  &__wrapper {
+  &--with-buttons.neon-number {
     &--s {
-      width: 4 * $size-s;
+      max-width: 4 * $size-s;
     }
 
     &--m {
-      width: 4 * $size-m;
+      max-width: 4 * $size-m;
     }
 
     &--l {
-      width: 4 * $size-l;
+      max-width: 4 * $size-l;
+    }
+  }
+
+  .neon-input .neon-input__textfield {
+    padding-right: 2 * $base-space;
+    font-variant: tabular-nums;
+    border-right: none;
+    -moz-appearance: textfield;
+
+    &:focus {
+      margin-left: 0;
+      margin-right: 0;
     }
 
-    .neon-input__textfield {
-      font-variant: tabular-nums;
-      border-right: none;
-
-      &:focus {
-        margin-left: 0;
-        margin-right: 0;
-      }
-
-      &::-webkit-outer-spin-button,
-      &::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
-
-      & {
-        -moz-appearance: textfield;
-      }
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
+  }
+
+  .neon-input {
+    .neon-icon {
+      display: none;
+    }
+  }
+
+  &:not(.neon-number--editable):not(.neon-number--disabled) .neon-number__input .neon-input__textfield {
+    cursor: default;
   }
 }

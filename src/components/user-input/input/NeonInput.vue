@@ -17,6 +17,7 @@
       v-if="!rows"
       ref="neonInput"
       :id="id"
+      :tabindex="tabindex"
       :type="type"
       :value="value"
       :disabled="disabled"
@@ -33,6 +34,7 @@
       v-else
       :rows="rows"
       :id="id"
+      :tabindex="tabindex"
       :value="value"
       :disabled="disabled"
       :placeholder="computedPlaceholder()"
