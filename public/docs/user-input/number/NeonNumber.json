@@ -1,5 +1,5 @@
 {
-  "description": "<p>\n  The <strong>NeonNumber</strong> component is the equivalent of an <strong>&lt;input type=\"number\" /&gt;</strong>\n  with -/+ spin buttons. This is intended for simple (unformatted) number inputs where there is a step, min and/or\n  max. For all other number inputs it is recommended to use\n  <a href=\"/user-input/input\"><strong>NeonInput</strong></a> directly and customize it to suit your needs.\n</p>\n<p><strong>NeonNumber</strong> supports all of the properties found on an HTML &lt;input&gt;.</p>",
+  "description": "<p>\n  The <strong>NeonNumber</strong> component is the equivalent of an <strong>&lt;input type=\"number\" /&gt;</strong>\n  with -/+ spin buttons. In addition, it supports formatting as a percentage or with a provided custom template and\n  also pasting of values in the user's locale, e.g. 6,543.12.\n</p>\n<p><strong>NeonNumber</strong> supports all of the properties found on an HTML &lt;input&gt;.</p>",
   "tags": {},
   "exportName": "default",
   "displayName": "NeonNumber",
@@ -43,10 +43,6 @@
       "description": "The step value for the spin buttons.",
       "type": {
         "name": "number"
-      },
-      "defaultValue": {
-        "func": false,
-        "value": "1"
       }
     },
     {
@@ -83,6 +79,58 @@
       "defaultValue": {
         "func": false,
         "value": "false"
+      }
+    },
+    {
+      "name": "editable",
+      "tags": {},
+      "description": "Enable/disable direct editing of the value.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    },
+    {
+      "name": "spinButtons",
+      "tags": {},
+      "description": "Show/hide spin buttons. NOTE: The user can still use up/down arrow keys when the input has focus.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    },
+    {
+      "name": "percentage",
+      "tags": {},
+      "description": "Automatically applies % formatting, e.g. if the value = 0.15 it will be displayed as 15%.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "decimals",
+      "tags": {},
+      "description": "The rounding precision for display formatting.",
+      "type": {
+        "name": "number"
+      }
+    },
+    {
+      "name": "valueTemplate",
+      "tags": {},
+      "description": "A template string used for formatting the value for display. Use the placeholder {value} to reference the value in\nthe template string. e.g. value = 90, ${value} => $90.",
+      "type": {
+        "name": "string"
       }
     },
     {
@@ -125,9 +173,10 @@
   "events": [
     {
       "name": "input",
+      "description": "Emitted when the user changes the value of the number via the increment/decrement buttons or manually entering\nthe value.",
       "type": {
         "names": [
-          "undefined"
+          "number | null"
         ]
       }
     }

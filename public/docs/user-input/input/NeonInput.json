@@ -101,6 +101,18 @@
       }
     },
     {
+      "name": "tabindex",
+      "tags": {},
+      "description": "Tabindex to assign to the input.",
+      "type": {
+        "name": "number"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "0"
+      }
+    },
+    {
       "name": "disabled",
       "tags": {},
       "description": "The disabled state of the input",
