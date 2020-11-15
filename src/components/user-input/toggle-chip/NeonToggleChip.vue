@@ -5,7 +5,7 @@
       `neon-toggle-chip--${size}`,
       `neon-toggle-chip--${color}`,
       {
-        'neon-toggle-chip--disabled neon--disabled': disabled,
+        'neon-toggle-chip--disabled': disabled,
         'neon-toggle-chip--checked': value,
         'neon-toggle-chip--show-check': showCheck,
       },

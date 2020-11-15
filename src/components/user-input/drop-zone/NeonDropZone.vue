@@ -4,7 +4,7 @@
     ref="dropzone"
     :class="[
       {
-        'neon--disabled neon-drop-zone--disabled': disabled,
+        'neon-drop-zone--disabled': disabled,
         'neon-square neon-drop-zone--circular': circular,
         'neon-drop-zone--active': active,
       },

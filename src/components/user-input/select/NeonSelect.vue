@@ -19,7 +19,7 @@
       <ul class="no-style neon-select__options">
         <li
           v-if="placeholderAsOption"
-          class="neon-select__option neon--disabled neon-select__option--disabled"
+          class="neon-select__option neon-select__option--disabled neon-select__option-placeholder"
           :class="`neon-select__option--${size}`"
         >
           <div class="neon-select__option-container">
@@ -34,7 +34,7 @@
             class="neon-select__option"
             :class="[
               {
-                'neon--disabled neon-select__option--disabled': option.disabled,
+                'neon-select__option--disabled': option.disabled,
                 'neon-select__option--separator-before': option.separatorBefore,
                 'neon-select__option--selected': multiple ? value.indexOf(option.key) >= 0 : option.key === value,
                 'neon-select__option--highlighted': option.key === highlightedKey,

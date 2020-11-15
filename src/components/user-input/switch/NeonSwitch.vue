@@ -6,7 +6,7 @@
       `neon-switch--${size}`,
       `neon-switch--${color}`,
       {
-        'neon-switch--disabled neon--disabled': disabled,
+        'neon-switch--disabled': disabled,
         'neon-switch--checked': value,
       },
     ]"

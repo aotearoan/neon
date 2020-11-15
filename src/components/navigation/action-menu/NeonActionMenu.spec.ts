@@ -44,7 +44,7 @@ describe('NeonActionMenu', () => {
       propsData: { model, value },
     });
     // when / then
-    expect(wrapper.find('.neon-action-menu__link--disabled.neon--disabled').text()).toEqual(model[1].label);
+    expect(wrapper.find('.neon-action-menu__link--disabled').text()).toEqual(model[1].label);
   });
 
   it('emits click event', () => {

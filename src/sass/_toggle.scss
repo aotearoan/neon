@@ -8,7 +8,7 @@
     display: none;
   }
 
-  label {
+  &__label {
     user-select: none;
     padding: 2 * $base-space 3 * $base-space;
     display: flex;
@@ -18,6 +18,10 @@
 
     &:focus {
       outline: none;
+    }
+
+    &--disabled {
+      cursor: not-allowed;
     }
   }
 
@@ -31,5 +35,9 @@
 
   &--horizontal {
     flex-direction: row;
+  }
+
+  &--disabled {
+    cursor: not-allowed;
   }
 }

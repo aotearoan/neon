@@ -21,7 +21,7 @@
         class="neon-dropdown-menu__item"
         :class="[
           {
-            'neon--disabled neon-dropdown-menu__item--disabled': item.disabled,
+            'neon-dropdown-menu__item--disabled': item.disabled,
             'neon-dropdown-menu__item--separator-before': item.separatorBefore,
             'neon-dropdown-menu__item--group-title': item.isGroup,
             'neon-dropdown-menu__item--grouped': item.grouped,

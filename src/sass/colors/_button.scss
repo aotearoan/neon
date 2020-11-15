@@ -9,7 +9,7 @@
     background: darken($to-color, 1);
   }
 
-  &:focus:not(:disabled) {
+  &:focus:not(:disabled):not(.neon-button--no-outline) {
     @include box-shadow-outline($to-color);
   }
 }
@@ -32,7 +32,7 @@
     border-color: darken($color, 4);
   }
 
-  &:focus:not(:disabled) {
+  &:focus:not(:disabled):not(.neon-button--no-outline) {
     @include box-shadow-outline($color);
   }
 }
@@ -106,6 +106,7 @@
     &.neon-button--disabled {
       color: $color-disabled-light;
       background: $color-disabled-dark;
+      box-shadow: none;
     }
   }
 
@@ -125,9 +126,5 @@
     &.neon-button--disabled {
       color: $color-disabled-light;
     }
-  }
-
-  &--no-outline {
-    box-shadow: none !important;
   }
 }

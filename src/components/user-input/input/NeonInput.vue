@@ -26,7 +26,6 @@
       @blur="onBlur"
       @focus="onFocus"
       class="neon-input__textfield neon-input__text"
-      :class="{ 'neon--disabled': disabled }"
       v-bind="sanitizedAttributes"
       v-on="sanitizedListeners"
     />
@@ -41,7 +40,6 @@
       @input="changeValue"
       @blur="onBlur"
       @focus="onFocus"
-      :class="{ 'neon--disabled': disabled }"
       class="neon-input__textfield neon-input__textarea"
       v-bind="sanitizedAttributes"
     ></textarea>

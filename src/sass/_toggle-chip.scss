@@ -94,4 +94,8 @@
   &:active:not(.neon-toggle-chip--disabled):not(.neon-toggle-chip--show-check) {
     transform: scale(0.95);
   }
+
+  &--disabled {
+    cursor: not-allowed;
+  }
 }

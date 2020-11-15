@@ -11,7 +11,6 @@
             {
               'neon-action-menu__link--selected': item.key === value,
               'neon-action-menu__link--disabled': item.disabled,
-              'neon--disabled': item.disabled,
             },
             `neon-action-menu__link--${color}`,
           ]"

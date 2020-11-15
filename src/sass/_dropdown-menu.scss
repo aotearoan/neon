@@ -64,6 +64,10 @@
         }
       }
     }
+
+    &--disabled {
+      cursor: not-allowed;
+    }
   }
 }
 
