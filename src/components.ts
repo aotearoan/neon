@@ -90,6 +90,8 @@ import { NeonMenuItem } from './common/models/NeonMenuItem';
 import { NeonMenuModel } from './common/models/NeonMenuModel';
 import { NeonMode } from './common/enums/NeonMode';
 import { NeonModeUtils } from './common/utils/NeonModeUtils';
+import { NeonNumberFormatOptions } from './common/models/NeonNumberFormatOptions';
+import { NeonNumberUtils } from './common/utils/NeonNumberUtils';
 import { NeonOrientation } from './common/enums/NeonOrientation';
 import { NeonOutlineStyle } from './common/enums/NeonOutlineStyle';
 import { NeonPlacement } from './common/enums/NeonPlacement';
@@ -258,6 +260,8 @@ export {
   NeonNote,
   NeonNotificationCounter,
   NeonNumber,
+  NeonNumberFormatOptions,
+  NeonNumberUtils,
   NeonOrientation,
   NeonOutlineStyle,
   NeonPage,

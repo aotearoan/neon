@@ -50,7 +50,7 @@ div {
 }
 
 .neon-vertically-spaced {
-  & > *:not(:last-child) {
+  & > *:not(:last-child):not(label) {
     margin-bottom: 4 * $base-space;
   }
 }
