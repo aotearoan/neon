@@ -45,6 +45,7 @@ import NeonSideNav from './components/layout/side-nav/NeonSideNav.vue';
 import NeonSearch from './components/user-input/search/NeonSearch.vue';
 import NeonSelect from './components/user-input/select/NeonSelect.vue';
 import NeonSkeletonLoader from './components/feedback/skeleton-loader/NeonSkeletonLoader.vue';
+import NeonSlider from './components/user-input/slider/NeonSlider.vue';
 import NeonSplashLoader from './components/feedback/splash-loader/NeonSplashLoader.vue';
 import NeonSwitch from './components/user-input/switch/NeonSwitch.vue';
 import NeonTab from './components/presentation/tabs/tab/NeonTab.vue';
@@ -169,6 +170,7 @@ const components: { [s: string]: VueConstructor } = {
   NeonSelect,
   NeonSideNav,
   NeonSkeletonLoader,
+  NeonSlider,
   NeonSplashLoader,
   NeonSwitch,
   NeonTab,
@@ -281,6 +283,7 @@ export {
   NeonSideNav,
   NeonSize,
   NeonSkeletonLoader,
+  NeonSlider,
   NeonSplashLoader,
   NeonSplashLoaderSize,
   NeonState,

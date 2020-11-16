@@ -92,7 +92,11 @@
         <div class="api-docs__responsive" v-if="hasDocs">
           <section class="api-docs__section" v-if="hasProps">
             <h3 class="neon-h4 api-docs__title">Properties</h3>
-            <div v-for="prop in apiModel.props" :key="prop.name" class="api-docs__property">
+            <div
+              v-for="prop in apiModel.props.filter((prop) => prop.tags.ignore === undefined)"
+              :key="prop.name"
+              class="api-docs__property"
+            >
               <div class="api-docs__attribute">
                 <span class="api-docs__name">{{ prop.name }}</span>
                 <neon-label v-if="prop.required" size="xs" color="brand" label="required" />

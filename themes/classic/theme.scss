@@ -174,3 +174,9 @@ $border-radius-switch-indicator: 50% !default;
 
 /* note */
 $border-width-note: $border-width !default;
+
+/* slider & range slider */
+$height-slider-track: 8px !default;
+$size-slider-thumb: 3 * $height-slider-track !default;
+$border-radius-slider-thumb: 50% !default;
+$border-radius-slider-track: $height-slider-track !default;

@@ -148,3 +148,10 @@ $color-toggle-chip: l1 !default;
 $color-toggle-chip-text: $color-text !default;
 $border-color-toggle-chip: $color-neutral-d3 !default;
 $opacity-toggle-chip: 0.15 !default;
+
+// slider & range slider
+$color-slider: l1 !default;
+$color-slider-track: $color-neutral-d3 !default;
+$slider-thumb-color: $background-color-card !default;
+$box-shadow-slider: none !default;
+$border-slider-thumb: $border-width $border-style $border-color !default;
