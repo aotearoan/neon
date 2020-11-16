@@ -19,7 +19,7 @@
   }
 
   &__section {
-    margin-bottom: 4 * $base-space;
+    margin-bottom: 6 * $base-space;
 
     &:last-child {
       margin-bottom: 0;
@@ -104,7 +104,6 @@
 
         &__name {
           font-size: $font-size-l;
-          padding-bottom: $base-space;
         }
 
         &__property,

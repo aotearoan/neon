@@ -40,6 +40,10 @@ export class Menu {
                 anchors: ['Installation', 'Typescript', 'SASS'],
               },
               {
+                path: 'accessibility',
+                page: 'Accessibility',
+              },
+              {
                 path: 'i18n',
                 page: 'I18n',
                 name: 'i18n',
@@ -59,10 +63,6 @@ export class Menu {
             path: 'design',
             name: 'Design',
             children: [
-              {
-                path: 'accessibility',
-                page: 'Accessibility',
-              },
               {
                 path: 'color',
                 page: 'Color',
@@ -413,6 +413,12 @@ export class Menu {
                 page: 'Select',
                 keywords: 'dropdown',
                 component: 'NeonSelect',
+              },
+              {
+                path: 'slider',
+                page: 'Slider',
+                keywords: 'range number',
+                component: 'NeonSlider',
               },
               {
                 path: 'switch',

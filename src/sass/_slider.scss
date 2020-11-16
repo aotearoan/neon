@@ -1,0 +1,161 @@
+/* from https://css-tricks.com/sliding-nightmare-understanding-range-input/ */
+$width-slider-tooltip: 201px;
+
+@mixin track {
+  box-sizing: border-box;
+  border: none;
+  border-radius: $border-radius-slider-track;
+  width: 100%;
+  height: $height-slider-track;
+}
+
+@mixin thumb {
+  box-sizing: border-box;
+  border: none;
+  width: $size-slider-thumb;
+  height: $size-slider-thumb;
+  border-radius: $border-radius-slider-thumb;
+  pointer-events: all;
+}
+
+.neon-slider {
+  --range: calc(var(--max) - var(--min));
+  --ratio: calc((var(--val) - var(--min)) / var(--range));
+  --sx: calc(0.5 *#{$size-slider-thumb} + var(--ratio) * (100% - #{$size-slider-thumb}));
+  position: relative;
+
+  .neon-slider__output {
+    font-size: $font-size-s;
+    margin-bottom: $base-space;
+    display: flex;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* create a transparent fixed width container to position centered above the thumb, that way we can center the
+     variable width contents using flex */
+  .neon-slider__tooltip {
+    opacity: 0;
+    position: absolute;
+    display: flex;
+    width: $width-slider-tooltip;
+    bottom: 52px;
+    left: calc(var(--sx) - #{floor(0.5 * $width-slider-tooltip)});
+    justify-content: center;
+    transition: opacity $animation-speed-slow ease-in-out;
+    transition-delay: 1.5s;
+
+    div {
+      user-select: none;
+      display: flex;
+      font-size: $font-size-s;
+      font-variant: tabular-nums;
+      line-height: 1;
+      font-weight: 600;
+      letter-spacing: 0;
+      padding: 2 * $base-space;
+      border-radius: $border-radius;
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-top: 6px solid;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        top: 100%;
+        left: calc(50% - 1px);
+        margin-left: -4px;
+        margin-top: -1px;
+      }
+    }
+  }
+
+  &:hover .neon-slider__tooltip {
+    opacity: 1;
+    transition: opacity $animation-speed-slow ease-in-out;
+    transition-delay: 0s;
+  }
+
+  &.neon-slider--disabled {
+    cursor: not-allowed;
+
+    .neon-slider__tooltip {
+      visibility: hidden;
+    }
+
+    .neon-slider__legend {
+      opacity: 1;
+    }
+  }
+}
+
+.neon-slider__input {
+  outline: none;
+
+  &,
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
+
+  &::-moz-focus-outer {
+    border: 0;
+  }
+
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: $size-slider-thumb;
+  background: transparent;
+
+  &::-webkit-slider-runnable-track {
+    @include track;
+  }
+
+  &::-moz-range-track {
+    @include track;
+  }
+
+  &::-ms-track {
+    @include track;
+  }
+
+  &::-moz-range-progress {
+    display: none;
+  }
+
+  &::-ms-fill-lower {
+    display: none;
+  }
+
+  &::-webkit-slider-thumb {
+    margin-top: 0.5 * ($height-slider-track - $size-slider-thumb);
+    @include thumb;
+  }
+
+  &::-moz-range-thumb {
+    @include thumb;
+  }
+
+  &::-ms-thumb {
+    margin-top: 0;
+    @include thumb;
+  }
+
+  &::-ms-tooltip {
+    display: none;
+  }
+}
+
+.neon-slider__legend {
+  flex-direction: row;
+  font-size: $font-size-s;
+  display: flex;
+  justify-content: space-between;
+}
+
+.neon-slider--no-legend {
+  .neon-slider__tooltip {
+    bottom: 36px;
+  }
+}
