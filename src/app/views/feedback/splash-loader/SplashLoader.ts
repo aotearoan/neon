@@ -1,5 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { NeonButton, NeonCard, NeonCardBody, NeonSplashLoader } from '../../../../components';
+import { NeonButton, NeonCard, NeonCardBody, NeonLink, NeonSplashLoader } from '../../../../components';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
 import { Menu, MenuModel } from '../../../Menu';
 
@@ -8,6 +8,7 @@ import { Menu, MenuModel } from '../../../Menu';
     NeonButton,
     NeonCard,
     NeonCardBody,
+    NeonLink,
     NeonSplashLoader,
     ComponentDocumentation,
   },

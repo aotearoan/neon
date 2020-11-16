@@ -12,7 +12,7 @@
         </p>
         <p>
           <strong>Note:</strong> As well as the options described below, pass through attributes supported by
-          <a href="/presentation/dropdown">NeonDropdown</a> to change the style of the dropdown button.
+          <neon-link href="/presentation/dropdown">NeonDropdown</neon-link> to change the style of the dropdown button.
         </p>
       </neon-card-body>
     </neon-card>

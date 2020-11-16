@@ -30,7 +30,9 @@
         to the body of the page. The classes are <em>neon-mode--light</em> and
         <em>neon-mode--dark</em>
       </p>
-      <p>Use <a href="/utils/NeonModeUtils">NeonModeUtils</a> to listen to native color scheme switching.</p>
+      <p>
+        Use <neon-link href="/utils/NeonModeUtils">NeonModeUtils</neon-link> to listen to native color scheme switching.
+      </p>
     </neon-card-body>
   </neon-card>
 </template>
