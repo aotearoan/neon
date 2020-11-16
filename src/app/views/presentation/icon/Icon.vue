@@ -29,9 +29,9 @@
       </neon-card-header>
       <neon-card-body>
         <p>
-          Use the utility class <a href="/utils/NeonIconRegistry">NeonIconRegistry</a> to register new icons or
-          overwrite the provided icons. For examples of usage (including adding the neon-svg--* classes) please see
-          <a href="/utils/RegisterIcons">RegisterIcons</a>.
+          Use the utility class <neon-link href="/utils/NeonIconRegistry">NeonIconRegistry</neon-link> to register new
+          icons or overwrite the provided icons. For examples of usage (including adding the neon-svg--* classes) please
+          see <neon-link href="/utils/RegisterIcons">RegisterIcons</neon-link>.
         </p>
       </neon-card-body>
     </neon-card>
