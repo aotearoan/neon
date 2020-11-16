@@ -47,6 +47,21 @@
     &::-ms-thumb {
       @include thumb-color($border-slider-thumb);
     }
+
+    &:focus {
+      $box-shadow-slider-thumb-focus: 0 0 0 4px rgba($background-color-low-contrast, 0.3);
+      &::-webkit-slider-thumb {
+        box-shadow: $box-shadow-slider-thumb-focus;
+      }
+
+      &::-moz-range-thumb {
+        box-shadow: $box-shadow-slider-thumb-focus;
+      }
+
+      &::-ms-thumb {
+        box-shadow: $box-shadow-slider-thumb-focus;
+      }
+    }
   }
 
   @each $color, $palette in $functional-colors {
@@ -79,6 +94,7 @@
 
         @if ($theme == 'sharp') {
           $border-slider-thumb-sharp: $border-width $border-style $color-slider-fill;
+
           &::-webkit-slider-thumb {
             @include thumb-color($border-slider-thumb-sharp);
           }
@@ -89,6 +105,26 @@
 
           &::-ms-thumb {
             @include thumb-color($border-slider-thumb-sharp);
+          }
+        }
+      }
+
+      &:focus-within {
+        @if ($theme == 'sharp') {
+          .neon-slider__input:focus {
+            $box-shadow-slider-thumb-focus: 0 0 0 4px rgba($color-slider-fill, 0.3);
+
+            &::-webkit-slider-thumb {
+              box-shadow: $box-shadow-slider-thumb-focus;
+            }
+
+            &::-moz-range-thumb {
+              box-shadow: $box-shadow-slider-thumb-focus;
+            }
+
+            &::-ms-thumb {
+              box-shadow: $box-shadow-slider-thumb-focus;
+            }
           }
         }
       }
