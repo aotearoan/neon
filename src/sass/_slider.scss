@@ -12,8 +12,8 @@ $width-slider-tooltip: 201px;
 @mixin thumb {
   box-sizing: border-box;
   border: none;
-  width: $size-slider-thumb;
-  height: $size-slider-thumb;
+  width: $width-slider-thumb;
+  height: $height-slider-thumb;
   border-radius: $border-radius-slider-thumb;
   pointer-events: all;
 }
@@ -21,7 +21,7 @@ $width-slider-tooltip: 201px;
 .neon-slider {
   --range: calc(var(--max) - var(--min));
   --ratio: calc((var(--val) - var(--min)) / var(--range));
-  --sx: calc(0.5 *#{$size-slider-thumb} + var(--ratio) * (100% - #{$size-slider-thumb}));
+  --sx: calc(0.5 * #{$width-slider-thumb} + var(--ratio) * (100% - #{$width-slider-thumb}));
   position: relative;
 
   .neon-slider__output {
@@ -105,7 +105,7 @@ $width-slider-tooltip: 201px;
   margin: 0;
   padding: 0;
   width: 100%;
-  height: $size-slider-thumb;
+  height: $height-slider-thumb;
   background: transparent;
 
   &::-webkit-slider-runnable-track {
@@ -129,7 +129,7 @@ $width-slider-tooltip: 201px;
   }
 
   &::-webkit-slider-thumb {
-    margin-top: 0.5 * ($height-slider-track - $size-slider-thumb);
+    margin-top: 0.5 * ($height-slider-track - $height-slider-thumb);
     @include thumb;
   }
 
@@ -156,6 +156,6 @@ $width-slider-tooltip: 201px;
 
 .neon-slider--no-legend {
   .neon-slider__tooltip {
-    bottom: 36px;
+    bottom: 30px;
   }
 }

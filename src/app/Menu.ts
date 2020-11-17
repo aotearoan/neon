@@ -403,6 +403,13 @@ export class Menu {
                 component: 'NeonPassword',
               },
               {
+                path: 'range-slider',
+                page: 'RangeSlider',
+                name: 'Range Slider',
+                keywords: 'number',
+                component: 'NeonRangeSlider',
+              },
+              {
                 path: 'search',
                 page: 'Search',
                 keywords: 'select',
