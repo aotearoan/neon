@@ -37,7 +37,7 @@ $alert-colors: (
         }
 
         .neon-alert__actions {
-          border-left: $border-width $border-style rgba($alert-color, 0.25);
+          border-left: $border-width $border-style rgba($alert-color, $border-opacity-alert-action);
 
           a {
             color: rgba($alert-color, 0.5);
@@ -54,7 +54,7 @@ $alert-colors: (
         }
 
         .neon-alert__action + .neon-alert__action {
-          border-top: $border-width $border-style rgba($alert-color, 0.25);
+          border-top: $border-width $border-style rgba($alert-color, $border-opacity-alert-action);
         }
       }
     }
