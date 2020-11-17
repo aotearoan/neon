@@ -14,7 +14,7 @@
           the min, max and selected value plus options for percentage formatting and providing custom templates, e.g.
           currency formatting.
         </p>
-        <p><strong>NeonNumber</strong> also supports all relevant properties found on an HTML &lt;input&gt;.</p>
+        <p><strong>NeonSlider</strong> also supports all relevant properties found on an HTML &lt;input&gt;.</p>
       </neon-card-body>
     </neon-card>
   </component-documentation>

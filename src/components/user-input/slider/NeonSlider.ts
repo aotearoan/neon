@@ -166,7 +166,7 @@ export class NeonSlider extends Vue {
     /**
      * Event triggered when the value changes.
      *
-     * @type {number}
+     * @type {number} the raw selected numeric value.
      */
     this.$emit('input', newValue);
   }

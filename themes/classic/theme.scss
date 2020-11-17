@@ -177,6 +177,7 @@ $border-width-note: $border-width !default;
 
 /* slider & range slider */
 $height-slider-track: 8px !default;
-$size-slider-thumb: 3 * $height-slider-track !default;
+$height-slider-thumb: 3 * $height-slider-track !default;
+$width-slider-thumb: $height-slider-thumb !default;
 $border-radius-slider-thumb: 50% !default;
 $border-radius-slider-track: $height-slider-track !default;

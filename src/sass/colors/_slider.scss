@@ -6,8 +6,8 @@
 
 @mixin disabled-track {
   cursor: not-allowed;
-  background: linear-gradient($color-disabled-dark, $color-disabled-dark) 0 / var(--sx) 100% no-repeat
-    rgba($color-disabled-dark, 0.5);
+  background: linear-gradient($color-disabled-light, $color-disabled-light) 0 / var(--sx) 100% no-repeat
+    $color-disabled-dark;
 }
 
 @mixin thumb-color($border-slider-thumb) {
@@ -18,9 +18,9 @@
 
 @mixin thumb-disabled {
   cursor: not-allowed;
-  background: $color-disabled-dark;
+  background: $color-disabled-light;
   box-shadow: none;
-  border-color: $color-disabled-dark;
+  border-color: $color-disabled-light;
 }
 
 .neon-slider {
@@ -93,7 +93,7 @@
         }
 
         @if ($theme == 'sharp') {
-          $border-slider-thumb-sharp: $border-width $border-style $color-slider-fill;
+          $border-slider-thumb-sharp: $border-width-slider-thumb $border-style $color-slider-fill;
 
           &::-webkit-slider-thumb {
             @include thumb-color($border-slider-thumb-sharp);
