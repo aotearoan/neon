@@ -58,7 +58,8 @@
           v-if="indicator"
           class="neon-button__indicator"
           :disabled="disabled"
-          :color="color"
+          :color="dropdownStyle !== 'solid-button' ? color : undefined"
+          :inverse="dropdownStyle === 'solid-button'"
           :expanded="value"
         />
       </div>

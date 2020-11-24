@@ -65,3 +65,9 @@ a[href]:not(.neon-link--no-style):not(.neon-link) {
     }
   }
 }
+
+.example-inverse-bg {
+  background-color: $color-primary;
+  border-radius: $border-radius;
+  padding: 2 * $base-space;
+}

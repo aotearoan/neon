@@ -46,10 +46,6 @@
       "description": "The color of the chevron.",
       "type": {
         "name": "NeonFunctionalColor"
-      },
-      "defaultValue": {
-        "func": false,
-        "value": "NeonFunctionalColor.LowContrast"
       }
     }
   ]
