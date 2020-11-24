@@ -23,6 +23,9 @@ export default class ExpansionIndicator extends Vue {
   <neon-expansion-indicator :expanded="false" />
   <neon-expansion-indicator :expanded="true" />
   <neon-expansion-indicator :expanded="false" color="primary" />
+  <div class="example-inverse-bg">
+    <neon-expansion-indicator :expanded="false" :inverse="true" />
+  </div>
   <neon-expansion-indicator :disabled="true" />
 </div>`,
     },

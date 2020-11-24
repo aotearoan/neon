@@ -27,6 +27,6 @@ export default class NeonExpansionIndicator extends Vue {
   /**
    * The color of the chevron.
    */
-  @Prop({ default: NeonFunctionalColor.LowContrast })
-  public color!: NeonFunctionalColor;
+  @Prop()
+  public color?: NeonFunctionalColor;
 }

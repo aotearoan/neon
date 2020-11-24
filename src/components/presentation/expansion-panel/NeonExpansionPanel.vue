@@ -27,7 +27,7 @@
         <neon-icon v-if="icon" :name="icon" :color="color" :disabled="disabled" />
         <span class="neon-expansion-panel__label">{{ label }}</span>
       </div>
-      <neon-expansion-indicator :disabled="disabled" :expanded="value" />
+      <neon-expansion-indicator :disabled="disabled" :expanded="value" :color="color" />
     </div>
     <div class="neon-expansion-panel__content" v-show="value" :id="id">
       <!-- @slot The expansion panel contents -->
