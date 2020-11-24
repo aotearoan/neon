@@ -66,7 +66,7 @@
     @include dropdown-size($size-s, $base-space);
 
     &.neon-dropdown--open-on-hover {
-      @include dropdown-size($size-s, 0);
+      @include dropdown-size($size-s, 0px);
     }
   }
 
@@ -74,7 +74,7 @@
     @include dropdown-size($size-m, $base-space);
 
     &.neon-dropdown--open-on-hover {
-      @include dropdown-size($size-m, 0);
+      @include dropdown-size($size-m, 0px);
     }
   }
 
@@ -82,7 +82,7 @@
     @include dropdown-size($size-l, $base-space);
 
     &.neon-dropdown--open-on-hover {
-      @include dropdown-size($size-l, 0);
+      @include dropdown-size($size-l, 0px);
     }
   }
 
