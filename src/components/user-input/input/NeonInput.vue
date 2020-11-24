@@ -46,7 +46,7 @@
     <neon-icon
       v-if="iconVisible"
       :name="iconName"
-      :tabindex="disabled ? false : 0"
+      :tabindex="disabled || !icon ? false : 0"
       :disabled="disabled"
       :color="iconColor"
       role="button"

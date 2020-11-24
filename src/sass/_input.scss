@@ -60,7 +60,7 @@
 
   &__text,
   &__textarea {
-    border-radius: $border-radius;
+    border-radius: $border-radius-input;
     border: $border-width $border-style;
     padding: $base-space 2 * $base-space;
     line-height: $line-height-one;
@@ -86,5 +86,12 @@
   &__text[inputmode='decimal'],
   &__text[inputmode='numeric'] {
     font-variant: tabular-nums;
+  }
+
+  &--disabled {
+    input,
+    textarea {
+      cursor: not-allowed;
+    }
   }
 }

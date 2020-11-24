@@ -46,7 +46,8 @@
         <neon-note color="info">
           <span
             ><strong>Note:</strong> For improved readability, paragraph text is limited to a maximum width. The default
-            width is 70ch but this is customizable in SASS.</span
+            width is 70ch but this is customizable in SASS by overriding the variable
+            <em>$max-paragraph-width</em>.</span
           >
         </neon-note>
         <p>

@@ -43,6 +43,12 @@ export default class NeonButton extends Vue {
   public color!: NeonFunctionalColor;
 
   /**
+   * Solid buttons ONLY. Alternate color for creating a gradient buttons. NOTE: can also be the same color as 'color'.
+   */
+  @Prop()
+  public alternateColor?: NeonFunctionalColor;
+
+  /**
    * Optional icon to display
    */
   @Prop()
@@ -118,6 +124,7 @@ export default class NeonButton extends Vue {
         'neon-button--with-icon neon-button--icon-only': !this.label && this.icon && !this.indicator,
         'neon-button--with-icon neon-button--icon-left': this.label && this.icon && this.iconPosition === 'left',
         'neon-button--with-icon neon-button--icon-right': this.label && this.icon && this.iconPosition === 'right',
+        [`neon-button--alternate-color-${this.alternateColor}`]: this.alternateColor,
       },
     ];
   }

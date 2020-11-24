@@ -24,6 +24,7 @@
         <span>First select a theme:</span>
         <ul>
           <li>classic</li>
+          <li>curved</li>
           <li>sharp</li>
         </ul>
         <p>

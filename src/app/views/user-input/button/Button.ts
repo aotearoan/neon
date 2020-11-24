@@ -41,6 +41,19 @@ export default class Button extends Vue {
   <neon-button color="error" label="Error" />
 </div>`;
 
+  private gradientExamples = `<div>
+  <neon-note color="warn">
+    <p>Use with care! It is recommended to avoid using too many variations of these buttons on a single site.</p>
+  </neon-note>
+  <br />
+  <div class="example--horizontal example--wrap">
+    <neon-button color="warn" alternate-color="warn" label="Warning" />
+    <neon-button color="brand" alternate-color="success" label="Success" />
+    <neon-button color="primary" alternate-color="brand" label="Primary" />
+    <neon-button color="brand" alternate-color="info" :circular="true" icon="plus" />
+  </div>
+</div>`;
+
   private styleExamples = `<div class="example--vertical">
   <neon-button button-style="solid" label="Solid button" />
   <neon-button button-style="outline" label="Outline button" />
@@ -82,10 +95,10 @@ export default class Button extends Vue {
     label="Success button with icon"
     icon="plus"
   />
-  <neon-button state="error" color="primary" label="Error" />
+  <neon-button state="error" color="error" label="Error" />
   <neon-button
     state="error"
-    color="primary"
+    color="error"
     label="Error button with icon"
     icon="plus"
   />
@@ -107,6 +120,10 @@ export default class Button extends Vue {
     {
       title: 'Functional colors',
       template: this.functionalColorExamples,
+    },
+    {
+      title: 'Gradient buttons',
+      template: this.gradientExamples,
     },
     {
       title: 'Button styles',

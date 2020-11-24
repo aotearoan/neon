@@ -45,6 +45,14 @@
       }
     },
     {
+      "name": "alternateColor",
+      "tags": {},
+      "description": "Solid buttons ONLY. Alternate color for creating a gradient buttons. NOTE: can also be the same color as 'color'.",
+      "type": {
+        "name": "NeonFunctionalColor"
+      }
+    },
+    {
       "name": "icon",
       "tags": {},
       "description": "Optional icon to display",

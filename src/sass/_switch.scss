@@ -51,10 +51,10 @@
 }
 
 @mixin switch-style($size) {
-  @if ($theme == 'classic') {
-    @include switch-classic($size);
-  } @else if($theme == 'sharp') {
+  @if ($neon-theme == 'sharp') {
     @include switch-sharp($size);
+  } @else {
+    @include switch-classic($size);
   }
 }
 

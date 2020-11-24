@@ -13,6 +13,7 @@ import Editor from '../../components/editor/Editor.vue';
 })
 export default class Source extends Vue {
   private className: string | null = null;
+  private ghLink: string | null = null;
 
   private template: string | null = null;
 
@@ -26,6 +27,8 @@ export default class Source extends Vue {
           this.template = file;
         });
       });
+
+      this.ghLink = `https://github.com/aotearoan/neon/tree/master/src/common${path}.ts`;
     }
   }
 }

@@ -1,3 +1,27 @@
+@mixin gradient-button($from-color, $to-color) {
+  background-image: linear-gradient(
+    $background-gradient-angle,
+    $from-color $background-gradient-offset,
+    $to-color 100%
+  );
+
+  &:hover:not(:disabled) {
+    background-image: linear-gradient(
+      360deg - $background-gradient-angle,
+      $from-color $background-gradient-offset,
+      $to-color 100%
+    );
+  }
+
+  &:active:not(:disabled) {
+    background: darken($from-color, 1);
+  }
+
+  &:focus:not(:disabled):not(.neon-button--no-outline) {
+    @include box-shadow-outline($from-color);
+  }
+}
+
 @mixin solid-button($from-color, $to-color) {
   background: linear-gradient($from-color, $to-color);
 
@@ -15,7 +39,7 @@
 }
 
 @mixin outline-button($color) {
-  border: $border-width $border-style $color;
+  border: $border-width-outline-button $border-style $color;
   @include color-with-svg($color);
 
   &:hover:not(:disabled),
@@ -54,23 +78,33 @@
   @each $color, $palette in $functional-colors {
     &--#{$color} {
       &.neon-button--solid {
+        $solid-button-color-1: '' !default;
+        $solid-button-color-2: '' !default;
         @if ($color == high-contrast) {
-          @include solid-button(
-            $background-high-contrast-solid-button-light,
-            $background-high-contrast-solid-button-dark
-          );
-        } @else if($color == low-contrast) {
+          $solid-button-color-1: $background-high-contrast-solid-button-light;
+          $solid-button-color-2: $background-high-contrast-solid-button-dark;
+        } @else if ($color == low-contrast) {
           @include color-with-svg($color-low-contrast-solid-button);
-
-          @include solid-button(
-            $background-low-contrast-solid-button-light,
-            $background-low-contrast-solid-button-dark
-          );
+          $solid-button-color-1: $background-low-contrast-solid-button-light;
+          $solid-button-color-2: $background-low-contrast-solid-button-dark;
         } @else {
-          @include solid-button(
-            map-get($palette, $background-solid-button-light),
-            map-get($palette, $background-solid-button-dark)
-          );
+          $solid-button-color-1: map-get($palette, $background-solid-button-light);
+          $solid-button-color-2: map-get($palette, $background-solid-button-dark);
+        }
+
+        @include solid-button($solid-button-color-1, $solid-button-color-2);
+
+        @each $alternateColor, $alternatePalette in $functional-colors {
+          &.neon-button--alternate-color-#{$alternateColor}:not(.neon-button--disabled) {
+            @if ($alternateColor == high-contrast) {
+              $solid-button-color-2: $background-high-contrast-solid-button-light;
+            } @else if ($alternateColor == low-contrast) {
+              $solid-button-color-2: $background-low-contrast-solid-button-light;
+            } @else {
+              $solid-button-color-2: map-get($alternatePalette, $background-solid-button-alternate);
+            }
+            @include gradient-button($solid-button-color-1, $solid-button-color-2);
+          }
         }
       }
 

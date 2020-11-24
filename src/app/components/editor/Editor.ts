@@ -36,6 +36,9 @@ export default class Editor extends Vue {
   @Prop({ default: 'html' })
   public language!: string;
 
+  @Prop()
+  public ghLink?: string;
+
   public mounted() {
     Prism.plugins.NormalizeWhitespace = new Normalizer({
       'remove-trailing': true,

@@ -49,6 +49,8 @@ $border-color-checkbox: l1 !default;
 // solid button
 $background-solid-button-light: l2 !default;
 $background-solid-button-dark: l1 !default;
+// alternate color for gradient buttons only
+$background-solid-button-alternate: d1 !default;
 
 // high-contrast buttons
 $background-high-contrast-solid-button-light: $color-text !default;
@@ -106,7 +108,7 @@ $color-radio-button-label: $color-neutral-l3 !default;
 $border-color-input: $color-neutral-d2 !default;
 $background-color-input: rgba($color-neutral-d5, 0.5) !default;
 $background-color-input-active: $color-neutral-d5 !default;
-$border-color-input-selected: l1 !default;
+$color-input-selected: l1 !default;
 $color-placeholder: $color-disabled-light !default;
 
 // drop zone
@@ -159,3 +161,9 @@ $color-slider-track: $color-neutral-d3 !default;
 $slider-thumb-color: $color-neutral-l4 !default;
 $box-shadow-slider: 0px -2px 4px 0px rgba(0, 0, 0, 0.2), 0px 2px 4px 0px rgba(0, 0, 0, 0.3) !default;
 $border-slider-thumb: none !default;
+
+// top nav
+$background-color-top-nav: $background-color-card !default;
+
+// side nav
+$background-color-side-nav: $background-color-card !default;

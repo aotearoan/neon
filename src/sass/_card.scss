@@ -58,6 +58,10 @@
     flex-direction: row;
     justify-content: space-between;
 
+    @if ($neon-theme == curved) {
+      padding-bottom: 0;
+    }
+
     .neon-h1,
     .neon-h2,
     .neon-h3,

@@ -14,6 +14,17 @@
         aria-label="Copy"
         @click="copyText"
       />
+      <neon-button
+        v-if="ghLink"
+        icon="github"
+        class="editor__copy"
+        button-style="text"
+        color="neutral"
+        size="s"
+        aria-label="View on GitHub"
+        :href="ghLink"
+        target="_blank"
+      />
       <neon-icon v-if="readOnly" name="lock" :disabled="true" class="editor__read-only" aria-label="Read only" />
     </div>
   </div>

@@ -1,13 +1,13 @@
 /* theme variable */
-$neon-theme: 'sharp' !default;
+$neon-theme: 'curved' !default;
 
 /* base colors */
 $color-brand: #5b0a9b !default;
-$color-primary: #34b587 !default;
+$color-primary: #bf08a1 !default;
 $color-info: #3c8eff !default;
-$color-success: #34b587 !default;
-$color-warn: #ffb22a !default;
-$color-error: #ec4145 !default;
+$color-success: #0fddad !default;
+$color-warn: #f5b104 !default;
+$color-error: #e9054d !default;
 
 /* layout */
 $base-space: 4px !default;
@@ -28,8 +28,8 @@ $animation-speed-slow: 0.3s !default;
 $animation-speed-fast: 0.225s !default;
 
 /* borders */
-$border-radius: 0 !default;
-$border-width: 1px !default;
+$border-radius: 12px !default;
+$border-width: 0px !default;
 $border-style: solid !default;
 
 /* typography */
@@ -75,9 +75,9 @@ $h0-weight: 500 !default;
 $font-weight-em: 200 !default;
 $font-weight-strong: 800 !default;
 
-$letter-spacing-headings: $letter-spacing-s !default;
+$letter-spacing-headings: 0 !default;
 
-$line-height-headings-ratio: 1.5 !default;
+$line-height-headings-ratio: 1.2 !default;
 $line-height-ratio: 1.618 !default;
 $line-height-one: 1.125 !default; // hack for line-height: 1 to prevent cropping of content below the baseline e.g. 'g'
 
@@ -87,7 +87,7 @@ $system-font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helve
 $body-font-family: $system-font-stack !default;
 $body-font-weight: 400 !default;
 
-$heading-font-family: $body-font-family !default;
+$heading-font-family: Salome, $body-font-family !default;
 $font-style-headings: normal !default;
 
 $font-family-paragraph: $body-font-family !default;
@@ -98,9 +98,9 @@ $logo-width-multiplier: 3.84776 !default; // logo ratio of width to height
 /* components */
 
 /* gradient config */
-$background-gradient-angle: 60deg !default;
+$background-gradient-angle: 160deg !default;
 /* % offset where background gradient switches to alternate-color */
-$background-gradient-offset: 25% !default;
+$background-gradient-offset: 33% !default;
 
 /* smaller sizes for labels only */
 $size-xxs: 4 * $base-space !default;
@@ -132,7 +132,7 @@ $side-nav-width: 80 * $base-space !default;
 
 /* card */
 $card-section-border: $border-width $border-style !default;
-$card-box-shadow: $box-shadow !default;
+$card-box-shadow: none !default;
 
 /* checkbox */
 $border-width-checkbox: 1px !default;
@@ -140,18 +140,18 @@ $border-width-checkbox: 1px !default;
 /* alerts */
 $width-alert: 400px !default;
 $width-alert-action: 96px !default;
-$border-width-alert: 1px !default;
-$border-opacity-alert-action: 1 !default;
+$border-width-alert: $border-width !default;
+$border-opacity-alert-action: 0.25 !default;
 $width-toast: 250px !default;
 
 /* dropdown */
-$box-shadow-dropdown: $box-shadow-strong !default;
+$box-shadow-dropdown: 0 2px 2px rgba(0, 0, 0, 0.028), 0 4px 4px rgba(0, 0, 0, 0.056), 0 6px 6px rgba(0, 0, 0, 0.06) !default;
 $max-height-dropdown: 280px !default;
 
 /* buttons */
-$border-radius-button: $border-radius !default;
+$border-radius-button: 50px !default;
 $border-radius-button-xl: $border-radius !default;
-$border-width-outline-button: $border-width !default;
+$border-width-outline-button: 1px !default;
 
 /* tabs */
 $border-width-tabs: 2px !default;
@@ -161,40 +161,39 @@ $border-radius-chip: $border-radius !default;
 
 /* scrollbars */
 $width-scrollbar: 6px !default;
-$border-radius-scrollbar: 0 !default;
+$border-radius-scrollbar: 4px !default;
 
 /* tooltips */
 $tooltip-max-width: 144px !default;
 $tooltip-max-height: 3 * $tooltip-max-width !default;
 $popover-max-width: 480px !default;
 $popover-max-height: 3 * $tooltip-max-width !default;
-$border-width-tooltip: 1px !default;
+$border-width-tooltip: 0 !default;
 
 /* drawer */
-$border-width-drawer: $border-width !default;
-$border-radius-drawer: 0 !default;
+$border-width-drawer: 0 !default;
+$border-radius-drawer: 12px !default;
 
 /* radio buttons */
-$border-radius-radio-button: 0 !default;
+$border-radius-radio-button: 50% !default;
 
 /* switch */
-$border-radius-switch: 0 !default;
-$border-radius-switch-indicator: 0 !default;
+$border-radius-switch: 4 * $base-space !default;
+$border-radius-switch-indicator: 50% !default;
 
 /* note */
-$border-width-note: 2px !default;
+$border-width-note: $border-width !default;
 
 /* slider & range slider */
 $height-slider-track: 8px !default;
-$height-slider-thumb: 2.5 * $height-slider-track !default;
-$width-slider-thumb: 2.5 * $height-slider-track !default;
-$border-radius-slider-thumb: $border-radius !default;
-$border-radius-slider-track: $border-radius !default;
-$border-width-slider-thumb: $border-width !default;
-$border-radius-slider-tooltip: $border-radius !default;
+$height-slider-thumb: 3 * $height-slider-track !default;
+$width-slider-thumb: $height-slider-thumb !default;
+$border-radius-slider-thumb: 50% !default;
+$border-radius-slider-track: $height-slider-track !default;
+$border-radius-slider-tooltip: 50px !default;
 
 /* input */
-$border-radius-input: $border-radius !default;
+$border-radius-input: 6px !default;
 
 /* skeleton loader */
-$border-radius-skeleton-loader: $border-radius !default;
+$border-radius-skeleton-loader: 6px !default;

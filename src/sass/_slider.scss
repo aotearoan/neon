@@ -53,7 +53,7 @@ $width-slider-tooltip: 201px;
       font-weight: 600;
       letter-spacing: 0;
       padding: 2 * $base-space;
-      border-radius: $border-radius;
+      border-radius: $border-radius-slider-tooltip;
 
       &:after {
         content: '';

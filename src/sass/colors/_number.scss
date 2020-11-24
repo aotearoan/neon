@@ -1,6 +1,6 @@
 .neon-number {
   @each $color, $palette in $functional-colors {
-    $number-component-color: map-get($palette, $border-color-input-selected);
+    $number-component-color: map-get($palette, $color-input-selected);
     &--#{$color}.neon-number--with-buttons:not(.neon-number--disabled) {
       .neon-input__textfield {
         border-color: $number-component-color;

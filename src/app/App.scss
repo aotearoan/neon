@@ -5,9 +5,12 @@ $monospaced-font-variation-settings: 'wdth' 100, 'wght' 450;
 $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', Courier, monospace;
 
 .app {
+  overscroll-behavior: none;
+
+  $heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
+
   &.neon-theme--classic {
-    $heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
     @import '../../themes/classic/theme';
     @import 'src/sass/common';
     @import './sass/app';
@@ -25,8 +28,25 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
     }
   }
 
+  &.neon-theme--curved {
+    @import '../../themes/curved/theme';
+    @import 'src/sass/common';
+    @import './sass/app';
+
+    &.neon-mode--dark {
+      @import '../../themes/curved/dark';
+      @import 'src/sass/colors/color-components';
+      @import './sass/dark';
+    }
+
+    &.neon-mode--light {
+      @import '../../themes/curved/light';
+      @import 'src/sass/colors/color-components';
+      @import './sass/light';
+    }
+  }
+
   &.neon-theme--sharp {
-    $heading-font-family: $font-family-monospaced, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
     @import '../../themes/sharp/theme';
     @import 'src/sass/common';
     @import './sass/app';

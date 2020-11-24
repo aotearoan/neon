@@ -16,6 +16,12 @@
   border: $border-slider-thumb;
 }
 
+@mixin thumb-color-sharp($background-color-slider-thumb) {
+  background: $background-color-slider-thumb;
+  box-shadow: $box-shadow-slider;
+  border: $border-slider-thumb;
+}
+
 @mixin thumb-disabled {
   cursor: not-allowed;
   background: $color-disabled-light;
@@ -92,25 +98,23 @@
           @include track-color($color-slider-fill);
         }
 
-        @if ($theme == 'sharp') {
-          $border-slider-thumb-sharp: $border-width-slider-thumb $border-style $color-slider-fill;
-
+        @if ($neon-theme == 'sharp') {
           &::-webkit-slider-thumb {
-            @include thumb-color($border-slider-thumb-sharp);
+            @include thumb-color-sharp(darken($color-slider-fill, 10));
           }
 
           &::-moz-range-thumb {
-            @include thumb-color($border-slider-thumb-sharp);
+            @include thumb-color-sharp(darken($color-slider-fill, 10));
           }
 
           &::-ms-thumb {
-            @include thumb-color($border-slider-thumb-sharp);
+            @include thumb-color-sharp(darken($color-slider-fill, 10));
           }
         }
       }
 
       &:focus-within {
-        @if ($theme == 'sharp') {
+        @if ($neon-theme == 'sharp') {
           .neon-slider__input:focus {
             $box-shadow-slider-thumb-focus: 0 0 0 4px rgba($color-slider-fill, 0.3);
 

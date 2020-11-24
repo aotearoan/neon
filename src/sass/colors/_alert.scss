@@ -17,15 +17,13 @@ $alert-colors: (
       &.neon-alert__message--#{$color} {
         background-color: $color-inverse;
 
-        @if ($theme == 'classic') {
+        @if ($neon-theme == 'sharp') {
+          border: $border-width-alert $border-style $alert-color;
+        } @else {
           @supports (backdrop-filter: none) {
             background-color: rgba($alert-color, 0.15);
             backdrop-filter: blur(20px);
           }
-        }
-
-        @if ($theme == 'sharp') {
-          border: $border-width-alert $border-style $alert-color;
         }
 
         &:focus-within:not(.neon-alert__message--with-actions) {

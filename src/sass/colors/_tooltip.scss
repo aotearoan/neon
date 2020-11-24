@@ -1,3 +1,10 @@
+@function neon-tooltip-border-color() {
+  @if ($border-width-tooltip == 0) {
+    @return $color-inverse;
+  }
+  @return $border-color;
+}
+
 .neon-tooltip {
   @each $color, $palette in $functional-colors {
     &--outline-color-#{$color} {
@@ -10,7 +17,7 @@
   &__content {
     background: $color-text;
     color: $color-inverse;
-    border: 1px solid $border-color;
+    border: $border-width-tooltip solid $border-color;
     box-shadow: $box-shadow-dropdown;
   }
 
@@ -66,7 +73,7 @@
 
     &.neon-tooltip--top {
       .neon-tooltip__arrow {
-        border-top-color: $border-color;
+        border-top-color: neon-tooltip-border-color();
       }
 
       .neon-tooltip__arrow-overlay {
@@ -76,7 +83,7 @@
 
     &.neon-tooltip--bottom {
       .neon-tooltip__arrow {
-        border-bottom-color: $border-color;
+        border-bottom-color: neon-tooltip-border-color();
       }
 
       .neon-tooltip__arrow-overlay {
@@ -86,7 +93,7 @@
 
     &.neon-tooltip--left {
       .neon-tooltip__arrow {
-        border-left-color: $border-color;
+        border-left-color: neon-tooltip-border-color();
       }
 
       .neon-tooltip__arrow-overlay {
@@ -96,7 +103,7 @@
 
     &.neon-tooltip--right {
       .neon-tooltip__arrow {
-        border-right-color: $border-color;
+        border-right-color: neon-tooltip-border-color();
       }
 
       .neon-tooltip__arrow-overlay {

@@ -64,7 +64,7 @@ Vue.use(VueI18n);
   },
 })
 export default class App extends Vue {
-  public theme = NeonTheme.Classic;
+  public theme = NeonTheme.Curved;
   public themeModel: NeonSelectOption[] = [
     ...Object.keys(NeonTheme).map((k, index) => ({
       key: this.themes[index],
@@ -85,7 +85,7 @@ export default class App extends Vue {
       this.$router.push({ path: path.replace('neon', '') });
     }
 
-    this.switchTheme((localStorage.getItem('theme') as NeonTheme) || NeonTheme.Classic);
+    this.switchTheme((localStorage.getItem('theme') as NeonTheme) || NeonTheme.Curved);
 
     const savedMode = (localStorage.getItem('mode') as NeonMode) || undefined;
     NeonModeUtils.init(savedMode);

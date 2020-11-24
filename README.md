@@ -29,6 +29,7 @@ export default class App extends Vue {}
 First select a theme:
 <ul>
   <li>classic</li>
+  <li>curved</li>
   <li>sharp</li>
 </ul>
 <p>To use a theme without any customization simply import the basic theme file, e.g. to import the classic theme:</p>

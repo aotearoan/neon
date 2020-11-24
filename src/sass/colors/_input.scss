@@ -12,13 +12,17 @@
   }
 
   @each $color, $palette in $functional-colors {
-    $input-color: map-get($palette, $border-color-input-selected);
+    $input-color: map-get($palette, $color-input-selected);
     &.neon-input--#{$color} {
       &.neon-input--focused {
         .neon-input__text,
         .neon-input__textarea {
-          border-color: $input-color;
-          background-color: $background-color-input-active;
+          @if ($neon-theme == curved) {
+            background-color: rgba($input-color, 0.125);
+          } @else {
+            border-color: $input-color;
+            background-color: $background-color-input-active;
+          }
         }
       }
 

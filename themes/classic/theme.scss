@@ -1,5 +1,5 @@
 /* theme variable */
-$theme: 'classic' !default;
+$neon-theme: 'classic' !default;
 
 /* base colors */
 $color-brand: #5b0a9b !default;
@@ -96,6 +96,12 @@ $font-family-monospaced: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', Courier
 $logo-width-multiplier: 3.84776 !default; // logo ratio of width to height
 
 /* components */
+
+/* gradient config */
+$background-gradient-angle: 60deg !default;
+/* % offset where background gradient switches to alternate-color */
+$background-gradient-offset: 25% !default;
+
 /* smaller sizes for labels only */
 $size-xxs: 4 * $base-space !default;
 $size-xs: 6 * $base-space !default;
@@ -144,7 +150,9 @@ $box-shadow-dropdown: $box-shadow-strong !default;
 $max-height-dropdown: 280px !default;
 
 /* buttons */
+$border-radius-button: $border-radius !default;
 $border-radius-button-xl: 8px !default;
+$border-width-outline-button: $border-width !default;
 
 /* tabs */
 $border-width-tabs: 2px !default;
@@ -161,6 +169,7 @@ $tooltip-max-width: 144px !default;
 $tooltip-max-height: 3 * $tooltip-max-width !default;
 $popover-max-width: 480px !default;
 $popover-max-height: 3 * $tooltip-max-width !default;
+$border-width-tooltip: 1px !default;
 
 /* drawer */
 $border-width-drawer: 0 !default;
@@ -182,3 +191,10 @@ $height-slider-thumb: 3 * $height-slider-track !default;
 $width-slider-thumb: $height-slider-thumb !default;
 $border-radius-slider-thumb: 50% !default;
 $border-radius-slider-track: $height-slider-track !default;
+$border-radius-slider-tooltip: $border-radius !default;
+
+/* input */
+$border-radius-input: $border-radius !default;
+
+/* skeleton loader */
+$border-radius-skeleton-loader: $border-radius !default;

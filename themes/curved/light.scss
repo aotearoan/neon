@@ -1,8 +1,6 @@
-$background-color-card: $color-neutral-l5 !default;
-$background-color: $color-neutral-l4 !default;
+$background-color-card: $color-high-contrast-l5 !default;
+$background-color: whitesmoke !default;
 
-$color-text-dark: #000;
-$color-text-light: #fff;
 $color-text: $color-text-dark !default;
 $color-inverse: $color-text-light !default;
 $color-text-low-contrast: $color-low-contrast-d1 !default;
@@ -25,15 +23,15 @@ $background-color-warn: $color-warn-l1 !default;
 $background-color-error: $color-error-l1 !default;
 
 $border-color: $color-neutral-l3 !default;
-$border: $border-width $border-style $border-color !default;
+$border: none !default;
 $hr-color: $border-color !default;
 
 $color-outline: d1 !default;
 
 $label-color: $color-neutral-d1 !default;
 
-$color-disabled-light: $color-neutral-l2 !default;
-$color-disabled-dark: $color-neutral-l4 !default;
+$color-disabled-light: $color-neutral-l4 !default;
+$color-disabled-dark: $color-high-contrast-l4 !default;
 
 // switch
 $color-switch-off: $color-neutral-l3 !default;
@@ -49,17 +47,17 @@ $border-color-checkbox: d2 !default;
 
 // solid button
 $background-solid-button-light: d1 !default;
-$background-solid-button-dark: d2 !default;
+$background-solid-button-dark: d1 !default;
 // alternate color for gradient buttons only
 $background-solid-button-alternate: l1 !default;
 
 // high-contrast buttons
-$background-high-contrast-solid-button-light: $color-high-contrast-d1 !default;
+$background-high-contrast-solid-button-light: $color-text !default;
 $background-high-contrast-solid-button-dark: $color-text !default;
 
 // low-contrast buttons
 $background-low-contrast-solid-button-light: $color-low-contrast-l5 !default;
-$background-low-contrast-solid-button-dark: $color-low-contrast-l4 !default;
+$background-low-contrast-solid-button-dark: $color-low-contrast-l5 !default;
 $color-low-contrast-solid-button: $color-low-contrast-d4 !default;
 $color-low-contrast-outline-button: $color-low-contrast-l2 !default;
 
@@ -73,8 +71,8 @@ $color-label: d1 !default;
 
 // note
 $border-color-note: d1 !default;
-$background-color-note: l4 !default;
-$background-opacity-note: 0.125 !default;
+$background-color-note: d1 !default;
+$background-opacity-note: 0.25 !default;
 $color-note: $color-neutral-d3 !default;
 
 // link
@@ -107,10 +105,9 @@ $color-radio-button-label: $color-neutral-d3 !default;
 
 // input
 $border-color-input: $color-neutral-l3 !default;
-$background-color-input: rgba($color-text-light, 0.5) !default;
-$background-color-input-active: $color-text-light !default;
-$color-input-selected: d1 !default;
-$color-placeholder: $color-disabled-light !default;
+$background-color-input: $color-high-contrast-l4 !default;
+$color-input-selected: d3 !default;
+$color-placeholder: rgba($color-text, 0.33) !default;
 
 // drop zone
 $color-drop-zone: $color-text !default;
@@ -133,7 +130,7 @@ $color-tab-selected: d1 !default;
 $border-color-tabs-underline: transparentize($color-neutral-l3, 0.667) !default;
 
 // footer
-$background-color-footer: darken($color-neutral-l5, 2) !default;
+$background-color-footer: $background-color !default;
 $border-top-footer: none !default;
 
 // skeleton loader
@@ -159,12 +156,12 @@ $opacity-toggle-chip: 0.15 !default;
 // slider & range slider
 $color-slider: d1 !default;
 $color-slider-track: $color-neutral-l4 !default;
-$slider-thumb-color: $color-neutral-l5 !default;
+$slider-thumb-color: $background-color-card !default;
 $box-shadow-slider: 0px -2px 4px 0px rgba(140, 140, 140, 0.2), 0px 2px 4px 0px rgba(140, 140, 140, 0.3) !default;
 $border-slider-thumb: none !default;
 
 // top nav
-$background-color-top-nav: $background-color-card !default;
+$background-color-top-nav: $background-color !default;
 
 // side nav
-$background-color-side-nav: $background-color-card !default;
+$background-color-side-nav: $background-color !default;

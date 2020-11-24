@@ -97,9 +97,9 @@
   color: $color-text;
 
   &--switch {
-    @if ($theme == 'classic') {
+    @if ($neon-theme == 'classic') {
       @include switch-color-classsic;
-    } @else if($theme == 'sharp') {
+    } @else if($neon-theme == 'sharp') {
       @include switch-color-sharp;
     }
   }
