@@ -79,21 +79,6 @@ header {
   }
 }
 
-.app-side-nav {
-  .neon-input {
-    input {
-      border: none;
-      border-radius: 0;
-      box-shadow: none;
-      @include padding-horizontal(0.75);
-    }
-  }
-
-  & > hr {
-    display: none;
-  }
-}
-
 .example__output,
 .no-style--font {
   .neon-h0,
@@ -133,11 +118,6 @@ header {
 blockquote,
 .neon-note {
   max-width: $max-paragraph-width;
-}
-
-.theme-toggle {
-  margin-left: 4 * $base-space;
-  margin-right: 4 * $base-space;
 }
 
 .menu-filter {

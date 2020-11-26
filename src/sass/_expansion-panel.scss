@@ -127,4 +127,12 @@
   .neon-expansion-indicator {
     margin-right: -3px;
   }
+
+  &--full-width {
+    .neon-expansion-panel__header,
+    .neon-expansion-panel__content {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 }

@@ -146,7 +146,6 @@ $border-opacity-alert-action: 0.25 !default;
 $width-toast: 250px !default;
 
 /* dropdown */
-$box-shadow-dropdown: $box-shadow-strong !default;
 $max-height-dropdown: 280px !default;
 
 /* buttons */
@@ -198,3 +197,6 @@ $border-radius-input: $border-radius !default;
 
 /* skeleton loader */
 $border-radius-skeleton-loader: $border-radius !default;
+
+/* expansion panel */
+$border-width-expansion-panel: $border-width !default;

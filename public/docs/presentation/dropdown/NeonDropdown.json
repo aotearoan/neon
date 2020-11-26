@@ -94,6 +94,14 @@
       }
     },
     {
+      "name": "alternateColor",
+      "tags": {},
+      "description": "The alternate color of the dropdown button (for gradient buttons).",
+      "type": {
+        "name": "NeonFunctionalColor"
+      }
+    },
+    {
       "name": "dropdownStyle",
       "tags": {},
       "description": "The style of the dropdown button",

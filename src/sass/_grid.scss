@@ -3,7 +3,7 @@
 .neon-grid {
   width: 100%;
   max-width: $max-page-width;
-  @include min-height(100);
+  @include min-height(100, $footer-height-desktop);
   @include padding(0.5, true);
   display: grid;
 

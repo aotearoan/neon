@@ -28,8 +28,7 @@
 
         &-container {
           &:focus {
-            border-top-color: $tab-color;
-            border-bottom-color: $tab-color;
+            border-bottom-color: rgba($tab-color, 0.5);
           }
         }
       }

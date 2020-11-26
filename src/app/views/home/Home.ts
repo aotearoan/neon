@@ -19,6 +19,7 @@ export default class Home extends Vue {
     'Lodash',
     'JQuery',
     'Bootstrap',
+    'Tailwind CSS',
   ];
 
   private get developers() {

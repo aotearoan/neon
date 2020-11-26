@@ -29,7 +29,13 @@ $height-component-header-mobile: 77px;
     z-index: $z-index-above-2;
     @include padding(1, true);
     padding-bottom: 0 !important;
-    top: $top-nav-height-desktop;
+
+    @if ($neon-theme == curved) {
+      top: 0;
+    } @else {
+      top: $top-nav-height-desktop;
+    }
+
     left: $side-nav-width;
     width: calc(100vw - #{$side-nav-width});
 

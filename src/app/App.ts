@@ -77,6 +77,7 @@ export default class App extends Vue {
   private indexFilter = '';
   private menuOpen = false;
   private isMobile = false;
+  private isTablet = false;
 
   public mounted() {
     const path = localStorage.getItem('path');
@@ -264,5 +265,6 @@ export default class App extends Vue {
 
   private handleResize() {
     this.isMobile = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.MobileLarge]).matches;
+    this.isTablet = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.Tablet]).matches;
   }
 }

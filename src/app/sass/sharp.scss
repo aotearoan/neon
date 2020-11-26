@@ -12,3 +12,16 @@
     display: none;
   }
 }
+
+.side-nav-logo-wrapper,
+.side-nav-actions {
+  display: none !important;
+}
+
+.component-documentation .neon-tabs__menu-items--underlined {
+  border-bottom: none !important;
+
+  .neon-tabs__menu-item {
+    top: 0;
+  }
+}

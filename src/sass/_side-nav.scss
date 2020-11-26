@@ -4,11 +4,6 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  @include padding($multiplier: 0.75);
-
-  &--full-width {
-    padding: 0;
-  }
 
   @include responsive(larger-than-tablet) {
     width: $side-nav-width;
@@ -21,12 +16,23 @@
   }
 
   &__sticky {
+    @include padding($multiplier: 0.75);
     flex: 1 0 auto;
   }
 
   &__scrolling {
+    @include padding($multiplier: 0.75);
     overflow-y: auto;
     height: 100%;
+  }
+
+  &--full-width {
+    .neon-side-nav {
+      &__sticky,
+      &__scrolling {
+        padding: 0;
+      }
+    }
   }
 }
 

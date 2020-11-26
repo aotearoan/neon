@@ -14,6 +14,7 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
     @import '../../themes/classic/theme';
     @import 'src/sass/common';
     @import './sass/app';
+    @import './sass/classic';
 
     &.neon-mode--dark {
       @import '../../themes/classic/dark';
@@ -32,6 +33,7 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
     @import '../../themes/curved/theme';
     @import 'src/sass/common';
     @import './sass/app';
+    @import './sass/curved';
 
     &.neon-mode--dark {
       @import '../../themes/curved/dark';
@@ -50,6 +52,7 @@ $font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu M
     @import '../../themes/sharp/theme';
     @import 'src/sass/common';
     @import './sass/app';
+    @import './sass/sharp';
 
     &.neon-mode--dark {
       @import '../../themes/sharp/dark';

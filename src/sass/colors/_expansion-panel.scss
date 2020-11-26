@@ -1,23 +1,28 @@
 .neon-expansion-panel {
-  border-bottom: $border-width $border-style $border-color;
-
-  &--disabled {
-    .neon-expansion-panel__header {
-      color: $color-disabled-light;
-    }
+  &--top {
+    border-bottom: $border-width-expansion-panel $border-style $border-color;
   }
 
   &--bottom {
     .neon-expansion-panel__header {
-      border-top: $border-width $border-style $border-color;
+      border-top: $border-width-expansion-panel $border-style $border-color;
     }
   }
 
   @each $color, $palette in $functional-colors {
-    &--#{$color} {
+    &--#{$color}:not(.neon-expansion-panel--disabled) {
+      $expansion-panel-color: map-get($palette, $base-color);
+
       .neon-expansion-panel__label-container {
-        @include focus-text-outline(map-get($palette, $color-outline));
+        color: $expansion-panel-color;
+        @include focus-text-outline($expansion-panel-color);
       }
+    }
+  }
+
+  &.neon-expansion-panel--disabled {
+    .neon-expansion-panel__header {
+      color: $color-disabled-light;
     }
   }
 }

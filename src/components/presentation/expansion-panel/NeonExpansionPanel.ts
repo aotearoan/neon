@@ -63,6 +63,12 @@ export default class NeonExpansionPanel extends Vue {
   public color!: NeonFunctionalColor;
 
   /**
+   * Whether the label and expansion indicator should be flush with the width of the container.
+   */
+  @Prop({ default: false })
+  public fullWidth!: boolean;
+
+  /**
    * The disabled state of the expansion panel
    */
   @Prop({ default: false })

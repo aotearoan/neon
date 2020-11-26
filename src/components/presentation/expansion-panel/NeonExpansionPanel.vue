@@ -2,7 +2,11 @@
   <div
     class="neon-expansion-panel"
     :class="[
-      { 'neon-expansion-panel--expanded': value, 'neon-expansion-panel--disabled': disabled },
+      {
+        'neon-expansion-panel--expanded': value,
+        'neon-expansion-panel--full-width': fullWidth,
+        'neon-expansion-panel--disabled': disabled,
+      },
       `neon-expansion-panel--${position}`,
       `neon-expansion-panel--${size}`,
       `neon-expansion-panel--${color}`,
@@ -10,13 +14,7 @@
     :aria-expanded="value"
     :aria-disabled="disabled"
   >
-    <div
-      class="neon-expansion-panel__header"
-      :class="`neon-color-text-${color}`"
-      @click="toggleExpanded"
-      tabindex="-1"
-      :aria-controls="id"
-    >
+    <div class="neon-expansion-panel__header" @click="toggleExpanded" tabindex="-1" :aria-controls="id">
       <div
         class="neon-expansion-panel__label-container neon-expansion-panel__label-container--outline-text"
         tabindex="0"

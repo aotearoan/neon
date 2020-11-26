@@ -4,10 +4,11 @@
     $from-color $background-gradient-offset,
     $to-color 100%
   );
+  transition: all ease-in-out $animation-speed-fast;
 
   &:hover:not(:disabled) {
     background-image: linear-gradient(
-      360deg - $background-gradient-angle,
+      $background-gradient-angle + 10deg,
       $from-color $background-gradient-offset,
       $to-color 100%
     );

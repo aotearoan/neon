@@ -20,6 +20,7 @@
           class="neon-dropdown__button"
           :button-style="dropdownStyle === 'text-button' ? 'text' : 'solid'"
           :color="color"
+          :alternate-color="alternateColor"
           :size="size"
           :indicator="indicator"
           :indicator-expanded="value"

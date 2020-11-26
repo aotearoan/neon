@@ -1,3 +1,5 @@
+$base-color: l1 !default;
+
 $background-color-card: $color-neutral-d4 !default;
 $background-color: $color-neutral-d5 !default;
 
@@ -26,7 +28,7 @@ $border-color: $color-neutral-d3 !default;
 $border: $border-width $border-style $border-color !default;
 $hr-color: $border-color !default;
 
-$color-outline: l1 !default;
+$color-outline: $base-color !default;
 
 $label-color: $color-neutral-l1 !default;
 
@@ -36,7 +38,7 @@ $color-disabled-dark: #383838 !default;
 
 // switch
 $color-switch-off: $color-neutral-d2 !default;
-$color-switch-on: l1 !default;
+$color-switch-on: $base-color !default;
 $color-switch-indicator: $color-neutral-d4 !default;
 
 $color-switch-disabled: $color-disabled-dark !default;
@@ -44,11 +46,11 @@ $color-switch-indicator-disabled: $color-disabled-light !default;
 
 // checkbox
 $background-color-checkbox: l2 !default;
-$border-color-checkbox: l1 !default;
+$border-color-checkbox: $base-color !default;
 
 // solid button
 $background-solid-button-light: l2 !default;
-$background-solid-button-dark: l1 !default;
+$background-solid-button-dark: $base-color !default;
 // alternate color for gradient buttons only
 $background-solid-button-alternate: d1 !default;
 
@@ -63,15 +65,15 @@ $color-low-contrast-solid-button: $color-low-contrast-l4 !default;
 $color-low-contrast-outline-button: $color-low-contrast-d3 !default;
 
 // text button
-$color-text-button: l1 !default;
+$color-text-button: $base-color !default;
 $background-color-text-button-hover: rgba($color-neutral-d3, 0.25) !default;
 $background-color-text-button-active: rgba($color-neutral-d3, 0.5) !default;
 
 // label
-$color-label: l1 !default;
+$color-label: $base-color !default;
 
 // note
-$border-color-note: l1 !default;
+$border-color-note: $base-color !default;
 $background-color-note: d4 !default;
 $background-opacity-note: 0.125 !default;
 $color-note: $color-neutral-l3 !default;
@@ -82,11 +84,11 @@ $color-link-hover: $color-primary-l2 !default;
 $color-link-visited: darken($color-primary-l1, 15%) !default;
 
 // icon
-$color-icon: l1 !default;
+$color-icon: $base-color !default;
 
 // action menu
 $color-action-menu-hover: $color-neutral-d3 !default;
-$color-action-menu-selected: l1 !default;
+$color-action-menu-selected: $base-color !default;
 
 // selection
 $background-color-selection: $color-brand-l1 !default;
@@ -96,7 +98,7 @@ $color-pre: $color-primary-l3 !default;
 $background-color-pre: darken($color-neutral-d3, 3) !default;
 
 // toggle
-$color-toggle: l1 !default;
+$color-toggle: $base-color !default;
 $color-toggle-selected: $color-neutral-d5 !default;
 $border-color-toggle: $color-neutral-d3 !default;
 
@@ -108,27 +110,31 @@ $color-radio-button-label: $color-neutral-l3 !default;
 $border-color-input: $color-neutral-d2 !default;
 $background-color-input: rgba($color-neutral-d5, 0.5) !default;
 $background-color-input-active: $color-neutral-d5 !default;
-$color-input-selected: l1 !default;
+$color-input-selected: $base-color !default;
 $color-placeholder: $color-disabled-light !default;
 
 // drop zone
 $color-drop-zone: $color-neutral-l1 !default;
 
 // file
-$color-list-item: l1 !default;
+$color-list-item: $base-color !default;
 
 // alerts
 $box-shadow-alert: 0.5 * $base-space 0.5 * $base-space 2 * $base-space $color-neutral-d5 !default;
-$color-alert: l1 !default;
-$background-color-toast: l1 !default;
+$color-alert: $base-color !default;
+$background-color-toast: $base-color !default;
 $color-toast: d4 !default;
 
 // dropdown / dropdown menu / select
 $border-color-dropdown: $color-neutral-d3 !default;
-$background-color-dropdown-menu-highlight: l1 !default;
+$background-color-dropdown-menu-highlight: $base-color !default;
+$box-shadow-dropdown: $box-shadow-strong !default;
+
+// tooltip
+$box-shadow-tooltip: $box-shadow-strong !default;
 
 // tabs
-$color-tab-selected: l1 !default;
+$color-tab-selected: $base-color !default;
 $border-color-tabs-underline: transparentize($color-neutral-d3, 0.667) !default;
 
 // footer
@@ -141,7 +147,7 @@ $color-loading-2: $color-neutral-d2 !default;
 $color-loading-3: rgba($color-neutral-d2, 0.5) !default;
 
 // chip
-$color-chip: l1 !default;
+$color-chip: $base-color !default;
 
 // scrollbars
 $color-scrollbar: rgba(white, 0.05) !default;
@@ -150,13 +156,13 @@ $color-scrollbar: rgba(white, 0.05) !default;
 $background-color-overlay: rgba($color-neutral-d5, 0.75) !default;
 
 // toggle chips
-$color-toggle-chip: l1 !default;
+$color-toggle-chip: $base-color !default;
 $color-toggle-chip-text: $color-text !default;
 $border-color-toggle-chip: $color-neutral-d3 !default;
 $opacity-toggle-chip: 0.15 !default;
 
 // slider & range slider
-$color-slider: l1 !default;
+$color-slider: $base-color !default;
 $color-slider-track: $color-neutral-d3 !default;
 $slider-thumb-color: $color-neutral-l4 !default;
 $box-shadow-slider: 0px -2px 4px 0px rgba(0, 0, 0, 0.2), 0px 2px 4px 0px rgba(0, 0, 0, 0.3) !default;

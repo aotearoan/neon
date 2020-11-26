@@ -1,14 +1,45 @@
 .app-side-nav {
-  .neon-input {
-    input {
-      border: none;
-      border-radius: 0;
-      box-shadow: none;
-      @include padding-horizontal(0.75);
-    }
-  }
-
   & > hr {
     display: none;
+  }
+
+  .tagline {
+    display: flex;
+    margin-top: 2 * $base-space;
+    margin-bottom: 6 * $base-space;
+  }
+
+  .neon-side-nav__scrolling {
+    padding-top: 0;
+  }
+
+  .side-nav-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6 * $base-space;
+  }
+}
+
+.app-top-nav {
+  @include responsive(larger-than-tablet) {
+    display: none !important;
+  }
+}
+
+.app-footer .neon-footer__container {
+  max-width: 1024px !important;
+  margin: auto;
+
+  @media screen and (min-width: 1393px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.neon-app--standard-page {
+  .neon-footer__container {
+    align-items: center;
   }
 }

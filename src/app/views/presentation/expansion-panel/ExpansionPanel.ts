@@ -55,16 +55,10 @@ brisket, kielbasa ham hock sirloin ground round strip steak jowl jerky short rib
   <neon-expansion-panel v-model="expanded5" color="success" icon="contrast" label="Colored label">
     ${this.content}
   </neon-expansion-panel>
-  <neon-expansion-panel v-model="expanded6" :disabled="true" label="Disabled">
+  <neon-expansion-panel :full-width="true" v-model="expanded6" label="Full width">
     ${this.content}
   </neon-expansion-panel>
-</div>`,
-      data: this.data,
-    },
-    {
-      title: 'Button position',
-      template: `<div class="example--vertical example-expansion-panel">
-  <neon-expansion-panel v-model="expanded7" label="From top">
+  <neon-expansion-panel v-model="expanded7" :disabled="true" label="Disabled">
     ${this.content}
   </neon-expansion-panel>
   <neon-expansion-panel v-model="expanded8" position="bottom" label="From bottom">
