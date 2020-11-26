@@ -17,28 +17,28 @@
   .neon-toast__message {
     pointer-events: visible;
     touch-action: auto;
-    height: $size-l;
-    min-width: $width-toast;
-    margin: $base-space;
+    height: $neon-size-l;
+    min-width: $neon-width-toast;
+    margin: $neon-base-space;
     overflow: hidden;
-    border-radius: 2 * $border-radius;
+    border-radius: 2 * $neon-border-radius;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     position: relative;
-    padding: 3 * $base-space 3.5 * $base-space;
+    padding: 3 * $neon-base-space 3.5 * $neon-base-space;
 
     &--dismissable {
       cursor: pointer;
     }
 
     .neon-toast__close {
-      min-width: $font-size-l;
-      width: $font-size-l;
-      min-height: $font-size-l;
-      height: $font-size-l;
-      margin-left: 3.5 * $base-space;
+      min-width: $neon-font-size-l;
+      width: $neon-font-size-l;
+      min-height: $neon-font-size-l;
+      height: $neon-font-size-l;
+      margin-left: 3.5 * $neon-base-space;
       opacity: 0.5;
       outline: none;
     }
@@ -51,8 +51,8 @@
   }
 
   .neon-toast__title {
-    line-height: $line-height-one;
-    font-size: $base-font-size;
+    line-height: $neon-line-height-one;
+    font-size: $neon-base-font-size;
     font-weight: 400;
   }
 }

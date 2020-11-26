@@ -18,8 +18,8 @@
 
     .neon-icon {
       position: absolute;
-      width: $font-size * $line-height-one;
-      height: $font-size * $line-height-one;
+      width: $font-size * $neon-line-height-one;
+      height: $font-size * $neon-line-height-one;
       right: 0.5 * ($size - $font-size);
       top: 0.5 * ($size - $font-size) - 1px;
       cursor: default;
@@ -47,37 +47,37 @@
   position: relative;
 
   &--s {
-    @include input-size($size-s, $font-size-s);
+    @include input-size($neon-size-s, $neon-font-size-s);
   }
 
   &--m {
-    @include input-size($size-m, $base-font-size);
+    @include input-size($neon-size-m, $neon-base-font-size);
   }
 
   &--l {
-    @include input-size($size-l, $base-font-size);
+    @include input-size($neon-size-l, $neon-base-font-size);
   }
 
   &__text,
   &__textarea {
-    border-radius: $border-radius-input;
-    border: $border-width $border-style;
-    padding: $base-space 2.5 * $base-space;
-    line-height: $line-height-one;
+    border-radius: $neon-border-radius-input;
+    border: $neon-border-width $neon-border-style;
+    padding: $neon-base-space 2.5 * $neon-base-space;
+    line-height: $neon-line-height-one;
     outline: none;
-    font-family: $body-font-family;
+    font-family: $neon-body-font-family;
     width: 100%;
 
     &::placeholder {
-      font-family: $body-font-family;
-      letter-spacing: $letter-spacing-s;
+      font-family: $neon-body-font-family;
+      letter-spacing: $neon-letter-spacing-s;
     }
   }
 
   &:not(.neon-input--placeholder-visible) {
     input[type='password'] {
       font-weight: bold;
-      letter-spacing: 2 * $letter-spacing-m;
+      letter-spacing: 2 * $neon-letter-spacing-m;
     }
   }
 

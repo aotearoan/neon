@@ -1,7 +1,7 @@
 %chevron-line-base {
   stroke-width: 1;
   stroke-linecap: round;
-  transition: all ease-in-out $animation-speed-fast;
+  transition: all ease-in-out $neon-animation-speed-fast;
 }
 
 .neon-expansion-indicator__line1 {
@@ -16,11 +16,11 @@
 
 .neon-expansion-indicator {
   display: flex;
-  font-size: $base-font-size;
+  font-size: $neon-base-font-size;
   position: relative;
 
   &__container {
-    transition: all ease-in-out $animation-speed-fast;
+    transition: all ease-in-out $neon-animation-speed-fast;
     transform: translateY(2px);
   }
 
@@ -28,7 +28,7 @@
     transform: rotate(35deg);
 
     &.neon-svg--stroke {
-      transition: transform ease-in-out $animation-speed-fast !important;
+      transition: transform ease-in-out $neon-animation-speed-fast !important;
     }
   }
 
@@ -36,7 +36,7 @@
     transform: rotate(-35deg);
 
     &.neon-svg--stroke {
-      transition: transform ease-in-out $animation-speed-fast !important;
+      transition: transform ease-in-out $neon-animation-speed-fast !important;
     }
   }
 

@@ -9,50 +9,50 @@
   .neon-logo {
     $logo-height: 100px;
     height: $logo-height;
-    width: $logo-height * $logo-width-multiplier;
+    width: $logo-height * $neon-logo-width-multiplier;
     max-width: 100%;
     align-self: center;
-    margin-top: 32 * $base-space;
-    margin-bottom: 5 * $base-space;
+    margin-top: 32 * $neon-base-space;
+    margin-bottom: 5 * $neon-base-space;
 
     @include responsive(tablet) {
       height: 0.75 * $logo-height;
-      width: 0.75 * $logo-height * $logo-width-multiplier;
+      width: 0.75 * $logo-height * $neon-logo-width-multiplier;
     }
   }
 
   h1 {
     @include neon-h0;
     text-align: center;
-    margin-top: 16 * $base-space;
+    margin-top: 16 * $neon-base-space;
 
     @include responsive(tablet) {
       @include neon-h1;
-      margin-top: 16 * $base-space;
+      margin-top: 16 * $neon-base-space;
     }
   }
 
   .powered-by {
     font-weight: 300;
-    margin-top: 10 * $base-space;
+    margin-top: 10 * $neon-base-space;
     text-align: center;
   }
 
   p {
-    font-size: $h5-size;
+    font-size: $neon-h5-size;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
 
     @include responsive(tablet) {
-      font-size: $base-font-size;
+      font-size: $neon-base-font-size;
     }
   }
 
   .neon-button {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 8 * $base-space;
+    margin-top: 8 * $neon-base-space;
   }
 
   .highlights {
@@ -66,28 +66,28 @@
     .highlight {
       @include padding;
       align-items: center;
-      width: 100 * $base-space;
+      width: 100 * $neon-base-space;
       @include margin(1, true);
 
       h2 {
-        font-size: $h4-size;
-        font-weight: $h4-weight;
+        font-size: $neon-h4-size;
+        font-weight: $neon-h4-weight;
         text-align: center;
       }
 
       p {
-        font-size: $base-font-size;
+        font-size: $neon-base-font-size;
       }
 
       @include responsive(mobile-large) {
-        width: 82 * $base-space;
+        width: 82 * $neon-base-space;
       }
     }
 
     .highlight-icon {
-      width: 24 * $base-space;
-      height: 24 * $base-space;
-      margin: 4 * $base-space;
+      width: 24 * $neon-base-space;
+      height: 24 * $neon-base-space;
+      margin: 4 * $neon-base-space;
     }
   }
 }

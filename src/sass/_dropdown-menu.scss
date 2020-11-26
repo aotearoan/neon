@@ -1,6 +1,6 @@
 .neon-dropdown-menu {
   &__items {
-    max-height: $max-height-dropdown;
+    max-height: $neon-max-height-dropdown;
     overflow-y: auto;
   }
 
@@ -24,7 +24,7 @@
     }
 
     .neon-icon {
-      margin-right: 3 * $base-space;
+      margin-right: 3 * $neon-base-space;
     }
 
     .neon-link {
@@ -33,30 +33,30 @@
 
     .neon-link,
     .neon-dropdown-menu__item-container {
-      padding-left: 4 * $base-space;
-      padding-right: 4 * $base-space;
-      height: $size-m;
+      padding-left: 4 * $neon-base-space;
+      padding-right: 4 * $neon-base-space;
+      height: $neon-size-m;
       flex: 1 1 auto;
-      font-size: $font-size-s;
+      font-size: $neon-font-size-s;
     }
 
     .neon-icon {
-      width: $font-size-s;
-      height: $font-size-s;
+      width: $neon-font-size-s;
+      height: $neon-font-size-s;
     }
 
     &--grouped {
       .neon-dropdown-menu__item-container,
       .neon-link {
-        padding-left: 8 * $base-space;
-        padding-right: 8 * $base-space;
+        padding-left: 8 * $neon-base-space;
+        padding-right: 8 * $neon-base-space;
       }
     }
 
     &--group-title {
       .neon-dropdown-menu__item-container {
         font-weight: 500;
-        letter-spacing: $letter-spacing-s;
+        letter-spacing: $neon-letter-spacing-s;
         cursor: default;
 
         &:hover {

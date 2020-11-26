@@ -1,12 +1,12 @@
 .neon-number {
-  @each $color, $palette in $functional-colors {
-    $number-component-color: map-get($palette, $color-input-selected);
+  @each $color, $palette in $neon-functional-colors {
+    $number-component-color: map-get($palette, $neon-color-input-selected);
     &--#{$color}.neon-number--with-buttons:not(.neon-number--disabled) {
       .neon-input__textfield {
         border-color: $number-component-color;
 
         &:focus {
-          border-right: $border-width $border-style $number-component-color;
+          border-right: $neon-border-width $neon-border-style $number-component-color;
         }
       }
 
@@ -15,7 +15,7 @@
         background-color: rgba($number-component-color, 0.0625);
 
         .neon-svg--fill {
-          fill: $color-text;
+          fill: $neon-color-text;
         }
 
         &:hover,
@@ -24,7 +24,7 @@
           box-shadow: none;
 
           .neon-svg--fill {
-            fill: $color-text;
+            fill: $neon-color-text;
           }
         }
       }
@@ -37,7 +37,7 @@
 
     &--#{$color}:not(.neon-number--with-buttons) {
       .neon-input__textfield {
-        border-right: $border-width $border-style $border-color-input;
+        border-right: $neon-border-width $neon-border-style $neon-border-color-input;
       }
     }
   }
@@ -45,18 +45,18 @@
   .neon-button--disabled {
     &.neon-number__decrement,
     &.neon-number__increment {
-      background-color: $color-disabled-dark;
+      background-color: $neon-color-disabled-dark;
 
       .neon-svg--fill {
-        fill: $color-disabled-light;
+        fill: $neon-color-disabled-light;
       }
     }
   }
 
   &:not(.neon-number--editable) {
     &:not(.neon-number--disabled) .neon-number__input .neon-input__textfield {
-      color: $color-text;
-      background-color: $background-color-input;
+      color: $neon-color-text;
+      background-color: $neon-background-color-input;
       box-shadow: none;
     }
   }
@@ -65,12 +65,12 @@
     .neon-button--disabled {
       &.neon-number__decrement,
       &.neon-number__increment {
-        border: $border-width $border-style $color-disabled-dark;
+        border: $neon-border-width $neon-border-style $neon-color-disabled-dark;
       }
     }
 
     &:not(.neon-number--with-buttons) .neon-input__textfield {
-      border-right: $border-width $border-style $color-disabled-dark;
+      border-right: $neon-border-width $neon-border-style $neon-color-disabled-dark;
     }
   }
 }

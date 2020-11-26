@@ -28,7 +28,7 @@
     .neon-modal__container,
     .neon-modal__overlay {
       opacity: 1;
-      transition: opacity ease-in-out 0.5 * $animation-speed-fast;
+      transition: opacity ease-in-out 0.5 * $neon-animation-speed-fast;
       pointer-events: auto;
     }
 
@@ -53,8 +53,8 @@
 
   &__container {
     @include responsive(larger-than-mobile-large) {
-      padding-left: 2 * $base-space;
-      padding-right: 2 * $base-space;
+      padding-left: 2 * $neon-base-space;
+      padding-right: 2 * $neon-base-space;
     }
   }
 
@@ -63,7 +63,7 @@
     top: 0;
     right: 0;
     display: flex;
-    margin: 0.5 * $base-space;
+    margin: 0.5 * $neon-base-space;
 
     @include responsive(larger-than-mobile-large) {
       display: none;

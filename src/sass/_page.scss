@@ -5,18 +5,18 @@
 
   &--with-top-nav .neon-page__container {
     @include responsive(larger-than-tablet) {
-      padding-top: $top-nav-height-desktop;
-      @include min-height(100, $top-nav-height-desktop);
+      padding-top: $neon-top-nav-height-desktop;
+      @include min-height(100, $neon-top-nav-height-desktop);
     }
 
     @include responsive(tablet) {
-      padding-top: $top-nav-height-tablet;
-      @include min-height(100, $top-nav-height-tablet);
+      padding-top: $neon-top-nav-height-tablet;
+      @include min-height(100, $neon-top-nav-height-tablet);
     }
 
     @include responsive(mobile-large) {
-      padding-top: $top-nav-height-mobile;
-      @include min-height(100, $top-nav-height-mobile);
+      padding-top: $neon-top-nav-height-mobile;
+      @include min-height(100, $neon-top-nav-height-mobile);
     }
   }
 }

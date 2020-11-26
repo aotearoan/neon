@@ -5,8 +5,8 @@
 
   .tagline {
     display: flex;
-    margin-top: 2 * $base-space;
-    margin-bottom: 6 * $base-space;
+    margin-top: 2 * $neon-base-space;
+    margin-bottom: 6 * $neon-base-space;
   }
 
   .neon-side-nav__scrolling {
@@ -18,7 +18,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 6 * $base-space;
+    margin-bottom: 6 * $neon-base-space;
   }
 }
 
@@ -29,7 +29,7 @@
 }
 
 .app-footer {
-  max-width: $max-page-width - $side-nav-width;
+  max-width: $neon-max-page-width - $neon-side-nav-width;
 
   .neon-footer__container {
     align-items: center;

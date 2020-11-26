@@ -3,19 +3,19 @@
   .neon-card-body,
   .neon-card-footer {
     &:not(:last-child) {
-      border-right: $border-width $border-style $border-color;
+      border-right: $neon-border-width $neon-border-style $neon-border-color;
     }
   }
 }
 
 .neon-card {
-  border: $border-width $border-style $border-color;
-  box-shadow: $card-box-shadow;
+  border: $neon-border-width $neon-border-style $neon-border-color;
+  box-shadow: $neon-card-box-shadow;
 
   .neon-card-header,
   .neon-card-body,
   .neon-card-footer {
-    background-color: $background-color-card;
+    background-color: $neon-background-color-card;
   }
 
   &.neon-card--vertical {
@@ -23,8 +23,8 @@
     .neon-card-body,
     .neon-card-footer {
       &:not(:last-child):not(.neon-card-body--full-width) {
-        border-bottom: $card-section-border;
-        border-bottom-color: $border-color;
+        border-bottom: $neon-card-section-border;
+        border-bottom-color: $neon-border-color;
       }
     }
   }

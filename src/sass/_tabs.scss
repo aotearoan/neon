@@ -6,7 +6,7 @@
     font-weight: 500;
 
     &--underlined .neon-tabs__menu-item {
-      top: 0.5 * $border-width-tabs;
+      top: 0.5 * $neon-border-width-tabs;
     }
   }
 
@@ -15,12 +15,12 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: calc(100% + #{$border-width});
+    height: calc(100% + #{$neon-border-width});
     user-select: none;
     cursor: pointer;
 
     & + .neon-tabs__menu-item {
-      margin-left: 6 * $base-space;
+      margin-left: 6 * $neon-base-space;
     }
 
     &:focus {
@@ -33,46 +33,46 @@
       outline: none;
       height: 100%;
       align-items: center;
-      border-bottom: $border-width-tabs $border-style transparent;
+      border-bottom: $neon-border-width-tabs $neon-border-style transparent;
       flex-direction: row;
     }
   }
 
   &--s {
     .neon-tabs__menu-items {
-      height: $size-s;
-      font-size: $base-font-size;
+      height: $neon-size-s;
+      font-size: $neon-base-font-size;
 
       svg {
-        width: $base-font-size;
-        height: $base-font-size;
-        margin-right: $base-space;
+        width: $neon-base-font-size;
+        height: $neon-base-font-size;
+        margin-right: $neon-base-space;
       }
     }
   }
 
   &--m {
     .neon-tabs__menu-items {
-      height: $size-m;
-      font-size: $font-size-l;
+      height: $neon-size-m;
+      font-size: $neon-font-size-l;
 
       svg {
-        width: $font-size-l;
-        height: $font-size-l;
-        margin-right: 2 * $base-space;
+        width: $neon-font-size-l;
+        height: $neon-font-size-l;
+        margin-right: 2 * $neon-base-space;
       }
     }
   }
 
   &--l {
     .neon-tabs__menu-items {
-      height: $size-l;
-      font-size: $font-size-l;
+      height: $neon-size-l;
+      font-size: $neon-font-size-l;
 
       svg {
-        width: $font-size-l;
-        height: $font-size-l;
-        margin-right: 2 * $base-space;
+        width: $neon-font-size-l;
+        height: $neon-font-size-l;
+        margin-right: 2 * $neon-base-space;
       }
     }
   }
@@ -81,7 +81,7 @@
 .neon-tab {
   position: relative;
   display: none;
-  border-radius: $border-radius;
+  border-radius: $neon-border-radius;
   @include padding-vertical;
 
   &--selected {
@@ -91,13 +91,13 @@
   &:before {
     content: '';
     position: absolute;
-    top: $base-space;
+    top: $neon-base-space;
     right: 0;
-    width: 2 * $base-space;
-    height: 2 * $base-space;
-    border-radius: $border-radius;
+    width: 2 * $neon-base-space;
+    height: 2 * $neon-base-space;
+    border-radius: $neon-border-radius;
     display: flex;
-    transition: all $animation-speed-fast ease-in-out;
+    transition: all $neon-animation-speed-fast ease-in-out;
   }
 
   &:focus {

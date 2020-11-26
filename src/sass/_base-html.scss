@@ -9,7 +9,7 @@
 hr {
   display: flex;
   width: 100%;
-  border-radius: $border-radius;
+  border-radius: $neon-border-radius;
   border: none;
   @include margin-vertical;
 }
@@ -27,28 +27,28 @@ ul {
 
   &:not(.no-style) > li {
     display: inline;
-    max-width: $max-paragraph-width;
-    padding-left: 7 * $base-space;
+    max-width: $neon-max-paragraph-width;
+    padding-left: 7 * $neon-base-space;
 
     &:before {
       content: '•';
-      padding-right: 2 * $base-space;
-      margin-left: -7 * $base-space;
+      padding-right: 2 * $neon-base-space;
+      margin-left: -7 * $neon-base-space;
       display: inline-flex;
       align-items: center;
-      font-size: $font-size-l;
-      line-height: $line-height-ratio;
+      font-size: $neon-font-size-l;
+      line-height: $neon-line-height-ratio;
     }
   }
 
   & + p {
-    margin-top: 4 * $base-space;
+    margin-top: 4 * $neon-base-space;
   }
 }
 
 pre:not(.prism-editor__editor) {
   @include padding;
-  border-radius: $border-radius;
+  border-radius: $neon-border-radius;
   overflow-x: auto;
   white-space: pre-line;
 }
@@ -58,11 +58,11 @@ p + pre {
 }
 
 p + ul {
-  margin-top: 2 * $base-space;
+  margin-top: 2 * $neon-base-space;
 }
 
 pre + p {
-  margin-top: 2 * $base-space;
+  margin-top: 2 * $neon-base-space;
 }
 
 blockquote,
@@ -81,12 +81,12 @@ p {
   & + .neon-h5,
   & + h6,
   & + .neon-h6 {
-    margin-top: 4 * $base-space;
+    margin-top: 4 * $neon-base-space;
   }
 }
 
 .neon-monospaced {
-  font-family: $font-family-monospaced;
+  font-family: $neon-font-family-monospaced;
   font-variant-ligatures: discretionary-ligatures;
   font-variation-settings: $monospaced-font-variation-settings;
 }
@@ -96,5 +96,5 @@ p {
 }
 
 textarea {
-  font-family: $body-font-family;
+  font-family: $neon-body-font-family;
 }

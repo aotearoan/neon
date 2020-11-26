@@ -2,6 +2,6 @@
   flex-direction: row;
 
   .neon-button:not(:last-child) {
-    margin-right: 4 * $base-space;
+    margin-right: 4 * $neon-base-space;
   }
 }

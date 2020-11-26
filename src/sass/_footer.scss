@@ -6,25 +6,25 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    max-width: $max-page-width + 4 * $base-space;
-    line-height: $line-height-one;
+    max-width: $neon-max-page-width + 4 * $neon-base-space;
+    line-height: $neon-line-height-one;
 
     @include responsive(larger-than-tablet) {
-      font-size: $base-font-size;
-      height: $footer-height-desktop;
+      font-size: $neon-base-font-size;
+      height: $neon-footer-height-desktop;
       padding: 0 $spacing-vertical-desktop;
     }
 
     @include responsive(tablet) {
-      font-size: $font-size-s;
-      height: $footer-height-tablet;
+      font-size: $neon-font-size-s;
+      height: $neon-footer-height-tablet;
       padding: 0 $spacing-vertical-tablet;
     }
 
     @include responsive(mobile-large) {
-      font-size: $font-size-s;
-      height: $footer-height-mobile;
-      padding: 0 $spacing-vertical-mobile;
+      font-size: $neon-font-size-s;
+      height: $neon-footer-height-mobile;
+      padding: 0 $neon-spacing-vertical-mobile;
     }
   }
 }

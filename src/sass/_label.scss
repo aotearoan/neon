@@ -2,38 +2,38 @@
 
 .neon-label {
   &--xs {
-    height: $size-xs - $base-space;
-    min-width: $size-xs - $base-space;
-    font-size: $font-size-xxs;
-    padding: 0 $base-space;
+    height: $neon-size-xs - $neon-base-space;
+    min-width: $neon-size-xs - $neon-base-space;
+    font-size: $neon-font-size-xxs;
+    padding: 0 $neon-base-space;
 
     .neon-icon {
-      width: $font-size-xs;
-      height: $font-size-xs;
+      width: $neon-font-size-xs;
+      height: $neon-font-size-xs;
     }
   }
 
   &--s {
-    height: $size-s - $base-space;
-    min-width: $size-s - $base-space;
+    height: $neon-size-s - $neon-base-space;
+    min-width: $neon-size-s - $neon-base-space;
 
-    font-size: $font-size-s;
+    font-size: $neon-font-size-s;
 
     .neon-icon {
-      width: $font-size-s;
-      height: $font-size-s;
+      width: $neon-font-size-s;
+      height: $neon-font-size-s;
     }
   }
 
   text-transform: uppercase;
-  border-radius: $border-radius;
-  letter-spacing: $letter-spacing-s;
+  border-radius: $neon-border-radius;
+  letter-spacing: $neon-letter-spacing-s;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   user-select: none;
-  padding: 0 2 * $base-space;
+  padding: 0 2 * $neon-base-space;
   min-width: fit-content;
   width: fit-content;
   font-weight: 700;
@@ -50,12 +50,12 @@
 
     &.neon-label--with-label {
       &.neon-label--icon-left .neon-icon {
-        margin-right: $base-space;
+        margin-right: $neon-base-space;
       }
 
       &.neon-label--icon-right .neon-icon {
         order: 1;
-        margin-left: $base-space;
+        margin-left: $neon-base-space;
       }
     }
   }

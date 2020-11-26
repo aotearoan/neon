@@ -1,21 +1,21 @@
 .neon-note {
-  color: $color-note;
+  color: $neon-color-note;
 
   strong {
-    color: $color-text;
+    color: $neon-color-text;
   }
 
-  @each $color, $palette in $functional-colors {
+  @each $color, $palette in $neon-functional-colors {
     &--#{$color} {
-      background-color: rgba(map-get($palette, $background-color-note), $background-opacity-note);
-      border: $border-width-note $border-style map-get($palette, $border-color-note);
+      background-color: rgba(map-get($palette, $neon-background-color-note), $neon-background-opacity-note);
+      border: $neon-border-width-note $neon-border-style map-get($palette, $neon-border-color-note);
     }
   }
 
   .neon-button.neon-button--s.neon-button--icon-only {
-    min-width: $size-xs;
-    width: $size-xs;
-    height: $size-xs;
+    min-width: $neon-size-xs;
+    width: $neon-size-xs;
+    height: $neon-size-xs;
     opacity: 0.75;
 
     &:hover {
@@ -26,12 +26,12 @@
 }
 
 blockquote {
-  color: $color-note;
+  color: $neon-color-note;
 
   strong {
-    color: $color-text;
+    color: $neon-color-text;
   }
 
-  background-color: rgba(map-get($primary-palette, $background-color-note), $background-opacity-note);
-  border: $border-width-note $border-style map-get($primary-palette, $border-color-note);
+  background-color: rgba(map-get($neon-primary-palette, $neon-background-color-note), $neon-background-opacity-note);
+  border: $neon-border-width-note $neon-border-style map-get($neon-primary-palette, $neon-border-color-note);
 }

@@ -11,7 +11,7 @@
   }
 
   .neon-list {
-    margin-bottom: 4 * $base-space;
+    margin-bottom: 4 * $neon-base-space;
   }
 
   &--single {
@@ -22,7 +22,7 @@
     flex: 1 1 auto;
 
     .neon-list {
-      margin-right: 2 * $base-space;
+      margin-right: 2 * $neon-base-space;
       flex: 1 1 auto;
       margin-bottom: 0;
       max-width: 100%;
@@ -30,19 +30,19 @@
     }
 
     &.neon-file--s {
-      @include single-file-size($size-s);
+      @include single-file-size($neon-size-s);
     }
 
     &.neon-file--m {
-      @include single-file-size($size-m);
+      @include single-file-size($neon-size-m);
     }
 
     &.neon-file--l {
-      @include single-file-size($size-l);
+      @include single-file-size($neon-size-l);
     }
   }
 
   .neon-button + .neon-button {
-    margin-left: 4 * $base-space;
+    margin-left: 4 * $neon-base-space;
   }
 }

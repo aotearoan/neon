@@ -1,20 +1,20 @@
 .neon-number {
   &--with-buttons.neon-number {
     &--s {
-      max-width: 4 * $size-s;
+      max-width: 4 * $neon-size-s;
     }
 
     &--m {
-      max-width: 4 * $size-m;
+      max-width: 4 * $neon-size-m;
     }
 
     &--l {
-      max-width: 4 * $size-l;
+      max-width: 4 * $neon-size-l;
     }
   }
 
   .neon-input .neon-input__textfield {
-    padding-right: 2 * $base-space;
+    padding-right: 2 * $neon-base-space;
     font-variant: tabular-nums;
     border-right: none;
     -moz-appearance: textfield;

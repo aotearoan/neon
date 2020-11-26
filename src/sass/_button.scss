@@ -3,12 +3,12 @@
 @mixin button-size($size, $font-size, $icon-only-size) {
   height: $size;
   font-size: $font-size;
-  line-height: $line-height-one;
+  line-height: $neon-line-height-one;
   padding: 0 0.75 * ($size - $font-size);
 
   .neon-icon {
-    width: $font-size * $line-height-one;
-    height: $font-size * $line-height-one;
+    width: $font-size * $neon-line-height-one;
+    height: $font-size * $neon-line-height-one;
   }
 
   &.neon-button--icon-only {
@@ -31,25 +31,25 @@
   margin-right: 0;
 
   &--s {
-    @include button-size($size-s, $font-size-s, $font-size-l);
+    @include button-size($neon-size-s, $neon-font-size-s, $neon-font-size-l);
   }
 
   &--m {
-    @include button-size($size-m, $base-font-size, $h6-size);
+    @include button-size($neon-size-m, $neon-base-font-size, $neon-h6-size);
   }
 
   &--l {
-    @include button-size($size-l, $base-font-size, $h5-size);
+    @include button-size($neon-size-l, $neon-base-font-size, $neon-h5-size);
   }
 
   &--xl {
-    @include button-size($size-xl, $h5-size, $h3-size);
-    border-radius: $border-radius-button-xl;
+    @include button-size($neon-size-xl, $neon-h5-size, $neon-h3-size);
+    border-radius: $neon-border-radius-button-xl;
   }
 
-  border-radius: $border-radius-button;
+  border-radius: $neon-border-radius-button;
   font-weight: 400;
-  letter-spacing: $letter-spacing-m;
+  letter-spacing: $neon-letter-spacing-m;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,14 +86,14 @@
 
   &--icon-left {
     .neon-icon {
-      margin-right: 2 * $base-space;
+      margin-right: 2 * $neon-base-space;
     }
   }
 
   &--icon-right {
     .neon-icon {
       order: 1;
-      margin-left: 2 * $base-space;
+      margin-left: 2 * $neon-base-space;
     }
   }
 
@@ -117,7 +117,7 @@
   }
 
   &__indicator:not(:first-child) {
-    margin-left: 2 * $base-space;
+    margin-left: 2 * $neon-base-space;
   }
 
   .neon-link__label {
@@ -136,6 +136,6 @@
   justify-content: flex-end;
 
   .neon-button + .neon-button {
-    margin-left: 2 * $base-space;
+    margin-left: 2 * $neon-base-space;
   }
 }

@@ -1,8 +1,8 @@
 .layout-example {
-  border: 2px solid $color-text-neutral;
+  border: 2px solid $neon-color-text-neutral;
 
   &__label,
   &__link {
-    color: $color-text-neutral !important;
+    color: $neon-color-text-neutral !important;
   }
 }

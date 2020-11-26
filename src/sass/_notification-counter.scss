@@ -1,6 +1,6 @@
 .neon-notification-counter {
   transform: scale(0);
-  transition: transform linear $animation-speed-fast;
+  transition: transform linear $neon-animation-speed-fast;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
@@ -16,6 +16,6 @@
 
   &--active {
     transform: scale(1);
-    transition: transform cubic-bezier(0.175, 0.885, 0.32, 1.275) $animation-speed-slow;
+    transition: transform cubic-bezier(0.175, 0.885, 0.32, 1.275) $neon-animation-speed-slow;
   }
 }

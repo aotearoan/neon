@@ -3,14 +3,14 @@
     justify-content: flex-start;
 
     &-label {
-      margin-right: 2 * $base-space;
+      margin-right: 2 * $neon-base-space;
     }
 
     &-count {
       width: fit-content;
       min-width: fit-content;
-      margin-right: 6 * $base-space;
-      font-size: $font-size-xs;
+      margin-right: 6 * $neon-base-space;
+      font-size: $neon-font-size-xs;
       font-weight: 600;
       font-variant: tabular-nums;
       line-height: 1;
@@ -18,7 +18,7 @@
 
     &--selected:not(.neon-filter-list__item--disabled) {
       .neon-filter-list__item-count {
-        margin-right: 2 * $base-space;
+        margin-right: 2 * $neon-base-space;
       }
     }
 
@@ -36,7 +36,7 @@
 
   &__show-toggle {
     align-self: center;
-    font-size: $font-size-s;
-    margin-top: 2 * $base-space;
+    font-size: $neon-font-size-s;
+    margin-top: 2 * $neon-base-space;
   }
 }

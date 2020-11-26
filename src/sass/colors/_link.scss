@@ -1,30 +1,30 @@
 a[href]:not(.neon-link--no-style),
 .neon-link:not(.neon-link--no-style) {
   &:not(.neon-button) {
-    color: $color-link;
-    transition: color ease-in-out $animation-speed-fast;
+    color: $neon-color-link;
+    transition: color ease-in-out $neon-animation-speed-fast;
     opacity: 1;
 
     &:visited {
-      color: $color-link-visited;
+      color: $neon-color-link-visited;
     }
 
     &:active,
     &:hover {
-      color: $color-link-hover;
+      color: $neon-color-link-hover;
     }
   }
 }
 
 .neon-link {
-  @include focus-outline-styles($color-link);
+  @include focus-outline-styles($neon-color-link);
 
   &--outline-text {
     &:hover {
-      color: $color-link;
+      color: $neon-color-link;
 
       &:after {
-        background-color: $color-link;
+        background-color: $neon-color-link;
       }
     }
   }

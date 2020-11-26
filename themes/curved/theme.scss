@@ -2,200 +2,207 @@
 $neon-theme: 'curved' !default;
 
 /* base colors */
-$color-brand: #5b0a9b !default;
-$color-primary: #bf08a1 !default;
-$color-info: #3c8eff !default;
-$color-success: #0fddad !default;
-$color-warn: #f5b104 !default;
-$color-error: #e9054d !default;
+$neon-color-brand: #5b0a9b !default;
+$neon-color-primary: #bf08a1 !default;
+$neon-color-info: #3c8eff !default;
+$neon-color-success: #0fddad !default;
+$neon-color-warn: #f5b104 !default;
+$neon-color-error: #e9054d !default;
 
 /* layout */
-$base-space: 4px !default;
-$max-paragraph-width: 70ch !default;
-$max-page-width: 1920px !default;
+$neon-base-space: 4px !default;
+$neon-max-paragraph-width: 70ch !default;
+$neon-max-page-width: 1920px !default;
 
 /* vertical layout spacing, used for margins and paddings of layout components */
-$spacing-vertical-mobile: 3 * $base-space !default;
+$neon-spacing-vertical-mobile: 3 * $neon-base-space !default;
 /* ratio of horizontal to vertical spacing */
-$spacing-horizontal-multiplier: 1.1667 !default;
+$neon-spacing-horizontal-multiplier: 1.1667 !default;
 /* ratio of tablet to mobile spacing */
-$spacing-multiplier-tablet: 1.5 !default;
+$neon-spacing-multiplier-tablet: 1.5 !default;
 /* ratio of desktop to mobile spacing */
-$spacing-multiplier-desktop: 2 !default;
+$neon-spacing-multiplier-desktop: 2 !default;
 
 /* animation */
-$animation-speed-slow: 0.3s !default;
-$animation-speed-fast: 0.225s !default;
+$neon-animation-speed-slow: 0.3s !default;
+$neon-animation-speed-fast: 0.225s !default;
 
 /* borders */
-$border-radius: 12px !default;
-$border-width: 0px !default;
-$border-style: solid !default;
+$neon-border-radius: 12px !default;
+$neon-border-width: 0px !default;
+$neon-border-style: solid !default;
 
 /* typography */
-$typography-scale: 1.125 !default; // Major second https://type-scale.com/
-$base-font-size: 16px !default;
+$neon-typography-scale: 1.125 !default; // Major second https://type-scale.com/
+$neon-base-font-size: 16px !default;
 
-$font-size-xxs: round($base-font-size / ($typography-scale * $typography-scale * $typography-scale)) !default;
-$font-size-xs: round($base-font-size / ($typography-scale * $typography-scale)) !default;
-$font-size-s: round($base-font-size / $typography-scale) !default;
-$font-size-l: round($base-font-size * $typography-scale) !default;
-
-$letter-spacing-s: 0.25px !default;
-$letter-spacing-m: 0.5px !default;
-$letter-spacing-l: 1px !default;
-
-$h6-size: $font-size-l !default;
-$h5-size: round($base-font-size * $typography-scale * $typography-scale) !default;
-$h4-size: round($base-font-size * $typography-scale * $typography-scale * $typography-scale) !default;
-$h3-size: round(
-  $base-font-size * $typography-scale * $typography-scale * $typography-scale * $typography-scale
+$neon-font-size-xxs: round(
+  $neon-base-font-size / ($neon-typography-scale * $neon-typography-scale * $neon-typography-scale)
 ) !default;
-$h2-size: round(
-  $base-font-size * $typography-scale * $typography-scale * $typography-scale * $typography-scale * $typography-scale
+$neon-font-size-xs: round($neon-base-font-size / ($neon-typography-scale * $neon-typography-scale)) !default;
+$neon-font-size-s: round($neon-base-font-size / $neon-typography-scale) !default;
+$neon-font-size-l: round($neon-base-font-size * $neon-typography-scale) !default;
+
+$neon-letter-spacing-s: 0.25px !default;
+$neon-letter-spacing-m: 0.5px !default;
+$neon-letter-spacing-l: 1px !default;
+
+$neon-h6-size: $neon-font-size-l !default;
+$neon-h5-size: round($neon-base-font-size * $neon-typography-scale * $neon-typography-scale) !default;
+$neon-h4-size: round(
+  $neon-base-font-size * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale
 ) !default;
-$h1-size: round(
-  $base-font-size * $typography-scale * $typography-scale * $typography-scale * $typography-scale * $typography-scale *
-    $typography-scale
+$neon-h3-size: round(
+  $neon-base-font-size * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale *
+    $neon-typography-scale
+) !default;
+$neon-h2-size: round(
+  $neon-base-font-size * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale *
+    $neon-typography-scale * $neon-typography-scale
+) !default;
+$neon-h1-size: round(
+  $neon-base-font-size * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale *
+    $neon-typography-scale * $neon-typography-scale * $neon-typography-scale
 ) !default;
 // AKA branding font size, used for landing page & banners etc...
-$h0-size: round(
-  $base-font-size * $typography-scale * $typography-scale * $typography-scale * $typography-scale * $typography-scale *
-    $typography-scale * $typography-scale * $typography-scale
+$neon-h0-size: round(
+  $neon-base-font-size * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale *
+    $neon-typography-scale * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale *
+    $neon-typography-scale
 ) !default;
 
-$h6-weight: 500 !default;
-$h5-weight: 500 !default;
-$h4-weight: 500 !default;
-$h3-weight: 500 !default;
-$h2-weight: 500 !default;
-$h1-weight: 500 !default;
-$h0-weight: 500 !default;
+$neon-h6-weight: 500 !default;
+$neon-h5-weight: 500 !default;
+$neon-h4-weight: 500 !default;
+$neon-h3-weight: 500 !default;
+$neon-h2-weight: 500 !default;
+$neon-h1-weight: 500 !default;
+$neon-h0-weight: 500 !default;
 
-$font-weight-em: 200 !default;
-$font-weight-strong: 800 !default;
+$neon-font-weight-em: 200 !default;
+$neon-font-weight-strong: 800 !default;
 
-$letter-spacing-headings: 0 !default;
+$neon-letter-spacing-headings: 0 !default;
 
-$line-height-headings-ratio: 1.2 !default;
-$line-height-ratio: 1.618 !default;
-$line-height-one: 1.125 !default; // hack for line-height: 1 to prevent cropping of content below the baseline e.g. 'g'
+$neon-line-height-headings-ratio: 1.2 !default;
+$neon-line-height-ratio: 1.618 !default;
+$neon-line-height-one: 1.125 !default; // hack for line-height: 1 to prevent cropping of content below the baseline e.g. 'g'
 
-$system-font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+$neon-system-font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
   'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
 
-$body-font-family: $system-font-stack !default;
-$body-font-weight: 400 !default;
+$neon-body-font-family: $neon-system-font-stack !default;
+$neon-body-font-weight: 400 !default;
 
-$heading-font-family: Salome, $body-font-family !default;
-$font-style-headings: normal !default;
+$neon-heading-font-family: Salome, $neon-body-font-family !default;
+$neon-font-style-headings: normal !default;
 
-$font-family-paragraph: $body-font-family !default;
-$font-family-monospaced: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', Courier, monospace !default;
+$neon-font-family-paragraph: $neon-body-font-family !default;
+$neon-font-family-monospaced: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', Courier, monospace !default;
 
-$logo-width-multiplier: 3.84776 !default; // logo ratio of width to height
+$neon-logo-width-multiplier: 3.84776 !default; // logo ratio of width to height
 
 /* components */
 
 /* gradient config */
-$background-gradient-angle: 160deg !default;
+$neon-background-gradient-angle: 160deg !default;
 /* % offset where background gradient switches to alternate-color */
-$background-gradient-offset: 33% !default;
+$neon-background-gradient-offset: 33% !default;
 
 /* smaller sizes for labels only */
-$size-xxs: 4 * $base-space !default;
-$size-xs: 6 * $base-space !default;
+$neon-size-xxs: 4 * $neon-base-space !default;
+$neon-size-xs: 6 * $neon-base-space !default;
 /* standard label & input sizes */
-$size-s: 8 * $base-space !default;
-$size-m: 10 * $base-space !default;
-$size-l: 12 * $base-space !default;
+$neon-size-s: 8 * $neon-base-space !default;
+$neon-size-m: 10 * $neon-base-space !default;
+$neon-size-l: 12 * $neon-base-space !default;
 /* buttons only */
-$size-xl: 16 * $base-space !default;
+$neon-size-xl: 16 * $neon-base-space !default;
 
 /* box shadows */
-$box-shadow: none !default;
-$box-shadow-strong: none !default;
-$inset-shadow: none !default;
+$neon-box-shadow: none !default;
+$neon-box-shadow-strong: none !default;
+$neon-inset-shadow: none !default;
 
 /* top nav */
-$top-nav-height-mobile: $size-s + 4 * $base-space !default;
-$top-nav-height-tablet: $size-m + 6 * $base-space !default;
-$top-nav-height-desktop: $size-l + 8 * $base-space !default;
+$neon-top-nav-height-mobile: $neon-size-s + 4 * $neon-base-space !default;
+$neon-top-nav-height-tablet: $neon-size-m + 6 * $neon-base-space !default;
+$neon-top-nav-height-desktop: $neon-size-l + 8 * $neon-base-space !default;
 
 /* footer */
-$footer-height-mobile: $font-size-s + 8 * $base-space !default;
-$footer-height-tablet: $font-size-s + 8 * $base-space !default;
-$footer-height-desktop: $base-font-size + 12 * $base-space !default;
+$neon-footer-height-mobile: $neon-font-size-s + 8 * $neon-base-space !default;
+$neon-footer-height-tablet: $neon-font-size-s + 8 * $neon-base-space !default;
+$neon-footer-height-desktop: $neon-base-font-size + 12 * $neon-base-space !default;
 
 /* side nav */
-$side-nav-width: 80 * $base-space !default;
+$neon-side-nav-width: 80 * $neon-base-space !default;
 
 /* card */
-$card-section-border: $border-width $border-style !default;
-$card-box-shadow: none !default;
+$neon-card-section-border: $neon-border-width $neon-border-style !default;
+$neon-card-box-shadow: none !default;
 
 /* checkbox */
-$border-width-checkbox: 1px !default;
+$neon-border-width-checkbox: 1px !default;
 
 /* alerts */
-$width-alert: 400px !default;
-$width-alert-action: 96px !default;
-$border-width-alert: $border-width !default;
-$border-opacity-alert-action: 0.25 !default;
-$width-toast: 250px !default;
+$neon-width-alert: 400px !default;
+$neon-width-alert-action: 96px !default;
+$neon-border-width-alert: $neon-border-width !default;
+$neon-border-opacity-alert-action: 0.25 !default;
+$neon-width-toast: 250px !default;
 
 /* dropdown */
-$max-height-dropdown: 280px !default;
+$neon-max-height-dropdown: 280px !default;
 
 /* buttons */
-$border-radius-button: 50px !default;
-$border-radius-button-xl: $border-radius !default;
-$border-width-outline-button: 1px !default;
+$neon-border-radius-button: 50px !default;
+$neon-border-radius-button-xl: $neon-border-radius !default;
+$neon-border-width-outline-button: 1px !default;
 
 /* tabs */
-$border-width-tabs: 2px !default;
+$neon-border-width-tabs: 2px !default;
 
 /* chips */
-$border-radius-chip: $border-radius !default;
+$neon-border-radius-chip: $neon-border-radius !default;
 
 /* scrollbars */
-$width-scrollbar: 6px !default;
-$border-radius-scrollbar: 4px !default;
+$neon-width-scrollbar: 6px !default;
+$neon-border-radius-scrollbar: 4px !default;
 
 /* tooltips */
-$tooltip-max-width: 144px !default;
-$tooltip-max-height: 3 * $tooltip-max-width !default;
-$popover-max-width: 480px !default;
-$popover-max-height: 3 * $tooltip-max-width !default;
-$border-width-tooltip: 0 !default;
+$neon-tooltip-max-width: 144px !default;
+$neon-tooltip-max-height: 3 * $neon-tooltip-max-width !default;
+$neon-popover-max-width: 480px !default;
+$neon-popover-max-height: 3 * $neon-tooltip-max-width !default;
+$neon-border-width-tooltip: 0 !default;
 
 /* drawer */
-$border-width-drawer: 0 !default;
-$border-radius-drawer: 12px !default;
+$neon-border-width-drawer: 0 !default;
+$neon-border-radius-drawer: 12px !default;
 
 /* radio buttons */
-$border-radius-radio-button: 50% !default;
+$neon-border-radius-radio-button: 50% !default;
 
 /* switch */
-$border-radius-switch: 4 * $base-space !default;
-$border-radius-switch-indicator: 50% !default;
+$neon-border-radius-switch: 4 * $neon-base-space !default;
+$neon-border-radius-switch-indicator: 50% !default;
 
 /* note */
-$border-width-note: $border-width !default;
+$neon-border-width-note: $neon-border-width !default;
 
 /* slider & range slider */
-$height-slider-track: 8px !default;
-$height-slider-thumb: 3 * $height-slider-track !default;
-$width-slider-thumb: $height-slider-thumb !default;
-$border-radius-slider-thumb: 50% !default;
-$border-radius-slider-track: $height-slider-track !default;
-$border-radius-slider-tooltip: 50px !default;
+$neon-height-slider-track: 8px !default;
+$neon-height-slider-thumb: 3 * $neon-height-slider-track !default;
+$neon-width-slider-thumb: $neon-height-slider-thumb !default;
+$neon-border-radius-slider-thumb: 50% !default;
+$neon-border-radius-slider-track: $neon-height-slider-track !default;
+$neon-border-radius-slider-tooltip: 50px !default;
 
 /* input */
-$border-radius-input: $border-radius !default;
+$neon-border-radius-input: $neon-border-radius !default;
 
 /* skeleton loader */
-$border-radius-skeleton-loader: 6px !default;
+$neon-border-radius-skeleton-loader: 6px !default;
 
 /* expansion panel */
-$border-width-expansion-panel: 1px !default;
+$neon-border-width-expansion-panel: 1px !default;

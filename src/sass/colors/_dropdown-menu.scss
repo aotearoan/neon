@@ -3,7 +3,7 @@
     transition: none;
 
     &--separator-before {
-      border-top: $border-width $border-style $border-color-dropdown;
+      border-top: $neon-border-width $neon-border-style $neon-border-color-dropdown;
 
       &:first-child {
         border-top: none;
@@ -11,13 +11,13 @@
     }
 
     .neon-link {
-      color: $color-text;
+      color: $neon-color-text;
     }
 
     &--disabled {
       &,
       .neon-link {
-        color: $color-disabled-light;
+        color: $neon-color-disabled-light;
       }
     }
   }
@@ -26,11 +26,11 @@
     @include scrollbars;
   }
 
-  @each $color, $palette in $functional-colors {
+  @each $color, $palette in $neon-functional-colors {
     &--#{$color} {
       .neon-dropdown-menu__item {
         &--highlighted:not(.neon-dropdown-menu__item--disabled):not(.neon-dropdown-menu__item--selected):not(.neon-dropdown-menu__item--group-title) {
-          background-color: rgba(map-get($palette, $background-color-dropdown-menu-highlight), 0.125);
+          background-color: rgba(map-get($palette, $neon-background-color-dropdown-menu-highlight), 0.125);
         }
       }
     }
@@ -45,7 +45,7 @@
     .neon-dropdown-menu__item {
       &--separator-before {
         &:first-child {
-          border-top: $border-width $border-style $border-color-dropdown;
+          border-top: $neon-border-width $neon-border-style $neon-border-color-dropdown;
         }
 
         &:last-child {

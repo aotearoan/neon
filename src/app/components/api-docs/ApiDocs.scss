@@ -1,9 +1,9 @@
 .api-docs {
   &__wrapper:not(:last-child) {
-    margin-bottom: 8 * $base-space;
+    margin-bottom: 8 * $neon-base-space;
 
     @include responsive(mobile-large) {
-      margin-bottom: 4 * $base-space;
+      margin-bottom: 4 * $neon-base-space;
     }
   }
 
@@ -15,11 +15,11 @@
 
   &__desktop,
   &__responsive {
-    margin-top: 2 * $base-space;
+    margin-top: 2 * $neon-base-space;
   }
 
   &__section {
-    margin-bottom: 6 * $base-space;
+    margin-bottom: 6 * $neon-base-space;
 
     &:last-child {
       margin-bottom: 0;
@@ -27,12 +27,12 @@
   }
 
   &__title {
-    margin-bottom: -2 * $base-space;
+    margin-bottom: -2 * $neon-base-space;
   }
 
   &__type,
   &__default {
-    font-family: $font-family-monospaced;
+    font-family: $neon-font-family-monospaced;
     font-variant-ligatures: discretionary-ligatures;
     font-variation-settings: $monospaced-font-variation-settings;
     white-space: nowrap;
@@ -44,7 +44,7 @@
     white-space: nowrap;
 
     .neon-label {
-      margin-left: 2 * $base-space;
+      margin-left: 2 * $neon-base-space;
     }
   }
 
@@ -82,7 +82,7 @@
 
       .api-docs {
         &__title {
-          margin-top: 2 * $base-space;
+          margin-top: 2 * $neon-base-space;
           margin-bottom: 0;
         }
 
@@ -90,27 +90,27 @@
           display: flex;
           flex-direction: row;
           align-items: center;
-          padding-top: $base-space;
+          padding-top: $neon-base-space;
 
           label {
             margin-bottom: 0;
-            margin-right: 2 * $base-space;
+            margin-right: 2 * $neon-base-space;
           }
 
           .neon-label {
-            margin-left: 2 * $base-space;
+            margin-left: 2 * $neon-base-space;
           }
         }
 
         &__name {
-          font-size: $font-size-l;
+          font-size: $neon-font-size-l;
         }
 
         &__property,
         &__event,
         &__slot {
           &:not(:first-of-type) {
-            margin-top: 4 * $base-space;
+            margin-top: 4 * $neon-base-space;
           }
         }
       }

@@ -1,6 +1,6 @@
 .neon-drop-zone {
-  border: 0.5 * $base-space dashed;
-  border-radius: $border-radius;
+  border: 0.5 * $neon-base-space dashed;
+  border-radius: $neon-border-radius;
   @include padding(1, true);
   cursor: copy;
 

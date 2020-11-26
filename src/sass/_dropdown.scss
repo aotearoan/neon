@@ -29,9 +29,9 @@
   &__content {
     position: absolute;
     z-index: $z-index-above;
-    border-radius: $border-radius;
+    border-radius: $neon-border-radius;
     overflow: hidden;
-    min-width: calc(100% - 2 * #{$border-width});
+    min-width: calc(100% - 2 * #{$neon-border-width});
 
     & > .neon-card-body {
       @include padding(0.75);
@@ -63,26 +63,26 @@
   }
 
   &--s {
-    @include dropdown-size($size-s, $base-space);
+    @include dropdown-size($neon-size-s, $neon-base-space);
 
     &.neon-dropdown--open-on-hover {
-      @include dropdown-size($size-s, 0px);
+      @include dropdown-size($neon-size-s, 0px);
     }
   }
 
   &--m {
-    @include dropdown-size($size-m, $base-space);
+    @include dropdown-size($neon-size-m, $neon-base-space);
 
     &.neon-dropdown--open-on-hover {
-      @include dropdown-size($size-m, 0px);
+      @include dropdown-size($neon-size-m, 0px);
     }
   }
 
   &--l {
-    @include dropdown-size($size-l, $base-space);
+    @include dropdown-size($neon-size-l, $neon-base-space);
 
     &.neon-dropdown--open-on-hover {
-      @include dropdown-size($size-l, 0px);
+      @include dropdown-size($neon-size-l, 0px);
     }
   }
 
@@ -140,11 +140,11 @@
     align-items: center;
 
     .neon-expansion-indicator {
-      margin-left: 2 * $base-space;
+      margin-left: 2 * $neon-base-space;
     }
 
     .neon-badge {
-      box-shadow: $box-shadow;
+      box-shadow: $neon-box-shadow;
       position: relative;
 
       &:not(.neon-badge--disabled) {

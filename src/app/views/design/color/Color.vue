@@ -26,7 +26,7 @@
         <p>
           It is possible to override the reference colors that palettes are generated from by overriding the color
           variables in the theme's variable file. E.g. to override the primary color set the variable
-          <strong>$color-primary</strong> in your SASS overrides file.
+          <strong>$neon-color-primary</strong> in your SASS overrides file.
         </p>
         <p>
           Alternatively, if you would like to change an entire palette you can do so by overriding the palette map, e.g.

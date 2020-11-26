@@ -6,7 +6,7 @@
       .neon-page {
         .neon-grid {
           .neon-grid-area {
-            border: $border-width $border-style $border-color;
+            border: $neon-border-width $neon-border-style $neon-border-color;
           }
         }
       }

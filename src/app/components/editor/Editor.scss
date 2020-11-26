@@ -1,18 +1,18 @@
 $editor-max-height: 400px;
 
 .editor {
-  font-family: $font-family-monospaced;
+  font-family: $neon-font-family-monospaced;
   font-variant-ligatures: discretionary-ligatures;
   font-variation-settings: $monospaced-font-variation-settings;
-  font-size: $base-font-size;
-  line-height: $line-height-ratio;
+  font-size: $neon-base-font-size;
+  line-height: $neon-line-height-ratio;
   min-width: 100%;
-  width: $max-paragraph-width;
+  width: $neon-max-paragraph-width;
   height: 100%;
   overflow: visible;
 
   @include responsive(mobile-large) {
-    font-size: $font-size-s;
+    font-size: $neon-font-size-s;
   }
 
   .prism-editor {
@@ -29,7 +29,7 @@ $editor-max-height: 400px;
 
     &__textarea {
       @include padding(0.5);
-      font-family: $font-family-monospaced;
+      font-family: $neon-font-family-monospaced;
       font-variant-ligatures: discretionary-ligatures;
       font-variation-settings: $monospaced-font-variation-settings;
 
@@ -45,7 +45,7 @@ $editor-max-height: 400px;
   }
 
   &__wrapper {
-    border-radius: $border-radius;
+    border-radius: $neon-border-radius;
     overflow: hidden;
     position: relative;
   }
@@ -57,30 +57,30 @@ $editor-max-height: 400px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: $size-l;
+    height: $neon-size-l;
 
     @include responsive(tablet) {
-      height: $size-m + $base-space;
+      height: $neon-size-m + $neon-base-space;
 
       .editor__copy {
-        height: $size-m;
-        width: $size-m;
+        height: $neon-size-m;
+        width: $neon-size-m;
       }
     }
 
     @include responsive(mobile-large) {
-      height: $size-s + $base-space;
+      height: $neon-size-s + $neon-base-space;
 
       .editor__copy {
-        height: $size-s;
-        width: $size-s;
+        height: $neon-size-s;
+        width: $neon-size-s;
       }
     }
   }
 
   &__copy {
     opacity: 0.85;
-    transition: opacity ease-in-out $animation-speed-fast;
+    transition: opacity ease-in-out $neon-animation-speed-fast;
 
     &:hover {
       background: none !important;
@@ -89,34 +89,34 @@ $editor-max-height: 400px;
     }
 
     &:last-child {
-      margin-right: 2 * $base-space;
+      margin-right: 2 * $neon-base-space;
     }
   }
 
   &__read-only {
-    width: $font-size-l;
-    height: $font-size-l;
-    margin-left: 2 * $base-space;
-    margin-right: 4 * $base-space;
+    width: $neon-font-size-l;
+    height: $neon-font-size-l;
+    margin-left: 2 * $neon-base-space;
+    margin-right: 4 * $neon-base-space;
 
     @include responsive(tablet) {
       margin-left: 0;
-      margin-right: 3 * $base-space;
+      margin-right: 3 * $neon-base-space;
     }
   }
 }
 
 p + .editor__wrapper {
-  margin-top: 2 * $base-space;
+  margin-top: 2 * $neon-base-space;
 }
 
 .editor__wrapper {
   & + p,
   & + .editor__wrapper {
-    margin-top: 8 * $base-space;
+    margin-top: 8 * $neon-base-space;
 
     @include responsive(mobile-large) {
-      margin-top: 4 * $base-space;
+      margin-top: 4 * $neon-base-space;
     }
   }
 }

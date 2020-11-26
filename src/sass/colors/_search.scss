@@ -1,7 +1,7 @@
 .neon-search {
   &__option {
     &--separator-before {
-      border-top: $border-width $border-style $border-color-dropdown;
+      border-top: $neon-border-width $neon-border-style $neon-border-color-dropdown;
 
       &:first-child {
         border-top: none;
@@ -9,7 +9,7 @@
     }
 
     .neon-link {
-      color: $color-text;
+      color: $neon-color-text;
     }
   }
 
@@ -17,24 +17,24 @@
     @include scrollbars;
   }
 
-  @each $color, $palette in $functional-colors {
+  @each $color, $palette in $neon-functional-colors {
     &--#{$color} {
       .neon-search__option {
         &--selected {
-          background-color: rgba(map-get($palette, $background-color-dropdown-menu-highlight), 0.2);
+          background-color: rgba(map-get($palette, $neon-background-color-dropdown-menu-highlight), 0.2);
         }
 
         &--highlighted:not(.neon-search__option--selected) {
-          background-color: rgba(map-get($palette, $background-color-dropdown-menu-highlight), 0.05);
+          background-color: rgba(map-get($palette, $neon-background-color-dropdown-menu-highlight), 0.05);
         }
       }
     }
   }
 
   .neon-search__container {
-    border: $border-width $border-style $border-color-input;
-    background-color: $background-color-input;
-    box-shadow: $inset-shadow;
+    border: $neon-border-width $neon-border-style $neon-border-color-input;
+    background-color: $neon-background-color-input;
+    box-shadow: $neon-inset-shadow;
 
     .neon-search__input .neon-input__textfield {
       background-color: transparent;
@@ -42,15 +42,15 @@
       box-shadow: none;
     }
 
-    @each $color, $palette in $functional-colors {
-      $input-color: map-get($palette, $color-input-selected);
+    @each $color, $palette in $neon-functional-colors {
+      $input-color: map-get($palette, $neon-color-input-selected);
       &--#{$color} {
         &:focus-within {
           @if ($neon-theme == curved) {
             background-color: rgba($input-color, 0.75);
           } @else {
             border-color: $input-color;
-            background-color: $background-color-input-active;
+            background-color: $neon-background-color-input-active;
           }
         }
       }
@@ -58,12 +58,12 @@
 
     &--disabled {
       box-shadow: none;
-      border-color: $color-disabled-dark;
-      background-color: $color-disabled-dark;
-      @include color-with-svg($color-disabled-light);
+      border-color: $neon-color-disabled-dark;
+      background-color: $neon-color-disabled-dark;
+      @include color-with-svg($neon-color-disabled-light);
 
       &::placeholder {
-        color: $color-disabled-light;
+        color: $neon-color-disabled-light;
       }
     }
   }
@@ -77,7 +77,7 @@
     .neon-search__option {
       &--separator-before {
         &:first-child {
-          border-top: $border-width $border-style $border-color-dropdown;
+          border-top: $neon-border-width $neon-border-style $neon-border-color-dropdown;
         }
 
         &:last-child {

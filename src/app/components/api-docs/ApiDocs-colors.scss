@@ -1,17 +1,17 @@
 .api-docs {
   &__name {
-    color: map-get($info-palette, $color-api-docs-property-name);
+    color: map-get($neon-info-palette, $neon-color-api-docs-property-name);
   }
 
   @include responsive(desktop) {
     &__responsive {
       .api-docs__attribute:first-child {
-        border-bottom: $border-width $border-style $color-text-neutral;
+        border-bottom: $neon-border-width $neon-border-style $neon-color-text-neutral;
       }
     }
   }
 
   &__description {
-    color: $color-text-high-contrast;
+    color: $neon-color-text-high-contrast;
   }
 }

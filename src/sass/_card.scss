@@ -9,13 +9,13 @@
     justify-content: center;
 
     &:first-child {
-      border-bottom-left-radius: $border-radius;
+      border-bottom-left-radius: $neon-border-radius;
       border-top-right-radius: 0;
     }
 
     &:last-child {
       border-bottom-left-radius: 0;
-      border-top-right-radius: $border-radius;
+      border-top-right-radius: $neon-border-radius;
     }
   }
 
@@ -29,8 +29,8 @@
 }
 
 .neon-card {
-  border-radius: $border-radius;
-  box-shadow: $box-shadow;
+  border-radius: $neon-border-radius;
+  box-shadow: $neon-box-shadow;
   position: relative;
 
   .neon-card-header,
@@ -40,8 +40,8 @@
     position: relative;
 
     &:first-child {
-      border-top-left-radius: $border-radius;
-      border-top-right-radius: $border-radius;
+      border-top-left-radius: $neon-border-radius;
+      border-top-right-radius: $neon-border-radius;
     }
   }
 
@@ -51,7 +51,7 @@
     align-items: center;
 
     .neon-button + .neon-button {
-      margin-left: 4 * $base-space;
+      margin-left: 4 * $neon-base-space;
     }
   }
 
@@ -82,8 +82,8 @@
   .neon-card-body,
   .neon-card-footer {
     &:last-child {
-      border-bottom-left-radius: $border-radius;
-      border-bottom-right-radius: $border-radius;
+      border-bottom-left-radius: $neon-border-radius;
+      border-bottom-right-radius: $neon-border-radius;
     }
   }
 
@@ -127,8 +127,8 @@
     padding: 0;
 
     img {
-      margin-left: -$border-width;
-      margin-right: -$border-width;
+      margin-left: -$neon-border-width;
+      margin-right: -$neon-border-width;
     }
 
     &:not(:first-child) {
@@ -138,20 +138,20 @@
     }
 
     & > * {
-      max-width: calc(100% + #{2 * $border-width});
+      max-width: calc(100% + #{2 * $neon-border-width});
     }
 
     &:first-child {
       & > * {
-        border-top-left-radius: $border-radius;
-        border-top-right-radius: $border-radius;
+        border-top-left-radius: $neon-border-radius;
+        border-top-right-radius: $neon-border-radius;
       }
     }
 
     &:last-child {
       & > * {
-        border-bottom-left-radius: $border-radius;
-        border-bottom-right-radius: $border-radius;
+        border-bottom-left-radius: $neon-border-radius;
+        border-bottom-right-radius: $neon-border-radius;
       }
     }
   }

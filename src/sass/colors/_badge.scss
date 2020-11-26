@@ -1,22 +1,22 @@
 .neon-badge {
   &--with-icon,
   &--with-label {
-    @each $color, $palette in $functional-colors {
+    @each $color, $palette in $neon-functional-colors {
       &.neon-badge--#{$color}:not(.neon-badge--disabled) {
         @if ($color == high-contrast) {
-          color: $color-inverse;
-          background-color: $color-text;
+          color: $neon-color-inverse;
+          background-color: $neon-color-text;
         } @else {
-          color: $background-color-card;
-          background-color: map-get($palette, $color-label);
+          color: $neon-background-color-card;
+          background-color: map-get($palette, $neon-color-label);
         }
       }
     }
   }
 
   &--disabled {
-    color: $color-disabled-light;
-    background-color: $color-disabled-dark;
+    color: $neon-color-disabled-light;
+    background-color: $neon-color-disabled-dark;
     cursor: not-allowed;
   }
 }

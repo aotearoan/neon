@@ -1,17 +1,17 @@
 .neon-expansion-panel {
   &--top {
-    border-bottom: $border-width-expansion-panel $border-style $border-color;
+    border-bottom: $neon-border-width-expansion-panel $neon-border-style $neon-border-color;
   }
 
   &--bottom {
     .neon-expansion-panel__header {
-      border-top: $border-width-expansion-panel $border-style $border-color;
+      border-top: $neon-border-width-expansion-panel $neon-border-style $neon-border-color;
     }
   }
 
-  @each $color, $palette in $functional-colors {
+  @each $color, $palette in $neon-functional-colors {
     &--#{$color}:not(.neon-expansion-panel--disabled) {
-      $expansion-panel-color: map-get($palette, $base-color);
+      $expansion-panel-color: map-get($palette, $neon-base-color);
 
       .neon-expansion-panel__label-container {
         color: $expansion-panel-color;
@@ -22,7 +22,7 @@
 
   &.neon-expansion-panel--disabled {
     .neon-expansion-panel__header {
-      color: $color-disabled-light;
+      color: $neon-color-disabled-light;
     }
   }
 }

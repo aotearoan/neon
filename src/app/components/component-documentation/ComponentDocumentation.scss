@@ -1,19 +1,19 @@
-$height-component-header-desktop: 160px;
-$height-component-header-mobile: 77px;
+$neon-height-component-header-desktop: 160px;
+$neon-height-component-header-mobile: 77px;
 
 .component-documentation {
-  margin-top: $height-component-header-desktop - 0.5 * $spacing-vertical-desktop;
+  margin-top: $neon-height-component-header-desktop - 0.5 * $spacing-vertical-desktop;
 
   &__description-heading {
     display: none;
   }
 
   @include responsive(tablet) {
-    margin-top: $height-component-header-desktop - $spacing-vertical-tablet;
+    margin-top: $neon-height-component-header-desktop - $spacing-vertical-tablet;
   }
 
   @include responsive(mobile-large) {
-    margin-top: $height-component-header-mobile - 0.5 * $spacing-vertical-mobile;
+    margin-top: $neon-height-component-header-mobile - 0.5 * $neon-spacing-vertical-mobile;
 
     &__description-heading {
       display: flex;
@@ -29,25 +29,25 @@ $height-component-header-mobile: 77px;
     z-index: $z-index-above-2;
     @include padding(1, true);
     padding-bottom: 0 !important;
-    max-width: $max-page-width - $side-nav-width;
+    max-width: $neon-max-page-width - $neon-side-nav-width;
 
     @if ($neon-theme == curved) {
       top: 0;
     } @else {
-      top: $top-nav-height-desktop;
+      top: $neon-top-nav-height-desktop;
     }
 
-    left: $side-nav-width;
-    width: calc(100vw - #{$side-nav-width});
+    left: $neon-side-nav-width;
+    width: calc(100vw - #{$neon-side-nav-width});
 
     @include responsive(tablet) {
-      top: $top-nav-height-tablet;
+      top: $neon-top-nav-height-tablet;
       left: 0;
       width: 100vw;
     }
 
     @include responsive(mobile-large) {
-      top: $top-nav-height-mobile;
+      top: $neon-top-nav-height-mobile;
     }
 
     .neon-tabs {
@@ -88,69 +88,69 @@ $height-component-header-mobile: 77px;
     padding-bottom: 0;
 
     &:nth-child(2) {
-      padding-top: 4 * $base-space;
+      padding-top: 4 * $neon-base-space;
     }
 
     @include responsive(mobile-large) {
       &:nth-child(3),
       &:nth-child(4) {
-        margin-top: 8 * $base-space;
+        margin-top: 8 * $neon-base-space;
       }
     }
   }
 
   &__headline {
-    margin-bottom: 8 * $base-space;
+    margin-bottom: 8 * $neon-base-space;
     font-weight: 300;
-    font-size: $h6-size;
-    letter-spacing: $letter-spacing-m;
+    font-size: $neon-h6-size;
+    letter-spacing: $neon-letter-spacing-m;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 
     @include responsive(mobile-large) {
-      margin-bottom: 2 * $base-space;
-      font-size: $base-font-size;
+      margin-bottom: 2 * $neon-base-space;
+      font-size: $neon-base-font-size;
     }
   }
 
   .examples:not(:first-child) {
-    margin-top: 8 * $base-space;
+    margin-top: 8 * $neon-base-space;
   }
 
   @include responsive(mobile-large) {
     .neon-h0 {
-      font-size: $h1-size;
+      font-size: $neon-h1-size;
     }
 
     .neon-h1,
     h1 {
-      font-size: $h2-size;
+      font-size: $neon-h2-size;
     }
 
     .neon-h2,
     h2 {
-      font-size: $h3-size;
+      font-size: $neon-h3-size;
     }
 
     .neon-h3,
     h3 {
-      font-size: $h4-size;
+      font-size: $neon-h4-size;
     }
 
     .neon-h4,
     h4 {
-      font-size: $h5-size;
+      font-size: $neon-h5-size;
     }
 
     .neon-h5,
     h5 {
-      font-size: $h6-size;
+      font-size: $neon-h6-size;
     }
 
     .neon-h6,
     h6 {
-      font-size: $base-font-size;
+      font-size: $neon-base-font-size;
     }
   }
 }

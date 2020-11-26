@@ -5,14 +5,14 @@ table {
   thead {
     tr {
       th {
-        height: $size-m;
+        height: $neon-size-m;
         vertical-align: bottom;
-        font-size: $font-size-s;
+        font-size: $neon-font-size-s;
         font-weight: 500;
         text-transform: uppercase;
         text-align: left;
-        padding: 0 6 * $base-space 0 0;
-        letter-spacing: $letter-spacing-m;
+        padding: 0 6 * $neon-base-space 0 0;
+        letter-spacing: $neon-letter-spacing-m;
 
         &.neon--number {
           text-align: right;
@@ -28,12 +28,12 @@ table {
   tbody {
     tr {
       td {
-        $padding-td-vertical: 0.5 * ($size-m - $line-height-ratio * $base-font-size);
+        $padding-td-vertical: 0.5 * ($neon-size-m - $neon-line-height-ratio * $neon-base-font-size);
         vertical-align: top;
         text-align: left;
-        padding: $padding-td-vertical 6 * $base-space $padding-td-vertical 0;
+        padding: $padding-td-vertical 6 * $neon-base-space $padding-td-vertical 0;
         font-weight: 400;
-        letter-spacing: $letter-spacing-m;
+        letter-spacing: $neon-letter-spacing-m;
 
         &.neon--number {
           text-align: right;
@@ -45,7 +45,7 @@ table {
         }
 
         .neon-label--xs {
-          margin-top: 0.5 * ($line-height-ratio * $base-font-size - ($size-xs - $base-space));
+          margin-top: 0.5 * ($neon-line-height-ratio * $neon-base-font-size - ($neon-size-xs - $neon-base-space));
         }
       }
     }

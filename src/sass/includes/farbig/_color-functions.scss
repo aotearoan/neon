@@ -119,8 +119,8 @@ $lab-t3: 0.008856452; // t1 * t1 * t1
   @return 0.2126 * $r + 0.7152 * $g + 0.0722 * $b;
 }
 
-@function contrast-ratio($background-color, $text-color) {
-  $lum1: relativeLuminance($background-color);
+@function contrast-ratio($neon-background-color, $text-color) {
+  $lum1: relativeLuminance($neon-background-color);
   $lum2: relativeLuminance($text-color);
 
   $lightest: max($lum1, $lum2);
@@ -252,15 +252,15 @@ $lab-t3: 0.008856452; // t1 * t1 * t1
 }
 
 @function neutral-palette() {
-  @return generate-neutral-palette($neutral-luminance-curve);
+  @return generate-neutral-palette($neon-neutral-luminance-curve);
 }
 
 @function low-contrast-palette() {
-  @return generate-neutral-palette($low-contrast-luminance-curve);
+  @return generate-neutral-palette($neon-low-contrast-luminance-curve);
 }
 
 @function high-contrast-palette() {
-  @return generate-neutral-palette($high-contrast-luminance-curve);
+  @return generate-neutral-palette($neon-high-contrast-luminance-curve);
 }
 
 @function generate-neutral-palette($luminance-curve) {

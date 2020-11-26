@@ -2,8 +2,8 @@
 
 .neon-grid {
   width: 100%;
-  max-width: $max-page-width;
-  @include min-height(100, $footer-height-desktop);
+  max-width: $neon-max-page-width;
+  @include min-height(100, $neon-footer-height-desktop);
   @include padding(0.5, true);
   display: grid;
 
@@ -15,21 +15,21 @@
 
 .neon-page--with-side-nav .neon-grid {
   @include side-nav-offset;
-  max-width: calc(#{$max-page-width - $side-nav-width});
+  max-width: calc(#{$neon-max-page-width - $neon-side-nav-width});
 }
 
 .neon-page--with-top-nav .neon-page__container {
   .neon-grid {
     @include responsive(larger-than-tablet) {
-      @include min-height(100, $top-nav-height-desktop + $footer-height-desktop);
+      @include min-height(100, $neon-top-nav-height-desktop + $neon-footer-height-desktop);
     }
 
     @include responsive(tablet) {
-      @include min-height(100, $top-nav-height-tablet + $footer-height-tablet);
+      @include min-height(100, $neon-top-nav-height-tablet + $neon-footer-height-tablet);
     }
 
     @include responsive(mobile-large) {
-      @include min-height(100, $top-nav-height-mobile + $footer-height-mobile);
+      @include min-height(100, $neon-top-nav-height-mobile + $neon-footer-height-mobile);
     }
   }
 }
@@ -45,7 +45,7 @@
     }
 
     @include responsive(mobile-large) {
-      max-width: calc(100vw - #{2 * $spacing-vertical-mobile});
+      max-width: calc(100vw - #{2 * $neon-spacing-vertical-mobile});
     }
   }
 }
@@ -53,7 +53,7 @@
 .neon-page--with-side-nav .neon-grid {
   .neon-grid-area {
     @include responsive(larger-than-tablet) {
-      max-width: calc(100vw - #{$side-nav-width + 2 * $spacing-vertical-desktop});
+      max-width: calc(100vw - #{$neon-side-nav-width + 2 * $spacing-vertical-desktop});
     }
   }
 }

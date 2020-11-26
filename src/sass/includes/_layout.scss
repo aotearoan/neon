@@ -1,21 +1,21 @@
 @import 'responsive';
 
 // mobile spacing
-$spacing-horizontal-mobile: $spacing-vertical-mobile * $spacing-horizontal-multiplier;
+$spacing-horizontal-mobile: $neon-spacing-vertical-mobile * $neon-spacing-horizontal-multiplier;
 // tablet spacing
-$spacing-vertical-tablet: $spacing-vertical-mobile * $spacing-multiplier-tablet;
-$spacing-horizontal-tablet: $spacing-horizontal-mobile * $spacing-multiplier-tablet;
+$spacing-vertical-tablet: $neon-spacing-vertical-mobile * $neon-spacing-multiplier-tablet;
+$spacing-horizontal-tablet: $spacing-horizontal-mobile * $neon-spacing-multiplier-tablet;
 // desktop spacing
-$spacing-vertical-desktop: $spacing-vertical-mobile * $spacing-multiplier-desktop;
-$spacing-horizontal-desktop: $spacing-horizontal-mobile * $spacing-multiplier-desktop;
+$spacing-vertical-desktop: $neon-spacing-vertical-mobile * $neon-spacing-multiplier-desktop;
+$spacing-horizontal-desktop: $spacing-horizontal-mobile * $neon-spacing-multiplier-desktop;
 
 $spacing: (
   mobile: (
-    $spacing-vertical-mobile,
+    $neon-spacing-vertical-mobile,
     $spacing-horizontal-mobile,
   ),
   mobile-large: (
-    $spacing-vertical-mobile,
+    $neon-spacing-vertical-mobile,
     $spacing-horizontal-mobile,
   ),
   tablet: (
@@ -175,7 +175,7 @@ $spacing: (
 
 @mixin side-nav-offset($offset: 0px) {
   @include responsive(larger-than-tablet) {
-    margin-left: $side-nav-width + $offset;
-    @include width(100, $side-nav-width + $offset);
+    margin-left: $neon-side-nav-width + $offset;
+    @include width(100, $neon-side-nav-width + $offset);
   }
 }

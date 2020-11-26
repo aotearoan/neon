@@ -1,22 +1,22 @@
 @mixin toggle-color($color, $toggle-color) {
   &:not(.neon-toggle--disabled).neon-toggle--#{$color} {
-    color: rgba($color-text, 0.7);
+    color: rgba($neon-color-text, 0.7);
 
     .neon-toggle__label:not(.neon-toggle__label--disabled) {
-      border: $border-width $border-style $border-color-toggle;
+      border: $neon-border-width $neon-border-style $neon-border-color-toggle;
 
       &:first-child {
-        border-top-left-radius: $border-radius;
-        border-bottom-left-radius: $border-radius;
+        border-top-left-radius: $neon-border-radius;
+        border-bottom-left-radius: $neon-border-radius;
       }
 
       &:last-child {
-        border-top-right-radius: $border-radius;
-        border-bottom-right-radius: $border-radius;
+        border-top-right-radius: $neon-border-radius;
+        border-bottom-right-radius: $neon-border-radius;
       }
 
       & + label {
-        margin-left: -$border-width;
+        margin-left: -$neon-border-width;
       }
 
       &.neon-toggle__label--checked {
@@ -26,44 +26,44 @@
 
       &:hover:not(.neon-toggle__label--checked),
       &:focus:not(.neon-toggle__label--checked) {
-        background-color: rgba($border-color-toggle, 0.375);
+        background-color: rgba($neon-border-color-toggle, 0.375);
       }
     }
   }
 }
 
 @mixin toggle-colors() {
-  @each $color, $palette in $functional-colors {
+  @each $color, $palette in $neon-functional-colors {
     @if ($color == high-contrast) {
-      @include toggle-color($color, $color-text);
+      @include toggle-color($color, $neon-color-text);
     } @else {
-      @include toggle-color($color, map-get($palette, $color-toggle));
+      @include toggle-color($color, map-get($palette, $neon-color-toggle));
     }
   }
 
   &.neon-toggle--disabled {
-    border: $border-width $border-style $color-disabled-dark;
+    border: $neon-border-width $neon-border-style $neon-color-disabled-dark;
 
     .neon-toggle__label {
-      color: $color-disabled-light;
-      border-color: $color-disabled-dark;
+      color: $neon-color-disabled-light;
+      border-color: $neon-color-disabled-dark;
     }
   }
 
   .neon-toggle__label--disabled {
-    color: $color-disabled-light;
-    border-top: $border-width $border-style $color-disabled-dark;
-    border-bottom: $border-width $border-style $color-disabled-dark;
+    color: $neon-color-disabled-light;
+    border-top: $neon-border-width $neon-border-style $neon-color-disabled-dark;
+    border-bottom: $neon-border-width $neon-border-style $neon-color-disabled-dark;
   }
 
   .neon-toggle__label:not(.neon-toggle__label--disabled) + .neon-toggle__label--disabled {
-    border-left: $border-width $border-style $border-color-toggle;
+    border-left: $neon-border-width $neon-border-style $neon-border-color-toggle;
   }
 
   &.neon-toggle--disabled .neon-toggle__label--checked,
   .neon-toggle__label--disabled.neon-toggle__label--checked {
-    color: $color-disabled-light;
-    border-color: $color-disabled-dark;
-    background-color: $color-disabled-dark;
+    color: $neon-color-disabled-light;
+    border-color: $neon-color-disabled-dark;
+    background-color: $neon-color-disabled-dark;
   }
 }

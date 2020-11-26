@@ -1,6 +1,6 @@
-$color-api-docs-property-name: l3;
-$color-404: rgba($color-brand-l1, 0.75);
-$color-editor-lock: $color-text-low-contrast;
+$neon-color-api-docs-property-name: l3;
+$neon-color-404: rgba($neon-color-brand-l1, 0.75);
+$neon-color-editor-lock: $neon-color-text-low-contrast;
 
 // application dark mode SASS
 @import '../components/editor/Editor-colors';
@@ -14,7 +14,7 @@ $color-editor-lock: $color-text-low-contrast;
 
 .neon-top-nav + .neon-side-nav {
   .neon-side-nav__scrolling {
-    border-top: $border-width $border-style $border-color;
+    border-top: $neon-border-width $neon-border-style $neon-border-color;
   }
 }
 
@@ -32,30 +32,30 @@ a[href]:not(.neon-link--no-style):not(.neon-link) {
     height: 2px;
     display: flex;
     background-color: transparent;
-    border-radius: $border-radius;
-    transition: background-color $animation-speed-slow ease-in-out, color $animation-speed-slow ease-in-out;
+    border-radius: $neon-border-radius;
+    transition: background-color $neon-animation-speed-slow ease-in-out, color $neon-animation-speed-slow ease-in-out;
   }
 
   &:focus {
     outline: none;
-    color: $color-link;
+    color: $neon-color-link;
 
     &:after {
-      background-color: $color-link;
+      background-color: $neon-color-link;
     }
   }
 
   &:hover {
-    color: $color-link;
+    color: $neon-color-link;
 
     &:after {
-      background-color: $color-link;
+      background-color: $neon-color-link;
     }
   }
 }
 
 .example-inverse-bg {
-  background-color: $color-primary;
-  border-radius: $border-radius;
-  padding: 2 * $base-space;
+  background-color: $neon-color-primary;
+  border-radius: $neon-border-radius;
+  padding: 2 * $neon-base-space;
 }

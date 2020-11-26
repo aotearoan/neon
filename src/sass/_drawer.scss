@@ -7,8 +7,8 @@
     margin: 0;
     z-index: $z-index-top;
     @include padding($multiplier: 0.75);
-    transition: margin-left ease-in-out $animation-speed-slow, margin-right ease-in-out $animation-speed-slow,
-      margin-top ease-in-out $animation-speed-slow, margin-bottom ease-in-out $animation-speed-slow;
+    transition: margin-left ease-in-out $neon-animation-speed-slow, margin-right ease-in-out $neon-animation-speed-slow,
+      margin-top ease-in-out $neon-animation-speed-slow, margin-bottom ease-in-out $neon-animation-speed-slow;
 
     &--full-width {
       padding: 0;
@@ -19,7 +19,7 @@
   &--right {
     .neon-drawer__container {
       top: 0;
-      width: $side-nav-width;
+      width: $neon-side-nav-width;
       @include min-height(100);
       @include height(100);
     }
@@ -58,15 +58,15 @@
       top: 0;
 
       @include responsive(larger-than-tablet) {
-        margin-top: $top-nav-height-desktop;
+        margin-top: $neon-top-nav-height-desktop;
       }
 
       @include responsive(tablet) {
-        margin-top: $top-nav-height-tablet;
+        margin-top: $neon-top-nav-height-tablet;
       }
 
       @include responsive(mobile-large) {
-        margin-top: $top-nav-height-mobile;
+        margin-top: $neon-top-nav-height-mobile;
       }
     }
 
@@ -102,7 +102,7 @@
       opacity: 1;
       pointer-events: auto;
       z-index: $z-index-top;
-      transition: opacity ease-in-out 0.5 * $animation-speed-fast;
+      transition: opacity ease-in-out 0.5 * $neon-animation-speed-fast;
     }
   }
 }

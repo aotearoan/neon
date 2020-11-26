@@ -25,8 +25,8 @@
 
 body {
   .title {
-    margin-left: 8 * $base-space;
-    font-family: $body-font-family;
+    margin-left: 8 * $neon-base-space;
+    font-family: $neon-body-font-family;
     font-weight: lighter;
   }
 }
@@ -50,7 +50,7 @@ header {
     }
 
     .neon-button {
-      margin-right: 4 * $base-space;
+      margin-right: 4 * $neon-base-space;
 
       @include responsive(larger-than-tablet) {
         display: none;
@@ -63,12 +63,12 @@ header {
   }
 
   .tagline {
-    margin-left: 4 * $base-space;
-    font-size: $font-size-l;
+    margin-left: 4 * $neon-base-space;
+    font-size: $neon-font-size-l;
     font-weight: 300;
     opacity: 0.9;
-    letter-spacing: $letter-spacing-s;
-    line-height: $line-height-one;
+    letter-spacing: $neon-letter-spacing-s;
+    line-height: $neon-line-height-one;
     user-select: none;
     position: relative;
     top: 3px;
@@ -117,7 +117,7 @@ header {
 
 blockquote,
 .neon-note {
-  max-width: $max-paragraph-width;
+  max-width: $neon-max-paragraph-width;
 }
 
 .menu-filter {

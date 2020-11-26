@@ -1,17 +1,17 @@
-@mixin label-colors($label-color, $label-background-color) {
+@mixin label-colors($neon-label-color, $neon-label-background-color) {
   &.neon-label {
-    color: $label-color;
-    background-color: $label-background-color;
+    color: $neon-label-color;
+    background-color: $neon-label-background-color;
   }
 }
 
 .neon-label {
-  @each $color, $palette in $functional-colors {
+  @each $color, $palette in $neon-functional-colors {
     &--#{$color} {
       @if ($color == high-contrast) {
-        @include label-colors($color-text, rgba($color-text, 0.15));
+        @include label-colors($neon-color-text, rgba($neon-color-text, 0.15));
       } @else {
-        @include label-colors(map-get($palette, $color-label), rgba(map-get($palette, $color-label), 0.15));
+        @include label-colors(map-get($palette, $neon-color-label), rgba(map-get($palette, $neon-color-label), 0.15));
       }
     }
   }

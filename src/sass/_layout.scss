@@ -36,7 +36,7 @@ div {
   justify-content: flex-start;
 
   & > *:not(:last-child) {
-    margin-right: 4 * $base-space;
+    margin-right: 4 * $neon-base-space;
   }
 }
 
@@ -51,6 +51,6 @@ div {
 
 .neon-vertically-spaced {
   & > *:not(:last-child):not(label) {
-    margin-bottom: 4 * $base-space;
+    margin-bottom: 4 * $neon-base-space;
   }
 }

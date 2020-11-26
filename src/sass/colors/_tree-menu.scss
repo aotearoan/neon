@@ -5,19 +5,19 @@
       &,
       &:hover,
       &:active {
-        color: $color-text;
+        color: $neon-color-text;
       }
 
       &.router-link-exact-active {
         &,
         &:active {
-          color: $color-link;
+          color: $neon-color-link;
           opacity: 1;
         }
       }
 
       &:not(.neon-tree-menu__link--no-click):hover {
-        color: $color-link;
+        color: $neon-color-link;
         opacity: 0.75;
       }
     }
@@ -27,6 +27,6 @@
   &__link-label,
   &__anchor-label {
     outline: none;
-    @include focus-text-outline($color-text-primary);
+    @include focus-text-outline($neon-color-text-primary);
   }
 }

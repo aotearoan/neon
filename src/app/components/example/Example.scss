@@ -2,12 +2,12 @@ $fixed-content-height: 348px;
 
 .example {
   & + .example {
-    margin-top: 8 * $base-space;
+    margin-top: 8 * $neon-base-space;
   }
 
   &__output {
-    border-radius: $border-radius !important;
-    margin-bottom: 4 * $base-space !important;
+    border-radius: $neon-border-radius !important;
+    margin-bottom: 4 * $neon-base-space !important;
     position: relative;
 
     &--fixed-content {
@@ -42,27 +42,27 @@ $fixed-content-height: 348px;
         }
 
         .neon-side-nav {
-          top: $top-nav-height-desktop;
+          top: $neon-top-nav-height-desktop;
 
           @include responsive(tablet) {
-            top: $top-nav-height-tablet;
+            top: $neon-top-nav-height-tablet;
           }
 
           @include responsive(mobile-large) {
-            top: $top-nav-height-mobile;
+            top: $neon-top-nav-height-mobile;
           }
         }
 
         .neon-grid {
           min-height: 100%;
-          width: calc(100% - #{$side-nav-width});
+          width: calc(100% - #{$neon-side-nav-width});
 
           @include responsive(tablet) {
             width: 100%;
           }
 
           .neon-grid-area {
-            border-radius: $border-radius;
+            border-radius: $neon-border-radius;
             @include padding;
           }
         }
@@ -79,7 +79,7 @@ $fixed-content-height: 348px;
 
   &--no-card {
     h3 {
-      margin-bottom: 4 * $base-space;
+      margin-bottom: 4 * $neon-base-space;
     }
   }
 
@@ -95,7 +95,7 @@ $fixed-content-height: 348px;
 
     & > *:not(:last-child) {
       margin-right: 0;
-      margin-bottom: 3 * $base-space;
+      margin-bottom: 3 * $neon-base-space;
     }
   }
 
@@ -105,7 +105,7 @@ $fixed-content-height: 348px;
     align-items: center;
 
     & > *:not(:last-child) {
-      margin-right: 4 * $base-space;
+      margin-right: 4 * $neon-base-space;
     }
 
     @include responsive(mobile-large) {
@@ -114,12 +114,12 @@ $fixed-content-height: 348px;
 
       & > *:not(:last-child) {
         margin-right: 0;
-        margin-bottom: 3 * $base-space;
+        margin-bottom: 3 * $neon-base-space;
       }
     }
   }
 
   &--margin-top {
-    margin-top: 2 * $base-space;
+    margin-top: 2 * $neon-base-space;
   }
 }

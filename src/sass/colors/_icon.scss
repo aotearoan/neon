@@ -2,33 +2,33 @@ $neon-icon-types: (neon-expansion-indicator, neon-icon);
 
 @each $neon-icon-type in $neon-icon-types {
   .#{$neon-icon-type} {
-    @include svg-colors($color-text);
+    @include svg-colors($neon-color-text);
 
     .neon-svg--fill {
-      transition: fill ease-in-out $animation-speed-fast;
+      transition: fill ease-in-out $neon-animation-speed-fast;
     }
 
     .neon-svg--stroke {
-      transition: stroke ease-in-out $animation-speed-fast;
+      transition: stroke ease-in-out $neon-animation-speed-fast;
     }
 
-    @each $color, $palette in $functional-colors {
+    @each $color, $palette in $neon-functional-colors {
       &--#{$color}:not(.#{$neon-icon-type}--disabled):not(.#{$neon-icon-type}--inverse) {
-        @include svg-colors(map-get($palette, $color-icon));
+        @include svg-colors(map-get($palette, $neon-color-icon));
       }
     }
 
     &--inverse {
-      @include svg-colors($color-inverse);
+      @include svg-colors($neon-color-inverse);
     }
 
     &--disabled {
       .neon-svg--fill {
-        fill: $color-disabled-light;
+        fill: $neon-color-disabled-light;
       }
 
       .neon-svg--stroke {
-        stroke: $color-disabled-light;
+        stroke: $neon-color-disabled-light;
       }
     }
   }
