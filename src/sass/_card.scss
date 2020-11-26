@@ -4,6 +4,7 @@
   .neon-card-header,
   .neon-card-body,
   .neon-card-footer {
+    @include padding;
     margin-bottom: 0;
     justify-content: center;
 
@@ -58,10 +59,6 @@
     flex-direction: row;
     justify-content: space-between;
 
-    @if ($neon-theme == curved) {
-      padding-bottom: 0;
-    }
-
     .neon-h1,
     .neon-h2,
     .neon-h3,
@@ -81,16 +78,29 @@
     }
   }
 
-  .neon-card-body {
+  .neon-card-header,
+  .neon-card-body,
+  .neon-card-footer {
     &:last-child {
       border-bottom-left-radius: $border-radius;
       border-bottom-right-radius: $border-radius;
     }
   }
 
-  .neon-card-footer {
-    border-bottom-left-radius: $border-radius;
-    border-bottom-right-radius: $border-radius;
+  @if ($neon-theme == curved) {
+    &.neon-card--vertical {
+      .neon-card-header {
+        &:not(:last-child) {
+          padding-bottom: 0;
+        }
+      }
+
+      .neon-card-footer {
+        &:not(:first-child) {
+          padding-top: 0;
+        }
+      }
+    }
   }
 
   &.neon-card--horizontal {

@@ -1,21 +1,14 @@
 @mixin gradient-button($from-color, $to-color) {
-  background-image: linear-gradient(
-    $background-gradient-angle,
-    $from-color $background-gradient-offset,
-    $to-color 100%
-  );
+  background: linear-gradient($background-gradient-angle, $from-color $background-gradient-offset, $to-color 100%);
   transition: all ease-in-out $animation-speed-fast;
 
+  &:active:not(:disabled),
   &:hover:not(:disabled) {
-    background-image: linear-gradient(
-      $background-gradient-angle + 10deg,
+    background: linear-gradient(
+      $background-gradient-angle + 15deg,
       $from-color $background-gradient-offset,
       $to-color 100%
     );
-  }
-
-  &:active:not(:disabled) {
-    background: darken($from-color, 1);
   }
 
   &:focus:not(:disabled):not(.neon-button--no-outline) {

@@ -1,6 +1,9 @@
 .component-documentation {
   &__header {
-    background-color: $background-color-footer;
-    border-bottom: $border-width $border-style $border-color;
+    &,
+    &:before {
+      background-color: $background-color-footer;
+      border-bottom: $border-width $border-style $border-color;
+    }
   }
 }

@@ -28,17 +28,9 @@
   }
 }
 
-.app-footer .neon-footer__container {
-  max-width: 1024px !important;
-  margin: auto;
+.app-footer {
+  max-width: $max-page-width - $side-nav-width;
 
-  @media screen and (min-width: 1393px) {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-.neon-app--standard-page {
   .neon-footer__container {
     align-items: center;
   }

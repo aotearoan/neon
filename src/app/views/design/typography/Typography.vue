@@ -4,6 +4,8 @@
       <neon-card-header>
         <h1 class="neon-h3">Typography</h1>
       </neon-card-header>
+    </neon-card>
+    <neon-card>
       <neon-card-body>
         <neon-anchor id="headings" />
         <h2 class="neon-h4">Headings</h2>

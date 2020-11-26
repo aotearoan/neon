@@ -80,7 +80,9 @@
       v-bind="sanitizedAttributes"
       v-on="sanitizedListeners"
     >
-      <option value="" disabled :selected="multiple ? value.length === 0 : value" hidden>{{ placeholder }}</option>
+      <option value="" disabled :selected="multiple ? value.length === 0 : value === ''" hidden>{{
+        placeholder
+      }}</option>
       <template v-if="groupedOptions">
         <optgroup v-for="group in groupedOptions" :key="group.group" :label="group.group">
           <option

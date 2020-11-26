@@ -1,5 +1,4 @@
 .neon-footer {
-  width: 100%;
   display: flex;
   align-items: flex-start;
 
@@ -32,8 +31,4 @@
 
 .neon-page--with-side-nav .neon-footer {
   @include side-nav-offset;
-
-  .neon-footer__container {
-    max-width: $max-page-width - $side-nav-width;
-  }
 }
