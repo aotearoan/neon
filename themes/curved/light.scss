@@ -24,7 +24,7 @@ $neon-background-color-success: $neon-color-success-l1 !default;
 $neon-background-color-warn: $neon-color-warn-l1 !default;
 $neon-background-color-error: $neon-color-error-l1 !default;
 
-$neon-border-color: $neon-color-neutral-l3 !default;
+$neon-border-color: $neon-color-neutral-l4 !default;
 $neon-border: none !default;
 $neon-hrcolor: $neon-border-color !default;
 
@@ -125,7 +125,7 @@ $neon-background-color-toast: $neon-base-color !default;
 $neon-color-toast: l4 !default;
 
 /* dropdown / dropdown menu / select */
-$neon-border-color-dropdown: $neon-color-neutral-l3 !default;
+$neon-border-color-dropdown: $neon-color-neutral-l4 !default;
 $neon-background-color-dropdown-menu-highlight: $neon-base-color !default;
 $neon-box-shadow-dropdown: 0.5 * $neon-base-space 0.5 * $neon-base-space 2 * $neon-base-space
   rgba($neon-color-neutral-d1, 0.5) !default;

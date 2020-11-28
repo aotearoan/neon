@@ -1,7 +1,7 @@
 .neon-search {
   &__option {
     &--separator-before {
-      border-top: $neon-border-width $neon-border-style $neon-border-color-dropdown;
+      border-top: $neon-border-width-separator-before $neon-border-style $neon-border-color-dropdown;
 
       &:first-child {
         border-top: none;
@@ -77,7 +77,7 @@
     .neon-search__option {
       &--separator-before {
         &:first-child {
-          border-top: $neon-border-width $neon-border-style $neon-border-color-dropdown;
+          border-top: $neon-border-width-separator-before $neon-border-style $neon-border-color-dropdown;
         }
 
         &:last-child {

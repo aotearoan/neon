@@ -28,8 +28,9 @@ $neon-animation-speed-slow: 0.3s !default;
 $neon-animation-speed-fast: 0.225s !default;
 
 /* borders */
-$neon-border-radius: 12px !default;
+$neon-border-radius: 8px !default;
 $neon-border-width: 0px !default;
+$neon-border-width-separator-before: 1px !default;
 $neon-border-style: solid !default;
 
 /* typography */
@@ -155,7 +156,7 @@ $neon-width-toast: 250px !default;
 $neon-max-height-dropdown: 280px !default;
 
 /* buttons */
-$neon-border-radius-button: 50px !default;
+$neon-border-radius-button: $neon-border-radius !default;
 $neon-border-radius-button-xl: $neon-border-radius !default;
 $neon-border-width-outline-button: 1px !default;
 
@@ -178,7 +179,7 @@ $neon-border-width-tooltip: 0 !default;
 
 /* drawer */
 $neon-border-width-drawer: 0 !default;
-$neon-border-radius-drawer: 12px !default;
+$neon-border-radius-drawer: 16px !default;
 
 /* radio buttons */
 $neon-border-radius-radio-button: 50% !default;
@@ -196,7 +197,7 @@ $neon-height-slider-thumb: 3 * $neon-height-slider-track !default;
 $neon-width-slider-thumb: $neon-height-slider-thumb !default;
 $neon-border-radius-slider-thumb: 50% !default;
 $neon-border-radius-slider-track: $neon-height-slider-track !default;
-$neon-border-radius-slider-tooltip: 50px !default;
+$neon-border-radius-slider-tooltip: $neon-border-radius !default;
 
 /* input */
 $neon-border-radius-input: $neon-border-radius !default;
