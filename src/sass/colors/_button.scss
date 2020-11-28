@@ -24,7 +24,11 @@
   background: linear-gradient($from-color, $to-color);
 
   &:hover:not(:disabled) {
-    background: linear-gradient(lighten($from-color, 1), lighten($to-color, 1));
+    @if ($from-color == #fff or $to-color == #fff) {
+      background: linear-gradient(darken($from-color, 10), darken($to-color, 10));
+    } @else {
+      background: linear-gradient(lighten($from-color, 5), lighten($to-color, 5));
+    }
   }
 
   &:active:not(:disabled) {

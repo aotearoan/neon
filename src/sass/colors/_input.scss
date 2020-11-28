@@ -5,9 +5,11 @@
     color: $neon-color-text;
     background-color: $neon-background-color-input;
     box-shadow: $neon-inset-shadow;
+    transition: all ease-in-out $neon-animation-speed-fast;
 
     &::placeholder {
       color: $neon-color-placeholder;
+      transition: all ease-in-out $neon-animation-speed-fast;
     }
   }
 
@@ -18,7 +20,11 @@
         .neon-input__text,
         .neon-input__textarea {
           @if ($neon-theme == curved) {
-            background-color: rgba($input-color, 0.125);
+            background-color: rgba($input-color, 0.1);
+
+            &::placeholder {
+              color: rgba($input-color, 0.75);
+            }
           } @else {
             border-color: $input-color;
             background-color: $neon-background-color-input-active;

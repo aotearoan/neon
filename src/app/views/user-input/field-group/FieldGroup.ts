@@ -72,8 +72,8 @@ export default class FieldGroup extends Vue {
   </neon-field-group>
   <neon-field-group>
     <neon-input-indicator size="l" label="$" />
-    <neon-input size="l" type="text" color="primary" v-model="indexFilter" placeholder="Enter amount" />
-    <neon-button size="l" label="Submit" color="primary" />
+    <neon-input size="l" type="text" v-model="indexFilter" placeholder="Enter amount" />
+    <neon-button size="l" label="Submit" />
   </neon-field-group>
 </div>`;
 

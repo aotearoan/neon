@@ -35,8 +35,7 @@ $neon-color-outline: $neon-base-color !default;
 $neon-label-color: $neon-color-neutral-l1 !default;
 
 $neon-color-disabled-light: $neon-color-neutral-d2 !default;
-// cannot use opacity for border colors so this needs to be hardcoded
-$neon-color-disabled-dark: #383838 !default;
+$neon-color-disabled-dark: #333333 !default;
 
 // switch
 $neon-color-switch-off: $neon-color-neutral-d2 !default;
@@ -112,7 +111,7 @@ $neon-color-radio-button-label: $neon-color-neutral-l3 !default;
 $neon-border-color-input: $neon-color-neutral-d2 !default;
 $neon-background-color-input: rgba($neon-color-neutral-d5, 0.5) !default;
 $neon-color-input-selected: $neon-base-color !default;
-$neon-color-placeholder: rgba($neon-color-text, 0.5) !default;
+$neon-color-placeholder: rgba($neon-color-text, 0.25) !default;
 
 // drop zone
 $neon-color-drop-zone: $neon-color-neutral-l1 !default;
@@ -174,3 +173,7 @@ $neon-background-color-top-nav: $neon-background-color-card !default;
 
 // side nav
 $neon-background-color-side-nav: $neon-background-color-card !default;
+
+/* input indicators */
+$neon-background-color-input-indicator: $neon-color-high-contrast-d2 !default;
+$neon-color-input-indicator: $neon-color-text-neutral !default;

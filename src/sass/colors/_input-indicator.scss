@@ -1,5 +1,5 @@
 .neon-input-indicator {
   border: $neon-border-width $neon-border-style $neon-border-color-input;
-  color: $neon-color-text-neutral;
-  background-color: rgba($neon-color-disabled-dark, 0.5);
+  background-color: $neon-background-color-input-indicator;
+  @include color-with-svg($neon-color-input-indicator);
 }

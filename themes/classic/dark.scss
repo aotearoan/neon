@@ -173,3 +173,7 @@ $neon-background-color-top-nav: $neon-background-color-card !default;
 
 // side nav
 $neon-background-color-side-nav: $neon-background-color-card !default;
+
+/* input indicators */
+$neon-background-color-input-indicator: rgba($neon-color-disabled-dark, 0.5) !default;
+$neon-color-input-indicator: $neon-color-text-neutral !default;

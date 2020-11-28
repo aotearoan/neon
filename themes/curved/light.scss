@@ -32,8 +32,8 @@ $neon-color-outline: $neon-base-color !default;
 
 $neon-label-color: $neon-color-neutral-d1 !default;
 
-$neon-color-disabled-light: $neon-color-neutral-l4 !default;
-$neon-color-disabled-dark: $neon-color-high-contrast-l4 !default;
+$neon-color-disabled-light: $neon-color-low-contrast-l4 !default;
+$neon-color-disabled-dark: lighten($neon-color-high-contrast-l4, 3) !default;
 
 // switch
 $neon-color-switch-off: $neon-color-neutral-l3 !default;
@@ -174,3 +174,7 @@ $neon-background-color-top-nav: $neon-background-color-card !default;
 
 // side nav
 $neon-background-color-side-nav: $neon-background-color-card !default;
+
+/* input indicators */
+$neon-background-color-input-indicator: $neon-color-high-contrast-l3 !default;
+$neon-color-input-indicator: $neon-color-text-neutral !default;

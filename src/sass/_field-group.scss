@@ -55,3 +55,9 @@
     }
   }
 }
+
+&.neon-theme--curved {
+  .neon-field-group > *:not(:last-child) {
+    margin-right: 1px;
+  }
+}
