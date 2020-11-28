@@ -1,37 +1,54 @@
 .neon-number {
   @each $color, $palette in $neon-functional-colors {
     $number-component-color: map-get($palette, $neon-color-input-selected);
-    &--#{$color}.neon-number--with-buttons:not(.neon-number--disabled) {
-      .neon-input__textfield {
-        border-color: $number-component-color;
+    &.neon-number--#{$color}.neon-number--with-buttons:not(.neon-number--disabled) {
+      @if ($neon-theme == curved) {
+        .neon-button.neon-number__decrement:not(.neon-button--disabled),
+        .neon-button.neon-number__increment:not(.neon-button--disabled) {
+          border: none;
+          background-color: rgba($number-component-color, 0.125);
+          @include color-with-svg($number-component-color);
+          transition: all ease-in-out $neon-animation-speed-fast;
 
-        &:focus {
-          border-right: $neon-border-width $neon-border-style $number-component-color;
+          &:hover,
+          &:focus {
+            box-shadow: none;
+            background-color: rgba($number-component-color, 0.25);
+            @include color-with-svg($number-component-color);
+          }
         }
-      }
+      } @else {
+        .neon-input__textfield {
+          border-color: $number-component-color;
 
-      .neon-button.neon-number__decrement:not(.neon-button--disabled),
-      .neon-button.neon-number__increment:not(.neon-button--disabled) {
-        background-color: rgba($number-component-color, 0.0625);
-
-        .neon-svg--fill {
-          fill: $neon-color-text;
+          &:focus {
+            border-right: $neon-border-width $neon-border-style $number-component-color;
+          }
         }
 
-        &:hover,
-        &:focus {
-          background-color: rgba($number-component-color, 0.25);
-          box-shadow: none;
+        .neon-button.neon-number__decrement:not(.neon-button--disabled),
+        .neon-button.neon-number__increment:not(.neon-button--disabled) {
+          background-color: rgba($number-component-color, 0.0625);
 
           .neon-svg--fill {
             fill: $neon-color-text;
           }
-        }
-      }
 
-      .neon-button.neon-number__decrement.neon-button--disabled,
-      .neon-button.neon-number__increment.neon-button--disabled {
-        border-color: $number-component-color;
+          &:hover,
+          &:focus {
+            background-color: rgba($number-component-color, 0.25);
+            box-shadow: none;
+
+            .neon-svg--fill {
+              fill: $neon-color-text;
+            }
+          }
+        }
+
+        .neon-button.neon-number__decrement.neon-button--disabled,
+        .neon-button.neon-number__increment.neon-button--disabled {
+          border-color: $number-component-color;
+        }
       }
     }
 
@@ -55,9 +72,15 @@
 
   &:not(.neon-number--editable) {
     &:not(.neon-number--disabled) .neon-number__input .neon-input__textfield {
-      color: $neon-color-text;
-      background-color: $neon-background-color-input;
       box-shadow: none;
+
+      @if ($neon-theme == curved) {
+        color: $neon-color-disabled-light;
+        background-color: $neon-color-disabled-dark;
+      } @else {
+        color: $neon-color-text;
+        background-color: $neon-background-color-input;
+      }
     }
   }
 
