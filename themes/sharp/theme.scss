@@ -64,7 +64,7 @@ $neon-h1-size: round(
   $neon-base-font-size * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale *
     $neon-typography-scale * $neon-typography-scale * $neon-typography-scale
 ) !default;
-// AKA branding font size, used for landing page & banners etc...
+/* AKA branding font size, used for landing page & banners etc... */
 $neon-h0-size: round(
   $neon-base-font-size * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale *
     $neon-typography-scale * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale *
