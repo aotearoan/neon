@@ -70,6 +70,18 @@
       }
     },
     {
+      "name": "labelPosition",
+      "tags": {},
+      "description": "The position of the switch label.",
+      "type": {
+        "name": "NeonHorizontalPosition"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonHorizontalPosition.Right"
+      }
+    },
+    {
       "name": "disabled",
       "tags": {},
       "description": "Disabled state of the switch.",

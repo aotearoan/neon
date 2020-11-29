@@ -5,6 +5,7 @@
       `neon-switch--${switchStyle}`,
       `neon-switch--${size}`,
       `neon-switch--${color}`,
+      `neon-switch--${labelPosition}`,
       {
         'neon-switch--disabled': disabled,
         'neon-switch--checked': value,
@@ -27,7 +28,6 @@
       :name="indeterminate ? 'dash' : 'check'"
       :tabindex="!disabled ? 0 : undefined"
     />
-    <span class="neon-switch__label">{{ label }}</span>
     <span v-if="switchStyle === 'switch'" class="neon-switch__switch" :tabindex="!disabled ? 0 : undefined">
       <span class="neon-switch__indicator"></span>
     </span>
@@ -40,6 +40,7 @@
       v-on="sanitizedListeners"
       v-bind="$attrs"
     />
+    <span class="neon-switch__label">{{ label }}</span>
   </label>
 </template>
 

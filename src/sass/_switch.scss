@@ -127,7 +127,6 @@
     }
 
     .neon-switch__switch {
-      margin: 0 2 * $neon-base-space;
       display: inline-flex;
       position: relative;
       align-items: center;
@@ -146,7 +145,6 @@
 
   &--checkbox {
     .neon-switch__checkbox {
-      margin-right: 2 * $neon-base-space;
       border: $neon-border-width-checkbox $neon-border-style;
       border-radius: $neon-border-radius-checkbox;
       outline: none;
@@ -196,5 +194,18 @@
 
   &--disabled {
     cursor: not-allowed;
+  }
+
+  &--right {
+    .neon-switch__label {
+      margin-left: 2 * $neon-base-space;
+    }
+  }
+
+  &--left {
+    .neon-switch__label {
+      order: -1;
+      margin-right: 2 * $neon-base-space;
+    }
   }
 }

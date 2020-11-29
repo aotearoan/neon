@@ -3,6 +3,7 @@ import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonSwitchStyle } from '../../../common/enums/NeonSwitchStyle';
 import { TranslateResult } from 'vue-i18n';
+import { NeonHorizontalPosition } from '../../../common/enums/NeonHorizontalPosition';
 
 /**
  * <p>
@@ -51,6 +52,12 @@ export default class NeonSwitch extends Vue {
    */
   @Prop({ default: NeonSwitchStyle.Switch })
   public switchStyle!: NeonSwitchStyle;
+
+  /**
+   * The position of the switch label.
+   */
+  @Prop({ default: NeonHorizontalPosition.Right })
+  public labelPosition!: NeonHorizontalPosition;
 
   /**
    * Disabled state of the switch.
