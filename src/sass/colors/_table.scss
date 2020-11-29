@@ -2,7 +2,7 @@ table {
   thead {
     tr {
       th {
-        border-bottom: $neon-border-width $neon-border-style $neon-label-color;
+        border-bottom: $neon-border-width-table $neon-border-style $neon-label-color;
         color: $neon-label-color;
       }
     }
@@ -16,5 +16,5 @@ table {
     }
   }
 
-  border-bottom: $neon-border-width $neon-border-style $neon-label-color;
+  border-bottom: $neon-border-width-table $neon-border-style $neon-label-color;
 }

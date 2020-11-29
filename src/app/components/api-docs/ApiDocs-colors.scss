@@ -6,7 +6,7 @@
   @include responsive(desktop) {
     &__responsive {
       .api-docs__attribute:first-child {
-        border-bottom: $neon-border-width $neon-border-style $neon-color-text-neutral;
+        border-bottom: $neon-border-width-table $neon-border-style $neon-color-text-neutral;
       }
     }
   }
