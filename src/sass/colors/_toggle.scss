@@ -12,7 +12,7 @@
 
         .neon-toggle__label:not(.neon-toggle__label--disabled) {
           .neon-toggle__radio-button {
-            border: $neon-border-width $neon-border-style $neon-border-color-toggle;
+            border: $neon-border-width-radio-button $neon-border-style $neon-border-color-toggle;
             background: $neon-background-radio-button;
           }
 
@@ -29,7 +29,7 @@
             color: $neon-color-text;
 
             .neon-toggle__radio-button {
-              border: $neon-border-width $neon-border-style $toggle-color;
+              border: $neon-border-width-radio-button $neon-border-style $toggle-color;
 
               &-indicator {
                 background-color: $toggle-color;

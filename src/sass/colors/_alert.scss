@@ -35,7 +35,9 @@ $alert-colors: (
         }
 
         .neon-alert__actions {
-          border-left: $neon-border-width $neon-border-style rgba($alert-color, $neon-border-opacity-alert-action);
+          border-left: $neon-border-width-alert
+            $neon-border-style
+            rgba($alert-color, $neon-border-opacity-alert-action);
 
           a {
             color: rgba($alert-color, 0.5);
@@ -52,7 +54,7 @@ $alert-colors: (
         }
 
         .neon-alert__action + .neon-alert__action {
-          border-top: $neon-border-width $neon-border-style rgba($alert-color, $neon-border-opacity-alert-action);
+          border-top: $neon-border-width-alert $neon-border-style rgba($alert-color, $neon-border-opacity-alert-action);
         }
       }
     }

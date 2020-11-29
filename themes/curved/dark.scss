@@ -28,6 +28,7 @@ $neon-background-color-error: $neon-color-error-d1 !default;
 
 $neon-border-color: $neon-color-neutral-d3 !default;
 $neon-border: $neon-border-width $neon-border-style $neon-border-color !default;
+$neon-border-hr: 1px $neon-border-style $neon-border-color !default;
 $neon-hrcolor: $neon-border-color !default;
 
 $neon-color-outline: $neon-base-color !default;
@@ -105,7 +106,7 @@ $neon-color-toggle-selected: $neon-color-neutral-d5 !default;
 $neon-border-color-toggle: $neon-color-neutral-d3 !default;
 
 /* radio buttons */
-$neon-background-radio-button: linear-gradient(0deg, $neon-color-neutral-d3 0%, $neon-color-neutral-d5 100%) !default;
+$neon-background-radio-button: none !default;
 $neon-color-radio-button-label: $neon-color-neutral-l3 !default;
 
 /* input */

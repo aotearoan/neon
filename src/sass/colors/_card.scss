@@ -3,13 +3,13 @@
   .neon-card-body,
   .neon-card-footer {
     &:not(:last-child) {
-      border-right: $neon-border-width $neon-border-style $neon-border-color;
+      border-right: $neon-border;
     }
   }
 }
 
 .neon-card {
-  border: $neon-border-width $neon-border-style $neon-border-color;
+  border: $neon-border;
   box-shadow: $neon-card-box-shadow;
 
   .neon-card-header,

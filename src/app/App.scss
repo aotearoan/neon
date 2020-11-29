@@ -60,7 +60,7 @@ $neon-font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubu
       @import './sass/dark';
 
       .neon-drawer .neon-side-nav__sticky {
-        border-bottom: $neon-border-width $neon-border-style $neon-border-color;
+        border-bottom: $neon-border;
       }
     }
 
@@ -70,7 +70,7 @@ $neon-font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubu
       @import './sass/light';
 
       .neon-drawer .neon-side-nav__sticky {
-        border-bottom: $neon-border-width $neon-border-style $neon-border-color;
+        border-bottom: $neon-border;
       }
     }
   }
