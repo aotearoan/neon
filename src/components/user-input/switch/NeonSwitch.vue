@@ -8,6 +8,7 @@
       {
         'neon-switch--disabled': disabled,
         'neon-switch--checked': value,
+        'neon-switch--indeterminate': indeterminate,
       },
     ]"
     tabindex="-1"
@@ -15,7 +16,7 @@
     @keydown.space="toggleSwitch"
     @keydown.space.prevent=""
     :role="switchStyle"
-    :aria-checked="value"
+    :aria-checked="indeterminate ? 'mixed' : value"
     :aria-disabled="disabled"
   >
     <neon-icon
@@ -23,7 +24,7 @@
       class="neon-switch__checkbox"
       :inverse="true"
       :disabled="disabled"
-      name="check"
+      :name="indeterminate ? 'dash' : 'check'"
       :tabindex="!disabled ? 0 : undefined"
     />
     <span class="neon-switch__label">{{ label }}</span>
@@ -31,9 +32,10 @@
       <span class="neon-switch__indicator"></span>
     </span>
     <input
+      ref="checkbox"
       type="checkbox"
       class="neon-switch__input"
-      :checked="value"
+      :checked="!indeterminate && value"
       :disabled="disabled"
       v-on="sanitizedListeners"
       v-bind="$attrs"

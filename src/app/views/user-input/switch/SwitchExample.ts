@@ -26,6 +26,9 @@ export default class SwitchExample extends Vue {
     checked7: true,
     checked8: true,
     checked9: true,
+    checked10: true,
+    checked11: true,
+    indeterminate: true,
   };
 
   private sizeTemplate = `<div>
@@ -46,7 +49,15 @@ export default class SwitchExample extends Vue {
   private checkboxTemplate = `<div>
   <neon-switch size="s" label="Small checkbox" v-model="checked7" switch-style="checkbox" />
   <neon-switch label="Medium checkbox" v-model="checked8" switch-style="checkbox" />
-  <neon-switch size="l" label="Large checkbox" v-model="checked9" :disabled="true" switch-style="checkbox" />
+  <neon-switch size="l" label="Large checkbox" v-model="checked9" switch-style="checkbox" />
+  <neon-switch label="Disabled checkbox" v-model="checked10" :disabled="true" switch-style="checkbox" />
+  <neon-switch
+    label="Indeterminate checkbox"
+    v-model="checked11"
+    :indeterminate="indeterminate"
+    @indeterminate-change="indeterminate = false"
+    switch-style="checkbox"
+  />
 </div>`;
 
   private examples = [

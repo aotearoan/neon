@@ -34,7 +34,7 @@
       },
       "defaultValue": {
         "func": false,
-        "value": "NeonFunctionalColor.Neutral"
+        "value": "NeonFunctionalColor.LowContrast"
       }
     },
     {

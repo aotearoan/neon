@@ -55,6 +55,10 @@ export class RegisterIcons {
       '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%"><path class="neon-svg--fill" fill-rule="evenodd" d="M4.75 3A1.75 1.75 0 003 4.75v9.5c0 .966.784 1.75 1.75 1.75h1.5a.75.75 0 000-1.5h-1.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.25-.25h9.5a.25.25 0 01.25.25v1.5a.75.75 0 001.5 0v-1.5A1.75 1.75 0 0014.25 3h-9.5zm5 5A1.75 1.75 0 008 9.75v9.5c0 .966.784 1.75 1.75 1.75h9.5A1.75 1.75 0 0021 19.25v-9.5A1.75 1.75 0 0019.25 8h-9.5zM9.5 9.75a.25.25 0 01.25-.25h9.5a.25.25 0 01.25.25v9.5a.25.25 0 01-.25.25h-9.5a.25.25 0 01-.25-.25v-9.5z"></path></svg>',
     );
     NeonIconRegistry.addIcon(
+      'dash',
+      '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 18 18" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><path class="neon-svg--fill" d="M1.039,8.992c0,-0.544 0.361,-0.992 0.798,-0.992l14.367,0c0.438,0 0.798,0.448 0.798,0.992c0,0.543 -0.36,0.991 -0.798,0.991l-14.367,0c-0.437,0 -0.798,-0.448 -0.798,-0.991Z"/></svg>',
+    );
+    NeonIconRegistry.addIcon(
       'desktop',
       `<svg xmlns='http://www.w3.org/2000/svg' width="100%" height="100%" viewBox='0 0 512 512'><rect class="neon-svg--stroke" x='32' y='64' width='448' height='320' rx='32' ry='32' style='fill:none;stroke-linejoin:round;stroke-width:32px'/><polygon class="neon-svg--stroke" points='304 448 296 384 216 384 208 448 304 448' style='fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/><line class="neon-svg--stroke" x1='368' y1='448' x2='144' y2='448' style='fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/><path class="neon-svg--fill" d='M32,304v48a32.09,32.09,0,0,0,32,32H448a32.09,32.09,0,0,0,32-32V304Zm224,64a16,16,0,1,1,16-16A16,16,0,0,1,256,368Z'/></svg>`,
     );
@@ -112,7 +116,7 @@ export class RegisterIcons {
     );
     NeonIconRegistry.addIcon(
       'menu',
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"  width="100%" height="100%"><path class="neon-svg--fill" d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z"></path></svg>',
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="100%" height="100%"><path class="neon-svg--fill" d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z"></path></svg>',
     );
     NeonIconRegistry.addIcon(
       'minus',

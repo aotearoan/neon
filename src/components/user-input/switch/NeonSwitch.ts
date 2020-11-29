@@ -1,4 +1,4 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonSwitchStyle } from '../../../common/enums/NeonSwitchStyle';
@@ -12,6 +12,10 @@ import { TranslateResult } from 'vue-i18n';
  */
 @Component({})
 export default class NeonSwitch extends Vue {
+  readonly $refs!: {
+    checkbox: HTMLInputElement;
+  };
+
   /**
    * The switch model.
    */
@@ -23,6 +27,12 @@ export default class NeonSwitch extends Vue {
    */
   @Prop()
   public label?: TranslateResult;
+
+  /**
+   * The indeterminate state of the checkbox.
+   */
+  @Prop({ default: false })
+  public indeterminate!: boolean;
 
   /**
    * The size of the switch.
@@ -48,6 +58,17 @@ export default class NeonSwitch extends Vue {
   @Prop({ default: false })
   public disabled!: boolean;
 
+  @Watch('indeterminate')
+  private watchIndeterminate(to: boolean) {
+    this.$refs.checkbox.indeterminate = to;
+  }
+
+  public mounted() {
+    if (this.indeterminate) {
+      this.watchIndeterminate(true);
+    }
+  }
+
   private get sanitizedListeners() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { input, ...listeners } = this.$listeners;
@@ -55,13 +76,31 @@ export default class NeonSwitch extends Vue {
   }
 
   private toggleSwitch() {
-    if (!this.disabled) {
-      this.emitChecked(!this.value);
-    }
+    this.changeState(!this.value);
   }
 
   private onInput(event: InputEvent) {
-    this.emitChecked((event.target as HTMLInputElement).checked);
+    this.changeState((event.target as HTMLInputElement).checked);
+  }
+
+  private changeState(newState: boolean) {
+    if (!this.disabled) {
+      if (this.indeterminate) {
+        this.emitIndeterminate(false);
+        this.emitChecked(true);
+      } else {
+        this.emitChecked(newState);
+      }
+    }
+  }
+
+  private emitIndeterminate(indeterminate: boolean) {
+    /**
+     * Emitted when an indeterminate checkbox is toggled to checked.
+     *
+     * @type {boolean} The indeterminate state of the checkbox.
+     */
+    this.$emit('indeterminate-change', indeterminate);
   }
 
   private emitChecked(checked: boolean) {

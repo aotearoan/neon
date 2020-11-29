@@ -38,14 +38,15 @@ $neon-color-disabled-dark: lighten($neon-color-high-contrast-l4, 3) !default;
 /* switch */
 $neon-color-switch-off: $neon-color-neutral-l3 !default;
 $neon-color-switch-on: $neon-base-color !default;
-$neon-color-switch-indicator: $neon-color-neutral-l5 !default;
-
+$neon-color-switch-indicator: $neon-color-high-contrast-l5 !default;
+$neon-inset-shadow-switch: inset 0 2px 2px rgba(0, 0, 0, 0.014), inset 0 4px 4px rgba(0, 0, 0, 0.028),
+  inset 0 6px 6px rgba(0, 0, 0, 0.03) !default;
 $neon-color-switch-disabled: $neon-color-disabled-light !default;
 $neon-color-switch-indicator-disabled: $neon-color-disabled-dark !default;
 
 /* checkbox */
 $neon-background-color-checkbox: $neon-base-color !default;
-$neon-border-color-checkbox: d2 !default;
+$neon-border-color-checkbox: $neon-base-color !default;
 
 /* solid button */
 $neon-background-solid-button-light: $neon-base-color !default;

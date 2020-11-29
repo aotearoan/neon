@@ -1,17 +1,17 @@
-@mixin switch-color-classsic() {
+@mixin switch-color-default() {
   .neon-switch__switch {
     background-color: $neon-color-switch-off;
     transition: background-color $neon-animation-speed-fast ease-in;
-    box-shadow: $neon-inset-shadow;
+    box-shadow: $neon-inset-shadow-switch;
 
     &:focus {
-      box-shadow: 0 0 0 4px rgba($neon-color-text-low-contrast, 0.3), $neon-inset-shadow;
+      box-shadow: 0 0 0 4px rgba($neon-color-text-low-contrast, 0.3), $neon-inset-shadow-switch;
     }
   }
 
   .neon-switch__indicator {
     background-color: $neon-color-switch-indicator;
-    box-shadow: 0 0 2px 1px rgba($neon-color-neutral-d5, 0.125);
+    box-shadow: 0 0 2px 1px rgba($neon-color-neutral-d5, 0.3);
   }
 
   @each $color, $palette in $neon-functional-colors {
@@ -19,15 +19,10 @@
       &.neon-switch--checked:not(.neon-switch--disabled) {
         .neon-switch__switch {
           background-color: map-get($palette, $neon-color-switch-on);
-          box-shadow: $neon-inset-shadow;
 
           &:focus {
-            box-shadow: 0 0 0 4px rgba(map-get($palette, $neon-color-switch-on), 0.3), $neon-inset-shadow;
+            box-shadow: 0 0 0 4px rgba(map-get($palette, $neon-color-switch-on), 0.3), $neon-inset-shadow-switch;
           }
-        }
-
-        .neon-switch__indicator {
-          box-shadow: 0 0 2px 1px rgba($neon-color-neutral-d5, 0.125);
         }
       }
     }
@@ -97,10 +92,10 @@
   color: $neon-color-text;
 
   &--switch {
-    @if ($neon-theme == 'classic') {
-      @include switch-color-classsic;
-    } @else if($neon-theme == 'sharp') {
+    @if ($neon-theme == 'sharp') {
       @include switch-color-sharp;
+    } @else {
+      @include switch-color-default;
     }
   }
 
@@ -130,14 +125,23 @@
             }
           }
         }
+
+        &:not(.neon-switch--checked) {
+          &:hover {
+            .neon-switch__checkbox {
+              background-color: rgba($neon-color-switch-off, 0.125);
+            }
+          }
+        }
       }
     }
 
     &.neon-switch--disabled {
       .neon-switch__checkbox {
         box-shadow: none;
-        border-color: $neon-color-disabled-dark;
-        background-color: $neon-color-disabled-dark;
+        border: none;
+        background-color: $neon-color-switch-disabled;
+        @include color-with-svg($neon-color-switch-indicator-disabled);
       }
     }
   }

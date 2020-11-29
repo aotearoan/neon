@@ -38,6 +38,8 @@ $neon-color-disabled-dark: $neon-color-neutral-l4 !default;
 /* switch */
 $neon-color-switch-off: $neon-color-neutral-l3 !default;
 $neon-color-switch-on: $neon-base-color !default;
+$neon-color-switch-disabled: $neon-color-disabled-light !default;
+$neon-color-switch-indicator-disabled: $neon-color-disabled-dark !default;
 
 /* checkbox */
 $neon-background-color-checkbox: $neon-base-color !default;
