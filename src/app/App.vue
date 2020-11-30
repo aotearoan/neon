@@ -33,7 +33,7 @@
               </div>
             </neon-drawer>
             <neon-link outline-style="none" href="/" class="homepage-link" aria-label="home">
-              <neon-logo aria-label="Neon logo"></neon-logo>
+              <neon-logo color="brand" aria-label="Neon logo"></neon-logo>
             </neon-link>
             <span class="tagline neon-color-text-brand">A VueJs Design System</span>
           </span>

@@ -20,6 +20,12 @@ export default class NeonDrawer extends Vue {
   public open!: boolean;
 
   /**
+   * Whether or not the user is allowed to dismiss the modal by clicking outside of the modal or pressing escape.
+   */
+  @Prop({ default: true })
+  public dismissable!: boolean;
+
+  /**
    * If true, remove the padding applied to the drawer.
    */
   @Prop({ default: false })
@@ -38,7 +44,9 @@ export default class NeonDrawer extends Vue {
   public overlay!: boolean;
 
   public mounted() {
-    this.closableUtils = new NeonClosableUtils(this.$refs.drawer, this.close);
+    if (this.dismissable) {
+      this.closableUtils = new NeonClosableUtils(this.$refs.drawer, this.close);
+    }
   }
 
   @Watch('open', { immediate: true })

@@ -58,8 +58,10 @@ export default class Drawer extends Vue {
   </neon-drawer>
   <!-- Bottom -->
   <neon-button label="Open bottom" @click="openBottom = true"></neon-button>
-  <neon-drawer :open="openBottom" position="bottom" @close="openBottom = false">
+  <neon-drawer :dismissable="false" :open="openBottom" position="bottom">
     <div v-html="contents"></div>
+    <br />
+    <neon-button style="align-self: flex-end" label="Close" @click="openBottom = false" />
   </neon-drawer>
 </div>`,
       data: this.data,

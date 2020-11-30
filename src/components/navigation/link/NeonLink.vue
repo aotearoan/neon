@@ -19,7 +19,10 @@
     v-else-if="href"
     :href="href"
     class="neon-link neon-link--external-link"
-    :class="[{ 'neon-link--no-style': noStyle }, `neon-link--outline-${outlineStyle}`]"
+    :class="[
+      { 'neon-link--no-style': noStyle, 'neon-link--with-external-indicator': externalIndicator },
+      `neon-link--outline-${outlineStyle}`,
+    ]"
     v-on="sanitizedListeners"
     v-bind="$attrs"
     tabindex="0"

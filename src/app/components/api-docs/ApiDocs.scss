@@ -13,17 +13,12 @@
     text-overflow: ellipsis;
   }
 
-  &__desktop,
-  &__responsive {
+  &__desktop {
     margin-top: 2 * $neon-base-space;
   }
 
   &__section {
-    margin-bottom: 6 * $neon-base-space;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
+    margin-top: 6 * $neon-base-space;
   }
 
   &__title {

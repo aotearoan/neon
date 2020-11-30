@@ -14,6 +14,18 @@
       "required": true
     },
     {
+      "name": "dismissable",
+      "tags": {},
+      "description": "Whether or not the user is allowed to dismiss the modal by clicking outside of the modal or pressing escape.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    },
+    {
       "name": "fullWidth",
       "tags": {},
       "description": "If true, remove the padding applied to the drawer.",
@@ -64,7 +76,7 @@
   "slots": [
     {
       "name": "default",
-      "description": "drawer contents"
+      "description": "the contents of the drawer"
     }
   ]
 }

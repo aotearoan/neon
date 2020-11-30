@@ -75,12 +75,14 @@
               <thead>
                 <tr>
                   <th>Name</th>
+                  <th></th>
                   <th>Description</th>
                 </tr>
               </thead>
               <tbody>
                 <tr v-for="slot in apiModel.slots" :key="slot.name">
                   <td class="api-docs__name">{{ slot.name }}</td>
+                  <td></td>
                   <td class="api-docs__description">
                     <span v-if="slot.description" v-html="slot.description"></span>
                   </td>

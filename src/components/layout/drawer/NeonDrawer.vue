@@ -18,7 +18,7 @@
       ref="drawer"
       id="neonDrawerDesc"
     >
-      <!-- @slot drawer contents -->
+      <!-- @slot the contents of the drawer -->
       <slot></slot>
     </div>
   </div>
