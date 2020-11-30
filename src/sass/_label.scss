@@ -5,7 +5,7 @@
     height: $neon-size-xs - $neon-base-space;
     min-width: $neon-size-xs - $neon-base-space;
     font-size: $neon-font-size-xxs;
-    padding: 0 $neon-base-space;
+    padding: 0 2 * $neon-base-space;
 
     .neon-icon {
       width: $neon-font-size-xs;
@@ -26,14 +26,14 @@
   }
 
   text-transform: uppercase;
-  border-radius: $neon-border-radius;
+  border-radius: $neon-border-radius-label;
   letter-spacing: $neon-letter-spacing-s;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   user-select: none;
-  padding: 0 2 * $neon-base-space;
+  padding: 0 3 * $neon-base-space;
   min-width: fit-content;
   width: fit-content;
   font-weight: 700;

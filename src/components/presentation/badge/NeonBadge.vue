@@ -3,6 +3,7 @@
     class="neon-badge"
     :class="[
       `neon-badge--${color}`,
+      alternateColor ? `neon-badge--alternate-color-${alternateColor}` : '',
       `neon-badge--${size}`,
       {
         'neon-badge--with-label': label,

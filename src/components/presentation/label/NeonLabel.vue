@@ -3,6 +3,7 @@
     class="neon-label"
     :class="[
       `neon-label--${color}`,
+      alternateColor ? `neon-label--alternate-color-${alternateColor}` : '',
       `neon-label--${size}`,
       icon ? `neon-label--icon-${iconPosition}` : '',
       {

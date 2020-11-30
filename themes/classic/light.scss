@@ -51,8 +51,6 @@ $neon-border-color-checkbox: d2 !default;
 /* solid button */
 $neon-background-solid-button-light: $neon-base-color !default;
 $neon-background-solid-button-dark: d2 !default;
-/* alternate color for gradient buttons only */
-$neon-background-solid-button-alternate: l1 !default;
 
 /* high-contrast buttons */
 $neon-background-high-contrast-solid-button-light: $neon-color-high-contrast-d1 !default;
@@ -178,3 +176,6 @@ $neon-background-color-side-nav: $neon-background-color-card !default;
 /* input indicators */
 $neon-background-color-input-indicator: rgba($neon-color-disabled-dark, 0.5) !default;
 $neon-color-input-indicator: $neon-color-text-neutral !default;
+
+/* gradients */
+$neon-color-gradient-alternate: l1 !default;

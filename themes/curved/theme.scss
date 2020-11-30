@@ -2,7 +2,7 @@
 $neon-theme: 'curved' !default;
 
 /* base colors */
-$neon-color-brand: #5b0a9b !default;
+$neon-color-brand: #7703d2 !default;
 $neon-color-primary: #bf08a1 !default;
 $neon-color-info: #3c8eff !default;
 $neon-color-success: #0fddad !default;
@@ -212,3 +212,9 @@ $neon-border-width-expansion-panel: 1px !default;
 
 /* table */
 $neon-border-width-table: 1px !default;
+
+/* label */
+$neon-border-radius-label: 4px !default;
+
+/* badge */
+$neon-background-gradient-angle-badge: 45deg !default;

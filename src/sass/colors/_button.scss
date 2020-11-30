@@ -103,7 +103,7 @@
             } @else if ($alternateColor == low-contrast) {
               $solid-button-color-2: $neon-background-low-contrast-solid-button-light;
             } @else {
-              $solid-button-color-2: map-get($alternatePalette, $neon-background-solid-button-alternate);
+              $solid-button-color-2: map-get($alternatePalette, $neon-color-gradient-alternate);
             }
             @include gradient-button($solid-button-color-1, $solid-button-color-2);
           }

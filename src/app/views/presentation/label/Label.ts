@@ -34,6 +34,15 @@ export default class Label extends Vue {
 </div>`,
     },
     {
+      title: 'Gradient labels',
+      template: `<div class="example--horizontal">
+  <neon-label color="brand" alternate-color="primary" label="Brand" />
+  <neon-label color="primary" alternate-color="brand" label="Primary" />
+  <neon-label color="success" alternate-color="success" label="Success" />
+  <neon-label color="warn" alternate-color="warn" label="Warning" />
+</div>`,
+    },
+    {
       title: 'Labels with icons',
       template: `<div class="example--horizontal">
   <neon-label icon="check" size="xs" color="warn" label="Extra small" />
