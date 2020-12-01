@@ -33,7 +33,7 @@
           <neon-link
             v-if="message.primaryAction"
             tabindex="0"
-            outline-style="border"
+            outline-style="none"
             role="button"
             @click="
               message.primaryAction.callback();
@@ -51,7 +51,7 @@
           <neon-link
             v-if="message.secondaryAction"
             tabindex="0"
-            outline-style="border"
+            outline-style="none"
             role="button"
             @click="
               message.secondaryAction.callback();

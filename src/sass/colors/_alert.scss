@@ -39,16 +39,18 @@ $alert-colors: (
             $neon-border-style
             rgba($alert-color, $neon-border-opacity-alert-action);
 
-          a {
+          .neon-alert__action {
+            transition: all $neon-animation-speed-fast ease-in-out;
             color: rgba($alert-color, 0.5);
 
+            &:focus,
             &:hover {
               color: $alert-color;
               text-decoration: none;
             }
 
             &:focus {
-              @include box-shadow-outline($alert-color);
+              background-color: rgba($alert-color, 0.125);
             }
           }
         }
