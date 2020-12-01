@@ -1,28 +1,33 @@
 @import 'includes/layout';
 
-.neon-label {
-  &--xs {
-    height: $neon-size-xs - $neon-base-space;
-    min-width: $neon-size-xs - $neon-base-space;
-    font-size: $neon-font-size-xxs;
-    padding: 0 2 * $neon-base-space;
+@mixin neon-label-size($neon-label-size, $neon-label-font-size) {
+  height: $neon-label-size - $neon-base-space;
+  min-width: $neon-label-size - $neon-base-space;
+  font-size: $neon-label-font-size;
 
-    .neon-icon {
-      width: $neon-font-size-xs;
-      height: $neon-font-size-xs;
-    }
+  .neon-icon {
+    width: $neon-label-font-size;
+    height: $neon-label-font-size;
+  }
+}
+
+.neon-label {
+  padding: 0 2 * $neon-base-space;
+
+  &--xs {
+    @include neon-label-size($neon-size-xs, $neon-font-size-xs);
   }
 
   &--s {
-    height: $neon-size-s - $neon-base-space;
-    min-width: $neon-size-s - $neon-base-space;
+    @include neon-label-size($neon-size-s, $neon-font-size-s);
+  }
 
-    font-size: $neon-font-size-s;
+  &--m {
+    @include neon-label-size($neon-size-m, $neon-base-font-size);
+  }
 
-    .neon-icon {
-      width: $neon-font-size-s;
-      height: $neon-font-size-s;
-    }
+  &--l {
+    @include neon-label-size($neon-size-l, $neon-font-size-l);
   }
 
   text-transform: uppercase;
