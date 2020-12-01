@@ -1,10 +1,15 @@
 <template>
-  <div class="neon-color" :class="[`neon-color--${size}`, `neon-color--${color}`]">
+  <div
+    class="neon-color"
+    :class="[`neon-color--${size}`, `neon-color--${color}`, { 'neon-color--disabled': disabled }]"
+  >
     <neon-input
+      v-if="!pickerOnly"
       :value="value"
       @input="changeValue"
       :size="size"
       :color="color"
+      :hide-icon="true"
       :disabled="disabled"
       :placeholder="placeholder"
       :pattern="'#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})'"
@@ -18,6 +23,7 @@
       :value="value"
       :size="size"
       :color="color"
+      :hide-icon="true"
       @input="changeValue"
       :disabled="disabled"
       v-bind="$attrs"
