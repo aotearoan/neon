@@ -49,6 +49,7 @@
       &,
       &::placeholder {
         color: $neon-color-disabled-light;
+        -webkit-text-fill-color: $neon-color-disabled-light;
       }
     }
   }

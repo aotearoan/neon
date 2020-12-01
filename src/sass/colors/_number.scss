@@ -76,9 +76,11 @@
 
       @if ($neon-theme == smooth) {
         color: $neon-color-disabled-light;
+        -webkit-text-fill-color: $neon-color-disabled-light;
         background-color: $neon-color-disabled-dark;
       } @else {
         color: $neon-color-text;
+        -webkit-text-fill-color: $neon-color-text;
         background-color: $neon-background-color-input;
       }
     }
