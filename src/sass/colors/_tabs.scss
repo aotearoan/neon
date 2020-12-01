@@ -14,22 +14,23 @@
       .neon-tabs__menu-item {
         &:hover:not(.neon-tabs__menu-item--selected),
         &:active:not(.neon-tabs__menu-item--selected) {
-          $tabs-hover-color: rgba($tab-color, 0.85);
-          @include color-with-svg($tabs-hover-color);
+          @include color-with-svg($tab-color);
+
+          .neon-tabs__menu-item-container:before {
+            background-color: $tab-color;
+          }
         }
 
         &--selected {
           @include color-with-svg($tab-color);
 
-          .neon-tabs__menu-item-container {
-            border-bottom-color: $tab-color;
+          .neon-tabs__menu-item-container:before {
+            background-color: $tab-color;
           }
         }
 
-        &-container {
-          &:focus {
-            border-bottom-color: rgba($tab-color, 0.5);
-          }
+        &-container:focus:before {
+          background-color: $tab-color;
         }
       }
 

@@ -93,8 +93,8 @@
                 button-icon="palette"
                 aria-label="Select theme"
                 size="s"
-                :color="selectedMode === 'light' ? 'brand' : 'info'"
-                :alternate-color="selectedMode === 'light' ? 'info' : 'brand'"
+                :color="selectedMode === 'light' ? 'brand' : 'warn'"
+                :alternate-color="selectedMode === 'light' ? 'warn' : 'brand'"
               />
               <neon-button
                 class="github-link"

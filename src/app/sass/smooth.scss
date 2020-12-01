@@ -23,6 +23,14 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 4 * $neon-base-space;
+
+    .neon-select {
+      width: 100%;
+    }
+
+    & > .neon-button {
+      margin-left: 2 * $neon-base-space;
+    }
   }
 }
 

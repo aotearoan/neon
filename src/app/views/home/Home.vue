@@ -10,6 +10,7 @@
       <neon-button
         href="/for-developers/getting-started"
         color="brand"
+        alternate-color="brand"
         size="xl"
         button-style="solid"
         label="Get started"

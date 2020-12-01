@@ -4,10 +4,6 @@
     flex-direction: row;
     align-items: center;
     font-weight: 500;
-
-    &--underlined .neon-tabs__menu-item {
-      top: 0.5 * $neon-border-width-tabs;
-    }
   }
 
   &__menu-item {
@@ -33,8 +29,28 @@
       outline: none;
       height: 100%;
       align-items: center;
-      border-bottom: $neon-border-width-tabs $neon-border-style transparent;
       flex-direction: row;
+
+      &:before {
+        content: '';
+        display: flex;
+        width: 100%;
+        background-color: transparent;
+        position: absolute;
+        height: $neon-border-width-tabs;
+        bottom: -$neon-border-width-tabs;
+        border-radius: $neon-border-radius;
+        transition: all ease-in-out $neon-animation-speed-fast;
+      }
+    }
+
+    &:hover .neon-tabs__menu-item-container,
+    .neon-tabs__menu-item-container:focus {
+      &:before {
+        margin-left: $neon-base-space;
+        margin-right: $neon-base-space;
+        width: calc(100% - #{2 * $neon-base-space});
+      }
     }
   }
 
