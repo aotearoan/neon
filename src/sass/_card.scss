@@ -87,7 +87,7 @@
     }
   }
 
-  @if ($neon-theme == curved) {
+  @if ($neon-theme == smooth) {
     &.neon-card--vertical {
       .neon-card-header {
         &:not(:last-child) {

@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="neon-app neon-app--standard-page">
     <neon-page>
-      <template v-if="theme !== 'curved' || isTablet" #top-nav>
+      <template v-if="theme !== 'smooth' || isTablet" #top-nav>
         <neon-top-nav class="app-top-nav">
           <span class="logo-wrapper top-nav-logo-wrapper">
             <neon-button
@@ -25,7 +25,7 @@
                     :key="section.group"
                     v-model="section.expanded"
                     class="menu-expansion-panel"
-                    :full-width="theme === 'curved'"
+                    :full-width="theme === 'smooth'"
                   >
                     <neon-tree-menu :model="section.children" :expand-all="expandAll" @click="onSideNavMenuClick" />
                   </neon-expansion-panel>
@@ -73,7 +73,7 @@
         </neon-top-nav>
       </template>
       <template #side-nav>
-        <neon-side-nav class="app-side-nav" :full-width="theme !== 'curved'">
+        <neon-side-nav class="app-side-nav" :full-width="theme !== 'smooth'">
           <template #sticky>
             <span class="logo-wrapper side-nav-logo-wrapper">
               <neon-link outline-style="none" href="/" class="homepage-link" aria-label="home">
@@ -116,7 +116,7 @@
             <label for="menuFilterSideNav" class="menu-filter">Filter menu</label>
             <neon-input
               id="menuFilterSideNav"
-              :size="theme === 'curved' ? 'm' : 'l'"
+              :size="theme === 'smooth' ? 'm' : 'l'"
               type="text"
               v-model="indexFilter"
               placeholder="Filter..."
@@ -130,7 +130,7 @@
               :key="section.group"
               v-model="section.expanded"
               class="menu-expansion-panel"
-              :full-width="theme === 'curved'"
+              :full-width="theme === 'smooth'"
             >
               <neon-tree-menu :model="section.children" :expand-all="expandAll" @click="onSideNavMenuClick" />
             </neon-expansion-panel>

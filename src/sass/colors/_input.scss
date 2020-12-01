@@ -19,7 +19,7 @@
       &.neon-input--focused {
         .neon-input__text,
         .neon-input__textarea {
-          @if ($neon-theme == curved) {
+          @if ($neon-theme == smooth) {
             background-color: rgba($input-color, 0.1);
 
             &::placeholder {

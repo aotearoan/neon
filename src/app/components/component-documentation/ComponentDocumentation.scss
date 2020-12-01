@@ -31,7 +31,7 @@ $neon-height-component-header-mobile: 77px;
     padding-bottom: 0 !important;
     max-width: $neon-max-page-width - $neon-side-nav-width;
 
-    @if ($neon-theme == curved) {
+    @if ($neon-theme == smooth) {
       top: 0;
     } @else {
       top: $neon-top-nav-height-desktop;

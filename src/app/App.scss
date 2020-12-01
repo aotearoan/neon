@@ -29,20 +29,20 @@ $neon-font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubu
     }
   }
 
-  &.neon-theme--curved {
-    @import '../../themes/curved/theme';
+  &.neon-theme--smooth {
+    @import '../../themes/smooth/theme';
     @import 'src/sass/common';
     @import './sass/app';
-    @import './sass/curved';
+    @import './sass/smooth';
 
     &.neon-mode--dark {
-      @import '../../themes/curved/dark';
+      @import '../../themes/smooth/dark';
       @import 'src/sass/colors/color-components';
       @import './sass/dark';
     }
 
     &.neon-mode--light {
-      @import '../../themes/curved/light';
+      @import '../../themes/smooth/light';
       @import 'src/sass/colors/color-components';
       @import './sass/light';
     }

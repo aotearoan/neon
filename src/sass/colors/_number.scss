@@ -2,7 +2,7 @@
   @each $color, $palette in $neon-functional-colors {
     $number-component-color: map-get($palette, $neon-color-input-selected);
     &.neon-number--#{$color}.neon-number--with-buttons:not(.neon-number--disabled) {
-      @if ($neon-theme == curved) {
+      @if ($neon-theme == smooth) {
         .neon-button.neon-number__decrement:not(.neon-button--disabled),
         .neon-button.neon-number__increment:not(.neon-button--disabled) {
           border: none;
@@ -74,7 +74,7 @@
     &:not(.neon-number--disabled) .neon-number__input .neon-input__textfield {
       box-shadow: none;
 
-      @if ($neon-theme == curved) {
+      @if ($neon-theme == smooth) {
         color: $neon-color-disabled-light;
         background-color: $neon-color-disabled-dark;
       } @else {

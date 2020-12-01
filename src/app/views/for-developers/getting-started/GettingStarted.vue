@@ -25,8 +25,8 @@
         <h2 class="neon-h4">SASS</h2>
         <span>First select a theme:</span>
         <ul>
+          <li>smooth</li>
           <li>classic</li>
-          <li>curved</li>
           <li>sharp</li>
         </ul>
         <p>

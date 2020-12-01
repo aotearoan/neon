@@ -93,6 +93,18 @@
       }
     },
     {
+      "name": "hideIcon",
+      "tags": {},
+      "description": "Hide the icon button, e.g. the X button to clear the input's contents.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
       "name": "pattern",
       "tags": {},
       "description": "A regular expression for filtering valid values in the input",

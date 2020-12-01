@@ -1,5 +1,5 @@
 export enum NeonTheme {
   Classic = 'classic',
-  Curved = 'curved',
+  Smooth = 'smooth',
   Sharp = 'sharp',
 }
