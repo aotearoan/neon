@@ -1,4 +1,4 @@
-@mixin toggle-color($color, $toggle-color) {
+@mixin neon-toggle-color($color, $toggle-color) {
   &:not(.neon-toggle--disabled).neon-toggle--#{$color} {
     color: rgba($neon-color-text, 0.7);
 
@@ -21,26 +21,49 @@
 
       &.neon-toggle__label--checked {
         border-color: $toggle-color;
-        background-color: rgba($toggle-color, 0.125);
+        background-color: rgba($toggle-color, $neon-opacity-toggle-chip-hover);
       }
 
       &:hover:not(.neon-toggle__label--checked),
       &:focus:not(.neon-toggle__label--checked) {
-        background-color: rgba($neon-border-color-toggle, 0.375);
+        background-color: rgba($neon-border-color-toggle, $neon-opacity-toggle-chip-hover);
       }
     }
   }
 }
 
-@mixin toggle-colors() {
-  @each $color, $palette in $neon-functional-colors {
-    @if ($color == high-contrast) {
-      @include toggle-color($color, $neon-color-text);
-    } @else {
-      @include toggle-color($color, map-get($palette, $neon-color-toggle));
+@mixin neon-toggle-color-smooth($color, $toggle-color) {
+  &.neon-toggle--#{$color} {
+    @include color-with-svg(rgba($toggle-color, 0.5));
+    background-color: rgba($toggle-color, 0.05);
+
+    .neon-toggle__label:not(.neon-toggle__label--disabled) {
+      &.neon-toggle__label--checked {
+        @include color-with-svg($toggle-color);
+        background-color: rgba($toggle-color, 0.25);
+      }
+
+      &:hover:not(.neon-toggle__label--checked):not(.neon-toggle__label--disabled),
+      &:focus:not(.neon-toggle__label--checked) {
+        @include color-with-svg(rgba($toggle-color, 0.75));
+        background-color: rgba($toggle-color, 0.125);
+      }
+    }
+
+    &.neon-toggle--disabled .neon-toggle__label,
+    .neon-toggle__label--disabled {
+      @include color-with-svg(rgba($toggle-color, 0.33));
+    }
+
+    &.neon-toggle--disabled .neon-toggle__label--checked,
+    .neon-toggle__label--disabled.neon-toggle__label--checked {
+      @include color-with-svg(rgba($toggle-color, 0.33));
+      background-color: rgba($toggle-color, 0.125);
     }
   }
+}
 
+@mixin neon-toggle-color-disabled() {
   &.neon-toggle--disabled {
     border: $neon-border-width $neon-border-style $neon-color-disabled-dark;
 
@@ -65,5 +88,27 @@
     color: $neon-color-disabled-light;
     border-color: $neon-color-disabled-dark;
     background-color: $neon-color-disabled-dark;
+  }
+}
+
+@mixin toggle-colors() {
+  @each $color, $palette in $neon-functional-colors {
+    @if ($neon-theme == smooth) {
+      @if ($color == high-contrast) {
+        @include neon-toggle-color-smooth($color, $neon-color-text);
+      } @else {
+        @include neon-toggle-color-smooth($color, map-get($palette, $neon-color-toggle));
+      }
+    } @else {
+      @if ($color == high-contrast) {
+        @include neon-toggle-color($color, $neon-color-text);
+      } @else {
+        @include neon-toggle-color($color, map-get($palette, $neon-color-toggle));
+      }
+    }
+  }
+
+  @if ($neon-theme != smooth) {
+    @include neon-toggle-color-disabled();
   }
 }

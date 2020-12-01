@@ -58,7 +58,7 @@
     flex-direction: row;
     justify-content: flex-start;
     position: relative;
-    font-size: $neon-base-font-size;
+    font-size: $neon-font-size-m;
 
     &--dismissable:not(.neon-alert__message--with-actions) {
       cursor: pointer;
@@ -77,7 +77,7 @@
 
   &__title {
     line-height: $neon-line-height-one;
-    font-size: $neon-base-font-size;
+    font-size: $neon-font-size-m;
     font-weight: 600;
     font-family: $neon-heading-font-family;
     letter-spacing: $neon-letter-spacing-m;

@@ -28,7 +28,7 @@ table {
   tbody {
     tr {
       td {
-        $padding-td-vertical: 0.5 * ($neon-size-m - $neon-line-height-ratio * $neon-base-font-size);
+        $padding-td-vertical: 0.5 * ($neon-size-m - $neon-line-height-ratio * $neon-font-size-m);
         vertical-align: top;
         text-align: left;
         padding: $padding-td-vertical 6 * $neon-base-space $padding-td-vertical 0;
@@ -45,7 +45,7 @@ table {
         }
 
         .neon-label--xs {
-          margin-top: 0.5 * ($neon-line-height-ratio * $neon-base-font-size - ($neon-size-xs - $neon-base-space));
+          margin-top: 0.5 * ($neon-line-height-ratio * $neon-font-size-m - ($neon-size-xs - $neon-base-space));
         }
       }
     }

@@ -12,7 +12,7 @@ blockquote,
 
   &__icon.neon-icon {
     margin-right: 4 * $neon-base-space;
-    $note-icon-size: 1.5 * $neon-base-font-size;
+    $note-icon-size: 1.5 * $neon-font-size-m;
     width: $note-icon-size;
     min-width: $note-icon-size;
     height: $note-icon-size;

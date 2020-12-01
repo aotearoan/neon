@@ -102,6 +102,9 @@ $neon-background-color-pre: darken($neon-color-neutral-d3, 3) !default;
 $neon-color-toggle: $neon-base-color !default;
 $neon-color-toggle-selected: $neon-color-neutral-d5 !default;
 $neon-border-color-toggle: $neon-color-neutral-d3 !default;
+$neon-opacity-toggle: 0.125 !default;
+$neon-opacity-toggle-selected: 0.33 !default;
+$neon-opacity-toggle-hover: 0.25 !default;
 
 /* radio buttons */
 $neon-background-radio-button: none !default;
@@ -159,7 +162,8 @@ $neon-background-color-overlay: rgba($neon-color-neutral-d5, 0.75) !default;
 $neon-color-toggle-chip: $neon-base-color !default;
 $neon-color-toggle-chip-text: $neon-color-text !default;
 $neon-border-color-toggle-chip: $neon-color-neutral-d3 !default;
-$neon-opacity-toggle-chip: 0.15 !default;
+$neon-opacity-toggle-chip: 0.23 !default;
+$neon-opacity-toggle-chip-hover: 0.33 !default;
 
 /* slider & range slider */
 $neon-color-slider: $neon-base-color !default;

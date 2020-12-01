@@ -1,12 +1,12 @@
 .neon-toggle-chip {
   border-color: $neon-border-color-toggle-chip;
-  background-color: rgba($neon-background-color, 0.125);
-  color: rgba($neon-color-text, 0.6);
+  background-color: rgba($neon-border-color-toggle-chip, $neon-opacity-toggle-chip);
+  color: rgba($neon-color-text, 0.667);
 
   &:not(.neon-toggle-chip--disabled) {
     &:focus,
     &:hover {
-      background-color: rgba($neon-border-color-toggle-chip, 0.33);
+      background-color: rgba($neon-border-color-toggle-chip, $neon-opacity-toggle-chip-hover);
     }
   }
 
@@ -15,13 +15,17 @@
       &.neon-toggle-chip--checked {
         border-color: map-get($palette, $neon-color-toggle-chip);
         background-color: rgba(map-get($palette, $neon-color-toggle-chip), $neon-opacity-toggle-chip);
-        @include color-with-svg($neon-color-toggle-chip-text);
+        @if ($neon-theme == smooth) {
+          @include color-with-svg(map-get($palette, $neon-color-toggle-chip));
+        } @else {
+          @include color-with-svg($neon-color-toggle-chip-text);
+        }
       }
 
       &.neon-toggle-chip--checked {
         &:focus,
         &:hover {
-          background-color: rgba(map-get($palette, $neon-color-toggle-chip), 2 * $neon-opacity-toggle-chip);
+          background-color: rgba(map-get($palette, $neon-color-toggle-chip), $neon-opacity-toggle-chip-hover);
         }
       }
     }

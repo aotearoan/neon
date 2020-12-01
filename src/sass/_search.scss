@@ -65,9 +65,9 @@
       min-height: $neon-size-m;
 
       .neon-search__search-icon {
-        top: 0.5 * ($neon-size-m - $neon-base-font-size) + 0.75 * $neon-base-space;
-        width: $neon-base-font-size;
-        height: $neon-base-font-size;
+        top: 0.5 * ($neon-size-m - $neon-font-size-m) + 0.75 * $neon-base-space;
+        width: $neon-font-size-m;
+        height: $neon-font-size-m;
       }
 
       .neon-search__input {
@@ -84,9 +84,9 @@
       min-height: $neon-size-l;
 
       .neon-search__search-icon {
-        top: 0.5 * ($neon-size-l - $neon-base-font-size) + 0.75 * $neon-base-space;
-        width: $neon-base-font-size;
-        height: $neon-base-font-size;
+        top: 0.5 * ($neon-size-l - $neon-font-size-m) + 0.75 * $neon-base-space;
+        width: $neon-font-size-m;
+        height: $neon-font-size-m;
       }
 
       .neon-search__input {

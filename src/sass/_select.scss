@@ -95,7 +95,7 @@
     display: none;
 
     @include touchscreen {
-      font-size: $neon-base-font-size;
+      font-size: $neon-font-size-m;
       display: flex;
       position: absolute;
       top: 0;

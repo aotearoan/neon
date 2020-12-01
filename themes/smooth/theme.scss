@@ -42,6 +42,7 @@ $neon-font-size-xxs: round(
 ) !default;
 $neon-font-size-xs: round($neon-base-font-size / ($neon-typography-scale * $neon-typography-scale)) !default;
 $neon-font-size-s: round($neon-base-font-size / $neon-typography-scale) !default;
+$neon-font-size-m: $neon-base-font-size !default;
 $neon-font-size-l: round($neon-base-font-size * $neon-typography-scale) !default;
 
 $neon-letter-spacing-s: 0.25px !default;

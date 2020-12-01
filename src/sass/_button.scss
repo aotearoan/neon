@@ -35,11 +35,11 @@
   }
 
   &--m {
-    @include button-size($neon-size-m, $neon-base-font-size, $neon-h6-size);
+    @include button-size($neon-size-m, $neon-font-size-m, $neon-h6-size);
   }
 
   &--l {
-    @include button-size($neon-size-l, $neon-base-font-size, $neon-h5-size);
+    @include button-size($neon-size-l, $neon-font-size-m, $neon-h5-size);
   }
 
   &--xl {

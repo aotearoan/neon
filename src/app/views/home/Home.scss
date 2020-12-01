@@ -45,7 +45,7 @@
     margin-right: auto;
 
     @include responsive(tablet) {
-      font-size: $neon-base-font-size;
+      font-size: $neon-font-size-m;
     }
   }
 
@@ -76,7 +76,7 @@
       }
 
       p {
-        font-size: $neon-base-font-size;
+        font-size: $neon-font-size-m;
       }
 
       @include responsive(mobile-large) {

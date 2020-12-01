@@ -10,7 +10,7 @@
     line-height: $neon-line-height-one;
 
     @include responsive(larger-than-tablet) {
-      font-size: $neon-base-font-size;
+      font-size: $neon-font-size-m;
       height: $neon-footer-height-desktop;
       padding: 0 $spacing-vertical-desktop;
     }

@@ -111,7 +111,7 @@
   }
 
   &--m {
-    @include neon-menu-size($neon-size-m, $neon-base-font-size, 5 * $neon-base-space);
+    @include neon-menu-size($neon-size-m, $neon-font-size-m, 5 * $neon-base-space);
   }
 
   &--l {

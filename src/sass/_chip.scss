@@ -46,7 +46,7 @@
   }
 
   &--l {
-    @include chip-size($neon-size-l, $neon-base-font-size, 5 * $neon-base-space, 5 * $neon-base-space);
+    @include chip-size($neon-size-l, $neon-font-size-m, 5 * $neon-base-space, 5 * $neon-base-space);
   }
 
   &__close {

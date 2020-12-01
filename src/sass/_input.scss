@@ -51,11 +51,11 @@
   }
 
   &--m {
-    @include input-size($neon-size-m, $neon-base-font-size);
+    @include input-size($neon-size-m, $neon-font-size-m);
   }
 
   &--l {
-    @include input-size($neon-size-l, $neon-base-font-size);
+    @include input-size($neon-size-l, $neon-font-size-m);
   }
 
   &__text,

@@ -110,7 +110,7 @@ $neon-height-component-header-mobile: 77px;
 
     @include responsive(mobile-large) {
       margin-bottom: 2 * $neon-base-space;
-      font-size: $neon-base-font-size;
+      font-size: $neon-font-size-m;
     }
   }
 
@@ -150,7 +150,7 @@ $neon-height-component-header-mobile: 77px;
 
     .neon-h6,
     h6 {
-      font-size: $neon-base-font-size;
+      font-size: $neon-font-size-m;
     }
   }
 }

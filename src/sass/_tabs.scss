@@ -41,11 +41,11 @@
   &--s {
     .neon-tabs__menu-items {
       height: $neon-size-s;
-      font-size: $neon-base-font-size;
+      font-size: $neon-font-size-m;
 
       svg {
-        width: $neon-base-font-size;
-        height: $neon-base-font-size;
+        width: $neon-font-size-m;
+        height: $neon-font-size-m;
         margin-right: $neon-base-space;
       }
     }

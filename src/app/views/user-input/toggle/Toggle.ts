@@ -29,6 +29,11 @@ export default class Toggle extends Vue {
         key: 'key-3',
         label: 'Label 3',
       },
+      {
+        key: 'key-4',
+        label: 'Label 4',
+        disabled: true,
+      },
     ],
     iconModel: [
       {

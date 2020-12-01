@@ -33,7 +33,7 @@ export default class NeonToggleChip extends Vue {
   /**
    * The toggle chip color.
    */
-  @Prop({ default: NeonFunctionalColor.LowContrast })
+  @Prop({ default: NeonFunctionalColor.Primary })
   public color!: NeonFunctionalColor;
 
   /**

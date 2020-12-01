@@ -3,7 +3,7 @@
     class="neon-toggle"
     :class="[
       `neon-toggle--${toggleStyle}`,
-      `neon-toggle--${color}`,
+      `neon-toggle--${disabled ? 'low-contrast' : color}`,
       `neon-toggle--${orientation}`,
       `neon-toggle--${size}`,
       { 'neon-toggle--disabled': disabled },

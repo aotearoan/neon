@@ -1,3 +1,17 @@
+@mixin neon-toggle-chip-size($neon-toggle-chip-size, $neon-toggle-chip-font-size, $neon-toggle-chip-padding) {
+  height: $neon-toggle-chip-size;
+  font-size: $neon-toggle-chip-font-size;
+  padding-left: $neon-toggle-chip-padding;
+  padding-right: $neon-toggle-chip-padding;
+
+  &.neon-toggle-chip--checked {
+    .neon-toggle-chip__checked {
+      width: $neon-toggle-chip-font-size;
+      height: $neon-toggle-chip-font-size;
+    }
+  }
+}
+
 .neon-toggle-chip {
   display: flex;
   flex-direction: row;
@@ -6,7 +20,7 @@
   cursor: pointer;
   border: $neon-border-width $neon-border-style;
   border-radius: $neon-border-radius;
-  transition: all ease-in-out $neon-animation-speed-fast;
+  transition: width ease-in-out $neon-animation-speed-fast, background-color ease-in-out $neon-animation-speed-fast;
 
   &:focus {
     outline: none;
@@ -36,59 +50,19 @@
   }
 
   &--xs {
-    height: $neon-size-xs;
-    font-size: $neon-font-size-xs;
-    padding-left: 2 * $neon-base-space;
-    padding-right: 2 * $neon-base-space;
-
-    &.neon-toggle-chip--checked {
-      .neon-toggle-chip__checked {
-        width: $neon-font-size-xs;
-        height: $neon-font-size-xs;
-      }
-    }
+    @include neon-toggle-chip-size($neon-size-xs, $neon-font-size-xs, 2 * $neon-base-space);
   }
 
   &--s {
-    height: $neon-size-s;
-    font-size: $neon-font-size-s;
-    padding-left: 2.5 * $neon-base-space;
-    padding-right: 2.5 * $neon-base-space;
-
-    &.neon-toggle-chip--checked {
-      .neon-toggle-chip__checked {
-        width: $neon-font-size-s;
-        height: $neon-font-size-s;
-      }
-    }
+    @include neon-toggle-chip-size($neon-size-s, $neon-font-size-s, 2.5 * $neon-base-space);
   }
 
   &--m {
-    height: $neon-size-m;
-    font-size: $neon-font-size-s;
-    padding-left: 3.5 * $neon-base-space;
-    padding-right: 3.5 * $neon-base-space;
-
-    &.neon-toggle-chip--checked {
-      .neon-toggle-chip__checked {
-        width: $neon-font-size-s;
-        height: $neon-font-size-s;
-      }
-    }
+    @include neon-toggle-chip-size($neon-size-m, $neon-font-size-m, 3.5 * $neon-base-space);
   }
 
   &--l {
-    height: $neon-size-l;
-    font-size: $neon-base-font-size;
-    padding-left: 5 * $neon-base-space;
-    padding-right: 5 * $neon-base-space;
-
-    &.neon-toggle-chip--checked {
-      .neon-toggle-chip__checked {
-        width: $neon-base-font-size;
-        height: $neon-base-font-size;
-      }
-    }
+    @include neon-toggle-chip-size($neon-size-l, $neon-font-size-l, 5 * $neon-base-space);
   }
 
   &:active:not(.neon-toggle-chip--disabled):not(.neon-toggle-chip--show-check) {

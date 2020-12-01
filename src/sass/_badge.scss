@@ -23,7 +23,7 @@ $badge-icon-size: 0.667;
   }
 
   &--m {
-    @include badge-size($neon-size-m, $neon-base-font-size);
+    @include badge-size($neon-size-m, $neon-font-size-m);
   }
 
   &--l {

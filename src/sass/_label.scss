@@ -23,7 +23,7 @@
   }
 
   &--m {
-    @include neon-label-size($neon-size-m, $neon-base-font-size);
+    @include neon-label-size($neon-size-m, $neon-font-size-m);
   }
 
   &--l {

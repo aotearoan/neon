@@ -158,7 +158,8 @@ $neon-background-color-overlay: rgba($neon-color-neutral-d5, 0.75) !default;
 $neon-color-toggle-chip: $neon-base-color !default;
 $neon-color-toggle-chip-text: $neon-color-text !default;
 $neon-border-color-toggle-chip: $neon-color-neutral-d3 !default;
-$neon-opacity-toggle-chip: 0.15 !default;
+$neon-opacity-toggle-chip: 0.125 !default;
+$neon-opacity-toggle-chip-hover: 0.33 !default;
 
 /* slider & range slider */
 $neon-color-slider: $neon-base-color !default;
