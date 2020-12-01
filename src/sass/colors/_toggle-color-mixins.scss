@@ -83,6 +83,10 @@
     border-left: $neon-border-width $neon-border-style $neon-border-color-toggle;
   }
 
+  .neon-toggle__label--disabled:last-child {
+    border-right: $neon-border-width $neon-border-style $neon-border-color-toggle;
+  }
+
   &.neon-toggle--disabled .neon-toggle__label--checked,
   .neon-toggle__label--disabled.neon-toggle__label--checked {
     color: $neon-color-disabled-light;

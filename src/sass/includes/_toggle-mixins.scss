@@ -60,6 +60,18 @@
   &.neon-toggle--l {
     @include toggle-size($neon-font-size-m, $neon-size-l);
   }
+
+  .neon-toggle__label {
+    &:first-child {
+      border-top-left-radius: $neon-border-radius;
+      border-bottom-left-radius: $neon-border-radius;
+    }
+
+    &:last-child {
+      border-top-right-radius: $neon-border-radius;
+      border-bottom-right-radius: $neon-border-radius;
+    }
+  }
 }
 
 @mixin radio-button-layout {
