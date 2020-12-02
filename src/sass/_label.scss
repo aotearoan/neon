@@ -1,9 +1,17 @@
 @import 'includes/layout';
 
-@mixin neon-label-size($neon-label-size, $neon-label-font-size) {
-  height: $neon-label-size - $neon-base-space;
-  min-width: $neon-label-size - $neon-base-space;
+@mixin neon-label-size($neon-label-height, $neon-label-font-size) {
+  height: $neon-label-height;
+  min-width: $neon-label-height;
   font-size: $neon-label-font-size;
+
+  .neon-label__label {
+    @if ($neon-label-font-size % 2 == 0) {
+      line-height: $neon-label-font-size;
+    } @else {
+      line-height: $neon-label-font-size + 1px;
+    }
+  }
 
   .neon-icon {
     width: $neon-label-font-size;
@@ -12,22 +20,29 @@
 }
 
 .neon-label {
-  padding: 0 2 * $neon-base-space;
+  &--xxs {
+    padding: 0 $neon-base-space;
+    @include neon-label-size($neon-size-xxs, $neon-font-size-xxs);
+  }
 
   &--xs {
-    @include neon-label-size($neon-size-xs, $neon-font-size-xs);
+    padding: 0 1.5 * $neon-base-space;
+    @include neon-label-size($neon-size-xs - $neon-base-space, $neon-font-size-xs);
   }
 
   &--s {
-    @include neon-label-size($neon-size-s, $neon-font-size-s);
+    padding: 0 2 * $neon-base-space;
+    @include neon-label-size($neon-size-s - $neon-base-space, $neon-font-size-s);
   }
 
   &--m {
-    @include neon-label-size($neon-size-m, $neon-font-size-m);
+    padding: 0 3.5 * $neon-base-space;
+    @include neon-label-size($neon-size-m - $neon-base-space, $neon-font-size-m);
   }
 
   &--l {
-    @include neon-label-size($neon-size-l, $neon-font-size-l);
+    padding: 0 4 * $neon-base-space;
+    @include neon-label-size($neon-size-l - $neon-base-space, $neon-font-size-l);
   }
 
   text-transform: uppercase;
@@ -38,14 +53,12 @@
   align-items: center;
   justify-content: center;
   user-select: none;
-  padding: 0 3 * $neon-base-space;
   min-width: fit-content;
   width: fit-content;
   font-weight: 700;
 
   &__label {
     white-space: nowrap;
-    line-height: 1;
   }
 
   &--with-icon {

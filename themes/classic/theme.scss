@@ -15,9 +15,9 @@ $neon-max-paragraph-width: 70ch !default;
 $neon-max-page-width: 1920px !default;
 
 /* vertical layout spacing, used for margins and paddings of layout components */
-$neon-spacing-vertical-mobile: 3 * $neon-base-space !default;
+$neon-spacing-vertical-mobile: 4 * $neon-base-space !default;
 /* ratio of horizontal to vertical spacing */
-$neon-spacing-horizontal-multiplier: 1.1667 !default;
+$neon-spacing-horizontal-multiplier: 1 !default;
 /* ratio of tablet to mobile spacing */
 $neon-spacing-multiplier-tablet: 1.5 !default;
 /* ratio of desktop to mobile spacing */
@@ -142,6 +142,7 @@ $neon-side-nav-width: 80 * $neon-base-space !default;
 
 /* card */
 $neon-card-section-border: $neon-border-width $neon-border-style !default;
+$neon-border-radius-card: $neon-border-radius !default;
 $neon-card-box-shadow: $neon-box-shadow !default;
 
 /* checkbox */
@@ -223,3 +224,8 @@ $neon-background-gradient-angle-badge: 45deg !default;
 
 /* color input */
 $neon-border-radius-input-color: 0.5 * $neon-border-radius !default;
+
+/* dialog */
+$neon-max-width-dialog: 250px !default;
+$neon-min-height-dialog: 275px !default;
+$neon-font-style-dialog: italic !default;

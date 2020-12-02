@@ -1,6 +1,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { NeonOrientation } from '../../../common/enums/NeonOrientation';
 import { NeonResponsive } from '../../../common/enums/NeonResponsive';
+import { NeonSize } from '../../../common/enums/NeonSize';
 
 /**
  * Card component used for the layout of content within a grid or page.
@@ -12,6 +13,12 @@ export default class NeonCard extends Vue {
    */
   @Prop({ default: NeonOrientation.Vertical })
   public orientation!: NeonOrientation;
+
+  /**
+   * The size of the card, this only adjusts the padding where more compact cards are required.
+   */
+  @Prop({ default: NeonSize.Medium })
+  public size!: NeonSize;
 
   /**
    * The breakpoint to switch horizontal cards to vertical cards. Accepts <em>Mobile | MobileLarge | Tablet</em> ONLY.

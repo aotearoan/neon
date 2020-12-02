@@ -1,3 +1,9 @@
-.neon-modal__overlay {
-  background-color: $neon-background-color-overlay;
+.neon-modal {
+  &__overlay {
+    background-color: $neon-background-color-overlay;
+  }
+
+  .neon-card {
+    box-shadow: $neon-box-shadow-alert;
+  }
 }

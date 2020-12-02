@@ -20,6 +20,7 @@ export default class Label extends Vue {
     {
       title: 'Label sizes',
       template: `<div class="example--horizontal">
+  <neon-label size="xxs" label="XX Small" />
   <neon-label size="xs" label="Extra small" />
   <neon-label size="s" label="Small" />
   <neon-label size="m" label="Medium" />

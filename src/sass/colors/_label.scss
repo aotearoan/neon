@@ -1,29 +1,32 @@
-@mixin neon-label-colors($neon-label-color) {
-  color: $neon-label-color;
-  background: rgba($neon-label-color, 0.15);
+@mixin neon-label-colors($neon-label-component-color) {
+  color: $neon-label-component-color;
+  background: rgba($neon-label-component-color, 0.15);
 }
 
-@mixin neon-gradient-label($neon-label-color, $neon-label-alternate-color) {
-  background: linear-gradient(90deg, rgba($neon-label-color, 0.15), rgba($neon-label-alternate-color, 0.15));
+@mixin neon-gradient-label($neon-label-component-color, $neon-label-alternate-color) {
+  background: linear-gradient(90deg, rgba($neon-label-component-color, 0.15), rgba($neon-label-alternate-color, 0.15));
 
   .neon-label__label {
-    @include neon-gradient-text($neon-label-color, $neon-label-alternate-color);
+    @include neon-gradient-text($neon-label-component-color, $neon-label-alternate-color);
   }
 }
 
 .neon-label {
   @each $color, $palette in $neon-functional-colors {
     &--#{$color} {
-      $neon-label-color: map-get($palette, $neon-color-label);
+      $neon-label-component-color: map-get($palette, $neon-color-label);
       @if ($color == high-contrast) {
-        $neon-label-color: $neon-color-text;
+        $neon-label-component-color: $neon-color-text;
       }
 
-      @include neon-label-colors($neon-label-color);
+      @include neon-label-colors($neon-label-component-color);
 
       @each $alternateColor, $alternatePalette in $neon-functional-colors {
         &.neon-label--alternate-color-#{$alternateColor} {
-          @include neon-gradient-label($neon-label-color, map-get($alternatePalette, $neon-color-gradient-alternate));
+          @include neon-gradient-label(
+            $neon-label-component-color,
+            map-get($alternatePalette, $neon-color-gradient-alternate)
+          );
         }
       }
     }

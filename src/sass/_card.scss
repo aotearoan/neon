@@ -9,13 +9,13 @@
     justify-content: center;
 
     &:first-child {
-      border-bottom-left-radius: $neon-border-radius;
+      border-bottom-left-radius: $neon-border-radius-card;
       border-top-right-radius: 0;
     }
 
     &:last-child {
       border-bottom-left-radius: 0;
-      border-top-right-radius: $neon-border-radius;
+      border-top-right-radius: $neon-border-radius-card;
     }
   }
 
@@ -29,19 +29,42 @@
 }
 
 .neon-card {
-  border-radius: $neon-border-radius;
-  box-shadow: $neon-box-shadow;
+  border-radius: $neon-border-radius-card;
+  box-shadow: $neon-card-box-shadow;
   position: relative;
+
+  &--s {
+    & > .neon-card-header,
+    & > .neon-card-body,
+    & > .neon-card-footer {
+      @include padding(0.5);
+    }
+  }
+
+  &--m {
+    & > .neon-card-header,
+    & > .neon-card-body,
+    & > .neon-card-footer {
+      @include padding(0.75);
+    }
+  }
+
+  &--l {
+    & > .neon-card-header,
+    & > .neon-card-body,
+    & > .neon-card-footer {
+      @include padding;
+    }
+  }
 
   .neon-card-header,
   .neon-card-body,
   .neon-card-footer {
-    @include padding;
     position: relative;
 
     &:first-child {
-      border-top-left-radius: $neon-border-radius;
-      border-top-right-radius: $neon-border-radius;
+      border-top-left-radius: $neon-border-radius-card;
+      border-top-right-radius: $neon-border-radius-card;
     }
   }
 
@@ -82,8 +105,8 @@
   .neon-card-body,
   .neon-card-footer {
     &:last-child {
-      border-bottom-left-radius: $neon-border-radius;
-      border-bottom-right-radius: $neon-border-radius;
+      border-bottom-left-radius: $neon-border-radius-card;
+      border-bottom-right-radius: $neon-border-radius-card;
     }
   }
 
@@ -143,15 +166,15 @@
 
     &:first-child {
       & > * {
-        border-top-left-radius: $neon-border-radius;
-        border-top-right-radius: $neon-border-radius;
+        border-top-left-radius: $neon-border-radius-card;
+        border-top-right-radius: $neon-border-radius-card;
       }
     }
 
     &:last-child {
       & > * {
-        border-bottom-left-radius: $neon-border-radius;
-        border-bottom-right-radius: $neon-border-radius;
+        border-bottom-left-radius: $neon-border-radius-card;
+        border-bottom-right-radius: $neon-border-radius-card;
       }
     }
   }

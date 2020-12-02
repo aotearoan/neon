@@ -112,6 +112,12 @@ export class Menu {
                 anchors: ['Examples', 'Description', 'API'],
               },
               {
+                path: 'dialog',
+                page: 'Dialog',
+                keywords: 'modal alert',
+                component: 'NeonDialog',
+              },
+              {
                 path: 'note',
                 page: 'Note',
                 component: 'NeonNote',

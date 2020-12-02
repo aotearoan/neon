@@ -27,7 +27,7 @@ export default class Modal extends Vue {
       template: `<div class="example--horizontal">
   <neon-button label="Open modal" @click="open = true"></neon-button>
   <neon-modal :open="open" @close="open = false">
-    <neon-card>
+    <neon-card size="m">
       <neon-card-header>
         <h3>Modal title</h3>
       </neon-card-header>
@@ -41,7 +41,7 @@ export default class Modal extends Vue {
         </p>
       </neon-card-body>
       <neon-card-footer>
-        <neon-button label="Cancel" @click="open = false" />
+        <neon-button label="Cancel" button-style="text" @click="open = false" />
         <neon-button label="Accept" color="primary" @click="open = false" />
       </neon-card-footer>
     </neon-card>

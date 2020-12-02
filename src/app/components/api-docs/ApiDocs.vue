@@ -25,7 +25,7 @@
                 <tr v-for="prop in apiModel.props" :key="prop.name">
                   <td class="api-docs__name">
                     <span>{{ prop.name }}</span>
-                    <neon-label v-if="prop.required" size="xs" color="brand" label="required" />
+                    <neon-label v-if="prop.required" size="xxs" color="brand" label="required" />
                   </td>
                   <td class="api-docs__type">
                     <neon-link v-if="typeLink(prop)" :href="typeLink(prop)"
@@ -101,7 +101,7 @@
             >
               <div class="api-docs__attribute">
                 <span class="api-docs__name">{{ prop.name }}</span>
-                <neon-label v-if="prop.required" size="xs" color="brand" label="required" />
+                <neon-label v-if="prop.required" size="xxs" color="brand" label="required" />
               </div>
               <div class="api-docs__attribute">
                 <label>Type</label>

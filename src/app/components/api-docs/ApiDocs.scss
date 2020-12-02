@@ -36,6 +36,7 @@
   &__name {
     display: flex;
     flex-wrap: nowrap;
+    align-items: center;
     white-space: nowrap;
 
     .neon-label {
