@@ -25,7 +25,7 @@
       },
       "defaultValue": {
         "func": false,
-        "value": "NeonSize.Large"
+        "value": "NeonSize.Medium"
       }
     },
     {

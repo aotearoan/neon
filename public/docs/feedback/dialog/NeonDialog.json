@@ -17,18 +17,6 @@
       }
     },
     {
-      "name": "size",
-      "tags": {},
-      "description": "The dialog size.",
-      "type": {
-        "name": "NeonSize"
-      },
-      "defaultValue": {
-        "func": false,
-        "value": "NeonSize.Medium"
-      }
-    },
-    {
       "name": "cancelLabel",
       "tags": {},
       "description": "The label of the button for the cancel (negative) action.",
