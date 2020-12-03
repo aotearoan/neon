@@ -36,8 +36,4 @@
       display: none;
     }
   }
-
-  &:not(.neon-number--editable):not(.neon-number--disabled) .neon-number__input .neon-input__textfield {
-    cursor: default;
-  }
 }

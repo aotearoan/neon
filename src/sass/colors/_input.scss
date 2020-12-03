@@ -5,11 +5,9 @@
     color: $neon-color-text;
     background-color: $neon-background-color-input;
     box-shadow: $neon-inset-shadow;
-    transition: all ease-in-out $neon-animation-speed-fast;
 
     &::placeholder {
       color: $neon-color-placeholder;
-      transition: all ease-in-out $neon-animation-speed-fast;
     }
   }
 
@@ -19,11 +17,12 @@
       &.neon-input--focused {
         .neon-input__text,
         .neon-input__textarea {
-          @if ($neon-theme == smooth) {
-            background-color: rgba($input-color, 0.1);
+          @debug index($neon-neutral-colors, $color);
+          @if ($neon-theme == smooth and not index($neon-neutral-colors, $color)) {
+            background-color: rgba(map-get($palette, $neon-color-input-selected), 0.125);
 
             &::placeholder {
-              color: rgba($input-color, 0.75);
+              color: rgba(map-get($palette, $neon-color-input-selected), 0.75);
             }
           } @else {
             border-color: $input-color;
@@ -35,6 +34,39 @@
       .neon-icon:focus {
         background-color: rgba($input-color, 0.125);
         box-shadow: 0 0 0 2px rgba($input-color, 0.125);
+      }
+    }
+  }
+
+  &.neon-input--with-state-highlight.neon-input--state-success {
+    .neon-input__text,
+    .neon-input__textarea {
+      @if ($neon-theme == smooth) {
+        background-color: rgba(map-get($neon-success-palette, $neon-color-input-selected), 0.125);
+
+        &::placeholder {
+          color: rgba(map-get($neon-success-palette, $neon-color-input-selected), 0.75);
+        }
+      } @else {
+        border-color: map-get($neon-success-palette, $neon-color-input-selected);
+      }
+    }
+  }
+
+  &.neon-input--with-state-highlight.neon-input--state-error {
+    &,
+    &.neon-input--focused {
+      .neon-input__text,
+      .neon-input__textarea {
+        @if ($neon-theme == smooth) {
+          background-color: rgba(map-get($neon-error-palette, $neon-color-input-selected), 0.125);
+
+          &::placeholder {
+            color: rgba(map-get($neon-error-palette, $neon-color-input-selected), 0.75);
+          }
+        } @else {
+          border-color: map-get($neon-error-palette, $neon-color-input-selected);
+        }
       }
     }
   }

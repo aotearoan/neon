@@ -113,8 +113,9 @@ $neon-color-radio-button-label: $neon-color-neutral-l3 !default;
 /* input */
 $neon-border-color-input: $neon-color-neutral-d2 !default;
 $neon-background-color-input: rgba($neon-color-neutral-d5, 0.5) !default;
+$neon-background-color-input-active: $neon-color-neutral-d5 !default;
 $neon-color-input-selected: $neon-base-color !default;
-$neon-color-placeholder: rgba($neon-color-text, 0.25) !default;
+$neon-color-placeholder: $neon-color-disabled-light !default;
 
 /* drop zone */
 $neon-color-drop-zone: $neon-color-neutral-l1 !default;

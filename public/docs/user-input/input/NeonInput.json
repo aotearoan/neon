@@ -135,6 +135,30 @@
         "func": false,
         "value": "false"
       }
+    },
+    {
+      "name": "stateHighlight",
+      "tags": {},
+      "description": "When the state is success or error, display the field with the state color indicator, e.g. border or background\ncolor.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    },
+    {
+      "name": "stateIcon",
+      "tags": {},
+      "description": "When the state is success or error, display the state icon.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
     }
   ],
   "events": [

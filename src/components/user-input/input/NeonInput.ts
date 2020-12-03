@@ -94,6 +94,19 @@ export default class NeonInput extends Vue {
   @Prop({ default: false })
   private disabled!: boolean;
 
+  /**
+   * When the state is success or error, display the field with the state color indicator, e.g. border or background
+   * color.
+   */
+  @Prop({ default: true })
+  private stateHighlight!: boolean;
+
+  /**
+   * When the state is success or error, display the state icon.
+   */
+  @Prop({ default: true })
+  private stateIcon!: boolean;
+
   private focused = false;
 
   get sanitizedAttributes(): Record<string, string> {
@@ -119,9 +132,9 @@ export default class NeonInput extends Vue {
       case NeonState.Loading:
         return 'loading';
       case NeonState.Success:
-        return 'check';
+        return this.stateIcon ? 'check' : undefined;
       case NeonState.Error:
-        return 'times';
+        return this.stateIcon ? 'times' : undefined;
       default:
         if (this.icon) {
           return this.icon;

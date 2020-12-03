@@ -7,6 +7,8 @@
         'neon-input--disabled': disabled,
         'neon-input--focused': focused,
         'neon-input--placeholder-visible': placeholder && (!value || value.length === 0),
+        'neon-input--with-state-highlight': stateHighlight,
+        'neon-input--with-state-icon': stateIcon,
       },
       `neon-input--${size}`,
       `neon-input--${color}`,

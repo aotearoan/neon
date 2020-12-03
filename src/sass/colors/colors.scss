@@ -10,6 +10,8 @@ $neon-functional-colors: (
   error: $neon-error-palette,
 );
 
+$neon-neutral-colors: neutral, low-contrast, high-contrast;
+
 @include generate-color-classes('neon-neutral', $neon-neutral-palette);
 @include generate-color-classes('neon-low-contrast', $neon-low-contrast-palette);
 @include generate-color-classes('neon-high-contrast', $neon-high-contrast-palette);
