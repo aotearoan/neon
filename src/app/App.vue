@@ -35,7 +35,7 @@
             <neon-link outline-style="none" href="/" class="homepage-link" aria-label="home">
               <neon-logo color="brand" aria-label="Neon logo"></neon-logo>
             </neon-link>
-            <span class="tagline neon-color-text-brand">A VueJs Design System</span>
+            <span class="tagline neon-color-text-primary">A VueJs Design System</span>
           </span>
           <span class="top-nav-actions">
             <neon-select
@@ -79,7 +79,7 @@
               <neon-link outline-style="none" href="/" class="homepage-link" aria-label="home">
                 <neon-logo aria-label="Neon logo"></neon-logo>
               </neon-link>
-              <span class="tagline neon-color-text-brand">A VueJs Design System</span>
+              <span class="tagline neon-color-text-primary">A VueJs Design System</span>
             </span>
             <span class="side-nav-actions">
               <neon-select
@@ -93,8 +93,8 @@
                 button-icon="palette"
                 aria-label="Select theme"
                 size="s"
-                :color="selectedMode === 'light' ? 'brand' : 'warn'"
-                :alternate-color="selectedMode === 'light' ? 'warn' : 'brand'"
+                color="primary"
+                alternate-color="primary"
               />
               <neon-button
                 class="github-link"

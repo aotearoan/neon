@@ -24,6 +24,7 @@ export default class Toggle extends Vue {
       {
         key: 'key-2',
         label: 'Label 2',
+        disabled: true,
       },
       {
         key: 'key-3',

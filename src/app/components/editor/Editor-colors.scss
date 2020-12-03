@@ -9,25 +9,25 @@
 
     &__textarea {
       &::selection {
-        background-color: rgba($neon-background-color-selection, 0.5);
+        background-color: rgba($neon-background-color-selection, 0.667);
       }
     }
   }
 
   .tag {
-    color: $neon-color-error-l2;
+    color: $neon-color-error-l3;
   }
 
   .attr-name {
-    color: $neon-color-warn-l2;
+    color: $neon-color-warn-l3;
   }
 
   .attr-value {
-    color: $neon-color-success-l2;
+    color: $neon-color-success-l3;
   }
 
   .punctuation {
-    color: $neon-color-neutral-l2;
+    color: $neon-color-neutral-l3;
   }
 
   &__read-only.neon-icon--disabled {

@@ -32,12 +32,37 @@ export default class ActionMenu extends Vue {
         disabled: true,
       },
     ],
+    modelWithCounts: [
+      {
+        label: 'Option 1',
+        key: 'option-1',
+        count: 4322,
+      },
+      {
+        label: 'Option 2',
+        key: 'option-2',
+        count: 42,
+      },
+      {
+        label: 'Option 3',
+        key: 'option-3',
+        disabled: true,
+        count: 911,
+      },
+    ],
     selected: 'option-1',
+    selected2: 'option-1',
   };
 
   private examples = [
     {
+      title: 'Basic example',
       template: `<neon-action-menu :model="model" color="primary" v-model="selected"></neon-action-menu>`,
+      data: this.data,
+    },
+    {
+      title: 'With counts',
+      template: `<neon-action-menu :model="modelWithCounts" color="primary" v-model="selected2"></neon-action-menu>`,
       data: this.data,
     },
   ];

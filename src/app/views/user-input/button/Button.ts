@@ -47,9 +47,9 @@ export default class Button extends Vue {
   </neon-note>
   <br />
   <div class="example--horizontal example--wrap">
-    <neon-button color="warn" alternate-color="warn" label="Warning" />
+    <neon-button color="primary" alternate-color="primary" label="Primary" />
     <neon-button color="success" alternate-color="info" label="Success" />
-    <neon-button color="primary" alternate-color="brand" label="Primary" />
+    <neon-button color="brand" alternate-color="primary" label="Mixed" />
     <neon-button color="brand" alternate-color="info" :circular="true" icon="plus" />
   </div>
 </div>`;

@@ -9,8 +9,8 @@
       </p>
       <neon-button
         href="/for-developers/getting-started"
-        color="brand"
-        alternate-color="brand"
+        color="primary"
+        alternate-color="primary"
         size="xl"
         button-style="solid"
         label="Get started"

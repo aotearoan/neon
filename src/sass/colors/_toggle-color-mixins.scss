@@ -52,7 +52,7 @@
 
     &.neon-toggle--disabled .neon-toggle__label,
     .neon-toggle__label--disabled {
-      @include color-with-svg(rgba($toggle-color, 0.33));
+      @include color-with-svg(rgba($toggle-color, 0.2));
     }
 
     &.neon-toggle--disabled .neon-toggle__label--checked,

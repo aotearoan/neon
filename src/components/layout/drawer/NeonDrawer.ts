@@ -3,7 +3,9 @@ import { NeonPosition } from '../../../common/enums/NeonPosition';
 import { NeonClosableUtils } from '../../../common/utils/NeonClosableUtils';
 
 /**
- * A drawer is a slide out panel for representing data which may be secondary or not fit on the main screen. Examples are a responsive navigation menu, more details of a selected item on the page. Drawers can be opened from top, bottom, left or right and an overlay covers the screen to focus more attention on the drawer contents.
+ * A drawer is a slide out panel for representing data which may be secondary or not fit on the main screen. Examples
+ * are a responsive navigation menu, more details of a selected item on the page. Drawers can be opened from top,
+ * bottom, left or right and an overlay covers the screen to focus more attention on the drawer contents.
  */
 @Component
 export default class NeonDrawer extends Vue {

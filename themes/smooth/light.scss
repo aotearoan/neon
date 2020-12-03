@@ -75,12 +75,12 @@ $neon-color-label: $neon-base-color !default;
 $neon-border-color-note: $neon-base-color !default;
 $neon-background-color-note: $neon-base-color !default;
 $neon-background-opacity-note: 0.25 !default;
-$neon-color-note: $neon-color-neutral-d3 !default;
+$neon-color-note: $neon-color-text !default;
 
 /* link */
-$neon-color-link: $neon-color-primary-d1 !default;
-$neon-color-link-hover: $neon-color-primary-d2 !default;
-$neon-color-link-visited: $neon-color-primary-l1 !default;
+$neon-color-link: lighten($neon-color-primary-d1, 5) !default;
+$neon-color-link-hover: $neon-color-primary-d1 !default;
+$neon-color-link-visited: darken($neon-color-primary-d1, 5) !default;
 
 /* icon */
 $neon-color-icon: $neon-base-color !default;

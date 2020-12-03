@@ -1,13 +1,11 @@
 .neon-action-menu {
   .neon-action-menu__link {
     display: flex;
-    width: calc(100% + #{2 * $neon-base-space});
+    flex: 1 0 auto;
     letter-spacing: $neon-letter-spacing-s;
     border-radius: $neon-border-radius;
     margin: 0.5 * $neon-base-space -2 * $neon-base-space;
-    padding-left: 2 * $neon-base-space;
-    padding-top: $neon-base-space;
-    padding-bottom: $neon-base-space;
+    padding: $neon-base-space 2 * $neon-base-space;
     font-size: $neon-font-size-s;
     font-weight: 400;
     user-select: none;
@@ -22,6 +20,18 @@
 
     &.neon-action-menu__link--disabled {
       cursor: not-allowed;
+    }
+
+    &-count {
+      font-variant: tabular-nums;
+      font-weight: 600;
+    }
+
+    .neon-link__label {
+      max-width: none;
+      display: flex;
+      flex: 1 0 auto;
+      justify-content: space-between;
     }
   }
 }

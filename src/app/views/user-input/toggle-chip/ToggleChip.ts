@@ -70,17 +70,17 @@ export default class ToggleChip extends Vue {
 
   private examples = [
     {
-      title: 'Switch sizes',
+      title: 'Toggle chip sizes',
       template: this.sizeTemplate,
       data: this.data,
     },
     {
-      title: 'Switches no check',
+      title: 'Toggle chip with no check',
       template: this.noCheckTemplate,
       data: this.data,
     },
     {
-      title: 'Switch colors',
+      title: 'Toggle chip colors',
       template: this.colorTemplate,
       data: this.data,
     },

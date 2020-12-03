@@ -56,18 +56,7 @@
   &--top {
     .neon-drawer__container {
       top: 0;
-
-      @include responsive(larger-than-tablet) {
-        margin-top: $neon-top-nav-height-desktop;
-      }
-
-      @include responsive(tablet) {
-        margin-top: $neon-top-nav-height-tablet;
-      }
-
-      @include responsive(mobile-large) {
-        margin-top: $neon-top-nav-height-mobile;
-      }
+      margin-top: 0;
     }
 
     &:not(.neon-drawer--open) .neon-drawer__container {
@@ -114,6 +103,26 @@
     }
     .neon-drawer__container {
       z-index: $z-index-above-2;
+    }
+  }
+
+  .neon-drawer--top {
+    .neon-drawer__container {
+      @include responsive(larger-than-tablet) {
+        margin-top: $neon-top-nav-height-desktop;
+      }
+
+      @include responsive(tablet) {
+        margin-top: $neon-top-nav-height-tablet;
+      }
+
+      @include responsive(mobile-large) {
+        margin-top: $neon-top-nav-height-mobile;
+      }
+    }
+
+    &:not(.neon-drawer--open) .neon-drawer__container {
+      margin-top: -200%;
     }
   }
 }

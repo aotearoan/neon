@@ -23,6 +23,7 @@
 @import '../views/layout/footer/Footer';
 @import '../views/design/layout/Layout';
 @import '../views/user-input/slider/Slider';
+@import '../views/navigation/action-menu/ActionMenu';
 
 body {
   .title {
@@ -65,6 +66,7 @@ header {
 
   .tagline {
     margin-left: 4 * $neon-base-space;
+    font-family: $neon-heading-font-family;
     font-size: $neon-font-size-l;
     font-weight: 300;
     opacity: 0.9;
