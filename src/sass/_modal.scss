@@ -11,6 +11,15 @@
     opacity: 0;
     z-index: $z-index-below;
     pointer-events: none;
+    transition: opacity ease-in-out $neon-animation-speed-fast;
+
+    @include responsive(larger-than-mobile-large) {
+      transition: all ease-in-out $neon-animation-speed-fast;
+      .neon-card {
+        margin-top: -30vh;
+        transition: all ease-in-out $neon-animation-speed-slow;
+      }
+    }
   }
 
   &,
@@ -25,11 +34,28 @@
   &.neon-modal--open {
     opacity: 1;
 
+    @include responsive(larger-than-mobile-large) {
+      .neon-card {
+        margin-top: -20vh;
+      }
+    }
+
     .neon-modal__container,
     .neon-modal__overlay {
       opacity: 1;
-      transition: opacity ease-in-out 0.5 * $animation-speed-fast;
       pointer-events: auto;
+    }
+
+    &:not(.neon-dialog),
+    &:not(.neon-dialog) .neon-modal__container {
+      @include responsive(mobile-large) {
+        @include width(100);
+        @include min-height(100);
+
+        .neon-card {
+          @include min-height(100);
+        }
+      }
     }
 
     &,
@@ -37,12 +63,7 @@
       z-index: $z-index-top;
 
       @include responsive(mobile-large) {
-        @include width(100);
-        @include min-height(100);
-
         .neon-card {
-          @include min-height(100);
-
           .neon-card-body {
             flex: 1 1 auto;
           }
@@ -53,20 +74,44 @@
 
   &__container {
     @include responsive(larger-than-mobile-large) {
-      padding-left: 2 * $base-space;
-      padding-right: 2 * $base-space;
+      padding-left: 2 * $neon-base-space;
+      padding-right: 2 * $neon-base-space;
     }
   }
 
-  &__close.neon-button.neon-button--text.neon-button--low-contrast {
+  &__close {
     position: fixed;
     top: 0;
     right: 0;
     display: flex;
-    margin: 0.5 * $base-space;
+    margin: 0.5 * $neon-base-space;
 
     @include responsive(larger-than-mobile-large) {
       display: none;
+    }
+  }
+
+  &.neon-dialog {
+    &,
+    .neon-modal__container,
+    .neon-modal__overlay {
+      transition: all ease-in-out $neon-animation-speed-fast;
+      .neon-card {
+        margin-top: -30vh;
+        transition: all ease-in-out $neon-animation-speed-slow;
+      }
+    }
+
+    &.neon-modal--open {
+      .neon-card {
+        margin-top: -20vh;
+      }
+    }
+
+    .neon-modal__close {
+      @include responsive(mobile-large) {
+        display: none;
+      }
     }
   }
 }

@@ -4,12 +4,12 @@
   user-select: none;
   pointer-events: none;
   touch-action: none;
-  width: $width-alert;
-  max-width: $width-alert;
+  width: $neon-width-alert;
+  max-width: $neon-width-alert;
   @include max-height(100);
   overflow-y: auto;
   overflow-x: visible;
-  padding: 2 * $base-space;
+  padding: 2 * $neon-base-space;
 
   &--top-right {
     top: 0;
@@ -51,54 +51,54 @@
     pointer-events: visible;
     touch-action: auto;
     height: 100%;
-    min-height: 20 * $base-space;
-    margin: $base-space;
-    border-radius: 2 * $border-radius;
+    min-height: 20 * $neon-base-space;
+    margin: $neon-base-space;
+    border-radius: 2 * $neon-border-radius;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     position: relative;
-    font-size: $base-font-size;
+    font-size: $neon-font-size-m;
 
     &--dismissable:not(.neon-alert__message--with-actions) {
       cursor: pointer;
     }
 
     .neon-icon {
-      min-width: 8 * $base-space;
-      width: 8 * $base-space;
-      min-height: 8 * $base-space;
-      height: 8 * $base-space;
-      margin: 2 * $base-space;
-      margin-left: 3 * $base-space;
+      min-width: 8 * $neon-base-space;
+      width: 8 * $neon-base-space;
+      min-height: 8 * $neon-base-space;
+      height: 8 * $neon-base-space;
+      margin: 2 * $neon-base-space;
+      margin-left: 3 * $neon-base-space;
       align-self: center;
     }
   }
 
   &__title {
-    line-height: $line-height-one;
-    font-size: $base-font-size;
+    line-height: $neon-line-height-one;
+    font-size: $neon-font-size-m;
     font-weight: 600;
-    font-family: $heading-font-family;
-    letter-spacing: $letter-spacing-m;
+    font-family: $neon-heading-font-family;
+    letter-spacing: $neon-letter-spacing-m;
   }
 
   &__body {
-    font-size: $font-size-s;
+    font-size: $neon-font-size-s;
   }
 
   .neon-alert__actions {
-    margin-left: 2 * $base-space;
+    margin-left: 2 * $neon-base-space;
 
     .neon-alert__action {
-      padding: 2 * $base-space;
-      font-size: $font-size-xs;
+      padding: 2 * $neon-base-space;
+      font-size: $neon-font-size-xs;
       text-transform: uppercase;
-      letter-spacing: $letter-spacing-m;
+      letter-spacing: $neon-letter-spacing-m;
       height: 100%;
       display: flex;
       align-items: center;
-      width: $width-alert-action;
+      width: $neon-width-alert-action;
       justify-content: center;
       font-weight: 600;
 
@@ -106,19 +106,19 @@
         border-radius: 0;
 
         &:first-child {
-          border-top-right-radius: 2 * $border-radius;
+          border-top-right-radius: 2 * $neon-border-radius;
         }
 
         &:last-child {
-          border-bottom-right-radius: 2 * $border-radius;
+          border-bottom-right-radius: 2 * $neon-border-radius;
         }
       }
     }
   }
 
   &__content {
-    padding-top: 2 * $base-space;
-    padding-bottom: 2 * $base-space;
+    padding-top: 2 * $neon-base-space;
+    padding-bottom: 2 * $neon-base-space;
     justify-content: center;
     flex: 1 1 auto;
     outline: none;
@@ -128,7 +128,7 @@
 .neon-alert-transition {
   &-enter-active,
   &-leave-active {
-    transition: all ease-in-out $animation-speed-slow;
+    transition: all ease-in-out $neon-animation-speed-slow;
   }
 
   &-enter,

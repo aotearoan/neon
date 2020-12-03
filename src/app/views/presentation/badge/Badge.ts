@@ -50,6 +50,13 @@ export default class Badge extends Vue {
   <neon-badge icon="user" color="success" />
 </div>`,
     },
+    {
+      title: 'Gradient badges',
+      template: `<div class="example--horizontal">
+  <neon-badge icon="user" color="primary" alternate-color="primary" />
+  <neon-badge label="LB" color="info" alternate-color="brand" />
+</div>`,
+    },
   ];
 
   public mounted() {

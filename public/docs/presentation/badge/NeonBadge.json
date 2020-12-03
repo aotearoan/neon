@@ -65,6 +65,14 @@
       }
     },
     {
+      "name": "alternateColor",
+      "tags": {},
+      "description": "Alternate color for creating gradient badges. NOTE: can also be the same color as 'color'.",
+      "type": {
+        "name": "NeonFunctionalColor"
+      }
+    },
+    {
       "name": "disabled",
       "tags": {},
       "description": "Display the badge in the disable style",

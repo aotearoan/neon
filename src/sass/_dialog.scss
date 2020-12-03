@@ -1,0 +1,26 @@
+.neon-dialog {
+  .neon-card {
+    max-width: $neon-max-width-dialog;
+  }
+
+  .neon-card-body {
+    min-height: $neon-min-height-dialog;
+    justify-content: space-between;
+    padding: 6 * $neon-base-space;
+  }
+
+  .neon-button {
+    margin-top: 2 * $neon-base-space;
+  }
+
+  &__title {
+    margin-bottom: 2 * $neon-base-space;
+  }
+
+  &__question {
+    margin-bottom: 6 * $neon-base-space;
+    font-size: $neon-font-size-s;
+    font-style: $neon-font-style-dialog;
+    letter-spacing: $neon-letter-spacing-s;
+  }
+}

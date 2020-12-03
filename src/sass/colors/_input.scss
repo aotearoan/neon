@@ -1,24 +1,32 @@
 .neon-input {
   &__text,
   &__textarea {
-    border-color: $border-color-input;
-    color: $color-text;
-    background-color: $background-color-input;
-    box-shadow: $inset-shadow;
+    border-color: $neon-border-color-input;
+    color: $neon-color-text;
+    background-color: $neon-background-color-input;
+    box-shadow: $neon-inset-shadow;
 
     &::placeholder {
-      color: $color-placeholder;
+      color: $neon-color-placeholder;
     }
   }
 
-  @each $color, $palette in $functional-colors {
-    $input-color: map-get($palette, $border-color-input-selected);
+  @each $color, $palette in $neon-functional-colors {
+    $input-color: map-get($palette, $neon-color-input-selected);
     &.neon-input--#{$color} {
       &.neon-input--focused {
         .neon-input__text,
         .neon-input__textarea {
-          border-color: $input-color;
-          background-color: $background-color-input-active;
+          @if ($neon-theme == smooth and not index($neon-neutral-colors, $color)) {
+            background-color: rgba(map-get($palette, $neon-color-input-selected), 0.125);
+
+            &::placeholder {
+              color: rgba(map-get($palette, $neon-color-input-selected), 0.75);
+            }
+          } @else {
+            border-color: $input-color;
+            background-color: $neon-background-color-input-active;
+          }
         }
       }
 
@@ -29,16 +37,50 @@
     }
   }
 
+  &.neon-input--with-state-highlight.neon-input--state-success {
+    .neon-input__text,
+    .neon-input__textarea {
+      @if ($neon-theme == smooth) {
+        background-color: rgba(map-get($neon-success-palette, $neon-color-input-selected), 0.125);
+
+        &::placeholder {
+          color: rgba(map-get($neon-success-palette, $neon-color-input-selected), 0.75);
+        }
+      } @else {
+        border-color: map-get($neon-success-palette, $neon-color-input-selected);
+      }
+    }
+  }
+
+  &.neon-input--with-state-highlight.neon-input--state-error {
+    &,
+    &.neon-input--focused {
+      .neon-input__text,
+      .neon-input__textarea {
+        @if ($neon-theme == smooth) {
+          background-color: rgba(map-get($neon-error-palette, $neon-color-input-selected), 0.125);
+
+          &::placeholder {
+            color: rgba(map-get($neon-error-palette, $neon-color-input-selected), 0.75);
+          }
+        } @else {
+          border-color: map-get($neon-error-palette, $neon-color-input-selected);
+        }
+      }
+    }
+  }
+
   &--disabled {
     .neon-input__text,
     .neon-input__textarea {
       box-shadow: none;
-      border-color: $color-disabled-dark;
-      background-color: $color-disabled-dark;
+      border-color: $neon-color-disabled-dark;
+      background-color: $neon-color-disabled-dark;
 
       &,
       &::placeholder {
-        color: $color-disabled-light;
+        color: $neon-color-disabled-light;
+        -webkit-text-fill-color: $neon-color-disabled-light;
       }
     }
   }

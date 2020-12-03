@@ -1,12 +1,12 @@
 .layout-example {
-  border-radius: $border-radius;
-  padding: 4 * $base-space;
-  margin: 2 * $base-space;
+  border-radius: $neon-border-radius;
+  padding: 4 * $neon-base-space;
+  margin: 2 * $neon-base-space;
   user-select: none;
 
   &__label {
-    font-size: $font-size-s;
-    margin-left: 2 * $base-space;
+    font-size: $neon-font-size-s;
+    margin-left: 2 * $neon-base-space;
   }
 
   &__content {

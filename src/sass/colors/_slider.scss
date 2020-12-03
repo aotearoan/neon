@@ -1,129 +1,134 @@
 /* from https://css-tricks.com/sliding-nightmare-understanding-range-input/ */
-@mixin track-color($color-slider-fill) {
-  background: $color-slider-track;
-  background: linear-gradient($color-slider-fill, $color-slider-fill) 0 / var(--sx) 100% no-repeat $color-slider-track;
+@mixin track-color($neon-color-slider-fill) {
+  background: $neon-color-slider-track;
+  background: linear-gradient($neon-color-slider-fill, $neon-color-slider-fill) 0 / var(--sx) 100% no-repeat
+    $neon-color-slider-track;
 }
 
 @mixin disabled-track {
   cursor: not-allowed;
-  background: linear-gradient($color-disabled-light, $color-disabled-light) 0 / var(--sx) 100% no-repeat
-    $color-disabled-dark;
+  background: linear-gradient($neon-color-disabled-light, $neon-color-disabled-light) 0 / var(--sx) 100% no-repeat
+    $neon-color-disabled-dark;
 }
 
-@mixin thumb-color($border-slider-thumb) {
-  background: $slider-thumb-color;
-  box-shadow: $box-shadow-slider;
-  border: $border-slider-thumb;
+@mixin thumb-color($neon-border-slider-thumb) {
+  background: $neon-slider-thumb-color;
+  box-shadow: $neon-box-shadow-slider;
+  border: $neon-border-slider-thumb;
+}
+
+@mixin thumb-color-sharp($neon-background-color-slider-thumb) {
+  background: $neon-background-color-slider-thumb;
+  box-shadow: $neon-box-shadow-slider;
+  border: $neon-border-slider-thumb;
 }
 
 @mixin thumb-disabled {
   cursor: not-allowed;
-  background: $color-disabled-light;
+  background: $neon-color-disabled-light;
   box-shadow: none;
-  border-color: $color-disabled-light;
+  border-color: $neon-color-disabled-light;
 }
 
 .neon-slider {
   &__legend {
-    color: $color-placeholder;
+    color: $neon-color-placeholder;
   }
 
   &__tooltip {
     div {
-      box-shadow: $card-box-shadow;
-      color: $color-inverse;
+      box-shadow: $neon-card-box-shadow;
+      color: $neon-color-inverse;
     }
   }
 
   &__input {
     &::-webkit-slider-thumb {
-      @include thumb-color($border-slider-thumb);
+      @include thumb-color($neon-border-slider-thumb);
     }
 
     &::-moz-range-thumb {
-      @include thumb-color($border-slider-thumb);
+      @include thumb-color($neon-border-slider-thumb);
     }
 
     &::-ms-thumb {
-      @include thumb-color($border-slider-thumb);
+      @include thumb-color($neon-border-slider-thumb);
     }
 
     &:focus {
-      $box-shadow-slider-thumb-focus: 0 0 0 4px rgba($background-color-low-contrast, 0.3);
+      $neon-box-shadow-slider-thumb-focus: 0 0 0 4px rgba($neon-background-color-low-contrast, 0.3);
       &::-webkit-slider-thumb {
-        box-shadow: $box-shadow-slider-thumb-focus;
+        box-shadow: $neon-box-shadow-slider-thumb-focus;
       }
 
       &::-moz-range-thumb {
-        box-shadow: $box-shadow-slider-thumb-focus;
+        box-shadow: $neon-box-shadow-slider-thumb-focus;
       }
 
       &::-ms-thumb {
-        box-shadow: $box-shadow-slider-thumb-focus;
+        box-shadow: $neon-box-shadow-slider-thumb-focus;
       }
     }
   }
 
-  @each $color, $palette in $functional-colors {
+  @each $color, $palette in $neon-functional-colors {
     &--#{$color} {
-      $color-slider-fill: map-get($palette, $color-slider);
+      $neon-color-slider-fill: map-get($palette, $neon-color-slider);
       /* create a transparent fixed width container to position centered above the thumb, that way we can center the
          variable width contents using flex */
       .neon-slider__tooltip {
         div {
-          background: $color-slider-fill;
+          background: $neon-color-slider-fill;
 
           &:after {
-            border-top-color: $color-slider-fill;
+            border-top-color: $neon-color-slider-fill;
           }
         }
       }
 
       .neon-slider__input {
         &::-webkit-slider-runnable-track {
-          @include track-color($color-slider-fill);
+          @include track-color($neon-color-slider-fill);
         }
 
         &::-moz-range-track {
-          @include track-color($color-slider-fill);
+          @include track-color($neon-color-slider-fill);
         }
 
         &::-ms-track {
-          @include track-color($color-slider-fill);
+          @include track-color($neon-color-slider-fill);
         }
 
-        @if ($theme == 'sharp') {
-          $border-slider-thumb-sharp: $border-width-slider-thumb $border-style $color-slider-fill;
-
+        @if ($neon-theme == 'sharp') {
           &::-webkit-slider-thumb {
-            @include thumb-color($border-slider-thumb-sharp);
+            @include thumb-color-sharp(darken($neon-color-slider-fill, 10));
           }
 
           &::-moz-range-thumb {
-            @include thumb-color($border-slider-thumb-sharp);
+            @include thumb-color-sharp(darken($neon-color-slider-fill, 10));
           }
 
           &::-ms-thumb {
-            @include thumb-color($border-slider-thumb-sharp);
+            @include thumb-color-sharp(darken($neon-color-slider-fill, 10));
           }
         }
       }
 
       &:focus-within {
-        @if ($theme == 'sharp') {
+        @if ($neon-theme == 'sharp') {
           .neon-slider__input:focus {
-            $box-shadow-slider-thumb-focus: 0 0 0 4px rgba($color-slider-fill, 0.3);
+            $neon-box-shadow-slider-thumb-focus: 0 0 0 4px rgba($neon-color-slider-fill, 0.3);
 
             &::-webkit-slider-thumb {
-              box-shadow: $box-shadow-slider-thumb-focus;
+              box-shadow: $neon-box-shadow-slider-thumb-focus;
             }
 
             &::-moz-range-thumb {
-              box-shadow: $box-shadow-slider-thumb-focus;
+              box-shadow: $neon-box-shadow-slider-thumb-focus;
             }
 
             &::-ms-thumb {
-              box-shadow: $box-shadow-slider-thumb-focus;
+              box-shadow: $neon-box-shadow-slider-thumb-focus;
             }
           }
         }

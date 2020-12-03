@@ -75,6 +75,18 @@
       }
     },
     {
+      "name": "fullWidth",
+      "tags": {},
+      "description": "Whether the label and expansion indicator should be flush with the width of the container.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
       "name": "disabled",
       "tags": {},
       "description": "The disabled state of the expansion panel",

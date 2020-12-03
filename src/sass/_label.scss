@@ -1,46 +1,64 @@
 @import 'includes/layout';
 
-.neon-label {
-  &--xs {
-    height: $size-xs - $base-space;
-    min-width: $size-xs - $base-space;
-    font-size: $font-size-xxs;
-    padding: 0 $base-space;
+@mixin neon-label-size($neon-label-height, $neon-label-font-size) {
+  height: $neon-label-height;
+  min-width: $neon-label-height;
+  font-size: $neon-label-font-size;
 
-    .neon-icon {
-      width: $font-size-xs;
-      height: $font-size-xs;
+  .neon-label__label {
+    @if ($neon-label-font-size % 2 == 0) {
+      line-height: $neon-label-font-size;
+    } @else {
+      line-height: $neon-label-font-size + 1px;
     }
+  }
+
+  .neon-icon {
+    width: $neon-label-font-size;
+    height: $neon-label-font-size;
+  }
+}
+
+.neon-label {
+  &--xxs {
+    padding: 0 $neon-base-space;
+    @include neon-label-size($neon-size-xxs, $neon-font-size-xxs);
+  }
+
+  &--xs {
+    padding: 0 1.5 * $neon-base-space;
+    @include neon-label-size($neon-size-xs - $neon-base-space, $neon-font-size-xs);
   }
 
   &--s {
-    height: $size-s - $base-space;
-    min-width: $size-s - $base-space;
+    padding: 0 2 * $neon-base-space;
+    @include neon-label-size($neon-size-s - $neon-base-space, $neon-font-size-s);
+  }
 
-    font-size: $font-size-s;
+  &--m {
+    padding: 0 3.5 * $neon-base-space;
+    @include neon-label-size($neon-size-m - $neon-base-space, $neon-font-size-m);
+  }
 
-    .neon-icon {
-      width: $font-size-s;
-      height: $font-size-s;
-    }
+  &--l {
+    padding: 0 4 * $neon-base-space;
+    @include neon-label-size($neon-size-l - $neon-base-space, $neon-font-size-l);
   }
 
   text-transform: uppercase;
-  border-radius: $border-radius;
-  letter-spacing: $letter-spacing-s;
+  border-radius: $neon-border-radius-label;
+  letter-spacing: $neon-letter-spacing-s;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   user-select: none;
-  padding: 0 2 * $base-space;
   min-width: fit-content;
   width: fit-content;
   font-weight: 700;
 
   &__label {
     white-space: nowrap;
-    line-height: 1;
   }
 
   &--with-icon {
@@ -50,12 +68,12 @@
 
     &.neon-label--with-label {
       &.neon-label--icon-left .neon-icon {
-        margin-right: $base-space;
+        margin-right: $neon-base-space;
       }
 
       &.neon-label--icon-right .neon-icon {
         order: 1;
-        margin-left: $base-space;
+        margin-left: $neon-base-space;
       }
     }
   }

@@ -1,0 +1,49 @@
+.app-side-nav {
+  & > hr {
+    display: none;
+  }
+
+  .tagline {
+    display: flex;
+    margin-top: 2 * $neon-base-space;
+    margin-bottom: 8 * $neon-base-space;
+  }
+
+  .neon-side-nav__sticky {
+    padding-bottom: 2 * $neon-base-space;
+  }
+
+  .neon-side-nav__scrolling {
+    padding-top: 0;
+  }
+
+  .side-nav-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4 * $neon-base-space;
+
+    .neon-select {
+      width: 100%;
+    }
+
+    & > .neon-button {
+      margin-left: 2 * $neon-base-space;
+    }
+  }
+}
+
+.app-top-nav {
+  @include responsive(larger-than-tablet) {
+    display: none !important;
+  }
+}
+
+.app-footer {
+  max-width: $neon-max-page-width - $neon-side-nav-width;
+
+  .neon-footer__container {
+    align-items: center;
+  }
+}

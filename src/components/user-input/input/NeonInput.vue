@@ -7,6 +7,8 @@
         'neon-input--disabled': disabled,
         'neon-input--focused': focused,
         'neon-input--placeholder-visible': placeholder && (!value || value.length === 0),
+        'neon-input--with-state-highlight': stateHighlight,
+        'neon-input--with-state-icon': stateIcon,
       },
       `neon-input--${size}`,
       `neon-input--${color}`,
@@ -46,7 +48,7 @@
     <neon-icon
       v-if="iconVisible"
       :name="iconName"
-      :tabindex="disabled ? false : 0"
+      :tabindex="disabled || !icon ? false : 0"
       :disabled="disabled"
       :color="iconColor"
       role="button"

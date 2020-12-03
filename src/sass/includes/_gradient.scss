@@ -1,0 +1,5 @@
+@mixin neon-gradient-text($neon-gradient-color-1, $neon-gradient-color-2, $neon-gradient-angle: 90deg) {
+  background: linear-gradient($neon-gradient-angle, $neon-gradient-color-1, $neon-gradient-color-2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

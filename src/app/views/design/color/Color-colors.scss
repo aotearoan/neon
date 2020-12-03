@@ -1,6 +1,8 @@
 .color-example-inverse-bg {
-  background-color: $color-primary;
-  border-radius: 4px;
-  margin-left: -4px;
-  padding-left: 4px;
+  background-color: $neon-color-primary;
+  border-radius: $neon-border-radius;
+  margin-left: -$neon-base-space;
+  padding-left: $neon-base-space;
+  padding-right: $neon-base-space;
+  width: fit-content;
 }

@@ -6,9 +6,17 @@
       .neon-page {
         .neon-grid {
           .neon-grid-area {
-            border: $border-width $border-style $border-color;
+            border: 1px $neon-border-style $neon-border-color;
           }
         }
+      }
+
+      .neon-top-nav {
+        border-bottom: 1px $neon-border-style $neon-border-color;
+      }
+
+      .neon-side-nav {
+        border-right: 1px $neon-border-style $neon-border-color;
       }
     }
   }

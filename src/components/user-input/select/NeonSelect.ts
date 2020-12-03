@@ -177,8 +177,6 @@ export default class NeonSelect extends Vue {
   }
 
   private clickOption(option: NeonSelectOption) {
-    this.open = false;
-
     if (this.multiple) {
       const values = [...this.value];
       const index = values.findIndex((v) => v === option.key);
@@ -189,6 +187,7 @@ export default class NeonSelect extends Vue {
       }
       this.emitInputEvent(values);
     } else if (this.value !== option.key) {
+      this.open = false;
       this.emitInputEvent(option.key);
     }
   }

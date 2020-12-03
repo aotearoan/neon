@@ -1,8 +1,34 @@
+@mixin gradient-button($from-color, $to-color) {
+  background: linear-gradient(
+    $neon-background-gradient-angle,
+    $from-color $neon-background-gradient-offset,
+    $to-color 100%
+  );
+  transition: all ease-in-out $neon-animation-speed-fast;
+
+  &:active:not(:disabled),
+  &:hover:not(:disabled) {
+    background: linear-gradient(
+      $neon-background-gradient-angle - 20deg,
+      $from-color $neon-background-gradient-offset,
+      $to-color 100%
+    );
+  }
+
+  &:focus:not(:disabled):not(.neon-button--no-outline) {
+    @include box-shadow-outline($from-color);
+  }
+}
+
 @mixin solid-button($from-color, $to-color) {
   background: linear-gradient($from-color, $to-color);
 
   &:hover:not(:disabled) {
-    background: linear-gradient(lighten($from-color, 1), lighten($to-color, 1));
+    @if ($from-color == #fff or $to-color == #fff) {
+      background: linear-gradient(darken($from-color, 10), darken($to-color, 10));
+    } @else {
+      background: linear-gradient(lighten($from-color, 5), lighten($to-color, 5));
+    }
   }
 
   &:active:not(:disabled) {
@@ -15,12 +41,12 @@
 }
 
 @mixin outline-button($color) {
-  border: $border-width $border-style $color;
+  border: $neon-border-width-outline-button $neon-border-style $color;
   @include color-with-svg($color);
 
   &:hover:not(:disabled),
   &:active:not(:disabled) {
-    @include color-with-svg($color-inverse);
+    @include color-with-svg($neon-color-inverse);
   }
 
   &:hover:not(:disabled) {
@@ -37,58 +63,68 @@
   }
 }
 
-@mixin text-button($color, $background-color-hover, $background-color-active) {
+@mixin text-button($color, $neon-background-color-hover, $neon-background-color-active) {
   color: $color;
 
   &:hover:not(:disabled),
   &:focus:not(:disabled) {
-    background: $background-color-hover;
+    background: $neon-background-color-hover;
   }
 
   &:active:not(:disabled) {
-    background: $background-color-active;
+    background: $neon-background-color-active;
   }
 }
 
 .neon-button {
-  @each $color, $palette in $functional-colors {
+  @each $color, $palette in $neon-functional-colors {
     &--#{$color} {
       &.neon-button--solid {
+        $solid-button-color-1: '' !default;
+        $solid-button-color-2: '' !default;
         @if ($color == high-contrast) {
-          @include solid-button(
-            $background-high-contrast-solid-button-light,
-            $background-high-contrast-solid-button-dark
-          );
-        } @else if($color == low-contrast) {
-          @include color-with-svg($color-low-contrast-solid-button);
-
-          @include solid-button(
-            $background-low-contrast-solid-button-light,
-            $background-low-contrast-solid-button-dark
-          );
+          $solid-button-color-1: $neon-background-high-contrast-solid-button-light;
+          $solid-button-color-2: $neon-background-high-contrast-solid-button-dark;
+        } @else if ($color == low-contrast) {
+          @include color-with-svg($neon-color-low-contrast-solid-button);
+          $solid-button-color-1: $neon-background-low-contrast-solid-button-light;
+          $solid-button-color-2: $neon-background-low-contrast-solid-button-dark;
         } @else {
-          @include solid-button(
-            map-get($palette, $background-solid-button-light),
-            map-get($palette, $background-solid-button-dark)
-          );
+          $solid-button-color-1: map-get($palette, $neon-background-solid-button-light);
+          $solid-button-color-2: map-get($palette, $neon-background-solid-button-dark);
+        }
+
+        @include solid-button($solid-button-color-1, $solid-button-color-2);
+
+        @each $alternateColor, $alternatePalette in $neon-functional-colors {
+          &.neon-button--alternate-color-#{$alternateColor}:not(.neon-button--disabled) {
+            @if ($alternateColor == high-contrast) {
+              $solid-button-color-2: $neon-background-high-contrast-solid-button-light;
+            } @else if ($alternateColor == low-contrast) {
+              $solid-button-color-2: $neon-background-low-contrast-solid-button-light;
+            } @else {
+              $solid-button-color-2: map-get($alternatePalette, $neon-color-gradient-alternate);
+            }
+            @include gradient-button($solid-button-color-1, $solid-button-color-2);
+          }
         }
       }
 
       &.neon-button--outline {
         @if ($color == high-contrast) {
-          @include outline-button($color-text);
+          @include outline-button($neon-color-text);
         } @else if($color == low-contrast) {
-          @include outline-button($color-low-contrast-outline-button);
+          @include outline-button($neon-color-low-contrast-outline-button);
         } @else {
-          @include outline-button(map-get($palette, $background-solid-button-dark));
+          @include outline-button(map-get($palette, $neon-background-solid-button-dark));
         }
       }
 
       &.neon-button--text {
         @include text-button(
-          map-get($palette, $color-text-button),
-          $background-color-text-button-hover,
-          $background-color-text-button-active
+          map-get($palette, $neon-color-text-button),
+          $neon-background-color-text-button-hover,
+          $neon-background-color-text-button-active
         );
       }
     }
@@ -96,16 +132,16 @@
 
   &--solid {
     border: none;
-    box-shadow: $box-shadow;
-    color: $color-inverse;
+    box-shadow: $neon-box-shadow;
+    color: $neon-color-inverse;
 
     &:active {
-      box-shadow: $inset-shadow;
+      box-shadow: $neon-inset-shadow;
     }
 
     &.neon-button--disabled {
-      color: $color-disabled-light;
-      background: $color-disabled-dark;
+      color: $neon-color-disabled-light;
+      background: $neon-color-disabled-dark;
       box-shadow: none;
     }
   }
@@ -114,8 +150,8 @@
     background: transparent;
 
     &.neon-button--disabled {
-      color: $color-disabled-light;
-      border-color: $color-disabled-light;
+      color: $neon-color-disabled-light;
+      border-color: $neon-color-disabled-light;
     }
   }
 
@@ -124,7 +160,7 @@
     border: none;
 
     &.neon-button--disabled {
-      color: $color-disabled-light;
+      color: $neon-color-disabled-light;
     }
   }
 }

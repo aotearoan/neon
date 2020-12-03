@@ -18,15 +18,17 @@
 @import '../views/error/NotFound';
 @import '../views/feedback/splash-loader/SplashLoader';
 @import '../views/user-input/select/Select';
+@import '../views/user-input/color/Color';
 @import '../views/user-input/field-group/FieldGroup';
 @import '../views/layout/footer/Footer';
 @import '../views/design/layout/Layout';
 @import '../views/user-input/slider/Slider';
+@import '../views/navigation/action-menu/ActionMenu';
 
 body {
   .title {
-    margin-left: 8 * $base-space;
-    font-family: $body-font-family;
+    margin-left: 8 * $neon-base-space;
+    font-family: $neon-body-font-family;
     font-weight: lighter;
   }
 }
@@ -50,7 +52,7 @@ header {
     }
 
     .neon-button {
-      margin-right: 4 * $base-space;
+      margin-right: 4 * $neon-base-space;
 
       @include responsive(larger-than-tablet) {
         display: none;
@@ -63,12 +65,13 @@ header {
   }
 
   .tagline {
-    margin-left: 4 * $base-space;
-    font-size: $font-size-l;
+    margin-left: 4 * $neon-base-space;
+    font-family: $neon-heading-font-family;
+    font-size: $neon-font-size-l;
     font-weight: 300;
     opacity: 0.9;
-    letter-spacing: $letter-spacing-s;
-    line-height: $line-height-one;
+    letter-spacing: $neon-letter-spacing-s;
+    line-height: $neon-line-height-one;
     user-select: none;
     position: relative;
     top: 3px;
@@ -76,21 +79,6 @@ header {
     @include responsive(tablet) {
       display: none;
     }
-  }
-}
-
-.app-side-nav {
-  .neon-input {
-    input {
-      border: none;
-      border-radius: 0;
-      box-shadow: none;
-      @include padding-horizontal(0.75);
-    }
-  }
-
-  & > hr {
-    display: none;
   }
 }
 
@@ -132,12 +120,7 @@ header {
 
 blockquote,
 .neon-note {
-  max-width: $max-paragraph-width;
-}
-
-.theme-toggle {
-  margin-left: 4 * $base-space;
-  margin-right: 4 * $base-space;
+  max-width: $neon-max-paragraph-width;
 }
 
 .menu-filter {

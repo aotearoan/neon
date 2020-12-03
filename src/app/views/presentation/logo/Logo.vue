@@ -6,8 +6,8 @@
         <p>
           The light & dark logos can be provided by overriding the
           <em>$logo-light</em> (light theme logo) and <em>$logo-dark</em> (dark theme logo) SASS variables. These
-          describe the CSS background URLs of the logos. Specify <em>$logo-width-multiplier</em> to define the ratio of
-          the logo's width to it's height.
+          describe the CSS background URLs of the logos. Specify <em>$neon-logo-width-multiplier</em> to define the
+          ratio of the logo's width to it's height.
         </p>
       </neon-card-body>
     </neon-card>

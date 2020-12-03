@@ -50,6 +50,12 @@ export default class NeonBadge extends Vue {
   public color!: NeonFunctionalColor;
 
   /**
+   * Alternate color for creating gradient badges. NOTE: can also be the same color as 'color'.
+   */
+  @Prop()
+  public alternateColor?: NeonFunctionalColor;
+
+  /**
    * Display the badge in the disable style
    */
   @Prop({ default: false })

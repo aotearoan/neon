@@ -1,15 +1,15 @@
 .neon-range-slider {
   position: relative;
   width: 100%;
-  height: 16 * $base-space;
+  height: 16 * $neon-base-space;
 
   &.neon-range-slider--disabled {
     cursor: not-allowed;
   }
 
   &__output-range-separator {
-    margin-left: 1.5 * $base-space;
-    margin-right: 1.5 * $base-space;
+    margin-left: 1.5 * $neon-base-space;
+    margin-right: 1.5 * $neon-base-space;
     font-weight: 700;
     opacity: 0.25;
     top: -1px;
@@ -17,9 +17,9 @@
   }
 
   .neon-slider__output {
-    font-size: $font-size-s;
+    font-size: $neon-font-size-s;
     font-variant-numeric: tabular-nums;
-    height: 4 * $base-space;
+    height: 4 * $neon-base-space;
     display: flex;
   }
 

@@ -1,32 +1,32 @@
 /* from https://css-tricks.com/sliding-nightmare-understanding-range-input/ */
-$width-slider-tooltip: 201px;
+$neon-width-slider-tooltip: 201px;
 
 @mixin track {
   box-sizing: border-box;
   border: none;
-  border-radius: $border-radius-slider-track;
+  border-radius: $neon-border-radius-slider-track;
   width: 100%;
-  height: $height-slider-track;
+  height: $neon-height-slider-track;
 }
 
 @mixin thumb {
   box-sizing: border-box;
   border: none;
-  width: $width-slider-thumb;
-  height: $height-slider-thumb;
-  border-radius: $border-radius-slider-thumb;
+  width: $neon-width-slider-thumb;
+  height: $neon-height-slider-thumb;
+  border-radius: $neon-border-radius-slider-thumb;
   pointer-events: all;
 }
 
 .neon-slider {
   --range: calc(var(--max) - var(--min));
   --ratio: calc((var(--val) - var(--min)) / var(--range));
-  --sx: calc(0.5 * #{$width-slider-thumb} + var(--ratio) * (100% - #{$width-slider-thumb}));
+  --sx: calc(0.5 * #{$neon-width-slider-thumb} + var(--ratio) * (100% - #{$neon-width-slider-thumb}));
   position: relative;
 
   .neon-slider__output {
-    font-size: $font-size-s;
-    margin-bottom: $base-space;
+    font-size: $neon-font-size-s;
+    margin-bottom: $neon-base-space;
     display: flex;
     font-variant-numeric: tabular-nums;
   }
@@ -37,23 +37,23 @@ $width-slider-tooltip: 201px;
     opacity: 0;
     position: absolute;
     display: flex;
-    width: $width-slider-tooltip;
+    width: $neon-width-slider-tooltip;
     bottom: 52px;
-    left: calc(var(--sx) - #{floor(0.5 * $width-slider-tooltip)});
+    left: calc(var(--sx) - #{floor(0.5 * $neon-width-slider-tooltip)});
     justify-content: center;
-    transition: opacity $animation-speed-slow ease-in-out;
+    transition: opacity $neon-animation-speed-slow ease-in-out;
     transition-delay: 1.5s;
 
     div {
       user-select: none;
       display: flex;
-      font-size: $font-size-s;
+      font-size: $neon-font-size-s;
       font-variant: tabular-nums;
       line-height: 1;
       font-weight: 600;
       letter-spacing: 0;
-      padding: 2 * $base-space;
-      border-radius: $border-radius;
+      padding: 2 * $neon-base-space;
+      border-radius: $neon-border-radius-slider-tooltip;
 
       &:after {
         content: '';
@@ -73,7 +73,7 @@ $width-slider-tooltip: 201px;
 
   &:hover .neon-slider__tooltip {
     opacity: 1;
-    transition: opacity $animation-speed-slow ease-in-out;
+    transition: opacity $neon-animation-speed-slow ease-in-out;
     transition-delay: 0s;
   }
 
@@ -105,7 +105,7 @@ $width-slider-tooltip: 201px;
   margin: 0;
   padding: 0;
   width: 100%;
-  height: $height-slider-thumb;
+  height: $neon-height-slider-thumb;
   background: transparent;
 
   &::-webkit-slider-runnable-track {
@@ -129,7 +129,7 @@ $width-slider-tooltip: 201px;
   }
 
   &::-webkit-slider-thumb {
-    margin-top: 0.5 * ($height-slider-track - $height-slider-thumb);
+    margin-top: 0.5 * ($neon-height-slider-track - $neon-height-slider-thumb);
     @include thumb;
   }
 
@@ -149,7 +149,7 @@ $width-slider-tooltip: 201px;
 
 .neon-slider__legend {
   flex-direction: row;
-  font-size: $font-size-s;
+  font-size: $neon-font-size-s;
   display: flex;
   justify-content: space-between;
 }

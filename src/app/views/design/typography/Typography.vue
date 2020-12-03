@@ -4,6 +4,8 @@
       <neon-card-header>
         <h1 class="neon-h3">Typography</h1>
       </neon-card-header>
+    </neon-card>
+    <neon-card>
       <neon-card-body>
         <neon-anchor id="headings" />
         <h2 class="neon-h4">Headings</h2>
@@ -46,7 +48,8 @@
         <neon-note color="info">
           <span
             ><strong>Note:</strong> For improved readability, paragraph text is limited to a maximum width. The default
-            width is 70ch but this is customizable in SASS.</span
+            width is 70ch but this is customizable in SASS by overriding the variable
+            <em>$neon-max-paragraph-width</em>.</span
           >
         </neon-note>
         <p>

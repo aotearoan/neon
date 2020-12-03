@@ -1,39 +1,39 @@
 .editor {
   .prism-editor {
-    background-color: $background-color-pre;
+    background-color: $neon-background-color-pre;
 
     &__container {
-      color: $color-text-light;
+      color: $neon-color-text-light;
       @include scrollbars;
     }
 
     &__textarea {
       &::selection {
-        background-color: rgba($background-color-selection, 0.5);
+        background-color: rgba($neon-background-color-selection, 0.667);
       }
     }
   }
 
   .tag {
-    color: $color-error-l2;
+    color: $neon-color-error-l3;
   }
 
   .attr-name {
-    color: $color-warn-l2;
+    color: $neon-color-warn-l3;
   }
 
   .attr-value {
-    color: $color-success-l2;
+    color: $neon-color-success-l3;
   }
 
   .punctuation {
-    color: $color-neutral-l2;
+    color: $neon-color-neutral-l3;
   }
 
   &__read-only.neon-icon--disabled {
     opacity: 0.5;
     path.neon-svg--fill {
-      fill: $color-editor-lock !important;
+      fill: $neon-color-editor-lock !important;
     }
   }
 }

@@ -1,23 +1,23 @@
 .neon-list {
-  @each $color, $palette in $functional-colors {
+  @each $color, $palette in $neon-functional-colors {
     &--#{$color} {
       .neon-list__item {
-        $list-foreground-color: rgba(map-get($palette, $color-list-item), 0.75);
+        $list-foreground-color: rgba(map-get($palette, $neon-color-list-item), 0.75);
         background-color: rgba($list-foreground-color, 0.125);
         @if (not($color == 'low-contrast' or $color == 'neutral')) {
           @include color-with-svg($list-foreground-color);
         } @else {
-          @include color-with-svg(rgba($color-text, 0.75));
+          @include color-with-svg(rgba($neon-color-text, 0.75));
         }
 
         &:hover,
         &:focus {
-          $list-hover-color: map-get($palette, $color-list-item);
+          $list-hover-color: map-get($palette, $neon-color-list-item);
           background-color: rgba($list-hover-color, 0.25);
           @if (not($color == 'low-contrast' or $color == 'neutral')) {
             @include color-with-svg($list-hover-color);
           } @else {
-            @include color-with-svg($color-text);
+            @include color-with-svg($neon-color-text);
           }
         }
       }
@@ -28,8 +28,8 @@
         &,
         &:focus,
         &:hover {
-          background-color: $color-disabled-dark;
-          color: rgba($color-disabled-light, 0.75);
+          background-color: $neon-color-disabled-dark;
+          color: rgba($neon-color-disabled-light, 0.75);
         }
       }
     }

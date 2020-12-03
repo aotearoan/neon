@@ -1,15 +1,15 @@
 @mixin scrollbars() {
-  scrollbar-color: $color-scrollbar transparent;
+  scrollbar-color: $neon-color-scrollbar transparent;
   scrollbar-width: thin;
   scroll-behavior: smooth;
 
   &::-webkit-scrollbar {
-    width: $width-scrollbar;
-    height: $width-scrollbar;
+    width: $neon-width-scrollbar;
+    height: $neon-width-scrollbar;
 
     &-thumb {
-      background: $color-scrollbar;
-      border-radius: $border-radius-scrollbar;
+      background: $neon-color-scrollbar;
+      border-radius: $neon-border-radius-scrollbar;
     }
 
     &-track-piece {

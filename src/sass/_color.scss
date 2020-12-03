@@ -1,15 +1,16 @@
 .neon-color {
   position: relative;
-  min-width: 40 * $base-space;
 
   &__input {
     position: absolute;
-    opacity: 0;
     right: 0;
+    opacity: 0;
     z-index: 1;
 
-    input {
-      cursor: pointer;
+    &:not(.neon-input--disabled) {
+      input {
+        cursor: pointer;
+      }
     }
 
     .neon-icon {
@@ -21,51 +22,56 @@
     position: absolute;
     top: 0;
     right: 0;
-    border-radius: 0.5 * $border-radius;
-    margin: 2 * $base-space;
+    border-radius: $neon-border-radius-input-color;
+    margin: 2 * $neon-base-space;
   }
 
   &--s {
     .neon-color__input {
-      width: $size-s;
+      width: $neon-size-s;
     }
+
     .neon-color__indicator {
-      width: $size-s - 3 * $base-space;
-      height: $size-s - 3 * $base-space;
-      margin: 1.5 * $base-space;
+      width: $neon-size-s - 3 * $neon-base-space;
+      height: $neon-size-s - 3 * $neon-base-space;
+      margin: 1.5 * $neon-base-space;
     }
 
     .neon-input .neon-icon {
-      right: $size-s + $base-space;
+      right: $neon-size-s + $neon-base-space;
     }
   }
 
   &--m {
     .neon-color__input {
-      width: $size-m;
+      width: $neon-size-m;
     }
 
     .neon-color__indicator {
-      width: $size-m - 4 * $base-space;
-      height: $size-m - 4 * $base-space;
+      width: $neon-size-m - 4 * $neon-base-space;
+      height: $neon-size-m - 4 * $neon-base-space;
     }
 
     .neon-input .neon-icon {
-      right: $size-m + $base-space;
+      right: $neon-size-m + $neon-base-space;
     }
   }
 
   &--l {
     .neon-color__input {
-      width: $size-l;
+      width: $neon-size-l;
     }
     .neon-color__indicator {
-      width: $size-l - 4 * $base-space;
-      height: $size-l - 4 * $base-space;
+      width: $neon-size-l - 4 * $neon-base-space;
+      height: $neon-size-l - 4 * $neon-base-space;
     }
 
     .neon-input .neon-icon {
-      right: $size-l + 2 * $base-space;
+      right: $neon-size-l + 2 * $neon-base-space;
     }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
   }
 }

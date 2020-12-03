@@ -1,33 +1,28 @@
-@mixin switch-color-classsic() {
+@mixin switch-color-default() {
   .neon-switch__switch {
-    background-color: $color-switch-off;
-    transition: background-color $animation-speed-fast ease-in;
-    box-shadow: $inset-shadow;
+    background-color: $neon-color-switch-off;
+    transition: background-color $neon-animation-speed-fast ease-in;
+    box-shadow: $neon-inset-shadow-switch;
 
     &:focus {
-      box-shadow: 0 0 0 4px rgba($color-text-low-contrast, 0.3), $inset-shadow;
+      box-shadow: 0 0 0 4px rgba($neon-color-text-low-contrast, 0.3), $neon-inset-shadow-switch;
     }
   }
 
   .neon-switch__indicator {
-    background-color: $color-switch-indicator;
-    box-shadow: 0 0 2px 1px rgba($color-neutral-d5, 0.125);
+    background-color: $neon-color-switch-indicator;
+    box-shadow: 0 0 2px 1px rgba($neon-color-neutral-d5, 0.3);
   }
 
-  @each $color, $palette in $functional-colors {
+  @each $color, $palette in $neon-functional-colors {
     &.neon-switch--#{$color} {
       &.neon-switch--checked:not(.neon-switch--disabled) {
         .neon-switch__switch {
-          background-color: map-get($palette, $color-switch-on);
-          box-shadow: $inset-shadow;
+          background-color: map-get($palette, $neon-color-switch-on);
 
           &:focus {
-            box-shadow: 0 0 0 4px rgba(map-get($palette, $color-switch-on), 0.3), $inset-shadow;
+            box-shadow: 0 0 0 4px rgba(map-get($palette, $neon-color-switch-on), 0.3), $neon-inset-shadow-switch;
           }
-        }
-
-        .neon-switch__indicator {
-          box-shadow: 0 0 2px 1px rgba($color-neutral-d5, 0.125);
         }
       }
     }
@@ -40,42 +35,42 @@
     }
 
     .neon-switch__switch {
-      background-color: $color-switch-disabled;
+      background-color: $neon-color-switch-disabled;
     }
 
     .neon-switch__indicator {
-      background-color: $color-switch-indicator-disabled;
+      background-color: $neon-color-switch-indicator-disabled;
     }
   }
 }
 
 @mixin switch-color-sharp() {
   .neon-switch__switch {
-    border: $border-width solid $color-switch-off;
-    transition: all $animation-speed-fast ease-in;
+    border: $neon-border-width solid $neon-color-switch-off;
+    transition: all $neon-animation-speed-fast ease-in;
 
     &:focus {
-      box-shadow: 0 0 0 4px rgba($color-text-low-contrast, 0.3);
+      box-shadow: 0 0 0 4px rgba($neon-color-text-low-contrast, 0.3);
     }
   }
 
   .neon-switch__indicator {
-    background-color: $color-switch-off;
-    transition: all $animation-speed-fast ease-in;
+    background-color: $neon-color-switch-off;
+    transition: all $neon-animation-speed-fast ease-in;
   }
 
-  @each $color, $palette in $functional-colors {
+  @each $color, $palette in $neon-functional-colors {
     &.neon-switch--#{$color} {
       &.neon-switch--checked:not(.neon-switch--disabled) {
         .neon-switch__switch {
-          border-color: map-get($palette, $color-switch-on);
+          border-color: map-get($palette, $neon-color-switch-on);
 
           &:focus {
-            box-shadow: 0 0 0 4px rgba(map-get($palette, $color-switch-on), 0.3);
+            box-shadow: 0 0 0 4px rgba(map-get($palette, $neon-color-switch-on), 0.3);
           }
 
           .neon-switch__indicator {
-            background-color: map-get($palette, $color-switch-on);
+            background-color: map-get($palette, $neon-color-switch-on);
           }
         }
       }
@@ -84,49 +79,57 @@
 
   &.neon-switch--disabled {
     .neon-switch__switch {
-      border-color: rgba($color-disabled-light, 0.5);
+      border-color: rgba($neon-color-disabled-light, 0.5);
     }
 
     .neon-switch__indicator {
-      background-color: rgba($color-disabled-light, 0.5);
+      background-color: rgba($neon-color-disabled-light, 0.5);
     }
   }
 }
 
 .neon-switch {
-  color: $color-text;
+  color: $neon-color-text;
 
   &--switch {
-    @if ($theme == 'classic') {
-      @include switch-color-classsic;
-    } @else if($theme == 'sharp') {
+    @if ($neon-theme == 'sharp') {
       @include switch-color-sharp;
+    } @else {
+      @include switch-color-default;
     }
   }
 
   &--checkbox {
-    @each $color, $palette in $functional-colors {
+    @each $color, $palette in $neon-functional-colors {
       &.neon-switch--#{$color}:not(.neon-switch--disabled) {
         .neon-switch__checkbox {
-          border-color: $border-color-input;
-          box-shadow: $inset-shadow;
+          border-color: $neon-border-color-input;
+          box-shadow: $neon-inset-shadow;
 
           &:focus {
-            box-shadow: 0 0 0 4px rgba($color-text-low-contrast, 0.3);
+            box-shadow: 0 0 0 4px rgba($neon-color-text-low-contrast, 0.3);
           }
         }
 
         &.neon-switch--checked {
           .neon-switch__checkbox {
-            border-color: map-get($palette, $border-color-checkbox);
+            border-color: map-get($palette, $neon-border-color-checkbox);
             background: linear-gradient(
               0deg,
-              map-get($palette, $border-color-checkbox) 0%,
-              map-get($palette, $background-color-checkbox) 100%
+              map-get($palette, $neon-border-color-checkbox) 0%,
+              map-get($palette, $neon-background-color-checkbox) 100%
             );
 
             &:focus {
-              box-shadow: 0 0 0 4px rgba(map-get($palette, $background-color-checkbox), 0.3);
+              box-shadow: 0 0 0 4px rgba(map-get($palette, $neon-background-color-checkbox), 0.3);
+            }
+          }
+        }
+
+        &:not(.neon-switch--checked) {
+          &:hover {
+            .neon-switch__checkbox {
+              background-color: rgba($neon-color-switch-off, 0.125);
             }
           }
         }
@@ -136,8 +139,9 @@
     &.neon-switch--disabled {
       .neon-switch__checkbox {
         box-shadow: none;
-        border-color: $color-disabled-dark;
-        background-color: $color-disabled-dark;
+        border: none;
+        background-color: $neon-color-switch-disabled;
+        @include color-with-svg($neon-color-switch-indicator-disabled);
       }
     }
   }

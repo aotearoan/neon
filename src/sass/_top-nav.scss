@@ -9,21 +9,21 @@
   &__container {
     @include padding(0.75);
     width: 100%;
-    max-width: $max-page-width;
+    max-width: $neon-max-page-width;
     display: flex;
     flex-direction: row;
     align-items: center;
   }
 
   @include responsive(larger-than-tablet) {
-    height: $top-nav-height-desktop;
+    height: $neon-top-nav-height-desktop;
   }
 
   @include responsive(tablet) {
-    height: $top-nav-height-tablet;
+    height: $neon-top-nav-height-tablet;
   }
 
   @include responsive(mobile-large) {
-    height: $top-nav-height-mobile;
+    height: $neon-top-nav-height-mobile;
   }
 }

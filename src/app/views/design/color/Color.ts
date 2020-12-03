@@ -31,7 +31,7 @@ export default class Color extends Vue {
     noCard: true,
   };
 
-  private colorPalette = `$info-palette: (
+  private colorPalette = `$neon-info-palette: (
   l5: #f6e9ff,
   l4: #ebd4ff,
   l3: #ddbcfe,

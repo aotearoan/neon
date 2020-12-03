@@ -2,8 +2,8 @@ table {
   thead {
     tr {
       th {
-        border-bottom: $border-width $border-style $label-color;
-        color: $label-color;
+        border-bottom: $neon-border-width-table $neon-border-style $neon-label-color;
+        color: $neon-label-color;
       }
     }
   }
@@ -11,10 +11,10 @@ table {
   &.neon-table--hover {
     tbody {
       tr:hover {
-        background-color: rgba($color-text-low-contrast, 0.125);
+        background-color: rgba($neon-color-text-low-contrast, 0.125);
       }
     }
   }
 
-  border-bottom: $border-width $border-style $label-color;
+  border-bottom: $neon-border-width-table $neon-border-style $neon-label-color;
 }

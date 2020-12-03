@@ -81,6 +81,12 @@ export default class NeonDropdown extends Vue {
   public color!: NeonFunctionalColor;
 
   /**
+   * The alternate color of the dropdown button (for gradient buttons).
+   */
+  @Prop()
+  public alternateColor?: NeonFunctionalColor;
+
+  /**
    * The style of the dropdown button
    */
   @Prop({ default: NeonDropdownStyle.SolidButton })

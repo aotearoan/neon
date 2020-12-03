@@ -9,7 +9,8 @@
       </p>
       <neon-button
         href="/for-developers/getting-started"
-        color="brand"
+        color="primary"
+        alternate-color="primary"
         size="xl"
         button-style="solid"
         label="Get started"
@@ -86,8 +87,10 @@
           <p>
             Not quite happy with the themes provided?<br />Then customize it! Current Javascript frameworks encapsulate
             CSS making it difficult to override anything. Neon takes a different approach, where SASS styles are open to
-            be overridden. Neon uses <neon-link href="http://getbem.com/">BEM</neon-link> and
-            <neon-link href="https://semver.org/">SEMVER</neon-link> so if a class changes you'll know about it.
+            be overridden. Neon uses
+            <neon-link :external-indicator="true" href="http://getbem.com/" target="_blank">BEM</neon-link> and
+            <neon-link :external-indicator="true" href="https://semver.org/" target="_blank">SEMVER</neon-link> so if a
+            class changes you'll know about it.
           </p>
           <neon-button
             href="/for-developers/getting-started#sass"
@@ -110,7 +113,7 @@
             functional colors in both light and dark themes.
           </p>
           <neon-button
-            href="/presentation/icon"
+            href="/presentation/icon#description"
             color="brand"
             button-style="outline"
             label="Learn more about Icons"
@@ -128,7 +131,7 @@
             responsive breakpoint.
           </p>
           <neon-button
-            href="/layout/grid"
+            href="/layout/grid#description"
             color="brand"
             button-style="outline"
             label="Show me how to use Grid"
@@ -138,7 +141,7 @@
       </div>
       <span class="powered-by neon-color-text-neutral">
         No {{ developers }} developers were harmed making Neon.<br />This site was developed using
-        <neon-link href="https://vuejs.org/">VueJS</neon-link> and Neon o‿o
+        <neon-link :external-indicator="true" href="https://vuejs.org/" target="_blank">VueJS</neon-link> and Neon o‿o
       </span>
     </div>
   </div>

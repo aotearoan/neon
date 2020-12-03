@@ -3,23 +3,23 @@
     @include responsive(larger-than-tablet) {
       @include max-height(
         100,
-        $top-nav-height-desktop + $footer-height-desktop + $h3-size * $line-height-one + 5.75 *
-          $spacing-vertical-desktop + 3 * $border-width
+        $neon-top-nav-height-desktop + $neon-footer-height-desktop + $neon-h3-size * $neon-line-height-one + 5.75 *
+          $spacing-vertical-desktop + 3 * $neon-border-width
       );
     }
 
     @include responsive(tablet) {
       @include max-height(
         100,
-        $top-nav-height-tablet + $footer-height-tablet + $h3-size * $line-height-one + 5.75 * $spacing-vertical-tablet +
-          3 * $border-width
+        $neon-top-nav-height-tablet + $neon-footer-height-tablet + $neon-h3-size * $neon-line-height-one + 5.75 *
+          $spacing-vertical-tablet + 3 * $neon-border-width
       );
     }
     @include responsive(mobile-large) {
       @include max-height(
         100,
-        $top-nav-height-mobile + $footer-height-mobile + $h4-size * $line-height-one + 6.5 * $spacing-vertical-mobile +
-          3 * $border-width
+        $neon-top-nav-height-mobile + $neon-footer-height-mobile + $neon-h4-size * $neon-line-height-one + 6.5 *
+          $neon-spacing-vertical-mobile + 3 * $neon-border-width
       );
     }
   }

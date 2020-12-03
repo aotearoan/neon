@@ -2,8 +2,8 @@
   label {
     font-size: $font-size;
     font-weight: 400;
-    letter-spacing: $letter-spacing-s;
-    line-height: $line-height-one;
+    letter-spacing: $neon-letter-spacing-s;
+    line-height: $neon-line-height-one;
     min-height: $size;
     height: $size;
     z-index: $z-index-default;
@@ -13,8 +13,8 @@
       padding: 0;
 
       .neon-icon {
-        width: round($font-size * $line-height-one);
-        height: round($font-size * $line-height-one);
+        width: round($font-size * $neon-line-height-one);
+        height: round($font-size * $neon-line-height-one);
       }
     }
 
@@ -46,30 +46,42 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  border-radius: $border-radius;
+  border-radius: $neon-border-radius;
   overflow: hidden;
 
   &.neon-toggle--s {
-    @include toggle-size($font-size-s, $size-s);
+    @include toggle-size($neon-font-size-s, $neon-size-s);
   }
 
   &.neon-toggle--m {
-    @include toggle-size($font-size-s, $size-m);
+    @include toggle-size($neon-font-size-s, $neon-size-m);
   }
 
   &.neon-toggle--l {
-    @include toggle-size($base-font-size, $size-l);
+    @include toggle-size($neon-font-size-m, $neon-size-l);
+  }
+
+  .neon-toggle__label {
+    &:first-child {
+      border-top-left-radius: $neon-border-radius;
+      border-bottom-left-radius: $neon-border-radius;
+    }
+
+    &:last-child {
+      border-top-right-radius: $neon-border-radius;
+      border-bottom-right-radius: $neon-border-radius;
+    }
   }
 }
 
 @mixin radio-button-layout {
   .neon-toggle__label {
-    letter-spacing: $letter-spacing-s;
+    letter-spacing: $neon-letter-spacing-s;
   }
 
   .neon-toggle__radio-button {
-    border-radius: $border-radius-radio-button;
-    margin-right: 3 * $base-space;
+    border-radius: $neon-border-radius-radio-button;
+    margin-right: 3 * $neon-base-space;
     align-items: center;
     justify-content: center;
   }
@@ -77,20 +89,20 @@
   .neon-toggle__label--checked {
     .neon-toggle__radio-button {
       &-indicator {
-        border-radius: $border-radius-radio-button;
+        border-radius: $neon-border-radius-radio-button;
       }
     }
   }
 
   &.neon-toggle--s {
-    @include radio-button-size(14px, $font-size-s, $size-s);
+    @include radio-button-size(14px, $neon-font-size-s, $neon-size-s);
   }
 
   &.neon-toggle--m {
-    @include radio-button-size(14px, $font-size-s, $size-m);
+    @include radio-button-size(14px, $neon-font-size-s, $neon-size-m);
   }
 
   &.neon-toggle--l {
-    @include radio-button-size(16px, $base-font-size, $size-l);
+    @include radio-button-size(16px, $neon-font-size-m, $neon-size-l);
   }
 }

@@ -47,7 +47,7 @@ export default class Number extends Vue {
 
   private numberValueExamples = `<div class="neon-vertically-spaced">
   <label>spinButtons = false</label>
-  <neon-number v-model="noButtonsNumber" :spinButtons="false" placeholder="Value" />
+  <neon-number v-model="noButtonsNumber" :spin-buttons="false" placeholder="Value" />
   <label>Editable = false</label>
   <neon-number v-model="notEditableNumber" :editable="false" placeholder="Value" />
   <label>With min, max, step</label>

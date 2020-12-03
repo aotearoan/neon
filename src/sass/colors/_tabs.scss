@@ -1,36 +1,36 @@
 .neon-tabs {
   .neon-tabs__menu-items--underlined {
-    border-bottom: $border-width-tabs $border-style $border-color-tabs-underline;
+    border-bottom: $neon-border-width-tabs $neon-border-style $neon-border-color-tabs-underline;
   }
 
   .neon-tabs__menu-item {
-    @include color-with-svg($color-text-low-contrast);
-    transition: color ease-in-out $animation-speed-fast;
+    @include color-with-svg($neon-color-text-low-contrast);
+    transition: color ease-in-out $neon-animation-speed-fast;
   }
 
-  @each $color, $palette in $functional-colors {
+  @each $color, $palette in $neon-functional-colors {
     &.neon-tabs--#{$color} {
-      $tab-color: map-get($palette, $color-tab-selected);
+      $tab-color: map-get($palette, $neon-color-tab-selected);
       .neon-tabs__menu-item {
         &:hover:not(.neon-tabs__menu-item--selected),
         &:active:not(.neon-tabs__menu-item--selected) {
-          $tabs-hover-color: rgba($tab-color, 0.85);
-          @include color-with-svg($tabs-hover-color);
+          @include color-with-svg($tab-color);
+
+          .neon-tabs__menu-item-container:before {
+            background-color: $tab-color;
+          }
         }
 
         &--selected {
           @include color-with-svg($tab-color);
 
-          .neon-tabs__menu-item-container {
-            border-bottom-color: $tab-color;
+          .neon-tabs__menu-item-container:before {
+            background-color: $tab-color;
           }
         }
 
-        &-container {
-          &:focus {
-            border-top-color: $tab-color;
-            border-bottom-color: $tab-color;
-          }
+        &-container:focus:before {
+          background-color: $tab-color;
         }
       }
 
@@ -45,6 +45,6 @@
 
 .neon-tab {
   &:focus:before {
-    background-color: $color-text-low-contrast;
+    background-color: $neon-color-text-low-contrast;
   }
 }

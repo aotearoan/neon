@@ -1,9 +1,9 @@
 <template>
   <div id="app" class="neon-app neon-app--standard-page">
     <neon-page>
-      <template #top-nav>
-        <neon-top-nav>
-          <span class="logo-wrapper">
+      <template v-if="theme !== 'smooth' || isTablet" #top-nav>
+        <neon-top-nav class="app-top-nav">
+          <span class="logo-wrapper top-nav-logo-wrapper">
             <neon-button
               icon="menu"
               color="primary"
@@ -25,6 +25,7 @@
                     :key="section.group"
                     v-model="section.expanded"
                     class="menu-expansion-panel"
+                    :full-width="theme === 'smooth'"
                   >
                     <neon-tree-menu :model="section.children" :expand-all="expandAll" @click="onSideNavMenuClick" />
                   </neon-expansion-panel>
@@ -32,20 +33,11 @@
               </div>
             </neon-drawer>
             <neon-link outline-style="none" href="/" class="homepage-link" aria-label="home">
-              <neon-logo aria-label="Neon logo"></neon-logo>
+              <neon-logo color="brand" aria-label="Neon logo"></neon-logo>
             </neon-link>
-            <span class="tagline neon-color-text-brand">A VueJs Component Library for Web Applications</span>
+            <span class="tagline neon-color-text-primary">A VueJs Design System</span>
           </span>
           <span class="top-nav-actions">
-            <neon-button
-              class="github-link"
-              href="https://github.com/aotearoan/neon"
-              icon="github"
-              :label="!isMobile ? 'GitHub' : undefined"
-              color="high-contrast"
-              button-style="text"
-              :size="isMobile ? 's' : 'l'"
-            />
             <neon-select
               class="theme-toggle"
               name="themeToggle"
@@ -60,6 +52,15 @@
               aria-label="Select theme"
             />
             <neon-button
+              class="github-link"
+              href="https://github.com/aotearoan/neon"
+              icon="github"
+              :label="!isMobile ? 'GitHub' : undefined"
+              color="high-contrast"
+              button-style="text"
+              :size="isMobile ? 's' : 'l'"
+            />
+            <neon-button
               name="dark-mode-toggle"
               color="high-contrast"
               icon="contrast"
@@ -72,10 +73,54 @@
         </neon-top-nav>
       </template>
       <template #side-nav>
-        <neon-side-nav class="app-side-nav" :full-width="true">
+        <neon-side-nav class="app-side-nav" :full-width="theme !== 'smooth'">
           <template #sticky>
+            <span class="logo-wrapper side-nav-logo-wrapper">
+              <neon-link outline-style="none" href="/" class="homepage-link" aria-label="home">
+                <neon-logo aria-label="Neon logo"></neon-logo>
+              </neon-link>
+              <span class="tagline neon-color-text-primary">A VueJs Design System</span>
+            </span>
+            <span class="side-nav-actions">
+              <neon-select
+                class="theme-toggle"
+                name="themeToggle"
+                :options="themeModel"
+                placeholder="Select theme..."
+                :placeholder-as-option="true"
+                :value="theme"
+                @input="switchTheme"
+                button-icon="palette"
+                aria-label="Select theme"
+                size="s"
+                color="primary"
+                alternate-color="primary"
+              />
+              <neon-button
+                class="github-link"
+                href="https://github.com/aotearoan/neon"
+                icon="github"
+                color="high-contrast"
+                aria-label="View on GitHub"
+                button-style="text"
+              />
+              <neon-button
+                name="dark-mode-toggle"
+                color="high-contrast"
+                icon="contrast"
+                aria-label="Light/dark toggle"
+                @click="switchMode()"
+                button-style="text"
+              />
+            </span>
             <label for="menuFilterSideNav" class="menu-filter">Filter menu</label>
-            <neon-input id="menuFilterSideNav" size="l" type="text" v-model="indexFilter" placeholder="Filter..." />
+            <neon-input
+              id="menuFilterSideNav"
+              :size="theme === 'smooth' ? 'm' : 'l'"
+              type="text"
+              v-model="indexFilter"
+              placeholder="Filter..."
+            />
           </template>
           <template #scrolling>
             <neon-expansion-panel
@@ -85,6 +130,7 @@
               :key="section.group"
               v-model="section.expanded"
               class="menu-expansion-panel"
+              :full-width="theme === 'smooth'"
             >
               <neon-tree-menu :model="section.children" :expand-all="expandAll" @click="onSideNavMenuClick" />
             </neon-expansion-panel>
@@ -99,7 +145,7 @@
             </transition>
           </neon-grid-area>
         </neon-grid>
-        <neon-footer>
+        <neon-footer class="app-footer">
           <span
             >{{ version !== '0' ? `v${version}` : '' }} &copy; copyright aotearoan {{ new Date().getFullYear() }}</span
           >

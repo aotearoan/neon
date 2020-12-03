@@ -1,0 +1,27 @@
+.app-side-nav {
+  .neon-input {
+    input {
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      @include padding-horizontal(0.75);
+    }
+  }
+
+  & > hr {
+    display: none;
+  }
+}
+
+.side-nav-logo-wrapper,
+.side-nav-actions {
+  display: none !important;
+}
+
+.component-documentation .neon-tabs__menu-items--underlined {
+  border-bottom: none !important;
+
+  .neon-tabs__menu-item-container:before {
+    bottom: 0;
+  }
+}

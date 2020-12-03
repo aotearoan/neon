@@ -56,6 +56,14 @@
         "func": false,
         "value": "NeonFunctionalColor.Neutral"
       }
+    },
+    {
+      "name": "alternateColor",
+      "tags": {},
+      "description": "Alternate color for creating gradient labels. NOTE: can also be the same color as 'color'.",
+      "type": {
+        "name": "NeonFunctionalColor"
+      }
     }
   ]
 }

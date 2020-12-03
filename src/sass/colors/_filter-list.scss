@@ -1,22 +1,22 @@
 .neon-filter-list {
   .neon-filter-list__item:not(.neon-filter-list__item--disabled) {
-    color: rgba($color-text, 0.75);
+    color: rgba($neon-color-text, 0.75);
 
     &--selected,
     &:hover,
     &:focus {
-      color: $color-text;
+      color: $neon-color-text;
     }
 
     &:hover,
     &:focus {
-      background-color: rgba($color-text-low-contrast, 0.05);
+      background-color: rgba($neon-color-text-low-contrast, 0.05);
     }
   }
 
-  @each $color, $palette in $functional-colors {
+  @each $color, $palette in $neon-functional-colors {
     &.neon-filter-list--#{$color} {
-      $list-hover-color: map-get($palette, $color-list-item);
+      $list-hover-color: map-get($palette, $neon-color-list-item);
       $list-foreground-color: rgba($list-hover-color, 0.75);
       .neon-filter-list__item--selected:not(.neon-filter-list__item--disabled) {
         background-color: rgba($list-foreground-color, 0.125);
@@ -46,14 +46,14 @@
             }
           }
         } @else {
-          color: rgba($color-text, 0.75);
+          color: rgba($neon-color-text, 0.75);
 
           &:hover,
           &:focus {
-            color: $color-text;
+            color: $neon-color-text;
 
             &:after {
-              background-color: $color-text;
+              background-color: $neon-color-text;
             }
           }
         }
@@ -65,11 +65,11 @@
     &,
     &:focus,
     &:hover {
-      color: rgba($color-disabled-light, 0.75);
+      color: rgba($neon-color-disabled-light, 0.75);
     }
 
     &.neon-filter-list__item--selected {
-      background-color: rgba($color-disabled-dark, 0.25);
+      background-color: rgba($neon-color-disabled-dark, 0.25);
     }
   }
 }

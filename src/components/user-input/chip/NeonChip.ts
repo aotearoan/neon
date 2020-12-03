@@ -44,7 +44,7 @@ export default class NeonChip extends Vue {
   /**
    * The chip color.
    */
-  @Prop({ default: NeonFunctionalColor.Neutral })
+  @Prop({ default: NeonFunctionalColor.LowContrast })
   public color!: NeonFunctionalColor;
 
   /**

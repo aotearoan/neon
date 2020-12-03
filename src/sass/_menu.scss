@@ -4,7 +4,7 @@
     font-size: $font-size;
     padding-left: $horizontal-spacing;
     padding-right: $horizontal-spacing;
-    border-radius: $border-radius;
+    border-radius: $neon-border-radius;
 
     .neon-link {
       height: $size;
@@ -27,7 +27,7 @@
     .neon-dropdown .neon-dropdown__button .neon-icon {
       width: $font-size;
       height: $font-size;
-      margin-right: 2 * $base-space;
+      margin-right: 2 * $neon-base-space;
       padding-right: 0;
     }
   }
@@ -63,10 +63,10 @@
   }
 
   &__responsive-menu {
-    font-family: $heading-font-family;
+    font-family: $neon-heading-font-family;
 
     &:not(:first-child) {
-      margin-left: 5 * $base-space;
+      margin-left: 5 * $neon-base-space;
     }
 
     &--hidden {
@@ -76,7 +76,7 @@
 
   &__item {
     font-weight: 400;
-    letter-spacing: $letter-spacing-m;
+    letter-spacing: $neon-letter-spacing-m;
     white-space: nowrap;
 
     .neon-link {
@@ -89,7 +89,7 @@
       &__label {
         display: flex;
         align-items: center;
-        font-family: $heading-font-family;
+        font-family: $neon-heading-font-family;
       }
     }
 
@@ -100,21 +100,21 @@
     }
 
     .neon-dropdown .neon-dropdown__button {
-      font-family: $heading-font-family;
+      font-family: $neon-heading-font-family;
       font-weight: 400;
-      letter-spacing: $letter-spacing-m;
+      letter-spacing: $neon-letter-spacing-m;
     }
   }
 
   &--s {
-    @include neon-menu-size($size-s, $font-size-s, 5 * $base-space);
+    @include neon-menu-size($neon-size-s, $neon-font-size-s, 5 * $neon-base-space);
   }
 
   &--m {
-    @include neon-menu-size($size-m, $base-font-size, 5 * $base-space);
+    @include neon-menu-size($neon-size-m, $neon-font-size-m, 5 * $neon-base-space);
   }
 
   &--l {
-    @include neon-menu-size($size-l, $font-size-l, 5 * $base-space);
+    @include neon-menu-size($neon-size-l, $neon-font-size-l, 5 * $neon-base-space);
   }
 }

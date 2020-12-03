@@ -2,15 +2,15 @@
   .neon-anchor {
     position: absolute;
     @include responsive(larger-than-tablet) {
-      top: -$top-nav-height-desktop;
+      top: -$neon-top-nav-height-desktop;
     }
 
     @include responsive(tablet) {
-      top: -$top-nav-height-tablet;
+      top: -$neon-top-nav-height-tablet;
     }
 
     @include responsive(mobile-large) {
-      top: -$top-nav-height-mobile;
+      top: -$neon-top-nav-height-mobile;
     }
   }
 }

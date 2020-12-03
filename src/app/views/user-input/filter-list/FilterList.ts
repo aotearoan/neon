@@ -92,7 +92,7 @@ export default class FilterList extends Vue {
     largeModel: [this.items[0].key],
     hcModel: [this.items[0].key],
     brandModel: [this.items[0].key],
-    warnModel: [this.items[0].key],
+    primaryModel: [this.items[0].key],
     singleModel: this.items[0].key,
     multipleModel: [this.items[0].key],
     defaultLimitModel: [this.items[0].key],
@@ -114,8 +114,8 @@ export default class FilterList extends Vue {
   <neon-filter-list color="high-contrast" v-model="hcModel" :items="items"/>
   <h4>Brand</h4>
   <neon-filter-list color="brand" v-model="brandModel" :items="items"/>
-  <h4>Warn</h4>
-  <neon-filter-list color="warn" v-model="warnModel" :items="items"/>
+  <h4>Primary</h4>
+  <neon-filter-list color="primary" v-model="primaryModel" :items="items"/>
 </div>`;
 
   private typeExamples = `<div class="neon-vertically-spaced">

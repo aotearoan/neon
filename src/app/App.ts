@@ -64,7 +64,7 @@ Vue.use(VueI18n);
   },
 })
 export default class App extends Vue {
-  public theme = NeonTheme.Classic;
+  public theme = NeonTheme.Smooth;
   public themeModel: NeonSelectOption[] = [
     ...Object.keys(NeonTheme).map((k, index) => ({
       key: this.themes[index],
@@ -77,6 +77,7 @@ export default class App extends Vue {
   private indexFilter = '';
   private menuOpen = false;
   private isMobile = false;
+  private isTablet = false;
 
   public mounted() {
     const path = localStorage.getItem('path');
@@ -85,7 +86,8 @@ export default class App extends Vue {
       this.$router.push({ path: path.replace('neon', '') });
     }
 
-    this.switchTheme((localStorage.getItem('theme') as NeonTheme) || NeonTheme.Classic);
+    const theme = localStorage.getItem('theme') as NeonTheme;
+    this.switchTheme(theme && Object.values(NeonTheme).indexOf(theme) >= 0 ? theme : NeonTheme.Smooth);
 
     const savedMode = (localStorage.getItem('mode') as NeonMode) || undefined;
     NeonModeUtils.init(savedMode);
@@ -125,12 +127,10 @@ export default class App extends Vue {
   }
 
   private switchTheme(theme: NeonTheme) {
-    if (this.theme !== theme) {
-      document.documentElement.classList.remove(`neon-theme--${this.theme}`);
-      document.documentElement.classList.add(`neon-theme--${theme}`);
-      this.theme = theme;
-      localStorage.setItem('theme', this.theme);
-    }
+    document.documentElement.classList.remove(`neon-theme--${this.theme}`);
+    document.documentElement.classList.add(`neon-theme--${theme}`);
+    this.theme = theme;
+    localStorage.setItem('theme', this.theme);
   }
 
   private switchMode() {
@@ -264,5 +264,6 @@ export default class App extends Vue {
 
   private handleResize() {
     this.isMobile = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.MobileLarge]).matches;
+    this.isTablet = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.Tablet]).matches;
   }
 }

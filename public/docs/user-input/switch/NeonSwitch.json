@@ -22,6 +22,18 @@
       }
     },
     {
+      "name": "indeterminate",
+      "tags": {},
+      "description": "The indeterminate state of the checkbox.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
       "name": "size",
       "tags": {},
       "description": "The size of the switch.",
@@ -58,6 +70,18 @@
       }
     },
     {
+      "name": "labelPosition",
+      "tags": {},
+      "description": "The position of the switch label.",
+      "type": {
+        "name": "NeonHorizontalPosition"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonHorizontalPosition.Right"
+      }
+    },
+    {
       "name": "disabled",
       "tags": {},
       "description": "Disabled state of the switch.",
@@ -71,6 +95,15 @@
     }
   ],
   "events": [
+    {
+      "name": "indeterminate-change",
+      "description": "Emitted when an indeterminate checkbox is toggled to checked.",
+      "type": {
+        "names": [
+          "boolean"
+        ]
+      }
+    },
     {
       "name": "input",
       "description": "Emitted when the switch is toggled checked or unchecked.",

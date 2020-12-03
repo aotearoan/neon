@@ -1,13 +1,13 @@
 .neon-dropdown {
   &__content {
-    background-color: $background-color-card;
-    box-shadow: $box-shadow-dropdown;
+    background-color: $neon-background-color-card;
+    box-shadow: $neon-box-shadow-dropdown;
   }
 
   &--open,
   &--open-on-hover:hover {
     .neon-dropdown__content {
-      border: $border-width $border-style $border-color-dropdown;
+      border: $neon-border-width $neon-border-style $neon-border-color-dropdown;
     }
   }
 
@@ -17,12 +17,12 @@
     }
   }
 
-  @each $color, $palette in $functional-colors {
+  @each $color, $palette in $neon-functional-colors {
     &--#{$color}:not(.neon-dropdown--disabled) {
       .neon-dropdown__badge {
         &:focus {
           .neon-badge {
-            @include box-shadow-outline(map-get($palette, $color-label));
+            @include box-shadow-outline(map-get($palette, $neon-color-label));
           }
         }
       }

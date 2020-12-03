@@ -3,22 +3,22 @@
     &:not(.neon-action-menu__link--selected):not(.neon-action-menu__link--disabled) {
       &:hover,
       &:focus {
-        background-color: $color-action-menu-hover;
+        background-color: $neon-color-action-menu-hover;
       }
     }
 
     &.neon-action-menu__link--selected {
-      @each $color, $palette in $functional-colors {
+      @each $color, $palette in $neon-functional-colors {
         &.neon-action-menu__link--#{$color} {
-          background-color: map-get($palette, $color-action-menu-selected);
+          background-color: map-get($palette, $neon-color-action-menu-selected);
         }
       }
-      color: $color-inverse;
-      transition: background-color ease-in-out $animation-speed-slow, color ease-in-out $animation-speed-slow;
+      color: $neon-color-inverse;
+      transition: background-color ease-in-out $neon-animation-speed-slow, color ease-in-out $neon-animation-speed-slow;
     }
 
     &.neon-action-menu__link--disabled {
-      color: $color-disabled-light;
+      color: $neon-color-disabled-light;
     }
   }
 }

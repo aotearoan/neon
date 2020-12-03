@@ -6,7 +6,7 @@
     height: 250px;
 
     h4 {
-      line-height: $line-height-one;
+      line-height: $neon-line-height-one;
       margin: 0;
     }
   }
@@ -14,11 +14,11 @@
   .neon-drop-zone--circular {
     width: 250px;
     height: 250px;
-    margin-left: 8 * $base-space;
+    margin-left: 8 * $neon-base-space;
 
     @include responsive(tablet) {
       margin-left: 0;
-      margin-top: 4 * $base-space;
+      margin-top: 4 * $neon-base-space;
     }
   }
 }

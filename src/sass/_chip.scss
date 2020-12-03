@@ -1,7 +1,7 @@
 @mixin chip-size($size, $font-size, $icon-size, $padding) {
-  height: $size - 2 * $base-space;
+  height: $size - 2 * $neon-base-space;
   font-size: $font-size;
-  transition: transform $animation-speed-fast ease-in-out;
+  transition: transform $neon-animation-speed-fast ease-in-out;
   padding-left: $padding;
 
   &.neon-chip--click {
@@ -20,7 +20,7 @@
   .neon-chip__close {
     max-height: $icon-size;
     max-width: $icon-size;
-    margin-left: 1.5 * $base-space;
+    margin-left: 1.5 * $neon-base-space;
   }
 }
 
@@ -32,21 +32,21 @@
   flex-direction: row;
   flex: 0 0 auto;
   user-select: none;
-  border-radius: $border-radius-chip;
+  border-radius: $neon-border-radius-chip;
   width: fit-content;
   font-weight: 400;
-  letter-spacing: $letter-spacing-m;
+  letter-spacing: $neon-letter-spacing-m;
 
   &--s {
-    @include chip-size($size-s, $font-size-xs, 4 * $base-space, 3 * $base-space);
+    @include chip-size($neon-size-s, $neon-font-size-xs, 4 * $neon-base-space, 3 * $neon-base-space);
   }
 
   &--m {
-    @include chip-size($size-m, $font-size-s, 4.5 * $base-space, 3 * $base-space);
+    @include chip-size($neon-size-m, $neon-font-size-s, 4.5 * $neon-base-space, 3 * $neon-base-space);
   }
 
   &--l {
-    @include chip-size($size-l, $base-font-size, 5 * $base-space, 5 * $base-space);
+    @include chip-size($neon-size-l, $neon-font-size-m, 5 * $neon-base-space, 5 * $neon-base-space);
   }
 
   &__close {
@@ -72,7 +72,7 @@
   }
 
   .neon-icon + .neon-chip__label {
-    margin-left: 2 * $base-space;
+    margin-left: 2 * $neon-base-space;
   }
 
   &--disabled {
@@ -86,5 +86,5 @@
 
 .neon-transition-chip-leave-active {
   transform: scale(0.5);
-  transition: transform $animation-speed-fast ease-in-out;
+  transition: transform $neon-animation-speed-fast ease-in-out;
 }

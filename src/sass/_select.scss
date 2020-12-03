@@ -7,7 +7,7 @@
   }
 
   &__options {
-    max-height: $max-height-dropdown;
+    max-height: $neon-max-height-dropdown;
     overflow-y: auto;
   }
 
@@ -43,10 +43,10 @@
       user-select: none;
       align-items: center;
       font-weight: 600;
-      font-size: $font-size-xs;
+      font-size: $neon-font-size-xs;
       text-transform: uppercase;
-      padding: 3 * $base-space 4 * $base-space $base-space;
-      letter-spacing: $letter-spacing-s;
+      padding: 3 * $neon-base-space 4 * $neon-base-space $neon-base-space;
+      letter-spacing: $neon-letter-spacing-s;
     }
 
     .neon-switch {
@@ -55,26 +55,26 @@
     }
 
     .neon-icon {
-      margin-right: 3 * $base-space;
+      margin-right: 3 * $neon-base-space;
     }
 
     .neon-select__option-container {
-      padding-left: 4 * $base-space;
-      padding-right: 4 * $base-space;
-      height: $size-m;
+      padding-left: 4 * $neon-base-space;
+      padding-right: 4 * $neon-base-space;
+      height: $neon-size-m;
       flex: 1 1 auto;
-      font-size: $font-size-s;
+      font-size: $neon-font-size-s;
     }
 
     .neon-icon {
-      width: $font-size-s;
-      height: $font-size-s;
+      width: $neon-font-size-s;
+      height: $neon-font-size-s;
     }
   }
 
   &--grouped:not(.neon-select--multiple) {
     .neon-select__option {
-      padding-left: 4 * $base-space;
+      padding-left: 4 * $neon-base-space;
     }
   }
 
@@ -95,7 +95,7 @@
     display: none;
 
     @include touchscreen {
-      font-size: $base-font-size;
+      font-size: $neon-font-size-m;
       display: flex;
       position: absolute;
       top: 0;

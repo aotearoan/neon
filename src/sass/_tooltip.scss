@@ -7,14 +7,14 @@
   width: fit-content;
 
   &--outline-border {
-    border-radius: $border-radius;
+    border-radius: $neon-border-radius;
   }
 
   &__content-wrapper {
     z-index: $z-index-above-3;
     position: absolute;
     display: none;
-    width: $tooltip-max-width;
+    width: $neon-tooltip-max-width;
     cursor: default;
     user-select: none;
   }
@@ -37,24 +37,23 @@
   }
 
   &__content {
-    max-width: $tooltip-max-width;
-    max-height: $tooltip-max-height;
+    max-width: $neon-tooltip-max-width;
+    max-height: $neon-tooltip-max-height;
     margin: auto;
     position: relative;
-    border-radius: $border-radius;
-    padding: $base-space 2 * $base-space;
-    font-size: $font-size-xs;
-    box-shadow: $box-shadow-dropdown;
+    border-radius: $neon-border-radius;
+    padding: $neon-base-space 2 * $neon-base-space;
+    font-size: $neon-font-size-xs;
     text-transform: none;
-    line-height: $line-height-ratio;
-    font-weight: 400;
+    line-height: $neon-line-height-ratio;
+    font-weight: 500;
   }
 
   &--top,
   &--bottom {
     .neon-tooltip__content-wrapper {
       left: 50%;
-      margin-left: -0.5 * $tooltip-max-width;
+      margin-left: -0.5 * $neon-tooltip-max-width;
     }
 
     .neon-tooltip__arrow,
@@ -66,22 +65,22 @@
 
   &--top {
     .neon-tooltip__content-wrapper {
-      bottom: calc(100% + #{$base-space});
+      bottom: calc(100% + #{$neon-base-space});
     }
 
     .neon-tooltip__arrow {
-      top: calc(100% + #{$base-space});
+      top: calc(100% + #{$neon-base-space});
       margin-top: -6px;
     }
   }
 
   &--bottom {
     .neon-tooltip__content-wrapper {
-      top: calc(100% + #{$base-space});
+      top: calc(100% + #{$neon-base-space});
     }
 
     .neon-tooltip__arrow {
-      bottom: calc(100% + #{$base-space});
+      bottom: calc(100% + #{$neon-base-space});
       margin-bottom: -6px;
     }
   }
@@ -89,9 +88,9 @@
   &--left,
   &--right {
     .neon-tooltip__content-wrapper {
-      height: $tooltip-max-height;
+      height: $neon-tooltip-max-height;
       top: calc(50% - 1px);
-      margin-top: -0.5 * $tooltip-max-height;
+      margin-top: -0.5 * $neon-tooltip-max-height;
     }
 
     .neon-tooltip__arrow,
@@ -103,7 +102,7 @@
 
   &--left {
     .neon-tooltip__content-wrapper {
-      right: calc(100% + #{$base-space});
+      right: calc(100% + #{$neon-base-space});
     }
 
     .neon-tooltip__content {
@@ -111,14 +110,14 @@
     }
 
     .neon-tooltip__arrow {
-      left: calc(100% + #{$base-space});
+      left: calc(100% + #{$neon-base-space});
       margin-left: -6px;
     }
   }
 
   &--right {
     .neon-tooltip__content-wrapper {
-      left: calc(100% + #{$base-space});
+      left: calc(100% + #{$neon-base-space});
     }
 
     .neon-tooltip__content {
@@ -126,7 +125,7 @@
     }
 
     .neon-tooltip__arrow {
-      right: calc(100% + #{$base-space});
+      right: calc(100% + #{$neon-base-space});
       margin-right: -6px;
     }
   }
@@ -156,17 +155,17 @@
   &--popover {
     .neon-tooltip {
       &__content {
-        max-width: $popover-max-width;
-        max-height: $popover-max-height;
-        font-size: $base-font-size;
-        padding: 4 * $base-space;
+        max-width: $neon-popover-max-width;
+        max-height: $neon-popover-max-height;
+        font-size: $neon-font-size-m;
+        padding: 4 * $neon-base-space;
         text-transform: none;
-        line-height: $line-height-ratio;
+        line-height: $neon-line-height-ratio;
         font-weight: 400;
       }
 
       &__content-wrapper {
-        width: $popover-max-width;
+        width: $neon-popover-max-width;
       }
 
       &__arrow {
@@ -176,72 +175,72 @@
 
     &.neon-tooltip--top {
       .neon-tooltip__content-wrapper {
-        width: $popover-max-width;
+        width: $neon-popover-max-width;
         left: 50%;
-        margin-left: -0.5 * $popover-max-width;
+        margin-left: -0.5 * $neon-popover-max-width;
       }
 
       .neon-tooltip__arrow {
-        top: calc(100% + #{$base-space + 1px});
+        top: calc(100% + #{$neon-base-space + 1px});
         margin-top: -6px;
       }
 
       .neon-tooltip__arrow-overlay {
-        top: calc(100% + #{$base-space - 1px});
+        top: calc(100% + #{$neon-base-space - 1px});
         margin-top: -6px;
       }
     }
 
     &.neon-tooltip--bottom {
       .neon-tooltip__content-wrapper {
-        width: $popover-max-width;
+        width: $neon-popover-max-width;
         left: 50%;
-        margin-left: -0.5 * $popover-max-width;
+        margin-left: -0.5 * $neon-popover-max-width;
       }
 
       .neon-tooltip__arrow {
-        bottom: calc(100% + #{$base-space + 1px});
+        bottom: calc(100% + #{$neon-base-space + 1px});
         margin-bottom: -6px;
       }
 
       .neon-tooltip__arrow-overlay {
-        bottom: calc(100% + #{$base-space - 1px});
+        bottom: calc(100% + #{$neon-base-space - 1px});
         margin-bottom: -6px;
       }
     }
 
     &.neon-tooltip--left {
       .neon-tooltip__content-wrapper {
-        height: $popover-max-height;
+        height: $neon-popover-max-height;
         top: 50%;
-        margin-top: -0.5 * $popover-max-height;
+        margin-top: -0.5 * $neon-popover-max-height;
       }
 
       .neon-tooltip__arrow {
-        left: calc(100% + #{$base-space + 1px});
+        left: calc(100% + #{$neon-base-space + 1px});
         margin-left: -6px;
       }
 
       .neon-tooltip__arrow-overlay {
-        left: calc(100% + #{$base-space - 1px});
+        left: calc(100% + #{$neon-base-space - 1px});
         margin-left: -6px;
       }
     }
 
     &.neon-tooltip--right {
       .neon-tooltip__content-wrapper {
-        height: $popover-max-height;
+        height: $neon-popover-max-height;
         top: 50%;
-        margin-top: -0.5 * $popover-max-height;
+        margin-top: -0.5 * $neon-popover-max-height;
       }
 
       .neon-tooltip__arrow {
-        right: calc(100% + #{$base-space + 1px});
+        right: calc(100% + #{$neon-base-space + 1px});
         margin-right: -6px;
       }
 
       .neon-tooltip__arrow-overlay {
-        right: calc(100% + #{$base-space - 1px});
+        right: calc(100% + #{$neon-base-space - 1px});
         margin-right: -6px;
       }
     }

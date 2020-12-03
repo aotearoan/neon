@@ -5,8 +5,10 @@
     align-items: center;
     font-weight: 500;
 
-    &--underlined .neon-tabs__menu-item {
-      top: 0.5 * $border-width-tabs;
+    &--underlined {
+      .neon-tabs__menu-item-container:before {
+        bottom: -$neon-border-width-tabs;
+      }
     }
   }
 
@@ -15,12 +17,12 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: calc(100% + #{$border-width});
+    height: 100%;
     user-select: none;
     cursor: pointer;
 
     & + .neon-tabs__menu-item {
-      margin-left: 6 * $base-space;
+      margin-left: 6 * $neon-base-space;
     }
 
     &:focus {
@@ -33,47 +35,65 @@
       outline: none;
       height: 100%;
       align-items: center;
-      border-bottom: $border-width-tabs $border-style transparent;
-      border-top: $border-width-tabs $border-style transparent;
       flex-direction: row;
+
+      &:before {
+        content: '';
+        display: flex;
+        width: 100%;
+        background-color: transparent;
+        position: absolute;
+        height: $neon-border-width-tabs;
+        bottom: 0;
+        border-radius: $neon-border-radius;
+        transition: all ease-in-out $neon-animation-speed-fast;
+      }
+    }
+
+    .neon-tabs__menu-item-container:focus {
+      &:before {
+        margin-left: $neon-base-space;
+        margin-right: $neon-base-space;
+        width: calc(100% - #{2 * $neon-base-space});
+      }
     }
   }
 
   &--s {
     .neon-tabs__menu-items {
-      height: $size-s;
-      font-size: $base-font-size;
+      height: $neon-size-s;
+      font-size: $neon-font-size-m;
 
       svg {
-        width: $base-font-size;
-        height: $base-font-size;
-        margin-right: $base-space;
+        width: $neon-font-size-m;
+        height: $neon-font-size-m;
+        margin-right: $neon-base-space;
       }
     }
   }
 
   &--m {
     .neon-tabs__menu-items {
-      height: $size-m;
-      font-size: $font-size-l;
+      height: $neon-size-m;
+      font-size: $neon-font-size-l;
 
       svg {
-        width: $font-size-l;
-        height: $font-size-l;
-        margin-right: 2 * $base-space;
+        width: $neon-font-size-l;
+        height: $neon-font-size-l;
+        margin-right: 2 * $neon-base-space;
       }
     }
   }
 
   &--l {
     .neon-tabs__menu-items {
-      height: $size-l;
-      font-size: $font-size-l;
+      height: $neon-size-l;
+      font-size: $neon-font-size-l;
 
       svg {
-        width: $font-size-l;
-        height: $font-size-l;
-        margin-right: 2 * $base-space;
+        width: $neon-font-size-l;
+        height: $neon-font-size-l;
+        margin-right: 2 * $neon-base-space;
       }
     }
   }
@@ -82,7 +102,7 @@
 .neon-tab {
   position: relative;
   display: none;
-  border-radius: $border-radius;
+  border-radius: $neon-border-radius;
   @include padding-vertical;
 
   &--selected {
@@ -92,13 +112,13 @@
   &:before {
     content: '';
     position: absolute;
-    top: $base-space;
+    top: $neon-base-space;
     right: 0;
-    width: 2 * $base-space;
-    height: 2 * $base-space;
-    border-radius: $border-radius;
+    width: 2 * $neon-base-space;
+    height: 2 * $neon-base-space;
+    border-radius: $neon-border-radius;
     display: flex;
-    transition: all $animation-speed-fast ease-in-out;
+    transition: all $neon-animation-speed-fast ease-in-out;
   }
 
   &:focus {

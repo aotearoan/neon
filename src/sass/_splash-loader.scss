@@ -17,29 +17,29 @@
 
   &--s {
     .neon-icon {
-      width: $size-s;
-      height: $size-s;
+      width: $neon-size-s;
+      height: $neon-size-s;
     }
   }
 
   &--m {
     .neon-icon {
-      width: $size-m;
-      height: $size-m;
+      width: $neon-size-m;
+      height: $neon-size-m;
     }
   }
 
   &--l {
     .neon-icon {
-      width: $size-l;
-      height: $size-l;
+      width: $neon-size-l;
+      height: $neon-size-l;
     }
   }
 
   &--xl {
     .neon-icon {
-      width: 2 * $size-l;
-      height: 2 * $size-l;
+      width: 2 * $neon-size-l;
+      height: 2 * $neon-size-l;
     }
   }
 }
@@ -47,7 +47,7 @@
 .neon-fade-transition {
   &-enter-active,
   &-leave-active {
-    transition: opacity ease-in-out $animation-speed-fast;
+    transition: opacity ease-in-out $neon-animation-speed-fast;
   }
 
   &-enter,

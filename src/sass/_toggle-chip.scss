@@ -1,12 +1,26 @@
+@mixin neon-toggle-chip-size($neon-toggle-chip-size, $neon-toggle-chip-font-size, $neon-toggle-chip-padding) {
+  height: $neon-toggle-chip-size;
+  font-size: $neon-toggle-chip-font-size;
+  padding-left: $neon-toggle-chip-padding;
+  padding-right: $neon-toggle-chip-padding;
+
+  &.neon-toggle-chip--checked {
+    .neon-toggle-chip__checked {
+      width: $neon-toggle-chip-font-size;
+      height: $neon-toggle-chip-font-size;
+    }
+  }
+}
+
 .neon-toggle-chip {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: fit-content;
   cursor: pointer;
-  border: $border-width $border-style;
-  border-radius: $border-radius;
-  transition: all ease-in-out $animation-speed-fast;
+  border: $neon-border-width $neon-border-style;
+  border-radius: $neon-border-radius;
+  transition: width ease-in-out $neon-animation-speed-fast, background-color ease-in-out $neon-animation-speed-fast;
 
   &:focus {
     outline: none;
@@ -30,65 +44,25 @@
 
   &--checked {
     .neon-toggle-chip__checked {
-      margin-right: 2 * $base-space;
+      margin-right: 2 * $neon-base-space;
       opacity: 1;
     }
   }
 
   &--xs {
-    height: $size-xs;
-    font-size: $font-size-xs;
-    padding-left: 2 * $base-space;
-    padding-right: 2 * $base-space;
-
-    &.neon-toggle-chip--checked {
-      .neon-toggle-chip__checked {
-        width: $font-size-xs;
-        height: $font-size-xs;
-      }
-    }
+    @include neon-toggle-chip-size($neon-size-xs, $neon-font-size-xs, 2 * $neon-base-space);
   }
 
   &--s {
-    height: $size-s;
-    font-size: $font-size-s;
-    padding-left: 2.5 * $base-space;
-    padding-right: 2.5 * $base-space;
-
-    &.neon-toggle-chip--checked {
-      .neon-toggle-chip__checked {
-        width: $font-size-s;
-        height: $font-size-s;
-      }
-    }
+    @include neon-toggle-chip-size($neon-size-s, $neon-font-size-s, 2.5 * $neon-base-space);
   }
 
   &--m {
-    height: $size-m;
-    font-size: $font-size-s;
-    padding-left: 3.5 * $base-space;
-    padding-right: 3.5 * $base-space;
-
-    &.neon-toggle-chip--checked {
-      .neon-toggle-chip__checked {
-        width: $font-size-s;
-        height: $font-size-s;
-      }
-    }
+    @include neon-toggle-chip-size($neon-size-m, $neon-font-size-m, 3.5 * $neon-base-space);
   }
 
   &--l {
-    height: $size-l;
-    font-size: $base-font-size;
-    padding-left: 5 * $base-space;
-    padding-right: 5 * $base-space;
-
-    &.neon-toggle-chip--checked {
-      .neon-toggle-chip__checked {
-        width: $base-font-size;
-        height: $base-font-size;
-      }
-    }
+    @include neon-toggle-chip-size($neon-size-l, $neon-font-size-l, 5 * $neon-base-space);
   }
 
   &:active:not(.neon-toggle-chip--disabled):not(.neon-toggle-chip--show-check) {

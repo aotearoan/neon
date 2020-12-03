@@ -1,14 +1,14 @@
 .neon-skeleton-loader {
   &__item {
-    background-color: $color-loading-1;
+    background-color: $neon-color-loading-1;
 
     &::after {
       background-image: linear-gradient(
         90deg,
-        $color-loading-1 0,
-        $color-loading-2 33%,
-        $color-loading-3 66%,
-        $color-loading-1
+        $neon-color-loading-1 0,
+        $neon-color-loading-2 33%,
+        $neon-color-loading-3 66%,
+        $neon-color-loading-1
       );
     }
   }

@@ -92,6 +92,7 @@ export default class DropdownMenu extends Vue {
   <neon-dropdown-menu color="brand" label="Brand" :model="modelWithIcons" />
   <neon-dropdown-menu color="primary" label="Primary" :model="modelWithIcons" />
   <neon-dropdown-menu color="info" label="Info" :model="modelWithIcons" />
+  <neon-dropdown-menu color="success" label="Success" :model="modelWithIcons" />
   <neon-dropdown-menu color="warn" label="Warning" :model="modelWithIcons" />
   <neon-dropdown-menu color="error" label="Error" :model="modelWithIcons" />
 </div>`,

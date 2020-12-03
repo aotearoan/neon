@@ -43,4 +43,10 @@ export default class NeonLabel extends Vue {
    */
   @Prop({ default: NeonFunctionalColor.Neutral })
   public color!: NeonFunctionalColor;
+
+  /**
+   * Alternate color for creating gradient labels. NOTE: can also be the same color as 'color'.
+   */
+  @Prop()
+  public alternateColor?: NeonFunctionalColor;
 }

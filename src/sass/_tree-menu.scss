@@ -4,10 +4,10 @@
   &__anchor {
     display: flex;
     width: 100%;
-    letter-spacing: $letter-spacing-s;
-    border-radius: $border-radius;
-    padding-top: 0.5 * $base-space;
-    padding-bottom: 0.5 * $base-space;
+    letter-spacing: $neon-letter-spacing-s;
+    border-radius: $neon-border-radius;
+    padding-top: 0.5 * $neon-base-space;
+    padding-bottom: 0.5 * $neon-base-space;
     margin: 0;
     text-decoration: none;
     user-select: none;
@@ -28,7 +28,7 @@
 
   .neon-tree-menu__section {
     & > .neon-tree-menu__link {
-      font-size: $base-font-size;
+      font-size: $neon-font-size-m;
     }
 
     .neon-tree-menu__links {
@@ -45,15 +45,15 @@
   .neon-tree-menu__link-item {
     .neon-tree-menu__link {
       font-weight: 400;
-      margin-bottom: 0.5 * $base-space;
-      padding-left: 4 * $base-space;
+      margin-bottom: 0.5 * $neon-base-space;
+      padding-left: 4 * $neon-base-space;
     }
 
     .neon-tree-menu__anchor {
       font-weight: 400;
-      margin-bottom: 0.5 * $base-space;
-      padding-left: 8 * $base-space;
-      font-size: $font-size-s;
+      margin-bottom: 0.5 * $neon-base-space;
+      padding-left: 8 * $neon-base-space;
+      font-size: $neon-font-size-s;
     }
   }
 

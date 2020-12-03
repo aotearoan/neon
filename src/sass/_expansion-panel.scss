@@ -10,7 +10,7 @@
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    letter-spacing: $letter-spacing-s;
+    letter-spacing: $neon-letter-spacing-s;
     font-weight: 300;
     @include padding-horizontal(0.75);
     padding-top: 0;
@@ -32,7 +32,7 @@
     outline: none;
 
     .neon-icon {
-      margin-right: 2 * $base-space;
+      margin-right: 2 * $neon-base-space;
     }
   }
 
@@ -45,60 +45,60 @@
     }
 
     @include responsive(mobile-large) {
-      padding-bottom: 0.75 * $spacing-vertical-mobile;
+      padding-bottom: 0.75 * $neon-spacing-vertical-mobile;
     }
   }
 
   &--s {
     &:not(.neon-expansion-panel--expanded) {
-      height: $size-s;
-      max-height: $size-s;
+      height: $neon-size-s;
+      max-height: $neon-size-s;
     }
 
     .neon-expansion-panel__header {
-      height: $size-s;
-      max-height: $size-s;
-      font-size: $font-size-s;
+      height: $neon-size-s;
+      max-height: $neon-size-s;
+      font-size: $neon-font-size-s;
 
       .neon-icon {
-        width: $font-size-s;
-        height: $font-size-s;
+        width: $neon-font-size-s;
+        height: $neon-font-size-s;
       }
     }
   }
 
   &--m {
     &:not(.neon-expansion-panel--expanded) {
-      height: $size-m;
-      max-height: $size-m;
+      height: $neon-size-m;
+      max-height: $neon-size-m;
     }
 
     .neon-expansion-panel__header {
-      height: $size-m;
-      max-height: $size-m;
-      font-size: $base-font-size;
+      height: $neon-size-m;
+      max-height: $neon-size-m;
+      font-size: $neon-font-size-m;
 
       .neon-icon {
-        width: $base-font-size;
-        height: $base-font-size;
+        width: $neon-font-size-m;
+        height: $neon-font-size-m;
       }
     }
   }
 
   &--l {
     &:not(.neon-expansion-panel--expanded) {
-      height: $size-l;
-      max-height: $size-l;
+      height: $neon-size-l;
+      max-height: $neon-size-l;
     }
 
     .neon-expansion-panel__header {
-      height: $size-l;
-      max-height: $size-l;
-      font-size: $font-size-l;
+      height: $neon-size-l;
+      max-height: $neon-size-l;
+      font-size: $neon-font-size-l;
 
       .neon-icon {
-        width: $font-size-l;
-        height: $font-size-l;
+        width: $neon-font-size-l;
+        height: $neon-font-size-l;
       }
     }
   }
@@ -115,7 +115,7 @@
       justify-content: center;
 
       .neon-expansion-panel__label-container {
-        margin-right: 2 * $base-space;
+        margin-right: 2 * $neon-base-space;
       }
     }
 
@@ -126,5 +126,13 @@
 
   .neon-expansion-indicator {
     margin-right: -3px;
+  }
+
+  &--full-width {
+    .neon-expansion-panel__header,
+    .neon-expansion-panel__content {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }

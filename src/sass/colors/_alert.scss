@@ -1,31 +1,29 @@
 $alert-colors: (
-  info: $info-palette,
-  success: $success-palette,
-  warn: $warn-palette,
-  error: $error-palette,
+  info: $neon-info-palette,
+  success: $neon-success-palette,
+  warn: $neon-warn-palette,
+  error: $neon-error-palette,
 );
 
 .neon-alert {
   @include scrollbars;
 
   .neon-alert__message {
-    box-shadow: $box-shadow-alert;
+    box-shadow: $neon-box-shadow-alert;
 
     @each $color, $palette in $alert-colors {
-      $alert-color: map-get($palette, $color-alert);
+      $alert-color: map-get($palette, $neon-color-alert);
 
       &.neon-alert__message--#{$color} {
-        background-color: $color-inverse;
+        background-color: $neon-color-inverse;
 
-        @if ($theme == 'classic') {
+        @if ($neon-theme == 'sharp') {
+          border: $neon-border-width-alert $neon-border-style $alert-color;
+        } @else {
           @supports (backdrop-filter: none) {
             background-color: rgba($alert-color, 0.15);
             backdrop-filter: blur(20px);
           }
-        }
-
-        @if ($theme == 'sharp') {
-          border: $border-width-alert $border-style $alert-color;
         }
 
         &:focus-within:not(.neon-alert__message--with-actions) {
@@ -37,24 +35,28 @@ $alert-colors: (
         }
 
         .neon-alert__actions {
-          border-left: $border-width $border-style rgba($alert-color, $border-opacity-alert-action);
+          border-left: $neon-border-width-alert
+            $neon-border-style
+            rgba($alert-color, $neon-border-opacity-alert-action);
 
-          a {
+          .neon-alert__action {
+            transition: all $neon-animation-speed-fast ease-in-out;
             color: rgba($alert-color, 0.5);
 
+            &:focus,
             &:hover {
               color: $alert-color;
               text-decoration: none;
             }
 
             &:focus {
-              @include box-shadow-outline($alert-color);
+              background-color: rgba($alert-color, 0.125);
             }
           }
         }
 
         .neon-alert__action + .neon-alert__action {
-          border-top: $border-width $border-style rgba($alert-color, $border-opacity-alert-action);
+          border-top: $neon-border-width-alert $neon-border-style rgba($alert-color, $neon-border-opacity-alert-action);
         }
       }
     }

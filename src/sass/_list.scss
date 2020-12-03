@@ -1,8 +1,8 @@
 .neon-list {
   &__item {
     cursor: pointer;
-    border-radius: $border-radius;
-    font-size: $font-size-s;
+    border-radius: $neon-border-radius;
+    font-size: $neon-font-size-s;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -23,33 +23,33 @@
     }
 
     .neon-icon {
-      width: 4 * $base-space;
-      min-width: 4 * $base-space;
-      min-height: 4 * $base-space;
-      height: 4 * $base-space;
+      width: 4 * $neon-base-space;
+      min-width: 4 * $neon-base-space;
+      min-height: 4 * $neon-base-space;
+      height: 4 * $neon-base-space;
     }
 
     & + .neon-list__item {
-      margin-top: $base-space;
+      margin-top: $neon-base-space;
     }
   }
 
   &--s {
     .neon-list__item {
-      padding: 0.25 * $base-space 1.5 * $base-space;
+      padding: 0.25 * $neon-base-space 1.5 * $neon-base-space;
     }
   }
 
   &--m {
     .neon-list__item {
-      padding: 1.25 * $base-space 2 * $base-space;
+      padding: 1.25 * $neon-base-space 2 * $neon-base-space;
     }
   }
 
   &--l {
     .neon-list__item {
-      font-size: $base-font-size;
-      padding: 1.375 * $base-space 3 * $base-space;
+      font-size: $neon-font-size-m;
+      padding: 1.375 * $neon-base-space 3 * $neon-base-space;
     }
   }
 
@@ -63,5 +63,5 @@
 .neon-transition-list-item-leave-active {
   transform: scale(0);
   opacity: 0;
-  transition: all $animation-speed-slow ease-in-out;
+  transition: all $neon-animation-speed-slow ease-in-out;
 }

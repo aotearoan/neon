@@ -1,7 +1,7 @@
 .neon-select {
   &__option {
     &--separator-before {
-      border-top: $border-width $border-style $border-color-dropdown;
+      border-top: $neon-border-width-separator-before $neon-border-style $neon-border-color-dropdown;
 
       &:first-child {
         border-top: none;
@@ -9,13 +9,13 @@
     }
 
     .neon-link {
-      color: $color-text;
+      color: $neon-color-text;
     }
 
     &--disabled {
       &,
       .neon-link {
-        color: $color-disabled-light;
+        color: $neon-color-disabled-light;
       }
     }
   }
@@ -24,15 +24,15 @@
     @include scrollbars;
   }
 
-  @each $color, $palette in $functional-colors {
+  @each $color, $palette in $neon-functional-colors {
     &--#{$color} {
       .neon-select__option {
         &--selected {
-          background-color: rgba(map-get($palette, $background-color-dropdown-menu-highlight), 0.2);
+          background-color: rgba(map-get($palette, $neon-background-color-dropdown-menu-highlight), 0.2);
         }
 
         &--highlighted:not(.neon-select__option--disabled):not(.neon-select__option--selected) {
-          background-color: rgba(map-get($palette, $background-color-dropdown-menu-highlight), 0.05);
+          background-color: rgba(map-get($palette, $neon-background-color-dropdown-menu-highlight), 0.05);
         }
       }
     }
@@ -47,7 +47,7 @@
     .neon-select__option {
       &--separator-before {
         &:first-child {
-          border-top: $border-width $border-style $border-color-dropdown;
+          border-top: $neon-border-width-separator-before $neon-border-style $neon-border-color-dropdown;
         }
 
         &:last-child {

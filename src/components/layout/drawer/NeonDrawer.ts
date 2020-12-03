@@ -3,7 +3,9 @@ import { NeonPosition } from '../../../common/enums/NeonPosition';
 import { NeonClosableUtils } from '../../../common/utils/NeonClosableUtils';
 
 /**
- * A drawer is a slide out panel for representing data which may be secondary or not fit on the main screen. Examples are a responsive navigation menu, more details of a selected item on the page. Drawers can be opened from top, bottom, left or right and an overlay covers the screen to focus more attention on the drawer contents.
+ * A drawer is a slide out panel for representing data which may be secondary or not fit on the main screen. Examples
+ * are a responsive navigation menu, more details of a selected item on the page. Drawers can be opened from top,
+ * bottom, left or right and an overlay covers the screen to focus more attention on the drawer contents.
  */
 @Component
 export default class NeonDrawer extends Vue {
@@ -18,6 +20,12 @@ export default class NeonDrawer extends Vue {
    */
   @Prop({ required: true })
   public open!: boolean;
+
+  /**
+   * Whether or not the user is allowed to dismiss the modal by clicking outside of the modal or pressing escape.
+   */
+  @Prop({ default: true })
+  public dismissable!: boolean;
 
   /**
    * If true, remove the padding applied to the drawer.
@@ -38,7 +46,9 @@ export default class NeonDrawer extends Vue {
   public overlay!: boolean;
 
   public mounted() {
-    this.closableUtils = new NeonClosableUtils(this.$refs.drawer, this.close);
+    if (this.dismissable) {
+      this.closableUtils = new NeonClosableUtils(this.$refs.drawer, this.close);
+    }
   }
 
   @Watch('open', { immediate: true })

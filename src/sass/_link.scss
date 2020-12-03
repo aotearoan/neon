@@ -16,10 +16,9 @@ a[href]:not(.neon-link--no-style),
   position: relative;
 
   &__external-indicator {
-    width: $font-size-s;
-    height: $font-size-s;
-    margin-left: $base-space;
-    margin-right: 2 * $base-space;
+    width: $neon-font-size-s;
+    height: $neon-font-size-s;
+    margin-left: $neon-base-space;
     vertical-align: -2px;
     opacity: 0.5;
   }
@@ -30,15 +29,15 @@ a[href]:not(.neon-link--no-style),
     }
   }
 
-  &.neon-link--outline-text.neon-link--external-link {
+  &.neon-link--outline-text.neon-link--with-external-indicator {
     &:after {
-      width: calc(100% - #{6 * $base-space});
+      width: calc(100% - #{4.5 * $neon-base-space});
     }
 
     &:hover,
     &:focus {
       &:after {
-        width: calc(100% - #{6 * $base-space});
+        width: calc(100% - #{4.5 * $neon-base-space});
       }
     }
   }

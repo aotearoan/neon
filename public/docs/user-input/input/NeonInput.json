@@ -93,6 +93,18 @@
       }
     },
     {
+      "name": "hideIcon",
+      "tags": {},
+      "description": "Hide the icon button, e.g. the X button to clear the input's contents.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
       "name": "pattern",
       "tags": {},
       "description": "A regular expression for filtering valid values in the input",
@@ -122,6 +134,30 @@
       "defaultValue": {
         "func": false,
         "value": "false"
+      }
+    },
+    {
+      "name": "stateHighlight",
+      "tags": {},
+      "description": "When the state is success or error, display the field with the state color indicator, e.g. border or background\ncolor.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    },
+    {
+      "name": "stateIcon",
+      "tags": {},
+      "description": "When the state is success or error, display the state icon.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
       }
     }
   ],

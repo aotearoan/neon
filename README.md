@@ -28,6 +28,7 @@ export default class App extends Vue {}
 ### SASS
 First select a theme:
 <ul>
+  <li>smooth</li>
   <li>classic</li>
   <li>sharp</li>
 </ul>
@@ -39,16 +40,16 @@ First select a theme:
 <pre>
 .app {
   &.neon-theme--classic {
-    // override colors, palettes and other basic variables here BEFORE importing the theme, e.g. $color-primary: #bada55
+    // override colors, palettes and other basic variables here BEFORE importing the theme, e.g. $neon-color-primary: #bada55
     @import '~@aotearoan/neon/themes/classic/theme';
     // include custom app SASS here (you can use neon's defined variables, mixins and functions)
     &.neon-mode--dark {
-      // override dark mode specific variables here, e.g. $border-color: #bada55
+      // override dark mode specific variables here, e.g. $neon-border-color: #bada55
       @import '~@aotearoan/neon/themes/classic/dark';
       // include custom app dark mode SASS here (you can use neon's defined variables, mixins and functions)
     }
     &.neon-mode--light {
-      // override light mode specific variables here, e.g. $border-color: #bada55
+      // override light mode specific variables here, e.g. $neon-border-color: #bada55
       @import '~@aotearoan/neon/themes/classic/light';
       // include custom app light mode SASS here (you can use neon's defined variables, mixins and functions)
     }

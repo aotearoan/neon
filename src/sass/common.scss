@@ -1,15 +1,15 @@
 /* generate color palettes */
 @import './includes/farbig/farbig';
 
-$neutral-palette: neutral-palette() !default;
-$low-contrast-palette: low-contrast-palette() !default;
-$high-contrast-palette: high-contrast-palette() !default;
-$brand-palette: generate-palette($color-brand) !default;
-$primary-palette: generate-palette($color-primary) !default;
-$info-palette: generate-palette($color-info) !default;
-$success-palette: generate-palette($color-success) !default;
-$warn-palette: generate-palette($color-warn) !default;
-$error-palette: generate-palette($color-error) !default;
+$neon-neutral-palette: neutral-palette() !default;
+$neon-low-contrast-palette: low-contrast-palette() !default;
+$neon-high-contrast-palette: high-contrast-palette() !default;
+$neon-brand-palette: generate-palette($neon-color-brand) !default;
+$neon-primary-palette: generate-palette($neon-color-primary) !default;
+$neon-info-palette: generate-palette($neon-color-info) !default;
+$neon-success-palette: generate-palette($neon-color-success) !default;
+$neon-warn-palette: generate-palette($neon-color-warn) !default;
+$neon-error-palette: generate-palette($neon-color-error) !default;
 
 @import './colors/colors';
 @import './includes/includes';
@@ -65,3 +65,4 @@ $error-palette: generate-palette($color-error) !default;
 @import 'number';
 @import 'slider';
 @import 'range-slider';
+@import 'dialog';

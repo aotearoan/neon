@@ -20,8 +20,11 @@ export default class Label extends Vue {
     {
       title: 'Label sizes',
       template: `<div class="example--horizontal">
+  <neon-label size="xxs" label="XX Small" />
   <neon-label size="xs" label="Extra small" />
   <neon-label size="s" label="Small" />
+  <neon-label size="m" label="Medium" />
+  <neon-label size="l" label="Large" />
 </div>`,
     },
     {
@@ -31,6 +34,15 @@ export default class Label extends Vue {
   <neon-label color="brand" label="Brand" />
   <neon-label color="primary" label="Primary" />
   <neon-label color="info" label="Info" />
+</div>`,
+    },
+    {
+      title: 'Gradient labels',
+      template: `<div class="example--horizontal">
+  <neon-label color="primary" alternate-color="primary" label="Primary" />
+  <neon-label color="success" alternate-color="success" label="Success" />
+  <neon-label color="brand" alternate-color="primary" label="Covfefe" />
+  <neon-label color="primary" alternate-color="brand" label="Hamberders" />
 </div>`,
     },
     {

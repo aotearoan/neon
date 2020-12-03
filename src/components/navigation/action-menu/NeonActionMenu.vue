@@ -17,8 +17,10 @@
           @click="!item.disabled && onClick(item.key)"
           @keydown.space="!item.disabled && onClick(item.key)"
           @keypress.space.prevent=""
-          >{{ item.label }}</neon-link
         >
+          <div class="neon-action-menu__link-label">{{ item.label }}</div>
+          <div v-if="item.count" class="neon-action-menu__link-count">{{ item.count.toLocaleString() }}</div>
+        </neon-link>
       </li>
     </ul>
   </nav>

@@ -17,6 +17,18 @@
       }
     },
     {
+      "name": "size",
+      "tags": {},
+      "description": "The size of the card, this only adjusts the padding where more compact cards are required.",
+      "type": {
+        "name": "NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
       "name": "horizontalBreakpoint",
       "tags": {
         "type": [

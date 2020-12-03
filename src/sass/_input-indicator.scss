@@ -4,7 +4,7 @@
   justify-content: center;
   user-select: none;
   font-weight: 400;
-  letter-spacing: $letter-spacing-s;
+  letter-spacing: $neon-letter-spacing-s;
 
   &__label {
     display: flex;
@@ -13,7 +13,7 @@
   }
 
   &--s {
-    height: $size-s;
+    height: $neon-size-s;
 
     .neon-input-indicator__label {
       @include padding-horizontal(0.33);
@@ -21,17 +21,17 @@
 
     .neon-input-indicator__label,
     .neon-icon {
-      min-width: $size-s;
+      min-width: $neon-size-s;
     }
 
     .neon-icon {
-      width: $base-font-size;
-      height: $base-font-size;
+      width: $neon-font-size-m;
+      height: $neon-font-size-m;
     }
   }
 
   &--m {
-    height: $size-m;
+    height: $neon-size-m;
 
     .neon-input-indicator__label {
       @include padding-horizontal(0.5);
@@ -39,17 +39,17 @@
 
     .neon-input-indicator__label,
     .neon-icon {
-      min-width: $size-m;
+      min-width: $neon-size-m;
     }
 
     .neon-icon {
-      width: $font-size-l;
-      height: $font-size-l;
+      width: $neon-font-size-l;
+      height: $neon-font-size-l;
     }
   }
 
   &--l {
-    height: $size-l;
+    height: $neon-size-l;
 
     .neon-input-indicator__label {
       @include padding-horizontal(0.5);
@@ -57,12 +57,12 @@
 
     .neon-input-indicator__label,
     .neon-icon {
-      min-width: $size-l;
+      min-width: $neon-size-l;
     }
 
     .neon-icon {
-      width: $font-size-l;
-      height: $font-size-l;
+      width: $neon-font-size-l;
+      height: $neon-font-size-l;
     }
   }
 }

@@ -4,6 +4,8 @@
       <neon-card-header>
         <h1 class="neon-h3">Getting Started</h1>
       </neon-card-header>
+    </neon-card>
+    <neon-card>
       <neon-card-body>
         <neon-anchor id="installation" />
         <h2 class="neon-h4">Installation</h2>
@@ -23,6 +25,7 @@
         <h2 class="neon-h4">SASS</h2>
         <span>First select a theme:</span>
         <ul>
+          <li>smooth</li>
           <li>classic</li>
           <li>sharp</li>
         </ul>

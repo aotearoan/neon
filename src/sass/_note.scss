@@ -4,15 +4,15 @@ blockquote,
   flex-direction: row;
   width: 100%;
   margin: 0;
-  border-radius: $border-radius;
+  border-radius: $neon-border-radius;
 
   span {
     display: inline;
   }
 
   &__icon.neon-icon {
-    margin-right: 4 * $base-space;
-    $note-icon-size: 1.5 * $base-font-size;
+    margin-right: 4 * $neon-base-space;
+    $note-icon-size: 1.5 * $neon-font-size-m;
     width: $note-icon-size;
     min-width: $note-icon-size;
     height: $note-icon-size;
@@ -32,21 +32,21 @@ blockquote,
 
     &.neon-button {
       @include responsive(larger-than-tablet) {
-        margin: 2 * $base-space;
+        margin: 2 * $neon-base-space;
       }
 
       @include responsive(tablet) {
-        margin: $base-space;
+        margin: $neon-base-space;
       }
 
       @include responsive(mobile-large) {
-        margin: 0.5 * $base-space;
+        margin: 0.5 * $neon-base-space;
       }
     }
   }
 
   & + p {
-    margin-top: 4 * $base-space;
+    margin-top: 4 * $neon-base-space;
   }
 }
 
@@ -65,7 +65,7 @@ h5,
 h6 {
   & + blockquote,
   & + .neon-note {
-    margin-top: 2 * $base-space;
+    margin-top: 2 * $neon-base-space;
   }
 }
 

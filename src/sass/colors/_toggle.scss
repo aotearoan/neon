@@ -6,34 +6,34 @@
   }
 
   &--radio-buttons {
-    @each $color, $palette in $functional-colors {
+    @each $color, $palette in $neon-functional-colors {
       &.neon-toggle--#{$color}:not(.neon-toggle--disabled) {
-        $toggle-color: map-get($palette, $color-toggle);
+        $toggle-color: map-get($palette, $neon-color-toggle);
 
         .neon-toggle__label:not(.neon-toggle__label--disabled) {
           .neon-toggle__radio-button {
-            border: $border-width $border-style $border-color-toggle;
-            background: $background-radio-button;
+            border: $neon-border-width-radio-button $neon-border-style $neon-border-color-toggle;
+            background: $neon-background-radio-button;
           }
 
-          color: $color-radio-button-label;
+          color: $neon-color-radio-button-label;
 
           &:hover,
           &:focus {
             .neon-toggle__radio-button {
-              background: rgba($border-color-toggle, 0.375);
+              background: rgba($neon-border-color-toggle, 0.375);
             }
           }
 
           &.neon-toggle__label--checked {
-            color: $color-text;
+            color: $neon-color-text;
 
             .neon-toggle__radio-button {
-              border: $border-width $border-style $toggle-color;
+              border: $neon-border-width-radio-button $neon-border-style $toggle-color;
 
               &-indicator {
                 background-color: $toggle-color;
-                box-shadow: $box-shadow;
+                box-shadow: $neon-box-shadow;
               }
             }
           }
@@ -43,15 +43,15 @@
 
     &.neon-toggle--disabled .neon-toggle__label,
     .neon-toggle__label--disabled {
-      color: $color-disabled-light;
+      color: $neon-color-disabled-light;
 
       .neon-toggle__radio-button {
-        background: $color-disabled-dark;
-        color: $color-disabled-light;
-        border-color: $color-disabled-dark;
+        background: $neon-color-disabled-dark;
+        color: $neon-color-disabled-light;
+        border-color: $neon-color-disabled-dark;
 
         &-indicator {
-          background-color: $color-disabled-light;
+          background-color: $neon-color-disabled-light;
         }
       }
     }
