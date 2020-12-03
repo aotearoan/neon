@@ -17,7 +17,6 @@
       &.neon-input--focused {
         .neon-input__text,
         .neon-input__textarea {
-          @debug index($neon-neutral-colors, $color);
           @if ($neon-theme == smooth and not index($neon-neutral-colors, $color)) {
             background-color: rgba(map-get($palette, $neon-color-input-selected), 0.125);
 

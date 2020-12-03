@@ -46,12 +46,8 @@
       $input-color: map-get($palette, $neon-color-input-selected);
       &--#{$color} {
         &:focus-within {
-          @if ($neon-theme == smooth) {
-            background-color: rgba($input-color, 0.75);
-          } @else {
-            border-color: $input-color;
-            background-color: $neon-background-color-input-active;
-          }
+          border-color: $input-color;
+          background-color: $neon-background-color-input-active;
         }
       }
     }
