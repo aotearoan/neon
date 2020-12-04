@@ -59,3 +59,7 @@ First select a theme:
 
 Finally, the theme and mode (light/dark) need to be set on the document, e.g. to set the <em>classic</em> theme and <em>dark</em> mode:
 <pre>&lt;html class="app neon neon-theme--classic neon-mode--dark"&gt;</pre>
+
+[![Stargazers repo roster for @aotearoan/neon](https://reporoster.com/stars/aotearoan/neon)](https://github.com/aotearoan/neon/stargazers)
+
+[![Forkers repo roster for @aotearoan/neon](https://reporoster.com/forks/aotearoan/neon)](https://github.com/aotearoan/neon/network/members)
