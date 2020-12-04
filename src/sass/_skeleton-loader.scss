@@ -19,8 +19,12 @@
     border-radius: $neon-border-radius-skeleton-loader;
     position: relative;
     overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
 
-    &::after {
+    &:after {
       content: '';
       position: absolute;
       top: 0;
