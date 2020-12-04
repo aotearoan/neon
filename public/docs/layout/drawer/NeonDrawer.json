@@ -1,5 +1,5 @@
 {
-  "description": "A drawer is a slide out panel for representing data which may be secondary or not fit on the main screen. Examples are a responsive navigation menu, more details of a selected item on the page. Drawers can be opened from top, bottom, left or right and an overlay covers the screen to focus more attention on the drawer contents.",
+  "description": "A drawer is a slide out panel for representing data which may be secondary or not fit on the main screen. Examples\nare a responsive navigation menu, more details of a selected item on the page. Drawers can be opened from top,\nbottom, left or right and an overlay covers the screen to focus more attention on the drawer contents.",
   "tags": {},
   "displayName": "NeonDrawer",
   "exportName": "default",
