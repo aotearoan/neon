@@ -1,4 +1,4 @@
-## <img src="./logo.png">
+## <img src="./logo.svg">
 
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/aotearoan/neon)
 ![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/@aotearoan/neon)
