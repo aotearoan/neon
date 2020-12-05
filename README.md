@@ -1,4 +1,6 @@
-## <img src="./logo.svg">
+## <img src="./logo.png">
+
+_A lightweight VueJS Design System_
 
 _A lightweight VueJS Design System_
 
