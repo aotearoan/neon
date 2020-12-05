@@ -1,5 +1,7 @@
 ## <img src="./logo.png">
 
+_A lightweight VueJS Design System_
+
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/aotearoan/neon)
 ![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/@aotearoan/neon)
 ![GitHub last commit](https://img.shields.io/github/last-commit/aotearoan/neon)
