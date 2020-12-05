@@ -1,4 +1,10 @@
-# neon
+## <img src="./logo.png">
+
+![GitHub package.json version](https://img.shields.io/github/package-json/v/aotearoan/neon)
+![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/@aotearoan/neon)
+![GitHub last commit](https://img.shields.io/github/last-commit/aotearoan/neon)
+![npm](https://img.shields.io/npm/dt/@aotearoan/neon)
+![GitHub](https://img.shields.io/github/license/aotearoan/neon)
 
 ## Documentation & Demo
 Full documentation is available on the [demo site](https://aotearoan.github.io/neon/).
