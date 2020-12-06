@@ -59,6 +59,7 @@
               color="high-contrast"
               button-style="text"
               :size="isMobile ? 's' : 'l'"
+              aria-label="View on GitHub"
             />
             <neon-button
               name="dark-mode-toggle"
