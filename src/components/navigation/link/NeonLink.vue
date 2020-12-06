@@ -28,6 +28,7 @@
     tabindex="0"
     @click="onClick"
     @keydown.enter="onClick"
+    rel="noopener"
   >
     <span class="neon-link__label">
       <!-- @slot the content of the link -->
