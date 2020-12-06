@@ -173,9 +173,9 @@ $spacing: (
   width: calc(#{$n} * var(--vw, 1vw) - #{$offset});
 }
 
-@mixin side-nav-offset($offset: 0px) {
+@mixin side-nav-offset {
   @include responsive(larger-than-tablet) {
-    margin-left: $neon-side-nav-width + $offset;
-    @include width(100, $neon-side-nav-width + $offset);
+    margin-left: $neon-side-nav-width;
+    width: auto;
   }
 }
