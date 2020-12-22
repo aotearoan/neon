@@ -5,6 +5,7 @@ import { NeonSwitchStyle } from '../../../common/enums/NeonSwitchStyle';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import NeonSwitch from './NeonSwitch.vue';
 import NeonIcon from '../../presentation/icon/NeonIcon.vue';
+import NeonToggle from '../toggle/NeonToggle.vue';
 
 Vue.component('NeonIcon', NeonIcon);
 
@@ -82,6 +83,7 @@ describe('NeonSwitch', () => {
     });
     // when / then
     expect(wrapper.find('.neon-switch--disabled').element).toBeDefined();
+    expect(wrapper.find('.neon-switch--disabled').attributes('aria-disabled')).toEqual('true');
   });
 
   it('renders checked', () => {
@@ -92,6 +94,17 @@ describe('NeonSwitch', () => {
     // when / then
     expect(wrapper.find('input:checked').element).toBeDefined();
     expect(wrapper.find('.neon-switch--checked').element).toBeDefined();
+    expect(wrapper.find('.neon-switch--checked').attributes('aria-checked')).toEqual('true');
+  });
+
+  it('renders indeterminate', () => {
+    // given
+    const wrapper = shallowMount(NeonSwitch, {
+      propsData: { label, value, indeterminate: true },
+    });
+    // when / then
+    expect(wrapper.find('input:indeterminate').element).toBeDefined();
+    expect(wrapper.find('.neon-switch--indeterminate').element).toBeDefined();
   });
 
   it('renders label', () => {
@@ -136,6 +149,19 @@ describe('NeonSwitch', () => {
     expect(wrapper.emitted().input[0]).toEqual([true]);
   });
 
+  it('emits true when clicking indeterminate checkbox', () => {
+    // given
+    const wrapper = shallowMount(NeonSwitch, {
+      propsData: { label, value: false, indeterminate: true },
+    });
+    // when
+    const labelElement = wrapper.find('.neon-switch');
+    labelElement.trigger('click');
+    // then
+    expect(wrapper.emitted().input[0]).toEqual([true]);
+    expect(wrapper.emitted()['indeterminate-change'][0]).toEqual([false]);
+  });
+
   it('emits nothing when clicking disabled option', () => {
     // given
     const wrapper = shallowMount(NeonSwitch, {
@@ -144,6 +170,50 @@ describe('NeonSwitch', () => {
     // when
     const labelElement = wrapper.find('.neon-switch');
     labelElement.trigger('click');
+    // then
+    expect(wrapper.emitted().input).toBeUndefined();
+  });
+
+  it('emits false when keypress enter', () => {
+    // given
+    const wrapper = shallowMount(NeonSwitch, {
+      propsData: { label, value },
+    });
+    // when
+    wrapper.find('.neon-switch').trigger('keydown.enter');
+    // then
+    expect(wrapper.emitted().input[0]).toEqual([false]);
+  });
+
+  it('emits nothing when keypress enter and disabled', () => {
+    // given
+    const wrapper = shallowMount(NeonSwitch, {
+      propsData: { label, value, disabled: true },
+    });
+    // when
+    wrapper.find('.neon-switch').trigger('keydown.enter');
+    // then
+    expect(wrapper.emitted().input).toBeUndefined();
+  });
+
+  it('emits false when keypress space', () => {
+    // given
+    const wrapper = shallowMount(NeonSwitch, {
+      propsData: { label, value },
+    });
+    // when
+    wrapper.find('.neon-switch').trigger('keydown.space');
+    // then
+    expect(wrapper.emitted().input[0]).toEqual([false]);
+  });
+
+  it('emits nothing when keypress space and disabled', () => {
+    // given
+    const wrapper = shallowMount(NeonSwitch, {
+      propsData: { label, value, disabled: true },
+    });
+    // when
+    wrapper.find('.neon-switch').trigger('keydown.space');
     // then
     expect(wrapper.emitted().input).toBeUndefined();
   });
