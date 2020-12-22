@@ -24,7 +24,7 @@
       @keydown.space="selectOption(option)"
       @keypress.space.prevent=""
       role="radio"
-      aria-checked="option.key === value"
+      :aria-checked="option.key === value"
       :aria-disabled="disabled || option.disabled"
     >
       <input

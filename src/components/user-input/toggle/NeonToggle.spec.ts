@@ -6,6 +6,7 @@ import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonOrientation } from '../../../common/enums/NeonOrientation';
 import NeonToggle from './NeonToggle.vue';
 import NeonIcon from '../../presentation/icon/NeonIcon';
+import NeonToggleChip from '../toggle-chip/NeonToggleChip.vue';
 
 Vue.component('NeonIcon', NeonIcon);
 
@@ -156,8 +157,11 @@ describe('NeonToggle', () => {
       propsData: { name, model, value },
     });
     // when / then
+    const disabledOptions = wrapper.findAll('.neon-toggle__label--disabled');
     expect(wrapper.findAll('input[disabled]').length).toEqual(1);
-    expect(wrapper.findAll('.neon-toggle__label--disabled').length).toEqual(1);
+    expect(disabledOptions.length).toEqual(1);
+    // @ts-ignore
+    expect(disabledOptions.at(0).attributes('aria-disabled')).toEqual('true');
   });
 
   it('renders checked option', () => {
@@ -166,8 +170,11 @@ describe('NeonToggle', () => {
       propsData: { name, model, value },
     });
     // when / then
+    const checkedOptions = wrapper.findAll('.neon-toggle__label--checked');
     expect(wrapper.findAll('input:checked').length).toEqual(1);
-    expect(wrapper.findAll('.neon-toggle__label--checked').length).toEqual(1);
+    expect(checkedOptions.length).toEqual(1);
+    // @ts-ignore
+    expect(checkedOptions.at(0).attributes('aria-checked')).toEqual('true');
   });
 
   it('renders label', () => {
@@ -223,6 +230,18 @@ describe('NeonToggle', () => {
     expect(wrapper.emitted().input).toBeUndefined();
   });
 
+  it('emits nothing when toggle disabled', () => {
+    // given
+    const wrapper = shallowMount(NeonToggle, {
+      propsData: { name, model, value, disabled: true },
+    });
+    // when
+    const label = wrapper.findAll('.neon-toggle__label').at(0);
+    label.trigger('click');
+    // then
+    expect(wrapper.emitted().input).toBeUndefined();
+  });
+
   it('emits nothing when clicking checked option', () => {
     // given
     const wrapper = shallowMount(NeonToggle, {
@@ -231,6 +250,72 @@ describe('NeonToggle', () => {
     // when
     const label = wrapper.find('.neon-toggle__label--checked');
     label.trigger('click');
+    // then
+    expect(wrapper.emitted().input).toBeUndefined();
+  });
+
+  it('toggles option when space pressed', () => {
+    // given
+    const wrapper = shallowMount(NeonToggle, {
+      propsData: { name, model, value },
+    });
+    // when
+    wrapper.findAll('.neon-toggle__label').at(0).trigger('keydown.space');
+    // then
+    expect(wrapper.emitted().input[0]).toEqual([model[0].key]);
+  });
+
+  it('does not toggle option when space pressed and option disabled', () => {
+    // given
+    const wrapper = shallowMount(NeonToggle, {
+      propsData: { name, model, value },
+    });
+    // when
+    wrapper.findAll('.neon-toggle__label').at(1).trigger('keydown.space');
+    // then
+    expect(wrapper.emitted().input).toBeUndefined();
+  });
+
+  it('does not toggle option when space pressed and toggle disabled', () => {
+    // given
+    const wrapper = shallowMount(NeonToggle, {
+      propsData: { name, model, value, disabled: true },
+    });
+    // when
+    wrapper.findAll('.neon-toggle__label').at(0).trigger('keydown.space');
+    // then
+    expect(wrapper.emitted().input).toBeUndefined();
+  });
+
+  it('toggles option when enter pressed', () => {
+    // given
+    const wrapper = shallowMount(NeonToggle, {
+      propsData: { name, model, value },
+    });
+    // when
+    wrapper.findAll('.neon-toggle__label').at(0).trigger('keydown.enter');
+    // then
+    expect(wrapper.emitted().input[0]).toEqual([model[0].key]);
+  });
+
+  it('does not toggle option when enter pressed and option disabled', () => {
+    // given
+    const wrapper = shallowMount(NeonToggle, {
+      propsData: { name, model, value },
+    });
+    // when
+    wrapper.findAll('.neon-toggle__label').at(1).trigger('keydown.enter');
+    // then
+    expect(wrapper.emitted().input).toBeUndefined();
+  });
+
+  it('does not toggle option when enter pressed and toggle disabled', () => {
+    // given
+    const wrapper = shallowMount(NeonToggle, {
+      propsData: { name, model, value, disabled: true },
+    });
+    // when
+    wrapper.findAll('.neon-toggle__label').at(0).trigger('keydown.enter');
     // then
     expect(wrapper.emitted().input).toBeUndefined();
   });
