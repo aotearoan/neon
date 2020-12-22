@@ -2,6 +2,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { TranslateResult } from 'vue-i18n';
+import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 
 /**
  * <p>
@@ -10,10 +11,14 @@ import { TranslateResult } from 'vue-i18n';
  * filtering.
  * </p>
  */
-@Component({})
+@Component({
+  components: {
+    NeonIcon,
+  },
+})
 export default class NeonToggleChip extends Vue {
   /**
-   * The togge chip model.
+   * The toggle chip model.
    */
   @Prop({ required: true })
   public value!: boolean;
@@ -55,7 +60,9 @@ export default class NeonToggleChip extends Vue {
   }
 
   private toggleChip() {
-    this.emitInput(!this.value);
+    if (!this.disabled) {
+      this.emitInput(!this.value);
+    }
   }
 
   private onInput(event: InputEvent) {
