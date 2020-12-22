@@ -1,5 +1,6 @@
 <template>
   <div
+    v-if="icon"
     class="neon-icon"
     v-html="icon"
     v-bind="$attrs"
