@@ -75,7 +75,9 @@ export default class NeonToggle extends Vue {
   }
 
   private selectOption(option: NeonToggleModel) {
-    this.emitInput(option.key);
+    if (!this.disabled && !option.disabled) {
+      this.emitInput(option.key);
+    }
   }
 
   private emitInput(key: string) {
