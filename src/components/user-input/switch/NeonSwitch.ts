@@ -4,6 +4,7 @@ import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonSwitchStyle } from '../../../common/enums/NeonSwitchStyle';
 import { TranslateResult } from 'vue-i18n';
 import { NeonHorizontalPosition } from '../../../common/enums/NeonHorizontalPosition';
+import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 
 /**
  * <p>
@@ -11,7 +12,11 @@ import { NeonHorizontalPosition } from '../../../common/enums/NeonHorizontalPosi
  * both <em>Switch</em> and <em>Checkbox</em> styles which can be used in different scenarios.
  * </p>
  */
-@Component({})
+@Component({
+  components: {
+    NeonIcon,
+  },
+})
 export default class NeonSwitch extends Vue {
   readonly $refs!: {
     checkbox: HTMLInputElement;
