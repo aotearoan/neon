@@ -116,4 +116,74 @@ describe('NeonActionMenu', () => {
     // then
     expect(wrapper.emitted().input).toBeUndefined();
   });
+
+  it('emits event on space keydown', () => {
+    // given
+    const model = [
+      {
+        label: 'Option 1',
+        key: 'option-1',
+      },
+      {
+        label: 'Option 2',
+        key: 'option-2',
+      },
+    ];
+    const value = model[1].key;
+    const wrapper = mount(NeonActionMenu, {
+      propsData: { model, value },
+    });
+    // when
+    const item = wrapper.findAll('.neon-action-menu__link').at(0);
+    item.trigger('keydown.space');
+    // then
+    expect(wrapper.emitted().input[0]).toEqual([model[0].key]);
+  });
+
+  it('does not emit event on space keypress on disabled item', () => {
+    // given
+    const model = [
+      {
+        label: 'Option 1',
+        key: 'option-1',
+        disabled: true,
+      },
+      {
+        label: 'Option 2',
+        key: 'option-2',
+      },
+    ];
+    const value = model[1].key;
+    const wrapper = mount(NeonActionMenu, {
+      propsData: { model, value },
+    });
+    // when
+    const item = wrapper.find('.neon-action-menu__link--disabled');
+    item.trigger('keydown.space');
+    // then
+    expect(wrapper.emitted().input).toBeUndefined();
+  });
+
+  it('does not emit event on space keydown on selected item', () => {
+    // given
+    const model = [
+      {
+        label: 'Option 1',
+        key: 'option-1',
+      },
+      {
+        label: 'Option 2',
+        key: 'option-2',
+      },
+    ];
+    const value = model[1].key;
+    const wrapper = mount(NeonActionMenu, {
+      propsData: { model, value },
+    });
+    // when
+    const item = wrapper.findAll('.neon-action-menu__link').at(1);
+    item.trigger('keydown.space');
+    // then
+    expect(wrapper.emitted().input).toBeUndefined();
+  });
 });

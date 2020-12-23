@@ -24,4 +24,5 @@ module.exports = {
   cache: false,
   collectCoverage: true,
   coverageDirectory: '<rootDir>/coverage',
+  coveragePathIgnorePatterns: ['/node_modules/', '/test/'],
 };
