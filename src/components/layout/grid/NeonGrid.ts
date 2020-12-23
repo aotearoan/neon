@@ -107,7 +107,7 @@ export class NeonGrid extends Vue {
 
     const gridAreas = new Set<string>(grid.flat().flat());
     const toHide = Array.from(this.allGridAreas).filter((area) => !gridAreas.has(area));
-    gridStyles = gridStyles + toHide.map((area) => `.${area} { display: none!important; }`);
+    gridStyles = gridStyles + toHide.map((area) => `\n\n  .${area} { display: none!important; }`);
     return gridStyles;
   }
 
