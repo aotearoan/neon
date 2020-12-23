@@ -120,7 +120,7 @@ describe('NeonGrid', () => {
     // given
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const wrapper: any = mount(NeonGrid, {
-      propsData: { id, layouts, },
+      propsData: { id, layouts },
     });
     // when
     expect(document.getElementById(id)).toBeDefined();
