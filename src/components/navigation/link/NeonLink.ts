@@ -1,10 +1,15 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { NeonOutlineStyle } from '../../../common/enums/NeonOutlineStyle';
+import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 
 /**
  * An HTML anchor component which handles VueRouter links (internal), href links (external) and clickable links (no href).
  */
-@Component({})
+@Component({
+  components: {
+    NeonIcon,
+  },
+})
 export default class NeonLink extends Vue {
   /**
    * The href of the link, this can be an internal (relative or absolute) or an external link.
