@@ -16,4 +16,16 @@ describe('NeonPassword', () => {
     });
     expect((wrapper.find('input').element as HTMLInputElement).type).toEqual(NeonInputType.Password);
   });
+
+  it('emits icon-clicked', () => {
+    // given
+    const value = '123456';
+    const wrapper = mount(NeonPassword, {
+      propsData: { value },
+    });
+    // when
+    wrapper.find('.neon-icon').trigger('click');
+    // then
+    expect(wrapper.emitted()['icon-click'][0]).toBeDefined();
+  });
 });
