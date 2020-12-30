@@ -5,7 +5,7 @@
       <slot></slot>
       <neon-button
         @click="close"
-        @keydown.space="$event.stopPropagation() && close() && $event.preventDefault()"
+        @keypress.space.stop="close"
         @keydown.enter="close"
         button-style="text"
         icon="times"
