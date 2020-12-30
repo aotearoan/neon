@@ -77,12 +77,6 @@ export default class NeonInput extends Vue {
   private hideIcon!: boolean;
 
   /**
-   * A regular expression for filtering valid values in the input
-   */
-  @Prop()
-  private pattern?: string;
-
-  /**
    * Tabindex to assign to the input.
    */
   @Prop({ default: 0 })
@@ -111,7 +105,7 @@ export default class NeonInput extends Vue {
 
   get sanitizedAttributes(): Record<string, string> {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { id, ...sanitized } = this.$attrs;
+    const { id, tabindex, ...sanitized } = this.$attrs;
     return sanitized;
   }
 
@@ -123,7 +117,9 @@ export default class NeonInput extends Vue {
 
   get iconVisible() {
     return (
-      !this.hideIcon && (this.state !== 'ready' || this.icon || (this.value && !this.disabled && this.value.length > 0))
+      this.iconName &&
+      !this.hideIcon &&
+      (this.state !== 'ready' || this.icon || (this.value && !this.disabled && this.value.length > 0))
     );
   }
 
@@ -189,7 +185,7 @@ export default class NeonInput extends Vue {
          * @type {void}
          */
         this.$emit('icon-click');
-      } else if (this.value && this.value.length > 0) {
+      } else {
         /**
          * Emitted when the input value is changed
          * @type {string} the contents of the input
