@@ -45,10 +45,10 @@ export default class NeonIcon extends Vue {
   public disabled!: boolean;
 
   get icon() {
-    const icon = NeonIconRegistry.getIcon(this.name);
-    if (!icon) {
+    const _icon = NeonIconRegistry.getIcon(this.name);
+    if (!_icon) {
       console.error(`icon ${this.name} doesn't exist! Register icon with NeonIconRegistry.addIcon(name, svg);`);
     }
-    return icon;
+    return _icon;
   }
 }
