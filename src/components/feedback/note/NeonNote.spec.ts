@@ -59,6 +59,16 @@ describe('NeonNote', () => {
     expect(wrapper.vm.iconName).toEqual('times-circle');
   });
 
+  it('correctly maps icon false', () => {
+    // given
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const wrapper: any = mount(NeonNote, {
+      propsData: { icon: false, color: NeonFunctionalColor.Error },
+    });
+    // when / then
+    expect(wrapper.vm.iconName).toBeUndefined();
+  });
+
   it('renders correct color class', () => {
     // given
     const wrapper = mount(NeonNote, {
@@ -76,6 +86,30 @@ describe('NeonNote', () => {
     // when
     const closeButton = wrapper.find('.neon-note__close');
     closeButton.trigger('click');
+    // when / then
+    expect(wrapper.emitted()['close-note'][0]).toBeDefined();
+  });
+
+  it('space keydown on close emits close event', () => {
+    // given
+    const wrapper = mount(NeonNote, {
+      propsData: { closable: true },
+    });
+    // when
+    const closeButton = wrapper.find('.neon-note__close');
+    closeButton.trigger('keypress.space.stop');
+    // when / then
+    expect(wrapper.emitted()['close-note'][0]).toBeDefined();
+  });
+
+  it('enter keydown on close emits close event', () => {
+    // given
+    const wrapper = mount(NeonNote, {
+      propsData: { closable: true },
+    });
+    // when
+    const closeButton = wrapper.find('.neon-note__close');
+    closeButton.trigger('keydown.enter');
     // when / then
     expect(wrapper.emitted()['close-note'][0]).toBeDefined();
   });

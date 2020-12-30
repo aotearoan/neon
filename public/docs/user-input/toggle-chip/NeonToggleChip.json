@@ -7,7 +7,7 @@
     {
       "name": "value",
       "tags": {},
-      "description": "The togge chip model.",
+      "description": "The toggle chip model.",
       "type": {
         "name": "boolean"
       },

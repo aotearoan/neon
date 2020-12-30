@@ -53,6 +53,7 @@ export default class NeonNote extends Vue {
           return undefined;
       }
     }
+
     return undefined;
   }
 
