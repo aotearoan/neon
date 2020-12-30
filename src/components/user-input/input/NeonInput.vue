@@ -44,6 +44,7 @@
       @focus="onFocus"
       class="neon-input__textfield neon-input__textarea"
       v-bind="sanitizedAttributes"
+      v-on="sanitizedListeners"
     ></textarea>
     <neon-icon
       v-if="iconVisible"

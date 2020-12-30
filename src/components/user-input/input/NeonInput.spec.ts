@@ -10,6 +10,15 @@ import { NeonState } from '../../../common/enums/NeonState';
 Vue.component('NeonIcon', NeonIcon);
 
 describe('NeonInput', () => {
+  it('renders id', () => {
+    const value = '';
+    const id = 'test id';
+    const wrapper = shallowMount(NeonInput, {
+      propsData: { value, id },
+    });
+    expect(wrapper.find('.neon-input__textfield').attributes().id).toEqual(id);
+  });
+
   it('renders placeholder', () => {
     const value = '';
     const placeholder = 'test label';
@@ -17,6 +26,30 @@ describe('NeonInput', () => {
       propsData: { value, placeholder },
     });
     expect((wrapper.find('.neon-input__textfield').element as HTMLInputElement).placeholder).toEqual(placeholder);
+  });
+
+  it('renders telephone placeholder', () => {
+    const value = '';
+    const wrapper = shallowMount(NeonInput, {
+      propsData: { value, type: NeonInputType.Tel },
+    });
+    expect((wrapper.find('.neon-input__textfield').element as HTMLInputElement).placeholder).toEqual('+41785551234');
+  });
+
+  it('renders url placeholder', () => {
+    const value = '';
+    const wrapper = shallowMount(NeonInput, {
+      propsData: { value, type: NeonInputType.Url },
+    });
+    expect((wrapper.find('.neon-input__textfield').element as HTMLInputElement).placeholder).toEqual('http://www.getskeleton.com');
+  });
+
+  it('renders email placeholder', () => {
+    const value = '';
+    const wrapper = shallowMount(NeonInput, {
+      propsData: { value, type: NeonInputType.Email },
+    });
+    expect((wrapper.find('.neon-input__textfield').element as HTMLInputElement).placeholder).toEqual('gbelson@hooli.com');
   });
 
   it('renders placeholder visible class', () => {
@@ -28,7 +61,7 @@ describe('NeonInput', () => {
     expect(wrapper.find('.neon-input--placeholder-visible').element).toBeDefined();
   });
 
-  it('does not renders placeholder visible class when value is set', () => {
+  it('does not render placeholder visible class when value is set', () => {
     const value = '1';
     const placeholder = 'test label';
     const wrapper = shallowMount(NeonInput, {
@@ -59,6 +92,7 @@ describe('NeonInput', () => {
       propsData: { value, rows: 1 },
     });
     expect(wrapper.find('textarea')).toBeDefined();
+    expect(wrapper.find('textarea').attributes().rows).toEqual('1');
   });
 
   it('renders type as text by default', () => {
@@ -165,6 +199,36 @@ describe('NeonInput', () => {
     expect(wrapper.emitted().blur).toBeDefined();
   });
 
+  it('focuses when focus is called', () => {
+    // given
+    const value = 'test';
+    const wrapper: any = mount(NeonInput, {
+      propsData: { value, icon: 'plus' },
+    });
+    const focusFn = wrapper.vm.$refs.neonInput.focus;
+    wrapper.vm.$refs.neonInput.focus = jest.fn();
+    // when
+    wrapper.vm.focus();
+    // then
+    expect(wrapper.vm.$refs.neonInput.focus).toHaveBeenCalled();
+    wrapper.vm.$refs.neonInput.focus = focusFn;
+  });
+
+  it('clicks on input whn click is called', () => {
+    // given
+    const value = 'test';
+    const wrapper: any = mount(NeonInput, {
+      propsData: { value, icon: 'plus' },
+    });
+    const clickFn = wrapper.vm.$refs.neonInput.click;
+    wrapper.vm.$refs.neonInput.click = jest.fn();
+    // when
+    wrapper.vm.click();
+    // then
+    expect(wrapper.vm.$refs.neonInput.click).toHaveBeenCalled();
+    wrapper.vm.$refs.neonInput.click = clickFn;
+  });
+
   it('renders icon', () => {
     // given
     const value = 'test';
@@ -172,6 +236,88 @@ describe('NeonInput', () => {
       propsData: { value, icon: 'plus' },
     });
     expect(wrapper.find('.neon-icon')).toBeDefined();
+  });
+
+  it('determines iconName Success', () => {
+    // given
+    const value = 'test';
+    const wrapper: any = mount(NeonInput, {
+      propsData: { value, state: NeonState.Success },
+    });
+    expect(wrapper.vm.iconName).toEqual('check');
+  });
+
+  it('determines iconName Success, stateIcon = false', () => {
+    // given
+    const value = 'test';
+    const wrapper: any = mount(NeonInput, {
+      propsData: { value, state: NeonState.Success, stateIcon: false },
+    });
+    expect(wrapper.vm.iconName).toBeUndefined();
+  });
+
+  it('determines iconName Error', () => {
+    // given
+    const value = 'test';
+    const wrapper: any = mount(NeonInput, {
+      propsData: { value, state: NeonState.Error },
+    });
+    expect(wrapper.vm.iconName).toEqual('times');
+  });
+
+  it('hides icon', () => {
+    // given
+    const value = 'test';
+    const wrapper: any = mount(NeonInput, {
+      propsData: { value, icon: 'plus', hideIcon: true },
+    });
+    expect(wrapper.vm.iconVisible).toEqual(false);
+  });
+
+  it('sets stateHighlight default', () => {
+    // given
+    const value = 'test';
+    const wrapper: any = mount(NeonInput, {
+      propsData: { value, state: NeonState.Error },
+    });
+    expect(wrapper.find('.neon-input--with-state-highlight').element).toBeDefined();
+  });
+
+  it('sets stateHighlight false', () => {
+    // given
+    const value = 'test';
+    const wrapper: any = mount(NeonInput, {
+      propsData: { value, state: NeonState.Error, stateHighlight: false },
+    });
+    expect(wrapper.find('.neon-input--with-state-highlight').element).toBeUndefined();
+  });
+
+  it('sets stateIcon default', () => {
+    // given
+    const value = 'test';
+    const wrapper: any = mount(NeonInput, {
+      propsData: { value, state: NeonState.Error },
+    });
+    expect(wrapper.find('.neon-input--with-state-icon').element).toBeDefined();
+  });
+
+  it('sets stateIcon false', () => {
+    // given
+    const value = 'test';
+    const wrapper: any = mount(NeonInput, {
+      propsData: { value, state: NeonState.Error, stateIcon: false },
+    });
+    expect(wrapper.find('.neon-input--with-state-icon').element).toBeUndefined();
+  });
+
+  it('sets tabindex', () => {
+    // given
+    const value = 'test';
+    const tabindex = 14;
+    const wrapper: any = mount(NeonInput, {
+      propsData: { value, tabindex, },
+    });
+    expect(wrapper.find('input').attributes().tabindex).toEqual(`${tabindex}`);
   });
 
   it('emits icon click event', () => {
@@ -186,6 +332,18 @@ describe('NeonInput', () => {
     expect(wrapper.emitted()['icon-click'][0]).toBeDefined();
   });
 
+  it('does not emit icon click event when disabled', () => {
+    // given
+    const value = 'test';
+    const wrapper = mount(NeonInput, {
+      propsData: { value, icon: 'plus', disabled: true },
+    });
+    // when
+    wrapper.find('.neon-icon').trigger('click');
+    // then
+    expect(wrapper.emitted()['icon-click']).toBeUndefined();
+  });
+
   it('clears input when no icon and clicked', () => {
     // given
     const value = 'test';
@@ -197,5 +355,15 @@ describe('NeonInput', () => {
     // then
     expect(wrapper.emitted()['icon-click']).toBeUndefined();
     expect(wrapper.emitted().input[0]).toEqual(['']);
+  });
+
+  it('does not render clear icon for empty input', () => {
+    // given
+    const value = '';
+    const wrapper = mount(NeonInput, {
+      propsData: { value },
+    });
+    // when / then
+    expect(wrapper.find('.neon-icon').element).toBeUndefined();
   });
 });
