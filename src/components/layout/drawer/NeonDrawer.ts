@@ -13,7 +13,7 @@ export default class NeonDrawer extends Vue {
     drawer: HTMLDivElement;
   };
 
-  private closableUtils?: NeonClosableUtils;
+  closableUtils?: NeonClosableUtils;
 
   /**
    * Set the drawer to visible.

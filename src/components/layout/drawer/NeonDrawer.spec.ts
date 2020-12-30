@@ -123,4 +123,49 @@ describe('NeonDrawer', () => {
       done();
     });
   });
+
+  it('calls closable utils destroy', () => {
+    // given
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const wrapper: any = mount(NeonDrawer, {
+      propsData: { open: true },
+    });
+    const destroyFn = wrapper.vm.closableUtils.destroy;
+    wrapper.vm.closableUtils.destroy = jest.fn();
+    // when
+    wrapper.destroy();
+    // then
+    expect(wrapper.vm.closableUtils.destroy).toHaveBeenCalled();
+    wrapper.vm.closableUtils.destroy = destroyFn;
+  });
+
+  it('calls closable open on open true', () => {
+    // given
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const wrapper: any = mount(NeonDrawer, {
+      propsData: { open: false },
+    });
+    const openFn = wrapper.vm.closableUtils.open;
+    wrapper.vm.closableUtils.open = jest.fn();
+    // when
+    wrapper.vm.onOpen(true);
+    // then
+    expect(wrapper.vm.closableUtils.open).toHaveBeenCalled();
+    wrapper.vm.closableUtils.open = openFn;
+  });
+
+  it('calls closable close on open false', () => {
+    // given
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const wrapper: any = mount(NeonDrawer, {
+      propsData: { open: true },
+    });
+    const closeFn = wrapper.vm.closableUtils.close;
+    wrapper.vm.closableUtils.close = jest.fn();
+    // when
+    wrapper.vm.onOpen(false);
+    // then
+    expect(wrapper.vm.closableUtils.close).toHaveBeenCalled();
+    wrapper.vm.closableUtils.close = closeFn;
+  });
 });
