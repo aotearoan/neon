@@ -5,7 +5,7 @@ import { NeonToggleStyle } from '../../../common/enums/NeonToggleStyle';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonOrientation } from '../../../common/enums/NeonOrientation';
 import NeonToggle from './NeonToggle.vue';
-import NeonIcon from '../../presentation/icon/NeonIcon';
+import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 
 Vue.component('NeonIcon', NeonIcon);
 

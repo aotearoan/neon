@@ -1,7 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
 import NeonIcon from './NeonIcon.vue';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { glob } from 'glob';
 
 describe('NeonIcon', () => {
   const name = 'check';
@@ -29,7 +28,6 @@ describe('NeonIcon', () => {
   });
 
   it('gets icon', () => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const wrapper: any = shallowMount(NeonIcon, {
       propsData: { name },
     });
@@ -40,7 +38,6 @@ describe('NeonIcon', () => {
     const errorFn = global.console.error;
     global.console.error = jest.fn();
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const wrapper: any = shallowMount(NeonIcon, {
       propsData: { name: 'xdd' },
     });
