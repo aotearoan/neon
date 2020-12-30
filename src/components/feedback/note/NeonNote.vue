@@ -8,8 +8,8 @@
     <neon-button
       v-if="closable"
       @click="closeNote"
-      @keydown.space="$event.stopPropagation() && closeNote() && $event.preventDefault()"
       @keydown.enter="closeNote"
+      @keypress.space.stop="closeNote"
       button-style="text"
       icon="times"
       :aria-label="ariaLabelCloseNote"
