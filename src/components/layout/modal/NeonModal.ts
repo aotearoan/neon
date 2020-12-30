@@ -10,7 +10,7 @@ export default class NeonModal extends Vue {
     modal: HTMLDivElement;
   };
 
-  private closableUtils?: NeonClosableUtils;
+  closableUtils?: NeonClosableUtils;
 
   /**
    * Whether or not the modal is currently open.

@@ -107,4 +107,41 @@ describe('NeonModal', () => {
       done();
     });
   });
+
+
+  it('calls closable utils destroy', () => {
+    // given
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const wrapper: any = mount(NeonModal, {
+      propsData: { open: true },
+      slots: {
+        default: '<p>xd</p>',
+      },
+    });
+    const destroyFn = wrapper.vm.closableUtils.destroy;
+    wrapper.vm.closableUtils.destroy = jest.fn();
+    // when
+    wrapper.destroy();
+    // then
+    expect(wrapper.vm.closableUtils.destroy).toHaveBeenCalled();
+    wrapper.vm.closableUtils.destroy = destroyFn;
+  });
+
+  it('calls closable open on open true', () => {
+    // given
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const wrapper: any = mount(NeonModal, {
+      propsData: { open: false },
+      slots: {
+        default: '<p>xd</p>',
+      },
+    });
+    const openFn = wrapper.vm.closableUtils.open;
+    wrapper.vm.closableUtils.open = jest.fn();
+    // when
+    wrapper.vm.onOpen(true);
+    // then
+    expect(wrapper.vm.closableUtils.open).toHaveBeenCalled();
+    wrapper.vm.closableUtils.open = openFn;
+  });
 });
