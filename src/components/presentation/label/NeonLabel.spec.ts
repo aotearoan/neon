@@ -58,6 +58,14 @@ describe('NeonLabel', () => {
     expect(wrapper.find('.neon-label--primary').element).toBeDefined();
   });
 
+  it('renders alternate color', () => {
+    const icon = 'check';
+    const wrapper = mount(NeonLabel, {
+      propsData: { label, icon, alternateColor: NeonFunctionalColor.Primary },
+    });
+    expect(wrapper.find('.neon-label--alternate-color-primary').element).toBeDefined();
+  });
+
   it('renders icon position left', () => {
     const icon = 'check';
     const wrapper = mount(NeonLabel, {
