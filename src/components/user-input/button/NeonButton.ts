@@ -142,7 +142,7 @@ export default class NeonButton extends Vue {
     }
   }
 
-  private click() {
+  click() {
     (this.$el as HTMLAnchorElement).click();
   }
 }
