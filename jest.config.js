@@ -15,7 +15,7 @@ module.exports = {
     '^vue$': 'vue/dist/vue.common.js',
   },
   snapshotSerializers: ['jest-serializer-vue'],
-  testMatch: ['**/src/components/**/*.spec.(js|jsx|ts|tsx)'],
+  testMatch: ['**/src/(components|common)/**/*.spec.(js|jsx|ts|tsx)'],
   globals: {
     'ts-jest': {
       babelConfig: true,
