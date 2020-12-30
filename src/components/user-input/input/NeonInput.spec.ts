@@ -41,7 +41,9 @@ describe('NeonInput', () => {
     const wrapper = shallowMount(NeonInput, {
       propsData: { value, type: NeonInputType.Url },
     });
-    expect((wrapper.find('.neon-input__textfield').element as HTMLInputElement).placeholder).toEqual('http://www.getskeleton.com');
+    expect((wrapper.find('.neon-input__textfield').element as HTMLInputElement).placeholder).toEqual(
+      'http://www.getskeleton.com',
+    );
   });
 
   it('renders email placeholder', () => {
@@ -49,7 +51,9 @@ describe('NeonInput', () => {
     const wrapper = shallowMount(NeonInput, {
       propsData: { value, type: NeonInputType.Email },
     });
-    expect((wrapper.find('.neon-input__textfield').element as HTMLInputElement).placeholder).toEqual('gbelson@hooli.com');
+    expect((wrapper.find('.neon-input__textfield').element as HTMLInputElement).placeholder).toEqual(
+      'gbelson@hooli.com',
+    );
   });
 
   it('renders placeholder visible class', () => {
@@ -315,7 +319,7 @@ describe('NeonInput', () => {
     const value = 'test';
     const tabindex = 14;
     const wrapper: any = mount(NeonInput, {
-      propsData: { value, tabindex, },
+      propsData: { value, tabindex },
     });
     expect(wrapper.find('input').attributes().tabindex).toEqual(`${tabindex}`);
   });
