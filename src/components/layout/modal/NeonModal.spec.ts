@@ -126,6 +126,20 @@ describe('NeonModal', () => {
     wrapper.vm.closableUtils.destroy = destroyFn;
   });
 
+  it('does not init closable utils when not dismissable', () => {
+    // given
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const wrapper: any = mount(NeonModal, {
+      propsData: { open: true, dismissable: false },
+      slots: {
+        default: '<p>xd</p>',
+      },
+    });
+    wrapper.destroy();
+    // then
+    expect(wrapper.vm.closableUtils).toBeUndefined();
+  });
+
   it('calls closable open on open true', () => {
     // given
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

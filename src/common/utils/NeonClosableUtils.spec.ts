@@ -22,6 +22,32 @@ describe('NeonClosableUtils', () => {
     expect(document.body.classList.contains('neon-closable--open')).toEqual(false);
   });
 
+  it('escape key listener calls close', () => {
+    // given
+    const closableUtils = new NeonClosableUtils(document.documentElement, close);
+    const closeFn = closableUtils.close;
+    closableUtils.close = jest.fn();
+    // when
+    // @ts-ignore
+    closableUtils.escapeKeyListener({ key: 'Escape' });
+    // then
+    expect(closableUtils.close).toHaveBeenCalled();
+    closableUtils.close = closeFn;
+  });
+
+  it('escape key listener does not call close', () => {
+    // given
+    const closableUtils = new NeonClosableUtils(document.documentElement, close);
+    const closeFn = closableUtils.close;
+    closableUtils.close = jest.fn();
+    // when
+    // @ts-ignore
+    closableUtils.escapeKeyListener({ key: 'Enter' });
+    // then
+    expect(closableUtils.close).not.toHaveBeenCalled();
+    closableUtils.close = closeFn;
+  });
+
   it('adds and removes event listeners', () => {
     // given
     const addListenerFn = document.addEventListener;
