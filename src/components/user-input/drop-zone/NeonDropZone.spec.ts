@@ -1,5 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
 import NeonDropZone from './NeonDropZone.vue';
+import NeonDropZoneClass from './NeonDropZone';
 import { NeonState } from '../../../common/enums/NeonState';
 
 describe('NeonDropZone', () => {
@@ -40,5 +41,114 @@ describe('NeonDropZone', () => {
       propsData: { state: NeonState.Loading },
     });
     expect(wrapper.find('.neon-drop-zone--state-loading').element).toBeDefined();
+  });
+
+  it('removes listeners', () => {
+    // given
+    const removeEventListenerFn = jest.fn();
+    const wrapper = shallowMount(NeonDropZone, {
+      propsData: { },
+    });
+    const vm = wrapper.vm as NeonDropZoneClass;
+    vm.$refs.dropzone.removeEventListener = removeEventListenerFn;
+    // when
+    wrapper.destroy();
+    // then
+    expect(removeEventListenerFn).toHaveBeenCalledTimes(3);
+  });
+
+  it('calls processDragLeave', () => {
+    // given
+    const wrapper = shallowMount(NeonDropZone, {
+      propsData: { },
+    });
+    const vm = wrapper.vm as NeonDropZoneClass;
+    vm.active = true;
+    // when
+    vm.processDragLeave();
+    // then
+    expect(vm.active).toEqual(false);
+  });
+
+  it('calls processDragOverEnter no data transfer', () => {
+    // given
+    const wrapper = shallowMount(NeonDropZone, {
+      propsData: { },
+    });
+    const vm = wrapper.vm as NeonDropZoneClass;
+    vm.active = false;
+    // when / then
+    // @ts-ignore
+    vm.processDragOverOrEnter({});
+    // then
+    expect(vm.active).toEqual(false);
+  });
+
+  it('calls processDragOverEnter with data transfer', () => {
+    // given
+    // @ts-ignore
+    const event: any = { dataTransfer: { }, preventDefault: () => {}};
+    const wrapper = shallowMount(NeonDropZone, {
+      propsData: { },
+    });
+    const vm = wrapper.vm as NeonDropZoneClass;
+    vm.active = false;
+    // when / then
+    // @ts-ignore
+    vm.processDragOverOrEnter(event);
+    // then
+    expect(vm.active).toEqual(true);
+    expect(event.dataTransfer.effectAllowed).toEqual('copy');
+  });
+
+  it('emits files', () => {
+    // given
+    // @ts-ignore
+    const event: any = { dataTransfer: { files: [] }, preventDefault: () => {}};
+    const wrapper = shallowMount(NeonDropZone, {
+      propsData: { },
+    });
+    const vm = wrapper.vm as NeonDropZoneClass;
+    vm.active = true;
+    // when / then
+    // @ts-ignore
+    vm.transferData(event);
+    // then
+    expect(vm.active).toEqual(false);
+    expect(wrapper.emitted().files[0]).toBeDefined();
+  });
+
+  it('does not emit files when disabled', () => {
+    // given
+    // @ts-ignore
+    const event: any = { dataTransfer: { files: [] }, preventDefault: () => {}};
+    const wrapper = shallowMount(NeonDropZone, {
+      propsData: { disabled: true },
+    });
+    const vm = wrapper.vm as NeonDropZoneClass;
+    vm.active = true;
+    // when / then
+    // @ts-ignore
+    vm.transferData(event);
+    // then
+    expect(vm.active).toEqual(true);
+    expect(wrapper.emitted().files).toBeUndefined();
+  });
+
+  it('does not emit files when loading state', () => {
+    // given
+    // @ts-ignore
+    const event: any = { dataTransfer: { files: [] }, preventDefault: () => {}};
+    const wrapper = shallowMount(NeonDropZone, {
+      propsData: { state: NeonState.Loading },
+    });
+    const vm = wrapper.vm as NeonDropZoneClass;
+    vm.active = true;
+    // when / then
+    // @ts-ignore
+    vm.transferData(event);
+    // then
+    expect(vm.active).toEqual(true);
+    expect(wrapper.emitted().files).toBeUndefined();
   });
 });
