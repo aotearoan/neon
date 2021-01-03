@@ -10,7 +10,7 @@ export default class NeonDropZone extends Vue {
     dropzone: HTMLDivElement;
   };
 
-  private active = false;
+  active = false;
 
   /**
    * The state of the drop zone, used to indicate loading. ACCEPTS <em>Ready</em> and <em>Loading</em> states ONLY.
@@ -30,7 +30,7 @@ export default class NeonDropZone extends Vue {
   @Prop()
   circular?: boolean;
 
-  private processDragOverOrEnter(event: DragEvent) {
+  processDragOverOrEnter(event: DragEvent) {
     if (event?.dataTransfer) {
       event.preventDefault();
       event.dataTransfer.effectAllowed = 'copy';
@@ -39,7 +39,7 @@ export default class NeonDropZone extends Vue {
     return false;
   }
 
-  private processDragLeave() {
+  processDragLeave() {
     this.active = false;
   }
 
@@ -57,7 +57,7 @@ export default class NeonDropZone extends Vue {
     this.$refs.dropzone.removeEventListener('drop', this.transferData);
   }
 
-  private transferData(event: DragEvent) {
+  transferData(event: DragEvent) {
     if (!(this.state === 'loading') && !this.disabled && event != null && event.dataTransfer) {
       event.preventDefault();
       /**
