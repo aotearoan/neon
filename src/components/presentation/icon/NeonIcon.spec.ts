@@ -1,5 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
 import NeonIcon from './NeonIcon.vue';
+import NeonIconClass from './NeonIcon';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 
 describe('NeonIcon', () => {
@@ -28,20 +29,22 @@ describe('NeonIcon', () => {
   });
 
   it('gets icon', () => {
-    const wrapper: any = shallowMount(NeonIcon, {
+    const wrapper = shallowMount(NeonIcon, {
       propsData: { name },
     });
-    expect(wrapper.vm.icon).toBeDefined();
+    const vm = wrapper.vm as NeonIconClass;
+    expect(vm.icon).toBeDefined();
   });
 
   it('does not render missing icon', () => {
     const errorFn = global.console.error;
     global.console.error = jest.fn();
 
-    const wrapper: any = shallowMount(NeonIcon, {
+    const wrapper = shallowMount(NeonIcon, {
       propsData: { name: 'xdd' },
     });
-    expect(wrapper.vm.icon).toBeUndefined();
+    const vm = wrapper.vm as NeonIconClass;
+    expect(vm.icon).toBeUndefined();
     expect(global.console.error).toHaveBeenCalled();
     global.console.error = errorFn;
   });

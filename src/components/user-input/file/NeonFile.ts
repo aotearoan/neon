@@ -3,18 +3,27 @@ import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonState } from '../../../common/enums/NeonState';
 import { TranslateResult } from 'vue-i18n';
+import NeonButton from '../button/NeonButton.vue';
+import NeonInput from '../input/NeonInput.vue';
+import NeonList from '../list/NeonList.vue';
 
 /**
  * A file upload component. This is a wrapper around an HTML file input. It can display multiple files as well as
  * providing a convenient UI for removing/clearing files from the list.
  */
-@Component({})
+@Component({
+  components: {
+    NeonButton,
+    NeonInput,
+    NeonList,
+  },
+})
 export default class NeonFile extends Vue {
   $refs!: {
     fileInput: HTMLInputElement;
   };
 
-  private files: File[] = [];
+  files: File[] = [];
 
   /**
    * The disabled state of the component
@@ -78,29 +87,29 @@ export default class NeonFile extends Vue {
   @Prop()
   public icon?: string;
 
-  private get fileList() {
+  get fileList() {
     return this.files.map((file) => ({ key: file.name, label: file.name }));
   }
 
-  private remove(filename: string) {
+  remove(filename: string) {
     if (!this.disabled) {
       this.files = this.files.filter((f) => f.name !== filename);
       this.emit();
     }
   }
 
-  private clearAll() {
+  clearAll() {
     if (!this.disabled) {
       this.files = [];
       this.emit();
     }
   }
 
-  private openFileDialog() {
+  openFileDialog() {
     this.$refs.fileInput.click();
   }
 
-  private onInput(event: Event) {
+  onInput(event: Event) {
     if (event?.target) {
       const files = (event.target as HTMLInputElement).files;
       const newFiles = files ? Array.from(files).filter((file) => !this.files.find((f) => f.name === file.name)) : [];
@@ -109,7 +118,7 @@ export default class NeonFile extends Vue {
     }
   }
 
-  private emit() {
+  emit() {
     /**
      * Emitted when files are selected and uploaded
      * @type {File | File[]} either a single File (multiple = false) or a list of File objects (multiple = true)
