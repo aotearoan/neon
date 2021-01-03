@@ -103,6 +103,20 @@ describe('NeonDrawer', () => {
     });
   });
 
+  it('does not init closable utils when not dismissable', () => {
+    // given
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const wrapper: any = mount(NeonDrawer, {
+      propsData: { open: true, dismissable: false },
+      slots: {
+        default: '<p>xd</p>',
+      },
+    });
+    wrapper.destroy();
+    // then
+    expect(wrapper.vm.closableUtils).toBeUndefined();
+  });
+
   it('does not emit close event on click inside drawer container', (done) => {
     // given
     const wrapper = mount(NeonDrawer, {

@@ -61,7 +61,9 @@ export default class NeonDrawer extends Vue {
   }
 
   public beforeDestroy() {
-    this.closableUtils && this.closableUtils.destroy();
+    if (this.closableUtils) {
+      this.closableUtils.destroy();
+    }
   }
 
   public onClose() {
