@@ -38,7 +38,7 @@ export default class NeonModal extends Vue {
   }
 
   public beforeDestroy() {
-    if (this.dismissable && this.closableUtils) {
+    if (this.closableUtils) {
       this.closableUtils.destroy();
     }
   }
