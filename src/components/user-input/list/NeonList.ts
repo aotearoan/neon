@@ -2,12 +2,17 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonListItem } from '../../../common/models/NeonListItem';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 
 /**
  * Renders a list of removable items. This can be used as an alternative to removable chips where a vertical list is
  * more appropriate.
  */
-@Component({})
+@Component({
+  components: {
+    NeonIcon,
+  },
+})
 export default class NeonList extends Vue {
   /**
    * The list items.
