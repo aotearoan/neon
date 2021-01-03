@@ -2,6 +2,7 @@ import Vue from 'vue';
 import { mount, shallowMount } from '@vue/test-utils';
 import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 import NeonInput from './NeonInput.vue';
+import NeonInputClass from './NeonInput';
 import { NeonInputType } from '../../../common/enums/NeonInputType';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
@@ -206,31 +207,33 @@ describe('NeonInput', () => {
   it('focuses when focus is called', () => {
     // given
     const value = 'test';
-    const wrapper: any = mount(NeonInput, {
+    const wrapper = mount(NeonInput, {
       propsData: { value, icon: 'plus' },
     });
-    const focusFn = wrapper.vm.$refs.neonInput.focus;
-    wrapper.vm.$refs.neonInput.focus = jest.fn();
+    const vm = wrapper.vm as NeonInputClass;
+    const focusFn = vm.$refs.neonInput.focus;
+    vm.$refs.neonInput.focus = jest.fn();
     // when
-    wrapper.vm.focus();
+    vm.focus();
     // then
-    expect(wrapper.vm.$refs.neonInput.focus).toHaveBeenCalled();
-    wrapper.vm.$refs.neonInput.focus = focusFn;
+    expect(vm.$refs.neonInput.focus).toHaveBeenCalled();
+    vm.$refs.neonInput.focus = focusFn;
   });
 
   it('clicks on input whn click is called', () => {
     // given
     const value = 'test';
-    const wrapper: any = mount(NeonInput, {
+    const wrapper = mount(NeonInput, {
       propsData: { value, icon: 'plus' },
     });
-    const clickFn = wrapper.vm.$refs.neonInput.click;
-    wrapper.vm.$refs.neonInput.click = jest.fn();
+    const vm = wrapper.vm as NeonInputClass;
+    const clickFn = vm.$refs.neonInput.click;
+    vm.$refs.neonInput.click = jest.fn();
     // when
-    wrapper.vm.click();
+    vm.click();
     // then
-    expect(wrapper.vm.$refs.neonInput.click).toHaveBeenCalled();
-    wrapper.vm.$refs.neonInput.click = clickFn;
+    expect(vm.$refs.neonInput.click).toHaveBeenCalled();
+    vm.$refs.neonInput.click = clickFn;
   });
 
   it('renders icon', () => {
@@ -245,43 +248,47 @@ describe('NeonInput', () => {
   it('determines iconName Success', () => {
     // given
     const value = 'test';
-    const wrapper: any = mount(NeonInput, {
+    const wrapper = mount(NeonInput, {
       propsData: { value, state: NeonState.Success },
     });
-    expect(wrapper.vm.iconName).toEqual('check');
+    const vm = wrapper.vm as NeonInputClass;
+    expect(vm.iconName).toEqual('check');
   });
 
   it('determines iconName Success, stateIcon = false', () => {
     // given
     const value = 'test';
-    const wrapper: any = mount(NeonInput, {
+    const wrapper = mount(NeonInput, {
       propsData: { value, state: NeonState.Success, stateIcon: false },
     });
-    expect(wrapper.vm.iconName).toBeUndefined();
+    const vm = wrapper.vm as NeonInputClass;
+    expect(vm.iconName).toBeUndefined();
   });
 
   it('determines iconName Error', () => {
     // given
     const value = 'test';
-    const wrapper: any = mount(NeonInput, {
+    const wrapper = mount(NeonInput, {
       propsData: { value, state: NeonState.Error },
     });
-    expect(wrapper.vm.iconName).toEqual('times');
+    const vm = wrapper.vm as NeonInputClass;
+    expect(vm.iconName).toEqual('times');
   });
 
   it('hides icon', () => {
     // given
     const value = 'test';
-    const wrapper: any = mount(NeonInput, {
+    const wrapper = mount(NeonInput, {
       propsData: { value, icon: 'plus', hideIcon: true },
     });
-    expect(wrapper.vm.iconVisible).toEqual(false);
+    const vm = wrapper.vm as NeonInputClass;
+    expect(vm.iconVisible).toEqual(false);
   });
 
   it('sets stateHighlight default', () => {
     // given
     const value = 'test';
-    const wrapper: any = mount(NeonInput, {
+    const wrapper = mount(NeonInput, {
       propsData: { value, state: NeonState.Error },
     });
     expect(wrapper.find('.neon-input--with-state-highlight').element).toBeDefined();
@@ -290,7 +297,7 @@ describe('NeonInput', () => {
   it('sets stateHighlight false', () => {
     // given
     const value = 'test';
-    const wrapper: any = mount(NeonInput, {
+    const wrapper = mount(NeonInput, {
       propsData: { value, state: NeonState.Error, stateHighlight: false },
     });
     expect(wrapper.find('.neon-input--with-state-highlight').element).toBeUndefined();
@@ -299,7 +306,7 @@ describe('NeonInput', () => {
   it('sets stateIcon default', () => {
     // given
     const value = 'test';
-    const wrapper: any = mount(NeonInput, {
+    const wrapper = mount(NeonInput, {
       propsData: { value, state: NeonState.Error },
     });
     expect(wrapper.find('.neon-input--with-state-icon').element).toBeDefined();
@@ -308,7 +315,7 @@ describe('NeonInput', () => {
   it('sets stateIcon false', () => {
     // given
     const value = 'test';
-    const wrapper: any = mount(NeonInput, {
+    const wrapper = mount(NeonInput, {
       propsData: { value, state: NeonState.Error, stateIcon: false },
     });
     expect(wrapper.find('.neon-input--with-state-icon').element).toBeUndefined();
@@ -318,7 +325,7 @@ describe('NeonInput', () => {
     // given
     const value = 'test';
     const tabindex = 14;
-    const wrapper: any = mount(NeonInput, {
+    const wrapper = mount(NeonInput, {
       propsData: { value, tabindex },
     });
     expect(wrapper.find('input').attributes().tabindex).toEqual(`${tabindex}`);
