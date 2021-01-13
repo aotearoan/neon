@@ -26,6 +26,12 @@ export default class NeonDialog extends Vue {
   public color!: NeonFunctionalColor;
 
   /**
+   * Alternate confirm button color for creating a gradient button. NOTE: can also be the same color as 'color'.
+   */
+  @Prop()
+  public alternateColor?: NeonFunctionalColor;
+
+  /**
    * The label of the button for the cancel (negative) action.
    */
   @Prop({ default: 'Cancel' })

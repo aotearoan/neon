@@ -14,6 +14,7 @@
             :label="confirmLabel"
             size="s"
             :color="color"
+            :alternate-color="alternateColor"
             @click="confirm()"
           />
         </div>

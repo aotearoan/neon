@@ -17,6 +17,14 @@
       }
     },
     {
+      "name": "alternateColor",
+      "tags": {},
+      "description": "Alternate confirm button color for creating a gradient button. NOTE: can also be the same color as 'color'.",
+      "type": {
+        "name": "NeonFunctionalColor"
+      }
+    },
+    {
       "name": "cancelLabel",
       "tags": {},
       "description": "The label of the button for the cancel (negative) action.",
