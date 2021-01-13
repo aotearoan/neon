@@ -14,6 +14,8 @@
     @keydown.esc="closeTooltip()"
     @keydown.space="toggleTooltip()"
     @keypress.space.prevent=""
+    @mouseenter="openTooltip()"
+    @mouseleave="closeTooltip()"
     :aria-describedby="id"
   >
     <div class="neon-tooltip__content-wrapper" ref="content">

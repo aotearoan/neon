@@ -22,14 +22,9 @@ export class NeonClosableUtils {
     document.removeEventListener('touchstart', this.handleOutsideClick.bind(this));
   }
 
-  private escapeKeyListener(event: KeyboardEvent) {
+  escapeKeyListener(event: KeyboardEvent) {
     if (event.key === 'Escape') {
-      this.closeCallback();
-
-      if (this._open) {
-        document.body.classList.remove('neon-closable--open');
-        this._open = false;
-      }
+      this.close();
     }
   }
 
