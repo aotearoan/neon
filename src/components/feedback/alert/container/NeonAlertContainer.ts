@@ -3,6 +3,7 @@ import { Component, Prop } from 'vue-property-decorator';
 import { NeonAlertLevel } from '../../../../common/enums/NeonAlertLevel';
 import { NeonAlertPlacement } from '../../../../common/enums/NeonAlertPlacement';
 import NeonIcon from '../../../presentation/icon/NeonIcon.vue';
+import NeonLink from '../../../navigation/link/NeonLink.vue';
 import { NeonAlertModel } from '../NeonAlertModel';
 
 /**
@@ -11,6 +12,7 @@ import { NeonAlertModel } from '../NeonAlertModel';
 @Component({
   components: {
     NeonIcon,
+    NeonLink,
   },
 })
 export default class NeonAlertContainer extends Vue {
