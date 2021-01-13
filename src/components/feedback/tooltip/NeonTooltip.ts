@@ -20,13 +20,13 @@ export default class NeonTooltip extends Vue {
     content: HTMLElement;
   };
 
-  private open = false;
   private tooltipPlacement: NeonPlacement;
+  open = false;
 
   /**
    * Id of the tooltip.
    */
-  @Prop()
+  @Prop({ required: false })
   private id?: string;
 
   /**
@@ -66,28 +66,16 @@ export default class NeonTooltip extends Vue {
     this.tooltipPlacement = this.placement;
   }
 
-  private mounted() {
-    this.$refs.tooltip.addEventListener('mouseenter', this.openTooltip);
-    this.$refs.tooltip.addEventListener('mouseleave', this.closeTooltip);
-  }
-
-  private beforeDestroy() {
-    this.$refs.tooltip.removeEventListener('mouseenter', this.openTooltip);
-    this.$refs.tooltip.removeEventListener('mouseleave', this.closeTooltip);
-  }
-
   private recalculatePlacement() {
-    if (this.open) {
-      this.tooltipPlacement = NeonTooltipPlacementUtils.calculatePlacement(
-        this.$refs.tooltip,
-        this.$refs.content,
-        this.placement,
-        this.placementContainer,
-      );
-    }
+    this.tooltipPlacement = NeonTooltipPlacementUtils.calculatePlacement(
+      this.$refs.tooltip,
+      this.$refs.content,
+      this.placement,
+      this.placementContainer,
+    );
   }
 
-  private openTooltip() {
+  openTooltip() {
     this.open = true;
     setTimeout(this.recalculatePlacement);
   }

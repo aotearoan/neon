@@ -10,7 +10,8 @@
       "description": "Id of the tooltip.",
       "type": {
         "name": "string"
-      }
+      },
+      "required": false
     },
     {
       "name": "placement",
