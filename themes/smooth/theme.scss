@@ -96,7 +96,7 @@ $neon-system-font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
 $neon-body-font-family: $neon-system-font-stack !default;
 $neon-body-font-weight: 400 !default;
 
-$neon-heading-font-family: Salome, $neon-body-font-family !default;
+$neon-heading-font-family: $neon-body-font-family !default;
 $neon-font-style-headings: normal !default;
 
 $neon-font-family-paragraph: $neon-body-font-family !default;
@@ -228,3 +228,5 @@ $neon-border-radius-input-color: 50% !default;
 $neon-max-width-dialog: 250px !default;
 $neon-min-height-dialog: 275px !default;
 $neon-font-style-dialog: italic !default;
+
+@import '../../src/sass/common';

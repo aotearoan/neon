@@ -12,51 +12,43 @@ $neon-font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubu
 
   &.neon-theme--classic {
     @import '../../themes/classic/theme';
-    @import 'src/sass/common';
     @import './sass/app';
     @import './sass/classic';
 
     &.neon-mode--dark {
       @import '../../themes/classic/dark';
-      @import 'src/sass/colors/color-components';
       @import './sass/dark';
     }
 
     &.neon-mode--light {
       @import '../../themes/classic/light';
-      @import 'src/sass/colors/color-components';
       @import './sass/light';
     }
   }
 
   &.neon-theme--smooth {
     @import '../../themes/smooth/theme';
-    @import 'src/sass/common';
     @import './sass/app';
     @import './sass/smooth';
 
     &.neon-mode--dark {
       @import '../../themes/smooth/dark';
-      @import 'src/sass/colors/color-components';
       @import './sass/dark';
     }
 
     &.neon-mode--light {
       @import '../../themes/smooth/light';
-      @import 'src/sass/colors/color-components';
       @import './sass/light';
     }
   }
 
   &.neon-theme--sharp {
     @import '../../themes/sharp/theme';
-    @import 'src/sass/common';
     @import './sass/app';
     @import './sass/sharp';
 
     &.neon-mode--dark {
       @import '../../themes/sharp/dark';
-      @import 'src/sass/colors/color-components';
       @import './sass/dark';
 
       .neon-drawer .neon-side-nav__sticky {
@@ -66,7 +58,6 @@ $neon-font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubu
 
     &.neon-mode--light {
       @import '../../themes/sharp/light';
-      @import 'src/sass/colors/color-components';
       @import './sass/light';
 
       .neon-drawer .neon-side-nav__sticky {

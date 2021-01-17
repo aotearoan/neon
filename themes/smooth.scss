@@ -2,16 +2,13 @@
 .app {
   &.neon-theme--smooth {
     @import './smooth/theme';
-    @import 'src/sass/common';
 
     &.neon-mode--dark {
       @import './smooth/dark';
-      @import 'src/sass/colors/color-components';
     }
 
     &.neon-mode--light {
       @import './smooth/light';
-      @import 'src/sass/colors/color-components';
     }
   }
 }

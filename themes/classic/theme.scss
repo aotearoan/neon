@@ -229,3 +229,5 @@ $neon-border-radius-input-color: 0.5 * $neon-border-radius !default;
 $neon-max-width-dialog: 250px !default;
 $neon-min-height-dialog: 275px !default;
 $neon-font-style-dialog: italic !default;
+
+@import '../../src/sass/common';
