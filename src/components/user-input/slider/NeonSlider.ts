@@ -10,7 +10,7 @@ import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
  * </p>
  * <p><strong>NeonNumber</strong> also supports all relevant properties found on an HTML &lt;input&gt;.</p>
  */
-@Component({})
+@Component
 export class NeonSlider extends Vue {
   /**
    * The current input <em>value</em>.

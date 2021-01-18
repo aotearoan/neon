@@ -1,6 +1,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { TranslateResult } from 'vue-i18n';
+import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 
 /**
  * Use input indicators to provide additional information for input fields. This can be useful to add the field units or
@@ -8,7 +9,11 @@ import { TranslateResult } from 'vue-i18n';
  * <br />
  * NOTE: An input indicator is an HTML <em>label</em> so attributes like, e.g. <em>for</em> are accepted.
  */
-@Component({})
+@Component({
+  components: {
+    NeonIcon,
+  },
+})
 export default class NeonInputIndicator extends Vue {
   /**
    * The label to display

@@ -1,4 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator';
+import NeonInput from '../input/NeonInput.vue';
 
 /**
  * <p>The <strong>NeonPassword</strong> component is the equivalent of an
@@ -7,7 +8,11 @@ import { Component, Vue } from 'vue-property-decorator';
  * display of the password.
  * </p>
  */
-@Component({})
+@Component({
+  components: {
+    NeonInput,
+  },
+})
 export default class NeonPassword extends Vue {
   private show = false;
 

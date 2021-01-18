@@ -4,6 +4,7 @@ import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 import { NeonFilterListItem } from '../../../common/models/NeonFilterListItem';
 import { TranslateResult } from 'vue-i18n';
+import NeonLink from '../../navigation/link/NeonLink.vue';
 
 /**
  * <p><strong>NeonFilterList</strong> is an alternative component to a select where the values are displayed in a
@@ -13,6 +14,7 @@ import { TranslateResult } from 'vue-i18n';
 @Component({
   components: {
     NeonIcon,
+    NeonLink,
   },
 })
 export default class NeonFilterList extends Vue {

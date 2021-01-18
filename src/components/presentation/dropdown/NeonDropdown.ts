@@ -6,6 +6,9 @@ import { TranslateResult } from 'vue-i18n';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonDropdownStyle } from '../../../common/enums/NeonDropdownStyle';
+import NeonBadge from '../badge/NeonBadge.vue';
+import NeonButton from '../../user-input/button/NeonButton.vue';
+import NeonExpansionIndicator from '../expansion-indicator/NeonExpansionIndicator.vue';
 
 /**
  * <p>A general purpose dropdown component. This component consists of a button, to trigger the dropdown to open, and
@@ -16,7 +19,13 @@ import { NeonDropdownStyle } from '../../../common/enums/NeonDropdownStyle';
  * <p><strong>NeonDropdown</strong> is the basis for the <strong>NeonDropdownMenu</strong> component and the
  * <strong>NeonSelect</strong> form component.</p>
  */
-@Component
+@Component({
+  components: {
+    NeonBadge,
+    NeonButton,
+    NeonExpansionIndicator,
+  },
+})
 export default class NeonDropdown extends Vue {
   $refs!: {
     dropdownButton: HTMLElement;
