@@ -6,6 +6,7 @@ import NeonDropdownMenuClass from '../dropdown-menu/NeonDropdownMenu';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonPriorityMenuItem } from './NeonPriorityMenuItem';
+import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 
 /**
  * <p>
@@ -19,6 +20,7 @@ import { NeonPriorityMenuItem } from './NeonPriorityMenuItem';
   components: {
     NeonDropdownMenu,
     NeonLink,
+    NeonIcon,
   },
 })
 export default class NeonMenu extends Vue {

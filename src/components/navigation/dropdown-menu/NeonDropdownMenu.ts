@@ -6,6 +6,8 @@ import NeonDropdown from '../../presentation/dropdown/NeonDropdown.vue';
 import NeonDropdownClass from '../../presentation/dropdown/NeonDropdown';
 import { NeonDropdownPlacement } from '../../../common/enums/NeonDropdownPlacement';
 import { NeonScrollUtils } from '../../../common/utils/NeonScrollUtils';
+import NeonIcon from '../../presentation/icon/NeonIcon.vue';
+import NeonLink from '../link/NeonLink.vue';
 
 /**
  * <p>A dropdown menu consisting of a button to open the menu and a list of menu items. Clicking on a menu item will
@@ -16,6 +18,8 @@ import { NeonScrollUtils } from '../../../common/utils/NeonScrollUtils';
 @Component({
   components: {
     NeonDropdown,
+    NeonIcon,
+    NeonLink,
   },
 })
 export default class NeonDropdownMenu extends Vue {

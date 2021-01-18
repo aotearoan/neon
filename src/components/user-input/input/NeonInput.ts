@@ -3,11 +3,16 @@ import { NeonInputType } from '../../../common/enums/NeonInputType';
 import { NeonState } from '../../../common/enums/NeonState';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 
 /**
  * Equivalent of, and wrapper around, an HTML input. Also supports <strong>textarea</strong>.
  */
-@Component({})
+@Component({
+  components: {
+    NeonIcon,
+  },
+})
 export default class NeonInput extends Vue {
   $refs!: {
     neonInput: HTMLInputElement;

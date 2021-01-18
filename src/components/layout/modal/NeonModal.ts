@@ -1,10 +1,15 @@
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import { NeonClosableUtils } from '../../../common/utils/NeonClosableUtils';
+import NeonButton from '../../user-input/button/NeonButton.vue';
 
 /**
  * A modal dialog component. This will be rendered above the content of the main window and can either be dismissed by the user or configured to require user interaction before dismissal.
  */
-@Component
+@Component({
+  components: {
+    NeonButton,
+  },
+})
 export default class NeonModal extends Vue {
   $refs!: {
     modal: HTMLDivElement;

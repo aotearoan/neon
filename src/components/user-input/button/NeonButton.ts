@@ -6,6 +6,7 @@ import { NeonButtonStyle } from '../../../common/enums/NeonButtonStyle';
 import { NeonHorizontalPosition } from '../../../common/enums/NeonHorizontalPosition';
 import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 import NeonLink from '../../navigation/link/NeonLink.vue';
+import NeonExpansionIndicator from '../../presentation/expansion-indicator/NeonExpansionIndicator.vue';
 import { NeonState } from '../../../common/enums/NeonState';
 
 /**
@@ -13,8 +14,9 @@ import { NeonState } from '../../../common/enums/NeonState';
  */
 @Component({
   components: {
-    NeonLink,
+    NeonExpansionIndicator,
     NeonIcon,
+    NeonLink,
   },
 })
 export default class NeonButton extends Vue {
