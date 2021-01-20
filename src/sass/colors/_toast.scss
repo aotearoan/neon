@@ -5,19 +5,21 @@ $alert-colors: (
   error: $neon-error-palette,
 );
 
-.neon-toast__message {
-  box-shadow: $neon-box-shadow-alert;
+@mixin neon-toast-color-import {
+  .neon-toast__message {
+    box-shadow: $neon-box-shadow-alert;
 
-  @each $color, $palette in $alert-colors {
-    $alert-background-color: map-get($palette, $neon-background-color-toast);
-    $alert-color: map-get($palette, $neon-color-toast);
+    @each $color, $palette in $alert-colors {
+      $alert-background-color: map-get($palette, $neon-background-color-toast);
+      $alert-color: map-get($palette, $neon-color-toast);
 
-    &.neon-toast__message--#{$color} {
-      background-color: $alert-background-color;
-      @include color-with-svg($alert-color);
+      &.neon-toast__message--#{$color} {
+        background-color: $alert-background-color;
+        @include color-with-svg($alert-color);
 
-      &:focus-within {
-        @include box-shadow-outline($alert-background-color);
+        &:focus-within {
+          @include box-shadow-outline($alert-background-color);
+        }
       }
     }
   }

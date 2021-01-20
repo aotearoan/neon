@@ -1,6 +1,8 @@
-.neon-icon {
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+@mixin neon-icon-import {
+  .neon-icon {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 }

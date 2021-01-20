@@ -1,8 +1,8 @@
 {
   "description": "A modal dialog component. This will be rendered above the content of the main window and can either be dismissed by the user or configured to require user interaction before dismissal.",
   "tags": {},
-  "displayName": "NeonModal",
   "exportName": "default",
+  "displayName": "NeonModal",
   "props": [
     {
       "name": "open",

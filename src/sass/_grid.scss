@@ -1,59 +1,61 @@
 @import 'includes/layout';
 
-.neon-grid {
-  width: 100%;
-  max-width: $neon-max-page-width;
-  @include min-height(100, $neon-footer-height-desktop);
-  @include padding(0.5, true);
-  display: grid;
-
-  .neon-grid-area {
-    @include margin(0.5, true);
-    display: flex;
-  }
-}
-
-.neon-page--with-side-nav .neon-grid {
-  @include side-nav-offset;
-  max-width: calc(#{$neon-max-page-width - $neon-side-nav-width});
-}
-
-.neon-page--with-top-nav .neon-page__container {
+@mixin neon-grid-import {
   .neon-grid {
-    @include responsive(larger-than-tablet) {
-      @include min-height(100, $neon-top-nav-height-desktop + $neon-footer-height-desktop);
-    }
+    width: 100%;
+    max-width: $neon-max-page-width;
+    @include min-height(100, $neon-footer-height-desktop);
+    @include padding(0.5, true);
+    display: grid;
 
-    @include responsive(tablet) {
-      @include min-height(100, $neon-top-nav-height-tablet + $neon-footer-height-tablet);
-    }
-
-    @include responsive(mobile-large) {
-      @include min-height(100, $neon-top-nav-height-mobile + $neon-footer-height-mobile);
-    }
-  }
-}
-
-.neon-grid {
-  .neon-grid-area {
-    @include responsive(larger-than-tablet) {
-      max-width: calc(100vw - #{2 * $spacing-vertical-desktop});
-    }
-
-    @include responsive(tablet) {
-      max-width: calc(100vw - #{2 * $spacing-vertical-tablet});
-    }
-
-    @include responsive(mobile-large) {
-      max-width: calc(100vw - #{2 * $neon-spacing-vertical-mobile});
+    .neon-grid-area {
+      @include margin(0.5, true);
+      display: flex;
     }
   }
-}
 
-.neon-page--with-side-nav .neon-grid {
-  .neon-grid-area {
-    @include responsive(larger-than-tablet) {
-      max-width: calc(100vw - #{$neon-side-nav-width + 2 * $spacing-vertical-desktop});
+  .neon-page--with-side-nav .neon-grid {
+    @include side-nav-offset;
+    max-width: calc(#{$neon-max-page-width - $neon-side-nav-width});
+  }
+
+  .neon-page--with-top-nav .neon-page__container {
+    .neon-grid {
+      @include responsive(larger-than-tablet) {
+        @include min-height(100, $neon-top-nav-height-desktop + $neon-footer-height-desktop);
+      }
+
+      @include responsive(tablet) {
+        @include min-height(100, $neon-top-nav-height-tablet + $neon-footer-height-tablet);
+      }
+
+      @include responsive(mobile-large) {
+        @include min-height(100, $neon-top-nav-height-mobile + $neon-footer-height-mobile);
+      }
+    }
+  }
+
+  .neon-grid {
+    .neon-grid-area {
+      @include responsive(larger-than-tablet) {
+        max-width: calc(100vw - #{2 * $spacing-vertical-desktop});
+      }
+
+      @include responsive(tablet) {
+        max-width: calc(100vw - #{2 * $spacing-vertical-tablet});
+      }
+
+      @include responsive(mobile-large) {
+        max-width: calc(100vw - #{2 * $neon-spacing-vertical-mobile});
+      }
+    }
+  }
+
+  .neon-page--with-side-nav .neon-grid {
+    .neon-grid-area {
+      @include responsive(larger-than-tablet) {
+        max-width: calc(100vw - #{$neon-side-nav-width + 2 * $spacing-vertical-desktop});
+      }
     }
   }
 }

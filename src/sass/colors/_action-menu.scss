@@ -1,24 +1,27 @@
-.neon-action-menu {
-  &__link {
-    &:not(.neon-action-menu__link--selected):not(.neon-action-menu__link--disabled) {
-      &:hover,
-      &:focus {
-        background-color: $neon-color-action-menu-hover;
-      }
-    }
-
-    &.neon-action-menu__link--selected {
-      @each $color, $palette in $neon-functional-colors {
-        &.neon-action-menu__link--#{$color} {
-          background-color: map-get($palette, $neon-color-action-menu-selected);
+@mixin neon-action-menu-color-import {
+  .neon-action-menu {
+    &__link {
+      &:not(.neon-action-menu__link--selected):not(.neon-action-menu__link--disabled) {
+        &:hover,
+        &:focus {
+          background-color: $neon-color-action-menu-hover;
         }
       }
-      color: $neon-color-inverse;
-      transition: background-color ease-in-out $neon-animation-speed-slow, color ease-in-out $neon-animation-speed-slow;
-    }
 
-    &.neon-action-menu__link--disabled {
-      color: $neon-color-disabled-light;
+      &.neon-action-menu__link--selected {
+        @each $color, $palette in $neon-functional-colors {
+          &.neon-action-menu__link--#{$color} {
+            background-color: map-get($palette, $neon-color-action-menu-selected);
+          }
+        }
+        color: $neon-color-inverse;
+        transition: background-color ease-in-out $neon-animation-speed-slow,
+          color ease-in-out $neon-animation-speed-slow;
+      }
+
+      &.neon-action-menu__link--disabled {
+        color: $neon-color-disabled-light;
+      }
     }
   }
 }

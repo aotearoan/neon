@@ -1,43 +1,45 @@
 @import 'includes/toggle-mixins';
 
-.neon-toggle {
-  width: fit-content;
-  height: fit-content;
+@mixin neon-toggle-import {
+  .neon-toggle {
+    width: fit-content;
+    height: fit-content;
 
-  input {
-    display: none;
-  }
+    input {
+      display: none;
+    }
 
-  &__label {
-    user-select: none;
-    padding: 2 * $neon-base-space 3 * $neon-base-space;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
+    &__label {
+      user-select: none;
+      padding: 2 * $neon-base-space 3 * $neon-base-space;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
 
-    &:focus {
-      outline: none;
+      &:focus {
+        outline: none;
+      }
+
+      &--disabled {
+        cursor: not-allowed;
+      }
+    }
+
+    &--toggle {
+      @include toggle-layout;
+    }
+
+    &--radio-buttons {
+      @include radio-button-layout;
+    }
+
+    &--horizontal {
+      flex-direction: row;
     }
 
     &--disabled {
       cursor: not-allowed;
     }
-  }
-
-  &--toggle {
-    @include toggle-layout;
-  }
-
-  &--radio-buttons {
-    @include radio-button-layout;
-  }
-
-  &--horizontal {
-    flex-direction: row;
-  }
-
-  &--disabled {
-    cursor: not-allowed;
   }
 }

@@ -1,39 +1,41 @@
-.neon-number {
-  &--with-buttons.neon-number {
-    &--s {
-      max-width: 4 * $neon-size-s;
+@mixin neon-number-import {
+  .neon-number {
+    &--with-buttons.neon-number {
+      &--s {
+        max-width: 4 * $neon-size-s;
+      }
+
+      &--m {
+        max-width: 4 * $neon-size-m;
+      }
+
+      &--l {
+        max-width: 4 * $neon-size-l;
+      }
     }
 
-    &--m {
-      max-width: 4 * $neon-size-m;
+    .neon-input .neon-input__textfield {
+      padding-right: 2 * $neon-base-space;
+      font-variant: tabular-nums;
+      border-right: none;
+      -moz-appearance: textfield;
+
+      &:focus {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
     }
 
-    &--l {
-      max-width: 4 * $neon-size-l;
-    }
-  }
-
-  .neon-input .neon-input__textfield {
-    padding-right: 2 * $neon-base-space;
-    font-variant: tabular-nums;
-    border-right: none;
-    -moz-appearance: textfield;
-
-    &:focus {
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-  }
-
-  .neon-input {
-    .neon-icon {
-      display: none;
+    .neon-input {
+      .neon-icon {
+        display: none;
+      }
     }
   }
 }

@@ -1,57 +1,59 @@
 @import 'toggle-color-mixins';
 
-.neon-toggle {
-  &--toggle {
-    @include toggle-colors;
-  }
+@mixin neon-toggle-color-import {
+  .neon-toggle {
+    &--toggle {
+      @include toggle-colors;
+    }
 
-  &--radio-buttons {
-    @each $color, $palette in $neon-functional-colors {
-      &.neon-toggle--#{$color}:not(.neon-toggle--disabled) {
-        $toggle-color: map-get($palette, $neon-color-toggle);
+    &--radio-buttons {
+      @each $color, $palette in $neon-functional-colors {
+        &.neon-toggle--#{$color}:not(.neon-toggle--disabled) {
+          $toggle-color: map-get($palette, $neon-color-toggle);
 
-        .neon-toggle__label:not(.neon-toggle__label--disabled) {
-          .neon-toggle__radio-button {
-            border: $neon-border-width-radio-button $neon-border-style $neon-border-color-toggle;
-            background: $neon-background-radio-button;
-          }
-
-          color: $neon-color-radio-button-label;
-
-          &:hover,
-          &:focus {
+          .neon-toggle__label:not(.neon-toggle__label--disabled) {
             .neon-toggle__radio-button {
-              background: rgba($neon-border-color-toggle, 0.375);
+              border: $neon-border-width-radio-button $neon-border-style $neon-border-color-toggle;
+              background: $neon-background-radio-button;
             }
-          }
 
-          &.neon-toggle__label--checked {
-            color: $neon-color-text;
+            color: $neon-color-radio-button-label;
 
-            .neon-toggle__radio-button {
-              border: $neon-border-width-radio-button $neon-border-style $toggle-color;
+            &:hover,
+            &:focus {
+              .neon-toggle__radio-button {
+                background: rgba($neon-border-color-toggle, 0.375);
+              }
+            }
 
-              &-indicator {
-                background-color: $toggle-color;
-                box-shadow: $neon-box-shadow;
+            &.neon-toggle__label--checked {
+              color: $neon-color-text;
+
+              .neon-toggle__radio-button {
+                border: $neon-border-width-radio-button $neon-border-style $toggle-color;
+
+                &-indicator {
+                  background-color: $toggle-color;
+                  box-shadow: $neon-box-shadow;
+                }
               }
             }
           }
         }
       }
-    }
 
-    &.neon-toggle--disabled .neon-toggle__label,
-    .neon-toggle__label--disabled {
-      color: $neon-color-disabled-light;
-
-      .neon-toggle__radio-button {
-        background: $neon-color-disabled-dark;
+      &.neon-toggle--disabled .neon-toggle__label,
+      .neon-toggle__label--disabled {
         color: $neon-color-disabled-light;
-        border-color: $neon-color-disabled-dark;
 
-        &-indicator {
-          background-color: $neon-color-disabled-light;
+        .neon-toggle__radio-button {
+          background: $neon-color-disabled-dark;
+          color: $neon-color-disabled-light;
+          border-color: $neon-color-disabled-dark;
+
+          &-indicator {
+            background-color: $neon-color-disabled-light;
+          }
         }
       }
     }

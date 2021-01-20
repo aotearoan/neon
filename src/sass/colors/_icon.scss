@@ -1,34 +1,36 @@
 $neon-icon-types: (neon-expansion-indicator, neon-icon);
 
-@each $neon-icon-type in $neon-icon-types {
-  .#{$neon-icon-type} {
-    @include svg-colors($neon-color-text);
+@mixin neon-icon-color-import {
+  @each $neon-icon-type in $neon-icon-types {
+    .#{$neon-icon-type} {
+      @include svg-colors($neon-color-text);
 
-    .neon-svg--fill {
-      transition: fill ease-in-out $neon-animation-speed-fast;
-    }
-
-    .neon-svg--stroke {
-      transition: stroke ease-in-out $neon-animation-speed-fast;
-    }
-
-    @each $color, $palette in $neon-functional-colors {
-      &--#{$color}:not(.#{$neon-icon-type}--disabled):not(.#{$neon-icon-type}--inverse) {
-        @include svg-colors(map-get($palette, $neon-color-icon));
-      }
-    }
-
-    &--inverse {
-      @include svg-colors($neon-color-inverse);
-    }
-
-    &--disabled {
       .neon-svg--fill {
-        fill: $neon-color-disabled-light;
+        transition: fill ease-in-out $neon-animation-speed-fast;
       }
 
       .neon-svg--stroke {
-        stroke: $neon-color-disabled-light;
+        transition: stroke ease-in-out $neon-animation-speed-fast;
+      }
+
+      @each $color, $palette in $neon-functional-colors {
+        &--#{$color}:not(.#{$neon-icon-type}--disabled):not(.#{$neon-icon-type}--inverse) {
+          @include svg-colors(map-get($palette, $neon-color-icon));
+        }
+      }
+
+      &--inverse {
+        @include svg-colors($neon-color-inverse);
+      }
+
+      &--disabled {
+        .neon-svg--fill {
+          fill: $neon-color-disabled-light;
+        }
+
+        .neon-svg--stroke {
+          stroke: $neon-color-disabled-light;
+        }
       }
     }
   }

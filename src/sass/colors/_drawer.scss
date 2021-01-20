@@ -1,44 +1,46 @@
-.neon-drawer {
-  &--with-overlay {
-    .neon-drawer__overlay {
-      background-color: $neon-background-color-overlay;
+@mixin neon-drawer-color-import {
+  .neon-drawer {
+    &--with-overlay {
+      .neon-drawer__overlay {
+        background-color: $neon-background-color-overlay;
+      }
     }
-  }
 
-  &__container {
-    background-color: $neon-background-color-card;
-    box-shadow: $neon-box-shadow;
-  }
-
-  &--left {
-    .neon-drawer__container {
-      border-right: $neon-border-width-drawer $neon-border-style $neon-border-color;
-      border-top-right-radius: $neon-border-radius-drawer;
-      border-bottom-right-radius: $neon-border-radius-drawer;
+    &__container {
+      background-color: $neon-background-color-card;
+      box-shadow: $neon-box-shadow;
     }
-  }
 
-  &--right {
-    .neon-drawer__container {
-      border-left: $neon-border-width-drawer $neon-border-style $neon-border-color;
-      border-top-left-radius: $neon-border-radius-drawer;
-      border-bottom-left-radius: $neon-border-radius-drawer;
+    &--left {
+      .neon-drawer__container {
+        border-right: $neon-border-width-drawer $neon-border-style $neon-border-color;
+        border-top-right-radius: $neon-border-radius-drawer;
+        border-bottom-right-radius: $neon-border-radius-drawer;
+      }
     }
-  }
 
-  &--top {
-    .neon-drawer__container {
-      border-bottom: $neon-border-width-drawer $neon-border-style $neon-border-color;
-      border-bottom-left-radius: $neon-border-radius-drawer;
-      border-bottom-right-radius: $neon-border-radius-drawer;
+    &--right {
+      .neon-drawer__container {
+        border-left: $neon-border-width-drawer $neon-border-style $neon-border-color;
+        border-top-left-radius: $neon-border-radius-drawer;
+        border-bottom-left-radius: $neon-border-radius-drawer;
+      }
     }
-  }
 
-  &--bottom {
-    .neon-drawer__container {
-      border-top: $neon-border-width-drawer $neon-border-style $neon-border-color;
-      border-top-left-radius: $neon-border-radius-drawer;
-      border-top-right-radius: $neon-border-radius-drawer;
+    &--top {
+      .neon-drawer__container {
+        border-bottom: $neon-border-width-drawer $neon-border-style $neon-border-color;
+        border-bottom-left-radius: $neon-border-radius-drawer;
+        border-bottom-right-radius: $neon-border-radius-drawer;
+      }
+    }
+
+    &--bottom {
+      .neon-drawer__container {
+        border-top: $neon-border-width-drawer $neon-border-style $neon-border-color;
+        border-top-left-radius: $neon-border-radius-drawer;
+        border-top-right-radius: $neon-border-radius-drawer;
+      }
     }
   }
 }

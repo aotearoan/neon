@@ -1,5 +1,24 @@
-blockquote,
-.neon-note {
+@mixin neon-note-margins($neon-note-selector-name) {
+  p,
+  .neon-h1,
+  .neon-h2,
+  .neon-h3,
+  .neon-h4,
+  .neon-h5,
+  .neon-h6,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    & + #{$neon-note-selector-name} {
+      margin-top: 2 * $neon-base-space;
+    }
+  }
+}
+
+%neon-blockquote-import {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -10,69 +29,58 @@ blockquote,
     display: inline;
   }
 
-  &__icon.neon-icon {
-    margin-right: 4 * $neon-base-space;
-    $note-icon-size: 1.5 * $neon-font-size-m;
-    width: $note-icon-size;
-    min-width: $note-icon-size;
-    height: $note-icon-size;
-    min-height: $note-icon-size;
-  }
-
-  &__container {
-    @include padding(0.85);
-    width: 100%;
-    justify-items: flex-start;
-    align-items: flex-start;
-    flex-direction: row;
-  }
-
-  &__close {
-    align-self: flex-start;
-
-    &.neon-button {
-      @include responsive(larger-than-tablet) {
-        margin: 2 * $neon-base-space;
-      }
-
-      @include responsive(tablet) {
-        margin: $neon-base-space;
-      }
-
-      @include responsive(mobile-large) {
-        margin: 0.5 * $neon-base-space;
-      }
-    }
-  }
-
   & + p {
     margin-top: 4 * $neon-base-space;
   }
 }
 
-p,
-.neon-h1,
-.neon-h2,
-.neon-h3,
-.neon-h4,
-.neon-h5,
-.neon-h6,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  & + blockquote,
-  & + .neon-note {
-    margin-top: 2 * $neon-base-space;
-  }
-}
-
-.neon-note {
-  justify-content: space-between;
-}
-
 blockquote {
+  @extend %neon-blockquote-import;
   @include padding(0.85);
+}
+
+@include neon-note-margins('blockquote');
+
+@mixin neon-note-import {
+  .neon-note {
+    @extend %neon-blockquote-import;
+    justify-content: space-between;
+
+    &__icon.neon-icon {
+      margin-right: 4 * $neon-base-space;
+      $note-icon-size: 1.5 * $neon-font-size-m;
+      width: $note-icon-size;
+      min-width: $note-icon-size;
+      height: $note-icon-size;
+      min-height: $note-icon-size;
+    }
+
+    &__container {
+      @include padding(0.85);
+      width: 100%;
+      justify-items: flex-start;
+      align-items: flex-start;
+      flex-direction: row;
+    }
+
+    &__close {
+      align-self: flex-start;
+
+      &.neon-button {
+        @include responsive(larger-than-tablet) {
+          margin: 2 * $neon-base-space;
+        }
+
+        @include responsive(tablet) {
+          margin: $neon-base-space;
+        }
+
+        @include responsive(mobile-large) {
+          margin: 0.5 * $neon-base-space;
+        }
+      }
+    }
+  }
+
+  @include neon-note-margins('.neon-note');
 }

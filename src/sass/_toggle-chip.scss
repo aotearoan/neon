@@ -12,64 +12,66 @@
   }
 }
 
-.neon-toggle-chip {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: fit-content;
-  cursor: pointer;
-  border: $neon-border-width $neon-border-style;
-  border-radius: $neon-border-radius;
-  transition: width ease-in-out $neon-animation-speed-fast, background-color ease-in-out $neon-animation-speed-fast;
-
-  &:focus {
-    outline: none;
-  }
-
-  &__label {
-    user-select: none;
+@mixin neon-toggle-chip-import {
+  .neon-toggle-chip {
     display: flex;
+    flex-direction: row;
     align-items: center;
-  }
+    width: fit-content;
+    cursor: pointer;
+    border: $neon-border-width $neon-border-style;
+    border-radius: $neon-border-radius;
+    transition: width ease-in-out $neon-animation-speed-fast, background-color ease-in-out $neon-animation-speed-fast;
 
-  &__input {
-    display: none;
-  }
-
-  &__checked {
-    width: 0;
-    margin-right: 0;
-    opacity: 0;
-  }
-
-  &--checked {
-    .neon-toggle-chip__checked {
-      margin-right: 2 * $neon-base-space;
-      opacity: 1;
+    &:focus {
+      outline: none;
     }
-  }
 
-  &--xs {
-    @include neon-toggle-chip-size($neon-size-xs, $neon-font-size-xs, 2 * $neon-base-space);
-  }
+    &__label {
+      user-select: none;
+      display: flex;
+      align-items: center;
+    }
 
-  &--s {
-    @include neon-toggle-chip-size($neon-size-s, $neon-font-size-s, 2.5 * $neon-base-space);
-  }
+    &__input {
+      display: none;
+    }
 
-  &--m {
-    @include neon-toggle-chip-size($neon-size-m, $neon-font-size-m, 3.5 * $neon-base-space);
-  }
+    &__checked {
+      width: 0;
+      margin-right: 0;
+      opacity: 0;
+    }
 
-  &--l {
-    @include neon-toggle-chip-size($neon-size-l, $neon-font-size-l, 5 * $neon-base-space);
-  }
+    &--checked {
+      .neon-toggle-chip__checked {
+        margin-right: 2 * $neon-base-space;
+        opacity: 1;
+      }
+    }
 
-  &:active:not(.neon-toggle-chip--disabled):not(.neon-toggle-chip--show-check) {
-    transform: scale(0.95);
-  }
+    &--xs {
+      @include neon-toggle-chip-size($neon-size-xs, $neon-font-size-xs, 2 * $neon-base-space);
+    }
 
-  &--disabled {
-    cursor: not-allowed;
+    &--s {
+      @include neon-toggle-chip-size($neon-size-s, $neon-font-size-s, 2.5 * $neon-base-space);
+    }
+
+    &--m {
+      @include neon-toggle-chip-size($neon-size-m, $neon-font-size-m, 3.5 * $neon-base-space);
+    }
+
+    &--l {
+      @include neon-toggle-chip-size($neon-size-l, $neon-font-size-l, 5 * $neon-base-space);
+    }
+
+    &:active:not(.neon-toggle-chip--disabled):not(.neon-toggle-chip--show-check) {
+      transform: scale(0.95);
+    }
+
+    &--disabled {
+      cursor: not-allowed;
+    }
   }
 }

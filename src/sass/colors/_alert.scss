@@ -5,58 +5,62 @@ $alert-colors: (
   error: $neon-error-palette,
 );
 
-.neon-alert {
-  @include scrollbars;
+@mixin neon-alert-color-import {
+  .neon-alert {
+    @include scrollbars;
 
-  .neon-alert__message {
-    box-shadow: $neon-box-shadow-alert;
+    .neon-alert__message {
+      box-shadow: $neon-box-shadow-alert;
 
-    @each $color, $palette in $alert-colors {
-      $alert-color: map-get($palette, $neon-color-alert);
+      @each $color, $palette in $alert-colors {
+        $alert-color: map-get($palette, $neon-color-alert);
 
-      &.neon-alert__message--#{$color} {
-        background-color: $neon-color-inverse;
+        &.neon-alert__message--#{$color} {
+          background-color: $neon-color-inverse;
 
-        @if ($neon-theme == 'sharp') {
-          border: $neon-border-width-alert $neon-border-style $alert-color;
-        } @else {
-          @supports (backdrop-filter: none) {
-            background-color: rgba($alert-color, 0.15);
-            backdrop-filter: blur(20px);
-          }
-        }
-
-        &:focus-within:not(.neon-alert__message--with-actions) {
-          @include box-shadow-outline($alert-color);
-        }
-
-        .neon-alert__title {
-          color: $alert-color;
-        }
-
-        .neon-alert__actions {
-          border-left: $neon-border-width-alert
-            $neon-border-style
-            rgba($alert-color, $neon-border-opacity-alert-action);
-
-          .neon-alert__action {
-            transition: all $neon-animation-speed-fast ease-in-out;
-            color: rgba($alert-color, 0.5);
-
-            &:focus,
-            &:hover {
-              color: $alert-color;
-              text-decoration: none;
-            }
-
-            &:focus {
-              background-color: rgba($alert-color, 0.125);
+          @if ($neon-theme == 'sharp') {
+            border: $neon-border-width-alert $neon-border-style $alert-color;
+          } @else {
+            @supports (backdrop-filter: none) {
+              background-color: rgba($alert-color, 0.15);
+              backdrop-filter: blur(20px);
             }
           }
-        }
 
-        .neon-alert__action + .neon-alert__action {
-          border-top: $neon-border-width-alert $neon-border-style rgba($alert-color, $neon-border-opacity-alert-action);
+          &:focus-within:not(.neon-alert__message--with-actions) {
+            @include box-shadow-outline($alert-color);
+          }
+
+          .neon-alert__title {
+            color: $alert-color;
+          }
+
+          .neon-alert__actions {
+            border-left: $neon-border-width-alert
+              $neon-border-style
+              rgba($alert-color, $neon-border-opacity-alert-action);
+
+            .neon-alert__action {
+              transition: all $neon-animation-speed-fast ease-in-out;
+              color: rgba($alert-color, 0.5);
+
+              &:focus,
+              &:hover {
+                color: $alert-color;
+                text-decoration: none;
+              }
+
+              &:focus {
+                background-color: rgba($alert-color, 0.125);
+              }
+            }
+          }
+
+          .neon-alert__action + .neon-alert__action {
+            border-top: $neon-border-width-alert
+              $neon-border-style
+              rgba($alert-color, $neon-border-opacity-alert-action);
+          }
         }
       }
     }

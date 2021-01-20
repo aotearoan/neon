@@ -1,79 +1,81 @@
-.neon-tree-menu {
-  &__section-link,
-  &__link,
-  &__anchor {
-    display: flex;
-    width: 100%;
-    letter-spacing: $neon-letter-spacing-s;
-    border-radius: $neon-border-radius;
-    padding-top: 0.5 * $neon-base-space;
-    padding-bottom: 0.5 * $neon-base-space;
-    margin: 0;
-    text-decoration: none;
-    user-select: none;
-    cursor: pointer;
-  }
-
-  .neon-tree-menu__section-link-label,
-  .neon-tree-menu__link-label,
-  .neon-tree-menu__anchor-label {
-    pointer-events: none;
-    touch-action: none;
-    outline: none;
-  }
-
-  .neon-tree-menu__section-link {
-    font-weight: 600;
-  }
-
-  .neon-tree-menu__section {
-    & > .neon-tree-menu__link {
-      font-size: $neon-font-size-m;
-    }
-
-    .neon-tree-menu__links {
-      display: none;
-    }
-
-    &--expanded {
-      .neon-tree-menu__links {
-        display: flex;
-      }
-    }
-  }
-
-  .neon-tree-menu__link-item {
-    .neon-tree-menu__link {
-      font-weight: 400;
-      margin-bottom: 0.5 * $neon-base-space;
-      padding-left: 4 * $neon-base-space;
-    }
-
-    .neon-tree-menu__anchor {
-      font-weight: 400;
-      margin-bottom: 0.5 * $neon-base-space;
-      padding-left: 8 * $neon-base-space;
-      font-size: $neon-font-size-s;
-    }
-  }
-
-  &.neon-tree-menu--expand-all {
-    .neon-tree-menu__section {
-      .neon-tree-menu__links {
-        display: flex;
-      }
-    }
-  }
-
-  & > ul > li:first-child a {
-    padding-top: 0;
-  }
-
-  &__anchors {
-    display: none;
-
-    &--expanded {
+@mixin neon-tree-menu-import {
+  .neon-tree-menu {
+    &__section-link,
+    &__link,
+    &__anchor {
       display: flex;
+      width: 100%;
+      letter-spacing: $neon-letter-spacing-s;
+      border-radius: $neon-border-radius;
+      padding-top: 0.5 * $neon-base-space;
+      padding-bottom: 0.5 * $neon-base-space;
+      margin: 0;
+      text-decoration: none;
+      user-select: none;
+      cursor: pointer;
+    }
+
+    .neon-tree-menu__section-link-label,
+    .neon-tree-menu__link-label,
+    .neon-tree-menu__anchor-label {
+      pointer-events: none;
+      touch-action: none;
+      outline: none;
+    }
+
+    .neon-tree-menu__section-link {
+      font-weight: 600;
+    }
+
+    .neon-tree-menu__section {
+      & > .neon-tree-menu__link {
+        font-size: $neon-font-size-m;
+      }
+
+      .neon-tree-menu__links {
+        display: none;
+      }
+
+      &--expanded {
+        .neon-tree-menu__links {
+          display: flex;
+        }
+      }
+    }
+
+    .neon-tree-menu__link-item {
+      .neon-tree-menu__link {
+        font-weight: 400;
+        margin-bottom: 0.5 * $neon-base-space;
+        padding-left: 4 * $neon-base-space;
+      }
+
+      .neon-tree-menu__anchor {
+        font-weight: 400;
+        margin-bottom: 0.5 * $neon-base-space;
+        padding-left: 8 * $neon-base-space;
+        font-size: $neon-font-size-s;
+      }
+    }
+
+    &.neon-tree-menu--expand-all {
+      .neon-tree-menu__section {
+        .neon-tree-menu__links {
+          display: flex;
+        }
+      }
+    }
+
+    & > ul > li:first-child a {
+      padding-top: 0;
+    }
+
+    &__anchors {
+      display: none;
+
+      &--expanded {
+        display: flex;
+      }
     }
   }
 }

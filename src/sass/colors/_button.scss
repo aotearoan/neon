@@ -76,91 +76,93 @@
   }
 }
 
-.neon-button {
-  @each $color, $palette in $neon-functional-colors {
-    &--#{$color} {
-      &.neon-button--solid {
-        $solid-button-color-1: '' !default;
-        $solid-button-color-2: '' !default;
-        @if ($color == high-contrast) {
-          $solid-button-color-1: $neon-background-high-contrast-solid-button-light;
-          $solid-button-color-2: $neon-background-high-contrast-solid-button-dark;
-        } @else if ($color == low-contrast) {
-          @include color-with-svg($neon-color-low-contrast-solid-button);
-          $solid-button-color-1: $neon-background-low-contrast-solid-button-light;
-          $solid-button-color-2: $neon-background-low-contrast-solid-button-dark;
-        } @else {
-          $solid-button-color-1: map-get($palette, $neon-background-solid-button-light);
-          $solid-button-color-2: map-get($palette, $neon-background-solid-button-dark);
-        }
+@mixin neon-button-color-import {
+  .neon-button {
+    @each $color, $palette in $neon-functional-colors {
+      &--#{$color} {
+        &.neon-button--solid {
+          $solid-button-color-1: '' !default;
+          $solid-button-color-2: '' !default;
+          @if ($color == high-contrast) {
+            $solid-button-color-1: $neon-background-high-contrast-solid-button-light;
+            $solid-button-color-2: $neon-background-high-contrast-solid-button-dark;
+          } @else if ($color == low-contrast) {
+            @include color-with-svg($neon-color-low-contrast-solid-button);
+            $solid-button-color-1: $neon-background-low-contrast-solid-button-light;
+            $solid-button-color-2: $neon-background-low-contrast-solid-button-dark;
+          } @else {
+            $solid-button-color-1: map-get($palette, $neon-background-solid-button-light);
+            $solid-button-color-2: map-get($palette, $neon-background-solid-button-dark);
+          }
 
-        @include solid-button($solid-button-color-1, $solid-button-color-2);
+          @include solid-button($solid-button-color-1, $solid-button-color-2);
 
-        @each $alternateColor, $alternatePalette in $neon-functional-colors {
-          &.neon-button--alternate-color-#{$alternateColor}:not(.neon-button--disabled) {
-            @if ($alternateColor == high-contrast) {
-              $solid-button-color-2: $neon-background-high-contrast-solid-button-light;
-            } @else if ($alternateColor == low-contrast) {
-              $solid-button-color-2: $neon-background-low-contrast-solid-button-light;
-            } @else {
-              $solid-button-color-2: map-get($alternatePalette, $neon-color-gradient-alternate);
+          @each $alternateColor, $alternatePalette in $neon-functional-colors {
+            &.neon-button--alternate-color-#{$alternateColor}:not(.neon-button--disabled) {
+              @if ($alternateColor == high-contrast) {
+                $solid-button-color-2: $neon-background-high-contrast-solid-button-light;
+              } @else if ($alternateColor == low-contrast) {
+                $solid-button-color-2: $neon-background-low-contrast-solid-button-light;
+              } @else {
+                $solid-button-color-2: map-get($alternatePalette, $neon-color-gradient-alternate);
+              }
+              @include gradient-button($solid-button-color-1, $solid-button-color-2);
             }
-            @include gradient-button($solid-button-color-1, $solid-button-color-2);
           }
         }
-      }
 
-      &.neon-button--outline {
-        @if ($color == high-contrast) {
-          @include outline-button($neon-color-text);
-        } @else if($color == low-contrast) {
-          @include outline-button($neon-color-low-contrast-outline-button);
-        } @else {
-          @include outline-button(map-get($palette, $neon-background-solid-button-dark));
+        &.neon-button--outline {
+          @if ($color == high-contrast) {
+            @include outline-button($neon-color-text);
+          } @else if ($color == low-contrast) {
+            @include outline-button($neon-color-low-contrast-outline-button);
+          } @else {
+            @include outline-button(map-get($palette, $neon-background-solid-button-dark));
+          }
+        }
+
+        &.neon-button--text {
+          @include text-button(
+            map-get($palette, $neon-color-text-button),
+            $neon-background-color-text-button-hover,
+            $neon-background-color-text-button-active
+          );
         }
       }
+    }
 
-      &.neon-button--text {
-        @include text-button(
-          map-get($palette, $neon-color-text-button),
-          $neon-background-color-text-button-hover,
-          $neon-background-color-text-button-active
-        );
+    &--solid {
+      border: none;
+      box-shadow: $neon-box-shadow;
+      color: $neon-color-inverse;
+
+      &:active {
+        box-shadow: $neon-inset-shadow;
+      }
+
+      &.neon-button--disabled {
+        color: $neon-color-disabled-light;
+        background: $neon-color-disabled-dark;
+        box-shadow: none;
       }
     }
-  }
 
-  &--solid {
-    border: none;
-    box-shadow: $neon-box-shadow;
-    color: $neon-color-inverse;
+    &--outline {
+      background: transparent;
 
-    &:active {
-      box-shadow: $neon-inset-shadow;
+      &.neon-button--disabled {
+        color: $neon-color-disabled-light;
+        border-color: $neon-color-disabled-light;
+      }
     }
 
-    &.neon-button--disabled {
-      color: $neon-color-disabled-light;
-      background: $neon-color-disabled-dark;
-      box-shadow: none;
-    }
-  }
+    &--text {
+      background-color: transparent;
+      border: none;
 
-  &--outline {
-    background: transparent;
-
-    &.neon-button--disabled {
-      color: $neon-color-disabled-light;
-      border-color: $neon-color-disabled-light;
-    }
-  }
-
-  &--text {
-    background-color: transparent;
-    border: none;
-
-    &.neon-button--disabled {
-      color: $neon-color-disabled-light;
+      &.neon-button--disabled {
+        color: $neon-color-disabled-light;
+      }
     }
   }
 }

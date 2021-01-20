@@ -17,45 +17,47 @@ $badge-icon-size: 0.667;
   }
 }
 
-.neon-badge {
-  &--s {
-    @include badge-size($neon-size-s, $neon-font-size-s);
-  }
-
-  &--m {
-    @include badge-size($neon-size-m, $neon-font-size-m);
-  }
-
-  &--l {
-    @include badge-size($neon-size-l, $neon-h6-size);
-  }
-
-  text-transform: uppercase;
-  font-weight: 500;
-  letter-spacing: $neon-letter-spacing-m;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  user-select: none;
-
-  &__label,
-  svg {
-    display: flex;
-    position: relative;
-    top: 0;
-  }
-
-  &--square {
-    &,
-    .neon-badge__image {
-      border-radius: $neon-border-radius;
+@mixin neon-badge-import {
+  .neon-badge {
+    &--s {
+      @include badge-size($neon-size-s, $neon-font-size-s);
     }
-  }
 
-  &--circular {
-    &,
-    .neon-badge__image {
-      border-radius: 50%;
+    &--m {
+      @include badge-size($neon-size-m, $neon-font-size-m);
+    }
+
+    &--l {
+      @include badge-size($neon-size-l, $neon-h6-size);
+    }
+
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: $neon-letter-spacing-m;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+
+    &__label,
+    svg {
+      display: flex;
+      position: relative;
+      top: 0;
+    }
+
+    &--square {
+      &,
+      .neon-badge__image {
+        border-radius: $neon-border-radius;
+      }
+    }
+
+    &--circular {
+      &,
+      .neon-badge__image {
+        border-radius: 50%;
+      }
     }
   }
 }
