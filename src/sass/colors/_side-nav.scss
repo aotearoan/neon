@@ -1,8 +1,10 @@
-.neon-side-nav {
-  background-color: $neon-background-color-side-nav;
-  border-right: $neon-border;
+@mixin neon-side-nav-color-import {
+  .neon-side-nav {
+    background-color: $neon-background-color-side-nav;
+    border-right: $neon-border;
 
-  &__scrolling {
-    @include scrollbars;
+    &__scrolling {
+      @include scrollbars;
+    }
   }
 }

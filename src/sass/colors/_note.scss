@@ -1,26 +1,28 @@
-.neon-note {
-  color: $neon-color-note;
+@mixin neon-note-color-import {
+  .neon-note {
+    color: $neon-color-note;
 
-  strong {
-    color: $neon-color-text;
-  }
-
-  @each $color, $palette in $neon-functional-colors {
-    &--#{$color} {
-      background-color: rgba(map-get($palette, $neon-background-color-note), $neon-background-opacity-note);
-      border: $neon-border-width-note $neon-border-style map-get($palette, $neon-border-color-note);
+    strong {
+      color: $neon-color-text;
     }
-  }
 
-  .neon-button.neon-button--s.neon-button--icon-only {
-    min-width: $neon-size-xs;
-    width: $neon-size-xs;
-    height: $neon-size-xs;
-    opacity: 0.75;
+    @each $color, $palette in $neon-functional-colors {
+      &--#{$color} {
+        background-color: rgba(map-get($palette, $neon-background-color-note), $neon-background-opacity-note);
+        border: $neon-border-width-note $neon-border-style map-get($palette, $neon-border-color-note);
+      }
+    }
 
-    &:hover {
-      background-color: transparent;
-      opacity: 1;
+    .neon-button.neon-button--s.neon-button--icon-only {
+      min-width: $neon-size-xs;
+      width: $neon-size-xs;
+      height: $neon-size-xs;
+      opacity: 0.75;
+
+      &:hover {
+        background-color: transparent;
+        opacity: 1;
+      }
     }
   }
 }

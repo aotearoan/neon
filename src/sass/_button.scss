@@ -26,116 +26,118 @@
   }
 }
 
-.neon-button {
-  margin-left: 0;
-  margin-right: 0;
+@mixin neon-button-import {
+  .neon-button {
+    margin-left: 0;
+    margin-right: 0;
 
-  &--s {
-    @include button-size($neon-size-s, $neon-font-size-s, $neon-font-size-l);
-  }
-
-  &--m {
-    @include button-size($neon-size-m, $neon-font-size-m, $neon-h6-size);
-  }
-
-  &--l {
-    @include button-size($neon-size-l, $neon-font-size-m, $neon-h5-size);
-  }
-
-  &--xl {
-    @include button-size($neon-size-xl, $neon-h5-size, $neon-h3-size);
-    border-radius: $neon-border-radius-button-xl;
-  }
-
-  border-radius: $neon-border-radius-button;
-  font-weight: 400;
-  letter-spacing: $neon-letter-spacing-m;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  outline: none;
-  user-select: none;
-
-  .neon-button__label {
-    white-space: nowrap;
-    flex: 1 1 auto;
-    text-align: left;
-  }
-
-  &:active:not(:disabled) {
-    .neon-button__label,
-    .neon-icon {
-      position: relative;
-      top: 1px;
+    &--s {
+      @include button-size($neon-size-s, $neon-font-size-s, $neon-font-size-l);
     }
 
-    .neon-button__indicator {
-      top: 1px;
+    &--m {
+      @include button-size($neon-size-m, $neon-font-size-m, $neon-h6-size);
     }
-  }
 
-  &.neon-button--full-width {
-    width: 100%;
+    &--l {
+      @include button-size($neon-size-l, $neon-font-size-m, $neon-h5-size);
+    }
+
+    &--xl {
+      @include button-size($neon-size-xl, $neon-h5-size, $neon-h3-size);
+      border-radius: $neon-border-radius-button-xl;
+    }
+
+    border-radius: $neon-border-radius-button;
+    font-weight: 400;
+    letter-spacing: $neon-letter-spacing-m;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    width: fit-content;
+    outline: none;
+    user-select: none;
 
     .neon-button__label {
-      text-align: center;
+      white-space: nowrap;
+      flex: 1 1 auto;
+      text-align: left;
     }
-  }
 
-  &--icon-left {
-    .neon-icon {
-      margin-right: 2 * $neon-base-space;
+    &:active:not(:disabled) {
+      .neon-button__label,
+      .neon-icon {
+        position: relative;
+        top: 1px;
+      }
+
+      .neon-button__indicator {
+        top: 1px;
+      }
     }
-  }
 
-  &--icon-right {
-    .neon-icon {
-      order: 1;
+    &.neon-button--full-width {
+      width: 100%;
+      justify-content: center;
+
+      .neon-button__label {
+        text-align: center;
+      }
+    }
+
+    &--icon-left {
+      .neon-icon {
+        margin-right: 2 * $neon-base-space;
+      }
+    }
+
+    &--icon-right {
+      .neon-icon {
+        order: 1;
+        margin-left: 2 * $neon-base-space;
+      }
+    }
+
+    &--state-loading,
+    &--state-success,
+    &--state-error {
+      &:not(.neon-button--with-icon) {
+        .neon-button__label {
+          opacity: 0;
+        }
+
+        .neon-icon {
+          position: absolute;
+          z-index: $z-index-above;
+        }
+      }
+    }
+
+    &--state-loading {
+      cursor: progress;
+    }
+
+    &__indicator:not(:first-child) {
       margin-left: 2 * $neon-base-space;
     }
-  }
 
-  &--state-loading,
-  &--state-success,
-  &--state-error {
-    &:not(.neon-button--with-icon) {
-      .neon-button__label {
-        opacity: 0;
-      }
+    .neon-link__label {
+      display: flex;
+      justify-content: center;
+    }
 
-      .neon-icon {
-        position: absolute;
-        z-index: $z-index-above;
-      }
+    &--disabled {
+      cursor: not-allowed;
     }
   }
 
-  &--state-loading {
-    cursor: progress;
-  }
-
-  &__indicator:not(:first-child) {
-    margin-left: 2 * $neon-base-space;
-  }
-
-  .neon-link__label {
+  .neon-button-group {
     display: flex;
-    justify-content: center;
-  }
+    flex-direction: row;
+    justify-content: flex-end;
 
-  &--disabled {
-    cursor: not-allowed;
-  }
-}
-
-.neon-button-group {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-
-  .neon-button + .neon-button {
-    margin-left: 2 * $neon-base-space;
+    .neon-button + .neon-button {
+      margin-left: 2 * $neon-base-space;
+    }
   }
 }

@@ -13,57 +13,59 @@
     $neon-color-disabled-light;
 }
 
-.neon-range-slider {
-  .neon-range-slider__lower {
-    @each $color, $palette in $neon-functional-colors {
-      &.neon-slider--#{$color} {
-        $neon-color-slider-fill: map-get($palette, $neon-color-slider);
+@mixin neon-range-slider-color-import {
+  .neon-range-slider {
+    .neon-range-slider__lower {
+      @each $color, $palette in $neon-functional-colors {
+        &.neon-slider--#{$color} {
+          $neon-color-slider-fill: map-get($palette, $neon-color-slider);
 
+          .neon-slider__input {
+            &::-webkit-slider-runnable-track {
+              @include range-slider-track-lower($neon-color-slider-fill);
+            }
+
+            &::-moz-range-track {
+              @include range-slider-track-lower($neon-color-slider-fill);
+            }
+
+            &::-ms-track {
+              @include range-slider-track-lower($neon-color-slider-fill);
+            }
+          }
+        }
+      }
+
+      &.neon-slider--disabled {
         .neon-slider__input {
           &::-webkit-slider-runnable-track {
-            @include range-slider-track-lower($neon-color-slider-fill);
+            @include range-slider-track-lower-disabled;
           }
 
           &::-moz-range-track {
-            @include range-slider-track-lower($neon-color-slider-fill);
+            @include range-slider-track-lower-disabled;
           }
 
           &::-ms-track {
-            @include range-slider-track-lower($neon-color-slider-fill);
+            @include range-slider-track-lower-disabled;
           }
         }
       }
     }
 
-    &.neon-slider--disabled {
+    .neon-range-slider__upper {
       .neon-slider__input {
         &::-webkit-slider-runnable-track {
-          @include range-slider-track-lower-disabled;
+          @include range-slider-track-upper;
         }
 
         &::-moz-range-track {
-          @include range-slider-track-lower-disabled;
+          @include range-slider-track-upper;
         }
 
         &::-ms-track {
-          @include range-slider-track-lower-disabled;
+          @include range-slider-track-upper;
         }
-      }
-    }
-  }
-
-  .neon-range-slider__upper {
-    .neon-slider__input {
-      &::-webkit-slider-runnable-track {
-        @include range-slider-track-upper;
-      }
-
-      &::-moz-range-track {
-        @include range-slider-track-upper;
-      }
-
-      &::-ms-track {
-        @include range-slider-track-upper;
       }
     }
   }

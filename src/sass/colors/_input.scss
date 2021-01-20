@@ -1,86 +1,88 @@
-.neon-input {
-  &__text,
-  &__textarea {
-    border-color: $neon-border-color-input;
-    color: $neon-color-text;
-    background-color: $neon-background-color-input;
-    box-shadow: $neon-inset-shadow;
+@mixin neon-input-color-import {
+  .neon-input {
+    &__text,
+    &__textarea {
+      border-color: $neon-border-color-input;
+      color: $neon-color-text;
+      background-color: $neon-background-color-input;
+      box-shadow: $neon-inset-shadow;
 
-    &::placeholder {
-      color: $neon-color-placeholder;
+      &::placeholder {
+        color: $neon-color-placeholder;
+      }
     }
-  }
 
-  @each $color, $palette in $neon-functional-colors {
-    $input-color: map-get($palette, $neon-color-input-selected);
-    &.neon-input--#{$color} {
-      &.neon-input--focused {
-        .neon-input__text,
-        .neon-input__textarea {
-          @if ($neon-theme == smooth and not index($neon-neutral-colors, $color)) {
-            background-color: rgba(map-get($palette, $neon-color-input-selected), 0.125);
+    @each $color, $palette in $neon-functional-colors {
+      $input-color: map-get($palette, $neon-color-input-selected);
+      &.neon-input--#{$color} {
+        &.neon-input--focused {
+          .neon-input__text,
+          .neon-input__textarea {
+            @if ($neon-theme == smooth and not index($neon-neutral-colors, $color)) {
+              background-color: rgba(map-get($palette, $neon-color-input-selected), 0.125);
 
-            &::placeholder {
-              color: rgba(map-get($palette, $neon-color-input-selected), 0.75);
+              &::placeholder {
+                color: rgba(map-get($palette, $neon-color-input-selected), 0.75);
+              }
+            } @else {
+              border-color: $input-color;
+              background-color: $neon-background-color-input-active;
             }
-          } @else {
-            border-color: $input-color;
-            background-color: $neon-background-color-input-active;
           }
         }
-      }
 
-      .neon-icon:focus {
-        background-color: rgba($input-color, 0.125);
-        box-shadow: 0 0 0 2px rgba($input-color, 0.125);
-      }
-    }
-  }
-
-  &.neon-input--with-state-highlight.neon-input--state-success {
-    .neon-input__text,
-    .neon-input__textarea {
-      @if ($neon-theme == smooth) {
-        background-color: rgba(map-get($neon-success-palette, $neon-color-input-selected), 0.125);
-
-        &::placeholder {
-          color: rgba(map-get($neon-success-palette, $neon-color-input-selected), 0.75);
+        .neon-icon:focus {
+          background-color: rgba($input-color, 0.125);
+          box-shadow: 0 0 0 2px rgba($input-color, 0.125);
         }
-      } @else {
-        border-color: map-get($neon-success-palette, $neon-color-input-selected);
       }
     }
-  }
 
-  &.neon-input--with-state-highlight.neon-input--state-error {
-    &,
-    &.neon-input--focused {
+    &.neon-input--with-state-highlight.neon-input--state-success {
       .neon-input__text,
       .neon-input__textarea {
         @if ($neon-theme == smooth) {
-          background-color: rgba(map-get($neon-error-palette, $neon-color-input-selected), 0.125);
+          background-color: rgba(map-get($neon-success-palette, $neon-color-input-selected), 0.125);
 
           &::placeholder {
-            color: rgba(map-get($neon-error-palette, $neon-color-input-selected), 0.75);
+            color: rgba(map-get($neon-success-palette, $neon-color-input-selected), 0.75);
           }
         } @else {
-          border-color: map-get($neon-error-palette, $neon-color-input-selected);
+          border-color: map-get($neon-success-palette, $neon-color-input-selected);
         }
       }
     }
-  }
 
-  &--disabled {
-    .neon-input__text,
-    .neon-input__textarea {
-      box-shadow: none;
-      border-color: $neon-color-disabled-dark;
-      background-color: $neon-color-disabled-dark;
-
+    &.neon-input--with-state-highlight.neon-input--state-error {
       &,
-      &::placeholder {
-        color: $neon-color-disabled-light;
-        -webkit-text-fill-color: $neon-color-disabled-light;
+      &.neon-input--focused {
+        .neon-input__text,
+        .neon-input__textarea {
+          @if ($neon-theme == smooth) {
+            background-color: rgba(map-get($neon-error-palette, $neon-color-input-selected), 0.125);
+
+            &::placeholder {
+              color: rgba(map-get($neon-error-palette, $neon-color-input-selected), 0.75);
+            }
+          } @else {
+            border-color: map-get($neon-error-palette, $neon-color-input-selected);
+          }
+        }
+      }
+    }
+
+    &--disabled {
+      .neon-input__text,
+      .neon-input__textarea {
+        box-shadow: none;
+        border-color: $neon-color-disabled-dark;
+        background-color: $neon-color-disabled-dark;
+
+        &,
+        &::placeholder {
+          color: $neon-color-disabled-light;
+          -webkit-text-fill-color: $neon-color-disabled-light;
+        }
       }
     }
   }

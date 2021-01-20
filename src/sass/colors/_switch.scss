@@ -88,60 +88,62 @@
   }
 }
 
-.neon-switch {
-  color: $neon-color-text;
+@mixin neon-switch-color-import {
+  .neon-switch {
+    color: $neon-color-text;
 
-  &--switch {
-    @if ($neon-theme == 'sharp') {
-      @include switch-color-sharp;
-    } @else {
-      @include switch-color-default;
+    &--switch {
+      @if ($neon-theme == 'sharp') {
+        @include switch-color-sharp;
+      } @else {
+        @include switch-color-default;
+      }
     }
-  }
 
-  &--checkbox {
-    @each $color, $palette in $neon-functional-colors {
-      &.neon-switch--#{$color}:not(.neon-switch--disabled) {
-        .neon-switch__checkbox {
-          border-color: $neon-border-color-input;
-          box-shadow: $neon-inset-shadow;
-
-          &:focus {
-            box-shadow: 0 0 0 4px rgba($neon-color-text-low-contrast, 0.3);
-          }
-        }
-
-        &.neon-switch--checked {
+    &--checkbox {
+      @each $color, $palette in $neon-functional-colors {
+        &.neon-switch--#{$color}:not(.neon-switch--disabled) {
           .neon-switch__checkbox {
-            border-color: map-get($palette, $neon-border-color-checkbox);
-            background: linear-gradient(
-              0deg,
-              map-get($palette, $neon-border-color-checkbox) 0%,
-              map-get($palette, $neon-background-color-checkbox) 100%
-            );
+            border-color: $neon-border-color-input;
+            box-shadow: $neon-inset-shadow;
 
             &:focus {
-              box-shadow: 0 0 0 4px rgba(map-get($palette, $neon-background-color-checkbox), 0.3);
+              box-shadow: 0 0 0 4px rgba($neon-color-text-low-contrast, 0.3);
             }
           }
-        }
 
-        &:not(.neon-switch--checked) {
-          &:hover {
+          &.neon-switch--checked {
             .neon-switch__checkbox {
-              background-color: rgba($neon-color-switch-off, 0.125);
+              border-color: map-get($palette, $neon-border-color-checkbox);
+              background: linear-gradient(
+                0deg,
+                map-get($palette, $neon-border-color-checkbox) 0%,
+                map-get($palette, $neon-background-color-checkbox) 100%
+              );
+
+              &:focus {
+                box-shadow: 0 0 0 4px rgba(map-get($palette, $neon-background-color-checkbox), 0.3);
+              }
+            }
+          }
+
+          &:not(.neon-switch--checked) {
+            &:hover {
+              .neon-switch__checkbox {
+                background-color: rgba($neon-color-switch-off, 0.125);
+              }
             }
           }
         }
       }
-    }
 
-    &.neon-switch--disabled {
-      .neon-switch__checkbox {
-        box-shadow: none;
-        border: none;
-        background-color: $neon-color-switch-disabled;
-        @include color-with-svg($neon-color-switch-indicator-disabled);
+      &.neon-switch--disabled {
+        .neon-switch__checkbox {
+          box-shadow: none;
+          border: none;
+          background-color: $neon-color-switch-disabled;
+          @include color-with-svg($neon-color-switch-indicator-disabled);
+        }
       }
     }
   }

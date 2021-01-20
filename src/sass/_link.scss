@@ -1,5 +1,4 @@
-a[href]:not(.neon-link--no-style),
-.neon-link:not(.neon-link--no-style) {
+%neon-link-no-style {
   cursor: pointer;
   text-decoration: none;
 
@@ -12,32 +11,42 @@ a[href]:not(.neon-link--no-style),
   }
 }
 
-.neon-link {
-  position: relative;
+a[href]:not(.neon-link--no-style) {
+  @extend %neon-link-no-style;
+}
 
-  &__external-indicator {
-    width: $neon-font-size-s;
-    height: $neon-font-size-s;
-    margin-left: $neon-base-space;
-    vertical-align: -2px;
-    opacity: 0.5;
-  }
+@mixin neon-link-import {
+  .neon-link {
+    position: relative;
 
-  &:hover {
-    .neon-link__external-indicator {
-      opacity: 1;
-    }
-  }
-
-  &.neon-link--outline-text.neon-link--with-external-indicator {
-    &:after {
-      width: calc(100% - #{4.5 * $neon-base-space});
+    &:not(.neon-link--no-style) {
+      @extend %neon-link-no-style;
     }
 
-    &:hover,
-    &:focus {
+    &__external-indicator {
+      width: $neon-font-size-s;
+      height: $neon-font-size-s;
+      margin-left: $neon-base-space;
+      vertical-align: -2px;
+      opacity: 0.5;
+    }
+
+    &:hover {
+      .neon-link__external-indicator {
+        opacity: 1;
+      }
+    }
+
+    &.neon-link--outline-text.neon-link--with-external-indicator {
       &:after {
         width: calc(100% - #{4.5 * $neon-base-space});
+      }
+
+      &:hover,
+      &:focus {
+        &:after {
+          width: calc(100% - #{4.5 * $neon-base-space});
+        }
       }
     }
   }

@@ -1,8 +1,8 @@
 {
   "description": "<p>\n  The <strong>NeonSlider</strong> component is the equivalent of an <strong>&lt;input type=\"range\" /&gt;</strong>. In\n  addition to this, there is support for automatic formatting the min, max and selected value plus options for\n  percentage formatting and providing custom templates, e.g. currency formatting.\n</p>\n<p><strong>NeonNumber</strong> also supports all relevant properties found on an HTML &lt;input&gt;.</p>",
   "tags": {},
-  "exportName": "default",
   "displayName": "NeonSlider",
+  "exportName": "default",
   "props": [
     {
       "name": "value",

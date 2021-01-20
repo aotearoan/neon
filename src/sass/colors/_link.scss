@@ -1,5 +1,4 @@
-a[href]:not(.neon-link--no-style),
-.neon-link:not(.neon-link--no-style) {
+a[href]:not(.neon-link--no-style) {
   &:not(.neon-button) {
     color: $neon-color-link;
     transition: color ease-in-out $neon-animation-speed-fast;
@@ -16,15 +15,34 @@ a[href]:not(.neon-link--no-style),
   }
 }
 
-.neon-link {
-  @include focus-outline-styles($neon-color-link);
+@mixin neon-link-color-import {
+  .neon-link {
+    @include focus-outline-styles($neon-color-link);
 
-  &--outline-text {
-    &:hover {
-      color: $neon-color-link;
+    &--outline-text {
+      &:hover {
+        color: $neon-color-link;
 
-      &:after {
-        background-color: $neon-color-link;
+        &:after {
+          background-color: $neon-color-link;
+        }
+      }
+    }
+
+    &:not(.neon-link--no-style) {
+      &:not(.neon-button) {
+        color: $neon-color-link;
+        transition: color ease-in-out $neon-animation-speed-fast;
+        opacity: 1;
+
+        &:visited {
+          color: $neon-color-link-visited;
+        }
+
+        &:active,
+        &:hover {
+          color: $neon-color-link-hover;
+        }
       }
     }
   }

@@ -1,24 +1,26 @@
-.neon-drop-zone {
-  border: 0.5 * $neon-base-space dashed;
-  border-radius: $neon-border-radius;
-  @include padding(1, true);
-  cursor: copy;
+@mixin neon-drop-zone-import {
+  .neon-drop-zone {
+    border: 0.5 * $neon-base-space dashed;
+    border-radius: $neon-border-radius;
+    @include padding(1, true);
+    cursor: copy;
 
-  &--circular {
-    border-radius: 50%;
-  }
+    &--circular {
+      border-radius: 50%;
+    }
 
-  &--disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
+    &--disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
 
-  &--state-loading {
-    cursor: progress;
-  }
+    &--state-loading {
+      cursor: progress;
+    }
 
-  &__container {
-    justify-content: center;
-    align-items: center;
+    &__container {
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
