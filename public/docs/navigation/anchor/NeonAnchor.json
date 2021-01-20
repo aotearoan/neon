@@ -1,8 +1,8 @@
 {
   "description": "An HTML anchor component. This component is offset by the top nav (at all responsive breakpoints) which means\nfragments will scroll to the correct position offset by the top nav. Just place NeonAnchor directly inside a\npositioned element you want to create a fragment for and give it the correct id.",
   "tags": {},
-  "exportName": "default",
   "displayName": "NeonAnchor",
+  "exportName": "default",
   "props": [
     {
       "name": "id",

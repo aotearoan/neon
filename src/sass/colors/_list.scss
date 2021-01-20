@@ -1,35 +1,37 @@
-.neon-list {
-  @each $color, $palette in $neon-functional-colors {
-    &--#{$color} {
-      .neon-list__item {
-        $list-foreground-color: rgba(map-get($palette, $neon-color-list-item), 0.75);
-        background-color: rgba($list-foreground-color, 0.125);
-        @if (not($color == 'low-contrast' or $color == 'neutral')) {
-          @include color-with-svg($list-foreground-color);
-        } @else {
-          @include color-with-svg(rgba($neon-color-text, 0.75));
-        }
-
-        &:hover,
-        &:focus {
-          $list-hover-color: map-get($palette, $neon-color-list-item);
-          background-color: rgba($list-hover-color, 0.25);
+@mixin neon-list-color-import {
+  .neon-list {
+    @each $color, $palette in $neon-functional-colors {
+      &--#{$color} {
+        .neon-list__item {
+          $list-foreground-color: rgba(map-get($palette, $neon-color-list-item), 0.75);
+          background-color: rgba($list-foreground-color, 0.125);
           @if (not($color == 'low-contrast' or $color == 'neutral')) {
-            @include color-with-svg($list-hover-color);
+            @include color-with-svg($list-foreground-color);
           } @else {
-            @include color-with-svg($neon-color-text);
+            @include color-with-svg(rgba($neon-color-text, 0.75));
+          }
+
+          &:hover,
+          &:focus {
+            $list-hover-color: map-get($palette, $neon-color-list-item);
+            background-color: rgba($list-hover-color, 0.25);
+            @if (not($color == 'low-contrast' or $color == 'neutral')) {
+              @include color-with-svg($list-hover-color);
+            } @else {
+              @include color-with-svg($neon-color-text);
+            }
           }
         }
       }
-    }
 
-    &--disabled {
-      .neon-list__item {
-        &,
-        &:focus,
-        &:hover {
-          background-color: $neon-color-disabled-dark;
-          color: rgba($neon-color-disabled-light, 0.75);
+      &--disabled {
+        .neon-list__item {
+          &,
+          &:focus,
+          &:hover {
+            background-color: $neon-color-disabled-dark;
+            color: rgba($neon-color-disabled-light, 0.75);
+          }
         }
       }
     }

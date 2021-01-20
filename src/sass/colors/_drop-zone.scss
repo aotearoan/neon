@@ -1,15 +1,17 @@
-.neon-drop-zone {
-  background-color: rgba($neon-background-color, 0.5);
-  border-color: rgba($neon-color-drop-zone, 0.5);
-  color: rgba($neon-color-drop-zone, 0.5);
-  transition: background-color ease-in-out $neon-animation-speed-fast, color ease-in-out $neon-animation-speed-fast,
-    border-left-color ease-in-out $neon-animation-speed-fast, border-top-color ease-in-out $neon-animation-speed-fast,
-    border-bottom-color ease-in-out $neon-animation-speed-fast,
-    border-right-color ease-in-out $neon-animation-speed-fast;
+@mixin neon-drop-zone-color-import {
+  .neon-drop-zone {
+    background-color: rgba($neon-background-color, 0.5);
+    border-color: rgba($neon-color-drop-zone, 0.5);
+    color: rgba($neon-color-drop-zone, 0.5);
+    transition: background-color ease-in-out $neon-animation-speed-fast, color ease-in-out $neon-animation-speed-fast,
+      border-left-color ease-in-out $neon-animation-speed-fast, border-top-color ease-in-out $neon-animation-speed-fast,
+      border-bottom-color ease-in-out $neon-animation-speed-fast,
+      border-right-color ease-in-out $neon-animation-speed-fast;
 
-  &--active:not(.neon-drop-zone--disabled),
-  &:hover:not(.neon-drop-zone--disabled) {
-    border-color: $neon-color-drop-zone;
-    color: $neon-color-drop-zone;
+    &--active:not(.neon-drop-zone--disabled),
+    &:hover:not(.neon-drop-zone--disabled) {
+      border-color: $neon-color-drop-zone;
+      color: $neon-color-drop-zone;
+    }
   }
 }

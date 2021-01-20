@@ -1,77 +1,80 @@
-.neon-color {
-  position: relative;
+@mixin neon-color-import {
+  .neon-color {
+    position: relative;
 
-  &__input {
-    position: absolute;
-    right: 0;
-    opacity: 0;
-    z-index: 1;
+    &__input {
+      position: absolute;
+      right: 0;
+      opacity: 0;
+      z-index: 1;
 
-    &:not(.neon-input--disabled) {
-      input {
-        cursor: pointer;
+      &:not(.neon-input--disabled) {
+        input {
+          cursor: pointer;
+        }
+      }
+
+      .neon-icon {
+        display: none;
       }
     }
 
-    .neon-icon {
-      display: none;
-    }
-  }
-
-  &__indicator {
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-radius: $neon-border-radius-input-color;
-    margin: 2 * $neon-base-space;
-  }
-
-  &--s {
-    .neon-color__input {
-      width: $neon-size-s;
+    &__indicator {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-radius: $neon-border-radius-input-color;
+      margin: 2 * $neon-base-space;
     }
 
-    .neon-color__indicator {
-      width: $neon-size-s - 3 * $neon-base-space;
-      height: $neon-size-s - 3 * $neon-base-space;
-      margin: 1.5 * $neon-base-space;
+    &--s {
+      .neon-color__input {
+        width: $neon-size-s;
+      }
+
+      .neon-color__indicator {
+        width: $neon-size-s - 3 * $neon-base-space;
+        height: $neon-size-s - 3 * $neon-base-space;
+        margin: 1.5 * $neon-base-space;
+      }
+
+      .neon-input .neon-icon {
+        right: $neon-size-s + $neon-base-space;
+      }
     }
 
-    .neon-input .neon-icon {
-      right: $neon-size-s + $neon-base-space;
-    }
-  }
+    &--m {
+      .neon-color__input {
+        width: $neon-size-m;
+      }
 
-  &--m {
-    .neon-color__input {
-      width: $neon-size-m;
-    }
+      .neon-color__indicator {
+        width: $neon-size-m - 4 * $neon-base-space;
+        height: $neon-size-m - 4 * $neon-base-space;
+      }
 
-    .neon-color__indicator {
-      width: $neon-size-m - 4 * $neon-base-space;
-      height: $neon-size-m - 4 * $neon-base-space;
-    }
-
-    .neon-input .neon-icon {
-      right: $neon-size-m + $neon-base-space;
-    }
-  }
-
-  &--l {
-    .neon-color__input {
-      width: $neon-size-l;
-    }
-    .neon-color__indicator {
-      width: $neon-size-l - 4 * $neon-base-space;
-      height: $neon-size-l - 4 * $neon-base-space;
+      .neon-input .neon-icon {
+        right: $neon-size-m + $neon-base-space;
+      }
     }
 
-    .neon-input .neon-icon {
-      right: $neon-size-l + 2 * $neon-base-space;
-    }
-  }
+    &--l {
+      .neon-color__input {
+        width: $neon-size-l;
+      }
 
-  &--disabled {
-    cursor: not-allowed;
+      .neon-color__indicator {
+        width: $neon-size-l - 4 * $neon-base-space;
+        height: $neon-size-l - 4 * $neon-base-space;
+      }
+
+      .neon-input .neon-icon {
+        right: $neon-size-l + 2 * $neon-base-space;
+      }
+    }
+
+    &--disabled {
+      cursor: not-allowed;
+    }
   }
 }

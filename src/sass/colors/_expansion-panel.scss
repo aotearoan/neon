@@ -1,28 +1,30 @@
-.neon-expansion-panel {
-  &--top {
-    border-bottom: $neon-border-width-expansion-panel $neon-border-style $neon-border-color;
-  }
-
-  &--bottom {
-    .neon-expansion-panel__header {
-      border-top: $neon-border-width-expansion-panel $neon-border-style $neon-border-color;
+@mixin neon-expansion-panel-color-import {
+  .neon-expansion-panel {
+    &--top {
+      border-bottom: $neon-border-width-expansion-panel $neon-border-style $neon-border-color;
     }
-  }
 
-  @each $color, $palette in $neon-functional-colors {
-    &--#{$color}:not(.neon-expansion-panel--disabled) {
-      $expansion-panel-color: map-get($palette, $neon-base-color);
-
-      .neon-expansion-panel__label-container {
-        color: $expansion-panel-color;
-        @include focus-text-outline($expansion-panel-color);
+    &--bottom {
+      .neon-expansion-panel__header {
+        border-top: $neon-border-width-expansion-panel $neon-border-style $neon-border-color;
       }
     }
-  }
 
-  &.neon-expansion-panel--disabled {
-    .neon-expansion-panel__header {
-      color: $neon-color-disabled-light;
+    @each $color, $palette in $neon-functional-colors {
+      &--#{$color}:not(.neon-expansion-panel--disabled) {
+        $expansion-panel-color: map-get($palette, $neon-base-color);
+
+        .neon-expansion-panel__label-container {
+          color: $expansion-panel-color;
+          @include focus-text-outline($expansion-panel-color);
+        }
+      }
+    }
+
+    &.neon-expansion-panel--disabled {
+      .neon-expansion-panel__header {
+        color: $neon-color-disabled-light;
+      }
     }
   }
 }

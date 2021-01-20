@@ -1,70 +1,72 @@
-.neon-menu {
-  &__item {
-    & > .neon-link {
-      color: $neon-color-text-neutral;
-      transition: color ease-in-out $neon-animation-speed-fast;
-    }
-
-    &--disabled {
-      .neon-link {
-        color: $neon-color-disabled-light;
-      }
-    }
-  }
-
-  &__wrapper {
-    .neon-dropdown:not(.neon-dropdown--disabled) {
-      .neon-dropdown__button {
-        @include color-with-svg($neon-color-text-neutral);
+@mixin neon-menu-color-import {
+  .neon-menu {
+    &__item {
+      & > .neon-link {
+        color: $neon-color-text-neutral;
         transition: color ease-in-out $neon-animation-speed-fast;
-
-        &:hover:not(disabled),
-        &:active:not(disabled) {
-          background-color: transparent;
-          color: $neon-color-text-neutral;
-        }
       }
 
-      .neon-dropdown-menu__item {
-        &:not(.neon-dropdown-menu__item--highlighted) .neon-link,
-        &--group-title {
-          color: $neon-color-text-neutral;
+      &--disabled {
+        .neon-link {
+          color: $neon-color-disabled-light;
         }
       }
     }
-  }
 
-  @each $color, $palette in $neon-functional-colors {
-    &.neon-menu--#{$color},
-    &__responsive-menu.neon-dropdown-menu--#{$color} {
-      .neon-menu__item:not(.neon-menu__item--disabled) {
-        &:hover:not(.router-link-active),
-        &:focus:not(.router-link-active),
-        &:active:not(.router-link-active) {
-          & > .neon-link,
-          .neon-dropdown__button {
-            @include color-with-svg(rgba(map-get($palette, $neon-color-tab-selected), 0.85));
+    &__wrapper {
+      .neon-dropdown:not(.neon-dropdown--disabled) {
+        .neon-dropdown__button {
+          @include color-with-svg($neon-color-text-neutral);
+          transition: color ease-in-out $neon-animation-speed-fast;
+
+          &:hover:not(disabled),
+          &:active:not(disabled) {
+            background-color: transparent;
+            color: $neon-color-text-neutral;
           }
         }
 
-        &:focus-within {
-          background-color: rgba(map-get($palette, $neon-background-color-dropdown-menu-highlight), 0.125);
-
-          & > .neon-link:not(.router-link-active),
-          .neon-button:not(.router-link-active) {
-            @include color-with-svg($neon-color-text);
+        .neon-dropdown-menu__item {
+          &:not(.neon-dropdown-menu__item--highlighted) .neon-link,
+          &--group-title {
+            color: $neon-color-text-neutral;
           }
         }
       }
+    }
 
-      .router-link-active {
-        color: map-get($palette, $neon-color-tab-selected);
+    @each $color, $palette in $neon-functional-colors {
+      &.neon-menu--#{$color},
+      &__responsive-menu.neon-dropdown-menu--#{$color} {
+        .neon-menu__item:not(.neon-menu__item--disabled) {
+          &:hover:not(.router-link-active),
+          &:focus:not(.router-link-active),
+          &:active:not(.router-link-active) {
+            & > .neon-link,
+            .neon-dropdown__button {
+              @include color-with-svg(rgba(map-get($palette, $neon-color-tab-selected), 0.85));
+            }
+          }
 
-        .neon-dropdown__button {
-          color: map-get($palette, $neon-color-tab-selected);
+          &:focus-within {
+            background-color: rgba(map-get($palette, $neon-background-color-dropdown-menu-highlight), 0.125);
+
+            & > .neon-link:not(.router-link-active),
+            .neon-button:not(.router-link-active) {
+              @include color-with-svg($neon-color-text);
+            }
+          }
         }
 
-        @include svg-colors(rgba(map-get($palette, $neon-color-tab-selected), 0.85));
+        .router-link-active {
+          color: map-get($palette, $neon-color-tab-selected);
+
+          .neon-dropdown__button {
+            color: map-get($palette, $neon-color-tab-selected);
+          }
+
+          @include svg-colors(rgba(map-get($palette, $neon-color-tab-selected), 0.85));
+        }
       }
     }
   }

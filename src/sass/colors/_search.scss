@@ -1,83 +1,85 @@
-.neon-search {
-  &__option {
-    &--separator-before {
-      border-top: $neon-border-width-separator-before $neon-border-style $neon-border-color-dropdown;
+@mixin neon-search-color-import {
+  .neon-search {
+    &__option {
+      &--separator-before {
+        border-top: $neon-border-width-separator-before $neon-border-style $neon-border-color-dropdown;
 
-      &:first-child {
-        border-top: none;
+        &:first-child {
+          border-top: none;
+        }
+      }
+
+      .neon-link {
+        color: $neon-color-text;
       }
     }
 
-    .neon-link {
-      color: $neon-color-text;
-    }
-  }
-
-  &__options {
-    @include scrollbars;
-  }
-
-  @each $color, $palette in $neon-functional-colors {
-    &--#{$color} {
-      .neon-search__option {
-        &--selected {
-          background-color: rgba(map-get($palette, $neon-background-color-dropdown-menu-highlight), 0.2);
-        }
-
-        &--highlighted:not(.neon-search__option--selected) {
-          background-color: rgba(map-get($palette, $neon-background-color-dropdown-menu-highlight), 0.05);
-        }
-      }
-    }
-  }
-
-  .neon-search__container {
-    border: $neon-border-width $neon-border-style $neon-border-color-input;
-    background-color: $neon-background-color-input;
-    box-shadow: $neon-inset-shadow;
-
-    .neon-search__input .neon-input__textfield {
-      background-color: transparent;
-      border: none;
-      box-shadow: none;
+    &__options {
+      @include scrollbars;
     }
 
     @each $color, $palette in $neon-functional-colors {
-      $input-color: map-get($palette, $neon-color-input-selected);
       &--#{$color} {
-        &:focus-within {
-          border-color: $input-color;
-          background-color: $neon-background-color-input-active;
+        .neon-search__option {
+          &--selected {
+            background-color: rgba(map-get($palette, $neon-background-color-dropdown-menu-highlight), 0.2);
+          }
+
+          &--highlighted:not(.neon-search__option--selected) {
+            background-color: rgba(map-get($palette, $neon-background-color-dropdown-menu-highlight), 0.05);
+          }
         }
       }
     }
 
-    &--disabled {
-      box-shadow: none;
-      border-color: $neon-color-disabled-dark;
-      background-color: $neon-color-disabled-dark;
-      @include color-with-svg($neon-color-disabled-light);
+    .neon-search__container {
+      border: $neon-border-width $neon-border-style $neon-border-color-input;
+      background-color: $neon-background-color-input;
+      box-shadow: $neon-inset-shadow;
 
-      &::placeholder {
-        color: $neon-color-disabled-light;
+      .neon-search__input .neon-input__textfield {
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+      }
+
+      @each $color, $palette in $neon-functional-colors {
+        $input-color: map-get($palette, $neon-color-input-selected);
+        &--#{$color} {
+          &:focus-within {
+            border-color: $input-color;
+            background-color: $neon-background-color-input-active;
+          }
+        }
+      }
+
+      &--disabled {
+        box-shadow: none;
+        border-color: $neon-color-disabled-dark;
+        background-color: $neon-color-disabled-dark;
+        @include color-with-svg($neon-color-disabled-light);
+
+        &::placeholder {
+          color: $neon-color-disabled-light;
+        }
       }
     }
   }
-}
 
-.neon-dropdown__content {
-  &--top-left,
-  &--top-right,
-  &--left-bottom,
-  &--right-bottom {
-    .neon-search__option {
-      &--separator-before {
-        &:first-child {
-          border-top: $neon-border-width-separator-before $neon-border-style $neon-border-color-dropdown;
-        }
+  .neon-dropdown__content {
+    &--top-left,
+    &--top-right,
+    &--left-bottom,
+    &--right-bottom {
+      .neon-search__option {
+        &--separator-before {
+          &:first-child {
+            border-top: $neon-border-width-separator-before $neon-border-style $neon-border-color-dropdown;
+          }
 
-        &:last-child {
-          border-top: none;
+          &:last-child {
+            border-top: none;
+          }
         }
       }
     }

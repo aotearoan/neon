@@ -1,247 +1,249 @@
-.neon-tooltip {
-  display: inline-flex;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  cursor: pointer;
-  width: fit-content;
-
-  &--outline-border {
-    border-radius: $neon-border-radius;
-  }
-
-  &__content-wrapper {
-    z-index: $z-index-above-3;
-    position: absolute;
-    display: none;
-    width: $neon-tooltip-max-width;
-    cursor: default;
-    user-select: none;
-  }
-
-  &__arrow,
-  &__arrow-overlay {
-    position: absolute;
-    width: 0;
-    height: 0;
-  }
-
-  &--tooltip {
-    .neon-tooltip__arrow {
-      z-index: $z-index-above;
-    }
-  }
-
-  .neon-tooltip__arrow-overlay {
-    z-index: $z-index-above-2;
-  }
-
-  &__content {
-    max-width: $neon-tooltip-max-width;
-    max-height: $neon-tooltip-max-height;
-    margin: auto;
+@mixin neon-tooltip-import {
+  .neon-tooltip {
+    display: inline-flex;
     position: relative;
-    border-radius: $neon-border-radius;
-    padding: $neon-base-space 2 * $neon-base-space;
-    font-size: $neon-font-size-xs;
-    text-transform: none;
-    line-height: $neon-line-height-ratio;
-    font-weight: 500;
-  }
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    width: fit-content;
 
-  &--top,
-  &--bottom {
-    .neon-tooltip__content-wrapper {
-      left: 50%;
-      margin-left: -0.5 * $neon-tooltip-max-width;
+    &--outline-border {
+      border-radius: $neon-border-radius;
     }
 
-    .neon-tooltip__arrow,
-    .neon-tooltip__arrow-overlay {
-      left: calc(50% - 1px);
-      margin-left: -4px;
-    }
-  }
-
-  &--top {
-    .neon-tooltip__content-wrapper {
-      bottom: calc(100% + #{$neon-base-space});
+    &__content-wrapper {
+      z-index: $z-index-above-3;
+      position: absolute;
+      display: none;
+      width: $neon-tooltip-max-width;
+      cursor: default;
+      user-select: none;
     }
 
-    .neon-tooltip__arrow {
-      top: calc(100% + #{$neon-base-space});
-      margin-top: -6px;
-    }
-  }
-
-  &--bottom {
-    .neon-tooltip__content-wrapper {
-      top: calc(100% + #{$neon-base-space});
+    &__arrow,
+    &__arrow-overlay {
+      position: absolute;
+      width: 0;
+      height: 0;
     }
 
-    .neon-tooltip__arrow {
-      bottom: calc(100% + #{$neon-base-space});
-      margin-bottom: -6px;
-    }
-  }
-
-  &--left,
-  &--right {
-    .neon-tooltip__content-wrapper {
-      height: $neon-tooltip-max-height;
-      top: calc(50% - 1px);
-      margin-top: -0.5 * $neon-tooltip-max-height;
-    }
-
-    .neon-tooltip__arrow,
-    .neon-tooltip__arrow-overlay {
-      top: 50%;
-      margin-top: -4px;
-    }
-  }
-
-  &--left {
-    .neon-tooltip__content-wrapper {
-      right: calc(100% + #{$neon-base-space});
-    }
-
-    .neon-tooltip__content {
-      margin-right: 0;
-    }
-
-    .neon-tooltip__arrow {
-      left: calc(100% + #{$neon-base-space});
-      margin-left: -6px;
-    }
-  }
-
-  &--right {
-    .neon-tooltip__content-wrapper {
-      left: calc(100% + #{$neon-base-space});
-    }
-
-    .neon-tooltip__content {
-      margin-left: 0;
-    }
-
-    .neon-tooltip__arrow {
-      right: calc(100% + #{$neon-base-space});
-      margin-right: -6px;
-    }
-  }
-
-  &--open {
-    .neon-tooltip__content-wrapper {
-      display: flex;
-      animation: tooltipFadeIn 0.5s ease-in-out;
-    }
-  }
-
-  @keyframes tooltipFadeIn {
-    0% {
-      opacity: 0;
-    }
-
-    80% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  /** Popover styles */
-  &--popover {
-    .neon-tooltip {
-      &__content {
-        max-width: $neon-popover-max-width;
-        max-height: $neon-popover-max-height;
-        font-size: $neon-font-size-m;
-        padding: 4 * $neon-base-space;
-        text-transform: none;
-        line-height: $neon-line-height-ratio;
-        font-weight: 400;
-      }
-
-      &__content-wrapper {
-        width: $neon-popover-max-width;
-      }
-
-      &__arrow {
+    &--tooltip {
+      .neon-tooltip__arrow {
         z-index: $z-index-above;
       }
     }
 
-    &.neon-tooltip--top {
+    .neon-tooltip__arrow-overlay {
+      z-index: $z-index-above-2;
+    }
+
+    &__content {
+      max-width: $neon-tooltip-max-width;
+      max-height: $neon-tooltip-max-height;
+      margin: auto;
+      position: relative;
+      border-radius: $neon-border-radius;
+      padding: $neon-base-space 2 * $neon-base-space;
+      font-size: $neon-font-size-xs;
+      text-transform: none;
+      line-height: $neon-line-height-ratio;
+      font-weight: 500;
+    }
+
+    &--top,
+    &--bottom {
       .neon-tooltip__content-wrapper {
-        width: $neon-popover-max-width;
         left: 50%;
-        margin-left: -0.5 * $neon-popover-max-width;
+        margin-left: -0.5 * $neon-tooltip-max-width;
+      }
+
+      .neon-tooltip__arrow,
+      .neon-tooltip__arrow-overlay {
+        left: calc(50% - 1px);
+        margin-left: -4px;
+      }
+    }
+
+    &--top {
+      .neon-tooltip__content-wrapper {
+        bottom: calc(100% + #{$neon-base-space});
       }
 
       .neon-tooltip__arrow {
-        top: calc(100% + #{$neon-base-space + 1px});
+        top: calc(100% + #{$neon-base-space});
         margin-top: -6px;
       }
-
-      .neon-tooltip__arrow-overlay {
-        top: calc(100% + #{$neon-base-space - 1px});
-        margin-top: -6px;
-      }
     }
 
-    &.neon-tooltip--bottom {
+    &--bottom {
       .neon-tooltip__content-wrapper {
-        width: $neon-popover-max-width;
-        left: 50%;
-        margin-left: -0.5 * $neon-popover-max-width;
+        top: calc(100% + #{$neon-base-space});
       }
 
       .neon-tooltip__arrow {
-        bottom: calc(100% + #{$neon-base-space + 1px});
-        margin-bottom: -6px;
-      }
-
-      .neon-tooltip__arrow-overlay {
-        bottom: calc(100% + #{$neon-base-space - 1px});
+        bottom: calc(100% + #{$neon-base-space});
         margin-bottom: -6px;
       }
     }
 
-    &.neon-tooltip--left {
+    &--left,
+    &--right {
       .neon-tooltip__content-wrapper {
-        height: $neon-popover-max-height;
+        height: $neon-tooltip-max-height;
+        top: calc(50% - 1px);
+        margin-top: -0.5 * $neon-tooltip-max-height;
+      }
+
+      .neon-tooltip__arrow,
+      .neon-tooltip__arrow-overlay {
         top: 50%;
-        margin-top: -0.5 * $neon-popover-max-height;
+        margin-top: -4px;
+      }
+    }
+
+    &--left {
+      .neon-tooltip__content-wrapper {
+        right: calc(100% + #{$neon-base-space});
+      }
+
+      .neon-tooltip__content {
+        margin-right: 0;
       }
 
       .neon-tooltip__arrow {
-        left: calc(100% + #{$neon-base-space + 1px});
-        margin-left: -6px;
-      }
-
-      .neon-tooltip__arrow-overlay {
-        left: calc(100% + #{$neon-base-space - 1px});
+        left: calc(100% + #{$neon-base-space});
         margin-left: -6px;
       }
     }
 
-    &.neon-tooltip--right {
+    &--right {
       .neon-tooltip__content-wrapper {
-        height: $neon-popover-max-height;
-        top: 50%;
-        margin-top: -0.5 * $neon-popover-max-height;
+        left: calc(100% + #{$neon-base-space});
+      }
+
+      .neon-tooltip__content {
+        margin-left: 0;
       }
 
       .neon-tooltip__arrow {
-        right: calc(100% + #{$neon-base-space + 1px});
+        right: calc(100% + #{$neon-base-space});
         margin-right: -6px;
       }
+    }
 
-      .neon-tooltip__arrow-overlay {
-        right: calc(100% + #{$neon-base-space - 1px});
-        margin-right: -6px;
+    &--open {
+      .neon-tooltip__content-wrapper {
+        display: flex;
+        animation: tooltipFadeIn 0.5s ease-in-out;
+      }
+    }
+
+    @keyframes tooltipFadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      80% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /** Popover styles */
+    &--popover {
+      .neon-tooltip {
+        &__content {
+          max-width: $neon-popover-max-width;
+          max-height: $neon-popover-max-height;
+          font-size: $neon-font-size-m;
+          padding: 4 * $neon-base-space;
+          text-transform: none;
+          line-height: $neon-line-height-ratio;
+          font-weight: 400;
+        }
+
+        &__content-wrapper {
+          width: $neon-popover-max-width;
+        }
+
+        &__arrow {
+          z-index: $z-index-above;
+        }
+      }
+
+      &.neon-tooltip--top {
+        .neon-tooltip__content-wrapper {
+          width: $neon-popover-max-width;
+          left: 50%;
+          margin-left: -0.5 * $neon-popover-max-width;
+        }
+
+        .neon-tooltip__arrow {
+          top: calc(100% + #{$neon-base-space + 1px});
+          margin-top: -6px;
+        }
+
+        .neon-tooltip__arrow-overlay {
+          top: calc(100% + #{$neon-base-space - 1px});
+          margin-top: -6px;
+        }
+      }
+
+      &.neon-tooltip--bottom {
+        .neon-tooltip__content-wrapper {
+          width: $neon-popover-max-width;
+          left: 50%;
+          margin-left: -0.5 * $neon-popover-max-width;
+        }
+
+        .neon-tooltip__arrow {
+          bottom: calc(100% + #{$neon-base-space + 1px});
+          margin-bottom: -6px;
+        }
+
+        .neon-tooltip__arrow-overlay {
+          bottom: calc(100% + #{$neon-base-space - 1px});
+          margin-bottom: -6px;
+        }
+      }
+
+      &.neon-tooltip--left {
+        .neon-tooltip__content-wrapper {
+          height: $neon-popover-max-height;
+          top: 50%;
+          margin-top: -0.5 * $neon-popover-max-height;
+        }
+
+        .neon-tooltip__arrow {
+          left: calc(100% + #{$neon-base-space + 1px});
+          margin-left: -6px;
+        }
+
+        .neon-tooltip__arrow-overlay {
+          left: calc(100% + #{$neon-base-space - 1px});
+          margin-left: -6px;
+        }
+      }
+
+      &.neon-tooltip--right {
+        .neon-tooltip__content-wrapper {
+          height: $neon-popover-max-height;
+          top: 50%;
+          margin-top: -0.5 * $neon-popover-max-height;
+        }
+
+        .neon-tooltip__arrow {
+          right: calc(100% + #{$neon-base-space + 1px});
+          margin-right: -6px;
+        }
+
+        .neon-tooltip__arrow-overlay {
+          right: calc(100% + #{$neon-base-space - 1px});
+          margin-right: -6px;
+        }
       }
     }
   }

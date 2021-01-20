@@ -19,61 +19,63 @@
   }
 }
 
-.neon-label {
-  &--xxs {
-    padding: 0 $neon-base-space;
-    @include neon-label-size($neon-size-xxs, $neon-font-size-xxs);
-  }
-
-  &--xs {
-    padding: 0 1.5 * $neon-base-space;
-    @include neon-label-size($neon-size-xs - $neon-base-space, $neon-font-size-xs);
-  }
-
-  &--s {
-    padding: 0 2 * $neon-base-space;
-    @include neon-label-size($neon-size-s - $neon-base-space, $neon-font-size-s);
-  }
-
-  &--m {
-    padding: 0 3.5 * $neon-base-space;
-    @include neon-label-size($neon-size-m - $neon-base-space, $neon-font-size-m);
-  }
-
-  &--l {
-    padding: 0 4 * $neon-base-space;
-    @include neon-label-size($neon-size-l - $neon-base-space, $neon-font-size-l);
-  }
-
-  text-transform: uppercase;
-  border-radius: $neon-border-radius-label;
-  letter-spacing: $neon-letter-spacing-s;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
-  min-width: fit-content;
-  width: fit-content;
-  font-weight: 700;
-
-  &__label {
-    white-space: nowrap;
-  }
-
-  &--with-icon {
-    &:not(.neon-label--with-label) {
-      padding: 0;
+@mixin neon-label-import {
+  .neon-label {
+    &--xxs {
+      padding: 0 $neon-base-space;
+      @include neon-label-size($neon-size-xxs, $neon-font-size-xxs);
     }
 
-    &.neon-label--with-label {
-      &.neon-label--icon-left .neon-icon {
-        margin-right: $neon-base-space;
+    &--xs {
+      padding: 0 1.5 * $neon-base-space;
+      @include neon-label-size($neon-size-xs - $neon-base-space, $neon-font-size-xs);
+    }
+
+    &--s {
+      padding: 0 2 * $neon-base-space;
+      @include neon-label-size($neon-size-s - $neon-base-space, $neon-font-size-s);
+    }
+
+    &--m {
+      padding: 0 3.5 * $neon-base-space;
+      @include neon-label-size($neon-size-m - $neon-base-space, $neon-font-size-m);
+    }
+
+    &--l {
+      padding: 0 4 * $neon-base-space;
+      @include neon-label-size($neon-size-l - $neon-base-space, $neon-font-size-l);
+    }
+
+    text-transform: uppercase;
+    border-radius: $neon-border-radius-label;
+    letter-spacing: $neon-letter-spacing-s;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    min-width: fit-content;
+    width: fit-content;
+    font-weight: 700;
+
+    &__label {
+      white-space: nowrap;
+    }
+
+    &--with-icon {
+      &:not(.neon-label--with-label) {
+        padding: 0;
       }
 
-      &.neon-label--icon-right .neon-icon {
-        order: 1;
-        margin-left: $neon-base-space;
+      &.neon-label--with-label {
+        &.neon-label--icon-left .neon-icon {
+          margin-right: $neon-base-space;
+        }
+
+        &.neon-label--icon-right .neon-icon {
+          order: 1;
+          margin-left: $neon-base-space;
+        }
       }
     }
   }

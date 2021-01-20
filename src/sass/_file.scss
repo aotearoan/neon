@@ -5,44 +5,46 @@
   }
 }
 
-.neon-file {
-  &__input {
-    display: none;
-  }
-
-  .neon-list {
-    margin-bottom: 4 * $neon-base-space;
-  }
-
-  &--single {
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    max-width: 100%;
-    flex: 1 1 auto;
+@mixin neon-file-import {
+  .neon-file {
+    &__input {
+      display: none;
+    }
 
     .neon-list {
-      margin-right: 2 * $neon-base-space;
-      flex: 1 1 auto;
-      margin-bottom: 0;
-      max-width: 100%;
+      margin-bottom: 4 * $neon-base-space;
+    }
+
+    &--single {
+      flex-direction: row;
+      align-items: center;
       width: 100%;
+      max-width: 100%;
+      flex: 1 1 auto;
+
+      .neon-list {
+        margin-right: 2 * $neon-base-space;
+        flex: 1 1 auto;
+        margin-bottom: 0;
+        max-width: 100%;
+        width: 100%;
+      }
+
+      &.neon-file--s {
+        @include single-file-size($neon-size-s);
+      }
+
+      &.neon-file--m {
+        @include single-file-size($neon-size-m);
+      }
+
+      &.neon-file--l {
+        @include single-file-size($neon-size-l);
+      }
     }
 
-    &.neon-file--s {
-      @include single-file-size($neon-size-s);
+    .neon-button + .neon-button {
+      margin-left: 4 * $neon-base-space;
     }
-
-    &.neon-file--m {
-      @include single-file-size($neon-size-m);
-    }
-
-    &.neon-file--l {
-      @include single-file-size($neon-size-l);
-    }
-  }
-
-  .neon-button + .neon-button {
-    margin-left: 4 * $neon-base-space;
   }
 }

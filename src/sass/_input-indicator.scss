@@ -1,68 +1,70 @@
-.neon-input-indicator {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
-  font-weight: 400;
-  letter-spacing: $neon-letter-spacing-s;
-
-  &__label {
+@mixin neon-input-indicator-import {
+  .neon-input-indicator {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+    user-select: none;
+    font-weight: 400;
+    letter-spacing: $neon-letter-spacing-s;
 
-  &--s {
-    height: $neon-size-s;
-
-    .neon-input-indicator__label {
-      @include padding-horizontal(0.33);
+    &__label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .neon-input-indicator__label,
-    .neon-icon {
-      min-width: $neon-size-s;
+    &--s {
+      height: $neon-size-s;
+
+      .neon-input-indicator__label {
+        @include padding-horizontal(0.33);
+      }
+
+      .neon-input-indicator__label,
+      .neon-icon {
+        min-width: $neon-size-s;
+      }
+
+      .neon-icon {
+        width: $neon-font-size-m;
+        height: $neon-font-size-m;
+      }
     }
 
-    .neon-icon {
-      width: $neon-font-size-m;
-      height: $neon-font-size-m;
-    }
-  }
+    &--m {
+      height: $neon-size-m;
 
-  &--m {
-    height: $neon-size-m;
+      .neon-input-indicator__label {
+        @include padding-horizontal(0.5);
+      }
 
-    .neon-input-indicator__label {
-      @include padding-horizontal(0.5);
-    }
+      .neon-input-indicator__label,
+      .neon-icon {
+        min-width: $neon-size-m;
+      }
 
-    .neon-input-indicator__label,
-    .neon-icon {
-      min-width: $neon-size-m;
-    }
-
-    .neon-icon {
-      width: $neon-font-size-l;
-      height: $neon-font-size-l;
-    }
-  }
-
-  &--l {
-    height: $neon-size-l;
-
-    .neon-input-indicator__label {
-      @include padding-horizontal(0.5);
+      .neon-icon {
+        width: $neon-font-size-l;
+        height: $neon-font-size-l;
+      }
     }
 
-    .neon-input-indicator__label,
-    .neon-icon {
-      min-width: $neon-size-l;
-    }
+    &--l {
+      height: $neon-size-l;
 
-    .neon-icon {
-      width: $neon-font-size-l;
-      height: $neon-font-size-l;
+      .neon-input-indicator__label {
+        @include padding-horizontal(0.5);
+      }
+
+      .neon-input-indicator__label,
+      .neon-icon {
+        min-width: $neon-size-l;
+      }
+
+      .neon-icon {
+        width: $neon-font-size-l;
+        height: $neon-font-size-l;
+      }
     }
   }
 }

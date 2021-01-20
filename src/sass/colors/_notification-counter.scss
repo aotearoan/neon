@@ -1,11 +1,13 @@
-.neon-notification-counter {
-  @each $color, $palette in $neon-functional-colors {
-    &--#{$color} {
-      color: $neon-color-inverse;
-      @if ($color == high-contrast) {
-        background-color: $neon-color-text;
-      } @else {
-        background-color: map-get($palette, $neon-color-label);
+@mixin neon-notification-counter-color-import {
+  .neon-notification-counter {
+    @each $color, $palette in $neon-functional-colors {
+      &--#{$color} {
+        color: $neon-color-inverse;
+        @if ($color == high-contrast) {
+          background-color: $neon-color-text;
+        } @else {
+          background-color: map-get($palette, $neon-color-label);
+        }
       }
     }
   }

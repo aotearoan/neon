@@ -11,22 +11,24 @@
   }
 }
 
-.neon-label {
-  @each $color, $palette in $neon-functional-colors {
-    &--#{$color} {
-      $neon-label-component-color: map-get($palette, $neon-color-label);
-      @if ($color == high-contrast) {
-        $neon-label-component-color: $neon-color-text;
-      }
+@mixin neon-label-color-import {
+  .neon-label {
+    @each $color, $palette in $neon-functional-colors {
+      &--#{$color} {
+        $neon-label-component-color: map-get($palette, $neon-color-label);
+        @if ($color == high-contrast) {
+          $neon-label-component-color: $neon-color-text;
+        }
 
-      @include neon-label-colors($neon-label-component-color);
+        @include neon-label-colors($neon-label-component-color);
 
-      @each $alternateColor, $alternatePalette in $neon-functional-colors {
-        &.neon-label--alternate-color-#{$alternateColor} {
-          @include neon-gradient-label(
-            $neon-label-component-color,
-            map-get($alternatePalette, $neon-color-gradient-alternate)
-          );
+        @each $alternateColor, $alternatePalette in $neon-functional-colors {
+          &.neon-label--alternate-color-#{$alternateColor} {
+            @include neon-gradient-label(
+              $neon-label-component-color,
+              map-get($alternatePalette, $neon-color-gradient-alternate)
+            );
+          }
         }
       }
     }

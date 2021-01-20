@@ -1,43 +1,203 @@
 @import 'scrollbars';
 @import 'base-html';
-@import 'top-nav';
-@import 'footer';
-@import 'card';
-@import 'switch';
-@import 'side-nav';
-@import 'button';
-@import 'label';
-@import 'badge';
-@import 'note';
-@import 'link';
-@import 'icon';
-@import 'tree-menu';
-@import 'action-menu';
-@import 'toggle';
-@import 'drawer';
-@import 'modal';
-@import 'input';
-@import 'drop-zone';
-@import 'alert';
-@import 'dropdown';
-@import 'dropdown-menu';
 @import 'table';
+
+@import 'top-nav';
+@if index($neon-components, NeonTopNav) {
+  @include neon-top-nav-color-import;
+}
+
+@import 'footer';
+@if index($neon-components, NeonFooter) {
+  @include neon-footer-color-import;
+}
+
+@import 'card';
+@if index($neon-components, NeonCard) {
+  @include neon-card-color-import;
+}
+
+@import 'switch';
+@if index($neon-components, NeonSwitch) {
+  @include neon-switch-color-import;
+}
+
+@import 'side-nav';
+@if index($neon-components, NeonSideNav) {
+  @include neon-side-nav-color-import;
+}
+
+@import 'button';
+@if index($neon-components, NeonButton) {
+  @include neon-button-color-import;
+}
+
+@import 'label';
+@if index($neon-components, NeonLabel) {
+  @include neon-label-color-import;
+}
+
+@import 'badge';
+@if index($neon-components, NeonBadge) {
+  @include neon-badge-color-import;
+}
+
+@import 'note';
+@if index($neon-components, NeonNote) {
+  @include neon-note-color-import;
+}
+
+@import 'link';
+@if index($neon-components, NeonLink) {
+  @include neon-link-color-import;
+}
+
+@import 'icon';
+@if index($neon-components, NeonIcon) {
+  @include neon-icon-color-import;
+}
+
+@import 'tree-menu';
+@if index($neon-components, NeonTreeMenu) {
+  @include neon-tree-menu-color-import;
+}
+
+@import 'action-menu';
+@if index($neon-components, NeonActionMenu) {
+  @include neon-action-menu-color-import;
+}
+
+@import 'toggle';
+@if index($neon-components, NeonToggle) {
+  @include neon-toggle-color-import;
+}
+
+@import 'drawer';
+@if index($neon-components, NeonDrawer) {
+  @include neon-drawer-color-import;
+}
+
+@import 'modal';
+@if index($neon-components, NeonModal) {
+  @include neon-modal-color-import;
+}
+
+@import 'input';
+@if index($neon-components, NeonInput) {
+  @include neon-input-color-import;
+}
+
+@import 'drop-zone';
+@if index($neon-components, NeonDropZone) {
+  @include neon-drop-zone-color-import;
+}
+
+@import 'alert';
+@if index($neon-components, NeonAlert) {
+  @include neon-alert-color-import;
+}
+
+@import 'dropdown';
+@if index($neon-components, NeonDropdown) {
+  @include neon-dropdown-color-import;
+}
+
+@import 'dropdown-menu';
+@if index($neon-components, NeonDropdownMenu) {
+  @include neon-dropdown-menu-color-import;
+}
+
 @import 'notification-counter';
+@if index($neon-components, NeonNotificationCounter) {
+  @include neon-notification-counter-color-import;
+}
+
 @import 'tabs';
+@if index($neon-components, NeonTabs) {
+  @include neon-tabs-color-import;
+}
+
 @import 'expansion-panel';
+@if index($neon-components, NeonExpansionPanel) {
+  @include neon-expansion-panel-color-import;
+}
+
 @import 'input-indicator';
+@if index($neon-components, NeonInputIndicator) {
+  @include neon-input-indicator-color-import;
+}
+
 @import 'skeleton-loader';
+@if index($neon-components, NeonSkeletonLoader) {
+  @include neon-skeleton-loader-color-import;
+}
+
 @import 'chip';
+@if index($neon-components, NeonChip) {
+  @include neon-chip-color-import;
+}
+
 @import 'toast';
+@if index($neon-components, NeonToast) {
+  @include neon-toast-color-import;
+}
+
 @import 'splash-loader';
+@if index($neon-components, NeonSplashLoader) {
+  @include neon-splash-loader-color-import;
+}
+
 @import 'select';
+@if index($neon-components, NeonSelect) {
+  @include neon-select-color-import;
+}
+
 @import 'toggle-chip';
+@if index($neon-components, NeonToggleChip) {
+  @include neon-toggle-chip-color-import;
+}
+
 @import 'tooltip';
+@if index($neon-components, NeonTooltip) {
+  @include neon-tooltip-color-import;
+}
+
 @import 'menu';
+@if index($neon-components, NeonMenu) {
+  @include neon-menu-color-import;
+}
+
 @import 'list';
+@if index($neon-components, NeonList) {
+  @include neon-list-color-import;
+}
+
 @import 'filter-list';
+@if index($neon-components, NeonFilterList) {
+  @include neon-filter-list-color-import;
+}
+
 @import 'search';
+@if index($neon-components, NeonSearch) {
+  @include neon-search-color-import;
+}
+
 @import 'color';
+@if index($neon-components, NeonColor) {
+  @include neon-color-color-import;
+}
+
 @import 'number';
+@if index($neon-components, NeonNumber) {
+  @include neon-number-color-import;
+}
+
 @import 'slider';
+@if index($neon-components, NeonSlider) {
+  @include neon-slider-color-import;
+}
+
 @import 'range-slider';
+@if index($neon-components, NeonRangeSlider) {
+  @include neon-range-slider-color-import;
+}

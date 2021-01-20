@@ -1,148 +1,150 @@
-.neon-tabs {
-  &__menu-items {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-weight: 500;
+@mixin neon-tabs-import {
+  .neon-tabs {
+    &__menu-items {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-weight: 500;
 
-    &--underlined {
-      .neon-tabs__menu-item-container:before {
-        bottom: -$neon-border-width-tabs;
+      &--underlined {
+        .neon-tabs__menu-item-container:before {
+          bottom: -$neon-border-width-tabs;
+        }
+      }
+    }
+
+    &__menu-item {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 100%;
+      user-select: none;
+      cursor: pointer;
+
+      & + .neon-tabs__menu-item {
+        margin-left: 6 * $neon-base-space;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &-container {
+        pointer-events: none;
+        touch-action: none;
+        outline: none;
+        height: 100%;
+        align-items: center;
+        flex-direction: row;
+
+        &:before {
+          content: '';
+          display: flex;
+          width: 100%;
+          background-color: transparent;
+          position: absolute;
+          height: $neon-border-width-tabs;
+          bottom: 0;
+          border-radius: $neon-border-radius;
+          transition: all ease-in-out $neon-animation-speed-fast;
+        }
+      }
+
+      .neon-tabs__menu-item-container:focus {
+        &:before {
+          margin-left: $neon-base-space;
+          margin-right: $neon-base-space;
+          width: calc(100% - #{2 * $neon-base-space});
+        }
+      }
+    }
+
+    &--s {
+      .neon-tabs__menu-items {
+        height: $neon-size-s;
+        font-size: $neon-font-size-m;
+
+        svg {
+          width: $neon-font-size-m;
+          height: $neon-font-size-m;
+          margin-right: $neon-base-space;
+        }
+      }
+    }
+
+    &--m {
+      .neon-tabs__menu-items {
+        height: $neon-size-m;
+        font-size: $neon-font-size-l;
+
+        svg {
+          width: $neon-font-size-l;
+          height: $neon-font-size-l;
+          margin-right: 2 * $neon-base-space;
+        }
+      }
+    }
+
+    &--l {
+      .neon-tabs__menu-items {
+        height: $neon-size-l;
+        font-size: $neon-font-size-l;
+
+        svg {
+          width: $neon-font-size-l;
+          height: $neon-font-size-l;
+          margin-right: 2 * $neon-base-space;
+        }
       }
     }
   }
 
-  &__menu-item {
+  .neon-tab {
     position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 100%;
-    user-select: none;
-    cursor: pointer;
+    display: none;
+    border-radius: $neon-border-radius;
+    @include padding-vertical;
 
-    & + .neon-tabs__menu-item {
-      margin-left: 6 * $neon-base-space;
+    &--selected {
+      display: flex;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: $neon-base-space;
+      right: 0;
+      width: 2 * $neon-base-space;
+      height: 2 * $neon-base-space;
+      border-radius: $neon-border-radius;
+      display: flex;
+      transition: all $neon-animation-speed-fast ease-in-out;
     }
 
     &:focus {
       outline: none;
     }
-
-    &-container {
-      pointer-events: none;
-      touch-action: none;
-      outline: none;
-      height: 100%;
-      align-items: center;
-      flex-direction: row;
-
-      &:before {
-        content: '';
-        display: flex;
-        width: 100%;
-        background-color: transparent;
-        position: absolute;
-        height: $neon-border-width-tabs;
-        bottom: 0;
-        border-radius: $neon-border-radius;
-        transition: all ease-in-out $neon-animation-speed-fast;
-      }
-    }
-
-    .neon-tabs__menu-item-container:focus {
-      &:before {
-        margin-left: $neon-base-space;
-        margin-right: $neon-base-space;
-        width: calc(100% - #{2 * $neon-base-space});
-      }
-    }
   }
 
-  &--s {
+  @include responsive(mobile-large) {
     .neon-tabs__menu-items {
-      height: $neon-size-s;
-      font-size: $neon-font-size-m;
+      display: none;
+    }
 
-      svg {
-        width: $neon-font-size-m;
-        height: $neon-font-size-m;
-        margin-right: $neon-base-space;
-      }
+    .neon-tab {
+      display: flex;
+      padding-bottom: 0;
     }
   }
 
-  &--m {
+  .neon-card-body--full-width {
     .neon-tabs__menu-items {
-      height: $neon-size-m;
-      font-size: $neon-font-size-l;
-
-      svg {
-        width: $neon-font-size-l;
-        height: $neon-font-size-l;
-        margin-right: 2 * $neon-base-space;
-      }
+      @include padding-horizontal;
     }
-  }
 
-  &--l {
-    .neon-tabs__menu-items {
-      height: $neon-size-l;
-      font-size: $neon-font-size-l;
-
-      svg {
-        width: $neon-font-size-l;
-        height: $neon-font-size-l;
-        margin-right: 2 * $neon-base-space;
-      }
+    .neon-tab {
+      @include padding;
     }
-  }
-}
-
-.neon-tab {
-  position: relative;
-  display: none;
-  border-radius: $neon-border-radius;
-  @include padding-vertical;
-
-  &--selected {
-    display: flex;
-  }
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: $neon-base-space;
-    right: 0;
-    width: 2 * $neon-base-space;
-    height: 2 * $neon-base-space;
-    border-radius: $neon-border-radius;
-    display: flex;
-    transition: all $neon-animation-speed-fast ease-in-out;
-  }
-
-  &:focus {
-    outline: none;
-  }
-}
-
-@include responsive(mobile-large) {
-  .neon-tabs__menu-items {
-    display: none;
-  }
-
-  .neon-tab {
-    display: flex;
-    padding-bottom: 0;
-  }
-}
-
-.neon-card-body--full-width {
-  .neon-tabs__menu-items {
-    @include padding-horizontal;
-  }
-
-  .neon-tab {
-    @include padding;
   }
 }

@@ -30,136 +30,139 @@
   border-color: $neon-color-disabled-light;
 }
 
-.neon-slider {
-  &__legend {
-    color: $neon-color-placeholder;
-  }
-
-  &__tooltip {
-    div {
-      box-shadow: $neon-card-box-shadow;
-      color: $neon-color-inverse;
-    }
-  }
-
-  &__input {
-    &::-webkit-slider-thumb {
-      @include thumb-color($neon-border-slider-thumb);
+@mixin neon-slider-color-import {
+  .neon-slider {
+    &__legend {
+      color: $neon-color-placeholder;
     }
 
-    &::-moz-range-thumb {
-      @include thumb-color($neon-border-slider-thumb);
+    &__tooltip {
+      div {
+        box-shadow: $neon-card-box-shadow;
+        color: $neon-color-inverse;
+      }
     }
 
-    &::-ms-thumb {
-      @include thumb-color($neon-border-slider-thumb);
-    }
-
-    &:focus {
-      $neon-box-shadow-slider-thumb-focus: 0 0 0 4px rgba($neon-background-color-low-contrast, 0.3);
+    &__input {
       &::-webkit-slider-thumb {
-        box-shadow: $neon-box-shadow-slider-thumb-focus;
+        @include thumb-color($neon-border-slider-thumb);
       }
 
       &::-moz-range-thumb {
-        box-shadow: $neon-box-shadow-slider-thumb-focus;
+        @include thumb-color($neon-border-slider-thumb);
       }
 
       &::-ms-thumb {
-        box-shadow: $neon-box-shadow-slider-thumb-focus;
+        @include thumb-color($neon-border-slider-thumb);
+      }
+
+      &:focus {
+        $neon-box-shadow-slider-thumb-focus: 0 0 0 4px rgba($neon-background-color-low-contrast, 0.3);
+
+        &::-webkit-slider-thumb {
+          box-shadow: $neon-box-shadow-slider-thumb-focus;
+        }
+
+        &::-moz-range-thumb {
+          box-shadow: $neon-box-shadow-slider-thumb-focus;
+        }
+
+        &::-ms-thumb {
+          box-shadow: $neon-box-shadow-slider-thumb-focus;
+        }
       }
     }
-  }
 
-  @each $color, $palette in $neon-functional-colors {
-    &--#{$color} {
-      $neon-color-slider-fill: map-get($palette, $neon-color-slider);
-      /* create a transparent fixed width container to position centered above the thumb, that way we can center the
-         variable width contents using flex */
-      .neon-slider__tooltip {
-        div {
-          background: $neon-color-slider-fill;
+    @each $color, $palette in $neon-functional-colors {
+      &--#{$color} {
+        $neon-color-slider-fill: map-get($palette, $neon-color-slider);
+        /* create a transparent fixed width container to position centered above the thumb, that way we can center the
+           variable width contents using flex */
+        .neon-slider__tooltip {
+          div {
+            background: $neon-color-slider-fill;
 
-          &:after {
-            border-top-color: $neon-color-slider-fill;
+            &:after {
+              border-top-color: $neon-color-slider-fill;
+            }
           }
         }
-      }
 
-      .neon-slider__input {
-        &::-webkit-slider-runnable-track {
-          @include track-color($neon-color-slider-fill);
-        }
-
-        &::-moz-range-track {
-          @include track-color($neon-color-slider-fill);
-        }
-
-        &::-ms-track {
-          @include track-color($neon-color-slider-fill);
-        }
-
-        @if ($neon-theme == 'sharp') {
-          &::-webkit-slider-thumb {
-            @include thumb-color-sharp(darken($neon-color-slider-fill, 10));
+        .neon-slider__input {
+          &::-webkit-slider-runnable-track {
+            @include track-color($neon-color-slider-fill);
           }
 
-          &::-moz-range-thumb {
-            @include thumb-color-sharp(darken($neon-color-slider-fill, 10));
+          &::-moz-range-track {
+            @include track-color($neon-color-slider-fill);
           }
 
-          &::-ms-thumb {
-            @include thumb-color-sharp(darken($neon-color-slider-fill, 10));
+          &::-ms-track {
+            @include track-color($neon-color-slider-fill);
           }
-        }
-      }
 
-      &:focus-within {
-        @if ($neon-theme == 'sharp') {
-          .neon-slider__input:focus {
-            $neon-box-shadow-slider-thumb-focus: 0 0 0 4px rgba($neon-color-slider-fill, 0.3);
-
+          @if ($neon-theme == 'sharp') {
             &::-webkit-slider-thumb {
-              box-shadow: $neon-box-shadow-slider-thumb-focus;
+              @include thumb-color-sharp(darken($neon-color-slider-fill, 10));
             }
 
             &::-moz-range-thumb {
-              box-shadow: $neon-box-shadow-slider-thumb-focus;
+              @include thumb-color-sharp(darken($neon-color-slider-fill, 10));
             }
 
             &::-ms-thumb {
-              box-shadow: $neon-box-shadow-slider-thumb-focus;
+              @include thumb-color-sharp(darken($neon-color-slider-fill, 10));
+            }
+          }
+        }
+
+        &:focus-within {
+          @if ($neon-theme == 'sharp') {
+            .neon-slider__input:focus {
+              $neon-box-shadow-slider-thumb-focus: 0 0 0 4px rgba($neon-color-slider-fill, 0.3);
+
+              &::-webkit-slider-thumb {
+                box-shadow: $neon-box-shadow-slider-thumb-focus;
+              }
+
+              &::-moz-range-thumb {
+                box-shadow: $neon-box-shadow-slider-thumb-focus;
+              }
+
+              &::-ms-thumb {
+                box-shadow: $neon-box-shadow-slider-thumb-focus;
+              }
             }
           }
         }
       }
     }
-  }
 
-  &.neon-slider--disabled {
-    .neon-slider__input {
-      &::-webkit-slider-runnable-track {
-        @include disabled-track;
-      }
+    &.neon-slider--disabled {
+      .neon-slider__input {
+        &::-webkit-slider-runnable-track {
+          @include disabled-track;
+        }
 
-      &::-moz-range-track {
-        @include disabled-track;
-      }
+        &::-moz-range-track {
+          @include disabled-track;
+        }
 
-      &::-ms-track {
-        @include disabled-track;
-      }
+        &::-ms-track {
+          @include disabled-track;
+        }
 
-      &::-webkit-slider-thumb {
-        @include thumb-disabled;
-      }
+        &::-webkit-slider-thumb {
+          @include thumb-disabled;
+        }
 
-      &::-moz-range-thumb {
-        @include thumb-disabled;
-      }
+        &::-moz-range-thumb {
+          @include thumb-disabled;
+        }
 
-      &::-ms-thumb {
-        @include thumb-disabled;
+        &::-ms-thumb {
+          @include thumb-disabled;
+        }
       }
     }
   }

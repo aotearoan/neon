@@ -25,6 +25,10 @@ export default class App extends Vue {}`;
 
   private allTheSass = `.app {
   &.neon-theme--classic {
+    // OPTIONAL: define the list of Neon components used by the application and only the necessary SASS for these
+    // components will be imported, otherwise SASS for all components will be imported for the theme.
+    $neon-components: [NeonGrid, NeonGridArea, NeonPage, NeonSideNav];
+
     // override colors, palettes and other basic variables here BEFORE importing the theme, e.g. $neon-border-radius: 4px
     @import '~@aotearoan/neon/themes/classic/theme';
 
