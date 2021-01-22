@@ -21,7 +21,7 @@ describe('NeonExpansionPanel', () => {
       },
     });
     // when / then
-    expect(wrapper.find('.neon-expansion-panel__content p ').text()).toEqual(content);
+    expect(wrapper.find('.neon-expansion-panel__content p').text()).toEqual(content);
   });
 
   it('renders label', () => {
@@ -231,6 +231,30 @@ describe('NeonExpansionPanel', () => {
     });
     // when
     wrapper.find('.neon-expansion-panel__header').trigger('click');
+    // then
+    expect(wrapper.emitted().input[0]).toEqual([true]);
+  });
+
+  it('emits input event space', () => {
+    // given
+    const label = 'lol';
+    const wrapper = mount(NeonExpansionPanel, {
+      propsData: { label, value: false },
+    });
+    // when
+    wrapper.find('.neon-expansion-panel__label-container').trigger('keydown.space');
+    // then
+    expect(wrapper.emitted().input[0]).toEqual([true]);
+  });
+
+  it('emits input event enter', () => {
+    // given
+    const label = 'lol';
+    const wrapper = mount(NeonExpansionPanel, {
+      propsData: { label, value: false },
+    });
+    // when
+    wrapper.find('.neon-expansion-panel__label-container').trigger('keydown.enter');
     // then
     expect(wrapper.emitted().input[0]).toEqual([true]);
   });
