@@ -140,22 +140,32 @@ export default class NeonNumber extends Vue {
     }
   }
 
-  private get computedValue() {
+  get computedValue() {
     const newValue = this.value !== null ? +this.value : this.min || 0;
     return this.computedRawDecimals !== undefined ? Number(newValue.toFixed(this.computedRawDecimals)) : newValue;
   }
 
-  private decrement() {
+  get displayValue() {
+    return this.focus ? this.rawValue : this.formattedValue;
+  }
+
+  decrement() {
     const newValue = this.computedValue - this.computedStep;
-    this.emitValue(this.min !== undefined ? Math.max(this.min, newValue) : newValue);
+    const emittedValue = this.min !== undefined ? Math.max(this.min, newValue) : newValue;
+    if (emittedValue !== this.value) {
+      this.emitValue(emittedValue);
+    }
   }
 
-  private increment() {
+  increment() {
     const newValue = this.computedValue + this.computedStep;
-    this.emitValue(this.max !== undefined ? Math.min(this.max, newValue) : newValue);
+    const emittedValue = this.max !== undefined ? Math.min(this.max, newValue) : newValue;
+    if (emittedValue !== this.value) {
+      this.emitValue(emittedValue);
+    }
   }
 
-  private get formattedValue() {
+  get formattedValue() {
     return this.value !== null &&
       (this.valueTemplate !== undefined || this.computedDecimals !== undefined || this.percentage !== undefined)
       ? NeonNumberUtils.formatNumber(this.value, {
@@ -166,7 +176,7 @@ export default class NeonNumber extends Vue {
       : this.value;
   }
 
-  private get rawValue() {
+  get rawValue() {
     return this.computedRawDecimals ? this.value?.toFixed(this.computedRawDecimals) : this.value;
   }
 
@@ -179,11 +189,11 @@ export default class NeonNumber extends Vue {
     this.$emit('input', value);
   }
 
-  private onFocus() {
+  onFocus() {
     this.focus = true;
   }
 
-  private onBlur() {
+  onBlur() {
     this.focus = false;
   }
 
