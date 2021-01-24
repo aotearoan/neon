@@ -32,7 +32,7 @@
       :min="min"
       :step="computedStep"
       :aria-valuenow="value"
-      :value="focus ? rawValue : formattedValue"
+      :value="displayValue"
       :size="size"
       :color="color"
       :disabled="disabled || !editable"
