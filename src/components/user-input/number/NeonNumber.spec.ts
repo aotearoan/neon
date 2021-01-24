@@ -1,9 +1,17 @@
+import Vue from 'vue';
 import { mount } from '@vue/test-utils';
 import NeonNumberClass from './NeonNumber';
 import NeonNumber from './NeonNumber.vue';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonInputMode } from '../../../common/enums/NeonInputMode';
+import NeonButton from '../button/NeonButton.vue';
+import NeonFieldGroup from '../field-group/NeonFieldGroup.vue';
+import NeonInput from '../input/NeonInput.vue';
+
+Vue.component('NeonButton', NeonButton);
+Vue.component('NeonFieldGroup', NeonFieldGroup);
+Vue.component('NeonInput', NeonInput);
 
 describe('NeonNumber', () => {
   it('renders default size', () => {
