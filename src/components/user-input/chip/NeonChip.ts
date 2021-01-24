@@ -28,7 +28,7 @@ export default class NeonChip extends Vue {
   };
 
   private open = true;
-  private active = false;
+  active = false;
   /**
    * The chip label
    */
@@ -98,41 +98,18 @@ export default class NeonChip extends Vue {
           return 'link';
       }
     }
+
+    return undefined;
   }
 
   private keyUp() {
-    if (!this.disabled && document.activeElement === this.$refs.chip) {
-      this.active = false;
-    }
+    this.active = false;
   }
 
-  private keyDown(event: KeyboardEvent) {
-    if (!this.disabled && document.activeElement === this.$refs.chip) {
-      switch (this.action) {
-        case NeonChipAction.Remove:
-          switch (event.code) {
-            case 'Space':
-            case 'Enter':
-            case 'Backspace':
-            case 'Delete':
-              event.preventDefault();
-              this.clicked();
-              event.stopPropagation();
-              return false;
-          }
-          return true;
-        case NeonChipAction.Click:
-          switch (event.code) {
-            case 'Space':
-            case 'Enter':
-              this.active = true;
-              event.preventDefault();
-              this.clicked();
-              event.stopPropagation();
-              return false;
-          }
-          return true;
-      }
+  private keyDown() {
+    if (!this.disabled) {
+      this.active = true;
+      this.clicked();
     }
   }
 }
