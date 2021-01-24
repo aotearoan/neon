@@ -16,6 +16,7 @@
       v-bind="$attrs"
       v-on="$listeners"
       type="text"
+      class="neon-color__text-input"
     >
     </neon-input>
     <neon-input
