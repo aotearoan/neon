@@ -7,7 +7,7 @@ import { NeonResponsive } from '../../../../common/enums/NeonResponsive';
  */
 @Component
 export default class NeonTab extends Vue {
-  private responsiveView = false;
+  responsiveView = false;
 
   /**
    * True if the current tab is the visible tab.
@@ -36,7 +36,7 @@ export default class NeonTab extends Vue {
     window.removeEventListener('resize', this.handleResize);
   }
 
-  private handleResize() {
+  handleResize() {
     this.responsiveView = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.MobileLarge]).matches;
   }
 }
