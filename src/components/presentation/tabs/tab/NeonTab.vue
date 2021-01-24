@@ -1,8 +1,8 @@
 <template>
   <div
     class="neon-tab"
-    v-if="responsiveView || !toggleOnIf || selected"
-    :class="{ 'neon-tab--selected': toggleOnIf || selected }"
+    v-if="responsiveView || !toggleOnIf || (toggleOnIf && selected)"
+    :class="{ 'neon-tab--selected': selected }"
     role="tabpanel"
     :id="id"
     :aria-labelledby="id ? `${id}Button` : undefined"

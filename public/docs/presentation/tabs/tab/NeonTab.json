@@ -11,7 +11,10 @@
       "type": {
         "name": "boolean"
       },
-      "required": true
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
     },
     {
       "name": "id",
