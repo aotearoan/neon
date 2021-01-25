@@ -15,7 +15,11 @@
   >
     <!-- @slot optionally replace the dropdown button with a custom control -->
     <slot name="dropdown-button">
-      <div ref="dropdownButton" v-if="dropdownStyle === 'text-button' || dropdownStyle === 'solid-button'">
+      <div
+        ref="dropdownButton"
+        v-if="dropdownStyle === 'text-button' || dropdownStyle === 'solid-button'"
+        class="neon-dropdown__button-wrapper"
+      >
         <neon-button
           class="neon-dropdown__button"
           :button-style="dropdownStyle === 'text-button' ? 'text' : 'solid'"
@@ -50,6 +54,7 @@
           :label="label"
           :size="size"
           :color="color"
+          :alternate-color="alternateColor"
           :disabled="disabled"
           :circular="dropdownStyle === 'circular-badge'"
           :image="image"
@@ -59,8 +64,7 @@
           v-if="indicator"
           class="neon-button__indicator"
           :disabled="disabled"
-          :color="dropdownStyle !== 'solid-button' ? color : undefined"
-          :inverse="dropdownStyle === 'solid-button'"
+          :color="color"
           :expanded="value"
         />
       </div>
