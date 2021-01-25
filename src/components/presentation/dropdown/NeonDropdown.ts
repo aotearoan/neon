@@ -32,8 +32,8 @@ export default class NeonDropdown extends Vue {
     dropdownContent: HTMLDivElement;
   };
 
-  private dropdownPlacement: NeonDropdownPlacement;
-  private closableUtils?: NeonClosableUtils;
+  dropdownPlacement: NeonDropdownPlacement;
+  closableUtils?: NeonClosableUtils;
 
   /**
    * Whether or not the dropdown is currently open.
@@ -151,7 +151,7 @@ export default class NeonDropdown extends Vue {
      * Emitted when the dropdown is closed.
      * @type {void}
      */
-    this.$emit('input');
+    this.$emit('input', false);
   }
 
   public close() {
@@ -171,7 +171,7 @@ export default class NeonDropdown extends Vue {
     }
   }
 
-  private recalculatePlacement() {
+  recalculatePlacement() {
     if (this.value) {
       this.dropdownPlacement = NeonDropdownPlacementUtils.calculatePlacement(
         this.$refs.dropdownButton,
