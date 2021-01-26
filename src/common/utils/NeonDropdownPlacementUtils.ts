@@ -73,8 +73,6 @@ export class NeonDropdownPlacementUtils {
           !!placement.minorPlacement &&
           contentElement.offsetHeight <= availableMinorSpace[placement.minorPlacement]
         );
-      default:
-        return false;
     }
   }
 }
