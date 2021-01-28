@@ -8,7 +8,7 @@ import Vue from 'vue';
 export class NeonEventBus extends Vue {
   public static messagePrefix = 'neon-';
 
-  private static _bus = new Vue();
+  static _bus = new Vue();
 
   /**
    * Listen to event bus events

@@ -58,8 +58,6 @@ export class NeonTooltipPlacementUtils {
       case NeonPlacement.Left:
       case NeonPlacement.Right:
         return contentElement.offsetWidth <= availableSpace[placement];
-      default:
-        return false;
     }
   }
 }
