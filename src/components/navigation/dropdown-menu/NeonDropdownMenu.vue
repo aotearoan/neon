@@ -43,7 +43,6 @@
         <neon-link
           v-else-if="item.href && !item.disabled"
           :href="item.href"
-          :disabled="item.disabled"
           :no-style="true"
           role="menuitem"
           outline-style="none"

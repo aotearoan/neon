@@ -28,9 +28,9 @@ export default class NeonDropdownMenu extends Vue {
     items: HTMLLIElement[];
   };
 
-  private open = false;
-  private highlightedKey: string | null = null;
-  private highlightedIndex = -1;
+  open = false;
+  highlightedKey: string | null = null;
+  highlightedIndex = -1;
 
   /**
    * A list of menu items to render in the dropdown menu.
@@ -112,7 +112,7 @@ export default class NeonDropdownMenu extends Vue {
             break;
           case 'Enter':
           case 'Space':
-            if (!this.model[this.highlightedIndex].disabled) {
+            if (this.model[this.highlightedIndex] && !this.model[this.highlightedIndex].disabled) {
               this.clickItem(this.model[this.highlightedIndex]);
               $event.preventDefault();
             }
