@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NeonMenu renders menu 1`] = `
+<nav class="neon-menu__wrapper">
+  <ul role="menubar" class="neon-menu no-style neon-menu--brand neon-menu--l">
+    <li class="neon-menu__item"><a tabindex="0" role="menuitem" class="neon-link neon-link--router-link neon-link--no-style neon-link--outline-none"><span class="neon-link__label"><!----> <span class="neon-menu__item-label">Action Menu</span></span></a></li>
+    <li class="neon-menu__item"><a tabindex="0" role="menuitem" class="neon-link neon-link--router-link neon-link--no-style neon-link--outline-none"><span class="neon-link__label"><!----> <span class="neon-menu__item-label">Link</span></span></a></li>
+    <li class="neon-menu__item"><a tabindex="0" role="menuitem" class="neon-link neon-link--router-link neon-link--no-style neon-link--outline-none"><span class="neon-link__label"><!----> <span class="neon-menu__item-label">Menu</span></span></a></li>
+    <li class="neon-menu__item"><a tabindex="0" role="menuitem" class="neon-link neon-link--no-style neon-link--outline-none"><span class="neon-link__label"><div class="neon-icon neon-menu__item-icon neon-icon--neutral"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 512 512"><circle class="neon-svg--stroke" cx="256" cy="256" r="208" style="fill:none;stroke-linejoin:round;stroke-width:32px"></circle><path class="neon-svg--fill" d="M256,464C141.12,464,48,370.88,48,256S141.12,48,256,48Z"></path></svg></div> <span class="neon-menu__item-label">Click link</span></span></a></li>
+    <li class="neon-menu__item neon-menu__item--disabled"><a tabindex="-1" role="menuitem" class="neon-link neon-link--no-style neon-link--outline-none"><span class="neon-link__label"><!----> <span class="neon-menu__item-label">Disabled</span></span></a></li>
+    <li class="neon-menu__item">
+      <div class="neon-dropdown neon-dropdown-menu neon-dropdown--with-indicator neon-dropdown--open-on-hover neon-dropdown--l neon-dropdown--brand neon-dropdown-menu--brand" label="Tree Menu" dropdown-style="text-button">
+        <div class="neon-dropdown__button-wrapper"><button aria-haspopup="true" class="neon-button neon-dropdown__button neon-button--l neon-button--brand neon-button--text neon-button--state-ready">
+            <!----> <span class="neon-button__label">Tree Menu</span>
+            <div role="presentation" class="neon-expansion-indicator neon-button__indicator neon-expansion-indicator--brand"><svg width="16" height="16" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                <g class="neon-expansion-indicator__container">
+                  <line x1="2" y1="8" x2="8" y2="8" class="neon-svg--stroke neon-expansion-indicator__line1"></line>
+                  <line x1="14" y1="8" x2="8" y2="8" class="neon-svg--stroke neon-expansion-indicator__line2"></line>
+                </g>
+              </svg></div>
+          </button></div>
+        <div class="neon-dropdown__click-blocker"></div>
+        <div class="neon-dropdown__content neon-dropdown__content--bottom-left">
+          <ul role="menu" class="no-style neon-dropdown-menu__items">
+            <li class="neon-dropdown-menu__item neon-dropdown-menu__item--l"><a tabindex="0" role="menuitem" class="neon-link neon-link--router-link neon-link--no-style neon-link--outline-none"><span class="neon-link__label"><!----> <span class="neon-dropdown-menu__item-label">Description</span></span></a></li>
+            <li class="neon-dropdown-menu__item neon-dropdown-menu__item--l"><a tabindex="0" role="menuitem" class="neon-link neon-link--router-link neon-link--no-style neon-link--outline-none"><span class="neon-link__label"><!----> <span class="neon-dropdown-menu__item-label">API</span></span></a></li>
+            <li class="neon-dropdown-menu__item neon-dropdown-menu__item--l"><a tabindex="0" role="menuitem" class="neon-link neon-link--router-link neon-link--no-style neon-link--outline-none"><span class="neon-link__label"><!----> <span class="neon-dropdown-menu__item-label">Examples</span></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <div class="neon-dropdown neon-dropdown-menu neon-menu__responsive-menu neon-dropdown--open-on-hover neon-dropdown--icon-only neon-dropdown--l neon-dropdown--brand neon-dropdown-menu--brand neon-menu__responsive-menu--hidden" icon="ellipsis" dropdown-style="text-button" placement="bottom-right">
+    <div class="neon-dropdown__button-wrapper" hidden=""><button aria-haspopup="true" class="neon-button neon-dropdown__button neon-button--l neon-button--brand neon-button--text neon-button--state-ready neon-button--with-icon neon-button--icon-only">
+        <div class="neon-icon neon-icon--brand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="100%" height="100%">
+            <path class="neon-svg--fill" d="M8 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM1.5 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm13 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
+          </svg></div>
+        <!---->
+        <!---->
+      </button></div>
+    <div class="neon-dropdown__click-blocker"></div>
+    <div class="neon-dropdown__content neon-dropdown__content--bottom-right">
+      <ul role="menu" class="no-style neon-dropdown-menu__items"></ul>
+    </div>
+  </div>
+</nav>
+`;
