@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NeonRangeSlider matches snapshot 1`] = `
+<div class="neon-range-slider" lowerbound="2000" upperbound="49000"><output class="neon-slider__output"><span class="neon-range-slider__output-range"><span>$5,000.00</span> <span class="neon-range-slider__output-range-separator">:</span> <span>$10,000.00</span></span></output>
+  <div class="neon-slider neon-range-slider__lower neon-slider--low-contrast" style="--min: 1000; --max: 50000; --val: 5000;" aria-label="Lower bound">
+    <!----> <input type="range" step="100" min="1000" max="50000" aria-valuemin="1000" aria-valuemax="50000" aria-valuenow="5000" aria-label="Lower bound" class="neon-slider__input">
+    <div class="neon-slider__legend"><span class="neon-slider__legend-item">$1,000.00</span> <span class="neon-slider__legend-item">$50,000.00</span></div> <output class="neon-slider__tooltip">
+      <div class="neon-slider__tooltip-content"><span class="neon-slider__tooltip-value">$5,000.00</span></div>
+    </output>
+  </div>
+  <div class="neon-slider neon-range-slider__upper neon-slider--no-legend neon-slider--low-contrast" style="--min: 1000; --max: 50000; --val: 10000;" aria-label="Upper bound">
+    <!----> <input type="range" step="100" min="1000" max="50000" aria-valuemin="1000" aria-valuemax="50000" aria-valuenow="10000" aria-label="Upper bound" class="neon-slider__input">
+    <!----> <output class="neon-slider__tooltip">
+      <div class="neon-slider__tooltip-content"><span class="neon-slider__tooltip-value">$10,000.00</span></div>
+    </output>
+  </div>
+</div>
+`;
