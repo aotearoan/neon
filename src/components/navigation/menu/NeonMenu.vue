@@ -43,6 +43,7 @@
       :class="{ 'neon-menu__responsive-menu--hidden': responsiveMenuItems.length === 0 }"
       icon="ellipsis"
       :color="color"
+      :size="size"
       :model="responsiveMenuItems"
       dropdown-style="text-button"
       placement="bottom-right"

@@ -30,7 +30,7 @@ export default class NeonMenu extends Vue {
     responsiveMenu: NeonDropdownMenuClass;
   };
 
-  private menuItems: NeonPriorityMenuItem[] = [];
+  menuItems: NeonPriorityMenuItem[] = [];
   private responsiveMenuItems: NeonMenuModel[] = [];
   private visible: string[] = [];
 
@@ -69,13 +69,13 @@ export default class NeonMenu extends Vue {
     }
   }
 
-  private destroyed() {
+  private beforeDestroy() {
     if (this.priorityMenuEnabled) {
       window.removeEventListener('resize', this.refreshVisibleMenu);
     }
   }
 
-  private refreshVisibleMenu() {
+  refreshVisibleMenu() {
     this.$nextTick();
     const menuWidth = this.getWidth(this.$refs.menu);
     const responsiveMenuElement = this.$refs.responsiveMenu.dropdown.button;
@@ -108,7 +108,7 @@ export default class NeonMenu extends Vue {
     };
   }
 
-  private determineVisibleMenuItems(menuWidth: number, responsiveMenuWidth: number, menuItems: NeonPriorityMenuItem[]) {
+  determineVisibleMenuItems(menuWidth: number, responsiveMenuWidth: number, menuItems: NeonPriorityMenuItem[]) {
     const itemWidthSum = menuItems.map((item) => item.width).reduce((acc: number, width) => (acc ? acc + width : 0));
 
     // no responsive menu
