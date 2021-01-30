@@ -234,6 +234,27 @@ describe('NeonFilterList', () => {
     expect(el.attributes().tabindex).toEqual('0');
   });
 
+  it('renders show more label', () => {
+    const showMoreLabel = 'xdd';
+    const wrapper = mount(NeonFilterList, {
+      propsData: { items, value: [], displayCount: 2, showMoreLabel },
+    });
+    expect(wrapper.find('.neon-filter-list__show-toggle').text()).toEqual(showMoreLabel);
+  });
+
+  it('renders show less label', (done) => {
+    const showLessLabel = 'xdd';
+    const showMoreLabel = 'show more';
+    const wrapper = mount(NeonFilterList, {
+      propsData: { items, value: [], displayCount: 2, showMoreLabel, showLessLabel },
+    });
+    wrapper.find('.neon-filter-list__show-toggle').trigger('click');
+    setTimeout(() => {
+      expect(wrapper.find('.neon-filter-list__show-toggle').text()).toEqual(showLessLabel);
+      done();
+    });
+  });
+
   it('emits input on click multiple', () => {
     const wrapper = mount(NeonFilterList, {
       propsData: { items, value: [items[1].key] },
