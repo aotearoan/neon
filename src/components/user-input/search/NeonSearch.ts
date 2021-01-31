@@ -32,9 +32,9 @@ export default class NeonSearch extends Vue {
     dropdown: NeonDropdownClass;
   };
 
-  private open = false;
-  private highlightedKey: string | null = null;
-  private highlightedIndex = -1;
+  open = false;
+  highlightedKey: string | null = null;
+  highlightedIndex = -1;
   private filter = '';
 
   /**
@@ -53,7 +53,7 @@ export default class NeonSearch extends Vue {
   /**
    * The list of search results.
    */
-  @Prop()
+  @Prop({ required: true })
   public options!: NeonSearchOption[];
 
   /**
@@ -130,7 +130,7 @@ export default class NeonSearch extends Vue {
     this.highlightedIndex = this.options.findIndex((opt) => opt.key === key);
   }
 
-  private keyboardHandler($event: KeyboardEvent) {
+  keyboardHandler($event: KeyboardEvent) {
     if (this.open) {
       switch ($event.code) {
         case 'ArrowUp':
@@ -185,10 +185,6 @@ export default class NeonSearch extends Vue {
     NeonScrollUtils.scrollIntoView(element);
   }
 
-  public get dropdown() {
-    return this.$refs.dropdown;
-  }
-
   private emitInputEvent(value: string | NeonSearchOption[]) {
     /**
      * emitted when the user changes the selection.
@@ -211,7 +207,7 @@ export default class NeonSearch extends Vue {
     this.$emit('filter-changed', filter);
   }
 
-  private showOptions() {
+  showOptions() {
     this.open = true;
   }
 
