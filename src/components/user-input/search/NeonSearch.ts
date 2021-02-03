@@ -180,7 +180,7 @@ export default class NeonSearch extends Vue {
     return false;
   }
 
-  private scrollOnNavigate() {
+  scrollOnNavigate() {
     const element = this.$el.querySelector('.neon-search__option--highlighted') as HTMLElement;
     NeonScrollUtils.scrollIntoView(element);
   }

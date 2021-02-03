@@ -29,9 +29,9 @@ export default class NeonSelect extends Vue {
     dropdown: NeonDropdownClass;
   };
 
-  private open = false;
-  private highlightedKey: string | null = null;
-  private highlightedIndex = -1;
+  open = false;
+  highlightedKey: string | null = null;
+  highlightedIndex = -1;
 
   /**
    * Placeholder to display as button label when there is no option selected.
@@ -101,7 +101,7 @@ export default class NeonSelect extends Vue {
   public color!: NeonFunctionalColor;
 
   @Watch('open')
-  private toggleOpen(open: boolean) {
+  toggleOpen(open: boolean) {
     if (open) {
       this.highlightedKey = this.flattenedOptions[0].key;
       this.highlightedIndex = 0;
@@ -192,7 +192,7 @@ export default class NeonSelect extends Vue {
     }
   }
 
-  private nativeSelectChange(event: Event) {
+  nativeSelectChange(event: Event) {
     const selectedKeys = Array.from((event.target as HTMLSelectElement).options)
       .filter((opt) => opt.selected)
       .map((opt) => opt.value);
@@ -215,7 +215,7 @@ export default class NeonSelect extends Vue {
     this.highlightedIndex = this.flattenedOptions.findIndex((opt) => opt.key === key);
   }
 
-  private keyboardHandler($event: KeyboardEvent) {
+  keyboardHandler($event: KeyboardEvent) {
     if (this.open) {
       switch ($event.code) {
         case 'ArrowUp':
@@ -269,7 +269,7 @@ export default class NeonSelect extends Vue {
     return false;
   }
 
-  private scrollOnNavigate() {
+  scrollOnNavigate() {
     const element = this.$el.querySelector('.neon-select__option--highlighted') as HTMLElement;
     NeonScrollUtils.scrollIntoView(element);
   }

@@ -8,6 +8,7 @@ import NeonLink from '../link/NeonLink.vue';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonDropdownPlacement } from '../../../common/enums/NeonDropdownPlacement';
+import { NeonScrollUtils } from '../../../common/utils/NeonScrollUtils';
 
 Vue.component('NeonDropdown', NeonDropdown);
 Vue.component('NeonIcon', NeonIcon);
@@ -598,5 +599,23 @@ describe('NeonDropdownMenu', () => {
     dropdownMenu.dropdown.$emit('blur');
     // then
     expect(dropdownMenu.open).toEqual(false);
+  });
+
+  it('scroll on navigate scrolls into view', () => {
+    // given
+    const scrollIntoView = NeonScrollUtils.scrollIntoView;
+    NeonScrollUtils.scrollIntoView = jest.fn();
+    const wrapper = mount(NeonDropdownMenu, {
+      propsData: { model },
+      stubs: {
+        RouterLink: RouterLinkStub,
+      },
+    });
+    const dropdownMenu = wrapper.vm as NeonDropdownMenuClass;
+    // when
+    dropdownMenu.scrollOnNavigate();
+    // then
+    expect(NeonScrollUtils.scrollIntoView).toHaveBeenCalled();
+    NeonScrollUtils.scrollIntoView = scrollIntoView;
   });
 });

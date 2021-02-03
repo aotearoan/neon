@@ -140,7 +140,7 @@ export default class NeonDropdownMenu extends Vue {
     }
   }
 
-  private scrollOnNavigate() {
+  scrollOnNavigate() {
     const element = this.$el.querySelector('.neon-dropdown-menu__item--highlighted') as HTMLElement;
     NeonScrollUtils.scrollIntoView(element);
   }
@@ -160,13 +160,8 @@ export default class NeonDropdownMenu extends Vue {
   private clickItem(item: NeonDropdownMenuItem) {
     if (!item.disabled) {
       if (item.href) {
-        const itemElement = this.$refs.items[this.highlightedIndex];
-        if (itemElement) {
-          const anchorElement = itemElement.firstElementChild as HTMLAnchorElement;
-          if (anchorElement) {
-            anchorElement.click();
-          }
-        }
+        const anchor = this.$refs.items[this.highlightedIndex]?.firstElementChild as HTMLAnchorElement;
+        anchor && anchor.click();
       } else {
         /**
          * emitted when the user clicks on a menu item.

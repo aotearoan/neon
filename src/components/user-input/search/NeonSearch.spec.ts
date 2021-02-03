@@ -10,6 +10,7 @@ import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonSearchOption } from '../../../common/models/NeonSearchOption';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonDropdownPlacement } from '../../../common/enums/NeonDropdownPlacement';
+import { NeonScrollUtils } from '../../../common/utils/NeonScrollUtils';
 
 Vue.component('NeonChip', NeonChip);
 Vue.component('NeonDropdown', NeonDropdown);
@@ -533,5 +534,20 @@ describe('NeonSearch', () => {
     search.keyboardHandler(new KeyboardEvent('keydown', { code: 'Tab', ctrlKey: true }));
     // then
     expect(search.open).toEqual(true);
+  });
+
+  it('scroll on navigate scrolls into view', () => {
+    // given
+    const scrollIntoView = NeonScrollUtils.scrollIntoView;
+    NeonScrollUtils.scrollIntoView = jest.fn();
+    const wrapper = mount(NeonSearch, {
+      propsData: { value, placeholder, options, multiple: true },
+    });
+    const search = wrapper.vm as NeonSearchClass;
+    // when
+    search.scrollOnNavigate();
+    // then
+    expect(NeonScrollUtils.scrollIntoView).toHaveBeenCalled();
+    NeonScrollUtils.scrollIntoView = scrollIntoView;
   });
 });
