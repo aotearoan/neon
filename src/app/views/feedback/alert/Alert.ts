@@ -78,7 +78,7 @@ export default class Alert extends Vue {
       });
     },
     toastInfo: (placement?: NeonVerticalPosition) => {
-      NeonToastService.info({ title: 'This is an info toast', placement });
+      NeonToastService.info({ title: 'This is an info toast', placement, duration: 60000 });
     },
     toastSuccess: (placement?: NeonVerticalPosition) => {
       NeonToastService.success({ title: 'This is a success toast', placement });
