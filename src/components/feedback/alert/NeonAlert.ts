@@ -25,13 +25,13 @@ import { NeonVerticalPosition } from '../../../common/enums/NeonVerticalPosition
 })
 export default class NeonAlert extends Vue {
   // alerts
-  private topLeft: NeonAlertModel[] = [];
-  private topRight: NeonAlertModel[] = [];
-  private bottomLeft: NeonAlertModel[] = [];
-  private bottomRight: NeonAlertModel[] = [];
+  topLeft: NeonAlertModel[] = [];
+  topRight: NeonAlertModel[] = [];
+  bottomLeft: NeonAlertModel[] = [];
+  bottomRight: NeonAlertModel[] = [];
   // toasts
-  private top: NeonToastModel[] = [];
-  private bottom: NeonToastModel[] = [];
+  top: NeonToastModel[] = [];
+  bottom: NeonToastModel[] = [];
 
   private internalId = 1;
 
@@ -117,22 +117,24 @@ export default class NeonAlert extends Vue {
 
     const duration = alert.duration === undefined ? this.duration : alert.duration;
     if (duration > 0 && !alert.primaryAction) {
-      setTimeout(() => {
-        switch (alert.placement || NeonAlertPlacement.TopRight) {
-          case NeonAlertPlacement.TopLeft:
-            this.topLeft = this.topLeft.filter((m) => m.id !== message.id);
-            break;
-          case NeonAlertPlacement.TopRight:
-            this.topRight = this.topRight.filter((m) => m.id !== message.id);
-            break;
-          case NeonAlertPlacement.BottomLeft:
-            this.bottomLeft = this.bottomLeft.filter((m) => m.id !== message.id);
-            break;
-          case NeonAlertPlacement.BottomRight:
-            this.bottomRight = this.bottomRight.filter((m) => m.id !== message.id);
-            break;
-        }
-      }, duration);
+      setTimeout(() => this.removeAlert(message), duration);
+    }
+  }
+
+  removeAlert(message: NeonAlertModel) {
+    switch (message.placement || NeonAlertPlacement.TopRight) {
+      case NeonAlertPlacement.TopLeft:
+        this.topLeft = this.topLeft.filter((m) => m.id !== message.id);
+        break;
+      case NeonAlertPlacement.TopRight:
+        this.topRight = this.topRight.filter((m) => m.id !== message.id);
+        break;
+      case NeonAlertPlacement.BottomLeft:
+        this.bottomLeft = this.bottomLeft.filter((m) => m.id !== message.id);
+        break;
+      case NeonAlertPlacement.BottomRight:
+        this.bottomRight = this.bottomRight.filter((m) => m.id !== message.id);
+        break;
     }
   }
 
@@ -173,16 +175,18 @@ export default class NeonAlert extends Vue {
 
     const duration = toast.duration === undefined ? this.duration : toast.duration;
     if (duration > 0) {
-      setTimeout(() => {
-        switch (toast.placement || NeonVerticalPosition.Top) {
-          case NeonVerticalPosition.Top:
-            this.top = this.top.filter((m) => m.id !== message.id);
-            break;
-          case NeonVerticalPosition.Bottom:
-            this.bottom = this.bottom.filter((m) => m.id !== message.id);
-            break;
-        }
-      }, duration);
+      setTimeout(() => this.removeToast(message), duration);
+    }
+  }
+
+  removeToast(message: NeonToastModel) {
+    switch (message.placement || NeonVerticalPosition.Top) {
+      case NeonVerticalPosition.Top:
+        this.top = this.top.filter((m) => m.id !== message.id);
+        break;
+      case NeonVerticalPosition.Bottom:
+        this.bottom = this.bottom.filter((m) => m.id !== message.id);
+        break;
     }
   }
 }
