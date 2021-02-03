@@ -326,7 +326,7 @@ $neon-error-palette: generate-palette($neon-color-error) !default;
 }
 
 @import 'toast';
-@if index($neon-components, NeonToast) {
+@if index($neon-components, NeonAlert) {
   @include neon-toast-import;
 }
 
