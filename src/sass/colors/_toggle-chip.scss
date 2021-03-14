@@ -7,7 +7,7 @@
     &:not(.neon-toggle-chip--disabled) {
       &:focus,
       &:hover {
-        background-color: rgba($neon-border-color-toggle-chip, $neon-opacity-toggle-chip-hover);
+        background-color: rgba($neon-border-color-toggle-chip, 2 * $neon-opacity-toggle-chip-hover);
       }
     }
 

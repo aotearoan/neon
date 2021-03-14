@@ -71,8 +71,7 @@ $neon-color-label: $neon-base-color !default;
 
 /* note */
 $neon-border-color-note: $neon-base-color !default;
-$neon-background-color-note: d4 !default;
-$neon-background-opacity-note: 0 !default;
+$neon-background-color-note: $neon-color-high-contrast-d1 !default;
 $neon-color-note: $neon-color-text !default;
 
 /* link */

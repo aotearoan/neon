@@ -58,8 +58,8 @@ export default class Input extends Vue {
 </div>`;
 
   private textareaExamples = `<div class="neon-vertically-spaced">
-  <neon-input type="text" rows="5" v-model="textArea" placeholder="Type here" />
-  <neon-input disabled="disabled" rows="5" type="text" v-model="textAreaDisabled" placeholder="Type here" />
+  <neon-input type="text" maxlength="100" rows="5" v-model="textArea" placeholder="Type here" />
+  <neon-input disabled="disabled" maxlength="100" rows="5" type="text" v-model="textAreaDisabled" placeholder="Type here" />
 </div>`;
 
   private examples = [
