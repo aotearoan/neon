@@ -57,6 +57,7 @@
       @keydown.enter.native="iconClicked"
       @keydown.space.native="iconClicked"
     />
+    <span v-if="maxlength" class="neon-input__textarea-counter">{{ `${value.length}/${maxlength}` }}</span>
   </div>
 </template>
 

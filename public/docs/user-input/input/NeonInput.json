@@ -151,6 +151,14 @@
         "func": false,
         "value": "true"
       }
+    },
+    {
+      "name": "limit",
+      "tags": {},
+      "description": "The character limit for a textarea.",
+      "type": {
+        "name": "number"
+      }
     }
   ],
   "events": [

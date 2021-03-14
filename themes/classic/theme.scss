@@ -107,9 +107,10 @@ $neon-logo-width-multiplier: 3.84776 !default; // logo ratio of width to height
 /* components */
 
 /* gradient config */
-$neon-background-gradient-angle: 160deg !default;
+$neon-background-gradient-angle: 90deg !default;
 /* % offset where background gradient switches to alternate-color */
 $neon-background-gradient-offset: 33% !default;
+$neon-background-gradient-offset-hover: 50% !default;
 
 /* smaller sizes for labels only */
 $neon-size-xxs: 4 * $neon-base-space !default;
@@ -194,7 +195,7 @@ $neon-border-radius-switch: 4 * $neon-base-space !default;
 $neon-border-radius-switch-indicator: 50% !default;
 
 /* note */
-$neon-border-width-note: $neon-border-width !default;
+$neon-border-width-note: 6px !default;
 
 /* slider & range slider */
 $neon-height-slider-track: 8px !default;

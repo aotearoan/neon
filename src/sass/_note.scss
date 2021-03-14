@@ -23,7 +23,10 @@
   flex-direction: row;
   width: 100%;
   margin: 0;
-  border-radius: $neon-border-radius;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: $neon-border-radius;
+  border-bottom-right-radius: $neon-border-radius;
 
   span {
     display: inline;

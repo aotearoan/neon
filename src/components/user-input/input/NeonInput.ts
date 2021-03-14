@@ -106,6 +106,12 @@ export default class NeonInput extends Vue {
   @Prop({ default: true })
   private stateIcon!: boolean;
 
+  /**
+   * The character limit for a textarea.
+   */
+  @Prop()
+  private maxlength?: number;
+
   private focused = false;
 
   get sanitizedAttributes(): Record<string, string> {
@@ -204,11 +210,15 @@ export default class NeonInput extends Vue {
 
   private changeValue(event: Event) {
     const input = event.target as HTMLInputElement;
-    /**
-     * Emitted when the input value is changed
-     * @type {string} the contents of the input
-     */
-    this.$emit('input', input.value);
+    const value =
+      this.maxlength && input.value.length > this.maxlength ? input.value.substr(0, this.maxlength) : input.value;
+    if (this.value !== value) {
+      /**
+       * Emitted when the input value is changed, NOTE: is not triggered if over the textarea length limit
+       * @type {string} the contents of the input
+       */
+      this.$emit('input', value);
+    }
   }
 
   private computedPlaceholder() {

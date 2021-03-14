@@ -8,8 +8,8 @@
 
     @each $color, $palette in $neon-functional-colors {
       &--#{$color} {
-        background-color: rgba(map-get($palette, $neon-background-color-note), $neon-background-opacity-note);
-        border: $neon-border-width-note $neon-border-style map-get($palette, $neon-border-color-note);
+        background-color: $neon-background-color-note;
+        border-left: $neon-border-width-note $neon-border-style map-get($palette, $neon-border-color-note);
       }
     }
 
@@ -34,6 +34,6 @@ blockquote {
     color: $neon-color-text;
   }
 
-  background-color: rgba(map-get($neon-primary-palette, $neon-background-color-note), $neon-background-opacity-note);
-  border: $neon-border-width-note $neon-border-style map-get($neon-primary-palette, $neon-border-color-note);
+  background-color: $neon-background-color-note;
+  border-left: $neon-border-width-note $neon-border-style map-get($neon-primary-palette, $neon-border-color-note);
 }

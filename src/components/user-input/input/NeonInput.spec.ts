@@ -188,6 +188,40 @@ describe('NeonInput', () => {
     expect(wrapper.emitted().input[0]).toEqual([newValue]);
   });
 
+  it('emits truncated value when maxlength defined', () => {
+    // given
+    const value = 'test';
+    const newValue = 'new value';
+    const rows = 2;
+    const maxlength = 5;
+    const wrapper = shallowMount(NeonInput, {
+      propsData: { value, rows, maxlength },
+    });
+    // when
+    const input = wrapper.find('textarea');
+    input.setValue(newValue);
+
+    // then
+    expect(wrapper.emitted().input[0]).toEqual([newValue.substr(0, maxlength)]);
+  });
+
+  it('does not emits truncated value when equals existing value', () => {
+    // given
+    const value = 'test';
+    const newValue = 'test new value';
+    const rows = 2;
+    const maxlength = 4;
+    const wrapper = shallowMount(NeonInput, {
+      propsData: { value, rows, maxlength },
+    });
+    // when
+    const input = wrapper.find('textarea');
+    input.setValue(newValue);
+
+    // then
+    expect(wrapper.emitted().input).toBeUndefined();
+  });
+
   it('emits focus/blur events', () => {
     // given
     const value = 'test';

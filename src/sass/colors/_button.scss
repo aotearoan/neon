@@ -9,8 +9,8 @@
   &:active:not(:disabled),
   &:hover:not(:disabled) {
     background: linear-gradient(
-      $neon-background-gradient-angle - 20deg,
-      $from-color $neon-background-gradient-offset,
+      $neon-background-gradient-angle,
+      $from-color $neon-background-gradient-offset-hover,
       $to-color 100%
     );
   }

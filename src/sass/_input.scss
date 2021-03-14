@@ -73,6 +73,15 @@
         font-family: $neon-body-font-family;
         letter-spacing: $neon-letter-spacing-s;
       }
+
+      &-counter {
+        position: absolute;
+        bottom: 2 * $neon-base-space;
+        right: 2 * $neon-base-space;
+        user-select: none;
+        font-size: $neon-font-size-s;
+        letter-spacing: $neon-letter-spacing-s;
+      }
     }
 
     &:not(.neon-input--placeholder-visible) {
