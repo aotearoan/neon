@@ -1,0 +1,174 @@
+{
+  "description": "A button component. Renders an HTML button or, if an href is provided, renders using NeonLink in the style of a button. NeonButton supports all events and attributes of HTML buttons, e.g, @click.",
+  "tags": {},
+  "exportName": "default",
+  "displayName": "NeonButton",
+  "props": [
+    {
+      "name": "href",
+      "tags": {},
+      "description": "Optional href for rendering a button as a link",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "label",
+      "tags": {},
+      "description": "The text to display on a button",
+      "type": {
+        "name": "TranslateResult"
+      }
+    },
+    {
+      "name": "size",
+      "tags": {},
+      "description": "The button size",
+      "type": {
+        "name": "NeonButtonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonButtonSize.Medium"
+      }
+    },
+    {
+      "name": "color",
+      "tags": {},
+      "description": "The button color",
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    },
+    {
+      "name": "alternateColor",
+      "tags": {},
+      "description": "Solid buttons ONLY. Alternate color for creating a gradient buttons. NOTE: can also be the same color as 'color'.",
+      "type": {
+        "name": "NeonFunctionalColor"
+      }
+    },
+    {
+      "name": "icon",
+      "tags": {},
+      "description": "Optional icon to display",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "iconPosition",
+      "tags": {},
+      "description": "Position of the icon if combined with text",
+      "type": {
+        "name": "NeonHorizontalPosition"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonHorizontalPosition.Left"
+      }
+    },
+    {
+      "name": "buttonStyle",
+      "tags": {},
+      "description": "The style of button",
+      "type": {
+        "name": "NeonButtonStyle"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonButtonStyle.Solid"
+      }
+    },
+    {
+      "name": "state",
+      "tags": {},
+      "description": "Provide button states of <em>ready, loading, success or error</em> which change the display of the button (with icons) to reflect the state.",
+      "type": {
+        "name": "NeonState"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonState.Ready"
+      }
+    },
+    {
+      "name": "disabled",
+      "tags": {},
+      "description": "Whether or not the button is disabled",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "outline",
+      "tags": {},
+      "description": "Whether or not to display a button outline when the button has focus",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    },
+    {
+      "name": "circular",
+      "tags": {},
+      "description": "Make the button circular. NOTE: This is only for icon only buttons.",
+      "type": {
+        "name": "boolean"
+      }
+    },
+    {
+      "name": "fullWidth",
+      "tags": {},
+      "description": "Make a button extend to the full width of the parent container.",
+      "type": {
+        "name": "boolean"
+      }
+    },
+    {
+      "name": "indicator",
+      "tags": {
+        "ignore": [
+          {
+            "description": true,
+            "title": "ignore"
+          }
+        ]
+      },
+      "description": "INTERNAL USE ONLY: display a NeonExpansionIndicator on the button (used for dropdown buttons)",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "indicatorExpanded",
+      "tags": {
+        "ignore": [
+          {
+            "description": true,
+            "title": "ignore"
+          }
+        ]
+      },
+      "description": "INTERNAL USE ONLY: display the NeonExpansionIndicator on the button as <em>open</em> or <em>closed</em>.",
+      "type": {
+        "name": "boolean"
+      }
+    }
+  ]
+}

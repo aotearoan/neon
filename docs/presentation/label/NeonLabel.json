@@ -1,0 +1,69 @@
+{
+  "description": "Labels are used to tag or emphasize properties of an item in the UI. Labels can be text only, icon only or contain both text and icons.",
+  "tags": {},
+  "exportName": "default",
+  "displayName": "NeonLabel",
+  "props": [
+    {
+      "name": "label",
+      "tags": {},
+      "description": "The label text",
+      "type": {
+        "name": "TranslateResult"
+      },
+      "required": true
+    },
+    {
+      "name": "icon",
+      "tags": {},
+      "description": "The name of the optional label icon",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "iconPosition",
+      "tags": {},
+      "description": "The icon position if there is also text in the label. This is either left or right.",
+      "type": {
+        "name": "NeonHorizontalPosition"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonHorizontalPosition.Left"
+      }
+    },
+    {
+      "name": "size",
+      "tags": {},
+      "description": "The label size",
+      "type": {
+        "name": "NeonLabelSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonLabelSize.Small"
+      }
+    },
+    {
+      "name": "color",
+      "tags": {},
+      "description": "The label color",
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Neutral"
+      }
+    },
+    {
+      "name": "alternateColor",
+      "tags": {},
+      "description": "Alternate color for creating gradient labels. NOTE: can also be the same color as 'color'.",
+      "type": {
+        "name": "NeonFunctionalColor"
+      }
+    }
+  ]
+}

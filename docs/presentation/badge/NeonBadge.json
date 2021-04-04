@@ -1,0 +1,100 @@
+{
+  "description": "A badge is a small square or circular component for representing user avatars. These can be in the form of an image, an icon or a two character string (e.g. the user's initials).",
+  "tags": {},
+  "exportName": "default",
+  "displayName": "NeonBadge",
+  "props": [
+    {
+      "name": "label",
+      "tags": {},
+      "description": "The two character <em>initials</em> to display on the badge.",
+      "type": {
+        "name": "TranslateResult"
+      }
+    },
+    {
+      "name": "image",
+      "tags": {},
+      "description": "URL of the image to display on the badge.",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "icon",
+      "tags": {},
+      "description": "An icon to display on the badge.",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "circular",
+      "tags": {},
+      "description": "If true, render the badge as a circle, instead of a square.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "size",
+      "tags": {},
+      "description": "The size of the badge - Small, Medium or Large.",
+      "type": {
+        "name": "NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "color",
+      "tags": {},
+      "description": "The color of the badge. This is one of the provided NeonFunctionalColors.",
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    },
+    {
+      "name": "alternateColor",
+      "tags": {},
+      "description": "Alternate color for creating gradient badges. NOTE: can also be the same color as 'color'.",
+      "type": {
+        "name": "NeonFunctionalColor"
+      }
+    },
+    {
+      "name": "disabled",
+      "tags": {},
+      "description": "Display the badge in the disable style",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "imageAlt",
+      "tags": {},
+      "description": "Badge image alt text.",
+      "type": {
+        "name": "TranslateResult"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Badge'"
+      }
+    }
+  ]
+}

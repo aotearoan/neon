@@ -1,0 +1,189 @@
+{
+  "description": "<p>A general purpose dropdown component. This component consists of a button, to trigger the dropdown to open, and\nthe dropdown content which is displayed above the page when the user clicks the button.</p>\n<p>This can be useful for secondary (perhaps more complex) actions for which there is not enough space on the page or\nthe action is asynchronous allowing the user to perform the action and continue what they were doing. Examples are\nproviding links to copy and letting the user send feedback.</p>\n<p><strong>NeonDropdown</strong> is the basis for the <strong>NeonDropdownMenu</strong> component and the\n<strong>NeonSelect</strong> form component.</p>",
+  "tags": {},
+  "exportName": "default",
+  "displayName": "NeonDropdown",
+  "props": [
+    {
+      "name": "value",
+      "tags": {},
+      "description": "Whether or not the dropdown is currently open.",
+      "type": {
+        "name": "boolean"
+      },
+      "required": true
+    },
+    {
+      "name": "label",
+      "tags": {},
+      "description": "The label for the dropdown button.",
+      "type": {
+        "name": "TranslateResult"
+      }
+    },
+    {
+      "name": "image",
+      "tags": {},
+      "description": "URL of image to display if the button style is a square or circular badge.",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "imageAlt",
+      "tags": {},
+      "description": "Badge image ALT text.",
+      "type": {
+        "name": "TranslateResult"
+      }
+    },
+    {
+      "name": "icon",
+      "tags": {},
+      "description": "An icon to display on the dropdown button. This will be to the left of any label, but can also be used on it's own.",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "indicator",
+      "tags": {},
+      "description": "Show the dropdown button's indicator (chevron).",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    },
+    {
+      "name": "disabled",
+      "tags": {},
+      "description": "Disable the dropdown button",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "size",
+      "tags": {},
+      "description": "The size of the dropdown button - Small, Medium or Large.",
+      "type": {
+        "name": "NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "color",
+      "tags": {},
+      "description": "The color of the dropdown button",
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    },
+    {
+      "name": "alternateColor",
+      "tags": {},
+      "description": "The alternate color of the dropdown button (for gradient buttons).",
+      "type": {
+        "name": "NeonFunctionalColor"
+      }
+    },
+    {
+      "name": "dropdownStyle",
+      "tags": {},
+      "description": "The style of the dropdown button",
+      "type": {
+        "name": "NeonDropdownStyle"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonDropdownStyle.SolidButton"
+      }
+    },
+    {
+      "name": "placement",
+      "tags": {},
+      "description": "Placement of the dropdown contents.",
+      "type": {
+        "name": "NeonDropdownPlacement"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonDropdownPlacement.BottomLeft"
+      }
+    },
+    {
+      "name": "placementContainer",
+      "tags": {},
+      "description": "Restrict placement to within this container.",
+      "type": {
+        "name": "HTMLElement"
+      },
+      "required": false
+    },
+    {
+      "name": "openOnHover",
+      "tags": {},
+      "description": "Instead of opening on click (default), open on hover.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "input",
+      "description": "Emitted when the dropdown button is toggled.",
+      "type": {
+        "names": [
+          "boolean"
+        ]
+      }
+    },
+    {
+      "name": "blur",
+      "description": "Emitted when the dropdown button is blurred.",
+      "type": {
+        "names": [
+          "void"
+        ]
+      }
+    },
+    {
+      "name": "focus",
+      "description": "Emitted when the dropdown button is focussed.",
+      "type": {
+        "names": [
+          "void"
+        ]
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "dropdown-button",
+      "description": "optionally replace the dropdown button with a custom control"
+    },
+    {
+      "name": "default",
+      "description": "The content of the open dropdown"
+    }
+  ]
+}

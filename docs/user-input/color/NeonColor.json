@@ -1,0 +1,73 @@
+{
+  "exportName": "default",
+  "displayName": "NeonColor",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "value",
+      "tags": {},
+      "description": "The Hexadecimal color code.",
+      "type": {
+        "name": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "disabled",
+      "tags": {},
+      "description": "Disable color picker",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "size",
+      "tags": {},
+      "description": "The size of the color picker, one of NeonSize.Small | NeonSize.Medium | NeonSize.Large.",
+      "type": {
+        "name": "NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "color",
+      "tags": {},
+      "description": "Color of the input",
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    },
+    {
+      "name": "placeholder",
+      "tags": {},
+      "description": "This is the placeholder for the text input when no value is provided.",
+      "type": {
+        "name": "string"
+      },
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "input",
+      "description": "event triggered when the value changes.",
+      "type": {
+        "names": [
+          "string"
+        ]
+      }
+    }
+  ]
+}

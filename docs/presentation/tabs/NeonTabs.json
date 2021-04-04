@@ -1,0 +1,84 @@
+{
+  "description": "A component for displaying tabbed content.",
+  "tags": {},
+  "displayName": "NeonTabs",
+  "exportName": "default",
+  "props": [
+    {
+      "name": "tabs",
+      "tags": {},
+      "description": "The list of tabs to display.",
+      "type": {
+        "name": "Array",
+        "elements": [
+          {
+            "name": "NeonTabModel"
+          }
+        ]
+      },
+      "required": true
+    },
+    {
+      "name": "value",
+      "tags": {},
+      "description": "The key of the selected tab.",
+      "type": {
+        "name": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "color",
+      "tags": {},
+      "description": "The tab highlight color (excludes low-contrast).",
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Primary"
+      }
+    },
+    {
+      "name": "size",
+      "tags": {},
+      "description": "The tab size.",
+      "type": {
+        "name": "NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "underline",
+      "tags": {},
+      "description": "Display a border underlining all tabs. When tabs are in an element with a border-bottom it is preferable to omit the tabs border-bottom",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "input",
+      "description": "Emitted when the selected tab is changed.",
+      "type": {
+        "names": [
+          "string"
+        ]
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Add tabs here (NeonTab). NOTE: Tabs can also be added outside of the component if preferred"
+    }
+  ]
+}

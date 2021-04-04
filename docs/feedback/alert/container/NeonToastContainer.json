@@ -1,0 +1,39 @@
+{
+  "description": "This is an internal component for rendering alerts.",
+  "tags": {},
+  "exportName": "default",
+  "displayName": "NeonToastContainer",
+  "props": [
+    {
+      "name": "value",
+      "tags": {},
+      "type": {
+        "name": "Array",
+        "elements": [
+          {
+            "name": "NeonToastModel"
+          }
+        ]
+      },
+      "required": true
+    },
+    {
+      "name": "placement",
+      "tags": {},
+      "type": {
+        "name": "NeonVerticalPosition"
+      },
+      "required": true
+    }
+  ],
+  "events": [
+    {
+      "name": "input",
+      "type": {
+        "names": [
+          "undefined"
+        ]
+      }
+    }
+  ]
+}
