@@ -94,8 +94,7 @@
                 button-icon="palette"
                 aria-label="Select theme"
                 size="s"
-                color="primary"
-                alternate-color="primary"
+                color="info"
               />
               <neon-button
                 class="github-link"

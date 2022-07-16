@@ -42,6 +42,7 @@ import NeonNotificationCounter from './components/feedback/notification-counter/
 import NeonNumber from './components/user-input/number/NeonNumber.vue';
 import NeonPage from './components/layout/page/NeonPage.vue';
 import NeonPassword from './components/user-input/password/NeonPassword.vue';
+import NeonLinearProgress from './components/feedback/linear-progress/NeonLinearProgress.vue';
 import NeonRangeSlider from './components/user-input/range-slider/NeonRangeSlider.vue';
 import NeonSideNav from './components/layout/side-nav/NeonSideNav.vue';
 import NeonSearch from './components/user-input/search/NeonSearch.vue';
@@ -159,6 +160,7 @@ const components: { [s: string]: VueConstructor } = {
   NeonInput,
   NeonInputIndicator,
   NeonLabel,
+  NeonLinearProgress,
   NeonLink,
   NeonList,
   NeonLogo,
@@ -254,6 +256,7 @@ export {
   NeonIconRegistry,
   NeonLabel,
   NeonLabelSize,
+  NeonLinearProgress,
   NeonLink,
   NeonList,
   NeonListItem,

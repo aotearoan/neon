@@ -1,0 +1,69 @@
+@mixin neon-linear-progress-import {
+  .neon-linear-progress {
+    user-select: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    &__bar {
+      overflow: hidden;
+      border-radius: $neon-border-radius;
+    }
+
+    &,
+    &__container,
+    &__bar,
+    &__indicator {
+      display: flex;
+      flex: 1 0 auto;
+    }
+
+    &__icon {
+      width: $neon-font-size-l;
+      height: $neon-font-size-l;
+      margin-left: 2 * $neon-base-space;
+    }
+
+    &--s {
+      .neon-linear-progress__bar,
+      .neon-linear-progress__indicator {
+        height: $neon-base-space;
+      }
+    }
+
+    &--m {
+      .neon-linear-progress__bar,
+      .neon-linear-progress__indicator {
+        height: 2 * $neon-base-space;
+      }
+    }
+
+    &--l {
+      .neon-linear-progress__bar,
+      .neon-linear-progress__indicator {
+        height: 3 * $neon-base-space;
+      }
+    }
+
+    &__indicator {
+      align-items: flex-end;
+      justify-content: center;
+      border-top-left-radius: $neon-border-radius;
+      border-bottom-left-radius: $neon-border-radius;
+      border-top-right-radius: $neon-border-radius-progress-indicator;
+      border-bottom-right-radius: $neon-border-radius-progress-indicator;
+      transition: all 25ms ease-in-out;
+
+      &--completed {
+        border-top-right-radius: $neon-border-radius;
+        border-bottom-right-radius: $neon-border-radius;
+      }
+    }
+
+    &__output {
+      margin-left: 2 * $neon-base-space;
+      font-weight: 600;
+      font-variant: tabular-nums;
+    }
+  }
+}

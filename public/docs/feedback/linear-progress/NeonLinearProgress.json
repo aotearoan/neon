@@ -1,0 +1,105 @@
+{
+  "description": "A component for displaying linear or circular progress. The progress can be displayed as a percentage (default) or\nas a counter (x / y).",
+  "tags": {},
+  "exportName": "default",
+  "displayName": "NeonLinearProgress",
+  "props": [
+    {
+      "name": "value",
+      "tags": {},
+      "description": "If the progress mode is Percentage this is the current % completion expressed as a decimal, e.g. 0.15 = 15%,\nIn the case of a counter this is the count of items from the total, i.e. the 'x' in 'x / y '.",
+      "type": {
+        "name": "number"
+      },
+      "required": true
+    },
+    {
+      "name": "total",
+      "tags": {},
+      "description": "When the mode is counter this is the total item count, i.e. the 'y' in 'x / y'.",
+      "type": {
+        "name": "number"
+      }
+    },
+    {
+      "name": "label",
+      "tags": {},
+      "description": "A label to display above the progress bar",
+      "type": {
+        "name": "TranslateResult"
+      }
+    },
+    {
+      "name": "color",
+      "tags": {},
+      "description": "The progress bar color",
+      "type": {
+        "name": "NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Primary"
+      }
+    },
+    {
+      "name": "alternateColor",
+      "tags": {},
+      "description": "The alternate color for displaying the progress as a gradient",
+      "type": {
+        "name": "NeonFunctionalColor"
+      }
+    },
+    {
+      "name": "size",
+      "tags": {},
+      "description": "The component size, NeonSize.Small or NeonSize.Medium",
+      "type": {
+        "name": "NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "output",
+      "tags": {},
+      "description": "Display the text output indicating the current state of progress",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    },
+    {
+      "name": "completedIcon",
+      "tags": {},
+      "description": "Display an icon on completion",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "completedIconColor",
+      "tags": {},
+      "description": "Specify the icon color (default = alternate-color || color)",
+      "type": {
+        "name": "NeonFunctionalColor"
+      }
+    },
+    {
+      "name": "decimals",
+      "tags": {},
+      "description": "The decimals to use for rounding",
+      "type": {
+        "name": "number"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "0"
+      }
+    }
+  ]
+}

@@ -118,6 +118,13 @@ export class Menu {
                 component: 'NeonDialog',
               },
               {
+                path: 'linear-progress',
+                page: 'LinearProgress',
+                name: 'Linear Progress',
+                keywords: 'bar loading loader percentage',
+                component: 'NeonLinearProgress',
+              },
+              {
                 path: 'note',
                 page: 'Note',
                 component: 'NeonNote',
@@ -502,7 +509,7 @@ export class Menu {
         return { ...item, path };
       } else if (item.children) {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const [head, ...tail] = item.children
+        const [head, ..._tail] = item.children
           .map((child) => findComponent(child, path))
           .filter((child) => child !== null);
         return head || null;

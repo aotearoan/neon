@@ -84,6 +84,7 @@ $neon-component-dependencies: (
   NeonExpansionIndicator,
   NeonIcon,
   NeonLink],
+  NeonLinearProgress: [NeonIcon],
   NeonPage: [],
   NeonPassword: [NeonInput,
   NeonIcon],
@@ -393,4 +394,9 @@ $neon-error-palette: generate-palette($neon-color-error) !default;
 @import 'dialog';
 @if index($neon-components, NeonDialog) {
   @include neon-dialog-import;
+}
+
+@import 'linear-progress';
+@if index($neon-components, NeonLinearProgress) {
+  @include neon-linear-progress-import;
 }
