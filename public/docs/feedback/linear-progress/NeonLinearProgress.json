@@ -1,5 +1,5 @@
 {
-  "description": "A component for displaying linear or circular progress. The progress can be displayed as a percentage (default) or\nas a counter (x / y).",
+  "description": "A component for displaying linear progress. The progress can be displayed as a percentage (default) or\nas a counter (x / y).",
   "tags": {},
   "exportName": "default",
   "displayName": "NeonLinearProgress",
@@ -7,7 +7,7 @@
     {
       "name": "value",
       "tags": {},
-      "description": "If the progress mode is Percentage this is the current % completion expressed as a decimal, e.g. 0.15 = 15%,\nIn the case of a counter this is the count of items from the total, i.e. the 'x' in 'x / y '.",
+      "description": "If no total is provided (default) the current % completion is expressed as a %, e.g. 0.15 = 15%,\nIn the case of a total being provided this is the count of items from the total, i.e. the 'x' in 'x / y '.",
       "type": {
         "name": "number"
       },
@@ -16,7 +16,7 @@
     {
       "name": "total",
       "tags": {},
-      "description": "When the mode is counter this is the total item count, i.e. the 'y' in 'x / y'.",
+      "description": "When the total is provided the display is 'x / y' where total is the 'y' in 'x / y'.",
       "type": {
         "name": "number"
       }
