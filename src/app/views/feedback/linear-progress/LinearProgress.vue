@@ -3,7 +3,7 @@
     <neon-card>
       <neon-card-body>
         <p>
-          A component for displaying linear progress. The progress can be displayed as a percentage (default) or as a
+          A component for displaying linear progress. The progress can be displayed as a percentage by default or as a
           counter (x / y).
         </p>
       </neon-card-body>
