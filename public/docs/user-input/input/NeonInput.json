@@ -153,7 +153,7 @@
       }
     },
     {
-      "name": "limit",
+      "name": "maxlength",
       "tags": {},
       "description": "The character limit for a textarea.",
       "type": {
@@ -191,7 +191,7 @@
     },
     {
       "name": "input",
-      "description": "Emitted when the input value is changed",
+      "description": "Emitted when the input value is changed, NOTE: is not triggered if over the textarea length limit",
       "type": {
         "names": [
           "string"

@@ -201,3 +201,8 @@
 @if index($neon-components, NeonRangeSlider) {
   @include neon-range-slider-color-import;
 }
+
+@import 'linear-progress';
+@if index($neon-components, NeonLinearProgress) {
+  @include neon-linear-progress-color-import;
+}

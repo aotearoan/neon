@@ -230,4 +230,8 @@ $neon-max-width-dialog: 250px !default;
 $neon-min-height-dialog: 275px !default;
 $neon-font-style-dialog: italic !default;
 
+/* progress linear */
+$neon-opacity-background-progress: 0.0625 !default;
+$neon-border-radius-progress-indicator: 2 * $neon-base-space !default;
+
 @import '../../src/sass/common';

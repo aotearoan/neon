@@ -1,0 +1,37 @@
+@mixin neon-linear-progress-color-import {
+  .neon-linear-progress {
+    @each $color, $palette in $neon-functional-colors {
+      &.neon-linear-progress--#{$color} {
+        $progress-color: map-get($palette, $neon-base-color);
+
+        .neon-linear-progress__bar {
+          background: rgba($progress-color, $neon-opacity-background-progress);
+        }
+
+        .neon-linear-progress__indicator {
+          background: $progress-color;
+        }
+
+        @each $alternateColor, $alternatePalette in $neon-functional-colors {
+          &.neon-linear-progress--alternate-color-#{$alternateColor} {
+            .neon-linear-progress__indicator {
+              //@if ($neon-mode == light) {
+              background: linear-gradient(
+                90deg,
+                map-get($alternatePalette, $neon-color-gradient-alternate) 0%,
+                $progress-color 100%
+              );
+              //} @else {
+              //  background: linear-gradient(
+              //                  90deg,
+              //                  map-get($alternatePalette, $neon-color-gradient-alternate) 0%,
+              //                  $progress-color 100%
+              //  );
+              //}
+            }
+          }
+        }
+      }
+    }
+  }
+}
