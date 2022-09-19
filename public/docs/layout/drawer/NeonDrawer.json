@@ -1,12 +1,11 @@
 {
+  "displayName": "NeonDrawer",
   "description": "A drawer is a slide out panel for representing data which may be secondary or not fit on the main screen. Examples\nare a responsive navigation menu, more details of a selected item on the page. Drawers can be opened from top,\nbottom, left or right and an overlay covers the screen to focus more attention on the drawer contents.",
   "tags": {},
-  "displayName": "NeonDrawer",
   "exportName": "default",
   "props": [
     {
       "name": "open",
-      "tags": {},
       "description": "Set the drawer to visible.",
       "type": {
         "name": "boolean"
@@ -14,9 +13,8 @@
       "required": true
     },
     {
-      "name": "dismissable",
-      "tags": {},
-      "description": "Whether or not the user is allowed to dismiss the modal by clicking outside of the modal or pressing escape.",
+      "name": "dismissible",
+      "description": "Whether the user is allowed to dismiss the modal by clicking outside the modal or pressing escape.",
       "type": {
         "name": "boolean"
       },
@@ -27,7 +25,6 @@
     },
     {
       "name": "fullWidth",
-      "tags": {},
       "description": "If true, remove the padding applied to the drawer.",
       "type": {
         "name": "boolean"
@@ -39,10 +36,9 @@
     },
     {
       "name": "position",
-      "tags": {},
       "description": "The location of the drawer.",
       "type": {
-        "name": "NeonPosition"
+        "name": "String as () => NeonPosition"
       },
       "defaultValue": {
         "func": false,
@@ -51,7 +47,6 @@
     },
     {
       "name": "overlay",
-      "tags": {},
       "description": "Display a semi-transparent overlay under the drawer, but over the rest of the page.",
       "type": {
         "name": "boolean"

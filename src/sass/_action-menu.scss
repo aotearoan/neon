@@ -1,4 +1,11 @@
-@mixin neon-action-menu-import {
+@use 'sass:map';
+
+@mixin import(
+  $neon-letter-spacing-s,
+  $neon-border-radius,
+  $neon-base-space,
+  $neon-font-size-s,
+) {
   .neon-action-menu {
     .neon-action-menu__link {
       display: flex;
@@ -37,3 +44,38 @@
     }
   }
 }
+
+@mixin import-colors(
+  $neon-color-action-menu-hover,
+  $neon-functional-colors,
+  $neon-color-action-menu-selected,
+  $neon-color-inverse,
+  $neon-animation-speed-slow,
+  $neon-color-disabled-light,
+) {
+  &__link {
+    &:not(.neon-action-menu__link--selected):not(.neon-action-menu__link--disabled) {
+      &:hover,
+      &:focus {
+        background-color: $neon-color-action-menu-hover;
+      }
+    }
+
+    &.neon-action-menu__link--selected {
+      @each $color, $palette in $neon-functional-colors {
+        &.neon-action-menu__link--#{$color} {
+          background-color: map.get($palette, $neon-color-action-menu-selected);
+        }
+      }
+
+      color: $neon-color-inverse;
+      transition: background-color ease-in-out $neon-animation-speed-slow,
+      color ease-in-out $neon-animation-speed-slow;
+    }
+
+    &.neon-action-menu__link--disabled {
+      color: $neon-color-disabled-light;
+    }
+  }
+}
+

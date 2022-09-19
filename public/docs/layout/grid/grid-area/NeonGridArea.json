@@ -1,12 +1,11 @@
 {
+  "displayName": "NeonGridArea",
   "description": "A grid area is the basic container corresponding to a grid area defined in the NeonGrid component.",
   "tags": {},
-  "displayName": "NeonGridArea",
   "exportName": "default",
   "props": [
     {
       "name": "id",
-      "tags": {},
       "description": "Identifier of the grid area (this should match a named area in the grid layout)",
       "type": {
         "name": "string"

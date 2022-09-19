@@ -1,6 +1,7 @@
 // This structure allows you to not only use the theme and light/dark modes,
 // but to also use the defined variables, mixins and functions in your own components and pages.
-@import 'sass/fonts';
+@use 'sass/fonts';
+
 $monospaced-font-variation-settings: 'wdth' 100, 'wght' 450;
 $neon-font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', Courier, monospace;
 
@@ -8,7 +9,7 @@ $neon-font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubu
   overscroll-behavior: none;
 
   $neon-heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
-    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
+  sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
 
   &.neon-theme--classic {
     @import '../../themes/classic/theme';

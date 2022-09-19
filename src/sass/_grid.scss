@@ -1,51 +1,65 @@
-@import 'includes/layout';
+@use './includes/layout';
+@use './includes/responsive';
 
-@mixin neon-grid-import {
+@mixin import(
+  $spacings,
+  $neon-max-page-width,
+  $neon-footer-height-desktop,
+  $neon-footer-height-tablet,
+  $neon-footer-height-mobile,
+  $neon-side-nav-width,
+  $neon-top-nav-height-desktop,
+  $neon-top-nav-height-tablet,
+  $neon-top-nav-height-mobile,
+  $spacing-vertical-desktop,
+  $spacing-vertical-tablet,
+  $neon-spacing-vertical-mobile,
+) {
   .neon-grid {
     width: 100%;
     max-width: $neon-max-page-width;
-    @include min-height(100, $neon-footer-height-desktop);
-    @include padding(0.5, true);
+    @include layout.min-height(100, $neon-footer-height-desktop);
+    @include layout.padding($spacings, 0.5, true);
     display: grid;
 
     .neon-grid-area {
-      @include margin(0.5, true);
+      @include layout.margin($spacings, 0.5, true);
       display: flex;
     }
   }
 
   .neon-page--with-side-nav .neon-grid {
-    @include side-nav-offset;
-    max-width: calc(#{$neon-max-page-width - $neon-side-nav-width});
+    @include layout.side-nav-offset($neon-side-nav-width);
+    max-width: $neon-max-page-width - $neon-side-nav-width;
   }
 
   .neon-page--with-top-nav .neon-page__container {
     .neon-grid {
-      @include responsive(larger-than-tablet) {
-        @include min-height(100, $neon-top-nav-height-desktop + $neon-footer-height-desktop);
+      @include responsive.responsive(larger-than-tablet) {
+        @include layout.min-height(100, $neon-top-nav-height-desktop + $neon-footer-height-desktop);
       }
 
-      @include responsive(tablet) {
-        @include min-height(100, $neon-top-nav-height-tablet + $neon-footer-height-tablet);
+      @include responsive.responsive(tablet) {
+        @include layout.min-height(100, $neon-top-nav-height-tablet + $neon-footer-height-tablet);
       }
 
-      @include responsive(mobile-large) {
-        @include min-height(100, $neon-top-nav-height-mobile + $neon-footer-height-mobile);
+      @include responsive.responsive(mobile-large) {
+        @include layout.min-height(100, $neon-top-nav-height-mobile + $neon-footer-height-mobile);
       }
     }
   }
 
   .neon-grid {
     .neon-grid-area {
-      @include responsive(larger-than-tablet) {
+      @include responsive.responsive(larger-than-tablet) {
         max-width: calc(100vw - #{2 * $spacing-vertical-desktop});
       }
 
-      @include responsive(tablet) {
+      @include responsive.responsive(tablet) {
         max-width: calc(100vw - #{2 * $spacing-vertical-tablet});
       }
 
-      @include responsive(mobile-large) {
+      @include responsive.responsive(mobile-large) {
         max-width: calc(100vw - #{2 * $neon-spacing-vertical-mobile});
       }
     }
@@ -53,7 +67,7 @@
 
   .neon-page--with-side-nav .neon-grid {
     .neon-grid-area {
-      @include responsive(larger-than-tablet) {
+      @include responsive.responsive(larger-than-tablet) {
         max-width: calc(100vw - #{$neon-side-nav-width + 2 * $spacing-vertical-desktop});
       }
     }

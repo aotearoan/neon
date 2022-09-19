@@ -1,4 +1,19 @@
-@mixin neon-tabs-import {
+@use './includes/layout';
+@use './includes/responsive';
+@use './includes/svg';
+
+@mixin import(
+  $spacings,
+  $neon-border-width-tabs,
+  $neon-base-space,
+  $neon-border-radius,
+  $neon-animation-speed-fast,
+  $neon-size-s,
+  $neon-font-size-m,
+  $neon-size-m,
+  $neon-size-l,
+  $neon-font-size-l,
+) {
   .neon-tabs {
     &__menu-items {
       display: flex;
@@ -104,7 +119,7 @@
     position: relative;
     display: none;
     border-radius: $neon-border-radius;
-    @include padding-vertical;
+    @include layout.padding-vertical($spacings);
 
     &--selected {
       display: flex;
@@ -127,7 +142,7 @@
     }
   }
 
-  @include responsive(mobile-large) {
+  @include responsive.responsive(mobile-large) {
     .neon-tabs__menu-items {
       display: none;
     }
@@ -140,11 +155,73 @@
 
   .neon-card-body--full-width {
     .neon-tabs__menu-items {
-      @include padding-horizontal;
+      @include layout.padding-horizontal($spacings);
     }
 
     .neon-tab {
-      @include padding;
+      @include layout.padding($spacings);
+    }
+  }
+}
+
+@mixin import-colors(
+  $neon-border-width-tabs,
+  $neon-border-style,
+  $neon-border-color-tabs-underline,
+  $neon-color-text-low-contrast,
+  $neon-animation-speed-fast,
+  $neon-functional-colors,
+  $neon-color-tab-selected,
+) {
+  .neon-tabs {
+    .neon-tabs__menu-items--underlined {
+      border-bottom: $neon-border-width-tabs $neon-border-style $neon-border-color-tabs-underline;
+    }
+
+    .neon-tabs__menu-item {
+      @include svg.color-with-svg($neon-color-text-low-contrast);
+      transition: color ease-in-out $neon-animation-speed-fast;
+    }
+
+    @each $color, $palette in $neon-functional-colors {
+      &.neon-tabs--#{$color} {
+        $tab-color: map-get($palette, $neon-color-tab-selected);
+
+        .neon-tabs__menu-item {
+          &:hover:not(.neon-tabs__menu-item--selected),
+          &:active:not(.neon-tabs__menu-item--selected) {
+            @include svg.color-with-svg($tab-color);
+
+            .neon-tabs__menu-item-container:before {
+              background-color: $tab-color;
+            }
+          }
+
+          &--selected {
+            @include svg.color-with-svg($tab-color);
+
+            .neon-tabs__menu-item-container:before {
+              background-color: $tab-color;
+            }
+          }
+
+          &-container:focus:before {
+            background-color: $tab-color;
+          }
+        }
+
+        .neon-tab {
+          &:focus:before {
+            background-color: $tab-color;
+          }
+        }
+      }
+    }
+  }
+
+  .neon-tab {
+    &:focus:before {
+      background-color: $neon-color-text-low-contrast;
     }
   }
 }

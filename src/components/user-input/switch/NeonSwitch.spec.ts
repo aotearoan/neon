@@ -1,219 +1,173 @@
-import Vue from 'vue';
-import { mount, shallowMount } from '@vue/test-utils';
+import type { RenderResult } from '@testing-library/vue';
+import { fireEvent, render } from '@testing-library/vue';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonSwitchStyle } from '../../../common/enums/NeonSwitchStyle';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import NeonSwitch from './NeonSwitch.vue';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
-
-Vue.component('NeonIcon', NeonIcon);
 
 describe('NeonSwitch', () => {
-  const value = true;
+  const modelValue = true;
   const label = 'test';
+
+  let harness: RenderResult;
+  const props = { modelValue, label };
+
+  beforeEach(() => {
+    harness = render(NeonSwitch, { props });
+  });
 
   it('renders default switch style', () => {
     // given
-    const wrapper = shallowMount(NeonSwitch, {
-      propsData: { label, value },
-    });
+    const { html } = harness;
     // when / then
-    expect(wrapper.find('.neon-switch--switch').element).toBeDefined();
+    expect(html()).toMatch('neon-switch--switch');
   });
 
-  it('renders switch style', () => {
+  it('renders switch style', async () => {
     // given
-    const wrapper = shallowMount(NeonSwitch, {
-      propsData: { label, value, switchStyle: NeonSwitchStyle.Checkbox },
-    });
-    // when / then
-    expect(wrapper.find('.neon-switch--checkbox').element).toBeDefined();
+    const { html, rerender } = harness;
+    // when
+    await rerender({ ...props, switchStyle: NeonSwitchStyle.Checkbox });
+    // then
+    expect(html()).toMatch('neon-switch--checkbox');
   });
 
-  it('renders default size', () => {
+  it('renders default switch size', () => {
     // given
-    const wrapper = shallowMount(NeonSwitch, {
-      propsData: { label, value },
-    });
+    const { html } = harness;
     // when / then
-    expect(wrapper.find('.neon-switch--m').element).toBeDefined();
+    expect(html()).toMatch('neon-switch--m');
   });
 
-  it('renders size', () => {
+  it('renders switch size', async () => {
     // given
-    const wrapper = shallowMount(NeonSwitch, {
-      propsData: { label, value, size: NeonSize.Small },
-    });
-    // when / then
-    expect(wrapper.find('.neon-switch--s').element).toBeDefined();
+    const { html, rerender } = harness;
+    // when
+    await rerender({ ...props, size: NeonSize.Small });
+    // then
+    expect(html()).toMatch('neon-switch--s');
   });
 
-  it('renders default color', () => {
+  it('renders default switch color', () => {
     // given
-    const wrapper = shallowMount(NeonSwitch, {
-      propsData: { label, value },
-    });
+    const { html } = harness;
     // when / then
-    expect(wrapper.find('.neon-switch--primary').element).toBeDefined();
+    expect(html()).toMatch('neon-switch--primary');
   });
 
-  it('renders color', () => {
+  it('renders switch color', async () => {
     // given
-    const wrapper = shallowMount(NeonSwitch, {
-      propsData: { label, value, color: NeonFunctionalColor.LowContrast },
-    });
-    // when / then
-    expect(wrapper.find('.neon-switch--low-contrast').element).toBeDefined();
+    const { html, rerender } = harness;
+    // when
+    await rerender({ ...props, color: NeonFunctionalColor.LowContrast });
+    // then
+    expect(html()).toMatch('neon-switch--low-contrast');
   });
 
   it('renders default disabled', () => {
     // given
-    const wrapper = shallowMount(NeonSwitch, {
-      propsData: { label, value },
-    });
+    const { html } = harness;
     // when / then
-    expect(wrapper.find('.neon-switch--disabled').element).toBeUndefined();
+    expect(html()).not.toMatch('neon-switch--disabled');
   });
 
-  it('renders disabled', () => {
+  it('renders disabled', async () => {
     // given
-    const wrapper = shallowMount(NeonSwitch, {
-      propsData: { label, value, disabled: true },
-    });
-    // when / then
-    expect(wrapper.find('.neon-switch--disabled').element).toBeDefined();
-    expect(wrapper.find('.neon-switch--disabled').attributes('aria-disabled')).toEqual('true');
+    const { html, rerender } = harness;
+    // when
+    await rerender({ ...props, disabled: true });
+    // then
+    expect(html()).toMatch('neon-switch--disabled');
+    expect(html()).toMatch('aria-disabled="true"');
   });
 
   it('renders checked', () => {
     // given
-    const wrapper = shallowMount(NeonSwitch, {
-      propsData: { label, value },
-    });
+    const { getByTestId, html } = harness;
     // when / then
-    expect(wrapper.find('input:checked').element).toBeDefined();
-    expect(wrapper.find('.neon-switch--checked').element).toBeDefined();
-    expect(wrapper.find('.neon-switch--checked').attributes('aria-checked')).toEqual('true');
+    const checkbox = getByTestId('checkbox');
+    expect(checkbox.getAttribute('checked')).toEqual('true');
+    const result = html();
+    expect(result).toMatch('neon-switch--checked');
+    expect(checkbox.parentElement?.getAttribute('aria-checked')).toEqual('true');
   });
 
-  it('renders indeterminate', () => {
+  it('renders indeterminate', async () => {
     // given
-    const wrapper = shallowMount(NeonSwitch, {
-      propsData: { label, value, indeterminate: true },
-    });
-    // when / then
-    expect(wrapper.find('input:indeterminate').element).toBeDefined();
-    expect(wrapper.find('.neon-switch--indeterminate').element).toBeDefined();
+    const { html, rerender } = harness;
+    // when
+    await rerender({ ...props, indeterminate: true });
+    // then
+    const result = html();
+    expect(result).toMatch('neon-switch--indeterminate');
   });
 
   it('renders label', () => {
     // given
-    const wrapper = shallowMount(NeonSwitch, {
-      propsData: { label, value },
-    });
-    // when / then
-    expect(wrapper.find('.neon-switch__label').text()).toEqual(label);
+    const { getByText } = harness;
+    getByText(label);
   });
 
-  it('renders icon for checkbox', () => {
+  it('renders icon for checkbox', async () => {
     // given
-    const wrapper = mount(NeonSwitch, {
-      propsData: { label, value, switchStyle: NeonSwitchStyle.Checkbox },
-    });
-    // when / then
-    expect(wrapper.find('.neon-switch--checked .neon-switch__checkbox.neon-icon svg').element).toBeDefined();
-  });
-
-  it('emits false when clicking checked checkbox', () => {
-    // given
-    const wrapper = shallowMount(NeonSwitch, {
-      propsData: { label, value },
-    });
+    const { html, rerender } = harness;
     // when
-    const labelElement = wrapper.find('.neon-switch');
-    labelElement.trigger('click');
+    await rerender({ ...props, switchStyle: NeonSwitchStyle.Checkbox });
     // then
-    expect(wrapper.emitted().input[0]).toEqual([false]);
+    expect(html()).toMatch('neon-icon');
   });
 
-  it('emits true when clicking unchecked checkbox', () => {
-    // given
-    const wrapper = shallowMount(NeonSwitch, {
-      propsData: { label, value: false },
-    });
-    // when
-    const labelElement = wrapper.find('.neon-switch');
-    labelElement.trigger('click');
-    // then
-    expect(wrapper.emitted().input[0]).toEqual([true]);
+  it('emits false when clicking checked checkbox', async () => {
+    const { emitted, getByTestId } = harness;
+    await fireEvent.click(getByTestId('checkbox'));
+    expect(emitted()['update:modelValue']).toEqual([[false]]);
   });
 
-  it('emits true when clicking indeterminate checkbox', () => {
-    // given
-    const wrapper = shallowMount(NeonSwitch, {
-      propsData: { label, value: false, indeterminate: true },
-    });
-    // when
-    const labelElement = wrapper.find('.neon-switch');
-    labelElement.trigger('click');
-    // then
-    expect(wrapper.emitted().input[0]).toEqual([true]);
-    expect(wrapper.emitted()['indeterminate-change'][0]).toEqual([false]);
+  it('emits true when clicking unchecked checkbox', async () => {
+    const { emitted, getByTestId, rerender } = harness;
+    await rerender({ ...props, modelValue: false });
+    await fireEvent.click(getByTestId('checkbox'));
+    expect(emitted()['update:modelValue']).toEqual([[true]]);
   });
 
-  it('emits nothing when clicking disabled option', () => {
-    // given
-    const wrapper = shallowMount(NeonSwitch, {
-      propsData: { label, value, disabled: true },
-    });
-    // when
-    const labelElement = wrapper.find('.neon-switch');
-    labelElement.trigger('click');
-    // then
-    expect(wrapper.emitted().input).toBeUndefined();
+  it('emits true when clicking indeterminate checkbox', async () => {
+    const { emitted, getByTestId, rerender } = harness;
+    await rerender({ ...props, modelValue: false, indeterminate: true });
+    await fireEvent.click(getByTestId('checkbox'));
+    expect(emitted()['update:modelValue']).toEqual([[true]]);
+    expect(emitted()['indeterminate-change']).toEqual([[false]]);
   });
 
-  it('emits false when keypress enter', () => {
-    // given
-    const wrapper = shallowMount(NeonSwitch, {
-      propsData: { label, value },
-    });
-    // when
-    wrapper.find('.neon-switch').trigger('keydown.enter');
-    // then
-    expect(wrapper.emitted().input[0]).toEqual([false]);
+  it('emits nothing when clicking disabled checkbox', async () => {
+    const { emitted, getByTestId, rerender } = harness;
+    await rerender({ ...props, disabled: true });
+    await fireEvent.click(getByTestId('checkbox'));
+    expect(emitted()['update:modelValue']).toBeUndefined();
   });
 
-  it('emits nothing when keypress enter and disabled', () => {
-    // given
-    const wrapper = shallowMount(NeonSwitch, {
-      propsData: { label, value, disabled: true },
-    });
-    // when
-    wrapper.find('.neon-switch').trigger('keydown.enter');
-    // then
-    expect(wrapper.emitted().input).toBeUndefined();
+  it('emits false when keypress enter', async () => {
+    const { emitted, getByTestId } = harness;
+    await fireEvent.keyDown(getByTestId('checkbox-label'), { key: 'Enter', code: 'Enter' });
+    expect(emitted()['update:modelValue']).toEqual([[false]]);
   });
 
-  it('emits false when keypress space', () => {
-    // given
-    const wrapper = shallowMount(NeonSwitch, {
-      propsData: { label, value },
-    });
-    // when
-    wrapper.find('.neon-switch').trigger('keydown.space');
-    // then
-    expect(wrapper.emitted().input[0]).toEqual([false]);
+  it('emits nothing when keypress enter & disabled', async () => {
+    const { emitted, getByTestId, rerender } = harness;
+    await rerender({ ...props, disabled: true });
+    await fireEvent.keyDown(getByTestId('checkbox-label'), { key: 'Enter', code: 'Enter' });
+    expect(emitted()['update:modelValue']).toBeUndefined();
   });
 
-  it('emits nothing when keypress space and disabled', () => {
-    // given
-    const wrapper = shallowMount(NeonSwitch, {
-      propsData: { label, value, disabled: true },
-    });
-    // when
-    wrapper.find('.neon-switch').trigger('keydown.space');
-    // then
-    expect(wrapper.emitted().input).toBeUndefined();
+  it('emits false when keypress space', async () => {
+    const { emitted, getByTestId } = harness;
+    await fireEvent.keyDown(getByTestId('checkbox-label'), { key: 'Space', code: 'Space' });
+    expect(emitted()['update:modelValue']).toEqual([[false]]);
+  });
+
+  it('emits nothing when keypress space & disabled', async () => {
+    const { emitted, getByTestId, rerender } = harness;
+    await rerender({ ...props, disabled: true });
+    await fireEvent.keyDown(getByTestId('checkbox-label'), { key: 'Space', code: 'Space' });
+    expect(emitted()['update:modelValue']).toBeUndefined();
   });
 });

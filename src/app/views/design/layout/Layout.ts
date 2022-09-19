@@ -1,12 +1,14 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonLink } from '../../../../components';
+import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader, NeonLink } from '@/neon';
+import { defineComponent } from 'vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Layout',
   components: {
+    NeonAnchor,
     NeonCard,
     NeonCardHeader,
     NeonCardBody,
     NeonLink,
   },
-})
-export default class Layout extends Vue {}
+});

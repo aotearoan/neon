@@ -1,8 +1,7 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
 import { NeonDropdownPlacement } from '../../../common/enums/NeonDropdownPlacement';
 import { NeonDropdownPlacementUtils } from '../../../common/utils/NeonDropdownPlacementUtils';
 import { NeonClosableUtils } from '../../../common/utils/NeonClosableUtils';
-import { TranslateResult } from 'vue-i18n';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonDropdownStyle } from '../../../common/enums/NeonDropdownStyle';
@@ -19,190 +18,184 @@ import NeonExpansionIndicator from '../expansion-indicator/NeonExpansionIndicato
  * <p><strong>NeonDropdown</strong> is the basis for the <strong>NeonDropdownMenu</strong> component and the
  * <strong>NeonSelect</strong> form component.</p>
  */
-@Component({
+export default defineComponent({
+  name: 'NeonDropdown',
   components: {
     NeonBadge,
     NeonButton,
     NeonExpansionIndicator,
   },
-})
-export default class NeonDropdown extends Vue {
-  $refs!: {
-    dropdownButton: HTMLElement;
-    dropdownContent: HTMLDivElement;
-  };
-
-  dropdownPlacement: NeonDropdownPlacement;
-  closableUtils?: NeonClosableUtils;
-
-  /**
-   * Whether or not the dropdown is currently open.
-   */
-  @Prop({ required: true })
-  public value!: boolean;
-
-  /**
-   * The label for the dropdown button.
-   */
-  @Prop()
-  public label?: TranslateResult;
-
-  /**
-   * URL of image to display if the button style is a square or circular badge.
-   */
-  @Prop()
-  public image?: string;
-
-  /**
-   * Badge image ALT text.
-   */
-  @Prop()
-  public imageAlt?: TranslateResult;
-
-  /**
-   * An icon to display on the dropdown button. This will be to the left of any label, but can also be used on it's own.
-   */
-  @Prop()
-  public icon?: string;
-
-  /**
-   * Show the dropdown button's indicator (chevron).
-   */
-  @Prop({ default: true })
-  public indicator!: boolean;
-
-  /**
-   * Disable the dropdown button
-   */
-  @Prop({ default: false })
-  public disabled!: boolean;
-
-  /**
-   * The size of the dropdown button - Small, Medium or Large.
-   */
-  @Prop({ default: NeonSize.Medium })
-  public size!: NeonSize;
-
-  /**
-   * The color of the dropdown button
-   */
-  @Prop({ default: NeonFunctionalColor.LowContrast })
-  public color!: NeonFunctionalColor;
-
-  /**
-   * The alternate color of the dropdown button (for gradient buttons).
-   */
-  @Prop()
-  public alternateColor?: NeonFunctionalColor;
-
-  /**
-   * The style of the dropdown button
-   */
-  @Prop({ default: NeonDropdownStyle.SolidButton })
-  public dropdownStyle!: NeonDropdownStyle;
-
-  /**
-   * Placement of the dropdown contents.
-   */
-  @Prop({ default: NeonDropdownPlacement.BottomLeft })
-  public placement!: NeonDropdownPlacement;
-
-  /**
-   * Restrict placement to within this container.
-   */
-  @Prop({ required: false })
-  public placementContainer?: HTMLElement;
-
-  /**
-   * Instead of opening on click (default), open on hover.
-   */
-  @Prop({ default: false })
-  public openOnHover!: boolean;
-
-  public constructor() {
-    super();
-    this.dropdownPlacement = this.placement;
-  }
-
-  public mounted() {
-    if (!this.openOnHover) {
-      this.closableUtils = new NeonClosableUtils(this.$refs.dropdownContent, this.close);
-    }
-    window.addEventListener('resize', this.recalculatePlacement, { passive: true });
-    window.addEventListener('scroll', this.recalculatePlacement, { passive: true });
-    if (this.placementContainer) {
-      this.placementContainer.addEventListener('scroll', this.recalculatePlacement, { passive: true });
-    }
-  }
-
-  public beforeDestroy() {
-    if (!this.openOnHover) {
-      this.closableUtils && this.closableUtils.destroy();
-    }
-    window.removeEventListener('resize', this.recalculatePlacement);
-    window.removeEventListener('scroll', this.recalculatePlacement);
-    if (this.placementContainer) {
-      this.placementContainer.removeEventListener('scroll', this.recalculatePlacement);
-    }
-  }
-
-  public onClose() {
+  props: {
     /**
-     * Emitted when the dropdown is closed.
-     * @type {void}
+     * Whether the dropdown is currently open.
      */
-    this.$emit('input', false);
-  }
-
-  public close() {
-    if (this.value) {
-      this.onClose();
-    }
-  }
-
-  public toggleOpen() {
-    if (!this.disabled && !this.openOnHover) {
-      /**
-       * Emitted when the dropdown button is toggled.
-       * @type {boolean} the open state of the dropdown.
-       */
-      this.$emit('input', !this.value);
-      setTimeout(this.recalculatePlacement);
-    }
-  }
-
-  recalculatePlacement() {
-    if (this.value) {
-      this.dropdownPlacement = NeonDropdownPlacementUtils.calculatePlacement(
-        this.$refs.dropdownButton,
-        this.$refs.dropdownContent,
-        this.placement,
-        this.placementContainer,
-      );
-    }
-  }
-
-  public getPlacement(): NeonDropdownPlacement {
-    return this.dropdownPlacement;
-  }
-
-  private onBlur() {
+    modelValue: { type: Boolean, required: true },
+    /**
+     * The label for the dropdown button.
+     */
+    label: { type: String, default: null },
+    /**
+     * URL of image to display if the button style is a square or circular badge.
+     */
+    image: { type: String, default: null },
+    /**
+     * Badge image ALT text.
+     */
+    imageAlt: { type: String, default: null },
+    /**
+     * An icon to display on the dropdown button. This will be to the left of any label, but can also be used on it's own.
+     */
+    icon: { type: String, default: null },
+    /**
+     * Show the dropdown button's indicator (chevron).
+     */
+    indicator: { type: Boolean, default: true },
+    /**
+     * Disable the dropdown button
+     */
+    disabled: { type: Boolean, default: false },
+    /**
+     * The size of the dropdown button - Small, Medium or Large.
+     */
+    size: { type: String as () => NeonSize, default: NeonSize.Medium },
+    /**
+     * The color of the dropdown button
+     */
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    /**
+     * The alternate color of the dropdown button (for gradient buttons).
+     */
+    alternateColor: { type: String as () => NeonFunctionalColor, default: null },
+    /**
+     * The style of the dropdown button
+     */
+    dropdownStyle: { type: String as () => NeonDropdownStyle, default: NeonDropdownStyle.SolidButton },
+    /**
+     * Placement of the dropdown contents.
+     */
+    placement: { type: String as () => NeonDropdownPlacement, default: NeonDropdownPlacement.BottomLeft },
+    /**
+     * Restrict placement to within this container.
+     */
+    placementContainer: { type: Object as () => HTMLElement, default: null },
+    /**
+     * Instead of opening on click (default), open on hover.
+     */
+    openOnHover: { type: Boolean, default: false },
+  },
+  emits: [
+    /**
+     * Emitted when the dropdown button is toggled.
+     * @type {boolean} the open state of the dropdown.
+     */
+    'update:modelValue',
+    /**
+     * Emitted on initialisation.
+     * @type {NeonDropdownPlacement} the placement of the dropdown.
+     */
+    'dropdown-placement',
     /**
      * Emitted when the dropdown button is blurred.
      * @type {void}
      */
-    this.$emit('blur');
-  }
-
-  private onFocus() {
+    'blur',
     /**
      * Emitted when the dropdown button is focussed.
      * @type {void}
      */
-    this.$emit('focus');
-  }
+    'focus',
+    /**
+     * emitted on initialisation
+     * @type {HTMLElement} the reference to the HTMLElement for the dropdown menu button.
+     */
+    'button-ref',
+  ],
+  setup(props, { emit }) {
+    const dropdownButton = ref<HTMLElement | null>(null);
+    const dropdownContent = ref<HTMLDivElement | null>(null);
 
-  public get button() {
-    return this.$refs.dropdownButton;
-  }
-}
+    const dropdownPlacement = ref<NeonDropdownPlacement>(props.placement);
+    const closableUtils = ref<NeonClosableUtils | null>(null);
+
+    const onClose = () => {
+      emit('update:modelValue', false);
+    };
+
+    const close = () => {
+      if (props.modelValue) {
+        onClose();
+      }
+    };
+
+    const recalculatePlacement = () => {
+      if (props.modelValue && dropdownButton.value && dropdownContent.value) {
+        const previousValue = dropdownPlacement.value;
+        dropdownPlacement.value = NeonDropdownPlacementUtils.calculatePlacement(
+          dropdownButton.value,
+          dropdownContent.value,
+          props.placement,
+          props.placementContainer,
+        );
+
+        if (previousValue !== dropdownPlacement.value) {
+          emit('dropdown-placement', dropdownPlacement.value);
+        }
+      }
+    };
+
+    const toggleOpen = () => {
+      if (!props.disabled && !props.openOnHover) {
+        emit('update:modelValue', !props.modelValue);
+        setTimeout(recalculatePlacement);
+      }
+    };
+
+    const onBlur = () => {
+      emit('blur');
+    };
+
+    const onFocus = () => {
+      emit('focus');
+    };
+
+    onMounted(() => {
+      if (!props.openOnHover && dropdownContent.value) {
+        closableUtils.value = new NeonClosableUtils(dropdownContent.value, close);
+      }
+      window.addEventListener('resize', recalculatePlacement, { passive: true });
+      window.addEventListener('scroll', recalculatePlacement, { passive: true });
+      if (props.placementContainer) {
+        props.placementContainer.addEventListener('scroll', recalculatePlacement, { passive: true });
+      }
+    });
+
+    onUnmounted(() => {
+      if (!props.openOnHover) {
+        closableUtils.value && closableUtils.value.destroy();
+      }
+      window.removeEventListener('resize', recalculatePlacement);
+      window.removeEventListener('scroll', recalculatePlacement);
+      if (props.placementContainer) {
+        props.placementContainer.removeEventListener('scroll', recalculatePlacement);
+      }
+    });
+
+    watch(
+      () => dropdownButton.value,
+      (value) => emit('button-ref', value),
+      { immediate: true },
+    );
+
+    return {
+      dropdownButton,
+      dropdownContent,
+      dropdownPlacement,
+      closableUtils,
+      onClose,
+      close,
+      toggleOpen,
+      onBlur,
+      onFocus,
+    };
+  },
+});

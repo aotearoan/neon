@@ -1,9 +1,12 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonButton, NeonCard, NeonCardBody, NeonDialog } from '../../../../components';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonButton, NeonCard, NeonCardBody, NeonDialog } from '@/neon';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import { Menu, MenuModel } from '../../../Menu';
+import type { MenuModel } from '../../../Menu';
+import { Menu } from '../../../Menu';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Dialog',
   components: {
     NeonButton,
     NeonCard,
@@ -11,37 +14,44 @@ import { Menu, MenuModel } from '../../../Menu';
     NeonDialog,
     ComponentDocumentation,
   },
-})
-export default class Dialog extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Confirm user actions in a dialog window');
 
-  private headline = 'Confirm user actions in a dialog window';
+    const data = ref({
+      open: false,
+    });
 
-  private data = {
-    open: false,
-  };
+    const examples = ref([
+      {
+        title: 'Dialog example',
+        template: `
+          <div class="example--horizontal">
+          <neon-button label="Open dialog" @click="open = true"></neon-button>
+          <neon-dialog
+            :open="open"
+            cancel-label="Reject"
+            confirm-label="Accept"
+            color="success"
+            title="Incoming requests"
+            question="Are you sure you want to accept incoming requests?"
+            @cancel="open = false"
+            @confirm="open = false">
+          </neon-dialog>
+          </div>`,
+        data: data.value,
+      },
+    ]);
 
-  private examples = [
-    {
-      title: 'Dialog example',
-      template: `<div class="example--horizontal">
-  <neon-button label="Open dialog" @click="open = true"></neon-button>
-  <neon-dialog
-    :open="open"
-    cancel-label="Reject"
-    confirm-label="Accept"
-    color="success"
-    title="Incoming requests"
-    question="Are you sure you want to accept incoming requests?"
-    @cancel="open = false"
-    @confirm="open = false">
-  </neon-dialog>
-</div>`,
-      data: this.data,
-    },
-  ];
+    onMounted(() => {
+      menuModel.value = Menu.getComponentConfig('NeonDialog');
+    });
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonDialog');
-  }
-}
+    return {
+      menuModel,
+      headline,
+      data,
+      examples,
+    };
+  },
+});

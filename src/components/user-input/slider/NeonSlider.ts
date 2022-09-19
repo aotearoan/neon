@@ -1,6 +1,7 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { NeonNumberUtils } from '../../../common/utils/NeonNumberUtils';
+import { computed, defineComponent } from 'vue';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { NeonNumberUtils } from '../../../common/utils/NeonNumberUtils';
+import { NeonVueUtils } from '../../../common/utils/NeonVueUtils';
 
 /**
  * <p>
@@ -10,166 +11,129 @@ import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
  * </p>
  * <p><strong>NeonNumber</strong> also supports all relevant properties found on an HTML &lt;input&gt;.</p>
  */
-@Component
-export class NeonSlider extends Vue {
-  /**
-   * The current input <em>value</em>.
-   */
-  @Prop({ required: true })
-  private value!: number;
-
-  /**
-   * Id of the range input.
-   */
-  @Prop()
-  private id?: string;
-
-  /**
-   * Slider color.
-   */
-  @Prop({ default: NeonFunctionalColor.LowContrast })
-  private color!: boolean;
-
-  /**
-   * Show/hide the output.
-   */
-  @Prop({ default: true })
-  private output!: boolean;
-
-  /**
-   * Show/hide the legend.
-   */
-  @Prop({ default: true })
-  private legend!: boolean;
-
-  /**
-   * Show/hide the tooltip.
-   */
-  @Prop({ default: true })
-  private tooltip!: boolean;
-
-  /**
-   * Automatically applies % formatting, e.g. if the value = 0.15 it will be displayed as 15%.
-   */
-  @Prop({ default: false })
-  private percentage!: boolean;
-
-  /**
-   * The size of steps between values the user can select. The default value is 1 except when percentage = true the
-   * default is 0.01 (1%).
-   */
-  @Prop()
-  private step?: number;
-
-  /**
-   * The rounding precision for display purposes.
-   */
-  @Prop()
-  private decimals?: number;
-
-  /**
-   * A template string used for formatting the display value. Use the placeholder {value} to reference the value in the
-   * template string. e.g. value = 90, ${value} => $90.
-   */
-  @Prop()
-  private valueTemplate?: string;
-
-  /**
-   * Disable formatting, e.g. in the case of a year value -> display as 2020, not 2,020.
-   */
-  @Prop({ default: false })
-  private disableFormatting!: boolean;
-
-  /**
-   * The minimum range value.
-   */
-  @Prop({ default: 0 })
-  private min!: number;
-
-  /**
-   * The maximum range value. The default value is 100 except when percentage = true the default is 1 (100%).
-   */
-  @Prop()
-  private max?: number;
-
-  /**
-   * The lower bound within the range of values.
-   * @ignore
-   */
-  @Prop()
-  private lowerBound?: number;
-
-  /**
-   * The upper bound within the range of values.
-   * @ignore
-   */
-  @Prop()
-  private upperBound?: number;
-
-  /**
-   * Component disabled state.
-   */
-  @Prop({ default: false })
-  private disabled!: boolean;
-
-  private get sanitizedAttributes() {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { id, type, value, step, min, max, disabled, ...attrs } = this.$attrs;
-    return attrs;
-  }
-
-  private get sanitizedListeners() {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { input, ...listeners } = this.$listeners;
-    return listeners;
-  }
-
-  private get formattedMin() {
-    return this.formatNumber(this.min);
-  }
-
-  private get formattedMax() {
-    return this.formatNumber(this.computedMax);
-  }
-
-  private get formattedValue() {
-    return this.formatNumber(this.value);
-  }
-
-  private get computedMax() {
-    return this.max !== undefined ? this.max : this.percentage ? 1 : 100;
-  }
-
-  private get computedStep() {
-    return this.step !== undefined ? this.step : this.percentage ? 0.01 : 1;
-  }
-
-  private formatNumber(value: number) {
-    return !this.disableFormatting
-      ? NeonNumberUtils.formatNumber(value, {
-          decimals: this.decimals,
-          format: this.valueTemplate,
-          percentage: this.percentage,
-        })
-      : value;
-  }
-
-  private changeValue(event: Event) {
-    const input = event.target as HTMLInputElement;
-    let newValue = +input.value;
-    // adjust for bounds if set
-    if (this.lowerBound !== undefined && newValue < this.lowerBound) {
-      newValue = this.lowerBound;
-    } else if (this.upperBound !== undefined && newValue > this.upperBound) {
-      newValue = this.upperBound;
-    }
+export default defineComponent({
+  name: 'NeonSlider',
+  props: {
+    /**
+     * The current input <em>value</em>.
+     */
+    modelValue: { type: Number, required: true },
+    /**
+     * id of the range input.
+     */
+    id: { type: String, required: false },
+    /**
+     * Slider color.
+     */
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    /**
+     * Show/hide the output.
+     */
+    output: { type: Boolean, default: true },
+    /**
+     * Show/hide the legend.
+     */
+    legend: { type: Boolean, default: true },
+    /**
+     * Show/hide the tooltip.
+     */
+    tooltip: { type: Boolean, default: true },
+    /**
+     * Automatically applies % formatting, e.g. if the value = 0.15 it will be displayed as 15%.
+     */
+    percentage: { type: Boolean, default: false },
+    /**
+     * The size of steps between values the user can select. The default value is 1 except when percentage = true the
+     * default is 0.01 (1%).
+     */
+    step: { type: Number, required: false },
+    /**
+     * The rounding precision for display purposes.
+     */
+    decimals: { type: Number, required: false },
+    /**
+     * A template string used for formatting the display value. Use the placeholder {value} to reference the value in the
+     * template string. e.g. value = 90, ${value} => $90.
+     */
+    valueTemplate: { type: String, required: false },
+    /**
+     * Disable formatting, e.g. in the case of a year value -> display as 2020, not 2,020.
+     */
+    disableFormatting: { type: Boolean, default: false },
+    /**
+     * The minimum range value.
+     */
+    min: { type: Number, default: 0 },
+    /**
+     * The maximum range value. The default value is 100 except when percentage = true the default is 1 (100%).
+     */
+    max: { type: Number, required: false },
+    /**
+     * The lower bound within the range of values.
+     * @ignore
+     */
+    lowerBound: { type: Number, required: false },
+    /**
+     * The upper bound within the range of values.
+     * @ignore
+     */
+    upperBound: { type: Number, required: false },
+    /**
+     * Component disabled state.
+     */
+    disabled: { type: Boolean, default: false },
+  },
+  emits: [
     /**
      * Event triggered when the value changes.
      *
      * @type {number} the raw selected numeric value.
      */
-    this.$emit('input', newValue);
-  }
-}
+    'update:modelValue',
+  ],
+  setup(props, { attrs, emit }) {
+    const sanitizedAttributes = computed(() => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { id, type, value, step, min, max, disabled, ...sanitized } = attrs;
+      return NeonVueUtils.sanitizeAttributes(sanitized, 'onUpdate:modelValue');
+    });
 
-export default NeonSlider;
+    const formatNumber = (value: number) => {
+      return !props.disableFormatting
+        ? NeonNumberUtils.formatNumber(value, {
+          decimals: props.decimals,
+          format: props.valueTemplate,
+          percentage: props.percentage,
+        })
+        : value;
+    };
+
+    const formattedMin = computed(() => formatNumber(props.min));
+    const computedMax = computed(() => props.max !== undefined ? props.max : props.percentage ? 1 : 100);
+    const formattedMax = computed(() => formatNumber(computedMax.value));
+    const formattedValue = computed(() => formatNumber(props.modelValue));
+    const computedStep = computed(() => props.step !== undefined ? props.step : props.percentage ? 0.01 : 1);
+
+    const changeValue = (event: Event) => {
+      const input = event.target as HTMLInputElement;
+      let newValue = +input.value;
+      // adjust for bounds if set
+      if (props.lowerBound !== undefined && newValue < props.lowerBound) {
+        newValue = props.lowerBound;
+      } else if (props.upperBound !== undefined && newValue > props.upperBound) {
+        newValue = props.upperBound;
+      }
+      emit('update:modelValue', newValue);
+    };
+
+    return {
+      sanitizedAttributes,
+      formattedMin,
+      formattedMax,
+      formattedValue,
+      computedMax,
+      computedStep,
+      changeValue,
+    };
+  },
+});

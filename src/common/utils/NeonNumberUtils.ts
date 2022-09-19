@@ -1,4 +1,4 @@
-import { NeonNumberFormatOptions } from '../models/NeonNumberFormatOptions';
+import type { NeonNumberFormatOptions } from '../models/NeonNumberFormatOptions';
 
 export class NeonNumberUtils {
   public static parseExample = Intl.NumberFormat([...navigator.languages]).format(1.1);
@@ -12,9 +12,9 @@ export class NeonNumberUtils {
     const formatOptions =
       options && (options.decimals || options.minimumFractionDigits)
         ? {
-            minimumFractionDigits: options.decimals || options.minimumFractionDigits,
-            maximumFractionDigits: options.decimals,
-          }
+          minimumFractionDigits: options.decimals || options.minimumFractionDigits,
+          maximumFractionDigits: options.decimals,
+        }
         : {};
     const formatted = Number(options && options.percentage ? 100 * value : value).toLocaleString(
       undefined,

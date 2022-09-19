@@ -1,28 +1,34 @@
-@import 'includes/layout';
+@use './includes/layout';
+@use './includes/responsive';
+@use './includes/scrollbars';
 
-@mixin neon-side-nav-import {
+@mixin import(
+  $spacings,
+  $neon-side-nav-width,
+  $neon-top-nav-height-desktop,
+) {
   .neon-side-nav {
     position: fixed;
     bottom: 0;
     left: 0;
 
-    @include responsive(larger-than-tablet) {
+    @include responsive.responsive(larger-than-tablet) {
       width: $neon-side-nav-width;
-      @include min-height(100);
-      @include height(100);
+      @include layout.min-height(100);
+      @include layout.height(100);
     }
 
-    @include responsive(tablet) {
+    @include responsive.responsive(tablet) {
       display: none;
     }
 
     &__sticky {
-      @include padding($multiplier: 0.75);
+      @include layout.padding($spacings, $multiplier: 0.75);
       flex: 1 0 auto;
     }
 
     &__scrolling {
-      @include padding($multiplier: 0.75);
+      @include layout.padding($spacings, $multiplier: 0.75);
       overflow-y: auto;
       height: 100%;
     }
@@ -38,9 +44,26 @@
   }
 
   .neon-page--with-top-nav .neon-side-nav {
-    @include responsive(larger-than-tablet) {
-      @include min-height(100, $neon-top-nav-height-desktop);
-      @include height(100, $neon-top-nav-height-desktop);
+    @include responsive.responsive(larger-than-tablet) {
+      @include layout.min-height(100, $neon-top-nav-height-desktop);
+      @include layout.height(100, $neon-top-nav-height-desktop);
+    }
+  }
+}
+
+@mixin import-colors(
+  $neon-background-color-side-nav,
+  $neon-border,
+  $neon-color-scrollbar,
+  $neon-width-scrollbar,
+  $neon-border-radius-scrollbar,
+) {
+  .neon-side-nav {
+    background-color: $neon-background-color-side-nav;
+    border-right: $neon-border;
+
+    &__scrolling {
+      @include scrollbars.scrollbars($neon-color-scrollbar, $neon-width-scrollbar, $neon-border-radius-scrollbar);
     }
   }
 }

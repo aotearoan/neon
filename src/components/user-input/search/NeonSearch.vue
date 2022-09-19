@@ -16,10 +16,10 @@
       :disabled="disabled"
       v-bind="sanitizedAttributes"
       v-model="open"
-      v-on="sanitizedListeners"
       role="listbox"
-      :aria-activedescendant="multiple ? value[0] && value[0].key : value"
+      :aria-activedescendant="multiple ? modelValue[0] && modelValue[0].key : modelValue"
       :aria-multiselectable="multiple"
+      @dropdown-placement="onPlacement"
     >
       <template #dropdown-button>
         <div
@@ -34,7 +34,7 @@
           <neon-icon name="search" color="low-contrast" class="neon-search__search-icon" />
           <template v-if="multiple">
             <neon-chip
-              v-for="(selected, index) in value"
+              v-for="(selected, index) in modelValue"
               :key="selected.key"
               :label="selected.label"
               :color="selected.chipColor"
@@ -43,16 +43,16 @@
               role="option"
               :id="selected.key"
               aria-selected="true"
-              :class="{ 'neon-chip--last-chip': index === value.length - 1 }"
+              :class="{ 'neon-chip--last-chip': index === modelValue.length - 1 }"
               @close="removeSelected(selected)"
               :disabled="disabled"
             />
           </template>
           <neon-input
-            :value="filter"
+            :modelValue="filter"
             :placeholder="placeholder"
             :size="size"
-            @input="onFilterChange"
+            @update:modelValue="onFilterChange"
             @icon-click="onFilterChange('')"
             @focus="showOptions()"
             class="neon-search__input"

@@ -1,72 +1,185 @@
-@mixin switch-classic($switch-height) {
+@use './includes/svg';
+
+@mixin switch-classic($neon-switch-height, $neon-animation-speed-fast) {
   &.neon-switch--switch {
     .neon-switch__switch {
-      height: $switch-height;
-      width: 2 * $switch-height;
+      height: $neon-switch-height;
+      width: 2 * $neon-switch-height;
       padding: 2px;
       overflow: hidden;
     }
 
-    $switch-indicator-size: $switch-height - 4px;
+    $neon-switch-indicator-size: $neon-switch-height - 4px;
 
     .neon-switch__indicator {
-      height: $switch-indicator-size;
-      width: $switch-indicator-size;
+      height: $neon-switch-indicator-size;
+      width: $neon-switch-indicator-size;
       left: 0;
       transition: all $neon-animation-speed-fast ease-in;
     }
 
     &.neon-switch--checked {
       .neon-switch__indicator {
-        left: 2 * $switch-height - $switch-indicator-size - 4px;
+        left: 2 * $neon-switch-height - $neon-switch-indicator-size - 4px;
       }
     }
   }
 }
 
-@mixin switch-sharp($switch-height) {
-  &.neon-switch--switch {
-    .neon-switch__switch {
-      height: $switch-height;
-      width: 2 * $switch-height - 6px;
-      padding: 2px;
-      overflow: hidden;
-    }
+@mixin switch-sharp($neon-switch-height) {
+  .neon-theme--sharp {
+    .neon-switch--switch {
+      .neon-switch__switch {
+        width: 2 * $neon-switch-height - 6px;
+      }
 
-    $switch-indicator-size: $switch-height - 6px;
+      $neon-switch-indicator-size: $neon-switch-height - 6px;
 
-    .neon-switch__indicator {
-      height: $switch-indicator-size;
-      width: $switch-indicator-size;
-      left: 0;
-      transition: all $neon-animation-speed-fast ease-in;
-    }
-
-    &.neon-switch--checked {
-      .neon-switch__indicator {
-        left: $switch-indicator-size;
+      &.neon-switch--checked {
+        .neon-switch__indicator {
+          left: $neon-switch-indicator-size;
+        }
       }
     }
   }
 }
 
-@mixin switch-style($size) {
-  @if ($neon-theme == 'sharp') {
-    @include switch-sharp($size);
-  } @else {
-    @include switch-classic($size);
-  }
+@mixin switch-style($neon-switch-height, $neon-animation-speed-fast) {
+  @include switch-classic($neon-switch-height, $neon-animation-speed-fast);
+  @include switch-sharp($neon-switch-height);
 }
 
-@mixin checkbox-style($size, $padding) {
+@mixin checkbox-style($size, $padding, $neon-base-space) {
   .neon-switch__checkbox {
     height: $size;
     width: $size;
-    padding: $padding;
+    padding: $padding * $neon-base-space;
   }
 }
 
-@mixin neon-switch-import {
+@mixin switch-color-default(
+  $neon-color-switch-off,
+  $neon-animation-speed-fast,
+  $neon-inset-shadow-switch,
+  $neon-color-text-low-contrast,
+  $neon-color-switch-indicator,
+  $neon-color-neutral-d5,
+  $neon-functional-colors,
+  $neon-color-switch-on,
+  $neon-color-switch-disabled,
+  $neon-color-switch-indicator-disabled,
+) {
+  .neon-switch__switch {
+    background-color: $neon-color-switch-off;
+    transition: background-color $neon-animation-speed-fast ease-in;
+    box-shadow: $neon-inset-shadow-switch;
+
+    &:focus {
+      box-shadow: 0 0 0 4px rgba($neon-color-text-low-contrast, 0.3), $neon-inset-shadow-switch;
+    }
+  }
+
+  .neon-switch__indicator {
+    background-color: $neon-color-switch-indicator;
+    box-shadow: 0 0 2px 1px rgba($neon-color-neutral-d5, 0.3);
+  }
+
+  @each $color, $palette in $neon-functional-colors {
+    &.neon-switch--#{$color} {
+      &.neon-switch--checked:not(.neon-switch--disabled) {
+        .neon-switch__switch {
+          background-color: map-get($palette, $neon-color-switch-on);
+
+          &:focus {
+            box-shadow: 0 0 0 4px rgba(map-get($palette, $neon-color-switch-on), 0.3), $neon-inset-shadow-switch;
+          }
+        }
+      }
+    }
+  }
+
+  &.neon-switch--disabled {
+    .neon-switch__switch,
+    .neon-switch__indicator {
+      box-shadow: none;
+    }
+
+    .neon-switch__switch {
+      background-color: $neon-color-switch-disabled;
+    }
+
+    .neon-switch__indicator {
+      background-color: $neon-color-switch-indicator-disabled;
+    }
+  }
+}
+
+@mixin switch-color-sharp(
+  $neon-border-width,
+  $neon-color-switch-off,
+  $neon-animation-speed-fast,
+  $neon-color-text-low-contrast,
+  $neon-functional-colors,
+  $neon-color-switch-on,
+  $neon-color-disabled-light,
+) {
+  .neon-switch__switch {
+    border: $neon-border-width solid $neon-color-switch-off;
+    transition: all $neon-animation-speed-fast ease-in;
+
+    &:focus {
+      box-shadow: 0 0 0 4px rgba($neon-color-text-low-contrast, 0.3);
+    }
+  }
+
+  .neon-switch__indicator {
+    background-color: $neon-color-switch-off;
+    transition: all $neon-animation-speed-fast ease-in;
+  }
+
+  @each $color, $palette in $neon-functional-colors {
+    &.neon-switch--#{$color} {
+      &.neon-switch--checked:not(.neon-switch--disabled) {
+        .neon-switch__switch {
+          border-color: map-get($palette, $neon-color-switch-on);
+
+          &:focus {
+            box-shadow: 0 0 0 4px rgba(map-get($palette, $neon-color-switch-on), 0.3);
+          }
+
+          .neon-switch__indicator {
+            background-color: map-get($palette, $neon-color-switch-on);
+          }
+        }
+      }
+    }
+  }
+
+  &.neon-switch--disabled {
+    .neon-switch__switch {
+      border-color: rgba($neon-color-disabled-light, 0.5);
+    }
+
+    .neon-switch__indicator {
+      background-color: rgba($neon-color-disabled-light, 0.5);
+    }
+  }
+}
+
+@mixin import(
+  $neon-font-size-s,
+  $neon-font-size-m,
+  $neon-size-s,
+  $neon-size-m,
+  $neon-size-l,
+  $neon-base-space,
+  $neon-animation-speed-fast,
+  $neon-border-radius-switch,
+  $neon-border-radius-switch-indicator,
+  $neon-border-width-checkbox,
+  $neon-border-style,
+  $neon-border-radius-checkbox,
+) {
   .neon-switch {
     display: flex;
     flex-direction: row;
@@ -101,30 +214,30 @@
 
     &--switch {
       &.neon-switch--s {
-        $switch-height: $neon-size-s - 3 * $neon-base-space;
-        $switch-margin: 0.5 * ($neon-size-s - $switch-height);
-        height: $switch-height;
-        margin-top: $switch-margin;
-        margin-bottom: $switch-margin;
-        @include switch-style($switch-height);
+        $neon-switch-height: $neon-size-s - 3 * $neon-base-space;
+        $neon-switch-margin: 0.5 * ($neon-size-s - $neon-switch-height);
+        height: $neon-switch-height;
+        margin-top: $neon-switch-margin;
+        margin-bottom: $neon-switch-margin;
+        @include switch-style($neon-switch-height, $neon-animation-speed-fast);
       }
 
       &.neon-switch--m {
-        $switch-height: $neon-size-m - 4 * $neon-base-space;
-        $switch-margin: 0.5 * ($neon-size-m - $switch-height);
-        height: $switch-height;
-        margin-top: $switch-margin;
-        margin-bottom: $switch-margin;
-        @include switch-style($switch-height);
+        $neon-switch-height: $neon-size-m - 4 * $neon-base-space;
+        $neon-switch-margin: 0.5 * ($neon-size-m - $neon-switch-height);
+        height: $neon-switch-height;
+        margin-top: $neon-switch-margin;
+        margin-bottom: $neon-switch-margin;
+        @include switch-style($neon-switch-height, $neon-animation-speed-fast);
       }
 
       &.neon-switch--l {
-        $switch-height: $neon-size-l - 5 * $neon-base-space;
-        $switch-margin: 0.5 * ($neon-size-l - $switch-height);
-        height: $switch-height;
-        margin-top: $switch-margin;
-        margin-bottom: $switch-margin;
-        @include switch-style($switch-height);
+        $neon-switch-height: $neon-size-l - 5 * $neon-base-space;
+        $neon-switch-margin: 0.5 * ($neon-size-l - $neon-switch-height);
+        height: $neon-switch-height;
+        margin-top: $neon-switch-margin;
+        margin-bottom: $neon-switch-margin;
+        @include switch-style($neon-switch-height, $neon-animation-speed-fast);
       }
 
       .neon-switch__switch {
@@ -171,7 +284,7 @@
         height: $checkbox-height;
         margin-top: $checkbox-margin;
         margin-bottom: $checkbox-margin;
-        @include checkbox-style($checkbox-height, 0.5 * $neon-base-space);
+        @include checkbox-style($checkbox-height, 0.5, $neon-base-space);
       }
 
       &.neon-switch--m {
@@ -180,7 +293,7 @@
         height: $checkbox-height;
         margin-top: $checkbox-margin;
         margin-bottom: $checkbox-margin;
-        @include checkbox-style($checkbox-height, 0.75 * $neon-base-space);
+        @include checkbox-style($checkbox-height, 0.75, $neon-base-space);
       }
 
       &.neon-switch--l {
@@ -189,7 +302,7 @@
         height: $checkbox-height;
         margin-top: $checkbox-margin;
         margin-bottom: $checkbox-margin;
-        @include checkbox-style($checkbox-height, $neon-base-space);
+        @include checkbox-style($checkbox-height, 1, $neon-base-space);
       }
     }
 
@@ -207,6 +320,106 @@
       .neon-switch__label {
         order: -1;
         margin-right: 2 * $neon-base-space;
+      }
+    }
+  }
+}
+
+@mixin import-colors(
+  $neon-color-switch-off,
+  $neon-animation-speed-fast,
+  $neon-inset-shadow-switch,
+  $neon-color-text-low-contrast,
+  $neon-color-switch-indicator,
+  $neon-color-neutral-d5,
+  $neon-functional-colors,
+  $neon-color-switch-on,
+  $neon-color-switch-disabled,
+  $neon-color-switch-indicator-disabled,
+  $neon-border-width,
+  $neon-color-disabled-light,
+  $neon-color-text,
+  $neon-theme,
+  $neon-border-color-input,
+  $neon-inset-shadow,
+  $neon-border-color-checkbox,
+  $neon-background-color-checkbox,
+) {
+
+  .neon-switch {
+    color: $neon-color-text;
+
+    &--switch {
+      @if ($neon-theme == 'sharp') {
+        @include switch-color-sharp(
+                        $neon-border-width,
+                        $neon-color-switch-off,
+                        $neon-animation-speed-fast,
+                        $neon-color-text-low-contrast,
+                        $neon-functional-colors,
+                        $neon-color-switch-on,
+                        $neon-color-disabled-light,
+        );
+      } @else {
+        @include switch-color-default(
+                        $neon-color-switch-off,
+                        $neon-animation-speed-fast,
+                        $neon-inset-shadow-switch,
+                        $neon-color-text-low-contrast,
+                        $neon-color-switch-indicator,
+                        $neon-color-neutral-d5,
+                        $neon-functional-colors,
+                        $neon-color-switch-on,
+                        $neon-color-switch-disabled,
+                        $neon-color-switch-indicator-disabled,
+        );
+      }
+    }
+
+    &--checkbox {
+      @each $color, $palette in $neon-functional-colors {
+        &.neon-switch--#{$color}:not(.neon-switch--disabled) {
+          .neon-switch__checkbox {
+            border-color: $neon-border-color-input;
+            box-shadow: $neon-inset-shadow;
+
+            &:focus {
+              box-shadow: 0 0 0 4px rgba($neon-color-text-low-contrast, 0.3);
+            }
+          }
+
+          &.neon-switch--checked {
+            .neon-switch__checkbox {
+              border-color: map-get($palette, $neon-border-color-checkbox);
+              background: linear-gradient(
+                              0deg,
+                              map-get($palette, $neon-border-color-checkbox) 0%,
+                              map-get($palette, $neon-background-color-checkbox) 100%
+              );
+
+              &:focus {
+                box-shadow: 0 0 0 4px rgba(map-get($palette, $neon-background-color-checkbox), 0.3);
+              }
+            }
+          }
+
+          &:not(.neon-switch--checked) {
+            &:hover {
+              .neon-switch__checkbox {
+                background-color: rgba($neon-color-switch-off, 0.125);
+              }
+            }
+          }
+        }
+      }
+
+      &.neon-switch--disabled {
+        .neon-switch__checkbox {
+          box-shadow: none;
+          border: none;
+          background-color: $neon-color-switch-disabled;
+          @include svg.color-with-svg($neon-color-switch-indicator-disabled);
+        }
       }
     }
   }

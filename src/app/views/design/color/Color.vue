@@ -32,7 +32,7 @@
           Alternatively, if you would like to change an entire palette you can do so by overriding the palette map, e.g.
           to override the info palette in SASS set:
         </p>
-        <editor language="scss" :read-only="true" :value="colorPalette" />
+        <editor v-model="colorPalette" :read-only="true" language="scss" />
       </neon-card-body>
       <neon-card-body class="color-palettes">
         <neon-anchor id="brand-palettes" />
@@ -44,18 +44,18 @@
             <div
               v-for="i in 5"
               :key="`l${i}`"
-              class="color-item neon-dark-text"
               :ref="`brandl${6 - i}`"
               :class="`neon-brand-bg-color-l${6 - i}`"
+              class="color-item neon-dark-text"
             >
               {{ `l${6 - i}` }}
             </div>
             <div
               v-for="i in 5"
               :key="`d${i}`"
-              class="color-item neon-light-text"
               :ref="`brandd${i}`"
               :class="`neon-brand-bg-color-d${i}`"
+              class="color-item neon-light-text"
             >
               {{ `d${i}` }}
             </div>
@@ -68,18 +68,18 @@
             <div
               v-for="i in 5"
               :key="`l${i}`"
-              class="color-item neon-dark-text"
               :ref="`primaryl${6 - i}`"
               :class="`neon-primary-bg-color-l${6 - i}`"
+              class="color-item neon-dark-text"
             >
               {{ `l${6 - i}` }}
             </div>
             <div
               v-for="i in 5"
               :key="`d${i}`"
-              class="color-item neon-light-text"
               :ref="`primaryd${i}`"
               :class="`neon-primary-bg-color-d${i}`"
+              class="color-item neon-light-text"
             >
               {{ `d${i}` }}
             </div>
@@ -96,18 +96,18 @@
             <div
               v-for="i in 5"
               :key="`l${i}`"
-              class="color-item neon-dark-text"
               :ref="`infol${6 - i}`"
               :class="`neon-info-bg-color-l${6 - i}`"
+              class="color-item neon-dark-text"
             >
               {{ `l${6 - i}` }}
             </div>
             <div
               v-for="i in 5"
               :key="`d${i}`"
-              class="color-item neon-light-text"
               :ref="`infod${i}`"
               :class="`neon-info-bg-color-d${i}`"
+              class="color-item neon-light-text"
             >
               {{ `d${i}` }}
             </div>
@@ -120,18 +120,18 @@
             <div
               v-for="i in 5"
               :key="`l${i}`"
-              class="color-item neon-dark-text"
               :ref="`successl${6 - i}`"
               :class="`neon-success-bg-color-l${6 - i}`"
+              class="color-item neon-dark-text"
             >
               {{ `l${6 - i}` }}
             </div>
             <div
               v-for="i in 5"
               :key="`d${i}`"
-              class="color-item neon-light-text"
               :ref="`successd${i}`"
               :class="`neon-success-bg-color-d${i}`"
+              class="color-item neon-light-text"
             >
               {{ `d${i}` }}
             </div>
@@ -144,18 +144,18 @@
             <div
               v-for="i in 5"
               :key="`l${i}`"
-              class="color-item neon-dark-text"
               :ref="`warnl${6 - i}`"
               :class="`neon-warn-bg-color-l${6 - i}`"
+              class="color-item neon-dark-text"
             >
               {{ `l${6 - i}` }}
             </div>
             <div
               v-for="i in 5"
               :key="`d${i}`"
-              class="color-item neon-light-text"
               :ref="`warnd${i}`"
               :class="`neon-warn-bg-color-d${i}`"
+              class="color-item neon-light-text"
             >
               {{ `d${i}` }}
             </div>
@@ -168,18 +168,18 @@
             <div
               v-for="i in 5"
               :key="`l${i}`"
-              class="color-item neon-dark-text"
               :ref="`errorl${6 - i}`"
               :class="`neon-error-bg-color-l${6 - i}`"
+              class="color-item neon-dark-text"
             >
               {{ `l${6 - i}` }}
             </div>
             <div
               v-for="i in 5"
               :key="`d${i}`"
-              class="color-item neon-light-text"
               :ref="`errord${i}`"
               :class="`neon-error-bg-color-d${i}`"
+              class="color-item neon-light-text"
             >
               {{ `d${i}` }}
             </div>
@@ -196,18 +196,18 @@
             <div
               v-for="i in 5"
               :key="`l${i}`"
-              class="color-item neon-dark-text"
               :ref="`neutrall${6 - i}`"
               :class="`neon-neutral-bg-color-l${6 - i}`"
+              class="color-item neon-dark-text"
             >
               {{ `l${6 - i}` }}
             </div>
             <div
               v-for="i in 5"
               :key="`d${i}`"
-              class="color-item neon-light-text"
               :ref="`neutrald${i}`"
               :class="`neon-neutral-bg-color-d${i}`"
+              class="color-item neon-light-text"
             >
               {{ `d${i}` }}
             </div>
@@ -223,18 +223,18 @@
             <div
               v-for="i in 5"
               :key="`l${i}`"
-              class="color-item neon-dark-text"
               :ref="`high-contrastl${6 - i}`"
               :class="`neon-high-contrast-bg-color-l${6 - i}`"
+              class="color-item neon-dark-text"
             >
               {{ `l${6 - i}` }}
             </div>
             <div
               v-for="i in 5"
               :key="`d${i}`"
-              class="color-item neon-light-text"
               :ref="`high-contrastd${i}`"
               :class="`neon-high-contrast-bg-color-d${i}`"
+              class="color-item neon-light-text"
             >
               {{ `d${i}` }}
             </div>
@@ -250,28 +250,28 @@
             <div
               v-for="i in 5"
               :key="`l${i}`"
-              class="color-item neon-dark-text"
               :ref="`low-contrastl${6 - i}`"
               :class="`neon-low-contrast-bg-color-l${6 - i}`"
+              class="color-item neon-dark-text"
             >
               {{ `l${6 - i}` }}
             </div>
             <div
               v-for="i in 5"
               :key="`d${i}`"
-              class="color-item neon-light-text"
               :ref="`low-contrastd${i}`"
               :class="`neon-low-contrast-bg-color-d${i}`"
+              class="color-item neon-light-text"
             >
               {{ `d${i}` }}
             </div>
           </div>
         </div>
         <neon-note color="warn"
-          ><span
-            ><strong>Note: </strong> the <em>low-contrast</em> palette doesn't provide adequate contrast ratio support
+        ><span
+        ><strong>Note: </strong> the <em>low-contrast</em> palette doesn't provide adequate contrast ratio support
             for accessibility at all color steps. Use with care.</span
-          ></neon-note
+        ></neon-note
         >
       </neon-card-body>
       <neon-card-body>

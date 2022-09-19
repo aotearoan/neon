@@ -1,50 +1,48 @@
-import { shallowMount } from '@vue/test-utils';
+import type { RenderResult } from '@testing-library/vue';
+import { render } from '@testing-library/vue';
 import NeonIcon from './NeonIcon.vue';
-import NeonIconClass from './NeonIcon';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 
 describe('NeonIcon', () => {
   const name = 'check';
+  const color = NeonFunctionalColor.Warn;
+
+  let harness: RenderResult;
+
+  beforeEach(() => {
+    harness = render(NeonIcon, { props: { name, color } });
+  });
 
   it('renders color', () => {
-    const color = NeonFunctionalColor.Warn;
-    const wrapper = shallowMount(NeonIcon, {
-      propsData: { name, color },
-    });
-    expect(wrapper.find(`.neon-icon--${color}`).element).toBeDefined();
+    const { html } = harness;
+    expect(html()).toMatch(`neon-icon--${color}`);
   });
 
-  it('renders inverse', () => {
-    const wrapper = shallowMount(NeonIcon, {
-      propsData: { name, inverse: true },
-    });
-    expect(wrapper.find('.neon-icon--inverse').element).toBeDefined();
+  it('renders inverse', async () => {
+    const { html, rerender } = harness;
+
+    await rerender({ name, inverse: true });
+    expect(html()).toMatch('neon-icon--inverse');
   });
 
-  it('renders disabled', () => {
-    const wrapper = shallowMount(NeonIcon, {
-      propsData: { name, disabled: true },
-    });
-    expect(wrapper.find('.neon-icon--disabled').element).toBeDefined();
+  it('renders disabled', async () => {
+    const { html, rerender } = harness;
+
+    await rerender({ name, disabled: true });
+    expect(html()).toMatch('neon-icon--disabled');
   });
 
   it('gets icon', () => {
-    const wrapper = shallowMount(NeonIcon, {
-      propsData: { name },
-    });
-    const vm = wrapper.vm as NeonIconClass;
-    expect(vm.icon).toBeDefined();
+    const { html } = harness;
+    expect(html()).toMatch('<svg');
   });
 
-  it('does not render missing icon', () => {
+  it('does not render missing icon', async () => {
+    const { rerender } = harness;
     const errorFn = global.console.error;
     global.console.error = jest.fn();
 
-    const wrapper = shallowMount(NeonIcon, {
-      propsData: { name: 'xdd' },
-    });
-    const vm = wrapper.vm as NeonIconClass;
-    expect(vm.icon).toBeUndefined();
+    await rerender({ name: 'xdd' });
     expect(global.console.error).toHaveBeenCalled();
     global.console.error = errorFn;
   });

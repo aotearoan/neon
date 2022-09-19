@@ -1,54 +1,59 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { NeonTabModel } from '../../../common/models/NeonTabModel';
+import { defineComponent } from 'vue';
+import type { NeonTabModel } from '../../../common/models/NeonTabModel';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonSize } from '../../../common/enums/NeonSize';
+import NeonIcon from '../icon/NeonIcon.vue';
 
 /**
  * A component for displaying tabbed content.
  */
-@Component
-export default class NeonTabs extends Vue {
-  /**
-   * The list of tabs to display.
-   * */
-  @Prop({ required: true })
-  public tabs!: NeonTabModel[];
-
-  /**
-   * The key of the selected tab.
-   */
-  @Prop({ required: true })
-  public value!: string;
-
-  /**
-   * The tab highlight color (excludes low-contrast).
-   */
-  @Prop({ default: NeonFunctionalColor.Primary })
-  public color!: NeonFunctionalColor;
-
-  /**
-   * The tab size.
-   */
-  @Prop({ default: NeonSize.Medium })
-  public size!: NeonSize;
-
-  /**
-   * Display a border underlining all tabs. When tabs are in an element with a border-bottom it is preferable to omit the tabs border-bottom
-   */
-  @Prop({ default: true })
-  public underline!: boolean;
-
-  private onClick(key: string, changeFocus = false) {
-    if (changeFocus) {
-      const tab = document.getElementById(`${key}ButtonContainer`);
-      if (tab) {
-        tab.focus();
-      }
-    }
+export default defineComponent({
+  name: 'NeonTabs',
+  components: {
+    NeonIcon,
+  },
+  props: {
+    /**
+     * The list of tabs to display.
+     * */
+    tabs: { type: Array as () => Array<NeonTabModel>, required: true },
+    /**
+     * The key of the selected tab.
+     */
+    modelValue: { type: String, required: true },
+    /**
+     * The tab highlight color (excludes low-contrast).
+     */
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Primary },
+    /**
+     * The tab size.
+     */
+    size: { type: String as () => NeonSize, default: NeonSize.Medium },
+    /**
+     * Display a border underlining all tabs. When tabs are in an element with a border-bottom it is preferable to omit the tabs border-bottom
+     */
+    underline: { type: Boolean, default: true },
+  },
+  emits: [
     /**
      * Emitted when the selected tab is changed.
      * @type {string} The key of the selected tab.
      */
-    this.$emit('input', key);
-  }
-}
+    'update:modelValue',
+  ],
+  setup(_props, { emit }) {
+    const onClick = (key: string, changeFocus = false) => {
+      if (changeFocus) {
+        const tab = document.getElementById(`${key}ButtonContainer`);
+        if (tab) {
+          tab.focus();
+        }
+      }
+      emit('update:modelValue', key);
+    };
+
+    return {
+      onClick,
+    };
+  },
+});

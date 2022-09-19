@@ -1,4 +1,16 @@
-@mixin neon-select-import {
+@use './includes/responsive';
+@use './includes/globals';
+@use './includes/scrollbars';
+
+@mixin import(
+  $neon-max-height-dropdown,
+  $neon-font-size-xs,
+  $neon-font-size-s,
+  $neon-font-size-m,
+  $neon-size-m,
+  $neon-base-space,
+  $neon-letter-spacing-s,
+) {
   .neon-select {
     &__wrapper {
       position: relative;
@@ -95,16 +107,89 @@
     &__native {
       display: none;
 
-      @include touchscreen {
+      @include responsive.touchscreen {
         font-size: $neon-font-size-m;
         display: flex;
         position: absolute;
         top: 0;
         left: 0;
-        z-index: $z-index-above;
+        z-index: globals.$z-index-above;
         width: 100%;
         height: 100%;
         opacity: 0;
+      }
+    }
+  }
+}
+
+@mixin import-colors(
+  $neon-border-width-separator-before,
+  $neon-border-style,
+  $neon-border-color-dropdown,
+  $neon-color-text,
+  $neon-color-disabled-light,
+  $neon-functional-colors,
+  $neon-background-color-dropdown-menu-highlight,
+  $neon-color-scrollbar,
+  $neon-width-scrollbar,
+  $neon-border-radius-scrollbar,
+) {
+  .neon-select {
+    &__option {
+      &--separator-before {
+        border-top: $neon-border-width-separator-before $neon-border-style $neon-border-color-dropdown;
+
+        &:first-child {
+          border-top: none;
+        }
+      }
+
+      .neon-link {
+        color: $neon-color-text;
+      }
+
+      &--disabled {
+        &,
+        .neon-link {
+          color: $neon-color-disabled-light;
+        }
+      }
+    }
+
+    &__options {
+      @include scrollbars.scrollbars($neon-color-scrollbar, $neon-width-scrollbar, $neon-border-radius-scrollbar);
+    }
+
+    @each $color, $palette in $neon-functional-colors {
+      &--#{$color} {
+        .neon-select__option {
+          &--selected {
+            background-color: rgba(map-get($palette, $neon-background-color-dropdown-menu-highlight), 0.2);
+          }
+
+          &--highlighted:not(.neon-select__option--disabled):not(.neon-select__option--selected) {
+            background-color: rgba(map-get($palette, $neon-background-color-dropdown-menu-highlight), 0.05);
+          }
+        }
+      }
+    }
+  }
+
+  .neon-dropdown__content {
+    &--top-left,
+    &--top-right,
+    &--left-bottom,
+    &--right-bottom {
+      .neon-select__option {
+        &--separator-before {
+          &:first-child {
+            border-top: $neon-border-width-separator-before $neon-border-style $neon-border-color-dropdown;
+          }
+
+          &:last-child {
+            border-top: none;
+          }
+        }
       }
     }
   }

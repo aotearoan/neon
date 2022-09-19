@@ -1,31 +1,37 @@
 <template>
   <div class="editor__wrapper">
     <div class="editor__container">
-      <prism-editor :value="value" @input="onEdit" :highlight="highlighter" class="editor" :readonly="readOnly" />
+      <prism-editor
+        :highlight="highlighter"
+        :readonly="readOnly"
+        :modelValue="modelValue"
+        class="editor"
+        @update:modelValue="onEdit"
+      />
     </div>
     <div class="editor__actions">
       <neon-button
         v-if="clipboard.supportClipboard"
-        icon="copy"
-        class="editor__copy"
-        button-style="text"
-        color="neutral"
-        size="s"
         aria-label="Copy"
+        button-style="text"
+        class="editor__copy"
+        color="neutral"
+        icon="copy"
+        size="s"
         @click="copyText"
       />
       <neon-button
         v-if="ghLink"
-        icon="github"
-        class="editor__copy"
-        button-style="text"
-        color="neutral"
-        size="s"
-        aria-label="View on GitHub"
         :href="ghLink"
+        aria-label="View on GitHub"
+        button-style="text"
+        class="editor__copy"
+        color="neutral"
+        icon="github"
+        size="s"
         target="_blank"
       />
-      <neon-icon v-if="readOnly" name="lock" :disabled="true" class="editor__read-only" aria-label="Read only" />
+      <neon-icon v-if="readOnly" :disabled="true" aria-label="Read only" class="editor__read-only" name="lock" />
     </div>
   </div>
 </template>

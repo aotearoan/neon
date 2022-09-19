@@ -1,10 +1,13 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonNote } from '../../../../components';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonNote } from '@/neon';
 import Examples from '../../../components/examples/Examples.vue';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import { Menu, MenuModel } from '../../../Menu';
+import type { MenuModel } from '../../../Menu';
+import { Menu } from '../../../Menu';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names,vue/no-reserved-component-names
+  name: 'Table',
   components: {
     NeonCard,
     NeonCardBody,
@@ -13,16 +16,14 @@ import { Menu, MenuModel } from '../../../Menu';
     Examples,
     ComponentDocumentation,
   },
-})
-export default class Table extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('CSS table styles');
 
-  private headline = 'CSS table styles';
-
-  private examples = [
-    {
-      title: 'Table style example',
-      template: `<table>
+    const examples = ref([
+      {
+        title: 'Table style example',
+        template: `<table>
   <thead>
     <tr>
       <th>header 1</th>
@@ -40,10 +41,15 @@ export default class Table extends Vue {
     </tr>
   </tbody>
 </table>`,
-    },
-  ];
+      },
+    ]);
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonTable');
-  }
-}
+    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonTable'));
+
+    return {
+      menuModel,
+      headline,
+      examples,
+    };
+  },
+});

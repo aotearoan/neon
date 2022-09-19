@@ -11,10 +11,10 @@
       :disabled="disabled"
       v-bind="sanitizedAttributes"
       v-model="open"
-      v-on="sanitizedListeners"
       role="listbox"
-      :aria-activedescendant="multiple ? value[0] : value"
+      :aria-activedescendant="multiple ? modelValue[0] : modelValue"
       :aria-multiselectable="multiple"
+      @dropdown-placement="onPlacement"
     >
       <ul class="no-style neon-select__options">
         <li
@@ -36,14 +36,14 @@
               {
                 'neon-select__option--disabled': option.disabled,
                 'neon-select__option--separator-before': option.separatorBefore,
-                'neon-select__option--selected': multiple ? value.indexOf(option.key) >= 0 : option.key === value,
+                'neon-select__option--selected': multiple ? modelValue.indexOf(option.key) >= 0 : option.key === modelValue,
                 'neon-select__option--highlighted': option.key === highlightedKey,
               },
               `neon-select__option--${size}`,
             ]"
             role="option"
             :id="option.key"
-            :aria-selected="multiple ? value.indexOf(option.key) >= 0 : option.key === value"
+            :aria-selected="multiple ? modelValue.indexOf(option.key) >= 0 : option.key === modelValue"
             @click="!option.disabled && clickOption(option)"
             @mouseover="changeHighlighted(option.key)"
           >
@@ -56,7 +56,7 @@
                   v-if="multiple"
                   :size="size === 'l' ? 'm' : 's'"
                   :color="color"
-                  :value="value.indexOf(option.key) >= 0"
+                  :modelValue="modelValue.indexOf(option.key) >= 0"
                   switch-style="checkbox"
                 />
                 <neon-icon
@@ -78,11 +78,10 @@
       :multiple="multiple"
       :disabled="disabled"
       v-bind="sanitizedAttributes"
-      v-on="sanitizedListeners"
     >
-      <option value="" disabled :selected="multiple ? value.length === 0 : value === ''" hidden>{{
-        placeholder
-      }}</option>
+      <option value="" disabled :selected="multiple ? modelValue.length === 0 : modelValue === ''" hidden>
+        {{ placeholder }}
+      </option>
       <template v-if="groupedOptions">
         <optgroup v-for="group in groupedOptions" :key="group.group" :label="group.group">
           <option
@@ -91,10 +90,11 @@
             :value="option.key"
             :data-index="index"
             :multiple="multiple"
-            :selected="multiple ? value.indexOf(option.key) >= 0 : option.key === value"
+            :selected="multiple ? modelValue.indexOf(option.key) >= 0 : option.key === modelValue"
             :disabled="option.disabled"
-            >{{ option.label }}</option
           >
+            {{ option.label }}
+          </option>
         </optgroup>
       </template>
       <template v-else>
@@ -104,10 +104,11 @@
           :value="option.key"
           :data-index="index"
           :multiple="multiple"
-          :selected="multiple ? value.indexOf(option.key) >= 0 : option.key === value"
+          :selected="multiple ? modelValue.indexOf(option.key) >= 0 : option.key === modelValue"
           :disabled="option.disabled"
-          >{{ option.label }}</option
         >
+          {{ option.label }}
+        </option>
       </template>
     </select>
   </div>

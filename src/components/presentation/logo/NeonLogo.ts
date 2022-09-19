@@ -1,15 +1,18 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { defineComponent } from 'vue';
 import NeonIcon from '../icon/NeonIcon.vue';
 
 /**
  * Component for displaying the SASS configured logo.
  */
-@Component({
+export default defineComponent({
+  name: 'NeonLogo',
   components: {
     NeonIcon,
   },
-})
-export default class NeonLogo extends Vue {
-  @Prop({ default: false })
-  inverse!: boolean;
-}
+  props: {
+    /**
+     * invert the logo color
+     */
+    inverse: { type: Boolean, default: false },
+  },
+});

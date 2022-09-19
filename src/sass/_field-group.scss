@@ -1,4 +1,7 @@
-@mixin neon-field-group-import {
+@mixin import(
+  $neon-border-radius,
+  $neon-border-width,
+) {
   .neon-field-group {
     display: flex;
     flex-direction: row;
@@ -56,10 +59,10 @@
       }
     }
   }
-}
 
-&.neon-theme--smooth {
-  .neon-field-group > *:not(:last-child) {
-    margin-right: 1px;
+  .neon-theme--smooth {
+    .neon-field-group > *:not(:last-child) {
+      margin-right: 1px;
+    }
   }
 }

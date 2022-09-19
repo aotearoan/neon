@@ -1,4 +1,12 @@
-@mixin neon-tree-menu-import {
+@use './includes/outline';
+
+@mixin import(
+  $neon-letter-spacing-s,
+  $neon-border-radius,
+  $neon-base-space,
+  $neon-font-size-m,
+  $neon-font-size-s,
+) {
   .neon-tree-menu {
     &__section-link,
     &__link,
@@ -76,6 +84,47 @@
       &--expanded {
         display: flex;
       }
+    }
+  }
+}
+
+@mixin import-colors(
+  $neon-color-text,
+  $neon-color-link,
+  $neon-color-text-primary,
+  $neon-border-radius,
+  $neon-animation-speed-slow,
+) {
+  .neon-tree-menu {
+    a.neon-tree-menu__link,
+    a.neon-tree-menu__anchor {
+      &.neon-link {
+        &,
+        &:hover,
+        &:active {
+          color: $neon-color-text;
+        }
+
+        &.router-link-exact-active {
+          &,
+          &:active {
+            color: $neon-color-link;
+            opacity: 1;
+          }
+        }
+
+        &:not(.neon-tree-menu__link--no-click):hover {
+          color: $neon-color-link;
+          opacity: 0.75;
+        }
+      }
+    }
+
+    &__section-link-label,
+    &__link-label,
+    &__anchor-label {
+      outline: none;
+      @include outline.focus-text-outline($neon-color-text-primary, $neon-border-radius, $neon-animation-speed-slow);
     }
   }
 }

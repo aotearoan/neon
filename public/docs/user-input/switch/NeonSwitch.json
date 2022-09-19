@@ -1,12 +1,11 @@
 {
+  "displayName": "NeonSwitch",
   "description": "<p>\nA Switch or Checkbox component used to indicate an on/off state. This is equivalent to a checkbox. The switch supports\nboth <em>Switch</em> and <em>Checkbox</em> styles which can be used in different scenarios.\n</p>",
   "tags": {},
   "exportName": "default",
-  "displayName": "NeonSwitch",
   "props": [
     {
-      "name": "value",
-      "tags": {},
+      "name": "modelValue",
       "description": "The switch model.",
       "type": {
         "name": "boolean"
@@ -15,15 +14,17 @@
     },
     {
       "name": "label",
-      "tags": {},
       "description": "The switch label, the label can be optional only in the case the switch is part of a more complex component.",
       "type": {
-        "name": "TranslateResult"
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     },
     {
       "name": "indeterminate",
-      "tags": {},
       "description": "The indeterminate state of the checkbox.",
       "type": {
         "name": "boolean"
@@ -35,55 +36,50 @@
     },
     {
       "name": "size",
-      "tags": {},
       "description": "The size of the switch.",
       "type": {
-        "name": "NeonSize"
+        "name": "String as () => NeonSize"
       },
       "defaultValue": {
-        "func": false,
-        "value": "NeonSize.Medium"
+        "func": true,
+        "value": "() => NeonSize.Medium"
       }
     },
     {
       "name": "color",
-      "tags": {},
       "description": "The switch color.",
       "type": {
-        "name": "NeonFunctionalColor"
+        "name": "String as () => NeonFunctionalColor"
       },
       "defaultValue": {
-        "func": false,
-        "value": "NeonFunctionalColor.Primary"
+        "func": true,
+        "value": "() => NeonFunctionalColor.Primary"
       }
     },
     {
       "name": "switchStyle",
-      "tags": {},
       "description": "Style the switch as a <em>Switch</em> or a <em>Checkbox</em>.",
       "type": {
-        "name": "NeonSwitchStyle"
+        "name": "String as () => NeonSwitchStyle"
       },
       "defaultValue": {
-        "func": false,
-        "value": "NeonSwitchStyle.Switch"
+        "func": true,
+        "value": "() => NeonSwitchStyle.Switch"
       }
     },
     {
       "name": "labelPosition",
-      "tags": {},
       "description": "The position of the switch label.",
       "type": {
-        "name": "NeonHorizontalPosition"
+        "name": "String as () => NeonHorizontalPosition"
       },
       "defaultValue": {
-        "func": false,
-        "value": "NeonHorizontalPosition.Right"
+        "func": true,
+        "value": "() => NeonHorizontalPosition.Right"
       }
     },
     {
       "name": "disabled",
-      "tags": {},
       "description": "Disabled state of the switch.",
       "type": {
         "name": "boolean"
@@ -105,7 +101,7 @@
       }
     },
     {
-      "name": "input",
+      "name": "update:modelValue",
       "description": "Emitted when the switch is toggled checked or unchecked.",
       "type": {
         "names": [

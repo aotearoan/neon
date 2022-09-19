@@ -1,13 +1,15 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonLink, NeonNote } from '../../../../components';
+import { defineComponent } from 'vue';
+import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader, NeonLink, NeonNote } from '@/neon';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Theming',
   components: {
+    NeonAnchor,
     NeonCard,
     NeonCardHeader,
     NeonCardBody,
     NeonLink,
     NeonNote,
   },
-})
-export default class Theming extends Vue {}
+});

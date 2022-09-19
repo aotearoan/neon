@@ -1,42 +1,55 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonLink, NeonToastService } from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonLink } from '@/neon';
+import type { MenuModel } from '../../../Menu';
+import { Menu } from '../../../Menu';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import { ExampleModel } from '../../../components/example/ExampleModel';
+import type { ExampleModel } from '../../../components/example/ExampleModel';
+import { NeonToastService } from '../../../../common/utils/NeonToastService';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names,vue/no-reserved-component-names
+  name: 'Link',
   components: {
     NeonCard,
     NeonCardBody,
     NeonLink,
     ComponentDocumentation,
   },
-})
-export default class Link extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Display any type of link to the user');
 
-  private headline = 'Display any type of link to the user';
+    const data = ref({
+      toast: () => {
+        NeonToastService.success({ title: 'Link clicked!' });
+      },
+    });
 
-  private data = {
-    toast: () => {
-      NeonToastService.success({ title: 'Link clicked!' });
-    },
-  };
+    const examples = ref<Array<ExampleModel>>([
+      {
+        title: 'Link examples',
+        template: `
+          <div>
+          <p>This is some text with a
+            <neon-link href="/">link</neon-link>
+            embedded in it.
+          </p>
+          <neon-link href="/">Router link</neon-link>
+          <neon-link href="http://www.getskeleton.com" :external-indicator="true" target="_blank">External link
+          </neon-link>
+          <neon-link aria-label="Link title" @click="toast()">Link with click handler</neon-link>
+          </div>`,
+        data: data.value,
+      },
+    ]);
 
-  private examples: ExampleModel[] = [
-    {
-      title: 'Link examples',
-      template: `<div>
-  <p>This is some text with a <neon-link href="/">link</neon-link> embedded in it.</p>
-  <neon-link href="/">Router link</neon-link>
-  <neon-link href="http://www.getskeleton.com" :external-indicator="true" target="_blank">External link</neon-link>
-  <neon-link aria-label="Link title" @click="toast()">Link with click handler</neon-link>
-</div>`,
-      data: this.data,
-    },
-  ];
+    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonLink'));
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonLink');
-  }
-}
+    return {
+      menuModel,
+      headline,
+      data,
+      examples,
+    };
+  },
+});

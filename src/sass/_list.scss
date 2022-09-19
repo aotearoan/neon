@@ -1,4 +1,12 @@
-@mixin neon-list-import {
+@use './includes/svg';
+
+@mixin import(
+  $neon-border-radius,
+  $neon-font-size-s,
+  $neon-font-size-m,
+  $neon-base-space,
+  $neon-animation-speed-slow,
+) {
   .neon-list {
     &__item {
       cursor: pointer;
@@ -65,5 +73,51 @@
     transform: scale(0);
     opacity: 0;
     transition: all $neon-animation-speed-slow ease-in-out;
+  }
+}
+
+@mixin import-colors(
+  $neon-functional-colors,
+  $neon-color-list-item,
+  $neon-color-text,
+  $neon-color-disabled-dark,
+  $neon-color-disabled-light,
+) {
+  .neon-list {
+    @each $color, $palette in $neon-functional-colors {
+      &--#{$color} {
+        .neon-list__item {
+          $list-foreground-color: rgba(map-get($palette, $neon-color-list-item), 0.75);
+          background-color: rgba($list-foreground-color, 0.125);
+          @if (not($color == 'low-contrast' or $color == 'neutral')) {
+            @include svg.color-with-svg($list-foreground-color);
+          } @else {
+            @include svg.color-with-svg(rgba($neon-color-text, 0.75));
+          }
+
+          &:hover,
+          &:focus {
+            $list-hover-color: map-get($palette, $neon-color-list-item);
+            background-color: rgba($list-hover-color, 0.25);
+            @if (not($color == 'low-contrast' or $color == 'neutral')) {
+              @include svg.color-with-svg($list-hover-color);
+            } @else {
+              @include svg.color-with-svg($neon-color-text);
+            }
+          }
+        }
+      }
+
+      &--disabled {
+        .neon-list__item {
+          &,
+          &:focus,
+          &:hover {
+            background-color: $neon-color-disabled-dark;
+            color: rgba($neon-color-disabled-light, 0.75);
+          }
+        }
+      }
+    }
   }
 }

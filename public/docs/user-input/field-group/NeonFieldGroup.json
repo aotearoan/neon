@@ -1,7 +1,7 @@
 {
+  "displayName": "NeonFieldGroup",
   "description": "Used to compose a group of inputs, buttons and input indicators into a single component.",
   "tags": {},
-  "displayName": "NeonFieldGroup",
   "exportName": "default",
   "slots": [
     {

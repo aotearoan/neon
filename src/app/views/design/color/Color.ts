@@ -1,21 +1,24 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader } from '../../../../components';
+import { defineComponent, ref } from 'vue';
+import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader, NeonNote } from '@/neon';
 import Example from '../../../components/example/Example.vue';
 import Editor from '../../../components/editor/Editor.vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Color',
   components: {
     NeonAnchor,
     NeonCard,
     NeonCardHeader,
     NeonCardBody,
+    NeonNote,
     Example,
     Editor,
   },
-})
-export default class Color extends Vue {
-  private example = {
-    template: `<div>
+  setup() {
+
+    const example = ref({
+      template: `<div>
   <div class="neon-color-text">This is the default text color</div>
   <div class="color-example-inverse-bg neon-color-inverse">This is the inverse text color</div>
   <div class="neon-color-text-brand">This is the brand text color</div>
@@ -28,10 +31,10 @@ export default class Color extends Vue {
   <div class="neon-color-text-high-contrast">This is the high-contrast text color</div>
   <div class="neon-color-text-low-contrast">This is the low contrast text color</div>
 </div>`,
-    noCard: true,
-  };
+      noCard: true,
+    });
 
-  private colorPalette = `$neon-info-palette: (
+    const colorPalette = ref(`$neon-info-palette: (
   l5: #f6e9ff,
   l4: #ebd4ff,
   l3: #ddbcfe,
@@ -42,5 +45,11 @@ export default class Color extends Vue {
   d3: #4d346b,
   d4: #39294c,
   d5: #292033,
-);`;
-}
+);`);
+
+    return {
+      example,
+      colorPalette,
+    };
+  },
+});

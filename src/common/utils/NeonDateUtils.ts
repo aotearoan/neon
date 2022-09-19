@@ -1,4 +1,4 @@
-import { NeonFormattedDate } from '../models/NeonFormattedDate';
+import type { NeonFormattedDate } from '../models/NeonFormattedDate';
 
 export class NeonDateUtils {
   /**

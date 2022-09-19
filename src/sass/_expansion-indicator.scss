@@ -1,17 +1,12 @@
-%chevron-line-base {
-  stroke-width: 1;
-  stroke-linecap: round;
-  transition: all ease-in-out $neon-animation-speed-fast;
-}
-
-@mixin neon-expansion-indicator-import {
-  .neon-expansion-indicator__line1 {
-    @extend %chevron-line-base;
-    transform-origin: 8px 8px;
-  }
-
+@mixin import(
+  $neon-animation-speed-fast,
+  $neon-font-size-m,
+) {
+  .neon-expansion-indicator__line1,
   .neon-expansion-indicator__line2 {
-    @extend %chevron-line-base;
+    stroke-width: 1;
+    stroke-linecap: round;
+    transition: all ease-in-out $neon-animation-speed-fast;
     transform-origin: 8px 8px;
   }
 

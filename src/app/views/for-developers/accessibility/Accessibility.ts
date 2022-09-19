@@ -1,7 +1,9 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonLink, NeonNote } from '../../../../components';
+import { defineComponent } from 'vue';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonLink, NeonNote } from '@/neon';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Accessibility',
   components: {
     NeonCard,
     NeonCardHeader,
@@ -9,5 +11,4 @@ import { NeonCard, NeonCardBody, NeonCardHeader, NeonLink, NeonNote } from '../.
     NeonLink,
     NeonNote,
   },
-})
-export default class Accessibility extends Vue {}
+});

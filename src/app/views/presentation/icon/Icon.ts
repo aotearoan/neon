@@ -1,39 +1,46 @@
-import { Component, Vue } from 'vue-property-decorator';
+import { computed, defineComponent, onMounted, ref } from 'vue';
 import { NeonIconRegistry } from '../../../../common/utils/NeonIconRegistry';
-import { NeonCard, NeonCardBody, NeonIcon, NeonLink } from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonIcon, NeonLink, NeonNote } from '@/neon';
+import type { MenuModel } from '../../../Menu';
+import { Menu } from '../../../Menu';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Icon',
   components: {
     NeonCard,
     NeonCardBody,
+    NeonCardHeader,
     NeonIcon,
     NeonLink,
+    NeonNote,
     ComponentDocumentation,
   },
-})
-export default class Icon extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Display icons and other SVGs');
 
-  private headline = 'Display icons and other SVGs';
-
-  private examples = [
-    {
-      title: 'Icon colors',
-      template: `<div class="icons-wrapper">
+    const examples = ref([
+      {
+        title: 'Icon colors',
+        template: `<div class="icons-wrapper">
   <neon-icon name="contrast" />
   <neon-icon color="primary" name="contrast" />
   <neon-icon :disabled="true" name="contrast" />
 </div>`,
-    },
-  ];
+      },
+    ]);
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonIcon');
-  }
+    const icons = computed(() => NeonIconRegistry.list());
 
-  get icons() {
-    return NeonIconRegistry.list();
-  }
-}
+    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonIcon'));
+
+    return {
+      menuModel,
+      headline,
+      examples,
+      icons,
+    };
+  },
+});

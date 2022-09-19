@@ -1,9 +1,12 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonButton, NeonCard, NeonCardBody, NeonModal } from '../../../../components';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonButton, NeonCard, NeonCardBody, NeonModal } from '@/neon';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import { Menu, MenuModel } from '../../../Menu';
+import type { MenuModel } from '../../../Menu';
+import { Menu } from '../../../Menu';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Modal',
   components: {
     NeonButton,
     NeonModal,
@@ -11,47 +14,52 @@ import { Menu, MenuModel } from '../../../Menu';
     NeonCardBody,
     ComponentDocumentation,
   },
-})
-export default class Modal extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Display modal content over the page');
 
-  private headline = 'Display modal content over the page';
+    const data = ref({
+      open: false,
+    });
 
-  private data = {
-    open: false,
-  };
+    const examples = ref([
+      {
+        title: 'Modal example',
+        template: `
+          <div class="example--horizontal">
+          <neon-button label="Open modal" @click="open = true"></neon-button>
+          <neon-modal :open="open" @close="open = false">
+            <neon-card size="m">
+              <neon-card-header>
+                <h3>Modal title</h3>
+              </neon-card-header>
+              <neon-card-body>
+                <h6>Modal content goes here</h6>
+                <p>
+                  Bacon ipsum dolor amet venison pig ball tip salami pork chop, drumstick tenderloin sirloin pork loin.
+                  Shoulder ham venison pork leberkas. Shankle pork loin pork belly turducken rump landjaeger pastrami
+                  tongue leberkas picanha t-bone alcatra fatback meatball. T-bone tenderloin landjaeger beef pork chop.
+                  Picanha ham hock t-bone, tenderloin flank frankfurter pig filet mignon bacon chuck.
+                </p>
+              </neon-card-body>
+              <neon-card-footer>
+                <neon-button label="Cancel" button-style="text" @click="open = false" />
+                <neon-button label="Accept" color="primary" @click="open = false" />
+              </neon-card-footer>
+            </neon-card>
+          </neon-modal>
+          </div>`,
+        data: data.value,
+      },
+    ]);
 
-  private examples = [
-    {
-      title: 'Modal example',
-      template: `<div class="example--horizontal">
-  <neon-button label="Open modal" @click="open = true"></neon-button>
-  <neon-modal :open="open" @close="open = false">
-    <neon-card size="m">
-      <neon-card-header>
-        <h3>Modal title</h3>
-      </neon-card-header>
-      <neon-card-body>
-        <h6>Modal content goes here</h6>
-        <p>
-          Bacon ipsum dolor amet venison pig ball tip salami pork chop, drumstick tenderloin sirloin pork loin.
-          Shoulder ham venison pork leberkas. Shankle pork loin pork belly turducken rump landjaeger pastrami
-          tongue leberkas picanha t-bone alcatra fatback meatball. T-bone tenderloin landjaeger beef pork chop.
-          Picanha ham hock t-bone, tenderloin flank frankfurter pig filet mignon bacon chuck.
-        </p>
-      </neon-card-body>
-      <neon-card-footer>
-        <neon-button label="Cancel" button-style="text" @click="open = false" />
-        <neon-button label="Accept" color="primary" @click="open = false" />
-      </neon-card-footer>
-    </neon-card>
-  </neon-modal>
-</div>`,
-      data: this.data,
-    },
-  ];
+    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonModal'));
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonModal');
-  }
-}
+    return {
+      menuModel,
+      headline,
+      data,
+      examples,
+    };
+  },
+});

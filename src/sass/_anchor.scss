@@ -1,16 +1,22 @@
-@mixin neon-anchor-import {
+@use './includes/responsive';
+
+@mixin import(
+  $neon-top-nav-height-desktop,
+  $neon-top-nav-height-tablet,
+  $neon-top-nav-height-mobile,
+) {
   .neon-page--with-top-nav .neon-page__container {
     .neon-anchor {
       position: absolute;
-      @include responsive(larger-than-tablet) {
+      @include responsive.responsive(larger-than-tablet) {
         top: -$neon-top-nav-height-desktop;
       }
 
-      @include responsive(tablet) {
+      @include responsive.responsive(tablet) {
         top: -$neon-top-nav-height-tablet;
       }
 
-      @include responsive(mobile-large) {
+      @include responsive.responsive(mobile-large) {
         top: -$neon-top-nav-height-mobile;
       }
     }

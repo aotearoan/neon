@@ -1,50 +1,54 @@
-import { shallowMount } from '@vue/test-utils';
+import type { RenderResult } from '@testing-library/vue';
+import { render } from '@testing-library/vue';
 import NeonExpansionIndicator from './NeonExpansionIndicator.vue';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 
 describe('NeonExpansionIndicator', () => {
-  it('renders indicator closed', () => {
-    // given
-    const wrapper = shallowMount(NeonExpansionIndicator, {
-      propsData: {},
-    });
-    // when / then
-    expect(wrapper.find('.neon-expansion-indicator--expanded').element).toBeUndefined();
+  const props = {};
+  let harness: RenderResult;
+
+  beforeEach(() => {
+    harness = render(NeonExpansionIndicator, { props });
   });
 
-  it('renders indicator expanded', () => {
+  it('renders defaults', () => {
     // given
-    const wrapper = shallowMount(NeonExpansionIndicator, {
-      propsData: { expanded: true },
-    });
+    const { html } = harness;
     // when / then
-    expect(wrapper.find('.neon-expansion-indicator--expanded').element).toBeDefined();
+    expect(html()).not.toMatch('neon-expansion-indicator--expanded');
+    expect(html()).not.toMatch('neon-expansion-indicator--inverse');
+    expect(html()).not.toMatch('neon-expansion-indicator--disabled');
   });
 
-  it('renders inverse', () => {
+  it('renders indicator expanded', async () => {
     // given
-    const wrapper = shallowMount(NeonExpansionIndicator, {
-      propsData: { inverse: true },
-    });
+    const { html, rerender } = harness;
     // when / then
-    expect(wrapper.find('.neon-expansion-indicator--inverse').element).toBeDefined();
+    await rerender({ expanded: true });
+    expect(html()).toMatch('neon-expansion-indicator--expanded');
   });
 
-  it('renders disabled', () => {
+  it('renders inverse', async () => {
     // given
-    const wrapper = shallowMount(NeonExpansionIndicator, {
-      propsData: { disabled: true },
-    });
+    const { html, rerender } = harness;
     // when / then
-    expect(wrapper.find('.neon-expansion-indicator--disabled').element).toBeDefined();
+    await rerender({ inverse: true });
+    expect(html()).toMatch('neon-expansion-indicator--inverse');
   });
 
-  it('renders indicator color', () => {
+  it('renders disabled', async () => {
     // given
-    const wrapper = shallowMount(NeonExpansionIndicator, {
-      propsData: { color: NeonFunctionalColor.Info },
-    });
+    const { html, rerender } = harness;
     // when / then
-    expect(wrapper.find('.neon-expansion-indicator--info').element).toBeDefined();
+    await rerender({ disabled: true });
+    expect(html()).toMatch('neon-expansion-indicator--disabled');
+  });
+
+  it('renders indicator color', async () => {
+    // given
+    const { html, rerender } = harness;
+    // when / then
+    await rerender({ color: NeonFunctionalColor.Info });
+    expect(html()).toMatch('neon-expansion-indicator--info');
   });
 });

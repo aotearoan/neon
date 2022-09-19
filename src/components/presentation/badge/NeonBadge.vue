@@ -1,6 +1,5 @@
 <template>
   <div
-    class="neon-badge"
     :class="[
       `neon-badge--${color}`,
       alternateColor ? `neon-badge--alternate-color-${alternateColor}` : '',
@@ -13,10 +12,16 @@
       },
       circular ? 'neon-badge--circular' : 'neon-badge--square',
     ]"
+    class="neon-badge"
   >
     <span v-if="label" class="neon-badge__label">{{ label }}</span>
-    <img v-else-if="image" class="neon-badge__image" :alt="imageAlt" :src="image" />
-    <neon-icon v-else-if="icon" :disabled="disabled" :inverse="color" :name="icon" class="neon-badge__icon"></neon-icon>
+    <img v-else-if="image" :alt="imageAlt" :src="image" class="neon-badge__image" />
+    <neon-icon
+      v-else-if="icon"
+      :disabled="disabled"
+      :inverse="!!color"
+      :name="icon"
+      class="neon-badge__icon" />
   </div>
 </template>
 

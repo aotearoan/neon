@@ -1,3 +1,5 @@
+@use './includes/outline';
+
 %neon-link-no-style {
   cursor: pointer;
   text-decoration: none;
@@ -15,7 +17,10 @@ a[href]:not(.neon-link--no-style) {
   @extend %neon-link-no-style;
 }
 
-@mixin neon-link-import {
+@mixin import(
+  $neon-font-size-s,
+  $neon-base-space,
+) {
   .neon-link {
     position: relative;
 
@@ -46,6 +51,64 @@ a[href]:not(.neon-link--no-style) {
       &:focus {
         &:after {
           width: calc(100% - #{4.5 * $neon-base-space});
+        }
+      }
+    }
+  }
+}
+
+@mixin import-colors(
+  $neon-color-link,
+  $neon-animation-speed-fast,
+  $neon-color-link-visited,
+  $neon-color-link-hover,
+  $neon-border-radius,
+  $neon-animation-speed-slow,
+  $neon-base-space,
+) {
+  a[href]:not(.neon-link--no-style) {
+    &:not(.neon-button) {
+      color: $neon-color-link;
+      transition: color ease-in-out $neon-animation-speed-fast;
+      opacity: 1;
+
+      &:visited {
+        color: $neon-color-link-visited;
+      }
+
+      &:active,
+      &:hover {
+        color: $neon-color-link-hover;
+      }
+    }
+  }
+
+  .neon-link {
+    @include outline.focus-outline-styles($neon-color-link, $neon-border-radius, $neon-animation-speed-slow, $neon-animation-speed-fast, $neon-base-space);
+
+    &--outline-text {
+      &:hover {
+        color: $neon-color-link;
+
+        &:after {
+          background-color: $neon-color-link;
+        }
+      }
+    }
+
+    &:not(.neon-link--no-style) {
+      &:not(.neon-button) {
+        color: $neon-color-link;
+        transition: color ease-in-out $neon-animation-speed-fast;
+        opacity: 1;
+
+        &:visited {
+          color: $neon-color-link-visited;
+        }
+
+        &:active,
+        &:hover {
+          color: $neon-color-link-hover;
         }
       }
     }

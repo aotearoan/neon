@@ -1,13 +1,14 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { ExampleModel } from '../example/ExampleModel';
+import { defineComponent } from 'vue';
+import type { ExampleModel } from '../example/ExampleModel';
 import Example from '../example/Example.vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Examples',
   components: {
     Example,
   },
-})
-export default class Examples extends Vue {
-  @Prop({ required: true })
-  public examples!: ExampleModel[];
-}
+  props: {
+    examples: { type: Array as () => Array<ExampleModel>, required: true },
+  },
+});

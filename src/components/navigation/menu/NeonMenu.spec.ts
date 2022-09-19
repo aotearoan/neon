@@ -1,46 +1,10 @@
-import Vue from 'vue';
-import { mount, RouterLinkStub, shallowMount } from '@vue/test-utils';
-import NeonDropdownMenu from '../dropdown-menu/NeonDropdownMenu.vue';
+import type { RenderResult } from '@testing-library/vue';
+import { render } from '@testing-library/vue';
 import NeonMenu from '../menu/NeonMenu.vue';
-import NeonMenuClass from '../menu/NeonMenu';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
-import NeonLink from '../link/NeonLink.vue';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonPriorityMenuItem } from './NeonPriorityMenuItem';
-
-Vue.component('NeonDropdownMenu', NeonDropdownMenu);
-Vue.component('NeonIcon', NeonIcon);
-Vue.component('NeonLink', NeonLink);
 
 describe('NeonMenu', () => {
-  const priorityMenuItems: NeonPriorityMenuItem[] = [
-    {
-      // @ts-ignore
-      element: {},
-      width: 250,
-      key: 'item1',
-    },
-    {
-      // @ts-ignore
-      element: {},
-      width: 250,
-      key: 'item2',
-    },
-    {
-      // @ts-ignore
-      element: {},
-      width: 250,
-      key: 'item3',
-    },
-    {
-      // @ts-ignore
-      element: {},
-      width: 250,
-      key: 'item4',
-    },
-  ];
-
   const menu = [
     {
       key: 'action-menu',
@@ -91,118 +55,82 @@ describe('NeonMenu', () => {
     },
   ];
 
-  it('renders menu', () => {
-    // given
-    const wrapper = mount(NeonMenu, {
-      propsData: { menu },
-      stubs: {
-        RouterLink: RouterLinkStub,
+  let harness: RenderResult;
+
+  beforeEach(() => {
+    harness = render(NeonMenu, {
+      props: {
+        menu,
       },
-      mocks: {
-        $route: { path: '.' },
+      global: {
+        stubs: ['router-link'],
+        mocks: {
+          route: { path: '.' },
+        },
       },
     });
+  });
+
+  it('renders menu', () => {
+    // given
+    const { html } = harness;
     // when / then
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(html()).toMatchSnapshot();
   });
 
   it('renders default color', () => {
     // given
-    const wrapper = mount(NeonMenu, {
-      propsData: { menu },
-      stubs: {
-        RouterLink: RouterLinkStub,
-      },
-      mocks: {
-        $route: { path: '.' },
-      },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-menu--brand').element).toBeDefined();
-    expect(wrapper.findAll('.neon-dropdown-menu--brand').length).toEqual(2);
+    expect(container.querySelector('.neon-menu--brand')).toBeDefined();
+    expect(container.querySelectorAll('.neon-dropdown-menu--brand').length).toEqual(2);
   });
 
-  it('renders color', () => {
+  it('renders color', async () => {
     // given
-    const wrapper = mount(NeonMenu, {
-      propsData: { menu, color: NeonFunctionalColor.Primary },
-      stubs: {
-        RouterLink: RouterLinkStub,
-      },
-      mocks: {
-        $route: { path: '.' },
-      },
-    });
+    const { container, rerender } = harness;
+    await rerender({ color: NeonFunctionalColor.Primary });
     // when / then
-    expect(wrapper.find('.neon-menu--primary').element).toBeDefined();
-    expect(wrapper.findAll('.neon-dropdown-menu--primary').length).toEqual(2);
+    expect(container.querySelector('.neon-menu--primary')).toBeDefined();
+    expect(container.querySelectorAll('.neon-dropdown-menu--primary').length).toEqual(2);
   });
 
   it('renders default size', () => {
     // given
-    const wrapper = mount(NeonMenu, {
-      propsData: { menu },
-      stubs: {
-        RouterLink: RouterLinkStub,
-      },
-      mocks: {
-        $route: { path: '.' },
-      },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-menu--l').element).toBeDefined();
-    expect(wrapper.findAll('.neon-dropdown--l').length).toEqual(2);
+    expect(container.querySelector('.neon-menu--l')).toBeDefined();
+    expect(container.querySelectorAll('.neon-dropdown--l').length).toEqual(2);
   });
 
-  it('renders size', () => {
+  it('renders size', async () => {
     // given
-    const wrapper = mount(NeonMenu, {
-      propsData: { menu, size: NeonSize.Small },
-      stubs: {
-        RouterLink: RouterLinkStub,
-      },
-      mocks: {
-        $route: { path: '.' },
-      },
-    });
+    const { container, rerender } = harness;
+    await rerender({ size: NeonSize.Small });
     // when / then
-    expect(wrapper.find('.neon-menu--s').element).toBeDefined();
-    expect(wrapper.findAll('.neon-dropdown--s').length).toEqual(2);
+    expect(container.querySelector('.neon-menu--s')).toBeDefined();
+    expect(container.querySelectorAll('.neon-dropdown--s').length).toEqual(2);
   });
 
   it('removes resize handler on destroy', () => {
     // given
     window.addEventListener = jest.fn();
     window.removeEventListener = jest.fn();
-    const wrapper = mount(NeonMenu, {
-      propsData: { menu },
-      stubs: {
-        RouterLink: RouterLinkStub,
-      },
-      mocks: {
-        $route: { path: '.' },
-      },
-    });
-    wrapper.destroy();
+    const { unmount } = harness;
+    // when
+    unmount();
     // then
     expect(window.addEventListener).toHaveBeenCalledTimes(5);
     expect(window.removeEventListener).toHaveBeenCalledTimes(5);
   });
 
-  it('does not remove resize handler on destroy', () => {
+  it('does not remove resize handler on destroy', async () => {
     // given
     window.addEventListener = jest.fn();
     window.removeEventListener = jest.fn();
-    const wrapper = shallowMount(NeonMenu, {
-      propsData: { menu, priorityMenuEnabled: false },
-      stubs: {
-        RouterLink: RouterLinkStub,
-      },
-      mocks: {
-        $route: { path: '.' },
-      },
-    });
-    wrapper.destroy();
+    const { unmount, rerender } = harness;
+    await rerender({ priorityMenuEnabled: false });
+    unmount();
     // then
     expect(window.addEventListener).toHaveBeenCalledTimes(0);
     expect(window.removeEventListener).toHaveBeenCalledTimes(0);
@@ -210,101 +138,11 @@ describe('NeonMenu', () => {
 
   it('emits click event', () => {
     // given
-    const wrapper = mount(NeonMenu, {
-      propsData: { menu },
-      stubs: {
-        RouterLink: RouterLinkStub,
-      },
-      mocks: {
-        $route: { path: '.' },
-      },
-    });
+    const { container, emitted } = harness;
     // when
-    wrapper.find('.neon-menu__item:nth-child(4) .neon-link').trigger('click');
+    const item = container.querySelector('.neon-menu__item:nth-child(4) .neon-link') as HTMLElement;
+    item?.click();
     // then
-    expect(wrapper.emitted().click[0]).toEqual([menu[3].key]);
-  });
-
-  it('responsive menu desktop', () => {
-    // given
-    const wrapper = mount(NeonMenu, {
-      propsData: { menu },
-      stubs: {
-        RouterLink: RouterLinkStub,
-      },
-      mocks: {
-        $route: { path: '.' },
-      },
-    });
-    // when
-    const menuComponent = wrapper.vm as NeonMenuClass;
-    const result = menuComponent.determineVisibleMenuItems(1048, 48, priorityMenuItems);
-    // then
-    expect(result).toEqual(['item1', 'item2', 'item3', 'item4']);
-  });
-
-  it('responsive menu mobile', () => {
-    // given
-    const wrapper = mount(NeonMenu, {
-      propsData: { menu },
-      stubs: {
-        RouterLink: RouterLinkStub,
-      },
-      mocks: {
-        $route: { path: '.' },
-      },
-    });
-    // when
-    const menuComponent = wrapper.vm as NeonMenuClass;
-    const result = menuComponent.determineVisibleMenuItems(550, 48, priorityMenuItems);
-    // then
-    expect(result).toEqual(['item1', 'item2']);
-  });
-
-  it('responsive menu mobile, never show just one item', () => {
-    // given
-    const wrapper = mount(NeonMenu, {
-      propsData: { menu },
-      stubs: {
-        RouterLink: RouterLinkStub,
-      },
-      mocks: {
-        $route: { path: '.' },
-      },
-    });
-    // when
-    const menuComponent = wrapper.vm as NeonMenuClass;
-    const result = menuComponent.determineVisibleMenuItems(300, 48, priorityMenuItems);
-    // then
-    expect(result).toEqual([]);
-  });
-
-  it('resizes to mobile', (done) => {
-    // given
-    const wrapper = mount(NeonMenu, {
-      propsData: { menu },
-      stubs: {
-        RouterLink: RouterLinkStub,
-      },
-      mocks: {
-        $route: { path: '.' },
-      },
-    });
-    const menuComponent = wrapper.vm as NeonMenuClass;
-    menuComponent.menuItems = [
-      {
-        // @ts-ignore
-        element: {},
-        key: 'action-menu',
-        width: 200,
-      },
-    ];
-    setTimeout(() => {
-      // when
-      menuComponent.refreshVisibleMenu();
-      // then
-      expect(wrapper.find('.neon-menu__responsive-menu .neon-button').attributes().hidden).toBeUndefined();
-      done();
-    });
+    expect(emitted().click[0]).toEqual([menu[3].key]);
   });
 });

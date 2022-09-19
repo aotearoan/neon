@@ -1,119 +1,120 @@
-import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
+import { computed, defineComponent, onMounted, ref, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 import Examples from '../examples/Examples.vue';
 import ApiDocs from '../api-docs/ApiDocs.vue';
-import { ExampleModel } from '../example/ExampleModel';
-import { NeonTab, NeonTabModel, NeonTabs } from '../../../components';
-import { DocumentationModel } from '../ApiModel';
-import { MenuModel } from '../../Menu';
-import { Route } from 'vue-router';
+import type { ExampleModel } from '../example/ExampleModel';
+import type { NeonTabModel } from '@/neon';
+import { NeonTab, NeonTabs } from '@/neon';
+import type { DocumentationModel } from '../ApiModel';
+import type { MenuModel } from '../../Menu';
 
 interface SubDocumentationModel {
   api: DocumentationModel;
   name: string;
 }
 
-@Component({
+export default defineComponent({
+  name: 'ComponentDocumentation',
   components: {
     ApiDocs,
     Examples,
     NeonTab,
     NeonTabs,
   },
-})
-export default class ComponentDocumentation extends Vue {
-  private static readonly defaultTabs: NeonTabModel[] = [
-    {
-      key: 'examples',
-      label: 'Examples',
-    },
-    {
-      key: 'description',
-      label: 'Description',
-    },
-    {
-      key: 'api',
-      label: 'API',
-    },
-  ];
+  props: {
+    model: { type: Object as () => MenuModel, required: true },
+    headline: { type: String, required: true },
+    examples: { type: Array as () => Array<ExampleModel>, default: () => [] },
+  },
+  setup(props) {
+    const router = useRouter();
+    const route = useRoute();
 
-  private apiModel: DocumentationModel | null = null;
-  private subApiModels: SubDocumentationModel[] = [];
-  private tabs: NeonTabModel[] = [];
+    const defaultTabs = ref<Array<NeonTabModel>>([
+      {
+        key: 'examples',
+        label: 'Examples',
+      },
+      {
+        key: 'description',
+        label: 'Description',
+      },
+      {
+        key: 'api',
+        label: 'API',
+      },
+    ]);
 
-  private selected: string | null = null;
+    const apiModel = ref<DocumentationModel | null>(null);
+    const subApiModels = ref<Array<SubDocumentationModel>>([]);
+    const tabs = ref<Array<NeonTabModel>>([]);
+    const selected = ref<string | null>(null);
 
-  @Prop({ required: true })
-  public model!: MenuModel;
+    const path = computed(() => props.model.path);
+    const componentName = computed(() => props.model.component);
+    const componentTitle = computed(() => props.model.name || props.model.page);
+    const examplesIndex = computed(() => tabs.value.findIndex((tab) => tab.key === 'examples'));
+    const descriptionIndex = computed(() => tabs.value.findIndex((tab) => tab.key === 'description'));
+    const apiIndex = computed(() => tabs.value.findIndex((tab) => tab.key === 'api'));
 
-  @Prop({ required: true })
-  public headline?: string;
+    onMounted(() => {
+      const url = `${import.meta.env.VITE_RESOURCE_URL}docs/${path.value}/${componentName.value}.json`;
+      fetch(url).then((response) => {
+        response.json().then(
+          (api) => {
+            apiModel.value = api;
+          },
+          () => console.info(`no component JSON at ${url}`),
+        );
+      });
 
-  @Prop()
-  public examples?: ExampleModel[];
+      (props.model.subComponents || []).forEach((subComp) => {
+        fetch(`${import.meta.env.VITE_RESOURCE_URL}docs/${path.value}/${subComp.path}/${subComp.name}.json`).then(
+          (response) => {
+            response.json().then((api) => {
+              subApiModels.value.push({ api, name: subComp.name });
+            });
+          },
+        );
+      });
 
-  @Watch('$route')
-  private onRouteChange(to: Route) {
-    if (to.hash) {
-      this.selected = to.hash.substring(1);
-    } else {
-      this.selected = this.tabs[0].key;
-    }
-  }
-
-  get path() {
-    return this.model.path;
-  }
-
-  get componentName() {
-    return this.model.component;
-  }
-
-  get componentTitle() {
-    return this.model.name || this.model.page;
-  }
-
-  public mounted() {
-    const url = `${process.env.VUE_APP_RESOURCE_URL}docs/${this.path}/${this.componentName}.json`;
-    fetch(url).then((response) => {
-      response.json().then(
-        (api) => {
-          this.apiModel = api;
-        },
-        () => console.info(`no component JSON at ${url}`),
-      );
+      const anchors = (props.model.anchors || []).map((anchor) => anchor.toLowerCase());
+      tabs.value = defaultTabs.value.filter((item) => anchors.indexOf(item.key) >= 0);
+      selected.value = route.hash?.substring(1) || tabs.value[0].key;
     });
 
-    (this.model.subComponents || []).forEach((subComp) => {
-      fetch(`${process.env.VUE_APP_RESOURCE_URL}docs/${this.path}/${subComp.path}/${subComp.name}.json`).then(
-        (response) => {
-          response.json().then((api) => {
-            this.subApiModels.push({ api, name: subComp.name });
-          });
-        },
-      );
-    });
+    watch(
+      () => route.hash,
+      (to) => {
+        if (to) {
+          selected.value = to.substring(1);
+        } else {
+          selected.value = tabs.value[0].key;
+        }
+      },
+    );
 
-    const anchors = (this.model.anchors || []).map((anchor) => anchor.toLowerCase());
-    this.tabs = ComponentDocumentation.defaultTabs.filter((item) => anchors.indexOf(item.key) >= 0);
-    this.selected = this.$route.hash?.substring(1) || this.tabs[0].key;
-  }
+    watch(
+      () => selected.value,
+      async (key) => {
+        const hash = `#${key}`;
+        if (route.hash !== hash) {
+          await router.replace({ hash });
+        }
+      },
+    );
 
-  private onChangeTab(key: string) {
-    const path = `#${key}`;
-    if (this.$route.hash !== path) {
-      this.$router.replace({ path });
-    }
-  }
-
-  private get examplesIndex() {
-    return this.tabs.findIndex((tab) => tab.key === 'examples');
-  }
-
-  private get descriptionIndex() {
-    return this.tabs.findIndex((tab) => tab.key === 'description');
-  }
-
-  private get apiIndex() {
-    return this.tabs.findIndex((tab) => tab.key === 'api');
-  }
-}
+    return {
+      path,
+      componentName,
+      componentTitle,
+      examplesIndex,
+      descriptionIndex,
+      apiIndex,
+      apiModel,
+      subApiModels,
+      tabs,
+      selected,
+    };
+  },
+});

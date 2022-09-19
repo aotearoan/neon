@@ -1,9 +1,8 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { computed, defineComponent, ref } from 'vue';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import NeonIcon from '../../presentation/icon/NeonIcon.vue';
-import { NeonFilterListItem } from '../../../common/models/NeonFilterListItem';
-import { TranslateResult } from 'vue-i18n';
+import type { NeonFilterListItem } from '../../../common/models/NeonFilterListItem';
 import NeonLink from '../../navigation/link/NeonLink.vue';
 
 /**
@@ -11,119 +10,112 @@ import NeonLink from '../../navigation/link/NeonLink.vue';
  * visible list to the user. This component is particularly useful for presenting filters to the user and also provides
  * the option of displaying the item counts with each list item.</p>
  */
-@Component({
+export default defineComponent({
+  name: 'NeonFilterList',
   components: {
     NeonIcon,
     NeonLink,
   },
-})
-export default class NeonFilterList extends Vue {
-  private showAll = false;
-
-  /**
-   * The list if items to display
-   */
-  @Prop({ required: true })
-  public items!: NeonFilterListItem[];
-
-  /**
-   * Either a single string, indicating the key of the selected item or an array of selected keys in the case
-   * multiple = true.
-   */
-  @Prop({ required: true })
-  public value!: string | string[];
-
-  /**
-   * Allow multi-select of items.
-   */
-  @Prop({ default: true })
-  public multiple!: boolean;
-
-  /**
-   * The size of the list items - Small, Medium or Large.
-   */
-  @Prop({ default: NeonSize.Medium })
-  public size!: NeonSize;
-
-  /**
-   * The color of the selected list items..
-   */
-  @Prop({ default: NeonFunctionalColor.LowContrast })
-  public color!: NeonFunctionalColor;
-
-  /**
-   * The number of visible items. If there are more items they will be placed behind an expansion
-   * button which toggles displaying displayCount items and all items.
-   */
-  @Prop()
-  public displayCount?: number;
-
-  /**
-   * Label for the Show more toggle if <em>displayCount</em> is set. The default is 'Show {count} more'
-   */
-  @Prop()
-  public showMoreLabel?: TranslateResult;
-
-  /**
-   * Label for the expanded Show more toggle if <em>displayCount</em> is set. The default is 'Show less'.
-   */
-  @Prop()
-  public showLessLabel?: TranslateResult;
-
-  private get selected(): Record<string, boolean> {
-    const result: Record<string, boolean> = {};
-    (this.multiple ? (this.value as string[]) : [this.value as string]).forEach((v) => (result[v] = true));
-    return result;
-  }
-
-  private toggleItem(key: string, $event?: Event) {
-    if (this.multiple) {
-      if (this.selected[key]) {
-        this.emitInput((this.value as string[]).filter((v) => v !== key));
-      } else {
-        this.emitInput([...this.value, key]);
-      }
-    } else {
-      this.emitInput(key === this.value ? '' : key);
-    }
-
-    if ($event) {
-      ($event.target as HTMLDivElement).blur();
-    }
-  }
-
-  private emitInput(value: string | string[]) {
+  props: {
     /**
-     * emitted when the user selects or toggles the selection of an item..
+     * The list if items to display
+     */
+    items: { type: Array as () => Array<NeonFilterListItem>, required: true },
+    /**
+     * Either a single string, indicating the key of the selected item or an array of selected keys in the case
+     * multiple = true.
+     */
+    modelValue: { type: [String, Array as () => Array<string>], required: true },
+    /**
+     * Allow multi-select of items.
+     */
+    multiple: { type: Boolean, default: true },
+    /**
+     * The size of the list items - Small, Medium or Large.
+     */
+    size: { type: String as () => NeonSize, default: NeonSize.Medium },
+    /**
+     * The color of the selected list items..
+     */
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    /**
+     * The number of visible items. If there are more items they will be placed behind an expansion
+     * button which toggles displaying displayCount items and all items.
+     */
+    displayCount: { type: Number, default: null },
+    /**
+     * Label for the Show more toggle if <em>displayCount</em> is set. The default is 'Show {count} more' where {count} is substituted with the display count
+     */
+    showMoreLabel: { type: String, default: 'Show {count} more' },
+    /**
+     * Label for the expanded Show more toggle if <em>displayCount</em> is set. The default is 'Show less'.
+     */
+    showLessLabel: { type: String, default: 'Show less' },
+  },
+  emits: [
+    /**
+     * emitted when the user selects or toggles the selection of an item.
      * @type {string | string[]} either the selected option's key (single select) or an array of the selected keys
      * (multi-select).
      */
-    this.$emit('input', value);
-  }
+    'update:modelValue',
+  ],
+  setup(props, { emit }) {
+    const showAll = ref(false);
 
-  private displayShowAllToggle() {
-    return this.displayCount && this.items.length > this.displayCount;
-  }
+    const selected = computed((): Record<string, boolean> => {
+      const result: Record<string, boolean> = {};
+      (props.multiple ? (props.modelValue as string[]) : [props.modelValue as string]).forEach((v) => (result[v] = true));
+      return result;
+    });
 
-  private toggleShowAll() {
-    this.showAll = !this.showAll;
-  }
+    const displayShowAllToggle = computed(() => props.displayCount && props.items.length > props.displayCount);
 
-  private get visibleItems() {
-    return this.displayShowAllToggle() && !this.showAll
-      ? this.items.filter((item, index) => !this.displayCount || index < this.displayCount)
-      : this.items;
-  }
+    const visibleItems = computed(() => {
+      return displayShowAllToggle.value && !showAll.value
+        ? props.items.filter((item, index) => !props.displayCount || index < props.displayCount)
+        : props.items;
+    });
 
-  private computedShowMoreLabel() {
-    return this.showMoreLabel || this.$t('Show {count} more', { count: this.items.length - this.visibleItems.length });
-  }
+    const computedShowMoreLabel = computed(() => props.showMoreLabel.replace('{count}', `${props.items.length - visibleItems.value.length}`));
 
-  private computedShowLessLabel() {
-    return this.showLessLabel || this.$t('Show less');
-  }
+    const toggleShowAllLabel = computed(() => showAll.value ? props.showLessLabel : computedShowMoreLabel.value);
 
-  private get toggleShowAllLabel() {
-    return this.showAll ? this.computedShowLessLabel() : this.computedShowMoreLabel();
-  }
-}
+    const emitInput = (value: string | string[]) => {
+      emit('update:modelValue', value);
+    };
+
+    const toggleItem = (key: string, $event?: Event) => {
+      if (props.multiple) {
+        if (selected.value[key]) {
+          emitInput((props.modelValue as string[]).filter((v) => v !== key));
+        } else {
+          const result = [];
+          (props.modelValue as string[]).forEach((v) => result.push(v));
+          result.push(key);
+          emitInput(result);
+        }
+      } else {
+        emitInput(key === props.modelValue ? '' : key);
+      }
+
+      if ($event) {
+        ($event.target as HTMLDivElement).blur();
+      }
+    };
+
+    const toggleShowAll = () => {
+      showAll.value = !showAll.value;
+    };
+
+    return {
+      showAll,
+      selected,
+      visibleItems,
+      toggleShowAllLabel,
+      displayShowAllToggle,
+      toggleItem,
+      toggleShowAll,
+    };
+  },
+});

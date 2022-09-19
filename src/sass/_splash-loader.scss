@@ -1,4 +1,11 @@
-@mixin neon-splash-loader-import {
+@use './includes/globals';
+
+@mixin import(
+  $neon-size-s,
+  $neon-size-m,
+  $neon-size-l,
+  $neon-animation-speed-fast,
+) {
   .neon-splash-loader {
     opacity: 1;
     display: flex;
@@ -10,7 +17,7 @@
     flex: 1 0 auto;
     width: 100%;
     height: 100%;
-    z-index: $z-index-top;
+    z-index: globals.$z-index-top;
 
     &--fullscreen {
       position: fixed;
@@ -54,6 +61,14 @@
     &-enter,
     &-leave-to {
       opacity: 0;
+    }
+  }
+}
+
+@mixin import-colors($neon-background-color-overlay) {
+  .neon-splash-loader {
+    &--with-overlay {
+      background-color: $neon-background-color-overlay;
     }
   }
 }

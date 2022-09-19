@@ -1,4 +1,6 @@
-@mixin toggle-size($font-size, $size) {
+@use 'globals';
+
+@mixin toggle-size($font-size, $size, $neon-letter-spacing-s, $neon-line-height-one) {
   label {
     font-size: $font-size;
     font-weight: 400;
@@ -6,7 +8,7 @@
     line-height: $neon-line-height-one;
     min-height: $size;
     height: $size;
-    z-index: $z-index-default;
+    z-index: globals.$z-index-default;
 
     &.neon-toggle__label--with-icon {
       width: $size;
@@ -19,13 +21,13 @@
     }
 
     &.neon-toggle__label--checked {
-      z-index: $z-index-above;
+      z-index: globals.$z-index-above;
     }
   }
 }
 
-@mixin radio-button-size($control-size, $font-size, $size) {
-  @include toggle-size($font-size, $size);
+@mixin radio-button-size($control-size, $font-size, $size, $neon-letter-spacing-s, $neon-line-height-one) {
+  @include toggle-size($font-size, $size, $neon-letter-spacing-s, $neon-line-height-one);
 
   .neon-toggle__radio-button {
     width: $control-size;
@@ -42,7 +44,16 @@
   }
 }
 
-@mixin toggle-layout {
+@mixin toggle-layout(
+  $neon-border-radius,
+  $neon-font-size-s,
+  $neon-font-size-m,
+  $neon-size-s,
+  $neon-size-m,
+  $neon-size-l,
+  $neon-letter-spacing-s,
+  $neon-line-height-one,
+) {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
@@ -50,15 +61,15 @@
   overflow: hidden;
 
   &.neon-toggle--s {
-    @include toggle-size($neon-font-size-s, $neon-size-s);
+    @include toggle-size($neon-font-size-s, $neon-size-s, $neon-letter-spacing-s, $neon-line-height-one);
   }
 
   &.neon-toggle--m {
-    @include toggle-size($neon-font-size-s, $neon-size-m);
+    @include toggle-size($neon-font-size-s, $neon-size-m, $neon-letter-spacing-s, $neon-line-height-one);
   }
 
   &.neon-toggle--l {
-    @include toggle-size($neon-font-size-m, $neon-size-l);
+    @include toggle-size($neon-font-size-m, $neon-size-l, $neon-letter-spacing-s, $neon-line-height-one);
   }
 
   .neon-toggle__label {
@@ -74,7 +85,17 @@
   }
 }
 
-@mixin radio-button-layout {
+@mixin radio-button-layout(
+  $neon-letter-spacing-s,
+  $neon-border-radius-radio-button,
+  $neon-base-space,
+  $neon-font-size-s,
+  $neon-font-size-m,
+  $neon-size-s,
+  $neon-size-m,
+  $neon-size-l,
+  $neon-line-height-one,
+) {
   .neon-toggle__label {
     letter-spacing: $neon-letter-spacing-s;
   }
@@ -95,14 +116,14 @@
   }
 
   &.neon-toggle--s {
-    @include radio-button-size(14px, $neon-font-size-s, $neon-size-s);
+    @include radio-button-size(14px, $neon-font-size-s, $neon-size-s, $neon-letter-spacing-s, $neon-line-height-one);
   }
 
   &.neon-toggle--m {
-    @include radio-button-size(14px, $neon-font-size-s, $neon-size-m);
+    @include radio-button-size(14px, $neon-font-size-s, $neon-size-m, $neon-letter-spacing-s, $neon-line-height-one);
   }
 
   &.neon-toggle--l {
-    @include radio-button-size(16px, $neon-font-size-m, $neon-size-l);
+    @include radio-button-size(16px, $neon-font-size-m, $neon-size-l, $neon-letter-spacing-s, $neon-line-height-one);
   }
 }

@@ -1,42 +1,44 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { defineComponent, onMounted, onUnmounted, ref } from 'vue';
 import { NeonResponsiveUtils } from '../../../../common/utils/NeonResponsiveUtils';
 import { NeonResponsive } from '../../../../common/enums/NeonResponsive';
 
 /**
  * The NeonTab component that defines individual tabs for use with the NeonTabs component.
  */
-@Component
-export default class NeonTab extends Vue {
-  responsiveView = false;
+export default defineComponent({
+  name: 'NeonTab',
+  props: {
+    /**
+     * True if the current tab is the visible tab.
+     */
+    selected: { type: Boolean, required: true },
+    /**
+     * Id of the tab (matches the key in NeonTabModel).
+     */
+    id: { type: String, default: null },
+    /**
+     * By default, use CSS display property to show/hide tab contents. This flag will enable using v-if instead.
+     * */
+    toggleOnIf: { type: Boolean, default: false },
+  },
+  setup() {
+    const responsiveView = ref(false);
 
-  /**
-   * True if the current tab is the visible tab.
-   */
-  @Prop({ required: true })
-  public selected!: boolean;
+    const handleResize = () => {
+      responsiveView.value = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.MobileLarge]).matches;
+    };
 
-  /**
-   * Id of the tab (matches the key in NeonTabModel).
-   */
-  @Prop()
-  public id?: boolean;
+    onMounted(() => {
+      window.addEventListener('resize', handleResize, { passive: true });
+      handleResize();
+    });
 
-  /**
-   * By default, use CSS display property to show/hide tab contents. This flag will enable using v-if instead.
-   * */
-  @Prop({ default: false })
-  public toggleOnIf!: boolean;
+    onUnmounted(() => {
+      window.removeEventListener('resize', handleResize);
+    });
 
-  private mounted() {
-    window.addEventListener('resize', this.handleResize, { passive: true });
-    this.handleResize();
-  }
-
-  private beforeDestroy() {
-    window.removeEventListener('resize', this.handleResize);
-  }
-
-  handleResize() {
-    this.responsiveView = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.MobileLarge]).matches;
-  }
-}
+    return {
+      responsiveView,
+    };
+  },
+});

@@ -1,149 +1,118 @@
-import Vue from 'vue';
-import { mount } from '@vue/test-utils';
+import type { RenderResult } from '@testing-library/vue';
+import { fireEvent, render } from '@testing-library/vue';
 import NeonDialog from './NeonDialog.vue';
-import NeonButton from '../../user-input/button/NeonButton.vue';
-import NeonModal from '../../layout/modal/NeonModal.vue';
-import NeonCardBody from '../../layout/card/body/NeonCardBody.vue';
-import NeonCard from '../../layout/card/NeonCard.vue';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-
-Vue.component('NeonButton', NeonButton);
-Vue.component('NeonCard', NeonCard);
-Vue.component('NeonCardBody', NeonCardBody);
-Vue.component('NeonModal', NeonModal);
 
 describe('NeonDialog', () => {
   const title = 'test title';
   const question = 'question';
 
+  let harness: RenderResult;
+
+  beforeEach(() => {
+    harness = render(NeonDialog,
+      {
+        props: { title, question },
+      });
+  });
+
   it('renders title', () => {
     // given
-    const wrapper = mount(NeonDialog, {
-      propsData: { title, question },
-    });
+    const { getByText } = harness;
     // when / then
-    expect(wrapper.find('.neon-dialog__title').text()).toEqual(title);
+    getByText(title);
   });
 
   it('renders question', () => {
     // given
-    const wrapper = mount(NeonDialog, {
-      propsData: { title, question },
-    });
+    const { getByText } = harness;
     // when / then
-    expect(wrapper.find('.neon-dialog__question').text()).toEqual(question);
+    getByText(question);
   });
 
   it('renders closed', () => {
     // given
-    const wrapper = mount(NeonDialog, {
-      propsData: { title, question },
-    });
+    const { html } = harness;
     // when / then
-    expect(wrapper.find('.neon-modal--open').element).toBeUndefined();
+    expect(html()).not.toMatch('neon-modal--open');
   });
 
-  it('renders open', () => {
+  it('renders open', async () => {
     // given
-    const wrapper = mount(NeonDialog, {
-      propsData: { title, question, open: true },
-    });
+    const { html, rerender } = harness;
+    await rerender({ open: true });
     // when / then
-    expect(wrapper.find('.neon-modal--open').element).toBeDefined();
+    expect(html()).toMatch('neon-modal--open');
   });
 
   it('renders default cancel label', () => {
     // given
-    const wrapper = mount(NeonDialog, {
-      propsData: { title, question },
-    });
+    const { getByText } = harness;
     // when / then
-    const cancelButton = wrapper.findAll('.neon-button').at(0);
-    expect(cancelButton.text()).toEqual('Cancel');
-    expect(cancelButton.attributes()['aria-label']).toEqual('Cancel');
+    getByText('Cancel');
   });
 
-  it('renders provided cancel label', () => {
+  it('renders provided cancel label', async () => {
     // given
     const cancelLabel = 'Decline';
-    const wrapper = mount(NeonDialog, {
-      propsData: { title, question, cancelLabel },
-    });
+    const { getByText, rerender } = harness;
+    await rerender({ cancelLabel });
     // when / then
-    const cancelButton = wrapper.findAll('.neon-button').at(0);
-    expect(cancelButton.text()).toEqual(cancelLabel);
-    expect(cancelButton.attributes()['aria-label']).toEqual(cancelLabel);
+    getByText(cancelLabel);
   });
 
   it('renders default confirm label', () => {
     // given
-    const wrapper = mount(NeonDialog, {
-      propsData: { title, question },
-    });
+    const { getByText } = harness;
     // when / then
-    const confirmButton = wrapper.findAll('.neon-button').at(1);
-    expect(confirmButton.text()).toEqual('Confirm');
-    expect(confirmButton.attributes()['aria-label']).toEqual('Confirm');
+    getByText('Confirm');
   });
 
-  it('renders provided confirm label', () => {
+  it('renders provided confirm label', async () => {
     // given
     const confirmLabel = 'Approve';
-    const wrapper = mount(NeonDialog, {
-      propsData: { title, question, confirmLabel },
-    });
+    const { getByText, rerender } = harness;
+    await rerender({ confirmLabel });
     // when / then
-    const confirmButton = wrapper.findAll('.neon-button').at(1);
-    expect(confirmButton.text()).toEqual(confirmLabel);
-    expect(confirmButton.attributes()['aria-label']).toEqual(confirmLabel);
+    getByText(confirmLabel);
   });
 
   it('renders default color', () => {
     // given
-    const wrapper = mount(NeonDialog, {
-      propsData: { title, question },
-    });
+    const { html } = harness;
     // when / then
-    expect(wrapper.find('.neon-button--primary')).toBeDefined();
+    expect(html()).toMatch('neon-button--primary');
   });
 
-  it('renders brand color', () => {
+  it('renders default color', async () => {
     // given
-    const wrapper = mount(NeonDialog, {
-      propsData: { title, question, color: NeonFunctionalColor.Brand },
-    });
+    const { html, rerender } = harness;
+    await rerender({ color: NeonFunctionalColor.Brand });
     // when / then
-    expect(wrapper.find('.neon-button--brand')).toBeDefined();
+    expect(html()).toMatch('neon-button--brand');
   });
 
-  it('renders alternate color', () => {
+  it('renders alternate color', async () => {
     // given
-    const wrapper = mount(NeonDialog, {
-      propsData: { title, question, alternateColor: NeonFunctionalColor.Brand },
-    });
+    const { html, rerender } = harness;
+    await rerender({ alternateColor: NeonFunctionalColor.Brand });
     // when / then
-    expect(wrapper.find('.neon-button--alternate-color-brand')).toBeDefined();
+    expect(html()).toMatch('neon-button--alternate-color-brand');
   });
 
-  it('emits cancel', () => {
+  it('emits cancel', async () => {
     // given
-    const wrapper = mount(NeonDialog, {
-      propsData: { title, question },
-    });
-    // when
-    wrapper.findAll('.neon-button').at(0).trigger('click');
-    // then
-    expect(wrapper.emitted().cancel[0]).toBeDefined();
+    const { getByText, emitted } = harness;
+    await fireEvent.click(getByText('Cancel'));
+    // when / then
+    expect(emitted().cancel).toBeDefined();
   });
 
-  it('emits confirm', () => {
+  it('emits confirm', async () => {
     // given
-    const wrapper = mount(NeonDialog, {
-      propsData: { title, question },
-    });
-    // when
-    wrapper.findAll('.neon-button').at(1).trigger('click');
-    // then
-    expect(wrapper.emitted().confirm[0]).toBeDefined();
+    const { getByText, emitted } = harness;
+    await fireEvent.click(getByText('Confirm'));
+    // when / then
+    expect(emitted().confirm).toBeDefined();
   });
 });

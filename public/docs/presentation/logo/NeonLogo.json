@@ -1,12 +1,12 @@
 {
+  "displayName": "NeonLogo",
   "description": "Component for displaying the SASS configured logo.",
   "tags": {},
   "exportName": "default",
-  "displayName": "NeonLogo",
   "props": [
     {
       "name": "inverse",
-      "tags": {},
+      "description": "invert the logo color",
       "type": {
         "name": "boolean"
       },

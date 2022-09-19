@@ -1,7 +1,6 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { computed, defineComponent } from 'vue';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { TranslateResult } from 'vue-i18n';
 import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 
 /**
@@ -11,71 +10,65 @@ import NeonIcon from '../../presentation/icon/NeonIcon.vue';
  * filtering.
  * </p>
  */
-@Component({
+export default defineComponent({
+  name: 'NeonToggleChip',
   components: {
     NeonIcon,
   },
-})
-export default class NeonToggleChip extends Vue {
-  /**
-   * The toggle chip model.
-   */
-  @Prop({ required: true })
-  public value!: boolean;
-
-  /**
-   * The toggle label.
-   */
-  @Prop({ required: true })
-  public label!: TranslateResult;
-
-  /**
-   * The size of the toggle chip.
-   */
-  @Prop({ default: NeonSize.Medium })
-  public size!: NeonSize;
-
-  /**
-   * The toggle chip color.
-   */
-  @Prop({ default: NeonFunctionalColor.Primary })
-  public color!: NeonFunctionalColor;
-
-  /**
-   * Whether or not to display a checked icon on the toggle chip when it is 'on'.
-   */
-  @Prop({ default: true })
-  public showCheck!: boolean;
-
-  /**
-   * Disabled state of the toggle chip.
-   */
-  @Prop({ default: false })
-  public disabled!: boolean;
-
-  private get sanitizedListeners() {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { input, ...listeners } = this.$listeners;
-    return { listeners, input: this.onInput };
-  }
-
-  private toggleChip() {
-    if (!this.disabled) {
-      this.emitInput(!this.value);
-    }
-  }
-
-  private onInput(event: InputEvent) {
-    const on = (event.target as HTMLInputElement).checked;
-    this.emitInput(on);
-  }
-
-  private emitInput(value: boolean) {
+  props: {
+    /**
+     * The toggle chip model.
+     */
+    modelValue: { type: Boolean, required: true },
+    /**
+     * The toggle label.
+     */
+    label: { type: String, required: true },
+    /**
+     * The size of the toggle chip.
+     */
+    size: { type: String as () => NeonSize, default: NeonSize.Medium },
+    /**
+     * The toggle chip color.
+     */
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Primary },
+    /**
+     * Whether to display a checked icon on the toggle chip when it is 'on'.
+     */
+    showCheck: { type: Boolean, default: true },
+    /**
+     * Disabled state of the toggle chip.
+     */
+    disabled: { type: Boolean, default: false },
+  },
+  emits: [
     /**
      * Emitted when the toggle chip is toggled on or off.
      *
      * @type {boolean} The state of the switch.
      */
-    this.$emit('input', value);
-  }
-}
+    'update:modelValue',
+  ],
+  setup(props, { emit, attrs }) {
+    const emitInput = (value: boolean) => {
+      emit('update:modelValue', value);
+    };
+
+    const sanitizedAttributes = computed(() => {
+      const attributes = Object.entries(attrs).filter(([key, _value]) => key !== 'onInput' && key !== 'onClick');
+      return { ...attributes };
+    });
+
+    const toggleChip = () => {
+      if (!props.disabled) {
+        emitInput(!props.modelValue);
+      }
+    };
+
+    return {
+      sanitizedAttributes,
+      emitInput,
+      toggleChip,
+    };
+  },
+});

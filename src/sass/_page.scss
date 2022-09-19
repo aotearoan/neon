@@ -1,23 +1,30 @@
-@mixin neon-page-import {
+@use './includes/layout';
+@use './includes/responsive';
+
+@mixin import(
+  $neon-top-nav-height-desktop,
+  $neon-top-nav-height-tablet,
+  $neon-top-nav-height-mobile,
+) {
   .neon-page {
     position: relative;
     left: 0;
     width: 100%;
 
     &--with-top-nav .neon-page__container {
-      @include responsive(larger-than-tablet) {
+      @include responsive.responsive(larger-than-tablet) {
         padding-top: $neon-top-nav-height-desktop;
-        @include min-height(100, $neon-top-nav-height-desktop);
+        @include layout.min-height(100, $neon-top-nav-height-desktop);
       }
 
-      @include responsive(tablet) {
+      @include responsive.responsive(tablet) {
         padding-top: $neon-top-nav-height-tablet;
-        @include min-height(100, $neon-top-nav-height-tablet);
+        @include layout.min-height(100, $neon-top-nav-height-tablet);
       }
 
-      @include responsive(mobile-large) {
+      @include responsive.responsive(mobile-large) {
         padding-top: $neon-top-nav-height-mobile;
-        @include min-height(100, $neon-top-nav-height-mobile);
+        @include layout.min-height(100, $neon-top-nav-height-mobile);
       }
     }
   }

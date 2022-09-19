@@ -1,11 +1,19 @@
-@mixin single-file-size($size) {
+@use './includes/layout';
+
+@mixin single-file-size($size, $spacings) {
   .neon-list__item {
     height: $size;
-    @include padding(0.5);
+    @include layout.padding($spacings, 0.5);
   }
 }
 
-@mixin neon-file-import {
+@mixin import(
+  $spacings,
+  $neon-base-space,
+  $neon-size-s,
+  $neon-size-m,
+  $neon-size-l,
+) {
   .neon-file {
     &__input {
       display: none;
@@ -31,15 +39,15 @@
       }
 
       &.neon-file--s {
-        @include single-file-size($neon-size-s);
+        @include single-file-size($neon-size-s, $spacings);
       }
 
       &.neon-file--m {
-        @include single-file-size($neon-size-m);
+        @include single-file-size($neon-size-m, $spacings);
       }
 
       &.neon-file--l {
-        @include single-file-size($neon-size-l);
+        @include single-file-size($neon-size-l, $spacings);
       }
     }
 

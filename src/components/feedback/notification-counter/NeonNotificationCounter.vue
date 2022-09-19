@@ -6,7 +6,7 @@
       `neon-notification-counter--${color}`,
     ]"
   >
-    {{ count > 9 ? '9+' : count }}
+    {{ count > 9 ? "9+" : count }}
   </div>
 </template>
 

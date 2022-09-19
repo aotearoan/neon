@@ -1,28 +1,27 @@
-import Vue from 'vue';
-import { Component, Prop } from 'vue-property-decorator';
+import { defineComponent } from 'vue';
 import NeonIcon from '../../../presentation/icon/NeonIcon.vue';
-import { NeonToastModel } from '../NeonToastModel';
-import { NeonVerticalPosition } from '../../../../common/enums/NeonVerticalPosition';
+import type { NeonToastModel } from '../NeonToastModel';
+import type { NeonVerticalPosition } from '../../../../common/enums/NeonVerticalPosition';
 
 /**
  * This is an internal component for rendering alerts.
  */
-@Component({
+export default defineComponent({
+  name: 'NeonToastContainer',
   components: {
     NeonIcon,
   },
-})
-export default class NeonAlertContainer extends Vue {
-  @Prop({ required: true })
-  private value!: NeonToastModel[];
+  props: {
+    modelValue: { type: Object as () => Array<NeonToastModel>, required: true },
+    placement: { type: String as () => NeonVerticalPosition, required: true },
+  },
+  setup(props, { emit }) {
+    const closeMessage = (id: number) => {
+      emit('update:modelValue', props.modelValue.filter((msg) => msg.id !== id));
+    };
 
-  @Prop({ required: true })
-  private placement!: NeonVerticalPosition;
-
-  private closeMessage(id: number) {
-    this.$emit(
-      'input',
-      this.value.filter((msg) => msg.id !== id),
-    );
-  }
-}
+    return {
+      closeMessage,
+    };
+  },
+});

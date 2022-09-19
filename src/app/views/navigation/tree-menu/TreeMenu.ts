@@ -1,90 +1,97 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonTreeMenu } from '../../../../components';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonTreeMenu } from '@/neon';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import { Menu, MenuModel } from '../../../Menu';
+import type { MenuModel } from '../../../Menu';
+import { Menu } from '../../../Menu';
 
-@Component({
+export default defineComponent({
+  name: 'TreeMenu',
   components: {
     NeonCard,
     NeonCardBody,
     NeonTreeMenu,
     ComponentDocumentation,
   },
-})
-export default class TreeMenu extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('A multi-level menu for the side nav');
 
-  private headline = 'A multi-level menu for the side nav';
+    const data = ref({
+      model: [
+        {
+          key: 'feedback',
+          label: 'Feedback',
+          expanded: false,
+          children: [
+            {
+              key: 'alert',
+              label: 'Alert',
+              href: '/feedback/alert',
+              anchors: ['Description', 'API', 'Examples'],
+            },
+            {
+              key: 'note',
+              label: 'Note',
+              href: '/feedback/note',
+              anchors: ['Description', 'API', 'Examples'],
+            },
+            {
+              key: 'notification-counter',
+              label: 'Notification Counter',
+              href: '/feedback/notification-counter',
+              anchors: ['Description', 'API', 'Examples'],
+            },
+          ],
+        },
+        {
+          key: 'navigation',
+          label: 'Navigation',
+          expanded: true,
+          children: [
+            {
+              key: 'action-menu',
+              label: 'Action Menu',
+              href: '/navigation/action-menu',
+              anchors: ['Description', 'API', 'Examples'],
+            },
+            {
+              key: 'dropdown-menu',
+              label: 'Dropdown Menu',
+              href: '/navigation/dropdown-menu',
+              anchors: ['Description', 'API', 'Examples'],
+            },
+            {
+              key: 'link',
+              label: 'Link',
+              href: '/navigation/link',
+              anchors: ['Description', 'API', 'Examples'],
+            },
+            {
+              key: 'tree-menu',
+              label: 'Tree Menu',
+              href: '/navigation/tree-menu',
+              anchors: ['Description', 'API', 'Examples'],
+            },
+          ],
+        },
+      ],
+    });
 
-  private data = {
-    model: [
+    const examples = ref([
       {
-        key: 'feedback',
-        label: 'Feedback',
-        expanded: false,
-        children: [
-          {
-            key: 'alert',
-            label: 'Alert',
-            href: '/feedback/alert',
-            anchors: ['Description', 'API', 'Examples'],
-          },
-          {
-            key: 'note',
-            label: 'Note',
-            href: '/feedback/note',
-            anchors: ['Description', 'API', 'Examples'],
-          },
-          {
-            key: 'notification-counter',
-            label: 'Notification Counter',
-            href: '/feedback/notification-counter',
-            anchors: ['Description', 'API', 'Examples'],
-          },
-        ],
+        template: `
+          <neon-tree-menu :model="model"></neon-tree-menu>`,
+        data: data.value,
       },
-      {
-        key: 'navigation',
-        label: 'Navigation',
-        expanded: true,
-        children: [
-          {
-            key: 'action-menu',
-            label: 'Action Menu',
-            href: '/navigation/action-menu',
-            anchors: ['Description', 'API', 'Examples'],
-          },
-          {
-            key: 'dropdown-menu',
-            label: 'Dropdown Menu',
-            href: '/navigation/dropdown-menu',
-            anchors: ['Description', 'API', 'Examples'],
-          },
-          {
-            key: 'link',
-            label: 'Link',
-            href: '/navigation/link',
-            anchors: ['Description', 'API', 'Examples'],
-          },
-          {
-            key: 'tree-menu',
-            label: 'Tree Menu',
-            href: '/navigation/tree-menu',
-            anchors: ['Description', 'API', 'Examples'],
-          },
-        ],
-      },
-    ],
-  };
+    ]);
 
-  private examples = [
-    {
-      template: `<neon-tree-menu :model="model"></neon-tree-menu>`,
-      data: this.data,
-    },
-  ];
+    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonTreeMenu'));
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonTreeMenu');
-  }
-}
+    return {
+      menuModel,
+      headline,
+      data,
+      examples,
+    };
+  },
+});

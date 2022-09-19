@@ -1,6 +1,6 @@
 import { NeonPlacement } from '../enums/NeonPlacement';
 import { NeonPlacementUtils } from './NeonPlacementUtils';
-import { NeonAvailableSpace } from '../models/NeonAvailableSpace';
+import type { NeonAvailableSpace } from '../models/NeonAvailableSpace';
 
 export class NeonTooltipPlacementUtils {
   public static calculatePlacement(

@@ -1,8 +1,7 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { computed, defineComponent, ref } from 'vue';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonState } from '../../../common/enums/NeonState';
-import { TranslateResult } from 'vue-i18n';
 import NeonButton from '../button/NeonButton.vue';
 import NeonInput from '../input/NeonInput.vue';
 import NeonList from '../list/NeonList.vue';
@@ -11,121 +10,116 @@ import NeonList from '../list/NeonList.vue';
  * A file upload component. This is a wrapper around an HTML file input. It can display multiple files as well as
  * providing a convenient UI for removing/clearing files from the list.
  */
-@Component({
+export default defineComponent({
+  name: 'NeonFile',
   components: {
     NeonButton,
     NeonInput,
     NeonList,
   },
-})
-export default class NeonFile extends Vue {
-  $refs!: {
-    fileInput: HTMLInputElement;
-  };
-
-  files: File[] = [];
-
-  /**
-   * The disabled state of the component
-   */
-  @Prop({ default: false })
-  public disabled!: boolean;
-
-  /**
-   * Files are uploaded directly once added, there is no waiting to click a confirmation button
-   */
-  @Prop({ default: false })
-  public directUpload!: boolean;
-
-  /**
-   * Support multiple files.
-   */
-  @Prop({ default: false })
-  public multiple!: boolean;
-
-  /**
-   * HTML file input accept property for filtering the files the user is allowed to select. THis is a mime type,
-   * e.g. 'application/pdf'.
-   */
-  @Prop()
-  public accept?: string;
-
-  /**
-   * Provide an id to attach to the internal HTML input[file] (also adds an aria-controls link between the button and
-   * the hidden input).
-   */
-  @Prop()
-  public id?: string;
-
-  /**
-   * The file component size
-   */
-  @Prop({ default: NeonSize.Medium })
-  public size!: NeonSize;
-
-  /**
-   * The state of the input, used to indicate loading, success and error states
-   */
-  @Prop({ default: NeonState.Ready })
-  public state!: NeonState;
-
-  /**
-   * The file component color
-   */
-  @Prop({ default: NeonFunctionalColor.LowContrast })
-  public color!: NeonFunctionalColor;
-
-  /**
-   * The label of the file component button
-   */
-  @Prop()
-  public label?: TranslateResult;
-
-  /**
-   * The icon of the file component button
-   */
-  @Prop()
-  public icon?: string;
-
-  get fileList() {
-    return this.files.map((file) => ({ key: file.name, label: file.name }));
-  }
-
-  remove(filename: string) {
-    if (!this.disabled) {
-      this.files = this.files.filter((f) => f.name !== filename);
-      this.emit();
-    }
-  }
-
-  clearAll() {
-    if (!this.disabled) {
-      this.files = [];
-      this.emit();
-    }
-  }
-
-  openFileDialog() {
-    this.$refs.fileInput.click();
-  }
-
-  onInput(event: Event) {
-    if (event?.target) {
-      const files = (event.target as HTMLInputElement).files;
-      const newFiles = files ? Array.from(files).filter((file) => !this.files.find((f) => f.name === file.name)) : [];
-      this.files = this.multiple ? [...this.files, ...newFiles] : newFiles;
-      this.emit();
-    }
-  }
-
-  emit() {
+  props: {
+    /**
+     * The disabled state of the component
+     */
+    disabled: { type: Boolean, default: false },
+    /**
+     * Files are uploaded directly once added, there is no waiting to click a confirmation button
+     */
+    directUpload: { type: Boolean, default: false },
+    /**
+     * Support multiple files.
+     */
+    multiple: { type: Boolean, default: false },
+    /**
+     * HTML file input accept property for filtering the files the user is allowed to select. THis is a mime type,
+     * e.g. 'application/pdf'.
+     */
+    accept: { type: String, default: null },
+    /**
+     * Provide an id to attach to the internal HTML input[file] (also adds an aria-controls link between the button and
+     * the hidden input).
+     */
+    id: { type: String, default: null },
+    /**
+     * The file component size
+     */
+    size: { type: String as () => NeonSize, default: NeonSize.Medium },
+    /**
+     * The state of the input, used to indicate loading, success and error states
+     */
+    state: { type: String as () => NeonState, default: NeonState.Ready },
+    /**
+     * The file component color
+     */
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    /**
+     * The label of the file component button
+     */
+    label: { type: String, default: null },
+    /**
+     * The icon of the file component button
+     */
+    icon: { type: String, default: null },
+  },
+  emits: [
     /**
      * Emitted when files are selected and uploaded
      * @type {File | File[]} either a single File (multiple = false) or a list of File objects (multiple = true)
      */
-    this.$emit('input', this.multiple ? this.files : this.files[0]);
-    if (this.directUpload) {
-      this.files = [];
-    }
-  }
-}
+    'update:modelValue',
+  ],
+  setup(props, { emit }) {
+    const fileInput = ref<HTMLInputElement | null>(null);
+    const files = ref<Array<File>>([]);
+    const fileInputModel = ref('');
+
+    const fileList = computed(() => {
+      return files.value.map((file) => ({ key: file.name, label: file.name }));
+    });
+
+    const emitFiles = () => {
+      emit('update:modelValue', props.multiple ? files.value : files.value[0]);
+      if (props.directUpload) {
+        files.value = [];
+      }
+    };
+
+    const remove = (filename: string) => {
+      if (!props.disabled) {
+        files.value = files.value.filter((f) => f.name !== filename);
+        emitFiles();
+      }
+    };
+
+    const clearAll = () => {
+      if (!props.disabled) {
+        files.value = [];
+        emitFiles();
+      }
+    };
+
+    const openFileDialog = () => {
+      fileInput.value?.click();
+    };
+
+    const onInput = (event: Event) => {
+      if (event?.target) {
+        const theFiles = (event.target as HTMLInputElement).files;
+        const newFiles = theFiles ? Array.from(theFiles).filter((file) => !files.value.find((f) => f.name === file.name)) : [];
+        files.value = props.multiple ? [...files.value, ...newFiles] : newFiles;
+        emitFiles();
+      }
+    };
+
+    return {
+      fileInput,
+      files,
+      fileList,
+      fileInputModel,
+      remove,
+      clearAll,
+      openFileDialog,
+      onInput,
+    };
+  },
+});

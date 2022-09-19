@@ -1,6 +1,8 @@
-import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
-import { NeonGridModel } from '../../../common/models/NeonGridModel';
+import { defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
+import type { NeonGridModel } from '../../../common/models/NeonGridModel';
 import { NeonResponsiveUtils } from '../../../common/utils/NeonResponsiveUtils';
+
+const styleIdPrefix = 'neon-grid-styles-';
 
 /**
  * <p>A CSS grid component for top level layout within a page. This component provides functionality to dynamically
@@ -10,117 +12,104 @@ import { NeonResponsiveUtils } from '../../../common/utils/NeonResponsiveUtils';
  * <p>NeonGrid provides a slot for a set of NeonGridArea components, defining the contents for the various grid areas on
  * the page.</p>
  */
-@Component
-export class NeonGrid extends Vue {
-  private static styleIdPrefix = 'neon-grid-styles-';
+export default defineComponent({
+  name: 'NeonGrid',
+  props: {
+    /**
+     * The grid layouts
+     */
+    layouts: { type: Array as () => Array<NeonGridModel>, required: true },
+    /**
+     * Id of the grid, should be unique on the page
+     */
+    id: { type: String, required: true },
+  },
+  setup(props) {
+    const allGridAreas = ref<Set<string>>(new Set<string>(props.layouts.map((layout) => layout.grid.flat()).flat()));
 
-  private allGridAreas: Set<string>;
-
-  /**
-   * The grid layouts
-   */
-  @Prop({ required: true })
-  public layouts!: NeonGridModel[];
-
-  /**
-   * Id of the grid, should be unique on the page
-   */
-  @Prop({ required: true })
-  public id!: string;
-
-  public constructor() {
-    super();
-    // used to hide missing items from grid
-    this.allGridAreas = new Set<string>(this.layouts.map((layout) => layout.grid.flat()).flat());
-  }
-
-  public created() {
-    this.init();
-  }
-
-  public beforeDestroy() {
-    this.destroy();
-  }
-
-  private init() {
-    const styles = this.generateStyles();
-    this.applyStyle(styles);
-  }
-
-  private destroy() {
-    const id = NeonGrid.styleIdPrefix + this.id;
-    const element: HTMLStyleElement = document.getElementById(id) as HTMLStyleElement;
-
-    if (element != null && element.parentNode) {
-      element.parentNode.removeChild(element);
-    }
-  }
-
-  @Watch('layouts', { deep: true, immediate: true })
-  private changeLayout() {
-    this.destroy();
-    this.init();
-  }
-
-  public generateStyles() {
-    return this.layouts.map((layout) => this.generateStyle(layout)).join('\n');
-  }
-
-  public generateStyle(layout: NeonGridModel) {
-    const grid = layout.grid;
-    const breakpoint = NeonResponsiveUtils.breakpoints[layout.breakpoint];
-    const breakpointQuery = breakpoint.length > 0 ? ` and ${breakpoint}` : '';
-    return `@media screen${breakpointQuery} {\n` + this.generateGridCSS(grid) + '\n}';
-  }
-
-  public generateGridCSS(grid: string[][]) {
-    // add template
-    let gridStyles = `  .neon-grid {
+    const generateGridCSS = (grid: string[][]) => {
+      // add template
+      let gridStyles = `  .neon-grid {
     grid-template-areas: `;
 
-    gridStyles = gridStyles + grid.map((row) => `"${row.join(' ')}"`).join('\n') + ';';
-    gridStyles = gridStyles + '\n  }\n';
+      gridStyles = gridStyles + grid.map((row) => `"${row.join(' ')}"`).join('\n') + ';';
+      gridStyles = gridStyles + '\n  }\n';
 
-    const processed: string[] = [];
+      const processed: string[] = [];
 
-    // add areas
-    gridStyles =
-      gridStyles +
-      grid
-        .map((row) => {
-          return row
-            .map((column) => {
-              if (processed.indexOf(column) >= 0) {
-                return '';
-              }
+      // add areas
+      gridStyles =
+        gridStyles +
+        grid
+          .map((row) => {
+            return row
+              .map((column) => {
+                if (processed.indexOf(column) >= 0) {
+                  return '';
+                }
 
-              processed.push(column);
+                processed.push(column);
 
-              return `
+                return `
   .${column} {
     grid-area: ${column};
   }`;
-            })
-            .join('\n');
-        })
-        .join('');
+              })
+              .join('\n');
+          })
+          .join('');
 
-    const gridAreas = new Set<string>(grid.flat().flat());
-    const toHide = Array.from(this.allGridAreas).filter((area) => !gridAreas.has(area));
-    gridStyles = gridStyles + toHide.map((area) => `\n\n  .${area} { display: none!important; }`);
-    return gridStyles;
-  }
+      const gridAreas = new Set<string>(grid.flat().flat());
+      const toHide = Array.from(allGridAreas.value).filter((area) => !gridAreas.has(area));
+      gridStyles = gridStyles + toHide.map((area) => `\n\n  .${area} { display: none!important; }`);
+      return gridStyles;
+    };
 
-  public applyStyle(styles: string) {
-    const id = NeonGrid.styleIdPrefix + this.id;
-    let element: HTMLStyleElement = document.getElementById(id) as HTMLStyleElement;
-    if (element === null) {
-      element = document.createElement('style');
-      element.id = id;
-      document.head.appendChild(element);
-    }
-    element.innerHTML = styles;
-  }
-}
+    const generateStyle = (layout: NeonGridModel) => {
+      const grid = layout.grid;
+      const breakpoint = NeonResponsiveUtils.breakpoints[layout.breakpoint];
+      const breakpointQuery = breakpoint.length > 0 ? ` and ${breakpoint}` : '';
+      return `@media screen${breakpointQuery} {\n` + generateGridCSS(grid) + '\n}';
+    };
 
-export default NeonGrid;
+    const generateStyles = () => {
+      return props.layouts.map((layout) => generateStyle(layout)).join('\n');
+    };
+
+    const applyStyle = (styles: string) => {
+      const id = styleIdPrefix + props.id;
+      let element: HTMLStyleElement = document.getElementById(id) as HTMLStyleElement;
+      if (element === null) {
+        element = document.createElement('style');
+        element.id = id;
+        document.head.appendChild(element);
+      }
+      element.innerHTML = styles;
+    };
+
+    const init = () => {
+      const styles = generateStyles();
+      applyStyle(styles);
+    };
+
+    const destroy = () => {
+      const id = styleIdPrefix + props.id;
+      const element: HTMLStyleElement = document.getElementById(id) as HTMLStyleElement;
+
+      if (element != null && element.parentNode) {
+        element.parentNode.removeChild(element);
+      }
+    };
+
+    onMounted(() => init());
+    onUnmounted(() => destroy());
+
+    watch(() => props.layouts,
+      () => {
+        destroy();
+        init();
+      },
+      { deep: true, immediate: true },
+    );
+  },
+});

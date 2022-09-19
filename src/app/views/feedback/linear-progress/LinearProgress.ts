@@ -1,30 +1,29 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonLinearProgress } from '../../../../components';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonLinearProgress } from '@/neon';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import { Menu, MenuModel } from '../../../Menu';
+import type { MenuModel } from '../../../Menu';
+import { Menu } from '../../../Menu';
 
-@Component({
+export default defineComponent({
+  name: 'LinearProgress',
   components: {
     NeonCard,
     NeonCardBody,
     NeonLinearProgress,
     ComponentDocumentation,
   },
-})
-export default class LinearProgress extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Indicate deterministic progress to users');
+    const stylesData = ref({
+      progressPercentage: 0.35,
+      progressCounter: 12,
+      progressNoOutput: 35,
+      progressLabel: 22,
+      progressCompletedIcon: 55,
+    });
 
-  private headline = 'Indicate deterministic progress to users';
-
-  private stylesData = {
-    progressPercentage: 0.35,
-    progressCounter: 12,
-    progressNoOutput: 35,
-    progressLabel: 22,
-    progressCompletedIcon: 55,
-  };
-
-  private styleExamples = `<div class="example--vertical">
+    const styleExamples = ref(`<div class="example--vertical">
   <h4 class="neon-h5">Percentage</h4>
   <div class="example--horizontal">
     <neon-linear-progress :value="progressPercentage" />
@@ -52,9 +51,9 @@ export default class LinearProgress extends Vue {
   <div class="example--horizontal">
     <neon-linear-progress :value="progressLabel" label="Label goes here" :total="55" />
   </div>
-</div>`;
+</div>`);
 
-  private sizeExamples = `<div class="example--vertical">
+    const sizeExamples = ref(`<div class="example--vertical">
   <h4 class="neon-h5">Small</h4>
   <div class="example--horizontal">
     <neon-linear-progress size="s" :value="progressPercentage" />
@@ -67,9 +66,9 @@ export default class LinearProgress extends Vue {
   <div class="example--horizontal">
     <neon-linear-progress size="l" :value="progressNoOutput" :total="55" :output="false" />
   </div>
-</div>`;
+</div>`);
 
-  private colorExamples = `<div class="example--vertical">
+    const colorExamples = ref(`<div class="example--vertical">
   <h4 class="neon-h5">Default (primary)</h4>
   <div class="example--horizontal">
     <neon-linear-progress :value="progressPercentage" />
@@ -82,27 +81,36 @@ export default class LinearProgress extends Vue {
   <div class="example--horizontal">
     <neon-linear-progress color="success" alternate-color="success" :value="progressNoOutput" :total="55" :output="false" />
   </div>
-</div>`;
+</div>`);
 
-  private examples = [
-    {
-      title: 'Linear progress styles',
-      template: this.styleExamples,
-      data: this.stylesData,
-    },
-    {
-      title: 'Linear progress sizes',
-      template: this.sizeExamples,
-      data: this.stylesData,
-    },
-    {
-      title: 'Linear progress colors',
-      template: this.colorExamples,
-      data: this.stylesData,
-    },
-  ];
+    const examples = ref([
+      {
+        title: 'Linear progress styles',
+        template: styleExamples.value,
+        data: stylesData.value,
+      },
+      {
+        title: 'Linear progress sizes',
+        template: sizeExamples.value,
+        data: stylesData.value,
+      },
+      {
+        title: 'Linear progress colors',
+        template: colorExamples.value,
+        data: stylesData.value,
+      },
+    ]);
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonLinearProgress');
-  }
-}
+    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonLinearProgress'));
+
+    return {
+      menuModel,
+      headline,
+      stylesData,
+      styleExamples,
+      sizeExamples,
+      colorExamples,
+      examples,
+    };
+  },
+});

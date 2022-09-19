@@ -1,10 +1,13 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonLogo } from '../../../../components';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonLogo } from '@/neon';
 import Examples from '../../../components/examples/Examples.vue';
-import { Menu, MenuModel } from '../../../Menu';
+import type { MenuModel } from '../../../Menu';
+import { Menu } from '../../../Menu';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Logo',
   components: {
     NeonCard,
     NeonCardBody,
@@ -13,20 +16,23 @@ import ComponentDocumentation from '../../../components/component-documentation/
     Examples,
     ComponentDocumentation,
   },
-})
-export default class Logo extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Light and dark mode logo');
 
-  private headline = 'Light and dark mode logo';
+    const examples = ref([
+      {
+        title: 'Logo example',
+        template: '<neon-logo />',
+      },
+    ]);
 
-  private examples = [
-    {
-      title: 'Logo example',
-      template: `<neon-logo />`,
-    },
-  ];
+    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonLogo'));
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonLogo');
-  }
-}
+    return {
+      menuModel,
+      headline,
+      examples,
+    };
+  },
+});

@@ -1,17 +1,11 @@
-import { mount } from '@vue/test-utils';
+import { render } from '@testing-library/vue';
 import NeonCardHeader from './NeonCardHeader.vue';
 
 describe('NeonCardHeader', () => {
   it('renders default slot contents', () => {
     // given
-    const slotValue = 'xd';
-    const wrapper = mount(NeonCardHeader, {
-      propsData: {},
-      slots: {
-        default: `<p>${slotValue}</p>`,
-      },
-    });
+    const { html } = render(NeonCardHeader, { slots: { default: '<p>test</p>' } });
     // when / then
-    expect(wrapper.find('.neon-card-header p').text()).toEqual(slotValue);
+    expect(html()).toMatch('<p>test</p>');
   });
 });

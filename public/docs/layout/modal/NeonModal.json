@@ -1,22 +1,20 @@
 {
+  "displayName": "NeonDrawer",
   "description": "A modal dialog component. This will be rendered above the content of the main window and can either be dismissed by the user or configured to require user interaction before dismissal.",
   "tags": {},
   "exportName": "default",
-  "displayName": "NeonModal",
   "props": [
     {
       "name": "open",
-      "tags": {},
-      "description": "Whether or not the modal is currently open.",
+      "description": "Whether the modal is currently open.",
       "type": {
         "name": "boolean"
       },
       "required": true
     },
     {
-      "name": "dismissable",
-      "tags": {},
-      "description": "Whether or not the user is allowed to dismiss the modal by clicking outside of the modal or pressing escape.",
+      "name": "dismissible",
+      "description": "Whether the user is allowed to dismiss the modal by clicking outside the modal or pressing escape.",
       "type": {
         "name": "boolean"
       },

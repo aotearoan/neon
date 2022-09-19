@@ -1,24 +1,22 @@
 {
+  "displayName": "NeonChip",
   "description": "<p>\n<strong>NeonChip</strong> is a clickable or removable chip which can be used as a tag or to indicate selected values\nin filters and other more complex inputs (e.g. search / multiselect). Clicking the chip results in a callback and in\nthe case it is removable, also removal of the chip. Chips are designed to fit inside inputs for creating more complex\ninput components.\n</p>\n<p>\n  Chips are navigable via tab (tabindex). When focussed, use space, return or enter to click on clickable tabs and, in\n  the case of removable tabs, use backspace and delete to remove a tab. Escape will blur a focussed tab.\n</p>",
   "tags": {},
   "exportName": "default",
-  "displayName": "NeonChip",
   "props": [
     {
       "name": "label",
-      "tags": {},
       "description": "The chip label",
       "type": {
-        "name": "TranslateResult"
+        "name": "string"
       },
       "required": true
     },
     {
       "name": "size",
-      "tags": {},
       "description": "The size of the chip.",
       "type": {
-        "name": "NeonSize"
+        "name": "String as () => NeonSize"
       },
       "defaultValue": {
         "func": false,
@@ -27,10 +25,9 @@
     },
     {
       "name": "color",
-      "tags": {},
       "description": "The chip color.",
       "type": {
-        "name": "NeonFunctionalColor"
+        "name": "String as () => NeonFunctionalColor"
       },
       "defaultValue": {
         "func": false,
@@ -39,10 +36,9 @@
     },
     {
       "name": "action",
-      "tags": {},
       "description": "The action when clicking on a chip. Can be click or remove.",
       "type": {
-        "name": "NeonChipAction"
+        "name": "String as () => NeonChipAction"
       },
       "defaultValue": {
         "func": false,
@@ -51,7 +47,6 @@
     },
     {
       "name": "disabled",
-      "tags": {},
       "description": "The chip disabled state.",
       "type": {
         "name": "boolean"
@@ -63,10 +58,13 @@
     },
     {
       "name": "icon",
-      "tags": {},
       "description": "This is the name of an icon which can optionally be added to the chip.",
       "type": {
         "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     }
   ],

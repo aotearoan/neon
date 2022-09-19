@@ -1,0 +1,210 @@
+@mixin neon-h0(
+  $neon-h0-weight,
+  $neon-h0-size,
+  $neon-typography-margin-unit,
+) {
+  font-weight: $neon-h0-weight;
+  margin-bottom: $neon-typography-margin-unit;
+  margin-top: 0;
+  font-size: $neon-h0-size;
+}
+
+@mixin neon-h1(
+  $neon-h1-weight,
+  $neon-h1-size,
+  $neon-typography-margin-unit,
+) {
+  font-weight: $neon-h1-weight;
+  margin-bottom: $neon-typography-margin-unit;
+  margin-top: 0;
+  font-size: $neon-h1-size;
+}
+
+@mixin neon-h2(
+  $neon-h2-weight,
+  $neon-h2-size,
+  $neon-typography-margin-unit,
+) {
+  font-weight: $neon-h2-weight;
+  margin-bottom: $neon-typography-margin-unit;
+  margin-top: 0;
+  font-size: $neon-h2-size;
+}
+
+@mixin neon-h3(
+  $neon-h3-weight,
+  $neon-h3-size,
+  $neon-typography-margin-unit,
+) {
+  font-weight: $neon-h3-weight;
+  margin-bottom: $neon-typography-margin-unit;
+  margin-top: 0;
+  font-size: $neon-h3-size;
+}
+
+@mixin neon-h4(
+  $neon-h4-weight,
+  $neon-h4-size,
+  $neon-typography-margin-unit,
+) {
+  font-weight: $neon-h4-weight;
+  margin-bottom: $neon-typography-margin-unit;
+  margin-top: 0;
+  font-size: $neon-h4-size;
+}
+
+@mixin neon-h5(
+  $neon-h5-weight,
+  $neon-h5-size,
+  $neon-typography-margin-unit,
+) {
+  font-weight: $neon-h5-weight;
+  margin-bottom: $neon-typography-margin-unit;
+  margin-top: 0;
+  font-size: $neon-h5-size;
+}
+
+@mixin neon-h6(
+  $neon-h6-weight,
+  $neon-h6-size,
+  $neon-typography-margin-unit,
+) {
+  font-weight: $neon-h6-weight;
+  margin-bottom: $neon-typography-margin-unit;
+  margin-top: 0;
+  font-size: $neon-h6-size;
+}
+
+@mixin import(
+  $neon-base-space,
+  $neon-body-font-family,
+  $neon-body-font-weight,
+  $neon-line-height-ratio,
+  $neon-font-family-paragraph,
+  $neon-max-paragraph-width,
+  $neon-font-weight-em,
+  $neon-font-weight-strong,
+  $neon-letter-spacing-s,
+  $neon-font-size-s,
+  $neon-letter-spacing-m,
+  $neon-heading-font-family,
+  $neon-line-height-headings-ratio,
+  $neon-letter-spacing-headings,
+  $neon-h0-weight,
+  $neon-h0-size,
+  $neon-h1-weight,
+  $neon-h1-size,
+  $neon-h2-weight,
+  $neon-h2-size,
+  $neon-h3-weight,
+  $neon-h3-size,
+  $neon-h4-weight,
+  $neon-h4-size,
+  $neon-h5-weight,
+  $neon-h5-size,
+  $neon-h6-weight,
+  $neon-h6-size,
+) {
+  $neon-typography-margin-unit: 2 * $neon-base-space;
+
+  body {
+    font-family: $neon-body-font-family;
+    font-weight: $neon-body-font-weight;
+    font-size: 16px;
+    line-height: $neon-line-height-ratio;
+  }
+
+  p {
+    font-family: $neon-font-family-paragraph;
+    margin: 0;
+    max-width: $neon-max-paragraph-width;
+    line-height: $neon-line-height-ratio;
+
+    & + p {
+      margin-top: 4 * $neon-base-space;
+    }
+  }
+
+  em {
+    font-weight: $neon-font-weight-em;
+  }
+
+  strong {
+    font-weight: $neon-font-weight-strong;
+    letter-spacing: $neon-letter-spacing-s;
+  }
+
+  span {
+    max-width: $neon-max-paragraph-width;
+  }
+
+  .neon-number {
+    font-variant: tabular-nums;
+  }
+
+  .neon-h0 {
+    font-family: $neon-heading-font-family;
+    line-height: $neon-line-height-headings-ratio;
+    letter-spacing: $neon-letter-spacing-headings;
+    @include neon-h0($neon-h0-weight, $neon-h0-size, $neon-typography-margin-unit);
+  }
+
+  .neon-h1,
+  h1 {
+    font-family: $neon-heading-font-family;
+    line-height: $neon-line-height-headings-ratio;
+    letter-spacing: $neon-letter-spacing-headings;
+    @include neon-h1($neon-h1-weight, $neon-h1-size, $neon-typography-margin-unit);
+  }
+
+  .neon-h2,
+  h2 {
+    font-family: $neon-heading-font-family;
+    line-height: $neon-line-height-headings-ratio;
+    letter-spacing: $neon-letter-spacing-headings;
+    @include neon-h2($neon-h2-weight, $neon-h2-size, $neon-typography-margin-unit);
+  }
+
+  .neon-h3,
+  h3 {
+    font-family: $neon-heading-font-family;
+    line-height: $neon-line-height-headings-ratio;
+    letter-spacing: $neon-letter-spacing-headings;
+    @include neon-h3($neon-h3-weight, $neon-h3-size, $neon-typography-margin-unit);
+  }
+
+  .neon-h4,
+  h4 {
+    font-family: $neon-heading-font-family;
+    line-height: $neon-line-height-headings-ratio;
+    letter-spacing: $neon-letter-spacing-headings;
+    @include neon-h4($neon-h4-weight, $neon-h4-size, $neon-typography-margin-unit);
+  }
+
+  .neon-h5,
+  h5 {
+    font-family: $neon-heading-font-family;
+    line-height: $neon-line-height-headings-ratio;
+    letter-spacing: $neon-letter-spacing-headings;
+    @include neon-h5($neon-h5-weight, $neon-h5-size, $neon-typography-margin-unit);
+  }
+
+  .neon-h6,
+  h6 {
+    font-family: $neon-heading-font-family;
+    line-height: $neon-line-height-headings-ratio;
+    letter-spacing: $neon-letter-spacing-headings;
+    @include neon-h6($neon-h6-weight, $neon-h6-size, $neon-typography-margin-unit);
+  }
+
+  label {
+    &:not(.no-style) {
+      font-size: $neon-font-size-s;
+      font-weight: 500;
+      letter-spacing: $neon-letter-spacing-m;
+      text-transform: uppercase;
+      user-select: none;
+      margin-bottom: 2 * $neon-base-space;
+    }
+  }
+}

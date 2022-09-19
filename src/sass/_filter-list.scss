@@ -1,4 +1,10 @@
-@mixin neon-filter-list-import {
+@use './includes/svg';
+
+@mixin import(
+  $neon-base-space,
+  $neon-font-size-xs,
+  $neon-font-size-s,
+) {
   .neon-filter-list {
     .neon-filter-list__item {
       justify-content: flex-start;
@@ -39,6 +45,92 @@
       align-self: center;
       font-size: $neon-font-size-s;
       margin-top: 2 * $neon-base-space;
+    }
+  }
+}
+
+@mixin import-colors(
+  $neon-color-text,
+  $neon-color-text-low-contrast,
+  $neon-functional-colors,
+  $neon-color-list-item,
+  $neon-color-disabled-light,
+  $neon-color-disabled-dark,
+) {
+  .neon-filter-list {
+    .neon-filter-list__item:not(.neon-filter-list__item--disabled) {
+      color: rgba($neon-color-text, 0.75);
+
+      &.neon-filter-list__item--selected,
+      &.neon-filter-list__item:hover,
+      &.neon-filter-list__item:focus {
+        color: $neon-color-text;
+      }
+
+      &.neon-filter-list__item:hover,
+      &.neon-filter-list__item:focus {
+        background-color: rgba($neon-color-text-low-contrast, 0.05);
+      }
+    }
+
+    @each $color, $palette in $neon-functional-colors {
+      &.neon-filter-list--#{$color} {
+        $list-hover-color: map-get($palette, $neon-color-list-item);
+        $list-foreground-color: rgba($list-hover-color, 0.75);
+
+        .neon-filter-list__item--selected:not(.neon-filter-list__item--disabled) {
+          background-color: rgba($list-foreground-color, 0.125);
+          @if (not($color == 'low-contrast' or $color == 'neutral')) {
+            @include svg.color-with-svg($list-foreground-color);
+          }
+
+          &:hover,
+          &:focus {
+            background-color: rgba($list-hover-color, 0.25);
+            @if (not($color == 'low-contrast' or $color == 'neutral')) {
+              @include svg.color-with-svg($list-hover-color);
+            }
+          }
+        }
+
+        .neon-filter-list__show-toggle {
+          @if (not($color == 'low-contrast' or $color == 'neutral')) {
+            color: $list-foreground-color;
+
+            &:hover,
+            &:focus {
+              color: $list-hover-color;
+
+              &:after {
+                background-color: $list-hover-color;
+              }
+            }
+          } @else {
+            color: rgba($neon-color-text, 0.75);
+
+            &:hover,
+            &:focus {
+              color: $neon-color-text;
+
+              &:after {
+                background-color: $neon-color-text;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .neon-filter-list__item--disabled {
+      &,
+      &:focus,
+      &:hover {
+        color: rgba($neon-color-disabled-light, 0.75);
+      }
+
+      &.neon-filter-list__item--selected {
+        background-color: rgba($neon-color-disabled-dark, 0.25);
+      }
     }
   }
 }

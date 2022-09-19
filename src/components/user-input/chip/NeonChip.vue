@@ -19,6 +19,7 @@
       @keyup="keyUp"
       :tabindex="!disabled ? 0 : undefined"
       ref="chip"
+      v-bind="$attrs"
     >
       <neon-icon v-if="icon" :name="icon" class="neon-chip__icon" :color="color" />
       <span class="neon-chip__label">{{ label }}</span>

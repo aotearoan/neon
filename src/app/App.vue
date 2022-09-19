@@ -45,8 +45,8 @@
               :options="themeModel"
               placeholder="Select theme..."
               :placeholder-as-option="true"
-              :value="theme"
-              @input="switchTheme"
+              :modelValue="theme"
+              @update:modelValue="switchTheme"
               dropdown-style="text-button"
               color="high-contrast"
               aria-label="Select theme"
@@ -89,12 +89,13 @@
                 :options="themeModel"
                 placeholder="Select theme..."
                 :placeholder-as-option="true"
-                :value="theme"
-                @input="switchTheme"
+                :modelValue="theme"
+                @update:modelValue="switchTheme"
                 button-icon="palette"
                 aria-label="Select theme"
                 size="s"
-                color="info"
+                color="primary"
+                alternate-color="primary"
               />
               <neon-button
                 class="github-link"
@@ -140,15 +141,17 @@
       <template #content>
         <neon-grid id="content" :layouts="layouts" class="content">
           <neon-grid-area id="section-content">
-            <transition name="neon-fade-transition" mode="out-in">
-              <router-view />
-            </transition>
+            <router-view v-slot="{ Component }">
+              <transition name="neon-fade-transition" mode="out-in">
+                <component :is="Component" />
+              </transition>
+            </router-view>
           </neon-grid-area>
         </neon-grid>
         <neon-footer class="app-footer">
-          <span
-            >{{ version !== '0' ? `v${version}` : '' }} &copy; copyright aotearoan {{ new Date().getFullYear() }}</span
-          >
+          <span>
+            {{ version !== "0" ? `v${version}` : "" }} &copy; copyright aotearoan {{ new Date().getFullYear() }}
+          </span>
         </neon-footer>
       </template>
     </neon-page>
@@ -157,7 +160,7 @@
 </template>
 
 <style lang="scss">
-@import './App';
+@use './App';
 </style>
 
 <script lang="ts" src="./App.ts"></script>

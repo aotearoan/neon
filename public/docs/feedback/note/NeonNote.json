@@ -1,15 +1,14 @@
 {
+  "displayName": "NeonNote",
   "description": "NeonNote is a component for displaying important information to the user, such as - notes, hints or quotes.",
   "tags": {},
   "exportName": "default",
-  "displayName": "NeonNote",
   "props": [
     {
       "name": "color",
-      "tags": {},
       "description": "The color of the note. In the case of the colors info, success, warn and error an icon will also be displayed to further enhance user comprehension.",
       "type": {
-        "name": "NeonFunctionalColor"
+        "name": "String as () => NeonFunctionalColor"
       },
       "defaultValue": {
         "func": false,
@@ -18,8 +17,7 @@
     },
     {
       "name": "closable",
-      "tags": {},
-      "description": "Whether or not the note has a close button",
+      "description": "Whether the note has a close button",
       "type": {
         "name": "boolean"
       },
@@ -30,7 +28,6 @@
     },
     {
       "name": "icon",
-      "tags": {},
       "description": "Display the associated icon for info, success, warn and error colors.",
       "type": {
         "name": "boolean"
@@ -42,10 +39,9 @@
     },
     {
       "name": "ariaLabelCloseNote",
-      "tags": {},
       "description": "Note close button aria label.",
       "type": {
-        "name": "TranslateResult"
+        "name": "string"
       },
       "defaultValue": {
         "func": false,

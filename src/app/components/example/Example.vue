@@ -1,5 +1,5 @@
 <template>
-  <div v-if="example.noCard" class="example--no-card">
+  <div v-if="example && example.noCard" class="example--no-card">
     <h3 v-if="example.title">{{ example.title }}</h3>
     <neon-note v-if="example.tip" color="info">
       <span><strong>Tip:</strong>{{ ` ${example.tip}` }}</span>
@@ -12,14 +12,20 @@
       <editor v-if="example.template" v-model="example.template" />
     </div>
   </div>
-  <neon-card v-else>
-    <neon-card-header v-if="example.title" class="example__title">
+  <div v-else class="neon-card neon-card--vertical neon-card--m neon-card--horizontal-breakpoint-mobile-l">
+    <div v-if="example.title" class="neon-card-header example__title">
       <h3>{{ example.title }}</h3>
-    </neon-card-header>
-    <neon-card-body :full-width="example.fixedContent">
-      <neon-note v-if="example.tip" color="info">
-        <span><strong>Tip:</strong>{{ ` ${example.tip}` }}</span>
-      </neon-note>
+    </div>
+    <div class="neon-card-body" :class="{ 'neon-card-body--fullWidth': example.fixedContent }">
+      <div v-if="example.tip" class="neon-note neon-note--info" role="note">
+        <div class="neon-note__container">
+          <div
+            class="neon-icon neon-icon--info neon-note__icon"
+            v-html="infoIcon"
+          ></div>
+          <span><strong>Tip:</strong>{{ ` ${example.tip}` }}</span>
+        </div>
+      </div>
       <br v-if="example.tip" />
       <div class="example__output" :class="{ 'example__output--fixed-content': example.fixedContent }">
         <v-runtime-template :template-props="example.data || {}" :template="example.template" />
@@ -27,8 +33,8 @@
       <div class="example__code" :class="{ 'example__code--fixed-content': example.fixedContent }">
         <editor v-if="example.template" v-model="example.template" />
       </div>
-    </neon-card-body>
-  </neon-card>
+    </div>
+  </div>
 </template>
 
 <script lang="ts" src="./Example.ts"></script>

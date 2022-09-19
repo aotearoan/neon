@@ -1,39 +1,22 @@
 {
+  "displayName": "NeonAlertContainer",
   "description": "This is an internal component for rendering alerts.",
   "tags": {},
   "exportName": "default",
-  "displayName": "NeonAlertContainer",
   "props": [
     {
-      "name": "value",
-      "tags": {},
+      "name": "modelValue",
       "type": {
-        "name": "Array",
-        "elements": [
-          {
-            "name": "NeonAlertModel"
-          }
-        ]
+        "name": "Array as () => Array<NeonAlertModel>"
       },
       "required": true
     },
     {
       "name": "placement",
-      "tags": {},
       "type": {
-        "name": "NeonAlertPlacement"
+        "name": "String as () => NeonAlertPlacement"
       },
       "required": true
-    }
-  ],
-  "events": [
-    {
-      "name": "input",
-      "type": {
-        "names": [
-          "undefined"
-        ]
-      }
     }
   ]
 }

@@ -1,37 +1,44 @@
-import { mount } from '@vue/test-utils';
+import type { RenderResult } from '@testing-library/vue';
+import { render } from '@testing-library/vue';
 import NeonCard from './NeonCard.vue';
 import { NeonOrientation } from '../../../common/enums/NeonOrientation';
 import { NeonResponsive } from '../../../common/enums/NeonResponsive';
 
 describe('NeonCard', () => {
-  it('renders orientation class', () => {
-    // given
-    const wrapper = mount(NeonCard, {
-      propsData: { orientation: NeonOrientation.Horizontal },
-    });
-    // when / then
-    expect(wrapper.find('.neon-card--horizontal').element).toBeDefined();
+  let harness: RenderResult;
+
+  beforeEach(() => {
+    harness = render(NeonCard, { slots: { default: '<p>test</p>' } });
   });
 
-  it('renders horizontal breakpoint class', () => {
+  it('renders orientation class', async () => {
     // given
-    const wrapper = mount(NeonCard, {
-      propsData: { orientation: NeonOrientation.Horizontal, horizontalBreakpoint: NeonResponsive.Tablet },
-    });
+    const { html, rerender } = harness;
     // when / then
-    expect(wrapper.find('.neon-card--horizontal-breakpoint-tablet').element).toBeDefined();
+    await rerender({ orientation: NeonOrientation.Horizontal });
+    expect(html()).toMatch('neon-card--horizontal');
+  });
+
+  it('renders horizontal breakpoint class', async () => {
+    // given
+    const { html, rerender } = harness;
+    // when / then
+    await rerender({ orientation: NeonOrientation.Horizontal, horizontalBreakpoint: NeonResponsive.Tablet });
+    expect(html()).toMatch('neon-card--horizontal-breakpoint-tablet');
+  });
+
+  it('renders default slot contents', async () => {
+    // given
+    const { html, rerender } = harness;
+    // when / then
+    await rerender({ orientation: NeonOrientation.Horizontal, horizontalBreakpoint: NeonResponsive.Tablet });
+    expect(html()).toMatch('neon-card--horizontal-breakpoint-tablet');
   });
 
   it('renders default slot contents', () => {
     // given
-    const slotValue = 'xd';
-    const wrapper = mount(NeonCard, {
-      propsData: {},
-      slots: {
-        default: `<p>${slotValue}</p>`,
-      },
-    });
+    const { html } = harness;
     // when / then
-    expect(wrapper.find('.neon-card p').text()).toEqual(slotValue);
+    expect(html()).toMatch('<p>test</p>');
   });
 });

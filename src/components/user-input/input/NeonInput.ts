@@ -1,244 +1,249 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { computed, defineComponent, ref } from 'vue';
 import { NeonInputType } from '../../../common/enums/NeonInputType';
 import { NeonState } from '../../../common/enums/NeonState';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import NeonIcon from '../../presentation/icon/NeonIcon.vue';
+import { NeonVueUtils } from '../../../common/utils/NeonVueUtils';
 
 /**
  * Equivalent of, and wrapper around, an HTML input. Also supports <strong>textarea</strong>.
  */
-@Component({
+export default defineComponent({
+  name: 'NeonInput',
   components: {
     NeonIcon,
   },
-})
-export default class NeonInput extends Vue {
-  $refs!: {
-    neonInput: HTMLInputElement;
-  };
-
-  /**
-   * The id the input
-   */
-  @Prop()
-  private id?: string;
-
-  /**
-   * The value of the input
-   */
-  @Prop()
-  private value?: string;
-
-  /**
-   * The type of input this is. NOTE: Neon provides custom components as alternatives in the following cases:
-   * * file (use <a href="/user-input/file">NeonFile</a>)
-   * * password (use <a href="/user-input/password">NeonPassword</a>)
-   */
-  @Prop({ default: NeonInputType.Text })
-  private type!: NeonInputType;
-
-  /**
-   * Placeholder text to display in the input
-   */
-  @Prop()
-  private placeholder?: string;
-
-  /**
-   * Size of the input
-   */
-  @Prop({ default: NeonSize.Medium })
-  private size!: NeonSize;
-
-  /**
-   * Color of the input
-   */
-  @Prop({ default: NeonFunctionalColor.LowContrast })
-  private color!: NeonFunctionalColor;
-
-  /**
-   * The state of the input
-   */
-  @Prop({ default: NeonState.Ready })
-  private state!: NeonState;
-
-  /**
-   * The number of rows to display in the case of a textarea
-   */
-  @Prop()
-  private rows?: number;
-
-  /**
-   * The name of a clickable icon to display inside the input. This is used for clearing contents or e.g. in the case of
-   * NeonPassword toggle showing/hiding the password. Defaults to <em>times</em> (for clearing the input's contents).
-   */
-  @Prop()
-  private icon?: string;
-
-  /**
-   * Hide the icon button, e.g. the X button to clear the input's contents.
-   */
-  @Prop({ default: false })
-  private hideIcon!: boolean;
-
-  /**
-   * Tabindex to assign to the input.
-   */
-  @Prop({ default: 0 })
-  private tabindex!: number;
-
-  /**
-   * The disabled state of the input
-   */
-  @Prop({ default: false })
-  private disabled!: boolean;
-
-  /**
-   * When the state is success or error, display the field with the state color indicator, e.g. border or background
-   * color.
-   */
-  @Prop({ default: true })
-  private stateHighlight!: boolean;
-
-  /**
-   * When the state is success or error, display the state icon.
-   */
-  @Prop({ default: true })
-  private stateIcon!: boolean;
-
-  /**
-   * The character limit for a textarea.
-   */
-  @Prop()
-  private maxlength?: number;
-
-  private focused = false;
-
-  get sanitizedAttributes(): Record<string, string> {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { id, tabindex, type, disabled, placeholder, rows, ...sanitized } = this.$attrs;
-    return sanitized;
-  }
-
-  get sanitizedListeners(): Record<string, Function | Function[]> {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { input, blur, focus, iconClicked, ...sanitized } = this.$listeners;
-    return sanitized;
-  }
-
-  get iconVisible() {
-    return (
-      this.iconName &&
-      !this.hideIcon &&
-      (this.state !== 'ready' || this.icon || (this.value && !this.disabled && this.value.length > 0))
-    );
-  }
-
-  get iconName() {
-    switch (this.state) {
-      case NeonState.Loading:
-        return 'loading';
-      case NeonState.Success:
-        return this.stateIcon ? 'check' : undefined;
-      case NeonState.Error:
-        return this.stateIcon ? 'times' : undefined;
-      default:
-        if (this.icon) {
-          return this.icon;
-        } else if (this.value && this.value.length > 0) {
-          return 'times';
-        }
-
-        return undefined;
-    }
-  }
-
-  get iconColor() {
-    switch (this.state) {
-      case NeonState.Success:
-        return NeonFunctionalColor.Success;
-      case NeonState.Error:
-        return NeonFunctionalColor.Error;
-      case NeonState.Loading:
-        return this.color;
-      default:
-        return NeonFunctionalColor.LowContrast;
-    }
-  }
-
-  public focus() {
-    this.$refs.neonInput.focus();
-  }
-
-  private onFocus() {
-    this.focused = true;
+  props: {
+    /**
+     * The id the input
+     */
+    id: { type: String, default: null },
+    /**
+     * The value of the input
+     */
+    modelValue: { type: String, default: null },
+    /**
+     * The type of input this is. NOTE: Neon provides custom components as alternatives in the following cases:
+     * * file (use <a href="/user-input/file">NeonFile</a>)
+     * * password (use <a href="/user-input/password">NeonPassword</a>)
+     */
+    type: { type: String as () => NeonInputType, default: NeonInputType.Text },
+    /**
+     * Placeholder text to display in the input
+     */
+    placeholder: { type: String, default: null },
+    /**
+     * Size of the input
+     */
+    size: { type: String as () => NeonSize, default: NeonSize.Medium },
+    /**
+     * Color of the input
+     */
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    /**
+     * The state of the input
+     */
+    state: { type: String as () => NeonState, default: NeonState.Ready },
+    /**
+     * The number of rows to display in the case of a textarea
+     */
+    rows: { type: Number, default: null },
+    /**
+     * The name of a clickable icon to display inside the input. This is used for clearing contents or e.g. in the case of
+     * NeonPassword toggle showing/hiding the password. Defaults to <em>times</em> (for clearing the input's contents).
+     */
+    icon: { type: String, default: null },
+    /**
+     * Hide the icon button, e.g. the X button to clear the input's contents.
+     */
+    hideIcon: { type: Boolean, default: false },
+    /**
+     * Tabindex to assign to the input.
+     */
+    tabindex: { type: Number, default: 0 },
+    /**
+     * The disabled state of the input
+     */
+    disabled: { type: Boolean, default: false },
+    /**
+     * When the state is success or error, display the field with the state color indicator, e.g. border or background
+     * color.
+     */
+    stateHighlight: { type: Boolean, default: true },
+    /**
+     * When the state is success or error, display the state icon.
+     */
+    stateIcon: { type: Boolean, default: true },
+    /**
+     * The character limit for a textarea.
+     */
+    maxlength: { type: Number, default: null },
+  },
+  emits: [
     /**
      * Emitted when the input has gained focus
      * @type {void}
      */
-    this.$emit('focus');
-  }
-
-  private onBlur() {
-    this.focused = false;
+    'focus',
     /**
      * Emitted when the input has lost focus
      * @type {void}
      */
-    this.$emit('blur');
-  }
+    'blur',
+    /**
+     * Emitted when the icon is clicked
+     * @type {void}
+     */
+    'icon-click',
+    /**
+     * Emitted when the input value is changed, NOTE: is not triggered if input is over the textarea length limit
+     * @type {string} the contents of the input
+     */
+    'update:modelValue',
+  ],
+  setup(props, { attrs, emit }) {
+    const neonInput = ref<HTMLElement | null>(null);
+    const focused = ref(false);
 
-  private iconClicked($event: Event) {
-    if (!this.disabled) {
-      if (this.icon) {
-        /**
-         * Emitted when the icon is clicked
-         * @type {void}
-         */
-        this.$emit('icon-click');
-      } else {
-        /**
-         * Emitted when the input value is changed
-         * @type {string} the contents of the input
-         */
-        this.$emit('input', '');
-      }
-      $event.preventDefault();
-      $event.stopPropagation();
-    }
-  }
+    const sanitizedAttributes = computed((): Record<string, unknown> => {
+      const {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        id,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        tabindex,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        type,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        disabled,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        placeholder,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        rows,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        onBlur,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        onFocus,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        onUpdate,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        onIconClicked,
+        ...sanitized
+      } = attrs;
 
-  private changeValue(event: Event) {
-    const input = event.target as HTMLInputElement;
-    const value =
-      this.maxlength && input.value.length > this.maxlength ? input.value.substr(0, this.maxlength) : input.value;
-    if (this.value !== value) {
-      /**
-       * Emitted when the input value is changed, NOTE: is not triggered if over the textarea length limit
-       * @type {string} the contents of the input
-       */
-      this.$emit('input', value);
-    }
-  }
+      return NeonVueUtils.sanitizeAttributes(sanitized, 'onUpdate:modelValue');
+    });
 
-  private computedPlaceholder() {
-    if (this.placeholder) {
-      return this.placeholder;
-    } else {
-      switch (this.type) {
-        case NeonInputType.Email:
-          return 'gbelson@hooli.com';
-        case NeonInputType.Tel:
-          return '+41785551234';
-        case NeonInputType.Url:
-          return 'http://www.getskeleton.com';
+    const iconName = computed(() => {
+      switch (props.state) {
+        case NeonState.Loading:
+          return 'loading';
+        case NeonState.Success:
+          return props.stateIcon ? 'check' : undefined;
+        case NeonState.Error:
+          return props.stateIcon ? 'times' : undefined;
         default:
-          return '';
-      }
-    }
-  }
+          if (props.icon) {
+            return props.icon;
+          } else if (props.modelValue && props.modelValue.length > 0) {
+            return 'times';
+          }
 
-  public click() {
-    this.$refs.neonInput.click();
-  }
-}
+          return undefined;
+      }
+    });
+
+    const iconVisible = computed(() => {
+      return (
+        iconName.value &&
+        !props.hideIcon &&
+        (props.state !== 'ready' || props.icon || (props.modelValue && !props.disabled && props.modelValue.length > 0))
+      );
+    });
+
+    const iconColor = computed(() => {
+      switch (props.state) {
+        case NeonState.Success:
+          return NeonFunctionalColor.Success;
+        case NeonState.Error:
+          return NeonFunctionalColor.Error;
+        case NeonState.Loading:
+          return props.color;
+        default:
+          return NeonFunctionalColor.LowContrast;
+      }
+    });
+
+    const focus = () => {
+      neonInput.value?.focus();
+    };
+
+    const click = () => {
+      neonInput.value?.click();
+    };
+
+    const onFocus = () => {
+      focused.value = true;
+      emit('focus');
+    };
+
+    const onBlur = () => {
+      focused.value = false;
+      emit('blur');
+    };
+
+    const iconClicked = ($event: Event) => {
+      if (!props.disabled) {
+        if (props.icon) {
+          emit('icon-click');
+        } else {
+          emit('update:modelValue', '');
+        }
+        $event.preventDefault();
+        $event.stopPropagation();
+      }
+    };
+
+    const changeValue = (event: InputEvent) => {
+      const val = (event.target as HTMLInputElement).value;
+      const v =
+        props.maxlength && val.length > props.maxlength ? val.substring(0, props.maxlength) : val;
+      if (props.modelValue !== v) {
+        emit('update:modelValue', v);
+      }
+    };
+
+    const computedPlaceholder = computed(() => {
+      if (props.placeholder) {
+        return props.placeholder;
+      } else {
+        switch (props.type) {
+          case NeonInputType.Email:
+            return 'gbelson@hooli.com';
+          case NeonInputType.Tel:
+            return '+41785551234';
+          case NeonInputType.Url:
+            return 'http://www.getskeleton.com';
+          default:
+            return '';
+        }
+      }
+    });
+
+    return {
+      neonInput,
+      focused,
+      sanitizedAttributes,
+      iconVisible,
+      iconName,
+      iconColor,
+      computedPlaceholder,
+      focus,
+      click,
+      onFocus,
+      onBlur,
+      iconClicked,
+      changeValue,
+    };
+  },
+});

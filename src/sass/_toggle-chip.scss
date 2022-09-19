@@ -1,18 +1,30 @@
-@mixin neon-toggle-chip-size($neon-toggle-chip-size, $neon-toggle-chip-font-size, $neon-toggle-chip-padding) {
+@use './includes/svg';
+
+@mixin neon-toggle-chip-size($neon-toggle-chip-size, $neon-toggle-chip-padding, $neon-base-space) {
   height: $neon-toggle-chip-size;
-  font-size: $neon-toggle-chip-font-size;
-  padding-left: $neon-toggle-chip-padding;
-  padding-right: $neon-toggle-chip-padding;
+  font-size: $neon-toggle-chip-size;
+  padding-left: $neon-toggle-chip-padding * $neon-base-space;
+  padding-right: $neon-toggle-chip-padding * $neon-base-space;
 
   &.neon-toggle-chip--checked {
     .neon-toggle-chip__checked {
-      width: $neon-toggle-chip-font-size;
-      height: $neon-toggle-chip-font-size;
+      width: $neon-toggle-chip-size;
+      height: $neon-toggle-chip-size;
     }
   }
 }
 
-@mixin neon-toggle-chip-import {
+@mixin import(
+  $neon-border-width,
+  $neon-border-style,
+  $neon-border-radius,
+  $neon-animation-speed-fast,
+  $neon-base-space,
+  $neon-size-xs,
+  $neon-size-s,
+  $neon-size-m,
+  $neon-size-l,
+) {
   .neon-toggle-chip {
     display: flex;
     flex-direction: row;
@@ -51,19 +63,19 @@
     }
 
     &--xs {
-      @include neon-toggle-chip-size($neon-size-xs, $neon-font-size-xs, 2 * $neon-base-space);
+      @include neon-toggle-chip-size($neon-size-xs, 2, $neon-base-space);
     }
 
     &--s {
-      @include neon-toggle-chip-size($neon-size-s, $neon-font-size-s, 2.5 * $neon-base-space);
+      @include neon-toggle-chip-size($neon-size-s, 2.5, $neon-base-space);
     }
 
     &--m {
-      @include neon-toggle-chip-size($neon-size-m, $neon-font-size-m, 3.5 * $neon-base-space);
+      @include neon-toggle-chip-size($neon-size-m, 3.5, $neon-base-space);
     }
 
     &--l {
-      @include neon-toggle-chip-size($neon-size-l, $neon-font-size-l, 5 * $neon-base-space);
+      @include neon-toggle-chip-size($neon-size-l, 5, $neon-base-space);
     }
 
     &:active:not(.neon-toggle-chip--disabled):not(.neon-toggle-chip--show-check) {
@@ -72,6 +84,58 @@
 
     &--disabled {
       cursor: not-allowed;
+    }
+  }
+}
+
+@mixin import-colors(
+  $neon-border-color-toggle-chip,
+  $neon-opacity-toggle-chip,
+  $neon-color-text,
+  $neon-opacity-toggle-chip-hover,
+  $neon-functional-colors,
+  $neon-color-toggle-chip,
+  $neon-color-toggle-chip-text,
+  $neon-color-disabled-light,
+  $neon-theme,
+) {
+  .neon-toggle-chip {
+    border-color: $neon-border-color-toggle-chip;
+    background-color: rgba($neon-border-color-toggle-chip, $neon-opacity-toggle-chip);
+    color: rgba($neon-color-text, 0.667);
+
+    &:not(.neon-toggle-chip--disabled) {
+      &:focus,
+      &:hover {
+        background-color: rgba($neon-border-color-toggle-chip, 2 * $neon-opacity-toggle-chip-hover);
+      }
+    }
+
+    @each $color, $palette in $neon-functional-colors {
+      &--#{$color}:not(.neon-toggle-chip--disabled) {
+        &.neon-toggle-chip--checked {
+          border-color: map-get($palette, $neon-color-toggle-chip);
+          background-color: rgba(map-get($palette, $neon-color-toggle-chip), $neon-opacity-toggle-chip);
+          @if ($neon-theme == smooth) {
+            @include svg.color-with-svg(map-get($palette, $neon-color-toggle-chip));
+          } @else {
+            @include svg.color-with-svg($neon-color-toggle-chip-text);
+          }
+        }
+
+        &.neon-toggle-chip--checked {
+          &:focus,
+          &:hover {
+            background-color: rgba(map-get($palette, $neon-color-toggle-chip), $neon-opacity-toggle-chip-hover);
+          }
+        }
+      }
+    }
+
+    &--disabled {
+      opacity: 0.85;
+      color: $neon-color-disabled-light;
+      border-color: $neon-border-color-toggle-chip;
     }
   }
 }

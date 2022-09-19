@@ -1,8 +1,10 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader, NeonLink } from '../../../../components';
+import { defineComponent, ref } from 'vue';
+import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader, NeonLink } from '@/neon';
 import Editor from '../../../components/editor/Editor.vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Responsiveness',
   components: {
     NeonAnchor,
     NeonCard,
@@ -11,15 +13,15 @@ import Editor from '../../../components/editor/Editor.vue';
     NeonLink,
     Editor,
   },
-})
-export default class Responsiveness extends Vue {
-  private sassExample = `@import '~@aotearoan/neon/themes/classic/theme';
+  setup() {
+
+    const sassExample = ref(`@use '~@aotearoan/neon/themes/classic/theme';
 
 @include responsive(larger-than-tablet) {
   // add desired larger-than-tablet responsive styling here
-}`;
+}`);
 
-  private typescriptExample = `private responsiveView = false;
+    const typescriptExample = ref(`private responsiveView = false;
 
 private mounted() {
   window.addEventListener('resize', this.handleResize, { passive: true });
@@ -32,5 +34,11 @@ private beforeDestroy() {
 
 private handleResize() {
   this.responsiveView = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.MobileLarge]).matches;
-}`;
-}
+}`);
+
+    return {
+      sassExample,
+      typescriptExample,
+    };
+  },
+});

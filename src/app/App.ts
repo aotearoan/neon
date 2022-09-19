@@ -1,11 +1,10 @@
-import { Component, Vue, Watch } from 'vue-property-decorator';
-import VueI18n, { TranslateResult } from 'vue-i18n';
-import { RegisterIcons } from '../common/utils/RegisterIcons';
+import { computed, defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
 import { Menu } from './Menu';
 import { NeonMode } from '../common/enums/NeonMode';
-import { NeonTreeMenuLinkModel, NeonTreeMenuSectionModel } from '../common/models/NeonTreeMenuModel';
+import type { NeonTreeMenuLinkModel, NeonTreeMenuSectionModel } from '../common/models/NeonTreeMenuModel';
 import {
   NeonAlert,
+  NeonButton,
   NeonDrawer,
   NeonExpansionPanel,
   NeonFooter,
@@ -15,38 +14,35 @@ import {
   NeonLink,
   NeonLogo,
   NeonPage,
-  NeonResponsive,
-  NeonResponsiveUtils,
   NeonSelect,
-  NeonSelectOption,
   NeonSideNav,
   NeonSwitch,
-  NeonTheme,
   NeonTopNav,
   NeonTreeMenu,
-  registerComponents,
-} from '../components';
+} from '@/neon';
+import { NeonTheme } from '../../src/common/enums/NeonTheme';
+import type { NeonSelectOption } from '../../src/common/models/NeonSelectOption';
 import { NeonModeUtils } from '../common/utils/NeonModeUtils';
-import { Route } from 'vue-router';
-
-registerComponents();
+import { NeonResponsive } from '../../src/common/enums/NeonResponsive';
+import { NeonResponsiveUtils } from '../../src/common/utils/NeonResponsiveUtils';
+import { useRoute, useRouter } from 'vue-router';
 
 export interface AppMenuGroup {
-  group: TranslateResult;
+  group: string;
   expanded: boolean;
   children: NeonTreeMenuSectionModel[];
 }
 
 export interface AppMenuLinkModel extends NeonTreeMenuLinkModel {
-  keywords?: TranslateResult;
+  keywords?: string;
 }
 
-RegisterIcons.register();
-Vue.use(VueI18n);
 
-@Component({
+export default defineComponent({
+  name: 'App',
   components: {
     NeonAlert,
+    NeonButton,
     NeonTopNav,
     NeonLogo,
     NeonSwitch,
@@ -62,208 +58,235 @@ Vue.use(VueI18n);
     NeonLink,
     NeonExpansionPanel,
   },
-})
-export default class App extends Vue {
-  public theme = NeonTheme.Smooth;
-  public themeModel: NeonSelectOption[] = [
-    ...Object.keys(NeonTheme).map((k, index) => ({
-      key: this.themes[index],
-      label: k,
-    })),
-  ];
+  setup() {
+    const router = useRouter();
+    const route = useRoute();
 
-  public selectedMode = NeonMode.Dark;
-  private indexModel: AppMenuGroup[] = [];
-  private indexFilter = '';
-  private menuOpen = false;
-  private isMobile = false;
-  private isTablet = false;
+    const theme = ref(NeonTheme.Smooth);
+    const themes = ref(Object.values(NeonTheme));
 
-  public mounted() {
-    const path = localStorage.getItem('path');
-    if (path) {
-      localStorage.removeItem('path');
-      this.$router.push({ path: path.replace('neon', '') });
-    }
+    const themeModel = ref<Array<NeonSelectOption>>([
+      ...Object.keys(NeonTheme).map((k, index) => ({
+        key: themes.value[index],
+        label: k,
+      })),
+    ]);
 
-    const theme = localStorage.getItem('theme') as NeonTheme;
-    this.switchTheme(theme && Object.values(NeonTheme).indexOf(theme) >= 0 ? theme : NeonTheme.Smooth);
+    const selectedMode = ref(NeonMode.Dark);
+    const indexModel = ref<Array<AppMenuGroup>>([]);
+    const indexFilter = ref('');
+    const menuOpen = ref(false);
+    const isMobile = ref(false);
+    const isTablet = ref(false);
 
-    const savedMode = (localStorage.getItem('mode') as NeonMode) || undefined;
-    NeonModeUtils.init(savedMode);
-    NeonModeUtils.addListener('app-mode-listener', this.setMode);
-    window.addEventListener('resize', this.handleResize, { passive: true });
-    this.handleResize();
+    const expandAll = computed(() => indexFilter.value.length > 0);
 
-    this.indexModel = Menu.menu().map((group) => ({
-      group: group.group,
-      expanded: false,
-      children: group.children.map((item) => ({
-        label: item.name || item.page || item.path,
-        key: item.path,
-        children: item.children
-          ? item.children.map((child) => ({
+    const lowercaseFilter = computed(() => (indexFilter.value || '').toLowerCase());
+
+    const filterLink = (item: AppMenuLinkModel): NeonTreeMenuLinkModel | undefined => {
+      const searchString =
+        item.label.toString() +
+        (item.keywords ? item.keywords.toString() : '') +
+        (item.anchors ? item.anchors.join(' ') : '');
+      return searchString.toLowerCase().indexOf(lowercaseFilter.value) >= 0 ? item : undefined;
+    };
+
+    const filterSection = (item: NeonTreeMenuSectionModel): NeonTreeMenuSectionModel | undefined => {
+      const children: NeonTreeMenuLinkModel[] = [];
+      if (item.children) {
+        item.children.forEach((child) => {
+          const filteredChild = filterLink(child);
+          if (filteredChild) {
+            children.push(filteredChild);
+          }
+        });
+      }
+
+      return children.length > 0
+        ? { ...item, children }
+        : item.label.toString().toLowerCase().indexOf(lowercaseFilter.value) >= 0
+          ? item
+          : undefined;
+    };
+
+    const filteredModel = computed((): AppMenuGroup[] => {
+      const groups: AppMenuGroup[] = [];
+
+      if (indexFilter.value && indexFilter.value.length > 0) {
+        indexModel.value.forEach((group) => {
+          const children: NeonTreeMenuSectionModel[] = [];
+          group.children.forEach((item) => {
+            const filteredItem = filterSection(item);
+            if (filteredItem) {
+              children.push(filteredItem);
+            }
+          });
+
+          if (children.length > 0) {
+            const filteredGroup = {
+              group: group.group,
+              expanded: true,
+              children,
+            };
+            groups.push(filteredGroup);
+          }
+        });
+      } else {
+        groups.push(...indexModel.value);
+      }
+
+      return groups;
+    });
+
+    const layouts = ref([
+      {
+        breakpoint: NeonResponsive.All,
+        grid: [['section-content']],
+      },
+    ]);
+
+    // @ts-ignore
+    const version = ref(PACKAGE_VERSION);
+
+    const switchTheme = (newTheme: NeonTheme) => {
+      document.documentElement.classList.remove(`neon-theme--${theme.value}`);
+      document.documentElement.classList.add(`neon-theme--${newTheme}`);
+      theme.value = newTheme;
+      localStorage.setItem('theme', theme.value);
+    };
+
+    const setMode = (mode: NeonMode) => {
+      document.documentElement.classList.remove(`neon-mode--${selectedMode.value}`);
+      document.documentElement.classList.add(`neon-mode--${mode}`);
+      selectedMode.value = mode;
+      localStorage.setItem('mode', selectedMode.value);
+    };
+
+    const switchMode = () => {
+      setMode(selectedMode.value === NeonMode.Dark ? NeonMode.Light : NeonMode.Dark);
+    };
+
+    const onSideNavMenuClick = (key: string) => {
+      toggleExpand(key);
+    };
+
+    const handleResize = () => {
+      isMobile.value = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.MobileLarge]).matches;
+      isTablet.value = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.Tablet]).matches;
+    };
+
+
+    const toggleExpand = (key: string) => {
+      indexModel.value.forEach((group) => {
+        group.children.forEach((item) => {
+          if (item.key === key) {
+            item.expanded = !item.expanded;
+          }
+        });
+        group.children = [...group.children];
+      });
+    };
+
+    onMounted(async () => {
+      const path = localStorage.getItem('path');
+      if (path) {
+        localStorage.removeItem('path');
+        await router.push({ path: path.replace('neon', '') });
+      }
+
+      const cachedTheme = localStorage.getItem('theme') as NeonTheme;
+      switchTheme(cachedTheme && Object.values(NeonTheme).indexOf(cachedTheme) >= 0 ? cachedTheme : NeonTheme.Smooth);
+
+      const savedMode = (localStorage.getItem('mode') as NeonMode) || undefined;
+      NeonModeUtils.init(savedMode);
+      NeonModeUtils.addListener('app-mode-listener', setMode);
+      window.addEventListener('resize', handleResize, { passive: true });
+      handleResize();
+
+      indexModel.value = Menu.menu().map((group) => ({
+        group: group.group,
+        expanded: false,
+        children: group.children.map((item) => ({
+          label: item.name || item.page || item.path,
+          key: item.path,
+          children: item.children
+            ? item.children.map((child) => ({
               label: child.name || child.page || child.path,
               key: child.path,
               keywords:
-                child.keywords +
+                (child.keywords || '') +
                 (child.component ? ` ${child.component.toLowerCase()}` : '') +
                 (child.subComponents ? '' + child.subComponents.map((sc) => sc.name.toLowerCase()).join(' ') : ''),
               href: `/${item.path}/${child.path}`,
               anchors: child.anchors,
             }))
-          : [],
-      })),
-    }));
-  }
-
-  public beforeDestroy() {
-    NeonModeUtils.removeListener('app-mode-listener');
-    window.removeEventListener('resize', this.handleResize);
-  }
-
-  get themes() {
-    return Object.values(NeonTheme);
-  }
-
-  private switchTheme(theme: NeonTheme) {
-    document.documentElement.classList.remove(`neon-theme--${this.theme}`);
-    document.documentElement.classList.add(`neon-theme--${theme}`);
-    this.theme = theme;
-    localStorage.setItem('theme', this.theme);
-  }
-
-  private switchMode() {
-    this.setMode(this.selectedMode === NeonMode.Dark ? NeonMode.Light : NeonMode.Dark);
-  }
-
-  private setMode(mode: NeonMode) {
-    document.documentElement.classList.remove(`neon-mode--${this.selectedMode}`);
-    document.documentElement.classList.add(`neon-mode--${mode}`);
-    this.selectedMode = mode;
-    localStorage.setItem('mode', this.selectedMode);
-  }
-
-  @Watch('$route', { immediate: false })
-  private watchRoute(to: Route) {
-    this.menuOpen = false;
-    const key = to.path.split('/')[1];
-    this.indexModel
-      .filter((group) => group.children.find((item) => item.key === key))
-      .forEach((group) => {
-        group.expanded = true;
-        group.children
-          .filter((item) => item.key === key)
-          .forEach((item) => {
-            item.expanded = true;
-          });
-        group.children = [...group.children];
-      });
-    this.indexModel = [...this.indexModel];
-
-    setTimeout(() => {
-      if (to.hash) {
-        const el = document.getElementById(to.hash.substring(1));
-        if (el) {
-          el.scrollIntoView();
-        }
-      }
-    }, 250);
-  }
-
-  get filteredModel(): AppMenuGroup[] {
-    const groups: AppMenuGroup[] = [];
-
-    if (this.indexFilter && this.indexFilter.length > 0) {
-      this.indexModel.forEach((group) => {
-        const children: NeonTreeMenuSectionModel[] = [];
-        group.children.forEach((item) => {
-          const filteredItem = this.filterSection(item);
-          if (filteredItem) {
-            children.push(filteredItem);
-          }
-        });
-
-        if (children.length > 0) {
-          const filteredGroup = {
-            group: group.group,
-            expanded: true,
-            children,
-          };
-          groups.push(filteredGroup);
-        }
-      });
-    } else {
-      groups.push(...this.indexModel);
-    }
-
-    return groups;
-  }
-
-  get expandAll() {
-    return this.indexFilter && this.indexFilter.length > 0;
-  }
-
-  private filterSection(item: NeonTreeMenuSectionModel): NeonTreeMenuSectionModel | undefined {
-    const children: NeonTreeMenuLinkModel[] = [];
-    if (item.children) {
-      item.children.forEach((child) => {
-        const filteredChild = this.filterLink(child);
-        if (filteredChild) {
-          children.push(filteredChild);
-        }
-      });
-    }
-
-    return children.length > 0
-      ? { ...item, children }
-      : item.label.toString().toLowerCase().indexOf(this.lowercaseFilter) >= 0
-      ? item
-      : undefined;
-  }
-
-  private filterLink(item: AppMenuLinkModel): NeonTreeMenuLinkModel | undefined {
-    const searchString =
-      item.label.toString() +
-      (item.keywords ? item.keywords.toString() : '') +
-      (item.anchors ? item.anchors.join(' ') : '');
-    return searchString.toLowerCase().indexOf(this.lowercaseFilter) >= 0 ? item : undefined;
-  }
-
-  private toggleExpand(key: string) {
-    this.indexModel.forEach((group) => {
-      group.children.forEach((item) => {
-        if (item.key === key) {
-          item.expanded = !item.expanded;
-        }
-      });
-      group.children = [...group.children];
+            : [],
+        })),
+      }));
     });
-  }
 
-  private onSideNavMenuClick(key: string) {
-    this.toggleExpand(key);
-  }
+    onUnmounted(() => {
+      NeonModeUtils.removeListener('app-mode-listener');
+      window.removeEventListener('resize', handleResize);
+    });
 
-  get lowercaseFilter() {
-    return (this.indexFilter || '').toLowerCase();
-  }
-
-  get layouts() {
-    return [
-      {
-        breakpoint: NeonResponsive.All,
-        grid: [['section-content']],
+    watch(
+      () => route.path,
+      (to: string) => {
+        menuOpen.value = false;
+        const key = to.split('/')[1];
+        indexModel.value
+          .filter((group) => group.children.find((item) => item.key === key))
+          .forEach((group) => {
+            group.expanded = true;
+            group.children
+              .filter((item) => item.key === key)
+              .forEach((item) => {
+                item.expanded = true;
+              });
+            group.children = [...group.children];
+          });
+        indexModel.value = [...indexModel.value];
       },
-    ];
-  }
+      { immediate: true },
+    );
 
-  get version() {
-    return process.env.PACKAGE_VERSION;
-  }
+    watch(
+      () => route.hash,
+      (to: string) => {
+        setTimeout(() => {
+          if (to) {
+            const el = document.getElementById(to.substring(1));
+            if (el) {
+              el.scrollIntoView();
+            }
+          } else {
+            window.scrollTo(0, 0);
+          }
+        }, 250);
+      },
+      { immediate: false },
+    );
 
-  private handleResize() {
-    this.isMobile = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.MobileLarge]).matches;
-    this.isTablet = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.Tablet]).matches;
-  }
-}
+
+    return {
+      theme,
+      themeModel,
+      selectedMode,
+      indexModel,
+      indexFilter,
+      menuOpen,
+      isMobile,
+      isTablet,
+      themes,
+      layouts,
+      version,
+      filteredModel,
+      expandAll,
+      switchTheme,
+      switchMode,
+      toggleExpand,
+      onSideNavMenuClick,
+    };
+  },
+});

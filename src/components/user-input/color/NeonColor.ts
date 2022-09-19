@@ -1,52 +1,52 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { computed, defineComponent } from 'vue';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import NeonInput from '../input/NeonInput.vue';
 
-@Component({
+export default defineComponent({
+  name: 'NeonColor',
   components: {
     NeonInput,
   },
-})
-export class NeonColor extends Vue {
-  /**
-   * The Hexadecimal color code.
-   */
-  @Prop({ required: true })
-  private value!: string;
-
-  /**
-   * Disable color picker
-   */
-  @Prop({ default: false })
-  private disabled!: boolean;
-
-  /**
-   * The size of the color picker, one of NeonSize.Small | NeonSize.Medium | NeonSize.Large.
-   */
-  @Prop({ default: NeonSize.Medium })
-  private size!: NeonSize;
-
-  /**
-   * Color of the input
-   */
-  @Prop({ default: NeonFunctionalColor.LowContrast })
-  private color!: NeonFunctionalColor;
-
-  /**
-   * This is the placeholder for the text input when no value is provided.
-   */
-  @Prop({ required: false })
-  private placeholder?: string;
-
-  private changeValue(event: Event) {
+  props: {
     /**
-     * event triggered when the value changes.
-     *
-     * @type {string}
+     * The Hexadecimal color code.
      */
-    this.$emit('input', event);
-  }
-}
+    modelValue: { type: String, required: true },
+    /**
+     * Disable color picker
+     */
+    disabled: { type: Boolean, default: false },
+    /**
+     * Only display the color picker
+     */
+    pickerOnly: { type: Boolean, default: false },
+    /**
+     * The size of the color picker, one of NeonSize.Small | NeonSize.Medium | NeonSize.Large.
+     */
+    size: { type: String as () => NeonSize, default: NeonSize.Medium },
+    /**
+     * Color of the input
+     */
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    /**
+     * This is the placeholder for the text input when no value is provided.
+     */
+    placeholder: { type: String, required: false },
+  },
+  setup(props, { emit }) {
 
-export default NeonColor;
+    const localValue = computed({
+      get() {
+        return props.modelValue;
+      },
+      set(val: string) {
+        emit('update:modelValue', val);
+      },
+    });
+
+    return {
+      localValue,
+    };
+  },
+});

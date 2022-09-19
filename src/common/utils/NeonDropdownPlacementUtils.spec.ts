@@ -5,6 +5,7 @@ describe('NeonDropdownPlacementUtils', () => {
   beforeEach(() => {
     // eslint-disable-next-line no-global-assign
     document = {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       documentElement: {
         clientWidth: 400,
@@ -15,13 +16,16 @@ describe('NeonDropdownPlacementUtils', () => {
 
   it('calculate same placement', () => {
     // given
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const triggerElement: HTMLElement = {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       getBoundingClientRect: () => ({ top: 0, left: 0, bottom: 100, right: 100 }),
       offsetHeight: 100,
       offsetWidth: 100,
     };
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const contentElement: HTMLElement = {
       offsetHeight: 100,
@@ -36,13 +40,16 @@ describe('NeonDropdownPlacementUtils', () => {
 
   it('calculate same placement RightBottom', () => {
     // given
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const triggerElement: HTMLElement = {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       getBoundingClientRect: () => ({ top: 0, left: 0, bottom: 100, right: 100 }),
       offsetHeight: 100,
       offsetWidth: 100,
     };
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const contentElement: HTMLElement = {
       offsetHeight: 100,
@@ -57,13 +64,16 @@ describe('NeonDropdownPlacementUtils', () => {
 
   it('calculate same placement LeftTop', () => {
     // given
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const triggerElement: HTMLElement = {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       getBoundingClientRect: () => ({ top: 300, left: 300, bottom: 400, right: 400 }),
       offsetHeight: 100,
       offsetWidth: 100,
     };
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const contentElement: HTMLElement = {
       offsetHeight: 100,
@@ -78,19 +88,23 @@ describe('NeonDropdownPlacementUtils', () => {
 
   it('calculate minor placement change', () => {
     // given
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const triggerElement: HTMLElement = {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       getBoundingClientRect: () => ({ top: 0, left: 150, bottom: 50, right: 200 }),
       offsetHeight: 50,
       offsetWidth: 50,
     };
     const placementContainer: HTMLElement = {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       getBoundingClientRect: () => ({ top: 100, left: 0, bottom: 400, right: 200 }),
       offsetHeight: 300,
       offsetWidth: 200,
     };
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const contentElement: HTMLElement = {
       offsetHeight: 40,
@@ -105,19 +119,23 @@ describe('NeonDropdownPlacementUtils', () => {
 
   it('calculate major placement change', () => {
     // given
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const triggerElement: HTMLElement = {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       getBoundingClientRect: () => ({ top: 350, left: 0, bottom: 400, right: 50 }),
       offsetHeight: 50,
       offsetWidth: 50,
     };
     const placementContainer: HTMLElement = {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       getBoundingClientRect: () => ({ top: 100, left: 0, bottom: 400, right: 200 }),
       offsetHeight: 300,
       offsetWidth: 200,
     };
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const contentElement: HTMLElement = {
       offsetHeight: 40,
@@ -132,19 +150,23 @@ describe('NeonDropdownPlacementUtils', () => {
 
   it('calculate same when too large', () => {
     // given
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const triggerElement: HTMLElement = {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       getBoundingClientRect: () => ({ top: 350, left: 0, bottom: 400, right: 50 }),
       offsetHeight: 50,
       offsetWidth: 50,
     };
     const placementContainer: HTMLElement = {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       getBoundingClientRect: () => ({ top: 100, left: 0, bottom: 400, right: 200 }),
       offsetHeight: 300,
       offsetWidth: 200,
     };
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const contentElement: HTMLElement = {
       offsetHeight: 4000,

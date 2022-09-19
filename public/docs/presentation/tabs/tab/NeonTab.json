@@ -1,12 +1,11 @@
 {
+  "displayName": "NeonTab",
   "description": "The NeonTab component that defines individual tabs for use with the NeonTabs component.",
   "tags": {},
-  "displayName": "NeonTab",
   "exportName": "default",
   "props": [
     {
       "name": "selected",
-      "tags": {},
       "description": "True if the current tab is the visible tab.",
       "type": {
         "name": "boolean"
@@ -15,15 +14,17 @@
     },
     {
       "name": "id",
-      "tags": {},
       "description": "Id of the tab (matches the key in NeonTabModel).",
       "type": {
-        "name": "boolean"
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     },
     {
       "name": "toggleOnIf",
-      "tags": {},
       "description": "By default, use CSS display property to show/hide tab contents. This flag will enable using v-if instead.",
       "type": {
         "name": "boolean"

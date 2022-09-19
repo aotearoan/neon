@@ -1,46 +1,38 @@
-import { mount } from '@vue/test-utils';
-import NeonInputIndicator from './NeonInputIndicator.vue';
+import { render } from '@testing-library/vue';
 import { NeonSize } from '../../../common/enums/NeonSize';
+import NeonInputIndicator from './NeonInputIndicator.vue';
 
 describe('NeonInputIndicator', () => {
   it('renders label', () => {
     // given
     const label = 'xdd';
-    const wrapper = mount(NeonInputIndicator, {
-      propsData: { label },
-    });
+    const { container } = render(NeonInputIndicator, { props: { label } });
     // when / then
-    expect(wrapper.find('.neon-input-indicator__label').text()).toEqual(label);
-    expect(wrapper.find('.neon-input-indicator--with-label').element).toBeDefined();
+    expect(container.querySelector('.neon-input-indicator__label')?.textContent).toEqual(label);
+    expect(container.querySelector('.neon-input-indicator--with-label')).toBeDefined();
   });
 
   it('renders icon', () => {
     // given
     const icon = 'times';
-    const wrapper = mount(NeonInputIndicator, {
-      propsData: { icon },
-    });
+    const { container } = render(NeonInputIndicator, { props: { icon } });
     // when / then
-    expect(wrapper.find('.neon-input-indicator .neon-icon').element).toBeDefined();
-    expect(wrapper.find('.neon-input-indicator--with-icon').element).toBeDefined();
+    expect(container.querySelector('.neon-input-indicator .neon-icon')).toBeDefined();
+    expect(container.querySelector('.neon-input-indicator--with-icon')).toBeDefined();
   });
 
   it('renders default size', () => {
     // given
-    const wrapper = mount(NeonInputIndicator, {
-      propsData: {},
-    });
+    const { container } = render(NeonInputIndicator, { props: {} });
     // when / then
-    expect(wrapper.find('.neon-input-indicator--m').element).toBeDefined();
+    expect(container.querySelector('.neon-input-indicator--m')).toBeDefined();
   });
 
   it('renders size', () => {
     // given
     const size = NeonSize.Large;
-    const wrapper = mount(NeonInputIndicator, {
-      propsData: { size },
-    });
+    const { container } = render(NeonInputIndicator, { props: { size } });
     // when / then
-    expect(wrapper.find('.neon-input-indicator--l').element).toBeDefined();
+    expect(container.querySelector('.neon-input-indicator--l')).toBeDefined();
   });
 });

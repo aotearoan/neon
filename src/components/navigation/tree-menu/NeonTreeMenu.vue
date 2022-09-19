@@ -22,7 +22,7 @@
             @keydown.space="onClick(section.key)"
             @keypress.space.prevent=""
             class="neon-tree-menu__section-link-label neon-tree-menu__section-link-label--outline-text"
-            >{{ section.label }}</span
+          >{{ section.label }}</span
           >
         </neon-link>
         <ul class="no-style neon-tree-menu__links">
@@ -41,7 +41,7 @@
                 @keydown.enter="click($event)"
                 @keydown.space="click($event)"
                 @keypress.space.prevent=""
-                >{{ link.label }}</span
+              >{{ link.label }}</span
               >
             </neon-link>
             <ul
@@ -63,7 +63,7 @@
                     @keydown.space="click($event)"
                     @keydown.enter="click($event)"
                     @keypress.space.prevent=""
-                    >{{ anchor }}</span
+                  >{{ anchor }}</span
                   >
                 </neon-link>
               </li>

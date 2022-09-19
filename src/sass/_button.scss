@@ -1,50 +1,220 @@
-@import 'includes/layout';
+@use 'sass:map';
+@use './includes/globals';
+@use './includes/outline';
+@use './includes/svg';
 
-@mixin button-size($size, $font-size, $icon-only-size) {
-  height: $size;
-  font-size: $font-size;
-  line-height: $neon-line-height-one;
-  padding: 0 0.75 * ($size - $font-size);
+@mixin gradient-button(
+  $from-color,
+  $to-color,
+  $neon-background-gradient-angle,
+  $neon-background-gradient-offset,
+  $neon-animation-speed-fast,
+  $neon-background-gradient-offset-hover,
+) {
+  background: linear-gradient(
+                  $neon-background-gradient-angle,
+                  $from-color $neon-background-gradient-offset,
+                  $to-color 100%
+  );
+  transition: all ease-in-out $neon-animation-speed-fast;
 
-  .neon-icon {
-    width: $font-size * $neon-line-height-one;
-    height: $font-size * $neon-line-height-one;
+  &:active:not(:disabled),
+  &:hover:not(:disabled) {
+    background: linear-gradient(
+                    $neon-background-gradient-angle,
+                    $from-color $neon-background-gradient-offset-hover,
+                    $to-color 100%
+    );
   }
 
-  &.neon-button--icon-only {
-    min-width: $size;
-    padding: 0;
-
-    &.neon-button--circular {
-      border-radius: 50%;
-    }
-
-    .neon-icon {
-      width: $icon-only-size;
-      height: $icon-only-size;
-    }
+  &:focus:not(:disabled):not(.neon-button--no-outline) {
+    @include outline.box-shadow-outline($from-color);
   }
 }
 
-@mixin neon-button-import {
+@mixin solid-button($from-color, $to-color) {
+  background: linear-gradient($from-color, $to-color);
+
+  &:hover:not(:disabled) {
+    @if ($from-color == #fff or $to-color == #fff) {
+      background: linear-gradient(darken($from-color, 10), darken($to-color, 10));
+    } @else {
+      background: linear-gradient(lighten($from-color, 5), lighten($to-color, 5));
+    }
+  }
+
+  &:active:not(:disabled) {
+    background: darken($to-color, 1);
+  }
+
+  &:focus:not(:disabled):not(.neon-button--no-outline) {
+    @include outline.box-shadow-outline($to-color);
+  }
+}
+
+@mixin outline-button($color, $neon-border-width-outline-button, $neon-border-style, $neon-color-inverse) {
+  border: $neon-border-width-outline-button $neon-border-style $color;
+  @include svg.color-with-svg($color);
+
+  &:hover:not(:disabled),
+  &:active:not(:disabled) {
+    @include svg.color-with-svg($neon-color-inverse);
+  }
+
+  &:hover:not(:disabled) {
+    background: $color;
+  }
+
+  &:active:not(:disabled) {
+    background: darken($color, 4);
+    border-color: darken($color, 4);
+  }
+
+  &:focus:not(:disabled):not(.neon-button--no-outline) {
+    @include outline.box-shadow-outline($color);
+  }
+}
+
+@mixin text-button($color, $neon-background-color-hover, $neon-background-color-active) {
+  color: $color;
+
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    background: $neon-background-color-hover;
+  }
+
+  &:active:not(:disabled) {
+    background: $neon-background-color-active;
+  }
+}
+
+@mixin import(
+  $neon-line-height-one,
+  $neon-size-s,
+  $neon-size-m,
+  $neon-size-l,
+  $neon-size-xl,
+  $neon-font-size-s,
+  $neon-font-size-m,
+  $neon-font-size-l,
+  $neon-h1-size,
+  $neon-h2-size,
+  $neon-h3-size,
+  $neon-h4-size,
+  $neon-h5-size,
+  $neon-h6-size,
+  $neon-border-radius-button-xl,
+  $neon-border-radius-button,
+  $neon-letter-spacing-m,
+  $neon-base-space,
+) {
   .neon-button {
     margin-left: 0;
     margin-right: 0;
 
     &--s {
-      @include button-size($neon-size-s, $neon-font-size-s, $neon-font-size-l);
+      height: $neon-size-s;
+      font-size: $neon-font-size-s;
+      line-height: $neon-line-height-one;
+      padding: 0 0.75 * ($neon-size-s - $neon-font-size-s);
+
+      .neon-icon {
+        width: $neon-font-size-s * $neon-line-height-one;
+        height: $neon-font-size-s * $neon-line-height-one;
+      }
+
+      &.neon-button--icon-only {
+        min-width: $neon-size-s;
+        padding: 0;
+
+        &.neon-button--circular {
+          border-radius: 50%;
+        }
+
+        .neon-icon {
+          width: $neon-font-size-l;
+          height: $neon-font-size-l;
+        }
+      }
     }
 
     &--m {
-      @include button-size($neon-size-m, $neon-font-size-m, $neon-h6-size);
+      height: $neon-size-m;
+      font-size: $neon-font-size-m;
+      line-height: $neon-line-height-one;
+      padding: 0 0.75 * ($neon-size-m - $neon-font-size-m);
+
+      .neon-icon {
+        width: $neon-font-size-m * $neon-line-height-one;
+        height: $neon-font-size-m * $neon-line-height-one;
+      }
+
+      &.neon-button--icon-only {
+        min-width: $neon-size-m;
+        padding: 0;
+
+        &.neon-button--circular {
+          border-radius: 50%;
+        }
+
+        .neon-icon {
+          width: $neon-h6-size;
+          height: $neon-h6-size;
+        }
+      }
     }
 
     &--l {
-      @include button-size($neon-size-l, $neon-font-size-m, $neon-h5-size);
+      height: $neon-size-l;
+      font-size: $neon-font-size-m;
+      line-height: $neon-line-height-one;
+      padding: 0 0.75 * ($neon-size-l - $neon-font-size-m);
+
+      .neon-icon {
+        width: $neon-font-size-m * $neon-line-height-one;
+        height: $neon-font-size-m * $neon-line-height-one;
+      }
+
+      &.neon-button--icon-only {
+        min-width: $neon-size-l;
+        padding: 0;
+
+        &.neon-button--circular {
+          border-radius: 50%;
+        }
+
+        .neon-icon {
+          width: $neon-h5-size;
+          height: $neon-h5-size;
+        }
+      }
     }
 
     &--xl {
-      @include button-size($neon-size-xl, $neon-h5-size, $neon-h3-size);
+      height: $neon-size-xl;
+      font-size: $neon-h5-size;
+      line-height: $neon-line-height-one;
+      padding: 0 0.75 * ($neon-size-xl - $neon-h5-size);
+
+      .neon-icon {
+        width: $neon-h5-size * $neon-line-height-one;
+        height: $neon-h5-size * $neon-line-height-one;
+      }
+
+      &.neon-button--icon-only {
+        min-width: $neon-size-xl;
+        padding: 0;
+
+        &.neon-button--circular {
+          border-radius: 50%;
+        }
+
+        .neon-icon {
+          width: $neon-h3-size;
+          height: $neon-h3-size;
+        }
+      }
+
       border-radius: $neon-border-radius-button-xl;
     }
 
@@ -108,7 +278,7 @@
 
         .neon-icon {
           position: absolute;
-          z-index: $z-index-above;
+          z-index: globals.$z-index-above;
         }
       }
     }
@@ -138,6 +308,123 @@
 
     .neon-button + .neon-button {
       margin-left: 2 * $neon-base-space;
+    }
+  }
+}
+
+@mixin import-colors(
+  $neon-functional-colors,
+  $neon-background-high-contrast-solid-button-light,
+  $neon-background-high-contrast-solid-button-dark,
+  $neon-color-low-contrast-solid-button,
+  $neon-background-low-contrast-solid-button-light,
+  $neon-background-low-contrast-solid-button-dark,
+  $neon-background-solid-button-light,
+  $neon-background-solid-button-dark,
+  $neon-color-gradient-alternate,
+  $neon-background-gradient-angle,
+  $neon-background-gradient-offset,
+  $neon-animation-speed-fast,
+  $neon-background-gradient-offset-hover,
+  $neon-color-text,
+  $neon-border-width-outline-button,
+  $neon-border-style,
+  $neon-color-inverse,
+  $neon-color-low-contrast-outline-button,
+  $neon-color-text-button,
+  $neon-background-color-text-button-hover,
+  $neon-background-color-text-button-active,
+  $neon-box-shadow,
+  $neon-inset-shadow,
+  $neon-color-disabled-light,
+  $neon-color-disabled-dark,
+) {
+  .neon-button {
+    @each $color, $palette in $neon-functional-colors {
+      &--#{$color} {
+        &.neon-button--solid {
+          $solid-button-color-1: '' !default;
+          $solid-button-color-2: '' !default;
+          @if ($color == high-contrast) {
+            $solid-button-color-1: $neon-background-high-contrast-solid-button-light;
+            $solid-button-color-2: $neon-background-high-contrast-solid-button-dark;
+          } @else if ($color == low-contrast) {
+            @include svg.color-with-svg($neon-color-low-contrast-solid-button);
+            $solid-button-color-1: $neon-background-low-contrast-solid-button-light;
+            $solid-button-color-2: $neon-background-low-contrast-solid-button-dark;
+          } @else {
+            $solid-button-color-1: map.get($palette, $neon-background-solid-button-light);
+            $solid-button-color-2: map.get($palette, $neon-background-solid-button-dark);
+          }
+
+          @include solid-button($solid-button-color-1, $solid-button-color-2);
+
+          @each $alternateColor, $alternatePalette in $neon-functional-colors {
+            &.neon-button--alternate-color-#{$alternateColor}:not(.neon-button--disabled) {
+              @if ($alternateColor == high-contrast) {
+                $solid-button-color-2: $neon-background-high-contrast-solid-button-light;
+              } @else if ($alternateColor == low-contrast) {
+                $solid-button-color-2: $neon-background-low-contrast-solid-button-light;
+              } @else {
+                $solid-button-color-2: map.get($alternatePalette, $neon-color-gradient-alternate);
+              }
+              @include gradient-button($solid-button-color-1, $solid-button-color-2, $neon-background-gradient-angle, $neon-background-gradient-offset, $neon-animation-speed-fast, $neon-background-gradient-offset-hover);
+            }
+          }
+        }
+
+        &.neon-button--outline {
+          @if ($color == high-contrast) {
+            @include outline-button($neon-color-text, $neon-border-width-outline-button, $neon-border-style, $neon-color-inverse);
+          } @else if ($color == low-contrast) {
+            @include outline-button($neon-color-low-contrast-outline-button, $neon-border-width-outline-button, $neon-border-style, $neon-color-inverse);
+          } @else {
+            @include outline-button(map.get($palette, $neon-background-solid-button-dark), $neon-border-width-outline-button, $neon-border-style, $neon-color-inverse);
+          }
+        }
+
+        &.neon-button--text {
+          @include text-button(
+                          map.get($palette, $neon-color-text-button),
+                          $neon-background-color-text-button-hover,
+                          $neon-background-color-text-button-active
+          );
+        }
+      }
+    }
+
+    &--solid {
+      border: none;
+      box-shadow: $neon-box-shadow;
+      color: $neon-color-inverse;
+
+      &:active {
+        box-shadow: $neon-inset-shadow;
+      }
+
+      &.neon-button--disabled {
+        color: $neon-color-disabled-light;
+        background: $neon-color-disabled-dark;
+        box-shadow: none;
+      }
+    }
+
+    &--outline {
+      background: transparent;
+
+      &.neon-button--disabled {
+        color: $neon-color-disabled-light;
+        border-color: $neon-color-disabled-light;
+      }
+    }
+
+    &--text {
+      background-color: transparent;
+      border: none;
+
+      &.neon-button--disabled {
+        color: $neon-color-disabled-light;
+      }
     }
   }
 }

@@ -1,4 +1,8 @@
-@mixin neon-skeleton-loader-import {
+@mixin import(
+  $neon-font-size-m,
+  $neon-base-space,
+  $neon-border-radius-skeleton-loader,
+) {
   @keyframes neon-shimmer {
     100% {
       transform: translateX(100%);
@@ -34,6 +38,28 @@
         left: 0;
         transform: translateX(-100%);
         animation: neon-shimmer 2.5s infinite;
+      }
+    }
+  }
+}
+
+@mixin import-colors(
+  $neon-color-loading-1,
+  $neon-color-loading-2,
+  $neon-color-loading-3,
+) {
+  .neon-skeleton-loader {
+    &__item {
+      background-color: $neon-color-loading-1;
+
+      &:after {
+        background-image: linear-gradient(
+                        90deg,
+                        $neon-color-loading-1 0,
+                        $neon-color-loading-2 33%,
+                        $neon-color-loading-3 66%,
+                        $neon-color-loading-1
+        );
       }
     }
   }

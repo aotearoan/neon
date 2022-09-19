@@ -1,4 +1,11 @@
-@mixin neon-dialog-import {
+@mixin import(
+  $neon-max-width-dialog,
+  $neon-min-height-dialog,
+  $neon-base-space,
+  $neon-font-size-s,
+  $neon-font-style-dialog,
+  $neon-letter-spacing-s,
+) {
   .neon-dialog {
     .neon-card {
       max-width: $neon-max-width-dialog;

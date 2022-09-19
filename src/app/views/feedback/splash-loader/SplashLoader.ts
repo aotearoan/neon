@@ -1,9 +1,11 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonButton, NeonCard, NeonCardBody, NeonLink, NeonSplashLoader } from '../../../../components';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonButton, NeonCard, NeonCardBody, NeonLink, NeonSplashLoader } from '@/neon';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import { Menu, MenuModel } from '../../../Menu';
+import type { MenuModel } from '../../../Menu';
+import { Menu } from '../../../Menu';
 
-@Component({
+export default defineComponent({
+  name: 'SplashLoader',
   components: {
     NeonButton,
     NeonCard,
@@ -12,34 +14,39 @@ import { Menu, MenuModel } from '../../../Menu';
     NeonSplashLoader,
     ComponentDocumentation,
   },
-})
-export default class SplashLoader extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Indicate loading progress');
 
-  private data = {
-    open: false,
-    openLoader: () => {
-      this.data.open = true;
-      setTimeout(() => {
-        this.data.open = false;
-      }, 2500);
-    },
-  };
+    const data = ref({
+      open: false,
+      openLoader: () => {
+        data.value.open = true;
+        setTimeout(() => {
+          data.value.open = false;
+        }, 2500);
+      },
+    });
 
-  private headline = 'Indicate loading progress';
+    const examples = ref([
+      {
+        title: 'Splash loader example',
+        template: `
+          <div class="example--vertical">
+          <neon-button label="Show loader" @click="openLoader()" />
+          <neon-splash-loader v-if="open" :fullscreen="true" :overlay="true" size="xl" color="brand" />
+          </div>`,
+        data: data.value,
+      },
+    ]);
 
-  private examples = [
-    {
-      title: 'Splash loader example',
-      template: `<div class="example--vertical">
-  <neon-button label="Show loader" @click="openLoader()" />
-  <neon-splash-loader v-if="open" :fullscreen="true" :overlay="true" size="xl" color="brand" />
-</div>`,
-      data: this.data,
-    },
-  ];
+    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonSplashLoader'));
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonSplashLoader');
-  }
-}
+    return {
+      menuModel,
+      data,
+      headline,
+      examples,
+    };
+  },
+});

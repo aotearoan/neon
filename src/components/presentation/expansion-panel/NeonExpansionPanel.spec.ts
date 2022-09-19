@@ -1,273 +1,222 @@
-import Vue from 'vue';
-import { mount } from '@vue/test-utils';
+import type { RenderResult } from '@testing-library/vue';
+import { fireEvent, render } from '@testing-library/vue';
 import NeonExpansionPanel from './NeonExpansionPanel.vue';
-import NeonExpansionIndicator from '../expansion-indicator/NeonExpansionIndicator.vue';
-import NeonIcon from '../icon/NeonIcon.vue';
 import { NeonVerticalPosition } from '../../../common/enums/NeonVerticalPosition';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 
-Vue.component('NeonExpansionIndicator', NeonExpansionIndicator);
-Vue.component('NeonIcon', NeonIcon);
-
 describe('NeonExpansionPanel', () => {
+  const content = 'lol';
+  const label = 'xdd';
+  let harness: RenderResult;
+
+  beforeEach(() => {
+    harness = render(NeonExpansionPanel, {
+      props: { label, modelValue: false },
+      slots: { default: `<p>${content}</p>` },
+    });
+  });
+
   it('renders default slot content', () => {
     // given
-    const content = 'lol';
-    const wrapper = mount(NeonExpansionPanel, {
-      propsData: { label: 'xdd', value: false },
-      slots: {
-        default: `<p>${content}</p>`,
-      },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-expansion-panel__content p').text()).toEqual(content);
+    expect(container.querySelector('.neon-expansion-panel__content p')?.textContent).toEqual(content);
   });
 
   it('renders label', () => {
     // given
-    const label = 'lol';
-    const wrapper = mount(NeonExpansionPanel, {
-      propsData: { label, value: false },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-expansion-panel__label').text()).toEqual(label);
+    expect(container.querySelector('.neon-expansion-panel__label')?.textContent).toEqual(label);
   });
 
   it('renders closed', () => {
     // given
-    const label = 'lol';
-    const wrapper = mount(NeonExpansionPanel, {
-      propsData: { label, value: false },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-expansion-panel--expanded').element).toBeUndefined();
-    expect(wrapper.find('.neon-expansion-panel__content').attributes().style).toEqual('display: none;');
-    expect(wrapper.find('.neon-expansion-indicator--expanded').element).toBeUndefined();
+    expect(container.querySelector('.neon-expansion-panel--expanded')).toBeNull();
+    expect(container.querySelector('.neon-expansion-panel__content')?.getAttribute('style')).toEqual('display: none;');
+    expect(container.querySelector('.neon-expansion-indicator--expanded')).toBeNull();
   });
 
-  it('renders open', () => {
+  it('renders open', async () => {
     // given
-    const label = 'lol';
-    const wrapper = mount(NeonExpansionPanel, {
-      propsData: { label, value: true },
-    });
+    const { container, rerender } = harness;
+    await rerender({ modelValue: true });
     // when / then
-    expect(wrapper.find('.neon-expansion-panel--expanded').element).toBeDefined();
-    expect(wrapper.find('.neon-expansion-panel--expanded').attributes()['aria-expanded']).toEqual('true');
-    expect(wrapper.find('.neon-expansion-panel__content').attributes().style).toBeUndefined();
-    expect(wrapper.find('.neon-expansion-indicator--expanded').element).toBeDefined();
+    expect(container.querySelector('.neon-expansion-panel--expanded')).toBeDefined();
+    expect(container.querySelector('.neon-expansion-panel--expanded')?.getAttribute('aria-expanded')).toEqual('true');
+    expect(container.querySelector('.neon-expansion-panel__content')?.getAttribute('style')).toEqual('');
+    expect(container.querySelector('.neon-expansion-indicator--expanded')).toBeDefined();
   });
 
-  it('renders id', () => {
+  it('renders id', async () => {
     // given
-    const label = 'lol';
     const id = 'xd';
-    const wrapper = mount(NeonExpansionPanel, {
-      propsData: { label, value: false, id },
-    });
+    const { container, rerender } = harness;
+    await rerender({ id });
     // when / then
-    expect(wrapper.find('.neon-expansion-panel__header').attributes()['aria-controls']).toEqual(id);
-    expect(wrapper.find('.neon-expansion-panel__content').element.id).toEqual(id);
+    expect(container.querySelector('.neon-expansion-panel__header')?.getAttribute('aria-controls')).toEqual(id);
+    expect(container.querySelector('.neon-expansion-panel__content')?.id).toEqual(id);
   });
 
   it('renders no icon', () => {
     // given
-    const label = 'lol';
-    const wrapper = mount(NeonExpansionPanel, {
-      propsData: { label, value: false },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-expansion-panel__label-container .neon-icon').element).toBeUndefined();
+    expect(container.querySelector('.neon-expansion-panel__label-container .neon-icon')).toBeNull();
   });
 
-  it('renders icon', () => {
+  it('renders icon', async () => {
     // given
-    const label = 'lol';
     const icon = 'times';
-    const wrapper = mount(NeonExpansionPanel, {
-      propsData: { label, value: false, icon },
-    });
+    const { container, rerender } = harness;
+    await rerender({ icon });
     // when / then
-    expect(wrapper.find('.neon-expansion-panel__label-container .neon-icon').element).toBeDefined();
+    expect(container.querySelector('.neon-expansion-panel__label-container .neon-icon')).toBeDefined();
   });
 
   it('renders default position', () => {
     // given
-    const label = 'lol';
-    const wrapper = mount(NeonExpansionPanel, {
-      propsData: { label, value: false },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-expansion-panel--top').element).toBeDefined();
+    expect(container.querySelector('.neon-expansion-panel--top')).toBeDefined();
   });
 
-  it('renders position', () => {
+  it('renders position', async () => {
     // given
-    const label = 'lol';
     const position = NeonVerticalPosition.Bottom;
-    const wrapper = mount(NeonExpansionPanel, {
-      propsData: { label, value: false, position },
-    });
+    const { container, rerender } = harness;
+    await rerender({ position });
     // when / then
-    expect(wrapper.find('.neon-expansion-panel--bottom').element).toBeDefined();
+    expect(container.querySelector('.neon-expansion-panel--bottom')).toBeDefined();
   });
 
   it('renders default size', () => {
     // given
-    const label = 'lol';
-    const wrapper = mount(NeonExpansionPanel, {
-      propsData: { label, value: false },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-expansion-panel--m').element).toBeDefined();
+    expect(container.querySelector('.neon-expansion-panel--m')).toBeDefined();
   });
 
-  it('renders size', () => {
+  it('renders size', async () => {
     // given
-    const label = 'lol';
     const size = NeonSize.Large;
-    const wrapper = mount(NeonExpansionPanel, {
-      propsData: { label, value: false, size },
-    });
+    const { container, rerender } = harness;
+    await rerender({ size });
     // when / then
-    expect(wrapper.find('.neon-expansion-panel--l').element).toBeDefined();
+    expect(container.querySelector('.neon-expansion-panel--l')).toBeDefined();
   });
 
   it('renders default full width', () => {
     // given
-    const label = 'lol';
-    const wrapper = mount(NeonExpansionPanel, {
-      propsData: { label, value: false },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-expansion-panel--full-width').element).toBeUndefined();
+    expect(container.querySelector('.neon-expansion-panel--full-width')).toBeNull();
   });
 
-  it('renders full width', () => {
+  it('renders full width', async () => {
     // given
-    const label = 'lol';
     const fullWidth = true;
-    const wrapper = mount(NeonExpansionPanel, {
-      propsData: { label, value: false, fullWidth },
-    });
+    const { container, rerender } = harness;
+    await rerender({ fullWidth });
     // when / then
-    expect(wrapper.find('.neon-expansion-panel--full-width').element).toBeDefined();
+    expect(container.querySelector('.neon-expansion-panel--full-width')).toBeDefined();
   });
 
-  it('renders default color', () => {
+  it('renders default color', async () => {
     // given
-    const label = 'lol';
     const icon = 'times';
-    const wrapper = mount(NeonExpansionPanel, {
-      propsData: { label, value: false, icon },
-    });
+    const { container, rerender } = harness;
+    await rerender({ icon });
     // when / then
-    expect(wrapper.find('.neon-expansion-panel--neutral').element).toBeDefined();
-    expect(wrapper.find('.neon-expansion-indicator--neutral').element).toBeDefined();
-    expect(wrapper.find('.neon-expansion-panel__label-container .neon-icon--neutral').element).toBeDefined();
+    expect(container.querySelector('.neon-expansion-panel--neutral')).toBeDefined();
+    expect(container.querySelector('.neon-expansion-indicator--neutral')).toBeDefined();
+    expect(container.querySelector('.neon-expansion-panel__label-container .neon-icon--neutral')).toBeDefined();
   });
 
-  it('renders color', () => {
+  it('renders color', async () => {
     // given
-    const label = 'lol';
     const icon = 'times';
     const color = NeonFunctionalColor.Primary;
-    const wrapper = mount(NeonExpansionPanel, {
-      propsData: { label, value: false, icon, color },
-    });
+    const { container, rerender } = harness;
+    await rerender({ icon, color });
     // when / then
-    expect(wrapper.find('.neon-expansion-panel--primary').element).toBeDefined();
-    expect(wrapper.find('.neon-expansion-indicator--primary').element).toBeDefined();
-    expect(wrapper.find('.neon-expansion-panel__label-container .neon-icon--primary').element).toBeDefined();
+    expect(container.querySelector('.neon-expansion-panel--primary')).toBeDefined();
+    expect(container.querySelector('.neon-expansion-indicator--primary')).toBeDefined();
+    expect(container.querySelector('.neon-expansion-panel__label-container .neon-icon--primary')).toBeDefined();
   });
 
-  it('renders not disabled', () => {
+  it('renders not disabled', async () => {
     // given
-    const label = 'lol';
     const icon = 'times';
-    const wrapper = mount(NeonExpansionPanel, {
-      propsData: { label, value: false, icon },
-    });
+    const { container, rerender } = harness;
+    await rerender({ icon });
     // when / then
-    expect(wrapper.find('.neon-expansion-panel--disabled').element).toBeUndefined();
-    expect(wrapper.find('.neon-expansion-panel').attributes()['aria-disabled']).toBeUndefined();
-    expect(wrapper.find('.neon-expansion-indicator--disabled').element).toBeUndefined();
-    expect(wrapper.find('.neon-expansion-panel__label-container .neon-icon--disabled').element).toBeUndefined();
+    expect(container.querySelector('.neon-expansion-panel--disabled')).toBeNull();
+    expect(container.querySelector('.neon-expansion-panel')?.getAttribute('aria-disabled')).toEqual('false');
+    expect(container.querySelector('.neon-expansion-indicator--disabled')).toBeNull();
+    expect(container.querySelector('.neon-expansion-panel__label-container .neon-icon--disabled')).toBeNull();
   });
 
-  it('renders disabled', () => {
+  it('renders disabled', async () => {
     // given
-    const label = 'lol';
     const icon = 'times';
     const disabled = true;
-    const wrapper = mount(NeonExpansionPanel, {
-      propsData: { label, value: false, icon, disabled },
-    });
+    const { container, rerender } = harness;
+    await rerender({ icon, disabled });
     // when / then
-    expect(wrapper.find('.neon-expansion-panel--disabled').element).toBeDefined();
-    expect(wrapper.find('.neon-expansion-panel').attributes()['aria-disabled']).toEqual('true');
-    expect(wrapper.find('.neon-expansion-indicator--disabled').element).toBeDefined();
-    expect(wrapper.find('.neon-expansion-panel__label-container .neon-icon--disabled').element).toBeDefined();
+    expect(container.querySelector('.neon-expansion-panel--disabled')).toBeDefined();
+    expect(container.querySelector('.neon-expansion-panel')?.getAttribute('aria-disabled')).toEqual('true');
+    expect(container.querySelector('.neon-expansion-indicator--disabled')).toBeDefined();
+    expect(container.querySelector('.neon-expansion-panel__label-container .neon-icon--disabled')).toBeDefined();
   });
 
-  it('emits input event false', () => {
+  it('emits input event false', async () => {
     // given
-    const label = 'lol';
-    const wrapper = mount(NeonExpansionPanel, {
-      propsData: { label, value: true },
-    });
+    const { emitted, getByText, rerender } = harness;
+    await rerender({ modelValue: true });
     // when
-    wrapper.find('.neon-expansion-panel__header').trigger('click');
+    await fireEvent.click(getByText(label));
     // then
-    expect(wrapper.emitted().input[0]).toEqual([false]);
+    expect(emitted()['update:modelValue'][0]).toEqual([false]);
   });
 
-  it('emits input event true', () => {
+  it('emits input event true', async () => {
     // given
-    const label = 'lol';
-    const wrapper = mount(NeonExpansionPanel, {
-      propsData: { label, value: false },
-    });
+    const { emitted, getByText } = harness;
     // when
-    wrapper.find('.neon-expansion-panel__header').trigger('click');
+    await fireEvent.click(getByText(label));
     // then
-    expect(wrapper.emitted().input[0]).toEqual([true]);
+    expect(emitted()['update:modelValue'][0]).toEqual([true]);
   });
 
-  it('emits input event space', () => {
+  it('emits input event space', async () => {
     // given
-    const label = 'lol';
-    const wrapper = mount(NeonExpansionPanel, {
-      propsData: { label, value: false },
-    });
+    const { emitted, getByText } = harness;
     // when
-    wrapper.find('.neon-expansion-panel__label-container').trigger('keydown.space');
+    await fireEvent.keyDown(getByText(label), { key: 'Space', code: 'Space' });
     // then
-    expect(wrapper.emitted().input[0]).toEqual([true]);
+    expect(emitted()['update:modelValue'][0]).toEqual([true]);
   });
 
-  it('emits input event enter', () => {
+  it('emits input event enter', async () => {
     // given
-    const label = 'lol';
-    const wrapper = mount(NeonExpansionPanel, {
-      propsData: { label, value: false },
-    });
+    const { emitted, getByText } = harness;
     // when
-    wrapper.find('.neon-expansion-panel__label-container').trigger('keydown.enter');
+    await fireEvent.keyDown(getByText(label), { key: 'Enter', code: 'Enter' });
     // then
-    expect(wrapper.emitted().input[0]).toEqual([true]);
+    expect(emitted()['update:modelValue'][0]).toEqual([true]);
   });
 
-  it('does not emit input event when disabled', () => {
+  it('does not emit input event when disabled', async () => {
     // given
-    const label = 'lol';
-    const wrapper = mount(NeonExpansionPanel, {
-      propsData: { label, value: false, disabled: true },
-    });
+    const { emitted, getByText, rerender } = harness;
+    await rerender({ disabled: true });
     // when
-    wrapper.find('.neon-expansion-panel__header').trigger('click');
+    await fireEvent.click(getByText(label));
     // then
-    expect(wrapper.emitted().input).toBeUndefined();
+    expect(emitted()['update:modelValue']).toBeUndefined();
   });
 });

@@ -3,6 +3,7 @@ import { NeonScrollUtils } from './NeonScrollUtils';
 describe('NeonScrollUtils', () => {
   it('scrolls into view no offset', () => {
     const element = {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       parentElement: {
         scrollTop: 0,
@@ -10,6 +11,7 @@ describe('NeonScrollUtils', () => {
       offsetTop: 0,
       offsetHeight: 0,
     };
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     NeonScrollUtils.scrollIntoView(element);
     expect(element.parentElement.scrollTop).toEqual(0);
@@ -23,6 +25,7 @@ describe('NeonScrollUtils', () => {
       offsetTop: 200,
       offsetHeight: 0,
     };
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     NeonScrollUtils.scrollIntoView(element);
     expect(element.parentElement.scrollTop).toEqual(200);
@@ -36,6 +39,7 @@ describe('NeonScrollUtils', () => {
       offsetTop: 200,
       offsetHeight: 0,
     };
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     NeonScrollUtils.scrollIntoView(element);
     expect(element.parentElement.scrollTop).toEqual(200);

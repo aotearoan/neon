@@ -1,11 +1,8 @@
-import Vue from 'vue';
-import { mount } from '@vue/test-utils';
+import type { RenderResult } from '@testing-library/vue';
+import { fireEvent, render } from '@testing-library/vue';
 import NeonTabs from './NeonTabs.vue';
-import NeonIcon from '../icon/NeonIcon.vue';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-
-Vue.component('NeonIcon', NeonIcon);
 
 describe('NeonTabs', () => {
   const tabs = [
@@ -24,180 +21,140 @@ describe('NeonTabs', () => {
       icon: 'check',
     },
   ];
-  const value = tabs[1].key;
 
-  it('renders default slot', () => {
-    const contents = 'lol';
-    const wrapper = mount(NeonTabs, {
-      propsData: { tabs, value },
+  const modelValue = tabs[1].key;
+
+  let harness: RenderResult;
+
+  beforeAll(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    window.matchMedia = () => ({ matches: false });
+  });
+
+  beforeEach(() => {
+    harness = render(NeonTabs, {
+      props: { tabs, modelValue },
       slots: {
-        default: `<p>${contents}</p>`,
+        default: '<p>test</p>',
       },
     });
-    expect(wrapper.find('.neon-tabs p').text()).toEqual(contents);
+  });
+
+  it('renders default slot', () => {
+    const { html } = harness;
+    expect(html()).toMatch('<p>test</p>');
   });
 
   it('renders default size', () => {
-    const wrapper = mount(NeonTabs, {
-      propsData: { tabs, value },
-    });
-    expect(wrapper.find('.neon-tabs--m').element).toBeDefined();
+    const { html } = harness;
+    expect(html()).toMatch('neon-tabs--m');
   });
 
-  it('renders size', () => {
-    const wrapper = mount(NeonTabs, {
-      propsData: { tabs, value, size: NeonSize.Large },
-    });
-    expect(wrapper.find('.neon-tabs--l').element).toBeDefined();
+  it('renders default size', async () => {
+    const { html, rerender } = harness;
+    await rerender({ size: NeonSize.Large });
+    expect(html()).toMatch('neon-tabs--l');
   });
 
   it('renders default color', () => {
-    const wrapper = mount(NeonTabs, {
-      propsData: { tabs, value },
-    });
-    expect(wrapper.find('.neon-tabs--primary').element).toBeDefined();
+    const { html } = harness;
+    expect(html()).toMatch('neon-tabs--primary');
   });
 
-  it('renders color', () => {
-    const wrapper = mount(NeonTabs, {
-      propsData: { tabs, value, color: NeonFunctionalColor.Brand },
-    });
-    expect(wrapper.find('.neon-tabs--brand').element).toBeDefined();
+  it('renders default color', async () => {
+    const { html, rerender } = harness;
+    await rerender({ color: NeonFunctionalColor.Brand });
+    expect(html()).toMatch('neon-tabs--brand');
   });
 
   it('renders default underline', () => {
-    const wrapper = mount(NeonTabs, {
-      propsData: { tabs, value },
-    });
-    expect(wrapper.find('.neon-tabs__menu-items--underlined').element).toBeDefined();
+    const { html } = harness;
+    expect(html()).toMatch('neon-tabs__menu-items--underlined');
   });
 
-  it('renders underline false', () => {
-    const wrapper = mount(NeonTabs, {
-      propsData: { tabs, value, underline: false },
-    });
-    expect(wrapper.find('.neon-tabs__menu-items--underlined').element).toBeUndefined();
+  it('renders underline false', async () => {
+    const { html, rerender } = harness;
+    await rerender({ underline: false });
+    expect(html()).not.toMatch('neon-tabs__menu-items--underlined');
   });
 
-  it('selects the correct tab', () => {
-    const wrapper = mount(NeonTabs, {
-      propsData: { tabs, value },
-    });
-    expect(wrapper.find('.neon-tabs__menu-item:nth-child(2).neon-tabs__menu-item--selected').element).toBeDefined();
-    expect(wrapper.find('.neon-tabs__menu-item:nth-child(2)').attributes()['aria-selected']).toEqual('true');
-  });
-
-  it('renders aria-controls', () => {
-    const wrapper = mount(NeonTabs, {
-      propsData: { tabs, value },
-    });
-    expect(wrapper.find('.neon-tabs__menu-item--selected').attributes()['aria-controls']).toEqual(value);
+  it('renders aria-controls', async () => {
+    const { html, rerender } = harness;
+    await rerender({ underline: false });
+    expect(html()).toMatch('aria-controls="tab2"');
   });
 
   it('renders id', () => {
-    const wrapper = mount(NeonTabs, {
-      propsData: { tabs, value },
-    });
-    expect(wrapper.find('.neon-tabs__menu-item--selected').attributes().id).toEqual(`${value}Button`);
+    const { html } = harness;
+    expect(html()).toMatch(`id="${modelValue}Button"`);
   });
 
   it('renders button container id', () => {
-    const wrapper = mount(NeonTabs, {
-      propsData: { tabs, value },
-    });
-    expect(wrapper.find('.neon-tabs__menu-item--selected .neon-tabs__menu-item-container').attributes().id).toEqual(
-      `${value}ButtonContainer`,
-    );
+    const { html } = harness;
+    expect(html()).toMatch(`id="${modelValue}ButtonContainer"`);
   });
 
   it('renders tabindex selected', () => {
-    const wrapper = mount(NeonTabs, {
-      propsData: { tabs, value },
-    });
-    expect(
-      wrapper.find('.neon-tabs__menu-item--selected .neon-tabs__menu-item-container').attributes().tabindex,
-    ).toEqual('0');
+    const { html } = harness;
+    expect(html()).toMatch('<div id="tab2Button" aria-controls="tab2" aria-selected="true" class="neon-tabs__menu-item--selected neon-tabs__menu-item" role="tab" tabindex="-1">');
+    expect(html()).toMatch('<div id="tab2ButtonContainer" tabindex="0" class="neon-tabs__menu-item-container">');
   });
 
   it('renders tabindex unselected', () => {
-    const wrapper = mount(NeonTabs, {
-      propsData: { tabs, value },
-    });
-    expect(
-      wrapper.find('.neon-tabs__menu-item:first-child .neon-tabs__menu-item-container').attributes().tabindex,
-    ).toEqual('-1');
+    const { html } = harness;
+    expect(html()).toMatch('<div id="tab1Button" aria-controls="tab1" aria-selected="false" class="neon-tabs__menu-item" role="tab" tabindex="-1">');
+    expect(html()).toMatch('<div id="tab1ButtonContainer" tabindex="-1" class="neon-tabs__menu-item-container">');
   });
 
   it('renders tab label', () => {
-    const wrapper = mount(NeonTabs, {
-      propsData: { tabs, value },
-    });
-    expect(wrapper.find('.neon-tabs__menu-item:first-child .neon-tabs__menu-label').text()).toEqual(tabs[0].label);
+    const { getByText } = harness;
+    getByText(tabs[0].label);
   });
 
   it('renders tab icon', () => {
-    const wrapper = mount(NeonTabs, {
-      propsData: { tabs, value, color: NeonFunctionalColor.Brand },
-    });
-    expect(wrapper.find('.neon-tabs__menu-item:last-child .neon-tabs__menu-icon').element).toBeDefined();
+    const { html } = harness;
+    expect(html()).toMatch('neon-tabs__menu-icon');
   });
 
   it('renders tab icon selected', () => {
-    const wrapper = mount(NeonTabs, {
-      propsData: { tabs, value, color: NeonFunctionalColor.Brand },
-    });
-    expect(wrapper.find('.neon-tabs__menu-item--selected .neon-icon--brand').element).toBeDefined();
+    const { html } = harness;
+    expect(html()).toMatch('<div id="tab2Button" aria-controls="tab2" aria-selected="true" class="neon-tabs__menu-item--selected neon-tabs__menu-item" role="tab" tabindex="-1">');
   });
 
-  it('click tab emits event', () => {
-    const wrapper = mount(NeonTabs, {
-      propsData: { tabs, value, color: NeonFunctionalColor.Brand },
-    });
-    wrapper.find('.neon-tabs__menu-item:first-child').trigger('click');
-    expect(wrapper.emitted().input[0]).toEqual([tabs[0].key]);
+  it('click tab emits event', async () => {
+    const { emitted, getByText } = harness;
+    await fireEvent.click(getByText(tabs[0].label));
+    expect(emitted()['update:modelValue']).toEqual([[tabs[0].key]]);
   });
 
-  it('click selected tab emits no event', () => {
-    const wrapper = mount(NeonTabs, {
-      propsData: { tabs, value, color: NeonFunctionalColor.Brand },
-    });
-    wrapper.find('.neon-tabs__menu-item--selected').trigger('click');
-    expect(wrapper.emitted().input).toBeUndefined();
+  it('click selected tab emits no event', async () => {
+    const { emitted, getByText } = harness;
+    await fireEvent.click(getByText(tabs[1].label));
+    expect(emitted()['update:modelValue']).toBeUndefined();
   });
 
-  it('key left goes to previous tab', () => {
-    const wrapper = mount(NeonTabs, {
-      propsData: { tabs, value },
-    });
-    wrapper.find('.neon-tabs__menu-item--selected .neon-tabs__menu-item-container').trigger('keydown.left');
-    expect(wrapper.emitted().input[0]).toEqual([tabs[0].key]);
+  it('key left goes to previous tab', async () => {
+    const { emitted, getByText } = harness;
+    await fireEvent.keyDown(getByText(tabs[1].label), { key: 'Left', code: 'Left' });
+    expect(emitted()['update:modelValue']).toEqual([[tabs[0].key]]);
   });
 
-  it('key left wraps to last tab', () => {
-    const wrapper = mount(NeonTabs, {
-      propsData: { tabs, value },
-    });
-    wrapper.find('.neon-tabs__menu-item:first-child .neon-tabs__menu-item-container').trigger('keydown.left');
-    expect(wrapper.emitted().input[0]).toEqual([tabs[tabs.length - 1].key]);
+  it('key left wraps to last tab', async () => {
+    const { emitted, getByText } = harness;
+    await fireEvent.keyDown(getByText(tabs[0].label), { key: 'Left', code: 'Left' });
+    expect(emitted()['update:modelValue']).toEqual([[tabs[tabs.length - 1].key]]);
   });
 
-  it('key right goes to next tab', () => {
-    const wrapper = mount(NeonTabs, {
-      propsData: { tabs, value },
-    });
-    wrapper.find('.neon-tabs__menu-item--selected .neon-tabs__menu-item-container').trigger('keydown.right');
-    expect(wrapper.emitted().input[0]).toEqual([tabs[2].key]);
+  it('key right goes to next tab', async () => {
+    const { emitted, getByText } = harness;
+    await fireEvent.keyDown(getByText(tabs[1].label), { key: 'Right', code: 'Right' });
+    expect(emitted()['update:modelValue']).toEqual([[tabs[2].key]]);
   });
 
-  it('key right wraps to first tab', () => {
-    const wrapper = mount(NeonTabs, {
-      propsData: { tabs, value },
-    });
-    const getElFn = document.getElementById;
-    document.getElementById = (id: string) =>
-      wrapper.find('.neon-tabs__menu-item:first-child .neon-tabs__menu-item-container').element;
-    wrapper.find('.neon-tabs__menu-item:last-child .neon-tabs__menu-item-container').trigger('keydown.right');
-    expect(wrapper.emitted().input[0]).toEqual([tabs[0].key]);
-    document.getElementById = getElFn;
+  it('key right wraps to first tab', async () => {
+    const { emitted, getByText } = harness;
+    await fireEvent.keyDown(getByText(tabs[2].label), { key: 'Right', code: 'Right' });
+    expect(emitted()['update:modelValue']).toEqual([[tabs[0].key]]);
   });
 });

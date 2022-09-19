@@ -1,4 +1,20 @@
-@mixin neon-footer-import {
+@use './includes/layout';
+@use './includes/responsive';
+
+@mixin import(
+  $neon-max-page-width,
+  $neon-base-space,
+  $neon-line-height-one,
+  $neon-font-size-m,
+  $neon-font-size-s,
+  $neon-footer-height-desktop,
+  $spacing-vertical-desktop,
+  $neon-footer-height-tablet,
+  $spacing-vertical-tablet,
+  $neon-footer-height-mobile,
+  $neon-spacing-vertical-mobile,
+  $neon-side-nav-width,
+) {
   .neon-footer {
     display: flex;
     align-items: flex-start;
@@ -10,19 +26,19 @@
       max-width: $neon-max-page-width + 4 * $neon-base-space;
       line-height: $neon-line-height-one;
 
-      @include responsive(larger-than-tablet) {
+      @include responsive.responsive(larger-than-tablet) {
         font-size: $neon-font-size-m;
         height: $neon-footer-height-desktop;
         padding: 0 $spacing-vertical-desktop;
       }
 
-      @include responsive(tablet) {
+      @include responsive.responsive(tablet) {
         font-size: $neon-font-size-s;
         height: $neon-footer-height-tablet;
         padding: 0 $spacing-vertical-tablet;
       }
 
-      @include responsive(mobile-large) {
+      @include responsive.responsive(mobile-large) {
         font-size: $neon-font-size-s;
         height: $neon-footer-height-mobile;
         padding: 0 $neon-spacing-vertical-mobile;
@@ -31,6 +47,18 @@
   }
 
   .neon-page--with-side-nav .neon-footer {
-    @include side-nav-offset;
+    @include layout.side-nav-offset($neon-side-nav-width);
+  }
+}
+
+@mixin import-colors(
+  $neon-background-color-footer,
+  $neon-border-top-footer,
+  $neon-color-text-neutral,
+) {
+  .neon-footer {
+    background-color: $neon-background-color-footer;
+    border-top: $neon-border-top-footer;
+    color: $neon-color-text-neutral;
   }
 }

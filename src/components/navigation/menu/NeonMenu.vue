@@ -1,54 +1,54 @@
 <template>
-  <nav class="neon-menu__wrapper" ref="menu">
-    <ul class="neon-menu no-style" :class="[`neon-menu--${color}`, `neon-menu--${size}`]" role="menubar">
+  <nav ref="menuWrapper" class="neon-menu__wrapper">
+    <ul :class="[`neon-menu--${color}`, `neon-menu--${size}`]" class="neon-menu no-style" role="menubar">
       <li
         v-for="item in menu"
         :key="item.key"
         ref="menuItem"
-        class="neon-menu__item"
         :class="{ 'neon-menu__item--disabled': item.disabled }"
+        class="neon-menu__item"
       >
         <neon-dropdown-menu
           v-if="item.children"
-          :model="item.children"
-          :color="color"
-          :size="size"
-          :disabled="item.disabled"
-          :label="item.label"
-          :icon="item.icon"
-          dropdown-style="text-button"
-          :openOnHover="!item.disabled"
           :class="{ 'router-link-active': routeMatches(item.href) }"
+          :color="color"
+          :disabled="item.disabled"
+          :icon="item.icon"
+          :label="item.label"
+          :model="item.children"
+          :openOnHover="!item.disabled"
+          :size="size"
+          dropdown-style="text-button"
         />
         <neon-link
           v-else
-          outline-style="none"
           :href="item.href"
-          @click.native="!item.disabled && onClick(item.key)"
-          @keydown.enter="!item.disabled && onClick(item.key)"
-          @keydown.space.native="!item.disabled && onClick(item.key)"
-          @keypress.space.prevent=""
           :no-style="true"
           :tabindex="item.disabled ? -1 : 0"
+          outline-style="none"
           role="menuitem"
+          @click="!item.disabled && onClick(item.key)"
+          @keydown.enter="!item.disabled && onClick(item.key)"
+          @keydown.space="!item.disabled && onClick(item.key)"
+          @keypress.space.prevent=""
         >
-          <neon-icon v-if="item.icon" :name="item.icon" color="neutral" class="neon-menu__item-icon" />
+          <neon-icon v-if="item.icon" :name="item.icon" class="neon-menu__item-icon" color="neutral" />
           <span class="neon-menu__item-label">{{ item.label }}</span>
         </neon-link>
       </li>
     </ul>
     <neon-dropdown-menu
-      ref="responsiveMenu"
-      class="neon-menu__responsive-menu"
       :class="{ 'neon-menu__responsive-menu--hidden': responsiveMenuItems.length === 0 }"
-      icon="ellipsis"
       :color="color"
-      :size="size"
-      :model="responsiveMenuItems"
-      dropdown-style="text-button"
-      placement="bottom-right"
-      :openOnHover="true"
       :indicator="false"
+      :model="responsiveMenuItems"
+      :openOnHover="true"
+      :size="size"
+      class="neon-menu__responsive-menu"
+      dropdown-style="text-button"
+      icon="ellipsis"
+      placement="bottom-right"
+      @button-ref="responsiveButton = $event"
     />
   </nav>
 </template>

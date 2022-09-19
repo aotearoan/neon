@@ -1,26 +1,23 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { defineComponent } from 'vue';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 
 /**
  * A component for displaying notification counts to the user.
  */
-@Component
-export default class NeonNotificationCounter extends Vue {
-  /**
-   * Whether or not the notification is active
-   */
-  @Prop({ default: false })
-  public active!: boolean;
-
-  /**
-   * The notification color
-   */
-  @Prop({ default: NeonFunctionalColor.Error })
-  public color!: NeonFunctionalColor;
-
-  /**
-   * The count of notifications to display, if greater than 9 <em>9+</em> is displayed
-   */
-  @Prop()
-  public count?: number;
-}
+export default defineComponent({
+  name: 'NeonNotificationCounter',
+  props: {
+    /**
+     * Whether the notification is active
+     */
+    active: { type: Boolean, default: false },
+    /**
+     * The notification color
+     */
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Error },
+    /**
+     * The count of notifications to display, if greater than 9 <em>9+</em> is displayed
+     */
+    count: { type: Number, default: null },
+  },
+});

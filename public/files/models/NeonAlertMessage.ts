@@ -1,6 +1,5 @@
-import { TranslateResult } from 'vue-i18n';
-import { NeonAlertPlacement } from '../enums/NeonAlertPlacement';
-import { NeonAlertAction } from './NeonAlertAction';
+import type { NeonAlertPlacement } from '../enums/NeonAlertPlacement';
+import type { NeonAlertAction } from './NeonAlertAction';
 
 /**
  * An alert message.
@@ -9,12 +8,12 @@ export interface NeonAlertMessage {
   /**
    * Optional title of the alert.
    */
-  title?: TranslateResult;
+  title?: string;
 
   /**
    * Optional body message.
    */
-  message?: TranslateResult;
+  message?: string;
 
   /**
    * Placement of the message. Default is top-right.
@@ -23,14 +22,14 @@ export interface NeonAlertMessage {
 
   /**
    * Duration to display the message (default = 2500ms). Set to 0 for the message to never expire (make sure it's
-   * dismissable).
+   * dismissible).
    */
   duration?: number;
 
   /**
    * Whether the message can be dismissed by a user click. Default is true.
    */
-  dismissable?: boolean;
+  dismissible?: boolean;
 
   /**
    * Provide an action for the user to click on an alert. Actions consist of a label to display for the action and a

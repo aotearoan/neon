@@ -1,0 +1,91 @@
+@mixin import(
+  $neon-size-xs,
+  $neon-size-m,
+  $neon-font-size-m,
+  $neon-font-size-s,
+  $neon-base-space,
+  $neon-letter-spacing-m,
+  $neon-line-height-ratio,
+) {
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+
+    thead {
+      tr {
+        th {
+          height: $neon-size-m;
+          vertical-align: bottom;
+          font-size: $neon-font-size-s;
+          font-weight: 500;
+          text-transform: uppercase;
+          text-align: left;
+          padding: 0 6 * $neon-base-space 0 0;
+          letter-spacing: $neon-letter-spacing-m;
+
+          &.neon--number {
+            text-align: right;
+          }
+
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          $padding-td-vertical: 0.5 * ($neon-size-m - $neon-line-height-ratio * $neon-font-size-m);
+          vertical-align: top;
+          text-align: left;
+          padding: $padding-td-vertical 6 * $neon-base-space $padding-td-vertical 0;
+          font-weight: 400;
+          letter-spacing: $neon-letter-spacing-m;
+
+          &.neon--number {
+            text-align: right;
+            font-variant: tabular-nums;
+          }
+
+          &:last-child {
+            padding-right: 0;
+          }
+
+          .neon-label--xs {
+            margin-top: 0.5 * ($neon-line-height-ratio * $neon-font-size-m - ($neon-size-xs - $neon-base-space));
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin import-colors(
+  $neon-border-width-table,
+  $neon-border-style,
+  $neon-label-color,
+  $neon-color-text-low-contrast,
+) {
+  table {
+    border-bottom: $neon-border-width-table $neon-border-style $neon-label-color;
+
+    thead {
+      tr {
+        th {
+          border-bottom: $neon-border-width-table $neon-border-style $neon-label-color;
+          color: $neon-label-color;
+        }
+      }
+    }
+
+    &.neon-table--hover {
+      tbody {
+        tr:hover {
+          background-color: rgba($neon-color-text-low-contrast, 0.125);
+        }
+      }
+    }
+  }
+}

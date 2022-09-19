@@ -1,4 +1,4 @@
-import { NeonAvailableSpace } from '../models/NeonAvailableSpace';
+import type { NeonAvailableSpace } from '../models/NeonAvailableSpace';
 
 export class NeonPlacementUtils {
   public static calculateAvailableSpace(

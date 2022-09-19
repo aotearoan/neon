@@ -1,9 +1,12 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonColor } from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonColor } from '@/neon';
+import type { MenuModel } from '../../../Menu';
+import { Menu } from '../../../Menu';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Color',
   components: {
     ComponentDocumentation,
     NeonCard,
@@ -11,33 +14,37 @@ import ComponentDocumentation from '../../../components/component-documentation/
     NeonCardHeader,
     NeonColor,
   },
-})
-export default class Color extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Enhanced HTML native color picker');
 
-  private headline = 'Enhanced HTML native color picker';
+    const data = ref({
+      colorSmall: '#FF6F61',
+      colorMedium: '#FF6F61',
+      colorLarge: '#FF6F61',
+    });
 
-  private data = {
-    colorSmall: '#FF6F61',
-    colorMedium: '#FF6F61',
-    colorLarge: '#FF6F61',
-  };
-
-  private colorSizeExamples = `<div class="neon-vertically-spaced">
+    const colorSizeExamples = `<div class="neon-vertically-spaced">
   <neon-color size="s" v-model="colorSmall" placeholder="Choose a color" />
   <neon-color size="m" v-model="colorMedium" placeholder="Choose a color" />
   <neon-color size="l" v-model="colorLarge" placeholder="Choose a color" />
 </div>`;
 
-  private examples = [
-    {
-      title: 'Color input sizes',
-      template: this.colorSizeExamples,
-      data: this.data,
-    },
-  ];
+    const examples = ref([
+      {
+        title: 'Color input sizes',
+        template: colorSizeExamples,
+        data: data.value,
+      },
+    ]);
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonColor');
-  }
-}
+    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonColor'));
+
+    return {
+      menuModel,
+      headline,
+      data,
+      examples,
+    };
+  },
+});

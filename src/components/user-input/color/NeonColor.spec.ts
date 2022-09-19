@@ -1,103 +1,89 @@
-import { mount } from '@vue/test-utils';
+import type { RenderResult } from '@testing-library/vue';
+import { fireEvent, render } from '@testing-library/vue';
 import NeonColor from './NeonColor.vue';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 
 describe('NeonColor', () => {
-  it('renders default size', () => {
-    const wrapper = mount(NeonColor, {
-      propsData: { value: '#bada55' },
-    });
-    expect(wrapper.find('.neon-color--m').element).toBeDefined();
-    expect(wrapper.findAll('.neon-input--m').length).toEqual(2);
+  const value = '#bada55';
+  let harness: RenderResult;
+
+  beforeEach(() => {
+    harness = render(NeonColor,
+      {
+        props: { modelValue: value },
+      },
+    );
   });
 
-  it('renders size', () => {
-    const wrapper = mount(NeonColor, {
-      propsData: { value: '#bada55', size: NeonSize.Large },
-    });
-    expect(wrapper.find('.neon-color--l').element).toBeDefined();
-    expect(wrapper.findAll('.neon-input--l').length).toEqual(2);
+  it('renders default size', () => {
+    const { container } = harness;
+    expect(container.querySelector('.neon-color--m')).toBeDefined();
+    expect(container.querySelectorAll('.neon-input--m').length).toEqual(2);
+  });
+
+  it('renders size', async () => {
+    const { container, rerender } = harness;
+    await rerender({ size: NeonSize.Large });
+    expect(container.querySelector('.neon-color--l')).toBeDefined();
+    expect(container.querySelectorAll('.neon-input--l').length).toEqual(2);
   });
 
   it('renders default color', () => {
-    const wrapper = mount(NeonColor, {
-      propsData: { value: '#bada55' },
-    });
-    expect(wrapper.find('.neon-color--low-contrast').element).toBeDefined();
-    expect(wrapper.findAll('.neon-input--low-contrast').length).toEqual(2);
+    const { container } = harness;
+    expect(container.querySelector('.neon-color--low-contrast')).toBeDefined();
+    expect(container.querySelectorAll('.neon-input--low-contrast').length).toEqual(2);
   });
 
-  it('renders color', () => {
-    const wrapper = mount(NeonColor, {
-      propsData: { value: '#bada55', color: NeonFunctionalColor.Brand },
-    });
-    expect(wrapper.find('.neon-color--brand').element).toBeDefined();
-    expect(wrapper.findAll('.neon-input--brand').length).toEqual(2);
+  it('renders color', async () => {
+    const { container, rerender } = harness;
+    await rerender({ color: NeonFunctionalColor.Brand });
+    expect(container.querySelector('.neon-color--brand')).toBeDefined();
+    expect(container.querySelectorAll('.neon-input--brand').length).toEqual(2);
   });
 
   it('renders default not disabled', () => {
-    const wrapper = mount(NeonColor, {
-      propsData: { value: '#bada55' },
-    });
-    expect(wrapper.find('.neon-color--disabled').element).toBeUndefined();
-    expect(wrapper.findAll('.neon-input--disabled').length).toEqual(0);
+    const { container } = harness;
+    expect(container.querySelector('.neon-color--disabled')).toBeNull();
+    expect(container.querySelectorAll('.neon-input--disabled').length).toEqual(0);
   });
 
-  it('renders disabled', () => {
-    const wrapper = mount(NeonColor, {
-      propsData: { value: '#bada55', disabled: true },
-    });
-    expect(wrapper.find('.neon-color--disabled').element).toBeDefined();
-    expect(wrapper.findAll('.neon-input--disabled').length).toEqual(2);
+  it('renders disabled', async () => {
+    const { container, rerender } = harness;
+    await rerender({ disabled: true });
+    expect(container.querySelector('.neon-color--disabled')).toBeDefined();
+    expect(container.querySelectorAll('.neon-input--disabled').length).toEqual(2);
   });
 
-  it('renders placeholder', () => {
+  it('renders placeholder', async () => {
     const placeholder = 'xdd';
-    const wrapper = mount(NeonColor, {
-      propsData: { value: '#bada55', placeholder },
-    });
-    expect(wrapper.find('.neon-color__text-input .neon-input__textfield').attributes().placeholder).toEqual(
-      placeholder,
-    );
+    const { container, rerender } = harness;
+    await rerender({ placeholder });
+    expect(container.querySelector('.neon-color__text-input .neon-input__textfield')?.getAttribute('placeholder')).toEqual(placeholder);
   });
 
   it('renders value', () => {
-    const value = '#bada55';
-    const wrapper = mount(NeonColor, {
-      propsData: { value },
-    });
-    expect((wrapper.find('.neon-color__text-input .neon-input__textfield').element as HTMLInputElement).value).toEqual(
+    const { container } = harness;
+    expect(container.querySelector('.neon-color__text-input .neon-input__textfield')?.getAttribute('value')).toEqual(
       value,
     );
-    expect((wrapper.find('.neon-color__input .neon-input__textfield').element as HTMLInputElement).value).toEqual(
+    expect(container.querySelector('.neon-color__input .neon-input__textfield')?.getAttribute('value')).toEqual(
       value,
     );
     expect(
-      (wrapper.find('.neon-color__indicator').element as HTMLInputElement).style.getPropertyValue('background-color'),
+      (container.querySelector('.neon-color__indicator') as HTMLInputElement).style.getPropertyValue('background-color'),
     ).toEqual('rgb(186, 218, 85)');
     expect(
-      (wrapper.find('.neon-color__indicator').element as HTMLInputElement).style.getPropertyValue('box-shadow'),
+      (container.querySelector('.neon-color__indicator') as HTMLInputElement).style.getPropertyValue('box-shadow'),
     ).toEqual(`0 0 0 4px ${value}4D`);
   });
 
-  it('emits changed text value', () => {
-    const value = '#bada55';
+  it('emits changed text value', async () => {
     const newValue = '#1a1a1a';
-    const wrapper = mount(NeonColor, {
-      propsData: { value },
-    });
-    wrapper.find('.neon-color__text-input .neon-input__textfield').setValue(newValue);
-    expect(wrapper.emitted().input[0]).toEqual([newValue]);
-  });
-
-  it('emits changed color picker value', () => {
-    const value = '#bada55';
-    const newValue = '#1a1a1a';
-    const wrapper = mount(NeonColor, {
-      propsData: { value },
-    });
-    wrapper.find('.neon-color__input .neon-input__textfield').setValue(newValue);
-    expect(wrapper.emitted().input[0]).toEqual([newValue]);
+    const { emitted, getAllByTestId } = harness;
+    const el = getAllByTestId('neonInput')[0] as HTMLInputElement;
+    el.value = newValue;
+    await fireEvent.input(el);
+    expect(emitted()['update:modelValue'][0]).toEqual([newValue]);
   });
 });

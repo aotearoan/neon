@@ -1,414 +1,277 @@
-import Vue from 'vue';
-import { mount, shallowMount } from '@vue/test-utils';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
+import type { RenderResult } from '@testing-library/vue';
+import { fireEvent, render } from '@testing-library/vue';
 import NeonInput from './NeonInput.vue';
-import NeonInputClass from './NeonInput';
 import { NeonInputType } from '../../../common/enums/NeonInputType';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonState } from '../../../common/enums/NeonState';
 
-Vue.component('NeonIcon', NeonIcon);
-
 describe('NeonInput', () => {
+  const modelValue = '';
+  const id = 'test id';
+  let harness: RenderResult;
+
+  beforeEach(() => {
+    harness = render(NeonInput,
+      {
+        props: { modelValue, id },
+      },
+    );
+  });
+
   it('renders id', () => {
-    const value = '';
-    const id = 'test id';
-    const wrapper = shallowMount(NeonInput, {
-      propsData: { value, id },
-    });
-    expect(wrapper.find('.neon-input__textfield').attributes().id).toEqual(id);
+    const { container } = harness;
+    expect(container.querySelector('.neon-input__textfield')?.getAttribute('id')).toEqual(id);
   });
 
-  it('renders placeholder', () => {
-    const value = '';
+  it('renders placeholder', async () => {
+    const modelValue = '';
     const placeholder = 'test label';
-    const wrapper = shallowMount(NeonInput, {
-      propsData: { value, placeholder },
-    });
-    expect((wrapper.find('.neon-input__textfield').element as HTMLInputElement).placeholder).toEqual(placeholder);
+    const { getByPlaceholderText, rerender } = harness;
+    await rerender({ modelValue, placeholder });
+    getByPlaceholderText(placeholder);
   });
 
-  it('renders telephone placeholder', () => {
-    const value = '';
-    const wrapper = shallowMount(NeonInput, {
-      propsData: { value, type: NeonInputType.Tel },
-    });
-    expect((wrapper.find('.neon-input__textfield').element as HTMLInputElement).placeholder).toEqual('+41785551234');
+  it('renders telephone placeholder', async () => {
+    const modelValue = '';
+    const { getByPlaceholderText, rerender } = harness;
+    await rerender({ modelValue, type: NeonInputType.Tel });
+    getByPlaceholderText('+41785551234');
   });
 
-  it('renders url placeholder', () => {
-    const value = '';
-    const wrapper = shallowMount(NeonInput, {
-      propsData: { value, type: NeonInputType.Url },
-    });
-    expect((wrapper.find('.neon-input__textfield').element as HTMLInputElement).placeholder).toEqual(
-      'http://www.getskeleton.com',
-    );
+  it('renders url placeholder', async () => {
+    const modelValue = '';
+    const { getByPlaceholderText, rerender } = harness;
+    await rerender({ modelValue, type: NeonInputType.Url });
+    getByPlaceholderText('http://www.getskeleton.com');
   });
 
-  it('renders email placeholder', () => {
-    const value = '';
-    const wrapper = shallowMount(NeonInput, {
-      propsData: { value, type: NeonInputType.Email },
-    });
-    expect((wrapper.find('.neon-input__textfield').element as HTMLInputElement).placeholder).toEqual(
-      'gbelson@hooli.com',
-    );
+  it('renders email placeholder', async () => {
+    const modelValue = '';
+    const { getByPlaceholderText, rerender } = harness;
+    await rerender({ modelValue, type: NeonInputType.Email });
+    getByPlaceholderText('gbelson@hooli.com');
   });
 
-  it('renders placeholder visible class', () => {
-    const value = '';
+  it('renders placeholder visible class', async () => {
+    const modelValue = '';
     const placeholder = 'test label';
-    const wrapper = shallowMount(NeonInput, {
-      propsData: { value, placeholder },
-    });
-    expect(wrapper.find('.neon-input--placeholder-visible').element).toBeDefined();
+    const { container, rerender } = harness;
+    await rerender({ modelValue, placeholder });
+    expect(container.querySelector('.neon-input--placeholder-visible')).toBeDefined();
   });
 
-  it('does not render placeholder visible class when value is set', () => {
-    const value = '1';
+  it('does not render placeholder visible class when modelValue is set', async () => {
+    const modelValue = '1';
     const placeholder = 'test label';
-    const wrapper = shallowMount(NeonInput, {
-      propsData: { value, placeholder },
-    });
-    expect(wrapper.find('.neon-input--placeholder-visible').element).toBeUndefined();
+    const { container, rerender } = harness;
+    await rerender({ modelValue, placeholder });
+    expect(container.querySelector('.neon-input--placeholder-visible')).toBeNull();
   });
 
-  it('renders value', () => {
-    const value = 'test';
-    const wrapper = shallowMount(NeonInput, {
-      propsData: { value },
-    });
-    expect((wrapper.find('.neon-input__textfield').element as HTMLInputElement).value).toEqual(value);
+  it('renders modelValue', async () => {
+    const { container, rerender } = harness;
+    const modelValue = 'xdd';
+    await rerender({ modelValue });
+    expect((container.querySelector('.neon-input__textfield') as HTMLInputElement).getAttribute('value')).toEqual(modelValue);
   });
 
   it('renders as input by default', () => {
-    const value = 'test';
-    const wrapper = shallowMount(NeonInput, {
-      propsData: { value },
-    });
-    expect(wrapper.find('input')).toBeDefined();
+    const { container } = harness;
+    expect(container.querySelector('.neon-input__textfield')).toBeDefined();
   });
 
-  it('renders textarea', () => {
-    const value = 'test';
-    const wrapper = shallowMount(NeonInput, {
-      propsData: { value, rows: 1 },
-    });
-    expect(wrapper.find('textarea')).toBeDefined();
-    expect(wrapper.find('textarea').attributes().rows).toEqual('1');
+  it('renders textarea', async () => {
+    const rows = 1;
+    const { container, rerender } = harness;
+    await rerender({ modelValue, rows });
+    expect(container.querySelector('textarea')).toBeDefined();
+    expect(container.querySelector('textarea')?.getAttribute('rows')).toEqual(`${rows}`);
   });
 
   it('renders type as text by default', () => {
-    const value = 'test';
-    const wrapper = shallowMount(NeonInput, {
-      propsData: { value },
-    });
-    expect((wrapper.find('input').element as HTMLInputElement).type).toEqual(NeonInputType.Text);
+    const { container } = harness;
+    expect(container.querySelector('.neon-input__textfield')?.getAttribute('type')).toEqual(NeonInputType.Text);
   });
 
-  it('renders type', () => {
-    const value = 'test';
-    const wrapper = shallowMount(NeonInput, {
-      propsData: { value, type: NeonInputType.Email },
-    });
-    expect((wrapper.find('input').element as HTMLInputElement).type).toEqual(NeonInputType.Email);
+  it('renders type', async () => {
+    const { container, rerender } = harness;
+    await rerender({ modelValue, type: NeonInputType.Email });
+    expect(container.querySelector('.neon-input__textfield')?.getAttribute('type')).toEqual(NeonInputType.Email);
   });
 
   it('renders default size', () => {
-    const value = 'test';
-    const wrapper = shallowMount(NeonInput, {
-      propsData: { value },
-    });
-    expect(wrapper.find('.neon-input--m').element).toBeDefined();
+    const { container } = harness;
+    expect(container.querySelector('.neon-input--m')).toBeDefined();
   });
 
-  it('renders size', () => {
-    const value = 'test';
-    const wrapper = shallowMount(NeonInput, {
-      propsData: { value, size: NeonSize.Small },
-    });
-    expect(wrapper.find('.neon-input--s').element).toBeDefined();
+  it('renders size', async () => {
+    const { container, rerender } = harness;
+    await rerender({ size: NeonSize.Small });
+    expect(container.querySelector('.neon-input--s')).toBeDefined();
   });
 
   it('renders default color', () => {
-    const value = 'test';
-    const wrapper = shallowMount(NeonInput, {
-      propsData: { value },
-    });
-    expect(wrapper.find('.neon-input--low-contrast').element).toBeDefined();
+    const { container } = harness;
+    expect(container.querySelector('.neon-input--low-contrast')).toBeDefined();
   });
 
-  it('renders color', () => {
-    const value = 'test';
-    const wrapper = shallowMount(NeonInput, {
-      propsData: { value, color: NeonFunctionalColor.Info },
-    });
-    expect(wrapper.find('.neon-input--info').element).toBeDefined();
+  it('renders color', async () => {
+    const { container, rerender } = harness;
+    await rerender({ color: NeonFunctionalColor.Info });
+    expect(container.querySelector('.neon-input--info')).toBeDefined();
   });
 
   it('renders default state', () => {
-    const value = 'test';
-    const wrapper = shallowMount(NeonInput, {
-      propsData: { value },
-    });
-    expect(wrapper.find('.neon-input--state-ready').element).toBeDefined();
+    const { container } = harness;
+    expect(container.querySelector('.neon-input--state-ready')).toBeDefined();
   });
 
-  it('renders state', () => {
-    const value = 'test';
-    const wrapper = shallowMount(NeonInput, {
-      propsData: { value, state: NeonState.Loading },
-    });
-    expect(wrapper.find('.neon-input--state-loading').element).toBeDefined();
+  it('renders state', async () => {
+    const { container, rerender } = harness;
+    await rerender({ state: NeonState.Loading });
+    expect(container.querySelector('.neon-input--state-loading')).toBeDefined();
   });
 
-  it('renders disabled', () => {
-    const value = 'test';
-    const wrapper = shallowMount(NeonInput, {
-      propsData: { value, disabled: true },
-    });
-    expect(wrapper.find('.neon-input--disabled').element).toBeDefined();
-    expect(wrapper.find('input[disabled]').element).toBeDefined();
+  it('renders disabled', async () => {
+    const { container, rerender } = harness;
+    await rerender({ disabled: true });
+    expect(container.querySelector('.neon-input--disabled')).toBeDefined();
+    expect(container.querySelector('input[disabled]')).toBeDefined();
   });
 
-  it('emits input event', () => {
+  it('emits update event', async () => {
     // given
-    const value = 'test';
-    const newValue = 'new value';
-    const wrapper = shallowMount(NeonInput, {
-      propsData: { value },
-    });
+    const newValue = 'new modelValue';
+    const { emitted, getByTestId } = harness;
     // when
-    const input = wrapper.find('input');
-    input.setValue(newValue);
-
+    const el = getByTestId('neonInput') as HTMLInputElement;
+    el.value = newValue;
+    await fireEvent.input(el);
     // then
-    expect(wrapper.emitted().input[0]).toEqual([newValue]);
+    expect(emitted()['update:modelValue'][0]).toEqual([newValue]);
   });
 
-  it('emits truncated value when maxlength defined', () => {
+  it('emits truncated value when maxlength defined', async () => {
     // given
-    const value = 'test';
-    const newValue = 'new value';
+    const newValue = 'new modelValue';
     const rows = 2;
     const maxlength = 5;
-    const wrapper = shallowMount(NeonInput, {
-      propsData: { value, rows, maxlength },
-    });
+    const { emitted, getByTestId, rerender } = harness;
+    await rerender({ rows, maxlength });
     // when
-    const input = wrapper.find('textarea');
-    input.setValue(newValue);
-
-    // then
-    expect(wrapper.emitted().input[0]).toEqual([newValue.substr(0, maxlength)]);
+    const el = getByTestId('neonTextArea') as HTMLTextAreaElement;
+    el.value = newValue;
+    await fireEvent.input(el);
+    expect(emitted()['update:modelValue'][0]).toEqual([newValue.substring(0, maxlength)]);
   });
 
-  it('does not emits truncated value when equals existing value', () => {
+  it('does not emit truncated modelValue when equals existing modelValue', async () => {
     // given
-    const value = 'test';
-    const newValue = 'test new value';
+    const newValue = 'test new modelValue';
     const rows = 2;
     const maxlength = 4;
-    const wrapper = shallowMount(NeonInput, {
-      propsData: { value, rows, maxlength },
-    });
+    const { emitted, getByTestId, rerender } = harness;
+    await rerender({ rows, maxlength, modelValue: 'test' });
     // when
-    const input = wrapper.find('textarea');
-    input.setValue(newValue);
-
-    // then
-    expect(wrapper.emitted().input).toBeUndefined();
+    const el = getByTestId('neonTextArea') as HTMLTextAreaElement;
+    el.value = newValue;
+    await fireEvent.input(el);
+    expect(emitted()['update:modelValue']).toBeUndefined();
   });
 
-  it('emits focus/blur events', () => {
+  it('emits focus/blur events', async () => {
     // given
-    const value = 'test';
-    const wrapper = shallowMount(NeonInput, {
-      propsData: { value },
-    });
+    const { getByTestId, emitted } = harness;
     // when
-    const input = wrapper.find('input');
-    input.trigger('focus');
-    input.trigger('blur');
-
+    await fireEvent.blur(getByTestId('neonInput'));
+    await fireEvent.focus(getByTestId('neonInput'));
     // then
-    expect(wrapper.emitted().focus).toBeDefined();
-    expect(wrapper.emitted().blur).toBeDefined();
+    expect(emitted().blur).toBeDefined();
+    expect(emitted().focus).toBeDefined();
   });
 
-  it('focuses when focus is called', () => {
+  it('renders icon', async () => {
     // given
-    const value = 'test';
-    const wrapper = mount(NeonInput, {
-      propsData: { value, icon: 'plus' },
-    });
-    const vm = wrapper.vm as NeonInputClass;
-    const focusFn = vm.$refs.neonInput.focus;
-    vm.$refs.neonInput.focus = jest.fn();
-    // when
-    vm.focus();
-    // then
-    expect(vm.$refs.neonInput.focus).toHaveBeenCalled();
-    vm.$refs.neonInput.focus = focusFn;
+    const { container, rerender } = harness;
+    await rerender({ icon: 'plus' });
+    expect(container.querySelector('.neon-icon')).toBeDefined();
   });
 
-  it('clicks on input whn click is called', () => {
+  it('sets stateHighlight default', async () => {
     // given
-    const value = 'test';
-    const wrapper = mount(NeonInput, {
-      propsData: { value, icon: 'plus' },
-    });
-    const vm = wrapper.vm as NeonInputClass;
-    const clickFn = vm.$refs.neonInput.click;
-    vm.$refs.neonInput.click = jest.fn();
-    // when
-    vm.click();
-    // then
-    expect(vm.$refs.neonInput.click).toHaveBeenCalled();
-    vm.$refs.neonInput.click = clickFn;
+    const { container, rerender } = harness;
+    await rerender({ state: NeonState.Error });
+    expect(container.querySelector('.neon-input--with-state-highlight')).toBeDefined();
   });
 
-  it('renders icon', () => {
+  it('sets stateHighlight false', async () => {
     // given
-    const value = 'test';
-    const wrapper = mount(NeonInput, {
-      propsData: { value, icon: 'plus' },
-    });
-    expect(wrapper.find('.neon-icon')).toBeDefined();
+    const { container, rerender } = harness;
+    await rerender({ state: NeonState.Error, stateHighlight: false });
+    expect(container.querySelector('.neon-input--with-state-highlight')).toBeNull();
   });
 
-  it('determines iconName Success', () => {
+  it('sets stateIcon default', async () => {
     // given
-    const value = 'test';
-    const wrapper = mount(NeonInput, {
-      propsData: { value, state: NeonState.Success },
-    });
-    const vm = wrapper.vm as NeonInputClass;
-    expect(vm.iconName).toEqual('check');
+    const { container, rerender } = harness;
+    await rerender({ state: NeonState.Error });
+    expect(container.querySelector('.neon-input--with-state-icon')).toBeDefined();
   });
 
-  it('determines iconName Success, stateIcon = false', () => {
+  it('sets stateIcon false', async () => {
     // given
-    const value = 'test';
-    const wrapper = mount(NeonInput, {
-      propsData: { value, state: NeonState.Success, stateIcon: false },
-    });
-    const vm = wrapper.vm as NeonInputClass;
-    expect(vm.iconName).toBeUndefined();
+    const { container, rerender } = harness;
+    await rerender({ state: NeonState.Error, stateIcon: false });
+    expect(container.querySelector('.neon-input--with-state-icon')).toBeNull();
   });
 
-  it('determines iconName Error', () => {
+  it('sets tabindex', async () => {
     // given
-    const value = 'test';
-    const wrapper = mount(NeonInput, {
-      propsData: { value, state: NeonState.Error },
-    });
-    const vm = wrapper.vm as NeonInputClass;
-    expect(vm.iconName).toEqual('times');
-  });
-
-  it('hides icon', () => {
-    // given
-    const value = 'test';
-    const wrapper = mount(NeonInput, {
-      propsData: { value, icon: 'plus', hideIcon: true },
-    });
-    const vm = wrapper.vm as NeonInputClass;
-    expect(vm.iconVisible).toEqual(false);
-  });
-
-  it('sets stateHighlight default', () => {
-    // given
-    const value = 'test';
-    const wrapper = mount(NeonInput, {
-      propsData: { value, state: NeonState.Error },
-    });
-    expect(wrapper.find('.neon-input--with-state-highlight').element).toBeDefined();
-  });
-
-  it('sets stateHighlight false', () => {
-    // given
-    const value = 'test';
-    const wrapper = mount(NeonInput, {
-      propsData: { value, state: NeonState.Error, stateHighlight: false },
-    });
-    expect(wrapper.find('.neon-input--with-state-highlight').element).toBeUndefined();
-  });
-
-  it('sets stateIcon default', () => {
-    // given
-    const value = 'test';
-    const wrapper = mount(NeonInput, {
-      propsData: { value, state: NeonState.Error },
-    });
-    expect(wrapper.find('.neon-input--with-state-icon').element).toBeDefined();
-  });
-
-  it('sets stateIcon false', () => {
-    // given
-    const value = 'test';
-    const wrapper = mount(NeonInput, {
-      propsData: { value, state: NeonState.Error, stateIcon: false },
-    });
-    expect(wrapper.find('.neon-input--with-state-icon').element).toBeUndefined();
-  });
-
-  it('sets tabindex', () => {
-    // given
-    const value = 'test';
     const tabindex = 14;
-    const wrapper = mount(NeonInput, {
-      propsData: { value, tabindex },
-    });
-    expect(wrapper.find('input').attributes().tabindex).toEqual(`${tabindex}`);
+    const { container, rerender } = harness;
+    await rerender({ tabindex });
+    expect(container.querySelector('input')?.getAttribute('tabindex')).toEqual(`${tabindex}`);
   });
 
-  it('emits icon click event', () => {
+  it('emits icon click event', async () => {
     // given
-    const value = 'test';
-    const wrapper = mount(NeonInput, {
-      propsData: { value, icon: 'plus' },
-    });
+    const { container, emitted, rerender } = harness;
+    await rerender({ icon: 'plus' });
     // when
-    wrapper.find('.neon-icon').trigger('click');
+    const icon = container.querySelector('.neon-icon') as HTMLElement;
+    await fireEvent.click(icon);
     // then
-    expect(wrapper.emitted()['icon-click'][0]).toBeDefined();
+    expect(emitted()['icon-click'][0]).toBeDefined();
   });
 
-  it('does not emit icon click event when disabled', () => {
+  it('does not emit icon click event when disabled', async () => {
     // given
-    const value = 'test';
-    const wrapper = mount(NeonInput, {
-      propsData: { value, icon: 'plus', disabled: true },
-    });
+    const { container, emitted, rerender } = harness;
+    await rerender({ icon: 'plus', disabled: true });
     // when
-    wrapper.find('.neon-icon').trigger('click');
+    const icon = container.querySelector('.neon-icon') as HTMLElement;
+    await fireEvent.click(icon);
     // then
-    expect(wrapper.emitted()['icon-click']).toBeUndefined();
+    expect(emitted()['icon-click']).toBeUndefined();
   });
 
-  it('clears input when no icon and clicked', () => {
+  it('emits clear event', async () => {
     // given
-    const value = 'test';
-    const wrapper = mount(NeonInput, {
-      propsData: { value },
-    });
+    const { container, emitted, rerender } = harness;
+    await rerender({ modelValue: 'xdd' });
     // when
-    wrapper.find('.neon-icon').trigger('click');
+    const icon = container.querySelector('.neon-icon') as HTMLElement;
+    await fireEvent.click(icon);
     // then
-    expect(wrapper.emitted()['icon-click']).toBeUndefined();
-    expect(wrapper.emitted().input[0]).toEqual(['']);
+    expect(emitted()['update:modelValue'][0]).toEqual(['']);
   });
 
-  it('does not render clear icon for empty input', () => {
+  it('does not render clear icon for empty input', async () => {
     // given
-    const value = '';
-    const wrapper = mount(NeonInput, {
-      propsData: { value },
-    });
+    const { container, rerender } = harness;
+    await rerender({ modelValue: '' });
     // when / then
-    expect(wrapper.find('.neon-icon').element).toBeUndefined();
+    expect(container.querySelector('.neon-icon')).toBeNull();
   });
 });

@@ -1,4 +1,3 @@
-import { Component, Vue } from 'vue-property-decorator';
 import {
   NeonCard,
   NeonCardBody,
@@ -7,11 +6,14 @@ import {
   NeonInput,
   NeonInputIndicator,
   NeonSelect,
-} from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
+} from '@/neon';
+import type { MenuModel } from '../../../Menu';
+import { Menu } from '../../../Menu';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import { defineComponent, onMounted, ref } from 'vue';
 
-@Component({
+export default defineComponent({
+  name: 'FieldGroup',
   components: {
     ComponentDocumentation,
     NeonCard,
@@ -22,45 +24,43 @@ import ComponentDocumentation from '../../../components/component-documentation/
     NeonFieldGroup,
     NeonSelect,
   },
-})
-export default class FieldGroup extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Compose richer input components');
 
-  private headline = 'Compose richer input components';
+    const data = ref({
+      indexFilter: '',
+      currency: 'NZD',
+      currencies: [
+        {
+          key: 'CAD',
+          label: 'CAD',
+          separatorBefore: true,
+        },
+        {
+          key: 'EUR',
+          label: 'EUR',
+          separatorBefore: true,
+        },
+        {
+          key: 'NZD',
+          label: 'NZD',
+          separatorBefore: true,
+        },
+        {
+          key: 'PLN',
+          label: 'PLN',
+          separatorBefore: true,
+        },
+        {
+          key: 'USD',
+          label: 'USD',
+          separatorBefore: true,
+        },
+      ],
+    });
 
-  private data = {
-    indexFilter: '',
-    currency: 'NZD',
-    currencies: [
-      {
-        key: 'CAD',
-        label: 'CAD',
-        separatorBefore: true,
-      },
-      {
-        key: 'EUR',
-        label: 'EUR',
-        separatorBefore: true,
-      },
-      {
-        key: 'NZD',
-        label: 'NZD',
-        separatorBefore: true,
-      },
-      {
-        key: 'PLN',
-        label: 'PLN',
-        separatorBefore: true,
-      },
-      {
-        key: 'USD',
-        label: 'USD',
-        separatorBefore: true,
-      },
-    ],
-  };
-
-  private inputIndicatorExamples = `<div class="neon-vertically-spaced">
+    const inputIndicatorExamples = `<div class="neon-vertically-spaced">
   <neon-field-group>
     <neon-input-indicator size="s" label="Salary" />
     <neon-input size="s" type="text" color="primary" v-model="indexFilter" placeholder="Enter amount" />
@@ -77,15 +77,21 @@ export default class FieldGroup extends Vue {
   </neon-field-group>
 </div>`;
 
-  private examples = [
-    {
-      title: 'Field Group Examples',
-      template: this.inputIndicatorExamples,
-      data: this.data,
-    },
-  ];
+    const examples = ref([
+      {
+        title: 'Field Group Examples',
+        template: inputIndicatorExamples,
+        data: data.value,
+      },
+    ]);
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonFieldGroup');
-  }
-}
+    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonFieldGroup'));
+
+    return {
+      menuModel,
+      headline,
+      data,
+      examples,
+    };
+  },
+});

@@ -1,6 +1,12 @@
-@import 'includes/layout';
+@use './includes/layout';
+@use './includes/responsive';
+@use './includes/globals';
 
-@mixin neon-modal-import {
+@mixin import(
+  $neon-animation-speed-fast,
+  $neon-animation-speed-slow,
+  $neon-base-space,
+) {
   .neon-modal {
     align-items: center;
     justify-content: center;
@@ -10,11 +16,11 @@
     .neon-modal__overlay {
       position: fixed;
       opacity: 0;
-      z-index: $z-index-below;
+      z-index: globals.$z-index-below;
       pointer-events: none;
       transition: opacity ease-in-out $neon-animation-speed-fast;
 
-      @include responsive(larger-than-mobile-large) {
+      @include responsive.responsive(larger-than-mobile-large) {
         transition: all ease-in-out $neon-animation-speed-fast;
         .neon-card {
           margin-top: -30vh;
@@ -27,15 +33,15 @@
     .neon-modal__overlay {
       top: 0;
       left: 0;
-      @include width(100);
-      @include min-height(100);
-      @include height(100);
+      @include layout.width(100);
+      @include layout.min-height(100);
+      @include layout.height(100);
     }
 
     &.neon-modal--open {
       opacity: 1;
 
-      @include responsive(larger-than-mobile-large) {
+      @include responsive.responsive(larger-than-mobile-large) {
         .neon-card {
           margin-top: -20vh;
         }
@@ -49,21 +55,21 @@
 
       &:not(.neon-dialog),
       &:not(.neon-dialog) .neon-modal__container {
-        @include responsive(mobile-large) {
-          @include width(100);
-          @include min-height(100);
+        @include responsive.responsive(mobile-large) {
+          @include layout.width(100);
+          @include layout.min-height(100);
 
           .neon-card {
-            @include min-height(100);
+            @include layout.min-height(100);
           }
         }
       }
 
       &,
       .neon-modal__container {
-        z-index: $z-index-top;
+        z-index: globals.$z-index-top;
 
-        @include responsive(mobile-large) {
+        @include responsive.responsive(mobile-large) {
           .neon-card {
             .neon-card-body {
               flex: 1 1 auto;
@@ -74,7 +80,7 @@
     }
 
     &__container {
-      @include responsive(larger-than-mobile-large) {
+      @include responsive.responsive(larger-than-mobile-large) {
         padding-left: 2 * $neon-base-space;
         padding-right: 2 * $neon-base-space;
       }
@@ -87,7 +93,7 @@
       display: flex;
       margin: 0.5 * $neon-base-space;
 
-      @include responsive(larger-than-mobile-large) {
+      @include responsive.responsive(larger-than-mobile-large) {
         display: none;
       }
     }
@@ -111,10 +117,25 @@
       }
 
       .neon-modal__close {
-        @include responsive(mobile-large) {
+        @include responsive.responsive(mobile-large) {
           display: none;
         }
       }
+    }
+  }
+}
+
+@mixin import-colors(
+  $neon-background-color-overlay,
+  $neon-box-shadow-alert,
+) {
+  .neon-modal {
+    &__overlay {
+      background-color: $neon-background-color-overlay;
+    }
+
+    .neon-card {
+      box-shadow: $neon-box-shadow-alert;
     }
   }
 }

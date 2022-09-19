@@ -1,4 +1,15 @@
-@mixin neon-input-indicator-import {
+@use './includes/layout';
+@use './includes/svg';
+
+@mixin import(
+  $spacings,
+  $neon-letter-spacing-s,
+  $neon-size-s,
+  $neon-size-m,
+  $neon-size-l,
+  $neon-font-size-m,
+  $neon-font-size-l,
+) {
   .neon-input-indicator {
     display: flex;
     align-items: center;
@@ -17,7 +28,7 @@
       height: $neon-size-s;
 
       .neon-input-indicator__label {
-        @include padding-horizontal(0.33);
+        @include layout.padding-horizontal($spacings, 0.33);
       }
 
       .neon-input-indicator__label,
@@ -35,7 +46,7 @@
       height: $neon-size-m;
 
       .neon-input-indicator__label {
-        @include padding-horizontal(0.5);
+        @include layout.padding-horizontal($spacings, 0.5);
       }
 
       .neon-input-indicator__label,
@@ -53,7 +64,7 @@
       height: $neon-size-l;
 
       .neon-input-indicator__label {
-        @include padding-horizontal(0.5);
+        @include layout.padding-horizontal($spacings, 0.5);
       }
 
       .neon-input-indicator__label,
@@ -66,5 +77,19 @@
         height: $neon-font-size-l;
       }
     }
+  }
+}
+
+@mixin import-colors(
+  $neon-border-width,
+  $neon-border-style,
+  $neon-border-color-input,
+  $neon-background-color-input-indicator,
+  $neon-color-input-indicator,
+) {
+  .neon-input-indicator {
+    border: $neon-border-width $neon-border-style $neon-border-color-input;
+    background-color: $neon-background-color-input-indicator;
+    @include svg.color-with-svg($neon-color-input-indicator);
   }
 }

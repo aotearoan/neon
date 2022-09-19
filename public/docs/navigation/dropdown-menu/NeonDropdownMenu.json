@@ -1,29 +1,22 @@
 {
+  "displayName": "NeonDropdownMenu",
   "description": "<p>A dropdown menu consisting of a button to open the menu and a list of menu items. Clicking on a menu item will\nresult in navigating to the provided URL or notifying the parent component via the @click event.</p>\n<p><strong>Note:</strong> As well as the options described below, pass through attributes supported by\n<a href=\"/presentation/dropdown\">NeonDropdown</a> to change the style of the dropdown button.</p>",
   "tags": {},
   "exportName": "default",
-  "displayName": "NeonDropdownMenu",
   "props": [
     {
       "name": "model",
-      "tags": {},
       "description": "A list of menu items to render in the dropdown menu.",
       "type": {
-        "name": "Array",
-        "elements": [
-          {
-            "name": "NeonDropdownMenuItem"
-          }
-        ]
+        "name": "Array as () => Array<NeonDropdownMenuItem>"
       },
       "required": true
     },
     {
       "name": "size",
-      "tags": {},
       "description": "The size of the dropdown - Small, Medium or Large.",
       "type": {
-        "name": "NeonSize"
+        "name": "String as () => NeonSize"
       },
       "defaultValue": {
         "func": false,
@@ -32,10 +25,9 @@
     },
     {
       "name": "color",
-      "tags": {},
       "description": "The dropdown color.",
       "type": {
-        "name": "NeonFunctionalColor"
+        "name": "String as () => NeonFunctionalColor"
       },
       "defaultValue": {
         "func": false,
@@ -44,7 +36,6 @@
     },
     {
       "name": "disabled",
-      "tags": {},
       "description": "Whether the dropdown button is disabled or not.",
       "type": {
         "name": "boolean"
@@ -56,7 +47,6 @@
     },
     {
       "name": "openOnHover",
-      "tags": {},
       "description": "Instead of opening on click (default), open on hover.",
       "type": {
         "name": "boolean"
@@ -68,6 +58,15 @@
     }
   ],
   "events": [
+    {
+      "name": "button-ref",
+      "description": "emitted on initialisation",
+      "type": {
+        "names": [
+          "HTMLElement"
+        ]
+      }
+    },
     {
       "name": "click",
       "description": "emitted when the user clicks on a menu item.",

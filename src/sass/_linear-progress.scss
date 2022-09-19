@@ -1,4 +1,9 @@
-@mixin neon-linear-progress-import {
+@mixin import(
+  $neon-border-radius,
+  $neon-font-size-l,
+  $neon-base-space,
+  $neon-border-radius-progress-indicator,
+) {
   .neon-linear-progress {
     user-select: none;
     flex-direction: row;
@@ -48,10 +53,7 @@
     &__indicator {
       align-items: flex-end;
       justify-content: center;
-      border-top-left-radius: $neon-border-radius;
-      border-bottom-left-radius: $neon-border-radius;
-      border-top-right-radius: $neon-border-radius-progress-indicator;
-      border-bottom-right-radius: $neon-border-radius-progress-indicator;
+      border-radius: $neon-border-radius $neon-border-radius-progress-indicator $neon-border-radius-progress-indicator $neon-border-radius;
       transition: all 25ms ease-in-out;
 
       &--completed {
@@ -64,6 +66,41 @@
       margin-left: 2 * $neon-base-space;
       font-weight: 600;
       font-variant: tabular-nums;
+    }
+  }
+}
+
+@mixin import-colors(
+  $neon-functional-colors,
+  $neon-base-color,
+  $neon-opacity-background-progress,
+  $neon-color-gradient-alternate,
+) {
+  .neon-linear-progress {
+    @each $color, $palette in $neon-functional-colors {
+      &.neon-linear-progress--#{$color} {
+        $progress-color: map-get($palette, $neon-base-color);
+
+        .neon-linear-progress__bar {
+          background: rgba($progress-color, $neon-opacity-background-progress);
+        }
+
+        .neon-linear-progress__indicator {
+          background: $progress-color;
+        }
+
+        @each $alternateColor, $alternatePalette in $neon-functional-colors {
+          &.neon-linear-progress--alternate-color-#{$alternateColor} {
+            .neon-linear-progress__indicator {
+              background: linear-gradient(
+                              90deg,
+                              map-get($alternatePalette, $neon-color-gradient-alternate) 0%,
+                              $progress-color 100%
+              );
+            }
+          }
+        }
+      }
     }
   }
 }

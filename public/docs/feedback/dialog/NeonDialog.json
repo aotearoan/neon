@@ -1,15 +1,14 @@
 {
+  "displayName": "NeonDialog",
   "description": "A dialog component for confirming simple actions. This will be rendered above the content of the main window and\npresent just two options to the user, one to proceed with the action and the other to cancel it.",
   "tags": {},
   "exportName": "default",
-  "displayName": "NeonDialog",
   "props": [
     {
       "name": "color",
-      "tags": {},
       "description": "The color of the button for the confirm (positive) action.",
       "type": {
-        "name": "NeonFunctionalColor"
+        "name": "String as () => NeonFunctionalColor"
       },
       "defaultValue": {
         "func": false,
@@ -18,18 +17,20 @@
     },
     {
       "name": "alternateColor",
-      "tags": {},
       "description": "Alternate confirm button color for creating a gradient button. NOTE: can also be the same color as 'color'.",
       "type": {
-        "name": "NeonFunctionalColor"
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     },
     {
       "name": "cancelLabel",
-      "tags": {},
       "description": "The label of the button for the cancel (negative) action.",
       "type": {
-        "name": "TranslateResult"
+        "name": "string"
       },
       "defaultValue": {
         "func": false,
@@ -38,10 +39,9 @@
     },
     {
       "name": "confirmLabel",
-      "tags": {},
       "description": "The label of the button for the confirm (positive) action.",
       "type": {
-        "name": "TranslateResult"
+        "name": "string"
       },
       "defaultValue": {
         "func": false,
@@ -50,26 +50,23 @@
     },
     {
       "name": "title",
-      "tags": {},
       "description": "The dialog title",
       "type": {
-        "name": "TranslateResult"
+        "name": "string"
       },
       "required": true
     },
     {
       "name": "question",
-      "tags": {},
       "description": "The dialog question. Can be html (rendered using v-html).",
       "type": {
-        "name": "TranslateResult"
+        "name": "string"
       },
       "required": true
     },
     {
       "name": "open",
-      "tags": {},
-      "description": "Whether or not the dialog is open.",
+      "description": "Whether the dialog is open.",
       "type": {
         "name": "boolean"
       },

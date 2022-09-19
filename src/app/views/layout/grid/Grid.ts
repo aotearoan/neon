@@ -1,45 +1,49 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonGrid, NeonGridArea, NeonResponsive } from '../../../../components';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonGrid, NeonGridArea, NeonLink } from '@/neon';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import { Menu, MenuModel } from '../../../Menu';
+import type { MenuModel } from '../../../Menu';
+import { Menu } from '../../../Menu';
 import Editor from '../../../components/editor/Editor.vue';
+import { NeonResponsive } from '../../../../common/enums/NeonResponsive';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Grid',
   components: {
     NeonCard,
     NeonCardBody,
     NeonGrid,
     NeonGridArea,
+    NeonLink,
     ComponentDocumentation,
     Editor,
   },
-})
-export default class Grid extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Use CSS grid for page content');
 
-  private headline = 'Use CSS grid for page content';
-
-  private examples = [
-    {
-      title: 'Grid example',
-      template: `<neon-grid id="content" :layouts="layouts">
-  <neon-grid-area id="section-content">
-    <span>Grid area (scroll me)</span>
-  </neon-grid-area>
-</neon-grid>`,
-      data: {
-        layouts: [
-          {
-            breakpoint: NeonResponsive.All,
-            grid: [['section-content']],
-          },
-        ],
+    const examples = ref([
+      {
+        title: 'Grid example',
+        template: `
+          <neon-grid id="content" :layouts="layouts">
+          <neon-grid-area id="section-content">
+            <span>Grid area (scroll me)</span>
+          </neon-grid-area>
+          </neon-grid>`,
+        data: {
+          layouts: [
+            {
+              breakpoint: NeonResponsive.All,
+              grid: [['section-content']],
+            },
+          ],
+        },
+        fixedContent: true,
       },
-      fixedContent: true,
-    },
-  ];
+    ]);
 
-  private layoutExample = `const layouts = [
+    const layoutExample = ref(`const layouts = [
   {
     breakpoint: NeonResponsive.LargerThanTablet,
     grid: [['area1', 'area2', 'area3', 'area4']],
@@ -60,9 +64,15 @@ export default class Grid extends Vue {
       ['area4'],
     ],
   },
-];`;
+];`);
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonGrid');
-  }
-}
+    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonGrid'));
+
+    return {
+      menuModel,
+      headline,
+      examples,
+      layoutExample,
+    };
+  },
+});

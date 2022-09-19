@@ -1,31 +1,32 @@
 <template>
   <div
-    class="neon-file"
+    :aria-disabled="disabled"
     :class="[
       `neon-file--${color}`,
       `neon-file--${size}`,
       { 'neon-file--disabled': disabled, 'neon-file--single': !multiple, 'neon-file--direct-upload': directUpload },
     ]"
-    :aria-disabled="disabled"
+    class="neon-file"
   >
     <neon-list
       v-if="!directUpload"
-      :value="fileList"
-      @close="remove"
-      :disabled="disabled"
+      v-model="fileList"
       :color="color"
+      :disabled="disabled"
       :size="size"
+      @close="remove"
     />
     <neon-input
-      type="file"
-      :multiple="multiple"
-      :accept="accept"
-      tabindex="-1"
-      :disabled="disabled"
-      class="neon-file__input"
-      @change="onInput"
-      ref="fileInput"
       :id="id"
+      ref="fileInput"
+      v-model="fileInputModel"
+      :accept="accept"
+      :disabled="disabled"
+      :multiple="multiple"
+      :tabindex="-1"
+      class="neon-file__input"
+      type="file"
+      @change="onInput"
     />
     <div class="neon-button-group neon-file__actions">
       <neon-button
@@ -37,13 +38,13 @@
         @click="clearAll()"
       />
       <neon-button
-        :disabled="disabled"
-        :color="color"
-        :state="state"
-        :size="size"
-        :label="label"
-        :icon="icon"
         :aria-controls="id ? id : undefined"
+        :color="color"
+        :disabled="disabled"
+        :icon="icon"
+        :label="label"
+        :size="size"
+        :state="state"
         @click="openFileDialog"
       />
     </div>

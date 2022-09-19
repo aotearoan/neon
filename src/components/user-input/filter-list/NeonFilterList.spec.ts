@@ -1,13 +1,8 @@
-import Vue from 'vue';
-import { mount } from '@vue/test-utils';
 import NeonFilterList from './NeonFilterList.vue';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
-import NeonLink from '../../navigation/link/NeonLink.vue';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonSize } from '../../../common/enums/NeonSize';
-
-Vue.component('NeonIcon', NeonIcon);
-Vue.component('NeonLink', NeonLink);
+import type { RenderResult } from '@testing-library/vue';
+import { fireEvent, render } from '@testing-library/vue';
 
 describe('NeonFilterList', () => {
   const items = [
@@ -77,237 +72,225 @@ describe('NeonFilterList', () => {
     },
   ];
 
-  it('renders multiselect short list', () => {
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items, value: [] },
+  let harness: RenderResult;
+
+  beforeEach(() => {
+    harness = render(NeonFilterList, {
+      props: { items, modelValue: [] },
+      global: {
+        stubs: ['router-link'],
+      },
     });
-    expect(wrapper.html()).toMatchSnapshot();
-    expect(wrapper.findAll('.neon-filter-list__item').length).toEqual(items.length);
+  });
+
+  it('renders multiselect short list', () => {
+    const { container, html } = harness;
+    expect(html()).toMatchSnapshot();
+    expect(container.querySelectorAll('.neon-filter-list__item').length).toEqual(items.length);
   });
 
   it('renders long list displayCount', () => {
     const displayCount = 3;
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items: longItemList, value: [], displayCount },
-      mocks: {
-        $t: (value: string) => value,
+    const { container } = render(NeonFilterList, {
+      props: { items: longItemList, displayCount, modelValue: [] },
+      global: {
+        stubs: ['router-link'],
       },
     });
-    expect(wrapper.findAll('.neon-filter-list__item').length).toEqual(displayCount);
+    expect(container.querySelectorAll('.neon-filter-list__item').length).toEqual(displayCount);
   });
 
-  it('renders long list displayCount, showAll', (done) => {
+  it('renders long list displayCount, showAll', async () => {
     const displayCount = 3;
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items: longItemList, value: [], displayCount },
-      mocks: {
-        $t: (value: string) => value,
+    const { container } = render(NeonFilterList, {
+      props: { items: longItemList, modelValue: [], displayCount },
+      global: {
+        stubs: ['router-link'],
       },
     });
-    wrapper.find('.neon-filter-list__show-toggle').trigger('click');
-    setTimeout(() => {
-      expect(wrapper.findAll('.neon-filter-list__item').length).toEqual(longItemList.length);
-      done();
-    });
+    const el = container.querySelector('.neon-filter-list__show-toggle') as HTMLInputElement;
+    await fireEvent.click(el);
+    expect(container.querySelectorAll('.neon-filter-list__item').length).toEqual(longItemList.length);
   });
 
-  it('renders long list no displayCount', () => {
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items: longItemList, value: [] },
-      mocks: {
-        $t: (value: string) => value,
-      },
-    });
-    expect(wrapper.findAll('.neon-filter-list__item').length).toEqual(longItemList.length);
+  it('renders long list no displayCount', async () => {
+    const { container, rerender } = harness;
+    await rerender({ items: longItemList, modelValue: [] });
+    expect(container.querySelectorAll('.neon-filter-list__item').length).toEqual(longItemList.length);
   });
 
-  it('renders single select long list', () => {
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items: longItemList, multiple: false, value: '' },
-    });
-    expect(wrapper.html()).toMatchSnapshot();
+  it('renders single select long list', async () => {
+    const { html, rerender } = harness;
+    await rerender({ items: longItemList, multiple: false, modelValue: '' });
+    expect(html()).toMatchSnapshot();
   });
 
-  it('renders long list, show all', () => {
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items: longItemList, value: [] },
-    });
-    expect(wrapper.html()).toMatchSnapshot();
+  it('renders long list, show all', async () => {
+    const { html, rerender } = harness;
+    await rerender({ items: longItemList, modelValue: [] });
+    expect(html()).toMatchSnapshot();
   });
 
   it('renders default color', () => {
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items, value: [] },
-    });
-    expect(wrapper.find('.neon-filter-list--primary')).toBeDefined();
-    expect(wrapper.find('.neon-filter-list__item-close.neon-icon--primary')).toBeDefined();
+    const { container } = harness;
+    expect(container.querySelector('.neon-filter-list--primary')).toBeDefined();
+    expect(container.querySelector('.neon-filter-list__item-close.neon-icon--primary')).toBeDefined();
   });
 
-  it('renders color', () => {
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items, value: [], color: NeonFunctionalColor.Brand },
-    });
-    expect(wrapper.find('.neon-filter-list--brand')).toBeDefined();
-    expect(wrapper.find('.neon-filter-list__item-close.neon-icon--brand')).toBeDefined();
+  it('renders color', async () => {
+    const { container, rerender } = harness;
+    await rerender({ color: NeonFunctionalColor.Brand });
+    expect(container.querySelector('.neon-filter-list--brand')).toBeDefined();
+    expect(container.querySelector('.neon-filter-list__item-close.neon-icon--brand')).toBeDefined();
   });
 
   it('renders default size', () => {
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items, value: [] },
-    });
-    expect(wrapper.find('.neon-filter-list--m')).toBeDefined();
-    expect(wrapper.find('.neon-list--m')).toBeDefined();
+    const { container } = harness;
+    expect(container.querySelector('.neon-filter-list--m')).toBeDefined();
+    expect(container.querySelector('.neon-list--m')).toBeDefined();
   });
 
-  it('renders size', () => {
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items, value: [], size: NeonSize.Large },
-    });
-    expect(wrapper.find('.neon-filter-list--l')).toBeDefined();
-    expect(wrapper.find('.neon-list--l')).toBeDefined();
+  it('renders size', async () => {
+    const { container, rerender } = harness;
+    await rerender({ size: NeonSize.Large });
+    expect(container.querySelector('.neon-filter-list--l')).toBeDefined();
+    expect(container.querySelector('.neon-list--l')).toBeDefined();
   });
 
   it('renders multiple', () => {
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items, value: [] },
-    });
-    expect(wrapper.find('.neon-filter-list--multiple')).toBeDefined();
-    expect(wrapper.find('.neon-filter-list').attributes()['aria-multiselectable']).toEqual('true');
+    const { container } = harness;
+    expect(container.querySelector('.neon-filter-list--multiple')).toBeDefined();
+    expect(container.querySelector('.neon-filter-list')?.getAttribute('aria-multiselectable')).toEqual('true');
   });
 
-  it('renders single', () => {
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items, multiple: false, value: '' },
-    });
-    expect(wrapper.find('.neon-filter-list--multiple').element).toBeUndefined();
-    expect(wrapper.find('.neon-filter-list').attributes()['aria-multiselectable']).toBeUndefined();
+  it('renders single', async () => {
+    const { container, rerender } = harness;
+    await rerender({ items, multiple: false, modelValue: '' });
+    expect(container.querySelector('.neon-filter-list--multiple')).toBeNull();
+    expect(container.querySelector('.neon-filter-list')?.getAttribute('aria-multiselectable')).toEqual('false');
   });
 
-  it('renders active descendant multiple', () => {
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items, value: [items[0].key] },
-    });
-    expect(wrapper.find('.neon-filter-list').attributes()['aria-activedescendant']).toEqual(items[0].key);
+  it('renders active descendant multiple', async () => {
+    const { container, rerender } = harness;
+    await rerender({ items, modelValue: [items[0].key] });
+    expect(container.querySelector('.neon-filter-list')?.getAttribute('aria-activedescendant')).toEqual(items[0].key);
   });
 
-  it('renders active descendant single', () => {
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items, multiple: false, value: items[0].key },
-    });
-    expect(wrapper.find('.neon-filter-list').attributes()['aria-activedescendant']).toEqual(items[0].key);
+  it('renders active descendant single', async () => {
+    const { container, rerender } = harness;
+    await rerender({ items, multiple: false, modelValue: items[0].key });
+    expect(container.querySelector('.neon-filter-list')?.getAttribute('aria-activedescendant')).toEqual(items[0].key);
   });
 
-  it('renders selected multiple', () => {
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items, value: [items[0].key, items[1].key] },
-    });
-    const firstEl = wrapper.find('.neon-filter-list__item:first-child.neon-filter-list__item--selected');
-    expect(firstEl.element).toBeDefined();
-    expect(firstEl.attributes()['aria-selected']).toEqual('true');
-    expect(wrapper.find('.neon-filter-list__item:nth-child(2).neon-filter-list__item--selected').element).toBeDefined();
+  it('renders selected multiple', async () => {
+    const { container, rerender } = harness;
+    await rerender({ items, modelValue: [items[0].key, items[1].key] });
+    const firstEl = container.querySelector('.neon-filter-list__item:first-child.neon-filter-list__item--selected');
+    expect(firstEl).toBeDefined();
+    expect(firstEl?.getAttribute('aria-selected')).toEqual('true');
+    expect(container.querySelector('.neon-filter-list__item:nth-child(2).neon-filter-list__item--selected')).toBeDefined();
   });
 
-  it('renders selected single', () => {
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items, multiple: false, value: items[0].key },
-    });
-    const el = wrapper.find('.neon-filter-list__item:first-child.neon-filter-list__item--selected');
-    expect(el.element).toBeDefined();
-    expect(el.attributes()['aria-selected']).toEqual('true');
+  it('renders selected single', async () => {
+    const { container, rerender } = harness;
+    await rerender({ items, multiple: false, modelValue: items[0].key });
+    const el = container.querySelector('.neon-filter-list__item:first-child.neon-filter-list__item--selected');
+    expect(el).toBeDefined();
+    expect(el?.getAttribute('aria-selected')).toEqual('true');
   });
 
   it('renders disabled', () => {
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items, value: [] },
-    });
-    const el = wrapper.find('.neon-filter-list__item:last-child.neon-filter-list__item--disabled');
-    expect(el.element).toBeDefined();
-    expect(el.attributes().tabindex).toEqual('-1');
+    const { container } = harness;
+    const el = container.querySelector('.neon-filter-list__item:last-child.neon-filter-list__item--disabled');
+    expect(el).toBeDefined();
+    expect(el?.getAttribute('tabindex')).toEqual('-1');
   });
 
   it('renders tabindex', () => {
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items, value: [] },
-    });
-    const el = wrapper.find('.neon-filter-list__item:first-child');
-    expect(el.element).toBeDefined();
-    expect(el.attributes().tabindex).toEqual('0');
+    const { container } = harness;
+    const el = container.querySelector('.neon-filter-list__item:first-child');
+    expect(el).toBeDefined();
+    expect(el?.getAttribute('tabindex')).toEqual('0');
   });
 
   it('renders show more label', () => {
     const showMoreLabel = 'xdd';
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items, value: [], displayCount: 2, showMoreLabel },
+    const { container } = render(NeonFilterList, {
+      props: { items, modelValue: [items[0].key], displayCount: 2, showMoreLabel },
+      global: {
+        stubs: ['router-link'],
+      },
     });
-    expect(wrapper.find('.neon-filter-list__show-toggle').text()).toEqual(showMoreLabel);
+    expect(container.querySelector('.neon-filter-list__show-toggle')?.textContent).toEqual(showMoreLabel);
   });
 
-  it('renders show less label', (done) => {
+  it('renders show less label', async () => {
     const showLessLabel = 'xdd';
     const showMoreLabel = 'show more';
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items, value: [], displayCount: 2, showMoreLabel, showLessLabel },
+    const { container } = render(NeonFilterList, {
+      props: { items, modelValue: [], displayCount: 2, showMoreLabel, showLessLabel },
+      global: {
+        stubs: ['router-link'],
+      },
     });
-    wrapper.find('.neon-filter-list__show-toggle').trigger('click');
-    setTimeout(() => {
-      expect(wrapper.find('.neon-filter-list__show-toggle').text()).toEqual(showLessLabel);
-      done();
-    });
+    const el = container.querySelector('.neon-filter-list__show-toggle') as HTMLElement;
+    await fireEvent.click(el);
+    expect(container.querySelector('.neon-filter-list__show-toggle')?.textContent).toEqual(showLessLabel);
   });
 
-  it('emits input on click multiple', () => {
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items, value: [items[1].key] },
-    });
-    wrapper.find('.neon-filter-list__item:first-child').trigger('click');
-    expect(wrapper.emitted().input[0]).toEqual([[items[1].key, items[0].key]]);
+  it('emits input on click multiple', async () => {
+    const { container, emitted, rerender } = harness;
+    await rerender({ items, modelValue: [items[1].key] });
+    const el = container.querySelector('.neon-filter-list__item:first-child') as HTMLElement;
+    await fireEvent.click(el);
+    expect(emitted()['update:modelValue'][0]).toEqual([[items[1].key, items[0].key]]);
   });
 
-  it('emits input on keydown enter', () => {
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items, value: [items[1].key] },
-    });
-    wrapper.find('.neon-filter-list__item:first-child').trigger('keydown.enter');
-    expect(wrapper.emitted().input[0]).toEqual([[items[1].key, items[0].key]]);
+  it('emits input on keydown enter', async () => {
+    const { container, emitted, rerender } = harness;
+    await rerender({ items, modelValue: [items[1].key] });
+    const el = container.querySelector('.neon-filter-list__item:first-child') as HTMLElement;
+    await fireEvent.keyDown(el, { key: 'Enter', code: 'Enter' });
+    expect(emitted()['update:modelValue'][0]).toEqual([[items[1].key, items[0].key]]);
   });
 
-  it('emits input on keydown space', () => {
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items, value: [items[1].key] },
-    });
-    wrapper.find('.neon-filter-list__item:first-child').trigger('keydown.space');
-    expect(wrapper.emitted().input[0]).toEqual([[items[1].key, items[0].key]]);
+  it('emits input on keydown space', async () => {
+    const { container, emitted, rerender } = harness;
+    await rerender({ items, modelValue: [items[1].key] });
+    const el = container.querySelector('.neon-filter-list__item:first-child') as HTMLElement;
+    await fireEvent.keyDown(el, { key: 'Space', code: 'Space' });
+    expect(emitted()['update:modelValue'][0]).toEqual([[items[1].key, items[0].key]]);
   });
 
-  it('emits input on click multiple deselect', () => {
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items, value: [items[0].key] },
-    });
-    wrapper.find('.neon-filter-list__item:first-child').trigger('click');
-    expect(wrapper.emitted().input[0]).toEqual([[]]);
+  it('emits input on click multiple deselect', async () => {
+    const { container, emitted, rerender } = harness;
+    await rerender({ items, modelValue: [items[0].key] });
+    const el = container.querySelector('.neon-filter-list__item:first-child') as HTMLElement;
+    await fireEvent.click(el);
+    expect(emitted()['update:modelValue'][0]).toEqual([[]]);
   });
 
-  it('emits input on click single', () => {
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items, multiple: false, value: items[1].key },
-    });
-    wrapper.find('.neon-filter-list__item:first-child').trigger('click');
-    expect(wrapper.emitted().input[0]).toEqual([items[0].key]);
+  it('emits input on click single', async () => {
+    const { container, emitted, rerender } = harness;
+    await rerender({ items, multiple: false, modelValue: items[1].key });
+    const el = container.querySelector('.neon-filter-list__item:first-child') as HTMLElement;
+    await fireEvent.click(el);
+    expect(emitted()['update:modelValue'][0]).toEqual([items[0].key]);
   });
 
-  it('emits input on click single unselect', () => {
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items, multiple: false, value: items[0].key },
-    });
-    wrapper.find('.neon-filter-list__item:first-child').trigger('click');
-    expect(wrapper.emitted().input[0]).toEqual(['']);
+  it('emits input on click single unselect', async () => {
+    const { container, emitted, rerender } = harness;
+    await rerender({ items, multiple: false, modelValue: items[0].key });
+    const el = container.querySelector('.neon-filter-list__item:first-child') as HTMLElement;
+    await fireEvent.click(el);
+    expect(emitted()['update:modelValue'][0]).toEqual(['']);
   });
 
-  it('does not emit input on click when disabled', () => {
-    const wrapper = mount(NeonFilterList, {
-      propsData: { items, value: [items[1].key] },
-    });
-    wrapper.find('.neon-filter-list__item:last-child').trigger('click');
-    expect(wrapper.emitted().input).toBeUndefined();
+  it('does not emit input on click when disabled', async () => {
+    const { container, emitted, rerender } = harness;
+    await rerender({ items, modelValue: [items[1].key] });
+    const el = container.querySelector('.neon-filter-list__item:last-child') as HTMLElement;
+    await fireEvent.click(el);
+    expect(emitted()['update:modelValue']).toBeUndefined();
   });
 });

@@ -1,9 +1,11 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonDropZone, NeonInput } from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonDropZone, NeonInput } from '@/neon';
+import type { MenuModel } from '../../../Menu';
+import { Menu } from '../../../Menu';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
 
-@Component({
+export default defineComponent({
+  name: 'DropZone',
   components: {
     NeonCard,
     NeonCardBody,
@@ -12,13 +14,11 @@ import ComponentDocumentation from '../../../components/component-documentation/
     NeonDropZone,
     ComponentDocumentation,
   },
-})
-export default class DropZone extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('A target for uploading files');
 
-  private headline = 'A target for uploading files';
-
-  private dropZoneExamples = `<div class="neon-horizontal drop-zone-examples">
+    const dropZoneExamples = `<div class="neon-horizontal drop-zone-examples">
   <neon-drop-zone>
     <span>Drop files here to upload</span>
   </neon-drop-zone>
@@ -27,14 +27,19 @@ export default class DropZone extends Vue {
   </neon-drop-zone>
 </div>`;
 
-  private examples = [
-    {
-      title: 'Drop zone example',
-      template: this.dropZoneExamples,
-    },
-  ];
+    const examples = ref([
+      {
+        title: 'Drop zone example',
+        template: dropZoneExamples,
+      },
+    ]);
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonDropZone');
-  }
-}
+    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonDropZone'));
+
+    return {
+      menuModel,
+      headline,
+      examples,
+    };
+  },
+});

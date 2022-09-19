@@ -1,4 +1,4 @@
-import { Component, Vue } from 'vue-property-decorator';
+import { defineComponent, onMounted, ref } from 'vue';
 import {
   NeonCard,
   NeonCardBody,
@@ -6,11 +6,13 @@ import {
   NeonFieldGroup,
   NeonInput,
   NeonInputIndicator,
-} from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
+} from '@/neon';
+import type { MenuModel } from '../../../Menu';
+import { Menu } from '../../../Menu';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
 
-@Component({
+export default defineComponent({
+  name: 'InputIndicator',
   components: {
     ComponentDocumentation,
     NeonCard,
@@ -20,19 +22,17 @@ import ComponentDocumentation from '../../../components/component-documentation/
     NeonInput,
     NeonInputIndicator,
   },
-})
-export default class InputIndicator extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Indicate read only information about an input');
 
-  private headline = 'Indicate read only information about an input';
+    const data = ref({
+      field1: '',
+      field2: '',
+      field3: '',
+    });
 
-  private data = {
-    field1: '',
-    field2: '',
-    field3: '',
-  };
-
-  private inputIndicatorExamples = `<div class="neon-vertically-spaced">
+    const inputIndicatorExamples = `<div class="neon-vertically-spaced">
   <neon-field-group>
     <neon-input type="text" size="s" v-model="field1" placeholder="Rate" />
     <neon-input-indicator size="s" label="%" />
@@ -48,15 +48,21 @@ export default class InputIndicator extends Vue {
   </neon-field-group>
 </div>`;
 
-  private examples = [
-    {
-      title: 'Input Indicator Examples',
-      template: this.inputIndicatorExamples,
-      data: this.data,
-    },
-  ];
+    const examples = ref([
+      {
+        title: 'Input Indicator Examples',
+        template: inputIndicatorExamples,
+        data: data.value,
+      },
+    ]);
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonInputIndicator');
-  }
-}
+    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonInputIndicator'));
+
+    return {
+      menuModel,
+      headline,
+      data,
+      examples,
+    };
+  },
+});

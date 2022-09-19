@@ -3,14 +3,14 @@ $neon-color-404: $neon-color-brand-d3;
 $neon-color-editor-lock: $neon-color-text-neutral;
 
 // application light mode SASS
-@import '../components/editor/Editor-colors';
-@import '../components/api-docs/ApiDocs-colors';
-@import '../components/example/Example-colors';
-@import '../components/component-documentation/ComponentDocumentation-colors';
+@use '../components/editor/Editor-colors';
+@use '../components/api-docs/ApiDocs-colors';
+@use '../components/example/Example-colors';
+@use '../components/component-documentation/ComponentDocumentation-colors';
 
-@import '../views/design/color/Color-colors';
-@import '../views/error/NotFound-colors';
-@import '../views/design/layout/Layout-colors';
+@use '../views/design/color/Color-colors';
+@use '../views/error/NotFound-colors';
+@use '../views/design/layout/Layout-colors';
 
 .neon-top-nav + .neon-side-nav {
   .neon-side-nav__scrolling {

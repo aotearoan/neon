@@ -10,7 +10,7 @@ describe('NeonIconRegistry', () => {
     expect(NeonIconRegistry.getIcon(name)).toEqual(icon);
   });
 
-  it("doesn't overwrite icon", () => {
+  it('doesn\'t overwrite icon', () => {
     // given
     const name = 'xd';
     const icon = 'lol';

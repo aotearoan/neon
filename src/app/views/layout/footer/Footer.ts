@@ -1,31 +1,37 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonFooter } from '../../../../components';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonFooter } from '@/neon';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import { Menu, MenuModel } from '../../../Menu';
+import type { MenuModel } from '../../../Menu';
+import { Menu } from '../../../Menu';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names,vue/no-reserved-component-names
+  name: 'Footer',
   components: {
     NeonCard,
     NeonCardBody,
     NeonFooter,
     ComponentDocumentation,
   },
-})
-export default class Footer extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Page footer component');
 
-  private headline = 'Page footer component';
-
-  private examples = [
-    {
-      title: 'Footer example',
-      template: `<neon-footer>
+    const examples = ref([
+      {
+        title: 'Footer example',
+        template: `<neon-footer>
   <span>Footer content</span>
 </neon-footer>`,
-    },
-  ];
+      },
+    ]);
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonFooter');
-  }
-}
+    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonFooter'));
+
+    return {
+      menuModel,
+      headline,
+      examples,
+    };
+  },
+});

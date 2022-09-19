@@ -1,29 +1,29 @@
 // application SASS
-@import '../components/editor/Editor';
-@import '../components/examples/Examples';
-@import '../components/example/Example';
-@import '../components/component-documentation/ComponentDocumentation';
-@import '../components/api-docs/ApiDocs';
+@use '../components/editor/Editor';
+@use '../components/examples/Examples';
+@use '../components/example/Example';
+@use '../components/component-documentation/ComponentDocumentation';
+@use '../components/api-docs/ApiDocs';
 
-@import '../views/design/color/Color';
-@import '../views/presentation/expansion-panel/ExpansionPanel';
-@import '../views/presentation/icon/Icon';
-@import '../views/design/typography/Typography';
-@import '../views/feedback/note/Note';
-@import '../views/source/Source';
-@import '../views/user-input/button/Button';
-@import '../views/user-input/drop-zone/DropZone';
-@import '../views/feedback/alert/Alert';
-@import '../views/home/Home';
-@import '../views/error/NotFound';
-@import '../views/feedback/splash-loader/SplashLoader';
-@import '../views/user-input/select/Select';
-@import '../views/user-input/color/Color';
-@import '../views/user-input/field-group/FieldGroup';
-@import '../views/layout/footer/Footer';
-@import '../views/design/layout/Layout';
-@import '../views/user-input/slider/Slider';
-@import '../views/navigation/action-menu/ActionMenu';
+@use '../views/design/color/Color';
+@use '../views/presentation/expansion-panel/ExpansionPanel';
+@use '../views/presentation/icon/Icon';
+@use '../views/design/typography/Typography';
+@use '../views/feedback/note/Note';
+@use '../views/source/Source';
+@use '../views/user-input/button/Button';
+@use '../views/user-input/drop-zone/DropZone';
+@use '../views/feedback/alert/Alert';
+@use '../views/home/Home';
+@use '../views/error/NotFound';
+@use '../views/feedback/splash-loader/SplashLoader';
+@use '../views/user-input/select/Select';
+@use '../views/user-input/color/Color';
+@use '../views/user-input/field-group/FieldGroup';
+@use '../views/layout/footer/Footer';
+@use '../views/design/layout/Layout';
+@use '../views/user-input/slider/Slider';
+@use '../views/navigation/action-menu/ActionMenu';
 
 body {
   .title {
@@ -98,7 +98,7 @@ header {
   h5,
   h6 {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   }
 }
 

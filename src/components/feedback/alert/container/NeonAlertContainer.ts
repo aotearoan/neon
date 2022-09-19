@@ -1,44 +1,44 @@
-import Vue from 'vue';
-import { Component, Prop } from 'vue-property-decorator';
+import { defineComponent } from 'vue';
 import { NeonAlertLevel } from '../../../../common/enums/NeonAlertLevel';
-import { NeonAlertPlacement } from '../../../../common/enums/NeonAlertPlacement';
+import type { NeonAlertPlacement } from '../../../../common/enums/NeonAlertPlacement';
 import NeonIcon from '../../../presentation/icon/NeonIcon.vue';
 import NeonLink from '../../../navigation/link/NeonLink.vue';
-import { NeonAlertModel } from '../NeonAlertModel';
+import type { NeonAlertModel } from '../NeonAlertModel';
 
 /**
  * This is an internal component for rendering alerts.
  */
-@Component({
+export default defineComponent({
+  name: 'NeonAlertContainer',
   components: {
     NeonIcon,
     NeonLink,
   },
-})
-export default class NeonAlertContainer extends Vue {
-  @Prop({ required: true })
-  private value!: NeonAlertModel[];
+  props: {
+    modelValue: { type: Array as () => Array<NeonAlertModel>, required: true },
+    placement: { type: String as () => NeonAlertPlacement, required: true },
+  },
+  setup(props, { emit }) {
+    const closeMessage = (id: number) => {
+      emit('update:modelValue', props.modelValue.filter((msg) => msg.id !== id));
+    };
 
-  @Prop({ required: true })
-  private placement!: NeonAlertPlacement;
+    const icon = (level: NeonAlertLevel) => {
+      switch (level) {
+        case NeonAlertLevel.Info:
+          return 'info-circle';
+        case NeonAlertLevel.Success:
+          return 'check-circle';
+        case NeonAlertLevel.Warn:
+          return 'exclamation-circle';
+        case NeonAlertLevel.Error:
+          return 'times-circle';
+      }
+    };
 
-  private closeMessage(id: number) {
-    this.$emit(
-      'input',
-      this.value.filter((msg) => msg.id !== id),
-    );
-  }
-
-  private icon(level: NeonAlertLevel) {
-    switch (level) {
-      case NeonAlertLevel.Info:
-        return 'info-circle';
-      case NeonAlertLevel.Success:
-        return 'check-circle';
-      case NeonAlertLevel.Warn:
-        return 'exclamation-circle';
-      case NeonAlertLevel.Error:
-        return 'times-circle';
-    }
-  }
-}
+    return {
+      closeMessage,
+      icon,
+    };
+  },
+});

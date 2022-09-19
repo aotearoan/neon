@@ -1,5 +1,4 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { TranslateResult } from 'vue-i18n';
+import { defineComponent } from 'vue';
 import { NeonVerticalPosition } from '../../../common/enums/NeonVerticalPosition';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import NeonExpansionIndicator from '../expansion-indicator/NeonExpansionIndicator.vue';
@@ -12,75 +11,67 @@ import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
  * of a button which, when clicked, toggles the open/closed state of the expansion panel and a slot for the content to
  * display on expansion.</p>
  */
-@Component({
+export default defineComponent({
+  name: 'NeonExpansionPanel',
   components: {
     NeonExpansionIndicator,
     NeonIcon,
   },
-})
-export default class NeonExpansionPanel extends Vue {
-  /**
-   * A boolean indicating whether or not the expansion panel is expanded.
-   */
-  @Prop({ required: true })
-  public value!: boolean;
+  props: {
+    /**
+     * A boolean indicating whether or not the expansion panel is expanded.
+     */
+    modelValue: { type: Boolean, required: true },
+    /**
+     * The label of the expansion button
+     */
+    label: { type: String, required: true },
+    /**
+     * Provide an id to support aria-controls. The id will be placed on the expansion panel content wrapper and the
+     * aria-controls on the header (triggering the expansion).
+     */
+    id: { type: String, default: null },
+    /**
+     * An icon to display to the left of the label
+     */
+    icon: { type: String, default: null },
+    /**
+     * The position of the expansion button. This can be located above the content to expand or below it.
+     */
+    position: { type: String as () => NeonVerticalPosition, default: NeonVerticalPosition.Top },
+    /**
+     * The size of the expansion panel button.
+     */
+    size: { type: String as () => NeonSize, default: NeonSize.Medium },
+    /**
+     * The color of the expansion panel button.
+     */
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Neutral },
+    /**
+     * Whether the label and expansion indicator should be flush with the width of the container.
+     */
+    fullWidth: { type: Boolean, default: false },
+    /**
+     * The disabled state of the expansion panel
+     */
+    disabled: { type: Boolean, default: false },
+  },
+  emits: [
+    /**
+     * Emitted when the expansion panel button is clicked.
+     * @type {boolean} The new open state of the expansion panel.
+     */
+    'update:modelValue',
+  ],
+  setup(props, { emit }) {
+    const toggleExpanded = () => {
+      if (!props.disabled) {
+        emit('update:modelValue', !props.modelValue);
+      }
+    };
 
-  /**
-   * The label of the expansion button
-   */
-  @Prop({ required: true })
-  public label!: TranslateResult;
-
-  /**
-   * Provide an id to support aria-controls. The id will be placed on the expansion panel content wrapper and the
-   * aria-controls on the header (triggering the expansion).
-   */
-  @Prop()
-  public id?: string;
-
-  /**
-   * An icon to display to the left of the label
-   */
-  @Prop()
-  public icon?: string;
-
-  /**
-   * The position of the expansion button. This can be located above the content to expand or below it.
-   */
-  @Prop({ default: NeonVerticalPosition.Top })
-  public position!: NeonVerticalPosition;
-
-  /**
-   * The size of the expansion panel button.
-   */
-  @Prop({ default: NeonSize.Medium })
-  public size!: NeonSize;
-
-  /**
-   * The color of the expansion panel button.
-   */
-  @Prop({ default: NeonFunctionalColor.Neutral })
-  public color!: NeonFunctionalColor;
-
-  /**
-   * Whether the label and expansion indicator should be flush with the width of the container.
-   */
-  @Prop({ default: false })
-  public fullWidth!: boolean;
-
-  /**
-   * The disabled state of the expansion panel
-   */
-  @Prop({ default: false })
-  public disabled!: boolean;
-
-  private toggleExpanded() {
-    if (!this.disabled) {
-      /**
-       * Emitted when the expansion panel button is clicked.
-       * @type {boolean} The new open state of the expansion panel.
-       */
-      this.$emit('input', !this.value);
-    }
-  }
-}
+    return {
+      toggleExpanded,
+    };
+  },
+});

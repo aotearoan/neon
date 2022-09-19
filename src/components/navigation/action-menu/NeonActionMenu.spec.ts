@@ -1,189 +1,98 @@
-import Vue from 'vue';
-import { mount } from '@vue/test-utils';
+import { fireEvent, render } from '@testing-library/vue';
 import NeonActionMenu from './NeonActionMenu.vue';
-import NeonLink from '../link/NeonLink.vue';
-
-Vue.component('NeonLink', NeonLink);
 
 describe('NeonActionMenu', () => {
+  const global = { stubs: ['router-link'] };
+  const model = [
+    {
+      label: 'Option 1',
+      key: 'option-1',
+    },
+    {
+      label: 'Option 2',
+      key: 'option-2',
+    },
+  ];
+
   it('renders selected class', () => {
     // given
-    const model = [
-      {
-        label: 'Option 1',
-        key: 'option-1',
-      },
-      {
-        label: 'Option 2',
-        key: 'option-2',
-      },
-    ];
-    const value = model[1].key;
-    const wrapper = mount(NeonActionMenu, {
-      propsData: { model, value },
-    });
+    const modelValue = model[1].key;
+    const { container } = render(NeonActionMenu, { props: { model, modelValue }, global });
     // when / then
-    expect(wrapper.find('.neon-action-menu__link--selected').text()).toEqual(model[1].label);
+    expect(container.getElementsByClassName('neon-action-menu__link--selected')[0].textContent).toMatch(model[1].label);
   });
 
   it('renders disabled classes', () => {
     // given
-    const model = [
-      {
-        label: 'Option 1',
-        key: 'option-1',
-      },
-      {
-        label: 'Option 2',
-        key: 'option-2',
-        disabled: true,
-      },
-    ];
-    const value = model[0].key;
-    const wrapper = mount(NeonActionMenu, {
-      propsData: { model, value },
-    });
+    const localModel = [model[0], { ...model[1], disabled: true }];
+    const modelValue = model[0].key;
+    const { container } = render(NeonActionMenu, { props: { model: localModel, modelValue }, global });
     // when / then
-    expect(wrapper.find('.neon-action-menu__link--disabled').text()).toEqual(model[1].label);
+    expect(container.getElementsByClassName('neon-action-menu__link--disabled')[0].textContent).toEqual(localModel[1].label);
   });
 
-  it('emits click event', () => {
+  it('emits click event', async () => {
     // given
-    const model = [
-      {
-        label: 'Option 1',
-        key: 'option-1',
-      },
-      {
-        label: 'Option 2',
-        key: 'option-2',
-      },
-    ];
-    const value = model[1].key;
-    const wrapper = mount(NeonActionMenu, {
-      propsData: { model, value },
-    });
+    const modelValue = model[1].key;
+    const { emitted, getByText } = render(NeonActionMenu, { props: { model, modelValue }, global });
+
     // when
-    const item = wrapper.findAll('.neon-action-menu__link').at(0);
-    item.trigger('click');
+    await fireEvent.click(getByText(model[0].label));
     // then
-    expect(wrapper.emitted().input[0]).toEqual([model[0].key]);
+    expect(emitted()['update:modelValue'][0]).toEqual([model[0].key]);
   });
 
-  it('does not emit click event on disabled item', () => {
+  it('does not emit click event on disabled item', async () => {
     // given
-    const model = [
-      {
-        label: 'Option 1',
-        key: 'option-1',
-        disabled: true,
-      },
-      {
-        label: 'Option 2',
-        key: 'option-2',
-      },
-    ];
-    const value = model[1].key;
-    const wrapper = mount(NeonActionMenu, {
-      propsData: { model, value },
-    });
+    const localModel = [{ ...model[0], disabled: true }, model[1]];
+    const modelValue = localModel[1].key;
+    const { emitted, getByText } = render(NeonActionMenu, { props: { model: localModel, modelValue }, global });
     // when
-    const item = wrapper.find('.neon-action-menu__link--disabled');
-    item.trigger('click');
+    await fireEvent.click(getByText(localModel[0].label));
     // then
-    expect(wrapper.emitted().input).toBeUndefined();
+    expect(emitted()['update:modelValue']).toBeUndefined();
   });
 
-  it('does not emit click event on selected item', () => {
+  it('does not emit click event on selected item', async () => {
     // given
-    const model = [
-      {
-        label: 'Option 1',
-        key: 'option-1',
-      },
-      {
-        label: 'Option 2',
-        key: 'option-2',
-      },
-    ];
-    const value = model[1].key;
-    const wrapper = mount(NeonActionMenu, {
-      propsData: { model, value },
-    });
+    const modelValue = model[1].key;
+    const { emitted, getByText } = render(NeonActionMenu, { props: { model, modelValue }, global });
+
     // when
-    const item = wrapper.findAll('.neon-action-menu__link').at(1);
-    item.trigger('click');
+    await fireEvent.click(getByText(model[1].label));
     // then
-    expect(wrapper.emitted().input).toBeUndefined();
+    expect(emitted()['update:modelValue']).toBeUndefined();
   });
 
-  it('emits event on space keydown', () => {
+  it('emits event on space keydown', async () => {
     // given
-    const model = [
-      {
-        label: 'Option 1',
-        key: 'option-1',
-      },
-      {
-        label: 'Option 2',
-        key: 'option-2',
-      },
-    ];
-    const value = model[1].key;
-    const wrapper = mount(NeonActionMenu, {
-      propsData: { model, value },
-    });
+    const modelValue = model[1].key;
+    const { emitted, getByText } = render(NeonActionMenu, { props: { model, modelValue }, global });
+
     // when
-    const item = wrapper.findAll('.neon-action-menu__link').at(0);
-    item.trigger('keydown.space');
+    await fireEvent.keyDown(getByText(model[0].label), { key: 'Space', code: 'Space' });
     // then
-    expect(wrapper.emitted().input[0]).toEqual([model[0].key]);
+    expect(emitted()['update:modelValue'][0]).toEqual([model[0].key]);
   });
 
-  it('does not emit event on space keypress on disabled item', () => {
+  it('does not emit event on space keypress on disabled item', async () => {
     // given
-    const model = [
-      {
-        label: 'Option 1',
-        key: 'option-1',
-        disabled: true,
-      },
-      {
-        label: 'Option 2',
-        key: 'option-2',
-      },
-    ];
-    const value = model[1].key;
-    const wrapper = mount(NeonActionMenu, {
-      propsData: { model, value },
-    });
+    const localModel = [{ ...model[0], disabled: true }, model[1]];
+    const modelValue = localModel[1].key;
+    const { emitted, getByText } = render(NeonActionMenu, { props: { model: localModel, modelValue }, global });
     // when
-    const item = wrapper.find('.neon-action-menu__link--disabled');
-    item.trigger('keydown.space');
+    await fireEvent.keyDown(getByText(model[0].label), { key: 'Space', code: 'Space' });
     // then
-    expect(wrapper.emitted().input).toBeUndefined();
+    expect(emitted()['update:modelValue']).toBeUndefined();
   });
 
-  it('does not emit event on space keydown on selected item', () => {
+  it('does not emit event on space keydown on selected item', async () => {
     // given
-    const model = [
-      {
-        label: 'Option 1',
-        key: 'option-1',
-      },
-      {
-        label: 'Option 2',
-        key: 'option-2',
-      },
-    ];
-    const value = model[1].key;
-    const wrapper = mount(NeonActionMenu, {
-      propsData: { model, value },
-    });
+    const modelValue = model[1].key;
+    const { emitted, getByText } = render(NeonActionMenu, { props: { model, modelValue }, global });
     // when
-    const item = wrapper.findAll('.neon-action-menu__link').at(1);
-    item.trigger('keydown.space');
+    await fireEvent.keyDown(getByText(model[1].label), { key: 'Space', code: 'Space' });
     // then
-    expect(wrapper.emitted().input).toBeUndefined();
+    expect(emitted()['update:modelValue']).toBeUndefined();
   });
 });

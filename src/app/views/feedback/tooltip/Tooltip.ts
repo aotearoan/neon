@@ -1,25 +1,26 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonTooltip } from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonTooltip } from '@/neon';
+import type { MenuModel } from '../../../Menu';
+import { Menu } from '../../../Menu';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Tooltip',
   components: {
     NeonTooltip,
     NeonCard,
     NeonCardBody,
     ComponentDocumentation,
   },
-})
-export default class Tooltip extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Contextual information popups');
 
-  private headline = 'Contextual information popups';
-
-  private examples = [
-    {
-      title: 'Tooltip styles',
-      template: `<div>
+    const examples = ref([
+      {
+        title: 'Tooltip styles',
+        template: `<div>
   <p>Hover over
   <neon-tooltip>
     <template #target>
@@ -50,12 +51,12 @@ export default class Tooltip extends Vue {
       <p>Spicy jalapeno bacon ipsum dolor amet biltong porchetta cupim sausage pork loin. Ham porchetta brisket,
       kielbasa ham hock sirloin ground round strip steak jowl jerky short ribs pork loin frankfurter.</p>
     </template>
-  </neon-tooltip></p>
+  </neon-tooltip>
 </div>`,
-    },
-    {
-      title: 'Tooltip placement',
-      template: `<div>
+      },
+      {
+        title: 'Tooltip placement',
+        template: `<div>
   <!-- top -->
   <p>Tooltip placement
   <neon-tooltip>
@@ -97,10 +98,15 @@ export default class Tooltip extends Vue {
     </template>
   </neon-tooltip>.</p>
 </div>`,
-    },
-  ];
+      },
+    ]);
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonTooltip');
-  }
-}
+    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonTooltip'));
+
+    return {
+      menuModel,
+      headline,
+      examples,
+    };
+  },
+});

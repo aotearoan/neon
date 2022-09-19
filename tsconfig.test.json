@@ -1,0 +1,53 @@
+{
+  "extends": "./tsconfig.config.json",
+  "include": [
+    "env.d.ts",
+    "**/*.d.ts",
+    "src/**/*",
+    "src/**/*.vue"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+  ],
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "es2020",
+    "lib": [
+      "dom",
+      "es2020"
+    ],
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "rootDirs": [
+      "src"
+    ],
+    "baseUrl": ".",
+    "strict": true,
+    "jsx": "react",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "declaration": true,
+    "declarationDir": "./dist/",
+    "types": [
+      "jest",
+      "node",
+      "vue",
+      "jsdom-global"
+    ]
+  },
+  "references": [
+    {
+      "path": "./tsconfig.config.json"
+    }
+  ],
+  "outDir": "dist/",
+  "declaration": true
+}

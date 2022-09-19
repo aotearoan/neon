@@ -1,28 +1,35 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonLink } from '../../../components';
+import { computed, defineComponent, ref } from 'vue';
+import { NeonButton, NeonCard, NeonCardBody, NeonCardHeader, NeonIcon, NeonLink } from '@/neon';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Home',
   components: {
+    NeonButton,
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
+    NeonIcon,
     NeonLink,
   },
-})
-export default class Home extends Vue {
-  private static readonly developerType = [
-    'React',
-    'Angular',
-    'GWT',
-    'Scala.js',
-    'Less',
-    'Lodash',
-    'JQuery',
-    'Bootstrap',
-    'Tailwind CSS',
-  ];
+  setup() {
+    const developerType = ref([
+      'React',
+      'Angular',
+      'GWT',
+      'Scala.js',
+      'Less',
+      'Lodash',
+      'JQuery',
+      'Bootstrap',
+      'Tailwind CSS',
+    ]);
 
-  private get developers() {
-    return Home.developerType[Math.floor(Math.random() * 10) % Home.developerType.length];
-  }
-}
+    const developers = computed(() => developerType.value[Math.floor(Math.random() * 10) % developerType.value.length]);
+
+    return {
+      developerType,
+      developers,
+    };
+  },
+});

@@ -1,22 +1,23 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader } from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
+import { defineComponent, onMounted, ref } from 'vue';
+import type { MenuModel } from '../../../Menu';
+import { Menu } from '../../../Menu';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import { NeonCard, NeonCardBody, NeonCardHeader } from '@/neon';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Card',
   components: {
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
     ComponentDocumentation,
   },
-})
-export default class Card extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('A component for content layout within a page');
 
-  private headline = 'A component for content layout within a page';
-
-  private example = `<neon-card>
+    const example = `<neon-card>
   <neon-card-header>
     <h4>Card header</h4>
   </neon-card-header>
@@ -38,7 +39,7 @@ export default class Card extends Vue {
   </neon-card-footer>
 </neon-card>`;
 
-  private horizontalExample = `<neon-card orientation="horizontal">
+    const horizontalExample = `<neon-card orientation="horizontal">
   <neon-card-header>
     <h4>Header</h4>
   </neon-card-header>
@@ -51,20 +52,26 @@ export default class Card extends Vue {
   </neon-card-footer>
 </neon-card>`;
 
-  private examples = [
-    {
-      title: 'Vertical card',
-      template: this.example,
-      noCard: true,
-    },
-    {
-      title: 'Horizontal card',
-      template: this.horizontalExample,
-      noCard: true,
-    },
-  ];
+    const examples = ref([
+      {
+        title: 'Vertical card',
+        template: example,
+        noCard: true,
+      },
+      {
+        title: 'Horizontal card',
+        template: horizontalExample,
+        noCard: true,
+      },
+    ]);
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonCard');
-  }
-}
+    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonCard'));
+
+    return {
+      menuModel,
+      headline,
+      horizontalExample,
+      examples,
+    };
+  },
+});

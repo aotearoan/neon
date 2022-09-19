@@ -1,12 +1,11 @@
 {
+  "displayName": "NeonFile",
   "description": "A file upload component. This is a wrapper around an HTML file input. It can display multiple files as well as\nproviding a convenient UI for removing/clearing files from the list.",
   "tags": {},
   "exportName": "default",
-  "displayName": "NeonFile",
   "props": [
     {
       "name": "disabled",
-      "tags": {},
       "description": "The disabled state of the component",
       "type": {
         "name": "boolean"
@@ -18,7 +17,6 @@
     },
     {
       "name": "directUpload",
-      "tags": {},
       "description": "Files are uploaded directly once added, there is no waiting to click a confirmation button",
       "type": {
         "name": "boolean"
@@ -30,7 +28,6 @@
     },
     {
       "name": "multiple",
-      "tags": {},
       "description": "Support multiple files.",
       "type": {
         "name": "boolean"
@@ -42,26 +39,31 @@
     },
     {
       "name": "accept",
-      "tags": {},
       "description": "HTML file input accept property for filtering the files the user is allowed to select. THis is a mime type,\ne.g. 'application/pdf'.",
       "type": {
         "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     },
     {
       "name": "id",
-      "tags": {},
       "description": "Provide an id to attach to the internal HTML input[file] (also adds an aria-controls link between the button and\nthe hidden input).",
       "type": {
         "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     },
     {
       "name": "size",
-      "tags": {},
       "description": "The file component size",
       "type": {
-        "name": "NeonSize"
+        "name": "String as () => NeonSize"
       },
       "defaultValue": {
         "func": false,
@@ -70,10 +72,9 @@
     },
     {
       "name": "state",
-      "tags": {},
       "description": "The state of the input, used to indicate loading, success and error states",
       "type": {
-        "name": "NeonState"
+        "name": "String as () => NeonState"
       },
       "defaultValue": {
         "func": false,
@@ -82,10 +83,9 @@
     },
     {
       "name": "color",
-      "tags": {},
       "description": "The file component color",
       "type": {
-        "name": "NeonFunctionalColor"
+        "name": "String as () => NeonFunctionalColor"
       },
       "defaultValue": {
         "func": false,
@@ -94,24 +94,30 @@
     },
     {
       "name": "label",
-      "tags": {},
       "description": "The label of the file component button",
       "type": {
-        "name": "TranslateResult"
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     },
     {
       "name": "icon",
-      "tags": {},
       "description": "The icon of the file component button",
       "type": {
         "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     }
   ],
   "events": [
     {
-      "name": "input",
+      "name": "update:modelValue",
       "description": "Emitted when files are selected and uploaded",
       "type": {
         "names": [

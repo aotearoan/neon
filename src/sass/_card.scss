@@ -1,10 +1,16 @@
-@mixin horizontal-card-responsive {
+@use './includes/layout';
+@use './includes/responsive';
+
+@mixin horizontal-card-responsive(
+  $spacings,
+  $neon-border-radius-card,
+) {
   flex-direction: row;
 
   .neon-card-header,
   .neon-card-body,
   .neon-card-footer {
-    @include padding;
+    @include layout.padding($spacings);
     margin-bottom: 0;
     justify-content: center;
 
@@ -28,7 +34,23 @@
   }
 }
 
-@mixin neon-card-import {
+@mixin horizontal-card-responsive-borders($neon-border) {
+  .neon-card-header,
+  .neon-card-body,
+  .neon-card-footer {
+    &:not(:last-child) {
+      border-right: $neon-border;
+    }
+  }
+}
+
+@mixin import(
+  $spacings,
+  $neon-border-radius-card,
+  $neon-card-box-shadow,
+  $neon-base-space,
+  $neon-border-width,
+) {
   .neon-card {
     border-radius: $neon-border-radius-card;
     box-shadow: $neon-card-box-shadow;
@@ -38,7 +60,7 @@
       & > .neon-card-header,
       & > .neon-card-body,
       & > .neon-card-footer {
-        @include padding(0.5);
+        @include layout.padding($spacings, 0.5);
       }
     }
 
@@ -46,7 +68,7 @@
       & > .neon-card-header,
       & > .neon-card-body,
       & > .neon-card-footer {
-        @include padding(0.75);
+        @include layout.padding($spacings, 0.75);
       }
     }
 
@@ -54,7 +76,7 @@
       & > .neon-card-header,
       & > .neon-card-body,
       & > .neon-card-footer {
-        @include padding;
+        @include layout.padding($spacings);
       }
     }
 
@@ -111,38 +133,22 @@
       }
     }
 
-    @if ($neon-theme == smooth) {
-      &.neon-card--vertical {
-        .neon-card-header {
-          &:not(:last-child) {
-            padding-bottom: 0;
-          }
-        }
-
-        .neon-card-footer {
-          &:not(:first-child) {
-            padding-top: 0;
-          }
-        }
-      }
-    }
-
     &.neon-card--horizontal {
       &.neon-card--horizontal-breakpoint-mobile-l {
-        @include responsive(larger-than-mobile-large) {
-          @include horizontal-card-responsive;
+        @include responsive.responsive(larger-than-mobile-large) {
+          @include horizontal-card-responsive($spacings, $neon-border-radius-card);
         }
       }
 
       &.neon-card--horizontal-breakpoint-mobile {
-        @include responsive(larger-than-mobile) {
-          @include horizontal-card-responsive;
+        @include responsive.responsive(larger-than-mobile) {
+          @include horizontal-card-responsive($spacings, $neon-border-radius-card);
         }
       }
 
       &.neon-card--horizontal-breakpoint-tablet {
-        @include responsive(larger-than-tablet) {
-          @include horizontal-card-responsive;
+        @include responsive.responsive(larger-than-tablet) {
+          @include horizontal-card-responsive($spacings, $neon-border-radius-card);
         }
       }
     }
@@ -176,6 +182,72 @@
         & > * {
           border-bottom-left-radius: $neon-border-radius-card;
           border-bottom-right-radius: $neon-border-radius-card;
+        }
+      }
+    }
+  }
+
+  .neon-theme--smooth {
+    .neon-card.neon-card--vertical {
+      .neon-card-header {
+        &:not(:last-child) {
+          padding-bottom: 0;
+        }
+      }
+
+      .neon-card-footer {
+        &:not(:first-child) {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+}
+
+@mixin import-colors(
+  $neon-border,
+  $neon-card-box-shadow,
+  $neon-background-color-card,
+  $neon-card-section-border,
+  $neon-border-color,
+) {
+  .neon-card {
+    border: $neon-border;
+    box-shadow: $neon-card-box-shadow;
+
+    .neon-card-header,
+    .neon-card-body,
+    .neon-card-footer {
+      background-color: $neon-background-color-card;
+    }
+
+    &.neon-card--vertical {
+      .neon-card-header,
+      .neon-card-body,
+      .neon-card-footer {
+        &:not(:last-child):not(.neon-card-body--full-width) {
+          border-bottom: $neon-card-section-border;
+          border-bottom-color: $neon-border-color;
+        }
+      }
+    }
+
+    &.neon-card--horizontal {
+      &.neon-card--horizontal-breakpoint-mobile-l {
+        @include responsive.responsive(larger-than-mobile-large) {
+          @include horizontal-card-responsive-borders($neon-border);
+        }
+      }
+
+      &.neon-card--horizontal-breakpoint-mobile {
+        @include responsive.responsive(larger-than-mobile) {
+          @include horizontal-card-responsive-borders($neon-border);
+        }
+      }
+
+      &.neon-card--horizontal-breakpoint-tablet {
+        @include responsive.responsive(larger-than-tablet) {
+          @include horizontal-card-responsive-borders($neon-border);
         }
       }
     }

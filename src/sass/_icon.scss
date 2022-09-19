@@ -1,8 +1,55 @@
-@mixin neon-icon-import {
+@use './includes/svg';
+
+@mixin import {
   .neon-icon {
     display: inline-flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+  }
+}
+
+@mixin import-colors(
+  $neon-color-text,
+  $neon-animation-speed-fast,
+  $neon-functional-colors,
+  $neon-color-icon,
+  $neon-color-inverse,
+  $neon-color-disabled-light,
+) {
+  $neon-icon-types: (neon-expansion-indicator, neon-icon);
+
+  @each $neon-icon-type in $neon-icon-types {
+    .#{$neon-icon-type} {
+      @include svg.svg-colors($neon-color-text);
+
+      .neon-svg--fill {
+        transition: fill ease-in-out $neon-animation-speed-fast;
+      }
+
+      .neon-svg--stroke {
+        transition: stroke ease-in-out $neon-animation-speed-fast;
+      }
+
+      @each $color, $palette in $neon-functional-colors {
+        &--#{$color}:not(.#{$neon-icon-type}--disabled):not(.#{$neon-icon-type}--inverse) {
+          @include svg.svg-colors(map-get($palette, $neon-color-icon));
+        }
+      }
+
+      &--inverse {
+        @include svg.svg-colors($neon-color-inverse);
+      }
+
+      &--disabled {
+        .neon-svg--fill {
+          fill: $neon-color-disabled-light;
+        }
+
+        .neon-svg--stroke {
+          stroke: $neon-color-disabled-light;
+        }
+      }
+    }
   }
 }

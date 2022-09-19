@@ -1,18 +1,21 @@
-import { Component, Vue } from 'vue-property-decorator';
+import { defineComponent, onMounted, ref } from 'vue';
 import {
   NeonCard,
   NeonCardBody,
   NeonGrid,
   NeonGridArea,
   NeonPage,
-  NeonResponsive,
   NeonSideNav,
   NeonTopNav,
-} from '../../../../components';
+} from '@/neon';
 import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import { Menu, MenuModel } from '../../../Menu';
+import type { MenuModel } from '../../../Menu';
+import { Menu } from '../../../Menu';
+import { NeonResponsive } from '../../../../common/enums/NeonResponsive';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Page',
   components: {
     NeonCard,
     NeonCardBody,
@@ -23,47 +26,51 @@ import { Menu, MenuModel } from '../../../Menu';
     NeonTopNav,
     ComponentDocumentation,
   },
-})
-export default class Page extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('The basic container for a page');
 
-  private headline = 'The basic container for a page';
-
-  private examples = [
-    {
-      title: 'Page example',
-      template: `<neon-page>
-  <template #top-nav>
-    <neon-top-nav>
-      <span>Top Nav content</span>
-    </neon-top-nav>
-  </template>
-  <template #content>
-    <neon-side-nav>
-      <template #sticky>
-        <span>Side nav content</span>
-      </template>
-    </neon-side-nav>
-    <neon-grid id="content" :layouts="layouts">
-      <neon-grid-area id="section-content">
-        <span>Grid area</span>
-      </neon-grid-area>
-    </neon-grid>
-  </template>
-</neon-page>`,
-      data: {
-        layouts: [
-          {
-            breakpoint: NeonResponsive.All,
-            grid: [['section-content']],
-          },
-        ],
+    const examples = ref([
+      {
+        title: 'Page example',
+        template: `
+          <neon-page>
+          <template #top-nav>
+            <neon-top-nav>
+              <span>Top Nav content</span>
+            </neon-top-nav>
+          </template>
+          <template #content>
+            <neon-side-nav>
+              <template #sticky>
+                <span>Side nav content</span>
+              </template>
+            </neon-side-nav>
+            <neon-grid id="content" :layouts="layouts">
+              <neon-grid-area id="section-content">
+                <span>Grid area</span>
+              </neon-grid-area>
+            </neon-grid>
+          </template>
+          </neon-page>`,
+        data: {
+          layouts: [
+            {
+              breakpoint: NeonResponsive.All,
+              grid: [['section-content']],
+            },
+          ],
+        },
+        fixedContent: true,
       },
-      fixedContent: true,
-    },
-  ];
+    ]);
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonPage');
-  }
-}
+    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonPage'));
+
+    return {
+      menuModel,
+      headline,
+      examples,
+    };
+  },
+});

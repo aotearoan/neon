@@ -1,23 +1,24 @@
 <template>
-  <div class="neon-note" :class="`neon-note--${color}`" role="note">
+  <div :class="`neon-note--${color}`" class="neon-note" role="note">
     <div class="neon-note__container">
-      <neon-icon v-if="iconName" class="neon-note__icon" :name="iconName" :color="color" />
+      <neon-icon v-if="iconName" :color="color" :name="iconName" class="neon-note__icon" />
       <!-- @slot the contents of the note -->
       <slot></slot>
     </div>
     <neon-button
       v-if="closable"
-      @click="closeNote"
-      @keydown.enter="closeNote"
-      @keypress.space.stop="closeNote"
-      button-style="text"
-      icon="times"
       :aria-label="ariaLabelCloseNote"
+      :circular="true"
+      :color="color"
+      button-style="text"
+      class="neon-note__close"
+      data-testid="note-button"
+      icon="times"
       size="s"
       tabindex="0"
-      :circular="true"
-      class="neon-note__close"
-      :color="color"
+      @click="closeNote"
+      @keydown.enter="closeNote"
+      @keydown.space.stop="closeNote"
     ></neon-button>
   </div>
 </template>

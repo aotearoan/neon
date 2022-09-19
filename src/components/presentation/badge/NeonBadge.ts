@@ -1,5 +1,4 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { TranslateResult } from 'vue-i18n';
+import { defineComponent } from 'vue';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import NeonIcon from '../icon/NeonIcon.vue';
@@ -7,63 +6,47 @@ import NeonIcon from '../icon/NeonIcon.vue';
 /**
  * A badge is a small square or circular component for representing user avatars. These can be in the form of an image, an icon or a two character string (e.g. the user's initials).
  */
-@Component({
+export default defineComponent({
+  name: 'NeonBadge',
   components: {
     NeonIcon,
   },
-})
-export default class NeonBadge extends Vue {
-  /**
-   * The two character <em>initials</em> to display on the badge.
-   */
-  @Prop()
-  public label?: TranslateResult;
-
-  /**
-   * URL of the image to display on the badge.
-   */
-  @Prop()
-  public image?: string;
-
-  /**
-   * An icon to display on the badge.
-   */
-  @Prop()
-  public icon?: string;
-
-  /**
-   * If true, render the badge as a circle, instead of a square.
-   */
-  @Prop({ default: false })
-  public circular!: boolean;
-
-  /**
-   * The size of the badge - Small, Medium or Large.
-   */
-  @Prop({ default: NeonSize.Medium })
-  public size!: NeonSize;
-
-  /**
-   * The color of the badge. This is one of the provided NeonFunctionalColors.
-   */
-  @Prop({ default: NeonFunctionalColor.LowContrast })
-  public color!: NeonFunctionalColor;
-
-  /**
-   * Alternate color for creating gradient badges. NOTE: can also be the same color as 'color'.
-   */
-  @Prop()
-  public alternateColor?: NeonFunctionalColor;
-
-  /**
-   * Display the badge in the disable style
-   */
-  @Prop({ default: false })
-  public disabled!: boolean;
-
-  /**
-   * Badge image alt text.
-   */
-  @Prop({ default: 'Badge' })
-  public imageAlt!: TranslateResult;
-}
+  props: {
+    /**
+     * The two character <em>initials</em> to display on the badge.
+     */
+    label: { type: String, default: null },
+    /**
+     * URL of the image to display on the badge.
+     */
+    image: { type: String, default: null },
+    /**
+     * An icon to display on the badge.
+     */
+    icon: { type: String, default: null },
+    /**
+     * If true, render the badge as a circle, instead of a square.
+     */
+    circular: { type: Boolean, default: false },
+    /**
+     * The size of the badge - Small, Medium or Large.
+     */
+    size: { type: String as () => NeonSize, default: NeonSize.Medium },
+    /**
+     * The color of the badge. This is one of the provided NeonFunctionalColors.
+     */
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    /**
+     * Alternate color for creating gradient badges. NOTE: can also be the same color as 'color'.
+     */
+    alternateColor: { type: String as () => NeonFunctionalColor, default: null },
+    /**
+     * Display the badge in the disable style
+     */
+    disabled: { type: Boolean, default: false },
+    /**
+     * Badge image alt text.
+     */
+    imageAlt: { type: String, default: 'Badge' },
+  },
+});

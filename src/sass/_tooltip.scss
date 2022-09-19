@@ -1,4 +1,24 @@
-@mixin neon-tooltip-import {
+@use './includes/globals';
+@use './includes/outline';
+
+@function neon-tooltip-border-color($neon-border-width-tooltip, $neon-color-inverse, $neon-border-color) {
+  @if ($neon-border-width-tooltip == 0) {
+    @return $neon-color-inverse;
+  }
+  @return $neon-border-color;
+}
+
+@mixin import(
+  $neon-border-radius,
+  $neon-tooltip-max-width,
+  $neon-tooltip-max-height,
+  $neon-base-space,
+  $neon-font-size-xs,
+  $neon-line-height-ratio,
+  $neon-popover-max-width,
+  $neon-popover-max-height,
+  $neon-font-size-m,
+) {
   .neon-tooltip {
     display: inline-flex;
     position: relative;
@@ -12,7 +32,7 @@
     }
 
     &__content-wrapper {
-      z-index: $z-index-above-3;
+      z-index: globals.$z-index-above-3;
       position: absolute;
       display: none;
       width: $neon-tooltip-max-width;
@@ -29,12 +49,12 @@
 
     &--tooltip {
       .neon-tooltip__arrow {
-        z-index: $z-index-above;
+        z-index: globals.$z-index-above;
       }
     }
 
     .neon-tooltip__arrow-overlay {
-      z-index: $z-index-above-2;
+      z-index: globals.$z-index-above-2;
     }
 
     &__content {
@@ -170,7 +190,7 @@
         }
 
         &__arrow {
-          z-index: $z-index-above;
+          z-index: globals.$z-index-above;
         }
       }
 
@@ -182,12 +202,12 @@
         }
 
         .neon-tooltip__arrow {
-          top: calc(100% + #{$neon-base-space + 1px});
+          top: calc(100% + #{$neon-base-space} + 1px);
           margin-top: -6px;
         }
 
         .neon-tooltip__arrow-overlay {
-          top: calc(100% + #{$neon-base-space - 1px});
+          top: calc(100% + #{$neon-base-space} - 1px);
           margin-top: -6px;
         }
       }
@@ -200,12 +220,12 @@
         }
 
         .neon-tooltip__arrow {
-          bottom: calc(100% + #{$neon-base-space + 1px});
+          bottom: calc(100% + #{$neon-base-space} + 1px);
           margin-bottom: -6px;
         }
 
         .neon-tooltip__arrow-overlay {
-          bottom: calc(100% + #{$neon-base-space - 1px});
+          bottom: calc(100% + #{$neon-base-space} - 1px);
           margin-bottom: -6px;
         }
       }
@@ -218,12 +238,12 @@
         }
 
         .neon-tooltip__arrow {
-          left: calc(100% + #{$neon-base-space + 1px});
+          left: calc(100% + #{$neon-base-space} + 1px);
           margin-left: -6px;
         }
 
         .neon-tooltip__arrow-overlay {
-          left: calc(100% + #{$neon-base-space - 1px});
+          left: calc(100% + #{$neon-base-space} - 1px);
           margin-left: -6px;
         }
       }
@@ -236,13 +256,135 @@
         }
 
         .neon-tooltip__arrow {
-          right: calc(100% + #{$neon-base-space + 1px});
+          right: calc(100% + #{$neon-base-space} + 1px);
           margin-right: -6px;
         }
 
         .neon-tooltip__arrow-overlay {
-          right: calc(100% + #{$neon-base-space - 1px});
+          right: calc(100% + #{$neon-base-space} - 1px);
           margin-right: -6px;
+        }
+      }
+    }
+  }
+}
+
+@mixin import-colors(
+  $neon-functional-colors,
+  $neon-color-outline,
+  $neon-border-radius,
+  $neon-animation-speed-slow,
+  $neon-animation-speed-fast,
+  $neon-base-space,
+  $neon-color-text,
+  $neon-color-inverse,
+  $neon-border-width-tooltip,
+  $neon-border-color,
+  $neon-box-shadow-tooltip,
+) {
+  .neon-tooltip {
+    @each $color, $palette in $neon-functional-colors {
+      &--outline-color-#{$color} {
+        &.neon-tooltip {
+          @include outline.focus-outline-styles(map-get($palette, $neon-color-outline), $neon-border-radius, $neon-animation-speed-slow, $neon-animation-speed-fast, $neon-base-space);
+        }
+      }
+    }
+
+    &__content {
+      background: $neon-color-text;
+      color: $neon-color-inverse;
+      border: $neon-border-width-tooltip solid $neon-border-color;
+      box-shadow: $neon-box-shadow-tooltip;
+    }
+
+    &--top,
+    &--bottom {
+      .neon-tooltip__arrow,
+      .neon-tooltip__arrow-overlay {
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+      }
+    }
+
+    &--top {
+      .neon-tooltip__arrow {
+        border-top: 6px solid $neon-color-text;
+      }
+    }
+
+    &--bottom {
+      .neon-tooltip__arrow {
+        border-bottom: 6px solid $neon-color-text;
+      }
+    }
+
+    &--left,
+    &--right {
+      .neon-tooltip__arrow,
+      .neon-tooltip__arrow-overlay {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+      }
+    }
+
+    &--left {
+      .neon-tooltip__arrow {
+        border-left: 6px solid $neon-color-text;
+      }
+    }
+
+    &--right {
+      .neon-tooltip__arrow {
+        border-right: 6px solid $neon-color-text;
+      }
+    }
+
+    &--popover {
+      .neon-tooltip {
+        &__content {
+          background: $neon-color-inverse;
+          color: $neon-color-text;
+        }
+      }
+
+      &.neon-tooltip--top {
+        .neon-tooltip__arrow {
+          border-top-color: neon-tooltip-border-color($neon-border-width-tooltip, $neon-color-inverse, $neon-border-color);
+        }
+
+        .neon-tooltip__arrow-overlay {
+          border-top: 6px solid $neon-color-inverse;
+        }
+      }
+
+      &.neon-tooltip--bottom {
+        .neon-tooltip__arrow {
+          border-bottom-color: neon-tooltip-border-color($neon-border-width-tooltip, $neon-color-inverse, $neon-border-color);
+        }
+
+        .neon-tooltip__arrow-overlay {
+          border-bottom: 6px solid $neon-color-inverse;
+        }
+      }
+
+      &.neon-tooltip--left {
+        .neon-tooltip__arrow {
+          border-left-color: neon-tooltip-border-color($neon-border-width-tooltip, $neon-color-inverse, $neon-border-color);
+        }
+
+        .neon-tooltip__arrow-overlay {
+          border-left: 6px solid $neon-color-inverse;
+        }
+      }
+
+      &.neon-tooltip--right {
+        .neon-tooltip__arrow {
+          border-right-color: neon-tooltip-border-color($neon-border-width-tooltip, $neon-color-inverse, $neon-border-color);
+        }
+
+        .neon-tooltip__arrow-overlay {
+          border-right: 6px solid $neon-color-inverse;
         }
       }
     }

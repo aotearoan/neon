@@ -1,6 +1,5 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { defineComponent } from 'vue';
 import { NeonSize } from '../../../common/enums/NeonSize';
-import { TranslateResult } from 'vue-i18n';
 import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 
 /**
@@ -9,27 +8,23 @@ import NeonIcon from '../../presentation/icon/NeonIcon.vue';
  * <br />
  * NOTE: An input indicator is an HTML <em>label</em> so attributes like, e.g. <em>for</em> are accepted.
  */
-@Component({
+export default defineComponent({
+  name: 'NeonInputIndicator',
   components: {
     NeonIcon,
   },
-})
-export default class NeonInputIndicator extends Vue {
-  /**
-   * The label to display
-   */
-  @Prop()
-  public label?: TranslateResult;
-
-  /**
-   * The icon to display
-   */
-  @Prop()
-  public icon?: string;
-
-  /**
-   * The size of the input indicator
-   */
-  @Prop({ default: NeonSize.Medium })
-  public size!: NeonSize;
-}
+  props: {
+    /**
+     * The label to display
+     */
+    label: { type: String, required: false },
+    /**
+     * The icon to display
+     */
+    icon: { type: String, required: false },
+    /**
+     * The size of the input indicator
+     */
+    size: { type: String as () => NeonSize, default: NeonSize.Medium },
+  },
+});

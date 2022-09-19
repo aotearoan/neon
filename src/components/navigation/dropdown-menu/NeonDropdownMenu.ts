@@ -1,9 +1,8 @@
-import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
-import { NeonDropdownMenuItem } from '../../../common/models/NeonDropdownMenuItem';
+import { computed, defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
+import type { NeonDropdownMenuItem } from '../../../common/models/NeonDropdownMenuItem';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import NeonDropdown from '../../presentation/dropdown/NeonDropdown.vue';
-import NeonDropdownClass from '../../presentation/dropdown/NeonDropdown';
 import { NeonDropdownPlacement } from '../../../common/enums/NeonDropdownPlacement';
 import { NeonScrollUtils } from '../../../common/utils/NeonScrollUtils';
 import NeonIcon from '../../presentation/icon/NeonIcon.vue';
@@ -15,177 +14,189 @@ import NeonLink from '../link/NeonLink.vue';
  * <p><strong>Note:</strong> As well as the options described below, pass through attributes supported by
  * <a href="/presentation/dropdown">NeonDropdown</a> to change the style of the dropdown button.</p>
  */
-@Component({
+export default defineComponent({
+  name: 'NeonDropdownMenu',
   components: {
     NeonDropdown,
     NeonIcon,
     NeonLink,
   },
-})
-export default class NeonDropdownMenu extends Vue {
-  readonly $refs!: {
-    dropdown: NeonDropdownClass;
-    items: HTMLLIElement[];
-  };
+  props: {
+    /**
+     * A list of menu items to render in the dropdown menu.
+     */
+    model: { type: Array as () => Array<NeonDropdownMenuItem>, required: true },
+    /**
+     * The size of the dropdown - Small, Medium or Large.
+     */
+    size: { type: String as () => NeonSize, default: NeonSize.Medium },
+    /**
+     * The dropdown color.
+     */
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    /**
+     * Whether the dropdown button is disabled or not.
+     */
+    disabled: { type: Boolean, default: false },
+    /**
+     * Instead of opening on click (default), open on hover.
+     */
+    openOnHover: { type: Boolean, default: false },
+  },
+  emits: [
+    /**
+     * emitted when the user clicks on a menu item.
+     * @type {NeonDropdownMenuItem} the menu item the user clicked on.
+     */
+    'click',
+    /**
+     * emitted on initialisation
+     * @type {HTMLElement} the reference to the HTMLElement for the dropdown menu button.
+     */
+    'button-ref',
+  ],
+  setup(props, { attrs, emit }) {
+    const dropdown = ref<HTMLElement | null>(null);
+    const dropdownPlacement = ref<NeonDropdownPlacement | null>(null);
+    const items = ref<Array<HTMLLIElement>>([]);
+    const open = ref(false);
+    const highlightedKey = ref<string | null>(null);
+    const highlightedIndex = ref(-1);
 
-  open = false;
-  highlightedKey: string | null = null;
-  highlightedIndex = -1;
+    const sanitizedAttributes = computed(() => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      const { size, color, ...attributes } = Object.entries(attrs).filter(([key, _value]) => key !== 'onInput');
+      return attributes;
+    });
 
-  /**
-   * A list of menu items to render in the dropdown menu.
-   */
-  @Prop({ required: true })
-  public model!: NeonDropdownMenuItem[];
+    const changeHighlighted = (key: string) => {
+      highlightedKey.value = key;
+      highlightedIndex.value = props.model.findIndex((item) => item.key === key);
+    };
 
-  /**
-   * The size of the dropdown - Small, Medium or Large.
-   */
-  @Prop({ default: NeonSize.Medium })
-  public size!: NeonSize;
+    const onPlacement = (placement: NeonDropdownPlacement) => {
+      dropdownPlacement.value = placement;
+    };
 
-  /**
-   * The dropdown color.
-   */
-  @Prop({ default: NeonFunctionalColor.LowContrast })
-  public color!: NeonFunctionalColor;
+    const isReverse = () => {
+      switch (dropdownPlacement.value) {
+        case NeonDropdownPlacement.TopLeft:
+        case NeonDropdownPlacement.TopRight:
+        case NeonDropdownPlacement.LeftBottom:
+        case NeonDropdownPlacement.RightBottom:
+          return true;
+      }
 
-  /**
-   * Whether the dropdown button is disabled or not.
-   */
-  @Prop({ default: false })
-  public disabled!: boolean;
+      return false;
+    };
 
-  /**
-   * Instead of opening on click (default), open on hover.
-   */
-  @Prop({ default: false })
-  public openOnHover!: boolean;
+    const scrollOnNavigate = () => {
+      const element = dropdown.value?.querySelector('.neon-dropdown-menu__item--highlighted') as HTMLElement;
+      NeonScrollUtils.scrollIntoView(element);
+    };
 
-  @Watch('open')
-  private toggleOpen(open: boolean) {
-    if (open) {
-      this.highlightedKey = this.model[0].key;
-      this.highlightedIndex = 0;
-    }
-  }
+    const navigateBy = (offset: number, $event: KeyboardEvent) => {
+      const newIndex = highlightedIndex.value + offset;
+      if (newIndex >= 0 && newIndex <= props.model.length - 1) {
+        highlightedIndex.value = newIndex;
+        highlightedKey.value = props.model[highlightedIndex.value].key;
+        $event.preventDefault();
+        setTimeout(scrollOnNavigate);
+      }
+    };
 
-  public mounted() {
-    document.addEventListener('keydown', this.keyboardHandler);
-  }
-
-  public beforeDestroy() {
-    document.removeEventListener('keydown', this.keyboardHandler);
-  }
-
-  private get sanitizedListeners(): Record<string, Function | Function[]> {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { input, ...sanitized } = this.$listeners;
-    return sanitized;
-  }
-
-  private get sanitizedAttributes(): Record<string, string> {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { size, color, ...sanitized } = this.$attrs;
-    return sanitized;
-  }
-
-  private changeHighlighted(key: string) {
-    this.highlightedKey = key;
-    this.highlightedIndex = this.model.findIndex((item) => item.key === key);
-  }
-
-  private keyboardHandler($event: KeyboardEvent) {
-    if (!this.disabled) {
-      if (this.open) {
-        switch ($event.code) {
-          case 'ArrowUp':
-          case 'ArrowDown':
-            {
-              const reverseOffset = this.isReverse() ? -1 : 1;
+    const keyboardHandler = ($event: KeyboardEvent) => {
+      if (!props.disabled) {
+        if (open.value) {
+          switch ($event.code) {
+            case 'ArrowUp':
+            case 'ArrowDown': {
+              const reverseOffset = isReverse() ? -1 : 1;
               if ($event.code === 'ArrowUp') {
-                this.navigateBy(-1 * reverseOffset, $event);
+                navigateBy(-1 * reverseOffset, $event);
               } else {
-                this.navigateBy(1 * reverseOffset, $event);
+                navigateBy(1 * reverseOffset, $event);
               }
             }
-            break;
-          case 'Enter':
-          case 'Space':
-            if (this.model[this.highlightedIndex] && !this.model[this.highlightedIndex].disabled) {
-              this.clickItem(this.model[this.highlightedIndex]);
-              $event.preventDefault();
-            }
-            break;
-          case 'Tab':
-            if (!$event.ctrlKey && !$event.metaKey && !$event.altKey) {
-              this.open = false;
-            }
-            break;
-          case 'Escape':
-            this.open = false;
-            break;
+              break;
+            case 'Enter':
+            case 'Space':
+              if (props.model[highlightedIndex.value] && !props.model[highlightedIndex.value].disabled) {
+                clickItem(props.model[highlightedIndex.value]);
+                $event.preventDefault();
+              }
+              break;
+            case 'Tab':
+              if (!$event.ctrlKey && !$event.metaKey && !$event.altKey) {
+                open.value = false;
+              }
+              break;
+            case 'Escape':
+              open.value = false;
+              break;
+          }
         }
       }
-    }
-  }
+    };
 
-  private navigateBy(offset: number, $event: KeyboardEvent) {
-    const newIndex = this.highlightedIndex + offset;
-    if (newIndex >= 0 && newIndex <= this.model.length - 1) {
-      this.highlightedIndex = newIndex;
-      this.highlightedKey = this.model[this.highlightedIndex].key;
-      $event.preventDefault();
-      setTimeout(this.scrollOnNavigate);
-    }
-  }
-
-  scrollOnNavigate() {
-    const element = this.$el.querySelector('.neon-dropdown-menu__item--highlighted') as HTMLElement;
-    NeonScrollUtils.scrollIntoView(element);
-  }
-
-  private isReverse() {
-    switch (this.$refs.dropdown.getPlacement()) {
-      case NeonDropdownPlacement.TopLeft:
-      case NeonDropdownPlacement.TopRight:
-      case NeonDropdownPlacement.LeftBottom:
-      case NeonDropdownPlacement.RightBottom:
-        return true;
-    }
-
-    return false;
-  }
-
-  private clickItem(item: NeonDropdownMenuItem) {
-    if (!item.disabled) {
-      if (item.href) {
-        const anchor = this.$refs.items[this.highlightedIndex]?.firstElementChild as HTMLAnchorElement;
-        anchor && anchor.click();
-      } else {
-        /**
-         * emitted when the user clicks on a menu item.
-         * @type {NeonDropdownMenuItem} the menu item the user clicked on.
-         */
-        this.$emit('click', item);
+    const clickItem = (item: NeonDropdownMenuItem) => {
+      if (!item.disabled) {
+        if (item.href) {
+          const anchor = items.value[highlightedIndex.value]?.firstElementChild as HTMLAnchorElement;
+          anchor && anchor.click();
+        } else {
+          emit('click', item);
+        }
+        open.value = false;
       }
-      this.open = false;
-    }
-  }
+    };
 
-  public get dropdown() {
-    return this.$refs.dropdown;
-  }
+    const onFocus = () => {
+      if (props.openOnHover) {
+        open.value = true;
+      }
+    };
 
-  private onFocus() {
-    if (this.openOnHover) {
-      this.open = true;
-    }
-  }
+    const onBlur = () => {
+      if (props.openOnHover) {
+        open.value = false;
+      }
+    };
 
-  private onBlur() {
-    if (this.openOnHover) {
-      this.open = false;
-    }
-  }
-}
+    onMounted(() => {
+      document.addEventListener('keydown', keyboardHandler);
+    });
+
+    onUnmounted(() => {
+      document.removeEventListener('keydown', keyboardHandler);
+    });
+
+
+    watch(
+      () => open.value,
+      (open: boolean) => {
+        if (open) {
+          highlightedKey.value = props.model[0].key;
+          highlightedIndex.value = 0;
+        }
+      },
+    );
+
+    return {
+      dropdown,
+      items,
+      open,
+      highlightedKey,
+      highlightedIndex,
+      sanitizedAttributes,
+      changeHighlighted,
+      keyboardHandler,
+      onBlur,
+      onFocus,
+      clickItem,
+      navigateBy,
+      onPlacement,
+    };
+  },
+});

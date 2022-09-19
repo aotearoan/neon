@@ -1,597 +1,444 @@
-import Vue from 'vue';
-import { mount, shallowMount } from '@vue/test-utils';
+import { fireEvent, render } from '@testing-library/vue';
 import NeonDropdown from './NeonDropdown.vue';
-import NeonDropdownClass from './NeonDropdown';
-import NeonBadge from '../badge/NeonBadge.vue';
-import NeonButton from '../../user-input/button/NeonButton.vue';
-import NeonExpansionIndicator from '../expansion-indicator/NeonExpansionIndicator.vue';
 import { NeonDropdownStyle } from '../../../common/enums/NeonDropdownStyle';
 import { NeonSize } from '../../../common/enums/NeonSize';
 import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
 import { NeonDropdownPlacement } from '../../../common/enums/NeonDropdownPlacement';
-import NeonTab from '../tabs/tab/NeonTab.vue';
-import { NeonClosableUtils } from '../../../common/utils/NeonClosableUtils';
-
-Vue.component('NeonBadge', NeonBadge);
-Vue.component('NeonButton', NeonButton);
-Vue.component('NeonExpansionIndicator', NeonExpansionIndicator);
 
 describe('NeonDropdown', () => {
+  const label = 'xd';
+  const slotValue = 'xd';
+  const icon = 'check';
+
   beforeAll(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    window.matchMedia = (query: string) => ({ matches: false });
+    window.matchMedia = () => ({ matches: false });
   });
 
   it('renders default slot contents', () => {
     // given
-    const slotValue = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false },
+    const { getByText } = render(NeonDropdown, {
+      props: { modelValue: false },
       slots: {
         default: `<p>${slotValue}</p>`,
       },
     });
     // when / then
-    expect(wrapper.find('.neon-dropdown__content p').text()).toEqual(slotValue);
+    getByText(slotValue);
   });
 
   it('renders dropdown-button slot contents', () => {
     // given
-    const slotValue = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false },
+    const { getByText } = render(NeonDropdown, {
+      props: { modelValue: false },
       slots: {
         'dropdown-button': `<p>${slotValue}</p>`,
       },
     });
     // when / then
-    expect(wrapper.find('.neon-dropdown > p').text()).toEqual(slotValue);
+    getByText(slotValue);
   });
 
   it('renders default indicator', () => {
     // given
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false },
     });
     // when / then
-    expect(wrapper.find('.neon-dropdown--with-indicator').element).toBeDefined();
-    expect(wrapper.find('.neon-button__indicator').element).toBeDefined();
+    expect(container.getElementsByClassName('neon-dropdown--with-indicator')[0]).toBeDefined();
+    expect(container.getElementsByClassName('neon-button__indicator')[0]).toBeDefined();
   });
 
   it('renders without indicator', () => {
     // given
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, indicator: false },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false, indicator: false },
     });
     // when / then
-    expect(wrapper.find('.neon-dropdown--with-indicator').element).toBeUndefined();
-    expect(wrapper.find('.neon-button__indicator').element).toBeUndefined();
-    expect(wrapper.find('.neon-button__indicator').element).toBeUndefined();
+    expect(container.getElementsByClassName('neon-dropdown--with-indicator')[0]).toBeUndefined();
+    expect(container.getElementsByClassName('neon-button__indicator')[0]).toBeUndefined();
+    expect(container.getElementsByClassName('neon-button__indicator')[0]).toBeUndefined();
   });
 
   it('renders closed by default', () => {
     // given
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false },
     });
     // when / then
-    expect(wrapper.find('.neon-dropdown--open').element).toBeUndefined();
-    expect(wrapper.find('.neon-expansion-indicator--expanded').element).toBeUndefined();
-    expect(wrapper.find('.neon-dropdown__button').attributes()['aria-expanded']).toBeUndefined();
-    expect(wrapper.find('.neon-dropdown__content').isVisible()).toEqual(false);
+    expect(container.getElementsByClassName('neon-dropdown--open')[0]).toBeUndefined();
+    expect(container.getElementsByClassName('neon-expansion-indicator--expanded')[0]).toBeUndefined();
+    expect(container.getElementsByClassName('neon-dropdown__button')[0].getAttribute('aria-expanded')).toEqual('false');
   });
 
   it('renders open', () => {
     // given
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: true },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: true },
     });
     // when / then
-    expect(wrapper.find('.neon-dropdown--open').element).toBeDefined();
-    expect(wrapper.find('.neon-expansion-indicator--expanded').element).toBeDefined();
-    expect(wrapper.find('.neon-dropdown__button').attributes()['aria-expanded']).toEqual('true');
-    expect(wrapper.find('.neon-dropdown__content').isVisible()).toEqual(true);
-  });
-
-  it('renders default openOnHover', () => {
-    // given
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false },
-    });
-    // when / then
-    expect(wrapper.find('.neon-dropdown--open-on-hover').element).toBeUndefined();
-    expect(wrapper.find('.neon-dropdown__content').isVisible()).toEqual(false);
+    expect(container.getElementsByClassName('neon-dropdown--open')[0]).toBeDefined();
+    expect(container.getElementsByClassName('neon-expansion-indicator--expanded')[0]).toBeDefined();
+    expect(container.getElementsByClassName('neon-dropdown__button')[0].getAttribute('aria-expanded')).toEqual('true');
   });
 
   it('renders openOnHover', () => {
     // given
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, openOnHover: true },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false },
     });
     // when / then
-    expect(wrapper.find('.neon-dropdown--open-on-hover').element).toBeDefined();
-    expect(wrapper.find('.neon-dropdown__content').isVisible()).toEqual(true);
+    expect(container.getElementsByClassName('neon-dropdown--open-on-hover')[0]).toBeUndefined();
   });
 
   it('renders icon only, with label', () => {
     // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false, label },
     });
     // when / then
-    expect(wrapper.find('.neon-dropdown--icon-only').element).toBeUndefined();
+    expect(container.getElementsByClassName('neon-dropdown--icon-only')[0]).toBeUndefined();
   });
 
   it('renders icon only, with label and icon', () => {
     // given
-    const label = 'xd';
-    const icon = 'check';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label, icon },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false, label, icon },
     });
     // when / then
-    expect(wrapper.find('.neon-dropdown--icon-only').element).toBeUndefined();
+    expect(container.getElementsByClassName('neon-dropdown--icon-only')[0]).toBeUndefined();
   });
 
   it('renders not disabled, button', () => {
     // given
-    const label = 'xdd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false, label },
     });
     // when / then
-    expect(wrapper.find('.neon-dropdown--disabled').element).toBeUndefined();
-    expect(wrapper.find('.neon-dropdown__button.neon-button--disabled').element).toBeUndefined();
+    expect(container.getElementsByClassName('neon-dropdown--disabled')[0]).toBeUndefined();
+    expect(container.getElementsByClassName('neon-dropdown__button.neon-button--disabled')[0]).toBeUndefined();
   });
 
   it('renders disabled, button', () => {
     // given
-    const label = 'xdd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label, disabled: true },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false, label, disabled: true },
     });
     // when / then
-    expect(wrapper.find('.neon-dropdown--disabled').element).toBeDefined();
-    expect(wrapper.find('.neon-dropdown__button.neon-button--disabled').element).toBeDefined();
+    expect(container.getElementsByClassName('neon-dropdown--disabled')[0]).toBeDefined();
+    expect(container.getElementsByClassName('neon-button--disabled')[0]).toBeDefined();
   });
 
   it('renders not disabled, badge', () => {
     // given
     const dropdownStyle = NeonDropdownStyle.CircularBadge;
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label, indicator: true, dropdownStyle },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false, label, indicator: true, dropdownStyle },
     });
     // when / then
-    expect(wrapper.find('.neon-dropdown__badge').attributes().tabindex).toEqual('0');
-    expect(wrapper.find('.neon-dropdown__badge.neon-badge--disabled').element).toBeUndefined();
-    expect(wrapper.find('.neon-expansion-indicator--disabled').element).toBeUndefined();
+    expect(container.getElementsByClassName('neon-dropdown__badge')[0].getAttribute('tabindex')).toEqual('0');
+    expect(container.getElementsByClassName('neon-dropdown__badge.neon-badge--disabled')[0]).toBeUndefined();
+    expect(container.getElementsByClassName('neon-expansion-indicator--disabled')[0]).toBeUndefined();
   });
 
   it('renders default size, button', () => {
     // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false, label },
     });
     // when / then
-    expect(wrapper.find('.neon-dropdown--m').element).toBeDefined();
-    expect(wrapper.find('.neon-button--m').element).toBeDefined();
+    expect(container.getElementsByClassName('neon-dropdown--m')[0]).toBeDefined();
+    expect(container.getElementsByClassName('neon-button--m')[0]).toBeDefined();
   });
 
   it('renders size, button', () => {
     // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label, size: NeonSize.Large },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false, label, size: NeonSize.Large },
     });
     // when / then
-    expect(wrapper.find('.neon-dropdown--l').element).toBeDefined();
-    expect(wrapper.find('.neon-button--l').element).toBeDefined();
+    expect(container.getElementsByClassName('neon-dropdown--l')[0]).toBeDefined();
+    expect(container.getElementsByClassName('neon-button--l')[0]).toBeDefined();
   });
 
   it('renders default size, badge', () => {
     // given
     const dropdownStyle = NeonDropdownStyle.CircularBadge;
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label, dropdownStyle },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false, label, dropdownStyle },
     });
     // when / then
-    expect(wrapper.find('.neon-badge--m').element).toBeDefined();
+    expect(container.getElementsByClassName('neon-badge--m')[0]).toBeDefined();
   });
 
   it('renders size, badge', () => {
     // given
     const dropdownStyle = NeonDropdownStyle.CircularBadge;
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label, dropdownStyle, size: NeonSize.Large },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false, label, dropdownStyle, size: NeonSize.Large },
     });
     // when / then
-    expect(wrapper.find('.neon-badge--l').element).toBeDefined();
+    expect(container.getElementsByClassName('neon-badge--l')[0]).toBeDefined();
   });
 
   it('renders default color, button', () => {
     // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false, label },
     });
     // when / then
-    expect(wrapper.find('.neon-dropdown--low-contrast').element).toBeDefined();
-    expect(wrapper.find('.neon-button--low-contrast').element).toBeDefined();
+    expect(container.getElementsByClassName('neon-dropdown--low-contrast')[0]).toBeDefined();
+    expect(container.getElementsByClassName('neon-button--low-contrast')[0]).toBeDefined();
   });
 
   it('renders color, button', () => {
     // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label, color: NeonFunctionalColor.Primary },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false, label, color: NeonFunctionalColor.Primary },
     });
     // when / then
-    expect(wrapper.find('.neon-dropdown--primary').element).toBeDefined();
-    expect(wrapper.find('.neon-button--primary').element).toBeDefined();
+    expect(container.getElementsByClassName('neon-dropdown--primary')[0]).toBeDefined();
+    expect(container.getElementsByClassName('neon-button--primary')[0]).toBeDefined();
   });
 
   it('renders default color, badge', () => {
     // given
     const dropdownStyle = NeonDropdownStyle.CircularBadge;
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label, dropdownStyle },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false, label, dropdownStyle },
     });
     // when / then
-    expect(wrapper.find('.neon-badge--low-contrast').element).toBeDefined();
-    expect(wrapper.find('.neon-expansion-indicator--low-contrast').element).toBeDefined();
+    expect(container.getElementsByClassName('neon-badge--low-contrast')[0]).toBeDefined();
+    expect(container.getElementsByClassName('neon-expansion-indicator--low-contrast')[0]).toBeDefined();
   });
 
   it('renders color, badge', () => {
     // given
     const dropdownStyle = NeonDropdownStyle.CircularBadge;
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label, dropdownStyle, color: NeonFunctionalColor.Primary },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false, label, dropdownStyle, color: NeonFunctionalColor.Primary },
     });
     // when / then
-    expect(wrapper.find('.neon-badge--primary').element).toBeDefined();
-    expect(wrapper.find('.neon-expansion-indicator--primary').element).toBeDefined();
+    expect(container.getElementsByClassName('neon-badge--primary')[0]).toBeDefined();
+    expect(container.getElementsByClassName('neon-expansion-indicator--primary')[0]).toBeDefined();
   });
 
   it('renders button style text', () => {
     // given
     const dropdownStyle = NeonDropdownStyle.Text;
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label, dropdownStyle },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false, label, dropdownStyle },
     });
     // when / then
-    expect(wrapper.find('.neon-button--text').element).toBeDefined();
+    expect(container.getElementsByClassName('neon-button--text')[0]).toBeDefined();
   });
 
   it('renders button style solid', () => {
     // given
     const dropdownStyle = NeonDropdownStyle.SolidButton;
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label, dropdownStyle },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false, label, dropdownStyle },
     });
     // when / then
-    expect(wrapper.find('.neon-button--solid').element).toBeDefined();
+    expect(container.getElementsByClassName('neon-button--solid')[0]).toBeDefined();
   });
 
   it('renders square badge', () => {
     // given
     const dropdownStyle = NeonDropdownStyle.SquareBadge;
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label, dropdownStyle },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false, label, dropdownStyle },
     });
     // when / then
-    expect(wrapper.find('.neon-badge--circular').element).toBeUndefined();
+    expect(container.getElementsByClassName('neon-badge--circular')[0]).toBeUndefined();
   });
 
   it('renders circular badge', () => {
     // given
     const dropdownStyle = NeonDropdownStyle.CircularBadge;
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label, dropdownStyle },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false, label, dropdownStyle },
     });
     // when / then
-    expect(wrapper.find('.neon-badge--circular').element).toBeDefined();
+    expect(container.getElementsByClassName('neon-badge--circular')[0]).toBeDefined();
   });
 
   it('renders alternate color, button', () => {
     // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label, alternateColor: NeonFunctionalColor.Primary },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false, label, alternateColor: NeonFunctionalColor.Primary },
     });
     // when / then
-    expect(wrapper.find('.neon-button--alternate-color-primary').element).toBeDefined();
+    expect(container.getElementsByClassName('neon-button--alternate-color-primary')[0]).toBeDefined();
   });
 
   it('renders alternate color, badge', () => {
     // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: {
-        value: false,
-        label,
-        dropdownStyle: NeonDropdownStyle.SquareBadge,
+    const { container } = render(NeonDropdown, {
+      props: {
+        modelValue: false, label, dropdownStyle: NeonDropdownStyle.SquareBadge,
         alternateColor: NeonFunctionalColor.Primary,
       },
     });
     // when / then
-    expect(wrapper.find('.neon-badge--alternate-color-primary').element).toBeDefined();
+    expect(container.getElementsByClassName('neon-badge--alternate-color-primary')[0]).toBeDefined();
   });
 
   it('renders default placement', () => {
     // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false, label },
     });
     // when / then
-    expect(wrapper.find('.neon-dropdown__content--bottom-left').element).toBeDefined();
+    expect(container.getElementsByClassName('neon-dropdown__content--bottom-left')[0]).toBeDefined();
   });
 
   it('renders placement', () => {
     // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label, placement: NeonDropdownPlacement.LeftTop },
+    const { container } = render(NeonDropdown, {
+      props: { modelValue: false, label, placement: NeonDropdownPlacement.LeftTop },
     });
     // when / then
-    expect(wrapper.find('.neon-dropdown__content--left-top').element).toBeDefined();
+    expect(container.getElementsByClassName('neon-dropdown__content--left-top')[0]).toBeDefined();
   });
 
-  it('renders placement with container', () => {
+  it('renders placement with container', async () => {
     // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label, placementContainer: document.body },
+    const { container, rerender } = render(NeonDropdown, {
+      props: { modelValue: false, label },
+    });
+    await rerender({ placementContainer: container });
+    // when / then
+    expect(container.getElementsByClassName('neon-dropdown__content--bottom-left')[0]).toBeDefined();
+  });
+
+  it('emits focus event', async () => {
+    // given
+    const { container, emitted } = render(NeonDropdown, {
+      props: { modelValue: false, label },
+    });
+    // when
+    const button = container.getElementsByClassName('neon-dropdown__button')[0];
+    await fireEvent.focus(button);
+    // then
+    expect(emitted().focus).toBeDefined();
+  });
+
+  it('emits blur event', async () => {
+    // given
+    const { container, emitted } = render(NeonDropdown, {
+      props: { modelValue: false, label },
+    });
+    // when
+    const button = container.getElementsByClassName('neon-dropdown__button')[0];
+    await fireEvent.blur(button);
+    // then
+    expect(emitted().blur).toBeDefined();
+  });
+
+  it('clicking button opens dropdown', async () => {
+    // given
+    const { container, emitted } = render(NeonDropdown, {
+      props: { modelValue: false, label },
+    });
+    // when
+    const button = container.getElementsByClassName('neon-dropdown__button')[0];
+    await fireEvent.click(button);
+    // then
+    expect(emitted()['update:modelValue'][0]).toEqual([true]);
+  });
+
+  it('clicking button closes dropdown', async () => {
+    // given
+    const { container, emitted } = render(NeonDropdown, {
+      props: { modelValue: true, label },
+    });
+    // when
+    const button = container.getElementsByClassName('neon-dropdown__button')[0];
+    await fireEvent.click(button);
+    // then
+    expect(emitted()['update:modelValue'][0]).toEqual([false]);
+  });
+
+  it('clicking disabled button does nothing', async () => {
+    // given
+    const { container, emitted } = render(NeonDropdown, {
+      props: { modelValue: false, label, disabled: true },
+    });
+    // when
+    const button = container.getElementsByClassName('neon-dropdown__button')[0];
+    await fireEvent.click(button);
+    // then
+    expect(emitted()['update:modelValue']).toBeUndefined();
+  });
+
+  it('clicking badge opens dropdown', async () => {
+    // given
+    const { container, emitted } = render(NeonDropdown, {
+      props: { modelValue: false, label, dropdownStyle: NeonDropdownStyle.SquareBadge },
+    });
+    // when
+    const button = container.getElementsByClassName('neon-dropdown__badge')[0];
+    await fireEvent.click(button);
+    // then
+    expect(emitted()['update:modelValue'][0]).toEqual([true]);
+  });
+
+  it('keydown space on badge opens dropdown', async () => {
+    // given
+    const { container, emitted } = render(NeonDropdown, {
+      props: { modelValue: false, label, dropdownStyle: NeonDropdownStyle.SquareBadge },
+    });
+    // when
+    const button = container.getElementsByClassName('neon-dropdown__badge')[0];
+    await fireEvent.keyDown(button, { key: 'Space', code: 'Space' });
+    // then
+    expect(emitted()['update:modelValue'][0]).toEqual([true]);
+  });
+
+  it('keydown enter on badge opens dropdown', async () => {
+    // given
+    const { container, emitted } = render(NeonDropdown, {
+      props: { modelValue: false, label, dropdownStyle: NeonDropdownStyle.SquareBadge },
+    });
+    // when
+    const button = container.getElementsByClassName('neon-dropdown__badge')[0];
+    await fireEvent.keyDown(button, { key: 'Enter', code: 'Enter' });
+    // then
+    expect(emitted()['update:modelValue'][0]).toEqual([true]);
+  });
+
+  it('clicking badge closes dropdown', async () => {
+    // given
+    const { container, emitted } = render(NeonDropdown, {
+      props: { modelValue: true, label, dropdownStyle: NeonDropdownStyle.SquareBadge },
+    });
+    // when
+    const button = container.getElementsByClassName('neon-dropdown__badge')[0];
+    await fireEvent.click(button);
+    // then
+    expect(emitted()['update:modelValue'][0]).toEqual([false]);
+  });
+
+  it('clicking disabled badge does nothing', async () => {
+    // given
+    const { container, emitted } = render(NeonDropdown, {
+      props: { modelValue: false, label, dropdownStyle: NeonDropdownStyle.SquareBadge, disabled: true },
+    });
+    // when
+    const button = container.getElementsByClassName('neon-dropdown__badge')[0];
+    await fireEvent.click(button);
+    // then
+    expect(emitted()['update:modelValue']).toBeUndefined();
+  });
+
+  it('emits button reference', () => {
+    // given
+    const { emitted } = render(NeonDropdown, {
+      props: { modelValue: false, label },
     });
     // when / then
-    expect(wrapper.find('.neon-dropdown__content--bottom-left').element).toBeDefined();
-  });
-
-  it('emits focus event', () => {
-    // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label },
-    });
-    // when
-    wrapper.find('.neon-dropdown__button').trigger('focus');
-    // then
-    expect(wrapper.emitted().focus[0]).toEqual([]);
-  });
-
-  it('emits blur event', () => {
-    // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label },
-    });
-    // when
-    wrapper.find('.neon-dropdown__button').trigger('blur');
-    // then
-    expect(wrapper.emitted().blur[0]).toEqual([]);
-  });
-
-  it('clicking button opens dropdown', () => {
-    // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label },
-    });
-    // when
-    wrapper.find('.neon-dropdown__button').trigger('click');
-    // then
-    expect(wrapper.emitted().input[0]).toEqual([true]);
-  });
-
-  it('clicking button closes dropdown', () => {
-    // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: true, label },
-    });
-    // when
-    wrapper.find('.neon-dropdown__button').trigger('click');
-    // then
-    expect(wrapper.emitted().input[0]).toEqual([false]);
-  });
-
-  it('clicking disabled button does nothing', () => {
-    // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label, disabled: true },
-    });
-    // when
-    wrapper.find('.neon-dropdown__button').trigger('click');
-    // then
-    expect(wrapper.emitted().input).toBeUndefined();
-  });
-
-  it('clicking badge opens dropdown', () => {
-    // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label, dropdownStyle: NeonDropdownStyle.SquareBadge },
-    });
-    // when
-    wrapper.find('.neon-dropdown__badge').trigger('click');
-    // then
-    expect(wrapper.emitted().input[0]).toEqual([true]);
-  });
-
-  it('keydown space on badge opens dropdown', () => {
-    // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label, dropdownStyle: NeonDropdownStyle.SquareBadge },
-    });
-    // when
-    wrapper.find('.neon-dropdown__badge').trigger('keydown.space');
-    // then
-    expect(wrapper.emitted().input[0]).toEqual([true]);
-  });
-
-  it('keydown enter on badge opens dropdown', () => {
-    // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label, dropdownStyle: NeonDropdownStyle.SquareBadge },
-    });
-    // when
-    wrapper.find('.neon-dropdown__badge').trigger('keydown.enter');
-    // then
-    expect(wrapper.emitted().input[0]).toEqual([true]);
-  });
-
-  it('clicking badge closes dropdown', () => {
-    // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: true, label, dropdownStyle: NeonDropdownStyle.SquareBadge },
-    });
-    // when
-    wrapper.find('.neon-dropdown__badge').trigger('click');
-    // then
-    expect(wrapper.emitted().input[0]).toEqual([false]);
-  });
-
-  it('clicking disabled badge does nothing', () => {
-    // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label, dropdownStyle: NeonDropdownStyle.SquareBadge, disabled: true },
-    });
-    // when
-    wrapper.find('.neon-dropdown__badge').trigger('click');
-    // then
-    expect(wrapper.emitted().input).toBeUndefined();
-  });
-
-  it('emits input event on calling close', () => {
-    // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: true, label },
-    });
-    // when
-    (wrapper.vm as NeonDropdownClass).close();
-    // then
-    expect(wrapper.emitted().input[0]).toEqual([false]);
-  });
-
-  it('does not emit event on calling close when closed', () => {
-    // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label },
-    });
-    // when
-    (wrapper.vm as NeonDropdownClass).close();
-    // then
-    expect(wrapper.emitted().input).toBeUndefined();
-  });
-
-  it('returns button reference when calling button', () => {
-    // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label },
-    });
-    // when / then
-    expect((wrapper.vm as NeonDropdownClass).button.className).toEqual('neon-dropdown__button-wrapper');
-  });
-
-  it('returns placement', () => {
-    // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label },
-    });
-    // when / then
-    expect((wrapper.vm as NeonDropdownClass).getPlacement()).toEqual(NeonDropdownPlacement.BottomLeft);
-  });
-
-  it('does not recalculate placement when closed', () => {
-    // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label },
-    });
-    // when
-    (wrapper.vm as NeonDropdownClass).recalculatePlacement();
-    // then
-    expect((wrapper.vm as NeonDropdownClass).dropdownPlacement).toEqual(NeonDropdownPlacement.BottomLeft);
-  });
-
-  it('recalculates placement when open', () => {
-    // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: true, label },
-    });
-    // when
-    (wrapper.vm as NeonDropdownClass).recalculatePlacement();
-    // then
-    expect((wrapper.vm as NeonDropdownClass).dropdownPlacement).toEqual(NeonDropdownPlacement.BottomLeft);
-  });
-
-  it('removes listeners on destroy', () => {
-    // given
-    const label = 'xd';
-    const windowRemoveFn = window.removeEventListener;
-    const removeEventListenerFn = jest.fn();
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label, openOnHover: true },
-    });
-    window.removeEventListener = removeEventListenerFn;
-    // when
-    wrapper.destroy();
-    // then
-    expect(removeEventListenerFn).toHaveBeenCalledTimes(2);
-    window.removeEventListener = windowRemoveFn;
-  });
-
-  it('adds/removes placeholder event listeners', () => {
-    // given
-    const placementContainer = {
-      addEventListener: jest.fn(),
-      removeEventListener: jest.fn(),
-    };
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label, placementContainer },
-    });
-    // when
-    wrapper.destroy();
-    // then
-    expect(placementContainer.addEventListener).toHaveBeenCalled();
-    expect(placementContainer.removeEventListener).toHaveBeenCalled();
-  });
-
-  it('destroys closable utils', () => {
-    // given
-    const label = 'xd';
-    const wrapper = mount(NeonDropdown, {
-      propsData: { value: false, label },
-    });
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    const closableUtils = new NeonClosableUtils(document.body, () => {});
-    closableUtils.destroy = jest.fn();
-    (wrapper.vm as NeonDropdownClass).closableUtils = closableUtils;
-    // when
-    wrapper.destroy();
-    // then
-    expect(closableUtils.destroy).toHaveBeenCalled();
+    expect(emitted()['button-ref']).toBeDefined();
   });
 });

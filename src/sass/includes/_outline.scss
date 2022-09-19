@@ -2,7 +2,7 @@
   box-shadow: 0 0 0 4px rgba($outline-color, 0.3);
 }
 
-@mixin focus-text-outline($outline-color) {
+@mixin focus-text-outline($outline-color, $neon-border-radius, $neon-animation-speed-slow) {
   &--outline-text {
     display: inline-flex;
     position: relative;
@@ -39,7 +39,7 @@
   }
 }
 
-@mixin focus-bullet-outline($outline-color) {
+@mixin focus-bullet-outline($outline-color, $neon-animation-speed-fast, $neon-border-radius, $neon-base-space) {
   &--outline-bullet {
     position: relative;
 
@@ -68,7 +68,7 @@
   }
 }
 
-@mixin focus-background-outline($outline-color) {
+@mixin focus-background-outline($outline-color, $neon-animation-speed-fast) {
   &--outline-background {
     transition: all $neon-animation-speed-fast ease-in-out;
 
@@ -78,13 +78,13 @@
   }
 }
 
-@mixin focus-outline-styles($outline-color) {
+@mixin focus-outline-styles($outline-color, $neon-border-radius, $neon-animation-speed-slow, $neon-animation-speed-fast, $neon-base-space) {
   &:focus {
     outline: none;
   }
 
-  @include focus-text-outline($outline-color);
+  @include focus-text-outline($outline-color, $neon-border-radius, $neon-animation-speed-slow);
   @include focus-border-outline($outline-color);
-  @include focus-bullet-outline($outline-color);
-  @include focus-background-outline($outline-color);
+  @include focus-bullet-outline($outline-color, $neon-animation-speed-fast, $neon-border-radius, $neon-base-space);
+  @include focus-background-outline($outline-color, $neon-animation-speed-fast);
 }

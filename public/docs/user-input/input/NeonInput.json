@@ -1,31 +1,36 @@
 {
+  "displayName": "NeonInput",
   "description": "Equivalent of, and wrapper around, an HTML input. Also supports <strong>textarea</strong>.",
   "tags": {},
   "exportName": "default",
-  "displayName": "NeonInput",
   "props": [
     {
       "name": "id",
-      "tags": {},
       "description": "The id the input",
       "type": {
         "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     },
     {
-      "name": "value",
-      "tags": {},
+      "name": "modelValue",
       "description": "The value of the input",
       "type": {
         "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     },
     {
       "name": "type",
-      "tags": {},
       "description": "The type of input this is. NOTE: Neon provides custom components as alternatives in the following cases:\n* file (use <a href=\"/user-input/file\">NeonFile</a>)\n* password (use <a href=\"/user-input/password\">NeonPassword</a>)",
       "type": {
-        "name": "NeonInputType"
+        "name": "String as () => NeonInputType"
       },
       "defaultValue": {
         "func": false,
@@ -34,18 +39,20 @@
     },
     {
       "name": "placeholder",
-      "tags": {},
       "description": "Placeholder text to display in the input",
       "type": {
         "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     },
     {
       "name": "size",
-      "tags": {},
       "description": "Size of the input",
       "type": {
-        "name": "NeonSize"
+        "name": "String as () => NeonSize"
       },
       "defaultValue": {
         "func": false,
@@ -54,10 +61,9 @@
     },
     {
       "name": "color",
-      "tags": {},
       "description": "Color of the input",
       "type": {
-        "name": "NeonFunctionalColor"
+        "name": "String as () => NeonFunctionalColor"
       },
       "defaultValue": {
         "func": false,
@@ -66,10 +72,9 @@
     },
     {
       "name": "state",
-      "tags": {},
       "description": "The state of the input",
       "type": {
-        "name": "NeonState"
+        "name": "String as () => NeonState"
       },
       "defaultValue": {
         "func": false,
@@ -78,23 +83,28 @@
     },
     {
       "name": "rows",
-      "tags": {},
       "description": "The number of rows to display in the case of a textarea",
       "type": {
         "name": "number"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     },
     {
       "name": "icon",
-      "tags": {},
       "description": "The name of a clickable icon to display inside the input. This is used for clearing contents or e.g. in the case of\nNeonPassword toggle showing/hiding the password. Defaults to <em>times</em> (for clearing the input's contents).",
       "type": {
         "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     },
     {
       "name": "hideIcon",
-      "tags": {},
       "description": "Hide the icon button, e.g. the X button to clear the input's contents.",
       "type": {
         "name": "boolean"
@@ -106,7 +116,6 @@
     },
     {
       "name": "tabindex",
-      "tags": {},
       "description": "Tabindex to assign to the input.",
       "type": {
         "name": "number"
@@ -118,7 +127,6 @@
     },
     {
       "name": "disabled",
-      "tags": {},
       "description": "The disabled state of the input",
       "type": {
         "name": "boolean"
@@ -130,7 +138,6 @@
     },
     {
       "name": "stateHighlight",
-      "tags": {},
       "description": "When the state is success or error, display the field with the state color indicator, e.g. border or background\ncolor.",
       "type": {
         "name": "boolean"
@@ -142,7 +149,6 @@
     },
     {
       "name": "stateIcon",
-      "tags": {},
       "description": "When the state is success or error, display the state icon.",
       "type": {
         "name": "boolean"
@@ -154,10 +160,13 @@
     },
     {
       "name": "maxlength",
-      "tags": {},
       "description": "The character limit for a textarea.",
       "type": {
         "name": "number"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     }
   ],
@@ -190,8 +199,8 @@
       }
     },
     {
-      "name": "input",
-      "description": "Emitted when the input value is changed, NOTE: is not triggered if over the textarea length limit",
+      "name": "update:modelValue",
+      "description": "Emitted when the input value is changed, NOTE: is not triggered if input is over the textarea length limit",
       "type": {
         "names": [
           "string"

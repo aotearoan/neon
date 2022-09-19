@@ -1,183 +1,173 @@
-$neon-mode: 'dark';
+@use '../../src/sass/component-colors';
 
-$neon-base-color: l1 !default;
+@mixin import($neon-components) {
+  &.neon-mode--dark {
+    $neon-color-gradient-alternate: d1 !default;
 
-$neon-background-color-card: $neon-color-neutral-d5 !default;
-$neon-background-color: $neon-color-neutral-d5 !default;
+    $neon-background-color-card: $neon-color-neutral-d5 !default;
+    $neon-background-color: $neon-color-neutral-d5 !default;
 
-$neon-color-text: $neon-color-text-light !default;
-$neon-color-inverse: $neon-color-text-dark !default;
-$neon-color-text-low-contrast: $neon-color-low-contrast-l1 !default;
-$neon-color-text-neutral: $neon-color-neutral-l1 !default;
-$neon-color-text-high-contrast: $neon-color-high-contrast-l1 !default;
-$neon-color-text-brand: $neon-color-brand-l1 !default;
-$neon-color-text-primary: $neon-color-primary-l1 !default;
-$neon-color-text-info: $neon-color-info-l1 !default;
-$neon-color-text-success: $neon-color-success-l1 !default;
-$neon-color-text-warn: $neon-color-warn-l1 !default;
-$neon-color-text-error: $neon-color-error-l1 !default;
+    $neon-color-text-dark: #000 !default;
+    $neon-color-text-light: #fff !default;
+    $neon-color-text: $neon-color-text-light !default;
+    $neon-color-inverse: $neon-color-text-dark !default;
 
-$neon-background-color-low-contrast: $neon-color-low-contrast-d1 !default;
-$neon-background-color-neutral: $neon-color-neutral-d1 !default;
-$neon-background-color-high-contrast: $neon-color-high-contrast-d1 !default;
-$neon-background-color-primary: $neon-color-primary-d1 !default;
-$neon-background-color-info: $neon-color-info-d1 !default;
-$neon-background-color-success: $neon-color-success-d1 !default;
-$neon-background-color-warn: $neon-color-warn-d1 !default;
-$neon-background-color-error: $neon-color-error-d1 !default;
+    $neon-color-text: l1 !default;
+    $neon-background-color: d1 !default;
 
-$neon-border-color: $neon-color-neutral-d1 !default;
-$neon-border: $neon-border-width $neon-border-style $neon-border-color !default;
-$neon-border-hr: $neon-border-width $neon-border-style $neon-border-color !default;
-$neon-hrcolor: $neon-border-color !default;
+    $neon-border-color: $neon-color-neutral-d1 !default;
+    $neon-border: $neon-border-width $neon-border-style $neon-border-color !default;
+    $neon-border-hr: $neon-border-width $neon-border-style $neon-border-color !default;
+    $neon-color-hr: $neon-border-color !default;
 
-$neon-color-outline: $neon-base-color !default;
+    $neon-color-outline: l1 !default;
 
-$neon-label-color: $neon-color-neutral-l1 !default;
+    $neon-label-color: $neon-color-neutral-l1 !default;
 
-$neon-color-disabled-light: $neon-color-neutral-d2 !default;
-/* cannot use opacity for border colors so this needs to be hardcoded */
-$neon-color-disabled-dark: #383838 !default;
+    $neon-color-disabled-light: $neon-color-neutral-d2 !default;
+    /* cannot use opacity for border colors so this needs to be hardcoded */
+    $neon-color-disabled-dark: #383838 !default;
 
-/* switch */
-$neon-color-switch-off: $neon-color-neutral-d2 !default;
-$neon-color-switch-on: $neon-base-color !default;
-$neon-color-switch-disabled: $neon-color-disabled-dark !default;
-$neon-color-switch-indicator-disabled: $neon-color-disabled-light !default;
+    /* switch */
+    $neon-color-switch-off: $neon-color-neutral-d2 !default;
 
-/* checkbox */
-$neon-background-color-checkbox: $neon-base-color !default;
-$neon-border-color-checkbox: $neon-base-color !default;
+    $neon-color-switch-on: l1 !default;
 
-/* solid button */
-$neon-background-solid-button-light: $neon-base-color !default;
-$neon-background-solid-button-dark: $neon-base-color !default;
+    $neon-color-switch-disabled: $neon-color-disabled-dark !default;
+    $neon-color-switch-indicator-disabled: $neon-color-disabled-light !default;
 
-/* high-contrast buttons */
-$neon-background-high-contrast-solid-button-light: $neon-color-high-contrast-l1 !default;
-$neon-background-high-contrast-solid-button-dark: $neon-color-high-contrast-l1 !default;
+    /* checkbox */
+    $neon-background-color-checkbox: l1 !default;
+    $neon-border-color-checkbox: l1 !default;
 
-/* low-contrast buttons */
-$neon-background-low-contrast-solid-button-light: $neon-color-low-contrast-d5 !default;
-$neon-background-low-contrast-solid-button-dark: $neon-color-low-contrast-d5 !default;
-$neon-color-low-contrast-solid-button: $neon-color-low-contrast-l4 !default;
-$neon-color-low-contrast-outline-button: $neon-color-low-contrast-d3 !default;
+    /* solid button */
+    $neon-background-solid-button-light: l1 !default;
+    $neon-background-solid-button-dark: l1 !default;
 
-/* text button */
-$neon-color-text-button: $neon-base-color !default;
-$neon-background-color-text-button-hover: rgba($neon-color-neutral-d3, 0.25) !default;
-$neon-background-color-text-button-active: rgba($neon-color-neutral-d3, 0.5) !default;
+    /* high-contrast buttons */
+    $neon-background-high-contrast-solid-button-light: $neon-color-high-contrast-l1 !default;
+    $neon-background-high-contrast-solid-button-dark: $neon-color-high-contrast-l1 !default;
 
-/* label */
-$neon-color-label: $neon-base-color !default;
+    /* low-contrast buttons */
+    $neon-background-low-contrast-solid-button-light: $neon-color-low-contrast-d5 !default;
+    $neon-background-low-contrast-solid-button-dark: $neon-color-low-contrast-d5 !default;
+    $neon-color-low-contrast-solid-button: $neon-color-low-contrast-l4 !default;
+    $neon-color-low-contrast-outline-button: $neon-color-low-contrast-d3 !default;
 
-/* note */
-$neon-border-color-note: $neon-base-color !default;
-$neon-background-color-note: $neon-color-high-contrast-d1 !default;
-$neon-color-note: $neon-color-text !default;
+    /* text button */
+    $neon-color-text-button: l1 !default;
+    $neon-background-color-text-button-hover: rgba($neon-color-neutral-d3, 0.25) !default;
+    $neon-background-color-text-button-active: rgba($neon-color-neutral-d3, 0.5) !default;
 
-/* link */
-$neon-color-link: $neon-color-primary-l1 !default;
-$neon-color-link-hover: $neon-color-primary-l2 !default;
-$neon-color-link-visited: darken($neon-color-primary-l1, 15%) !default;
+    /* label */
+    $neon-color-label: l1 !default;
 
-/* icon */
-$neon-color-icon: $neon-base-color !default;
+    /* note */
+    $neon-border-color-note: l1 !default;
+    $neon-background-color-note: $neon-color-high-contrast-d1 !default;
+    $neon-color-note: $neon-color-text !default;
 
-/* action menu */
-$neon-color-action-menu-hover: $neon-color-neutral-d3 !default;
-$neon-color-action-menu-selected: $neon-base-color !default;
+    /* link */
+    $neon-color-link: $neon-color-primary-l1 !default;
+    $neon-color-link-hover: $neon-color-primary-l2 !default;
+    $neon-color-link-visited: darken($neon-color-primary-l1, 15%) !default;
 
-/* selection */
-$neon-background-color-selection: $neon-color-brand-l1 !default;
+    /* icon */
+    $neon-color-icon: l1 !default;
 
-/* pre */
-$neon-color-pre: $neon-color-primary-l3 !default;
-$neon-background-color-pre: darken($neon-color-neutral-d3, 3) !default;
+    /* action menu */
+    $neon-color-action-menu-hover: $neon-color-neutral-d3 !default;
+    $neon-color-action-menu-selected: l1 !default;
 
-/* toggle */
-$neon-color-toggle: $neon-base-color !default;
-$neon-color-toggle-selected: $neon-color-neutral-d5 !default;
-$neon-border-color-toggle: $neon-color-neutral-d3 !default;
+    /* selection */
+    $neon-background-color-selection: $neon-color-brand-l1 !default;
 
-/* radio buttons */
-$neon-background-radio-button: $neon-color-neutral-d5 !default;
-$neon-color-radio-button-label: $neon-color-neutral-l3 !default;
+    /* pre */
+    $neon-color-pre: $neon-color-primary-l3 !default;
+    $neon-background-color-pre: darken($neon-color-neutral-d3, 3) !default;
 
-/* input */
-$neon-border-color-input: $neon-color-neutral-d2 !default;
-$neon-background-color-input: rgba($neon-color-neutral-d5, 0.5) !default;
-$neon-background-color-input-active: $neon-color-neutral-d5 !default;
-$neon-color-input-selected: $neon-base-color !default;
-$neon-color-placeholder: $neon-color-disabled-light !default;
+    /* toggle */
+    $neon-color-toggle: l1 !default;
+    $neon-color-toggle-selected: $neon-color-neutral-d5 !default;
+    $neon-border-color-toggle: $neon-color-neutral-d3 !default;
 
-/* drop zone */
-$neon-color-drop-zone: $neon-color-neutral-l1 !default;
+    /* radio buttons */
+    $neon-background-radio-button: $neon-color-neutral-d5 !default;
+    $neon-color-radio-button-label: $neon-color-neutral-l3 !default;
 
-/* file */
-$neon-color-list-item: $neon-base-color !default;
+    /* input */
+    $neon-border-color-input: $neon-color-neutral-d2 !default;
+    $neon-background-color-input: rgba($neon-color-neutral-d5, 0.5) !default;
+    $neon-background-color-input-active: $neon-color-neutral-d5 !default;
+    $neon-color-input-selected: l1 !default;
+    $neon-color-placeholder: $neon-color-disabled-light !default;
 
-/* alerts */
-$neon-box-shadow-alert: none !default;
-$neon-color-alert: $neon-base-color !default;
-$neon-background-color-toast: $neon-base-color !default;
-$neon-color-toast: d4 !default;
+    /* drop zone */
+    $neon-color-drop-zone: $neon-color-neutral-l1 !default;
 
-/* dropdown / dropdown menu / select */
-$neon-border-color-dropdown: $neon-color-neutral-d3 !default;
-$neon-background-color-dropdown-menu-highlight: $neon-base-color !default;
-$neon-box-shadow-dropdown: $neon-box-shadow-strong !default;
+    /* file */
+    $neon-color-list-item: l1 !default;
 
-/* tooltip */
-$neon-box-shadow-tooltip: none !default;
+    /* alerts */
+    $neon-box-shadow-alert: none !default;
+    $neon-color-alert: l1 !default;
+    $neon-background-color-toast: l1 !default;
+    $neon-color-toast: d4 !default;
 
-/* tabs */
-$neon-color-tab-selected: $neon-base-color !default;
-$neon-border-color-tabs-underline: transparentize($neon-color-neutral-d3, 0.667) !default;
+    /* dropdown / dropdown menu / select */
+    $neon-border-color-dropdown: $neon-color-neutral-d3 !default;
+    $neon-background-color-dropdown-menu-highlight: l1 !default;
+    $neon-box-shadow-dropdown: $neon-box-shadow-strong !default;
 
-/* footer */
-$neon-background-color-footer: $neon-background-color !default;
-$neon-border-top-footer: $neon-border-width $neon-border-style $neon-border-color !default;
+    /* tooltip */
+    $neon-box-shadow-tooltip: none !default;
 
-/* skeleton loader */
-$neon-color-loading-1: $neon-color-neutral-d3 !default;
-$neon-color-loading-2: $neon-color-neutral-d2 !default;
-$neon-color-loading-3: rgba($neon-color-neutral-d2, 0.5) !default;
+    /* tabs */
+    $neon-color-tab-selected: l1 !default;
+    $neon-border-color-tabs-underline: transparentize($neon-color-neutral-d3, 0.667) !default;
 
-/* chip */
-$neon-color-chip: $neon-base-color !default;
+    /* footer */
+    $neon-background-color-footer: $neon-background-color !default;
+    $neon-border-top-footer: $neon-border-width $neon-border-style $neon-border-color !default;
 
-// scrollbars
-$neon-color-scrollbar: rgba(white, 0.125) !default;
+    /* skeleton loader */
+    $neon-color-loading-1: $neon-color-neutral-d3 !default;
+    $neon-color-loading-2: $neon-color-neutral-d2 !default;
+    $neon-color-loading-3: rgba($neon-color-neutral-d2, 0.5) !default;
 
-// overlays
-$neon-background-color-overlay: rgba($neon-color-neutral-d5, 0.75) !default;
+    /* chip */
+    $neon-color-chip: l1 !default;
 
-// toggle chips
-$neon-color-toggle-chip: $neon-base-color !default;
-$neon-color-toggle-chip-text: $neon-color-text !default;
-$neon-border-color-toggle-chip: $neon-color-neutral-d3 !default;
-$neon-opacity-toggle-chip: 0.125 !default;
-$neon-opacity-toggle-chip-hover: 0.33 !default;
+    // scrollbars
+    $neon-color-scrollbar: rgba(white, 0.125) !default;
 
-// slider & range slider
-$neon-color-slider: $neon-base-color !default;
-$neon-color-slider-track: $neon-color-neutral-d3 !default;
-$neon-slider-thumb-color: $neon-background-color-card !default;
-$neon-box-shadow-slider: none !default;
-$neon-border-slider-thumb: none !default;
+    // overlays
+    $neon-background-color-overlay: rgba($neon-color-neutral-d5, 0.75) !default;
 
-// top nav
-$neon-background-color-top-nav: $neon-background-color-card !default;
+    // toggle chips
+    $neon-color-toggle-chip: l1 !default;
+    $neon-color-toggle-chip-text: $neon-color-text !default;
+    $neon-border-color-toggle-chip: $neon-color-neutral-d3 !default;
+    $neon-opacity-toggle-chip: 0.125 !default;
+    $neon-opacity-toggle-chip-hover: 0.33 !default;
 
-// side nav
-$neon-background-color-side-nav: $neon-background-color-card !default;
+    // slider & range slider
+    $neon-color-slider: l1 !default;
+    $neon-color-slider-track: $neon-color-neutral-d3 !default;
+    $neon-slider-thumb-color: $neon-background-color-card !default;
+    $neon-box-shadow-slider: none !default;
+    $neon-border-slider-thumb: none !default;
 
-/* input indicators */
-$neon-background-color-input-indicator: rgba($neon-color-disabled-dark, 0.5) !default;
-$neon-color-input-indicator: $neon-color-text-neutral !default;
+    // top nav
+    $neon-background-color-top-nav: $neon-background-color-card !default;
 
-/* gradients */
-$neon-color-gradient-alternate: d1 !default;
+    // side nav
+    $neon-background-color-side-nav: $neon-background-color-card !default;
 
-@import '../../src/sass/colors/color-components';
+    /* input indicators */
+    $neon-background-color-input-indicator: rgba($neon-color-disabled-dark, 0.5) !default;
+    $neon-color-input-indicator: $neon-color-text-neutral !default;
+
+    @include component-colors.import($neon-components);
+  }
+}

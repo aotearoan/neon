@@ -1,7 +1,7 @@
 import { NeonDropdownPlacementObject } from '../models/NeonDropdownPlacementObject';
 import { NeonPlacement } from '../enums/NeonPlacement';
-import { NeonDropdownPlacement } from '../enums/NeonDropdownPlacement';
-import { NeonAvailableSpace } from '../models/NeonAvailableSpace';
+import type { NeonDropdownPlacement } from '../enums/NeonDropdownPlacement';
+import type { NeonAvailableSpace } from '../models/NeonAvailableSpace';
 import { NeonPlacementUtils } from './NeonPlacementUtils';
 
 export class NeonDropdownPlacementUtils {

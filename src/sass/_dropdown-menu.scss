@@ -1,4 +1,12 @@
-@mixin neon-dropdown-menu-import {
+@use './includes/scrollbars';
+
+@mixin import(
+  $neon-max-height-dropdown,
+  $neon-base-space,
+  $neon-size-m,
+  $neon-font-size-s,
+  $neon-letter-spacing-s,
+) {
   .neon-dropdown-menu {
     &__items {
       max-height: $neon-max-height-dropdown;
@@ -79,6 +87,77 @@
     &--right-bottom {
       .neon-dropdown-menu__items {
         flex-direction: column-reverse;
+      }
+    }
+  }
+}
+
+@mixin import-colors(
+  $neon-border-width-separator-before,
+  $neon-border-style,
+  $neon-border-color-dropdown,
+  $neon-color-text,
+  $neon-color-disabled-light,
+  $neon-functional-colors,
+  $neon-background-color-dropdown-menu-highlight,
+  $neon-color-scrollbar,
+  $neon-width-scrollbar,
+  $neon-border-radius-scrollbar,
+) {
+  .neon-dropdown-menu {
+    &__item {
+      transition: none;
+
+      &--separator-before {
+        border-top: $neon-border-width-separator-before $neon-border-style $neon-border-color-dropdown;
+
+        &:first-child {
+          border-top: none;
+        }
+      }
+
+      .neon-link {
+        color: $neon-color-text;
+      }
+
+      &--disabled {
+        &,
+        .neon-link {
+          color: $neon-color-disabled-light;
+        }
+      }
+    }
+
+    &__items {
+      @include scrollbars.scrollbars($neon-color-scrollbar, $neon-width-scrollbar, $neon-border-radius-scrollbar);
+    }
+
+    @each $color, $palette in $neon-functional-colors {
+      &--#{$color} {
+        .neon-dropdown-menu__item {
+          &--highlighted:not(.neon-dropdown-menu__item--disabled):not(.neon-dropdown-menu__item--selected):not(.neon-dropdown-menu__item--group-title) {
+            background-color: rgba(map-get($palette, $neon-background-color-dropdown-menu-highlight), 0.125);
+          }
+        }
+      }
+    }
+  }
+
+  .neon-dropdown__content {
+    &--top-left,
+    &--top-right,
+    &--left-bottom,
+    &--right-bottom {
+      .neon-dropdown-menu__item {
+        &--separator-before {
+          &:first-child {
+            border-top: $neon-border-width-separator-before $neon-border-style $neon-border-color-dropdown;
+          }
+
+          &:last-child {
+            border-top: none;
+          }
+        }
       }
     }
   }

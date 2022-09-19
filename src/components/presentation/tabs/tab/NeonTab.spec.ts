@@ -1,81 +1,61 @@
-import { mount, shallowMount } from '@vue/test-utils';
+import type { RenderResult } from '@testing-library/vue';
+import { render } from '@testing-library/vue';
 import NeonTab from './NeonTab.vue';
-import NeonTabClass from './NeonTab';
 
 describe('NeonTab', () => {
+  const selected = true;
+
+  let harness: RenderResult;
+
   beforeAll(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    window.matchMedia = (query: string) => ({ matches: false });
+    window.matchMedia = () => ({ matches: false });
+  });
+
+  beforeEach(() => {
+    harness = render(NeonTab, {
+      props: { selected },
+      slots: {
+        default: '<p>test</p>',
+      },
+    });
   });
 
   it('renders default slot', () => {
-    const contents = 'lol';
-    const wrapper = mount(NeonTab, {
-      propsData: { selected: true },
-      slots: {
-        default: `<p>${contents}</p>`,
-      },
-    });
-    expect(wrapper.find('.neon-tab p').text()).toEqual(contents);
+    const { html } = harness;
+    expect(html()).toMatch('<p>test</p>');
   });
 
-  it('renders id', () => {
+  it('renders id', async () => {
     const id = 'xdd';
-    const wrapper = mount(NeonTab, {
-      propsData: { selected: true, id },
-    });
-    expect(wrapper.find('.neon-tab').attributes().id).toEqual(id);
-    expect(wrapper.find('.neon-tab').attributes()['aria-labelledby']).toEqual(`${id}Button`);
+    const { html, rerender } = harness;
+    await rerender({ id });
+
+    expect(html()).toMatch(`id="${id}"`);
+    expect(html()).toMatch(`aria-labelledby="${id}Button"`);
   });
 
   it('renders selected', () => {
-    const wrapper = mount(NeonTab, {
-      propsData: { selected: true },
-    });
-    expect(wrapper.find('.neon-tab--selected').element).toBeDefined();
+    const { html } = harness;
+    expect(html()).toMatch('neon-tab--selected');
   });
 
-  it('renders tab selected false', () => {
-    const wrapper = mount(NeonTab, {
-      propsData: { selected: false },
-    });
-    expect(wrapper.find('.neon-tab').element).toBeDefined();
+  it('renders tab selected false', async () => {
+    const { html, rerender } = harness;
+    await rerender({ selected: false });
+    expect(html()).not.toMatch('neon-tab--selected');
   });
 
-  it('does not render tab toggle on if, selected false', () => {
-    const wrapper = mount(NeonTab, {
-      propsData: { selected: false, toggleOnIf: true },
-    });
-    expect(wrapper.find('.neon-tab').element).toBeUndefined();
+  it('does not render tab toggle on if, selected false', async () => {
+    const { baseElement, rerender } = harness;
+    await rerender({ selected: false, toggleOnIf: true });
+    expect(baseElement.innerHTML).not.toMatch('neon-tab');
   });
 
-  it('renders tab toggle on if, selected true', () => {
-    const wrapper = mount(NeonTab, {
-      propsData: { selected: true, toggleOnIf: true },
-    });
-    expect(wrapper.find('.neon-tab').element).toBeDefined();
-  });
-
-  it('renders tab responsiveView = true', () => {
-    const wrapper = mount(NeonTab, {
-      propsData: { selected: false, toggleOnIf: true },
-    });
-    (wrapper.vm as NeonTabClass).responsiveView = true;
-    expect(wrapper.find('.neon-tab')).toBeDefined();
-  });
-
-  it('removes listener', () => {
-    // given
-    const windowRemoveFn = window.removeEventListener;
-    const removeEventListenerFn = jest.fn();
-    const wrapper = shallowMount(NeonTab, {
-      propsData: { selected: false },
-    });
-    window.removeEventListener = removeEventListenerFn;
-    // when
-    wrapper.destroy();
-    // then
-    expect(removeEventListenerFn).toHaveBeenCalled();
-    window.removeEventListener = windowRemoveFn;
+  it('renders tab toggle on if, selected true', async () => {
+    const { html, rerender } = harness;
+    await rerender({ selected: true, toggleOnIf: true });
+    expect(html()).toMatch('neon-tab');
   });
 });

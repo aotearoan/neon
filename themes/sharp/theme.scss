@@ -1,13 +1,26 @@
-/* theme variable */
-$neon-theme: 'sharp' !default;
+@use 'sass:math';
+@use '../../src/sass/global/global';
+@use 'dark';
+@use 'light';
+@use '../../src/sass/components';
 
-/* base colors */
 $neon-color-brand: #8b0dee !default;
 $neon-color-primary: #f5b104 !default;
 $neon-color-info: #0550e7 !default;
 $neon-color-success: #0fdd95 !default;
 $neon-color-warn: #f3840c !default;
 $neon-color-error: #f80521 !default;
+
+/* theme variable */
+$neon-theme: 'sharp' !default;
+
+/* base colors */
+$neon-color-brand: $neon-color-brand !default;
+$neon-color-primary: $neon-color-primary !default;
+$neon-color-info: $neon-color-info !default;
+$neon-color-success: $neon-color-success !default;
+$neon-color-warn: $neon-color-warn !default;
+$neon-color-error: $neon-color-error !default;
 
 /* layout */
 $neon-base-space: 4px !default;
@@ -23,6 +36,15 @@ $neon-spacing-multiplier-tablet: 1.5 !default;
 /* ratio of desktop to mobile spacing */
 $neon-spacing-multiplier-desktop: 2 !default;
 
+/* mobile spacing */
+$spacing-horizontal-mobile: $neon-spacing-vertical-mobile * $neon-spacing-horizontal-multiplier !default;
+/* tablet spacing */
+$spacing-vertical-tablet: $neon-spacing-vertical-mobile * $neon-spacing-multiplier-tablet !default;
+$spacing-horizontal-tablet: $spacing-horizontal-mobile * $neon-spacing-multiplier-tablet !default;
+/* desktop spacing */
+$spacing-vertical-desktop: $neon-spacing-vertical-mobile * $neon-spacing-multiplier-desktop !default;
+$spacing-horizontal-desktop: $spacing-horizontal-mobile * $neon-spacing-multiplier-desktop !default;
+
 /* animation */
 $neon-animation-speed-slow: 0.3s !default;
 $neon-animation-speed-fast: 0.225s !default;
@@ -37,41 +59,24 @@ $neon-border-style: solid !default;
 $neon-typography-scale: 1.125 !default; // Major second https://type-scale.com/
 $neon-base-font-size: 16px !default;
 
-$neon-font-size-xxs: round(
-  $neon-base-font-size / ($neon-typography-scale * $neon-typography-scale * $neon-typography-scale)
-) !default;
-$neon-font-size-xs: round($neon-base-font-size / ($neon-typography-scale * $neon-typography-scale)) !default;
-$neon-font-size-s: round($neon-base-font-size / $neon-typography-scale) !default;
+$neon-font-size-xxs: math.div($neon-base-font-size, $neon-typography-scale * $neon-typography-scale * $neon-typography-scale) !default;
+$neon-font-size-xs: math.div($neon-base-font-size, $neon-typography-scale * $neon-typography-scale) !default;
+$neon-font-size-s: math.div($neon-base-font-size, $neon-typography-scale) !default;
 $neon-font-size-m: $neon-base-font-size !default;
-$neon-font-size-l: round($neon-base-font-size * $neon-typography-scale) !default;
+$neon-font-size-l: $neon-base-font-size * $neon-typography-scale !default;
 
 $neon-letter-spacing-s: 0.25px !default;
 $neon-letter-spacing-m: 0.5px !default;
 $neon-letter-spacing-l: 1px !default;
 
 $neon-h6-size: $neon-font-size-l !default;
-$neon-h5-size: round($neon-base-font-size * $neon-typography-scale * $neon-typography-scale) !default;
-$neon-h4-size: round(
-  $neon-base-font-size * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale
-) !default;
-$neon-h3-size: round(
-  $neon-base-font-size * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale *
-    $neon-typography-scale
-) !default;
-$neon-h2-size: round(
-  $neon-base-font-size * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale *
-    $neon-typography-scale * $neon-typography-scale
-) !default;
-$neon-h1-size: round(
-  $neon-base-font-size * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale *
-    $neon-typography-scale * $neon-typography-scale * $neon-typography-scale
-) !default;
+$neon-h5-size: $neon-base-font-size * $neon-typography-scale * $neon-typography-scale !default;
+$neon-h4-size: $neon-base-font-size * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale !default;
+$neon-h3-size: $neon-base-font-size * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale !default;
+$neon-h2-size: $neon-base-font-size * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale !default;
+$neon-h1-size: $neon-base-font-size * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale !default;
 /* AKA branding font size, used for landing page & banners etc... */
-$neon-h0-size: round(
-  $neon-base-font-size * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale *
-    $neon-typography-scale * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale *
-    $neon-typography-scale
-) !default;
+$neon-h0-size: $neon-base-font-size * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale * $neon-typography-scale !default;
 
 $neon-h6-weight: 500 !default;
 $neon-h5-weight: 500 !default;
@@ -91,7 +96,7 @@ $neon-line-height-ratio: 1.618 !default;
 $neon-line-height-one: 1.125 !default; // hack for line-height: 1 to prevent cropping of content below the baseline e.g. 'g'
 
 $neon-system-font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
+'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
 
 $neon-body-font-family: $neon-system-font-stack !default;
 $neon-body-font-weight: 400 !default;
@@ -235,4 +240,11 @@ $neon-font-style-dialog: italic !default;
 $neon-opacity-background-progress: 0.0625 !default;
 $neon-border-radius-progress-indicator: 0 !default;
 
-@import '../../src/sass/common';
+@mixin import($neon-components: null) {
+  .neon-theme--sharp {
+    @include global.init($neon-color-brand, $neon-color-primary, $neon-color-info, $neon-color-success, $neon-color-warn, $neon-color-error);
+    @include dark.import($neon-components);
+    @include light.import($neon-components);
+    @include components.import($neon-components);
+  }
+}

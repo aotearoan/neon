@@ -1,79 +1,79 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NeonFilterList renders long list, show all 1`] = `
-<div role="listbox" aria-multiselectable="true" class="neon-filter-list neon-filter-list--low-contrast neon-list--m neon-filter-list--m neon-filter-list--multiple">
-  <div tabindex="0" role="option" class="neon-list__item neon-filter-list__item"><span class="neon-filter-list__item-label">Item 1</span> <span class="neon-filter-list__item-count">5,837</span>
-    <!---->
+<div aria-multiselectable="true" class="neon-filter-list--low-contrast neon-list--m neon-filter-list--m neon-filter-list--multiple neon-filter-list" role="listbox">
+  <div class="neon-list__item neon-filter-list__item" tabindex="0" role="option"><span class="neon-filter-list__item-label">Item 1</span><span class="neon-filter-list__item-count">5,837</span>
+    <!--v-if-->
   </div>
-  <div tabindex="0" role="option" class="neon-list__item neon-filter-list__item"><span class="neon-filter-list__item-label">Item 2</span> <span class="neon-filter-list__item-count">433</span>
-    <!---->
+  <div class="neon-list__item neon-filter-list__item" tabindex="0" role="option"><span class="neon-filter-list__item-label">Item 2</span><span class="neon-filter-list__item-count">433</span>
+    <!--v-if-->
   </div>
-  <div tabindex="0" role="option" class="neon-list__item neon-filter-list__item"><span class="neon-filter-list__item-label">Item 3</span> <span class="neon-filter-list__item-count">327</span>
-    <!---->
+  <div class="neon-list__item neon-filter-list__item" tabindex="0" role="option"><span class="neon-filter-list__item-label">Item 3</span><span class="neon-filter-list__item-count">327</span>
+    <!--v-if-->
   </div>
-  <div tabindex="0" role="option" class="neon-list__item neon-filter-list__item"><span class="neon-filter-list__item-label">Item 4</span> <span class="neon-filter-list__item-count">100</span>
-    <!---->
+  <div class="neon-list__item neon-filter-list__item" tabindex="0" role="option"><span class="neon-filter-list__item-label">Item 4</span><span class="neon-filter-list__item-count">100</span>
+    <!--v-if-->
   </div>
-  <div tabindex="0" role="option" class="neon-list__item neon-filter-list__item"><span class="neon-filter-list__item-label">Item 5</span> <span class="neon-filter-list__item-count">5,837</span>
-    <!---->
+  <div class="neon-list__item neon-filter-list__item" tabindex="0" role="option"><span class="neon-filter-list__item-label">Item 5</span><span class="neon-filter-list__item-count">5,837</span>
+    <!--v-if-->
   </div>
-  <div tabindex="0" role="option" class="neon-list__item neon-filter-list__item"><span class="neon-filter-list__item-label">Item 6</span> <span class="neon-filter-list__item-count">433</span>
-    <!---->
+  <div class="neon-list__item neon-filter-list__item" tabindex="0" role="option"><span class="neon-filter-list__item-label">Item 6</span><span class="neon-filter-list__item-count">433</span>
+    <!--v-if-->
   </div>
-  <div tabindex="0" role="option" class="neon-list__item neon-filter-list__item"><span class="neon-filter-list__item-label">Item 7</span> <span class="neon-filter-list__item-count">327</span>
-    <!---->
+  <div class="neon-list__item neon-filter-list__item" tabindex="0" role="option"><span class="neon-filter-list__item-label">Item 7</span><span class="neon-filter-list__item-count">327</span>
+    <!--v-if-->
   </div>
-  <div tabindex="0" role="option" class="neon-list__item neon-filter-list__item"><span class="neon-filter-list__item-label">Item 8</span> <span class="neon-filter-list__item-count">100</span>
-    <!---->
+  <div class="neon-list__item neon-filter-list__item" tabindex="0" role="option"><span class="neon-filter-list__item-label">Item 8</span><span class="neon-filter-list__item-count">100</span>
+    <!--v-if-->
   </div>
-  <!---->
+  <!--v-if-->
 </div>
 `;
 
 exports[`NeonFilterList renders multiselect short list 1`] = `
-<div role="listbox" aria-multiselectable="true" class="neon-filter-list neon-filter-list--low-contrast neon-list--m neon-filter-list--m neon-filter-list--multiple">
-  <div tabindex="0" role="option" class="neon-list__item neon-filter-list__item"><span class="neon-filter-list__item-label">Item 1</span> <span class="neon-filter-list__item-count">5,837</span>
-    <!---->
+<div aria-multiselectable="true" class="neon-filter-list--low-contrast neon-list--m neon-filter-list--m neon-filter-list--multiple neon-filter-list" role="listbox">
+  <div class="neon-list__item neon-filter-list__item" tabindex="0" role="option"><span class="neon-filter-list__item-label">Item 1</span><span class="neon-filter-list__item-count">5,837</span>
+    <!--v-if-->
   </div>
-  <div tabindex="0" role="option" class="neon-list__item neon-filter-list__item"><span class="neon-filter-list__item-label">Item 2</span> <span class="neon-filter-list__item-count">433</span>
-    <!---->
+  <div class="neon-list__item neon-filter-list__item" tabindex="0" role="option"><span class="neon-filter-list__item-label">Item 2</span><span class="neon-filter-list__item-count">433</span>
+    <!--v-if-->
   </div>
-  <div tabindex="0" role="option" class="neon-list__item neon-filter-list__item"><span class="neon-filter-list__item-label">Item 3</span> <span class="neon-filter-list__item-count">327</span>
-    <!---->
+  <div class="neon-list__item neon-filter-list__item" tabindex="0" role="option"><span class="neon-filter-list__item-label">Item 3</span><span class="neon-filter-list__item-count">327</span>
+    <!--v-if-->
   </div>
-  <div tabindex="-1" role="option" class="neon-list__item neon-filter-list__item neon-filter-list__item--disabled"><span class="neon-filter-list__item-label">Disabled item</span> <span class="neon-filter-list__item-count">100</span>
-    <!---->
+  <div class="neon-filter-list__item--disabled neon-list__item neon-filter-list__item" tabindex="-1" role="option"><span class="neon-filter-list__item-label">Disabled item</span><span class="neon-filter-list__item-count">100</span>
+    <!--v-if-->
   </div>
-  <!---->
+  <!--v-if-->
 </div>
 `;
 
 exports[`NeonFilterList renders single select long list 1`] = `
-<div role="listbox" aria-activedescendant="" class="neon-filter-list neon-filter-list--low-contrast neon-list--m neon-filter-list--m">
-  <div tabindex="0" role="option" class="neon-list__item neon-filter-list__item"><span class="neon-filter-list__item-label">Item 1</span> <span class="neon-filter-list__item-count">5,837</span>
-    <!---->
+<div aria-multiselectable="false" class="neon-filter-list--low-contrast neon-list--m neon-filter-list--m neon-filter-list" role="listbox">
+  <div class="neon-list__item neon-filter-list__item" tabindex="0" role="option"><span class="neon-filter-list__item-label">Item 1</span><span class="neon-filter-list__item-count">5,837</span>
+    <!--v-if-->
   </div>
-  <div tabindex="0" role="option" class="neon-list__item neon-filter-list__item"><span class="neon-filter-list__item-label">Item 2</span> <span class="neon-filter-list__item-count">433</span>
-    <!---->
+  <div class="neon-list__item neon-filter-list__item" tabindex="0" role="option"><span class="neon-filter-list__item-label">Item 2</span><span class="neon-filter-list__item-count">433</span>
+    <!--v-if-->
   </div>
-  <div tabindex="0" role="option" class="neon-list__item neon-filter-list__item"><span class="neon-filter-list__item-label">Item 3</span> <span class="neon-filter-list__item-count">327</span>
-    <!---->
+  <div class="neon-list__item neon-filter-list__item" tabindex="0" role="option"><span class="neon-filter-list__item-label">Item 3</span><span class="neon-filter-list__item-count">327</span>
+    <!--v-if-->
   </div>
-  <div tabindex="0" role="option" class="neon-list__item neon-filter-list__item"><span class="neon-filter-list__item-label">Item 4</span> <span class="neon-filter-list__item-count">100</span>
-    <!---->
+  <div class="neon-list__item neon-filter-list__item" tabindex="0" role="option"><span class="neon-filter-list__item-label">Item 4</span><span class="neon-filter-list__item-count">100</span>
+    <!--v-if-->
   </div>
-  <div tabindex="0" role="option" class="neon-list__item neon-filter-list__item"><span class="neon-filter-list__item-label">Item 5</span> <span class="neon-filter-list__item-count">5,837</span>
-    <!---->
+  <div class="neon-list__item neon-filter-list__item" tabindex="0" role="option"><span class="neon-filter-list__item-label">Item 5</span><span class="neon-filter-list__item-count">5,837</span>
+    <!--v-if-->
   </div>
-  <div tabindex="0" role="option" class="neon-list__item neon-filter-list__item"><span class="neon-filter-list__item-label">Item 6</span> <span class="neon-filter-list__item-count">433</span>
-    <!---->
+  <div class="neon-list__item neon-filter-list__item" tabindex="0" role="option"><span class="neon-filter-list__item-label">Item 6</span><span class="neon-filter-list__item-count">433</span>
+    <!--v-if-->
   </div>
-  <div tabindex="0" role="option" class="neon-list__item neon-filter-list__item"><span class="neon-filter-list__item-label">Item 7</span> <span class="neon-filter-list__item-count">327</span>
-    <!---->
+  <div class="neon-list__item neon-filter-list__item" tabindex="0" role="option"><span class="neon-filter-list__item-label">Item 7</span><span class="neon-filter-list__item-count">327</span>
+    <!--v-if-->
   </div>
-  <div tabindex="0" role="option" class="neon-list__item neon-filter-list__item"><span class="neon-filter-list__item-label">Item 8</span> <span class="neon-filter-list__item-count">100</span>
-    <!---->
+  <div class="neon-list__item neon-filter-list__item" tabindex="0" role="option"><span class="neon-filter-list__item-label">Item 8</span><span class="neon-filter-list__item-count">100</span>
+    <!--v-if-->
   </div>
-  <!---->
+  <!--v-if-->
 </div>
 `;

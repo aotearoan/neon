@@ -1,9 +1,10 @@
 <template>
   <div
-    class="neon-expansion-panel"
+    :aria-disabled="disabled"
+    :aria-expanded="modelValue"
     :class="[
       {
-        'neon-expansion-panel--expanded': value,
+        'neon-expansion-panel--expanded': modelValue,
         'neon-expansion-panel--full-width': fullWidth,
         'neon-expansion-panel--disabled': disabled,
       },
@@ -11,10 +12,9 @@
       `neon-expansion-panel--${size}`,
       `neon-expansion-panel--${color}`,
     ]"
-    :aria-expanded="value"
-    :aria-disabled="disabled"
+    class="neon-expansion-panel"
   >
-    <div class="neon-expansion-panel__header" @click="toggleExpanded" tabindex="-1" :aria-controls="id">
+    <div :aria-controls="id" class="neon-expansion-panel__header" tabindex="-1" @click="toggleExpanded">
       <div
         class="neon-expansion-panel__label-container neon-expansion-panel__label-container--outline-text"
         tabindex="0"
@@ -22,12 +22,12 @@
         @keydown.space="toggleExpanded"
         @keypress.space.prevent=""
       >
-        <neon-icon v-if="icon" :name="icon" :color="color" :disabled="disabled" />
+        <neon-icon v-if="icon" :color="color" :disabled="disabled" :name="icon" />
         <span class="neon-expansion-panel__label">{{ label }}</span>
       </div>
-      <neon-expansion-indicator :disabled="disabled" :expanded="value" :color="color" />
+      <neon-expansion-indicator :color="color" :disabled="disabled" :expanded="modelValue" />
     </div>
-    <div class="neon-expansion-panel__content" v-show="value" :id="id">
+    <div v-show="modelValue" :id="id" class="neon-expansion-panel__content">
       <!-- @slot The expansion panel contents -->
       <slot></slot>
     </div>

@@ -1,53 +1,46 @@
-import { mount } from '@vue/test-utils';
+import type { RenderResult } from '@testing-library/vue';
+import { render } from '@testing-library/vue';
 import NeonSideNav from './NeonSideNav.vue';
 
 describe('NeonSideNav', () => {
+  let harness: RenderResult;
+
+  beforeEach(() => {
+    harness = render(NeonSideNav, {
+        props: {},
+        slots: { sticky: '<p>sticky</p>', scrolling: '<p>scrolling</p>' },
+      },
+    );
+  });
+
   it('renders sticky slot contents', () => {
     // given
-    const slotValue = 'xd';
-    const wrapper = mount(NeonSideNav, {
-      propsData: {},
-      slots: {
-        sticky: `<p>${slotValue}</p>`,
-      },
-    });
+    const { html } = harness;
     // when / then
-    expect(wrapper.find('.neon-side-nav__sticky p').text()).toEqual(slotValue);
+    expect(html()).toMatch('neon-side-nav__sticky');
+    expect(html()).toMatch('sticky');
   });
 
   it('renders scrolling slot contents', () => {
     // given
-    const slotValue = 'xd';
-    const wrapper = mount(NeonSideNav, {
-      propsData: {},
-      slots: {
-        scrolling: `<p>${slotValue}</p>`,
-      },
-    });
+    const { html } = harness;
     // when / then
-    expect(wrapper.find('.neon-side-nav__scrolling p').text()).toEqual(slotValue);
+    expect(html()).toMatch('neon-side-nav__scrolling');
+    expect(html()).toMatch('scrolling');
   });
 
   it('renders hr when sticky and scrolling slots contents', () => {
     // given
-    const slotValue = 'xd';
-    const wrapper = mount(NeonSideNav, {
-      propsData: {},
-      slots: {
-        sticky: `<p>${slotValue}</p>`,
-        scrolling: `<p>${slotValue}</p>`,
-      },
-    });
+    const { html } = harness;
     // when / then
-    expect(wrapper.find('.neon-side-nav hr').element).toBeDefined();
+    expect(html()).toMatch('<hr');
   });
 
-  it('renders full width class', () => {
+  it('renders full width class', async () => {
     // given
-    const wrapper = mount(NeonSideNav, {
-      propsData: { fullWidth: true },
-    });
+    const { html, rerender } = harness;
+    await rerender({ fullWidth: true });
     // when / then
-    expect(wrapper.find('.neon-side-nav--full-width').element).toBeDefined();
+    expect(html()).toMatch('neon-side-nav--full-width');
   });
 });

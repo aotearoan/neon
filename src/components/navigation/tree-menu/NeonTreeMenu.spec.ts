@@ -1,10 +1,6 @@
-import Vue from 'vue';
-import { mount, RouterLinkStub } from '@vue/test-utils';
+import type { RenderResult } from '@testing-library/vue';
+import { fireEvent, render } from '@testing-library/vue';
 import NeonTreeMenu from './NeonTreeMenu.vue';
-import NeonTreeMenuClass from './NeonTreeMenu';
-import NeonLink from '../link/NeonLink.vue';
-
-Vue.component('NeonLink', NeonLink);
 
 describe('NeonTreeMenu', () => {
   const model = [
@@ -66,74 +62,52 @@ describe('NeonTreeMenu', () => {
     },
   ];
 
-  it('matches snapshot', () => {
-    // given
-    const wrapper = mount(NeonTreeMenu, {
-      propsData: { model },
-      stubs: { RouterLink: RouterLinkStub },
+  let harness: RenderResult;
+
+  beforeEach(() => {
+    harness = render(NeonTreeMenu, {
+      props: {
+        model,
+      },
+      global: {
+        stubs: ['router-link'],
+      },
     });
-    // when / then
-    expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it('expands all', () => {
+  it('matches snapshot', () => {
     // given
-    const wrapper = mount(NeonTreeMenu, {
-      propsData: { model, expandAll: true },
-      stubs: { RouterLink: RouterLinkStub },
-    });
+    const { html } = harness;
     // when / then
-    expect(wrapper.find('.neon-tree-menu--expand-all').element).toBeDefined();
-    expect(wrapper.findAll('.neon-tree-menu__anchors--expanded').length).toEqual(7);
+    expect(html()).toMatchSnapshot();
+  });
+
+  it('expands all', async () => {
+    // given
+    const { container, rerender } = harness;
+    await rerender({ expandAll: true });
+    // when / then
+    expect(container.querySelector('.neon-tree-menu--expand-all')).toBeDefined();
+    expect(container.querySelectorAll('.neon-tree-menu__anchors--expanded').length).toEqual(7);
   });
 
   it('emits click event on click section link', () => {
     // given
-    const wrapper = mount(NeonTreeMenu, {
-      propsData: { model },
-      stubs: { RouterLink: RouterLinkStub },
-    });
+    const { container, emitted } = harness;
     // when
-    wrapper.findAll('.neon-tree-menu__section-link').at(0).trigger('click');
+    const item = container.querySelectorAll('.neon-tree-menu__section-link').item(0) as HTMLElement;
+    item?.click();
     // then
-    expect(wrapper.emitted().click[0]).toEqual(['feedback']);
+    expect(emitted().click[0]).toEqual(['feedback']);
   });
 
-  it('emits click event on space keydown section link', () => {
+  it('emits click event on space keydown section link', async () => {
     // given
-    const wrapper = mount(NeonTreeMenu, {
-      propsData: { model },
-      stubs: { RouterLink: RouterLinkStub },
-    });
+    const { container, emitted } = harness;
     // when
-    wrapper.findAll('.neon-tree-menu__section-link-label').at(0).trigger('keydown.space');
+    const item = container.querySelectorAll('.neon-tree-menu__section-link').item(0) as HTMLElement;
+    await fireEvent.keyDown(item, { key: 'Space', code: 'Space' });
     // then
-    expect(wrapper.emitted().click[0]).toEqual(['feedback']);
-  });
-
-  it('triggers click on parent link on space keydown', () => {
-    // given
-    const wrapper = mount(NeonTreeMenu, {
-      propsData: { model },
-      stubs: { RouterLink: RouterLinkStub },
-    });
-    const vm = wrapper.vm as NeonTreeMenuClass;
-    vm.click = jest.fn(vm.click);
-    // when
-    wrapper.findAll('.neon-tree-menu__link-label').at(0).trigger('keydown.space');
-    // then
-    expect(vm.click).toHaveBeenCalled();
-  });
-
-  it('click executes with no parent element', () => {
-    // given
-    const wrapper = mount(NeonTreeMenu, {
-      propsData: { model },
-      stubs: { RouterLink: RouterLinkStub },
-    });
-    const vm = wrapper.vm as NeonTreeMenuClass;
-    // when / then
-    // @ts-ignore
-    expect(() => vm.click({})).not.toThrowError();
+    expect(emitted().click[0]).toEqual(['feedback']);
   });
 });

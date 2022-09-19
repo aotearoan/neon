@@ -1,8 +1,7 @@
-import { TranslateResult } from 'vue-i18n';
 import { enumList, modelList, utilsList } from './SupportingClasses';
 
 export interface MenuGroup {
-  group: TranslateResult;
+  group: string;
   children: MenuModel[];
 }
 
@@ -11,7 +10,7 @@ export interface MenuModel {
   path: string;
   page?: string;
   keywords?: string;
-  name?: TranslateResult;
+  name?: string;
   component?: string;
   subComponents?: SubComponent[];
   children?: MenuModel[];
@@ -116,13 +115,6 @@ export class Menu {
                 page: 'Dialog',
                 keywords: 'modal alert',
                 component: 'NeonDialog',
-              },
-              {
-                path: 'linear-progress',
-                page: 'LinearProgress',
-                name: 'Linear Progress',
-                keywords: 'bar loading loader percentage',
-                component: 'NeonLinearProgress',
               },
               {
                 path: 'note',
@@ -509,13 +501,14 @@ export class Menu {
         return { ...item, path };
       } else if (item.children) {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const [head, ..._tail] = item.children
+        const [head, ...tail] = item.children
           .map((child) => findComponent(child, path))
           .filter((child) => child !== null);
         return head || null;
       }
       return null;
     }
+
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [head, ...tail] = Menu.menu().flatMap((group) =>
       group.children.flatMap((item) => findComponent(item)).filter((item) => item !== null),

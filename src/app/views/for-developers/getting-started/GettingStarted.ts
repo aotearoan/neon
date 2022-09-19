@@ -1,52 +1,60 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader } from '../../../../components';
+import { defineComponent, ref } from 'vue';
+import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader, NeonLink } from '@/neon';
 import Editor from '../../../components/editor/Editor.vue';
 
-@Component({
+export default defineComponent({
+  name: 'GettingStarted',
   components: {
     NeonAnchor,
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
+    NeonLink,
     Editor,
   },
-})
-export default class GettingStarted extends Vue {
-  private darkModeExample = `<html class="app neon neon-theme--classic neon-mode--dark">`;
+  setup() {
+    const darkModeExample = ref('<html class="app neon neon-theme--classic neon-mode--dark">');
 
-  private importComponents = `import { Component, Vue } from 'vue-property-decorator';
+    const importComponents = ref(`import { Component, Vue } from 'vue-property-decorator';
 import { NeonLogo, registerComponents } from '@aotearoan/neon';
 
 // NOTE: Optional. This automatically registers all components, alternatively, use Vue.component to register components individually.
 registerComponents();
 
 @Component({ components: { NeonLogo } })
-export default class App extends Vue {}`;
+export default class App extends Vue {}`);
 
-  private allTheSass = `.app {
+    const allTheSass = ref(`.app {
   &.neon-theme--classic {
     // OPTIONAL: define the list of Neon components used by the application and only the necessary SASS for these
     // components will be imported, otherwise SASS for all components will be imported for the theme.
     $neon-components: [NeonGrid, NeonGridArea, NeonPage, NeonSideNav];
 
     // override colors, palettes and other basic variables here BEFORE importing the theme, e.g. $neon-border-radius: 4px
-    @import '~@aotearoan/neon/themes/classic/theme';
+    @use '~@aotearoan/neon/themes/classic/theme';
 
     // include custom app SASS here (you can use neon's defined variables, mixins and functions)
 
     &.neon-mode--dark {
       // override dark mode specific variables here, e.g. $neon-border-color: #bada55
-      @import '~@aotearoan/neon/themes/classic/dark';
+      @use '~@aotearoan/neon/themes/classic/dark';
 
       // include custom app dark mode SASS here (you can use neon's defined variables, mixins and functions)
     }
 
     &.neon-mode--light {
       // override light mode specific variables here, e.g. $neon-border-color: #bada55
-      @import '~@aotearoan/neon/themes/classic/light';
+      @use '~@aotearoan/neon/themes/classic/light';
 
       // include custom app light mode SASS here (you can use neon's defined variables, mixins and functions)
     }
   }
-}`;
-}
+}`);
+
+    return {
+      darkModeExample,
+      importComponents,
+      allTheSass,
+    };
+  },
+});

@@ -1,6 +1,7 @@
 <template>
   <label
-    class="neon-switch no-style"
+    :aria-checked="indeterminate ? 'mixed' : modelValue"
+    :aria-disabled="disabled"
     :class="[
       `neon-switch--${switchStyle}`,
       `neon-switch--${size}`,
@@ -8,37 +9,39 @@
       `neon-switch--${labelPosition}`,
       {
         'neon-switch--disabled': disabled,
-        'neon-switch--checked': value,
+        'neon-switch--checked': modelValue,
         'neon-switch--indeterminate': indeterminate,
       },
     ]"
+    :role="switchStyle"
+    class="neon-switch no-style"
+    data-testid="checkbox-label"
     tabindex="-1"
     @keydown.enter="toggleSwitch"
     @keydown.space="toggleSwitch"
     @keydown.space.prevent=""
-    :role="switchStyle"
-    :aria-checked="indeterminate ? 'mixed' : value"
-    :aria-disabled="disabled"
   >
     <neon-icon
       v-if="switchStyle === 'checkbox'"
-      class="neon-switch__checkbox"
-      :inverse="true"
       :disabled="disabled"
+      :inverse="true"
       :name="indeterminate ? 'dash' : 'check'"
       :tabindex="!disabled ? 0 : undefined"
+      class="neon-switch__checkbox"
     />
-    <span v-if="switchStyle === 'switch'" class="neon-switch__switch" :tabindex="!disabled ? 0 : undefined">
+    <span v-if="switchStyle === 'switch'" :tabindex="!disabled ? 0 : undefined" class="neon-switch__switch">
       <span class="neon-switch__indicator"></span>
     </span>
     <input
       ref="checkbox"
-      type="checkbox"
-      class="neon-switch__input"
-      :checked="!indeterminate && value"
+      :checked="!indeterminate && modelValue"
       :disabled="disabled"
-      v-on="sanitizedListeners"
-      v-bind="$attrs"
+      class="neon-switch__input"
+      data-testid="checkbox"
+      type="checkbox"
+      v-bind="sanitizedAttributes"
+      @click="toggleSwitch"
+      @input="toggleSwitch"
     />
     <span class="neon-switch__label">{{ label }}</span>
   </label>

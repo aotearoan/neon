@@ -31,9 +31,7 @@ export class NeonModeUtils {
     if (window.matchMedia) {
       if (
         Object.keys(NeonModeUtils.callbacks).length === 0 &&
-        typeof MediaQueryList !== 'undefined' &&
-        MediaQueryList.prototype.addEventListener
-      ) {
+        typeof MediaQueryList !== 'undefined') {
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', NeonModeUtils.onDarkChange);
         window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', NeonModeUtils.onLightChange);
         window
@@ -51,9 +49,7 @@ export class NeonModeUtils {
     if (
       Object.keys(NeonModeUtils.callbacks).length === 0 &&
       window.matchMedia &&
-      typeof MediaQueryList !== 'undefined' &&
-      MediaQueryList.prototype.removeEventListener
-    ) {
+      typeof MediaQueryList !== 'undefined') {
       window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', NeonModeUtils.onDarkChange);
       window.matchMedia('(prefers-color-scheme: light)').removeEventListener('change', NeonModeUtils.onLightChange);
       window

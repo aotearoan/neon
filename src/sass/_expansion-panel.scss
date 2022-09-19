@@ -1,4 +1,21 @@
-@mixin neon-expansion-panel-import {
+@use './includes/layout';
+@use './includes/responsive';
+@use './includes/outline';
+
+@mixin import(
+  $spacings,
+  $neon-letter-spacing-s,
+  $neon-base-space,
+  $spacing-vertical-desktop,
+  $spacing-vertical-tablet,
+  $neon-spacing-vertical-mobile,
+  $neon-size-s,
+  $neon-font-size-s,
+  $neon-size-m,
+  $neon-font-size-m,
+  $neon-size-l,
+  $neon-font-size-l,
+) {
   .neon-expansion-panel {
     flex: 1 0 auto;
     max-height: fit-content;
@@ -13,7 +30,7 @@
       cursor: pointer;
       letter-spacing: $neon-letter-spacing-s;
       font-weight: 300;
-      @include padding-horizontal(0.75);
+      @include layout.padding-horizontal($spacings, 0.75);
       padding-top: 0;
       padding-bottom: 0;
       user-select: none;
@@ -38,14 +55,14 @@
     }
 
     &__content {
-      @include padding-horizontal(0.75);
+      @include layout.padding-horizontal($spacings, 0.75);
       padding-bottom: 0.75 * $spacing-vertical-desktop;
 
-      @include responsive(tablet) {
+      @include responsive.responsive(tablet) {
         padding-bottom: 0.75 * $spacing-vertical-tablet;
       }
 
-      @include responsive(mobile-large) {
+      @include responsive.responsive(mobile-large) {
         padding-bottom: 0.75 * $neon-spacing-vertical-mobile;
       }
     }
@@ -121,7 +138,7 @@
       }
 
       .neon-expansion-panel__content {
-        @include padding-vertical(0.75);
+        @include layout.padding-vertical($spacings, 0.75);
       }
     }
 
@@ -134,6 +151,46 @@
       .neon-expansion-panel__content {
         padding-left: 0;
         padding-right: 0;
+      }
+    }
+  }
+}
+
+@mixin import-colors(
+  $neon-border-width-expansion-panel,
+  $neon-border-style,
+  $neon-border-color,
+  $neon-functional-colors,
+  $neon-base-color,
+  $neon-color-disabled-light,
+  $neon-border-radius,
+  $neon-animation-speed-slow,
+) {
+  .neon-expansion-panel {
+    &--top {
+      border-bottom: $neon-border-width-expansion-panel $neon-border-style $neon-border-color;
+    }
+
+    &--bottom {
+      .neon-expansion-panel__header {
+        border-top: $neon-border-width-expansion-panel $neon-border-style $neon-border-color;
+      }
+    }
+
+    @each $color, $palette in $neon-functional-colors {
+      &--#{$color}:not(.neon-expansion-panel--disabled) {
+        $expansion-panel-color: map-get($palette, $neon-base-color);
+
+        .neon-expansion-panel__label-container {
+          color: $expansion-panel-color;
+          @include outline.focus-text-outline($expansion-panel-color, $neon-border-radius, $neon-animation-speed-slow);
+        }
+      }
+    }
+
+    &.neon-expansion-panel--disabled {
+      .neon-expansion-panel__header {
+        color: $neon-color-disabled-light;
       }
     }
   }

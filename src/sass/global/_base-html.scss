@@ -1,0 +1,256 @@
+@use '../includes/scrollbars';
+@use '../includes/layout';
+@use '../includes/note';
+
+@mixin import(
+  $spacings,
+  $neon-border-radius,
+  $neon-max-paragraph-width,
+  $neon-base-space,
+  $neon-font-size-l,
+  $neon-line-height-ratio,
+  $neon-font-family-monospaced,
+  $neon-body-font-family,
+) {
+  * {
+    box-sizing: border-box;
+  }
+
+  hr {
+    display: flex;
+    width: 100%;
+    border-radius: $neon-border-radius;
+    border: none;
+    @include layout.margin-vertical($spacings);
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+
+    > li {
+      list-style-type: none;
+      margin: 0;
+    }
+
+    &:not(.no-style) > li {
+      display: inline;
+      max-width: $neon-max-paragraph-width;
+      padding-left: 7 * $neon-base-space;
+
+      &:before {
+        content: '•';
+        padding-right: 2 * $neon-base-space;
+        margin-left: -7 * $neon-base-space;
+        display: inline-flex;
+        align-items: center;
+        font-size: $neon-font-size-l;
+        line-height: $neon-line-height-ratio;
+      }
+    }
+
+    & + p {
+      margin-top: 4 * $neon-base-space;
+    }
+  }
+
+  pre:not(.prism-editor__editor) {
+    @include layout.padding($spacings);
+    border-radius: $neon-border-radius;
+    overflow-x: auto;
+    white-space: pre-line;
+  }
+
+  p + pre {
+    margin-top: 0;
+  }
+
+  p + ul {
+    margin-top: 2 * $neon-base-space;
+  }
+
+  pre + p {
+    margin-top: 2 * $neon-base-space;
+  }
+
+  blockquote {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+    border-radius: 0 $neon-border-radius $neon-border-radius 0;
+
+    span {
+      display: inline;
+    }
+
+    & + p {
+      margin-top: 4 * $neon-base-space;
+    }
+
+    @include layout.padding($spacings, 0.85);
+  }
+
+  @include note.neon-note-margins($neon-base-space, 'blockquote');
+
+  blockquote,
+  .neon-note,
+  table,
+  p {
+    & + h1,
+    & + .neon-h1,
+    & + h2,
+    & + .neon-h2,
+    & + h3,
+    & + .neon-h3,
+    & + h4,
+    & + .neon-h4,
+    & + h5,
+    & + .neon-h5,
+    & + h6,
+    & + .neon-h6 {
+      margin-top: 8 * $neon-base-space;
+    }
+  }
+
+  .neon-monospaced {
+    font-family: $neon-font-family-monospaced;
+    font-variant-ligatures: discretionary-ligatures;
+  }
+
+  .neon-closable--open {
+    overflow: hidden;
+  }
+
+  textarea {
+    font-family: $neon-body-font-family;
+  }
+
+  .neon-square {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    &:after {
+      content: '';
+      padding-bottom: 100%;
+    }
+  }
+}
+
+@mixin import-colors(
+  $neon-color-text-dark,
+  $neon-color-text-light,
+  $neon-background-color,
+  $neon-background-color-selection,
+  $neon-color-inverse,
+  $neon-color-text,
+  $neon-label-color,
+  $neon-color-text-neutral,
+  $neon-color-text-high-contrast,
+  $neon-color-text-brand,
+  $neon-color-text-primary,
+  $neon-color-text-info,
+  $neon-color-text-success,
+  $neon-color-text-warn,
+  $neon-color-text-error,
+  $neon-border-hr,
+  $neon-color-text-low-contrast,
+  $neon-background-color-pre,
+  $neon-color-scrollbar,
+  $neon-width-scrollbar,
+  $neon-border-radius-scrollbar,
+) {
+  background-color: $neon-background-color;
+
+  *::selection {
+    background-color: rgba($neon-background-color-selection, 0.99);
+    color: $neon-color-inverse;
+  }
+
+  body {
+    text-rendering: optimizeLegibility;
+    background-color: $neon-background-color;
+    color: $neon-color-text;
+  }
+
+  label:not(.no-style) {
+    color: $neon-label-color;
+  }
+
+  .neon-color-text {
+    color: $neon-color-text;
+  }
+
+  .neon-color-inverse {
+    color: $neon-color-inverse;
+  }
+
+  .neon-dark-text {
+    color: $neon-color-text-dark;
+  }
+
+  .neon-light-text {
+    color: $neon-color-text-light;
+  }
+
+  .neon-color-text-low-contrast {
+    color: $neon-color-text-low-contrast;
+  }
+
+  .neon-color-text-neutral {
+    color: $neon-color-text-neutral;
+  }
+
+  .neon-color-text-high-contrast {
+    color: $neon-color-text-high-contrast;
+  }
+
+  .neon-color-text-brand {
+    color: $neon-color-text-brand;
+  }
+
+  .neon-color-text-primary {
+    color: $neon-color-text-primary;
+  }
+
+  .neon-color-text-info {
+    color: $neon-color-text-info;
+  }
+
+  .neon-color-text-success {
+    color: $neon-color-text-success;
+  }
+
+  .neon-color-text-warn {
+    color: $neon-color-text-warn;
+  }
+
+  .neon-color-text-error {
+    color: $neon-color-text-error;
+  }
+
+  hr {
+    border-top: $neon-border-hr;
+  }
+
+  ul {
+    li {
+      &:before {
+        color: $neon-color-text-low-contrast;
+      }
+    }
+  }
+
+  pre {
+    color: $neon-color-text-light;
+    background-color: $neon-background-color-pre;
+  }
+
+  pre:not(.prism-editor__editor) {
+    @include scrollbars.scrollbars($neon-color-scrollbar, $neon-width-scrollbar, $neon-border-radius-scrollbar);
+  }
+}

@@ -1,12 +1,12 @@
 <template>
   <div
-    class="neon-card"
     :class="[
       `neon-card--${orientation}`,
       `neon-card--${size}`,
       `neon-card--horizontal-breakpoint-${horizontalBreakpoint}`,
     ]"
-    v-on="$listeners"
+    class="neon-card"
+    v-bind="attrs"
   >
     <!-- @slot card contents -->
     <slot></slot>

@@ -1,5 +1,5 @@
 export interface NeonPriorityMenuItem {
-  element: Element;
+  element: HTMLElement;
   width: number;
   key: string;
 }
