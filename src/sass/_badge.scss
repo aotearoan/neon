@@ -1,6 +1,6 @@
 @use 'sass:map';
 
-@mixin import(
+@mixin badge(
   $neon-size-s,
   $neon-size-m,
   $neon-size-l,
@@ -89,7 +89,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin badge-colors(
   $neon-functional-colors,
   $neon-color-label,
   $neon-color-inverse,

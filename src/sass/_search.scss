@@ -1,7 +1,7 @@
 @use './includes/scrollbars';
 @use './includes/svg';
 
-@mixin import(
+@mixin search(
   $neon-base-space,
   $neon-border-width,
   $neon-border-radius,
@@ -189,7 +189,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin search-colors(
   $neon-border-width-separator-before,
   $neon-border-width,
   $neon-border-style,

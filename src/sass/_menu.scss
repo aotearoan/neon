@@ -53,7 +53,7 @@
   }
 }
 
-@mixin import(
+@mixin menu(
   $neon-size-s,
   $neon-size-m,
   $neon-size-l,
@@ -131,7 +131,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin menu-colors(
   $neon-color-text-neutral,
   $neon-animation-speed-fast,
   $neon-color-disabled-light,

@@ -113,7 +113,7 @@
   }
 }
 
-@mixin toggle-colors(
+@mixin toggle-colors-include(
   $neon-functional-colors,
   $neon-theme,
   $neon-color-text,
@@ -171,7 +171,7 @@
   }
 }
 
-@mixin import(
+@mixin toggle(
   $neon-base-space,
   $neon-border-radius,
   $neon-font-size-s,
@@ -245,7 +245,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin toggle-colors(
   $neon-functional-colors,
   $neon-theme,
   $neon-color-text,
@@ -264,7 +264,7 @@
 ) {
   .neon-toggle {
     &--toggle {
-      @include toggle-colors(
+      @include toggle-colors-include(
                       $neon-functional-colors,
                       $neon-theme,
                       $neon-color-text,

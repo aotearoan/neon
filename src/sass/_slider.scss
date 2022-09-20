@@ -48,7 +48,7 @@ $neon-width-slider-tooltip: 201px;
   border-color: $neon-color-disabled-light;
 }
 
-@mixin import(
+@mixin slider(
   $neon-width-slider-thumb,
   $neon-font-size-s,
   $neon-base-space,
@@ -202,7 +202,7 @@ $neon-width-slider-tooltip: 201px;
   }
 }
 
-@mixin import-colors(
+@mixin slider-colors(
   $neon-color-placeholder,
   $neon-card-box-shadow,
   $neon-color-inverse,

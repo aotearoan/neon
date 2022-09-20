@@ -3,60 +3,8 @@
 @use '../src/sass/includes/color-mixins';
 @use '../src/sass/includes/color-functions';
 
-@use '../src/sass/global/base-html';
-@use '../src/sass/global/typography';
-@use '../src/sass/global/layout';
-@use '../src/sass/global/table';
-
-@use '../src/sass/toggle';
-@use '../src/sass/top-nav';
-@use '../src/sass/logo';
-@use '../src/sass/page';
-@use '../src/sass/footer';
-@use '../src/sass/grid';
-@use '../src/sass/card';
-@use '../src/sass/switch';
-@use '../src/sass/side-nav';
-@use '../src/sass/button';
-@use '../src/sass/label';
-@use '../src/sass/badge';
-@use '../src/sass/note';
-@use '../src/sass/link';
-@use '../src/sass/icon';
-@use '../src/sass/tree-menu';
-@use '../src/sass/action-menu';
-@use '../src/sass/field-group';
-@use '../src/sass/drawer';
-@use '../src/sass/modal';
-@use '../src/sass/input';
-@use '../src/sass/drop-zone';
-@use '../src/sass/file';
-@use '../src/sass/alert-container';
-@use '../src/sass/notification-counter';
-@use '../src/sass/expansion-indicator';
-@use '../src/sass/dropdown';
-@use '../src/sass/dropdown-menu';
-@use '../src/sass/anchor';
-@use '../src/sass/tabs';
-@use '../src/sass/expansion-panel';
-@use '../src/sass/input-indicator';
-@use '../src/sass/skeleton-loader';
-@use '../src/sass/chip';
-@use '../src/sass/toast-container';
-@use '../src/sass/splash-loader';
-@use '../src/sass/select';
-@use '../src/sass/toggle-chip';
-@use '../src/sass/tooltip';
-@use '../src/sass/menu';
-@use '../src/sass/list';
-@use '../src/sass/filter-list';
-@use '../src/sass/search';
-@use '../src/sass/color';
-@use '../src/sass/number';
-@use '../src/sass/slider';
-@use '../src/sass/range-slider';
-@use '../src/sass/dialog';
-@use '../src/sass/linear-progress';
+@use '../src/sass/utils';
+@use '../src/sass/common';
 
 /*********************
 * Global Variables
@@ -480,9 +428,6 @@ $neon-dark-background-color: $neon-color-neutral-d5 !default;
 $neon-dark-color-text: $neon-color-text-light !default;
 $neon-dark-color-inverse: $neon-color-text-dark !default;
 
-$neon-dark-color-text: $neon-color-text-light !default;
-$neon-dark-color-inverse: $neon-color-text-dark !default;
-
 $neon-dark-color-text-low-contrast: $neon-color-low-contrast-l1 !default;
 $neon-dark-color-text-neutral: $neon-color-neutral-l1 !default;
 $neon-dark-color-text-high-contrast: $neon-color-high-contrast-l1 !default;
@@ -671,9 +616,6 @@ $neon-light-background-color: $neon-color-high-contrast-l4 !default;
 $neon-light-color-text: $neon-color-text-dark !default;
 $neon-light-color-inverse: $neon-color-text-light !default;
 
-$neon-light-color-text: $neon-color-text-dark !default;
-$neon-light-color-inverse: $neon-color-text-light !default;
-
 $neon-light-color-text-low-contrast: $neon-color-low-contrast-d1 !default;
 $neon-light-color-text-neutral: $neon-color-neutral-d1 !default;
 $neon-light-color-text-high-contrast: $neon-color-high-contrast-d1 !default;
@@ -851,9 +793,11 @@ $neon-light-background-color-input-indicator: $neon-color-high-contrast-l3 !defa
 $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
 
 
-.neon-theme--smooth {
-  /* Base style initialisation */
-  @include base-html.import(
+.neon-theme--#{$neon-theme} {
+  /***********************
+  * Theme common
+  ************************/
+  @include common.base-html(
                   $spacings,
                   $neon-border-radius,
                   $neon-max-paragraph-width,
@@ -863,7 +807,8 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
                   $neon-font-family-monospaced,
                   $neon-body-font-family,
   );
-  @include typography.import(
+
+  @include common.typography(
                   $neon-base-space,
                   $neon-body-font-family,
                   $neon-body-font-weight,
@@ -893,11 +838,13 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
                   $neon-h6-weight,
                   $neon-h6-size,
   );
-  @include layout.import(
+
+  @include common.layout(
                   $spacings,
                   $neon-base-space,
   );
-  @include table.import(
+
+  @include common.table(
                   $neon-size-xs,
                   $neon-size-m,
                   $neon-font-size-m,
@@ -907,150 +854,13 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
                   $neon-line-height-ratio,
   );
 
-
-  /******************
-  * COMPONENT INIT
-  ******************/
-  $neon-component-dependencies: (
-          NeonActionMenu: [NeonLink,
-  NeonIcon],
-          NeonAlert: [NeonIcon,
-  NeonLink,
-  NeonToastContainer,
-  NeonIcon,
-  NeonLink],
-          NeonAnchor: [],
-          NeonBadge: [NeonIcon],
-          NeonButton: [NeonExpansionIndicator,
-  NeonIcon,
-  NeonLink],
-          NeonCard: [],
-          NeonCardBody: [],
-          NeonCardFooter: [],
-          NeonCardHeader: [],
-          NeonChip: [NeonIcon],
-          NeonColor: [NeonInput,
-  NeonIcon],
-          NeonDialog: [NeonButton,
-  NeonCard,
-  NeonCardBody,
-  NeonModal,
-  NeonExpansionIndicator,
-  NeonIcon,
-  NeonLink],
-          NeonDrawer: [],
-          NeonDropdown: [NeonBadge,
-  NeonButton,
-  NeonExpansionIndicator,
-  NeonIcon,
-  NeonLink],
-          NeonDropdownMenu: [NeonDropdown,
-  NeonIcon,
-  NeonLink,
-  NeonBadge,
-  NeonButton,
-  NeonExpansionIndicator],
-          NeonDropZone: [],
-          NeonExpansionIndicator: [],
-          NeonExpansionPanel: [NeonExpansionIndicator,
-  NeonIcon],
-          NeonFieldGroup: [],
-          NeonFile: [NeonButton,
-  NeonInput,
-  NeonList,
-  NeonExpansionIndicator,
-  NeonIcon,
-  NeonLink],
-          NeonFilterList: [NeonIcon,
-  NeonLink],
-          NeonFooter: [],
-          NeonGrid: [],
-          NeonGridArea: [],
-          NeonIcon: [],
-          NeonInput: [NeonIcon],
-          NeonInputIndicator: [NeonIcon],
-          NeonLabel: [NeonIcon],
-          NeonLink: [NeonIcon],
-          NeonList: [NeonIcon],
-          NeonLogo: [NeonIcon],
-          NeonMenu: [NeonDropdownMenu,
-  NeonIcon,
-  NeonLink,
-  NeonDropdown,
-  NeonBadge,
-  NeonButton,
-  NeonExpansionIndicator],
-          NeonModal: [NeonButton,
-  NeonExpansionIndicator,
-  NeonIcon,
-  NeonLink],
-          NeonNote: [NeonButton,
-  NeonIcon,
-  NeonExpansionIndicator,
-  NeonIcon,
-  NeonLink],
-          NeonNotificationCounter: [],
-          NeonNumber: [NeonButton,
-  NeonFieldGroup,
-  NeonInput,
-  NeonExpansionIndicator,
-  NeonIcon,
-  NeonLink],
-          NeonLinearProgress: [NeonIcon],
-          NeonPage: [],
-          NeonPassword: [NeonInput,
-  NeonIcon],
-          NeonRangeSlider: [NeonSlider],
-          NeonSearch: [NeonChip,
-  NeonDropdown,
-  NeonIcon,
-  NeonInput,
-  NeonBadge,
-  NeonButton,
-  NeonExpansionIndicator,
-  NeonLink],
-          NeonSelect: [NeonDropdown,
-  NeonIcon,
-  NeonSwitch,
-  NeonBadge,
-  NeonButton,
-  NeonExpansionIndicator,
-  NeonLink],
-          NeonSideNav: [],
-          NeonSkeletonLoader: [],
-          NeonSlider: [],
-          NeonSplashLoader: [NeonIcon],
-          NeonSwitch: [NeonIcon],
-          NeonTab: [],
-          NeonTabs: [NeonIcon],
-          NeonToastContainer: [NeonIcon],
-          NeonToggle: [NeonIcon],
-          NeonToggleChip: [NeonIcon],
-          NeonTooltip: [],
-          NeonTopNav: [],
-          NeonTreeMenu: [NeonLink,
-  NeonIcon],
-  );
-
-  $neon-flattened-components: [];
-  $neon-components-local: map-keys($neon-component-dependencies);
-  @if ($neon-components != null) {
-    $neon-components-local: $neon-components;
-  }
-  @each $neon-component-key in $neon-components-local {
-    @if not index($neon-flattened-components, $neon-component-key) {
-      $neon-flattened-components: append($neon-flattened-components, $neon-component-key);
-    }
-
-    @each $neon-component-dependency in map-get($neon-component-dependencies, $neon-component-key) {
-      @if not index($neon-flattened-components, $neon-component-dependency) {
-        $neon-flattened-components: append($neon-flattened-components, $neon-component-dependency);
-      }
-    }
-  }
+  /***********************
+  * Theme components
+  ************************/
+  $neon-flattened-components: utils.flatten-dependencies($neon-components);
 
   @if index($neon-flattened-components, NeonToggle) {
-    @include toggle.import(
+    @include common.toggle(
                     $neon-base-space,
                     $neon-border-radius,
                     $neon-font-size-s,
@@ -1065,7 +875,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonTopNav) {
-    @include top-nav.import(
+    @include common.top-nav(
                     $spacings,
                     $neon-max-page-width,
                     $neon-top-nav-height-desktop,
@@ -1075,7 +885,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonLogo) {
-    @include logo.import(
+    @include common.logo(
                     $neon-size-m,
                     $neon-size-s,
                     $neon-size-xs,
@@ -1084,7 +894,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonPage) {
-    @include page.import(
+    @include common.page(
                     $neon-top-nav-height-desktop,
                     $neon-top-nav-height-tablet,
                     $neon-top-nav-height-mobile,
@@ -1092,7 +902,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonFooter) {
-    @include footer.import(
+    @include common.footer(
                     $neon-max-page-width,
                     $neon-base-space,
                     $neon-line-height-one,
@@ -1109,7 +919,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonGrid) {
-    @include grid.import(
+    @include common.grid(
                     $spacings,
                     $neon-max-page-width,
                     $neon-footer-height-desktop,
@@ -1126,7 +936,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonCard) {
-    @include card.import(
+    @include common.card(
                     $spacings,
                     $neon-border-radius-card,
                     $neon-card-box-shadow,
@@ -1136,7 +946,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonSwitch) {
-    @include switch.import(
+    @include common.switch(
                     $neon-font-size-s,
                     $neon-font-size-m,
                     $neon-size-s,
@@ -1153,7 +963,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonSideNav) {
-    @include side-nav.import(
+    @include common.side-nav(
                     $spacings,
                     $neon-side-nav-width,
                     $neon-top-nav-height-desktop,
@@ -1161,7 +971,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonButton) {
-    @include button.import(
+    @include common.button(
                     $neon-line-height-one,
                     $neon-size-s,
                     $neon-size-m,
@@ -1184,7 +994,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonLabel) {
-    @include label.import(
+    @include common.label(
                     $neon-base-space,
                     $neon-size-xxs,
                     $neon-size-xs,
@@ -1202,7 +1012,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonBadge) {
-    @include badge.import(
+    @include common.badge(
                     $neon-size-s,
                     $neon-size-m,
                     $neon-size-l,
@@ -1215,7 +1025,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonNote) {
-    @include note.import(
+    @include common.note(
                     $spacings,
                     $neon-border-radius,
                     $neon-base-space,
@@ -1224,18 +1034,18 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonLink) {
-    @include link.import(
+    @include common.link(
                     $neon-font-size-s,
                     $neon-base-space,
     );
   }
 
   @if index($neon-flattened-components, NeonIcon) {
-    @include icon.import;
+    @include common.icon;
   }
 
   @if index($neon-flattened-components, NeonTreeMenu) {
-    @include tree-menu.import(
+    @include common.tree-menu(
                     $neon-letter-spacing-s,
                     $neon-border-radius,
                     $neon-base-space,
@@ -1245,7 +1055,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonActionMenu) {
-    @include action-menu.import(
+    @include common.action-menu(
                     $neon-letter-spacing-s,
                     $neon-border-radius,
                     $neon-base-space,
@@ -1254,14 +1064,14 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonFieldGroup) {
-    @include field-group.import(
+    @include common.field-group(
                     $neon-border-radius,
                     $neon-border-width,
     );
   }
 
   @if index($neon-flattened-components, NeonDrawer) {
-    @include drawer.import(
+    @include common.drawer(
                     $spacings,
                     $neon-animation-speed-slow,
                     $neon-side-nav-width,
@@ -1273,7 +1083,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonModal) {
-    @include modal.import(
+    @include common.modal(
                     $neon-animation-speed-fast,
                     $neon-animation-speed-slow,
                     $neon-base-space,
@@ -1281,7 +1091,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonInput) {
-    @include input.import(
+    @include common.input(
                     $neon-size-s,
                     $neon-font-size-s,
                     $neon-size-m,
@@ -1300,7 +1110,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonDropZone) {
-    @include drop-zone.import(
+    @include common.drop-zone(
                     $spacings,
                     $neon-base-space,
                     $neon-border-radius,
@@ -1308,7 +1118,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonFile) {
-    @include file.import(
+    @include common.file(
                     $spacings,
                     $neon-base-space,
                     $neon-size-s,
@@ -1318,7 +1128,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonAlert) {
-    @include alert-container.import(
+    @include common.alert-container(
                     $neon-width-alert,
                     $neon-base-space,
                     $neon-border-radius,
@@ -1334,21 +1144,21 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonNotificationCounter) {
-    @include notification-counter.import(
+    @include common.notification-counter(
                     $neon-animation-speed-fast,
                     $neon-animation-speed-slow,
     );
   }
 
   @if index($neon-flattened-components, NeonExpansionIndicator) {
-    @include expansion-indicator.import(
+    @include common.expansion-indicator(
                     $neon-animation-speed-fast,
                     $neon-font-size-m,
     );
   }
 
   @if index($neon-flattened-components, NeonDropdown) {
-    @include dropdown.import(
+    @include common.dropdown(
                     $spacings,
                     $neon-base-space,
                     $neon-border-radius,
@@ -1358,7 +1168,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonDropdownMenu) {
-    @include dropdown-menu.import(
+    @include common.dropdown-menu(
                     $neon-max-height-dropdown,
                     $neon-base-space,
                     $neon-size-m,
@@ -1368,7 +1178,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonAnchor) {
-    @include anchor.import(
+    @include common.anchor(
                     $neon-top-nav-height-desktop,
                     $neon-top-nav-height-tablet,
                     $neon-top-nav-height-mobile,
@@ -1376,7 +1186,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonTabs) {
-    @include tabs.import(
+    @include common.tabs(
                     $spacings,
                     $neon-border-width-tabs,
                     $neon-base-space,
@@ -1391,7 +1201,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonExpansionPanel) {
-    @include expansion-panel.import(
+    @include common.expansion-panel(
                     $spacings,
                     $neon-letter-spacing-s,
                     $neon-base-space,
@@ -1408,7 +1218,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonInputIndicator) {
-    @include input-indicator.import(
+    @include common.input-indicator(
                     $spacings,
                     $neon-letter-spacing-s,
                     $neon-size-s,
@@ -1420,7 +1230,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonSkeletonLoader) {
-    @include skeleton-loader.import(
+    @include common.skeleton-loader(
                     $neon-font-size-m,
                     $neon-base-space,
                     $neon-border-radius-skeleton-loader,
@@ -1428,7 +1238,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonChip) {
-    @include chip.import(
+    @include common.chip(
                     $neon-border-radius-chip,
                     $neon-letter-spacing-m,
                     $neon-size-s,
@@ -1443,7 +1253,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonAlert) {
-    @include toast-container.import(
+    @include common.toast-container(
                     $neon-size-l,
                     $neon-width-toast,
                     $neon-base-space,
@@ -1455,7 +1265,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonSplashLoader) {
-    @include splash-loader.import(
+    @include common.splash-loader(
                     $neon-size-s,
                     $neon-size-m,
                     $neon-size-l,
@@ -1464,7 +1274,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonSelect) {
-    @include select.import(
+    @include common.select(
                     $neon-max-height-dropdown,
                     $neon-font-size-xs,
                     $neon-font-size-s,
@@ -1476,7 +1286,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonToggleChip) {
-    @include toggle-chip.import(
+    @include common.toggle-chip(
                     $neon-border-width,
                     $neon-border-style,
                     $neon-border-radius,
@@ -1490,7 +1300,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonTooltip) {
-    @include tooltip.import(
+    @include common.tooltip(
                     $neon-border-radius,
                     $neon-tooltip-max-width,
                     $neon-tooltip-max-height,
@@ -1504,7 +1314,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonMenu) {
-    @include menu.import(
+    @include common.menu(
                     $neon-size-s,
                     $neon-size-m,
                     $neon-size-l,
@@ -1516,7 +1326,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonList) {
-    @include list.import(
+    @include common.list(
                     $neon-border-radius,
                     $neon-font-size-s,
                     $neon-font-size-m,
@@ -1526,7 +1336,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonFilterList) {
-    @include filter-list.import(
+    @include common.filter-list(
                     $neon-base-space,
                     $neon-font-size-xs,
                     $neon-font-size-s,
@@ -1534,7 +1344,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonSearch) {
-    @include search.import(
+    @include common.search(
                     $neon-base-space,
                     $neon-border-width,
                     $neon-border-radius,
@@ -1551,7 +1361,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonColor) {
-    @include color.import(
+    @include common.color(
                     $neon-border-radius-input-color,
                     $neon-base-space,
                     $neon-size-s,
@@ -1561,7 +1371,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonNumber) {
-    @include number.import(
+    @include common.number(
                     $neon-size-s,
                     $neon-size-m,
                     $neon-size-l,
@@ -1570,7 +1380,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonSlider) {
-    @include slider.import(
+    @include common.slider(
                     $neon-width-slider-thumb,
                     $neon-font-size-s,
                     $neon-base-space,
@@ -1584,14 +1394,14 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonRangeSlider) {
-    @include range-slider.import(
+    @include common.range-slider(
                     $neon-base-space,
                     $neon-font-size-s,
     );
   }
 
   @if index($neon-flattened-components, NeonDialog) {
-    @include dialog.import(
+    @include common.dialog(
                     $neon-max-width-dialog,
                     $neon-min-height-dialog,
                     $neon-base-space,
@@ -1602,7 +1412,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   @if index($neon-flattened-components, NeonLinearProgress) {
-    @include linear-progress.import(
+    @include common.linear-progress(
                     $neon-border-radius,
                     $neon-font-size-l,
                     $neon-base-space,
@@ -1611,7 +1421,10 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   &.neon-mode--dark {
-    @include base-html.import-colors(
+    /***********************
+    * Dark mode common
+    ************************/
+    @include common.base-html-colors(
                     $neon-color-text-dark,
                     $neon-color-text-light,
                     $neon-dark-background-color,
@@ -1635,9 +1448,18 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
                     $neon-border-radius-scrollbar,
     );
 
+    @include common.table-colors(
+                    $neon-border-width-table,
+                    $neon-border-style,
+                    $neon-dark-label-color,
+                    $neon-dark-color-text-low-contrast,
+    );
 
+    /***********************
+    * Dark mode components
+    ************************/
     @if index($neon-flattened-components, NeonToggle) {
-      @include toggle.import-colors(
+      @include common.toggle-colors(
                       $neon-functional-colors,
                       $neon-theme,
                       $neon-dark-color-text,
@@ -1657,14 +1479,14 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonTopNav) {
-      @include top-nav.import-colors(
+      @include common.top-nav-colors(
                       $neon-dark-background-color-top-nav,
                       $neon-dark-border,
       );
     }
 
     @if index($neon-flattened-components, NeonFooter) {
-      @include footer.import-colors(
+      @include common.footer-colors(
                       $neon-dark-background-color-footer,
                       $neon-dark-border-top-footer,
                       $neon-dark-color-text-neutral,
@@ -1672,7 +1494,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonCard) {
-      @include card.import-colors(
+      @include common.card-colors(
                       $neon-dark-border,
                       $neon-card-box-shadow,
                       $neon-dark-background-color-card,
@@ -1682,7 +1504,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonSwitch) {
-      @include switch.import-colors(
+      @include common.switch-colors(
                       $neon-dark-color-switch-off,
                       $neon-animation-speed-fast,
                       $neon-dark-inset-shadow-switch,
@@ -1705,7 +1527,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonSideNav) {
-      @include side-nav.import-colors(
+      @include common.side-nav-colors(
                       $neon-dark-background-color-side-nav,
                       $neon-dark-border,
                       $neon-dark-color-scrollbar,
@@ -1715,7 +1537,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonButton) {
-      @include button.import-colors(
+      @include common.button-colors(
                       $neon-functional-colors,
                       $neon-dark-background-high-contrast-solid-button-light,
                       $neon-dark-background-high-contrast-solid-button-dark,
@@ -1745,7 +1567,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonLabel) {
-      @include label.import-colors(
+      @include common.label-colors(
                       $neon-functional-colors,
                       $neon-dark-color-label,
                       $neon-dark-color-text,
@@ -1754,7 +1576,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonBadge) {
-      @include badge.import-colors(
+      @include common.badge-colors(
                       $neon-functional-colors,
                       $neon-dark-color-label,
                       $neon-dark-color-inverse,
@@ -1768,7 +1590,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonNote) {
-      @include note.import-colors(
+      @include common.note-colors(
                       $neon-dark-color-note,
                       $neon-dark-color-text,
                       $neon-functional-colors,
@@ -1782,7 +1604,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonLink) {
-      @include link.import-colors(
+      @include common.link-colors(
                       $neon-dark-color-link,
                       $neon-animation-speed-fast,
                       $neon-dark-color-link-visited,
@@ -1794,7 +1616,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonIcon) {
-      @include icon.import-colors(
+      @include common.icon-colors(
                       $neon-dark-color-text,
                       $neon-animation-speed-fast,
                       $neon-functional-colors,
@@ -1805,7 +1627,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonTreeMenu) {
-      @include tree-menu.import-colors(
+      @include common.tree-menu-colors(
                       $neon-dark-color-text,
                       $neon-dark-color-link,
                       $neon-dark-color-text-primary,
@@ -1815,7 +1637,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonActionMenu) {
-      @include action-menu.import-colors(
+      @include common.action-menu-colors(
                       $neon-dark-color-action-menu-hover,
                       $neon-functional-colors,
                       $neon-dark-color-action-menu-selected,
@@ -1826,7 +1648,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonDrawer) {
-      @include drawer.import-colors(
+      @include common.drawer-colors(
                       $neon-dark-background-color-overlay,
                       $neon-dark-background-color-card,
                       $neon-box-shadow,
@@ -1838,14 +1660,14 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonModal) {
-      @include modal.import-colors(
+      @include common.modal-colors(
                       $neon-dark-background-color-overlay,
                       $neon-dark-box-shadow-alert,
       );
     }
 
     @if index($neon-flattened-components, NeonInput) {
-      @include input.import-colors(
+      @include common.input-colors(
                       $neon-dark-border-color-input,
                       $neon-dark-color-text,
                       $neon-dark-background-color-input,
@@ -1864,7 +1686,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonDropZone) {
-      @include drop-zone.import-colors(
+      @include common.drop-zone-colors(
                       $neon-dark-background-color,
                       $neon-dark-color-drop-zone,
                       $neon-animation-speed-fast,
@@ -1872,7 +1694,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonAlert) {
-      @include alert-container.import-colors(
+      @include common.alert-container-colors(
                       $neon-dark-box-shadow-alert,
                       $alert-colors,
                       $neon-dark-color-alert,
@@ -1889,7 +1711,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonNotificationCounter) {
-      @include notification-counter.import-colors(
+      @include common.notification-counter-colors(
                       $neon-functional-colors,
                       $neon-dark-color-inverse,
                       $neon-dark-color-text,
@@ -1898,7 +1720,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonDropdown) {
-      @include dropdown.import-colors(
+      @include common.dropdown-colors(
                       $neon-dark-background-color-card,
                       $neon-dark-box-shadow-dropdown,
                       $neon-border-width,
@@ -1910,7 +1732,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonDropdownMenu) {
-      @include dropdown-menu.import-colors(
+      @include common.dropdown-menu-colors(
                       $neon-border-width-separator-before,
                       $neon-border-style,
                       $neon-dark-border-color-dropdown,
@@ -1925,7 +1747,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonTabs) {
-      @include tabs.import-colors(
+      @include common.tabs-colors(
                       $neon-border-width-tabs,
                       $neon-border-style,
                       $neon-dark-border-color-tabs-underline,
@@ -1937,7 +1759,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonExpansionPanel) {
-      @include expansion-panel.import-colors(
+      @include common.expansion-panel-colors(
                       $neon-border-width-expansion-panel,
                       $neon-border-style,
                       $neon-dark-border-color,
@@ -1950,7 +1772,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonInputIndicator) {
-      @include input-indicator.import-colors(
+      @include common.input-indicator-colors(
                       $neon-border-width,
                       $neon-border-style,
                       $neon-dark-border-color-input,
@@ -1960,7 +1782,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonSkeletonLoader) {
-      @include skeleton-loader.import-colors(
+      @include common.skeleton-loader-colors(
                       $neon-dark-color-loading-1,
                       $neon-dark-color-loading-2,
                       $neon-dark-color-loading-3,
@@ -1968,7 +1790,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonChip) {
-      @include chip.import-colors(
+      @include common.chip-colors(
                       $neon-functional-colors,
                       $neon-dark-color-toggle-chip,
                       $neon-border-width,
@@ -1980,7 +1802,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonAlert) {
-      @include toast-container.import-colors(
+      @include common.toast-container-colors(
                       $neon-dark-box-shadow-alert,
                       $alert-colors,
                       $neon-dark-background-color-toast,
@@ -1989,11 +1811,11 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonSplashLoader) {
-      @include splash-loader.import-colors($neon-dark-background-color-overlay);
+      @include common.splash-loader-colors($neon-dark-background-color-overlay);
     }
 
     @if index($neon-flattened-components, NeonSelect) {
-      @include select.import-colors(
+      @include common.select-colors(
                       $neon-border-width-separator-before,
                       $neon-border-style,
                       $neon-dark-border-color-dropdown,
@@ -2008,7 +1830,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonToggleChip) {
-      @include toggle-chip.import-colors(
+      @include common.toggle-chip-colors(
                       $neon-dark-border-color-toggle-chip,
                       $neon-dark-opacity-toggle-chip,
                       $neon-dark-color-text,
@@ -2022,7 +1844,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonTooltip) {
-      @include tooltip.import-colors(
+      @include common.tooltip-colors(
                       $neon-functional-colors,
                       $neon-dark-color-outline,
                       $neon-border-radius,
@@ -2038,7 +1860,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonMenu) {
-      @include menu.import-colors(
+      @include common.menu-colors(
                       $neon-dark-color-text-neutral,
                       $neon-animation-speed-fast,
                       $neon-dark-color-disabled-light,
@@ -2050,7 +1872,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonList) {
-      @include list.import-colors(
+      @include common.list-colors(
                       $neon-functional-colors,
                       $neon-dark-color-list-item,
                       $neon-dark-color-text,
@@ -2060,7 +1882,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonFilterList) {
-      @include filter-list.import-colors(
+      @include common.filter-list-colors(
                       $neon-dark-color-text,
                       $neon-dark-color-text-low-contrast,
                       $neon-functional-colors,
@@ -2071,7 +1893,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonSearch) {
-      @include search.import-colors(
+      @include common.search-colors(
                       $neon-border-width-separator-before,
                       $neon-border-width,
                       $neon-border-style,
@@ -2093,11 +1915,11 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonColor) {
-      @include color.import-colors();
+      @include common.color-colors();
     }
 
     @if index($neon-flattened-components, NeonNumber) {
-      @include number.import-colors(
+      @include common.number-colors(
                       $neon-functional-colors,
                       $neon-dark-color-input-selected,
                       $neon-theme,
@@ -2114,7 +1936,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonSlider) {
-      @include slider.import-colors(
+      @include common.slider-colors(
                       $neon-dark-color-placeholder,
                       $neon-card-box-shadow,
                       $neon-dark-color-inverse,
@@ -2132,7 +1954,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonRangeSlider) {
-      @include range-slider.import-colors(
+      @include common.range-slider-colors(
                       $neon-functional-colors,
                       $neon-dark-color-slider,
                       $neon-dark-color-slider-track,
@@ -2142,7 +1964,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonLinearProgress) {
-      @include linear-progress.import-colors(
+      @include common.linear-progress-colors(
                       $neon-functional-colors,
                       $neon-dark-base-color,
                       $neon-opacity-background-progress,
@@ -2152,7 +1974,10 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
   }
 
   &.neon-mode--light {
-    @include base-html.import-colors(
+    /***********************
+    * Light mode common
+    ************************/
+    @include common.base-html-colors(
                     $neon-color-text-dark,
                     $neon-color-text-light,
                     $neon-light-background-color,
@@ -2176,9 +2001,19 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
                     $neon-border-radius-scrollbar,
     );
 
+    @include common.table-colors(
+                    $neon-border-width-table,
+                    $neon-border-style,
+                    $neon-dark-label-color,
+                    $neon-dark-color-text-low-contrast,
+    );
 
+
+    /***********************
+    * Light mode components
+    ************************/
     @if index($neon-flattened-components, NeonToggle) {
-      @include toggle.import-colors(
+      @include common.toggle-colors(
                       $neon-functional-colors,
                       $neon-theme,
                       $neon-light-color-text,
@@ -2198,14 +2033,14 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonTopNav) {
-      @include top-nav.import-colors(
+      @include common.top-nav-colors(
                       $neon-light-background-color-top-nav,
                       $neon-light-border,
       );
     }
 
     @if index($neon-flattened-components, NeonFooter) {
-      @include footer.import-colors(
+      @include common.footer-colors(
                       $neon-light-background-color-footer,
                       $neon-light-border-top-footer,
                       $neon-light-color-text-neutral,
@@ -2213,7 +2048,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonCard) {
-      @include card.import-colors(
+      @include common.card-colors(
                       $neon-light-border,
                       $neon-card-box-shadow,
                       $neon-light-background-color-card,
@@ -2223,7 +2058,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonSwitch) {
-      @include switch.import-colors(
+      @include common.switch-colors(
                       $neon-light-color-switch-off,
                       $neon-animation-speed-fast,
                       $neon-light-inset-shadow-switch,
@@ -2246,7 +2081,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonSideNav) {
-      @include side-nav.import-colors(
+      @include common.side-nav-colors(
                       $neon-light-background-color-side-nav,
                       $neon-light-border,
                       $neon-light-color-scrollbar,
@@ -2256,7 +2091,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonButton) {
-      @include button.import-colors(
+      @include common.button-colors(
                       $neon-functional-colors,
                       $neon-light-background-high-contrast-solid-button-light,
                       $neon-light-background-high-contrast-solid-button-dark,
@@ -2286,7 +2121,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonLabel) {
-      @include label.import-colors(
+      @include common.label-colors(
                       $neon-functional-colors,
                       $neon-light-color-label,
                       $neon-light-color-text,
@@ -2295,7 +2130,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonBadge) {
-      @include badge.import-colors(
+      @include common.badge-colors(
                       $neon-functional-colors,
                       $neon-light-color-label,
                       $neon-light-color-inverse,
@@ -2309,7 +2144,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonNote) {
-      @include note.import-colors(
+      @include common.note-colors(
                       $neon-light-color-note,
                       $neon-light-color-text,
                       $neon-functional-colors,
@@ -2323,7 +2158,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonLink) {
-      @include link.import-colors(
+      @include common.link-colors(
                       $neon-light-color-link,
                       $neon-animation-speed-fast,
                       $neon-light-color-link-visited,
@@ -2335,7 +2170,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonIcon) {
-      @include icon.import-colors(
+      @include common.icon-colors(
                       $neon-light-color-text,
                       $neon-animation-speed-fast,
                       $neon-functional-colors,
@@ -2346,7 +2181,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonTreeMenu) {
-      @include tree-menu.import-colors(
+      @include common.tree-menu-colors(
                       $neon-light-color-text,
                       $neon-light-color-link,
                       $neon-light-color-text-primary,
@@ -2356,7 +2191,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonActionMenu) {
-      @include action-menu.import-colors(
+      @include common.action-menu-colors(
                       $neon-light-color-action-menu-hover,
                       $neon-functional-colors,
                       $neon-light-color-action-menu-selected,
@@ -2367,7 +2202,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonDrawer) {
-      @include drawer.import-colors(
+      @include common.drawer-colors(
                       $neon-light-background-color-overlay,
                       $neon-light-background-color-card,
                       $neon-box-shadow,
@@ -2379,14 +2214,14 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonModal) {
-      @include modal.import-colors(
+      @include common.modal-colors(
                       $neon-light-background-color-overlay,
                       $neon-light-box-shadow-alert,
       );
     }
 
     @if index($neon-flattened-components, NeonInput) {
-      @include input.import-colors(
+      @include common.input-colors(
                       $neon-light-border-color-input,
                       $neon-light-color-text,
                       $neon-light-background-color-input,
@@ -2405,7 +2240,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonDropZone) {
-      @include drop-zone.import-colors(
+      @include common.drop-zone-colors(
                       $neon-light-background-color,
                       $neon-light-color-drop-zone,
                       $neon-animation-speed-fast,
@@ -2413,7 +2248,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonAlert) {
-      @include alert-container.import-colors(
+      @include common.alert-container-colors(
                       $neon-light-box-shadow-alert,
                       $alert-colors,
                       $neon-light-color-alert,
@@ -2430,7 +2265,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonNotificationCounter) {
-      @include notification-counter.import-colors(
+      @include common.notification-counter-colors(
                       $neon-functional-colors,
                       $neon-light-color-inverse,
                       $neon-light-color-text,
@@ -2439,7 +2274,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonDropdown) {
-      @include dropdown.import-colors(
+      @include common.dropdown-colors(
                       $neon-light-background-color-card,
                       $neon-light-box-shadow-dropdown,
                       $neon-border-width,
@@ -2451,7 +2286,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonDropdownMenu) {
-      @include dropdown-menu.import-colors(
+      @include common.dropdown-menu-colors(
                       $neon-border-width-separator-before,
                       $neon-border-style,
                       $neon-light-border-color-dropdown,
@@ -2466,7 +2301,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonTabs) {
-      @include tabs.import-colors(
+      @include common.tabs-colors(
                       $neon-border-width-tabs,
                       $neon-border-style,
                       $neon-light-border-color-tabs-underline,
@@ -2478,7 +2313,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonExpansionPanel) {
-      @include expansion-panel.import-colors(
+      @include common.expansion-panel-colors(
                       $neon-border-width-expansion-panel,
                       $neon-border-style,
                       $neon-light-border-color,
@@ -2491,7 +2326,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonInputIndicator) {
-      @include input-indicator.import-colors(
+      @include common.input-indicator-colors(
                       $neon-border-width,
                       $neon-border-style,
                       $neon-light-border-color-input,
@@ -2501,7 +2336,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonSkeletonLoader) {
-      @include skeleton-loader.import-colors(
+      @include common.skeleton-loader-colors(
                       $neon-light-color-loading-1,
                       $neon-light-color-loading-2,
                       $neon-light-color-loading-3,
@@ -2509,7 +2344,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonChip) {
-      @include chip.import-colors(
+      @include common.chip-colors(
                       $neon-functional-colors,
                       $neon-light-color-toggle-chip,
                       $neon-border-width,
@@ -2521,7 +2356,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonAlert) {
-      @include toast-container.import-colors(
+      @include common.toast-container-colors(
                       $neon-light-box-shadow-alert,
                       $alert-colors,
                       $neon-light-background-color-toast,
@@ -2530,11 +2365,11 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonSplashLoader) {
-      @include splash-loader.import-colors($neon-light-background-color-overlay);
+      @include common.splash-loader-colors($neon-light-background-color-overlay);
     }
 
     @if index($neon-flattened-components, NeonSelect) {
-      @include select.import-colors(
+      @include common.select-colors(
                       $neon-border-width-separator-before,
                       $neon-border-style,
                       $neon-light-border-color-dropdown,
@@ -2549,7 +2384,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonToggleChip) {
-      @include toggle-chip.import-colors(
+      @include common.toggle-chip-colors(
                       $neon-light-border-color-toggle-chip,
                       $neon-light-opacity-toggle-chip,
                       $neon-light-color-text,
@@ -2563,7 +2398,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonTooltip) {
-      @include tooltip.import-colors(
+      @include common.tooltip-colors(
                       $neon-functional-colors,
                       $neon-light-color-outline,
                       $neon-border-radius,
@@ -2579,7 +2414,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonMenu) {
-      @include menu.import-colors(
+      @include common.menu-colors(
                       $neon-light-color-text-neutral,
                       $neon-animation-speed-fast,
                       $neon-light-color-disabled-light,
@@ -2591,7 +2426,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonList) {
-      @include list.import-colors(
+      @include common.list-colors(
                       $neon-functional-colors,
                       $neon-light-color-list-item,
                       $neon-light-color-text,
@@ -2601,7 +2436,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonFilterList) {
-      @include filter-list.import-colors(
+      @include common.filter-list-colors(
                       $neon-light-color-text,
                       $neon-light-color-text-low-contrast,
                       $neon-functional-colors,
@@ -2612,7 +2447,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonSearch) {
-      @include search.import-colors(
+      @include common.search-colors(
                       $neon-border-width-separator-before,
                       $neon-border-width,
                       $neon-border-style,
@@ -2634,11 +2469,11 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonColor) {
-      @include color.import-colors();
+      @include common.color-colors();
     }
 
     @if index($neon-flattened-components, NeonNumber) {
-      @include number.import-colors(
+      @include common.number-colors(
                       $neon-functional-colors,
                       $neon-light-color-input-selected,
                       $neon-theme,
@@ -2655,7 +2490,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonSlider) {
-      @include slider.import-colors(
+      @include common.slider-colors(
                       $neon-light-color-placeholder,
                       $neon-card-box-shadow,
                       $neon-light-color-inverse,
@@ -2673,7 +2508,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonRangeSlider) {
-      @include range-slider.import-colors(
+      @include common.range-slider-colors(
                       $neon-functional-colors,
                       $neon-light-color-slider,
                       $neon-light-color-slider-track,
@@ -2683,7 +2518,7 @@ $neon-light-color-input-indicator: $neon-light-color-text-neutral !default;
     }
 
     @if index($neon-flattened-components, NeonLinearProgress) {
-      @include linear-progress.import-colors(
+      @include common.linear-progress-colors(
                       $neon-functional-colors,
                       $neon-light-base-color,
                       $neon-opacity-background-progress,

@@ -1,4 +1,4 @@
-@mixin import(
+@mixin color(
   $neon-border-radius-input-color,
   $neon-base-space,
   $neon-size-s,
@@ -85,7 +85,7 @@
   }
 }
 
-@mixin import-colors {
+@mixin color-colors {
   .neon-color {
     &__input:not(:focus-within) + .neon-color__indicator {
       box-shadow: none !important;

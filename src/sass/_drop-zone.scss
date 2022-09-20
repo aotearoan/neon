@@ -1,6 +1,6 @@
 @use './includes/layout';
 
-@mixin import($spacings, $neon-base-space, $neon-border-radius) {
+@mixin drop-zone($spacings, $neon-base-space, $neon-border-radius) {
   .neon-drop-zone {
     border: 0.5 * $neon-base-space dashed;
     border-radius: $neon-border-radius;
@@ -27,7 +27,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin drop-zone-colors(
   $neon-background-color,
   $neon-color-drop-zone,
   $neon-animation-speed-fast,

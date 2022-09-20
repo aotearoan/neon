@@ -1,7 +1,7 @@
 @use './includes/layout';
 @use './includes/svg';
 
-@mixin import(
+@mixin input-indicator(
   $spacings,
   $neon-letter-spacing-s,
   $neon-size-s,
@@ -80,7 +80,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin input-indicator-colors(
   $neon-border-width,
   $neon-border-style,
   $neon-border-color-input,

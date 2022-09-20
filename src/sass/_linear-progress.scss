@@ -1,4 +1,4 @@
-@mixin import(
+@mixin linear-progress(
   $neon-border-radius,
   $neon-font-size-l,
   $neon-base-space,
@@ -70,7 +70,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin linear-progress-colors(
   $neon-functional-colors,
   $neon-base-color,
   $neon-opacity-background-progress,

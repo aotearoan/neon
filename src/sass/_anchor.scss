@@ -1,6 +1,6 @@
 @use './includes/responsive';
 
-@mixin import(
+@mixin anchor(
   $neon-top-nav-height-desktop,
   $neon-top-nav-height-tablet,
   $neon-top-nav-height-mobile,

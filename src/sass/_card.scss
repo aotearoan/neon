@@ -44,7 +44,7 @@
   }
 }
 
-@mixin import(
+@mixin card(
   $spacings,
   $neon-border-radius-card,
   $neon-card-box-shadow,
@@ -204,7 +204,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin card-colors(
   $neon-border,
   $neon-card-box-shadow,
   $neon-background-color-card,

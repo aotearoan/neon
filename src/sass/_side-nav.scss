@@ -2,7 +2,7 @@
 @use './includes/responsive';
 @use './includes/scrollbars';
 
-@mixin import(
+@mixin side-nav(
   $spacings,
   $neon-side-nav-width,
   $neon-top-nav-height-desktop,
@@ -51,7 +51,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin side-nav-colors(
   $neon-background-color-side-nav,
   $neon-border,
   $neon-color-scrollbar,

@@ -14,7 +14,7 @@
     },
     {
       "name": "id",
-      "description": "Id of the range input.",
+      "description": "id of the range input.",
       "type": {
         "name": "string"
       },

@@ -17,7 +17,7 @@ a[href]:not(.neon-link--no-style) {
   @extend %neon-link-no-style;
 }
 
-@mixin import(
+@mixin link(
   $neon-font-size-s,
   $neon-base-space,
 ) {
@@ -57,7 +57,7 @@ a[href]:not(.neon-link--no-style) {
   }
 }
 
-@mixin import-colors(
+@mixin link-colors(
   $neon-color-link,
   $neon-animation-speed-fast,
   $neon-color-link-visited,

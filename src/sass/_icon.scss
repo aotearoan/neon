@@ -1,6 +1,6 @@
 @use './includes/svg';
 
-@mixin import {
+@mixin icon {
   .neon-icon {
     display: inline-flex;
     flex-direction: row;
@@ -9,7 +9,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin icon-colors(
   $neon-color-text,
   $neon-animation-speed-fast,
   $neon-functional-colors,

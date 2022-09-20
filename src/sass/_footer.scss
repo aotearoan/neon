@@ -1,7 +1,7 @@
 @use './includes/layout';
 @use './includes/responsive';
 
-@mixin import(
+@mixin footer(
   $neon-max-page-width,
   $neon-base-space,
   $neon-line-height-one,
@@ -51,7 +51,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin footer-colors(
   $neon-background-color-footer,
   $neon-border-top-footer,
   $neon-color-text-neutral,

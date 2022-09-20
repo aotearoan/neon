@@ -1,7 +1,7 @@
 @use '../includes/layout';
 @use '../includes/responsive';
 
-@mixin import(
+@mixin layout(
   $spacings,
   $neon-base-space,
 ) {

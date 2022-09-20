@@ -2,7 +2,7 @@
 @use './includes/responsive';
 @use './includes/note';
 
-@mixin import(
+@mixin note(
   $spacings,
   $neon-border-radius,
   $neon-base-space,
@@ -64,7 +64,7 @@
   @include note.neon-note-margins($neon-base-space, '.neon-note');
 }
 
-@mixin import-colors(
+@mixin note-colors(
   $neon-color-note,
   $neon-color-text,
   $neon-functional-colors,

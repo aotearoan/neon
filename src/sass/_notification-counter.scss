@@ -1,6 +1,6 @@
 @use './includes/globals';
 
-@mixin import(
+@mixin notification-counter(
   $neon-animation-speed-fast,
   $neon-animation-speed-slow,
 ) {
@@ -27,7 +27,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin notification-counter-colors(
   $neon-functional-colors,
   $neon-color-inverse,
   $neon-color-text,

@@ -1,7 +1,7 @@
 @use './includes/layout';
 @use './includes/responsive';
 
-@mixin import(
+@mixin page(
   $neon-top-nav-height-desktop,
   $neon-top-nav-height-tablet,
   $neon-top-nav-height-mobile,

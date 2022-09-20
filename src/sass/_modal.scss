@@ -2,7 +2,7 @@
 @use './includes/responsive';
 @use './includes/globals';
 
-@mixin import(
+@mixin modal(
   $neon-animation-speed-fast,
   $neon-animation-speed-slow,
   $neon-base-space,
@@ -125,7 +125,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin modal-colors(
   $neon-background-color-overlay,
   $neon-box-shadow-alert,
 ) {

@@ -1,6 +1,6 @@
 @use './includes/globals';
 
-@mixin import(
+@mixin splash-loader(
   $neon-size-s,
   $neon-size-m,
   $neon-size-l,
@@ -65,7 +65,7 @@
   }
 }
 
-@mixin import-colors($neon-background-color-overlay) {
+@mixin splash-loader-colors($neon-background-color-overlay) {
   .neon-splash-loader {
     &--with-overlay {
       background-color: $neon-background-color-overlay;

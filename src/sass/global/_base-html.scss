@@ -2,7 +2,7 @@
 @use '../includes/layout';
 @use '../includes/note';
 
-@mixin import(
+@mixin base-html(
   $spacings,
   $neon-border-radius,
   $neon-max-paragraph-width,
@@ -141,7 +141,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin base-html-colors(
   $neon-color-text-dark,
   $neon-color-text-light,
   $neon-background-color,

@@ -1,7 +1,7 @@
 @use './includes/layout';
 @use './includes/responsive';
 
-@mixin import(
+@mixin grid(
   $spacings,
   $neon-max-page-width,
   $neon-footer-height-desktop,

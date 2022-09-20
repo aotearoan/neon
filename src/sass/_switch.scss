@@ -166,7 +166,7 @@
   }
 }
 
-@mixin import(
+@mixin switch(
   $neon-font-size-s,
   $neon-font-size-m,
   $neon-size-s,
@@ -325,7 +325,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin switch-colors(
   $neon-color-switch-off,
   $neon-animation-speed-fast,
   $neon-inset-shadow-switch,

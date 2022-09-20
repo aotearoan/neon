@@ -14,7 +14,7 @@
   }
 }
 
-@mixin import(
+@mixin toggle-chip(
   $neon-border-width,
   $neon-border-style,
   $neon-border-radius,
@@ -88,7 +88,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin toggle-chip-colors(
   $neon-border-color-toggle-chip,
   $neon-opacity-toggle-chip,
   $neon-color-text,

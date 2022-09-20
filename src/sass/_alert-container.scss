@@ -5,7 +5,7 @@
 @use './includes/scrollbars';
 @use './includes/outline';
 
-@mixin import(
+@mixin alert-container(
   $neon-width-alert,
   $neon-base-space,
   $neon-border-radius,
@@ -159,7 +159,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin alert-container-colors(
   $neon-box-shadow-alert,
   $alert-colors,
   $neon-color-alert,

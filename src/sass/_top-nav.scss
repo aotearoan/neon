@@ -2,7 +2,7 @@
 @use './includes/responsive';
 @use './includes/globals';
 
-@mixin import(
+@mixin top-nav(
   $spacings,
   $neon-max-page-width,
   $neon-top-nav-height-desktop,
@@ -40,7 +40,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin top-nav-colors(
   $neon-background-color-top-nav,
   $neon-border,
 ) {

@@ -1,6 +1,6 @@
 @use 'sass:map';
 
-@mixin import(
+@mixin action-menu(
   $neon-letter-spacing-s,
   $neon-border-radius,
   $neon-base-space,
@@ -45,7 +45,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin action-menu-colors(
   $neon-color-action-menu-hover,
   $neon-functional-colors,
   $neon-color-action-menu-selected,

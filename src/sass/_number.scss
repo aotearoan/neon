@@ -1,6 +1,6 @@
 @use './includes/svg';
 
-@mixin import(
+@mixin number(
   $neon-size-s,
   $neon-size-m,
   $neon-size-l,
@@ -47,7 +47,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin number-colors(
   $neon-functional-colors,
   $neon-color-input-selected,
   $neon-theme,

@@ -88,7 +88,7 @@
   }
 }
 
-@mixin import(
+@mixin button(
   $neon-line-height-one,
   $neon-size-s,
   $neon-size-m,
@@ -312,7 +312,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin button-colors(
   $neon-functional-colors,
   $neon-background-high-contrast-solid-button-light,
   $neon-background-high-contrast-solid-button-dark,

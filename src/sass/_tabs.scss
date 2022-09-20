@@ -2,7 +2,7 @@
 @use './includes/responsive';
 @use './includes/svg';
 
-@mixin import(
+@mixin tabs(
   $spacings,
   $neon-border-width-tabs,
   $neon-base-space,
@@ -164,7 +164,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin tabs-colors(
   $neon-border-width-tabs,
   $neon-border-style,
   $neon-border-color-tabs-underline,

@@ -2,7 +2,7 @@
 @use './includes/responsive';
 @use './includes/outline';
 
-@mixin import(
+@mixin expansion-panel(
   $spacings,
   $neon-letter-spacing-s,
   $neon-base-space,
@@ -156,7 +156,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin expansion-panel-colors(
   $neon-border-width-expansion-panel,
   $neon-border-style,
   $neon-border-color,

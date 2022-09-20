@@ -1,4 +1,4 @@
-@mixin import(
+@mixin skeleton-loader(
   $neon-font-size-m,
   $neon-base-space,
   $neon-border-radius-skeleton-loader,
@@ -43,7 +43,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin skeleton-loader-colors(
   $neon-color-loading-1,
   $neon-color-loading-2,
   $neon-color-loading-3,

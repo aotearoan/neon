@@ -2,7 +2,7 @@
 @use './includes/layout';
 @use './includes/globals';
 
-@mixin import(
+@mixin drawer(
   $spacings,
   $neon-animation-speed-slow,
   $neon-side-nav-width,
@@ -141,7 +141,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin drawer-colors(
   $neon-background-color-overlay,
   $neon-background-color-card,
   $neon-box-shadow,

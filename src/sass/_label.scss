@@ -30,7 +30,7 @@
   }
 }
 
-@mixin import(
+@mixin label(
   $neon-base-space,
   $neon-size-xxs,
   $neon-size-xs,
@@ -106,7 +106,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin label-colors(
   $neon-functional-colors,
   $neon-color-label,
   $neon-color-text,

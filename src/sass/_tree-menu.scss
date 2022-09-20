@@ -1,6 +1,6 @@
 @use './includes/outline';
 
-@mixin import(
+@mixin tree-menu(
   $neon-letter-spacing-s,
   $neon-border-radius,
   $neon-base-space,
@@ -88,7 +88,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin tree-menu-colors(
   $neon-color-text,
   $neon-color-link,
   $neon-color-text-primary,

@@ -8,7 +8,7 @@
   @return $neon-border-color;
 }
 
-@mixin import(
+@mixin tooltip(
   $neon-border-radius,
   $neon-tooltip-max-width,
   $neon-tooltip-max-height,
@@ -269,7 +269,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin tooltip-colors(
   $neon-functional-colors,
   $neon-color-outline,
   $neon-border-radius,

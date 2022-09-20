@@ -10,7 +10,7 @@
   background: linear-gradient($neon-color-disabled-dark, $neon-color-disabled-dark) 0 / var(--sx) 100% no-repeat $neon-color-disabled-light;
 }
 
-@mixin import(
+@mixin range-slider(
   $neon-base-space,
   $neon-font-size-s,
 ) {
@@ -71,7 +71,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin range-slider-colors(
   $neon-functional-colors,
   $neon-color-slider,
   $neon-color-slider-track,

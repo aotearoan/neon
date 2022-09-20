@@ -1,4 +1,4 @@
-@mixin import(
+@mixin table(
   $neon-size-xs,
   $neon-size-m,
   $neon-font-size-m,
@@ -62,7 +62,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin table-colors(
   $neon-border-width-table,
   $neon-border-style,
   $neon-label-color,

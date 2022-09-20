@@ -2,7 +2,7 @@
 @use './includes/globals';
 @use './includes/scrollbars';
 
-@mixin import(
+@mixin select(
   $neon-max-height-dropdown,
   $neon-font-size-xs,
   $neon-font-size-s,
@@ -122,7 +122,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin select-colors(
   $neon-border-width-separator-before,
   $neon-border-style,
   $neon-border-color-dropdown,

@@ -42,7 +42,7 @@
   }
 }
 
-@mixin import(
+@mixin input(
   $neon-size-s,
   $neon-font-size-s,
   $neon-size-m,
@@ -122,7 +122,7 @@
   }
 }
 
-@mixin import-colors(
+@mixin input-colors(
   $neon-border-color-input,
   $neon-color-text,
   $neon-background-color-input,
