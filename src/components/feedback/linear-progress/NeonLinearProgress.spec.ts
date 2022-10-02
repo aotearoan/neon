@@ -1,14 +1,13 @@
 import { render } from '@testing-library/vue';
 import NeonLinearProgress from './NeonLinearProgress.vue';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonSize } from '../../../common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonSize } from '@/common/enums/NeonSize';
 
 describe('NeonLinearProgress', () => {
   it('renders output with total', (done) => {
-    const { getByText, html } = render(NeonLinearProgress,
-      {
-        props: { value: 9, total: 42 },
-      });
+    const { getByText, html } = render(NeonLinearProgress, {
+      props: { value: 9, total: 42 },
+    });
     getByText('0 / 42');
     setTimeout(() => {
       getByText('9 / 42');
@@ -21,10 +20,9 @@ describe('NeonLinearProgress', () => {
   });
 
   it('renders indicator width', (done) => {
-    const { html } = render(NeonLinearProgress,
-      {
-        props: { value: 10, total: 40 },
-      });
+    const { html } = render(NeonLinearProgress, {
+      props: { value: 10, total: 40 },
+    });
     setTimeout(() => {
       expect(html()).toMatch('width: 25%;');
       done();
@@ -32,10 +30,9 @@ describe('NeonLinearProgress', () => {
   });
 
   it('renders output as %', (done) => {
-    const { html } = render(NeonLinearProgress,
-      {
-        props: { value: 0.4 },
-      });
+    const { html } = render(NeonLinearProgress, {
+      props: { value: 0.4 },
+    });
     expect(html()).toMatch('width: 0%;');
     setTimeout(() => {
       expect(html()).toMatch('width: 40%;');
@@ -44,42 +41,37 @@ describe('NeonLinearProgress', () => {
   });
 
   it('renders label', () => {
-    const { getByText } = render(NeonLinearProgress,
-      {
-        props: { value: 0.4, label: 'XDD' },
-      });
+    const { getByText } = render(NeonLinearProgress, {
+      props: { value: 0.4, label: 'XDD' },
+    });
     getByText('XDD');
   });
 
   it('renders color override', () => {
-    const { html } = render(NeonLinearProgress,
-      {
-        props: { value: 0.4, color: NeonFunctionalColor.Brand },
-      });
+    const { html } = render(NeonLinearProgress, {
+      props: { value: 0.4, color: NeonFunctionalColor.Brand },
+    });
     expect(html()).toMatch('neon-linear-progress--brand');
   });
 
   it('renders alternate color override', () => {
-    const { html } = render(NeonLinearProgress,
-      {
-        props: { value: 0.4, alternateColor: NeonFunctionalColor.Brand },
-      });
+    const { html } = render(NeonLinearProgress, {
+      props: { value: 0.4, alternateColor: NeonFunctionalColor.Brand },
+    });
     expect(html()).toMatch('neon-linear-progress--alternate-color-brand');
   });
 
   it('renders size override', () => {
-    const { html } = render(NeonLinearProgress,
-      {
-        props: { value: 0.4, size: NeonSize.Large },
-      });
+    const { html } = render(NeonLinearProgress, {
+      props: { value: 0.4, size: NeonSize.Large },
+    });
     expect(html()).toMatch('neon-linear-progress--l');
   });
 
   it('renders completed icon', (done) => {
-    const { html } = render(NeonLinearProgress,
-      {
-        props: { value: 1, decimals: 2, completedIcon: 'check' },
-      });
+    const { html } = render(NeonLinearProgress, {
+      props: { value: 1, decimals: 2, completedIcon: 'check' },
+    });
     setTimeout(() => {
       expect(html()).toMatch('neon-linear-progress__indicator--completed');
       expect(html()).toMatch('neon-icon');
@@ -88,10 +80,9 @@ describe('NeonLinearProgress', () => {
   });
 
   it('renders completed icon color override', (done) => {
-    const { html } = render(NeonLinearProgress,
-      {
-        props: { value: 1, decimals: 2, completedIcon: 'check', completedIconColor: NeonFunctionalColor.LowContrast },
-      });
+    const { html } = render(NeonLinearProgress, {
+      props: { value: 1, decimals: 2, completedIcon: 'check', completedIconColor: NeonFunctionalColor.LowContrast },
+    });
     setTimeout(() => {
       expect(html()).toMatch('neon-icon--low-contrast');
       done();
@@ -99,10 +90,9 @@ describe('NeonLinearProgress', () => {
   });
 
   it('renders completed icon alternate color override', (done) => {
-    const { html } = render(NeonLinearProgress,
-      {
-        props: { value: 1, decimals: 2, completedIcon: 'check', alternateColor: NeonFunctionalColor.LowContrast },
-      });
+    const { html } = render(NeonLinearProgress, {
+      props: { value: 1, decimals: 2, completedIcon: 'check', alternateColor: NeonFunctionalColor.LowContrast },
+    });
     setTimeout(() => {
       expect(html()).toMatch('neon-icon--low-contrast');
       done();

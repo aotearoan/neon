@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue';
-import type { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import type { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 /**
  * Custom animated chevron component which is used in dropdowns and expansion panels. This may be useful in creating

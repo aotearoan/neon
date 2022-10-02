@@ -1,13 +1,13 @@
 import { computed, defineComponent, onMounted, ref } from 'vue';
 import { NeonButton, NeonCard, NeonCardBody, NeonLink } from '@/neon';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import type { MenuModel } from '../../../Menu';
-import { Menu } from '../../../Menu';
-import Editor from '../../../components/editor/Editor.vue';
-import type { NeonAlertPlacement } from '../../../../common/enums/NeonAlertPlacement';
-import type { NeonVerticalPosition } from '../../../../common/enums/NeonVerticalPosition';
-import { NeonAlertService } from '../../../../common/utils/NeonAlertService';
-import { NeonToastService } from '../../../../common/utils/NeonToastService';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import Editor from '.@/app/components/editor/Editor.vue';
+import type { NeonAlertPlacement } from '@/common/enums/NeonAlertPlacement';
+import type { NeonVerticalPosition } from '@/common/enums/NeonVerticalPosition';
+import { NeonAlertService } from '@/common/utils/NeonAlertService';
+import { NeonToastService } from '@/common/utils/NeonToastService';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
@@ -20,7 +20,7 @@ export default defineComponent({
     ComponentDocumentation,
     Editor,
   },
-  setup(props) {
+  setup() {
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('Display temporary notifications to the user');
 
@@ -89,7 +89,6 @@ export default defineComponent({
       },
     });
 
-
     const examples = ref([
       {
         title: 'Different types of alert',
@@ -153,32 +152,47 @@ export default defineComponent({
       },
     ]);
 
+    const infoExample = computed(
+      () => `const alertMessage = { title: 'message title', message: 'Message' };
+NeonAlertService.info(alertMessage);`,
+    );
 
-    const infoExample = computed(() => `const alertMessage = { title: 'message title', message: 'Message' };
-NeonAlertService.info(alertMessage);`);
+    const successExample = computed(
+      () => `const alertMessage = { title: 'message title', message: 'Message' };
+NeonAlertService.success(alertMessage);`,
+    );
 
-    const successExample = computed(() => `const alertMessage = { title: 'message title', message: 'Message' };
-NeonAlertService.success(alertMessage);`);
+    const warnExample = computed(
+      () => `const alertMessage = { title: 'message title', message: 'Message' };
+NeonAlertService.warn(alertMessage);`,
+    );
 
-    const warnExample = computed(() => `const alertMessage = { title: 'message title', message: 'Message' };
-NeonAlertService.warn(alertMessage);`);
+    const errorExample = computed(
+      () => `const alertMessage = { title: 'message title', message: 'Message' };
+NeonAlertService.error(alertMessage);`,
+    );
 
-    const errorExample = computed(() => `const alertMessage = { title: 'message title', message: 'Message' };
-NeonAlertService.error(alertMessage);`);
+    const infoToast = computed(
+      () => `const toastMessage = { title: 'message title' };
+NeonToastService.info(toastMessage);`,
+    );
 
-    const infoToast = computed(() => `const toastMessage = { title: 'message title' };
-NeonToastService.info(toastMessage);`);
+    const successToast = computed(
+      () => `const toastMessage = { title: 'message title' };
+NeonToastService.success(toastMessage);`,
+    );
 
-    const successToast = computed(() => `const toastMessage = { title: 'message title' };
-NeonToastService.success(toastMessage);`);
+    const warnToast = computed(
+      () => `const toastMessage = { title: 'message title' };
+NeonToastService.warn(toastMessage);`,
+    );
 
-    const warnToast = computed(() => `const toastMessage = { title: 'message title' };
-NeonToastService.warn(toastMessage);`);
+    const errorToast = computed(
+      () => `const toastMessage = { title: 'message title' };
+NeonToastService.error(toastMessage);`,
+    );
 
-    const errorToast = computed(() => `const toastMessage = { title: 'message title' };
-NeonToastService.error(toastMessage);`);
-
-    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonAlert'));
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonAlert')));
 
     return {
       menuModel,

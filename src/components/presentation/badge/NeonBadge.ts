@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import NeonIcon from '../icon/NeonIcon.vue';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import NeonIcon from '@/components/icon/NeonIcon.vue';
 
 /**
  * A badge is a small square or circular component for representing user avatars. These can be in the form of an image, an icon or a two character string (e.g. the user's initials).

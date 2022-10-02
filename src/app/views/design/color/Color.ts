@@ -1,7 +1,7 @@
 import { defineComponent, ref } from 'vue';
 import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader, NeonNote } from '@/neon';
-import Example from '../../../components/example/Example.vue';
-import Editor from '../../../components/editor/Editor.vue';
+import Example from '@/app/components/example/Example.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
@@ -16,7 +16,6 @@ export default defineComponent({
     Editor,
   },
   setup() {
-
     const example = ref({
       template: `<div>
   <div class="neon-color-text">This is the default text color</div>

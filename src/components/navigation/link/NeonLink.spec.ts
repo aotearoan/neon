@@ -1,7 +1,7 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonLink from './NeonLink.vue';
-import { NeonOutlineStyle } from '../../../common/enums/NeonOutlineStyle';
+import { NeonOutlineStyle } from '@/common/enums/NeonOutlineStyle';
 import { RouterLinkStub } from '@vue/test-utils';
 
 describe('NeonLink', () => {
@@ -11,17 +11,16 @@ describe('NeonLink', () => {
 
   beforeEach(() => {
     harness = render(NeonLink, {
-        props,
-        slots: {
-          default: '<p>test</p>',
-        },
-        global: {
-          stubs: {
-            RouterLink: RouterLinkStub,
-          },
+      props,
+      slots: {
+        default: '<p>test</p>',
+      },
+      global: {
+        stubs: {
+          RouterLink: RouterLinkStub,
         },
       },
-    );
+    });
   });
 
   it('renders default slot contents external link', () => {

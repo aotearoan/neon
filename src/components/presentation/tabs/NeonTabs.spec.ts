@@ -1,8 +1,8 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonTabs from './NeonTabs.vue';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 describe('NeonTabs', () => {
   const tabs = [
@@ -97,13 +97,17 @@ describe('NeonTabs', () => {
 
   it('renders tabindex selected', () => {
     const { html } = harness;
-    expect(html()).toMatch('<div id="tab2Button" aria-controls="tab2" aria-selected="true" class="neon-tabs__menu-item--selected neon-tabs__menu-item" role="tab" tabindex="-1">');
+    expect(html()).toMatch(
+      '<div id="tab2Button" aria-controls="tab2" aria-selected="true" class="neon-tabs__menu-item--selected neon-tabs__menu-item" role="tab" tabindex="-1">',
+    );
     expect(html()).toMatch('<div id="tab2ButtonContainer" tabindex="0" class="neon-tabs__menu-item-container">');
   });
 
   it('renders tabindex unselected', () => {
     const { html } = harness;
-    expect(html()).toMatch('<div id="tab1Button" aria-controls="tab1" aria-selected="false" class="neon-tabs__menu-item" role="tab" tabindex="-1">');
+    expect(html()).toMatch(
+      '<div id="tab1Button" aria-controls="tab1" aria-selected="false" class="neon-tabs__menu-item" role="tab" tabindex="-1">',
+    );
     expect(html()).toMatch('<div id="tab1ButtonContainer" tabindex="-1" class="neon-tabs__menu-item-container">');
   });
 
@@ -119,7 +123,9 @@ describe('NeonTabs', () => {
 
   it('renders tab icon selected', () => {
     const { html } = harness;
-    expect(html()).toMatch('<div id="tab2Button" aria-controls="tab2" aria-selected="true" class="neon-tabs__menu-item--selected neon-tabs__menu-item" role="tab" tabindex="-1">');
+    expect(html()).toMatch(
+      '<div id="tab2Button" aria-controls="tab2" aria-selected="true" class="neon-tabs__menu-item--selected neon-tabs__menu-item" role="tab" tabindex="-1">',
+    );
   });
 
   it('click tab emits event', async () => {

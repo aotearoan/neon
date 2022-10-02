@@ -39,6 +39,6 @@ export class NeonEventBus {
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public static emit(event: string, ...args: any[]) {
-    NeonEventBus.listeners[event]?.forEach((cb) => cb(...args));
+    NeonEventBus.listeners[event]?.forEach((callbackFn) => callbackFn(...args));
   }
 }

@@ -28,7 +28,9 @@ describe('NeonActionMenu', () => {
     const modelValue = model[0].key;
     const { container } = render(NeonActionMenu, { props: { model: localModel, modelValue }, global });
     // when / then
-    expect(container.getElementsByClassName('neon-action-menu__link--disabled')[0].textContent).toEqual(localModel[1].label);
+    expect(container.getElementsByClassName('neon-action-menu__link--disabled')[0].textContent).toEqual(
+      localModel[1].label,
+    );
   });
 
   it('emits click event', async () => {

@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue';
-import { NeonOrientation } from '../../../common/enums/NeonOrientation';
-import { NeonResponsive } from '../../../common/enums/NeonResponsive';
-import { NeonSize } from '../../../common/enums/NeonSize';
+import { NeonOrientation } from '@/common/enums/NeonOrientation';
+import { NeonResponsive } from '@/common/enums/NeonResponsive';
+import { NeonSize } from '@/common/enums/NeonSize';
 
 /**
  * Card component used for the layout of content within a grid or page.

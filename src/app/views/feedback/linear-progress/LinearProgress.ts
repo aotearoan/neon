@@ -1,8 +1,8 @@
 import { defineComponent, onMounted, ref } from 'vue';
 import { NeonCard, NeonCardBody, NeonLinearProgress } from '@/neon';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import type { MenuModel } from '../../../Menu';
-import { Menu } from '../../../Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
 
 export default defineComponent({
   name: 'LinearProgress',
@@ -101,7 +101,7 @@ export default defineComponent({
       },
     ]);
 
-    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonLinearProgress'));
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonLinearProgress')));
 
     return {
       menuModel,

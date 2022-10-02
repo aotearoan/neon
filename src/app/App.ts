@@ -1,7 +1,7 @@
 import { computed, defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
 import { Menu } from './Menu';
-import { NeonMode } from '../common/enums/NeonMode';
-import type { NeonTreeMenuLinkModel, NeonTreeMenuSectionModel } from '../common/models/NeonTreeMenuModel';
+import { NeonMode } from '@/common/enums/NeonMode';
+import type { NeonTreeMenuLinkModel, NeonTreeMenuSectionModel } from '@/common/models/NeonTreeMenuModel';
 import {
   NeonAlert,
   NeonButton,
@@ -20,11 +20,11 @@ import {
   NeonTopNav,
   NeonTreeMenu,
 } from '@/neon';
-import { NeonTheme } from '../../src/common/enums/NeonTheme';
-import type { NeonSelectOption } from '../../src/common/models/NeonSelectOption';
-import { NeonModeUtils } from '../common/utils/NeonModeUtils';
-import { NeonResponsive } from '../../src/common/enums/NeonResponsive';
-import { NeonResponsiveUtils } from '../../src/common/utils/NeonResponsiveUtils';
+import { NeonTheme } from '@/common/enums/NeonTheme';
+import type { NeonSelectOption } from '@/common/models/NeonSelectOption';
+import { NeonModeUtils } from '@/common/utils/NeonModeUtils';
+import { NeonResponsive } from '@/common/enums/NeonResponsive';
+import { NeonResponsiveUtils } from '@/common/utils/NeonResponsiveUtils';
 import { useRoute, useRouter } from 'vue-router';
 
 export interface AppMenuGroup {
@@ -36,7 +36,6 @@ export interface AppMenuGroup {
 export interface AppMenuLinkModel extends NeonTreeMenuLinkModel {
   keywords?: string;
 }
-
 
 export default defineComponent({
   name: 'App',
@@ -105,8 +104,8 @@ export default defineComponent({
       return children.length > 0
         ? { ...item, children }
         : item.label.toString().toLowerCase().indexOf(lowercaseFilter.value) >= 0
-          ? item
-          : undefined;
+        ? item
+        : undefined;
     };
 
     const filteredModel = computed((): AppMenuGroup[] => {
@@ -145,8 +144,7 @@ export default defineComponent({
       },
     ]);
 
-    // @ts-ignore
-    const version = ref(PACKAGE_VERSION);
+    const version = ref(process.env.PACKAGE_VERSION);
 
     const switchTheme = (newTheme: NeonTheme) => {
       document.documentElement.classList.remove(`neon-theme--${theme.value}`);
@@ -174,7 +172,6 @@ export default defineComponent({
       isMobile.value = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.MobileLarge]).matches;
       isTablet.value = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.Tablet]).matches;
     };
-
 
     const toggleExpand = (key: string) => {
       indexModel.value.forEach((group) => {
@@ -211,15 +208,15 @@ export default defineComponent({
           key: item.path,
           children: item.children
             ? item.children.map((child) => ({
-              label: child.name || child.page || child.path,
-              key: child.path,
-              keywords:
-                (child.keywords || '') +
-                (child.component ? ` ${child.component.toLowerCase()}` : '') +
-                (child.subComponents ? '' + child.subComponents.map((sc) => sc.name.toLowerCase()).join(' ') : ''),
-              href: `/${item.path}/${child.path}`,
-              anchors: child.anchors,
-            }))
+                label: child.name || child.page || child.path,
+                key: child.path,
+                keywords:
+                  (child.keywords || '') +
+                  (child.component ? ` ${child.component.toLowerCase()}` : '') +
+                  (child.subComponents ? '' + child.subComponents.map((sc) => sc.name.toLowerCase()).join(' ') : ''),
+                href: `/${item.path}/${child.path}`,
+                anchors: child.anchors,
+              }))
             : [],
         })),
       }));
@@ -267,7 +264,6 @@ export default defineComponent({
       },
       { immediate: false },
     );
-
 
     return {
       theme,

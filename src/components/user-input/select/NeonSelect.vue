@@ -36,7 +36,9 @@
               {
                 'neon-select__option--disabled': option.disabled,
                 'neon-select__option--separator-before': option.separatorBefore,
-                'neon-select__option--selected': multiple ? modelValue.indexOf(option.key) >= 0 : option.key === modelValue,
+                'neon-select__option--selected': multiple
+                  ? modelValue.indexOf(option.key) >= 0
+                  : option.key === modelValue,
                 'neon-select__option--highlighted': option.key === highlightedKey,
               },
               `neon-select__option--${size}`,

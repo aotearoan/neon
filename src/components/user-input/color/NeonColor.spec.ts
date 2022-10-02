@@ -1,19 +1,17 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonColor from './NeonColor.vue';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 describe('NeonColor', () => {
   const value = '#bada55';
   let harness: RenderResult;
 
   beforeEach(() => {
-    harness = render(NeonColor,
-      {
-        props: { modelValue: value },
-      },
-    );
+    harness = render(NeonColor, {
+      props: { modelValue: value },
+    });
   });
 
   it('renders default size', () => {
@@ -59,7 +57,9 @@ describe('NeonColor', () => {
     const placeholder = 'xdd';
     const { container, rerender } = harness;
     await rerender({ placeholder });
-    expect(container.querySelector('.neon-color__text-input .neon-input__textfield')?.getAttribute('placeholder')).toEqual(placeholder);
+    expect(
+      container.querySelector('.neon-color__text-input .neon-input__textfield')?.getAttribute('placeholder'),
+    ).toEqual(placeholder);
   });
 
   it('renders value', () => {
@@ -67,11 +67,11 @@ describe('NeonColor', () => {
     expect(container.querySelector('.neon-color__text-input .neon-input__textfield')?.getAttribute('value')).toEqual(
       value,
     );
-    expect(container.querySelector('.neon-color__input .neon-input__textfield')?.getAttribute('value')).toEqual(
-      value,
-    );
+    expect(container.querySelector('.neon-color__input .neon-input__textfield')?.getAttribute('value')).toEqual(value);
     expect(
-      (container.querySelector('.neon-color__indicator') as HTMLInputElement).style.getPropertyValue('background-color'),
+      (container.querySelector('.neon-color__indicator') as HTMLInputElement).style.getPropertyValue(
+        'background-color',
+      ),
     ).toEqual('rgb(186, 218, 85)');
     expect(
       (container.querySelector('.neon-color__indicator') as HTMLInputElement).style.getPropertyValue('box-shadow'),

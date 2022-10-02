@@ -1,6 +1,6 @@
 import NeonFilterList from './NeonFilterList.vue';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonSize } from '../../../common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonSize } from '@/common/enums/NeonSize';
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 
@@ -188,7 +188,9 @@ describe('NeonFilterList', () => {
     const firstEl = container.querySelector('.neon-filter-list__item:first-child.neon-filter-list__item--selected');
     expect(firstEl).toBeDefined();
     expect(firstEl?.getAttribute('aria-selected')).toEqual('true');
-    expect(container.querySelector('.neon-filter-list__item:nth-child(2).neon-filter-list__item--selected')).toBeDefined();
+    expect(
+      container.querySelector('.neon-filter-list__item:nth-child(2).neon-filter-list__item--selected'),
+    ).toBeDefined();
   });
 
   it('renders selected single', async () => {

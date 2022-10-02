@@ -1,14 +1,14 @@
 import { computed, defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import NeonDropdown from '../../presentation/dropdown/NeonDropdown.vue';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
-import type { NeonSearchOption } from '../../../common/models/NeonSearchOption';
-import NeonInput from '../input/NeonInput.vue';
-import NeonChip from '../chip/NeonChip.vue';
-import { NeonDropdownPlacement } from '../../../common/enums/NeonDropdownPlacement';
-import { NeonScrollUtils } from '../../../common/utils/NeonScrollUtils';
-import { NeonVueUtils } from '../../../common/utils/NeonVueUtils';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import NeonDropdown from '@/components/presentation/dropdown/NeonDropdown.vue';
+import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
+import type { NeonSearchOption } from '@/common/models/NeonSearchOption';
+import NeonInput from '@/components/input/NeonInput.vue';
+import NeonChip from '@/components/chip/NeonChip.vue';
+import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
+import { NeonScrollUtils } from '@/common/utils/NeonScrollUtils';
+import { NeonVueUtils } from '@/common/utils/NeonVueUtils';
 
 /**
  * <p>
@@ -86,7 +86,8 @@ export default defineComponent({
           highlightedKey.value = props.options[0].key;
           highlightedIndex.value = 0;
         }
-      });
+      },
+    );
 
     const isReverse = () => {
       switch (dropdownPlacement.value) {
@@ -149,14 +150,15 @@ export default defineComponent({
       if (open.value) {
         switch ($event.code) {
           case 'ArrowUp':
-          case 'ArrowDown': {
-            const reverseOffset = isReverse() ? -1 : 1;
-            if ($event.code === 'ArrowUp') {
-              navigateBy(-1 * reverseOffset, $event);
-            } else {
-              navigateBy(1 * reverseOffset, $event);
+          case 'ArrowDown':
+            {
+              const reverseOffset = isReverse() ? -1 : 1;
+              if ($event.code === 'ArrowUp') {
+                navigateBy(-1 * reverseOffset, $event);
+              } else {
+                navigateBy(1 * reverseOffset, $event);
+              }
             }
-          }
             break;
           case 'Enter':
           case 'Space':
@@ -195,9 +197,10 @@ export default defineComponent({
       highlightedIndex.value = props.options.findIndex((opt) => opt.key === key);
     };
 
-    const showOptions = () => open.value = true;
+    const showOptions = () => (open.value = true);
 
-    const removeSelected = (removed: NeonSearchOption) => emitInputEvent((props.modelValue as NeonSearchOption[]).filter((v) => v.key !== removed.key));
+    const removeSelected = (removed: NeonSearchOption) =>
+      emitInputEvent((props.modelValue as NeonSearchOption[]).filter((v) => v.key !== removed.key));
 
     const computedOptions = computed(() => {
       return props.options.filter((opt) => opt.label !== filter.value);

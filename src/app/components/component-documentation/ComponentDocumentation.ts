@@ -6,7 +6,7 @@ import type { ExampleModel } from '../example/ExampleModel';
 import type { NeonTabModel } from '@/neon';
 import { NeonTab, NeonTabs } from '@/neon';
 import type { DocumentationModel } from '../ApiModel';
-import type { MenuModel } from '../../Menu';
+import type { MenuModel } from '@/app/Menu';
 
 interface SubDocumentationModel {
   api: DocumentationModel;

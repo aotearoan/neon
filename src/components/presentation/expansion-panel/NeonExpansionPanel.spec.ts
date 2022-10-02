@@ -1,9 +1,9 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonExpansionPanel from './NeonExpansionPanel.vue';
-import { NeonVerticalPosition } from '../../../common/enums/NeonVerticalPosition';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { NeonVerticalPosition } from '@/common/enums/NeonVerticalPosition';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 describe('NeonExpansionPanel', () => {
   const content = 'lol';

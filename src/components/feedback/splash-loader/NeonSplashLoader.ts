@@ -1,7 +1,7 @@
 import { defineComponent, onMounted, ref } from 'vue';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonSplashLoaderSize } from '../../../common/enums/NeonSplashLoaderSize';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonSplashLoaderSize } from '@/common/enums/NeonSplashLoaderSize';
+import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 
 /**
  * Use <strong>NeonSplashLoader</strong> to indicate loading progress to the user. This can be used fullscreen for the

@@ -1,8 +1,8 @@
 import { NeonActionMenu, NeonCard, NeonCardBody } from '@/neon';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import type { MenuModel } from '../../../Menu';
-import { Menu } from '../../../Menu';
-import Editor from '../../../components/editor/Editor.vue';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import Editor from '@/app/components/editor/Editor.vue';
 import { defineComponent, onMounted, ref } from 'vue';
 
 export default defineComponent({
@@ -20,7 +20,7 @@ export default defineComponent({
     const headline = ref('HTML fragment scrolling helper');
     const example = ref('<neon-anchor id="functional-palettes" />');
 
-    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonAnchor'));
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonAnchor')));
 
     return {
       menuModel,

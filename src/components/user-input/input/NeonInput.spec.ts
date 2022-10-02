@@ -1,10 +1,10 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonInput from './NeonInput.vue';
-import { NeonInputType } from '../../../common/enums/NeonInputType';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonState } from '../../../common/enums/NeonState';
+import { NeonInputType } from '@/common/enums/NeonInputType';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonState } from '@/common/enums/NeonState';
 
 describe('NeonInput', () => {
   const modelValue = '';
@@ -12,11 +12,9 @@ describe('NeonInput', () => {
   let harness: RenderResult;
 
   beforeEach(() => {
-    harness = render(NeonInput,
-      {
-        props: { modelValue, id },
-      },
-    );
+    harness = render(NeonInput, {
+      props: { modelValue, id },
+    });
   });
 
   it('renders id', () => {
@@ -73,7 +71,9 @@ describe('NeonInput', () => {
     const { container, rerender } = harness;
     const modelValue = 'xdd';
     await rerender({ modelValue });
-    expect((container.querySelector('.neon-input__textfield') as HTMLInputElement).getAttribute('value')).toEqual(modelValue);
+    expect((container.querySelector('.neon-input__textfield') as HTMLInputElement).getAttribute('value')).toEqual(
+      modelValue,
+    );
   });
 
   it('renders as input by default', () => {

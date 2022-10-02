@@ -1,3 +1,12 @@
 doc-gen.js
 gh-pages-deploy.js
-vue.config.js
+vite.config.ts
+**/*.d.ts
+dist/
+coverage/
+.idea/
+.gihub/
+public/
+test/
+themes/
+.*

@@ -1,7 +1,7 @@
 import { computed, defineComponent } from 'vue';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
-import NeonButton from '../../user-input/button/NeonButton.vue';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
+import NeonButton from '@/components/user-input/button/NeonButton.vue';
 
 /**
  * NeonNote is a component for displaying important information to the user, such as - notes, hints or quotes.
@@ -38,7 +38,6 @@ export default defineComponent({
     'close-note',
   ],
   setup(props, { emit }) {
-
     const iconName = computed(() => {
       if (props.icon) {
         switch (props.color) {

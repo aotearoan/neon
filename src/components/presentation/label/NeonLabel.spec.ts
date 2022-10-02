@@ -1,9 +1,9 @@
 import type { RenderResult } from '@testing-library/vue';
 import { render } from '@testing-library/vue';
 import NeonLabel from './NeonLabel.vue';
-import { NeonLabelSize } from '../../../common/enums/NeonLabelSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonHorizontalPosition } from '../../../common/enums/NeonHorizontalPosition';
+import { NeonLabelSize } from '@/common/enums/NeonLabelSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonHorizontalPosition } from '@/common/enums/NeonHorizontalPosition';
 
 describe('NeonLabel', () => {
   const label = 'test label';

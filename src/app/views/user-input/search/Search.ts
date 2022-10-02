@@ -1,10 +1,10 @@
 import { defineComponent, onMounted, ref } from 'vue';
 import { NeonCard, NeonCardBody, NeonSelect } from '@/neon';
-import type { MenuModel } from '../../../Menu';
-import { Menu } from '../../../Menu';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import { NeonFunctionalColor } from '../../../../common/enums/NeonFunctionalColor';
-import type { NeonSearchOption } from '../../../../common/models/NeonSearchOption';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import type { NeonSearchOption } from '@/common/models/NeonSearchOption';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
@@ -218,7 +218,7 @@ export default defineComponent({
       },
     ]);
 
-    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonSearch'));
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonSearch')));
 
     return {
       menuModel,

@@ -1,7 +1,7 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonNote from './NeonNote.vue';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 describe('NeonNote', () => {
   let harness: RenderResult;
@@ -96,4 +96,3 @@ describe('NeonNote', () => {
     expect(html()).toMatch('<p>test</p>');
   });
 });
-

@@ -7,14 +7,13 @@ describe('NeonPage', () => {
 
   beforeEach(() => {
     harness = render(NeonPage, {
-        props: { open: false },
-        slots: {
-          'top-nav': '<p>top nav</p>',
-          'side-nav': '<p>side nav</p>',
-          content: '<p>contents</p>',
-        },
+      props: { open: false },
+      slots: {
+        'top-nav': '<p>top nav</p>',
+        'side-nav': '<p>side nav</p>',
+        content: '<p>contents</p>',
       },
-    );
+    });
   });
 
   it('renders top-nav slot contents', () => {

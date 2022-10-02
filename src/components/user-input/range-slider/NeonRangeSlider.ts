@@ -1,7 +1,7 @@
 import { computed, defineComponent } from 'vue';
-import { NeonNumberUtils } from '../../../common/utils/NeonNumberUtils';
-import NeonSlider from '../slider/NeonSlider.vue';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { NeonNumberUtils } from '@/common/utils/NeonNumberUtils';
+import NeonSlider from '@/components/slider/NeonSlider.vue';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 /**
  *
@@ -97,7 +97,10 @@ export default defineComponent({
       };
 
       return !props.disableFormatting
-        ? [NeonNumberUtils.formatNumber(props.modelValue[0], options), NeonNumberUtils.formatNumber(props.modelValue[1], options)]
+        ? [
+            NeonNumberUtils.formatNumber(props.modelValue[0], options),
+            NeonNumberUtils.formatNumber(props.modelValue[1], options),
+          ]
         : [`${props.modelValue[0]}`, `${props.modelValue[1]}`];
     });
 

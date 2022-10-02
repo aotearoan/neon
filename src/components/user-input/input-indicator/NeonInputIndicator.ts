@@ -1,6 +1,6 @@
 import { defineComponent } from 'vue';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
+import { NeonSize } from '@/common/enums/NeonSize';
+import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 
 /**
  * Use input indicators to provide additional information for input fields. This can be useful to add the field units or

@@ -1,11 +1,11 @@
 import { defineComponent, nextTick, onMounted, onUnmounted, ref } from 'vue';
-import type { NeonMenuModel } from '../../../common/models/NeonMenuModel';
-import NeonLink from '../link/NeonLink.vue';
-import NeonDropdownMenu from '../dropdown-menu/NeonDropdownMenu.vue';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonSize } from '../../../common/enums/NeonSize';
+import type { NeonMenuModel } from '@/common/models/NeonMenuModel';
+import NeonLink from '@/components/link/NeonLink.vue';
+import NeonDropdownMenu from '@/components/dropdown-menu/NeonDropdownMenu.vue';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonSize } from '@/common/enums/NeonSize';
 import type { NeonPriorityMenuItem } from './NeonPriorityMenuItem';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
+import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import { useRoute } from 'vue-router';
 
 /**
@@ -75,7 +75,9 @@ export default defineComponent({
     };
 
     const initMenuItems = () => {
-      const results = [...props.menu].map((item, index) => menuItem.value && toPriorityMenuItem(item.key, menuItem.value[index]) || null);
+      const results = [...props.menu].map(
+        (item, index) => (menuItem.value && toPriorityMenuItem(item.key, menuItem.value[index])) || null,
+      );
       menuItems.value = results.filter((item) => item !== null) as NeonPriorityMenuItem[];
     };
 
@@ -85,7 +87,11 @@ export default defineComponent({
       emit('click', key);
     };
 
-    const determineVisibleMenuItems = (menuWidth: number, responsiveMenuWidth: number, menuItems: NeonPriorityMenuItem[]) => {
+    const determineVisibleMenuItems = (
+      menuWidth: number,
+      responsiveMenuWidth: number,
+      menuItems: NeonPriorityMenuItem[],
+    ) => {
       const itemWidthSum = menuItems.map((item) => item.width).reduce((acc: number, width) => (acc ? acc + width : 0));
 
       // no responsive menu
@@ -116,8 +122,8 @@ export default defineComponent({
 
     const refreshVisibleMenu = async () => {
       await nextTick();
-      const menuWidth = menuWrapper.value && getWidth(menuWrapper.value) || 0;
-      const responsiveMenuWidth = responsiveButton.value && getWidth(responsiveButton.value) || 0;
+      const menuWidth = (menuWrapper.value && getWidth(menuWrapper.value)) || 0;
+      const responsiveMenuWidth = (responsiveButton.value && getWidth(responsiveButton.value)) || 0;
       visible.value = determineVisibleMenuItems(menuWidth, responsiveMenuWidth, menuItems.value);
 
       responsiveMenuItems.value = props.menu
@@ -135,7 +141,6 @@ export default defineComponent({
         responsiveButton.value.hidden = menuItems.value.length === visible.value.length;
       }
     };
-
 
     onMounted(async () => {
       if (props.priorityMenuEnabled) {

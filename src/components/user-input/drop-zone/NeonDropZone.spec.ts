@@ -1,7 +1,7 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 
-import { NeonState } from '../../../common/enums/NeonState';
+import { NeonState } from '@/common/enums/NeonState';
 import NeonDropZone from './NeonDropZone.vue';
 
 describe('NeonDropZone', () => {
@@ -44,7 +44,6 @@ describe('NeonDropZone', () => {
     await rerender({ state: NeonState.Loading });
     expect(container.querySelector('.neon-drop-zone--state-loading')).toBeDefined();
   });
-
 
   it('emits files', async () => {
     // given

@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue';
-import NeonIcon from '../../../presentation/icon/NeonIcon.vue';
+import NeonIcon from '@/app/presentation/icon/NeonIcon.vue';
 import type { NeonToastModel } from '../NeonToastModel';
-import type { NeonVerticalPosition } from '../../../../common/enums/NeonVerticalPosition';
+import type { NeonVerticalPosition } from '@/common/enums/NeonVerticalPosition';
 
 /**
  * This is an internal component for rendering alerts.
@@ -17,7 +17,10 @@ export default defineComponent({
   },
   setup(props, { emit }) {
     const closeMessage = (id: number) => {
-      emit('update:modelValue', props.modelValue.filter((msg) => msg.id !== id));
+      emit(
+        'update:modelValue',
+        props.modelValue.filter((msg) => msg.id !== id),
+      );
     };
 
     return {

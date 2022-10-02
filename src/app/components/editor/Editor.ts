@@ -13,8 +13,8 @@ import 'prismjs/themes/prism-tomorrow.css';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import Normalizer from 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace';
-import { NeonClipboardService } from '../../../common/utils/NeonClipboardService';
-import { NeonToastService } from '../../../common/utils/NeonToastService';
+import { NeonClipboardService } from '@/common/utils/NeonClipboardService';
+import { NeonToastService } from '@/common/utils/NeonToastService';
 import { NeonButton, NeonIcon } from '@/neon';
 
 export default defineComponent({
@@ -32,7 +32,6 @@ export default defineComponent({
     ghLink: { type: String, default: null },
   },
   setup(props, { emit }) {
-
     const clipboard = ref(NeonClipboardService);
 
     onMounted(() => {
@@ -47,9 +46,10 @@ export default defineComponent({
 
     const onEdit = (newValue: string) => emit('update:modelValue', newValue);
 
-    const copyText = () => clipboard.value.copyTo(props.modelValue).then(() => {
-      NeonToastService.success({ title: 'Copied text' });
-    });
+    const copyText = () =>
+      clipboard.value.copyTo(props.modelValue).then(() => {
+        NeonToastService.success({ title: 'Copied text' });
+      });
 
     return {
       clipboard,

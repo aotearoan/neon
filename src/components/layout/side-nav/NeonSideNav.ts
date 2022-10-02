@@ -6,14 +6,12 @@ import { defineComponent } from 'vue';
  * side nave had two slots, one for <em>sticky</em> content which remains visible at all times. The other is for
  * <em>scrolling content</em> which is allowed to overflow below the bottom of the page.
  */
-export default defineComponent(
-  {
-    name: 'NeonSideNav',
-    props: {
-      /**
-       * If true, removes the side nav component's padding.
-       */
-      fullWidth: { type: Boolean, default: false },
-    },
+export default defineComponent({
+  name: 'NeonSideNav',
+  props: {
+    /**
+     * If true, removes the side nav component's padding.
+     */
+    fullWidth: { type: Boolean, default: false },
   },
-);
+});

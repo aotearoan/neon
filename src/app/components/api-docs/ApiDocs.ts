@@ -1,7 +1,7 @@
 import { computed, defineComponent } from 'vue';
 import { NeonCard, NeonCardBody, NeonCardHeader, NeonLabel, NeonLink, NeonNote } from '@/neon';
 import type { DocumentationModel, EventModel, PropertyModel, PropTypeModel } from '../ApiModel';
-import { enumList, modelList } from '../../SupportingClasses';
+import { enumList, modelList } from '@/app/SupportingClasses';
 
 export default defineComponent({
   name: 'ApiDocs',
@@ -18,7 +18,6 @@ export default defineComponent({
     componentName: { type: String, required: true },
   },
   setup(props) {
-
     const hasProps = computed(() => props.apiModel.props?.length > 0);
     const hasEvents = computed(() => props.apiModel.events?.length > 0);
     const hasSlots = computed(() => (props.apiModel.slots || []).length > 0);
@@ -52,7 +51,7 @@ export default defineComponent({
       return undefined;
     };
 
-    const lookupLink = (typeName ?: string) => {
+    const lookupLink = (typeName?: string) => {
       if (typeName) {
         const isEnum = enumList.indexOf(typeName) >= 0;
         const isModel = modelList.indexOf(typeName) >= 0;

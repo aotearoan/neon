@@ -1,9 +1,9 @@
 import { fireEvent, render } from '@testing-library/vue';
 import NeonDropdown from './NeonDropdown.vue';
-import { NeonDropdownStyle } from '../../../common/enums/NeonDropdownStyle';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonDropdownPlacement } from '../../../common/enums/NeonDropdownPlacement';
+import { NeonDropdownStyle } from '@/common/enums/NeonDropdownStyle';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
 
 describe('NeonDropdown', () => {
   const label = 'xd';
@@ -277,7 +277,9 @@ describe('NeonDropdown', () => {
     // given
     const { container } = render(NeonDropdown, {
       props: {
-        modelValue: false, label, dropdownStyle: NeonDropdownStyle.SquareBadge,
+        modelValue: false,
+        label,
+        dropdownStyle: NeonDropdownStyle.SquareBadge,
         alternateColor: NeonFunctionalColor.Primary,
       },
     });

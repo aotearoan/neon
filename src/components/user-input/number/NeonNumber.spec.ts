@@ -1,9 +1,9 @@
 import NeonNumber from './NeonNumber.vue';
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonInputMode } from '../../../common/enums/NeonInputMode';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonInputMode } from '@/common/enums/NeonInputMode';
 
 describe('NeonNumber', () => {
   const modelValue = 42;

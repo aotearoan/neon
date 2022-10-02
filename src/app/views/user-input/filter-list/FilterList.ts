@@ -1,8 +1,8 @@
 import { defineComponent, onMounted, ref } from 'vue';
 import { NeonCard, NeonCardBody, NeonCardHeader, NeonList } from '@/neon';
-import type { MenuModel } from '../../../Menu';
-import { Menu } from '../../../Menu';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
 
 export default defineComponent({
   name: 'FilterList',
@@ -85,8 +85,8 @@ export default defineComponent({
     ];
 
     const data = ref({
-      items: items,
-      longItemList: longItemList,
+      items,
+      longItemList,
       smallModel: [items[0].key],
       mediumModel: [items[0].key],
       largeModel: [items[0].key],
@@ -155,7 +155,7 @@ export default defineComponent({
       },
     ]);
 
-    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonFilterList'));
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonFilterList')));
 
     return {
       menuModel,

@@ -1,7 +1,7 @@
 import type { RenderResult } from '@testing-library/vue';
 import { render } from '@testing-library/vue';
 import NeonIcon from './NeonIcon.vue';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 describe('NeonIcon', () => {
   const name = 'check';

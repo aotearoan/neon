@@ -1,6 +1,6 @@
 import NeonBadge from './NeonBadge.vue';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import { render } from '@testing-library/vue';
 
 describe('NeonBadge', () => {

@@ -1,6 +1,6 @@
 <template>
   <div
-    :aria-activedescendant="multiple && modelValue[0] || !multiple && modelValue || null"
+    :aria-activedescendant="(multiple && modelValue[0]) || (!multiple && modelValue) || null"
     :aria-multiselectable="multiple"
     :class="[
       `neon-filter-list--${color}`,

@@ -1,10 +1,10 @@
 import { computed, defineComponent, ref } from 'vue';
-import { NeonInputType } from '../../../common/enums/NeonInputType';
-import { NeonState } from '../../../common/enums/NeonState';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
-import { NeonVueUtils } from '../../../common/utils/NeonVueUtils';
+import { NeonInputType } from '@/common/enums/NeonInputType';
+import { NeonState } from '@/common/enums/NeonState';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
+import { NeonVueUtils } from '@/common/utils/NeonVueUtils';
 
 /**
  * Equivalent of, and wrapper around, an HTML input. Also supports <strong>textarea</strong>.
@@ -206,8 +206,7 @@ export default defineComponent({
 
     const changeValue = (event: InputEvent) => {
       const val = (event.target as HTMLInputElement).value;
-      const v =
-        props.maxlength && val.length > props.maxlength ? val.substring(0, props.maxlength) : val;
+      const v = props.maxlength && val.length > props.maxlength ? val.substring(0, props.maxlength) : val;
       if (props.modelValue !== v) {
         emit('update:modelValue', v);
       }

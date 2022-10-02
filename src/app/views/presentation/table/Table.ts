@@ -1,9 +1,9 @@
 import { defineComponent, onMounted, ref } from 'vue';
 import { NeonCard, NeonCardBody, NeonCardHeader, NeonNote } from '@/neon';
-import Examples from '../../../components/examples/Examples.vue';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import type { MenuModel } from '../../../Menu';
-import { Menu } from '../../../Menu';
+import Examples from '@/app/components/examples/Examples.vue';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names,vue/no-reserved-component-names
@@ -44,7 +44,7 @@ export default defineComponent({
       },
     ]);
 
-    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonTable'));
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonTable')));
 
     return {
       menuModel,

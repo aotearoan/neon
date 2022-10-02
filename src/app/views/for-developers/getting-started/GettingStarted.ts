@@ -1,6 +1,6 @@
 import { defineComponent, ref } from 'vue';
 import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader, NeonLink } from '@/neon';
-import Editor from '../../../components/editor/Editor.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
 export default defineComponent({
   name: 'GettingStarted',

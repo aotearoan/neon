@@ -36,8 +36,7 @@
         <h2 class="neon-h4">Typescript</h2>
         <p>
           <neon-link href="/utils/NeonResponsiveUtils">NeonResponsiveUtils</neon-link>
-          also defines the same breakpoints
-          for use in Typescript/Javascript.
+          also defines the same breakpoints for use in Typescript/Javascript.
         </p>
         <p>
           Using SASS breakpoints should be preferred, however sometimes this is not enough. Use
@@ -54,9 +53,8 @@
           <neon-link href="/layout/grid">NeonGrid</neon-link>
           component.
           <neon-link href="/layout/grid">NeonGrid</neon-link>
-          is a CSS Grid based container designed to help simplify
-          page application layout and responsiveness by abstracting CSS Grid and allowing applications to define this
-          programmatically in Typescript.
+          is a CSS Grid based container designed to help simplify page application layout and responsiveness by
+          abstracting CSS Grid and allowing applications to define this programmatically in Typescript.
         </p>
         <p>
           This provides developers with the benefits of using CSS Grid without dealing with the steep learning curve and

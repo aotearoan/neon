@@ -1,6 +1,6 @@
 import { defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
-import { NeonClosableUtils } from '../../../common/utils/NeonClosableUtils';
-import NeonButton from '../../user-input/button/NeonButton.vue';
+import { NeonClosableUtils } from '@/common/utils/NeonClosableUtils';
+import NeonButton from '@/components/user-input/button/NeonButton.vue';
 
 /**
  * A modal dialog component. This will be rendered above the content of the main window and can either be dismissed by the user or configured to require user interaction before dismissal.
@@ -43,7 +43,7 @@ export default defineComponent({
 
     onMounted(() => {
       if (props.dismissible) {
-        closableUtils.value = modal.value && new NeonClosableUtils(modal.value, close) || null;
+        closableUtils.value = (modal.value && new NeonClosableUtils(modal.value, close)) || null;
       }
     });
 
@@ -51,13 +51,15 @@ export default defineComponent({
       closableUtils.value?.destroy();
     });
 
-    watch(() => props.open,
+    watch(
+      () => props.open,
       (value) => {
         if (value) {
           closableUtils.value?.open();
         }
       },
-      { immediate: true });
+      { immediate: true },
+    );
 
     return {
       modal,

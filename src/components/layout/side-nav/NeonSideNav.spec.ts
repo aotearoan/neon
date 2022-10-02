@@ -7,10 +7,9 @@ describe('NeonSideNav', () => {
 
   beforeEach(() => {
     harness = render(NeonSideNav, {
-        props: {},
-        slots: { sticky: '<p>sticky</p>', scrolling: '<p>scrolling</p>' },
-      },
-    );
+      props: {},
+      slots: { sticky: '<p>sticky</p>', scrolling: '<p>scrolling</p>' },
+    });
   });
 
   it('renders sticky slot contents', () => {

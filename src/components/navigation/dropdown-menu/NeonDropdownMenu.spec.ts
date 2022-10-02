@@ -1,7 +1,7 @@
 import { render } from '@testing-library/vue';
 import NeonDropdownMenu from './NeonDropdownMenu.vue';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonSize } from '../../../common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonSize } from '@/common/enums/NeonSize';
 
 describe('NeonDropdownMenu', () => {
   const model = [
@@ -179,8 +179,7 @@ describe('NeonDropdownMenu', () => {
     });
     // when / then
     expect(
-      container.querySelector(
-        '.neon-dropdown-menu__item:first-child .neon-dropdown-menu__item-label')?.textContent,
+      container.querySelector('.neon-dropdown-menu__item:first-child .neon-dropdown-menu__item-label')?.textContent,
     ).toEqual(model[0].label);
   });
 
@@ -218,8 +217,12 @@ describe('NeonDropdownMenu', () => {
       global: { stubs: ['router-link'] },
     });
     // when / then
-    expect(container.querySelector('.neon-dropdown-menu__item:first-child.neon-dropdown-menu__item--group-title')).toBeDefined();
-    expect(container.querySelector('.neon-dropdown-menu__item:last-child.neon-dropdown-menu__item--grouped')).toBeDefined();
+    expect(
+      container.querySelector('.neon-dropdown-menu__item:first-child.neon-dropdown-menu__item--group-title'),
+    ).toBeDefined();
+    expect(
+      container.querySelector('.neon-dropdown-menu__item:last-child.neon-dropdown-menu__item--grouped'),
+    ).toBeDefined();
   });
 
   it('emits click event', () => {
@@ -231,7 +234,11 @@ describe('NeonDropdownMenu', () => {
       global: { stubs: ['router-link'] },
     });
     // when
-    (container.querySelector('.neon-dropdown-menu__item:first-child .neon-dropdown-menu__item-container') as HTMLElement)?.click();
+    (
+      container.querySelector(
+        '.neon-dropdown-menu__item:first-child .neon-dropdown-menu__item-container',
+      ) as HTMLElement
+    )?.click();
     // then
     expect(emitted().click[0]).toEqual([model[0]]);
   });
@@ -245,7 +252,9 @@ describe('NeonDropdownMenu', () => {
       global: { stubs: ['router-link'] },
     });
     // when
-    (container.querySelector('.neon-dropdown-menu__item:last-child .neon-dropdown-menu__item-container') as HTMLElement)?.click();
+    (
+      container.querySelector('.neon-dropdown-menu__item:last-child .neon-dropdown-menu__item-container') as HTMLElement
+    )?.click();
     // then
     expect(emitted().click).toBeUndefined();
   });

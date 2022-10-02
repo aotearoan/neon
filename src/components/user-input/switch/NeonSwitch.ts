@@ -1,9 +1,9 @@
 import { computed, defineComponent, ref, watch } from 'vue';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonSwitchStyle } from '../../../common/enums/NeonSwitchStyle';
-import { NeonHorizontalPosition } from '../../../common/enums/NeonHorizontalPosition';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonSwitchStyle } from '@/common/enums/NeonSwitchStyle';
+import { NeonHorizontalPosition } from '@/common/enums/NeonHorizontalPosition';
+import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 
 /**
  * <p>
@@ -67,7 +67,8 @@ export default defineComponent({
   setup(props, { attrs, emit }) {
     const checkbox = ref<HTMLInputElement | null>(null);
 
-    watch(() => props.indeterminate,
+    watch(
+      () => props.indeterminate,
       (value) => {
         if (checkbox.value) {
           checkbox.value.indeterminate = value;
@@ -111,5 +112,3 @@ export default defineComponent({
     };
   },
 });
-
-

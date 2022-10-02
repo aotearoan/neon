@@ -1,8 +1,8 @@
 import { defineComponent } from 'vue';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import type { NeonListItem } from '../../../common/models/NeonListItem';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
+import { NeonSize } from '@/common/enums/NeonSize';
+import type { NeonListItem } from '@/common/models/NeonListItem';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 
 /**
  * Renders a list of removable items. This can be used as an alternative to removable chips where a vertical list is

@@ -1,6 +1,6 @@
 import NeonSplashLoader from './NeonSplashLoader.vue';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonSize } from '../../../common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonSize } from '@/common/enums/NeonSize';
 import { render } from '@testing-library/vue';
 
 describe('NeonSplashLoader', () => {

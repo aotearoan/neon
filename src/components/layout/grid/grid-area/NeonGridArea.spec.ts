@@ -8,10 +8,9 @@ describe('NeonGridArea', () => {
 
   beforeEach(() => {
     harness = render(NeonGridArea, {
-        props: { id },
-        slots: { default: '<p>test</p>' },
-      },
-    );
+      props: { id },
+      slots: { default: '<p>test</p>' },
+    });
   });
 
   it('renders default slot contents', () => {

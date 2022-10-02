@@ -1,9 +1,9 @@
 import { computed, defineComponent, onMounted, ref } from 'vue';
-import { NeonIconRegistry } from '../../../../common/utils/NeonIconRegistry';
+import { NeonIconRegistry } from '@/common/utils/NeonIconRegistry';
 import { NeonCard, NeonCardBody, NeonCardHeader, NeonIcon, NeonLink, NeonNote } from '@/neon';
-import type { MenuModel } from '../../../Menu';
-import { Menu } from '../../../Menu';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
@@ -34,7 +34,7 @@ export default defineComponent({
 
     const icons = computed(() => NeonIconRegistry.list());
 
-    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonIcon'));
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonIcon')));
 
     return {
       menuModel,

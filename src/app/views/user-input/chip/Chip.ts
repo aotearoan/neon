@@ -1,11 +1,11 @@
 import { defineComponent, onMounted, ref } from 'vue';
-import type { MenuModel } from '../../../Menu';
-import { Menu } from '../../../Menu';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import NeonCardBody from '../../../../components/layout/card/body/NeonCardBody.vue';
-import NeonCard from '../../../../components/layout/card/NeonCard.vue';
-import NeonToggle from '../../../../components/user-input/toggle/NeonToggle.vue';
-import NeonChip from '../../../../components/user-input/chip/NeonChip.vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import NeonCardBody from '@/components/layout/card/body/NeonCardBody.vue';
+import NeonCard from '@/components/layout/card/NeonCard.vue';
+import NeonToggle from '@/components/user-input/toggle/NeonToggle.vue';
+import NeonChip from '@/components/user-input/chip/NeonChip.vue';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
@@ -65,7 +65,7 @@ export default defineComponent({
       {
         title: 'Chip actions',
         template: chipActions,
-        data: data,
+        data,
       },
       {
         title: 'Chip with icon',
@@ -73,7 +73,7 @@ export default defineComponent({
       },
     ]);
 
-    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonChip'));
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonChip')));
 
     return {
       menuModel,

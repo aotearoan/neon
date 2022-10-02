@@ -1,6 +1,6 @@
 import { defineComponent, ref } from 'vue';
 import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader, NeonLink } from '@/neon';
-import Editor from '../../../components/editor/Editor.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
@@ -14,7 +14,6 @@ export default defineComponent({
     Editor,
   },
   setup() {
-
     const sassExample = ref(`@use '~@aotearoan/neon/themes/classic/theme';
 
 @include responsive(larger-than-tablet) {

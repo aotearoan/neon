@@ -15,10 +15,9 @@
         <p>
           Place
           <neon-link href="/layout/grid#api">NeonGridArea</neon-link>
-          components inside the NeonGrid default slot,
-          providing each with a unique id. Then create the <em>layouts</em> property of NeonGrid, using these ids,
-          describing the desired layouts at different breakpoints. Use the <em>All</em> breakpoint to define a single
-          global layout.
+          components inside the NeonGrid default slot, providing each with a unique id. Then create the
+          <em>layouts</em> property of NeonGrid, using these ids, describing the desired layouts at different
+          breakpoints. Use the <em>All</em> breakpoint to define a single global layout.
         </p>
         <p>
           Here is an example layout for a grid with 4 NeonGridAreas with ids <em>area1</em>, <em>area2</em>,

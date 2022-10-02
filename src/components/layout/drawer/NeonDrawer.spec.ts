@@ -1,17 +1,16 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonDrawer from './NeonDrawer.vue';
-import { NeonPosition } from '../../../common/enums/NeonPosition';
+import { NeonPosition } from '@/common/enums/NeonPosition';
 
 describe('NeonDrawer', () => {
   let harness: RenderResult;
 
   beforeEach(() => {
     harness = render(NeonDrawer, {
-        props: { open: false },
-        slots: { default: '<p>test</p>' },
-      },
-    );
+      props: { open: false },
+      slots: { default: '<p>test</p>' },
+    });
   });
 
   it('renders default slot contents', () => {
@@ -78,7 +77,7 @@ describe('NeonDrawer', () => {
 
   it('emits close event on outside click', async () => {
     // given
-    const { emitted } = harness = render(NeonDrawer, { props: { open: true } });
+    const { emitted } = (harness = render(NeonDrawer, { props: { open: true } }));
     // when / then
     await fireEvent.mouseDown(document);
     expect(emitted().close).toEqual([[]]);
@@ -86,7 +85,7 @@ describe('NeonDrawer', () => {
 
   it('does not emit close event on inside click', async () => {
     // given
-    const { baseElement, emitted } = harness = render(NeonDrawer, { props: { open: true } });
+    const { baseElement, emitted } = (harness = render(NeonDrawer, { props: { open: true } }));
     // when / then
     await fireEvent.mouseDown(baseElement);
     expect(emitted().close).toEqual([[]]);

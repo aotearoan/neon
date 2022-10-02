@@ -1,7 +1,7 @@
 import { computed, defineComponent } from 'vue';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 
 /**
  * <p>

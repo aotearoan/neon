@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue';
-import type { NeonActionMenuModel } from '../../../common/models/NeonActionMenuModel';
-import NeonLink from '../../navigation/link/NeonLink.vue';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import type { NeonActionMenuModel } from '@/common/models/NeonActionMenuModel';
+import NeonLink from '@/components/navigation/link/NeonLink.vue';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 /**
  * An action menu is designed for the NeonSideNav component and is designed to behave like tabs where selecting a different item switches the contents in the main page.

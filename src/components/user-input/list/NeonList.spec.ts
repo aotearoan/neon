@@ -1,7 +1,7 @@
 import NeonList from './NeonList.vue';
-import type { NeonListItem } from '../../../common/models/NeonListItem';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import type { NeonListItem } from '@/common/models/NeonListItem';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 

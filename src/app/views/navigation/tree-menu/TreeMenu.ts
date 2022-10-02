@@ -1,8 +1,8 @@
 import { defineComponent, onMounted, ref } from 'vue';
 import { NeonCard, NeonCardBody, NeonTreeMenu } from '@/neon';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import type { MenuModel } from '../../../Menu';
-import { Menu } from '../../../Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
 
 export default defineComponent({
   name: 'TreeMenu',
@@ -85,7 +85,7 @@ export default defineComponent({
       },
     ]);
 
-    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonTreeMenu'));
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonTreeMenu')));
 
     return {
       menuModel,

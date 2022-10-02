@@ -1,20 +1,18 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonChip from './NeonChip.vue';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonChipAction } from '../../../common/enums/NeonChipAction';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonChipAction } from '@/common/enums/NeonChipAction';
 
 describe('NeonChip', () => {
   const label = 'xdd';
   let harness: RenderResult;
 
   beforeEach(() => {
-    harness = render(NeonChip,
-      {
-        props: { label },
-      },
-    );
+    harness = render(NeonChip, {
+      props: { label },
+    });
   });
 
   it('renders label', () => {

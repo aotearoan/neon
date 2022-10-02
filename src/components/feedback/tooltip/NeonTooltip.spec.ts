@@ -1,9 +1,9 @@
 import type { RenderResult } from '@testing-library/vue';
 import { render } from '@testing-library/vue';
 import NeonTooltip from './NeonTooltip.vue';
-import { NeonTooltipStyle } from '../../../common/enums/NeonTooltipStyle';
-import { NeonOutlineStyle } from '../../../common/enums/NeonOutlineStyle';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { NeonTooltipStyle } from '@/common/enums/NeonTooltipStyle';
+import { NeonOutlineStyle } from '@/common/enums/NeonOutlineStyle';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 describe('NeonTooltip', () => {
   const slotValue = 'lol';
@@ -109,7 +109,6 @@ describe('NeonTooltip', () => {
     // when / then
     expect(html()).toMatch('neon-tooltip--outline-color-info');
   });
-
 
   it('is closed by default', () => {
     // given

@@ -1,6 +1,6 @@
 import { defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
-import { NeonPosition } from '../../../common/enums/NeonPosition';
-import { NeonClosableUtils } from '../../../common/utils/NeonClosableUtils';
+import { NeonPosition } from '@/common/enums/NeonPosition';
+import { NeonClosableUtils } from '@/common/utils/NeonClosableUtils';
 
 /**
  * A drawer is a slide out panel for representing data which may be secondary or not fit on the main screen. Examples
@@ -54,13 +54,13 @@ export default defineComponent({
 
     onMounted(() => {
       if (props.dismissible) {
-        closableUtils.value = drawer.value && new NeonClosableUtils(drawer.value, close) || null;
+        closableUtils.value = (drawer.value && new NeonClosableUtils(drawer.value, close)) || null;
       }
     });
 
     watch(
       () => props.open,
-      (value) => value ? closableUtils.value?.open() : closableUtils.value?.close(),
+      (value) => (value ? closableUtils.value?.open() : closableUtils.value?.close()),
       { immediate: true },
     );
 

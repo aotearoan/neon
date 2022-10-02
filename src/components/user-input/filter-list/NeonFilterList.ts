@@ -1,9 +1,9 @@
 import { computed, defineComponent, ref } from 'vue';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
-import type { NeonFilterListItem } from '../../../common/models/NeonFilterListItem';
-import NeonLink from '../../navigation/link/NeonLink.vue';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
+import type { NeonFilterListItem } from '@/common/models/NeonFilterListItem';
+import NeonLink from '@/components/navigation/link/NeonLink.vue';
 
 /**
  * <p><strong>NeonFilterList</strong> is an alternative component to a select where the values are displayed in a
@@ -65,7 +65,9 @@ export default defineComponent({
 
     const selected = computed((): Record<string, boolean> => {
       const result: Record<string, boolean> = {};
-      (props.multiple ? (props.modelValue as string[]) : [props.modelValue as string]).forEach((v) => (result[v] = true));
+      (props.multiple ? (props.modelValue as string[]) : [props.modelValue as string]).forEach(
+        (v) => (result[v] = true),
+      );
       return result;
     });
 
@@ -77,9 +79,11 @@ export default defineComponent({
         : props.items;
     });
 
-    const computedShowMoreLabel = computed(() => props.showMoreLabel.replace('{count}', `${props.items.length - visibleItems.value.length}`));
+    const computedShowMoreLabel = computed(() =>
+      props.showMoreLabel.replace('{count}', `${props.items.length - visibleItems.value.length}`),
+    );
 
-    const toggleShowAllLabel = computed(() => showAll.value ? props.showLessLabel : computedShowMoreLabel.value);
+    const toggleShowAllLabel = computed(() => (showAll.value ? props.showLessLabel : computedShowMoreLabel.value));
 
     const emitInput = (value: string | string[]) => {
       emit('update:modelValue', value);

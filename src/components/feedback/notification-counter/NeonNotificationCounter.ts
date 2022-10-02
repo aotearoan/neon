@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 /**
  * A component for displaying notification counts to the user.

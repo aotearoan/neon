@@ -1,7 +1,6 @@
 import { NeonEventBus } from './NeonEventBus';
 
 describe('NeonEventBus', () => {
-
   it('emits an event to a callback', () => {
     // given
     const callback = jest.fn();

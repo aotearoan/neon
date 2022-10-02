@@ -1,9 +1,9 @@
 import { defineComponent } from 'vue';
-import { NeonVerticalPosition } from '../../../common/enums/NeonVerticalPosition';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import NeonExpansionIndicator from '../expansion-indicator/NeonExpansionIndicator.vue';
-import NeonIcon from '../icon/NeonIcon.vue';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { NeonVerticalPosition } from '@/common/enums/NeonVerticalPosition';
+import { NeonSize } from '@/common/enums/NeonSize';
+import NeonExpansionIndicator from '@/components/expansion-indicator/NeonExpansionIndicator.vue';
+import NeonIcon from '@/components/icon/NeonIcon.vue';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 /**
  * <p>Expansion panels are used to show and hide content that may be less important or too large to display on screen

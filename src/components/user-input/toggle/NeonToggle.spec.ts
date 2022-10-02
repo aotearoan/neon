@@ -1,10 +1,10 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonToggle from './NeonToggle.vue';
-import { NeonToggleStyle } from '../../../common/enums/NeonToggleStyle';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonOrientation } from '../../../common/enums/NeonOrientation';
+import { NeonToggleStyle } from '@/common/enums/NeonToggleStyle';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonOrientation } from '@/common/enums/NeonOrientation';
 
 describe('NeonToggle', () => {
   const name = 'xd';

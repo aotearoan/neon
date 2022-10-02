@@ -1,15 +1,8 @@
 import { defineComponent, onMounted, ref } from 'vue';
-import {
-  NeonCard,
-  NeonCardBody,
-  NeonCardHeader,
-  NeonFieldGroup,
-  NeonInput,
-  NeonInputIndicator,
-} from '@/neon';
-import type { MenuModel } from '../../../Menu';
-import { Menu } from '../../../Menu';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonFieldGroup, NeonInput, NeonInputIndicator } from '@/neon';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
 
 export default defineComponent({
   name: 'InputIndicator',
@@ -56,7 +49,7 @@ export default defineComponent({
       },
     ]);
 
-    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonInputIndicator'));
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonInputIndicator')));
 
     return {
       menuModel,

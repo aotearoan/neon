@@ -1,8 +1,8 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonSwitchStyle } from '../../../common/enums/NeonSwitchStyle';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonSwitchStyle } from '@/common/enums/NeonSwitchStyle';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import NeonSwitch from './NeonSwitch.vue';
 
 describe('NeonSwitch', () => {

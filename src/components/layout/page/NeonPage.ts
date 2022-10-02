@@ -7,7 +7,6 @@ import { defineComponent, onMounted, onUnmounted } from 'vue';
 export default defineComponent({
   name: 'NeonPage',
   setup() {
-
     const handleResize = () => {
       const vh = (window.innerHeight * 0.01).toFixed(2);
       document.documentElement.style.setProperty('--vh', `${vh}px`);

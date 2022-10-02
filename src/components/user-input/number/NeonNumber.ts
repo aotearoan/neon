@@ -1,12 +1,12 @@
 import { computed, defineComponent, ref } from 'vue';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonInputMode } from '../../../common/enums/NeonInputMode';
-import NeonButton from '../button/NeonButton.vue';
-import NeonFieldGroup from '../field-group/NeonFieldGroup.vue';
-import NeonInput from '../input/NeonInput.vue';
-import { NeonNumberUtils } from '../../../common/utils/NeonNumberUtils';
-import { NeonVueUtils } from '../../../common/utils/NeonVueUtils';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonInputMode } from '@/common/enums/NeonInputMode';
+import NeonButton from '@/components/button/NeonButton.vue';
+import NeonFieldGroup from '@/components/field-group/NeonFieldGroup.vue';
+import NeonInput from '@/components/input/NeonInput.vue';
+import { NeonNumberUtils } from '@/common/utils/NeonNumberUtils';
+import { NeonVueUtils } from '@/common/utils/NeonVueUtils';
 
 /**
  * <p>
@@ -123,7 +123,9 @@ export default defineComponent({
     });
 
     const computedRawDecimals = computed(() => {
-      return props.percentage && computedDecimals.value !== undefined ? computedDecimals.value + 2 : computedDecimals.value;
+      return props.percentage && computedDecimals.value !== undefined
+        ? computedDecimals.value + 2
+        : computedDecimals.value;
     });
 
     const computedValue = computed(() => {
@@ -133,12 +135,12 @@ export default defineComponent({
 
     const formattedValue = computed(() => {
       return props.modelValue !== null &&
-      (props.valueTemplate !== undefined || computedDecimals.value !== undefined || props.percentage !== undefined)
+        (props.valueTemplate !== undefined || computedDecimals.value !== undefined || props.percentage !== undefined)
         ? NeonNumberUtils.formatNumber(props.modelValue, {
-          decimals: computedDecimals.value,
-          format: props.valueTemplate,
-          percentage: props.percentage,
-        })
+            decimals: computedDecimals.value,
+            format: props.valueTemplate,
+            percentage: props.percentage,
+          })
         : props.modelValue;
     });
 
@@ -170,8 +172,8 @@ export default defineComponent({
       }
     };
 
-    const onFocus = () => focus.value = true;
-    const onBlur = () => focus.value = false;
+    const onFocus = () => (focus.value = true);
+    const onBlur = () => (focus.value = false);
 
     return {
       focus,

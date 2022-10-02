@@ -1,8 +1,8 @@
 import { defineComponent } from 'vue';
-import { NeonAlertLevel } from '../../../../common/enums/NeonAlertLevel';
-import type { NeonAlertPlacement } from '../../../../common/enums/NeonAlertPlacement';
-import NeonIcon from '../../../presentation/icon/NeonIcon.vue';
-import NeonLink from '../../../navigation/link/NeonLink.vue';
+import { NeonAlertLevel } from '@/common/enums/NeonAlertLevel';
+import type { NeonAlertPlacement } from '@/common/enums/NeonAlertPlacement';
+import NeonIcon from '@/app/presentation/icon/NeonIcon.vue';
+import NeonLink from '@/app/navigation/link/NeonLink.vue';
 import type { NeonAlertModel } from '../NeonAlertModel';
 
 /**
@@ -20,7 +20,10 @@ export default defineComponent({
   },
   setup(props, { emit }) {
     const closeMessage = (id: number) => {
-      emit('update:modelValue', props.modelValue.filter((msg) => msg.id !== id));
+      emit(
+        'update:modelValue',
+        props.modelValue.filter((msg) => msg.id !== id),
+      );
     };
 
     const icon = (level: NeonAlertLevel) => {

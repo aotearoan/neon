@@ -1,18 +1,17 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonToastContainer from './NeonToastContainer.vue';
-import { NeonAlertPlacement } from '../../../../common/enums/NeonAlertPlacement';
-import { NeonAlertLevel } from '../../../../common/enums/NeonAlertLevel';
+import { NeonAlertPlacement } from '@/common/enums/NeonAlertPlacement';
+import { NeonAlertLevel } from '@/common/enums/NeonAlertLevel';
 
 describe('NeonToastContainer', () => {
   const msg = { id: 42, level: NeonAlertLevel.Info, title: 'test', dismissible: true };
   let harness: RenderResult;
 
   beforeEach(() => {
-    harness = render(NeonToastContainer,
-      {
-        props: { modelValue: [msg], placement: NeonAlertPlacement.TopLeft },
-      });
+    harness = render(NeonToastContainer, {
+      props: { modelValue: [msg], placement: NeonAlertPlacement.TopLeft },
+    });
   });
 
   it('removes toast on close', async () => {

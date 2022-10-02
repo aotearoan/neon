@@ -1,10 +1,10 @@
 import { computed, defineComponent, ref } from 'vue';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonState } from '../../../common/enums/NeonState';
-import NeonButton from '../button/NeonButton.vue';
-import NeonInput from '../input/NeonInput.vue';
-import NeonList from '../list/NeonList.vue';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonState } from '@/common/enums/NeonState';
+import NeonButton from '@/components/button/NeonButton.vue';
+import NeonInput from '@/components/input/NeonInput.vue';
+import NeonList from '@/components/list/NeonList.vue';
 
 /**
  * A file upload component. This is a wrapper around an HTML file input. It can display multiple files as well as
@@ -105,7 +105,9 @@ export default defineComponent({
     const onInput = (event: Event) => {
       if (event?.target) {
         const theFiles = (event.target as HTMLInputElement).files;
-        const newFiles = theFiles ? Array.from(theFiles).filter((file) => !files.value.find((f) => f.name === file.name)) : [];
+        const newFiles = theFiles
+          ? Array.from(theFiles).filter((file) => !files.value.find((f) => f.name === file.name))
+          : [];
         files.value = props.multiple ? [...files.value, ...newFiles] : newFiles;
         emitFiles();
       }

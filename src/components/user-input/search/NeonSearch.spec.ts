@@ -1,9 +1,9 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonSearch from './NeonSearch.vue';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import type { NeonSearchOption } from '../../../common/models/NeonSearchOption';
-import { NeonSize } from '../../../common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import type { NeonSearchOption } from '@/common/models/NeonSearchOption';
+import { NeonSize } from '@/common/enums/NeonSize';
 
 describe('NeonSearch', () => {
   const modelValue = '';

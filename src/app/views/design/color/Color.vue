@@ -268,10 +268,10 @@
           </div>
         </div>
         <neon-note color="warn"
-        ><span
-        ><strong>Note: </strong> the <em>low-contrast</em> palette doesn't provide adequate contrast ratio support
+          ><span
+            ><strong>Note: </strong> the <em>low-contrast</em> palette doesn't provide adequate contrast ratio support
             for accessibility at all color steps. Use with care.</span
-        ></neon-note
+          ></neon-note
         >
       </neon-card-body>
       <neon-card-body>

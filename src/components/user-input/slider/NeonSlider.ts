@@ -1,7 +1,7 @@
 import { computed, defineComponent } from 'vue';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonNumberUtils } from '../../../common/utils/NeonNumberUtils';
-import { NeonVueUtils } from '../../../common/utils/NeonVueUtils';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonNumberUtils } from '@/common/utils/NeonNumberUtils';
+import { NeonVueUtils } from '@/common/utils/NeonVueUtils';
 
 /**
  * <p>
@@ -101,18 +101,18 @@ export default defineComponent({
     const formatNumber = (value: number) => {
       return !props.disableFormatting
         ? NeonNumberUtils.formatNumber(value, {
-          decimals: props.decimals,
-          format: props.valueTemplate,
-          percentage: props.percentage,
-        })
+            decimals: props.decimals,
+            format: props.valueTemplate,
+            percentage: props.percentage,
+          })
         : value;
     };
 
     const formattedMin = computed(() => formatNumber(props.min));
-    const computedMax = computed(() => props.max !== undefined ? props.max : props.percentage ? 1 : 100);
+    const computedMax = computed(() => (props.max !== undefined ? props.max : props.percentage ? 1 : 100));
     const formattedMax = computed(() => formatNumber(computedMax.value));
     const formattedValue = computed(() => formatNumber(props.modelValue));
-    const computedStep = computed(() => props.step !== undefined ? props.step : props.percentage ? 0.01 : 1);
+    const computedStep = computed(() => (props.step !== undefined ? props.step : props.percentage ? 0.01 : 1));
 
     const changeValue = (event: Event) => {
       const input = event.target as HTMLInputElement;

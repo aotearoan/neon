@@ -1,7 +1,7 @@
 import { defineComponent, onMounted, ref } from 'vue';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import type { MenuModel } from '../../../Menu';
-import { Menu } from '../../../Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
 import { NeonCard, NeonCardBody, NeonDrawer } from '@/neon';
 
 export default defineComponent({
@@ -69,7 +69,7 @@ export default defineComponent({
       },
     ]);
 
-    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonDrawer'));
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonDrawer')));
 
     return {
       menuModel,

@@ -1,10 +1,10 @@
 import { defineComponent, onMounted, ref } from 'vue';
-import type { MenuModel } from '../../../Menu';
-import { Menu } from '../../../Menu';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import NeonNote from '../../../../components/feedback/note/NeonNote.vue';
-import NeonCardBody from '../../../../components/layout/card/body/NeonCardBody.vue';
-import NeonCard from '../../../../components/layout/card/NeonCard.vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import NeonNote from '@/app/components/feedback/note/NeonNote.vue';
+import NeonCardBody from '@/app/components/layout/card/body/NeonCardBody.vue';
+import NeonCard from '@/app/components/layout/card/NeonCard.vue';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
@@ -62,7 +62,7 @@ export default defineComponent({
       },
     ]);
 
-    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonNote'));
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonNote')));
 
     return {
       menuModel,

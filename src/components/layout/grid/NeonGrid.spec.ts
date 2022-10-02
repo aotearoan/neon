@@ -1,7 +1,7 @@
 import type { RenderResult } from '@testing-library/vue';
 import { render } from '@testing-library/vue';
 import NeonGrid from './NeonGrid.vue';
-import { NeonResponsive } from '../../../common/enums/NeonResponsive';
+import { NeonResponsive } from '@/common/enums/NeonResponsive';
 
 describe('NeonGrid', () => {
   const id = 'grid1';
@@ -18,10 +18,9 @@ describe('NeonGrid', () => {
 
   beforeEach(() => {
     harness = render(NeonGrid, {
-        props,
-        slots: { default: '<p>test</p>' },
-      },
-    );
+      props,
+      slots: { default: '<p>test</p>' },
+    });
   });
 
   it('renders default slot contents', () => {

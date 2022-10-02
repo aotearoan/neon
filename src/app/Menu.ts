@@ -1,8 +1,8 @@
 import { enumList, modelList, utilsList } from './SupportingClasses';
 
-export interface MenuGroup {
-  group: string;
-  children: MenuModel[];
+export interface SubComponent {
+  path: string;
+  name: string;
 }
 
 export interface MenuModel {
@@ -16,9 +16,9 @@ export interface MenuModel {
   children?: MenuModel[];
 }
 
-export interface SubComponent {
-  path: string;
-  name: string;
+export interface MenuGroup {
+  group: string;
+  children: MenuModel[];
 }
 
 export class Menu {
@@ -112,7 +112,8 @@ export class Menu {
               },
               {
                 path: 'dialog',
-                page: 'Dialog',
+                page: 'AppDialog',
+                name: 'Dialog',
                 keywords: 'modal alert',
                 component: 'NeonDialog',
               },

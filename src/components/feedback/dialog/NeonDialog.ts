@@ -1,9 +1,9 @@
 import { defineComponent } from 'vue';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import NeonButton from '../../user-input/button/NeonButton.vue';
-import NeonCard from '../../layout/card/NeonCard.vue';
-import NeonCardBody from '../../layout/card/body/NeonCardBody.vue';
-import NeonModal from '../../layout/modal/NeonModal.vue';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import NeonButton from '@/components/user-input/button/NeonButton.vue';
+import NeonCard from '@/components/layout/card/NeonCard.vue';
+import NeonCardBody from '@/components/layout/card/body/NeonCardBody.vue';
+import NeonModal from '@/components/layout/modal/NeonModal.vue';
 
 /**
  * A dialog component for confirming simple actions. This will be rendered above the content of the main window and

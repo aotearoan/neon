@@ -19,10 +19,7 @@
     <div class="neon-card-body" :class="{ 'neon-card-body--fullWidth': example.fixedContent }">
       <div v-if="example.tip" class="neon-note neon-note--info" role="note">
         <div class="neon-note__container">
-          <div
-            class="neon-icon neon-icon--info neon-note__icon"
-            v-html="infoIcon"
-          ></div>
+          <div class="neon-icon neon-icon--info neon-note__icon" v-html="infoIcon"></div>
           <span><strong>Tip:</strong>{{ ` ${example.tip}` }}</span>
         </div>
       </div>

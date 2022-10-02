@@ -1,7 +1,7 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonSlider from './NeonSlider.vue';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 describe('NeonSlider', () => {
   const modelValue = 5;
@@ -112,7 +112,9 @@ describe('NeonSlider', () => {
     const { container, rerender } = harness;
     await rerender({ min, max });
     // when / then
-    expect(container.querySelector('.neon-slider')?.getAttribute('style')).toEqual(`--min: ${min}; --max: ${max}; --val: ${modelValue};`);
+    expect(container.querySelector('.neon-slider')?.getAttribute('style')).toEqual(
+      `--min: ${min}; --max: ${max}; --val: ${modelValue};`,
+    );
   });
 
   it('renders formatted output', async () => {
@@ -170,8 +172,12 @@ describe('NeonSlider', () => {
     const { container, rerender } = harness;
     await rerender({ modelValue: value, min, max });
     // when / then
-    expect(container.querySelector('.neon-slider__legend .neon-slider__legend-item:first-child')?.textContent).toEqual('1,000');
-    expect(container.querySelector('.neon-slider__legend .neon-slider__legend-item:last-child')?.textContent).toEqual('99,000');
+    expect(container.querySelector('.neon-slider__legend .neon-slider__legend-item:first-child')?.textContent).toEqual(
+      '1,000',
+    );
+    expect(container.querySelector('.neon-slider__legend .neon-slider__legend-item:last-child')?.textContent).toEqual(
+      '99,000',
+    );
   });
 
   it('renders input attributes', async () => {

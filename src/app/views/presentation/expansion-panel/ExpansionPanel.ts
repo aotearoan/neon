@@ -1,8 +1,8 @@
 import { defineComponent, onMounted, ref } from 'vue';
 import { NeonCard, NeonCardBody, NeonExpansionPanel } from '@/neon';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import type { MenuModel } from '../../../Menu';
-import { Menu } from '../../../Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
 
 export default defineComponent({
   name: 'ExpansionPanel',
@@ -27,7 +27,8 @@ export default defineComponent({
       expanded8: false,
     });
 
-    const content = ref(`<p>Spicy jalapeno bacon ipsum dolor amet biltong porchetta cupim sausage pork loin. Ham porchetta
+    const content =
+      ref(`<p>Spicy jalapeno bacon ipsum dolor amet biltong porchetta cupim sausage pork loin. Ham porchetta
 brisket, kielbasa ham hock sirloin ground round strip steak jowl jerky short ribs pork loin frankfurter.</p>`);
 
     const examples = ref([
@@ -71,7 +72,7 @@ brisket, kielbasa ham hock sirloin ground round strip steak jowl jerky short rib
       },
     ]);
 
-    onMounted(() => menuModel.value = Menu.getComponentConfig('NeonExpansionPanel'));
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonExpansionPanel')));
 
     return {
       menuModel,

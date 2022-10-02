@@ -1,16 +1,16 @@
 import { defineComponent, onMounted, onUnmounted, ref } from 'vue';
-import { NeonEventBus } from '../../../common/utils/NeonEventBus';
-import type { NeonAlertMessage } from '../../../common/models/NeonAlertMessage';
-import { NeonAlertLevel } from '../../../common/enums/NeonAlertLevel';
-import { NeonAlertService } from '../../../common/utils/NeonAlertService';
+import { NeonEventBus } from '@/common/utils/NeonEventBus';
+import type { NeonAlertMessage } from '@/common/models/NeonAlertMessage';
+import { NeonAlertLevel } from '@/common/enums/NeonAlertLevel';
+import { NeonAlertService } from '@/common/utils/NeonAlertService';
 import NeonAlertContainer from './container/NeonAlertContainer.vue';
 import NeonToastContainer from './container/NeonToastContainer.vue';
 import type { NeonAlertModel } from './NeonAlertModel';
 import type { NeonToastModel } from './NeonToastModel';
-import type { NeonToastMessage } from '../../../common/models/NeonToastMessage';
-import { NeonToastService } from '../../../common/utils/NeonToastService';
-import { NeonAlertPlacement } from '../../../common/enums/NeonAlertPlacement';
-import { NeonVerticalPosition } from '../../../common/enums/NeonVerticalPosition';
+import type { NeonToastMessage } from '@/common/models/NeonToastMessage';
+import { NeonToastService } from '@/common/utils/NeonToastService';
+import { NeonAlertPlacement } from '@/common/enums/NeonAlertPlacement';
+import { NeonVerticalPosition } from '@/common/enums/NeonVerticalPosition';
 
 /**
  * NeonAlert is a component for presenting temporary notifications to the user. Place the component once inside your app
@@ -34,7 +34,6 @@ export default defineComponent({
     duration: { type: Number, default: 2500 },
   },
   setup(props) {
-
     // alerts
     const topLeft = ref<Array<NeonAlertModel>>([]);
     const topRight = ref<Array<NeonAlertModel>>([]);

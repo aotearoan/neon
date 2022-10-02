@@ -16,9 +16,7 @@ export { default as NeonDrawer } from './components/layout/drawer/NeonDrawer.vue
 export { default as NeonDropdown } from './components/presentation/dropdown/NeonDropdown.vue';
 export { default as NeonDropdownMenu } from './components/navigation/dropdown-menu/NeonDropdownMenu.vue';
 export { default as NeonDropZone } from './components/user-input/drop-zone/NeonDropZone.vue';
-export {
-  default as NeonExpansionIndicator,
-} from './components/presentation/expansion-indicator/NeonExpansionIndicator.vue';
+export { default as NeonExpansionIndicator } from './components/presentation/expansion-indicator/NeonExpansionIndicator.vue';
 export { default as NeonExpansionPanel } from './components/presentation/expansion-panel/NeonExpansionPanel.vue';
 export { default as NeonFieldGroup } from './components/user-input/field-group/NeonFieldGroup.vue';
 export { default as NeonFile } from './components/user-input/file/NeonFile.vue';
@@ -36,9 +34,7 @@ export { default as NeonLogo } from './components/presentation/logo/NeonLogo.vue
 export { default as NeonMenu } from './components/navigation/menu/NeonMenu.vue';
 export { default as NeonModal } from './components/layout/modal/NeonModal.vue';
 export { default as NeonNote } from './components/feedback/note/NeonNote.vue';
-export {
-  default as NeonNotificationCounter,
-} from './components/feedback/notification-counter/NeonNotificationCounter.vue';
+export { default as NeonNotificationCounter } from './components/feedback/notification-counter/NeonNotificationCounter.vue';
 export { default as NeonNumber } from './components/user-input/number/NeonNumber.vue';
 export { default as NeonPage } from './components/layout/page/NeonPage.vue';
 export { default as NeonPassword } from './components/user-input/password/NeonPassword.vue';
@@ -59,7 +55,6 @@ export { default as NeonToggleChip } from './components/user-input/toggle-chip/N
 export { default as NeonTooltip } from './components/feedback/tooltip/NeonTooltip.vue';
 export { default as NeonTopNav } from './components/layout/top-nav/NeonTopNav.vue';
 export { default as NeonTreeMenu } from './components/navigation/tree-menu/NeonTreeMenu.vue';
-
 
 /* enums */
 export { NeonAlertLevel } from './common/enums/NeonAlertLevel';
@@ -89,7 +84,6 @@ export { NeonToggleStyle } from './common/enums/NeonToggleStyle';
 export { NeonTooltipStyle } from './common/enums/NeonTooltipStyle';
 export { NeonVerticalPosition } from './common/enums/NeonVerticalPosition';
 
-
 /* models */
 export type { NeonActionMenuModel } from './common/models/NeonActionMenuModel';
 export type { NeonAlertAction } from './common/models/NeonAlertAction';
@@ -115,7 +109,6 @@ export type { NeonToastModel } from './components/feedback/alert/NeonToastModel'
 export type { NeonToggleModel } from './common/models/NeonToggleModel';
 export type { NeonTreeMenuLinkModel, NeonTreeMenuSectionModel } from './common/models/NeonTreeMenuModel';
 
-
 /* utils */
 export { NeonAlertService } from './common/utils/NeonAlertService';
 export { NeonClipboardService, NeonClipboardSupport } from './common/utils/NeonClipboardService';
@@ -132,7 +125,6 @@ export { NeonScrollUtils } from './common/utils/NeonScrollUtils';
 export { NeonToastService } from './common/utils/NeonToastService';
 export { NeonTooltipPlacementUtils } from './common/utils/NeonTooltipPlacementUtils';
 export { NeonVueUtils } from './common/utils/NeonVueUtils';
-
 
 /* register default provided icons */
 export { RegisterIcons } from './common/utils/RegisterIcons';

@@ -1,7 +1,7 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonPassword from './NeonPassword.vue';
-import { NeonInputType } from '../../../common/enums/NeonInputType';
+import { NeonInputType } from '@/common/enums/NeonInputType';
 
 describe('NeonPassword', () => {
   const modelValue = '123456';

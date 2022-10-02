@@ -56,7 +56,7 @@ import {
   NeonTopNav,
   NeonTreeMenu,
 } from '@/neon';
-import { NeonIconRegistry } from '../../../common/utils/NeonIconRegistry';
+import { NeonIconRegistry } from '@/common/utils/NeonIconRegistry';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names

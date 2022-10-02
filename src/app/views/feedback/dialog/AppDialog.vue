@@ -11,4 +11,4 @@
   </component-documentation>
 </template>
 
-<script lang="ts" src="./Dialog.ts"></script>
+<script lang="ts" src="./AppDialog.ts"></script>

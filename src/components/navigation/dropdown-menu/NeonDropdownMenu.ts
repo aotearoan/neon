@@ -1,12 +1,12 @@
 import { computed, defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
-import type { NeonDropdownMenuItem } from '../../../common/models/NeonDropdownMenuItem';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import NeonDropdown from '../../presentation/dropdown/NeonDropdown.vue';
-import { NeonDropdownPlacement } from '../../../common/enums/NeonDropdownPlacement';
-import { NeonScrollUtils } from '../../../common/utils/NeonScrollUtils';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
-import NeonLink from '../link/NeonLink.vue';
+import type { NeonDropdownMenuItem } from '@/common/models/NeonDropdownMenuItem';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import NeonDropdown from '@/components/presentation/dropdown/NeonDropdown.vue';
+import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
+import { NeonScrollUtils } from '@/common/utils/NeonScrollUtils';
+import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
+import NeonLink from '@/components/link/NeonLink.vue';
 
 /**
  * <p>A dropdown menu consisting of a button to open the menu and a list of menu items. Clicking on a menu item will
@@ -64,8 +64,7 @@ export default defineComponent({
     const highlightedIndex = ref(-1);
 
     const sanitizedAttributes = computed(() => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { size, color, ...attributes } = Object.entries(attrs).filter(([key, _value]) => key !== 'onInput');
       return attributes;
     });
@@ -111,14 +110,15 @@ export default defineComponent({
         if (open.value) {
           switch ($event.code) {
             case 'ArrowUp':
-            case 'ArrowDown': {
-              const reverseOffset = isReverse() ? -1 : 1;
-              if ($event.code === 'ArrowUp') {
-                navigateBy(-1 * reverseOffset, $event);
-              } else {
-                navigateBy(1 * reverseOffset, $event);
+            case 'ArrowDown':
+              {
+                const reverseOffset = isReverse() ? -1 : 1;
+                if ($event.code === 'ArrowUp') {
+                  navigateBy(-1 * reverseOffset, $event);
+                } else {
+                  navigateBy(1 * reverseOffset, $event);
+                }
               }
-            }
               break;
             case 'Enter':
             case 'Space':
@@ -171,7 +171,6 @@ export default defineComponent({
     onUnmounted(() => {
       document.removeEventListener('keydown', keyboardHandler);
     });
-
 
     watch(
       () => open.value,

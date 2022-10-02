@@ -12,16 +12,13 @@ const routes = [
     group.children.flatMap((item) =>
       item.children
         ? item.children
-          .filter((child) => child.page)
-          .map(
-            (child) =>
-              ({
-                path: `/${item.path}/${child.path}`,
-                name: `${item.path}-${child.name || child.page}`,
-                meta: { title: child.name || child.page },
-                component: () => import(`./views/${item.path}/${child.path}/${child.page}.vue`),
-              }),
-          )
+            .filter((child) => child.page)
+            .map((child) => ({
+              path: `/${item.path}/${child.path}`,
+              name: `${item.path}-${child.name || child.page}`,
+              meta: { title: child.name || child.page },
+              component: () => import(`./views/${item.path}/${child.path}/${child.page}.vue`),
+            }))
         : [],
     ),
   ),

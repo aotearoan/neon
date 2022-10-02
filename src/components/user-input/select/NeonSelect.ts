@@ -1,14 +1,14 @@
 import { computed, defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import type { NeonSelectGroup } from '../../../common/models/NeonSelectGroup';
-import type { NeonSelectOption } from '../../../common/models/NeonSelectOption';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import NeonDropdown from '../../presentation/dropdown/NeonDropdown.vue';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
-import NeonSwitch from '../switch/NeonSwitch.vue';
-import { NeonDropdownPlacement } from '../../../common/enums/NeonDropdownPlacement';
-import { NeonScrollUtils } from '../../../common/utils/NeonScrollUtils';
-import { NeonVueUtils } from '../../../common/utils/NeonVueUtils';
+import { NeonSize } from '@/common/enums/NeonSize';
+import type { NeonSelectGroup } from '@/common/models/NeonSelectGroup';
+import type { NeonSelectOption } from '@/common/models/NeonSelectOption';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import NeonDropdown from '@/components/presentation/dropdown/NeonDropdown.vue';
+import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
+import NeonSwitch from '@/components/switch/NeonSwitch.vue';
+import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
+import { NeonScrollUtils } from '@/common/utils/NeonScrollUtils';
+import { NeonVueUtils } from '@/common/utils/NeonVueUtils';
 
 /**
  * <p>The <strong>NeonSelect</strong> is the equivalent of an HTML &lt;select&gt; form control. On touch devices
@@ -146,14 +146,15 @@ export default defineComponent({
       if (open.value) {
         switch ($event.code) {
           case 'ArrowUp':
-          case 'ArrowDown': {
-            const reverseOffset = isReverse() ? -1 : 1;
-            if ($event.code === 'ArrowUp') {
-              navigateBy(-1 * reverseOffset, $event);
-            } else {
-              navigateBy(1 * reverseOffset, $event);
+          case 'ArrowDown':
+            {
+              const reverseOffset = isReverse() ? -1 : 1;
+              if ($event.code === 'ArrowUp') {
+                navigateBy(-1 * reverseOffset, $event);
+              } else {
+                navigateBy(1 * reverseOffset, $event);
+              }
             }
-          }
             break;
           case 'Enter':
           case 'Space':
@@ -172,12 +173,14 @@ export default defineComponent({
     };
 
     const computedOptions = computed((): Array<NeonSelectGroup> => {
-      return props.groupedOptions || [
-        {
-          group: '',
-          options: props.options || [],
-        },
-      ];
+      return (
+        props.groupedOptions || [
+          {
+            group: '',
+            options: props.options || [],
+          },
+        ]
+      );
     });
 
     const sanitizedAttributes = computed(() => {

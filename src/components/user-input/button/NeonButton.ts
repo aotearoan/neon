@@ -1,12 +1,12 @@
 import { computed, defineComponent, ref } from 'vue';
-import { NeonButtonSize } from '../../../common/enums/NeonButtonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonButtonStyle } from '../../../common/enums/NeonButtonStyle';
-import { NeonHorizontalPosition } from '../../../common/enums/NeonHorizontalPosition';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
-import NeonLink from '../../navigation/link/NeonLink.vue';
-import NeonExpansionIndicator from '../../presentation/expansion-indicator/NeonExpansionIndicator.vue';
-import { NeonState } from '../../../common/enums/NeonState';
+import { NeonButtonSize } from '@/common/enums/NeonButtonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonButtonStyle } from '@/common/enums/NeonButtonStyle';
+import { NeonHorizontalPosition } from '@/common/enums/NeonHorizontalPosition';
+import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
+import NeonLink from '@/components/navigation/link/NeonLink.vue';
+import NeonExpansionIndicator from '@/components/presentation/expansion-indicator/NeonExpansionIndicator.vue';
+import { NeonState } from '@/common/enums/NeonState';
 
 /**
  * A button component. Renders an HTML button or, if an href is provided, renders using NeonLink in the style of a button. NeonButton supports all events and attributes of HTML buttons, e.g, @click.
@@ -83,7 +83,6 @@ export default defineComponent({
     indicatorExpanded: { type: Boolean, default: null },
   },
   setup(props, { attrs }) {
-
     const button = ref<HTMLElement | null>(null);
 
     const iconName = computed(() => {

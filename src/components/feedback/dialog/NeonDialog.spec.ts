@@ -1,7 +1,7 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonDialog from './NeonDialog.vue';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 describe('NeonDialog', () => {
   const title = 'test title';
@@ -10,10 +10,9 @@ describe('NeonDialog', () => {
   let harness: RenderResult;
 
   beforeEach(() => {
-    harness = render(NeonDialog,
-      {
-        props: { title, question },
-      });
+    harness = render(NeonDialog, {
+      props: { title, question },
+    });
   });
 
   it('renders title', () => {

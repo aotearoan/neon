@@ -11,9 +11,8 @@ export class NeonDropdownPlacementUtils {
     placement: NeonDropdownPlacement,
     placementContainer?: HTMLElement,
   ): NeonDropdownPlacement {
-    const placementObject: NeonDropdownPlacementObject = NeonDropdownPlacementObject.toNeonDropdownPlacementObject(
-      placement,
-    );
+    const placementObject: NeonDropdownPlacementObject =
+      NeonDropdownPlacementObject.toNeonDropdownPlacementObject(placement);
     const { maxWidth, maxHeight } = NeonPlacementUtils.calculateBounds(placementContainer);
     const availableMajorSpace = NeonPlacementUtils.calculateAvailableSpace(
       triggerElement,

@@ -2,11 +2,11 @@ import type { RenderResult } from '@testing-library/vue';
 import { render } from '@testing-library/vue';
 import { RouterLinkStub } from '@vue/test-utils';
 import NeonButton from './NeonButton.vue';
-import { NeonButtonSize } from '../../../common/enums/NeonButtonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonHorizontalPosition } from '../../../common/enums/NeonHorizontalPosition';
-import { NeonButtonStyle } from '../../../common/enums/NeonButtonStyle';
-import { NeonState } from '../../../common/enums/NeonState';
+import { NeonButtonSize } from '@/common/enums/NeonButtonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonHorizontalPosition } from '@/common/enums/NeonHorizontalPosition';
+import { NeonButtonStyle } from '@/common/enums/NeonButtonStyle';
+import { NeonState } from '@/common/enums/NeonState';
 
 describe('NeonButton', () => {
   const label = 'test label';
@@ -15,14 +15,12 @@ describe('NeonButton', () => {
   let harness: RenderResult;
 
   beforeEach(() => {
-    harness = render(NeonButton,
-      {
-        props,
-        global: {
-          stubs: { RouterLink: RouterLinkStub },
-        },
+    harness = render(NeonButton, {
+      props,
+      global: {
+        stubs: { RouterLink: RouterLinkStub },
       },
-    );
+    });
   });
 
   it('renders label', () => {

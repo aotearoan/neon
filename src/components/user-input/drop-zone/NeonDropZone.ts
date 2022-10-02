@@ -1,5 +1,5 @@
 import { defineComponent, onMounted, onUnmounted, ref } from 'vue';
-import { NeonState } from '../../../common/enums/NeonState';
+import { NeonState } from '@/common/enums/NeonState';
 
 /**
  * Defines a file drop zone.

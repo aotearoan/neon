@@ -1,8 +1,8 @@
 import type { RenderResult } from '@testing-library/vue';
 import { render } from '@testing-library/vue';
-import NeonMenu from '../menu/NeonMenu.vue';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonSize } from '../../../common/enums/NeonSize';
+import NeonMenu from '@/components/menu/NeonMenu.vue';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonSize } from '@/common/enums/NeonSize';
 
 describe('NeonMenu', () => {
   const menu = [

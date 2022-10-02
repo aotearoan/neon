@@ -29,9 +29,7 @@ export class NeonModeUtils {
 
   public static addListener(key: string, callback: (value: NeonMode) => void) {
     if (window.matchMedia) {
-      if (
-        Object.keys(NeonModeUtils.callbacks).length === 0 &&
-        typeof MediaQueryList !== 'undefined') {
+      if (Object.keys(NeonModeUtils.callbacks).length === 0 && typeof MediaQueryList !== 'undefined') {
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', NeonModeUtils.onDarkChange);
         window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', NeonModeUtils.onLightChange);
         window
@@ -49,7 +47,8 @@ export class NeonModeUtils {
     if (
       Object.keys(NeonModeUtils.callbacks).length === 0 &&
       window.matchMedia &&
-      typeof MediaQueryList !== 'undefined') {
+      typeof MediaQueryList !== 'undefined'
+    ) {
       window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', NeonModeUtils.onDarkChange);
       window.matchMedia('(prefers-color-scheme: light)').removeEventListener('change', NeonModeUtils.onLightChange);
       window

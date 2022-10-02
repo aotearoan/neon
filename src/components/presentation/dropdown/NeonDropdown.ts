@@ -1,13 +1,13 @@
 import { defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
-import { NeonDropdownPlacement } from '../../../common/enums/NeonDropdownPlacement';
-import { NeonDropdownPlacementUtils } from '../../../common/utils/NeonDropdownPlacementUtils';
-import { NeonClosableUtils } from '../../../common/utils/NeonClosableUtils';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonDropdownStyle } from '../../../common/enums/NeonDropdownStyle';
-import NeonBadge from '../badge/NeonBadge.vue';
-import NeonButton from '../../user-input/button/NeonButton.vue';
-import NeonExpansionIndicator from '../expansion-indicator/NeonExpansionIndicator.vue';
+import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
+import { NeonDropdownPlacementUtils } from '@/common/utils/NeonDropdownPlacementUtils';
+import { NeonClosableUtils } from '@/common/utils/NeonClosableUtils';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonDropdownStyle } from '@/common/enums/NeonDropdownStyle';
+import NeonBadge from '@/components/badge/NeonBadge.vue';
+import NeonButton from '@/components/user-input/button/NeonButton.vue';
+import NeonExpansionIndicator from '@/components/expansion-indicator/NeonExpansionIndicator.vue';
 
 /**
  * <p>A general purpose dropdown component. This component consists of a button, to trigger the dropdown to open, and

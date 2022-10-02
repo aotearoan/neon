@@ -7,13 +7,12 @@ describe('NeonModal', () => {
   let harness: RenderResult;
 
   beforeEach(() => {
-    harness = render(NeonModal,
-      {
-        props,
-        slots: {
-          default: '<p>test</p>',
-        },
-      });
+    harness = render(NeonModal, {
+      props,
+      slots: {
+        default: '<p>test</p>',
+      },
+    });
   });
 
   it('renders default slot contents', () => {

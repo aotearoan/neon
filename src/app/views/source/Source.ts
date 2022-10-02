@@ -1,7 +1,7 @@
 import { defineComponent, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { NeonCard, NeonCardBody, NeonCardHeader } from '@/neon';
-import Editor from '../../components/editor/Editor.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names,vue/no-reserved-component-names

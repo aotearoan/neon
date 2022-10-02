@@ -1,5 +1,5 @@
 import { defineComponent, ref, watch } from 'vue';
-import type { NeonTreeMenuSectionModel } from '../../../common/models/NeonTreeMenuModel';
+import type { NeonTreeMenuSectionModel } from '@/common/models/NeonTreeMenuModel';
 import NeonLink from '../link/NeonLink.vue';
 import { useRoute } from 'vue-router';
 
@@ -51,7 +51,7 @@ export default defineComponent({
 
     watch(
       () => route.path,
-      (value) => url.value = value,
+      (value) => (url.value = value),
       { immediate: true },
     );
 
