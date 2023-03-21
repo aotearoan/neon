@@ -28,7 +28,7 @@ export default defineComponent({
     <p>Another card body. Cards can also have full width sections without an padding (this is useful for adding images, charts, etc). The following section is full width:</p>
   </neon-card-body>
   <neon-card-body :full-width="true">
-    <img src="https://i.picsum.photos/id/610/2000/300.jpg?hmac=Oa-gKut7zX0Q1zmsjyrhmJvSMP72MB0jeJN3zPOiucc">
+    <img :src="baseUrl + 'images/taranaki.jpg'">
   </neon-card-body>
   <neon-card-body>
     <p>Place card actions inside the <strong>NeonCardFooter</strong> below:</p>
@@ -57,6 +57,9 @@ export default defineComponent({
         title: 'Vertical card',
         template: example,
         noCard: true,
+        data: {
+          baseUrl: import.meta.env.VITE_BASE_URL,
+        },
       },
       {
         title: 'Horizontal card',

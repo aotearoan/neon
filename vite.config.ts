@@ -11,6 +11,7 @@ const pkg = JSON.parse(json);
 
 export default defineConfig({
   plugins: [vue(), svgLoader({ defaultImport: 'raw' })],
+  base: '/neon/',
   server: {
     host: '0.0.0.0',
     port: 8081,
