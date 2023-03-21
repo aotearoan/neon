@@ -28,5 +28,6 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: ["<rootDir>/src/components/**/*.vue", "<rootDir>/src/common/utils/*.ts"],
   coverageDirectory: "<rootDir>/coverage",
+  coverageProvider: "v8",
   coveragePathIgnorePatterns: ["/node_modules/", "/test/", "/dist/"]
 };
