@@ -13,7 +13,11 @@ exports[`NeonMenu renders menu 1`] = `
       <!--v-if--><a href="/test" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link" data-testid="link" tabindex="0" role="menuitem"><span class="neon-link__label"><!-- @slot the content of the link --><!--v-if--><span class="neon-menu__item-label">Menu</span></span></a>
     </li>
     <li class="neon-menu__item">
-      <!--v-if--><a class="neon-link--no-style neon-link--outline-none neon-link" tabindex="0" role="menuitem"><span class="neon-link__label"><!-- @slot the content of the link --><div class="neon-icon--neutral neon-icon neon-menu__item-icon neon-menu__item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 512 512"><circle class="neon-svg--stroke" cx="256" cy="256" r="208" style="fill:none;stroke-linejoin:round;stroke-width:32px"></circle><path class="neon-svg--fill" d="M256,464C141.12,464,48,370.88,48,256S141.12,48,256,48Z"></path></svg></div><span class="neon-menu__item-label">Click link</span></span></a>
+      <!--v-if--><a class="neon-link--no-style neon-link--outline-none neon-link" tabindex="0" role="menuitem"><span class="neon-link__label"><!-- @slot the content of the link --><div class="neon-icon--neutral neon-icon neon-menu__item-icon neon-menu__item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 512 512">
+    <circle class="neon-svg--stroke" cx="256" cy="256" r="208" style="fill:none;stroke-linejoin:round;stroke-width:32px"></circle>
+    <path class="neon-svg--fill" d="M256,464C141.12,464,48,370.88,48,256S141.12,48,256,48Z"></path>
+</svg>
+</div><span class="neon-menu__item-label">Click link</span></span></a>
     </li>
     <li class="neon-menu__item--disabled neon-menu__item">
       <!--v-if--><a class="neon-link--no-style neon-link--outline-none neon-link" tabindex="-1" role="menuitem"><span class="neon-link__label"><!-- @slot the content of the link --><!--v-if--><span class="neon-menu__item-label">Disabled</span></span></a>
@@ -47,7 +51,8 @@ exports[`NeonMenu renders menu 1`] = `
     <div class="neon-dropdown__button-wrapper"><button class="neon-button--l neon-button--brand neon-button--text neon-button--state-ready neon-button--with-icon neon-button--icon-only neon-button neon-dropdown__button neon-dropdown__button" disabled="false" aria-expanded="false" aria-haspopup="true">
         <div class="neon-icon--brand neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="100%" height="100%">
             <path class="neon-svg--fill" d="M8 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM1.5 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm13 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
-          </svg></div>
+          </svg>
+        </div>
         <!--v-if-->
         <!--v-if-->
       </button></div>

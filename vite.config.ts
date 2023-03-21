@@ -3,13 +3,14 @@ import { fileURLToPath, URL } from 'url';
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import vue from '@vitejs/plugin-vue';
+import svgLoader from 'vite-svg-loader';
 
 const file = fileURLToPath(new URL('package.json', import.meta.url));
 const json = readFileSync(file, 'utf8');
 const pkg = JSON.parse(json);
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), svgLoader({ defaultImport: 'raw' })],
   server: {
     host: '0.0.0.0',
     port: 8081,

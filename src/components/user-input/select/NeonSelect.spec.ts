@@ -267,7 +267,7 @@ describe('NeonSelect', () => {
     const { container, rerender } = harness;
     await rerender({ modelValue: options[0].key, multiple: false });
     // when / then
-    expect(container.querySelector('.neon-dropdown__button')?.textContent).toEqual(options[0].label);
+    expect(container.querySelector('.neon-dropdown__button')?.textContent).toMatch(options[0].label);
   });
 
   it('renders computedLabel multiple placeholder', async () => {

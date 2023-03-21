@@ -199,11 +199,11 @@ describe('NeonSearch', () => {
     const { container, rerender } = harness;
     await rerender({ modelValue, multiple: true, size: NeonSize.Large });
     // when / then
-    expect(container.querySelector('.neon-chip')?.textContent).toEqual(modelValue[0].label);
+    expect(container.querySelector('.neon-chip')?.textContent).toMatch(modelValue[0].label);
     expect(container.querySelector('.neon-chip')?.getAttribute('id')).toEqual(modelValue[0].key);
     expect(container.querySelector('.neon-chip--l')).toBeDefined();
     expect(container.querySelector('.neon-chip--brand')).toBeDefined();
-    expect(container.querySelector('.neon-chip--last-chip')?.textContent).toEqual(modelValue[0].label);
+    expect(container.querySelector('.neon-chip--last-chip')?.textContent).toMatch(modelValue[0].label);
   });
 
   it('closing a chip emits input', async () => {

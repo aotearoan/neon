@@ -9,7 +9,8 @@ module.exports = {
     "^.+\\.ts?$": ["ts-jest", {
       tsconfig: "tsconfig.test.json",
       useESM: true
-    }]
+    }],
+    "^.+\\.svg$": "<rootDir>/test/jest-svg-transformer.js"
   },
   transformIgnorePatterns: ["/node_modules/.+.(js)$"],
   roots: ["<rootDir>/src"],
