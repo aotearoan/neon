@@ -14,14 +14,11 @@ import {
   NeonLink,
   NeonLogo,
   NeonPage,
-  NeonSelect,
   NeonSideNav,
   NeonSwitch,
   NeonTopNav,
   NeonTreeMenu,
 } from '@/neon';
-import { NeonTheme } from '@/common/enums/NeonTheme';
-import type { NeonSelectOption } from '@/common/models/NeonSelectOption';
 import { NeonModeUtils } from '@/common/utils/NeonModeUtils';
 import { NeonResponsive } from '@/common/enums/NeonResponsive';
 import { NeonResponsiveUtils } from '@/common/utils/NeonResponsiveUtils';
@@ -47,7 +44,6 @@ export default defineComponent({
     NeonSwitch,
     NeonPage,
     NeonSideNav,
-    NeonSelect,
     NeonTreeMenu,
     NeonFooter,
     NeonGrid,
@@ -60,16 +56,6 @@ export default defineComponent({
   setup() {
     const router = useRouter();
     const route = useRoute();
-
-    const theme = ref(NeonTheme.Smooth);
-    const themes = ref(Object.values(NeonTheme));
-
-    const themeModel = ref<Array<NeonSelectOption>>([
-      ...Object.keys(NeonTheme).map((k, index) => ({
-        key: themes.value[index],
-        label: k,
-      })),
-    ]);
 
     const selectedMode = ref(NeonMode.Dark);
     const indexModel = ref<Array<AppMenuGroup>>([]);
@@ -144,14 +130,9 @@ export default defineComponent({
       },
     ]);
 
-    const version = ref(process.env.PACKAGE_VERSION);
-
-    const switchTheme = (newTheme: NeonTheme) => {
-      document.documentElement.classList.remove(`neon-theme--${theme.value}`);
-      document.documentElement.classList.add(`neon-theme--${newTheme}`);
-      theme.value = newTheme;
-      localStorage.setItem('theme', theme.value);
-    };
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    const version = ref(PACKAGE_VERSION);
 
     const setMode = (mode: NeonMode) => {
       document.documentElement.classList.remove(`neon-mode--${selectedMode.value}`);
@@ -190,9 +171,6 @@ export default defineComponent({
         localStorage.removeItem('path');
         await router.push({ path: path.replace('neon', '') });
       }
-
-      const cachedTheme = localStorage.getItem('theme') as NeonTheme;
-      switchTheme(cachedTheme && Object.values(NeonTheme).indexOf(cachedTheme) >= 0 ? cachedTheme : NeonTheme.Smooth);
 
       const savedMode = (localStorage.getItem('mode') as NeonMode) || undefined;
       NeonModeUtils.init(savedMode);
@@ -266,20 +244,16 @@ export default defineComponent({
     );
 
     return {
-      theme,
-      themeModel,
       selectedMode,
       indexModel,
       indexFilter,
       menuOpen,
       isMobile,
       isTablet,
-      themes,
       layouts,
       version,
       filteredModel,
       expandAll,
-      switchTheme,
       switchMode,
       toggleExpand,
       onSideNavMenuClick,

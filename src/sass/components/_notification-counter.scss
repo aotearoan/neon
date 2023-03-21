@@ -1,0 +1,36 @@
+@use 'src/sass/includes/palettes';
+
+@mixin notification-counter {
+  .neon-notification-counter {
+    transform: scale(0);
+    transition: transform linear var(--neon-animation-speed-fast);
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    z-index: var(--neon-z-index-above);
+    position: absolute;
+    width: 1.4375rem;
+    height: 1.4375rem;
+    top: -0.625rem;
+    right: -0.625rem;
+    user-select: none;
+    font-weight: 500;
+
+    @each $color in palettes.$neon-functional-colors {
+      &--#{$color} {
+        color: var(--neon-color-inverse);
+        @if ($color == high-contrast) {
+          background-color: var(--neon-color-text);
+        } @else {
+          background-color: var(--neon-color-#{$color});
+        }
+      }
+    }
+
+    &--active {
+      transform: scale(1);
+      transition: transform cubic-bezier(0.175, 0.885, 0.32, 1.275) var(--neon-animation-speed-slow);
+    }
+  }
+}

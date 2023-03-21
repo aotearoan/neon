@@ -65,5 +65,9 @@
         ]
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/user-input/list/NeonList.vue",
+    "/Users/andrew/dev/projects/neon/src/components/user-input/list/NeonList.ts"
   ]
 }

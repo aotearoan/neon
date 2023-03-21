@@ -70,5 +70,9 @@
       "name": "default",
       "description": "Add tabs here (NeonTab). NOTE: Tabs can also be added outside the component if preferred"
     }
+  ],
+  "sourceFiles": [
+    "./src/components/presentation/tabs/NeonTabs.vue",
+    "/Users/andrew/dev/projects/neon/src/components/presentation/tabs/NeonTabs.ts"
   ]
 }

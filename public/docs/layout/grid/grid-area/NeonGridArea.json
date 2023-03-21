@@ -18,5 +18,9 @@
       "name": "default",
       "description": "This slot is for grid area content"
     }
+  ],
+  "sourceFiles": [
+    "./src/components/layout/grid/grid-area/NeonGridArea.vue",
+    "/Users/andrew/dev/projects/neon/src/components/layout/grid/grid-area/NeonGridArea.ts"
   ]
 }

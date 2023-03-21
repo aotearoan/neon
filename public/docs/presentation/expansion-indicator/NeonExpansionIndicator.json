@@ -48,5 +48,9 @@
         "value": "null"
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/presentation/expansion-indicator/NeonExpansionIndicator.vue",
+    "/Users/andrew/dev/projects/neon/src/components/presentation/expansion-indicator/NeonExpansionIndicator.ts"
   ]
 }

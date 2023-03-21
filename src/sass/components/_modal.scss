@@ -1,0 +1,129 @@
+@use 'src/sass/includes/layout';
+@use 'src/sass/includes/responsive';
+
+@mixin modal {
+  .neon-modal {
+    align-items: center;
+    justify-content: center;
+
+    &__overlay {
+      background-color: var(--neon-background-color-overlay);
+    }
+
+    .neon-card {
+      box-shadow: var(--neon-box-shadow-alert);
+    }
+
+    &,
+    .neon-modal__container,
+    .neon-modal__overlay {
+      position: fixed;
+      opacity: 0;
+      z-index: var(--neon-z-index-below);
+      pointer-events: none;
+      transition: opacity ease-in-out var(--neon-animation-speed-fast);
+
+      @include responsive.responsive(larger-than-mobile-large) {
+        transition: all ease-in-out var(--neon-animation-speed-fast);
+        .neon-card {
+          margin-top: -30vh;
+          transition: all ease-in-out var(--neon-animation-speed-slow);
+        }
+      }
+    }
+
+    &,
+    .neon-modal__overlay {
+      top: 0;
+      left: 0;
+      @include layout.width(100);
+      @include layout.min-height(100);
+      @include layout.height(100);
+    }
+
+    &.neon-modal--open {
+      opacity: 1;
+
+      @include responsive.responsive(larger-than-mobile-large) {
+        .neon-card {
+          margin-top: -20vh;
+        }
+      }
+
+      .neon-modal__container,
+      .neon-modal__overlay {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      &:not(.neon-dialog),
+      &:not(.neon-dialog) .neon-modal__container {
+        @include responsive.responsive(mobile-large) {
+          @include layout.width(100);
+          @include layout.min-height(100);
+
+          .neon-card {
+            @include layout.min-height(100);
+          }
+        }
+      }
+
+      &,
+      .neon-modal__container {
+        z-index: var(--neon-z-index-top);
+
+        @include responsive.responsive(mobile-large) {
+          .neon-card {
+            .neon-card-body {
+              flex: 1 1 auto;
+            }
+          }
+        }
+      }
+    }
+
+    &__container {
+      @include responsive.responsive(larger-than-mobile-large) {
+        padding-left: calc(2 * var(--neon-base-space));
+        padding-right: calc(2 * var(--neon-base-space));
+      }
+    }
+
+    &__close {
+      position: fixed;
+      top: 0;
+      right: 0;
+      display: flex;
+      margin: calc(0.5 * var(--neon-base-space));
+
+      @include responsive.responsive(larger-than-mobile-large) {
+        display: none;
+      }
+    }
+
+    &.neon-dialog {
+      &,
+      .neon-modal__container,
+      .neon-modal__overlay {
+        transition: all ease-in-out var(--neon-animation-speed-fast);
+
+        .neon-card {
+          margin-top: -30vh;
+          transition: all ease-in-out var(--neon-animation-speed-slow);
+        }
+      }
+
+      &.neon-modal--open {
+        .neon-card {
+          margin-top: -20vh;
+        }
+      }
+
+      .neon-modal__close {
+        @include responsive.responsive(mobile-large) {
+          display: none;
+        }
+      }
+    }
+  }
+}

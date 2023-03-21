@@ -18,15 +18,16 @@
       "dom",
       "es2020"
     ],
+    "baseUrl": ".",
     "paths": {
       "@/*": [
-        "src/*"
+        "./src/*"
       ]
     },
     "rootDirs": [
       "src"
     ],
-    "baseUrl": ".",
+    "outDir": "dist/",
     "strict": true,
     "jsx": "react",
     "importHelpers": true,
@@ -46,9 +47,7 @@
   },
   "references": [
     {
-      "path": "./tsconfig.config.json"
+      "path": "./tsconfig.node.json"
     }
   ],
-  "outDir": "dist/",
-  "declaration": true
 }

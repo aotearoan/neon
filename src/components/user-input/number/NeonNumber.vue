@@ -1,6 +1,5 @@
 <template>
   <neon-field-group
-    class="neon-number"
     :class="[
       `neon-number--${size}`,
       `neon-number--${color}`,
@@ -10,50 +9,52 @@
         'neon-number--with-buttons': spinButtons,
       },
     ]"
+    class="neon-number"
   >
     <neon-button
       v-if="spinButtons"
-      :size="size"
+      :aria-label="decrementLabel"
       :color="color"
       :disabled="disabled || (min !== undefined && min === modelValue)"
-      icon="minus"
+      :size="size"
       button-style="outline"
-      @click="decrement()"
       class="neon-number__decrement"
-      :aria-label="decrementLabel"
+      icon="minus"
+      @click="decrement()"
     />
     <neon-input
-      class="neon-number__input"
-      type="text"
-      role="spinbutton"
       :aria-valuemax="max"
-      :max="max"
       :aria-valuemin="min"
-      :min="min"
-      :step="computedStep"
       :aria-valuenow="modelValue"
-      :modelValue="displayValue"
-      :size="size"
       :color="color"
       :disabled="disabled || !editable"
       :inputmode="inputmode"
+      :max="max"
+      :min="min"
+      :modelValue="displayValue"
+      :placeholder="placeholder"
+      :size="size"
+      :step="computedStep"
+      class="neon-number__input"
+      role="spinbutton"
+      type="text"
       v-bind="sanitizedAttributes"
-      @update:modelValue="valueChanged"
-      @focus="onFocus()"
       @blur="onBlur()"
+      @focus="onFocus()"
+      @update:modelValue="valueChanged"
       @keydown.up.prevent="increment()"
       @keydown.down.prevent="decrement()"
     />
     <neon-button
       v-if="spinButtons"
-      :size="size"
+      :aria-label="incrementLabel"
       :color="color"
       :disabled="disabled || (max !== undefined && max === modelValue)"
-      icon="plus"
+      :size="size"
       button-style="outline"
-      @click="increment()"
       class="neon-number__increment"
-      :aria-label="incrementLabel"
+      icon="plus"
+      @click="increment()"
     />
   </neon-field-group>
 </template>

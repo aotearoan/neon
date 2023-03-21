@@ -36,40 +36,33 @@ export default class App extends Vue {}
 
 ### SASS
 
-First select a theme:
-<ul>
-  <li>smooth</li>
-  <li>classic</li>
-  <li>sharp</li>
-</ul>
-<p>To use a theme without any customization simply import the basic theme file, e.g. to import the classic theme:</p>
+<p>To use a theme without any customization simply import the basic theme file</p>
 <pre>
-@use '~@aotearoan/neon/themes/classic';
+@use '~@aotearoan/neon/theme';
 </pre>
 <p>If, however you would like to override/customize the theme then you need to include the following:</p>
 <pre>
 .app {
-  &.neon-theme--classic {
+  &.neon {
     // override colors, palettes and other basic variables here BEFORE importing the theme, e.g. $neon-color-primary: #bada55
-    @use '~@aotearoan/neon/themes/classic/theme';
+    @use '~@aotearoan/neon/theme';
     // include custom app SASS here (you can use neon's defined variables, mixins and functions)
     &.neon-mode--dark {
       // override dark mode specific variables here, e.g. $neon-border-color: #bada55
-      @use '~@aotearoan/neon/themes/classic/dark';
+      @use '~@aotearoan/neon/theme/dark';
       // include custom app dark mode SASS here (you can use neon's defined variables, mixins and functions)
     }
     &.neon-mode--light {
       // override light mode specific variables here, e.g. $neon-border-color: #bada55
-      @use '~@aotearoan/neon/themes/classic/light';
+      @use '~@aotearoan/neon/theme/light';
       // include custom app light mode SASS here (you can use neon's defined variables, mixins and functions)
     }
   }
 }
 </pre>
 
-Finally, the theme and mode (light/dark) need to be set on the document, e.g. to set the <em>classic</em> theme and <em>
-dark</em> mode:
-<pre>&lt;html class="app neon neon-theme--classic neon-mode--dark"&gt;</pre>
+Finally, the theme and mode (light/dark) need to be set on the document:
+<pre>&lt;html class="app neon neon-mode--dark"&gt;</pre>
 
 [![Stargazers repo roster for @aotearoan/neon](https://reporoster.com/stars/aotearoan/neon)](https://github.com/aotearoan/neon/stargazers)
 

@@ -18,5 +18,9 @@
       },
       "required": true
     }
+  ],
+  "sourceFiles": [
+    "./src/components/feedback/alert/container/NeonToastContainer.vue",
+    "/Users/andrew/dev/projects/neon/src/components/feedback/alert/container/NeonToastContainer.ts"
   ]
 }

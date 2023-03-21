@@ -36,7 +36,7 @@
     },
     {
       "name": "priorityMenuEnabled",
-      "description": "Whether to enable the priority menu which automatically calculates the available screen space and displays\nas many of the menu items as possible, moving the remaining items to the mobile menu.",
+      "description": "Whether to enable the priority menu which automatically calculates the available screen space and displays\nas many of the menu items as possible, moving the remaining items into the overflow menu.",
       "type": {
         "name": "boolean"
       },
@@ -56,5 +56,9 @@
         ]
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/navigation/menu/NeonMenu.vue",
+    "/Users/andrew/dev/projects/neon/src/components/navigation/menu/NeonMenu.ts"
   ]
 }

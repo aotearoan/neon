@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue';
+import { defineComponent, useAttrs } from 'vue';
 import { NeonOrientation } from '@/common/enums/NeonOrientation';
 import { NeonResponsive } from '@/common/enums/NeonResponsive';
 import { NeonSize } from '@/common/enums/NeonSize';
@@ -23,7 +23,9 @@ export default defineComponent({
      */
     horizontalBreakpoint: { type: String as () => NeonResponsive, default: NeonResponsive.MobileLarge },
   },
-  setup(_props, { attrs }) {
+  setup(_props) {
+    const attrs = useAttrs();
+
     return {
       attrs,
     };

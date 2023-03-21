@@ -1,0 +1,50 @@
+@mixin expansion-indicator {
+  .neon-expansion-indicator__line1,
+  .neon-expansion-indicator__line2 {
+    stroke-width: 1;
+    stroke-linecap: round;
+    transition: all ease-in-out var(--neon-animation-speed-fast);
+    transform-origin: 0.5rem 0.5rem;
+  }
+
+  .neon-expansion-indicator {
+    display: flex;
+    font-size: var(--neon-font-size-m);
+    position: relative;
+
+    &__container {
+      transition: all ease-in-out var(--neon-animation-speed-fast);
+      transform: translateY(0.125rem);
+    }
+
+    &__line1 {
+      transform: rotate(35deg);
+
+      &.neon-svg--stroke {
+        transition: transform ease-in-out var(--neon-animation-speed-fast) !important;
+      }
+    }
+
+    &__line2 {
+      transform: rotate(-35deg);
+
+      &.neon-svg--stroke {
+        transition: transform ease-in-out var(--neon-animation-speed-fast) !important;
+      }
+    }
+
+    &--expanded {
+      .neon-expansion-indicator__container {
+        transform: translateY(-0.125rem);
+      }
+
+      .neon-expansion-indicator__line1 {
+        transform: rotate(-35deg);
+      }
+
+      .neon-expansion-indicator__line2 {
+        transform: rotate(35deg);
+      }
+    }
+  }
+}

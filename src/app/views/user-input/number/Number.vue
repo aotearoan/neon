@@ -1,5 +1,5 @@
 <template>
-  <component-documentation v-if="menuModel" :examples="examples" :model="menuModel" :headline="headline">
+  <component-documentation v-if="menuModel" :examples="examples" :headline="headline" :model="menuModel">
     <neon-card>
       <neon-card-body>
         <p>
@@ -8,7 +8,7 @@
           with -/+ spin buttons. In addition, it supports formatting as a percentage or with a provided custom template
           and also pasting of values in the user's locale, e.g. 6,543.12.
         </p>
-        <p><strong>NeonNumber</strong> supports all of the properties found on an HTML &lt;input&gt;.</p>
+        <p><strong>NeonNumber</strong> supports all the properties found on an HTML &lt;input&gt;.</p>
       </neon-card-body>
     </neon-card>
   </component-documentation>

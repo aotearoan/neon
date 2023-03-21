@@ -14,7 +14,7 @@
     },
     {
       "name": "color",
-      "description": "The color to render the icon. By default it will be the current text color (light text in dark mode or dark text in light mode).",
+      "description": "The color to render the icon. By default, it will be the current text color (light text in dark mode or dark text in light mode).",
       "type": {
         "name": "String as () => NeonFunctionalColor"
       },
@@ -45,5 +45,9 @@
         "value": "false"
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/presentation/icon/NeonIcon.vue",
+    "/Users/andrew/dev/projects/neon/src/components/presentation/icon/NeonIcon.ts"
   ]
 }

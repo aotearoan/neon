@@ -48,5 +48,9 @@
         "value": "false"
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/feedback/splash-loader/NeonSplashLoader.vue",
+    "/Users/andrew/dev/projects/neon/src/components/feedback/splash-loader/NeonSplashLoader.ts"
   ]
 }

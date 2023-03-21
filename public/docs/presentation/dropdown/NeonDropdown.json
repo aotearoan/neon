@@ -47,7 +47,7 @@
     },
     {
       "name": "icon",
-      "description": "An icon to display on the dropdown button. This will be to the left of any label, but can also be used on it's own.",
+      "description": "An icon to display on the dropdown button. This will be to the left of any label, but can also be used on its own.",
       "type": {
         "name": "string"
       },
@@ -212,5 +212,9 @@
       "name": "default",
       "description": "The content of the open dropdown"
     }
+  ],
+  "sourceFiles": [
+    "./src/components/presentation/dropdown/NeonDropdown.vue",
+    "/Users/andrew/dev/projects/neon/src/components/presentation/dropdown/NeonDropdown.ts"
   ]
 }

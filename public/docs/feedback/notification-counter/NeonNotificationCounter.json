@@ -37,5 +37,9 @@
         "value": "null"
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/feedback/notification-counter/NeonNotificationCounter.vue",
+    "/Users/andrew/dev/projects/neon/src/components/feedback/notification-counter/NeonNotificationCounter.ts"
   ]
 }

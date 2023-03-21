@@ -103,5 +103,9 @@
         "value": "'Badge'"
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/presentation/badge/NeonBadge.vue",
+    "/Users/andrew/dev/projects/neon/src/components/presentation/badge/NeonBadge.ts"
   ]
 }

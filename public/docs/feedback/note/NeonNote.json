@@ -65,5 +65,9 @@
       "name": "default",
       "description": "the contents of the note"
     }
+  ],
+  "sourceFiles": [
+    "./src/components/feedback/note/NeonNote.vue",
+    "/Users/andrew/dev/projects/neon/src/components/feedback/note/NeonNote.ts"
   ]
 }

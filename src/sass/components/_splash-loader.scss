@@ -1,0 +1,63 @@
+@mixin splash-loader {
+  .neon-splash-loader {
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex: 1 0 auto;
+    width: 100%;
+    height: 100%;
+    z-index: var(--neon-z-index-top);
+
+    &--with-overlay {
+      background-color: var(--neon-background-color-overlay);
+    }
+
+    &--fullscreen {
+      position: fixed;
+    }
+
+    &--s {
+      .neon-icon {
+        width: var(--neon-size-s);
+        height: var(--neon-size-s);
+      }
+    }
+
+    &--m {
+      .neon-icon {
+        width: var(--neon-size-m);
+        height: var(--neon-size-m);
+      }
+    }
+
+    &--l {
+      .neon-icon {
+        width: var(--neon-size-l);
+        height: var(--neon-size-l);
+      }
+    }
+
+    &--xl {
+      .neon-icon {
+        width: calc(2 * var(--neon-size-l));
+        height: calc(2 * var(--neon-size-l));
+      }
+    }
+  }
+
+  .neon-fade-transition {
+    &-enter-active,
+    &-leave-active {
+      transition: opacity ease-in-out var(--neon-animation-speed-fast);
+    }
+
+    &-enter,
+    &-leave-to {
+      opacity: 0;
+    }
+  }
+}

@@ -8,5 +8,9 @@
       "name": "default",
       "description": "footer contents"
     }
+  ],
+  "sourceFiles": [
+    "./src/components/layout/footer/NeonFooter.vue",
+    "/Users/andrew/dev/projects/neon/src/components/layout/footer/NeonFooter.ts"
   ]
 }

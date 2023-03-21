@@ -1,4 +1,4 @@
-import { computed, defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
+import { defineComponent, onMounted, onUnmounted, ref, useAttrs, watch } from 'vue';
 import type { NeonDropdownMenuItem } from '@/common/models/NeonDropdownMenuItem';
 import { NeonSize } from '@/common/enums/NeonSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
@@ -6,7 +6,7 @@ import NeonDropdown from '@/components/presentation/dropdown/NeonDropdown.vue';
 import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
 import { NeonScrollUtils } from '@/common/utils/NeonScrollUtils';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
-import NeonLink from '@/components/link/NeonLink.vue';
+import NeonLink from '@/components/navigation/link/NeonLink.vue';
 
 /**
  * <p>A dropdown menu consisting of a button to open the menu and a list of menu items. Clicking on a menu item will
@@ -55,19 +55,14 @@ export default defineComponent({
      */
     'button-ref',
   ],
-  setup(props, { attrs, emit }) {
+  setup(props, { emit }) {
+    const attrs = useAttrs();
     const dropdown = ref<HTMLElement | null>(null);
     const dropdownPlacement = ref<NeonDropdownPlacement | null>(null);
     const items = ref<Array<HTMLLIElement>>([]);
     const open = ref(false);
     const highlightedKey = ref<string | null>(null);
     const highlightedIndex = ref(-1);
-
-    const sanitizedAttributes = computed(() => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { size, color, ...attributes } = Object.entries(attrs).filter(([key, _value]) => key !== 'onInput');
-      return attributes;
-    });
 
     const changeHighlighted = (key: string) => {
       highlightedKey.value = key;
@@ -110,15 +105,14 @@ export default defineComponent({
         if (open.value) {
           switch ($event.code) {
             case 'ArrowUp':
-            case 'ArrowDown':
-              {
-                const reverseOffset = isReverse() ? -1 : 1;
-                if ($event.code === 'ArrowUp') {
-                  navigateBy(-1 * reverseOffset, $event);
-                } else {
-                  navigateBy(1 * reverseOffset, $event);
-                }
+            case 'ArrowDown': {
+              const reverseOffset = isReverse() ? -1 : 1;
+              if ($event.code === 'ArrowUp') {
+                navigateBy(-1 * reverseOffset, $event);
+              } else {
+                navigateBy(1 * reverseOffset, $event);
               }
+            }
               break;
             case 'Enter':
             case 'Space':
@@ -188,7 +182,7 @@ export default defineComponent({
       open,
       highlightedKey,
       highlightedIndex,
-      sanitizedAttributes,
+      attrs,
       changeHighlighted,
       keyboardHandler,
       onBlur,

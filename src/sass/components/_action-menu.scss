@@ -1,0 +1,64 @@
+@use 'src/sass/includes/palettes';
+
+@mixin action-menu {
+  .neon-action-menu {
+    .neon-action-menu__link {
+      display: flex;
+      flex: 1 0 auto;
+      letter-spacing: var(--neon-letter-spacing-s);
+      border-radius: var(--neon-border-radius);
+      margin: calc(0.5 * var(--neon-base-space)) calc(-2 * var(--neon-base-space));
+      padding: var(--neon-base-space) calc(2 * var(--neon-base-space));
+      font-size: var(--neon-font-size-s);
+      font-weight: 400;
+      user-select: none;
+
+      &:not(.neon-action-menu__link--selected):not(.neon-action-menu__link--disabled) {
+        &:hover,
+        &:focus {
+          background-color: var(--neon-color-action-menu-hover);
+        }
+      }
+
+      &.neon-action-menu__link--selected {
+        @each $color in palettes.$neon-functional-colors {
+          &.neon-action-menu__link--#{$color} {
+            background-color: var(--neon-color-#{$color});
+          }
+        }
+
+        color: var(--neon-color-inverse);
+        transition: background-color ease-in-out var(--neon-animation-speed-slow),
+        color ease-in-out var(--neon-animation-speed-slow);
+      }
+
+      &.neon-action-menu__link--disabled {
+        color: var(--neon-color-disabled-light);
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &.neon-action-menu__link--disabled {
+        cursor: not-allowed;
+      }
+
+      &-count {
+        font-variant: tabular-nums;
+        font-weight: 600;
+      }
+
+      .neon-link__label {
+        max-width: none;
+        display: flex;
+        flex: 1 0 auto;
+        justify-content: space-between;
+      }
+    }
+  }
+}

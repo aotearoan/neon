@@ -1,7 +1,6 @@
-import { computed, defineComponent } from 'vue';
+import { computed, defineComponent, useAttrs } from 'vue';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import { NeonNumberUtils } from '@/common/utils/NeonNumberUtils';
-import { NeonVueUtils } from '@/common/utils/NeonVueUtils';
 
 /**
  * <p>
@@ -91,20 +90,22 @@ export default defineComponent({
      */
     'update:modelValue',
   ],
-  setup(props, { attrs, emit }) {
+  setup(props, { emit }) {
+    const attrs = useAttrs();
+
     const sanitizedAttributes = computed(() => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { id, type, value, step, min, max, disabled, ...sanitized } = attrs;
-      return NeonVueUtils.sanitizeAttributes(sanitized, 'onUpdate:modelValue');
+      const { ...sanitized } = attrs;
+      return sanitized;
     });
 
     const formatNumber = (value: number) => {
       return !props.disableFormatting
         ? NeonNumberUtils.formatNumber(value, {
-            decimals: props.decimals,
-            format: props.valueTemplate,
-            percentage: props.percentage,
-          })
+          decimals: props.decimals,
+          format: props.valueTemplate,
+          percentage: props.percentage,
+        })
         : value;
     };
 

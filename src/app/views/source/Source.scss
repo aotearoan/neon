@@ -1,25 +1,28 @@
+@use 'src/sass/includes/layout';
+@use 'src/sass/includes/responsive';
+
 .source-page {
   .editor__container {
-    @include responsive(larger-than-tablet) {
-      @include max-height(
-        100,
-        $neon-top-nav-height-desktop + $neon-footer-height-desktop + $neon-h3-size * $neon-line-height-one + 5.75 *
-          $spacing-vertical-desktop + 3 * $neon-border-width
+    @include responsive.responsive(larger-than-tablet) {
+      @include layout.max-height(
+                      100,
+                      calc(var(--neon-top-nav-height-desktop) + var(--neon-footer-height-desktop) + var(--neon-h3-size) * var(--neon-line-height-one) + 5.75 *
+                      var(--neon-spacing-vertical-desktop) + 3 * var(--neon-border-width))
       );
     }
 
-    @include responsive(tablet) {
-      @include max-height(
-        100,
-        $neon-top-nav-height-tablet + $neon-footer-height-tablet + $neon-h3-size * $neon-line-height-one + 5.75 *
-          $spacing-vertical-tablet + 3 * $neon-border-width
+    @include responsive.responsive(tablet) {
+      @include layout.max-height(
+                      100,
+                      calc(var(--neon-top-nav-height-tablet) + var(--neon-footer-height-tablet) + var(--neon-h3-size) * var(--neon-line-height-one) + 5.75 *
+                      var(--neon-spacing-vertical-tablet) + 3 * var(--neon-border-width))
       );
     }
-    @include responsive(mobile-large) {
-      @include max-height(
-        100,
-        $neon-top-nav-height-mobile + $neon-footer-height-mobile + $neon-h4-size * $neon-line-height-one + 6.5 *
-          $neon-spacing-vertical-mobile + 3 * $neon-border-width
+    @include responsive.responsive(mobile-large) {
+      @include layout.max-height(
+                      100,
+                      calc(var(--neon-top-nav-height-mobile) + var(--neon-footer-height-mobile) + var(--neon-h4-size) * var(--neon-line-height-one) + 6.5 *
+                      var(--neon-spacing-vertical-mobile) + 3 * var(--neon-border-width))
       );
     }
   }

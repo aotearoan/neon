@@ -2,7 +2,7 @@ import { defineComponent } from 'vue';
 import { NeonLabelSize } from '@/common/enums/NeonLabelSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import { NeonHorizontalPosition } from '@/common/enums/NeonHorizontalPosition';
-import NeonIcon from '@/components/icon/NeonIcon.vue';
+import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 
 /**
  * Labels are used to tag or emphasize properties of an item in the UI. Labels can be text only, icon only or contain both text and icons.

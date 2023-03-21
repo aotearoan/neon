@@ -1,14 +1,14 @@
 <template>
   <neon-dropdown
     ref="dropdown"
+    v-model="open"
     :class="`neon-dropdown-menu--${color}`"
     :color="color"
     :disabled="disabled"
     :openOnHover="openOnHover"
     :size="size"
-    :modelValue="open"
     class="neon-dropdown-menu"
-    v-bind="sanitizedAttributes"
+    v-bind="attrs"
     @blur="onBlur()"
     @button="$emit('button-ref', $event)"
     @focus="onFocus()"

@@ -64,5 +64,9 @@
       },
       "required": false
     }
+  ],
+  "sourceFiles": [
+    "./src/components/user-input/color/NeonColor.vue",
+    "/Users/andrew/dev/projects/neon/src/components/user-input/color/NeonColor.ts"
   ]
 }

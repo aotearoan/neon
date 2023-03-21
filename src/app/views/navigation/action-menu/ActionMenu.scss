@@ -1,5 +1,5 @@
 .action-menu-examples {
   .neon-action-menu {
-    max-width: $neon-side-nav-width;
+    max-width: var(--neon-side-nav-width);
   }
 }

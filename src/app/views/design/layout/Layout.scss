@@ -1,12 +1,18 @@
 .layout-example {
-  border-radius: $neon-border-radius;
-  padding: 4 * $neon-base-space;
-  margin: 2 * $neon-base-space;
+  border: 0.125rem solid var(--neon-color-neutral);
+  border-radius: var(--neon-border-radius);
+  padding: calc(4 * var(--neon-base-space));
+  margin: calc(2 * var(--neon-base-space));
   user-select: none;
 
+  &__label,
+  &__link {
+    color: var(--neon-color-neutral) !important;
+  }
+
   &__label {
-    font-size: $neon-font-size-s;
-    margin-left: 2 * $neon-base-space;
+    font-size: var(--neon-font-size-s);
+    margin-left: calc(2 * var(--neon-base-space));
   }
 
   &__content {

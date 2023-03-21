@@ -1,10 +1,7 @@
-@use '../includes/layout';
-@use '../includes/responsive';
+@use 'src/sass/includes/layout';
+@use 'src/sass/includes/responsive';
 
-@mixin layout(
-  $spacings,
-  $neon-base-space,
-) {
+@mixin layout {
   * {
     @include layout.zero-spacing;
   }
@@ -26,7 +23,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    @include layout.margin-vertical($spacings);
+    @include layout.margin-vertical;
 
     @include responsive.responsive(tablet) {
       flex-direction: column;
@@ -43,7 +40,7 @@
     justify-content: flex-start;
 
     & > *:not(:last-child) {
-      margin-right: 4 * $neon-base-space;
+      margin-right: calc(4 * var(--neon-base-space));
     }
   }
 
@@ -58,7 +55,7 @@
 
   .neon-vertically-spaced {
     & > *:not(:last-child):not(label) {
-      margin-bottom: 4 * $neon-base-space;
+      margin-bottom: calc(4 * var(--neon-base-space));
     }
   }
 }

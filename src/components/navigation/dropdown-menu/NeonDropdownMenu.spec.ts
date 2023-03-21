@@ -1,7 +1,8 @@
-import { render } from '@testing-library/vue';
+import { fireEvent, render } from '@testing-library/vue';
 import NeonDropdownMenu from './NeonDropdownMenu.vue';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import { NeonSize } from '@/common/enums/NeonSize';
+import { router } from '@/../test/unit/test-router';
 
 describe('NeonDropdownMenu', () => {
   const model = [
@@ -21,14 +22,14 @@ describe('NeonDropdownMenu', () => {
     {
       key: 'k3',
       label: 'Internal link',
-      href: '/presentation/dropdown',
+      href: '/test',
       icon: 'images',
       separatorBefore: false,
     },
     {
       key: 'k4',
       label: 'Disabled link',
-      href: '/presentation/dropdown',
+      href: '/test',
       icon: 'lock',
       separatorBefore: true,
       disabled: true,
@@ -59,7 +60,7 @@ describe('NeonDropdownMenu', () => {
       props: {
         model,
       },
-      global: { stubs: ['router-link'] },
+      global: { plugins: [router] },
     });
     // when / then
     expect(container.querySelector('.neon-dropdown-menu--low-contrast')).toBeDefined();
@@ -73,7 +74,7 @@ describe('NeonDropdownMenu', () => {
         model,
         color: NeonFunctionalColor.Primary,
       },
-      global: { stubs: ['router-link'] },
+      global: { plugins: [router] },
     });
     // when / then
     expect(container.querySelector('.neon-dropdown-menu--primary')).toBeDefined();
@@ -86,7 +87,7 @@ describe('NeonDropdownMenu', () => {
       props: {
         model,
       },
-      global: { stubs: ['router-link'] },
+      global: { plugins: [router] },
     });
     // when / then
     expect(container.querySelectorAll('.neon-dropdown-menu__item--m').length).toEqual(model.length);
@@ -100,7 +101,7 @@ describe('NeonDropdownMenu', () => {
         model,
         size: NeonSize.Large,
       },
-      global: { stubs: ['router-link'] },
+      global: { plugins: [router] },
     });
     // when / then
     expect(container.querySelectorAll('.neon-dropdown-menu__item--l').length).toEqual(model.length);
@@ -114,7 +115,7 @@ describe('NeonDropdownMenu', () => {
         model,
         openOnHover: true,
       },
-      global: { stubs: ['router-link'] },
+      global: { plugins: [router] },
     });
     // when / then
     expect(container.querySelector('.neon-dropdown--open-on-hover')).toBeDefined();
@@ -126,10 +127,10 @@ describe('NeonDropdownMenu', () => {
       props: {
         model,
       },
-      global: { stubs: ['router-link'] },
+      global: { plugins: [router] },
     });
     // when / then
-    expect(container.querySelector('.neon-dropdown--disabled')).toBeUndefined();
+    expect(container.querySelector('.neon-dropdown--disabled')).toBeNull();
   });
 
   it('renders disabled', () => {
@@ -139,7 +140,7 @@ describe('NeonDropdownMenu', () => {
         model,
         disabled: true,
       },
-      global: { stubs: ['router-link'] },
+      global: { plugins: [router] },
     });
     // when / then
     expect(container.querySelector('.neon-dropdown--disabled')).toBeDefined();
@@ -151,7 +152,7 @@ describe('NeonDropdownMenu', () => {
       props: {
         model,
       },
-      global: { stubs: ['router-link'] },
+      global: { plugins: [router] },
     });
     // when / then
     expect(container.querySelectorAll('.neon-dropdown-menu__item').length).toEqual(model.length);
@@ -163,7 +164,7 @@ describe('NeonDropdownMenu', () => {
       props: {
         model,
       },
-      global: { stubs: ['router-link'] },
+      global: { plugins: [router] },
     });
     // when / then
     expect(container.querySelectorAll('.neon-dropdown-menu__item .neon-icon').length).toEqual(model.length);
@@ -175,7 +176,7 @@ describe('NeonDropdownMenu', () => {
       props: {
         model,
       },
-      global: { stubs: ['router-link'] },
+      global: { plugins: [router] },
     });
     // when / then
     expect(
@@ -189,7 +190,7 @@ describe('NeonDropdownMenu', () => {
       props: {
         model,
       },
-      global: { stubs: ['router-link'] },
+      global: { plugins: [router] },
     });
     // when / then
     expect(container.querySelector('.neon-dropdown-menu__item--disabled')).toBeDefined();
@@ -202,7 +203,7 @@ describe('NeonDropdownMenu', () => {
       props: {
         model,
       },
-      global: { stubs: ['router-link'] },
+      global: { plugins: [router] },
     });
     // when / then
     expect(container.querySelectorAll('.neon-dropdown-menu__item--separator-before').length).toEqual(3);
@@ -214,7 +215,7 @@ describe('NeonDropdownMenu', () => {
       props: {
         model: groupedModel,
       },
-      global: { stubs: ['router-link'] },
+      global: { plugins: [router] },
     });
     // when / then
     expect(
@@ -225,50 +226,51 @@ describe('NeonDropdownMenu', () => {
     ).toBeDefined();
   });
 
-  it('emits click event', () => {
+  it('emits click event', async () => {
     // given
     const { container, emitted } = render(NeonDropdownMenu, {
       props: {
         model,
       },
-      global: { stubs: ['router-link'] },
+      global: { plugins: [router] },
     });
     // when
-    (
-      container.querySelector(
-        '.neon-dropdown-menu__item:first-child .neon-dropdown-menu__item-container',
-      ) as HTMLElement
-    )?.click();
+    const el = container.querySelector(
+      '.neon-dropdown-menu__item:first-child  .neon-dropdown-menu__item-container',
+    ) as HTMLDivElement;
+    await fireEvent.click(el);
     // then
     expect(emitted().click[0]).toEqual([model[0]]);
   });
 
-  it('does not emit click event when disabled', () => {
+  it('does not emit click event when disabled', async () => {
     // given
     const { container, emitted } = render(NeonDropdownMenu, {
       props: {
         model,
       },
-      global: { stubs: ['router-link'] },
+      global: { plugins: [router] },
     });
     // when
-    (
-      container.querySelector('.neon-dropdown-menu__item:last-child .neon-dropdown-menu__item-container') as HTMLElement
-    )?.click();
+    const el = container.querySelector(
+      '.neon-dropdown-menu__item:last-child .neon-dropdown-menu__item-container',
+    ) as HTMLDivElement;
+    await fireEvent.click(el);
     // then
     expect(emitted().click).toBeUndefined();
   });
 
-  it('does not emit click event when href', () => {
+  it('does not emit click event when href', async () => {
     // given
     const { container, emitted } = render(NeonDropdownMenu, {
       props: {
         model,
       },
-      global: { stubs: ['router-link'] },
+      global: { plugins: [router] },
     });
     // when
-    (container.querySelector('.neon-dropdown-menu__item:nth-child(2) .neon-link') as HTMLElement)?.click();
+    const el = container.querySelector('.neon-dropdown-menu__item:nth-child(2) .neon-link') as HTMLAnchorElement;
+    await fireEvent.click(el);
     // then
     expect(emitted().click).toBeUndefined();
   });

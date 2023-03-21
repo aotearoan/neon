@@ -2,7 +2,7 @@ import { defineComponent } from 'vue';
 import type { NeonTabModel } from '@/common/models/NeonTabModel';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import { NeonSize } from '@/common/enums/NeonSize';
-import NeonIcon from '@/components/icon/NeonIcon.vue';
+import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 
 /**
  * A component for displaying tabbed content.

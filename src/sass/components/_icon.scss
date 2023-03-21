@@ -1,0 +1,47 @@
+@use 'src/sass/includes/palettes';
+@use 'src/sass/includes/svg';
+
+@mixin icon {
+  .neon-icon {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  $neon-icon-types: (neon-expansion-indicator, neon-icon);
+
+  @each $neon-icon-type in $neon-icon-types {
+    .#{$neon-icon-type} {
+      @include svg.svg-colors(var(--neon-color-text));
+
+      .neon-svg--fill {
+        transition: fill ease-in-out var(--neon-animation-speed-fast);
+      }
+
+      .neon-svg--stroke {
+        transition: stroke ease-in-out var(--neon-animation-speed-fast);
+      }
+
+      @each $color in palettes.$neon-functional-colors {
+        &--#{$color}:not(.#{$neon-icon-type}--disabled):not(.#{$neon-icon-type}--inverse) {
+          @include svg.svg-colors(var(--neon-color-#{$color}));
+        }
+      }
+
+      &--inverse {
+        @include svg.svg-colors(var(--neon-color-inverse));
+      }
+
+      &--disabled {
+        .neon-svg--fill {
+          fill: var(--neon-color-disabled-light);
+        }
+
+        .neon-svg--stroke {
+          stroke: var(--neon-color-disabled-light);
+        }
+      }
+    }
+  }
+}

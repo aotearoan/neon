@@ -105,5 +105,9 @@
         }
       ]
     }
+  ],
+  "sourceFiles": [
+    "./src/components/user-input/search/NeonSearch.vue",
+    "/Users/andrew/dev/projects/neon/src/components/user-input/search/NeonSearch.ts"
   ]
 }

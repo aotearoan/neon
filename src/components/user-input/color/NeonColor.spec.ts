@@ -75,7 +75,7 @@ describe('NeonColor', () => {
     ).toEqual('rgb(186, 218, 85)');
     expect(
       (container.querySelector('.neon-color__indicator') as HTMLInputElement).style.getPropertyValue('box-shadow'),
-    ).toEqual(`0 0 0 4px ${value}4D`);
+    ).toEqual(`0 0 0 0.25rem ${value}4D`);
   });
 
   it('emits changed text value', async () => {

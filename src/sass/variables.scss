@@ -1,0 +1,659 @@
+@import './colors';
+
+.neon {
+  /*********************
+  * Global Variables
+  *********************/
+
+  /* layout */
+  --neon-base-space: 0.25rem;
+  --neon-max-paragraph-width: 70ch;
+  --neon-max-page-width: 120rem;
+
+  /* ratio of horizontal to vertical spacing, e.g. 1 = square padding */
+  --neon-spacing-horizontal-multiplier: 1;
+  /* ratio of tablet to mobile spacing */
+  --neon-spacing-multiplier-tablet: 1.5;
+  /* ratio of desktop to mobile spacing */
+  --neon-spacing-multiplier-desktop: 2;
+
+  /* mobile spacing */
+  --neon-spacing-vertical-mobile: calc(4 * var(--neon-base-space));
+  --neon-spacing-horizontal-mobile: calc(var(--neon-spacing-vertical-mobile) * var(--neon-spacing-horizontal-multiplier));
+  /* tablet spacing */
+  --neon-spacing-vertical-tablet: calc(var(--neon-spacing-vertical-mobile) * var(--neon-spacing-multiplier-tablet));
+  --neon-spacing-horizontal-tablet: calc(var(--neon-spacing-horizontal-mobile) * var(--neon-spacing-multiplier-tablet));
+  /* desktop spacing */
+  --neon-spacing-vertical-desktop: calc(var(--neon-spacing-vertical-mobile) * var(--neon-spacing-multiplier-desktop));
+  --neon-spacing-horizontal-desktop: calc(var(--neon-spacing-horizontal-mobile) * var(--neon-spacing-multiplier-desktop));
+
+  /* animation */
+  --neon-animation-speed-slow: 0.3s;
+  --neon-animation-speed-fast: 0.225s;
+
+  /* borders */
+  --neon-border-radius: 0.375rem;
+  --neon-border-width: 0;
+  --neon-border-width-separator-before: 0.0625rem;
+  --neon-border-style: solid;
+
+  /* z-index */
+  --neon-z-index-below: -1;
+  --neon-z-index-default: 0;
+  --neon-z-index-above: 1;
+  --neon-z-index-above-2: 2;
+  --neon-z-index-above-3: 3;
+  --neon-z-index-top: 9999;
+
+  /* typography */
+  --neon-typography-scale: 1.125; // Major second https://type-scale.com/
+  --neon-base-font-size: 1rem;
+  --neon-typography-margin-unit: calc(2 * var(--neon-base-space)); // base typography bottom margin unit
+
+
+  --neon-font-size-xxs: calc(var(--neon-base-font-size) / (var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale)));
+  --neon-font-size-xs: calc(var(--neon-base-font-size) / (var(--neon-typography-scale) * var(--neon-typography-scale)));
+  --neon-font-size-s: calc(var(--neon-base-font-size) / var(--neon-typography-scale));
+  --neon-font-size-m: var(--neon-base-font-size);
+  --neon-font-size-l: calc(var(--neon-base-font-size) * var(--neon-typography-scale));
+
+  --neon-letter-spacing-s: 0.015625rem;
+  --neon-letter-spacing-m: 0.03125rem;
+  --neon-letter-spacing-l: 0.0625rem;
+
+  --neon-h6-size: var(--neon-font-size-l);
+  --neon-h5-size: calc(var(--neon-base-font-size) * var(--neon-typography-scale) * var(--neon-typography-scale));
+  --neon-h4-size: calc(var(--neon-base-font-size) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale));
+  --neon-h3-size: calc(var(--neon-base-font-size) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale));
+  --neon-h2-size: calc(var(--neon-base-font-size) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale));
+  --neon-h1-size: calc(var(--neon-base-font-size) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale));
+  /* AKA branding font size, used for landing page & banners etc... */
+  --neon-h0-size: calc(var(--neon-base-font-size) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale));
+
+  --neon-h6-weight: 500;
+  --neon-h5-weight: 500;
+  --neon-h4-weight: 500;
+  --neon-h3-weight: 500;
+  --neon-h2-weight: 500;
+  --neon-h1-weight: 500;
+  --neon-h0-weight: 500;
+
+  --neon-font-weight-em: 200;
+  --neon-font-weight-strong: 800;
+
+  --neon-letter-spacing-headings: 0;
+
+  --neon-line-height-headings-ratio: 1.2;
+  --neon-line-height-ratio: 1.618;
+  --neon-line-height-one: 1.125; // hack for line-height: 1 to prevent cropping of content below the baseline e.g. 'g'
+
+  --neon-system-font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+  --neon-body-font-family: var(--neon-system-font-stack);
+  --neon-body-font-weight: 400;
+
+  --neon-heading-font-family: var(--neon-body-font-family);
+  --neon-font-style-headings: normal;
+
+  --neon-font-family-paragraph: var(--neon-body-font-family);
+  --neon-font-family-monospaced: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', Courier, monospace;
+
+  --neon-logo-width-multiplier: 3.84776; // logo ratio of width to height
+
+  /* gradient config */
+  --neon-background-gradient-angle: 90deg;
+  /* % offset where background gradient switches to alternate-color */
+  --neon-background-gradient-offset: 33%;
+  --neon-background-gradient-offset-hover: 50%;
+
+  /* smaller sizes for labels only */
+  --neon-size-xxs: calc(4 * var(--neon-base-space));
+  --neon-size-xs: calc(6 * var(--neon-base-space));
+  /* standard label & input sizes */
+  --neon-size-s: calc(8 * var(--neon-base-space));
+  --neon-size-m: calc(10 * var(--neon-base-space));
+  --neon-size-l: calc(12 * var(--neon-base-space));
+  /* buttons only */
+  --neon-size-xl: calc(16 * var(--neon-base-space));
+
+  /* box shadows */
+  --neon-box-shadow: 0 0 0 0 rgba(#000, 0);
+  --neon-box-shadow-strong: 0 0 0 0 rgba(#000, 0);
+  --neon-inset-shadow: inset 0 0 0 0 rgba(#000, 0);
+
+  /* top nav */
+  --neon-top-nav-height-mobile: calc(var(--neon-size-s) + 4 * var(--neon-base-space));
+  --neon-top-nav-height-tablet: calc(var(--neon-size-m) + 6 * var(--neon-base-space));
+  --neon-top-nav-height-desktop: calc(var(--neon-size-l) + 8 * var(--neon-base-space));
+
+  /* footer */
+  --neon-footer-height-mobile: calc(var(--neon-font-size-s) + 8 * var(--neon-base-space));
+  --neon-footer-height-tablet: calc(var(--neon-font-size-s) + 8 * var(--neon-base-space));
+  --neon-footer-height-desktop: calc(var(--neon-base-font-size) + 12 * var(--neon-base-space));
+
+  /* side nav */
+  --neon-side-nav-width: calc(80 * var(--neon-base-space));
+
+  /* card */
+  --neon-card-section-border: var(--neon-border-width) var(--neon-border-style);
+  --neon-border-radius-card: 0.75rem;
+  --neon-card-box-shadow: none;
+
+  /* checkbox */
+  --neon-border-width-checkbox: 0.0625rem;
+  --neon-border-radius-checkbox: 0.125rem;
+
+  /* alerts */
+  --neon-width-alert: 25rem;
+  --neon-width-alert-action: 5rem;
+  --neon-border-width-alert: 0.0625rem;
+  --neon-border-opacity-alert-action: 0.25;
+  --neon-width-toast: 15.625rem;
+
+  /* dropdown */
+  --neon-max-height-dropdown: 17.5rem;
+
+  /* buttons */
+  --neon-border-radius-button: var(--neon-border-radius);
+  --neon-border-radius-button-xl: var(--neon-border-radius);
+  --neon-border-width-outline-button: 0.0625rem;
+
+  /* tabs */
+  --neon-border-width-tabs: 0.125rem;
+
+  /* chips */
+  --neon-border-radius-chip: var(--neon-border-radius);
+
+  /* scrollbars */
+  --neon-width-scrollbar: 0.75rem;
+  --neon-border-radius-scrollbar: 0.25rem;
+
+  /* tooltips */
+  --neon-tooltip-max-width: 9rem;
+  --neon-tooltip-max-height: calc(3 * var(--neon-tooltip-max-width));
+  --neon-popover-max-width: 30rem;
+  --neon-popover-max-height: calc(3 * var(--neon-tooltip-max-width));
+  --neon-border-width-tooltip: 0;
+
+  /* drawer */
+  --neon-border-width-drawer: 0;
+  --neon-border-radius-drawer: 1rem;
+
+  /* radio buttons */
+  --neon-border-radius-radio-button: 50%;
+  --neon-border-width-radio-button: 0.0625rem;
+
+  /* switch */
+  --neon-border-radius-switch: calc(4 * var(--neon-base-space));
+  --neon-border-radius-switch-indicator: 50%;
+
+  /* note */
+  --neon-border-width-note: 0.5rem;
+
+  /* slider & range slider */
+  --neon-height-slider-track: 0.5rem;
+  --neon-height-slider-thumb: calc(3 * var(--neon-height-slider-track));
+  --neon-width-slider-thumb: var(--neon-height-slider-thumb);
+  --neon-border-radius-slider-thumb: 50%;
+  --neon-border-radius-slider-track: var(--neon-height-slider-track);
+  --neon-border-radius-slider-tooltip: var(--neon-border-radius);
+
+  /* input */
+  --neon-border-radius-input: var(--neon-border-radius);
+
+  /* skeleton loader */
+  --neon-border-radius-skeleton-loader: 0.75rem;
+
+  /* expansion panel */
+  --neon-border-width-expansion-panel: 0.0625rem;
+
+  /* table */
+  --neon-border-width-table: 0.0625rem;
+
+  /* label */
+  --neon-border-radius-label: 0.25rem;
+
+  /* badge */
+  --neon-background-gradient-angle-badge: 45deg;
+  --neon-icon-size-multiplier-badge: 0.667;
+
+  /* color input */
+  --neon-border-radius-input-color: 50%;
+
+  /* dialog */
+  --neon-max-width-dialog: 15.625rem;
+  --neon-min-height-dialog: 17.1875rem;
+  --neon-font-style-dialog: italic;
+
+  /* progress linear */
+  --neon-opacity-background-progress: 0.0625;
+  --neon-border-radius-progress-indicator: calc(2 * var(--neon-base-space));
+
+  /**********************
+  * DARK THEME VARIABLES
+  **********************/
+  &.neon-mode--dark {
+    --neon-background-color-card: var(--neon-color-neutral-d4);
+    --neon-background-color: var(--neon-color-neutral-d5);
+
+    --neon-rgb-text: var(--neon-rgb-text-light);
+    --neon-color-text: var(--neon-color-text-light);
+
+    --neon-rgb-inverse: var(--neon-rgb-text-dark);
+    --neon-color-inverse: var(--neon-color-text-dark);
+
+    --neon-rgb-low-contrast: var(--neon-rgb-low-contrast-l1);
+    --neon-rgb-neutral: var(--neon-rgb-neutral-l1);
+    --neon-rgb-high-contrast: var(--neon-rgb-high-contrast-l1);
+    --neon-rgb-brand: var(--neon-rgb-brand-l1);
+    --neon-rgb-primary: var(--neon-rgb-primary-l1);
+    --neon-rgb-info: var(--neon-rgb-info-l1);
+    --neon-rgb-success: var(--neon-rgb-success-l1);
+    --neon-rgb-warn: var(--neon-rgb-warn-l1);
+    --neon-rgb-error: var(--neon-rgb-error-l1);
+
+    --neon-color-low-contrast: var(--neon-color-low-contrast-l1);
+    --neon-color-neutral: var(--neon-color-neutral-l1);
+    --neon-color-high-contrast: var(--neon-color-high-contrast-l1);
+    --neon-color-brand: var(--neon-color-brand-l1);
+    --neon-color-primary: var(--neon-color-primary-l1);
+    --neon-color-info: var(--neon-color-info-l1);
+    --neon-color-success: var(--neon-color-success-l1);
+    --neon-color-warn: var(--neon-color-warn-l1);
+    --neon-color-error: var(--neon-color-error-l1);
+
+    --neon-background-rgb-low-contrast: var(--neon-rgb-low-contrast-d1);
+    --neon-background-color-low-contrast: var(--neon-color-low-contrast-d1);
+    --neon-background-color-neutral: var(--neon-color-neutral-d1);
+    --neon-background-color-high-contrast: var(--neon-color-high-contrast-d1);
+    --neon-background-color-primary: var(--neon-color-primary-d1);
+    --neon-background-color-info: var(--neon-color-info-d1);
+    --neon-background-color-success: var(--neon-color-success-d1);
+    --neon-background-color-warn: var(--neon-color-warn-d1);
+    --neon-background-color-error: var(--neon-color-error-d1);
+
+    --neon-border-color: var(--neon-color-neutral-d3);
+    --neon-border: var(--neon-border-width) var(--neon-border-style) var(--neon-border-color);
+    --neon-border-hr: 0.0625rem var(--neon-border-style) var(--neon-border-color);
+    --neon-color-hr: var(--neon-border-color);
+
+    --neon-label-color: var(--neon-color-neutral-l1);
+
+    --neon-rgb-disabled-light: var(--neon-rgb-neutral-d2);
+    --neon-rgb-disabled-medium: var(--neon-rgb-neutral-d3);
+    --neon-rgb-disabled-dark: var(--neon-rgb-neutral-d4);
+
+    --neon-color-disabled-light: var(--neon-color-neutral-d2);
+    --neon-color-disabled-medium: var(--neon-color-neutral-d3);
+    --neon-color-disabled-dark: var(--neon-color-neutral-d4);
+
+    /* switch */
+    --neon-rgb-switch-off: var(--neon-rgb-neutral-d2);
+    --neon-color-switch-off: var(--neon-color-neutral-d2);
+    --neon-color-switch-indicator: var(--neon-color-neutral-d4);
+    --neon-inset-shadow-switch: inset 0 0.125rem 0.125rem rgba(0, 0, 0, 0.014), inset 0 0.25rem 0.25rem rgba(0, 0, 0, 0.028),
+    inset 0 0.75rem 0.75rem rgba(0, 0, 0, 0.03);
+    --neon-color-switch-disabled: var(--neon-color-disabled-medium);
+    --neon-color-switch-indicator-disabled: var(--neon-color-disabled-light);
+
+    /* solid buttons */
+    --neon-background-solid-button-light-high-contrast: var(--neon-color-text);
+    --neon-background-solid-button-dark-high-contrast: var(--neon-color-text);
+
+    --neon-background-solid-button-light-low-contrast: var(--neon-color-low-contrast-d5);
+    --neon-background-solid-button-dark-low-contrast: var(--neon-color-low-contrast-d5);
+
+    --neon-background-solid-button-light-neutral: var(--neon-color-low-contrast-l1);
+    --neon-background-solid-button-dark-neutral: var(--neon-color-low-contrast-l1);
+
+    --neon-background-solid-button-light-brand: var(--neon-color-brand-l1);
+    --neon-background-solid-button-dark-brand: var(--neon-color-brand-l1);
+
+    --neon-background-solid-button-light-primary: var(--neon-color-primary-l1);
+    --neon-background-solid-button-dark-primary: var(--neon-color-primary-l1);
+
+    --neon-background-solid-button-light-info: var(--neon-color-info-l1);
+    --neon-background-solid-button-dark-info: var(--neon-color-info-l1);
+
+    --neon-background-solid-button-light-success: var(--neon-color-success-l1);
+    --neon-background-solid-button-dark-success: var(--neon-color-success-l1);
+
+    --neon-background-solid-button-light-warn: var(--neon-color-warn-l1);
+    --neon-background-solid-button-dark-warn: var(--neon-color-warn-l1);
+
+    --neon-background-solid-button-light-error: var(--neon-color-error-l1);
+    --neon-background-solid-button-dark-error: var(--neon-color-error-l1);
+
+    /* outline buttons */
+    --neon-background-button-active-high-contrast: var(--neon-color-high-contrast-d1);
+    --neon-background-button-active-low-contrast: var(--neon-color-low-contrast-d1);
+    --neon-background-button-active-neutral: var(--neon-color-low-contrast-d1);
+    --neon-background-button-active-brand: var(--neon-color-brand-d1);
+    --neon-background-button-active-primary: var(--neon-color-primary-d1);
+    --neon-background-button-active-info: var(--neon-color-info-d1);
+    --neon-background-button-active-success: var(--neon-color-success-d1);
+    --neon-background-button-active-warn: var(--neon-color-warn-d1);
+    --neon-background-button-active-error: var(--neon-color-error-d1);
+
+    /* low-contrast buttons */
+    --neon-color-low-contrast-solid-button: var(--neon-color-low-contrast-l4);
+    --neon-color-low-contrast-outline-button: var(--neon-color-low-contrast-d3);
+
+    /* text button */
+    --neon-background-color-text-button-hover: rgba(var(--neon-rgb-neutral-d3), 0.25);
+    --neon-background-color-text-button-active: rgba(var(--neon-rgb-neutral-d3), 0.5);
+
+    /* note */
+    --neon-background-color-note: rgba(var(--neon-rgb-high-contrast-d3), 0.5);
+    --neon-color-note: var(--neon-color-text);
+
+    /* link */
+    --neon-rgb-link: var(--neon-rgb-primary-l1);
+    --neon-color-link: var(--neon-color-primary-l1);
+    --neon-color-link-hover: var(--neon-color-primary-l2);
+    --neon-color-link-visited: var(--neon-color-primary-l2);
+
+    /* action menu */
+    --neon-color-action-menu-hover: var(--neon-color-neutral-d3);
+
+    /* selection */
+    --neon-background-rgb-selection: var(--neon-rgb-info-l1);
+
+    /* pre */
+    --neon-color-pre: var(--neon-color-primary-l3);
+    --neon-background-color-pre: var(--neon-color-neutral-d3);
+
+    /* toggle */
+    --neon-color-toggle-selected: var(--neon-color-neutral-d5);
+    --neon-border-color-toggle: var(--neon-color-neutral-d3);
+    --neon-opacity-toggle: 0.125;
+    --neon-opacity-toggle-selected: 0.33;
+    --neon-opacity-toggle-hover: 0.25;
+
+    /* radio buttons */
+    --neon-background-radio-button: none;
+    --neon-color-radio-button-bg-active: rgba(var(--neon-rgb-neutral-d3), 0.375);
+    --neon-color-radio-button-label: var(--neon-color-neutral-l3);
+
+    /* input */
+    --neon-border-color-input: var(--neon-color-neutral-d2);
+    --neon-background-color-input: rgba(var(--neon-rgb-neutral-d5), 0.5);
+    --neon-background-color-input-active: var(--neon-color-neutral-d5);
+    --neon-color-placeholder: var(--neon-color-disabled-light);
+
+    /* drop zone */
+    --neon-rgb-drop-zone-background: var(--neon-rgb-neutral-d5);
+    --neon-rgb-drop-zone: var(--neon-rgb-neutral-l1);
+
+    /* alerts */
+    --neon-box-shadow-alert: calc(0.5 * var(--neon-base-space)) calc(0.5 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) var(--neon-color-neutral-d5);
+
+    --neon-color-toast-info: var(--neon-color-info-d4);
+    --neon-color-toast-success: var(--neon-color-success-d4);
+    --neon-color-toast-warn: var(--neon-color-warn-d4);
+    --neon-color-toast-error: var(--neon-color-error-d4);
+
+    /* dropdown / dropdown menu / select */
+    --neon-border-color-dropdown: var(--neon-color-neutral-d3);
+    --neon-box-shadow-dropdown: calc(0.5 * var(--neon-base-space)) calc(0.5 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) var(--neon-color-neutral-d5);
+
+    /* tooltip */
+    --neon-box-shadow-tooltip: calc(0.5 * var(--neon-base-space)) calc(0.5 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) var(--neon-color-neutral-d5);
+
+    /* tabs */
+    --neon-border-color-tabs-underline: rgba(var(--neon-rgb-neutral-d3), 0.667);
+
+    /* footer */
+    --neon-background-color-footer: var(--neon-background-color);
+    --neon-border-top-footer: none;
+
+    /* skeleton loader */
+    --neon-color-loading-1: var(--neon-color-neutral-d3);
+    --neon-color-loading-2: var(--neon-color-neutral-d2);
+    --neon-color-loading-3: rgba(var(--neon-rgb-neutral-d2), 0.5);
+
+    /* scrollbars */
+    --neon-color-scrollbar: rgba(white, 0.05);
+
+    /* overlays */
+    --neon-background-color-overlay: rgba(var(--neon-rgb-neutral-d5), 0.75);
+
+    /* toggle chips */
+    --neon-color-toggle-chip-text: var(--neon-color-text);
+    --neon-border-rgb-toggle-chip: var(--neon-rgb-neutral-d3);
+    --neon-border-color-toggle-chip: var(--neon-color-neutral-d3);
+    --neon-opacity-toggle-chip: 0.23;
+    --neon-opacity-toggle-chip-hover: 0.33;
+
+    /* slider & range slider */
+    --neon-color-slider-track: var(--neon-color-neutral-d3);
+    --neon-slider-thumb-color: var(--neon-color-neutral-l4);
+    --neon-box-shadow-slider: 0 -0.125rem 0.25rem 0 rgba(0, 0, 0, 0.2), 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.3);
+    --neon-border-slider-thumb: none;
+
+    /* top nav */
+    --neon-background-color-top-nav: var(--neon-background-color-card);
+
+    /* side nav */
+    --neon-background-color-side-nav: var(--neon-background-color-card);
+
+    /* input indicators */
+    --neon-background-color-input-indicator: var(--neon-color-high-contrast-d2);
+    --neon-color-input-indicator: var(--neon-color-neutral);
+  }
+
+  /*********************
+  * LIGHT VARIABLE
+  *********************/
+  &.neon-mode--light {
+    --neon-background-color-card: var(--neon-color-high-contrast-l5);
+    --neon-background-color: var(--neon-color-high-contrast-l4);
+
+    --neon-rgb-text: var(--neon-rgb-text-dark);
+    --neon-color-text: var(--neon-color-text-dark);
+
+    --neon-rgb-inverse: var(--neon-rgb-text-light);
+    --neon-color-inverse: var(--neon-color-text-light);
+
+    --neon-rgb-low-contrast: var(-neon-rgb-low-contrast-d1);
+    --neon-rgb-neutral: var(--neon-rgb-neutral-d1);
+    --neon-rgb-high-contrast: var(--neon-rgb-high-contrast-d1);
+    --neon-rgb-brand: var(--neon-rgb-brand-d1);
+    --neon-rgb-primary: var(--neon-rgb-primary-d1);
+    --neon-rgb-info: var(--neon-rgb-info-d1);
+    --neon-rgb-success: var(--neon-rgb-success-d1);
+    --neon-rgb-warn: var(--neon-rgb-warn-d1);
+    --neon-rgb-error: var(--neon-rgb-error-d1);
+
+    --neon-color-low-contrast: var(-neon-color-low-contrast-d1);
+    --neon-color-neutral: var(--neon-color-neutral-d1);
+    --neon-color-high-contrast: var(--neon-color-high-contrast-d1);
+    --neon-color-brand: var(--neon-color-brand-d1);
+    --neon-color-primary: var(--neon-color-primary-d1);
+    --neon-color-info: var(--neon-color-info-d1);
+    --neon-color-success: var(--neon-color-success-d1);
+    --neon-color-warn: var(--neon-color-warn-d1);
+    --neon-color-error: var(--neon-color-error-d1);
+
+    --neon-background-rgb-low-contrast: var(--neon-rgb-low-contrast-l1);
+    --neon-background-color-low-contrast: var(--neon-color-low-contrast-l1);
+    --neon-background-color-neutral: var(--neon-color-neutral-l1);
+    --neon-background-color-high-contrast: var(--neon-color-high-contrast-l1);
+    --neon-background-color-brand: var(--neon-color-brand-l1);
+    --neon-background-color-primary: var(--neon-color-primary-l1);
+    --neon-background-color-info: var(--neon-color-info-l1);
+    --neon-background-color-success: var(--neon-color-success-l1);
+    --neon-background-color-warn: var(--neon-color-warn-l1);
+    --neon-background-color-error: var(--neon-color-error-l1);
+
+    --neon-border-color: var(--neon-color-neutral-l4);
+    --neon-border: var(--neon-border-width) var(--neon-border-style) var(--neon-border-color);
+    --neon-border-hr: 0.0625rem var(--neon-border-style) var(--neon-border-color);
+    --neon-color-hr: var(--neon-border-color);
+
+    --neon-label-color: var(--neon-color-neutral-d1);
+
+    --neon-rgb-disabled-light: var(--neon-rgb-low-contrast-l5);
+    --neon-rgb-disabled-medium: var(--neon-rgb-low-contrast-l4);
+    --neon-rgb-disabled-dark: var(--neon-rgb-high-contrast-l3);
+
+    --neon-color-disabled-light: var(--neon-color-low-contrast-l5);
+    --neon-color-disabled-medium: var(--neon-color-low-contrast-l4);
+    --neon-color-disabled-dark: var(--neon-color-high-contrast-l3);
+
+    /* switch */
+    --neon-rgb-switch-off: var(--neon-rgb-neutral-l3);
+    --neon-color-switch-off: var(--neon-color-neutral-l3);
+    --neon-color-switch-indicator: var(--neon-color-high-contrast-l5);
+    --neon-inset-shadow-switch: inset 0 0.125rem 0.125rem rgba(0, 0, 0, 0.014), inset 0 0.25rem 0.25rem rgba(0, 0, 0, 0.028),
+    inset 0 0.75rem 0.75rem rgba(0, 0, 0, 0.03);
+    --neon-color-switch-disabled: var(--neon-color-disabled-light);
+    --neon-color-switch-indicator-disabled: var(--neon-color-disabled-dark);
+
+    /* solid buttons */
+    --neon-background-solid-button-light-high-contrast: var(--neon-color-text);
+    --neon-background-solid-button-dark-high-contrast: var(--neon-color-text);
+
+    --neon-background-solid-button-light-low-contrast: var(--neon-color-low-contrast-l5);
+    --neon-background-solid-button-dark-low-contrast: var(--neon-color-low-contrast-l5);
+
+    --neon-background-solid-button-light-neutral: var(--neon-color-low-contrast-d1);
+    --neon-background-solid-button-dark-neutral: var(--neon-color-low-contrast-d1);
+
+    --neon-background-solid-button-light-brand: var(--neon-color-brand-d1);
+    --neon-background-solid-button-dark-brand: var(--neon-color-brand-d1);
+
+    --neon-background-solid-button-light-primary: var(--neon-color-primary-d1);
+    --neon-background-solid-button-dark-primary: var(--neon-color-primary-d1);
+
+    --neon-background-solid-button-light-info: var(--neon-color-info-d1);
+    --neon-background-solid-button-dark-info: var(--neon-color-info-d1);
+
+    --neon-background-solid-button-light-success: var(--neon-color-success-d1);
+    --neon-background-solid-button-dark-success: var(--neon-color-success-d1);
+
+    --neon-background-solid-button-light-warn: var(--neon-color-warn-d1);
+    --neon-background-solid-button-dark-warn: var(--neon-color-warn-d1);
+
+    --neon-background-solid-button-light-error: var(--neon-color-error-d1);
+    --neon-background-solid-button-dark-error: var(--neon-color-error-d1);
+
+    /* outline buttons */
+    --neon-background-button-active-high-contrast: var(--neon-color-high-contrast-d2);
+    --neon-background-button-active-low-contrast: var(--neon-color-low-contrast-d2);
+    --neon-background-button-active-neutral: var(--neon-color-low-contrast-d2);
+    --neon-background-button-active-brand: var(--neon-color-brand-d2);
+    --neon-background-button-active-primary: var(--neon-color-primary-d2);
+    --neon-background-button-active-info: var(--neon-color-info-d2);
+    --neon-background-button-active-success: var(--neon-color-success-d2);
+    --neon-background-button-active-warn: var(--neon-color-warn-d2);
+    --neon-background-button-active-error: var(--neon-color-error-d2);
+
+    /* low-contrast buttons */
+    --neon-color-low-contrast-solid-button: var(--neon-color-low-contrast-d4);
+    --neon-color-low-contrast-outline-button: var(--neon-color-low-contrast-l2);
+
+    /* text button */
+    --neon-background-color-text-button-hover: rgba(var(--neon-rgb-neutral-l4), 0.33);
+    --neon-background-color-text-button-active: rgba(var(--neon-rgb-neutral-l4), 0.75);
+
+    /* note */
+    --neon-background-color-note: rgba(var(--neon-rgb-high-contrast-l3), 0.5);
+    --neon-color-note: var(--neon-color-text);
+
+    /* link */
+    --neon-rgb-link: var(--neon-rgb-primary-l1);
+    --neon-color-link: var(--neon-color-primary-d1);
+    --neon-color-link-hover: var(--neon-color-primary-d1);
+    --neon-color-link-visited: var(--neon-color-primary-d2);
+
+    /* action menu */
+    --neon-color-action-menu-hover: var(--neon-color-neutral-l4);
+
+    /* selection */
+    --neon-background-rgb-selection: var(--neon-rgb-info-d1);
+
+    /* pre */
+    --neon-color-pre: var(--neon-color-primary-d3);
+    --neon-background-color-pre: var(--neon-color-neutral-d5);
+
+    /* toggle */
+    --neon-color-toggle-selected: var(--neon-color-neutral-l5);
+    --neon-border-color-toggle: var(--neon-color-neutral-l3);
+    --neon-opacity-toggle: 0.125;
+    --neon-opacity-toggle-selected: 0.33;
+    --neon-opacity-toggle-hover: 0.25;
+
+    /* radio buttons */
+    --neon-background-radio-button: none;
+    --neon-color-radio-button-bg-active: rgba(var(--neon-rgb-neutral-l3), 0.375);
+    --neon-color-radio-button-label: var(--neon-color-neutral-d3);
+
+    /* input */
+    --neon-border-color-input: var(--neon-color-neutral-l3);
+    --neon-background-color-input: var(--neon-color-high-contrast-l4);
+    --neon-background-color-input-active: rgba(var(--neon-rgb-high-contrast-l4), 0.5);
+    --neon-color-placeholder: var(--neon-color-low-contrast-l3);
+
+    /* drop zone */
+    --neon-rgb-drop-zone-background: var(--neon-rgb-high-contrast-l4);
+    --neon-rgb-drop-zone: var(--neon-rgb-text);
+
+    /* alerts */
+    --neon-box-shadow-alert: calc(0.5 * var(--neon-base-space)) calc(0.5 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) rgba(var(--neon-rgb-neutral-d1), 0.5);
+
+    --neon-color-toast-info: var(--neon-color-info-l4);
+    --neon-color-toast-success: var(--neon-color-success-l4);
+    --neon-color-toast-warn: var(--neon-color-warn-l4);
+    --neon-color-toast-error: var(--neon-color-error-l4);
+
+    /* dropdown / dropdown menu / select */
+    --neon-border-color-dropdown: var(--neon-color-neutral-l4);
+    --neon-box-shadow-dropdown: calc(0.5 * var(--neon-base-space)) calc(0.5 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) rgba(var(--neon-rgb-neutral-d1), 0.5);
+
+    /* tooltip */
+    --neon-box-shadow-tooltip: calc(0.5 * var(--neon-base-space)) calc(0.5 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) rgba(var(--neon-rgb-neutral-d1), 0.5);
+
+    /* tabs */
+    --neon-border-color-tabs-underline: rgba(var(--neon-rgb-neutral-l3), 0.667);
+
+    /* footer */
+    --neon-background-color-footer: var(--neon-background-color);
+    --neon-border-top-footer: none;
+
+    /* skeleton loader */
+    --neon-color-loading-1: var(--neon-color-high-contrast-l3);
+    --neon-color-loading-2: rgba(var(--neon-rgb-high-contrast-l2), 0.5);
+    --neon-color-loading-3: var(--neon-color-high-contrast-l2);
+
+    /* scrollbars */
+    --neon-color-scrollbar: rgba(black, 0.125);
+
+    /* overlays */
+    --neon-background-color-overlay: rgba(var(--neon-rgb-neutral-d5), 0.75);
+
+    /* toggle chips */
+    --neon-color-toggle-chip-text: var(--neon-color-text);
+    --neon-border-rgb-toggle-chip: var(--neon-rgb-neutral-l3);
+    --neon-border-color-toggle-chip: var(--neon-color-neutral-l3);
+    --neon-opacity-toggle-chip: 0.23;
+    --neon-opacity-toggle-chip-hover: 0.33;
+
+    /* slider & range slider */
+    --neon-color-slider-track: var(--neon-color-neutral-l4);
+    --neon-slider-thumb-color: var(--neon-background-color-card);
+    --neon-box-shadow-slider: 0 -0.125rem 0.25rem 0 rgba(140, 140, 140, 0.2), 0 0.125rem 0.25rem 0 rgba(140, 140, 140, 0.3);
+    --neon-border-slider-thumb: none;
+
+    /* top nav */
+    --neon-background-color-top-nav: var(--neon-background-color-card);
+
+    /* side nav */
+    --neon-background-color-side-nav: var(--neon-background-color-card);
+
+    /* input indicators */
+    --neon-background-color-input-indicator: var(--neon-color-high-contrast-l3);
+    --neon-color-input-indicator: var(--neon-color-neutral);
+  }
+}

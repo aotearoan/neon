@@ -1,4 +1,4 @@
-import { computed, defineComponent, ref } from 'vue';
+import { computed, defineComponent, ref, useAttrs } from 'vue';
 import { NeonButtonSize } from '@/common/enums/NeonButtonSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import { NeonButtonStyle } from '@/common/enums/NeonButtonStyle';
@@ -82,7 +82,9 @@ export default defineComponent({
      */
     indicatorExpanded: { type: Boolean, default: null },
   },
-  setup(props, { attrs }) {
+  setup(props) {
+    const attrs = useAttrs();
+
     const button = ref<HTMLElement | null>(null);
 
     const iconName = computed(() => {

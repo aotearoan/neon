@@ -1,4 +1,4 @@
-import { computed, defineComponent } from 'vue';
+import { computed, defineComponent, useAttrs } from 'vue';
 import type { NeonToggleModel } from '@/common/models/NeonToggleModel';
 import { NeonSize } from '@/common/enums/NeonSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
@@ -55,7 +55,8 @@ export default defineComponent({
      */
     'update:modelValue',
   ],
-  setup(props, { emit, attrs }) {
+  setup(props, { emit }) {
+    const attrs = useAttrs();
     const emitInput = (key: string) => {
       emit('update:modelValue', key);
     };
@@ -67,8 +68,8 @@ export default defineComponent({
     };
 
     const sanitizedAttributes = computed(() => {
-      const attributes = Object.entries(attrs).filter(([key, _value]) => key !== 'onInput' && key !== 'onClick');
-      return { ...attributes };
+      const { onClick, ...sanitized } = attrs;
+      return sanitized;
     });
 
     const selectOption = (option: NeonToggleModel) => {

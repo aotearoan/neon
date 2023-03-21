@@ -1,4 +1,4 @@
-import { computed, defineComponent, ref } from 'vue';
+import { computed, defineComponent, ref, useAttrs } from 'vue';
 import { NeonSize } from '@/common/enums/NeonSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
@@ -62,6 +62,8 @@ export default defineComponent({
     'click',
   ],
   setup(props, { emit }) {
+    const attrs = useAttrs();
+
     const chip = ref(null);
     const open = ref(true);
     const active = ref(false);
@@ -109,6 +111,7 @@ export default defineComponent({
       open,
       active,
       role,
+      attrs,
       keyUp,
       keyDown,
       clicked,

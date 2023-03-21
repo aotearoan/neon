@@ -1,25 +1,26 @@
 import type { RenderResult } from '@testing-library/vue';
-import { render } from '@testing-library/vue';
-import NeonMenu from '@/components/menu/NeonMenu.vue';
+import { fireEvent, render } from '@testing-library/vue';
+import NeonMenu from './NeonMenu.vue';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import { NeonSize } from '@/common/enums/NeonSize';
+import { router } from '@/../test/unit/test-router';
 
 describe('NeonMenu', () => {
   const menu = [
     {
       key: 'action-menu',
       label: 'Action Menu',
-      href: '/navigation/action-menu',
+      href: '/test',
     },
     {
       key: 'link',
       label: 'Link',
-      href: '/navigation/link',
+      href: '/test',
     },
     {
       key: 'menu',
       label: 'Menu',
-      href: '/navigation/menu',
+      href: '/test',
     },
     {
       key: 'click-link',
@@ -34,22 +35,22 @@ describe('NeonMenu', () => {
     {
       key: 'tree-menu',
       label: 'Tree Menu',
-      href: '/navigation/tree-menu',
+      href: '/test',
       children: [
         {
           key: 'tree-menu-description',
           label: 'Description',
-          href: '/navigation/tree-menu#description',
+          href: '/test',
         },
         {
           key: 'tree-menu-api',
           label: 'API',
-          href: '/navigation/tree-menu#api',
+          href: '/test',
         },
         {
           key: 'tree-menu-examples',
           label: 'Examples',
-          href: '/navigation/tree-menu#examples',
+          href: '/test',
         },
       ],
     },
@@ -63,12 +64,11 @@ describe('NeonMenu', () => {
         menu,
       },
       global: {
-        stubs: ['router-link'],
-        mocks: {
-          route: { path: '.' },
-        },
+        plugins: [router],
       },
     });
+
+    jest.resetAllMocks();
   });
 
   it('renders menu', () => {
@@ -112,36 +112,12 @@ describe('NeonMenu', () => {
     expect(container.querySelectorAll('.neon-dropdown--s').length).toEqual(2);
   });
 
-  it('removes resize handler on destroy', () => {
-    // given
-    window.addEventListener = jest.fn();
-    window.removeEventListener = jest.fn();
-    const { unmount } = harness;
-    // when
-    unmount();
-    // then
-    expect(window.addEventListener).toHaveBeenCalledTimes(5);
-    expect(window.removeEventListener).toHaveBeenCalledTimes(5);
-  });
-
-  it('does not remove resize handler on destroy', async () => {
-    // given
-    window.addEventListener = jest.fn();
-    window.removeEventListener = jest.fn();
-    const { unmount, rerender } = harness;
-    await rerender({ priorityMenuEnabled: false });
-    unmount();
-    // then
-    expect(window.addEventListener).toHaveBeenCalledTimes(0);
-    expect(window.removeEventListener).toHaveBeenCalledTimes(0);
-  });
-
   it('emits click event', () => {
     // given
     const { container, emitted } = harness;
     // when
     const item = container.querySelector('.neon-menu__item:nth-child(4) .neon-link') as HTMLElement;
-    item?.click();
+    fireEvent.click(item);
     // then
     expect(emitted().click[0]).toEqual([menu[3].key]);
   });

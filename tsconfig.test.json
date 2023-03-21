@@ -1,14 +1,16 @@
 {
-  "extends": "./tsconfig.config.json",
+  "extends": "./tsconfig.json",
   "include": [
     "env.d.ts",
     "**/*.d.ts",
     "src/**/*",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "test/**/*"
   ],
   "exclude": [
     "dist",
     "node_modules",
+    "src/app/**/*"
   ],
   "compilerOptions": {
     "target": "es2020",
@@ -17,15 +19,16 @@
       "dom",
       "es2020"
     ],
+    "baseUrl": ".",
     "paths": {
       "@/*": [
-        "src/*"
+        "./src/*"
       ]
     },
     "rootDirs": [
       "src"
     ],
-    "baseUrl": ".",
+    "outDir": "dist/",
     "strict": true,
     "jsx": "react",
     "importHelpers": true,
@@ -45,9 +48,7 @@
   },
   "references": [
     {
-      "path": "./tsconfig.config.json"
+      "path": "./tsconfig.json"
     }
   ],
-  "outDir": "dist/",
-  "declaration": true
 }

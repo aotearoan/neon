@@ -1,0 +1,135 @@
+@use 'src/sass/includes/palettes';
+@use 'src/sass/includes/toggle-mixins';
+@use 'src/sass/includes/svg';
+
+@mixin toggle {
+  .neon-toggle {
+    width: fit-content;
+    height: fit-content;
+
+    input {
+      display: none;
+    }
+
+    &__label {
+      user-select: none;
+      padding: calc(2 * var(--neon-base-space)) calc(3 * var(--neon-base-space));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+
+      &:focus {
+        outline: none;
+      }
+
+      &--disabled {
+        cursor: not-allowed;
+      }
+    }
+
+    &--toggle {
+      @include toggle-mixins.toggle-layout;
+
+      @each $color in palettes.$neon-functional-colors {
+        &.neon-toggle--#{$color} {
+          $toggle-rgb: var(--neon-rgb-#{$color}) !default;
+          $toggle-color: var(--neon-color-#{$color}) !default;
+
+          @if ($color == high-contrast) {
+            $toggle-rgb: var(--neon-rgb-text);
+            $toggle-color: var(--neon-color-text);
+          }
+
+          @include svg.color-with-svg(rgba($toggle-rgb, 0.5));
+          background-color: rgba($toggle-rgb, 0.05);
+
+          .neon-toggle__label:not(.neon-toggle__label--disabled) {
+            &.neon-toggle__label--checked {
+              @include svg.color-with-svg($toggle-color);
+              background-color: rgba($toggle-rgb, 0.25);
+            }
+
+            &:hover:not(.neon-toggle__label--checked):not(.neon-toggle__label--disabled),
+            &:focus:not(.neon-toggle__label--checked) {
+              @include svg.color-with-svg(rgba($toggle-rgb, 0.75));
+              background-color: rgba($toggle-rgb, 0.125);
+            }
+          }
+
+          &.neon-toggle--disabled .neon-toggle__label,
+          .neon-toggle__label--disabled {
+            @include svg.color-with-svg(rgba($toggle-rgb, 0.2));
+          }
+
+          &.neon-toggle--disabled .neon-toggle__label--checked,
+          .neon-toggle__label--disabled.neon-toggle__label--checked {
+            @include svg.color-with-svg(rgba($toggle-rgb, 0.33));
+            background-color: rgba($toggle-rgb, 0.125);
+          }
+        }
+      }
+    }
+
+    &--radio-buttons {
+      @include toggle-mixins.radio-button-layout;
+
+      @each $color in palettes.$neon-functional-colors {
+        &.neon-toggle--#{$color}:not(.neon-toggle--disabled) {
+
+          .neon-toggle__label:not(.neon-toggle__label--disabled) {
+            .neon-toggle__radio-button {
+              border: var(--neon-border-width-radio-button) var(--neon-border-style) var(--neon-border-color-toggle);
+              background: var(--neon-background-radio-button);
+            }
+
+            color: var(--neon-color-radio-button-label);
+
+            &:hover,
+            &:focus {
+              .neon-toggle__radio-button {
+                background: var(--neon-color-radio-button-bg-active);
+              }
+            }
+
+            &.neon-toggle__label--checked {
+              color: var(--neon-color-text);
+
+              .neon-toggle__radio-button {
+                border: var(--neon-border-width-radio-button) var(--neon-border-style) var(--neon-color-#{$color});
+
+                &-indicator {
+                  background-color: var(--neon-color-#{$color});
+                  box-shadow: var(--neon-box-shadow);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.neon-toggle--disabled .neon-toggle__label,
+      .neon-toggle__label--disabled {
+        color: var(--neon-color-disabled-light);
+
+        .neon-toggle__radio-button {
+          background: var(--neon-color-disabled-dark);
+          color: var(--neon-color-disabled-light);
+          border-color: var(--neon-color-disabled-dark);
+
+          &-indicator {
+            background-color: var(--neon-color-disabled-light);
+          }
+        }
+      }
+    }
+
+    &--horizontal {
+      flex-direction: row;
+    }
+
+    &--disabled {
+      cursor: not-allowed;
+    }
+  }
+}

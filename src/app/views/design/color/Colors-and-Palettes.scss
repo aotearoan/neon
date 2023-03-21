@@ -1,0 +1,57 @@
+@use 'src/sass/includes/responsive';
+
+.colors {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: calc(-4 * var(--neon-base-space));
+  margin-bottom: calc(8 * var(--neon-base-space));
+}
+
+.color-list {
+  flex-direction: row;
+
+  &:not(:last-of-type) {
+    margin-bottom: calc(6 * var(--neon-base-space));
+  }
+
+  .color-list-section {
+    border-radius: var(--neon-border-radius);
+    overflow: hidden;
+    margin-bottom: var(--neon-base-space);
+    flex-direction: row;
+    width: fit-content;
+  }
+
+  .color-item {
+    padding: calc(2 * var(--neon-base-space)) calc(3 * var(--neon-base-space));
+    min-width: calc(12 * var(--neon-base-space));
+    min-height: calc(12 * var(--neon-base-space));
+    flex-direction: row;
+    font-family: var(--neon-font-family-monospaced);
+    font-variation-settings: var(--monospaced-font-variation-settings);
+    justify-content: center;
+    align-items: center;
+
+    @include responsive.responsive(mobile-large) {
+      font-size: var(--neon-font-size-xs);
+      min-width: 2.1875rem;
+      min-height: 2.1875rem;
+    }
+  }
+}
+
+.color-palettes {
+  p {
+    margin-bottom: calc(2 * var(--neon-base-space));
+  }
+}
+
+.color-example-inverse-bg {
+  background-color: var(--neon-color-primary);
+  border-radius: var(--neon-border-radius);
+  margin-left: calc(-1 * var(--neon-base-space));
+  padding-left: var(--neon-base-space);
+  padding-right: var(--neon-base-space);
+  width: fit-content;
+}

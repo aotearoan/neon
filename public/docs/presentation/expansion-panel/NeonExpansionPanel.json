@@ -1,12 +1,12 @@
 {
   "displayName": "NeonExpansionPanel",
-  "description": "<p>Expansion panels are used to show and hide content that may be less important or too large to display on screen\nall of the time. They can also be used to expand lists of items, e.g. <em>Show more</em>. The expansion panel consists\nof a button which, when clicked, toggles the open/closed state of the expansion panel and a slot for the content to\ndisplay on expansion.</p>",
+  "description": "<p>Expansion panels are used to show and hide content that may be less important or too large to display on screen\nall the time. They can also be used to expand lists of items, e.g. <em>Show more</em>. The expansion panel consists\nof a button which, when clicked, toggles the open/closed state of the expansion panel and a slot for the content to\ndisplay on expansion.</p>",
   "tags": {},
   "exportName": "default",
   "props": [
     {
       "name": "modelValue",
-      "description": "A boolean indicating whether or not the expansion panel is expanded.",
+      "description": "A boolean indicating whether the expansion panel is expanded.",
       "type": {
         "name": "boolean"
       },
@@ -114,5 +114,9 @@
       "name": "default",
       "description": "The expansion panel contents"
     }
+  ],
+  "sourceFiles": [
+    "./src/components/presentation/expansion-panel/NeonExpansionPanel.vue",
+    "/Users/andrew/dev/projects/neon/src/components/presentation/expansion-panel/NeonExpansionPanel.ts"
   ]
 }

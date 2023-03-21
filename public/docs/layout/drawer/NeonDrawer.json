@@ -73,5 +73,9 @@
       "name": "default",
       "description": "the contents of the drawer"
     }
+  ],
+  "sourceFiles": [
+    "./src/components/layout/drawer/NeonDrawer.vue",
+    "/Users/andrew/dev/projects/neon/src/components/layout/drawer/NeonDrawer.ts"
   ]
 }

@@ -50,7 +50,7 @@ export class NeonDropdownPlacementObject {
     NeonPlacement.Bottom,
   );
 
-  private static PLACEMENTS: { [key: string]: NeonDropdownPlacementObject } = {
+  private static PLACEMENTS = {
     'top-left': NeonDropdownPlacementObject.TopLeft,
     'top-right': NeonDropdownPlacementObject.TopRight,
     'bottom-left': NeonDropdownPlacementObject.BottomLeft,
@@ -61,7 +61,7 @@ export class NeonDropdownPlacementObject {
     'right-bottom': NeonDropdownPlacementObject.RightBottom,
   };
 
-  private static FLIP_MAJOR: { [key: string]: NeonDropdownPlacementObject } = {
+  private static FLIP_MAJOR = {
     'top-left': NeonDropdownPlacementObject.BottomLeft,
     'top-right': NeonDropdownPlacementObject.BottomRight,
     'bottom-left': NeonDropdownPlacementObject.TopLeft,
@@ -72,7 +72,7 @@ export class NeonDropdownPlacementObject {
     'right-bottom': NeonDropdownPlacementObject.LeftBottom,
   };
 
-  private static FLIP_MINOR: { [key: string]: NeonDropdownPlacementObject } = {
+  private static FLIP_MINOR = {
     'top-left': NeonDropdownPlacementObject.TopRight,
     'top-right': NeonDropdownPlacementObject.TopLeft,
     'bottom-left': NeonDropdownPlacementObject.BottomRight,

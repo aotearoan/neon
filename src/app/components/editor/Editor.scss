@@ -1,122 +1,155 @@
-$editor-max-height: 400px;
+@use 'src/sass/includes/layout';
+@use 'src/sass/includes/responsive';
+@use 'src/sass/includes/scrollbars';
 
-.editor {
-  font-family: $neon-font-family-monospaced;
-  font-variant-ligatures: discretionary-ligatures;
-  font-variation-settings: $monospaced-font-variation-settings;
-  font-size: $neon-font-size-m;
-  line-height: $neon-line-height-ratio;
-  min-width: 100%;
-  width: $neon-max-paragraph-width;
-  height: 100%;
-  overflow: visible;
+.editor__wrapper {
+  border-radius: var(--neon-border-radius);
+  overflow: hidden;
+  position: relative;
 
-  @include responsive(mobile-large) {
-    font-size: $neon-font-size-s;
-  }
+  .editor {
+    font-family: var(--neon-font-family-monospaced);
+    font-variant-ligatures: discretionary-ligatures;
+    font-variation-settings: var(--monospaced-font-variation-settings);
+    font-size: var(--neon-font-size-m);
+    line-height: var(--neon-line-height-ratio);
+    min-width: 100%;
+    width: var(--neon-max-paragraph-width);
+    height: 100%;
+    overflow: visible;
 
-  .prism-editor {
+    @include responsive.responsive(mobile-large) {
+      font-size: var(--neon-font-size-s);
+    }
+
+    .tag {
+      color: var(--neon-color-error-l3);
+    }
+
+    .attr-name {
+      color: var(--neon-color-warn-l3);
+    }
+
+    .attr-value {
+      color: var(--neon-color-success-l3);
+    }
+
+    .punctuation {
+      color: var(--neon-color-neutral-l3);
+    }
+
+    &__read-only.neon-icon--disabled {
+      opacity: 0.5;
+
+      path.neon-svg--fill {
+        fill: var(--app-color-editor-lock) !important;
+      }
+    }
+
+    &.prism-editor-wrapper .prism-editor {
+      &__container {
+        display: flex;
+        overflow: visible;
+        color: var(--neon-color-text-light);
+        @include scrollbars.scrollbars;
+      }
+
+      &__editor {
+        background-color: var(--neon-background-color-pre);
+        @include layout.padding(0.5);
+        display: block;
+        opacity: 0.85;
+      }
+
+      &__textarea {
+        @include layout.padding(0.5);
+        font-family: var(--neon-font-family-monospaced);
+        font-variant-ligatures: discretionary-ligatures;
+        font-variation-settings: var(--monospaced-font-variation-settings);
+
+        &::selection {
+          background-color: rgba(var(--neon-background-rgb-selection), 0.667);
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
     &__container {
+      max-height: 25rem;
+      overflow: auto;
+    }
+
+    &__actions {
+      position: absolute;
+      top: 0;
+      right: 0;
       display: flex;
-      overflow: visible;
+      flex-direction: row;
+      align-items: center;
+      height: var(--neon-size-l);
+
+      @include responsive.responsive(tablet) {
+        height: calc(var(--neon-size-m) + var(--neon-base-space));
+
+        .editor__copy {
+          height: var(--neon-size-m);
+          width: var(--neon-size-m);
+        }
+      }
+
+      @include responsive.responsive(mobile-large) {
+        height: calc(var(--neon-size-s) + var(--neon-base-space));
+
+        .editor__copy {
+          height: var(--neon-size-s);
+          width: var(--neon-size-s);
+        }
+      }
     }
 
-    &__editor {
-      @include padding(0.5);
-      display: block;
+    &__copy {
       opacity: 0.85;
-    }
+      transition: opacity ease-in-out var(--neon-animation-speed-fast);
 
-    &__textarea {
-      @include padding(0.5);
-      font-family: $neon-font-family-monospaced;
-      font-variant-ligatures: discretionary-ligatures;
-      font-variation-settings: $monospaced-font-variation-settings;
-
-      &:focus {
-        outline: none;
+      &:hover {
+        background: none !important;
+        cursor: pointer;
+        opacity: 1;
       }
-    }
-  }
 
-  &__container {
-    max-height: $editor-max-height;
-    overflow: auto;
-  }
-
-  &__wrapper {
-    border-radius: $neon-border-radius;
-    overflow: hidden;
-    position: relative;
-  }
-
-  &__actions {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: $neon-size-l;
-
-    @include responsive(tablet) {
-      height: $neon-size-m + $neon-base-space;
-
-      .editor__copy {
-        height: $neon-size-m;
-        width: $neon-size-m;
+      &:last-child {
+        margin-right: calc(2 * var(--neon-base-space));
       }
     }
 
-    @include responsive(mobile-large) {
-      height: $neon-size-s + $neon-base-space;
+    &__read-only {
+      width: var(--neon-font-size-l);
+      height: var(--neon-font-size-l);
+      margin-left: calc(2 * var(--neon-base-space));
+      margin-right: calc(4 * var(--neon-base-space));
 
-      .editor__copy {
-        height: $neon-size-s;
-        width: $neon-size-s;
+      @include responsive.responsive(tablet) {
+        margin-left: 0;
+        margin-right: calc(3 * var(--neon-base-space));
       }
-    }
-  }
-
-  &__copy {
-    opacity: 0.85;
-    transition: opacity ease-in-out $neon-animation-speed-fast;
-
-    &:hover {
-      background: none !important;
-      cursor: pointer;
-      opacity: 1;
-    }
-
-    &:last-child {
-      margin-right: 2 * $neon-base-space;
-    }
-  }
-
-  &__read-only {
-    width: $neon-font-size-l;
-    height: $neon-font-size-l;
-    margin-left: 2 * $neon-base-space;
-    margin-right: 4 * $neon-base-space;
-
-    @include responsive(tablet) {
-      margin-left: 0;
-      margin-right: 3 * $neon-base-space;
     }
   }
 }
 
 p + .editor__wrapper {
-  margin-top: 2 * $neon-base-space;
+  margin-top: calc(2 * var(--neon-base-space));
 }
 
 .editor__wrapper {
   & + p,
   & + .editor__wrapper {
-    margin-top: 8 * $neon-base-space;
+    margin-top: calc(8 * var(--neon-base-space));
 
-    @include responsive(mobile-large) {
-      margin-top: 4 * $neon-base-space;
+    @include responsive.responsive(mobile-large) {
+      margin-top: calc(4 * var(--neon-base-space));
     }
   }
 }

@@ -40,5 +40,9 @@
       "name": "default",
       "description": "The tab content"
     }
+  ],
+  "sourceFiles": [
+    "./src/components/presentation/tabs/tab/NeonTab.vue",
+    "/Users/andrew/dev/projects/neon/src/components/presentation/tabs/tab/NeonTab.ts"
   ]
 }

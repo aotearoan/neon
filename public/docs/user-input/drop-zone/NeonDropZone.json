@@ -53,5 +53,9 @@
     {
       "name": "default"
     }
+  ],
+  "sourceFiles": [
+    "./src/components/user-input/drop-zone/NeonDropZone.vue",
+    "/Users/andrew/dev/projects/neon/src/components/user-input/drop-zone/NeonDropZone.ts"
   ]
 }

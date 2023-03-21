@@ -125,5 +125,9 @@
         ]
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/user-input/file/NeonFile.vue",
+    "/Users/andrew/dev/projects/neon/src/components/user-input/file/NeonFile.ts"
   ]
 }

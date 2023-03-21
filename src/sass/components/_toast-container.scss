@@ -1,0 +1,78 @@
+@use 'src/sass/includes/palettes';
+@use 'src/sass/includes/svg';
+@use 'src/sass/includes/outline';
+
+@mixin toast-container {
+  .neon-alert {
+    &--top {
+      top: 0;
+    }
+
+    &--bottom {
+      bottom: 0;
+    }
+
+    &--top,
+    &--bottom {
+      min-width: 100%;
+      max-width: 100%;
+      align-items: center;
+    }
+
+    .neon-toast__message {
+      pointer-events: visible;
+      touch-action: auto;
+      height: var(--neon-size-l);
+      min-width: var(--neon-width-toast);
+      margin: var(--neon-base-space);
+      overflow: hidden;
+      border-radius: calc(2 * var(--neon-border-radius));
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      padding: calc(3 * var(--neon-base-space)) calc(3.5 * var(--neon-base-space));
+      box-shadow: var(--neon-box-shadow-alert);
+
+      @each $color in palettes.$alert-colors {
+        $alert-background-rgb: var(--neon-rgb-#{$color});
+
+        &.neon-toast__message--#{$color} {
+          background-color: rgb($alert-background-rgb);
+          @include svg.color-with-svg(var(--neon-color-toast-#{$color}));
+
+          &:focus-within {
+            @include outline.box-shadow-outline($alert-background-rgb);
+          }
+        }
+      }
+
+      &--dismissable {
+        cursor: pointer;
+      }
+
+      .neon-toast__close {
+        min-width: var(--neon-font-size-l);
+        width: var(--neon-font-size-l);
+        min-height: var(--neon-font-size-l);
+        height: var(--neon-font-size-l);
+        margin-left: calc(3.5 * var(--neon-base-space));
+        opacity: 0.5;
+        outline: none;
+      }
+
+      &:hover {
+        .neon-toast__close {
+          opacity: 1;
+        }
+      }
+    }
+
+    .neon-toast__title {
+      line-height: var(--neon-line-height-one);
+      font-size: var(--neon-font-size-m);
+      font-weight: 400;
+    }
+  }
+}

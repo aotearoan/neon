@@ -1,0 +1,186 @@
+@use 'src/sass/includes/palettes';
+@use 'src/sass/includes/svg';
+
+@mixin neon-menu-size($size) {
+  .neon-menu__item {
+    height: var(--neon-size-#{$size});
+    font-size: var(--neon-size-#{$size});
+    padding-left: calc(5 * var(--neon-base-space));
+    padding-right: calc(5 * var(--neon-base-space));
+    border-radius: var(--neon-border-radius);
+
+    .neon-link {
+      height: var(--neon-size-#{$size});
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:focus,
+    a:focus {
+      outline: none;
+    }
+
+    &-icon,
+    .neon-dropdown .neon-dropdown__button .neon-icon {
+      width: var(--neon-size-#{$size});
+      height: var(--neon-size-#{$size});
+      margin-right: calc(2 * var(--neon-base-space));
+      padding-right: 0;
+    }
+  }
+
+  .neon-dropdown .neon-dropdown__button {
+    font-size: var(--neon-size-#{$size});
+    padding-left: 0;
+    padding-right: 0;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active,
+    &:focus {
+      .neon-button__label,
+      .neon-button__indicator {
+        top: 0;
+      }
+    }
+  }
+}
+
+@mixin menu {
+  .neon-menu {
+    display: flex;
+    flex-direction: row;
+    user-select: none;
+
+    @each $color in palettes.$neon-functional-colors {
+      &.neon-menu--#{$color},
+      &__responsive-menu.neon-dropdown-menu--#{$color} {
+        .neon-menu__item:not(.neon-menu__item--disabled) {
+          &:hover:not(.router-link-active),
+          &:focus:not(.router-link-active),
+          &:active:not(.router-link-active) {
+            & > .neon-link,
+            .neon-dropdown__button {
+              @include svg.color-with-svg(rgba(var(--neon-rgb-#{$color}), 0.85));
+            }
+          }
+
+          &:focus-within {
+            background-color: rgba(var(--neon-rgb-#{$color}), 0.125);
+
+            & > .neon-link:not(.router-link-active),
+            .neon-button:not(.router-link-active) {
+              @include svg.color-with-svg(var(--neon-color-text));
+            }
+          }
+        }
+
+        .router-link-active {
+          color: var(--neon-color-#{$color});
+
+          .neon-dropdown__button {
+            color: var(--neon-color-#{$color});
+          }
+
+          @include svg.svg-colors(rgba(var(--neon-rgb-#{$color}), 0.85));
+        }
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .neon-dropdown:not(.neon-dropdown--disabled) {
+        .neon-dropdown__button {
+          @include svg.color-with-svg(var(--neon-color-neutral));
+          transition: color ease-in-out var(--neon-animation-speed-fast);
+
+          &:hover:not(:disabled),
+          &:active:not(:disabled) {
+            background-color: transparent;
+            color: var(--neon-color-neutral);
+          }
+        }
+
+        .neon-dropdown-menu__item {
+          &:not(.neon-dropdown-menu__item--highlighted) .neon-link,
+          &--group-title {
+            color: var(--neon-color-neutral);
+          }
+        }
+      }
+    }
+
+    &__responsive-menu {
+      font-family: var(--neon-heading-font-family);
+
+      &:not(:first-child) {
+        margin-left: calc(5 * var(--neon-base-space));
+      }
+
+      &--hidden {
+        display: none;
+      }
+    }
+
+    &__item {
+      font-weight: 400;
+      letter-spacing: var(--neon-letter-spacing-m);
+      white-space: nowrap;
+
+      & > .neon-link {
+        color: var(--neon-color-neutral);
+        transition: color ease-in-out var(--neon-animation-speed-fast);
+      }
+
+      .neon-link {
+        text-decoration: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        cursor: pointer;
+
+        &__label {
+          display: flex;
+          align-items: center;
+          font-family: var(--neon-heading-font-family);
+        }
+      }
+
+      &--disabled {
+        .neon-link {
+          cursor: not-allowed;
+          color: var(--neon-color-disabled-light);
+        }
+      }
+
+      .neon-dropdown .neon-dropdown__button {
+        font-family: var(--neon-heading-font-family);
+        font-weight: 400;
+        letter-spacing: var(--neon-letter-spacing-m);
+      }
+    }
+
+    &--s {
+      @include neon-menu-size('s');
+    }
+
+    &--m {
+      @include neon-menu-size('m');
+    }
+
+    &--l {
+      @include neon-menu-size('l');
+    }
+  }
+}

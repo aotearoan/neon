@@ -1,6 +1,6 @@
 import { computed, defineComponent } from 'vue';
 import { NeonNumberUtils } from '@/common/utils/NeonNumberUtils';
-import NeonSlider from '@/components/slider/NeonSlider.vue';
+import NeonSlider from '@/components/user-input/slider/NeonSlider.vue';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 /**

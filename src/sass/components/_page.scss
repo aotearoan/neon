@@ -1,0 +1,27 @@
+@use 'src/sass/includes/layout';
+@use 'src/sass/includes/responsive';
+
+@mixin page {
+  .neon-page {
+    position: relative;
+    left: 0;
+    width: 100%;
+
+    &--with-top-nav .neon-page__container {
+      @include responsive.responsive(larger-than-tablet) {
+        padding-top: var(--neon-top-nav-height-desktop);
+        @include layout.min-height(100, 'var(--neon-top-nav-height-desktop)');
+      }
+
+      @include responsive.responsive(tablet) {
+        padding-top: var(--neon-top-nav-height-tablet);
+        @include layout.min-height(100, 'var(--neon-top-nav-height-tablet)');
+      }
+
+      @include responsive.responsive(mobile-large) {
+        padding-top: var(--neon-top-nav-height-mobile);
+        @include layout.min-height(100, 'var(--neon-top-nav-height-mobile)');
+      }
+    }
+  }
+}

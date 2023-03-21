@@ -111,5 +111,9 @@
         "value": "0"
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/feedback/linear-progress/NeonLinearProgress.vue",
+    "/Users/andrew/dev/projects/neon/src/components/feedback/linear-progress/NeonLinearProgress.ts"
   ]
 }

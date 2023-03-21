@@ -14,7 +14,7 @@
       :size="size"
       class="neon-color__text-input"
       type="text"
-      v-bind="$attrs"
+      v-bind="attrs"
     >
     </neon-input>
     <neon-input
@@ -25,11 +25,11 @@
       :size="size"
       class="neon-color__input"
       type="color"
-      v-bind="$attrs"
+      v-bind="attrs"
     >
     </neon-input>
     <div
-      :style="`background-color:${modelValue || '#000000'};box-shadow: 0 0 0 4px ${modelValue || '#000000'}4D`"
+      :style="`background-color:${modelValue || '#000000'};box-shadow: 0 0 0 0.25rem ${modelValue || '#000000'}4D`"
       class="neon-color__indicator"
     ></div>
   </div>

@@ -1,13 +1,13 @@
 import { defineComponent } from 'vue';
 import { NeonVerticalPosition } from '@/common/enums/NeonVerticalPosition';
 import { NeonSize } from '@/common/enums/NeonSize';
-import NeonExpansionIndicator from '@/components/expansion-indicator/NeonExpansionIndicator.vue';
-import NeonIcon from '@/components/icon/NeonIcon.vue';
+import NeonExpansionIndicator from '@/components/presentation/expansion-indicator/NeonExpansionIndicator.vue';
+import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 /**
  * <p>Expansion panels are used to show and hide content that may be less important or too large to display on screen
- * all of the time. They can also be used to expand lists of items, e.g. <em>Show more</em>. The expansion panel consists
+ * all the time. They can also be used to expand lists of items, e.g. <em>Show more</em>. The expansion panel consists
  * of a button which, when clicked, toggles the open/closed state of the expansion panel and a slot for the content to
  * display on expansion.</p>
  */
@@ -19,7 +19,7 @@ export default defineComponent({
   },
   props: {
     /**
-     * A boolean indicating whether or not the expansion panel is expanded.
+     * A boolean indicating whether the expansion panel is expanded.
      */
     modelValue: { type: Boolean, required: true },
     /**

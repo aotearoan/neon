@@ -2,23 +2,21 @@ import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonLink from './NeonLink.vue';
 import { NeonOutlineStyle } from '@/common/enums/NeonOutlineStyle';
-import { RouterLinkStub } from '@vue/test-utils';
+import { router } from '@/../test/unit/test-router';
 
 describe('NeonLink', () => {
   const href = 'http://www.getskeleton.com';
   const props = { href };
   let harness: RenderResult;
 
-  beforeEach(() => {
+  beforeEach(async () => {
     harness = render(NeonLink, {
       props,
       slots: {
         default: '<p>test</p>',
       },
       global: {
-        stubs: {
-          RouterLink: RouterLinkStub,
-        },
+        plugins: [router],
       },
     });
   });
@@ -30,7 +28,7 @@ describe('NeonLink', () => {
 
   it('renders default slot contents router link', async () => {
     const { html, rerender } = harness;
-    await rerender({ href: '/xdd' });
+    await rerender({ href: '/test' });
     expect(html()).toMatch('<p>test</p>');
   });
 
@@ -51,7 +49,7 @@ describe('NeonLink', () => {
 
   it('renders router link', async () => {
     const { html, rerender } = harness;
-    await rerender({ href: '/xdd' });
+    await rerender({ href: '/test' });
     const result = html();
     expect(result).toMatch('neon-link--router-link');
   });
@@ -78,14 +76,14 @@ describe('NeonLink', () => {
 
   it('emits click event', async () => {
     const { emitted, getByTestId, rerender } = harness;
-    await rerender({ href: '/xdd' });
+    await rerender({ href: '/test' });
     await fireEvent.click(getByTestId('link'));
     expect(emitted().click).toEqual([[]]);
   });
 
   it('emits click event on enter keydown', async () => {
     const { emitted, getByTestId, rerender } = harness;
-    await rerender({ href: '/xdd' });
+    await rerender({ href: '/test' });
     await fireEvent.keyDown(getByTestId('link'), { key: 'Enter', code: 'Enter' });
     expect(emitted().click).toEqual([[]]);
   });

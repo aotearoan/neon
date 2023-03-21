@@ -51,5 +51,9 @@
       "name": "default",
       "description": "card contents"
     }
+  ],
+  "sourceFiles": [
+    "./src/components/layout/card/NeonCard.vue",
+    "/Users/andrew/dev/projects/neon/src/components/layout/card/NeonCard.ts"
   ]
 }

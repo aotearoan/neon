@@ -1,6 +1,7 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonTreeMenu from './NeonTreeMenu.vue';
+import { router } from '@/../test/unit/test-router';
 
 describe('NeonTreeMenu', () => {
   const model = [
@@ -12,19 +13,19 @@ describe('NeonTreeMenu', () => {
         {
           key: 'alert',
           label: 'Alert',
-          href: '/feedback/alert',
+          href: '/test',
           anchors: ['Description', 'API', 'Examples'],
         },
         {
           key: 'note',
           label: 'Note',
-          href: '/feedback/note',
+          href: '/test',
           anchors: ['Description', 'API', 'Examples'],
         },
         {
           key: 'notification-counter',
           label: 'Notification Counter',
-          href: '/feedback/notification-counter',
+          href: '/test',
           anchors: ['Description', 'API', 'Examples'],
         },
       ],
@@ -37,25 +38,25 @@ describe('NeonTreeMenu', () => {
         {
           key: 'action-menu',
           label: 'Action Menu',
-          href: '/navigation/action-menu',
+          href: '/test',
           anchors: ['Description', 'API', 'Examples'],
         },
         {
           key: 'dropdown-menu',
           label: 'Dropdown Menu',
-          href: '/navigation/dropdown-menu',
+          href: '/test',
           anchors: ['Description', 'API', 'Examples'],
         },
         {
           key: 'link',
           label: 'Link',
-          href: '/navigation/link',
+          href: '/test',
           anchors: ['Description', 'API', 'Examples'],
         },
         {
           key: 'tree-menu',
           label: 'Tree Menu',
-          href: '/navigation/tree-menu',
+          href: '/test',
           anchors: ['Description', 'API', 'Examples'],
         },
       ],
@@ -69,9 +70,7 @@ describe('NeonTreeMenu', () => {
       props: {
         model,
       },
-      global: {
-        stubs: ['router-link'],
-      },
+      global: { plugins: [router] },
     });
   });
 
@@ -91,12 +90,12 @@ describe('NeonTreeMenu', () => {
     expect(container.querySelectorAll('.neon-tree-menu__anchors--expanded').length).toEqual(7);
   });
 
-  it('emits click event on click section link', () => {
+  it('emits click event on click section link', async () => {
     // given
     const { container, emitted } = harness;
     // when
     const item = container.querySelectorAll('.neon-tree-menu__section-link').item(0) as HTMLElement;
-    item?.click();
+    await fireEvent.click(item);
     // then
     expect(emitted().click[0]).toEqual(['feedback']);
   });
@@ -105,7 +104,9 @@ describe('NeonTreeMenu', () => {
     // given
     const { container, emitted } = harness;
     // when
-    const item = container.querySelectorAll('.neon-tree-menu__section-link').item(0) as HTMLElement;
+    const item = container
+      .querySelectorAll('.neon-tree-menu__section-link .neon-tree-menu__section-link-label')
+      .item(0) as HTMLElement;
     await fireEvent.keyDown(item, { key: 'Space', code: 'Space' });
     // then
     expect(emitted().click[0]).toEqual(['feedback']);

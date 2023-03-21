@@ -76,5 +76,9 @@
         ]
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/navigation/dropdown-menu/NeonDropdownMenu.vue",
+    "/Users/andrew/dev/projects/neon/src/components/navigation/dropdown-menu/NeonDropdownMenu.ts"
   ]
 }

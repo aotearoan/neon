@@ -1,0 +1,20 @@
+@use 'src/sass/includes/responsive';
+
+@mixin anchor {
+  .neon-page--with-top-nav .neon-page__container {
+    .neon-anchor {
+      position: absolute;
+      @include responsive.responsive(larger-than-tablet) {
+        top: calc(-1 * var(--neon-top-nav-height-desktop));
+      }
+
+      @include responsive.responsive(tablet) {
+        top: calc(-1 * var(--neon-top-nav-height-tablet));
+      }
+
+      @include responsive.responsive(mobile-large) {
+        top: calc(-1 * var(--neon-top-nav-height-mobile));
+      }
+    }
+  }
+}

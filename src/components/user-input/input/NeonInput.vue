@@ -19,6 +19,7 @@
       v-if="!rows"
       :id="id"
       ref="neonInput"
+      :aria-placeholder="computedPlaceholder"
       :disabled="disabled"
       :placeholder="computedPlaceholder"
       :tabindex="tabindex"
@@ -28,12 +29,13 @@
       data-testid="neonInput"
       v-bind="sanitizedAttributes"
       @blur="onBlur"
-      @focus="onFocus"
-      @input.stop.prevent="changeValue"
+      @focus="!disabled && onFocus()"
+      @input.stop.prevent="!disabled && changeValue($event)"
     />
     <textarea
       v-else
       :id="id"
+      :aria-placeholder="computedPlaceholder"
       :disabled="disabled"
       :placeholder="computedPlaceholder"
       :rows="rows"

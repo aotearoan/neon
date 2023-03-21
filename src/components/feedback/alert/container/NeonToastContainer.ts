@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue';
-import NeonIcon from '@/app/presentation/icon/NeonIcon.vue';
+import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import type { NeonToastModel } from '../NeonToastModel';
 import type { NeonVerticalPosition } from '@/common/enums/NeonVerticalPosition';
 

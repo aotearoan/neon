@@ -1,0 +1,76 @@
+@use 'src/sass/includes/layout';
+@use 'src/sass/includes/svg';
+
+@mixin input-indicator {
+  .neon-input-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-weight: 400;
+    letter-spacing: var(--neon-letter-spacing-s);
+    border: var(--neon-border-width) var(--neon-border-style) var(--neon-border-color-input);
+    background-color: var(--neon-background-color-input-indicator);
+    @include svg.color-with-svg(var(--neon-color-input-indicator));
+
+    &__label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &--s {
+      height: var(--neon-size-s);
+
+      .neon-input-indicator__label {
+        @include layout.padding-horizontal(0.33);
+      }
+
+      .neon-input-indicator__label,
+      .neon-icon {
+        min-width: var(--neon-size-s);
+      }
+
+      .neon-icon {
+        width: var(--neon-font-size-m);
+        height: var(--neon-font-size-m);
+      }
+    }
+
+    &--m {
+      height: var(--neon-size-m);
+
+      .neon-input-indicator__label {
+        @include layout.padding-horizontal(0.5);
+      }
+
+      .neon-input-indicator__label,
+      .neon-icon {
+        min-width: var(--neon-size-m);
+      }
+
+      .neon-icon {
+        width: var(--neon-font-size-l);
+        height: var(--neon-font-size-l);
+      }
+    }
+
+    &--l {
+      height: var(--neon-size-l);
+
+      .neon-input-indicator__label {
+        @include layout.padding-horizontal(0.5);
+      }
+
+      .neon-input-indicator__label,
+      .neon-icon {
+        min-width: var(--neon-size-l);
+      }
+
+      .neon-icon {
+        width: var(--neon-font-size-l);
+        height: var(--neon-font-size-l);
+      }
+    }
+  }
+}

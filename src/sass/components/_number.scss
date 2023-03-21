@@ -1,0 +1,127 @@
+@use 'src/sass/includes/palettes';
+@use 'src/sass/includes/svg';
+
+@mixin number {
+  .neon-number {
+    @each $color in palettes.$neon-functional-colors {
+      $number-component-rgb: var(--neon-rgb-#{$color});
+      &.neon-number--#{$color}.neon-number--with-buttons:not(.neon-number--disabled) {
+        .neon-input:not(.neon-input--disabled) .neon-input__textfield {
+          background-color: rgba($number-component-rgb, 0.125);
+
+          &:hover {
+            background-color: rgba($number-component-rgb, 0.25);
+          }
+
+          &:focus {
+            background-color: var(--neon-background-color-input);
+          }
+        }
+
+        .neon-button.neon-number__decrement:not(.neon-button--disabled),
+        .neon-button.neon-number__increment:not(.neon-button--disabled) {
+          border: none;
+          background-color: rgba($number-component-rgb, 0.125);
+          transition: all ease-in-out var(--neon-animation-speed-fast);
+
+          @if (not index(palettes.$neon-neutral-colors, $color)) {
+            @include svg.color-with-svg(rgb($number-component-rgb));
+          } @else {
+            @include svg.color-with-svg(var(--neon-color-text));
+          }
+
+          &:hover,
+          &:focus {
+            box-shadow: none;
+            background-color: rgba($number-component-rgb, 0.25);
+
+            @if (not index(palettes.$neon-neutral-colors, $color)) {
+              @include svg.color-with-svg(rgb($number-component-rgb));
+            } @else {
+              @include svg.color-with-svg(var(--neon-color-text));
+            }
+          }
+        }
+      }
+
+      &--#{$color}:not(.neon-number--with-buttons) {
+        .neon-input__textfield {
+          border-right: var(--neon-border-width) var(--neon-border-style) var(--neon-border-color-input);
+        }
+      }
+    }
+
+    .neon-button--disabled {
+      &.neon-number__decrement,
+      &.neon-number__increment {
+        background-color: var(--neon-color-disabled-dark);
+
+        .neon-svg--fill {
+          fill: var(--neon-color-disabled-light);
+        }
+
+        border: none;
+      }
+    }
+
+    &:not(.neon-number--editable) {
+      &:not(.neon-number--disabled) .neon-number__input .neon-input__textfield {
+        box-shadow: none;
+        color: var(--neon-color-disabled-light);
+        -webkit-text-fill-color: var(--neon-color-disabled-light);
+        background-color: var(--neon-color-disabled-dark);
+      }
+    }
+
+    &--disabled {
+      .neon-button--disabled {
+        &.neon-number__decrement,
+        &.neon-number__increment {
+          border: var(--neon-border-width) var(--neon-border-style) var(--neon-color-disabled-dark);
+        }
+      }
+
+      &:not(.neon-number--with-buttons) .neon-input__textfield {
+        border-right: var(--neon-border-width) var(--neon-border-style) var(--neon-color-disabled-dark);
+      }
+    }
+
+    &--with-buttons.neon-number {
+      &--s {
+        max-width: calc(4 * var(--neon-size-s));
+      }
+
+      &--m {
+        max-width: calc(4 * var(--neon-size-m));
+      }
+
+      &--l {
+        max-width: calc(4 * var(--neon-size-l));
+      }
+    }
+
+    .neon-input .neon-input__textfield {
+      padding-right: calc(2 * var(--neon-base-space));
+      font-variant: tabular-nums;
+      border-right: none;
+      -moz-appearance: textfield;
+
+      &:focus {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+
+    .neon-input {
+      .neon-icon {
+        display: none;
+      }
+    }
+  }
+}

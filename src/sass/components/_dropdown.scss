@@ -1,0 +1,201 @@
+@use 'src/sass/includes/palettes';
+@use 'src/sass/includes/layout';
+@use 'src/sass/includes/outline';
+
+@mixin dropdown-size($offset) {
+  .neon-dropdown__content {
+    &--top-left,
+    &--top-right {
+      bottom: calc(100% + #{$offset} * var(--neon-base-space));
+    }
+
+    &--bottom-left,
+    &--bottom-right {
+      top: calc(100% + #{$offset} * var(--neon-base-space));
+    }
+
+    &--left-top,
+    &--left-bottom {
+      right: calc(100% + #{$offset} * var(--neon-base-space));
+    }
+
+    &--right-top,
+    &--right-bottom {
+      left: calc(100% + #{$offset} * var(--neon-base-space));
+    }
+  }
+}
+
+@mixin dropdown {
+  .neon-dropdown {
+    position: relative;
+    width: fit-content;
+
+    @each $color in palettes.$neon-functional-colors {
+      &--#{$color}:not(.neon-dropdown--disabled) {
+        .neon-dropdown__badge {
+          &:focus {
+            .neon-badge {
+              @include outline.box-shadow-outline(var(--neon-rgb-#{$color}));
+            }
+          }
+        }
+      }
+    }
+
+    &__content {
+      position: absolute;
+      z-index: var(--neon-z-index-above);
+      border-radius: var(--neon-border-radius);
+      overflow: hidden;
+      min-width: calc(100% - 2 * var(--neon-border-width));
+      background-color: var(--neon-background-color-card);
+      box-shadow: var(--neon-box-shadow-dropdown);
+
+      & > .neon-card-body {
+        @include layout.padding(0.75);
+      }
+
+      &--bottom-left,
+      &--top-left {
+        left: 0;
+      }
+
+      &--bottom-right,
+      &--top-right {
+        right: 0;
+      }
+
+      &--left-top,
+      &--right-top {
+        top: 0;
+      }
+
+      &--right-bottom,
+      &--left-bottom {
+        bottom: 0;
+      }
+    }
+
+    &__content-close {
+      display: none;
+    }
+
+    &--s {
+      @include dropdown-size(1);
+
+      &.neon-dropdown--open-on-hover {
+        @include dropdown-size(0);
+      }
+    }
+
+    &--m {
+      @include dropdown-size(1);
+
+      &.neon-dropdown--open-on-hover {
+        @include dropdown-size(0);
+      }
+    }
+
+    &--l {
+      @include dropdown-size(1);
+
+      &.neon-dropdown--open-on-hover {
+        @include dropdown-size(0);
+      }
+    }
+
+    &__click-blocker {
+      display: none;
+    }
+
+    &--open,
+    &--open-on-hover:hover {
+      .neon-dropdown__content {
+        border: var(--neon-border-width) var(--neon-border-style) var(--neon-border-color-dropdown);
+      }
+    }
+
+    &--open-on-hover {
+      .neon-dropdown__content {
+        display: none;
+      }
+
+      &.neon-dropdown--open,
+      &:hover {
+        .neon-dropdown__content {
+          display: flex;
+        }
+
+        .neon-expansion-indicator {
+          .neon-expansion-indicator__container {
+            transform: translateY(-0.125rem);
+          }
+
+          .neon-expansion-indicator__line1 {
+            transform: rotate(-35deg);
+          }
+
+          .neon-expansion-indicator__line2 {
+            transform: rotate(35deg);
+          }
+        }
+      }
+    }
+
+    &--open {
+      .neon-dropdown__click-blocker {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        z-index: var(--neon-z-index-top);
+      }
+    }
+
+    .neon-button {
+      flex: 1 0 auto;
+      width: inherit;
+    }
+
+    &__badge {
+      outline: none;
+      flex-direction: row;
+      align-items: center;
+
+      .neon-expansion-indicator {
+        margin-left: calc(2 * var(--neon-base-space));
+      }
+
+      .neon-badge {
+        box-shadow: var(--neon-box-shadow);
+        position: relative;
+
+        &:not(.neon-badge--disabled) {
+          opacity: 0.9;
+        }
+      }
+
+      &:hover {
+        .neon-badge {
+          opacity: 1;
+        }
+      }
+
+      &:active {
+        .neon-badge:not(.neon-badge--disabled) {
+          .neon-badge__label,
+          svg {
+            top: 0.0625rem;
+          }
+        }
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

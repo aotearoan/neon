@@ -1,0 +1,151 @@
+@mixin neon-h0 {
+  font-weight: var(--neon-h0-weight);
+  margin-bottom: var(--neon-typography-margin-unit);
+  margin-top: 0;
+  font-size: var(--neon-h0-size);
+}
+
+@mixin neon-h1 {
+  font-weight: var(--neon-h1-weight);
+  margin-bottom: var(--neon-typography-margin-unit);
+  margin-top: 0;
+  font-size: var(--neon-h1-size);
+}
+
+@mixin neon-h2 {
+  font-weight: var(--neon-h2-weight);
+  margin-bottom: var(--neon-typography-margin-unit);
+  margin-top: 0;
+  font-size: var(--neon-h2-size);
+}
+
+@mixin neon-h3 {
+  font-weight: var(--neon-h3-weight);
+  margin-bottom: var(--neon-typography-margin-unit);
+  margin-top: 0;
+  font-size: var(--neon-h3-size);
+}
+
+@mixin neon-h4 {
+  font-weight: var(--neon-h4-weight);
+  margin-bottom: var(--neon-typography-margin-unit);
+  margin-top: 0;
+  font-size: var(--neon-h4-size);
+}
+
+@mixin neon-h5 {
+  font-weight: var(--neon-h5-weight);
+  margin-bottom: var(--neon-typography-margin-unit);
+  margin-top: 0;
+  font-size: var(--neon-h5-size);
+}
+
+@mixin neon-h6 {
+  font-weight: var(--neon-h6-weight);
+  margin-bottom: var(--neon-typography-margin-unit);
+  margin-top: 0;
+  font-size: var(--neon-h6-size);
+}
+
+@mixin typography {
+  body {
+    font-family: var(--neon-body-font-family);
+    font-weight: var(--neon-body-font-weight);
+    font-size: 16px;
+    line-height: var(--neon-line-height-ratio);
+  }
+
+  p {
+    font-family: var(--neon-font-family-paragraph);
+    margin: 0;
+    max-width: var(--neon-max-paragraph-width);
+    line-height: var(--neon-line-height-ratio);
+
+    & + p {
+      margin-top: calc(4 * var(--neon-base-space));
+    }
+  }
+
+  em {
+    font-weight: var(--neon-font-weight-em);
+  }
+
+  strong {
+    font-weight: var(--neon-font-weight-strong);
+    letter-spacing: var(--neon-letter-spacing-s);
+  }
+
+  span {
+    max-width: var(--neon-max-paragraph-width);
+  }
+
+  .neon-number {
+    font-variant: tabular-nums;
+  }
+
+  .neon-h0 {
+    font-family: var(--neon-heading-font-family);
+    line-height: var(--neon-line-height-headings-ratio);
+    letter-spacing: var(--neon-letter-spacing-headings);
+    @include neon-h0;
+  }
+
+  .neon-h1,
+  h1 {
+    font-family: var(--neon-heading-font-family);
+    line-height: var(--neon-line-height-headings-ratio);
+    letter-spacing: var(--neon-letter-spacing-headings);
+    @include neon-h1;
+  }
+
+  .neon-h2,
+  h2 {
+    font-family: var(--neon-heading-font-family);
+    line-height: var(--neon-line-height-headings-ratio);
+    letter-spacing: var(--neon-letter-spacing-headings);
+    @include neon-h2;
+  }
+
+  .neon-h3,
+  h3 {
+    font-family: var(--neon-heading-font-family);
+    line-height: var(--neon-line-height-headings-ratio);
+    letter-spacing: var(--neon-letter-spacing-headings);
+    @include neon-h3;
+  }
+
+  .neon-h4,
+  h4 {
+    font-family: var(--neon-heading-font-family);
+    line-height: var(--neon-line-height-headings-ratio);
+    letter-spacing: var(--neon-letter-spacing-headings);
+    @include neon-h4;
+  }
+
+  .neon-h5,
+  h5 {
+    font-family: var(--neon-heading-font-family);
+    line-height: var(--neon-line-height-headings-ratio);
+    letter-spacing: var(--neon-letter-spacing-headings);
+    @include neon-h5;
+  }
+
+  .neon-h6,
+  h6 {
+    font-family: var(--neon-heading-font-family);
+    line-height: var(--neon-line-height-headings-ratio);
+    letter-spacing: var(--neon-letter-spacing-headings);
+    @include neon-h6;
+  }
+
+  label {
+    &:not(.no-style) {
+      font-size: var(--neon-font-size-s);
+      font-weight: 500;
+      letter-spacing: var(--neon-letter-spacing-m);
+      text-transform: uppercase;
+      user-select: none;
+      margin-bottom: calc(2 * var(--neon-base-space));
+    }
+  }
+}

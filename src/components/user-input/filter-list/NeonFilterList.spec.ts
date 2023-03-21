@@ -3,6 +3,7 @@ import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import { NeonSize } from '@/common/enums/NeonSize';
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
+import { router } from '@/../test/unit/test-router';
 
 describe('NeonFilterList', () => {
   const items = [
@@ -78,7 +79,7 @@ describe('NeonFilterList', () => {
     harness = render(NeonFilterList, {
       props: { items, modelValue: [] },
       global: {
-        stubs: ['router-link'],
+        plugins: [router],
       },
     });
   });
@@ -94,7 +95,7 @@ describe('NeonFilterList', () => {
     const { container } = render(NeonFilterList, {
       props: { items: longItemList, displayCount, modelValue: [] },
       global: {
-        stubs: ['router-link'],
+        plugins: [router],
       },
     });
     expect(container.querySelectorAll('.neon-filter-list__item').length).toEqual(displayCount);
@@ -105,7 +106,7 @@ describe('NeonFilterList', () => {
     const { container } = render(NeonFilterList, {
       props: { items: longItemList, modelValue: [], displayCount },
       global: {
-        stubs: ['router-link'],
+        plugins: [router],
       },
     });
     const el = container.querySelector('.neon-filter-list__show-toggle') as HTMLInputElement;
@@ -220,7 +221,7 @@ describe('NeonFilterList', () => {
     const { container } = render(NeonFilterList, {
       props: { items, modelValue: [items[0].key], displayCount: 2, showMoreLabel },
       global: {
-        stubs: ['router-link'],
+        plugins: [router],
       },
     });
     expect(container.querySelector('.neon-filter-list__show-toggle')?.textContent).toEqual(showMoreLabel);
@@ -232,7 +233,7 @@ describe('NeonFilterList', () => {
     const { container } = render(NeonFilterList, {
       props: { items, modelValue: [], displayCount: 2, showMoreLabel, showLessLabel },
       global: {
-        stubs: ['router-link'],
+        plugins: [router],
       },
     });
     const el = container.querySelector('.neon-filter-list__show-toggle') as HTMLElement;

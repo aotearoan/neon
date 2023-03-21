@@ -23,22 +23,16 @@
       <neon-card-body>
         <neon-anchor id="sass" />
         <h2 class="neon-h4">SASS</h2>
-        <span>First select a theme:</span>
-        <ul>
-          <li>smooth</li>
-          <li>classic</li>
-          <li>sharp</li>
-        </ul>
         <p>
-          To use a theme without any customization simply import the basic theme file, e.g. to import the
-          <em>classic</em> theme:
+          To use the default theme without any customization simply import the basic theme file, e.g. to import the
+          theme:
         </p>
-        <editor :read-only="true" language="scss" modelValue="@use '~@aotearoan/neon/themes/classic';" />
+        <editor :read-only="true" language="scss" modelValue="@use '~@aotearoan/neon/theme';" />
         <p>If, however you would like to override/customize the theme then you need to include the following:</p>
         <editor v-model="allTheSass" :read-only="true" language="scss" />
         <p>
-          Finally, the theme and mode (light/dark) need to be set on the document, e.g. to set the
-          <em>classic</em> theme and <em>dark</em> mode:
+          Finally, the theme and mode (light/dark) need to be set on the document, e.g. to set the theme with
+          <em>dark</em> mode:
         </p>
         <editor v-model="darkModeExample" :read-only="true" language="html" />
         <p>

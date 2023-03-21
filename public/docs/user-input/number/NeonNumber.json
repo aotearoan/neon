@@ -62,6 +62,17 @@
       }
     },
     {
+      "name": "placeholder",
+      "description": "Placeholder text to display in the input",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
       "name": "disabled",
       "description": "Whether the component is disabled.",
       "type": {
@@ -165,5 +176,9 @@
         ]
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/user-input/number/NeonNumber.vue",
+    "/Users/andrew/dev/projects/neon/src/components/user-input/number/NeonNumber.ts"
   ]
 }

@@ -28,7 +28,7 @@ export default defineComponent({
   <div class="neon-color-text-error">This is the error text color</div>
   <div class="neon-color-text-neutral">This is the neutral text color</div>
   <div class="neon-color-text-high-contrast">This is the high-contrast text color</div>
-  <div class="neon-color-text-low-contrast">This is the low contrast text color</div>
+  <div class="neon-color-text-low-contrast">This is the low-contrast text color</div>
 </div>`,
       noCard: true,
     });

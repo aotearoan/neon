@@ -1,4 +1,4 @@
-import { computed, defineComponent, ref, watch } from 'vue';
+import { computed, defineComponent, ref, useAttrs, watch } from 'vue';
 import { NeonSize } from '@/common/enums/NeonSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import { NeonSwitchStyle } from '@/common/enums/NeonSwitchStyle';
@@ -64,7 +64,9 @@ export default defineComponent({
      */
     'update:modelValue',
   ],
-  setup(props, { attrs, emit }) {
+  setup(props, { emit }) {
+    const attrs = useAttrs();
+
     const checkbox = ref<HTMLInputElement | null>(null);
 
     watch(
@@ -97,8 +99,9 @@ export default defineComponent({
     };
 
     const sanitizedAttributes = computed(() => {
-      const attributes = Object.entries(attrs).filter(([key, _value]) => key !== 'onInput' && key !== 'onClick');
-      return { ...attributes };
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { onIndeterminateChange, onClick, ...sanitized } = attrs;
+      return sanitized;
     });
 
     const toggleSwitch = () => {

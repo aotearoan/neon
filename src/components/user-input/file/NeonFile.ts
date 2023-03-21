@@ -2,9 +2,9 @@ import { computed, defineComponent, ref } from 'vue';
 import { NeonSize } from '@/common/enums/NeonSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import { NeonState } from '@/common/enums/NeonState';
-import NeonButton from '@/components/button/NeonButton.vue';
-import NeonInput from '@/components/input/NeonInput.vue';
-import NeonList from '@/components/list/NeonList.vue';
+import NeonButton from '@/components/user-input/button/NeonButton.vue';
+import NeonInput from '@/components/user-input/input/NeonInput.vue';
+import NeonList from '@/components/user-input/list/NeonList.vue';
 
 /**
  * A file upload component. This is a wrapper around an HTML file input. It can display multiple files as well as

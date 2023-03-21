@@ -1,4 +1,4 @@
-import { computed, defineComponent, ref } from 'vue';
+import { computed, defineComponent, ref, useAttrs } from 'vue';
 import NeonInput from '../input/NeonInput.vue';
 
 /**
@@ -21,12 +21,14 @@ export default defineComponent({
      */
     'icon-click',
   ],
-  setup(props, { attrs, emit }) {
+  setup(props, { emit }) {
+    const attrs = useAttrs();
+
     const show = ref(false);
 
     const sanitizedAttributes = computed(() => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { iconClicked, ...sanitized } = attrs;
+      const { iconClick, ...sanitized } = attrs;
       return sanitized;
     });
 

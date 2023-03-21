@@ -183,5 +183,9 @@
         ]
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/user-input/slider/NeonSlider.vue",
+    "/Users/andrew/dev/projects/neon/src/components/user-input/slider/NeonSlider.ts"
   ]
 }

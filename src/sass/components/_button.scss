@@ -1,0 +1,348 @@
+@use 'src/sass/includes/palettes';
+@use 'src/sass/includes/outline';
+@use 'src/sass/includes/svg';
+
+@mixin gradient-button(
+  $from-color,
+  $to-color,
+) {
+  --neon-gradient-button-c1: var(--neon-color-#{$from-color});
+  --neon-gradient-button-c2: var(--neon-background-color-#{$to-color});
+
+  background: linear-gradient(
+                  var(--neon-background-gradient-angle),
+                  var(--neon-gradient-button-c1) var(--neon-background-gradient-offset),
+                  var(--neon-gradient-button-c2) 100%
+  );
+  transition: all ease-in-out var(--neon-animation-speed-fast);
+
+  &:active:not(:disabled),
+  &:hover:not(:disabled) {
+    background: linear-gradient(
+                    var(--neon-background-gradient-angle),
+                    var(--neon-gradient-button-c1) var(--neon-background-gradient-offset-hover),
+                    var(--neon-gradient-button-c2) 100%
+    );
+  }
+
+  &:focus:not(:disabled):not(.neon-button--no-outline) {
+    @include outline.box-shadow-outline(var(--neon-rgb-#{$from-color}));
+  }
+}
+
+@mixin solid-button($color) {
+  background: linear-gradient(var(--neon-background-solid-button-light-#{$color}), var(--neon-background-solid-button-dark-#{$color}));
+
+  &:hover:not(:disabled) {
+    background: linear-gradient(var(--neon-background-solid-button-dark-#{$color}), var(--neon-background-solid-button-dark-#{$color}));
+  }
+
+  &:active:not(:disabled) {
+    background: var(--neon-background-button-active-#{$color});
+  }
+
+  &:focus:not(:disabled):not(.neon-button--no-outline) {
+    @include outline.box-shadow-outline(var(--neon-rgb-#{$color}));
+  }
+}
+
+@mixin outline-button($color) {
+  border: var(--neon-border-width-outline-button) var(--neon-border-style) var(--neon-color-#{$color});
+  @include svg.color-with-svg(var(--neon-color-#{$color}));
+
+  &:hover:not(:disabled),
+  &:active:not(:disabled) {
+    @include svg.color-with-svg(var(--neon-color-inverse));
+  }
+
+  &:hover:not(:disabled) {
+    background: var(--neon-color-#{$color});
+  }
+
+  &:active:not(:disabled) {
+    background: var(--neon-background-button-active-#{$color});
+    border-color: var(--neon-background-button-active-#{$color});
+  }
+
+  &:focus:not(:disabled):not(.neon-button--no-outline) {
+    @include outline.box-shadow-outline(var(--neon-rgb-#{$color}));
+  }
+}
+
+@mixin text-button($color) {
+  color: var(--neon-color-#{$color});
+
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    background: var(--neon-background-color-text-button-hover);
+  }
+
+  &:active:not(:disabled) {
+    background: var(--neon-background-color-text-button-active);
+  }
+}
+
+@mixin button {
+  .neon-button {
+    margin-left: 0;
+    margin-right: 0;
+
+    &--s {
+      height: var(--neon-size-s);
+      font-size: var(--neon-font-size-s);
+      line-height: var(--neon-line-height-one);
+      padding: 0 calc(0.75 * (var(--neon-size-s) - var(--neon-font-size-s)));
+
+      .neon-icon {
+        width: calc(var(--neon-font-size-s) * var(--neon-line-height-one));
+        height: calc(var(--neon-font-size-s) * var(--neon-line-height-one));
+      }
+
+      &.neon-button--icon-only {
+        min-width: var(--neon-size-s);
+        padding: 0;
+
+        &.neon-button--circular {
+          border-radius: 50%;
+        }
+
+        .neon-icon {
+          width: var(--neon-font-size-l);
+          height: var(--neon-font-size-l);
+        }
+      }
+    }
+
+    &--m {
+      height: var(--neon-size-m);
+      font-size: var(--neon-font-size-m);
+      line-height: var(--neon-line-height-one);
+      padding: 0 calc(0.75 * (var(--neon-size-m) - var(--neon-font-size-m)));
+
+      .neon-icon {
+        width: calc(var(--neon-font-size-m) * var(--neon-line-height-one));
+        height: calc(var(--neon-font-size-m) * var(--neon-line-height-one));
+      }
+
+      &.neon-button--icon-only {
+        min-width: var(--neon-size-m);
+        padding: 0;
+
+        &.neon-button--circular {
+          border-radius: 50%;
+        }
+
+        .neon-icon {
+          width: var(--neon-h6-size);
+          height: var(--neon-h6-size);
+        }
+      }
+    }
+
+    &--l {
+      height: var(--neon-size-l);
+      font-size: var(--neon-font-size-m);
+      line-height: var(--neon-line-height-one);
+      padding: 0 calc(0.75 * (var(--neon-size-l) - var(--neon-font-size-m)));
+
+      .neon-icon {
+        width: calc(var(--neon-font-size-m) * var(--neon-line-height-one));
+        height: calc(var(--neon-font-size-m) * var(--neon-line-height-one));
+      }
+
+      &.neon-button--icon-only {
+        min-width: var(--neon-size-l);
+        padding: 0;
+
+        &.neon-button--circular {
+          border-radius: 50%;
+        }
+
+        .neon-icon {
+          width: var(--neon-h5-size);
+          height: var(--neon-h5-size);
+        }
+      }
+    }
+
+    &--xl {
+      height: var(--neon-size-xl);
+      font-size: var(--neon-h5-size);
+      line-height: var(--neon-line-height-one);
+      padding: 0 calc(0.75 * (var(--neon-size-xl) - var(--neon-h5-size)));
+
+      .neon-icon {
+        width: calc(var(--neon-h5-size) * var(--neon-line-height-one));
+        height: calc(var(--neon-h5-size) * var(--neon-line-height-one));
+      }
+
+      &.neon-button--icon-only {
+        min-width: var(--neon-size-xl);
+        padding: 0;
+
+        &.neon-button--circular {
+          border-radius: 50%;
+        }
+
+        .neon-icon {
+          width: var(--neon-h3-size);
+          height: var(--neon-h3-size);
+        }
+      }
+
+      border-radius: var(--neon-border-radius-button-xl);
+    }
+
+    border-radius: var(--neon-border-radius-button);
+    font-weight: 400;
+    letter-spacing: var(--neon-letter-spacing-m);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    outline: none;
+    user-select: none;
+
+    .neon-button__label {
+      white-space: nowrap;
+      flex: 1 1 auto;
+      text-align: left;
+    }
+
+    &:active:not(:disabled) {
+      .neon-button__label,
+      .neon-icon {
+        position: relative;
+        top: 0.0625rem;
+      }
+
+      .neon-button__indicator {
+        top: 0.0625rem;
+      }
+    }
+
+    &.neon-button--full-width {
+      width: 100%;
+      justify-content: center;
+
+      .neon-button__label {
+        text-align: center;
+      }
+    }
+
+    &--icon-left {
+      .neon-icon {
+        margin-right: calc(2 * var(--neon-base-space));
+      }
+    }
+
+    &--icon-right {
+      .neon-icon {
+        order: 1;
+        margin-left: calc(2 * var(--neon-base-space));
+      }
+    }
+
+    @each $color in palettes.$neon-functional-colors {
+      &--#{$color} {
+        &.neon-button--solid {
+          @if ($color == 'low-contrast') {
+            color: var(--neon-color-text);
+          }
+
+          @include solid-button($color);
+
+          @each $alternateColor in palettes.$neon-functional-colors {
+            &.neon-button--alternate-color-#{$alternateColor}:not(.neon-button--disabled) {
+              @include gradient-button($color, $alternateColor);
+            }
+          }
+        }
+
+        &.neon-button--outline {
+          @include outline-button($color);
+        }
+
+        &.neon-button--text {
+          @include text-button($color);
+        }
+      }
+    }
+
+    &--solid {
+      border: none;
+      box-shadow: var(--neon-box-shadow);
+      color: var(--neon-color-inverse);
+
+      &:active {
+        box-shadow: var(--neon-inset-shadow);
+      }
+
+      &.neon-button--disabled {
+        color: var(--neon-color-disabled-light);
+        background: var(--neon-color-disabled-dark);
+        box-shadow: none;
+      }
+    }
+
+    &--outline {
+      background: transparent;
+
+      &.neon-button--disabled {
+        color: var(--neon-color-disabled-light);
+        border-color: var(--neon-color-disabled-light);
+      }
+    }
+
+    &--text {
+      background-color: transparent;
+      border: none;
+
+      &.neon-button--disabled {
+        color: var(--neon-color-disabled-light);
+      }
+    }
+
+    &--state-loading,
+    &--state-success,
+    &--state-error {
+      &:not(.neon-button--with-icon) {
+        .neon-button__label {
+          opacity: 0;
+        }
+
+        .neon-icon {
+          position: absolute;
+          z-index: var(--neon-z-index-above);
+        }
+      }
+    }
+
+    &--state-loading {
+      cursor: progress;
+    }
+
+    &__indicator:not(:first-child) {
+      margin-left: calc(2 * var(--neon-base-space));
+    }
+
+    .neon-link__label {
+      display: flex;
+      justify-content: center;
+    }
+
+    &--disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  .neon-button-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    .neon-button + .neon-button {
+      margin-left: calc(2 * var(--neon-base-space));
+    }
+  }
+}

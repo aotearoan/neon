@@ -2,7 +2,7 @@ import { NeonResponsive } from '../enums/NeonResponsive';
 
 export class NeonResponsiveUtils {
   public static readonly breakpoints: Record<NeonResponsive, string> = Object.freeze({
-    [NeonResponsive.All]: '', // only use all on it's own, never in combination with other breakpoints
+    [NeonResponsive.All]: '', // only use all on its own, never in combination with other breakpoints
     [NeonResponsive.DesktopLarge]: '(min-width: 1440px)',
     [NeonResponsive.Desktop]: '(max-width: 1339px)',
     [NeonResponsive.LargerThanTablet]: '(min-width: 1025px)',

@@ -1,0 +1,28 @@
+@mixin dialog {
+  .neon-dialog {
+    .neon-card {
+      max-width: var(--neon-max-width-dialog);
+    }
+
+    .neon-card-body {
+      min-height: var(--neon-min-height-dialog);
+      justify-content: space-between;
+      padding: calc(6 * var(--neon-base-space));
+    }
+
+    .neon-button {
+      margin-top: calc(2 * var(--neon-base-space));
+    }
+
+    &__title {
+      margin-bottom: calc(2 * var(--neon-base-space));
+    }
+
+    &__question {
+      margin-bottom: calc(6 * var(--neon-base-space));
+      font-size: var(--neon-font-size-s);
+      font-style: var(--neon-font-style-dialog);
+      letter-spacing: var(--neon-letter-spacing-s);
+    }
+  }
+}

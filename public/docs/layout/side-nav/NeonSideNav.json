@@ -24,5 +24,9 @@
     {
       "name": "scrolling"
     }
+  ],
+  "sourceFiles": [
+    "./src/components/layout/side-nav/NeonSideNav.vue",
+    "/Users/andrew/dev/projects/neon/src/components/layout/side-nav/NeonSideNav.ts"
   ]
 }

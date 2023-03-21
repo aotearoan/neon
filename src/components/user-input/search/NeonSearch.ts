@@ -1,14 +1,13 @@
-import { computed, defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
+import { computed, defineComponent, onMounted, onUnmounted, ref, useAttrs, watch } from 'vue';
 import { NeonSize } from '@/common/enums/NeonSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import NeonDropdown from '@/components/presentation/dropdown/NeonDropdown.vue';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import type { NeonSearchOption } from '@/common/models/NeonSearchOption';
-import NeonInput from '@/components/input/NeonInput.vue';
-import NeonChip from '@/components/chip/NeonChip.vue';
+import NeonInput from '@/components/user-input/input/NeonInput.vue';
+import NeonChip from '@/components/user-input/chip/NeonChip.vue';
 import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
 import { NeonScrollUtils } from '@/common/utils/NeonScrollUtils';
-import { NeonVueUtils } from '@/common/utils/NeonVueUtils';
 
 /**
  * <p>
@@ -70,7 +69,9 @@ export default defineComponent({
      */
     'filter-changed',
   ],
-  setup(props, { attrs, emit }) {
+  setup(props, { emit }) {
+    const attrs = useAttrs();
+
     const dropdown = ref<HTMLElement | null>(null);
     const dropdownPlacement = ref<NeonDropdownPlacement | null>(null);
 
@@ -150,15 +151,14 @@ export default defineComponent({
       if (open.value) {
         switch ($event.code) {
           case 'ArrowUp':
-          case 'ArrowDown':
-            {
-              const reverseOffset = isReverse() ? -1 : 1;
-              if ($event.code === 'ArrowUp') {
-                navigateBy(-1 * reverseOffset, $event);
-              } else {
-                navigateBy(1 * reverseOffset, $event);
-              }
+          case 'ArrowDown': {
+            const reverseOffset = isReverse() ? -1 : 1;
+            if ($event.code === 'ArrowUp') {
+              navigateBy(-1 * reverseOffset, $event);
+            } else {
+              navigateBy(1 * reverseOffset, $event);
             }
+          }
             break;
           case 'Enter':
           case 'Space':
@@ -188,8 +188,8 @@ export default defineComponent({
 
     const sanitizedAttributes = computed(() => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { size, disabled, label, icon, color, ...sanitized } = attrs;
-      return NeonVueUtils.sanitizeAttributes(sanitized, 'onUpdate:modelValue');
+      const { onFilterChanged, ...sanitized } = attrs;
+      return sanitized;
     });
 
     const changeHighlighted = (key: string) => {

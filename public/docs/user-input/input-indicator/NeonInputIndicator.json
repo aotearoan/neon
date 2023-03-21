@@ -31,5 +31,9 @@
         "value": "NeonSize.Medium"
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/user-input/input-indicator/NeonInputIndicator.vue",
+    "/Users/andrew/dev/projects/neon/src/components/user-input/input-indicator/NeonInputIndicator.ts"
   ]
 }

@@ -5,9 +5,9 @@ import { NeonClosableUtils } from '@/common/utils/NeonClosableUtils';
 import { NeonSize } from '@/common/enums/NeonSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import { NeonDropdownStyle } from '@/common/enums/NeonDropdownStyle';
-import NeonBadge from '@/components/badge/NeonBadge.vue';
+import NeonBadge from '@/components/presentation/badge/NeonBadge.vue';
 import NeonButton from '@/components/user-input/button/NeonButton.vue';
-import NeonExpansionIndicator from '@/components/expansion-indicator/NeonExpansionIndicator.vue';
+import NeonExpansionIndicator from '@/components/presentation/expansion-indicator/NeonExpansionIndicator.vue';
 
 /**
  * <p>A general purpose dropdown component. This component consists of a button, to trigger the dropdown to open, and
@@ -43,7 +43,7 @@ export default defineComponent({
      */
     imageAlt: { type: String, default: null },
     /**
-     * An icon to display on the dropdown button. This will be to the left of any label, but can also be used on it's own.
+     * An icon to display on the dropdown button. This will be to the left of any label, but can also be used on its own.
      */
     icon: { type: String, default: null },
     /**

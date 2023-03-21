@@ -1,12 +1,11 @@
-import { computed, defineComponent, ref } from 'vue';
+import { computed, defineComponent, ref, useAttrs } from 'vue';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import { NeonSize } from '@/common/enums/NeonSize';
 import { NeonInputMode } from '@/common/enums/NeonInputMode';
-import NeonButton from '@/components/button/NeonButton.vue';
-import NeonFieldGroup from '@/components/field-group/NeonFieldGroup.vue';
-import NeonInput from '@/components/input/NeonInput.vue';
+import NeonButton from '@/components/user-input/button/NeonButton.vue';
+import NeonFieldGroup from '@/components/user-input/field-group/NeonFieldGroup.vue';
+import NeonInput from '@/components/user-input/input/NeonInput.vue';
 import { NeonNumberUtils } from '@/common/utils/NeonNumberUtils';
-import { NeonVueUtils } from '@/common/utils/NeonVueUtils';
 
 /**
  * <p>
@@ -48,6 +47,10 @@ export default defineComponent({
      * The component size.
      */
     size: { type: String as () => NeonSize, default: NeonSize.Medium },
+    /**
+     * Placeholder text to display in the input
+     */
+    placeholder: { type: String, default: null },
     /**
      * Whether the component is disabled.
      */
@@ -94,17 +97,20 @@ export default defineComponent({
      */
     'update:modelValue',
   ],
-  setup(props, { attrs, emit }) {
+  setup(props, { emit }) {
+    const attrs = useAttrs();
     const focus = ref(false);
 
     const emitValue = (value: number | null) => {
-      emit('update:modelValue', value);
+      if (!props.disabled) {
+        emit('update:modelValue', value);
+      }
     };
 
     const sanitizedAttributes = computed(() => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { min, max, step, color, size, disabled, inputmode, onBlur, onFocus, ...sanitized } = attrs;
-      return NeonVueUtils.sanitizeAttributes(sanitized, 'onUpdate:modelValue');
+      const { onBlur, onFocus, ...sanitized } = attrs;
+      return sanitized;
     });
 
     const valueChanged = (value: string) => {
@@ -135,12 +141,12 @@ export default defineComponent({
 
     const formattedValue = computed(() => {
       return props.modelValue !== null &&
-        (props.valueTemplate !== undefined || computedDecimals.value !== undefined || props.percentage !== undefined)
+      (props.valueTemplate !== undefined || computedDecimals.value !== undefined || props.percentage !== undefined)
         ? NeonNumberUtils.formatNumber(props.modelValue, {
-            decimals: computedDecimals.value,
-            format: props.valueTemplate,
-            percentage: props.percentage,
-          })
+          decimals: computedDecimals.value,
+          format: props.valueTemplate,
+          percentage: props.percentage,
+        })
         : props.modelValue;
     });
 

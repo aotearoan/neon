@@ -16,5 +16,9 @@
       "name": "content",
       "description": "The main page content"
     }
+  ],
+  "sourceFiles": [
+    "./src/components/layout/page/NeonPage.vue",
+    "/Users/andrew/dev/projects/neon/src/components/layout/page/NeonPage.ts"
   ]
 }

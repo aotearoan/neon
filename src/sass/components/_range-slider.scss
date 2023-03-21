@@ -1,0 +1,127 @@
+@use 'src/sass/includes/palettes';
+
+@mixin range-slider-track-lower($color) {
+  $neon-color-slider-fill: var(--neon-color-#{$color});
+  $neon-color-slider-track: var(--neon-color-slider-track);
+  background: linear-gradient($neon-color-slider-track, $neon-color-slider-track) 0 / var(--sx) 100% no-repeat $neon-color-slider-fill;
+}
+
+@mixin range-slider-track-upper {
+  $neon-color-slider-track: var(--neon-color-slider-track);
+  background: linear-gradient($neon-color-slider-track, $neon-color-slider-track) 101% / calc(100% - var(--sx)) 100% no-repeat;
+}
+
+@mixin range-slider-track-lower-disabled {
+  $disabled-track-color: var(--neon-color-disabled-dark);
+  background: linear-gradient($disabled-track-color, $disabled-track-color) 0 / var(--sx) 100% no-repeat var(--neon-color-disabled-light);
+}
+
+@mixin range-slider {
+  .neon-range-slider {
+    position: relative;
+    width: 100%;
+    height: calc(16 * var(--neon-base-space));
+
+    .neon-range-slider__lower {
+      @each $color in palettes.$neon-functional-colors {
+        &.neon-slider--#{$color} {
+          .neon-slider__input {
+            &::-webkit-slider-runnable-track {
+              @include range-slider-track-lower($color);
+            }
+
+            &::-moz-range-track {
+              @include range-slider-track-lower($color);
+            }
+
+            &::-ms-track {
+              @include range-slider-track-lower($color);
+            }
+          }
+        }
+      }
+
+      &.neon-slider--disabled {
+        .neon-slider__input {
+          &::-webkit-slider-runnable-track {
+            @include range-slider-track-lower-disabled;
+          }
+
+          &::-moz-range-track {
+            @include range-slider-track-lower-disabled;
+          }
+
+          &::-ms-track {
+            @include range-slider-track-lower-disabled;
+          }
+        }
+      }
+    }
+
+    .neon-range-slider__upper {
+      .neon-slider__input {
+        &::-webkit-slider-runnable-track {
+          @include range-slider-track-upper;
+        }
+
+        &::-moz-range-track {
+          @include range-slider-track-upper;
+        }
+
+        &::-ms-track {
+          @include range-slider-track-upper;
+        }
+      }
+    }
+
+    &.neon-range-slider--disabled {
+      cursor: not-allowed;
+    }
+
+    &__output-range-separator {
+      margin-left: calc(1.5 * var(--neon-base-space));
+      margin-right: calc(1.5 * var(--neon-base-space));
+      font-weight: 700;
+      opacity: 0.25;
+      top: -0.0625rem;
+      position: relative;
+    }
+
+    .neon-slider__output {
+      font-size: var(--neon-font-size-s);
+      font-variant-numeric: tabular-nums;
+      height: calc(4 * var(--neon-base-space));
+      display: flex;
+    }
+
+    .neon-slider__input,
+    .neon-slider {
+      pointer-events: none;
+    }
+
+    .neon-range-slider__lower,
+    .neon-range-slider__upper {
+      position: absolute;
+      top: 1.5rem;
+      width: 100%;
+    }
+
+    &.neon-range-slider--all-upper-bound {
+      .neon-range-slider__upper {
+        .neon-slider__input {
+          &::-webkit-slider-thumb {
+            pointer-events: none;
+          }
+
+          &::-moz-range-thumb {
+            pointer-events: none;
+          }
+
+          &::-ms-thumb {
+            pointer-events: none;
+          }
+        }
+      }
+    }
+  }
+}

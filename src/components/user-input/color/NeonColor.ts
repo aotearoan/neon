@@ -1,7 +1,7 @@
-import { computed, defineComponent } from 'vue';
+import { computed, defineComponent, useAttrs } from 'vue';
 import { NeonSize } from '@/common/enums/NeonSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import NeonInput from '@/components/input/NeonInput.vue';
+import NeonInput from '@/components/user-input/input/NeonInput.vue';
 
 export default defineComponent({
   name: 'NeonColor',
@@ -35,6 +35,7 @@ export default defineComponent({
     placeholder: { type: String, required: false },
   },
   setup(props, { emit }) {
+    const attrs = useAttrs();
     const localValue = computed({
       get() {
         return props.modelValue;
@@ -45,6 +46,7 @@ export default defineComponent({
     });
 
     return {
+      attrs,
       localValue,
     };
   },

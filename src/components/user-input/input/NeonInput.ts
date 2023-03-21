@@ -1,10 +1,9 @@
-import { computed, defineComponent, ref } from 'vue';
+import { computed, defineComponent, ref, useAttrs } from 'vue';
 import { NeonInputType } from '@/common/enums/NeonInputType';
 import { NeonState } from '@/common/enums/NeonState';
 import { NeonSize } from '@/common/enums/NeonSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
-import { NeonVueUtils } from '@/common/utils/NeonVueUtils';
 
 /**
  * Equivalent of, and wrapper around, an HTML input. Also supports <strong>textarea</strong>.
@@ -102,36 +101,23 @@ export default defineComponent({
      */
     'update:modelValue',
   ],
-  setup(props, { attrs, emit }) {
+  setup(props, { emit }) {
+    const attrs = useAttrs();
     const neonInput = ref<HTMLElement | null>(null);
     const focused = ref(false);
 
-    const sanitizedAttributes = computed((): Record<string, unknown> => {
+    const sanitizedAttributes = computed(() => {
       const {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        id,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        tabindex,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        type,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        disabled,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        placeholder,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        rows,
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         onBlur,
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         onFocus,
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        onUpdate,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        onIconClicked,
+        onIconClick,
         ...sanitized
       } = attrs;
 
-      return NeonVueUtils.sanitizeAttributes(sanitized, 'onUpdate:modelValue');
+      return sanitized;
     });
 
     const iconName = computed(() => {

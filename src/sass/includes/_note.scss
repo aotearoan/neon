@@ -1,4 +1,4 @@
-@mixin neon-note-margins($neon-base-space, $neon-note-selector-name) {
+@mixin neon-note-margins($neon-base-space-multiplier, $neon-note-selector-name) {
   p,
   .neon-h1,
   .neon-h2,
@@ -13,7 +13,7 @@
   h5,
   h6 {
     & + #{$neon-note-selector-name} {
-      margin-top: 2 * $neon-base-space;
+      margin-top: calc(#{2 * $neon-base-space-multiplier} * var(--neon-base-space));
     }
   }
 }

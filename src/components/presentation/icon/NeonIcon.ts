@@ -1,4 +1,4 @@
-import { computed, defineComponent } from 'vue';
+import { computed, defineComponent, useAttrs } from 'vue';
 import { NeonIconRegistry } from '@/common/utils/NeonIconRegistry';
 import type { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
@@ -26,7 +26,7 @@ export default defineComponent({
      */
     name: { type: String, required: true },
     /**
-     * The color to render the icon. By default it will be the current text color (light text in dark mode or dark text in light mode).
+     * The color to render the icon. By default, it will be the current text color (light text in dark mode or dark text in light mode).
      */
     color: { type: String as () => NeonFunctionalColor, default: null },
     /**
@@ -39,6 +39,7 @@ export default defineComponent({
     disabled: { type: Boolean, default: false },
   },
   setup(props) {
+    const attrs = useAttrs();
     const icon = computed(() => {
       const _icon = NeonIconRegistry.getIcon(props.name);
       if (!_icon) {
@@ -48,6 +49,7 @@ export default defineComponent({
     });
 
     return {
+      attrs,
       icon,
     };
   },

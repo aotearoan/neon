@@ -8,12 +8,12 @@
         box or modify it to suit your needs.
       </p>
       <neon-button
-        href="/for-developers/getting-started"
-        color="primary"
         alternate-color="primary"
-        size="xl"
         button-style="solid"
+        color="primary"
+        href="/for-developers/getting-started"
         label="Get started"
+        size="xl"
       />
       <h1>Why Neon?</h1>
       <p>
@@ -22,7 +22,7 @@
       </p>
       <div class="highlights">
         <div class="highlight">
-          <neon-icon name="color-filter" class="highlight-icon" />
+          <neon-icon class="highlight-icon" name="color-filter" />
           <h2>Color palette generation</h2>
           <p>
             Most design systems either provide fixed color palettes or require developers to generate their own. This
@@ -30,15 +30,15 @@
             also the ability to generate WCAG contrast compliant color palettes from single colors.
           </p>
           <neon-button
-            href="/design/color"
-            color="brand"
             button-style="outline"
+            color="brand"
+            href="/design/color"
             label="Learn more about Colors"
             size="l"
           />
         </div>
         <div class="highlight">
-          <neon-icon name="html-logo" class="highlight-icon" />
+          <neon-icon class="highlight-icon" name="html-logo" />
           <h2>Semantic HTML components</h2>
           <p>
             Another thing a lot of component libraries do poorly is use nested divs instead of semantic HTML. Neon aims
@@ -46,9 +46,9 @@
             accessibility.
           </p>
           <neon-button
-            href="/for-developers/getting-started"
-            color="brand"
             button-style="outline"
+            color="brand"
+            href="/for-developers/getting-started"
             label="Start using Components"
             size="l"
           />
@@ -56,7 +56,7 @@
       </div>
       <div class="highlights">
         <div class="highlight">
-          <neon-icon name="palette" class="highlight-icon" />
+          <neon-icon class="highlight-icon" name="palette" />
           <h2>Multiple themes</h2>
           <p>
             Most design systems provide a single theme which is a concept from native mobile applications which is great
@@ -64,38 +64,39 @@
             differentiate applications from one another on the web. Neon provides multiple themes to suit a wider
             variety of tastes and styles.
           </p>
-          <neon-button href="/design/theming" color="brand" button-style="outline" label="More about Themes" size="l" />
+          <neon-button button-style="outline" color="brand" href="/design/theming" label="More about Themes" size="l" />
         </div>
         <div class="highlight">
-          <neon-icon name="contrast" class="highlight-icon" />
+          <neon-icon class="highlight-icon" name="contrast" />
           <h2>Light and dark modes</h2>
           <p>
             With growing support for light and dark modes in browsers design systems also need to provide this option.
             Neon provides light and dark modes for all themes.
           </p>
           <neon-button
-            href="/design/theming#dark-mode"
-            color="brand"
             button-style="outline"
+            color="brand"
+            href="/design/theming#dark-mode"
             label="Find out more about dark mode"
             size="l"
           />
         </div>
         <div class="highlight">
-          <neon-icon name="hammer" class="highlight-icon" />
+          <neon-icon class="highlight-icon" name="hammer" />
           <h2>Customization</h2>
           <p>
             Not quite happy with the themes provided?<br />Then customize it! Current Javascript frameworks encapsulate
             CSS making it difficult to override anything. Neon takes a different approach, where SASS styles are open to
             be overridden. Neon uses
-            <neon-link :external-indicator="true" href="http://getbem.com/" target="_blank">BEM</neon-link> and
-            <neon-link :external-indicator="true" href="https://semver.org/" target="_blank">SEMVER</neon-link> so if a
-            class changes you'll know about it.
+            <neon-link :external-indicator="true" href="http://getbem.com/" target="_blank">BEM</neon-link>
+            and
+            <neon-link :external-indicator="true" href="https://semver.org/" target="_blank">SEMVER</neon-link>
+            so if a class changes you'll know about it.
           </p>
           <neon-button
-            href="/for-developers/getting-started#sass"
-            color="brand"
             button-style="outline"
+            color="brand"
+            href="/for-developers/getting-started#sass"
             label="Find out about Customization"
             size="l"
           />
@@ -103,25 +104,25 @@
       </div>
       <div class="highlights">
         <div class="highlight">
-          <neon-icon name="images" class="highlight-icon" />
+          <neon-icon class="highlight-icon" name="images" />
           <h2>Icon libraries</h2>
           <p>
             Icon libraries are tricky. Either you need to include a heavyweight icon font which doesnt allow you to
             select only the icons you need or you will have to write some code to integrate a font library in javascript
             which is not very flexible if you need to add a custom icon. Neon's approach is to provide an icon registry
-            and a component for rendering icons. Add your own SVGs as icons and they will be available in all of the
+            and a component for rendering icons. Add your own SVGs as icons and they will be available in all the
             functional colors in both light and dark themes.
           </p>
           <neon-button
-            href="/presentation/icon#description"
-            color="brand"
             button-style="outline"
+            color="brand"
+            href="/presentation/icon#description"
             label="Learn more about Icons"
             size="l"
           />
         </div>
         <div class="highlight">
-          <neon-icon name="desktop" class="highlight-icon" />
+          <neon-icon class="highlight-icon" name="desktop" />
           <h2>Responsive layout</h2>
           <p>
             The 12 column grid (and other variants) are outdated and inflexible. How many times have you had to add
@@ -131,9 +132,9 @@
             responsive breakpoint.
           </p>
           <neon-button
-            href="/layout/grid#description"
-            color="brand"
             button-style="outline"
+            color="brand"
+            href="/layout/grid#description"
             label="Show me how to use Grid"
             size="l"
           />

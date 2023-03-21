@@ -10,6 +10,7 @@
       >
         <neon-dropdown-menu
           v-if="item.children"
+          :key="`${item.key}DropdownMenu`"
           :class="{ 'router-link-active': routeMatches(item.href) }"
           :color="color"
           :disabled="item.disabled"
@@ -21,7 +22,7 @@
           dropdown-style="text-button"
         />
         <neon-link
-          v-else
+          :key="`${item.key}Link`"
           :href="item.href"
           :no-style="true"
           :tabindex="item.disabled ? -1 : 0"
@@ -32,7 +33,8 @@
           @keydown.space="!item.disabled && onClick(item.key)"
           @keypress.space.prevent=""
         >
-          <neon-icon v-if="item.icon" :name="item.icon" class="neon-menu__item-icon" color="neutral" />
+          <neon-icon v-if="item.icon" :key="`${item.key}LinkIcon`" :name="item.icon" class="neon-menu__item-icon"
+                     color="neutral" />
           <span class="neon-menu__item-label">{{ item.label }}</span>
         </neon-link>
       </li>

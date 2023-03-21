@@ -185,5 +185,9 @@
         "value": "null"
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/user-input/button/NeonButton.vue",
+    "/Users/andrew/dev/projects/neon/src/components/user-input/button/NeonButton.ts"
   ]
 }

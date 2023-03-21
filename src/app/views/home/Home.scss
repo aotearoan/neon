@@ -1,58 +1,62 @@
+@use 'src/sass/includes/layout';
+@use 'src/sass/includes/responsive';
+@use 'src/sass/includes/typography';
+
 .homepage {
   align-items: center;
 
   &__content {
     align-items: center;
-    @include padding;
+    @include layout.padding;
   }
 
   .neon-logo {
-    $logo-height: 100px;
+    $logo-height: 6.25rem;
     height: $logo-height;
-    width: $logo-height * $neon-logo-width-multiplier;
+    width: calc(#{$logo-height} * var(--neon-logo-width-multiplier));
     max-width: 100%;
     align-self: center;
-    margin-top: 32 * $neon-base-space;
-    margin-bottom: 5 * $neon-base-space;
+    margin-top: calc(32 * var(--neon-base-space));
+    margin-bottom: calc(5 * var(--neon-base-space));
 
-    @include responsive(tablet) {
+    @include responsive.responsive(tablet) {
       height: 0.75 * $logo-height;
-      width: 0.75 * $logo-height * $neon-logo-width-multiplier;
+      width: calc(#{0.75 * $logo-height} * var(--neon-logo-width-multiplier));
     }
   }
 
   h1 {
-    @include neon-h0;
+    @include typography.neon-h0;
     text-align: center;
-    margin-top: 16 * $neon-base-space;
+    margin-top: calc(16 * var(--neon-base-space));
 
-    @include responsive(tablet) {
-      @include neon-h1;
-      margin-top: 16 * $neon-base-space;
+    @include responsive.responsive(tablet) {
+      @include typography.neon-h1;
+      margin-top: calc(16 * var(--neon-base-space));
     }
   }
 
   .powered-by {
     font-weight: 300;
-    margin-top: 10 * $neon-base-space;
+    margin-top: calc(10 * var(--neon-base-space));
     text-align: center;
   }
 
   p {
-    font-size: $neon-h5-size;
+    font-size: var(--neon-h5-size);
     text-align: center;
     margin-left: auto;
     margin-right: auto;
 
-    @include responsive(tablet) {
-      font-size: $neon-font-size-m;
+    @include responsive.responsive(tablet) {
+      font-size: var(--neon-font-size-m);
     }
   }
 
   .neon-button {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 8 * $neon-base-space;
+    margin-top: calc(8 * var(--neon-base-space));
   }
 
   .highlights {
@@ -64,30 +68,30 @@
     margin-right: auto;
 
     .highlight {
-      @include padding;
+      @include layout.padding;
       align-items: center;
-      width: 100 * $neon-base-space;
-      @include margin(1, true);
+      width: calc(100 * var(--neon-base-space));
+      @include layout.margin(1, true);
 
       h2 {
-        font-size: $neon-h4-size;
-        font-weight: $neon-h4-weight;
+        font-size: var(--neon-h4-size);
+        font-weight: var(--neon-h4-weight);
         text-align: center;
       }
 
       p {
-        font-size: $neon-font-size-m;
+        font-size: var(--neon-font-size-m);
       }
 
-      @include responsive(mobile-large) {
-        width: 82 * $neon-base-space;
+      @include responsive.responsive(mobile-large) {
+        width: calc(82 * var(--neon-base-space));
       }
     }
 
     .highlight-icon {
-      width: 24 * $neon-base-space;
-      height: 24 * $neon-base-space;
-      margin: 4 * $neon-base-space;
+      width: calc(24 * var(--neon-base-space));
+      height: calc(24 * var(--neon-base-space));
+      margin: calc(4 * var(--neon-base-space));
     }
   }
 }

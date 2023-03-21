@@ -8,10 +8,11 @@ export default defineComponent({
   name: 'NeonPage',
   setup() {
     const handleResize = () => {
-      const vh = (window.innerHeight * 0.01).toFixed(2);
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-      const vw = (window.innerWidth * 0.01).toFixed(2);
-      document.documentElement.style.setProperty('--vw', `${vw}px`);
+      /* 0.000625 = 1% height/width in rems */
+      const vh = window.innerHeight * 0.000625;
+      document.documentElement.style.setProperty('--vh', `${vh}rem`);
+      const vw = window.innerWidth * 0.000625;
+      document.documentElement.style.setProperty('--vw', `${vw}rem`);
     };
 
     onMounted(() => {

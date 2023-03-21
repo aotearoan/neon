@@ -1,7 +1,7 @@
 import { defineComponent, nextTick, onMounted, onUnmounted, ref } from 'vue';
 import type { NeonMenuModel } from '@/common/models/NeonMenuModel';
-import NeonLink from '@/components/link/NeonLink.vue';
-import NeonDropdownMenu from '@/components/dropdown-menu/NeonDropdownMenu.vue';
+import NeonLink from '@/components/navigation/link/NeonLink.vue';
+import NeonDropdownMenu from '@/components/navigation/dropdown-menu/NeonDropdownMenu.vue';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import { NeonSize } from '@/common/enums/NeonSize';
 import type { NeonPriorityMenuItem } from './NeonPriorityMenuItem';
@@ -39,7 +39,7 @@ export default defineComponent({
     size: { type: String as () => NeonSize, default: NeonSize.Large },
     /**
      * Whether to enable the priority menu which automatically calculates the available screen space and displays
-     * as many of the menu items as possible, moving the remaining items to the mobile menu.
+     * as many of the menu items as possible, moving the remaining items into the overflow menu.
      */
     priorityMenuEnabled: { type: Boolean, default: true },
   },
@@ -75,7 +75,7 @@ export default defineComponent({
     };
 
     const initMenuItems = () => {
-      const results = [...props.menu].map(
+      const results = props.menu.map(
         (item, index) => (menuItem.value && toPriorityMenuItem(item.key, menuItem.value[index])) || null,
       );
       menuItems.value = results.filter((item) => item !== null) as NeonPriorityMenuItem[];

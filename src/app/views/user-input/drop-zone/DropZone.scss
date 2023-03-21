@@ -1,24 +1,26 @@
+@use 'src/sass/includes/responsive';
+
 .drop-zone-examples {
   .neon-drop-zone {
     align-items: center;
     justify-content: center;
-    width: 250px;
-    height: 250px;
+    width: 15.625rem;
+    height: 15.625rem;
 
     h4 {
-      line-height: $neon-line-height-one;
+      line-height: var(--neon-line-height-one);
       margin: 0;
     }
   }
 
   .neon-drop-zone--circular {
-    width: 250px;
-    height: 250px;
-    margin-left: 8 * $neon-base-space;
+    width: 15.625rem;
+    height: 15.625rem;
+    margin-left: calc(8 * var(--neon-base-space));
 
-    @include responsive(tablet) {
+    @include responsive.responsive(tablet) {
       margin-left: 0;
-      margin-top: 4 * $neon-base-space;
+      margin-top: calc(4 * var(--neon-base-space));
     }
   }
 }

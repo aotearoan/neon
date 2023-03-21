@@ -1,5 +1,5 @@
 .examples {
   & > h2 {
-    margin-bottom: 4 * $neon-base-space;
+    margin-bottom: calc(4 * var(--neon-base-space));
   }
 }

@@ -1,4 +1,4 @@
-import { computed, defineComponent } from 'vue';
+import { computed, defineComponent, useAttrs } from 'vue';
 import { NeonSize } from '@/common/enums/NeonSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
@@ -49,14 +49,15 @@ export default defineComponent({
      */
     'update:modelValue',
   ],
-  setup(props, { emit, attrs }) {
+  setup(props, { emit }) {
+    const attrs = useAttrs();
     const emitInput = (value: boolean) => {
       emit('update:modelValue', value);
     };
 
     const sanitizedAttributes = computed(() => {
-      const attributes = Object.entries(attrs).filter(([key, _value]) => key !== 'onInput' && key !== 'onClick');
-      return { ...attributes };
+      const { onClick, type, tabindex, ...sanitized } = attrs;
+      return { ...sanitized };
     });
 
     const toggleChip = () => {

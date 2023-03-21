@@ -8,5 +8,9 @@
       "name": "default",
       "description": "The slot for the inputs, buttons and input indicators to compose into a single component"
     }
+  ],
+  "sourceFiles": [
+    "./src/components/user-input/field-group/NeonFieldGroup.vue",
+    "/Users/andrew/dev/projects/neon/src/components/user-input/field-group/NeonFieldGroup.ts"
   ]
 }

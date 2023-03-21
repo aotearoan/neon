@@ -1,8 +1,8 @@
 import { defineComponent } from 'vue';
 import { NeonAlertLevel } from '@/common/enums/NeonAlertLevel';
 import type { NeonAlertPlacement } from '@/common/enums/NeonAlertPlacement';
-import NeonIcon from '@/app/presentation/icon/NeonIcon.vue';
-import NeonLink from '@/app/navigation/link/NeonLink.vue';
+import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
+import NeonLink from '@/components/navigation/link/NeonLink.vue';
 import type { NeonAlertModel } from '../NeonAlertModel';
 
 /**

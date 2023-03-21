@@ -1,8 +1,9 @@
 import { fireEvent, render } from '@testing-library/vue';
 import NeonActionMenu from './NeonActionMenu.vue';
+import { router } from '@/../test/unit/test-router';
 
 describe('NeonActionMenu', () => {
-  const global = { stubs: ['router-link'] };
+  const global = { plugins: [router] };
   const model = [
     {
       label: 'Option 1',

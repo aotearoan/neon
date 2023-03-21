@@ -1,0 +1,246 @@
+@use 'src/sass/includes/palettes';
+@use 'src/sass/includes/scrollbars';
+@use 'src/sass/includes/svg';
+
+@mixin search {
+  .neon-search {
+    @each $color in palettes.$neon-functional-colors {
+      &--#{$color} {
+        .neon-search__option {
+          &--selected {
+            background-color: rgba(var(--neon-rgb-#{$color}), 0.2);
+          }
+
+          &--highlighted:not(.neon-search__option--selected) {
+            background-color: rgba(var(--neon-rgb-#{$color}), 0.05);
+          }
+        }
+      }
+    }
+
+    &__wrapper {
+      position: relative;
+      display: flex;
+      flex: 1 1 auto;
+      width: auto;
+
+      .neon-dropdown.neon-search {
+        width: auto;
+      }
+    }
+
+    &__input {
+      flex: 1;
+      min-width: 10ch;
+
+      input {
+        padding-left: 0;
+      }
+    }
+
+    &__search-icon {
+      position: absolute;
+      left: calc(4 * var(--neon-base-space) + var(--neon-border-width));
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      border-radius: var(--neon-border-radius);
+      padding-left: calc(10 * var(--neon-base-space));
+      padding-top: calc(0.5 * var(--neon-base-space));
+      padding-bottom: calc(0.5 * var(--neon-base-space));
+      border: var(--neon-border-width) var(--neon-border-style) var(--neon-border-color-input);
+      background-color: var(--neon-background-color-input);
+      box-shadow: var(--neon-inset-shadow);
+
+      .neon-search__input .neon-input__textfield {
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+      }
+
+      @each $color in palettes.$neon-functional-colors {
+        &--#{$color} {
+          &:focus-within {
+            border-color: var(--neon-color-#{$color});
+            background-color: var(--neon-background-color-input-active);
+          }
+        }
+      }
+
+      &--disabled {
+        box-shadow: none;
+        border-color: var(--neon-color-disabled-dark);
+        background-color: var(--neon-color-disabled-dark);
+        @include svg.color-with-svg(var(--neon-color-disabled-light));
+
+        &::placeholder {
+          color: var(--neon-color-disabled-light);
+        }
+      }
+
+      .neon-chip {
+        margin: calc(0.5 * var(--neon-base-space));
+
+        & + .neon-input {
+          margin-left: var(--neon-base-space);
+        }
+      }
+
+      &--s {
+        min-height: var(--neon-size-s);
+
+        .neon-search__search-icon {
+          top: calc(0.5 * (var(--neon-size-s) - var(--neon-font-size-s)) + 0.75 * var(--neon-base-space));
+          width: var(--neon-font-size-s);
+          height: var(--neon-font-size-s);
+        }
+
+        .neon-search__input {
+          max-height: calc(var(--neon-size-s) - 2 * var(--neon-border-width));
+
+          .neon-icon {
+            top: calc(2 * var(--neon-base-space));
+            right: calc(2 * var(--neon-base-space));
+          }
+        }
+      }
+
+      &--m {
+        min-height: var(--neon-size-m);
+
+        .neon-search__search-icon {
+          top: calc(0.5 * (var(--neon-size-m) - var(--neon-font-size-m)) + 0.75 * var(--neon-base-space));
+          width: var(--neon-font-size-m);
+          height: var(--neon-font-size-m);
+        }
+
+        .neon-search__input {
+          max-height: calc(var(--neon-size-m) - 2 * var(--neon-border-width));
+
+          .neon-icon {
+            top: calc(2.5 * var(--neon-base-space));
+            right: calc(2.5 * var(--neon-base-space));
+          }
+        }
+      }
+
+      &--l {
+        min-height: var(--neon-size-l);
+
+        .neon-search__search-icon {
+          top: calc(0.5 * (var(--neon-size-l) - var(--neon-font-size-m)) + 0.75 * var(--neon-base-space));
+          width: var(--neon-font-size-m);
+          height: var(--neon-font-size-m);
+        }
+
+        .neon-search__input {
+          max-height: calc(var(--neon-size-l) - 2 * var(--neon-border-width));
+
+          .neon-icon {
+            top: calc(3.5 * var(--neon-base-space));
+            right: calc(3.5 * var(--neon-base-space));
+          }
+        }
+      }
+    }
+
+    &__options {
+      max-height: var(--neon-max-height-dropdown);
+      overflow-y: auto;
+      @include scrollbars.scrollbars;
+    }
+
+    &__option {
+      display: flex;
+      flex: 1 0 auto;
+      flex-direction: row;
+      user-select: none;
+      cursor: pointer;
+
+      &--separator-before {
+        border-top: var(--neon-border-width-separator-before) var(--neon-border-style) var(--neon-border-color-dropdown);
+
+        &:first-child {
+          border-top: none;
+        }
+      }
+
+      .neon-link {
+        color: var(--neon-color-text);
+      }
+
+      &-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+      }
+
+      &-label {
+        white-space: nowrap;
+      }
+
+      &-title {
+        display: flex;
+        flex: 1 0 auto;
+        user-select: none;
+        align-items: center;
+        font-weight: 600;
+        font-size: var(--neon-font-size-xs);
+        text-transform: uppercase;
+        padding: calc(3 * var(--neon-base-space)) calc(4 * var(--neon-base-space)) var(--neon-base-space);
+        letter-spacing: var(--neon-letter-spacing-s);
+      }
+
+      .neon-icon {
+        margin-right: calc(3 * var(--neon-base-space));
+      }
+
+      .neon-search__option-container {
+        padding-left: calc(4 * var(--neon-base-space));
+        padding-right: calc(4 * var(--neon-base-space));
+        height: var(--neon-size-m);
+        flex: 1 1 auto;
+        font-size: var(--neon-font-size-s);
+      }
+
+      .neon-icon {
+        width: var(--neon-font-size-s);
+        height: var(--neon-font-size-s);
+      }
+    }
+
+    .neon-dropdown__content {
+      &--top-left,
+      &--top-right,
+      &--left-bottom,
+      &--right-bottom {
+        .neon-search__options {
+          flex-direction: column-reverse;
+        }
+
+        .neon-search__option {
+          &--separator-before {
+            &:first-child {
+              border-top: var(--neon-border-width-separator-before) var(--neon-border-style) var(--neon-border-color-dropdown);
+            }
+
+            &:last-child {
+              border-top: none;
+            }
+          }
+        }
+      }
+    }
+
+    &--empty {
+      .neon-dropdown__content {
+        display: none;
+      }
+    }
+  }
+}

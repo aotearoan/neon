@@ -1,4 +1,4 @@
-import { computed, defineComponent } from 'vue';
+import { computed, defineComponent, useAttrs } from 'vue';
 import { NeonOutlineStyle } from '@/common/enums/NeonOutlineStyle';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import { useRoute } from 'vue-router';
@@ -37,7 +37,8 @@ export default defineComponent({
      */
     'click',
   ],
-  setup(props, { attrs, emit }) {
+  setup(props, { emit }) {
+    const attrs = useAttrs();
     const route = useRoute();
     const routerUrl = computed(() => (props.href?.indexOf('//') === -1 ? props.href : undefined));
 
@@ -46,8 +47,8 @@ export default defineComponent({
 
     const sanitizedAttributes = computed(() => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { onClick, ...attributes } = attrs;
-      return { ...attributes };
+      const { onClick, ...sanitized } = attrs;
+      return sanitized;
     });
 
     const onClick = () => {

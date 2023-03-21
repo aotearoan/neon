@@ -42,5 +42,9 @@
         ]
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/navigation/action-menu/NeonActionMenu.vue",
+    "/Users/andrew/dev/projects/neon/src/components/navigation/action-menu/NeonActionMenu.ts"
   ]
 }

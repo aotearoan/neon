@@ -1,0 +1,199 @@
+/*
+  In order to use opacity with CSS Variables the raw r, g, b values need to be defined.
+  This is why there are 2 color definitions the raw 'rgb' definition and the actual 'color' one
+*/
+.neon {
+  --neon-rgb-text-dark: 0, 0, 0; // #000
+  --neon-color-text-dark: rgb(var(--neon-rgb-text-dark));
+  --neon-rgb-text-light: 255, 255, 255; // #fff
+  --neon-color-text-light: rgb(var(--neon-rgb-text-light));
+
+  --neon-rgb-neutral-l5: 238, 238, 238; // #eee
+  --neon-color-neutral-l5: rgb(var(--neon-rgb-neutral-l5));
+  --neon-rgb-neutral-l4: 221, 221, 221; // #ddd
+  --neon-color-neutral-l4: rgb(var(--neon-rgb-neutral-l4));
+  --neon-rgb-neutral-l3: 201, 201, 201; // #c9c9c9
+  --neon-color-neutral-l3: rgb(var(--neon-rgb-neutral-l3));
+  --neon-rgb-neutral-l2: 179, 179, 179; // #b3b3b3
+  --neon-color-neutral-l2: rgb(var(--neon-rgb-neutral-l2));
+  --neon-rgb-neutral-l1: 155, 155, 155; // #9b9b9b
+  --neon-color-neutral-l1: rgb(var(--neon-rgb-neutral-l1));
+  --neon-rgb-neutral-d1: 104, 104, 104; // #686868
+  --neon-color-neutral-d1: rgb(var(--neon-rgb-neutral-d1));
+  --neon-rgb-neutral-d2: 82, 82, 82; // #525252
+  --neon-color-neutral-d2: rgb(var(--neon-rgb-neutral-d2));
+  --neon-rgb-neutral-d3: 64, 64, 64; // #404040
+  --neon-color-neutral-d3: rgb(var(--neon-rgb-neutral-d3));
+  --neon-rgb-neutral-d4: 48, 48, 48; // #303030
+  --neon-color-neutral-d4: rgb(var(--neon-rgb-neutral-d4));
+  --neon-rgb-neutral-d5: 36, 36, 36; // #242424
+  --neon-color-neutral-d5: rgb(var(--neon-rgb-neutral-d5));
+
+  --neon-rgb-low-contrast-l5: 221, 221, 221; // #ddd
+  --neon-color-low-contrast-l5: rgb(var(--neon-rgb-low-contrast-l5));
+  --neon-rgb-low-contrast-l4: 201, 201, 201; // #c9c9c9
+  --neon-color-low-contrast-l4: rgb(var(--neon-rgb-low-contrast-l4));
+  --neon-rgb-low-contrast-l3: 176, 176, 176; // #b0b0b0
+  --neon-color-low-contrast-l3: rgb(var(--neon-rgb-low-contrast-l3));
+  --neon-rgb-low-contrast-l2: 145, 145, 145; // #919191
+  --neon-color-low-contrast-l2: rgb(var(--neon-rgb-low-contrast-l2));
+  --neon-rgb-low-contrast-l1: 114, 114, 114; // #727272
+  --neon-color-low-contrast-l1: rgb(var(--neon-rgb-low-contrast-l1));
+  --neon-rgb-low-contrast-d1: 166, 166, 166; // #a6a6a6
+  --neon-color-low-contrast-d1: rgb(var(--neon-rgb-low-contrast-d1));
+  --neon-rgb-low-contrast-d2: 132, 132, 132; // #848484
+  --neon-color-low-contrast-d2: rgb(var(--neon-rgb-low-contrast-d2));
+  --neon-rgb-low-contrast-d3: 104, 104, 104; // #686868
+  --neon-color-low-contrast-d3: rgb(var(--neon-rgb-low-contrast-d3));
+  --neon-rgb-low-contrast-d4: 82, 82, 82; // #525252
+  --neon-color-low-contrast-d4: rgb(var(--neon-rgb-low-contrast-d4));
+  --neon-rgb-low-contrast-d5: 66, 66, 66; // #424242
+  --neon-color-low-contrast-d5: rgb(var(--neon-rgb-low-contrast-d5));
+
+  --neon-rgb-high-contrast-l5: 255, 255, 255; // #fff
+  --neon-color-high-contrast-l5: rgb(var(--neon-rgb-high-contrast-l5));
+  --neon-rgb-high-contrast-l4: 241, 241, 241; // #f1f1f1
+  --neon-color-high-contrast-l4: rgb(var(--neon-rgb-high-contrast-l4));
+  --neon-rgb-high-contrast-l3: 226, 226, 226; // #e2e2e2
+  --neon-color-high-contrast-l3: rgb(var(--neon-rgb-high-contrast-l3));
+  --neon-rgb-high-contrast-l2: 212, 212, 212; // #d4d4d4
+  --neon-color-high-contrast-l2: rgb(var(--neon-rgb-high-contrast-l2));
+  --neon-rgb-high-contrast-l1: 198, 198, 198; // #c6c6c6
+  --neon-color-high-contrast-l1: rgb(var(--neon-rgb-high-contrast-l1));
+  --neon-rgb-high-contrast-d1: 48, 48, 48; // #303030
+  --neon-color-high-contrast-d1: rgb(var(--neon-rgb-high-contrast-d1));
+  --neon-rgb-high-contrast-d2: 38, 38, 38; // #262626
+  --neon-color-high-contrast-d2: rgb(var(--neon-rgb-high-contrast-d2));
+  --neon-rgb-high-contrast-d3: 27, 27, 27; // #1b1b1b
+  --neon-color-high-contrast-d3: rgb(var(--neon-rgb-high-contrast-d3));
+  --neon-rgb-high-contrast-d4: 17, 17, 17; // #111
+  --neon-color-high-contrast-d4: rgb(var(--neon-rgb-high-contrast-d4));
+  --neon-rgb-high-contrast-d5: 0, 0, 0; // #000
+  --neon-color-high-contrast-d5: rgb(var(--neon-rgb-high-contrast-d5));
+
+  --neon-rgb-brand-l5: 251, 240, 255; // #fbf0ff
+  --neon-color-brand-l5: rgb(var(--neon-rgb-brand-l5));
+  --neon-rgb-brand-l4: 250, 206, 255; // #faceff
+  --neon-color-brand-l4: rgb(var(--neon-rgb-brand-l4));
+  --neon-rgb-brand-l3: 244, 172, 255; // #f4acff
+  --neon-color-brand-l3: rgb(var(--neon-rgb-brand-l3));
+  --neon-rgb-brand-l2: 233, 137, 255; // #e989ff
+  --neon-color-brand-l2: rgb(var(--neon-rgb-brand-l2));
+  --neon-rgb-brand-l1: 218, 100, 255; // #da64ff
+  --neon-color-brand-l1: rgb(var(--neon-rgb-brand-l1));
+  --neon-rgb-brand-d1: 141, 7, 237; // #8d07ed
+  --neon-color-brand-d1: rgb(var(--neon-rgb-brand-d1));
+  --neon-rgb-brand-d2: 120, 29, 193; // #781dc1
+  --neon-color-brand-d2: rgb(var(--neon-rgb-brand-d2));
+  --neon-rgb-brand-d3: 90, 29, 140; // #5a1d8c
+  --neon-color-brand-d3: rgb(var(--neon-rgb-brand-d3));
+  --neon-rgb-brand-d4: 58, 26, 83; // #3a1a53
+  --neon-color-brand-d4: rgb(var(--neon-rgb-brand-d4));
+  --neon-rgb-brand-d5: 32, 25, 37; // #201925
+  --neon-color-brand-d5: rgb(var(--neon-rgb-brand-d5));
+
+  --neon-rgb-primary-l5: 255, 242, 225; // #fff2e1
+  --neon-color-primary-l5: rgb(var(--neon-rgb-primary-l5));
+  --neon-rgb-primary-l4: 255, 224, 170; // #ffe0aa
+  --neon-color-primary-l4: rgb(var(--neon-rgb-primary-l4));
+  --neon-rgb-primary-l3: 255, 207, 120; // #ffcf78
+  --neon-color-primary-l3: rgb(var(--neon-rgb-primary-l3));
+  --neon-rgb-primary-l2: 255, 192, 73; // #ffc049
+  --neon-color-primary-l2: rgb(var(--neon-rgb-primary-l2));
+  --neon-rgb-primary-l1: 246, 177, 5; // #f6b105
+  --neon-color-primary-l1: rgb(var(--neon-rgb-primary-l1));
+  --neon-rgb-primary-d1: 148, 95, 0; // #945f00
+  --neon-color-primary-d1: rgb(var(--neon-rgb-primary-d1));
+  --neon-rgb-primary-d2: 125, 81, 0; // #7d5100
+  --neon-color-primary-d2: rgb(var(--neon-rgb-primary-d2));
+  --neon-rgb-primary-d3: 94, 60, 0; // #5e3c00
+  --neon-color-primary-d3: rgb(var(--neon-rgb-primary-d3));
+  --neon-rgb-primary-d4: 61, 39, 0; // #3d2700
+  --neon-color-primary-d4: rgb(var(--neon-rgb-primary-d4));
+  --neon-rgb-primary-d5: 35, 26, 12; // #231a0c
+  --neon-color-primary-d5: rgb(var(--neon-rgb-primary-d5));
+
+  --neon-rgb-info-l5: 232, 245, 255; // #e8f5ff
+  --neon-color-info-l5: rgb(var(--neon-rgb-info-l5));
+  --neon-rgb-info-l4: 182, 244, 255; // #b6e0ff
+  --neon-color-info-l4: rgb(var(--neon-rgb-info-l4));
+  --neon-rgb-info-l3: 130, 202, 255; // #82caff
+  --neon-color-info-l3: rgb(var(--neon-rgb-info-l3));
+  --neon-rgb-info-l2: 76, 179, 255; // #4cb3ff
+  --neon-color-info-l2: rgb(var(--neon-rgb-info-l2));
+  --neon-rgb-info-l1: 0, 154, 255; // #009aff
+  --neon-color-info-l1: rgb(var(--neon-rgb-info-l1));
+  --neon-rgb-info-d1: 0, 93, 242; // #005df2
+  --neon-color-info-d1: rgb(var(--neon-rgb-info-d1));
+  --neon-rgb-info-d2: 0, 80, 199; // #0050c7
+  --neon-color-info-d2: rgb(var(--neon-rgb-info-d2));
+  --neon-rgb-info-d3: 0, 60, 146; // #003c92
+  --neon-color-info-d3: rgb(var(--neon-rgb-info-d3));
+  --neon-rgb-info-d4: 4, 40, 88; // #042858
+  --neon-color-info-d4: rgb(var(--neon-rgb-info-d4));
+  --neon-rgb-info-d5: 24, 27, 40; // #181b28
+  --neon-color-info-d5: rgb(var(--neon-rgb-info-d5));
+
+  --neon-rgb-success-l5: 227, 249, 236; //#e3f9ec
+  --neon-color-success-l5: rgb(var(--neon-rgb-success-l5));
+  --neon-rgb-success-l4: 183, 245, 211; //#b7f5d3
+  --neon-color-success-l4: rgb(var(--neon-rgb-success-l4));
+  --neon-rgb-success-l3: 138, 239, 187; //#8aefbb
+  --neon-color-success-l3: rgb(var(--neon-rgb-success-l3));
+  --neon-rgb-success-l2: 93, 230, 167; //#5de6a7
+  --neon-color-success-l2: rgb(var(--neon-rgb-success-l2));
+  --neon-rgb-success-l1: 21, 221, 148; //#15dd94
+  --neon-color-success-l1: rgb(var(--neon-rgb-success-l1));
+  --neon-rgb-success-d1: 0, 124, 61; //#007c3d
+  --neon-color-success-d1: rgb(var(--neon-rgb-success-d1));
+  --neon-rgb-success-d2: 0, 105, 53; //#006935
+  --neon-color-success-d2: rgb(var(--neon-rgb-success-d2));
+  --neon-rgb-success-d3: 0, 79, 40; //#004f28
+  --neon-color-success-d3: rgb(var(--neon-rgb-success-d3));
+  --neon-rgb-success-d4: 0, 51, 28; //#00331c
+  --neon-color-success-d4: rgb(var(--neon-rgb-success-d4));
+  --neon-rgb-success-d5: 15, 31, 22; //#0f1f16
+  --neon-color-success-d5: rgb(var(--neon-rgb-success-d5));
+
+  --neon-rgb-warn-l5: 255, 240, 227; // #fff0e3
+  --neon-color-warn-l5: rgb(var(--neon-rgb-warn-l5));
+  --neon-rgb-warn-l4: 255, 211, 170; // #ffd3aa
+  --neon-color-warn-l4: rgb(var(--neon-rgb-warn-l4));
+  --neon-rgb-warn-l3: 255, 183, 117; // #ffb775
+  --neon-color-warn-l3: rgb(var(--neon-rgb-warn-l3));
+  --neon-rgb-warn-l2: 255, 157, 70; // #ff9d46
+  --neon-color-warn-l2: rgb(var(--neon-rgb-warn-l2));
+  --neon-rgb-warn-l1: 243, 132, 12; // #f3840c
+  --neon-color-warn-l1: rgb(var(--neon-rgb-warn-l1));
+  --neon-rgb-warn-d1: 176, 78, 0; // #b04e00
+  --neon-color-warn-d1: rgb(var(--neon-rgb-warn-d1));
+  --neon-rgb-warn-d2: 148, 68, 0; // #944400
+  --neon-color-warn-d2: rgb(var(--neon-rgb-warn-d2));
+  --neon-rgb-warn-d3: 110, 51, 0; // #6e3300
+  --neon-color-warn-d3: rgb(var(--neon-rgb-warn-d3));
+  --neon-rgb-warn-d4: 70, 34, 0; // #462200
+  --neon-color-warn-d4: rgb(var(--neon-rgb-warn-d4));
+  --neon-rgb-warn-d5: 37, 25, 14; // #25190e
+  --neon-color-warn-d5: rgb(var(--neon-rgb-warn-d5));
+
+  --neon-rgb-error-l5: 255, 238, 233; // #ffeee9
+  --neon-color-error-l5: rgb(var(--neon-rgb-error-l5));
+  --neon-rgb-error-l4: 255, 206, 190; // #ffcebe
+  --neon-color-error-l4: rgb(var(--neon-rgb-error-l4));
+  --neon-rgb-error-l3: 255, 172, 150; // #ffac96
+  --neon-color-error-l3: rgb(var(--neon-rgb-error-l3));
+  --neon-rgb-error-l2: 255, 138, 115; // #ff8a73
+  --neon-color-error-l2: rgb(var(--neon-rgb-error-l2));
+  --neon-rgb-error-l1: 255, 99, 83; // #ff6353
+  --neon-color-error-l1: rgb(var(--neon-rgb-error-l1));
+  --neon-rgb-error-d1: 218, 0, 11; // #da000b
+  --neon-color-error-d1: rgb(var(--neon-rgb-error-d1));
+  --neon-rgb-error-d2: 181, 0, 16; // #b50010
+  --neon-color-error-d2: rgb(var(--neon-rgb-error-d2));
+  --neon-rgb-error-d3: 134, 9, 15; // #86090f
+  --neon-color-error-d3: rgb(var(--neon-rgb-error-d3));
+  --neon-rgb-error-d4: 83, 19, 14; // #53130e
+  --neon-color-error-d4: rgb(var(--neon-rgb-error-d4));
+  --neon-rgb-error-d5: 40, 23, 20; // #281714
+  --neon-color-error-d5: rgb(var(--neon-rgb-error-d5));
+}
