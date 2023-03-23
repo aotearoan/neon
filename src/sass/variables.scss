@@ -451,6 +451,7 @@
 
     /* overlays */
     --neon-background-color-overlay: rgba(var(--neon-rgb-neutral-d5), 0.75);
+    --neon-background-color-overlay-opaque: rgba(var(--neon-rgb-neutral-d5), 1);
 
     /* toggle chips */
     --neon-color-toggle-chip-text: var(--neon-color-text);
@@ -698,6 +699,7 @@
 
     /* overlays */
     --neon-background-color-overlay: rgba(var(--neon-rgb-neutral-d5), 0.75);
+    --neon-background-color-overlay-opaque: rgba(var(--neon-rgb-neutral-d5), 1);
 
     /* toggle chips */
     --neon-color-toggle-chip-text: var(--neon-color-text);

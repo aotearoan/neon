@@ -37,6 +37,21 @@ describe('NeonModal', () => {
     expect(html()).toMatch('neon-modal--open');
   });
 
+  it('renders opaque', async () => {
+    // given
+    const { html, rerender } = harness;
+    await rerender({ opaque: true });
+    // when / then
+    expect(html()).toMatch('neon-modal__overlay--opaque');
+  });
+
+  it('renders transparent', () => {
+    // given
+    const { html, rerender } = harness;
+    // when / then
+    expect(html()).not.toMatch('neon-modal__overlay--opaque');
+  });
+
   it('emits close event on escape key', async () => {
     // given
     const { emitted, getByText } = harness;

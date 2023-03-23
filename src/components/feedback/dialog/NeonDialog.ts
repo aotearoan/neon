@@ -46,6 +46,10 @@ export default defineComponent({
      * Whether the dialog is open.
      */
     open: { type: Boolean, default: false },
+    /**
+     * Increase the opacity so that the page behind the modal is no longer visible
+     */
+    opaque: { type: Boolean, default: false },
   },
   emits: [
     /**

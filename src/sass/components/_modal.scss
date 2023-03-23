@@ -8,6 +8,10 @@
 
     &__overlay {
       background-color: var(--neon-background-color-overlay);
+
+      &--opaque {
+        background-color: var(--neon-background-color-overlay-opaque);
+      }
     }
 
     .neon-card {

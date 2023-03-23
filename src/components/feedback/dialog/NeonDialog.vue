@@ -1,20 +1,20 @@
 <template>
-  <neon-modal class="neon-dialog" :open="open">
+  <neon-modal :opaque="opaque" :open="open" class="neon-dialog">
     <neon-card size="m">
       <neon-card-body>
         <div>
           <h6 class="neon-dialog__title">{{ title }}</h6>
-          <div v-html="question" class="neon-dialog__question"></div>
+          <div class="neon-dialog__question" v-html="question"></div>
         </div>
         <div>
-          <neon-button :full-width="true" :aria-label="cancelLabel" :label="cancelLabel" size="s" @click="cancel()" />
+          <neon-button :aria-label="cancelLabel" :full-width="true" :label="cancelLabel" size="s" @click="cancel()" />
           <neon-button
-            :full-width="true"
+            :alternate-color="alternateColor"
             :aria-label="confirmLabel"
+            :color="color"
+            :full-width="true"
             :label="confirmLabel"
             size="s"
-            :color="color"
-            :alternate-color="alternateColor"
             @click="confirm()"
           />
         </div>

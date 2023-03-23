@@ -19,6 +19,10 @@ export default defineComponent({
      * Whether the user is allowed to dismiss the modal by clicking outside the modal or pressing escape.
      */
     dismissible: { type: Boolean, default: true },
+    /**
+     * Increase the opacity so that the page behind the modal is no longer visible
+     */
+    opaque: { type: Boolean, default: false },
   },
   emits: [
     /**
