@@ -23,7 +23,7 @@
       height: var(--neon-size-s);
 
       .neon-input-indicator__label {
-        @include layout.padding-horizontal(0.33);
+        @include layout.padding-horizontal(0.33, 0.33);
       }
 
       .neon-input-indicator__label,
@@ -41,7 +41,7 @@
       height: var(--neon-size-m);
 
       .neon-input-indicator__label {
-        @include layout.padding-horizontal(0.5);
+        @include layout.padding-horizontal(0.5, 0.5);
       }
 
       .neon-input-indicator__label,
@@ -59,7 +59,7 @@
       height: var(--neon-size-l);
 
       .neon-input-indicator__label {
-        @include layout.padding-horizontal(0.5);
+        @include layout.padding-horizontal(0.5, 0.5);
       }
 
       .neon-input-indicator__label,

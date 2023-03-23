@@ -1,5 +1,6 @@
 PROJECT=$1
 VERSION=$(jq -r .version package.json)
+rm -rf ./dist
 npm run build
 npm pack
 rm -rf $PROJECT/node_modules/\@aotearoan/neon/

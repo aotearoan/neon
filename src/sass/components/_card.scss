@@ -196,14 +196,5 @@
         padding-top: 0;
       }
     }
-
-    .neon-card-header,
-    .neon-card-body,
-    .neon-card-footer {
-      &:not(:last-child):not(.neon-card-body--full-width) {
-        border-bottom: var(--neon-card-section-border);
-        border-bottom-color: var(--neon-border-color);
-      }
-    }
   }
 }

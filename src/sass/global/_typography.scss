@@ -1,3 +1,4 @@
+@use '../includes/responsive';
 @use '../includes/typography';
 
 @mixin typography {
@@ -24,6 +25,7 @@
   }
 
   strong {
+    color: var(--neon-color-text-strong);
     font-weight: var(--neon-font-weight-strong);
     letter-spacing: var(--neon-letter-spacing-s);
   }
@@ -100,5 +102,58 @@
       user-select: none;
       margin-bottom: calc(2 * var(--neon-base-space));
     }
+  }
+
+  @include responsive.responsive(mobile-large) {
+    .neon-h0 {
+      font-size: var(--neon-h1-size);
+    }
+
+    .neon-h1,
+    h1 {
+      font-size: var(--neon-h2-size);
+    }
+
+    .neon-h2,
+    h2 {
+      font-size: var(--neon-h3-size);
+    }
+
+    .neon-h3,
+    h3 {
+      font-size: var(--neon-h4-size);
+    }
+
+    .neon-h4,
+    h4 {
+      font-size: var(--neon-h5-size);
+    }
+
+    .neon-h5,
+    h5 {
+      font-size: var(--neon-h6-size);
+    }
+
+    .neon-h6,
+    h6 {
+      font-size: var(--neon-font-size-m);
+    }
+  }
+
+  .neon-h0,
+  h1,
+  .neon-h1,
+  h2,
+  .neon-h2,
+  h3,
+  .neon-h3,
+  h4,
+  .neon-h4,
+  h5,
+  .neon-h5,
+  h6,
+  .neon-h6,
+  .neon-color-heading {
+    color: var(--neon-color-heading);
   }
 }

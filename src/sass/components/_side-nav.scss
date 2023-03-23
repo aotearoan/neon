@@ -21,13 +21,15 @@
     }
 
     &__sticky {
-      @include layout.padding($multiplier: 0.75);
+      @include layout.padding-horizontal(0.75, 0.75);
+      @include layout.padding-vertical(1, 0.75);
       flex: 1 0 auto;
     }
 
     &__scrolling {
       @include scrollbars.scrollbars;
-      @include layout.padding($multiplier: 0.75);
+      @include layout.padding-horizontal(0.75, 0.75);
+      @include layout.padding-vertical(1, 0.75);
       overflow-y: auto;
       height: 100%;
     }

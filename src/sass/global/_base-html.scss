@@ -11,13 +11,14 @@
     color: var(--neon-color-text);
   }
 
+
   &.neon-mode--dark *,
   &.neon-mode--light * {
     box-sizing: border-box;
 
     &::selection {
-      background-color: rgba(var(--neon-background-rgb-selection), 0.6);
-      color: var(--neon-color-inverse);
+      background-color: rgba(var(--neon-background-rgb-selection), 0.99);
+      color: var(--neon-color-selection);
     }
   }
 

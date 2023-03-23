@@ -5,7 +5,8 @@
         v-for="section in model"
         :key="section.key"
         :class="{
-          'neon-tree-menu__section--expanded': section.expanded,
+          'neon-tree-menu__section--expanded': section.expanded || expandAll,
+          'neon-tree-menu__section--disabled': section.disabled,
         }"
         class="neon-tree-menu__section"
       >
@@ -14,15 +15,16 @@
           class="neon-tree-menu__section-link"
           outline-style="none"
           tabindex="-1"
-          @click="onClick(section.key)"
+          @click="!section.disabled && onClick(section.key)"
         >
           <span
             class="neon-tree-menu__section-link-label neon-tree-menu__section-link-label--outline-text"
             role="link"
             tabindex="0"
-            @keydown.space.stop.prevent="onClick(section.key)"
-            >{{ section.label }}</span
+            @keydown.space.stop.prevent="!section.disabled && onClick(section.key)"
           >
+            {{ section.label }}
+          </span>
         </neon-link>
         <ul class="no-style neon-tree-menu__links">
           <li v-for="link in section.children" :key="link.key" class="neon-tree-menu__link-item">

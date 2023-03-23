@@ -3,10 +3,15 @@
   This is why there are 2 color definitions the raw 'rgb' definition and the actual 'color' one
 */
 .neon {
-  --neon-rgb-text-dark: 0, 0, 0; // #000
+  --neon-rgb-text-dark: 48, 48, 48; // #303030
   --neon-color-text-dark: rgb(var(--neon-rgb-text-dark));
-  --neon-rgb-text-light: 255, 255, 255; // #fff
+  --neon-rgb-text-light: 221, 221, 221; // #ddd
   --neon-color-text-light: rgb(var(--neon-rgb-text-light));
+
+  --neon-rgb-text-strong-dark: 238, 238, 238; // #eee
+  --neon-color-text-strong-dark: rgb(var(--neon-rgb-text-dark));
+  --neon-rgb-text-strong-light: 36, 36, 36; // #242424
+  --neon-color-text-strong-light: rgb(var(--neon-rgb-text-light));
 
   --neon-rgb-neutral-l5: 238, 238, 238; // #eee
   --neon-color-neutral-l5: rgb(var(--neon-rgb-neutral-l5));

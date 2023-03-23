@@ -136,7 +136,6 @@
   --neon-side-nav-width: calc(80 * var(--neon-base-space));
 
   /* card */
-  --neon-card-section-border: var(--neon-border-width) var(--neon-border-style);
   --neon-border-radius-card: 0.75rem;
   --neon-card-box-shadow: none;
 
@@ -239,9 +238,11 @@
 
     --neon-rgb-text: var(--neon-rgb-text-light);
     --neon-color-text: var(--neon-color-text-light);
+    --neon-rgb-text-strong: var(--neon-rgb-text-strong-light);
+    --neon-color-text-strong: var(--neon-color-text-strong-light);
 
-    --neon-rgb-inverse: var(--neon-rgb-text-dark);
-    --neon-color-inverse: var(--neon-color-text-dark);
+    --neon-rgb-inverse: var(--neon-rgb-text-strong-dark);
+    --neon-color-inverse: var(--neon-color-text-strong-dark);
 
     --neon-rgb-low-contrast: var(--neon-rgb-low-contrast-l1);
     --neon-rgb-neutral: var(--neon-rgb-neutral-l1);
@@ -359,6 +360,7 @@
 
     /* selection */
     --neon-background-rgb-selection: var(--neon-rgb-info-l1);
+    --neon-color-selection: black;
 
     /* pre */
     --neon-color-pre: var(--neon-color-primary-l3);
@@ -402,7 +404,7 @@
     --neon-box-shadow-tooltip: calc(0.5 * var(--neon-base-space)) calc(0.5 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) var(--neon-color-neutral-d5);
 
     /* tabs */
-    --neon-border-color-tabs-underline: rgba(var(--neon-rgb-neutral-d3), 0.667);
+    --neon-border-color-tabs-underline: transparent;
 
     /* footer */
     --neon-background-color-footer: var(--neon-background-color);
@@ -453,8 +455,8 @@
     --neon-rgb-text: var(--neon-rgb-text-dark);
     --neon-color-text: var(--neon-color-text-dark);
 
-    --neon-rgb-inverse: var(--neon-rgb-text-light);
-    --neon-color-inverse: var(--neon-color-text-light);
+    --neon-rgb-inverse: var(--neon-rgb-text-strong-light);
+    --neon-color-inverse: var(--neon-color-text-strong-light);
 
     --neon-rgb-low-contrast: var(-neon-rgb-low-contrast-d1);
     --neon-rgb-neutral: var(--neon-rgb-neutral-d1);
@@ -573,6 +575,7 @@
 
     /* selection */
     --neon-background-rgb-selection: var(--neon-rgb-info-d1);
+    --neon-color-selection: white;
 
     /* pre */
     --neon-color-pre: var(--neon-color-primary-d3);
@@ -616,7 +619,7 @@
     --neon-box-shadow-tooltip: calc(0.5 * var(--neon-base-space)) calc(0.5 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) rgba(var(--neon-rgb-neutral-d1), 0.5);
 
     /* tabs */
-    --neon-border-color-tabs-underline: rgba(var(--neon-rgb-neutral-l3), 0.667);
+    --neon-border-color-tabs-underline: transparent;
 
     /* footer */
     --neon-background-color-footer: var(--neon-background-color);

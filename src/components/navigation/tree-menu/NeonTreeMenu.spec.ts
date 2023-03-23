@@ -61,6 +61,12 @@ describe('NeonTreeMenu', () => {
         },
       ],
     },
+    {
+      key: 'disabled-section',
+      label: 'Disabled Section',
+      expanded: true,
+      disabled: true,
+    },
   ];
 
   let harness: RenderResult;
@@ -88,6 +94,19 @@ describe('NeonTreeMenu', () => {
     // when / then
     expect(container.querySelector('.neon-tree-menu--expand-all')).toBeDefined();
     expect(container.querySelectorAll('.neon-tree-menu__anchors--expanded').length).toEqual(7);
+  });
+
+  it('disables sections', async () => {
+    // given
+    const { container, emitted, rerender } = harness;
+    await rerender({ expandAll: true });
+    // when
+    const disabledEl = container.querySelector('.neon-tree-menu__section--disabled') as HTMLElement;
+    expect(disabledEl).toBeDefined();
+    const disabledElLink = container.querySelector('.neon-tree-menu__section--disabled .neon-tree-menu__section-link') as HTMLElement;
+    await fireEvent.click(disabledElLink);
+    // then
+    expect(emitted().click).not.toBeDefined();
   });
 
   it('emits click event on click section link', async () => {

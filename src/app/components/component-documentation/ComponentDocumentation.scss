@@ -120,40 +120,4 @@ $neon-height-component-header-mobile: 4.8125rem;
   .examples:not(:first-child) {
     margin-top: calc(8 * var(--neon-base-space));
   }
-
-  @include responsive.responsive(mobile-large) {
-    .neon-h0 {
-      font-size: var(--neon-h1-size);
-    }
-
-    .neon-h1,
-    h1 {
-      font-size: var(--neon-h2-size);
-    }
-
-    .neon-h2,
-    h2 {
-      font-size: var(--neon-h3-size);
-    }
-
-    .neon-h3,
-    h3 {
-      font-size: var(--neon-h4-size);
-    }
-
-    .neon-h4,
-    h4 {
-      font-size: var(--neon-h5-size);
-    }
-
-    .neon-h5,
-    h5 {
-      font-size: var(--neon-h6-size);
-    }
-
-    .neon-h6,
-    h6 {
-      font-size: var(--neon-font-size-m);
-    }
-  }
 }

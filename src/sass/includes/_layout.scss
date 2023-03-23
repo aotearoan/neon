@@ -80,22 +80,22 @@ $spacings: (
   @include padding-mobile($multiplier, $square);
 }
 
-@mixin padding-horizontal($multiplier: 1) {
-  @include spacing-horizontal('padding-left', larger-than-tablet, $multiplier);
-  @include spacing-horizontal('padding-left', tablet, $multiplier);
-  @include spacing-horizontal('padding-left', mobile-large, $multiplier);
-  @include spacing-horizontal('padding-right', larger-than-tablet, $multiplier);
-  @include spacing-horizontal('padding-right', tablet, $multiplier);
-  @include spacing-horizontal('padding-right', mobile-large, $multiplier);
+@mixin padding-horizontal($multiplier-left: 1, $multiplier-right: 1) {
+  @include spacing-horizontal('padding-left', larger-than-tablet, $multiplier-left);
+  @include spacing-horizontal('padding-left', tablet, $multiplier-left);
+  @include spacing-horizontal('padding-left', mobile-large, $multiplier-left);
+  @include spacing-horizontal('padding-right', larger-than-tablet, $multiplier-right);
+  @include spacing-horizontal('padding-right', tablet, $multiplier-right);
+  @include spacing-horizontal('padding-right', mobile-large, $multiplier-right);
 }
 
-@mixin padding-vertical($multiplier: 1) {
-  @include spacing-vertical('padding-top', larger-than-tablet, $multiplier);
-  @include spacing-vertical('padding-top', tablet, $multiplier);
-  @include spacing-vertical('padding-top', mobile-large, $multiplier);
-  @include spacing-vertical('padding-bottom', larger-than-tablet, $multiplier);
-  @include spacing-vertical('padding-bottom', tablet, $multiplier);
-  @include spacing-vertical('padding-bottom', mobile-large, $multiplier);
+@mixin padding-vertical($multiplier-top: 1, $multiplier-bottom: 1) {
+  @include spacing-vertical('padding-top', larger-than-tablet, $multiplier-top);
+  @include spacing-vertical('padding-top', tablet, $multiplier-top);
+  @include spacing-vertical('padding-top', mobile-large, $multiplier-top);
+  @include spacing-vertical('padding-bottom', larger-than-tablet, $multiplier-bottom);
+  @include spacing-vertical('padding-bottom', tablet, $multiplier-bottom);
+  @include spacing-vertical('padding-bottom', mobile-large, $multiplier-bottom);
 }
 
 // margin mixins
