@@ -1,3 +1,4 @@
+@use '../includes/responsive';
 @use '../includes/palettes';
 @use '../includes/outline';
 @use '../includes/svg';
@@ -87,86 +88,104 @@
   }
 }
 
+@mixin button-small {
+  height: var(--neon-size-s);
+  font-size: var(--neon-font-size-s);
+  line-height: var(--neon-line-height-one);
+  padding: 0 calc(0.75 * (var(--neon-size-s) - var(--neon-font-size-s)));
+
+  .neon-icon {
+    width: calc(var(--neon-font-size-s) * var(--neon-line-height-one));
+    height: calc(var(--neon-font-size-s) * var(--neon-line-height-one));
+  }
+
+  &.neon-button--icon-only {
+    min-width: var(--neon-size-s);
+    padding: 0;
+
+    &.neon-button--circular {
+      border-radius: 50%;
+    }
+
+    .neon-icon {
+      width: var(--neon-font-size-l);
+      height: var(--neon-font-size-l);
+    }
+  }
+}
+
+@mixin button-medium {
+  height: var(--neon-size-m);
+  font-size: var(--neon-font-size-m);
+  line-height: var(--neon-line-height-one);
+  padding: 0 calc(0.75 * (var(--neon-size-m) - var(--neon-font-size-m)));
+
+  .neon-icon {
+    width: calc(var(--neon-font-size-m) * var(--neon-line-height-one));
+    height: calc(var(--neon-font-size-m) * var(--neon-line-height-one));
+  }
+
+  &.neon-button--icon-only {
+    min-width: var(--neon-size-m);
+    padding: 0;
+
+    &.neon-button--circular {
+      border-radius: 50%;
+    }
+
+    .neon-icon {
+      width: var(--neon-h6-size);
+      height: var(--neon-h6-size);
+    }
+  }
+}
+
+@mixin button-large {
+  height: var(--neon-size-l);
+  font-size: var(--neon-font-size-m);
+  line-height: var(--neon-line-height-one);
+  padding: 0 calc(0.75 * (var(--neon-size-l) - var(--neon-font-size-m)));
+
+  .neon-icon {
+    width: calc(var(--neon-font-size-m) * var(--neon-line-height-one));
+    height: calc(var(--neon-font-size-m) * var(--neon-line-height-one));
+  }
+
+  &.neon-button--icon-only {
+    min-width: var(--neon-size-l);
+    padding: 0;
+
+    &.neon-button--circular {
+      border-radius: 50%;
+    }
+
+    .neon-icon {
+      width: var(--neon-h5-size);
+      height: var(--neon-h5-size);
+    }
+  }
+}
+
 @mixin button {
   .neon-button {
     margin-left: 0;
     margin-right: 0;
 
     &--s {
-      height: var(--neon-size-s);
-      font-size: var(--neon-font-size-s);
-      line-height: var(--neon-line-height-one);
-      padding: 0 calc(0.75 * (var(--neon-size-s) - var(--neon-font-size-s)));
-
-      .neon-icon {
-        width: calc(var(--neon-font-size-s) * var(--neon-line-height-one));
-        height: calc(var(--neon-font-size-s) * var(--neon-line-height-one));
-      }
-
-      &.neon-button--icon-only {
-        min-width: var(--neon-size-s);
-        padding: 0;
-
-        &.neon-button--circular {
-          border-radius: 50%;
-        }
-
-        .neon-icon {
-          width: var(--neon-font-size-l);
-          height: var(--neon-font-size-l);
-        }
-      }
+      @include button-small;
     }
 
     &--m {
-      height: var(--neon-size-m);
-      font-size: var(--neon-font-size-m);
-      line-height: var(--neon-line-height-one);
-      padding: 0 calc(0.75 * (var(--neon-size-m) - var(--neon-font-size-m)));
-
-      .neon-icon {
-        width: calc(var(--neon-font-size-m) * var(--neon-line-height-one));
-        height: calc(var(--neon-font-size-m) * var(--neon-line-height-one));
-      }
-
-      &.neon-button--icon-only {
-        min-width: var(--neon-size-m);
-        padding: 0;
-
-        &.neon-button--circular {
-          border-radius: 50%;
-        }
-
-        .neon-icon {
-          width: var(--neon-h6-size);
-          height: var(--neon-h6-size);
-        }
+      @include button-medium;
+      @include responsive.responsive(tablet) {
+        @include button-small;
       }
     }
 
     &--l {
-      height: var(--neon-size-l);
-      font-size: var(--neon-font-size-m);
-      line-height: var(--neon-line-height-one);
-      padding: 0 calc(0.75 * (var(--neon-size-l) - var(--neon-font-size-m)));
-
-      .neon-icon {
-        width: calc(var(--neon-font-size-m) * var(--neon-line-height-one));
-        height: calc(var(--neon-font-size-m) * var(--neon-line-height-one));
-      }
-
-      &.neon-button--icon-only {
-        min-width: var(--neon-size-l);
-        padding: 0;
-
-        &.neon-button--circular {
-          border-radius: 50%;
-        }
-
-        .neon-icon {
-          width: var(--neon-h5-size);
-          height: var(--neon-h5-size);
-        }
+      @include button-large;
+      @include responsive.responsive(tablet) {
+        @include button-medium;
       }
     }
 
@@ -196,6 +215,10 @@
       }
 
       border-radius: var(--neon-border-radius-button-xl);
+
+      @include responsive.responsive(tablet) {
+        @include button-large;
+      }
     }
 
     border-radius: var(--neon-border-radius-button);
@@ -352,9 +375,10 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
 
     .neon-button + .neon-button {
-      margin-left: calc(2 * var(--neon-base-space));
+      margin-left: calc(4 * var(--neon-base-space));
     }
   }
 }

@@ -14,7 +14,10 @@
 
     &__container {
       @include layout.padding-vertical(0.75, 0.75);
-      @include layout.padding-horizontal(0.75, 1);
+      @include layout.padding-horizontal(1, 1);
+      // account for side nav
+      @include layout.spacing-horizontal('padding-left', larger-than-tablet, 0.75);
+
       width: 100%;
       max-width: var(--neon-max-page-width);
       display: flex;

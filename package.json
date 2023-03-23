@@ -6,7 +6,8 @@
   "types": "dist/neon.d.ts",
   "exports": {
     ".": "./dist/neon.js",
-    "./theme": "./src/sass/theme.scss"
+    "./theme": "./src/sass/theme.scss",
+    "./sass/includes/*": "./src/sass/includes/*"
   },
   "scripts": {
     "dev": "node doc-gen.js && vite",
