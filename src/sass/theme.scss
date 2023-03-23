@@ -1,10 +1,10 @@
-@use '@/sass/includes/color-mixins';
-@use '@/sass/includes/dependencies';
-@use '@/sass/includes/typography';
-@use '@/sass/global/global';
-@use '@/sass/components/components';
+@use './includes/color-mixins';
+@use './includes/dependencies';
+@use './includes/typography';
+@use './global/global';
+@use './components/components';
 
-@import '@/sass/variables';
+@import './variables';
 
 /*********************
 * Global Variables
@@ -20,9 +20,6 @@ $neon-components: null !default;
 @include color-mixins.generate-color-classes('success');
 @include color-mixins.generate-color-classes('warn');
 @include color-mixins.generate-color-classes('error');
-
-// default typography styles
-@include typography.typography;
 
 .neon {
   /***********************

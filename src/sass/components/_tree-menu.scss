@@ -1,4 +1,4 @@
-@use 'src/sass/includes/outline';
+@use '../includes/outline';
 
 @mixin tree-menu {
   .neon-tree-menu {
@@ -72,7 +72,8 @@
 
     .neon-tree-menu__link-item {
       .neon-tree-menu__link {
-        font-weight: 400;
+        font-weight: 500;
+        font-size: var(--neon-font-size-s);
         margin-bottom: calc(0.5 * var(--neon-base-space));
         padding-left: calc(4 * var(--neon-base-space));
       }

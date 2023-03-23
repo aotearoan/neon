@@ -1,6 +1,6 @@
-@use 'src/sass/includes/palettes';
-@use 'src/sass/includes/toggle-mixins';
-@use 'src/sass/includes/svg';
+@use '../includes/palettes';
+@use '../includes/toggle-mixins';
+@use '../includes/svg';
 
 @mixin toggle {
   .neon-toggle {

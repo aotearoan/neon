@@ -1,5 +1,5 @@
-@use 'src/sass/includes/layout';
-@use 'src/sass/includes/responsive';
+@use '../includes/layout';
+@use '../includes/responsive';
 
 @mixin horizontal-card-responsive {
   flex-direction: row;
@@ -165,6 +165,7 @@
 
       & > * {
         max-width: calc(100% + 2 * var(--neon-border-width));
+        width: 100%;
       }
 
       &:first-child {

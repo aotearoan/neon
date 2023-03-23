@@ -1,6 +1,6 @@
-@use 'src/sass/includes/palettes';
-@use 'src/sass/includes/layout';
-@use 'src/sass/includes/gradient';
+@use '../includes/palettes';
+@use '../includes/layout';
+@use '../includes/gradient';
 
 @mixin neon-label-size($neon-label-height, $neon-height-scalar, $neon-label-font-size) {
   height: calc(var(--neon-size-#{$neon-label-height}) - #{$neon-height-scalar} * var(--neon-base-space));

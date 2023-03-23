@@ -1,6 +1,6 @@
-@use 'src/sass/includes/palettes';
-@use 'src/sass/includes/scrollbars';
-@use 'src/sass/includes/svg';
+@use '../includes/palettes';
+@use '../includes/scrollbars';
+@use '../includes/svg';
 
 @mixin search {
   .neon-search {

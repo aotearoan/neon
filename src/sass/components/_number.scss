@@ -1,5 +1,5 @@
-@use 'src/sass/includes/palettes';
-@use 'src/sass/includes/svg';
+@use '../includes/palettes';
+@use '../includes/svg';
 
 @mixin number {
   .neon-number {

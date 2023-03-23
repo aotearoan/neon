@@ -1,5 +1,5 @@
-@use 'src/sass/includes/responsive';
-@use 'src/sass/includes/layout';
+@use '../includes/responsive';
+@use '../includes/layout';
 
 @mixin drawer {
   .neon-drawer {

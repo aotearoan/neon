@@ -1,8 +1,8 @@
-@use 'src/sass/includes/palettes';
-@use 'src/sass/includes/layout';
-@use 'src/sass/includes/responsive';
-@use 'src/sass/includes/scrollbars';
-@use 'src/sass/includes/outline';
+@use '../includes/palettes';
+@use '../includes/layout';
+@use '../includes/responsive';
+@use '../includes/scrollbars';
+@use '../includes/outline';
 
 @mixin alert-container {
   .neon-alert__wrapper .neon-alert {

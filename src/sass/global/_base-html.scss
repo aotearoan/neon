@@ -1,6 +1,6 @@
-@use 'src/sass/includes/scrollbars';
-@use 'src/sass/includes/layout';
-@use 'src/sass/includes/note';
+@use '../includes/scrollbars';
+@use '../includes/layout';
+@use '../includes/note';
 
 @mixin base-html {
   background-color: var(--neon-background-color);
@@ -138,6 +138,18 @@
 
   .neon-closable--open {
     overflow: hidden;
+  }
+
+  .neon-fade-transition {
+    &-enter-active,
+    &-leave-active {
+      transition: opacity ease-in-out var(--neon-animation-speed-fast);
+    }
+
+    &-enter,
+    &-leave-to {
+      opacity: 0;
+    }
   }
 
   textarea {

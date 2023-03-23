@@ -1,5 +1,5 @@
-@use 'src/sass/includes/palettes';
-@use 'src/sass/includes/scrollbars';
+@use '../includes/palettes';
+@use '../includes/scrollbars';
 
 @mixin dropdown-menu {
   .neon-dropdown-menu {

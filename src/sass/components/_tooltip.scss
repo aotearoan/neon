@@ -1,5 +1,5 @@
-@use 'src/sass/includes/palettes';
-@use 'src/sass/includes/outline';
+@use '../includes/palettes';
+@use '../includes/outline';
 
 @function neon-tooltip-border-color() {
   @if (var(--neon-border-width-tooltip) == 0) {

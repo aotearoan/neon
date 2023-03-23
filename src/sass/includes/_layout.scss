@@ -143,20 +143,20 @@ $spacings: (
 
 // height
 @mixin min-height($n, $offset: 0rem) {
-  min-height: calc(#{$n} * var(--vh, 1vh) - #{$offset});
+  min-height: calc(#{$n} * var(--vh, 1vh) - (#{$offset}));
 }
 
 @mixin max-height($n, $offset: 0rem) {
-  max-height: calc(#{$n} * var(--vh, 1vh) - #{$offset});
+  max-height: calc(#{$n} * var(--vh, 1vh) - (#{$offset}));
 }
 
 @mixin height($n, $offset: 0rem) {
-  height: calc(#{$n} * var(--vh, 1vh) - #{$offset});
+  height: calc(#{$n} * var(--vh, 1vh) - (#{$offset}));
 }
 
 // width
 @mixin width($n, $offset: 0rem) {
-  width: calc(#{$n} * var(--vw, 1vw) - #{$offset});
+  width: calc(#{$n} * var(--vw, 1vw) - (#{$offset}));
 }
 
 @mixin side-nav-offset {

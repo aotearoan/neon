@@ -1,5 +1,5 @@
-@use 'src/sass/includes/layout';
-@use 'src/sass/includes/responsive';
+@use '../includes/layout';
+@use '../includes/responsive';
 
 @mixin top-nav {
   .neon-top-nav {
@@ -13,7 +13,8 @@
     border-bottom: var(--neon-border);
 
     &__container {
-      @include layout.padding(0.75);
+      @include layout.padding-vertical(0.75);
+      @include layout.padding-horizontal(1);
       width: 100%;
       max-width: var(--neon-max-page-width);
       display: flex;

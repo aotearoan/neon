@@ -1,6 +1,6 @@
-@use 'src/sass/includes/palettes';
-@use 'src/sass/includes/outline';
-@use 'src/sass/includes/svg';
+@use '../includes/palettes';
+@use '../includes/outline';
+@use '../includes/svg';
 
 @mixin gradient-button(
   $from-color,

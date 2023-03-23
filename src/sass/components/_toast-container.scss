@@ -1,6 +1,6 @@
-@use 'src/sass/includes/palettes';
-@use 'src/sass/includes/svg';
-@use 'src/sass/includes/outline';
+@use '../includes/palettes';
+@use '../includes/svg';
+@use '../includes/outline';
 
 @mixin toast-container {
   .neon-alert {

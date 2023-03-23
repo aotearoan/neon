@@ -1,5 +1,5 @@
-@use 'src/sass/includes/layout';
-@use 'src/sass/includes/responsive';
+@use '../includes/layout';
+@use '../includes/responsive';
 
 @mixin footer {
   .neon-footer {

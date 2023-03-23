@@ -1,6 +1,6 @@
-@use 'src/sass/includes/palettes';
-@use 'src/sass/includes/responsive';
-@use 'src/sass/includes/scrollbars';
+@use '../includes/palettes';
+@use '../includes/responsive';
+@use '../includes/scrollbars';
 
 @mixin select {
   .neon-select {

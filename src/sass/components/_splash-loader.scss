@@ -48,16 +48,4 @@
       }
     }
   }
-
-  .neon-fade-transition {
-    &-enter-active,
-    &-leave-active {
-      transition: opacity ease-in-out var(--neon-animation-speed-fast);
-    }
-
-    &-enter,
-    &-leave-to {
-      opacity: 0;
-    }
-  }
 }

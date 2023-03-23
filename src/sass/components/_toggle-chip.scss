@@ -1,5 +1,5 @@
-@use 'src/sass/includes/palettes';
-@use 'src/sass/includes/svg';
+@use '../includes/palettes';
+@use '../includes/svg';
 
 @mixin neon-toggle-chip-size($neon-toggle-chip-size, $neon-toggle-chip-padding) {
   height: var(--neon-size-#{$neon-toggle-chip-size});

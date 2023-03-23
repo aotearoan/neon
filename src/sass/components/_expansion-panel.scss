@@ -1,7 +1,7 @@
-@use 'src/sass/includes/palettes';
-@use 'src/sass/includes/layout';
-@use 'src/sass/includes/responsive';
-@use 'src/sass/includes/outline';
+@use '../includes/palettes';
+@use '../includes/layout';
+@use '../includes/responsive';
+@use '../includes/outline';
 
 @mixin expansion-panel {
   .neon-expansion-panel {

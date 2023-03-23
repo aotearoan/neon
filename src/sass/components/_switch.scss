@@ -1,5 +1,5 @@
-@use 'src/sass/includes/palettes';
-@use 'src/sass/includes/svg';
+@use '../includes/palettes';
+@use '../includes/svg';
 
 @mixin switch-style($neon-switch-size, $spacing-multiplier) {
   --neon-switch-height: calc(var(--neon-size-#{$neon-switch-size}) - #{$spacing-multiplier} * var(--neon-base-space));

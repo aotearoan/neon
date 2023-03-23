@@ -1,6 +1,6 @@
-@use 'src/sass/includes/layout';
-@use 'src/sass/includes/responsive';
-@use 'src/sass/includes/scrollbars';
+@use '../includes/layout';
+@use '../includes/responsive';
+@use '../includes/scrollbars';
 
 @mixin side-nav {
   .neon-side-nav {

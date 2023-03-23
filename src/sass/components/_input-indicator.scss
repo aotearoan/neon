@@ -1,5 +1,5 @@
-@use 'src/sass/includes/layout';
-@use 'src/sass/includes/svg';
+@use '../includes/layout';
+@use '../includes/svg';
 
 @mixin input-indicator {
   .neon-input-indicator {
