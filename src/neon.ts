@@ -31,7 +31,6 @@ export { default as NeonLabel } from './components/presentation/label/NeonLabel.
 export { default as NeonLinearProgress } from './components/feedback/linear-progress/NeonLinearProgress.vue';
 export { default as NeonLink } from './components/navigation/link/NeonLink.vue';
 export { default as NeonList } from './components/user-input/list/NeonList.vue';
-export { default as NeonLogo } from './components/presentation/logo/NeonLogo.vue';
 export { default as NeonMenu } from './components/navigation/menu/NeonMenu.vue';
 export { default as NeonModal } from './components/layout/modal/NeonModal.vue';
 export { default as NeonNote } from './components/feedback/note/NeonNote.vue';

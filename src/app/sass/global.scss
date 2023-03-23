@@ -20,24 +20,6 @@ header {
     }
   }
 
-  .logo-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-
-    @include responsive.responsive(tablet) {
-      align-items: center;
-    }
-
-    .neon-button {
-      margin-right: calc(4 * var(--neon-base-space));
-
-      @include responsive.responsive(larger-than-tablet) {
-        display: none;
-      }
-    }
-  }
-
   .homepage-link {
     display: flex;
   }

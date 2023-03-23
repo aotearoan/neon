@@ -33,7 +33,7 @@
               </div>
             </neon-drawer>
             <neon-link aria-label="home" class="homepage-link" href="/" outline-style="none">
-              <neon-logo aria-label="Neon logo" color="brand"></neon-logo>
+              <neon-icon aria-label="Neon logo" class="homepage-logo" color="high-contrast" name="logo" />
             </neon-link>
             <span class="tagline neon-color-text-primary">A VueJs Design System</span>
           </span>
@@ -65,7 +65,7 @@
           <template #sticky>
             <span class="logo-wrapper side-nav-logo-wrapper">
               <neon-link aria-label="home" class="homepage-link" href="/" outline-style="none">
-                <neon-logo aria-label="Neon logo"></neon-logo>
+                <neon-icon aria-label="Neon logo" class="homepage-logo" color="high-contrast" name="logo" />
               </neon-link>
               <span class="tagline neon-color-text-primary">A VueJs Design System</span>
             </span>
@@ -128,6 +128,17 @@
 
 <style lang="scss">
 @use './App';
+
+.homepage-logo {
+  width: 8rem;
+  height: 2.1rem;
+
+  svg {
+    path {
+      fill: var(--neon-color-text-strong);
+    }
+  }
+}
 </style>
 
 <script lang="ts" src="./App.ts"></script>

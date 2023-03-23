@@ -43,10 +43,6 @@ $neon-components: null !default;
     @include components.top-nav;
   }
 
-  @if index($neon-flattened-components, NeonLogo) {
-    @include components.logo;
-  }
-
   @if index($neon-flattened-components, NeonPage) {
     @include components.page;
   }

@@ -72,6 +72,7 @@ export class RegisterIcons {
     NeonIconRegistry.addIcon('info-circle', infoCircle);
     NeonIconRegistry.addIcon('link-external', linkExternal);
     NeonIconRegistry.addIcon('lock', lock);
+    NeonIconRegistry.addIcon('logo', logo);
     NeonIconRegistry.addIcon('mail', mail);
     NeonIconRegistry.addIcon('menu', menu);
     NeonIconRegistry.addIcon('minus', minus);
@@ -89,8 +90,5 @@ export class RegisterIcons {
 
     // animated icons
     NeonIconRegistry.addIcon('loading', loading);
-
-    // logo
-    NeonIconRegistry.addIcon('logo', logo);
   }
 }

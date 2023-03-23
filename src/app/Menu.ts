@@ -306,11 +306,6 @@ export class Menu {
                 component: 'NeonLabel',
               },
               {
-                path: 'logo',
-                page: 'Logo',
-                component: 'NeonLogo',
-              },
-              {
                 path: 'table',
                 page: 'Table',
                 component: 'NeonTable',
