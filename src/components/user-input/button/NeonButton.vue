@@ -15,7 +15,7 @@
     <neon-icon
       v-if="icon || state !== 'ready'"
       :color="buttonStyle !== 'solid' ? color : undefined"
-      :inverse="buttonStyle === 'solid'"
+      :inverse="buttonStyle === 'solid' || inverse"
       :name="iconName"
     />
     <span v-if="label" class="neon-button__label">{{ label }}</span>
@@ -25,7 +25,7 @@
       v-if="icon || state !== 'ready'"
       :color="buttonStyle !== 'solid' ? color : undefined"
       :disabled="disabled"
-      :inverse="buttonStyle === 'solid'"
+      :inverse="buttonStyle === 'solid' || inverse"
       :name="iconName"
     />
     <span v-if="label" class="neon-button__label">{{ label }}</span>
@@ -34,7 +34,7 @@
       :color="color"
       :disabled="disabled"
       :expanded="indicatorExpanded"
-      :inverse="buttonStyle === 'solid'"
+      :inverse="buttonStyle === 'solid' || inverse"
       class="neon-button__indicator"
     />
   </button>

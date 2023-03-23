@@ -28,6 +28,9 @@ export default defineComponent({
   <neon-button color="low-contrast" label="Low contrast" />
   <neon-button color="neutral" label="Neutral" />
   <neon-button color="high-contrast" label="High contrast" />
+  <div class="example--padded example--info">
+    <neon-button :inverse="true" label="Inverse" />
+  </div>
 </div>`);
 
     const brandColorExamples = ref(`<div class="example--horizontal example--wrap">

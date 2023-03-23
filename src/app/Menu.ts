@@ -6,7 +6,8 @@ export interface SubComponent {
 }
 
 export interface MenuModel {
-  anchors?: string[];path: string;
+  anchors?: string[];
+  path: string;
   page?: string;
   keywords?: string;
   name?: string;

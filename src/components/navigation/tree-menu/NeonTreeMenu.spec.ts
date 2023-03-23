@@ -103,7 +103,9 @@ describe('NeonTreeMenu', () => {
     // when
     const disabledEl = container.querySelector('.neon-tree-menu__section--disabled') as HTMLElement;
     expect(disabledEl).toBeDefined();
-    const disabledElLink = container.querySelector('.neon-tree-menu__section--disabled .neon-tree-menu__section-link') as HTMLElement;
+    const disabledElLink = container.querySelector(
+      '.neon-tree-menu__section--disabled .neon-tree-menu__section-link',
+    ) as HTMLElement;
     await fireEvent.click(disabledElLink);
     // then
     expect(emitted().click).not.toBeDefined();

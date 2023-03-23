@@ -56,6 +56,7 @@ export default defineComponent({
     };
 
     const sanitizedAttributes = computed(() => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { onClick, type, tabindex, ...sanitized } = attrs;
       return { ...sanitized };
     });

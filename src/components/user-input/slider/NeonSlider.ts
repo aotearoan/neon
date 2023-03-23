@@ -102,10 +102,10 @@ export default defineComponent({
     const formatNumber = (value: number) => {
       return !props.disableFormatting
         ? NeonNumberUtils.formatNumber(value, {
-          decimals: props.decimals,
-          format: props.valueTemplate,
-          percentage: props.percentage,
-        })
+            decimals: props.decimals,
+            format: props.valueTemplate,
+            percentage: props.percentage,
+          })
         : value;
     };
 

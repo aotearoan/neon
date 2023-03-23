@@ -49,6 +49,17 @@
       }
     },
     {
+      "name": "inverse",
+      "description": "Display the button as high-contrast with inverted colors. This is useful for placing a button on a colored background.\nNOTE: Supports Solid & Outline button styles only (gradient & text buttons are not supported)",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
       "name": "alternateColor",
       "description": "Solid buttons ONLY. Alternate color for creating a gradient buttons. NOTE: can also be the same color as 'color'.",
       "type": {

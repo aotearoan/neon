@@ -141,12 +141,12 @@ export default defineComponent({
 
     const formattedValue = computed(() => {
       return props.modelValue !== null &&
-      (props.valueTemplate !== undefined || computedDecimals.value !== undefined || props.percentage !== undefined)
+        (props.valueTemplate !== undefined || computedDecimals.value !== undefined || props.percentage !== undefined)
         ? NeonNumberUtils.formatNumber(props.modelValue, {
-          decimals: computedDecimals.value,
-          format: props.valueTemplate,
-          percentage: props.percentage,
-        })
+            decimals: computedDecimals.value,
+            format: props.valueTemplate,
+            percentage: props.percentage,
+          })
         : props.modelValue;
     });
 

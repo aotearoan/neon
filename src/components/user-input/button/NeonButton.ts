@@ -36,6 +36,11 @@ export default defineComponent({
      */
     color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
     /**
+     * Display the button as high-contrast with inverted colors. This is useful for placing a button on a colored background.
+     * NOTE: Supports Solid & Outline button styles only (gradient & text buttons are not supported)
+     */
+    inverse: { type: Boolean, default: false },
+    /**
      * Solid buttons ONLY. Alternate color for creating a gradient buttons. NOTE: can also be the same color as 'color'.
      */
     alternateColor: { type: String as () => NeonFunctionalColor, default: null },
@@ -103,11 +108,12 @@ export default defineComponent({
     const classes = computed(() => {
       return [
         `neon-button--${props.size}`,
-        `neon-button--${props.color}`,
+        !props.inverse && `neon-button--${props.color}`,
         `neon-button--${props.buttonStyle}`,
         `neon-button--state-${props.state}`,
         {
           'neon-button--disabled': props.disabled,
+          'neon-button--inverse': props.inverse,
           'neon-button--circular': props.circular,
           'neon-button--no-outline': !props.outline,
           'neon-button--full-width': props.fullWidth,

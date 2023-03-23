@@ -33,8 +33,13 @@
           @keydown.space="!item.disabled && onClick(item.key)"
           @keypress.space.prevent=""
         >
-          <neon-icon v-if="item.icon" :key="`${item.key}LinkIcon`" :name="item.icon" class="neon-menu__item-icon"
-                     color="neutral" />
+          <neon-icon
+            v-if="item.icon"
+            :key="`${item.key}LinkIcon`"
+            :name="item.icon"
+            class="neon-menu__item-icon"
+            color="neutral"
+          />
           <span class="neon-menu__item-label">{{ item.label }}</span>
         </neon-link>
       </li>

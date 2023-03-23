@@ -82,6 +82,17 @@ describe('NeonButton', () => {
     expect(html()).toMatch('neon-button--s');
   });
 
+  it('renders direct', () => {
+    const { html } = harness;
+    expect(html()).not.toMatch('neon-button--inverse');
+  });
+
+  it('renders inverse', async () => {
+    const { html, rerender } = harness;
+    await rerender({ inverse: true });
+    expect(html()).toMatch('neon-button--inverse');
+  });
+
   it('renders default color', () => {
     const { html } = harness;
     expect(html()).toMatch('neon-button--low-contrast');

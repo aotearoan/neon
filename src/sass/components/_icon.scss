@@ -15,14 +15,6 @@
     .#{$neon-icon-type} {
       @include svg.svg-colors(var(--neon-color-text));
 
-      .neon-svg--fill {
-        transition: fill ease-in-out var(--neon-animation-speed-fast);
-      }
-
-      .neon-svg--stroke {
-        transition: stroke ease-in-out var(--neon-animation-speed-fast);
-      }
-
       @each $color in palettes.$neon-functional-colors {
         &--#{$color}:not(.#{$neon-icon-type}--disabled):not(.#{$neon-icon-type}--inverse) {
           @include svg.svg-colors(var(--neon-color-#{$color}));

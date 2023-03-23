@@ -60,6 +60,9 @@ exports[`NeonTreeMenu matches snapshot 1`] = `
         </li>
       </ul>
     </li>
+    <li class="neon-tree-menu__section--expanded neon-tree-menu__section--disabled neon-tree-menu__section"><a class="neon-link--no-style neon-link--outline-none neon-link neon-tree-menu__section-link neon-tree-menu__section-link" tabindex="-1"><span class="neon-link__label"><!-- @slot the content of the link --><span class="neon-tree-menu__section-link-label neon-tree-menu__section-link-label--outline-text" role="link" tabindex="0">Disabled Section</span></span></a>
+      <ul class="no-style neon-tree-menu__links"></ul>
+    </li>
   </ul>
 </nav>
 `;

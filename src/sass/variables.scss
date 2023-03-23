@@ -241,8 +241,8 @@
     --neon-rgb-text-strong: var(--neon-rgb-text-strong-light);
     --neon-color-text-strong: var(--neon-color-text-strong-light);
 
-    --neon-rgb-inverse: var(--neon-rgb-text-strong-dark);
-    --neon-color-inverse: var(--neon-color-text-strong-dark);
+    --neon-rgb-inverse: 0, 0, 0;
+    --neon-color-inverse: #000;
 
     --neon-rgb-low-contrast: var(--neon-rgb-low-contrast-l1);
     --neon-rgb-neutral: var(--neon-rgb-neutral-l1);
@@ -285,9 +285,9 @@
     --neon-rgb-disabled-medium: var(--neon-rgb-neutral-d3);
     --neon-rgb-disabled-dark: var(--neon-rgb-neutral-d4);
 
-    --neon-color-disabled-light: var(--neon-color-neutral-d2);
-    --neon-color-disabled-medium: var(--neon-color-neutral-d3);
-    --neon-color-disabled-dark: var(--neon-color-neutral-d4);
+    --neon-color-disabled-light: var(--neon-color-low-contrast-d3);
+    --neon-color-disabled-medium: var(--neon-color-low-contrast-d4);
+    --neon-color-disabled-dark: var(--neon-color-low-contrast-d5);
 
     /* switch */
     --neon-rgb-switch-off: var(--neon-rgb-neutral-d2);
@@ -299,47 +299,80 @@
     --neon-color-switch-indicator-disabled: var(--neon-color-disabled-light);
 
     /* solid buttons */
-    --neon-background-solid-button-light-high-contrast: var(--neon-color-text);
-    --neon-background-solid-button-dark-high-contrast: var(--neon-color-text);
+    --neon-color-solid-button: var(--neon-color-inverse);
+    --neon-color-solid-button-inverse: var(--neon-color-text-strong);
 
-    --neon-background-solid-button-light-low-contrast: var(--neon-color-low-contrast-d5);
+    --neon-background-solid-button-light-high-contrast: var(--neon-color-text-strong);
+    --neon-background-rgb-solid-button-dark-high-contrast: var(--neon-rgb-text-strong);
+    --neon-background-solid-button-dark-high-contrast: var(--neon-color-text-strong);
+
+    --neon-background-solid-button-light-inverse: var(--neon-color-inverse);
+    --neon-background-rgb-solid-button-dark-inverse: var(--neon-rgb-inverse);
+    --neon-background-solid-button-dark-inverse: var(--neon-color-inverse);
+
+    --neon-background-solid-button-light-low-contrast: var(--neon-color-low-contrast-d4);
+    --neon-background-rgb-solid-button-dark-low-contrast: var(--neon-rgb-low-contrast-d5);
     --neon-background-solid-button-dark-low-contrast: var(--neon-color-low-contrast-d5);
 
-    --neon-background-solid-button-light-neutral: var(--neon-color-low-contrast-l1);
+    --neon-background-solid-button-light-neutral: var(--neon-color-low-contrast-l2);
+    --neon-background-rgb-solid-button-dark-neutral: var(--neon-rgb-low-contrast-l1);
     --neon-background-solid-button-dark-neutral: var(--neon-color-low-contrast-l1);
 
-    --neon-background-solid-button-light-brand: var(--neon-color-brand-l1);
+    --neon-background-solid-button-light-brand: var(--neon-color-brand-l2);
+    --neon-background-rgb-solid-button-dark-brand: var(--neon-rgb-brand-l1);
     --neon-background-solid-button-dark-brand: var(--neon-color-brand-l1);
 
-    --neon-background-solid-button-light-primary: var(--neon-color-primary-l1);
+    --neon-background-solid-button-light-primary: var(--neon-color-primary-l2);
+    --neon-background-rgb-solid-button-dark-primary: var(--neon-rgb-primary-l1);
     --neon-background-solid-button-dark-primary: var(--neon-color-primary-l1);
 
-    --neon-background-solid-button-light-info: var(--neon-color-info-l1);
+    --neon-background-solid-button-light-info: var(--neon-color-info-l2);
+    --neon-background-rgb-solid-button-dark-info: var(--neon-rgb-info-l1);
     --neon-background-solid-button-dark-info: var(--neon-color-info-l1);
 
-    --neon-background-solid-button-light-success: var(--neon-color-success-l1);
+    --neon-background-solid-button-light-success: var(--neon-color-success-l2);
+    --neon-background-rgb-solid-button-dark-success: var(--neon-rgb-success-l1);
     --neon-background-solid-button-dark-success: var(--neon-color-success-l1);
 
-    --neon-background-solid-button-light-warn: var(--neon-color-warn-l1);
+    --neon-background-solid-button-light-warn: var(--neon-color-warn-l2);
+    --neon-background-rgb-solid-button-dark-warn: var(--neon-rgb-warn-l1);
     --neon-background-solid-button-dark-warn: var(--neon-color-warn-l1);
 
-    --neon-background-solid-button-light-error: var(--neon-color-error-l1);
+    --neon-background-solid-button-light-error: var(--neon-color-error-l2);
+    --neon-background-rgb-solid-button-dark-error: var(--neon-rgb-error-l1);
     --neon-background-solid-button-dark-error: var(--neon-color-error-l1);
 
     /* outline buttons */
-    --neon-background-button-active-high-contrast: var(--neon-color-high-contrast-d1);
-    --neon-background-button-active-low-contrast: var(--neon-color-low-contrast-d1);
-    --neon-background-button-active-neutral: var(--neon-color-low-contrast-d1);
-    --neon-background-button-active-brand: var(--neon-color-brand-d1);
-    --neon-background-button-active-primary: var(--neon-color-primary-d1);
-    --neon-background-button-active-info: var(--neon-color-info-d1);
-    --neon-background-button-active-success: var(--neon-color-success-d1);
-    --neon-background-button-active-warn: var(--neon-color-warn-d1);
-    --neon-background-button-active-error: var(--neon-color-error-d1);
+    --neon-background-outline-button-hover-high-contrast: var(--neon-color-high-contrast-l2);
+    --neon-background-outline-button-active-high-contrast: var(--neon-color-high-contrast-l1);
 
-    /* low-contrast buttons */
-    --neon-color-low-contrast-solid-button: var(--neon-color-low-contrast-l4);
-    --neon-color-low-contrast-outline-button: var(--neon-color-low-contrast-d3);
+    --neon-background-outline-button-hover-inverse: var(--neon-color-high-contrast-d5);
+    --neon-background-outline-button-active-inverse: var(--neon-color-high-contrast-d4);
+
+    --neon-background-outline-button-hover-low-contrast: var(--neon-color-low-contrast-l2);
+    --neon-background-outline-button-active-low-contrast: var(--neon-color-low-contrast-l1);
+
+    --neon-background-outline-button-hover-neutral: var(--neon-color-low-contrast-l2);
+    --neon-background-outline-button-active-neutral: var(--neon-color-low-contrast-l1);
+
+    --neon-background-outline-button-hover-brand: var(--neon-color-brand-l2);
+    --neon-background-outline-button-active-brand: var(--neon-color-brand-l1);
+
+    --neon-background-outline-button-hover-primary: var(--neon-color-primary-l2);
+    --neon-background-outline-button-active-primary: var(--neon-color-primary-l1);
+
+    --neon-background-outline-button-hover-info: var(--neon-color-info-l2);
+    --neon-background-outline-button-active-info: var(--neon-color-info-l1);
+
+    --neon-background-outline-button-hover-success: var(--neon-color-success-l2);
+    --neon-background-outline-button-active-success: var(--neon-color-success-l1);
+
+    --neon-background-outline-button-hover-warn: var(--neon-color-warn-l2);
+    --neon-background-outline-button-active-warn: var(--neon-color-warn-l1);
+
+    --neon-background-outline-button-hover-error: var(--neon-color-error-l2);
+    --neon-background-outline-button-active-error: var(--neon-color-error-l1);
+
 
     /* text button */
     --neon-background-color-text-button-hover: rgba(var(--neon-rgb-neutral-d3), 0.25);
@@ -455,10 +488,10 @@
     --neon-rgb-text: var(--neon-rgb-text-dark);
     --neon-color-text: var(--neon-color-text-dark);
 
-    --neon-rgb-inverse: var(--neon-rgb-text-strong-light);
-    --neon-color-inverse: var(--neon-color-text-strong-light);
+    --neon-rgb-inverse: 255, 255, 255;
+    --neon-color-inverse: #fff;
 
-    --neon-rgb-low-contrast: var(-neon-rgb-low-contrast-d1);
+    --neon-rgb-low-contrast: var(--neon-rgb-low-contrast-d1);
     --neon-rgb-neutral: var(--neon-rgb-neutral-d1);
     --neon-rgb-high-contrast: var(--neon-rgb-high-contrast-d1);
     --neon-rgb-brand: var(--neon-rgb-brand-d1);
@@ -468,7 +501,7 @@
     --neon-rgb-warn: var(--neon-rgb-warn-d1);
     --neon-rgb-error: var(--neon-rgb-error-d1);
 
-    --neon-color-low-contrast: var(-neon-color-low-contrast-d1);
+    --neon-color-low-contrast: var(--neon-color-low-contrast-d1);
     --neon-color-neutral: var(--neon-color-neutral-d1);
     --neon-color-high-contrast: var(--neon-color-high-contrast-d1);
     --neon-color-brand: var(--neon-color-brand-d1);
@@ -502,7 +535,7 @@
 
     --neon-color-disabled-light: var(--neon-color-low-contrast-l5);
     --neon-color-disabled-medium: var(--neon-color-low-contrast-l4);
-    --neon-color-disabled-dark: var(--neon-color-high-contrast-l3);
+    --neon-color-disabled-dark: var(--neon-color-low-contrast-l3);
 
     /* switch */
     --neon-rgb-switch-off: var(--neon-rgb-neutral-l3);
@@ -514,47 +547,79 @@
     --neon-color-switch-indicator-disabled: var(--neon-color-disabled-dark);
 
     /* solid buttons */
+    --neon-color-solid-button: var(--neon-color-inverse);
+    --neon-color-solid-button-inverse: var(--neon-color-text-strong);
+
     --neon-background-solid-button-light-high-contrast: var(--neon-color-text);
+    --neon-background-rgb-solid-button-dark-high-contrast: var(--neon-rgb-text);
     --neon-background-solid-button-dark-high-contrast: var(--neon-color-text);
 
+    --neon-background-solid-button-light-inverse: var(--neon-color-inverse);
+    --neon-background-rgb-solid-button-dark-inverse: var(--neon-rgb-inverse);
+    --neon-background-solid-button-dark-inverse: var(--neon-color-inverse);
+
     --neon-background-solid-button-light-low-contrast: var(--neon-color-low-contrast-l5);
-    --neon-background-solid-button-dark-low-contrast: var(--neon-color-low-contrast-l5);
+    --neon-background-rgb-solid-button-dark-low-contrast: var(--neon-rgb-low-contrast-l4);
+    --neon-background-solid-button-dark-low-contrast: var(--neon-color-low-contrast-l4);
 
     --neon-background-solid-button-light-neutral: var(--neon-color-low-contrast-d1);
-    --neon-background-solid-button-dark-neutral: var(--neon-color-low-contrast-d1);
+    --neon-background-rgb-solid-button-dark-neutral: var(--neon-rgb-low-contrast-d2);
+    --neon-background-solid-button-dark-neutral: var(--neon-color-low-contrast-d2);
 
     --neon-background-solid-button-light-brand: var(--neon-color-brand-d1);
-    --neon-background-solid-button-dark-brand: var(--neon-color-brand-d1);
+    --neon-background-rgb-solid-button-dark-brand: var(--neon-rgb-brand-d2);
+    --neon-background-solid-button-dark-brand: var(--neon-color-brand-d2);
 
     --neon-background-solid-button-light-primary: var(--neon-color-primary-d1);
-    --neon-background-solid-button-dark-primary: var(--neon-color-primary-d1);
+    --neon-background-rgb-solid-button-dark-primary: var(--neon-rgb-primary-d2);
+    --neon-background-solid-button-dark-primary: var(--neon-color-primary-d2);
 
     --neon-background-solid-button-light-info: var(--neon-color-info-d1);
-    --neon-background-solid-button-dark-info: var(--neon-color-info-d1);
+    --neon-background-rgb-solid-button-dark-info: var(--neon-rgb-info-d2);
+    --neon-background-solid-button-dark-info: var(--neon-color-info-d2);
 
     --neon-background-solid-button-light-success: var(--neon-color-success-d1);
-    --neon-background-solid-button-dark-success: var(--neon-color-success-d1);
+    --neon-background-rgb-solid-button-dark-success: var(--neon-rgb-success-d2);
+    --neon-background-solid-button-dark-success: var(--neon-color-success-d2);
 
     --neon-background-solid-button-light-warn: var(--neon-color-warn-d1);
-    --neon-background-solid-button-dark-warn: var(--neon-color-warn-d1);
+    --neon-background-rgb-solid-button-dark-warn: var(--neon-rgb-warn-d2);
+    --neon-background-solid-button-dark-warn: var(--neon-color-warn-d2);
 
     --neon-background-solid-button-light-error: var(--neon-color-error-d1);
-    --neon-background-solid-button-dark-error: var(--neon-color-error-d1);
+    --neon-background-rgb-solid-button-dark-error: var(--neon-rgb-error-d2);
+    --neon-background-solid-button-dark-error: var(--neon-color-error-d2);
 
     /* outline buttons */
-    --neon-background-button-active-high-contrast: var(--neon-color-high-contrast-d2);
-    --neon-background-button-active-low-contrast: var(--neon-color-low-contrast-d2);
-    --neon-background-button-active-neutral: var(--neon-color-low-contrast-d2);
-    --neon-background-button-active-brand: var(--neon-color-brand-d2);
-    --neon-background-button-active-primary: var(--neon-color-primary-d2);
-    --neon-background-button-active-info: var(--neon-color-info-d2);
-    --neon-background-button-active-success: var(--neon-color-success-d2);
-    --neon-background-button-active-warn: var(--neon-color-warn-d2);
-    --neon-background-button-active-error: var(--neon-color-error-d2);
+    --neon-background-outline-button-hover-high-contrast: var(--neon-color-high-contrast-d1);
+    --neon-background-outline-button-active-high-contrast: var(--neon-color-high-contrast-d2);
 
-    /* low-contrast buttons */
-    --neon-color-low-contrast-solid-button: var(--neon-color-low-contrast-d4);
-    --neon-color-low-contrast-outline-button: var(--neon-color-low-contrast-l2);
+    --neon-background-outline-button-hover-inverse: var(--neon-color-high-contrast-l5);
+    --neon-background-outline-button-active-inverse: var(--neon-color-high-contrast-l4);
+
+    --neon-background-outline-button-hover-low-contrast: var(--neon-color-low-contrast-d1);
+    --neon-background-outline-button-active-low-contrast: var(--neon-color-low-contrast-d2);
+
+    --neon-background-outline-button-hover-neutral: var(--neon-color-low-contrast-d1);
+    --neon-background-outline-button-active-neutral: var(--neon-color-low-contrast-d2);
+
+    --neon-background-outline-button-hover-brand: var(--neon-color-brand-d1);
+    --neon-background-outline-button-active-brand: var(--neon-color-brand-d2);
+
+    --neon-background-outline-button-hover-primary: var(--neon-color-primary-d1);
+    --neon-background-outline-button-active-primary: var(--neon-color-primary-d2);
+
+    --neon-background-outline-button-hover-info: var(--neon-color-info-d1);
+    --neon-background-outline-button-active-info: var(--neon-color-info-d2);
+
+    --neon-background-outline-button-hover-success: var(--neon-color-success-d1);
+    --neon-background-outline-button-active-success: var(--neon-color-success-d2);
+
+    --neon-background-outline-button-hover-warn: var(--neon-color-warn-d1);
+    --neon-background-outline-button-active-warn: var(--neon-color-warn-d2);
+
+    --neon-background-outline-button-hover-error: var(--neon-color-error-d1);
+    --neon-background-outline-button-active-error: var(--neon-color-error-d2);
 
     /* text button */
     --neon-background-color-text-button-hover: rgba(var(--neon-rgb-neutral-l4), 0.33);

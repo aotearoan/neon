@@ -128,6 +128,14 @@ $fixed-content-height: 21.75rem;
     }
   }
 
+  &--padded {
+    padding: calc(4 * var(--neon-base-space));
+  }
+
+  &--info {
+    background-color: var(--neon-color-info);
+  }
+
   &--margin-top {
     margin-top: calc(2 * var(--neon-base-space));
   }

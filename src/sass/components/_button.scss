@@ -34,34 +34,39 @@
   background: linear-gradient(var(--neon-background-solid-button-light-#{$color}), var(--neon-background-solid-button-dark-#{$color}));
 
   &:hover:not(:disabled) {
-    background: linear-gradient(var(--neon-background-solid-button-dark-#{$color}), var(--neon-background-solid-button-dark-#{$color}));
+    background: linear-gradient(var(--neon-background-solid-button-light-#{$color}), var(--neon-background-solid-button-light-#{$color}));
   }
 
   &:active:not(:disabled) {
-    background: var(--neon-background-button-active-#{$color});
+    background: var(--neon-background-solid-button-dark-#{$color});
   }
 
   &:focus:not(:disabled):not(.neon-button--no-outline) {
-    @include outline.box-shadow-outline(var(--neon-rgb-#{$color}));
+    @include outline.box-shadow-outline(var(--neon-background-rgb-solid-button-dark-#{$color}));
   }
 }
 
 @mixin outline-button($color) {
-  border: var(--neon-border-width-outline-button) var(--neon-border-style) var(--neon-color-#{$color});
-  @include svg.color-with-svg(var(--neon-color-#{$color}));
+  border: var(--neon-border-width-outline-button) var(--neon-border-style) var(--neon-background-outline-button-active-#{$color});
+  @include svg.color-with-svg(var(--neon-background-outline-button-active-#{$color}));
 
   &:hover:not(:disabled),
   &:active:not(:disabled) {
-    @include svg.color-with-svg(var(--neon-color-inverse));
+    @if ($color == 'inverse') {
+      @include svg.color-with-svg(var(--neon-color-text));
+    } @else {
+      @include svg.color-with-svg(var(--neon-color-inverse));
+    }
   }
 
   &:hover:not(:disabled) {
-    background: var(--neon-color-#{$color});
+    background: var(--neon-background-outline-button-hover-#{$color});
+    border-color: var(--neon-background-outline-button-hover-#{$color});
   }
 
   &:active:not(:disabled) {
-    background: var(--neon-background-button-active-#{$color});
-    border-color: var(--neon-background-button-active-#{$color});
+    background: var(--neon-background-outline-button-active-#{$color});
+    border-color: var(--neon-background-outline-button-active-#{$color});
   }
 
   &:focus:not(:disabled):not(.neon-button--no-outline) {
@@ -243,16 +248,23 @@
       }
     }
 
-    @each $color in palettes.$neon-functional-colors {
+    @each $color in palettes.$neon-button-colors {
       &--#{$color} {
         &.neon-button--solid {
-          @if ($color == 'low-contrast') {
-            color: var(--neon-color-text);
+          @if ($color == 'inverse') {
+            color: var(--neon-color-solid-button-inverse);
+            @include svg.color-with-svg(var(--neon-color-solid-button-inverse));
+          } @else if ($color == 'low-contrast') {
+            color: var(--neon-color-solid-button-inverse);
+            @include svg.color-with-svg(var(--neon-color-solid-button-inverse));
+          } @else {
+            color: var(--neon-color-solid-button);
+            @include svg.color-with-svg(var(--neon-color-solid-button));
           }
 
           @include solid-button($color);
 
-          @each $alternateColor in palettes.$neon-functional-colors {
+          @each $alternateColor in palettes.$neon-button-colors {
             &.neon-button--alternate-color-#{$alternateColor}:not(.neon-button--disabled) {
               @include gradient-button($color, $alternateColor);
             }
