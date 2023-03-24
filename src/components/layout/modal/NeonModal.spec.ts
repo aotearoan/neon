@@ -47,9 +47,24 @@ describe('NeonModal', () => {
 
   it('renders transparent', () => {
     // given
-    const { html, rerender } = harness;
+    const { html } = harness;
     // when / then
     expect(html()).not.toMatch('neon-modal__overlay--opaque');
+  });
+
+  it('renders top nav visible', async () => {
+    // given
+    const { html, rerender } = harness;
+    await rerender({ showTopNav: true });
+    // when / then
+    expect(html()).toMatch('neon-modal__overlay--show-top-nav');
+  });
+
+  it('renders over top nav', () => {
+    // given
+    const { html } = harness;
+    // when / then
+    expect(html()).not.toMatch('neon-modal__overlay--show-top-nav');
   });
 
   it('emits close event on escape key', async () => {

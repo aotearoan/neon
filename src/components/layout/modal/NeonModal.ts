@@ -23,6 +23,10 @@ export default defineComponent({
      * Increase the opacity so that the page behind the modal is no longer visible
      */
     opaque: { type: Boolean, default: false },
+    /**
+     * Keep the top nav visible when the modal is open
+     */
+    showTopNav: { type: Boolean, default: false },
   },
   emits: [
     /**

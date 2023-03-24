@@ -4,6 +4,7 @@
       <!-- @slot modal contents -->
       <slot></slot>
       <neon-button
+        v-if="dismissible"
         :circular="true"
         button-style="text"
         class="neon-modal__close"
@@ -14,9 +15,10 @@
         @click="close"
         @keypress.space.stop="close"
         @keydown.enter="close"
-      ></neon-button>
+      />
     </div>
-    <div :class="{ 'neon-modal__overlay--opaque': opaque }" class="neon-modal__overlay"></div>
+    <div :class="{ 'neon-modal__overlay--opaque': opaque, 'neon-modal__overlay--show-top-nav': showTopNav }"
+         class="neon-modal__overlay"></div>
   </div>
 </template>
 

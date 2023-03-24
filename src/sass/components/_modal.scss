@@ -38,11 +38,26 @@
 
     &,
     .neon-modal__overlay {
-      top: 0;
+      bottom: 0;
       left: 0;
       @include layout.width(100);
       @include layout.min-height(100);
       @include layout.height(100);
+
+      &--show-top-nav {
+        @include layout.min-height(100, 'var(--neon-top-nav-height-desktop)');
+        @include layout.height(100, 'var(--neon-top-nav-height-desktop)');
+
+        @include responsive.responsive(tablet) {
+          @include layout.min-height(100, 'var(--neon-top-nav-height-tablet)');
+          @include layout.height(100, 'var(--neon-top-nav-height-tablet)');
+        }
+
+        @include responsive.responsive(mobile) {
+          @include layout.min-height(100, 'var(--neon-top-nav-height-mobile)');
+          @include layout.height(100, 'var(--neon-top-nav-height-mobile)');
+        }
+      }
     }
 
     &.neon-modal--open {
