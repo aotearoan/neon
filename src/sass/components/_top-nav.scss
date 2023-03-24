@@ -10,7 +10,7 @@
     display: flex;
     z-index: var(--neon-z-index-above-3);
     background-color: var(--neon-background-color-top-nav);
-    border-bottom: var(--neon-border);
+    border-bottom: var(--neon-border-width) var(--neon-border-style) var(--neon-border-color-top-nav);
 
     &__container {
       @include layout.padding-vertical(0.75, 0.75);

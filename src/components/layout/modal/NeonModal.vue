@@ -17,8 +17,10 @@
         @keydown.enter="close"
       />
     </div>
-    <div :class="{ 'neon-modal__overlay--opaque': opaque, 'neon-modal__overlay--show-top-nav': showTopNav }"
-         class="neon-modal__overlay"></div>
+    <div
+      :class="{ 'neon-modal__overlay--opaque': opaque, 'neon-modal__overlay--show-top-nav': showTopNav }"
+      class="neon-modal__overlay"
+    ></div>
   </div>
 </template>
 
