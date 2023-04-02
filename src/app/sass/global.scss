@@ -3,10 +3,6 @@
 @use 'src/sass/includes/layout';
 @use 'src/sass/includes/hidden';
 
-html {
-  font-size: 1px;
-}
-
 body {
   font-size: var(--neon-base-font-size);
 
