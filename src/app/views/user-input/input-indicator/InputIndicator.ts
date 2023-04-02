@@ -45,7 +45,7 @@ export default defineComponent({
       {
         title: 'Input Indicator Examples',
         template: inputIndicatorExamples,
-        data: data.value,
+        data,
       },
     ]);
 

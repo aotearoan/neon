@@ -99,7 +99,7 @@ export default defineComponent({
           <neon-button color="warn" label="Warning" @click="warnAlert()" />
           <neon-button color="error" label="Error" @click="errorAlert()" />
           </div>`,
-        data: data.value,
+        data,
         components: {
           NeonButton,
         },
@@ -113,7 +113,7 @@ export default defineComponent({
           <neon-button label="Bottom left" @click="infoAlert('bottom-left')" />
           <neon-button label="Bottom right" @click="infoAlert('bottom-right')" />
           </div>`,
-        data: data.value,
+        data,
         components: {
           NeonButton,
         },
@@ -125,7 +125,7 @@ export default defineComponent({
           <neon-button label="Single action" @click="alertSingleAction()" />
           <neon-button label="Both actions" @click="alertBothActions()" />
           </div>`,
-        data: data.value,
+        data,
         components: {
           NeonButton,
         },
@@ -145,7 +145,7 @@ export default defineComponent({
             <neon-button color="error" label="Toast error" @click="toastError()" />
           </div>
           </div>`,
-        data: data.value,
+        data,
         components: {
           NeonButton,
         },

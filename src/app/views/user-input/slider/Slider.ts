@@ -18,7 +18,8 @@ export default defineComponent({
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('HTML single value slider input');
 
-    const data = ref({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const data = ref<Record<string, any>>({
       basicSlider: 50,
       minMaxSlider: 0,
       outputSlider: 50,
@@ -32,63 +33,67 @@ export default defineComponent({
       primarySlider: 50,
       brandSlider: 50,
       warnSlider: 50,
+      updateSlider: (key: string, value?: string) => {
+        data.value[key] = value;
+        data.value = { ...data.value };
+      },
     });
 
     const coreExamples = `<div class="neon-vertically-spaced">
   <label>Basic slider</label>
-  <neon-slider id="basicSliderId" v-model="basicSlider" />
+  <neon-slider id="basicSliderId" :model-value="basicSlider" @update:modelValue="updateSlider('basicSlider')" />
   <label>With Min, max and step</label>
-  <neon-slider v-model="minMaxSlider" :min="-100" :max="100" :step="10" />
+  <neon-slider :model-value="minMaxSlider" :min="-100" :max="100" :step="10" @update:modelValue="updateSlider('minMaxSlider')" />
   <label>Disabled</label>
-  <neon-slider v-model="disabledSlider" :disabled="true" />
+  <neon-slider :model-value="disabledSlider" :disabled="true" @update:modelValue="updateSlider('disabledSlider')" />
 </div>`;
 
     const formattingExamples = `<div class="neon-vertically-spaced">
   <label>Percentage</label>
-  <neon-slider v-model="percentageSlider" :percentage="true" />
+  <neon-slider :model-value="percentageSlider" :percentage="true" @update:modelValue="updateSlider('percentageSlider')" />
   <label>Decimal values</label>
-  <neon-slider v-model="decimalSlider" :decimals="2" />
+  <neon-slider :model-value="decimalSlider" :decimals="2" @update:modelValue="updateSlider('decimalSlider')" />
   <label>Formatting disabled (e.g. year)</label>
-  <neon-slider v-model="noFormattingSlider" :disable-formatting="true" :min="2000" :max="2050" />
+  <neon-slider :model-value="noFormattingSlider" :disable-formatting="true" :min="2000" :max="2050" @update:modelValue="updateSlider('noFormattingSlider')" />
   <label>With template (e.g. currency)</label>
-  <neon-slider v-model="templateSlider" :max="200.0" :step="0.5" :decimals="2" value-template="\${value}" />
+  <neon-slider :model-value="templateSlider" :max="200.0" :step="0.5" :decimals="2" value-template="\${value}" @update:modelValue="updateSlider('templateSlider')" />
 </div>`;
 
     const colorExamples = `<div class="neon-vertically-spaced">
-  <neon-slider v-model="primarySlider" color="primary" />
-  <neon-slider v-model="brandSlider" color="brand" />
-  <neon-slider v-model="warnSlider" color="warn" />
+  <neon-slider :model-value="primarySlider" color="primary" @update:modelValue="updateSlider('primarySlider')" />
+  <neon-slider :model-value="brandSlider" color="brand" @update:modelValue="updateSlider('brandSlider')" />
+  <neon-slider :model-value="warnSlider" color="warn" @update:modelValue="updateSlider('warnSlider')" />
 </div>`;
 
     const displayExamples = `<div class="neon-vertically-spaced">
   <label>Output hidden</label>
-  <neon-slider v-model="outputSlider" :output="false" />
+  <neon-slider :model-value="outputSlider" :output="false" @update:modelValue="updateSlider('outputSlider')" />
   <label>Legend hidden</label>
-  <neon-slider v-model="legendSlider" :legend="false" />
+  <neon-slider :model-value="legendSlider" :legend="false" @update:modelValue="updateSlider('legendSlider')" />
   <label>Tooltip hidden</label>
-  <neon-slider v-model="tooltipSlider" :tooltip="false" />
+  <neon-slider :model-value="tooltipSlider" :tooltip="false" @update:modelValue="updateSlider('tooltipSlider')" />
 </div>`;
 
     const examples = ref([
       {
         title: 'Basic usage',
         template: coreExamples,
-        data: data.value,
+        data,
       },
       {
         title: 'Formatting options',
         template: formattingExamples,
-        data: data.value,
+        data,
       },
       {
         title: 'Slider colors',
         template: colorExamples,
-        data: data.value,
+        data,
       },
       {
         title: 'Display options',
         template: displayExamples,
-        data: data.value,
+        data,
       },
     ]);
 

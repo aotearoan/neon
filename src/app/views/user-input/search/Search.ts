@@ -19,7 +19,8 @@ export default defineComponent({
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('A search input field');
 
-    const data = ref({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const data = ref<Record<string, any>>({
       filterSmall: '',
       searchSmall: '',
       filterMedium: '',
@@ -36,6 +37,14 @@ export default defineComponent({
       searchSuccess: '',
       filterWarning: '',
       searchWarning: '',
+      updateSelection: (key: string, value: string | Array<string>) => {
+        data.value[key] = value;
+        data.value = { ...data.value };
+      },
+      updateFilter: (key: string, value?: string) => {
+        data.value[key] = value;
+        data.value = { ...data.value };
+      },
       model: [
         {
           key: 'k1',
@@ -169,52 +178,73 @@ export default defineComponent({
         template: `
           <div class="neon-vertically-spaced">
           <neon-search :multiple="true" placeholder="Search"
-                       :options="filterOptions(modelWithIcons, searchMulti, filterMulti, true)" v-model="searchMulti"
-                       @filter-changed="filterMulti = $event" />
+                       :options="filterOptions(modelWithIcons, searchMulti, filterMulti, true)"
+                       :model-value="searchMulti"
+                       @filter-changed="updateFilter('filterMulti', $event)"
+                       @update:modelValue="updateSelection('searchMulti')" />
           </div>`,
-        data: data.value,
+        data,
       },
       {
         title: 'Colored chips',
         template: `
           <div class="neon-vertically-spaced">
           <neon-search :multiple="true" placeholder="Search"
-                       :options="filterOptions(coloredChips, searchMulti, filterMulti, true)" v-model="searchMulti"
-                       @filter-changed="filterMulti = $event" />
+                       :options="filterOptions(coloredChips, searchMulti, filterMulti, true)"
+                       :model-value="searchMulti"
+                       @filter-changed="filterMulti = $event"
+                       @update:modelValue="updateSelection('searchMulti')" />
           </div>`,
-        data: data.value,
+        data,
       },
       {
         title: 'Search sizes',
         template: `
           <div class="neon-vertically-spaced">
-          <neon-search size="s" placeholder="Search" :options="filterOptions(model, searchSmall, filterSmall)"
-                       v-model="searchSmall" @filter-changed="filterSmall = $event" />
-          <neon-search size="m" placeholder="Search" :options="filterOptions(model, searchMedium, filterMedium)"
-                       v-model="searchMedium" @filter-changed="filterMedium = $event" />
-          <neon-search size="l" placeholder="Search" :options="filterOptions(model, searchLarge, filterLarge)"
-                       v-model="searchLarge" @filter-changed="filterLarge = $event" />
+          <neon-search size="s" placeholder="Search"
+                       :options="filterOptions(model, searchSmall, filterSmall)"
+                       :model-value="searchSmall"
+                       @filter-changed="filterSmall = $event"
+                       @update:modelValue="updateSelection('searchSmall')" />
+          <neon-search size="m" placeholder="Search"
+                       :options="filterOptions(model, searchMedium, filterMedium)"
+                       :model-value="searchMedium"
+                       @filter-changed="filterMedium = $event"
+                       @update:modelValue="updateSelection('searchMedium')" />
+          <neon-search size="l" placeholder="Search"
+                       :options="filterOptions(model, searchLarge, filterLarge)"
+                       :model-value="searchLarge"
+                       @filter-changed="filterLarge = $event"
+                       @update:modelValue="updateSelection('searchLarge')" />
           </div>`,
-        data: data.value,
+        data,
       },
       {
         title: 'Search with colors and icons',
         template: `
           <div class="neon-vertically-spaced">
           <neon-search color="brand" placeholder="Search"
-                       :options="filterOptions(modelWithIcons, searchBrand, filterBrand)" v-model="searchBrand"
-                       @filter-changed="filterBrand = $event" />
+                       :options="filterOptions(modelWithIcons, searchBrand, filterBrand)"
+                       :model-value="searchBrand"
+                       @filter-changed="filterBrand = $event"
+                       @update:modelValue="updateSelection('searchBrand')" />
           <neon-search color="info" placeholder="Search"
-                       :options="filterOptions(modelWithIcons, searchInfo, filterInfo)" v-model="searchInfo"
-                       @filter-changed="filterInfo = $event" />
+                       :options="filterOptions(modelWithIcons, searchInfo, filterInfo)"
+                       :model-value="searchInfo"
+                       @filter-changed="filterInfo = $event"
+                       @update:modelValue="updateSelection('searchInfo')" />
           <neon-search color="success" placeholder="Search"
-                       :options="filterOptions(modelWithIcons, searchSuccess, filterSuccess)" v-model="searchSuccess"
-                       @filter-changed="filterSuccess = $event" />
+                       :options="filterOptions(modelWithIcons, searchSuccess, filterSuccess)"
+                       :model-value="searchSuccess"
+                       @filter-changed="filterSuccess = $event"
+                       @update:modelValue="updateSelection('searchSuccess')" />
           <neon-search color="warn" placeholder="Search"
-                       :options="filterOptions(modelWithIcons, searchWarning, filterWarning)" v-model="searchWarning"
-                       @filter-changed="filterWarning = $event" />
+                       :options="filterOptions(modelWithIcons, searchWarning, filterWarning)"
+                       :model-value="searchWarning"
+                       @filter-changed="filterWarning = $event"
+                       @update:modelValue="updateSelection('searchWarning')" />
           </div>`,
-        data: data.value,
+        data,
       },
     ]);
 

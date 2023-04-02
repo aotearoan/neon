@@ -16,7 +16,8 @@ export default defineComponent({
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('Expandable/collapsible container for content');
 
-    const data = ref({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const data = ref<Record<string, any>>({
       expanded1: false,
       expanded2: false,
       expanded3: false,
@@ -25,6 +26,10 @@ export default defineComponent({
       expanded6: false,
       expanded7: false,
       expanded8: false,
+      toggleExpanded: (key: string) => {
+        data.value[key] = !data.value[key];
+        data.value = { ...data.value };
+      },
     });
 
     const content =
@@ -36,39 +41,47 @@ brisket, kielbasa ham hock sirloin ground round strip steak jowl jerky short rib
         title: 'Expansion panel sizes',
         template: `
           <div class="example--vertical example-expansion-panel">
-          <neon-expansion-panel v-model="expanded1" label="Small" size="s">
+          <neon-expansion-panel :model-value="expanded1" label="Small" size="s"
+                                @update:modelValue="toggleExpanded('expanded1')">
             ${content.value}
           </neon-expansion-panel>
-          <neon-expansion-panel v-model="expanded2" label="Medium" size="m">
+          <neon-expansion-panel :model-value="expanded2" label="Medium" size="m"
+                                @update:modelValue="toggleExpanded('expanded2')">
             ${content.value}
           </neon-expansion-panel>
-          <neon-expansion-panel v-model="expanded3" label="Large" size="l">
+          <neon-expansion-panel :model-value="expanded3" label="Large" size="l"
+                                @update:modelValue="toggleExpanded('expanded3')">
             ${content.value}
           </neon-expansion-panel>
           </div>`,
-        data: data.value,
+        data,
       },
       {
         title: 'More styles',
         template: `
           <div class="example--vertical example-expansion-panel">
-          <neon-expansion-panel v-model="expanded4" icon="contrast" label="With icon">
+          <neon-expansion-panel :model-value="expanded4" icon="contrast" label="With icon"
+                                @update:modelValue="toggleExpanded('expanded4')">
             ${content.value}
           </neon-expansion-panel>
-          <neon-expansion-panel v-model="expanded5" color="success" icon="contrast" label="Colored label">
+          <neon-expansion-panel :model-value="expanded5" color="success" icon="contrast" label="Colored label"
+                                @update:modelValue="toggleExpanded('expanded5')">
             ${content.value}
           </neon-expansion-panel>
-          <neon-expansion-panel :full-width="true" v-model="expanded6" label="Full width">
+          <neon-expansion-panel :full-width="true" :model-value="expanded6" label="Full width"
+                                @update:modelValue="toggleExpanded('expanded6')">
             ${content.value}
           </neon-expansion-panel>
-          <neon-expansion-panel v-model="expanded7" :disabled="true" label="Disabled">
+          <neon-expansion-panel :model-value="expanded7" :disabled="true" label="Disabled"
+                                @update:modelValue="toggleExpanded('expanded7')">
             ${content.value}
           </neon-expansion-panel>
-          <neon-expansion-panel v-model="expanded8" position="bottom" label="From bottom">
+          <neon-expansion-panel :model-value="expanded8" position="bottom" label="From bottom"
+                                @update:modelValue="toggleExpanded('expanded8')">
             ${content.value}
           </neon-expansion-panel>
           </div>`,
-        data: data.value,
+        data,
       },
     ]);
 

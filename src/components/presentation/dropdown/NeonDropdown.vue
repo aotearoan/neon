@@ -46,8 +46,7 @@
         role="button"
         @click="toggleOpen"
         @keydown.enter="toggleOpen"
-        @keydown.space="toggleOpen"
-        @keypress.space.prevent=""
+        @keydown.space.stop.prevent="toggleOpen"
       >
         <neon-badge
           :alternate-color="alternateColor"

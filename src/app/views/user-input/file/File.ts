@@ -33,7 +33,7 @@ export default defineComponent({
       {
         title: 'File example',
         template: fileExamples,
-        data: data.value,
+        data,
       },
     ]);
 

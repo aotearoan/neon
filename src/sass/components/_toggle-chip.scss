@@ -3,14 +3,14 @@
 
 @mixin neon-toggle-chip-size($neon-toggle-chip-size, $neon-toggle-chip-padding) {
   height: var(--neon-size-#{$neon-toggle-chip-size});
-  font-size: var(--neon-size-#{$neon-toggle-chip-size});
+  font-size: var(--neon-font-size-#{$neon-toggle-chip-size});
   padding-left: calc(#{$neon-toggle-chip-padding} * var(--neon-base-space));
   padding-right: calc(#{$neon-toggle-chip-padding} * var(--neon-base-space));
 
   &.neon-toggle-chip--checked {
     .neon-toggle-chip__checked {
-      width: var(--neon-size-#{$neon-toggle-chip-size});
-      height: var(--neon-size-#{$neon-toggle-chip-size});
+      width: var(--neon-font-size-#{$neon-toggle-chip-size});
+      height: var(--neon-font-size-#{$neon-toggle-chip-size});
     }
   }
 }
@@ -22,7 +22,7 @@
     align-items: center;
     width: fit-content;
     cursor: pointer;
-    border: var(--neon-border-width) var(--neon-border-style);
+    border: var(--neon-border-width-toggle-chip) var(--neon-border-style);
     border-radius: var(--neon-border-radius);
     transition: width ease-in-out var(--neon-animation-speed-fast), background-color ease-in-out var(--neon-animation-speed-fast);
     border-color: var(--neon-border-color-toggle-chip);

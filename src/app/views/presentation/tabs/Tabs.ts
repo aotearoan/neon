@@ -24,6 +24,9 @@ export default defineComponent({
 
     const data = ref({
       selected: 'tab1',
+      toggleSelected: (selected: string) => {
+        data.value = { ...data.value, selected };
+      },
       tabs: [
         {
           key: 'tab1',
@@ -45,13 +48,13 @@ export default defineComponent({
       {
         title: 'Tabbed content',
         template: `
-          <neon-tabs :tabs="tabs" v-model="selected">
+          <neon-tabs :tabs="tabs" :model-value="selected" @update:modelValue="toggleSelected">
           <neon-tab v-for="(tab, index) in tabs" :key="tab.key" :tab="tab" :selected="selected === tab.key">
             <h6>Tab {{ index + 1 }}</h6>
             <span>${tabContent.value}</span>
           </neon-tab>
           </neon-tabs>`,
-        data: data.value,
+        data,
       },
     ]);
 

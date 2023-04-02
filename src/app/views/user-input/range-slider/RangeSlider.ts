@@ -17,7 +17,8 @@ export default defineComponent({
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('Select a range of discrete values');
 
-    const data = ref({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const data = ref<Record<string, any>>({
       basicSlider: [20, 80],
       minMaxSlider: [-50, 50],
       outputSlider: [20, 80],
@@ -31,63 +32,67 @@ export default defineComponent({
       primarySlider: [20, 80],
       brandSlider: [20, 80],
       warnSlider: [20, 80],
+      updateModel: (key: string, value: Array<number>) => {
+        data.value[key] = value;
+        data.value = { ...data.value };
+      },
     });
 
     const coreExamples = `<div class="neon-vertically-spaced">
   <label>Basic range slider</label>
-  <neon-range-slider id="basicSliderId" v-model="basicSlider" />
+  <neon-range-slider id="basicSliderId" :model-value="basicSlider" @update:modelValue="updateModel('basicSlider')" />
   <label>With Min, max and step</label>
-  <neon-range-slider v-model="minMaxSlider" :min="-100" :max="100" :step="10" />
+  <neon-range-slider :model-value="minMaxSlider" :min="-100" :max="100" :step="10" @update:modelValue="updateModel('minMaxSlider')" />
   <label>Disabled</label>
-  <neon-range-slider v-model="disabledSlider" :disabled="true" />
+  <neon-range-slider :model-value="disabledSlider" :disabled="true" @update:modelValue="updateModel('disabledSlider')" />
 </div>`;
 
     const formattingExamples = `<div class="neon-vertically-spaced">
   <label>Percentage</label>
-  <neon-range-slider v-model="percentageSlider" :percentage="true" />
+  <neon-range-slider :model-value="percentageSlider" :percentage="true" @update:modelValue="updateModel('percentageSlider')" />
   <label>Decimal values</label>
-  <neon-range-slider v-model="decimalSlider" :decimals="2" />
+  <neon-range-slider :model-value="decimalSlider" :decimals="2" @update:modelValue="updateModel('decimalSlider')" />
   <label>Formatting disabled (e.g. year)</label>
-  <neon-range-slider v-model="noFormattingSlider" :disable-formatting="true" :min="2000" :max="2050" />
+  <neon-range-slider :model-value="noFormattingSlider" :disable-formatting="true" :min="2000" :max="2050" @update:modelValue="updateModel('noFormattingSlider')" />
   <label>With template (e.g. currency)</label>
-  <neon-range-slider v-model="templateSlider" :max="200.0" :step="0.5" :decimals="2" value-template="\${value}" />
+  <neon-range-slider :model-value="templateSlider" :max="200.0" :step="0.5" :decimals="2" value-template="\${value}" @update:modelValue="updateModel('templateSlider')" />
 </div>`;
 
     const colorExamples = `<div class="neon-vertically-spaced">
-  <neon-range-slider v-model="primarySlider" color="primary" />
-  <neon-range-slider v-model="brandSlider" color="brand" />
-  <neon-range-slider v-model="warnSlider" color="warn" />
+  <neon-range-slider :model-value="primarySlider" color="primary" @update:modelValue="updateModel('primarySlider')" />
+  <neon-range-slider :model-value="brandSlider" color="brand" @update:modelValue="updateModel('brandSlider')" />
+  <neon-range-slider :model-value="warnSlider" color="warn" @update:modelValue="updateModel('warnSlider')" />
 </div>`;
 
     const displayExamples = `<div class="neon-vertically-spaced">
   <label>Output hidden</label>
-  <neon-range-slider v-model="outputSlider" :output="false" />
+  <neon-range-slider :model-value="outputSlider" :output="false" @update:modelValue="updateModel('outputSlider')" />
   <label>Legend hidden</label>
-  <neon-range-slider v-model="legendSlider" :legend="false" />
+  <neon-range-slider :model-value="legendSlider" :legend="false" @update:modelValue="updateModel('legendSlider')" />
   <label>Tooltip hidden</label>
-  <neon-range-slider v-model="tooltipSlider" :tooltip="false" />
+  <neon-range-slider :model-value="tooltipSlider" :tooltip="false" @update:modelValue="updateModel('tooltipSlider')" />
 </div>`;
 
     const examples = ref([
       {
         title: 'Basic usage',
         template: coreExamples,
-        data: data.value,
+        data,
       },
       {
         title: 'Formatting options',
         template: formattingExamples,
-        data: data.value,
+        data,
       },
       {
-        title: 'Rangle slider colors',
+        title: 'Range slider colors',
         template: colorExamples,
-        data: data.value,
+        data,
       },
       {
         title: 'Display options',
         template: displayExamples,
-        data: data.value,
+        data,
       },
     ]);
 

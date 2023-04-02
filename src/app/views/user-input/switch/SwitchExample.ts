@@ -16,7 +16,8 @@ export default defineComponent({
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('Switch and toggle on or off');
 
-    const data = ref({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const data = ref<Record<string, any>>({
       checked1: true,
       checked2: true,
       checked3: true,
@@ -32,68 +33,76 @@ export default defineComponent({
       checked13: true,
       checked14: true,
       indeterminate: true,
+      toggleSwitch: (key: string) => {
+        data.value[key] = !data.value[key];
+        data.value = { ...data.value };
+      },
+      setIndeterminate: () => {
+        data.value = { ...data.value, indeterminate: false };
+      },
     });
 
     const sizeTemplate = `<div>
-  <neon-switch size="s" label="Small" v-model="checked1" />
-  <neon-switch label="Medium" v-model="checked2" />
-  <neon-switch size="l" label="Large" v-model="checked3" />
+  <neon-switch size="s" label="Small" :model-value="checked1" @update:modelValue="toggleSwitch('checked1')" />
+  <neon-switch label="Medium" :model-value="checked2" @update:modelValue="toggleSwitch('checked2')" />
+  <neon-switch size="l" label="Large" :model-value="checked3" @update:modelValue="toggleSwitch('checked3')" />
 </div>`;
 
     const colorTemplate = `<div>
-  <neon-switch size="m" label="Low contrast" color="low-contrast" v-model="checked4" />
-  <neon-switch size="m" label="Info" color="info" v-model="checked5" />
+  <neon-switch size="m" label="Low contrast" color="low-contrast" :model-value="checked4" @update:modelValue="toggleSwitch('checked4')" />
+  <neon-switch size="m" label="Info" color="info" :model-value="checked5" @update:modelValue="toggleSwitch('checked5')" />
 </div>`;
 
     const labelTemplate = `<div>
-  <neon-switch size="m" label="Right label" color="primary" v-model="checked6" />
-  <neon-switch size="m" label="Left label" color="primary" label-position="left" v-model="checked7" />
+  <neon-switch size="m" label="Right label" color="primary" :model-value="checked6" @update:modelValue="toggleSwitch('checked6')" />
+  <neon-switch size="m" label="Left label" color="primary" label-position="left" :model-value="checked7" @update:modelValue="toggleSwitch('checked7')" />
 </div>`;
 
     const stateTemplate = `<div>
-  <neon-switch size="m" label="Disabled" color="primary" :disabled="true" v-model="checked8" />
+  <neon-switch size="m" label="Disabled" color="primary" :disabled="true" :model-value="checked8" @update:modelValue="toggleSwitch('checked8')" />
 </div>`;
 
     const checkboxTemplate = `<div>
-  <neon-switch size="s" label="Small checkbox" v-model="checked9" switch-style="checkbox" />
-  <neon-switch label="Medium checkbox" v-model="checked10" switch-style="checkbox" />
-  <neon-switch size="l" label="Large checkbox" v-model="checked11" switch-style="checkbox" />
-  <neon-switch label="Left label" v-model="checked12" label-position="left" switch-style="checkbox" />
+  <neon-switch size="s" label="Small checkbox" :model-value="checked9" switch-style="checkbox" @update:modelValue="toggleSwitch('checked9')" />
+  <neon-switch label="Medium checkbox" :model-value="checked10" switch-style="checkbox" @update:modelValue="toggleSwitch('checked10')" />
+  <neon-switch size="l" label="Large checkbox" :model-value="checked11" switch-style="checkbox" @update:modelValue="toggleSwitch('checked11')" />
+  <neon-switch label="Left label" :model-value="checked12" label-position="left" switch-style="checkbox" @update:modelValue="toggleSwitch('checked12')" />
   <neon-switch
     label="Indeterminate checkbox"
-    v-model="checked13"
+    :model-value="checked13"
     :indeterminate="indeterminate"
-    @indeterminate-change="indeterminate = false"
+    @indeterminate-change="setIndeterminate()"
     switch-style="checkbox"
+    @update:modelValue="toggleSwitch('checked13')"
   />
-  <neon-switch label="Disabled checkbox" v-model="checked14" :disabled="true" switch-style="checkbox" />
+  <neon-switch label="Disabled checkbox" :model-value="checked14" :disabled="true" switch-style="checkbox" @update:modelValue="toggleSwitch('checked14')" />
 </div>`;
 
     const examples = ref([
       {
         title: 'Switch sizes',
         template: sizeTemplate,
-        data: data.value,
+        data,
       },
       {
         title: 'Switch colors',
         template: colorTemplate,
-        data: data.value,
+        data,
       },
       {
         title: 'Label position',
         template: labelTemplate,
-        data: data.value,
+        data,
       },
       {
         title: 'Disabled switch',
         template: stateTemplate,
-        data: data.value,
+        data,
       },
       {
         title: 'Checkbox style',
         template: checkboxTemplate,
-        data: data.value,
+        data,
       },
     ]);
 

@@ -17,6 +17,13 @@ export default defineComponent({
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('A component for notifying the user of new items');
 
+    const data = ref({
+      active: true,
+      toggleActive: () => {
+        data.value = { ...data.value, active: !data.value.active };
+      },
+    });
+
     const example = ref(`<div class="example--vertical">
   <div class="example--horizontal example--margin-top">
     <span class="positioned-element">No value<neon-notification-counter :active="active" /></span>
@@ -24,16 +31,14 @@ export default defineComponent({
     <span class="positioned-element">Large number<neon-notification-counter :count="42" :active="active" /></span>
     <span class="positioned-element">With color<neon-notification-counter :count="9" color="brand" :active="active" /></span>
   </div>
-  <neon-switch label="Activate notifications" v-model="active" />
+  <neon-switch label="Activate notifications" :model-value="active" @update:modelValue="toggleActive()" />
 </div>`);
 
     const examples = ref([
       {
         title: 'Notification counters',
         template: example.value,
-        data: {
-          active: true,
-        },
+        data,
       },
     ]);
 

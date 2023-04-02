@@ -31,7 +31,7 @@
       :inputmode="inputmode"
       :max="max"
       :min="min"
-      :modelValue="displayValue"
+      :model-value="displayValue"
       :placeholder="placeholder"
       :size="size"
       :step="computedStep"

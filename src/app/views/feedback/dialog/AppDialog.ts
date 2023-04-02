@@ -20,6 +20,9 @@ export default defineComponent({
 
     const data = ref({
       open: false,
+      toggleOpen: (open: boolean) => {
+        data.value = { ...data.value, open };
+      },
     });
 
     const examples = ref([
@@ -27,7 +30,7 @@ export default defineComponent({
         title: 'Dialog example',
         template: `
           <div class="example--horizontal">
-          <neon-button label="Open dialog" @click="open = true"></neon-button>
+          <neon-button label="Open dialog" @click="toggleOpen(true)"></neon-button>
           <neon-dialog
             :open="open"
             cancel-label="Reject"
@@ -35,17 +38,15 @@ export default defineComponent({
             color="success"
             title="Incoming requests"
             question="Are you sure you want to accept incoming requests?"
-            @cancel="open = false"
-            @confirm="open = false">
+            @cancel="toggleOpen(false)"
+            @confirm="toggleOpen(false)">
           </neon-dialog>
           </div>`,
-        data: data.value,
+        data,
       },
     ]);
 
-    onMounted(() => {
-      menuModel.value = Menu.getComponentConfig('NeonDialog');
-    });
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonDialog')));
 
     return {
       menuModel,

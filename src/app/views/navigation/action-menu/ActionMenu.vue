@@ -2,8 +2,8 @@
   <component-documentation
     v-if="menuModel"
     :examples="examples"
-    :model="menuModel"
     :headline="headline"
+    :model="menuModel"
     class="action-menu-examples"
   >
     <neon-card>
@@ -14,7 +14,7 @@
           URL.
         </p>
         <p>
-          Use these in the same way you would use tabs - to break uo the presentation of information to the user when
+          Use these in the same way you would use tabs - to break up the presentation of information to the user when
           there is too much information to display at once.
         </p>
       </neon-card-body>

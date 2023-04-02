@@ -74,6 +74,17 @@
         "func": false,
         "value": "false"
       }
+    },
+    {
+      "name": "opaque",
+      "description": "Increase the opacity so that the page behind the modal is no longer visible",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
     }
   ],
   "events": [

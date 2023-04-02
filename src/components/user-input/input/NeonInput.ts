@@ -4,6 +4,7 @@ import { NeonState } from '@/common/enums/NeonState';
 import { NeonSize } from '@/common/enums/NeonSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
+import { NeonDebounceUtils } from '@/common/utils/NeonDebounceUtils';
 
 /**
  * Equivalent of, and wrapper around, an HTML input. Also supports <strong>textarea</strong>.
@@ -78,6 +79,10 @@ export default defineComponent({
      * The character limit for a textarea.
      */
     maxlength: { type: Number, default: null },
+    /**
+     * Debounce time in ms, set to 0 to disable.
+     */
+    debounce: { type: Number, default: 300 },
   },
   emits: [
     /**
@@ -118,6 +123,10 @@ export default defineComponent({
       } = attrs;
 
       return sanitized;
+    });
+
+    const emitModelValue = NeonDebounceUtils.debounce((value: string) => {
+      emit('update:modelValue', value);
     });
 
     const iconName = computed(() => {
@@ -183,7 +192,7 @@ export default defineComponent({
         if (props.icon) {
           emit('icon-click');
         } else {
-          emit('update:modelValue', '');
+          emitModelValue('');
         }
         $event.preventDefault();
         $event.stopPropagation();
@@ -194,7 +203,7 @@ export default defineComponent({
       const val = (event.target as HTMLInputElement).value;
       const v = props.maxlength && val.length > props.maxlength ? val.substring(0, props.maxlength) : val;
       if (props.modelValue !== v) {
-        emit('update:modelValue', v);
+        emitModelValue(v);
       }
     };
 

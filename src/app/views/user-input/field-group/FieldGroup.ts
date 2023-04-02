@@ -81,7 +81,7 @@ export default defineComponent({
       {
         title: 'Field Group Examples',
         template: inputIndicatorExamples,
-        data: data.value,
+        data,
       },
     ]);
 

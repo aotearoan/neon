@@ -21,10 +21,10 @@ export default defineComponent({
     const data = ref({
       open: false,
       openLoader: () => {
-        data.value.open = true;
         setTimeout(() => {
-          data.value.open = false;
+          data.value = { ...data.value, open: false };
         }, 2500);
+        data.value = { ...data.value, open: true };
       },
     });
 
@@ -36,7 +36,7 @@ export default defineComponent({
           <neon-button label="Show loader" @click="openLoader()" />
           <neon-splash-loader v-if="open" :fullscreen="true" :overlay="true" size="xl" color="brand" />
           </div>`,
-        data: data.value,
+        data,
       },
     ]);
 

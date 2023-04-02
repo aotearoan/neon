@@ -85,7 +85,7 @@ export default defineComponent({
           <neon-dropdown-menu size="m" label="Medium menu" :model="model" />
           <neon-dropdown-menu size="l" label="Large menu" :model="model" />
           </div>`,
-        data: data.value,
+        data,
       },
       {
         title: 'Dropdowns with colors and icons',
@@ -98,7 +98,7 @@ export default defineComponent({
           <neon-dropdown-menu color="warn" label="Warning" :model="modelWithIcons" />
           <neon-dropdown-menu color="error" label="Error" :model="modelWithIcons" />
           </div>`,
-        data: data.value,
+        data,
       },
     ]);
 

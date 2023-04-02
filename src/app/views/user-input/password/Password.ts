@@ -29,7 +29,7 @@ export default defineComponent({
     const examples = ref([
       {
         template: passwordExample,
-        data: data.value,
+        data,
       },
     ]);
 

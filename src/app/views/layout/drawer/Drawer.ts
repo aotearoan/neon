@@ -19,9 +19,21 @@ export default defineComponent({
 
     const data = ref({
       openLeft: false,
+      onOpenLeft: (openLeft: boolean) => {
+        data.value = { ...data.value, openLeft };
+      },
       openRight: false,
+      onOpenRight: (openRight: boolean) => {
+        data.value = { ...data.value, openRight };
+      },
       openTop: false,
+      onOpenTop: (openTop: boolean) => {
+        data.value = { ...data.value, openTop };
+      },
       openBottom: false,
+      onOpenBottom: (openBottom: boolean) => {
+        data.value = { ...data.value, openBottom };
+      },
       contents: `<h6>Drawer content goes here</h6>
               <p>
                 Bacon ipsum dolor amet venison pig ball tip salami pork chop, drumstick tenderloin sirloin pork loin.
@@ -43,29 +55,29 @@ export default defineComponent({
         template: `
           <div class="example--horizontal">
           <!-- Left -->
-          <neon-button label="Open left" @click="openLeft = true"></neon-button>
-          <neon-drawer :open="openLeft" position="left" @close="openLeft = false">
+          <neon-button label="Open left" @click="onOpenLeft(true)"></neon-button>
+          <neon-drawer :open="openLeft" position="left" @close="onOpenLeft(false)">
             <div v-html="contents"></div>
           </neon-drawer>
           <!-- Right -->
-          <neon-button label="Open right" @click="openRight = true"></neon-button>
-          <neon-drawer :open="openRight" position="right" @close="openRight = false">
+          <neon-button label="Open right" @click="onOpenRight(true)"></neon-button>
+          <neon-drawer :open="openRight" position="right" @close="onOpenRight(false)">
             <div v-html="contents"></div>
           </neon-drawer>
           <!-- Top (overlay = false) -->
-          <neon-button label="Open top" @click="openTop = true"></neon-button>
-          <neon-drawer :open="openTop" position="top" @close="openTop = false" :overlay="false">
+          <neon-button label="Open top" @click="onOpenTop(true)"></neon-button>
+          <neon-drawer :open="openTop" position="top" @close="onOpenTop(false)" :overlay="false">
             <div v-html="contents"></div>
           </neon-drawer>
           <!-- Bottom -->
-          <neon-button label="Open bottom" @click="openBottom = true"></neon-button>
+          <neon-button label="Open bottom" @click="onOpenBottom(true)"></neon-button>
           <neon-drawer :dismissible="false" :open="openBottom" position="bottom">
             <div v-html="contents"></div>
             <br />
-            <neon-button style="align-self: flex-end" label="Close" @click="openBottom = false" />
+            <neon-button style="align-self: flex-end" label="Close" @click="onOpenBottom(false)" />
           </neon-drawer>
           </div>`,
-        data: data.value,
+        data,
       },
     ]);
 

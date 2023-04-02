@@ -39,7 +39,7 @@ export default defineComponent({
           </neon-link>
           <neon-link aria-label="Link title" @click="toast()">Link with click handler</neon-link>
           </div>`,
-        data: data.value,
+        data,
       },
     ]);
 

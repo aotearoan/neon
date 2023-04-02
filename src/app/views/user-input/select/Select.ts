@@ -216,41 +216,51 @@ export default defineComponent({
         title: 'Select sizes',
         template: `
           <div class="neon-vertically-spaced">
-          <neon-select size="s" placeholder="Select item" :options="model" v-model="selectSmall" />
-          <neon-select size="m" placeholder="Select item" :options="model" v-model="selectMedium" />
-          <neon-select size="l" placeholder="Select item" :options="model" v-model="selectLarge" />
+          <neon-select size="s" placeholder="Select item" :options="model" :model-value="selectSmall"
+                       @update:modelValue="updateSelection('selectSmall', $event)" />
+          <neon-select size="m" placeholder="Select item" :options="model" :model-value="selectMedium"
+                       @update:modelValue="updateSelection('selectMedium', $event)" />
+          <neon-select size="l" placeholder="Select item" :options="model" :model-value="selectLarge"
+                       @update:modelValue="updateSelection('selectLarge', $event)" />
           </div>`,
-        data: data.value,
+        data,
       },
       {
         title: 'Selects with colors and icons',
         template: `
           <div class="neon-vertically-spaced">
-          <neon-select color="brand" placeholder="Select item(s)" :options="modelWithIcons" v-model="selectBrand" />
-          <neon-select color="info" placeholder="Select item(s)" :options="modelWithIcons" v-model="selectInfo" />
-          <neon-select color="success" placeholder="Select item(s)" :options="modelWithIcons" v-model="selectSuccess" />
-          <neon-select color="warn" placeholder="Select item(s)" :options="modelWithIcons" v-model="selectWarning" />
-          <neon-select color="error" placeholder="Select item(s)" :options="modelWithIcons" v-model="selectError" />
+          <neon-select color="brand" placeholder="Select item(s)" :options="modelWithIcons" :model-value="selectBrand"
+                       @update:modelValue="updateSelection('select', $event)" />
+          <neon-select color="info" placeholder="Select item(s)" :options="modelWithIcons" :model-value="selectInfo"
+                       @update:modelValue="updateSelection('select', $event)" />
+          <neon-select color="success" placeholder="Select item(s)" :options="modelWithIcons"
+                       :model-value="selectSuccess" @update:modelValue="updateSelection('select', $event)" />
+          <neon-select color="warn" placeholder="Select item(s)" :options="modelWithIcons" :model-value="selectWarning"
+                       @update:modelValue="updateSelection('select', $event)" />
+          <neon-select color="error" placeholder="Select item(s)" :options="modelWithIcons" :model-value="selectError"
+                       @update:modelValue="updateSelection('select', $event)" />
           </div>`,
-        data: data.value,
+        data,
       },
       {
         title: 'Multiple selection',
         template: `
           <div class="neon-vertically-spaced">
-          <neon-select :multiple="true" placeholder="Select item(s)" :options="modelWithIcons" v-model="selectMulti" />
+          <neon-select :multiple="true" placeholder="Select item(s)" :options="modelWithIcons"
+                       :model-value="selectMulti" @update:modelValue="updateSelection('select', $event)" />
           </div>`,
-        data: data.value,
+        data,
       },
       {
         title: 'Grouped options',
         template: `
           <div class="neon-vertically-spaced">
-          <neon-select placeholder="Select item" :grouped-options="groupedModel" v-model="selectGrouped" />
+          <neon-select placeholder="Select item" :grouped-options="groupedModel" :model-value="selectGrouped"
+                       @update:modelValue="updateSelection('select', $event)" />
           <neon-select :multiple="true" placeholder="Select item(s)" :grouped-options="groupedModel"
-                       v-model="selectGroupedMulti" />
+                       :model-value="selectGroupedMulti" @update:modelValue="updateSelection('select', $event)" />
           </div>`,
-        data: data.value,
+        data,
       },
     ]);
 

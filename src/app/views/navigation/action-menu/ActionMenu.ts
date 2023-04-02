@@ -51,19 +51,27 @@ export default defineComponent({
         },
       ],
       selected: 'option-1',
+      toggleSelected: (selected: string) => {
+        data.value = { ...data.value, selected };
+      },
       selected2: 'option-1',
+      toggleSelected2: (selected2: string) => {
+        data.value = { ...data.value, selected2 };
+      },
     });
 
     const examples = ref([
       {
         title: 'Basic example',
-        template: '<neon-action-menu :model="model" color="primary" v-model="selected"></neon-action-menu>',
-        data: data.value,
+        template:
+          '<neon-action-menu :model="model" color="primary" :model-value="selected" @update:modelValue="toggleSelected"></neon-action-menu>',
+        data,
       },
       {
         title: 'With counts',
-        template: '<neon-action-menu :model="modelWithCounts" color="primary" v-model="selected2"></neon-action-menu>',
-        data: data.value,
+        template:
+          '<neon-action-menu :model="modelWithCounts" color="primary" :model-value="selected2" @update:modelValue="toggleSelected2"></neon-action-menu>',
+        data,
       },
     ]);
 

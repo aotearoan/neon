@@ -80,7 +80,7 @@ export default defineComponent({
           <neon-menu size="m" :menu="menu" @click="onClick" />
           <neon-menu size="l" :menu="menu" @click="onClick" />
           </div>`,
-        data: data.value,
+        data,
       },
       {
         title: 'Menu colors',
@@ -89,7 +89,7 @@ export default defineComponent({
           <neon-menu color="primary" :menu="menu" />
           <neon-menu color="info" :menu="menu" />
           </div>`,
-        data: data.value,
+        data,
       },
     ]);
 

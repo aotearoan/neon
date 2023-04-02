@@ -2,9 +2,9 @@ import { defineComponent, onMounted, ref } from 'vue';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
-import NeonNote from '@/app/components/feedback/note/NeonNote.vue';
-import NeonCardBody from '@/app/components/layout/card/body/NeonCardBody.vue';
-import NeonCard from '@/app/components/layout/card/NeonCard.vue';
+import NeonNote from '@/components/feedback/note/NeonNote.vue';
+import NeonCardBody from '@/components/layout/card/body/NeonCardBody.vue';
+import NeonCard from '@/components/layout/card/NeonCard.vue';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
@@ -21,6 +21,9 @@ export default defineComponent({
 
     const data = ref({
       noteOpen: true,
+      closeNote: () => {
+        data.value = { ...data.value, noteOpen: false };
+      },
     });
 
     const examples = ref([
@@ -41,10 +44,10 @@ export default defineComponent({
       {
         title: 'Note with close',
         template: `
-          <neon-note v-if="noteOpen" :closable="true" @close-note="noteOpen = false">
+          <neon-note v-if="noteOpen" :closable="true" @close-note="closeNote()">
           <span><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue bottle activated charcoal bicycle rights adaptogen.</span>
           </neon-note>`,
-        data: data.value,
+        data,
       },
       {
         title: 'Colored note',

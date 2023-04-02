@@ -22,6 +22,28 @@
         "func": false,
         "value": "true"
       }
+    },
+    {
+      "name": "opaque",
+      "description": "Increase the opacity so that the page behind the modal is no longer visible",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "showTopNav",
+      "description": "Keep the top nav visible when the modal is open",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
     }
   ],
   "events": [

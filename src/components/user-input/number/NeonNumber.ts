@@ -155,7 +155,7 @@ export default defineComponent({
     });
 
     const displayValue = computed(() => {
-      return focus.value ? rawValue.value : formattedValue.value;
+      return focus.value ? `${rawValue.value}` : formattedValue.value;
     });
 
     const computedStep = computed(() => {

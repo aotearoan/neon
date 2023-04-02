@@ -84,7 +84,8 @@ export default defineComponent({
       },
     ];
 
-    const data = ref({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const data = ref<Record<string, any>>({
       items,
       longItemList,
       smallModel: [items[0].key],
@@ -98,60 +99,64 @@ export default defineComponent({
       defaultLimitModel: [items[0].key],
       customLimitModel: [items[0].key],
       unlimitedModel: [items[0].key],
+      updateModel: (model: string, value: Array<string>) => {
+        data.value[model] = value;
+        data.value = { ...data.value };
+      },
     });
 
     const sizeExamples = `<div class="neon-vertically-spaced">
   <h4>Small</h4>
-  <neon-filter-list size="s" v-model="smallModel" :items="items"/>
+  <neon-filter-list size="s" :model-value="smallModel" :items="items" @update:modelValue="updateModel('smallModel', $event)"/>
   <h4>Medium</h4>
-  <neon-filter-list v-model="mediumModel" :items="items"/>
+  <neon-filter-list :model-value="mediumModel" :items="items" @update:modelValue="updateModel('mediumModel', $event)"/>
   <h4>Large</h4>
-  <neon-filter-list size="l" v-model="largeModel" :items="items"/>
+  <neon-filter-list size="l" :model-value="largeModel" :items="items" @update:modelValue="updateModel('largeModel', $event)"/>
 </div>`;
 
     const colorExamples = `<div class="neon-vertically-spaced">
   <h4>High contrast</h4>
-  <neon-filter-list color="high-contrast" v-model="hcModel" :items="items"/>
+  <neon-filter-list color="high-contrast" :model-value="hcModel" :items="items" @update:modelValue="updateModel('hcModel', $event)"/>
   <h4>Brand</h4>
-  <neon-filter-list color="brand" v-model="brandModel" :items="items"/>
+  <neon-filter-list color="brand" :model-value="brandModel" :items="items" @update:modelValue="updateModel('brandModel', $event)"/>
   <h4>Primary</h4>
-  <neon-filter-list color="primary" v-model="primaryModel" :items="items"/>
+  <neon-filter-list color="primary" :model-value="primaryModel" :items="items" @update:modelValue="updateModel('primaryModel', $event)"/>
 </div>`;
 
     const typeExamples = `<div class="neon-vertically-spaced">
   <h4>Single select</h4>
-  <neon-filter-list :multiple="false" v-model="singleModel" :items="items" />
+  <neon-filter-list :multiple="false" :model-value="singleModel" :items="items" @update:modelValue="updateModel('singleModel', $event)"/>
   <h4>Multi select</h4>
-  <neon-filter-list v-model="multipleModel" :items="items" />
+  <neon-filter-list :model-value="multipleModel" :items="items" @update:modelValue="updateModel('multipleModel', $event)"/>
 </div>`;
 
     const limitExamples = `<div class="neon-vertically-spaced">
   <h4>Unlimited (default)</h4>
-  <neon-filter-list v-model="unlimitedModel" :items="longItemList" :display-count="0" />
+  <neon-filter-list :model-value="unlimitedModel" :items="longItemList" :display-count="0" @update:modelValue="updateModel('unlimitedModel', $event)"/>
   <h4>Limited</h4>
-  <neon-filter-list v-model="customLimitModel" :items="longItemList" :display-count="5" color="brand" />
+  <neon-filter-list :model-value="customLimitModel" :items="longItemList" :display-count="5" color="brand" @update:modelValue="updateModel('customLimitModel', $event)"/>
 </div>`;
 
     const examples = ref([
       {
         title: 'Filter list sizes',
         template: sizeExamples,
-        data: data.value,
+        data,
       },
       {
         title: 'Filter list colors',
         template: colorExamples,
-        data: data.value,
+        data,
       },
       {
         title: 'Filter list selection type',
         template: typeExamples,
-        data: data.value,
+        data,
       },
       {
         title: 'Limit items displayed',
         template: limitExamples,
-        data: data.value,
+        data,
       },
     ]);
 

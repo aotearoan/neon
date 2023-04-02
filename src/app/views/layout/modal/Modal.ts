@@ -20,6 +20,9 @@ export default defineComponent({
 
     const data = ref({
       open: false,
+      toggleOpen: (open: boolean) => {
+        data.value = { ...data.value, open };
+      },
     });
 
     const examples = ref([
@@ -27,8 +30,8 @@ export default defineComponent({
         title: 'Modal example',
         template: `
           <div class="example--horizontal">
-          <neon-button label="Open modal" @click="open = true"></neon-button>
-          <neon-modal :open="open" @close="open = false">
+          <neon-button label="Open modal" @click="toggleOpen(true)"></neon-button>
+          <neon-modal :open="open" @close="toggleOpen(false)">
             <neon-card size="m">
               <neon-card-header>
                 <h3>Modal title</h3>
@@ -43,13 +46,13 @@ export default defineComponent({
                 </p>
               </neon-card-body>
               <neon-card-footer>
-                <neon-button label="Cancel" button-style="text" @click="open = false" />
-                <neon-button label="Accept" color="primary" @click="open = false" />
+                <neon-button label="Cancel" button-style="text" @click="toggleOpen(false)" />
+                <neon-button label="Accept" color="primary" @click="toggleOpen(false)" />
               </neon-card-footer>
             </neon-card>
           </neon-modal>
           </div>`,
-        data: data.value,
+        data,
       },
     ]);
 

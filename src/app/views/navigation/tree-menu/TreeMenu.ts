@@ -81,7 +81,7 @@ export default defineComponent({
       {
         template: `
           <neon-tree-menu :model="model"></neon-tree-menu>`,
-        data: data.value,
+        data,
       },
     ]);
 
