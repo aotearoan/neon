@@ -83,7 +83,7 @@
       margin-right: calc(1.5 * var(--neon-base-space));
       font-weight: 700;
       opacity: 0.25;
-      top: -0.0625rem;
+      top: -1rem;
       position: relative;
     }
 
@@ -102,7 +102,7 @@
     .neon-range-slider__lower,
     .neon-range-slider__upper {
       position: absolute;
-      top: 1.5rem;
+      top: 24rem;
       width: 100%;
     }
 

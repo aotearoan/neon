@@ -2,7 +2,7 @@
 @use 'src/sass/includes/responsive';
 @use 'src/sass/includes/scrollbars';
 
-$fixed-content-height: 21.75rem;
+$fixed-content-height: 348rem;
 
 .app .example {
   & + .example {
@@ -27,7 +27,7 @@ $fixed-content-height: 21.75rem;
         left: 0;
         height: 100% !important;
         min-height: 100% !important;
-        border-right: 0.0625rem var(--neon-border-style) var(--neon-border-color);
+        border-right: 1rem var(--neon-border-style) var(--neon-border-color);
 
         h6 {
           margin-bottom: 0;
@@ -38,7 +38,7 @@ $fixed-content-height: 21.75rem;
         position: absolute;
         top: 0;
         left: 0;
-        border-bottom: 0.0625rem var(--neon-border-style) var(--neon-border-color);
+        border-bottom: 1rem var(--neon-border-style) var(--neon-border-color);
       }
 
       .neon-page {
@@ -70,7 +70,7 @@ $fixed-content-height: 21.75rem;
           }
 
           .neon-grid-area {
-            border: 0.0625rem var(--neon-border-style) var(--neon-border-color);
+            border: 1rem var(--neon-border-style) var(--neon-border-color);
             border-radius: var(--neon-border-radius);
             @include layout.padding;
           }

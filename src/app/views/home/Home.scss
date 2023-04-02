@@ -11,7 +11,7 @@
   }
 
   .neon-logo {
-    $logo-height: 6.25rem;
+    $logo-height: 100rem;
     height: $logo-height;
     width: calc(#{$logo-height} * var(--neon-logo-width-multiplier));
     max-width: 100%;

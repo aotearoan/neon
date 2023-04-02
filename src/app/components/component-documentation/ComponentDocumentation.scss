@@ -1,8 +1,8 @@
 @use 'src/sass/includes/layout';
 @use 'src/sass/includes/responsive';
 
-$neon-height-component-header-desktop: 10rem;
-$neon-height-component-header-mobile: 4.8125rem;
+$neon-height-component-header-desktop: 160rem;
+$neon-height-component-header-mobile: 77rem;
 
 .component-documentation {
   margin-top: calc(#{$neon-height-component-header-desktop} - 0.5 * var(--neon-spacing-vertical-desktop));
@@ -82,7 +82,7 @@ $neon-height-component-header-mobile: 4.8125rem;
   &__header-container,
   .neon-tab {
     width: 100%;
-    max-width: 64rem;
+    max-width: 1024rem;
     margin: auto;
   }
 

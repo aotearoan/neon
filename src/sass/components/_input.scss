@@ -23,7 +23,7 @@
       width: calc(var(--neon-font-size-#{$font-size}) * var(--neon-line-height-one));
       height: calc(var(--neon-font-size-#{$font-size}) * var(--neon-line-height-one));
       right: calc(0.5 * (var(--neon-size-#{$size}) - var(--neon-font-size-#{$font-size})));
-      top: calc(0.5 * (var(--neon-size-#{$size}) - var(--neon-font-size-#{$font-size})) - 0.0625rem);
+      top: calc(0.5 * (var(--neon-size-#{$size}) - var(--neon-font-size-#{$font-size})) - 1rem);
       cursor: default;
       border-radius: 50%;
 
@@ -38,7 +38,7 @@
       cursor: pointer;
 
       &:active {
-        top: calc(0.5 * (var(--neon-size-#{$size}) - var(--neon-font-size-#{$font-size})) + 0.0625rem);
+        top: calc(0.5 * (var(--neon-size-#{$size}) - var(--neon-font-size-#{$font-size})) + 1rem);
       }
     }
   }
@@ -70,7 +70,7 @@
 
         .neon-icon:focus {
           background-color: rgba($input-rgb, 0.125);
-          box-shadow: 0 0 0 0.125rem rgba($input-rgb, 0.125);
+          box-shadow: 0 0 0 2rem rgba($input-rgb, 0.125);
         }
       }
     }

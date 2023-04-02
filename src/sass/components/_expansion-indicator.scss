@@ -4,7 +4,7 @@
     stroke-width: 1;
     stroke-linecap: round;
     transition: all ease-in-out var(--neon-animation-speed-fast);
-    transform-origin: 0.5rem 0.5rem;
+    transform-origin: 8rem 8rem;
   }
 
   .neon-expansion-indicator {
@@ -14,7 +14,7 @@
 
     &__container {
       transition: all ease-in-out var(--neon-animation-speed-fast);
-      transform: translateY(0.125rem);
+      transform: translateY(2rem);
     }
 
     &__line1 {
@@ -35,7 +35,7 @@
 
     &--expanded {
       .neon-expansion-indicator__container {
-        transform: translateY(-0.125rem);
+        transform: translateY(-2rem);
       }
 
       .neon-expansion-indicator__line1 {

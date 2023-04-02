@@ -35,8 +35,8 @@
 
     @include responsive.responsive(mobile-large) {
       font-size: var(--neon-font-size-xs);
-      min-width: 2.1875rem;
-      min-height: 2.1875rem;
+      min-width: 35rem;
+      min-height: 35rem;
     }
   }
 }

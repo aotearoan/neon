@@ -35,8 +35,8 @@
   .neon-toggle__label--checked {
     .neon-toggle__radio-button {
       &-indicator {
-        width: $control-size - 0.375rem;
-        height: $control-size - 0.375rem;
+        width: $control-size - 6rem;
+        height: $control-size - 6rem;
       }
     }
   }
@@ -95,14 +95,14 @@
   }
 
   &.neon-toggle--s {
-    @include radio-button-size(0.875rem, 's', 's');
+    @include radio-button-size(14rem, 's', 's');
   }
 
   &.neon-toggle--m {
-    @include radio-button-size(0.875rem, 's', 'm');
+    @include radio-button-size(14rem, 's', 'm');
   }
 
   &.neon-toggle--l {
-    @include radio-button-size(1rem, 'm', 'l');
+    @include radio-button-size(16rem, 'm', 'l');
   }
 }

@@ -129,7 +129,7 @@
 
         .neon-expansion-indicator {
           .neon-expansion-indicator__container {
-            transform: translateY(-0.125rem);
+            transform: translateY(-2rem);
           }
 
           .neon-expansion-indicator__line1 {
@@ -188,7 +188,7 @@
         .neon-badge:not(.neon-badge--disabled) {
           .neon-badge__label,
           svg {
-            top: 0.0625rem;
+            top: 1rem;
           }
         }
       }

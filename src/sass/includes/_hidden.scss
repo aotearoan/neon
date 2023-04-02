@@ -2,10 +2,10 @@
   &:not(:focus):not(:active) {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
-    height: 0.0625rem;
+    height: 1rem;
     overflow: hidden;
     position: absolute;
     white-space: nowrap;
-    width: 0.0625rem;
+    width: 1rem;
   }
 }

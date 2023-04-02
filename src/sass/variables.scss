@@ -6,9 +6,9 @@
   *********************/
 
   /* layout */
-  --neon-base-space: 0.25rem;
+  --neon-base-space: 4rem;
   --neon-max-paragraph-width: 70ch;
-  --neon-max-page-width: 120rem;
+  --neon-max-page-width: 1920rem;
 
   /* ratio of horizontal to vertical spacing, e.g. 1 = square padding */
   --neon-spacing-horizontal-multiplier: 1;
@@ -32,9 +32,9 @@
   --neon-animation-speed-fast: 0.225s;
 
   /* borders */
-  --neon-border-radius: 0.375rem;
-  --neon-border-width: 0.0625rem;
-  --neon-border-width-separator-before: 0.0625rem;
+  --neon-border-radius: 6rem;
+  --neon-border-width: 1rem;
+  --neon-border-width-separator-before: 1rem;
   --neon-border-style: solid;
 
   /* z-index */
@@ -47,7 +47,7 @@
 
   /* typography */
   --neon-typography-scale: 1.125; // Major second https://type-scale.com/
-  --neon-base-font-size: 1rem;
+  --neon-base-font-size: 16rem;
   --neon-typography-margin-unit: calc(2 * var(--neon-base-space)); // base typography bottom margin unit
 
 
@@ -57,9 +57,9 @@
   --neon-font-size-m: var(--neon-base-font-size);
   --neon-font-size-l: calc(var(--neon-base-font-size) * var(--neon-typography-scale));
 
-  --neon-letter-spacing-s: 0.015625rem;
-  --neon-letter-spacing-m: 0.03125rem;
-  --neon-letter-spacing-l: 0.0625rem;
+  --neon-letter-spacing-s: 0.25rem;
+  --neon-letter-spacing-m: 0.5rem;
+  --neon-letter-spacing-l: 1rem;
 
   --neon-h6-size: var(--neon-font-size-l);
   --neon-h5-size: calc(var(--neon-base-font-size) * var(--neon-typography-scale) * var(--neon-typography-scale));
@@ -134,62 +134,62 @@
   --neon-side-nav-width: calc(80 * var(--neon-base-space));
 
   /* card */
-  --neon-border-radius-card: 0.75rem;
+  --neon-border-radius-card: 12rem;
   --neon-card-box-shadow: none;
 
   /* checkbox */
-  --neon-border-width-checkbox: 0.0625rem;
-  --neon-border-radius-checkbox: 0.125rem;
+  --neon-border-width-checkbox: 1rem;
+  --neon-border-radius-checkbox: 2rem;
 
   /* alerts */
-  --neon-width-alert: 25rem;
-  --neon-width-alert-action: 5rem;
-  --neon-border-width-alert: 0.0625rem;
+  --neon-width-alert: 400rem;
+  --neon-width-alert-action: 80rem;
+  --neon-border-width-alert: 1rem;
   --neon-border-opacity-alert-action: 0.25;
-  --neon-width-toast: 15.625rem;
+  --neon-width-toast: 250rem;
 
   /* dropdown */
-  --neon-max-height-dropdown: 17.5rem;
+  --neon-max-height-dropdown: 280rem;
 
   /* buttons */
   --neon-border-radius-button: var(--neon-border-radius);
   --neon-border-radius-button-xl: var(--neon-border-radius);
-  --neon-border-width-outline-button: 0.0625rem;
+  --neon-border-width-outline-button: 1rem;
 
   /* tabs */
-  --neon-border-width-tabs: 0.125rem;
+  --neon-border-width-tabs: 2rem;
 
   /* chips */
   --neon-border-radius-chip: var(--neon-border-radius);
 
   /* scrollbars */
-  --neon-width-scrollbar: 0.75rem;
-  --neon-border-radius-scrollbar: 0.25rem;
+  --neon-width-scrollbar: 12rem;
+  --neon-border-radius-scrollbar: 4rem;
 
   /* tooltips */
-  --neon-tooltip-max-width: 9rem;
+  --neon-tooltip-max-width: 144rem;
   --neon-tooltip-max-height: calc(3 * var(--neon-tooltip-max-width));
-  --neon-popover-max-width: 30rem;
+  --neon-popover-max-width: 480rem;
   --neon-popover-max-height: calc(3 * var(--neon-tooltip-max-width));
   --neon-border-width-tooltip: 0;
 
   /* drawer */
   --neon-border-width-drawer: 0;
-  --neon-border-radius-drawer: 1rem;
+  --neon-border-radius-drawer: 16rem;
 
   /* radio buttons */
   --neon-border-radius-radio-button: 50%;
-  --neon-border-width-radio-button: 0.0625rem;
+  --neon-border-width-radio-button: 1rem;
 
   /* switch */
   --neon-border-radius-switch: calc(4 * var(--neon-base-space));
   --neon-border-radius-switch-indicator: 50%;
 
   /* note */
-  --neon-border-width-note: 0.5rem;
+  --neon-border-width-note: 8rem;
 
   /* slider & range slider */
-  --neon-height-slider-track: 0.5rem;
+  --neon-height-slider-track: 8rem;
   --neon-height-slider-thumb: calc(3 * var(--neon-height-slider-track));
   --neon-width-slider-thumb: var(--neon-height-slider-thumb);
   --neon-border-radius-slider-thumb: 50%;
@@ -200,16 +200,16 @@
   --neon-border-radius-input: var(--neon-border-radius);
 
   /* skeleton loader */
-  --neon-border-radius-skeleton-loader: 0.75rem;
+  --neon-border-radius-skeleton-loader: 12rem;
 
   /* expansion panel */
-  --neon-border-width-expansion-panel: 0.0625rem;
+  --neon-border-width-expansion-panel: 1rem;
 
   /* table */
-  --neon-border-width-table: 0.0625rem;
+  --neon-border-width-table: 1rem;
 
   /* label */
-  --neon-border-radius-label: 0.25rem;
+  --neon-border-radius-label: 2rem;
 
   /* badge */
   --neon-background-gradient-angle-badge: 45deg;
@@ -219,8 +219,8 @@
   --neon-border-radius-input-color: 50%;
 
   /* dialog */
-  --neon-max-width-dialog: 15.625rem;
-  --neon-min-height-dialog: 17.1875rem;
+  --neon-max-width-dialog: 250rem;
+  --neon-min-height-dialog: 275rem;
   --neon-font-style-dialog: italic;
 
   /* progress linear */
@@ -274,7 +274,7 @@
 
     --neon-border-color: var(--neon-color-neutral-d3);
     --neon-border: var(--neon-border-width) var(--neon-border-style) var(--neon-border-color);
-    --neon-border-hr: 0.0625rem var(--neon-border-style) var(--neon-border-color);
+    --neon-border-hr: 1rem var(--neon-border-style) var(--neon-border-color);
     --neon-color-hr: var(--neon-border-color);
 
     --neon-label-color: var(--neon-color-neutral-l1);
@@ -291,8 +291,8 @@
     --neon-rgb-switch-off: var(--neon-rgb-neutral-d2);
     --neon-color-switch-off: var(--neon-color-neutral-d2);
     --neon-color-switch-indicator: var(--neon-color-neutral-d4);
-    --neon-inset-shadow-switch: inset 0 0.125rem 0.125rem rgba(0, 0, 0, 0.014), inset 0 0.25rem 0.25rem rgba(0, 0, 0, 0.028),
-    inset 0 0.75rem 0.75rem rgba(0, 0, 0, 0.03);
+    --neon-inset-shadow-switch: inset 0 2rem 2rem rgba(0, 0, 0, 0.014), inset 0 4rem 4rem rgba(0, 0, 0, 0.028),
+    inset 0 12rem 12rem rgba(0, 0, 0, 0.03);
     --neon-color-switch-disabled: var(--neon-color-disabled-medium);
     --neon-color-switch-indicator-disabled: var(--neon-color-disabled-light);
 
@@ -464,7 +464,7 @@
     /* slider & range slider */
     --neon-color-slider-track: var(--neon-color-neutral-d3);
     --neon-slider-thumb-color: var(--neon-color-neutral-l4);
-    --neon-box-shadow-slider: 0 -0.125rem 0.25rem 0 rgba(0, 0, 0, 0.2), 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.3);
+    --neon-box-shadow-slider: 0 -2rem 4rem 0 rgba(0, 0, 0, 0.2), 0 2rem 4rem 0 rgba(0, 0, 0, 0.3);
     --neon-border-slider-thumb: none;
 
     /* top nav */
@@ -525,7 +525,7 @@
 
     --neon-border-color: var(--neon-color-neutral-l4);
     --neon-border: var(--neon-border-width) var(--neon-border-style) var(--neon-border-color);
-    --neon-border-hr: 0.0625rem var(--neon-border-style) var(--neon-border-color);
+    --neon-border-hr: 1rem var(--neon-border-style) var(--neon-border-color);
     --neon-color-hr: var(--neon-border-color);
 
     --neon-label-color: var(--neon-color-neutral-d1);
@@ -542,8 +542,8 @@
     --neon-rgb-switch-off: var(--neon-rgb-neutral-l3);
     --neon-color-switch-off: var(--neon-color-neutral-l3);
     --neon-color-switch-indicator: var(--neon-color-high-contrast-l5);
-    --neon-inset-shadow-switch: inset 0 0.125rem 0.125rem rgba(0, 0, 0, 0.014), inset 0 0.25rem 0.25rem rgba(0, 0, 0, 0.028),
-    inset 0 0.75rem 0.75rem rgba(0, 0, 0, 0.03);
+    --neon-inset-shadow-switch: inset 0 2rem 2rem rgba(0, 0, 0, 0.014), inset 0 4rem 4rem rgba(0, 0, 0, 0.028),
+    inset 0 12rem 12rem rgba(0, 0, 0, 0.03);
     --neon-color-switch-disabled: var(--neon-color-disabled-light);
     --neon-color-switch-indicator-disabled: var(--neon-color-disabled-dark);
 
@@ -713,7 +713,7 @@
     /* slider & range slider */
     --neon-color-slider-track: var(--neon-color-neutral-l4);
     --neon-slider-thumb-color: var(--neon-background-color-card);
-    --neon-box-shadow-slider: 0 -0.125rem 0.25rem 0 rgba(140, 140, 140, 0.2), 0 0.125rem 0.25rem 0 rgba(140, 140, 140, 0.3);
+    --neon-box-shadow-slider: 0 -2rem 4rem 0 rgba(140, 140, 140, 0.2), 0 2rem 4rem 0 rgba(140, 140, 140, 0.3);
     --neon-border-slider-thumb: none;
 
     /* top nav */

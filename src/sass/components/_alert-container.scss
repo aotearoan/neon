@@ -82,7 +82,7 @@
 
           @supports (backdrop-filter: none) {
             background-color: rgba($alert-rgb, 0.15);
-            backdrop-filter: blur(1.25rem);
+            backdrop-filter: blur(20rem);
           }
 
           &:focus-within:not(.neon-alert__message--with-actions) {

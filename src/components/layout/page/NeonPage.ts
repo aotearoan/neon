@@ -8,10 +8,9 @@ export default defineComponent({
   name: 'NeonPage',
   setup() {
     const handleResize = () => {
-      /* 0.000625 = 1% height/width in rems */
-      const vh = window.innerHeight * 0.000625;
+      const vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}rem`);
-      const vw = window.innerWidth * 0.000625;
+      const vw = window.innerWidth * 0.01;
       document.documentElement.style.setProperty('--vw', `${vw}rem`);
     };
 

@@ -168,6 +168,17 @@
         "func": false,
         "value": "null"
       }
+    },
+    {
+      "name": "debounce",
+      "description": "Debounce time in ms, set to 0 to disable.",
+      "type": {
+        "name": "number"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "300"
+      }
     }
   ],
   "events": [

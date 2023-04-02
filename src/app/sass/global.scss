@@ -3,7 +3,13 @@
 @use 'src/sass/includes/layout';
 @use 'src/sass/includes/hidden';
 
+html {
+  font-size: 1px;
+}
+
 body {
+  font-size: var(--neon-base-font-size);
+
   .title {
     margin-left: calc(8 * var(--neon-base-space));
     font-family: var(--neon-body-font-family);
@@ -34,7 +40,7 @@ header {
     line-height: var(--neon-line-height-one);
     user-select: none;
     position: relative;
-    top: 0.1875rem;
+    top: 3rem;
 
     @include responsive.responsive(tablet) {
       display: none;
@@ -104,7 +110,7 @@ a[href]:not(.neon-link--no-style):not(.neon-link) {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 0.125rem;
+    height: 2rem;
     display: flex;
     background-color: transparent;
     border-radius: var(--neon-border-radius);

@@ -4,8 +4,8 @@
   .neon-drop-zone {
     align-items: center;
     justify-content: center;
-    width: 15.625rem;
-    height: 15.625rem;
+    width: 250rem;
+    height: 250rem;
 
     h4 {
       line-height: var(--neon-line-height-one);
@@ -14,8 +14,8 @@
   }
 
   .neon-drop-zone--circular {
-    width: 15.625rem;
-    height: 15.625rem;
+    width: 250rem;
+    height: 250rem;
     margin-left: calc(8 * var(--neon-base-space));
 
     @include responsive.responsive(tablet) {

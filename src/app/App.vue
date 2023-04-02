@@ -130,8 +130,8 @@
 @use './App';
 
 .homepage-logo {
-  width: 8rem;
-  height: 2.1rem;
+  width: 128rem;
+  height: 33.6rem;
 
   svg {
     path {

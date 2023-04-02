@@ -81,10 +81,10 @@
 
       .neon-tooltip__arrow,
       .neon-tooltip__arrow-overlay {
-        left: calc(50% - 0.0625rem);
-        margin-left: -0.25rem;
-        border-left: 0.3125rem solid transparent;
-        border-right: 0.3125rem solid transparent;
+        left: calc(50% - 1rem);
+        margin-left: -4rem;
+        border-left: 5rem solid transparent;
+        border-right: 5rem solid transparent;
       }
     }
 
@@ -95,8 +95,8 @@
 
       .neon-tooltip__arrow {
         top: calc(100% + var(--neon-base-space));
-        margin-top: -0.375rem;
-        border-top: 0.375rem solid var(--neon-color-text);
+        margin-top: -6rem;
+        border-top: 6rem solid var(--neon-color-text);
       }
     }
 
@@ -107,8 +107,8 @@
 
       .neon-tooltip__arrow {
         bottom: calc(100% + var(--neon-base-space));
-        margin-bottom: -0.375rem;
-        border-bottom: 0.375rem solid var(--neon-color-text);
+        margin-bottom: -6rem;
+        border-bottom: 6rem solid var(--neon-color-text);
       }
     }
 
@@ -116,16 +116,16 @@
     &--right {
       .neon-tooltip__content-wrapper {
         height: var(--neon-tooltip-max-height);
-        top: calc(50% - 0.0625rem);
+        top: calc(50% - 1rem);
         margin-top: calc(-0.5 * var(--neon-tooltip-max-height));
       }
 
       .neon-tooltip__arrow,
       .neon-tooltip__arrow-overlay {
         top: 50%;
-        margin-top: -0.25rem;
-        border-top: 0.3125rem solid transparent;
-        border-bottom: 0.3125rem solid transparent;
+        margin-top: -4rem;
+        border-top: 5rem solid transparent;
+        border-bottom: 5rem solid transparent;
       }
     }
 
@@ -140,8 +140,8 @@
 
       .neon-tooltip__arrow {
         left: calc(100% + var(--neon-base-space));
-        margin-left: -0.375rem;
-        border-left: 0.375rem solid var(--neon-color-text);
+        margin-left: -6rem;
+        border-left: 6rem solid var(--neon-color-text);
       }
     }
 
@@ -156,8 +156,8 @@
 
       .neon-tooltip__arrow {
         right: calc(100% + var(--neon-base-space));
-        margin-right: -0.375rem;
-        border-right: 0.375rem solid var(--neon-color-text);
+        margin-right: -6rem;
+        border-right: 6rem solid var(--neon-color-text);
       }
     }
 
@@ -214,15 +214,15 @@
         }
 
         .neon-tooltip__arrow {
-          top: calc(100% + var(--neon-base-space) + 0.0625rem);
-          margin-top: -0.375rem;
+          top: calc(100% + var(--neon-base-space) + 1rem);
+          margin-top: -6rem;
           border-top-color: neon-tooltip-border-color();
         }
 
         .neon-tooltip__arrow-overlay {
-          top: calc(100% + var(--neon-base-space) - 0.0625rem);
-          margin-top: -0.375rem;
-          border-top: 0.375rem solid var(--neon-color-inverse);
+          top: calc(100% + var(--neon-base-space) - 1rem);
+          margin-top: -6rem;
+          border-top: 6rem solid var(--neon-color-inverse);
         }
       }
 
@@ -234,15 +234,15 @@
         }
 
         .neon-tooltip__arrow {
-          bottom: calc(100% + var(--neon-base-space) + 0.0625rem);
-          margin-bottom: -0.375rem;
+          bottom: calc(100% + var(--neon-base-space) + 1rem);
+          margin-bottom: -6rem;
           border-bottom-color: neon-tooltip-border-color();
         }
 
         .neon-tooltip__arrow-overlay {
-          bottom: calc(100% + var(--neon-base-space) - 0.0625rem);
-          margin-bottom: -0.375rem;
-          border-bottom: 0.375rem solid var(--neon-color-inverse);
+          bottom: calc(100% + var(--neon-base-space) - 1rem);
+          margin-bottom: -6rem;
+          border-bottom: 6rem solid var(--neon-color-inverse);
         }
       }
 
@@ -254,15 +254,15 @@
         }
 
         .neon-tooltip__arrow {
-          left: calc(100% + var(--neon-base-space) + 0.0625rem);
-          margin-left: -0.375rem;
+          left: calc(100% + var(--neon-base-space) + 1rem);
+          margin-left: -6rem;
           border-left-color: neon-tooltip-border-color();
         }
 
         .neon-tooltip__arrow-overlay {
-          left: calc(100% + var(--neon-base-space) - 0.0625rem);
-          margin-left: -0.375rem;
-          border-left: 0.375rem solid var(--neon-color-inverse);
+          left: calc(100% + var(--neon-base-space) - 1rem);
+          margin-left: -6rem;
+          border-left: 6rem solid var(--neon-color-inverse);
         }
       }
 
@@ -274,15 +274,15 @@
         }
 
         .neon-tooltip__arrow {
-          right: calc(100% + var(--neon-base-space) + 0.0625rem);
-          margin-right: -0.375rem;
+          right: calc(100% + var(--neon-base-space) + 1rem);
+          margin-right: -6rem;
           border-right-color: neon-tooltip-border-color();
         }
 
         .neon-tooltip__arrow-overlay {
-          right: calc(100% + var(--neon-base-space) - 0.0625rem);
-          margin-right: -0.375rem;
-          border-right: 0.375rem solid var(--neon-color-inverse);
+          right: calc(100% + var(--neon-base-space) - 1rem);
+          margin-right: -6rem;
+          border-right: 6rem solid var(--neon-color-inverse);
         }
       }
     }

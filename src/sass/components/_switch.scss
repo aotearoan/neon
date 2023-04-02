@@ -13,11 +13,11 @@
     .neon-switch__switch {
       height: var(--neon-switch-height);
       width: calc(2 * var(--neon-switch-height));
-      padding: 0.125rem;
+      padding: 2rem;
       overflow: hidden;
     }
 
-    --neon-switch-indicator-size: calc(var(--neon-switch-height) - 0.25rem);
+    --neon-switch-indicator-size: calc(var(--neon-switch-height) - 4rem);
 
     .neon-switch__indicator {
       height: var(--neon-switch-indicator-size);
@@ -28,7 +28,7 @@
 
     &.neon-switch--checked {
       .neon-switch__indicator {
-        left: calc(2 * var(--neon-switch-height) - var(--neon-switch-indicator-size) - 0.25rem);
+        left: calc(2 * var(--neon-switch-height) - var(--neon-switch-indicator-size) - 4rem);
       }
     }
   }
@@ -90,7 +90,7 @@
               background-color: var(--neon-color-#{$color});
 
               &:focus {
-                box-shadow: 0 0 0 0.25rem rgba(var(--neon-rgb-#{$color}), 0.3), var(--neon-inset-shadow-switch);
+                box-shadow: 0 0 0 4rem rgba(var(--neon-rgb-#{$color}), 0.3), var(--neon-inset-shadow-switch);
               }
             }
           }
@@ -122,7 +122,7 @@
         box-shadow: var(--neon-inset-shadow-switch);
 
         &:focus {
-          box-shadow: 0 0 0 0.25rem rgba(var(--neon-rgb-low-contrast), 0.3), var(--neon-inset-shadow-switch);
+          box-shadow: 0 0 0 4rem rgba(var(--neon-rgb-low-contrast), 0.3), var(--neon-inset-shadow-switch);
         }
 
       }
@@ -132,7 +132,7 @@
         position: relative;
         border-radius: var(--neon-border-radius-switch-indicator);
         background-color: var(--neon-color-switch-indicator);
-        box-shadow: 0 0 0.125rem 0.0625rem rgba(var(--neon-rgb-neutral-d5), 0.3);
+        box-shadow: 0 0 2rem 1rem rgba(var(--neon-rgb-neutral-d5), 0.3);
       }
 
       &.neon-switch--disabled {
@@ -159,7 +159,7 @@
             box-shadow: var(--neon-inset-shadow);
 
             &:focus {
-              box-shadow: 0 0 0 0.25rem rgba(var(--neon-rgb-low-contrast), 0.3);
+              box-shadow: 0 0 0 4rem rgba(var(--neon-rgb-low-contrast), 0.3);
             }
           }
 
@@ -169,7 +169,7 @@
               background: var(--neon-color-#{$color});
 
               &:focus {
-                box-shadow: 0 0 0 0.25rem rgba(var(--neon-rgb-#{$color}), 0.3);
+                box-shadow: 0 0 0 4rem rgba(var(--neon-rgb-#{$color}), 0.3);
               }
             }
           }
