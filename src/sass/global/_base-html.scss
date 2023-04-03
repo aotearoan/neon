@@ -4,10 +4,7 @@
 
 @mixin base-html {
   background-color: var(--neon-background-color);
-
-  html {
-    font-size: 1px;
-  }
+  font-size: 1px;
 
   body {
     text-rendering: optimizeLegibility;
