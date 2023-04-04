@@ -25,8 +25,9 @@
         <h2 class="neon-h4">SASS</h2>
         <p>Import the theme:</p>
         <editor :read-only="true" language="scss" modelValue="@use '@aotearoan/neon/theme';" />
-        <p>Alternatively the theme can be imported with a list of used components to minimise the final package
-          size:</p>
+        <p>
+          Alternatively the theme can be imported with a list of used components to minimise the final package size:
+        </p>
         <editor v-model="allTheSass" :read-only="true" language="scss" />
       </neon-card-body>
       <neon-card-body>

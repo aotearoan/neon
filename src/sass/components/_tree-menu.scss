@@ -26,7 +26,7 @@
           color: var(--neon-color-text);
         }
 
-        &.router-link-exact-active {
+        &.neon-link--exact-active {
           &,
           &:active {
             color: var(--neon-color-link);

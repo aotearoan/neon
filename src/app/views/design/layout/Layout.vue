@@ -14,8 +14,10 @@
           Neon will set the rems:px ratio to 1:1 in the document HTML element. This means 24px = 24rems which makes
           calculations easier to reason about.
         </p>
-        <p>Spacing is all relative to the CSS variable <em>--neon-base-space</em> which has a default value of
-          <em>4rem</em> (=4px). So adjusting all spacing is as simple as changing this variable.</p>
+        <p>
+          Spacing is all relative to the CSS variable <em>--neon-base-space</em> which has a default value of
+          <em>4rem</em> (=4px). So adjusting all spacing is as simple as changing this variable.
+        </p>
       </neon-card-body>
       <neon-card-body>
         <neon-anchor id="desktop-layout" />
@@ -31,14 +33,14 @@
           <neon-link class="layout-example__label" href="/layout/page">NeonPage</neon-link>
           <div class="layout-example">
             <span class="layout-example__label"
-            >#top-nav (<neon-link class="layout-example__link" href="/layout/top-nav">NeonTopNav</neon-link>)</span
+              >#top-nav (<neon-link class="layout-example__link" href="/layout/top-nav">NeonTopNav</neon-link>)</span
             >
           </div>
           <div class="layout-example__content">
             <div class="layout-example layout-example__side-nav">
               <span class="layout-example__label"
-              >#side-nav (<neon-link class="layout-example__link" href="/layout/side-nav">NeonSideNav</neon-link
-              >)</span
+                >#side-nav (<neon-link class="layout-example__link" href="/layout/side-nav">NeonSideNav</neon-link
+                >)</span
               >
               <div class="layout-example layout-example__side-nav-section">
                 <span class="layout-example__label">#sticky</span>
@@ -53,17 +55,17 @@
                 <neon-link class="layout-example__label" href="/layout/grid">NeonGrid</neon-link>
                 <div class="layout-example">
                   <span class="layout-example__label"
-                  >Grid section 1 (<neon-link class="layout-example__link" href="/layout/grid#api"
-                  >NeonGridArea</neon-link
-                  >)</span
+                    >Grid section 1 (<neon-link class="layout-example__link" href="/layout/grid#api"
+                      >NeonGridArea</neon-link
+                    >)</span
                   >
                 </div>
                 <div class="layout-example__label">...</div>
                 <div class="layout-example">
                   <span class="layout-example__label"
-                  >Grid section n (<neon-link class="layout-example__link" href="/layout/grid#api"
-                  >NeonGridArea</neon-link
-                  >)</span
+                    >Grid section n (<neon-link class="layout-example__link" href="/layout/grid#api"
+                      >NeonGridArea</neon-link
+                    >)</span
                   >
                 </div>
               </div>
@@ -90,7 +92,7 @@
           <neon-link class="layout-example__label" href="/layout/page">NeonPage</neon-link>
           <div class="layout-example">
             <span class="layout-example__label"
-            >#top-nav (<neon-link class="layout-example__link" href="/layout/top-nav">NeonTopNav</neon-link>)</span
+              >#top-nav (<neon-link class="layout-example__link" href="/layout/top-nav">NeonTopNav</neon-link>)</span
             >
           </div>
           <div class="layout-example__content">
@@ -100,17 +102,17 @@
                 <neon-link class="layout-example__label" href="/layout/grid">NeonGrid</neon-link>
                 <div class="layout-example">
                   <span class="layout-example__label"
-                  >Grid section 1 (<neon-link class="layout-example__link" href="/layout/grid#api"
-                  >NeonGridArea</neon-link
-                  >)</span
+                    >Grid section 1 (<neon-link class="layout-example__link" href="/layout/grid#api"
+                      >NeonGridArea</neon-link
+                    >)</span
                   >
                 </div>
                 <div class="layout-example__label">...</div>
                 <div class="layout-example">
                   <span class="layout-example__label"
-                  >Grid section n (<neon-link class="layout-example__link" href="/layout/grid#api"
-                  >NeonGridArea</neon-link
-                  >)</span
+                    >Grid section n (<neon-link class="layout-example__link" href="/layout/grid#api"
+                      >NeonGridArea</neon-link
+                    >)</span
                   >
                 </div>
               </div>
@@ -130,9 +132,8 @@
           <neon-link href="/layout/grid">NeonGrid</neon-link>
           component.
           <neon-link href="/layout/grid">NeonGrid</neon-link>
-          is a CSS Grid based container designed to help simplify
-          page application layout and responsiveness by abstracting CSS Grid and allowing applications to define this
-          programmatically in Typescript.
+          is a CSS Grid based container designed to help simplify page application layout and responsiveness by
+          abstracting CSS Grid and allowing applications to define this programmatically in Typescript.
         </p>
         <p>
           This provides developers with the benefits of using CSS Grid without dealing with the steep learning curve and

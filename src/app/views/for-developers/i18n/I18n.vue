@@ -10,8 +10,7 @@
         <p>
           Neon does not support i18n implicitly but rather adopts the approach of providing default English strings as
           component parameters where text is necessary. This means Neon works out of the box with English and can easily
-          be
-          integrated easily with i18n libraries like
+          be integrated easily with i18n libraries like
           <neon-link href="https://kazupon.github.io/vue-i18n/" target="_blank">vue-i18n</neon-link>
           .
         </p>

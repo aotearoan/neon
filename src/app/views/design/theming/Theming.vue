@@ -26,8 +26,7 @@
         <p>
           Use
           <neon-link href="/utils/NeonModeUtils">NeonModeUtils</neon-link>
-          to listen to native color scheme
-          switching.
+          to listen to native color scheme switching.
         </p>
       </neon-card-body>
     </neon-card>

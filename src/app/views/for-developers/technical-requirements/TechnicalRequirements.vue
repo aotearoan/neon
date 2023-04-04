@@ -10,8 +10,8 @@
         <neon-anchor id="browser-support" />
         <h2 class="neon-h4">Browser Support</h2>
         <p>
-          Neon aims to support all popular modern browsers.
-          However, based on Microsoft's recommendations, it must be pointed out the legacy Microsoft browsers
+          Neon aims to support all popular modern browsers. However, based on Microsoft's recommendations, it must be
+          pointed out the legacy Microsoft browsers
           <strong>IE11 and non Chromium Edge (pre v79)</strong> are specifically <strong>not supported</strong>.
         </p>
         <p>
