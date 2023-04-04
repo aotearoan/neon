@@ -68,6 +68,11 @@ export default defineComponent({
   <neon-input disabled="disabled" :maxlength="100" :rows="5" type="text" :model-value="textAreaDisabled" placeholder="Type here" @update:modelValue="updateInput('', $event)" />
 </div>`;
 
+    const messageExamples = `<div class="neon-vertically-spaced">
+  <neon-input type="text" message="Bacon ipsum dolor amet venison" :maxlength="100" :model-value="textArea" placeholder="Type here" @update:modelValue="updateInput('', $event)" />
+  <neon-input :maxlength="100" message-level="error" message="Bacon ipsum dolor amet venison" type="text" :model-value="textAreaDisabled" placeholder="Type here" @update:modelValue="updateInput('', $event)" />
+</div>`;
+
     const examples = ref([
       {
         title: 'Input sizes',
@@ -87,6 +92,11 @@ export default defineComponent({
       {
         title: 'Textarea examples',
         template: textareaExamples,
+        data,
+      },
+      {
+        title: 'Message examples',
+        template: messageExamples,
         data,
       },
     ]);

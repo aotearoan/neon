@@ -673,7 +673,7 @@
 
     /* input */
     --neon-border-color-input: var(--neon-color-neutral-l3);
-    --neon-background-color-input: var(--neon-color-high-contrast-l4);
+    --neon-background-color-input: rgba(var(--neon-rgb-high-contrast-l4), 0.75);
     --neon-background-color-input-active: rgba(var(--neon-rgb-high-contrast-l4), 0.5);
     --neon-color-placeholder: var(--neon-color-low-contrast-l3);
 
@@ -684,10 +684,10 @@
     /* alerts */
     --neon-box-shadow-alert: calc(0.5 * var(--neon-base-space)) calc(0.5 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) rgba(var(--neon-rgb-neutral-d1), 0.5);
 
-    --neon-color-toast-info: var(--neon-color-info-l4);
-    --neon-color-toast-success: var(--neon-color-success-l4);
-    --neon-color-toast-warn: var(--neon-color-warn-l4);
-    --neon-color-toast-error: var(--neon-color-error-l4);
+    --neon-color-toast-info: var(--neon-color-info-l5);
+    --neon-color-toast-success: var(--neon-color-success-l5);
+    --neon-color-toast-warn: var(--neon-color-warn-l5);
+    --neon-color-toast-error: var(--neon-color-error-l5);
 
     --neon-background-color-alert-info: var(--neon-color-info-d5);
     --neon-background-color-alert-success: var(--neon-color-success-d5);

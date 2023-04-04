@@ -1,5 +1,7 @@
 @use '../includes/palettes';
 
+$message-height: calc(var(--neon-font-size-s) * var(--neon-line-height-ratio));
+
 @mixin input-size($size, $font-size) {
   .neon-input__text,
   .neon-input__textarea {
@@ -174,6 +176,19 @@
       input,
       textarea {
         cursor: not-allowed;
+      }
+    }
+
+    &--with-message {
+      .neon-input__message {
+        bottom: 0;
+        font-size: var(--neon-font-size-s);
+        min-height: $message-height;
+      }
+
+      .neon-input__text-counter,
+      .neon-input__textarea-counter {
+        bottom: calc(2 * var(--neon-base-space) + #{$message-height});
       }
     }
   }

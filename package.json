@@ -1,7 +1,7 @@
 {
   "name": "@aotearoan/neon",
   "description": "Neon is a lightweight design library of VueJS components with minimal dependencies. It supports light and dark modes and can be extended to support multiple themes",
-  "version": "7.0.5-beta.1",
+  "version": "7.1.0-beta.1",
   "module": "dist/neon.js",
   "types": "dist/neon.d.ts",
   "exports": {

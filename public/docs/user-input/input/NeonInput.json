@@ -179,6 +179,28 @@
         "func": false,
         "value": "300"
       }
+    },
+    {
+      "name": "message",
+      "description": "Message to display below the input field.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "messageLevel",
+      "description": "Alert level of message displayed under input. Can be any functional color.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
     }
   ],
   "events": [

@@ -51,6 +51,22 @@ describe('NeonInput', () => {
     getByPlaceholderText('gbelson@hooli.com');
   });
 
+  it('renders message', async () => {
+    const message = 'Bacon ipsum dolor amet venison';
+    const { container, getByText, rerender } = harness;
+    await rerender({ message });
+    getByText(message);
+    expect(container.querySelector('.neon-input__message .neon-color-text-low-contrast')).toBeDefined();
+  });
+
+  it('renders error message', async () => {
+    const message = 'Bacon ipsum dolor amet venison';
+    const { container, getByText, rerender } = harness;
+    await rerender({ message, messageLevel: NeonFunctionalColor.Error });
+    getByText(message);
+    expect(container.querySelector('.neon-input__message .neon-color-text-error')).toBeDefined();
+  });
+
   it('renders placeholder visible class', async () => {
     const modelValue = '';
     const placeholder = 'test label';

@@ -8,6 +8,7 @@
         'neon-input--placeholder-visible': placeholder && (!modelValue || modelValue.length === 0),
         'neon-input--with-state-highlight': stateHighlight,
         'neon-input--with-state-icon': stateIcon,
+        'neon-input--with-message': message !== null,
       },
       `neon-input--${size}`,
       `neon-input--${color}`,
@@ -61,6 +62,9 @@
     />
     <span v-if="maxlength && maxlength > 0" class="neon-input__textarea-counter">
       {{ `${modelValue.length}/${maxlength}` }}
+    </span>
+    <span v-if="message !== null" :class="`neon-color-text-${messageLevel}`" class="neon-input__message">
+      {{ message }}
     </span>
   </div>
 </template>
