@@ -38,7 +38,7 @@
     user-select: none;
     border-radius: var(--neon-border-radius-chip);
     width: fit-content;
-    font-weight: 400;
+    font-weight: var(--neon-font-weight-normal);
     letter-spacing: var(--neon-letter-spacing-m);
 
     @each $color in palettes.$neon-functional-colors {

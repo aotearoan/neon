@@ -65,7 +65,7 @@
       font-size: var(--neon-font-size-xs);
       text-transform: none;
       line-height: var(--neon-line-height-ratio);
-      font-weight: 500;
+      font-weight: var(--neon-font-weight-semi-bold);
       background: var(--neon-color-text);
       color: var(--neon-color-inverse);
       border: var(--neon-border-width-tooltip) solid var(--neon-border-color);
@@ -192,7 +192,7 @@
           padding: calc(4 * var(--neon-base-space));
           text-transform: none;
           line-height: var(--neon-line-height-ratio);
-          font-weight: 400;
+          font-weight: var(--neon-font-weight-normal);
           background: var(--neon-color-inverse);
           color: var(--neon-color-text);
         }

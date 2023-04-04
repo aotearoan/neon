@@ -104,7 +104,7 @@ $neon-height-component-header-mobile: 77rem;
 
   &__headline {
     margin-bottom: calc(8 * var(--neon-base-space));
-    font-weight: 300;
+    font-weight: var(--neon-font-weight-light);
     font-size: var(--neon-h6-size);
     letter-spacing: var(--neon-letter-spacing-m);
     white-space: nowrap;

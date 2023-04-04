@@ -96,7 +96,7 @@
   label {
     &:not(.no-style) {
       font-size: var(--neon-font-size-s);
-      font-weight: 500;
+      font-weight: var(--neon-font-weight-semi-bold);
       letter-spacing: var(--neon-letter-spacing-m);
       text-transform: uppercase;
       user-select: none;

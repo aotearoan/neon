@@ -226,4 +226,8 @@ $neon-components: null !default;
   @if index($neon-flattened-components, NeonLinearProgress) {
     @include components.linear-progress;
   }
+
+  @if index($neon-flattened-components, NeonStepper) {
+    @include components.stepper;
+  }
 }

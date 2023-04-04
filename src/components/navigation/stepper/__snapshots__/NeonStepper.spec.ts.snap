@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NeonStepper.vue matches snapshot 1`] = `
+<div class="neon-stepper--brand neon-stepper">
+  <div class="neon-stepper__step--has-value neon-stepper__step--display-stepper neon-stepper__step">
+    <div class="neon-stepper__step-indicator-wrapper">
+      <div class="neon-stepper__step-indicator">
+        <div class="neon-icon--inverse neon-icon neon-stepper__step-completed-icon neon-stepper__step-completed-icon"><svg width="100%" height="100%" viewBox="0 0 24 24" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+            <path class="neon-svg--fill" d="M22.596,6.529c0.26,-0.278 0.404,-0.645 0.404,-1.025c0,-0.825 -0.679,-1.504 -1.505,-1.504c-0.381,0 -0.748,0.144 -1.026,0.404l-11.981,11.971l-4.957,-4.953c-0.278,-0.259 -0.645,-0.404 -1.026,-0.404c-0.826,0 -1.505,0.679 -1.505,1.504c-0,0.381 0.144,0.747 0.404,1.025l6.02,6.016c0.584,0.583 1.544,0.583 2.128,0l13.044,-13.034Z" style="fill-rule:nonzero;"></path>
+          </svg>
+        </div>
+      </div>
+    </div><span class="neon-stepper__step-title">Parties</span>
+  </div>
+  <div class="neon-stepper__step--has-value neon-stepper__step--display-stepper neon-stepper__step">
+    <div class="neon-stepper__step-indicator-wrapper">
+      <div class="neon-stepper__step-indicator">
+        <div class="neon-icon--inverse neon-icon neon-stepper__step-completed-icon neon-stepper__step-completed-icon"><svg width="100%" height="100%" viewBox="0 0 24 24" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+            <path class="neon-svg--fill" d="M22.596,6.529c0.26,-0.278 0.404,-0.645 0.404,-1.025c0,-0.825 -0.679,-1.504 -1.505,-1.504c-0.381,0 -0.748,0.144 -1.026,0.404l-11.981,11.971l-4.957,-4.953c-0.278,-0.259 -0.645,-0.404 -1.026,-0.404c-0.826,0 -1.505,0.679 -1.505,1.504c-0,0.381 0.144,0.747 0.404,1.025l6.02,6.016c0.584,0.583 1.544,0.583 2.128,0l13.044,-13.034Z" style="fill-rule:nonzero;"></path>
+          </svg>
+        </div>
+      </div>
+    </div><span class="neon-stepper__step-title">Artwork</span>
+  </div>
+  <div class="neon-stepper__step--has-value neon-stepper__step--active neon-stepper__step--display-stepper neon-stepper__step">
+    <div class="neon-stepper__step-indicator-wrapper">
+      <div class="neon-stepper__step-indicator">
+        <div class="neon-icon--inverse neon-icon neon-stepper__step-completed-icon neon-stepper__step-completed-icon"><svg width="100%" height="100%" viewBox="0 0 24 24" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+            <path class="neon-svg--fill" d="M22.596,6.529c0.26,-0.278 0.404,-0.645 0.404,-1.025c0,-0.825 -0.679,-1.504 -1.505,-1.504c-0.381,0 -0.748,0.144 -1.026,0.404l-11.981,11.971l-4.957,-4.953c-0.278,-0.259 -0.645,-0.404 -1.026,-0.404c-0.826,0 -1.505,0.679 -1.505,1.504c-0,0.381 0.144,0.747 0.404,1.025l6.02,6.016c0.584,0.583 1.544,0.583 2.128,0l13.044,-13.034Z" style="fill-rule:nonzero;"></path>
+          </svg>
+        </div>
+      </div>
+    </div><span class="neon-stepper__step-title">Additional Terms</span>
+  </div>
+  <div class="neon-stepper__step--has-value neon-stepper__step--display-stepper neon-stepper__step">
+    <div class="neon-stepper__step-indicator-wrapper">
+      <div class="neon-stepper__step-indicator">
+        <div class="neon-icon--inverse neon-icon neon-stepper__step-completing-icon neon-stepper__step-completing-icon"><svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="16" r="15.5" class="neon-svg--fill neon-svg--stroke"></circle>
+          </svg>
+        </div>
+      </div>
+    </div><span class="neon-stepper__step-title">Duration</span>
+  </div>
+  <div class="neon-stepper__step">
+    <div class="neon-stepper__step-indicator-wrapper">
+      <div class="neon-stepper__step-indicator">
+        <!--v-if-->
+      </div>
+    </div><span class="neon-stepper__step-title">Review</span>
+  </div>
+</div>
+`;

@@ -30,7 +30,7 @@ header {
     margin-left: calc(4 * var(--neon-base-space));
     font-family: var(--neon-heading-font-family);
     font-size: var(--neon-font-size-l);
-    font-weight: 300;
+    font-weight: var(--neon-font-weight-light);
     opacity: 0.9;
     letter-spacing: var(--neon-letter-spacing-s);
     line-height: var(--neon-line-height-one);

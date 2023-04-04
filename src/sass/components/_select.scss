@@ -79,7 +79,7 @@
         flex: 1 0 auto;
         user-select: none;
         align-items: center;
-        font-weight: 600;
+        font-weight: var(--neon-font-weight-bold);
         font-size: var(--neon-font-size-xs);
         text-transform: uppercase;
         padding: calc(3 * var(--neon-base-space)) calc(4 * var(--neon-base-space)) var(--neon-base-space);

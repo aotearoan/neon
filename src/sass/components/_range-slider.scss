@@ -81,7 +81,7 @@
     &__output-range-separator {
       margin-left: calc(1.5 * var(--neon-base-space));
       margin-right: calc(1.5 * var(--neon-base-space));
-      font-weight: 700;
+      font-weight: var(--neon-font-weight-bold);
       opacity: 0.25;
       top: -1rem;
       position: relative;

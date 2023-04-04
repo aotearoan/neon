@@ -80,7 +80,7 @@
 
       &--group-title {
         .neon-dropdown-menu__item-container {
-          font-weight: 500;
+          font-weight: var(--neon-font-weight-semi-bold);
           letter-spacing: var(--neon-letter-spacing-s);
           cursor: default;
 

@@ -14,6 +14,7 @@ import contrast from '@/common/icons/contrast.svg';
 import copy from '@/common/icons/copy.svg';
 import dash from '@/common/icons/dash.svg';
 import desktop from '@/common/icons/desktop.svg';
+import dot from '@/common/icons/dot.svg';
 import download from '@/common/icons/download.svg';
 import ellipsis from '@/common/icons/ellipsis.svg';
 import exclamationCircle from '@/common/icons/exclamation-circle.svg';
@@ -60,6 +61,7 @@ export class RegisterIcons {
     NeonIconRegistry.addIcon('copy', copy);
     NeonIconRegistry.addIcon('dash', dash);
     NeonIconRegistry.addIcon('desktop', desktop);
+    NeonIconRegistry.addIcon('dot', dot);
     NeonIconRegistry.addIcon('download', download);
     NeonIconRegistry.addIcon('ellipsis', ellipsis);
     NeonIconRegistry.addIcon('exclamation-circle', exclamationCircle);

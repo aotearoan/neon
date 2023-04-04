@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: center;
     user-select: none;
-    font-weight: 400;
+    font-weight: var(--neon-font-weight-normal);
     letter-spacing: var(--neon-letter-spacing-s);
     border: var(--neon-border-width) var(--neon-border-style) var(--neon-border-color-input);
     background-color: var(--neon-background-color-input-indicator);

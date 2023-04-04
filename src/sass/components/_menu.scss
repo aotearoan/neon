@@ -134,7 +134,7 @@
     }
 
     &__item {
-      font-weight: 400;
+      font-weight: var(--neon-font-weight-normal);
       letter-spacing: var(--neon-letter-spacing-m);
       white-space: nowrap;
 
@@ -166,7 +166,7 @@
 
       .neon-dropdown .neon-dropdown__button {
         font-family: var(--neon-heading-font-family);
-        font-weight: 400;
+        font-weight: var(--neon-font-weight-normal);
         letter-spacing: var(--neon-letter-spacing-m);
       }
     }

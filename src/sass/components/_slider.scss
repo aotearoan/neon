@@ -107,7 +107,7 @@ $neon-width-slider-tooltip: 201rem;
         font-size: var(--neon-font-size-s);
         font-variant: tabular-nums;
         line-height: 1;
-        font-weight: 600;
+        font-weight: var(--neon-font-weight-bold);
         letter-spacing: 0;
         padding: calc(2 * var(--neon-base-space));
         border-radius: var(--neon-border-radius-slider-tooltip);

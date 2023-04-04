@@ -1,7 +1,7 @@
 @mixin toggle-size($font-size, $size) {
   label {
     font-size: var(--neon-font-size-#{$font-size});
-    font-weight: 400;
+    font-weight: var(--neon-font-weight-normal);
     letter-spacing: var(--neon-letter-spacing-s);
     line-height: var(--neon-line-height-one);
     min-height: var(--neon-size-#{$size});

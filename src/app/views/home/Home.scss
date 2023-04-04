@@ -37,7 +37,7 @@
   }
 
   .powered-by {
-    font-weight: 300;
+    font-weight: var(--neon-font-weight-light);
     margin-top: calc(10 * var(--neon-base-space));
     text-align: center;
   }

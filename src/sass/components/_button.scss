@@ -222,7 +222,7 @@
     }
 
     border-radius: var(--neon-border-radius-button);
-    font-weight: 400;
+    font-weight: var(--neon-font-weight-normal);
     letter-spacing: var(--neon-letter-spacing-m);
     display: flex;
     align-items: center;

@@ -15,7 +15,7 @@
     top: -10rem;
     right: -10rem;
     user-select: none;
-    font-weight: 500;
+    font-weight: var(--neon-font-weight-semi-bold);
 
     @each $color in palettes.$neon-functional-colors {
       &--#{$color} {

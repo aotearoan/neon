@@ -52,7 +52,7 @@
 
     .neon-tree-menu__section-link {
       font-size: var(--neon-font-size-l);
-      font-weight: 600;
+      font-weight: var(--neon-font-weight-bold);
     }
 
     .neon-tree-menu__section {
@@ -80,14 +80,14 @@
 
     .neon-tree-menu__link-item {
       .neon-tree-menu__link {
-        font-weight: 400;
+        font-weight: var(--neon-font-weight-normal);
         font-size: var(--neon-font-size-s);
         margin-bottom: calc(0.5 * var(--neon-base-space));
         color: var(--neon-color-text);
       }
 
       .neon-tree-menu__anchor {
-        font-weight: 400;
+        font-weight: var(--neon-font-weight-normal);
         margin-bottom: calc(0.5 * var(--neon-base-space));
         padding-left: calc(4 * var(--neon-base-space));
         font-size: var(--neon-font-size-s);

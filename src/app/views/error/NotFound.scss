@@ -14,7 +14,7 @@
 
   h1 {
     font-size: 20vw;
-    font-weight: 900;
+    font-weight: var(--neon-font-weight-bold);
     color: var(--app-color-404);
 
     @include responsive.responsive(tablet) {
@@ -23,7 +23,7 @@
   }
 
   h2 {
-    font-weight: 900;
+    font-weight: var(--neon-font-weight-bold);
   }
 
   p {

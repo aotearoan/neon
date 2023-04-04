@@ -44,7 +44,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      font-weight: 500;
+      font-weight: var(--neon-font-weight-semi-bold);
 
       &--underlined {
         border-bottom: var(--neon-border-width-tabs) var(--neon-border-style) var(--neon-border-color-tabs-underline);

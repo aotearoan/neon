@@ -10,7 +10,7 @@
       margin: calc(0.5 * var(--neon-base-space)) calc(-2 * var(--neon-base-space));
       padding: var(--neon-base-space) calc(2 * var(--neon-base-space));
       font-size: var(--neon-font-size-s);
-      font-weight: 400;
+      font-weight: var(--neon-font-weight-normal);
       user-select: none;
 
       &:not(.neon-action-menu__link--selected):not(.neon-action-menu__link--disabled) {
@@ -50,7 +50,7 @@
 
       &-count {
         font-variant: tabular-nums;
-        font-weight: 600;
+        font-weight: var(--neon-font-weight-bold);
       }
 
       .neon-link__label {

@@ -10,7 +10,7 @@
           height: var(--neon-size-m);
           vertical-align: bottom;
           font-size: var(--neon-font-size-s);
-          font-weight: 500;
+          font-weight: var(--neon-font-weight-semi-bold);
           text-transform: uppercase;
           text-align: left;
           padding: 0 calc(6 * var(--neon-base-space)) 0 0;
@@ -36,7 +36,7 @@
           vertical-align: top;
           text-align: left;
           padding: var(--padding-td-vertical) calc(6 * var(--neon-base-space)) var(--padding-td-vertical) 0;
-          font-weight: 400;
+          font-weight: var(--neon-font-weight-normal);
           letter-spacing: var(--neon-letter-spacing-m);
 
           &.neon--number {

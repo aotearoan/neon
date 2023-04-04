@@ -81,7 +81,7 @@
     }
 
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: var(--neon-font-weight-semi-bold);
     letter-spacing: var(--neon-letter-spacing-m);
     display: flex;
     justify-content: center;

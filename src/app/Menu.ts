@@ -257,6 +257,11 @@ export class Menu {
                 component: 'NeonMenu',
               },
               {
+                path: 'stepper',
+                page: 'Stepper',
+                component: 'NeonStepper',
+              },
+              {
                 path: 'tree-menu',
                 page: 'TreeMenu',
                 name: 'Tree Menu',

@@ -70,16 +70,21 @@
   /* AKA branding font size, used for landing page & banners etc... */
   --neon-h0-size: calc(var(--neon-base-font-size) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale));
 
-  --neon-h6-weight: 500;
-  --neon-h5-weight: 500;
-  --neon-h4-weight: 500;
-  --neon-h3-weight: 500;
-  --neon-h2-weight: 500;
-  --neon-h1-weight: 500;
-  --neon-h0-weight: 500;
+  --neon-font-weight-lighter: 200;
+  --neon-font-weight-normal: 400;
+  --neon-font-weight-semi-bold: 500;
+  --neon-font-weight-bold: 600;
 
-  --neon-font-weight-em: 200;
-  --neon-font-weight-strong: 800;
+  --neon-h6-weight: var(--neon-font-weight-semi-bold);
+  --neon-h5-weight: var(--neon-font-weight-semi-bold);
+  --neon-h4-weight: var(--neon-font-weight-semi-bold);
+  --neon-h3-weight: var(--neon-font-weight-semi-bold);
+  --neon-h2-weight: var(--neon-font-weight-semi-bold);
+  --neon-h1-weight: var(--neon-font-weight-semi-bold);
+  --neon-h0-weight: var(--neon-font-weight-semi-bold);
+
+  --neon-font-weight-em: var(--neon-font-weight-lighter);
+  --neon-font-weight-strong: var(--neon-font-weight-bold);
 
   --neon-letter-spacing-headings: 0;
 
@@ -91,7 +96,7 @@
   'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
   --neon-body-font-family: var(--neon-system-font-stack);
-  --neon-body-font-weight: 400;
+  --neon-body-font-weight: var(--neon-font-weight-normal);
 
   --neon-heading-font-family: var(--neon-body-font-family);
   --neon-font-style-headings: normal;
@@ -239,8 +244,8 @@
     --neon-rgb-text-strong: var(--neon-rgb-text-strong-light);
     --neon-color-text-strong: var(--neon-color-text-strong-light);
 
-    --neon-rgb-inverse: 0, 0, 0;
-    --neon-color-inverse: #000;
+    --neon-rgb-inverse: 17, 17, 17;
+    --neon-color-inverse: #111;
 
     --neon-rgb-low-contrast: var(--neon-rgb-low-contrast-l1);
     --neon-rgb-neutral: var(--neon-rgb-neutral-l1);
@@ -487,6 +492,9 @@
     /* input indicators */
     --neon-background-color-input-indicator: var(--neon-color-high-contrast-d2);
     --neon-color-input-indicator: var(--neon-color-neutral);
+
+    /* stepper */
+    --neon-color-stepper-disabled: var(--neon-color-disabled-light);
   }
 
   /*********************
@@ -748,5 +756,8 @@
     /* input indicators */
     --neon-background-color-input-indicator: var(--neon-color-high-contrast-l3);
     --neon-color-input-indicator: var(--neon-color-neutral);
+
+    /* stepper */
+    --neon-color-stepper-disabled: var(--neon-color-disabled-dark);
   }
 }
