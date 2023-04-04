@@ -144,7 +144,7 @@
   /* alerts */
   --neon-width-alert: 400rem;
   --neon-width-alert-action: 80rem;
-  --neon-border-width-alert: 1rem;
+  --neon-border-radius-alert: calc(2 * var(--neon-border-radius));
   --neon-border-opacity-alert-action: 0.25;
   --neon-width-toast: 250rem;
 
@@ -427,6 +427,16 @@
     --neon-color-toast-warn: var(--neon-color-warn-d4);
     --neon-color-toast-error: var(--neon-color-error-d4);
 
+    --neon-background-color-alert-info: var(--neon-color-info-l5);
+    --neon-background-color-alert-success: var(--neon-color-success-l5);
+    --neon-background-color-alert-warn: var(--neon-color-warn-l5);
+    --neon-background-color-alert-error: var(--neon-color-error-l5);
+
+    --neon-rgb-alert-info: var(--neon-rgb-info-d1);
+    --neon-rgb-alert-success: var(--neon-rgb-success-d1);
+    --neon-rgb-alert-warn: var(--neon-rgb-warn-d1);
+    --neon-rgb-alert-error: var(--neon-rgb-error-d1);
+
     /* dropdown / dropdown menu / select */
     --neon-border-color-dropdown: var(--neon-color-neutral-d3);
     --neon-box-shadow-dropdown: calc(0.5 * var(--neon-base-space)) calc(0.5 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) var(--neon-color-neutral-d5);
@@ -488,6 +498,8 @@
 
     --neon-rgb-text: var(--neon-rgb-text-dark);
     --neon-color-text: var(--neon-color-text-dark);
+    --neon-rgb-text-strong: var(--neon-rgb-text-strong-dark);
+    --neon-color-text-strong: var(--neon-color-text-strong-dark);
 
     --neon-rgb-inverse: 255, 255, 255;
     --neon-color-inverse: #fff;
@@ -676,6 +688,16 @@
     --neon-color-toast-success: var(--neon-color-success-l4);
     --neon-color-toast-warn: var(--neon-color-warn-l4);
     --neon-color-toast-error: var(--neon-color-error-l4);
+
+    --neon-background-color-alert-info: var(--neon-color-info-d5);
+    --neon-background-color-alert-success: var(--neon-color-success-d5);
+    --neon-background-color-alert-warn: var(--neon-color-warn-d5);
+    --neon-background-color-alert-error: var(--neon-color-error-d5);
+
+    --neon-rgb-alert-info: var(--neon-rgb-info-l1);
+    --neon-rgb-alert-success: var(--neon-rgb-success-l1);
+    --neon-rgb-alert-warn: var(--neon-rgb-warn-l1);
+    --neon-rgb-alert-error: var(--neon-rgb-error-l1);
 
     /* dropdown / dropdown menu / select */
     --neon-border-color-dropdown: var(--neon-color-neutral-l4);

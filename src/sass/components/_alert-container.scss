@@ -3,6 +3,7 @@
 @use '../includes/responsive';
 @use '../includes/scrollbars';
 @use '../includes/outline';
+@use '../includes/svg';
 
 @mixin alert-container {
   .neon-alert__wrapper .neon-alert {
@@ -64,7 +65,7 @@
       height: 100%;
       min-height: calc(20 * var(--neon-base-space));
       margin: var(--neon-base-space);
-      border-radius: calc(2 * var(--neon-border-radius));
+      border-radius: var(--neon-border-radius-alert);
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
@@ -74,23 +75,19 @@
       overflow: hidden;
 
       @each $color in palettes.$alert-colors {
-        $alert-rgb: var(--neon-rgb-#{$color});
-        $alert-color: var(--neon-color-#{$color});
+        $alert-rgb: var(--neon-rgb-alert-#{$color});
 
         &.neon-alert__message--#{$color} {
-          background-color: var(--neon-color-inverse);
-
-          @supports (backdrop-filter: none) {
-            background-color: rgba($alert-rgb, 0.15);
-            backdrop-filter: blur(20rem);
-          }
+          background-color: var(--neon-background-color-alert-#{$color});
+          @include svg.color-with-svg(rgb($alert-rgb));
+          color: var(--neon-color-inverse);
 
           &:focus-within:not(.neon-alert__message--with-actions) {
-            @include outline.box-shadow-outline($alert-color);
+            @include outline.box-shadow-outline($alert-rgb);
           }
 
           .neon-alert__title {
-            color: $alert-color;
+            color: rgb(var(--neon-rgb-alert-#{$color}));
           }
 
           .neon-alert__actions {
@@ -102,7 +99,7 @@
 
               &:focus,
               &:hover {
-                color: $alert-color;
+                color: rgb($alert-rgb);
                 text-decoration: none;
                 background-color: rgba($alert-rgb, 0.125);
               }
