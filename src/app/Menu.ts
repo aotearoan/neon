@@ -36,7 +36,7 @@ export class Menu {
                 page: 'GettingStarted',
                 name: 'Getting Started',
                 keywords: 'installation sass css scss instructions yarn npm',
-                anchors: ['Installation', 'Typescript', 'SASS'],
+                anchors: ['Installation', 'Typescript', 'SASS', 'HTML'],
               },
               {
                 path: 'accessibility',
@@ -70,7 +70,7 @@ export class Menu {
               {
                 path: 'layout',
                 page: 'Layout',
-                anchors: ['Desktop layout', 'Responsive layout', 'Page content'],
+                anchors: ['Units & Spacing', 'Desktop layout', 'Responsive layout', 'Page content'],
                 keywords: 'mobile tablet grid responsiveness',
               },
               {

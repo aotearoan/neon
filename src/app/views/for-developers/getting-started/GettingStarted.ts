@@ -15,41 +15,27 @@ export default defineComponent({
   setup() {
     const darkModeExample = ref('<html class="app neon neon-mode--dark">');
 
-    const importComponents = ref(`import { Component, Vue } from 'vue-property-decorator';
-import { NeonLogo, registerComponents } from '@aotearoan/neon';
+    const importComponents = ref(`import { NeonButton } from '@aotearoan/neon';
 
-// NOTE: Optional. This automatically registers all components, alternatively, use Vue.component to register components individually.
-registerComponents();
+export default defineComponent({
+  name: 'SomeComponent',
+  components: {
+    NeonButton,
+  },
+  ...
+});`);
 
-@Component({ components: { NeonLogo } })
-export default class App extends Vue {}`);
-
-    const allTheSass = ref(`.app {
-  &.neon {
-    // OPTIONAL: define the list of Neon components used by the application and only the necessary SASS for these
-    // components will be imported, otherwise SASS for all components will be imported for the theme.
-    $neon-components: [NeonGrid, NeonGridArea, NeonPage, NeonSideNav];
-
-    // override colors, palettes and other basic variables here BEFORE importing the theme, e.g. $neon-border-radius: 0.25rem
-    @use '~@aotearoan/neon/theme';
-
-    // include custom app SASS here (you can use neon's defined variables, mixins and functions)
-
-    &.neon-mode--dark {
-      // override dark mode specific variables here, e.g. $neon-border-color: #bada55
-      @use '~@aotearoan/neon/theme/dark';
-
-      // include custom app dark mode SASS here (you can use neon's defined variables, mixins and functions)
-    }
-
-    &.neon-mode--light {
-      // override light mode specific variables here, e.g. $neon-border-color: #bada55
-      @use '~@aotearoan/neon/theme/light';
-
-      // include custom app light mode SASS here (you can use neon's defined variables, mixins and functions)
-    }
-  }
-}`);
+    const allTheSass = ref(`@use '@aotearoan/neon/theme' with (
+  $neon-components: (
+      NeonAlert,
+      NeonButton,
+      NeonCard,
+      NeonCardBody,
+      NeonCardFooter,
+      NeonCardHeader,
+      NeonDrawer,
+  ),
+);`);
 
     return {
       darkModeExample,

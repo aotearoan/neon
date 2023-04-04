@@ -11,10 +11,8 @@
         <h2 class="neon-h4">Browser Support</h2>
         <p>
           Neon aims to support all popular modern browsers.
-          <em
-            >However, based on Microsoft's recommendations, it must be pointed out the legacy Microsoft browsers
-            <strong>IE11 and non Chromium Edge (pre v79)</strong> are specifically <strong>not supported</strong>.</em
-          >
+          However, based on Microsoft's recommendations, it must be pointed out the legacy Microsoft browsers
+          <strong>IE11 and non Chromium Edge (pre v79)</strong> are specifically <strong>not supported</strong>.
         </p>
         <p>
           With that in mind, Neon strives to use semantic native HTML and fallbacks (where possible) so you may find

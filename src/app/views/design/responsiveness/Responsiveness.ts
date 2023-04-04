@@ -14,9 +14,9 @@ export default defineComponent({
     Editor,
   },
   setup() {
-    const sassExample = ref(`@use '~@aotearoan/neon/theme';
+    const sassExample = ref(`@use '@aotearoan/neon/sass/includes/responsive';
 
-@include responsive(larger-than-tablet) {
+@include responsive.responsive(larger-than-tablet) {
   // add desired larger-than-tablet responsive styling here
 }`);
 

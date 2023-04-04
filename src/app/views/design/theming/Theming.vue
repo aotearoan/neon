@@ -10,19 +10,9 @@
         <neon-anchor id="themes" />
         <h2 class="neon-h4">Themes</h2>
         <p>
-          Neon supports multiple themes to suit a wider variety of tastes and styles. Each theme is available in both
-          light and dark modes so you have the choice of using light mode, dark mode or allowing the user to dynamically
-          switch between the two.
-        </p>
-        <neon-note color="error">
-          <span>
-            <strong>Note: </strong> For performance reasons, dynamically switching themes is not recommended. Including
-            a single theme will keep the CSS to a reasonable size.</span
-          >
-        </neon-note>
-        <p>
-          See the <neon-link href="/for-developers/getting-started#sass">Getting started</neon-link> page for more info
-          about how to use themes.
+          Neon supports theming via CSS variables. Override any of the variables defined in
+          <em>src/sass/variables.scss</em> & <em>src/sass/colors.scss</em> to achieve style changes for individual
+          components or, more broadly, to change the application style.
         </p>
       </neon-card-body>
       <neon-card-body>
@@ -34,7 +24,9 @@
           <em>neon-mode--dark</em>
         </p>
         <p>
-          Use <neon-link href="/utils/NeonModeUtils">NeonModeUtils</neon-link> to listen to native color scheme
+          Use
+          <neon-link href="/utils/NeonModeUtils">NeonModeUtils</neon-link>
+          to listen to native color scheme
           switching.
         </p>
       </neon-card-body>

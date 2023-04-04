@@ -19,18 +19,14 @@
           the look they want without any hassle.
         </p>
         <p>
-          Each functional color palette is generated from a single reference color. From this the light and dark color
-          steps are generated (l1-l5 & d1-d5). Another important feature of the palette generator is ensuring accessible
-          contrast ratios of the colors when used in combination with text in light and dark modes.
+          Each functional color palette is comprised of 10 color steps - l1-l5 are the light colors used for the dark
+          mode & d1-d5 are the steps used for the light mode. It is also worth noting that the colors are defined as
+          both RGB variables (e.g. '255, 128, 42') and the actual color variable. The RGB variables are necessary where
+          opacity is applied to colors in order to work with CSS variables.
         </p>
         <p>
-          It is possible to override the reference colors that palettes are generated from by overriding the color
-          variables in the theme's variable file. E.g. to override the primary color set the variable
-          <strong>$neon-color-primary</strong> in your SASS overrides file.
-        </p>
-        <p>
-          Alternatively, if you would like to change an entire palette you can do so by overriding the palette map, e.g.
-          to override the info palette in SASS set:
+          Colors can be overridden using CSS variables, you will find all CSS base color variables in the
+          src/sass/colors.scss file, e.g. to override the <em>brand</em> palette:
         </p>
         <editor v-model="colorPalette" :read-only="true" language="scss" />
       </neon-card-body>
@@ -268,10 +264,10 @@
           </div>
         </div>
         <neon-note color="warn"
-          ><span
-            ><strong>Note: </strong> the <em>low-contrast</em> palette doesn't provide adequate contrast ratio support
+        ><span
+        ><strong>Note: </strong> the <em>low-contrast</em> palette doesn't provide adequate contrast ratio support
             for accessibility at all color steps. Use with care.</span
-          ></neon-note
+        ></neon-note
         >
       </neon-card-body>
       <neon-card-body>

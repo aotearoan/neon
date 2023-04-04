@@ -35,7 +35,7 @@
             <neon-link aria-label="home" class="homepage-link" href="/" outline-style="none">
               <neon-icon aria-label="Neon logo" class="homepage-logo" color="high-contrast" name="logo" />
             </neon-link>
-            <span class="tagline neon-color-text-primary">A VueJs Design System</span>
+            <span class="tagline neon-color-text-primary">A Vue 3 Design System</span>
           </span>
           <span class="top-nav-actions">
             <neon-button
@@ -63,30 +63,32 @@
       <template #side-nav>
         <neon-side-nav class="app-side-nav">
           <template #sticky>
-            <span class="logo-wrapper side-nav-logo-wrapper">
-              <neon-link aria-label="home" class="homepage-link" href="/" outline-style="none">
-                <neon-icon aria-label="Neon logo" class="homepage-logo" color="high-contrast" name="logo" />
-              </neon-link>
-              <span class="tagline neon-color-text-primary">A VueJs Design System</span>
-            </span>
-            <span class="side-nav-actions">
-              <neon-button
-                aria-label="View on GitHub"
-                button-style="text"
-                class="github-link"
-                color="high-contrast"
-                href="https://github.com/aotearoan/neon"
-                icon="github"
-              />
-              <neon-button
-                aria-label="Light/dark toggle"
-                button-style="text"
-                color="high-contrast"
-                icon="contrast"
-                name="dark-mode-toggle"
-                @click="switchMode()"
-              />
-            </span>
+            <div class="app-header">
+              <span class="logo-wrapper side-nav-logo-wrapper">
+                <neon-link aria-label="home" class="homepage-link" href="/" outline-style="none">
+                  <neon-icon aria-label="Neon logo" class="homepage-logo" color="high-contrast" name="logo" />
+                </neon-link>
+                <span class="tagline neon-color-text-primary">A Vue 3 Design System</span>
+              </span>
+              <span class="side-nav-actions">
+                <neon-button
+                  aria-label="View on GitHub"
+                  button-style="text"
+                  class="github-link"
+                  color="high-contrast"
+                  href="https://github.com/aotearoan/neon"
+                  icon="github"
+                />
+                <neon-button
+                  aria-label="Light/dark toggle"
+                  button-style="text"
+                  color="high-contrast"
+                  icon="contrast"
+                  name="dark-mode-toggle"
+                  @click="switchMode()"
+                />
+              </span>
+            </div>
             <label class="menu-filter" for="menuFilterSideNav">Filter menu</label>
             <neon-input id="menuFilterSideNav" v-model="indexFilter" placeholder="Filter..." size="m" type="text" />
           </template>
@@ -117,7 +119,7 @@
         </neon-grid>
         <neon-footer class="app-footer">
           <span>
-            {{ version !== '0' ? `v${version}` : '' }} &copy; copyright aotearoan {{ new Date().getFullYear() }}
+            {{ version !== "0" ? `v${version}` : "" }} &copy; copyright aotearoan {{ new Date().getFullYear() }}
           </span>
         </neon-footer>
       </template>
@@ -129,13 +131,21 @@
 <style lang="scss">
 @use './App';
 
-.homepage-logo {
-  width: 128rem;
-  height: 33.6rem;
+.neon-app {
+  .app-header {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
 
-  svg {
-    path {
-      fill: var(--neon-color-text-strong);
+  .homepage-logo {
+    width: 128rem;
+    height: 33.6rem;
+
+    svg {
+      path {
+        fill: var(--neon-color-text-strong);
+      }
     }
   }
 }

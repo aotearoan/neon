@@ -23,16 +23,18 @@
       <neon-card-body>
         <neon-anchor id="sass" />
         <h2 class="neon-h4">SASS</h2>
-        <p>
-          To use the default theme without any customization simply import the basic theme file, e.g. to import the
-          theme:
-        </p>
-        <editor :read-only="true" language="scss" modelValue="@use '~@aotearoan/neon/theme';" />
-        <p>If, however you would like to override/customize the theme then you need to include the following:</p>
+        <p>Import the theme:</p>
+        <editor :read-only="true" language="scss" modelValue="@use '@aotearoan/neon/theme';" />
+        <p>Alternatively the theme can be imported with a list of used components to minimise the final package
+          size:</p>
         <editor v-model="allTheSass" :read-only="true" language="scss" />
+      </neon-card-body>
+      <neon-card-body>
+        <neon-anchor id="html" />
+        <h2 class="neon-h4">HTML</h2>
         <p>
-          Finally, the theme and mode (light/dark) need to be set on the document, e.g. to set the theme with
-          <em>dark</em> mode:
+          Add the necessary <em>app</em> & <em>neon</em> styles to the HTML element as well as the light/dark mode, e.g.
+          to set dark mode by default:
         </p>
         <editor v-model="darkModeExample" :read-only="true" language="html" />
         <p>

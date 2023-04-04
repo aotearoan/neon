@@ -33,18 +33,27 @@ export default defineComponent({
       noCard: true,
     });
 
-    const colorPalette = ref(`$neon-info-palette: (
-  l5: #f6e9ff,
-  l4: #ebd4ff,
-  l3: #ddbcfe,
-  l2: #cba1fa,
-  l1: #b683f3,
-  d1: #7f50ba,
-  d2: #644190,
-  d3: #4d346b,
-  d4: #39294c,
-  d5: #292033,
-);`);
+    const colorPalette = ref(`  --neon-rgb-brand-l5: 251, 240, 255; // #fbf0ff
+  --neon-color-brand-l5: rgb(var(--neon-rgb-brand-l5));
+  --neon-rgb-brand-l4: 250, 206, 255; // #faceff
+  --neon-color-brand-l4: rgb(var(--neon-rgb-brand-l4));
+  --neon-rgb-brand-l3: 244, 172, 255; // #f4acff
+  --neon-color-brand-l3: rgb(var(--neon-rgb-brand-l3));
+  --neon-rgb-brand-l2: 233, 137, 255; // #e989ff
+  --neon-color-brand-l2: rgb(var(--neon-rgb-brand-l2));
+  --neon-rgb-brand-l1: 218, 100, 255; // #da64ff
+  --neon-color-brand-l1: rgb(var(--neon-rgb-brand-l1));
+  --neon-rgb-brand-d1: 141, 7, 237; // #8d07ed
+  --neon-color-brand-d1: rgb(var(--neon-rgb-brand-d1));
+  --neon-rgb-brand-d2: 120, 29, 193; // #781dc1
+  --neon-color-brand-d2: rgb(var(--neon-rgb-brand-d2));
+  --neon-rgb-brand-d3: 90, 29, 140; // #5a1d8c
+  --neon-color-brand-d3: rgb(var(--neon-rgb-brand-d3));
+  --neon-rgb-brand-d4: 58, 26, 83; // #3a1a53
+  --neon-color-brand-d4: rgb(var(--neon-rgb-brand-d4));
+  --neon-rgb-brand-d5: 32, 25, 37; // #201925
+  --neon-color-brand-d5: rgb(var(--neon-rgb-brand-d5));
+`);
 
     return {
       example,
