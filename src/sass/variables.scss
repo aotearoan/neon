@@ -163,8 +163,8 @@
   --neon-border-radius-chip: var(--neon-border-radius);
 
   /* scrollbars */
-  --neon-width-scrollbar: 12rem;
-  --neon-border-radius-scrollbar: 4rem;
+  --neon-width-scrollbar: 8rem;
+  --neon-border-radius-scrollbar: 8rem;
 
   /* tooltips */
   --neon-tooltip-max-width: 144rem;
@@ -447,7 +447,7 @@
     --neon-color-loading-3: rgba(var(--neon-rgb-neutral-d2), 0.5);
 
     /* scrollbars */
-    --neon-color-scrollbar: rgba(white, 0.05);
+    --neon-color-scrollbar: rgba(255, 255, 255, 0.05);
 
     /* overlays */
     --neon-background-color-overlay: rgba(var(--neon-rgb-neutral-d5), 0.75);
@@ -697,7 +697,7 @@
     --neon-color-loading-3: var(--neon-color-high-contrast-l2);
 
     /* scrollbars */
-    --neon-color-scrollbar: rgba(black, 0.125);
+    --neon-color-scrollbar: rgba(0, 0, 0, 0.125);
 
     /* overlays */
     --neon-background-color-overlay: rgba(var(--neon-rgb-neutral-d5), 0.75);
