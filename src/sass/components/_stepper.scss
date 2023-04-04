@@ -54,14 +54,21 @@
         background: var(--neon-color-stepper-disabled);
         transition: all var(--neon-animation-speed-fast) ease-in-out;
 
-        .neon-stepper__step-completed-icon {
-          width: calc(2.5 * var(--neon-base-space));
-          height: calc(2.5 * var(--neon-base-space));
-        }
-
+        .neon-stepper__step-completed-icon,
         .neon-stepper__step-completing-icon {
           width: calc(2.5 * var(--neon-base-space));
           height: calc(2.5 * var(--neon-base-space));
+
+          svg {
+            path,
+            circle {
+              fill: var(--neon-color-stepper-indicator);
+            }
+
+            circle {
+              stroke: var(--neon-color-stepper-indicator);
+            }
+          }
         }
       }
 

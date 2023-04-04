@@ -494,6 +494,7 @@
     --neon-color-input-indicator: var(--neon-color-neutral);
 
     /* stepper */
+    --neon-color-stepper-indicator: var(--neon-color-high-contrast-d3);
     --neon-color-stepper-disabled: var(--neon-color-disabled-light);
   }
 
@@ -758,6 +759,7 @@
     --neon-color-input-indicator: var(--neon-color-neutral);
 
     /* stepper */
+    --neon-color-stepper-indicator: var(--neon-color-high-contrast-l5);
     --neon-color-stepper-disabled: var(--neon-color-disabled-dark);
   }
 }

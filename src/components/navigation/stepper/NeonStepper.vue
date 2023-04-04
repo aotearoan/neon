@@ -15,18 +15,8 @@
         @click="index !== modelValue && index <= completedIndex && emit('update:modelValue', index)"
       >
         <div class="neon-stepper__step-indicator">
-          <neon-icon
-            v-if="index < completedIndex"
-            :inverse="true"
-            class="neon-stepper__step-completed-icon"
-            name="check"
-          />
-          <neon-icon
-            v-else-if="index === completedIndex"
-            :inverse="true"
-            class="neon-stepper__step-completing-icon"
-            name="dot"
-          />
+          <neon-icon v-if="index < completedIndex" class="neon-stepper__step-completed-icon" name="check" />
+          <neon-icon v-else-if="index === completedIndex" class="neon-stepper__step-completing-icon" name="dot" />
         </div>
       </div>
       <span
