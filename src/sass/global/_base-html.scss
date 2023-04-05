@@ -32,6 +32,50 @@
     @include layout.margin-vertical();
   }
 
+  ol {
+    padding: 0;
+    list-style: none;
+    counter-reset: li;
+    display: flex;
+    flex-direction: column;
+
+    > li {
+      counter-increment: li;
+      max-width: var(--neon-max-paragraph-width);
+      margin-left: calc(8 * var(--neon-base-space));
+
+      &::before {
+        display: inline-flex;
+        content: counter(li);
+        margin-right: calc(4 * var(--neon-base-space));
+        width: calc(6 * var(--neon-base-space));
+        justify-content: flex-start;
+        font-variant: tabular-nums;
+        color: var(--neon-color-neutral);
+        position: absolute;
+        left: calc(6 * var(--neon-base-space));
+      }
+    }
+
+    > li:nth-child(1),
+    > li:nth-child(2),
+    > li:nth-child(3),
+    > li:nth-child(4),
+    > li:nth-child(5),
+    > li:nth-child(6),
+    > li:nth-child(7),
+    > li:nth-child(8),
+    > li:nth-child(9) {
+      &::before {
+        content: "0" counter(li);
+      }
+    }
+
+    & + p {
+      margin-top: calc(4 * var(--neon-base-space));
+    }
+  }
+
   ul {
     margin: 0;
     padding-left: 0;
@@ -85,10 +129,8 @@
     margin-top: 0;
   }
 
-  p + ul {
-    margin-top: calc(2 * var(--neon-base-space));
-  }
-
+  p + ul,
+  p + ol,
   pre + p {
     margin-top: calc(2 * var(--neon-base-space));
   }

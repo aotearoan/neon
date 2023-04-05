@@ -7,7 +7,6 @@
   .neon-card-header,
   .neon-card-body,
   .neon-card-footer {
-    @include layout.padding;
     margin-bottom: 0;
     justify-content: center;
 
@@ -130,20 +129,37 @@
       &.neon-card--horizontal-breakpoint-mobile-l {
         @include responsive.responsive(larger-than-mobile-large) {
           @include horizontal-card-responsive;
-          @include horizontal-card-responsive-borders;
+          
+          &.neon-card--with-horizontal-borders {
+            @include horizontal-card-responsive-borders;
+          }
         }
       }
 
       &.neon-card--horizontal-breakpoint-mobile {
         @include responsive.responsive(larger-than-mobile) {
           @include horizontal-card-responsive;
-          @include horizontal-card-responsive-borders;
+
+          &.neon-card--with-horizontal-borders {
+            @include horizontal-card-responsive-borders;
+          }
         }
       }
 
       &.neon-card--horizontal-breakpoint-tablet {
         @include responsive.responsive(larger-than-tablet) {
           @include horizontal-card-responsive;
+
+          &.neon-card--with-horizontal-borders {
+            @include horizontal-card-responsive-borders;
+          }
+        }
+      }
+
+      &.neon-card--horizontal-breakpoint-no-break {
+        @include horizontal-card-responsive;
+
+        &.neon-card--with-horizontal-borders {
           @include horizontal-card-responsive-borders;
         }
       }
@@ -151,6 +167,7 @@
 
     .neon-card-body--full-width {
       padding: 0;
+      width: calc(100% + 2 * var(--neon-border-width));
 
       img {
         margin-left: calc(-1 * var(--neon-border-width));
@@ -185,7 +202,7 @@
   }
 
   .neon-card.neon-card--vertical {
-    .neon-card-header {
+    & > .neon-card-header {
       &:not(:last-child) {
         padding-bottom: 0;
       }

@@ -3,8 +3,8 @@
     <div class="editor__container">
       <prism-editor
         :highlight="highlighter"
-        :readonly="readOnly"
         :modelValue="modelValue"
+        :readonly="true"
         class="editor"
         @update:modelValue="onEdit"
       />
@@ -31,7 +31,6 @@
         size="s"
         target="_blank"
       />
-      <neon-icon v-if="readOnly" :disabled="true" aria-label="Read only" class="editor__read-only" name="lock" />
     </div>
   </div>
 </template>

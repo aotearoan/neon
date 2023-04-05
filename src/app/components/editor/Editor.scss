@@ -6,6 +6,7 @@
   border-radius: var(--neon-border-radius);
   overflow: hidden;
   position: relative;
+  margin-top: calc(8 * var(--neon-base-space));
 
   .editor {
     font-family: var(--neon-font-family-monospaced);
@@ -36,14 +37,6 @@
 
     .punctuation {
       color: var(--neon-color-neutral-l3);
-    }
-
-    &__read-only.neon-icon--disabled {
-      opacity: 0.5;
-
-      path.neon-svg--fill {
-        fill: var(--app-color-editor-lock) !important;
-      }
     }
 
     &.prism-editor-wrapper .prism-editor {
@@ -122,18 +115,6 @@
 
       &:last-child {
         margin-right: calc(2 * var(--neon-base-space));
-      }
-    }
-
-    &__read-only {
-      width: var(--neon-font-size-l);
-      height: var(--neon-font-size-l);
-      margin-left: calc(2 * var(--neon-base-space));
-      margin-right: calc(4 * var(--neon-base-space));
-
-      @include responsive.responsive(tablet) {
-        margin-left: 0;
-        margin-right: calc(3 * var(--neon-base-space));
       }
     }
   }

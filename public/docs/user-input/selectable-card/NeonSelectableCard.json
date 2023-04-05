@@ -1,0 +1,70 @@
+{
+  "displayName": "NeonSelectableCard",
+  "description": "<p>\n<strong>NeonSelectableCard</strong> is a horizontal card that is selectable by clicking on it. It can be used in\nlists to easily allow users to select multiple items, providing richer content & a larger footprint for clicking on.\n</p>",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "modelValue",
+      "description": "The selected state of the card",
+      "type": {
+        "name": "boolean"
+      },
+      "required": true
+    },
+    {
+      "name": "size",
+      "description": "The size of the card.",
+      "type": {
+        "name": "String as () => NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Small"
+      }
+    },
+    {
+      "name": "color",
+      "description": "The selection color. This will be used for the checkbox as well as borders & the background color",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Brand"
+      }
+    },
+    {
+      "name": "disabled",
+      "description": "The disabled state of the card.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "update:modelValue",
+      "description": "Emitted when the user clicks on the card, toggling the selection state.",
+      "type": {
+        "names": [
+          "boolean"
+        ]
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "the card sections to add to the card after the checkbox"
+    }
+  ],
+  "sourceFiles": [
+    "./src/components/user-input/selectable-card/NeonSelectableCard.vue",
+    "/Users/andrew/dev/projects/neon/src/components/user-input/selectable-card/NeonSelectableCard.ts"
+  ]
+}

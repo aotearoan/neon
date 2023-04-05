@@ -23,7 +23,7 @@
           Here is an example layout for a grid with 4 NeonGridAreas with ids <em>area1</em>, <em>area2</em>,
           <em>area3</em>, <em>area4</em>:
         </p>
-        <editor v-model="layoutExample" :read-only="true" language="typescript" />
+        <editor v-model="layoutExample" language="typescript" />
         <p>
           This is a very simple example where the grid is a single row at larger sizes, wraps to a 2x3 grid on tablet
           (with area1 and area4 taking up two columns and area2 and area3 taking only one column), then a single column

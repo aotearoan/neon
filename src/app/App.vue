@@ -35,7 +35,7 @@
             <neon-link aria-label="home" class="homepage-link" href="/" outline-style="none">
               <neon-icon aria-label="Neon logo" class="homepage-logo" color="high-contrast" name="logo" />
             </neon-link>
-            <span class="tagline neon-color-text-primary">A Vue 3 Design System</span>
+            <span class="tagline neon-color-text-brand">A Vue 3 Design System</span>
           </span>
           <span class="top-nav-actions">
             <neon-button
@@ -68,7 +68,7 @@
                 <neon-link aria-label="home" class="homepage-link" href="/" outline-style="none">
                   <neon-icon aria-label="Neon logo" class="homepage-logo" color="high-contrast" name="logo" />
                 </neon-link>
-                <span class="tagline neon-color-text-primary">A Vue 3 Design System</span>
+                <span class="tagline neon-color-text-brand">A Vue 3 Design System</span>
               </span>
               <span class="side-nav-actions">
                 <neon-button

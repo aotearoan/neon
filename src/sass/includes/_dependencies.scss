@@ -118,9 +118,9 @@
           NeonToggleChip: [NeonIcon],
           NeonTooltip: [],
           NeonTopNav: [],
-          NeonTreeMenu: [NeonLink,
-  NeonIcon],
+          NeonTreeMenu: [NeonLink,NeonIcon],
           NeonStepper: [NeonIcon],
+          NeonSelectableCard: [NeonCard, NeonCardHeader, NeonSwitch, NeonIcon],
   );
 
   $neon-flattened-components: [];

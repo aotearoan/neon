@@ -11,7 +11,7 @@
           E.g. to create an anchor to scroll to the fragment <strong>#functional-palettes</strong> place the following
           <strong>NeonAnchor</strong> component inside the element to scroll to:
         </p>
-        <editor v-model="example" :read-only="true" language="html" />
+        <editor v-model="example" language="html" />
       </neon-card-body>
     </neon-card>
   </component-documentation>

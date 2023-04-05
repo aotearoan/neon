@@ -10,25 +10,25 @@
         <neon-anchor id="installation" />
         <h2 class="neon-h4">Installation</h2>
         <p>Install with NPM:</p>
-        <editor :read-only="true" language="bash" modelValue="npm install @aotearoan/neon" />
+        <editor language="bash" modelValue="npm install @aotearoan/neon" />
         <p>or yarn:</p>
-        <editor :read-only="true" language="bash" modelValue="yarn add @aotearoan/neon" />
+        <editor language="bash" modelValue="yarn add @aotearoan/neon" />
       </neon-card-body>
       <neon-card-body>
         <neon-anchor id="typescript" />
         <h2 class="neon-h4">Javascript/Typescript</h2>
         <p>Import components and supporting classes like so:</p>
-        <editor v-model="importComponents" :read-only="true" language="typescript" />
+        <editor v-model="importComponents" language="typescript" />
       </neon-card-body>
       <neon-card-body>
         <neon-anchor id="sass" />
         <h2 class="neon-h4">SASS</h2>
         <p>Import the theme:</p>
-        <editor :read-only="true" language="scss" modelValue="@use '@aotearoan/neon/theme';" />
+        <editor language="scss" modelValue="@use '@aotearoan/neon/theme';" />
         <p>
           Alternatively the theme can be imported with a list of used components to minimise the final package size:
         </p>
-        <editor v-model="allTheSass" :read-only="true" language="scss" />
+        <editor v-model="allTheSass" language="scss" />
       </neon-card-body>
       <neon-card-body>
         <neon-anchor id="html" />
@@ -37,7 +37,7 @@
           Add the necessary <em>app</em> & <em>neon</em> styles to the HTML element as well as the light/dark mode, e.g.
           to set dark mode by default:
         </p>
-        <editor v-model="darkModeExample" :read-only="true" language="html" />
+        <editor v-model="darkModeExample" language="html" />
         <p>
           For more information on dynamically changing the mode see
           <neon-link href="/design/theming#dark-mode">Dark mode</neon-link>

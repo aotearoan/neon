@@ -29,7 +29,7 @@
         <neon-anchor id="sass-mixins" />
         <h2 class="neon-h4">SASS Mixins</h2>
         <p>A SASS mixin <strong>responsive(breakpoint)</strong> is provided for convenience, e.g.</p>
-        <editor v-model="sassExample" :read-only="true" language="scss" />
+        <editor v-model="sassExample" language="scss" />
       </neon-card-body>
       <neon-card-body>
         <neon-anchor id="typescript" />
@@ -43,7 +43,7 @@
           NeonResponsiveUtils.breakpoints in combination with a window resize listener to manage changes in the
           responsive breakpoints, e.g.
         </p>
-        <editor v-model="typescriptExample" :read-only="true" language="typescript" />
+        <editor v-model="typescriptExample" language="typescript" />
       </neon-card-body>
       <neon-card-body>
         <neon-anchor id="page-content" />

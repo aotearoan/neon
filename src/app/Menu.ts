@@ -39,6 +39,12 @@ export class Menu {
                 anchors: ['Installation', 'Typescript', 'SASS', 'HTML'],
               },
               {
+                path: 'add-a-component',
+                page: 'AddingAComponent',
+                name: 'Adding Components',
+                keywords: 'add new component',
+              },
+              {
                 path: 'accessibility',
                 page: 'Accessibility',
               },
@@ -426,6 +432,13 @@ export class Menu {
                 page: 'Select',
                 keywords: 'dropdown',
                 component: 'NeonSelect',
+              },
+              {
+                path: 'selectable-card',
+                page: 'SelectableCard',
+                name: 'Selectable Card',
+                keywords: 'selectable card checklist checkbox list',
+                component: 'NeonSelectableCard',
               },
               {
                 path: 'slider',

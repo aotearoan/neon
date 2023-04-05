@@ -27,7 +27,32 @@ describe('NeonCard', () => {
     expect(html()).toMatch('neon-card--horizontal-breakpoint-tablet');
   });
 
-  it('renders default slot contents', async () => {
+  it('does not render horizontal borders class by default', () => {
+    // given
+    const { html } = harness;
+    // when / then
+    expect(html()).not.toMatch('neon-card--with-horizontal-borders');
+  });
+
+  it('renders horizontal borders class default for horizontal card', async () => {
+    // given
+    const { html, rerender } = harness;
+    // when
+    await rerender({ orientation: NeonOrientation.Horizontal });
+    // then
+    expect(html()).toMatch('neon-card--with-horizontal-borders');
+  });
+
+  it('does not render horizontal border class when disabled', async () => {
+    // given
+    const { html, rerender } = harness;
+    // when
+    await rerender({ orientation: NeonOrientation.Horizontal, horizontalBorders: false });
+    // then
+    expect(html()).not.toMatch('neon-card--with-horizontal-borders');
+  });
+
+  it('renders slot contents', async () => {
     // given
     const { html, rerender } = harness;
     // when / then
@@ -40,5 +65,14 @@ describe('NeonCard', () => {
     const { html } = harness;
     // when / then
     expect(html()).toMatch('<p>test</p>');
+  });
+
+  it('renders no break', async () => {
+    // given
+    const { container, rerender } = harness;
+    // when
+    await rerender({ noBreak: true });
+    // then
+    expect(container.querySelector('.neon-card--horizontal-breakpoint-no-break')).toBeDefined();
   });
 });

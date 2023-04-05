@@ -1,8 +1,8 @@
 {
   "displayName": "NeonStepper",
-  "exportName": "default",
-  "description": "",
+  "description": "A stepper component for assisting users in navigating through complex flows.",
   "tags": {},
+  "exportName": "default",
   "props": [
     {
       "name": "steps",
@@ -32,6 +32,17 @@
       "defaultValue": {
         "func": false,
         "value": "0"
+      }
+    },
+    {
+      "name": "color",
+      "description": "The color of the Stepper component.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Brand"
       }
     }
   ],

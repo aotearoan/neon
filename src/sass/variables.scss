@@ -232,6 +232,9 @@
   --neon-opacity-background-progress: 0.0625;
   --neon-border-radius-progress-indicator: calc(2 * var(--neon-base-space));
 
+  /* selectable card */
+  --neon-border-radius-selectable-card: calc(1.5 * var(--neon-base-space));
+
   /**********************
   * DARK THEME VARIABLES
   **********************/
@@ -496,6 +499,10 @@
     /* stepper */
     --neon-color-stepper-indicator: var(--neon-color-high-contrast-d3);
     --neon-color-stepper-disabled: var(--neon-color-disabled-light);
+
+    /* selectable card */
+    --neon-background-color-selectable-card: rgba(var(--neon-rgb-neutral-d5), 0.5);
+    --neon-box-shadow-selectable-card: 0 -2rem 4rem 0 rgba(var(--neon-rgb-neutral-d5), 0.2), 0 2rem 4rem 0 rgba(var(--neon-rgb-neutral-d5), 0.3);
   }
 
   /*********************
@@ -761,5 +768,9 @@
     /* stepper */
     --neon-color-stepper-indicator: var(--neon-color-high-contrast-l5);
     --neon-color-stepper-disabled: var(--neon-color-disabled-dark);
+
+    /* selectable card */
+    --neon-background-color-selectable-card: rgba(var(--neon-rgb-high-contrast-l4), 0.5);
+    --neon-box-shadow-selectable-card: 0 -2rem 4rem 0 rgba(var(--neon-rgb-neutral-l3), 0.1), 0 2rem 4rem 0 rgba(var(--neon-rgb-neutral-l3), 0.15);
   }
 }

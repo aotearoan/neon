@@ -28,7 +28,7 @@
           Colors can be overridden using CSS variables, you will find all CSS base color variables in the
           src/sass/colors.scss file, e.g. to override the <em>brand</em> palette:
         </p>
-        <editor v-model="colorPalette" :read-only="true" language="scss" />
+        <editor v-model="colorPalette" language="scss" />
       </neon-card-body>
       <neon-card-body class="color-palettes">
         <neon-anchor id="brand-palettes" />

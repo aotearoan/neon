@@ -230,4 +230,8 @@ $neon-components: null !default;
   @if index($neon-flattened-components, NeonStepper) {
     @include components.stepper;
   }
+
+  @if index($neon-flattened-components, NeonSelectableCard) {
+    @include components.selectable-card;
+  }
 }

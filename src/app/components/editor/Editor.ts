@@ -27,7 +27,7 @@ export default defineComponent({
   },
   props: {
     modelValue: { type: String, required: true },
-    readOnly: { type: Boolean, default: false },
+    readOnly: { type: Boolean, default: true },
     language: { type: String, default: 'html' },
     ghLink: { type: String, default: null },
   },

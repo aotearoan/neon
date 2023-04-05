@@ -42,6 +42,7 @@ export { default as NeonRangeSlider } from './components/user-input/range-slider
 export { default as NeonSideNav } from './components/layout/side-nav/NeonSideNav.vue';
 export { default as NeonSearch } from './components/user-input/search/NeonSearch.vue';
 export { default as NeonSelect } from './components/user-input/select/NeonSelect.vue';
+export { default as NeonSelectableCard } from './components/user-input/selectable-card/NeonSelectableCard.vue';
 export { default as NeonSkeletonLoader } from './components/feedback/skeleton-loader/NeonSkeletonLoader.vue';
 export { default as NeonSlider } from './components/user-input/slider/NeonSlider.vue';
 export { default as NeonSplashLoader } from './components/feedback/splash-loader/NeonSplashLoader.vue';

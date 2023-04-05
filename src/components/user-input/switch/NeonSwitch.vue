@@ -17,16 +17,16 @@
     class="neon-switch no-style"
     data-testid="checkbox-label"
     tabindex="-1"
-    @keydown.enter="toggleSwitch"
-    @keydown.space="toggleSwitch"
-    @keydown.space.prevent=""
+    @click="toggleSwitch"
+    @keydown.enter.stop.prevent="toggleSwitch"
+    @keydown.space.stop.prevent="toggleSwitch"
   >
     <neon-icon
       v-if="switchStyle === 'checkbox'"
       :disabled="disabled"
       :inverse="true"
       :name="indeterminate ? 'dash' : 'check'"
-      :tabindex="!disabled ? 0 : undefined"
+      :tabindex="!disabled && label ? 0 : undefined"
       class="neon-switch__checkbox"
     />
     <span v-if="switchStyle === 'switch'" :tabindex="!disabled ? 0 : undefined" class="neon-switch__switch">
@@ -40,10 +40,9 @@
       data-testid="checkbox"
       type="checkbox"
       v-bind="sanitizedAttributes"
-      @click="toggleSwitch"
       @input="toggleSwitch"
     />
-    <span class="neon-switch__label">{{ label }}</span>
+    <span v-if="label" class="neon-switch__label">{{ label }}</span>
   </label>
 </template>
 

@@ -104,8 +104,16 @@ describe('NeonSwitch', () => {
 
   it('renders label', () => {
     // given
-    const { getByText } = harness;
+    const { container, getByText } = harness;
     getByText(label);
+    expect(container.querySelector('.neon-switch__label')).toBeDefined();
+  });
+
+  it('does not render label when not provided', async () => {
+    // given
+    const { container, rerender } = harness;
+    await rerender({ label: null });
+    expect(container.querySelector('.neon-switch__label')).toBeNull();
   });
 
   it('renders icon for checkbox', async () => {
