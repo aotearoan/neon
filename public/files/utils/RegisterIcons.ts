@@ -26,11 +26,13 @@ import htmlLogo from '@/common/icons/html-logo.svg';
 import images from '@/common/icons/images.svg';
 import infoCircle from '@/common/icons/info-circle.svg';
 import linkExternal from '@/common/icons/link-external.svg';
+import loading from '@/common/icons/loading.svg';
 import lock from '@/common/icons/lock.svg';
 import mail from '@/common/icons/mail.svg';
 import menu from '@/common/icons/menu.svg';
 import minus from '@/common/icons/minus.svg';
 import moon from '@/common/icons/moon.svg';
+import neonLogo from '@/common/icons/neon-logo.svg';
 import palette from '@/common/icons/palette.svg';
 import plus from '@/common/icons/plus.svg';
 import send from '@/common/icons/send.svg';
@@ -41,8 +43,6 @@ import timesCircle from '@/common/icons/times-circle.svg';
 import user from '@/common/icons/user.svg';
 import visibilityOff from '@/common/icons/visibility-off.svg';
 import visibilityOn from '@/common/icons/visibility-on.svg';
-import loading from '@/common/icons/loading.svg';
-import logo from '@/common/icons/logo.svg';
 
 export class RegisterIcons {
   public static register() {
@@ -73,12 +73,13 @@ export class RegisterIcons {
     NeonIconRegistry.addIcon('images', images);
     NeonIconRegistry.addIcon('info-circle', infoCircle);
     NeonIconRegistry.addIcon('link-external', linkExternal);
+    NeonIconRegistry.addIcon('loading', loading);
     NeonIconRegistry.addIcon('lock', lock);
-    NeonIconRegistry.addIcon('logo', logo);
     NeonIconRegistry.addIcon('mail', mail);
     NeonIconRegistry.addIcon('menu', menu);
     NeonIconRegistry.addIcon('minus', minus);
     NeonIconRegistry.addIcon('moon', moon);
+    NeonIconRegistry.addIcon('neon-logo', neonLogo);
     NeonIconRegistry.addIcon('palette', palette);
     NeonIconRegistry.addIcon('plus', plus);
     NeonIconRegistry.addIcon('send', send);
@@ -89,8 +90,5 @@ export class RegisterIcons {
     NeonIconRegistry.addIcon('user', user);
     NeonIconRegistry.addIcon('visibility-off', visibilityOff);
     NeonIconRegistry.addIcon('visibility-on', visibilityOn);
-
-    // animated icons
-    NeonIconRegistry.addIcon('loading', loading);
   }
 }

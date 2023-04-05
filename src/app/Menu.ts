@@ -74,6 +74,10 @@ export class Menu {
                 anchors: ['Introduction', 'Brand palettes', 'Functional palettes', 'Neutral palettes', 'Color classes'],
               },
               {
+                path: 'icons',
+                page: 'Icons',
+              },
+              {
                 path: 'layout',
                 page: 'Layout',
                 anchors: ['Units & Spacing', 'Desktop layout', 'Responsive layout', 'Page content'],

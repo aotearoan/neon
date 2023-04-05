@@ -33,7 +33,7 @@
               </div>
             </neon-drawer>
             <neon-link aria-label="home" class="homepage-link" href="/" outline-style="none">
-              <neon-icon aria-label="Neon logo" class="homepage-logo" color="high-contrast" name="logo" />
+              <neon-icon aria-label="Neon logo" class="homepage-logo" color="high-contrast" name="neon-logo" />
             </neon-link>
             <span class="tagline neon-color-text-brand">A Vue 3 Design System</span>
           </span>
@@ -66,7 +66,7 @@
             <div class="app-header">
               <span class="logo-wrapper side-nav-logo-wrapper">
                 <neon-link aria-label="home" class="homepage-link" href="/" outline-style="none">
-                  <neon-icon aria-label="Neon logo" class="homepage-logo" color="high-contrast" name="logo" />
+                  <neon-icon aria-label="Neon logo" class="homepage-logo" color="high-contrast" name="neon-logo" />
                 </neon-link>
                 <span class="tagline neon-color-text-brand">A Vue 3 Design System</span>
               </span>
