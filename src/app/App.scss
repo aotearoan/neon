@@ -52,6 +52,30 @@
       @include responsive.responsive(larger-than-tablet) {
         display: none !important;
       }
+
+      .top-nav-logo-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        & > * {
+          margin-right: calc(2 * var(--neon-base-space));
+        }
+
+        .neon-link__label {
+          display: flex;
+        }
+
+        .homepage-logo {
+          width: 96rem;
+          height: 25.2rem;
+
+          @include responsive.responsive(mobile-large) {
+            width: 64rem;
+            height: 16.8rem;
+          }
+        }
+      }
     }
 
     .app-footer {
