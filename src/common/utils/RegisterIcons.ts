@@ -18,6 +18,7 @@ import dot from '@/common/icons/dot.svg';
 import download from '@/common/icons/download.svg';
 import ellipsis from '@/common/icons/ellipsis.svg';
 import exclamationCircle from '@/common/icons/exclamation-circle.svg';
+import feather from '@/common/icons/feather.svg';
 import github from '@/common/icons/github.svg';
 import hammer from '@/common/icons/hammer.svg';
 import heart from '@/common/icons/heart.svg';
@@ -65,6 +66,7 @@ export class RegisterIcons {
     NeonIconRegistry.addIcon('download', download);
     NeonIconRegistry.addIcon('ellipsis', ellipsis);
     NeonIconRegistry.addIcon('exclamation-circle', exclamationCircle);
+    NeonIconRegistry.addIcon('feather', feather);
     NeonIconRegistry.addIcon('github', github);
     NeonIconRegistry.addIcon('hammer', hammer);
     NeonIconRegistry.addIcon('heart', heart);

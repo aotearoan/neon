@@ -16,8 +16,8 @@
         </p>
         <h3 class="neon-h5">Vue Component + Typescript</h3>
         <ol>
-          <li>Increase minor version in package.json & set patch version to 0.</li>
-          <li>Decide in which of the sections the component belongs.</li>
+          <li>Increment minor version in package.json & set patch version to 0.</li>
+          <li>Decide on a component name & in which of the sections the component belongs.</li>
           <li>Create component vue/ts files in the relevant directory.</li>
           <li>Add component vue file export to <em>src/neon.ts</em>.</li>
           <li>Question: should this component define a 2 way bound modelValue?</li>
@@ -64,10 +64,6 @@
             Create the example/documentation for the component under <em>src/app/views</em>. The directory structure
             here should match that of the components. Here it is recommended to look at similar components to see how to
             correctly document a component.
-          </li>
-          <li>
-            Examples are compiled dynamically so add the new component as a dependency to
-            <em>src/app/components/example/Example.ts</em>.
           </li>
           <li>
             In the file <em>src/app/Menu.ts</em> add an entry for the new component documentation page in the relevant

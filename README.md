@@ -1,5 +1,3 @@
-<img src="./logo.png">
-
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/aotearoan/neon)
 ![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/@aotearoan/neon)
 ![GitHub last commit](https://img.shields.io/github/last-commit/aotearoan/neon)
@@ -23,47 +21,44 @@ or yarn:
 
 Import components and supporting classes like so:
 <pre>
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonLogo } from '@aotearoan/neon';
+import { NeonButton } from '@aotearoan/neon';
 
-@Component({
+export default defineComponent({
+  name: 'SomeComponent',
   components: {
-    NeonLogo,
+    NeonButton,
   },
-})
-export default class App extends Vue {}
+  ...
+});
 </pre>
 
 ### SASS
 
-<p>To use a theme without any customization simply import the basic theme file</p>
+To import the theme:
 <pre>
-@use '~@aotearoan/neon/theme';
-</pre>
-<p>If, however you would like to override/customize the theme then you need to include the following:</p>
-<pre>
-.app {
-  &.neon {
-    // override colors, palettes and other basic variables here BEFORE importing the theme, e.g. $neon-color-primary: #bada55
-    @use '~@aotearoan/neon/theme';
-    // include custom app SASS here (you can use neon's defined variables, mixins and functions)
-    &.neon-mode--dark {
-      // override dark mode specific variables here, e.g. $neon-border-color: #bada55
-      @use '~@aotearoan/neon/theme/dark';
-      // include custom app dark mode SASS here (you can use neon's defined variables, mixins and functions)
-    }
-    &.neon-mode--light {
-      // override light mode specific variables here, e.g. $neon-border-color: #bada55
-      @use '~@aotearoan/neon/theme/light';
-      // include custom app light mode SASS here (you can use neon's defined variables, mixins and functions)
-    }
-  }
-}
+@use '@aotearoan/neon/theme';
 </pre>
 
-Finally, the theme and mode (light/dark) need to be set on the document:
-<pre>&lt;html class="app neon neon-mode--dark"&gt;</pre>
+Alternatively the theme can be imported with a list of used components to minimise the final package size:
+<pre>
+@use '@aotearoan/neon/theme' with (
+  $neon-components: (
+      NeonAlert,
+      NeonButton,
+      NeonCard,
+      NeonCardBody,
+      NeonCardFooter,
+      NeonCardHeader,
+      NeonDrawer,
+  ),
+);</pre>
 
-[![Stargazers repo roster for @aotearoan/neon](https://reporoster.com/stars/aotearoan/neon)](https://github.com/aotearoan/neon/stargazers)
+### HTML
 
-[![Forkers repo roster for @aotearoan/neon](https://reporoster.com/forks/aotearoan/neon)](https://github.com/aotearoan/neon/network/members)
+Add the necessary _app_ & _Neon_ styles to the HTML element as well as the light/dark mode, e.g.to set dark mode by
+default:
+
+<pre>&lt;html class="app neon neon-mode--dark"></pre>
+For more information on dynamically changing the mode
+see [Dark mode](https://aotearoan.github.io/neon/design/theming#dark-mode).
+
