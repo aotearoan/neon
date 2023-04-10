@@ -55,6 +55,10 @@ export default defineComponent({
      */
     icon: { type: String, default: null },
     /**
+     * Make the input field icon read-only, i.e. it will not emit events or be treated as a focusable button.
+     */
+    iconReadonly: { type: Boolean, default: false },
+    /**
      * Hide the icon button, e.g. the X button to clear the input's contents.
      */
     hideIcon: { type: Boolean, default: false },

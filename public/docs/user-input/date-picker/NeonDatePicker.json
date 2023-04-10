@@ -1,0 +1,229 @@
+{
+  "displayName": "NeonDatePicker",
+  "description": "<strong>NeonDatePicker</strong> is the equivalent of the native\n<a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date\" target=\"_blank\">HTML Date Input</a>.\nIt accepts an <a href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601</a> date string as values &\nallows the user to select a date. Dates are formatted with the provided locale, if none is provided the browser\nlocale is used as a default. On touch devices the native date picker is presented to the user.\n\nThis component interaction was inspired by this <a href=\"https://icehaunter.github.io/vue3-datepicker\" target=\"_blank\">vue-datepicker</a>",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "modelValue",
+      "description": "The selected date. A date string in the\n<a href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601</a> format.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "locale",
+      "description": "The locale used for display purposes. This defaults to the browser's locale if none is provided.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "disabled",
+      "description": "Disable date picker",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "size",
+      "description": "The size of the date picker, one of NeonSize.Small | NeonSize.Medium | NeonSize.Large.",
+      "type": {
+        "name": "String as () => NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "color",
+      "description": "Color of the date picker",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Primary"
+      }
+    },
+    {
+      "name": "min",
+      "description": "Minimum allowed date value in the <a href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601</a> format.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "max",
+      "description": "Maximum allowed date value in the <a href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601</a> format.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "disabledDates",
+      "description": "Disabled dates, a list of <a href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601</a> format\ndates for which to disable selection.",
+      "type": {
+        "name": "Array as () => Array<string>"
+      },
+      "defaultValue": {
+        "func": true,
+        "value": "() => []"
+      }
+    },
+    {
+      "name": "placeholder",
+      "description": "This is the placeholder for the text input when no value is provided.",
+      "type": {
+        "name": "string"
+      },
+      "required": false
+    },
+    {
+      "name": "openCalendarLabel",
+      "description": "This is the label of the input field which opens the calendar. This is technically a button.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Open calendar'"
+      }
+    },
+    {
+      "name": "doneLabel",
+      "description": "This is the label of the 'Done' button in the calendar popup.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Done'"
+      }
+    },
+    {
+      "name": "clearLabel",
+      "description": "This is the label of the 'Clear' button in the calendar popup.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Clear'"
+      }
+    },
+    {
+      "name": "changeMonthLabel",
+      "description": "This is the ARIA label of the 'Change month' button in the calendar popup.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Change month'"
+      }
+    },
+    {
+      "name": "previousMonthLabel",
+      "description": "This is the ARIA label of the 'Previous month' button in the calendar popup.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Previous month'"
+      }
+    },
+    {
+      "name": "nextMonthLabel",
+      "description": "This is the ARIA label of the 'Next month' button in the calendar popup.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Next month'"
+      }
+    },
+    {
+      "name": "changeYearLabel",
+      "description": "This is the ARIA label of the 'Change year' button in the calendar popup.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Change year'"
+      }
+    },
+    {
+      "name": "previousYearLabel",
+      "description": "This is the ARIA label of the 'Previous year' button in the calendar popup.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Previous year'"
+      }
+    },
+    {
+      "name": "nextYearLabel",
+      "description": "This is the ARIA label of the 'Next year' button in the calendar popup.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Next year'"
+      }
+    },
+    {
+      "name": "previousDecadeLabel",
+      "description": "This is the ARIA label of the 'Previous decade' button in the calendar popup.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Previous decade'"
+      }
+    },
+    {
+      "name": "nextDecadeLabel",
+      "description": "This is the ARIA label of the 'Next decade' button in the calendar popup.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Next decade'"
+      }
+    }
+  ],
+  "sourceFiles": [
+    "./src/components/user-input/date-picker/NeonDatePicker.vue",
+    "/Users/andrew/dev/projects/neon/src/components/user-input/date-picker/NeonDatePicker.ts"
+  ]
+}

@@ -27,23 +27,45 @@ export default defineConfig({
     PACKAGE_VERSION: JSON.stringify(pkg.version),
   },
   build: {
+    minify: true,
+    reportCompressedSize: true,
+    emptyOutDir: false,
+    outDir: './dist',
+    sourcemap: true,
     lib: {
       name: '@aotearoan/neon',
       entry: resolve(__dirname, './src/neon.ts'),
-      formats: ['es'],
+      fileName: 'neon',
     },
     rollupOptions: {
-      external: ['vue', 'vue-router'],
-      output: {
-        preserveModules: true,
-        entryFileNames: ({ name: fileName }) => {
-          return `${fileName}.js`;
-        },
-        globals: {
-          vue: 'Vue',
-          'vue-router': 'VueRouter',
-        },
+      input: {
+        neon: './src/neon.ts'
       },
+      external: ['vue', 'vue-router'],
+      output: [
+        {
+          preserveModules: true,
+          entryFileNames: () => {
+            return '[name].[format].js';
+          },
+          globals: {
+            vue: 'Vue',
+            'vue-router': 'VueRouter',
+          },
+          format: 'cjs',
+        },
+        {
+          preserveModules: true,
+          entryFileNames: () => {
+            return '[name].[format].js';
+          },
+          globals: {
+            vue: 'Vue',
+            'vue-router': 'VueRouter',
+          },
+          format: 'es',
+        },
+      ],
     },
   },
 });

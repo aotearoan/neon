@@ -82,7 +82,7 @@ describe('NeonSlider', () => {
     const { container } = harness;
     // when / then
     expect(container.querySelector('.neon-slider--disabled')).toBeNull();
-    expect(container.querySelector('.neon-slider__input')?.getAttribute('disabled')).toEqual('false');
+    expect((container.querySelector('.neon-slider__input') as HTMLInputElement)?.disabled).toEqual(false);
   });
 
   it('renders disabled', async () => {
@@ -91,7 +91,7 @@ describe('NeonSlider', () => {
     await rerender({ disabled: true });
     // when / then
     expect(container.querySelector('.neon-slider--disabled')).toBeDefined();
-    expect(container.querySelector('.neon-slider__input')?.getAttribute('disabled')).toEqual('true');
+    expect((container.querySelector('.neon-slider__input') as HTMLInputElement)?.disabled).toEqual(true);
   });
 
   it('renders id', async () => {
@@ -191,7 +191,7 @@ describe('NeonSlider', () => {
 
     // when / then
     const input = container.querySelector('.neon-slider__input');
-    expect(input?.getAttribute('value')).toEqual('5000');
+    expect((input as HTMLInputElement)?.value).toEqual('5000');
     expect(input?.getAttribute('aria-valuenow')).toEqual('5000');
     expect(input?.getAttribute('min')).toEqual('1000');
     expect(input?.getAttribute('aria-valuemin')).toEqual('1000');

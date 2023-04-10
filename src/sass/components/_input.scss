@@ -36,7 +36,7 @@ $message-height: calc(var(--neon-font-size-s) * var(--neon-line-height-ratio));
   }
 
   &.neon-input--with-icon {
-    .neon-icon {
+    .neon-input__icon:not(.neon-input__icon--read-only) {
       cursor: pointer;
 
       &:active {

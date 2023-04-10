@@ -12,7 +12,6 @@
       :color="color"
       button-style="text"
       class="neon-note__close"
-      data-testid="note-button"
       icon="times"
       size="s"
       tabindex="0"

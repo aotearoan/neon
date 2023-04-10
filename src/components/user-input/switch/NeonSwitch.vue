@@ -15,7 +15,6 @@
     ]"
     :role="switchStyle"
     class="neon-switch no-style"
-    data-testid="checkbox-label"
     tabindex="-1"
     @click="toggleSwitch"
     @keydown.enter.stop.prevent="toggleSwitch"
@@ -37,10 +36,8 @@
       :checked="!indeterminate && modelValue"
       :disabled="disabled"
       class="neon-switch__input"
-      data-testid="checkbox"
       type="checkbox"
       v-bind="sanitizedAttributes"
-      @input="toggleSwitch"
     />
     <span v-if="label" class="neon-switch__label">{{ label }}</span>
   </label>

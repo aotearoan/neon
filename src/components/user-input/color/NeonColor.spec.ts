@@ -64,10 +64,10 @@ describe('NeonColor', () => {
 
   it('renders value', () => {
     const { container } = harness;
-    expect(container.querySelector('.neon-color__text-input .neon-input__textfield')?.getAttribute('value')).toEqual(
-      value,
-    );
-    expect(container.querySelector('.neon-color__input .neon-input__textfield')?.getAttribute('value')).toEqual(value);
+    const input = container.querySelector('.neon-color__text-input .neon-input__textfield') as HTMLInputElement;
+    expect(input?.value).toEqual(value);
+    const input2 = container.querySelector('.neon-color__input .neon-input__textfield') as HTMLInputElement;
+    expect(input2?.value).toEqual(value);
     expect(
       (container.querySelector('.neon-color__indicator') as HTMLInputElement).style.getPropertyValue(
         'background-color',
@@ -80,8 +80,8 @@ describe('NeonColor', () => {
 
   it('emits changed text value', async () => {
     const newValue = '#1a1a1a';
-    const { emitted, getAllByTestId } = harness;
-    const el = getAllByTestId('neonInput')[0] as HTMLInputElement;
+    const { container, emitted } = harness;
+    const el = container.querySelectorAll('.neon-color__text-input .neon-input__text')[0] as HTMLInputElement;
     el.value = newValue;
     await fireEvent.input(el);
     expect(emitted()['update:modelValue'][0]).toEqual([newValue]);

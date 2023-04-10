@@ -83,10 +83,10 @@ describe('NeonSwitch', () => {
 
   it('renders checked', () => {
     // given
-    const { getByTestId, html } = harness;
+    const { container, html } = harness;
     // when / then
-    const checkbox = getByTestId('checkbox');
-    expect(checkbox.getAttribute('checked')).toEqual('true');
+    const checkbox = container.querySelector('.neon-switch__input') as HTMLInputElement;
+    expect(checkbox.checked).toEqual(true);
     const result = html();
     expect(result).toMatch('neon-switch--checked');
     expect(checkbox.parentElement?.getAttribute('aria-checked')).toEqual('true');
@@ -126,56 +126,68 @@ describe('NeonSwitch', () => {
   });
 
   it('emits false when clicking checked checkbox', async () => {
-    const { emitted, getByTestId } = harness;
-    await fireEvent.click(getByTestId('checkbox'));
+    const { container, emitted } = harness;
+    await fireEvent.click(container.querySelector('.neon-switch__input') as HTMLInputElement);
     expect(emitted()['update:modelValue']).toEqual([[false]]);
   });
 
   it('emits true when clicking unchecked checkbox', async () => {
-    const { emitted, getByTestId, rerender } = harness;
+    const { container, emitted, rerender } = harness;
     await rerender({ ...props, modelValue: false });
-    await fireEvent.click(getByTestId('checkbox'));
+    await fireEvent.click(container.querySelector('.neon-switch__input') as HTMLInputElement);
     expect(emitted()['update:modelValue']).toEqual([[true]]);
   });
 
   it('emits true when clicking indeterminate checkbox', async () => {
-    const { emitted, getByTestId, rerender } = harness;
+    const { container, emitted, rerender } = harness;
     await rerender({ ...props, modelValue: false, indeterminate: true });
-    await fireEvent.click(getByTestId('checkbox'));
+    await fireEvent.click(container.querySelector('.neon-switch__input') as HTMLInputElement);
     expect(emitted()['update:modelValue']).toEqual([[true]]);
     expect(emitted()['indeterminate-change']).toEqual([[false]]);
   });
 
   it('emits nothing when clicking disabled checkbox', async () => {
-    const { emitted, getByTestId, rerender } = harness;
+    const { container, emitted, rerender } = harness;
     await rerender({ ...props, disabled: true });
-    await fireEvent.click(getByTestId('checkbox'));
+    await fireEvent.click(container.querySelector('.neon-switch__input') as HTMLInputElement);
     expect(emitted()['update:modelValue']).toBeUndefined();
   });
 
   it('emits false when keypress enter', async () => {
-    const { emitted, getByTestId } = harness;
-    await fireEvent.keyDown(getByTestId('checkbox-label'), { key: 'Enter', code: 'Enter' });
+    const { container, emitted } = harness;
+    await fireEvent.keyDown(container.querySelector('.neon-switch') as HTMLLabelElement, {
+      key: 'Enter',
+      code: 'Enter',
+    });
     expect(emitted()['update:modelValue']).toEqual([[false]]);
   });
 
   it('emits nothing when keypress enter & disabled', async () => {
-    const { emitted, getByTestId, rerender } = harness;
+    const { container, emitted, rerender } = harness;
     await rerender({ ...props, disabled: true });
-    await fireEvent.keyDown(getByTestId('checkbox-label'), { key: 'Enter', code: 'Enter' });
+    await fireEvent.keyDown(container.querySelector('.neon-switch') as HTMLLabelElement, {
+      key: 'Enter',
+      code: 'Enter',
+    });
     expect(emitted()['update:modelValue']).toBeUndefined();
   });
 
   it('emits false when keypress space', async () => {
-    const { emitted, getByTestId } = harness;
-    await fireEvent.keyDown(getByTestId('checkbox-label'), { key: 'Space', code: 'Space' });
+    const { container, emitted } = harness;
+    await fireEvent.keyDown(container.querySelector('.neon-switch') as HTMLLabelElement, {
+      key: 'Space',
+      code: 'Space',
+    });
     expect(emitted()['update:modelValue']).toEqual([[false]]);
   });
 
   it('emits nothing when keypress space & disabled', async () => {
-    const { emitted, getByTestId, rerender } = harness;
+    const { container, emitted, rerender } = harness;
     await rerender({ ...props, disabled: true });
-    await fireEvent.keyDown(getByTestId('checkbox-label'), { key: 'Space', code: 'Space' });
+    await fireEvent.keyDown(container.querySelector('.neon-switch') as HTMLLabelElement, {
+      key: 'Space',
+      code: 'Space',
+    });
     expect(emitted()['update:modelValue']).toBeUndefined();
   });
 });

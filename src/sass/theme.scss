@@ -234,4 +234,8 @@ $neon-components: null !default;
   @if index($neon-flattened-components, NeonSelectableCard) {
     @include components.selectable-card;
   }
+
+  @if index($neon-flattened-components, NeonDatePicker) {
+    @include components.date-picker;
+  }
 }

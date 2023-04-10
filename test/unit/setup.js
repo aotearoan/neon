@@ -1,9 +1,9 @@
-// eslint-disable-next-line no-undef
-require("jsdom-global")();
-
-// eslint-disable-next-line no-undef
-require("./before-tests");
-
-const { NeonDebounceUtils } = require("@/common/utils/NeonDebounceUtils");
+import { RegisterIcons } from "@/common/utils/RegisterIcons";
+import { NeonDebounceUtils } from "@/common/utils/NeonDebounceUtils";
 
 NeonDebounceUtils.setGlobalDebounceTimeout(0);
+RegisterIcons.register();
+
+global.PACKAGE_VERSION = "0.0.0";
+window.scrollTo = () => {
+};

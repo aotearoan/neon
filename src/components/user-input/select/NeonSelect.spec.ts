@@ -224,7 +224,7 @@ describe('NeonSelect', () => {
     expect(container.querySelector('.neon-select--multiple')).toBeNull();
     expect(container.querySelector('.neon-select')?.getAttribute('aria-multiselectable')).toEqual('false');
     expect(container.querySelectorAll('.neon-switch--checkbox').length).toEqual(0);
-    expect(container.querySelector('.neon-select__native')?.getAttribute('multiple')).toEqual('false');
+    expect((container.querySelector('.neon-select__native') as HTMLSelectElement)?.multiple).toEqual(false);
     expect(container.querySelectorAll('.neon-select__native option[multiple=true]').length).toEqual(0);
   });
 
@@ -235,7 +235,7 @@ describe('NeonSelect', () => {
     expect(container.querySelector('.neon-select--multiple')).toBeDefined();
     expect(container.querySelector('.neon-select')?.getAttribute('aria-multiselectable')).toEqual('true');
     expect(container.querySelectorAll('.neon-switch--checkbox').length).toEqual(options.length);
-    expect(container.querySelector('.neon-select__native')?.getAttribute('multiple')).toEqual('true');
+    expect((container.querySelector('.neon-select__native') as HTMLSelectElement)?.multiple).toEqual(true);
     expect(container.querySelectorAll('.neon-select__native option[multiple]').length).toEqual(options.length);
   });
 

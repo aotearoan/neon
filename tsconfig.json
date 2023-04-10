@@ -28,8 +28,10 @@
       "src"
     ],
     "outDir": "dist/",
+    "allowJs": true,
     "strict": true,
     "jsx": "react",
+    "isolatedModules": true,
     "importHelpers": true,
     "moduleResolution": "node",
     "experimentalDecorators": true,
@@ -42,12 +44,13 @@
       "jest",
       "node",
       "vue",
-      "jsdom-global"
+      "jsdom-global",
+      "vite/client"
     ]
   },
   "references": [
     {
-      "path": "./tsconfig.node.json"
+      "path": "./tsconfig.base.json"
     }
   ],
 }

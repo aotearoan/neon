@@ -1,7 +1,7 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonStepper from './NeonStepper.vue';
-import { NeonFunctionalColor } from '@/neon';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 describe('NeonStepper.vue', () => {
   let harness: RenderResult;

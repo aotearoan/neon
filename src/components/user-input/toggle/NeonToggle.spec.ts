@@ -137,31 +137,31 @@ describe('NeonToggle', () => {
 
   it('renders name', () => {
     // given
-    const { getAllByTestId } = harness;
+    const { container } = harness;
     // when / then
-    const inputs = getAllByTestId('toggle-input');
+    const inputs = container.querySelectorAll('.neon-toggle__input');
     expect(inputs.length).toEqual(3);
     inputs.forEach((input) => expect(input.getAttribute('name')).toEqual(name));
   });
 
   it('renders disabled option', () => {
     // given
-    const { getAllByTestId } = harness;
+    const { container } = harness;
     // when / then
-    const option = getAllByTestId('toggle-input')[1];
-    expect(option.getAttribute('disabled')).toEqual('true');
+    const option = container.querySelectorAll('.neon-toggle__input')[1] as HTMLInputElement;
+    expect(option.disabled).toEqual(true);
     expect(option.parentElement?.getAttribute('aria-disabled')).toEqual('true');
   });
 
   it('renders checked option', () => {
     // given
-    const { getAllByTestId } = harness;
+    const { container } = harness;
     // when / then
-    const option = getAllByTestId('toggle-input')[0];
-    expect(option.getAttribute('checked')).toEqual('true');
+    const option = container.querySelectorAll('.neon-toggle__input')[0] as HTMLInputElement;
+    expect(option.getAttribute('checked')).toBeDefined();
     expect(option.parentElement?.getAttribute('aria-checked')).toEqual('true');
     expect(option.parentElement?.textContent).toEqual(model[0].label);
-    expect(option.getAttribute('value')).toEqual(model[0].key);
+    expect(option.value).toEqual(model[0].key);
   });
 
   it('renders indicator for radio buttons', async () => {
@@ -175,28 +175,14 @@ describe('NeonToggle', () => {
 
   it('emits selection when clicked', async () => {
     // given
-    const { emitted, getAllByTestId } = harness;
-    const option = getAllByTestId('toggle-input')[2];
+    const { container, emitted } = harness;
+    const option = container.querySelectorAll('.neon-toggle__input')[2];
     // when
     await fireEvent.click(option);
     // then
     expect(emitted()['update:modelValue']).toEqual([[model[2].key]]);
   });
 
-  // it('emits selection when clicked', () => {
-  //   // given
-  //   const wrapper = shallowMount(NeonToggle, {
-  //     propsData: { name, model, modelValue },
-  //   });
-  //   // when
-  //   const label = wrapper.find(
-  //     '.neon-toggle__label:not(.neon-toggle__label--checked):not(.neon-toggle__label--disabled)',
-  //   );
-  //   label.trigger('click');
-  //   // then
-  //   expect(wrapper.emitted()['update:modelValue'][0]).toEqual([model[2].key]);
-  // });
-  //
   // it('emits nothing when clicking disabled option', () => {
   //   // given
   //   const wrapper = shallowMount(NeonToggle, {

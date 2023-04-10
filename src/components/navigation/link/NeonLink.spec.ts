@@ -75,16 +75,19 @@ describe('NeonLink', () => {
   });
 
   it('emits click event', async () => {
-    const { emitted, getByTestId, rerender } = harness;
+    const { container, emitted, rerender } = harness;
     await rerender({ href: '/test' });
-    await fireEvent.click(getByTestId('link'));
+    await fireEvent.click(container.querySelector('.neon-link') as HTMLAnchorElement);
     expect(emitted().click).toEqual([[]]);
   });
 
   it('emits click event on enter keydown', async () => {
-    const { emitted, getByTestId, rerender } = harness;
+    const { container, emitted, rerender } = harness;
     await rerender({ href: '/test' });
-    await fireEvent.keyDown(getByTestId('link'), { key: 'Enter', code: 'Enter' });
+    await fireEvent.keyDown(container.querySelector('.neon-link') as HTMLAnchorElement, {
+      key: 'Enter',
+      code: 'Enter',
+    });
     expect(emitted().click).toEqual([[]]);
   });
 });

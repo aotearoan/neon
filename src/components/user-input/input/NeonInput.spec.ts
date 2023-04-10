@@ -87,9 +87,7 @@ describe('NeonInput', () => {
     const { container, rerender } = harness;
     const modelValue = 'xdd';
     await rerender({ modelValue });
-    expect((container.querySelector('.neon-input__textfield') as HTMLInputElement).getAttribute('value')).toEqual(
-      modelValue,
-    );
+    expect((container.querySelector('.neon-input__textfield') as HTMLInputElement).value).toEqual(modelValue);
   });
 
   it('renders as input by default', () => {
@@ -159,9 +157,9 @@ describe('NeonInput', () => {
   it('emits update event', async () => {
     // given
     const newValue = 'new modelValue';
-    const { emitted, getByTestId } = harness;
+    const { container, emitted } = harness;
     // when
-    const el = getByTestId('neonInput') as HTMLInputElement;
+    const el = container.querySelector('.neon-input__textfield') as HTMLInputElement;
     el.value = newValue;
     await fireEvent.input(el);
     // then
@@ -173,10 +171,10 @@ describe('NeonInput', () => {
     const newValue = 'new modelValue';
     const rows = 2;
     const maxlength = 5;
-    const { emitted, getByTestId, rerender } = harness;
+    const { container, emitted, rerender } = harness;
     await rerender({ rows, maxlength });
     // when
-    const el = getByTestId('neonTextArea') as HTMLTextAreaElement;
+    const el = container.querySelector('.neon-input__textarea') as HTMLTextAreaElement;
     el.value = newValue;
     await fireEvent.input(el);
     expect(emitted()['update:modelValue'][0]).toEqual([newValue.substring(0, maxlength)]);
@@ -187,10 +185,10 @@ describe('NeonInput', () => {
     const newValue = 'test new modelValue';
     const rows = 2;
     const maxlength = 4;
-    const { emitted, getByTestId, rerender } = harness;
+    const { container, emitted, rerender } = harness;
     await rerender({ rows, maxlength, modelValue: 'test' });
     // when
-    const el = getByTestId('neonTextArea') as HTMLTextAreaElement;
+    const el = container.querySelector('.neon-input__textarea') as HTMLTextAreaElement;
     el.value = newValue;
     await fireEvent.input(el);
     expect(emitted()['update:modelValue']).toBeUndefined();
@@ -198,10 +196,10 @@ describe('NeonInput', () => {
 
   it('emits focus/blur events', async () => {
     // given
-    const { getByTestId, emitted } = harness;
+    const { container, emitted } = harness;
     // when
-    await fireEvent.blur(getByTestId('neonInput'));
-    await fireEvent.focus(getByTestId('neonInput'));
+    await fireEvent.blur(container.querySelector('.neon-input__textfield') as HTMLInputElement);
+    await fireEvent.focus(container.querySelector('.neon-input__textfield') as HTMLInputElement);
     // then
     expect(emitted().blur).toBeDefined();
     expect(emitted().focus).toBeDefined();

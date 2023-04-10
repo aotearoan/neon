@@ -262,8 +262,8 @@ describe('NeonNumber', () => {
     const { container, rerender } = harness;
     await rerender({ modelValue: 1000 });
     // when / then
-    const input = container.querySelector('.neon-input__textfield');
-    expect(input?.getAttribute('value')).toEqual('1,000');
+    const input = container.querySelector('.neon-input__textfield') as HTMLInputElement;
+    expect(input?.value).toEqual('1,000');
     expect(input?.getAttribute('aria-valuenow')).toEqual('1000');
   });
 
@@ -272,8 +272,8 @@ describe('NeonNumber', () => {
     const { container, rerender } = harness;
     await rerender({ modelValue: 1000, decimals: 2 });
     // when / then
-    const input = container.querySelector('.neon-input__textfield');
-    expect(input?.getAttribute('value')).toEqual('1,000.00');
+    const input = container.querySelector('.neon-input__textfield') as HTMLInputElement;
+    expect(input?.value).toEqual('1,000.00');
     expect(input?.getAttribute('aria-valuenow')).toEqual('1000');
   });
 
@@ -287,7 +287,7 @@ describe('NeonNumber', () => {
     // when
     await fireEvent.focus(el);
     // then
-    expect(el.getAttribute('value')).toEqual(expected);
+    expect(el.value).toEqual(expected);
   });
 
   it('renders formatted value when blurred', async () => {
@@ -300,7 +300,7 @@ describe('NeonNumber', () => {
     await fireEvent.focus(el);
     await fireEvent.blur(el);
     // then
-    expect(el.getAttribute('value')).toEqual('1,000.00');
+    expect(el.value).toEqual('1,000.00');
   });
 
   it('renders default input mode', async () => {
@@ -328,7 +328,8 @@ describe('NeonNumber', () => {
     const { container, rerender } = harness;
     await rerender({ modelValue: value, percentage: true });
     // when / then
-    expect(container.querySelector('.neon-input__textfield')?.getAttribute('value')).toEqual('42%');
+    const input = container.querySelector('.neon-input__textfield') as HTMLInputElement;
+    expect(input?.value).toEqual('42%');
   });
 
   it('renders using valueTemplate', async () => {
@@ -338,7 +339,8 @@ describe('NeonNumber', () => {
     // eslint-disable-next-line no-template-curly-in-string
     await rerender({ modelValue: value, valueTemplate: '${value}' });
     // when / then
-    expect(container.querySelector('.neon-input__textfield')?.getAttribute('value')).toEqual('$5.42');
+    const input = container.querySelector('.neon-input__textfield') as HTMLInputElement;
+    expect(input?.value).toEqual('$5.42');
   });
 
   it('emits input when value changed', async () => {
@@ -380,7 +382,7 @@ describe('NeonNumber', () => {
     await rerender({ disabled: true });
     // when
     const el = container.querySelector('.neon-input__textfield') as HTMLInputElement;
-    expect(el.getAttribute('disabled')).toEqual('true');
+    expect(el.disabled).toEqual(true);
     el.value = '50';
     await fireEvent.input(el);
     // then

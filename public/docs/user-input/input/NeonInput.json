@@ -104,6 +104,17 @@
       }
     },
     {
+      "name": "iconReadonly",
+      "description": "Make the input field icon read-only, i.e. it will not emit events or be treated as a focusable button.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
       "name": "hideIcon",
       "description": "Hide the icon button, e.g. the X button to clear the input's contents.",
       "type": {

@@ -77,6 +77,7 @@
 
 @mixin text-button($color) {
   color: var(--neon-color-#{$color});
+  background: var(--neon-background-color-text-button);
 
   &:hover:not(:disabled),
   &:focus:not(:disabled) {

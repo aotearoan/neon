@@ -59,25 +59,31 @@ describe('NeonNote', () => {
   });
 
   it('clicking close emits close event', async () => {
-    const { emitted, getByTestId, rerender } = harness;
+    const { container, emitted, rerender } = harness;
     await rerender({ closable: true, color: NeonFunctionalColor.Error });
-    await fireEvent.click(getByTestId('note-button'));
+    await fireEvent.click(container.querySelector('.neon-note__close') as HTMLButtonElement);
     // when / then
     expect(emitted()['close-note']).toBeDefined();
   });
 
   it('space keydown on close emits close event', async () => {
-    const { emitted, getByTestId, rerender } = harness;
+    const { container, emitted, rerender } = harness;
     await rerender({ closable: true, color: NeonFunctionalColor.Error });
-    await fireEvent.keyDown(getByTestId('note-button'), { key: 'Space', code: 'Space' });
+    await fireEvent.keyDown(container.querySelector('.neon-note__close') as HTMLButtonElement, {
+      key: 'Space',
+      code: 'Space',
+    });
     // when / then
     expect(emitted()['close-note']).toBeDefined();
   });
 
   it('enter keydown on close emits close event', async () => {
-    const { emitted, getByTestId, rerender } = harness;
+    const { container, emitted, rerender } = harness;
     await rerender({ closable: true, color: NeonFunctionalColor.Error });
-    await fireEvent.keyDown(getByTestId('note-button'), { key: 'Enter', code: 'Enter' });
+    await fireEvent.keyDown(container.querySelector('.neon-note__close') as HTMLButtonElement, {
+      key: 'Enter',
+      code: 'Enter',
+    });
     // when / then
     expect(emitted()['close-note']).toBeDefined();
   });

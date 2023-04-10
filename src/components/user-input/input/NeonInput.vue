@@ -2,7 +2,7 @@
   <div
     :class="[
       {
-        'neon-input--with-icon': icon || (modelValue && modelValue.length > 0),
+        'neon-input--with-icon': !hideIcon && (icon || (modelValue && modelValue.length > 0)),
         'neon-input--disabled': disabled,
         'neon-input--focused': focused,
         'neon-input--placeholder-visible': placeholder && (!modelValue || modelValue.length === 0),
@@ -27,7 +27,6 @@
       :type="type"
       :value="modelValue"
       class="neon-input__textfield neon-input__text"
-      data-testid="neonInput"
       v-bind="sanitizedAttributes"
       @blur="onBlur"
       @focus="!disabled && onFocus()"
@@ -43,7 +42,6 @@
       :tabindex="tabindex"
       :value="modelValue"
       class="neon-input__textfield neon-input__textarea"
-      data-testid="neonTextArea"
       v-bind="sanitizedAttributes"
       @blur="onBlur"
       @focus="onFocus"
@@ -51,14 +49,16 @@
     ></textarea>
     <neon-icon
       v-if="iconVisible"
+      :class="{ 'neon-input__icon--read-only': iconReadonly }"
       :color="iconColor"
       :disabled="disabled"
       :name="iconName"
-      :tabindex="disabled || !icon ? false : 0"
-      role="button"
-      @click="iconClicked"
-      @keydown.enter="iconClicked"
-      @keydown.space="iconClicked"
+      :role="!iconReadonly && 'button'"
+      :tabindex="disabled || !icon || iconReadonly ? false : 0"
+      class="neon-input__icon"
+      @click="!iconReadonly && iconClicked($event)"
+      @keydown.enter="!iconReadonly && iconClicked($event)"
+      @keydown.space="!iconReadonly && iconClicked($event)"
     />
     <span v-if="maxlength && maxlength > 0" class="neon-input__textarea-counter">
       {{ `${modelValue.length}/${maxlength}` }}

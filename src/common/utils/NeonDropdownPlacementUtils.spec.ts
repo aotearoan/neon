@@ -3,15 +3,15 @@ import { NeonDropdownPlacement } from '../enums/NeonDropdownPlacement';
 
 describe('NeonDropdownPlacementUtils', () => {
   beforeEach(() => {
-    // eslint-disable-next-line no-global-assign
-    document = {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      documentElement: {
-        clientWidth: 400,
-        clientHeight: 400,
-      },
-    };
+    Object.defineProperty(global.document.documentElement, 'clientWidth', {
+      value: 400,
+      writable: true,
+    });
+
+    Object.defineProperty(global.document.documentElement, 'clientHeight', {
+      value: 400,
+      writable: true,
+    });
   });
 
   it('calculate same placement', () => {

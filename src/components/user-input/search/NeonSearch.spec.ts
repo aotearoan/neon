@@ -176,9 +176,9 @@ describe('NeonSearch', () => {
 
   it('emits filter-changed', async () => {
     // given
-    const { getByTestId, emitted } = harness;
+    const { container, emitted } = harness;
     // when
-    const el = getByTestId('neonInput') as HTMLInputElement;
+    const el = container.querySelector('.neon-search__input .neon-input__text') as HTMLInputElement;
     el.value = 'xdd';
     await fireEvent.input(el);
     // then

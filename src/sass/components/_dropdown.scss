@@ -45,7 +45,7 @@
 
     &__content {
       position: absolute;
-      z-index: var(--neon-z-index-above);
+      z-index: var(--neon-z-index-below-top);
       border-radius: var(--neon-border-radius);
       overflow: hidden;
       min-width: calc(100% - 2 * var(--neon-border-width));
@@ -155,7 +155,7 @@
       }
     }
 
-    .neon-button {
+    &__button {
       flex: 1 0 auto;
       width: inherit;
     }

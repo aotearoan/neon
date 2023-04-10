@@ -147,14 +147,14 @@ describe('NeonToggleChip', () => {
   });
 
   it('renders input unchecked', async () => {
-    const { html, rerender } = harness;
+    const { container, rerender } = harness;
     await rerender({ modelValue: false, label });
-    expect(html()).toMatch('checked="false"');
+    expect((container.querySelector('.neon-toggle-chip__input') as HTMLInputElement)?.checked).toEqual(false);
   });
 
   it('renders input checked', () => {
-    const { html } = harness;
-    expect(html()).toMatch('checked="true"');
+    const { container } = harness;
+    expect((container.querySelector('.neon-toggle-chip__input') as HTMLInputElement)?.checked).toEqual(true);
   });
 
   it('renders input not disabled', () => {
@@ -169,51 +169,63 @@ describe('NeonToggleChip', () => {
   });
 
   it('does not emit event when disabled', async () => {
-    const { emitted, getByTestId, rerender } = harness;
+    const { container, emitted, rerender } = harness;
     await rerender({ modelValue: false, label, disabled: true });
-    await fireEvent.click(getByTestId('toggle-chip-input'));
+    await fireEvent.click(container.querySelector('.neon-toggle-chip__input') as HTMLInputElement);
     expect(emitted()['update:modelValue']).toBeUndefined();
   });
 
   it('emits event when clicked', async () => {
-    const { emitted, getByTestId, rerender } = harness;
+    const { container, emitted, rerender } = harness;
     await rerender({ modelValue: false, label });
-    await fireEvent.click(getByTestId('toggle-chip-input'));
+    await fireEvent.click(container.querySelector('.neon-toggle-chip__input') as HTMLInputElement);
     expect(emitted()['update:modelValue']).toEqual([[true]]);
   });
 
   it('toggles chip off when clicked', async () => {
-    const { emitted, getByTestId, rerender } = harness;
+    const { container, emitted, rerender } = harness;
     await rerender({ modelValue: true, label });
-    await fireEvent.click(getByTestId('toggle-chip-input'));
+    await fireEvent.click(container.querySelector('.neon-toggle-chip__input') as HTMLInputElement);
     expect(emitted()['update:modelValue']).toEqual([[false]]);
   });
 
   it('toggles chip toggle when enter pressed', async () => {
-    const { emitted, getByTestId, rerender } = harness;
+    const { container, emitted, rerender } = harness;
     await rerender({ modelValue: false, label });
-    await fireEvent.keyDown(getByTestId('toggle-chip'), { key: 'Enter', code: 'Enter' });
+    await fireEvent.keyDown(container.querySelector('.neon-toggle-chip') as HTMLLabelElement, {
+      key: 'Enter',
+      code: 'Enter',
+    });
     expect(emitted()['update:modelValue']).toEqual([[true]]);
   });
 
   it('does not toggle chip when enter pressed and disabled', async () => {
-    const { emitted, getByTestId, rerender } = harness;
+    const { container, emitted, rerender } = harness;
     await rerender({ modelValue: false, label, disabled: true });
-    await fireEvent.keyDown(getByTestId('toggle-chip'), { key: 'Enter', code: 'Enter' });
+    await fireEvent.keyDown(container.querySelector('.neon-toggle-chip') as HTMLLabelElement, {
+      key: 'Enter',
+      code: 'Enter',
+    });
     expect(emitted()['update:modelValue']).toBeUndefined();
   });
 
   it('toggles chip toggle when space pressed', async () => {
-    const { emitted, getByTestId, rerender } = harness;
+    const { container, emitted, rerender } = harness;
     await rerender({ modelValue: false, label });
-    await fireEvent.keyDown(getByTestId('toggle-chip'), { key: 'Space', code: 'Space' });
+    await fireEvent.keyDown(container.querySelector('.neon-toggle-chip') as HTMLLabelElement, {
+      key: 'Space',
+      code: 'Space',
+    });
     expect(emitted()['update:modelValue']).toEqual([[true]]);
   });
 
   it('does not toggle chip when space pressed and disabled', async () => {
-    const { emitted, getByTestId, rerender } = harness;
+    const { container, emitted, rerender } = harness;
     await rerender({ modelValue: false, label, disabled: true });
-    await fireEvent.keyDown(getByTestId('toggle-chip'), { key: 'Space', code: 'Space' });
+    await fireEvent.keyDown(container.querySelector('.neon-toggle-chip') as HTMLLabelElement, {
+      key: 'Space',
+      code: 'Space',
+    });
     expect(emitted()['update:modelValue']).toBeUndefined();
   });
 });

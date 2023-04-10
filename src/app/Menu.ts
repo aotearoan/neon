@@ -368,6 +368,13 @@ export class Menu {
                 component: 'NeonDropZone',
               },
               {
+                path: 'date-picker',
+                page: 'DatePicker',
+                name: 'Date Picker',
+                keywords: 'date time picker calendar locale',
+                component: 'NeonDatePicker',
+              },
+              {
                 path: 'field-group',
                 page: 'FieldGroup',
                 name: 'Field Group',

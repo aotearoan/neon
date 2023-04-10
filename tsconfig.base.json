@@ -1,21 +1,21 @@
 {
   "extends": "@vue/tsconfig/tsconfig.node.json",
   "include": [
-    "vite.config.*"
-  ],
-  "exclude": [
-    "node_modules"
+    "vite.config.*",
+    "package.json"
   ],
   "compilerOptions": {
     "target": "es2020",
     "module": "es2020",
+    "moduleResolution": "node",
     "lib": [
       "dom",
       "es2020"
     ],
     "composite": true,
     "types": [
-      "node"
+      "node",
+      "vite/client"
     ],
     "baseUrl": "."
   }

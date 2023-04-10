@@ -39,6 +39,7 @@
           </span>
           <span class="top-nav-actions">
             <neon-button
+              :circular="true"
               :label="!isMobile ? 'GitHub' : undefined"
               :size="isMobile ? 's' : 'l'"
               aria-label="View on GitHub"
@@ -49,6 +50,7 @@
               icon="github"
             />
             <neon-button
+              :circular="true"
               :size="isMobile ? 's' : 'l'"
               aria-label="light/dark toggle"
               button-style="text"
@@ -72,6 +74,7 @@
               </span>
               <span class="side-nav-actions">
                 <neon-button
+                  :circular="true"
                   aria-label="View on GitHub"
                   button-style="text"
                   class="github-link"
@@ -80,6 +83,7 @@
                   icon="github"
                 />
                 <neon-button
+                  :circular="true"
                   aria-label="Light/dark toggle"
                   button-style="text"
                   color="high-contrast"

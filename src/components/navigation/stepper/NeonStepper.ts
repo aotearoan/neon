@@ -1,6 +1,6 @@
 import { defineComponent } from 'vue';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
-import { NeonFunctionalColor } from '@/neon';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 /**
  * A stepper component for assisting users in navigating through complex flows.

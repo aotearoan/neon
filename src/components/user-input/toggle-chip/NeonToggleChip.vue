@@ -12,7 +12,6 @@
       },
     ]"
     class="neon-toggle-chip no-style"
-    data-testid="toggle-chip"
     role="button"
     tabindex="0"
     @keydown.enter="toggleChip"
@@ -25,7 +24,6 @@
       :checked="modelValue"
       :disabled="disabled"
       class="neon-toggle-chip__input"
-      data-testid="toggle-chip-input"
       tabindex="-1"
       type="checkbox"
       v-bind="sanitizedAttributes"

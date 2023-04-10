@@ -34,11 +34,9 @@
         :tabindex="-1"
         :value="option.key"
         class="neon-toggle__input"
-        data-testid="toggle-input"
         type="radio"
         v-bind="sanitizedAttributes"
         @click="onInput(option.key)"
-        @input="onInput(option.key)"
       />
       <div v-if="toggleStyle === 'radio-buttons'" class="neon-toggle__radio-button">
         <div v-if="option.key === modelValue" class="neon-toggle__radio-button-indicator"></div>

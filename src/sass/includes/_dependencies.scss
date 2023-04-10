@@ -121,6 +121,7 @@
           NeonTreeMenu: [NeonLink,NeonIcon],
           NeonStepper: [NeonIcon],
           NeonSelectableCard: [NeonCard, NeonCardHeader, NeonSwitch, NeonIcon],
+          NeonDatePicker: [NeonDropdown, NeonBadge, NeonButton, NeonExpansionIndicator, NeonIcon, NeonLink, NeonInput],
   );
 
   $neon-flattened-components: [];

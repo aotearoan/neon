@@ -4,12 +4,12 @@ exports[`NeonSelectableCard matches snapshot 1`] = `
 <div class="neon-card--horizontal neon-card--s neon-card--horizontal-breakpoint-mobile-l neon-card--horizontal-breakpoint-no-break neon-card neon-selectable-card--brand neon-selectable-card neon-selectable-card--brand neon-selectable-card" tabindex="0">
   <!-- @slot card contents -->
   <div class="neon-card-header">
-    <!-- @slot card header content --><label aria-checked="false" aria-disabled="false" class="neon-switch--checkbox neon-switch--s neon-switch--brand neon-switch--right neon-switch no-style neon-selectable-card__checkbox" role="checkbox" data-testid="checkbox-label" tabindex="-1">
+    <!-- @slot card header content --><label aria-checked="false" aria-disabled="false" class="neon-switch--checkbox neon-switch--s neon-switch--brand neon-switch--right neon-switch no-style neon-selectable-card__checkbox" role="checkbox" tabindex="-1">
       <div class="neon-icon--inverse neon-icon neon-switch__checkbox neon-switch__checkbox"><svg width="100%" height="100%" viewBox="0 0 24 24" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
           <path class="neon-svg--fill" d="M22.596,6.529c0.26,-0.278 0.404,-0.645 0.404,-1.025c0,-0.825 -0.679,-1.504 -1.505,-1.504c-0.381,0 -0.748,0.144 -1.026,0.404l-11.981,11.971l-4.957,-4.953c-0.278,-0.259 -0.645,-0.404 -1.026,-0.404c-0.826,0 -1.505,0.679 -1.505,1.504c-0,0.381 0.144,0.747 0.404,1.025l6.02,6.016c0.584,0.583 1.544,0.583 2.128,0l13.044,-13.034Z" style="fill-rule:nonzero;"></path>
         </svg>
       </div>
-      <!--v-if--><input checked="false" disabled="false" class="neon-switch__input neon-selectable-card__checkbox" data-testid="checkbox" type="checkbox"></input>
+      <!--v-if--><input class="neon-switch__input neon-selectable-card__checkbox" type="checkbox">
       <!--v-if-->
     </label>
   </div><!-- @slot the card sections to add to the card after the checkbox -->

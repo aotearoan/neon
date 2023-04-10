@@ -7,7 +7,6 @@
     ]"
     :to="routerUrl"
     class="neon-link neon-link--router-link"
-    data-testid="link"
     tabindex="0"
     v-bind="sanitizedAttributes"
     @click="onClick"
