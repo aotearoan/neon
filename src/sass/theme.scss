@@ -238,4 +238,8 @@ $neon-components: null !default;
   @if index($neon-flattened-components, NeonDatePicker) {
     @include components.date-picker;
   }
+
+  @if index($neon-flattened-components, NeonFieldLabel) {
+    @include components.field-label;
+  }
 }

@@ -382,6 +382,13 @@ export class Menu {
                 component: 'NeonFieldGroup',
               },
               {
+                path: 'field-label',
+                page: 'FieldLabel',
+                name: 'Field Label',
+                keywords: 'label field input optional mandatory',
+                component: 'NeonFieldLabel',
+              },
+              {
                 path: 'file',
                 page: 'File',
                 keywords: 'input multiple',

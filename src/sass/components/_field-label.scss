@@ -1,0 +1,10 @@
+@mixin field-label {
+  .neon-field-label {
+    &__container {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: calc(2 * var(--neon-base-space));
+      gap: calc(1.5 * var(--neon-base-space));
+    }
+  }
+}

@@ -9,7 +9,7 @@ describe('NeonCardBody', () => {
     expect(html()).toMatch('<p>test</p>');
   });
 
-  it('renders default slot contents', () => {
+  it('renders full width', () => {
     // given
     const { html } = render(NeonCardBody, { props: { fullWidth: true } });
     // when / then
