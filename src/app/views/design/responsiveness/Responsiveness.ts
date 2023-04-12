@@ -22,14 +22,14 @@ export default defineComponent({
 
     const typescriptExample = ref(`private responsiveView = false;
 
-private mounted() {
+onMounted(() => {
   window.addEventListener('resize', this.handleResize, { passive: true });
   this.handleResize();
-}
+});
 
-private beforeDestroy() {
+onUnmounted(() => {
   window.removeEventListener('resize', this.handleResize);
-}
+});
 
 private handleResize() {
   this.responsiveView = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.MobileLarge]).matches;

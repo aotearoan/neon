@@ -53,7 +53,8 @@ export class Menu {
                 page: 'I18n',
                 name: 'i18n',
                 keywords:
-                  'internationalization internationalisation languages translations translationresult multilanguage multi-language',
+                  'internationalization internationalisation languages translations translationresult multilanguage multi-language number date format',
+                anchors: ['Text Strings', 'Dates & Numbers'],
               },
               {
                 path: 'technical-requirements',

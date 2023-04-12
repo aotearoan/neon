@@ -1,10 +1,11 @@
 import { defineComponent } from 'vue';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonLink } from '@/neon';
+import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader, NeonLink } from '@/neon';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'I18n',
   components: {
+    NeonAnchor,
     NeonCard,
     NeonCardHeader,
     NeonCardBody,

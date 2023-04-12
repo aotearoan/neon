@@ -82,6 +82,17 @@
       }
     },
     {
+      "name": "placement",
+      "description": "The placement of the dropdown calendar popup.",
+      "type": {
+        "name": "String as () => NeonDropdownPlacement"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonDropdownPlacement.BottomLeft"
+      }
+    },
+    {
       "name": "disabledDates",
       "description": "Disabled dates, a list of <a href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601</a> format\ndates for which to disable selection.",
       "type": {

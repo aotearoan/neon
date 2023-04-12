@@ -59,20 +59,20 @@
   ],
   "events": [
     {
-      "name": "button-ref",
-      "description": "emitted on initialisation",
-      "type": {
-        "names": [
-          "HTMLElement"
-        ]
-      }
-    },
-    {
       "name": "click",
       "description": "emitted when the user clicks on a menu item.",
       "type": {
         "names": [
           "NeonDropdownMenuItem"
+        ]
+      }
+    },
+    {
+      "name": "button-ref",
+      "description": "emitted on initialisation",
+      "type": {
+        "names": [
+          "HTMLElement"
         ]
       }
     }

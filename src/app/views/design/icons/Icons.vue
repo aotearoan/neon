@@ -7,8 +7,7 @@
       <neon-card-body>
         <p>
           Below is the set of icons provided with Neon for components or used in the showcase examples. This set is
-          intentionally kept small so that it is easier to replace this set with custom icons. Plus the additional
-          benefit is that only those icons which are necessary are included in the final application payload.
+          intentionally kept small so that it is easier to replace this set with custom icons.
         </p>
       </neon-card-body>
       <neon-card-body class="icons-wrapper">
