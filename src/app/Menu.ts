@@ -129,6 +129,13 @@ export class Menu {
                 component: 'NeonDialog',
               },
               {
+                path: 'linear-progress',
+                page: 'LinearProgress',
+                name: 'Linear Progress',
+                keywords: 'bar loading loader percentage',
+                component: 'NeonLinearProgress',
+              },
+              {
                 path: 'note',
                 page: 'Note',
                 component: 'NeonNote',
