@@ -1,22 +1,36 @@
 @use '../includes/palettes';
 @use '../includes/responsive';
+@use '../includes/outline';
 
 @mixin date-picker {
   .neon-date-picker {
     position: relative;
 
     .neon-date-picker__button {
-      z-index: 0;
+      z-index: var(--neon-z-index-default);
 
       input {
         pointer-events: none;
         user-select: none;
+        font-variant: tabular-nums;
       }
 
       &,
       .neon-icon {
         cursor: default;
         user-select: none;
+      }
+    }
+
+    .neon-date-picker__button-click-capture {
+      position: absolute;
+      z-index: var(--neon-z-index-above);
+      border-radius: var(--neon-border-radius-input);
+      width: 100%;
+      height: 100%;
+
+      &:focus {
+        outline: none;
       }
     }
 
@@ -185,6 +199,13 @@
             color: var(--neon-color-#{$color});
             background-color: rgba(var(--neon-rgb-#{$color}), 0.25);
             font-weight: var(--neon-font-weight-bold);
+          }
+        }
+
+        .neon-date-picker__button-click-capture {
+          &:focus {
+            border: var(--neon-border);
+            border-color: var(--neon-color-#{$color});
           }
         }
       }

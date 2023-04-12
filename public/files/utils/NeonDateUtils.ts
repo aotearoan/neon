@@ -11,15 +11,13 @@ export class NeonDateUtils {
     const loc = locale || navigator.language;
     const dateObj = new Date(date);
     let time;
-    if (!isNaN(dateObj.getTime())) {
-      if (date.length > 10) {
-        time = dateObj.toLocaleString(
-          loc,
-          date.length <= 16
-            ? { hour12: false, hour: '2-digit', minute: '2-digit' }
-            : { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' },
-        );
-      }
+    if (date.length > 10) {
+      time = dateObj.toLocaleString(
+        loc,
+        date.length <= 16
+          ? { hour12: false, hour: '2-digit', minute: '2-digit' }
+          : { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' },
+      );
     }
 
     const result: NeonDate = {

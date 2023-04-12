@@ -110,6 +110,7 @@ export default defineComponent({
     const attrs = useAttrs();
     const optional = !attrs.required;
 
+    const calendarRef = ref<HTMLElement | null>(null);
     const calendarOpen = ref<boolean>(false);
     const monthSelectionOpen = ref<boolean>(false);
     const yearSelectionOpen = ref<boolean>(false);
@@ -159,6 +160,12 @@ export default defineComponent({
     const openCalendar = () => {
       if (!props.disabled) {
         calendarOpen.value = true;
+        if (calendarRef.value) {
+          const selected = calendarRef.value.querySelector('.neon-date-picker__calendar-date--selected') as HTMLElement;
+          if (selected) {
+            setTimeout(() => selected.focus());
+          }
+        }
       }
     };
 
@@ -294,6 +301,7 @@ export default defineComponent({
       monthSelectionOpen,
       optional,
       today,
+      calendarRef,
       yearSelectionOpen,
       changeMonth,
       changeYear,

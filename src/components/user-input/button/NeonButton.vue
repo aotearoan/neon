@@ -20,7 +20,14 @@
     />
     <span v-if="label" class="neon-button__label">{{ label }}</span>
   </neon-link>
-  <button v-else :class="classes" :disabled="disabled || state !== 'ready'" class="neon-button" v-bind="attrs">
+  <button
+    v-else
+    :class="classes"
+    :disabled="disabled || state !== 'ready'"
+    :tabindex="!disabled ? 0 : -1"
+    class="neon-button"
+    v-bind="attrs"
+  >
     <neon-icon
       v-if="icon || state !== 'ready'"
       :color="buttonStyle !== 'solid' ? color : undefined"

@@ -13,24 +13,29 @@
     <neon-dropdown v-model="calendarOpen" @update:modelValue="resetToCalendar()">
       <template #dropdown-button>
         <neon-input
-          :aria-label="openCalendarLabel"
           :color="color"
           :disabled="disabled"
           :icon-readonly="true"
           :model-value="formattedValue"
           :placeholder="placeholder"
           :size="size"
+          :tabindex="-1"
           class="neon-date-picker__button"
           icon="calendar"
-          role="button"
           type="text"
+        />
+        <div
+          :aria-label="openCalendarLabel"
+          class="neon-date-picker__button-click-capture"
+          role="button"
+          tabindex="0"
           @click="openCalendar()"
           @keydown.enter.stop.prevent="openCalendar()"
           @keydown.space.stop.prevent="openCalendar()"
-        />
+        ></div>
       </template>
       <template #default>
-        <div class="neon-date-picker__calendar">
+        <div ref="calendarRef" class="neon-date-picker__calendar">
           <template v-if="yearSelectionOpen">
             <div class="neon-date-picker__calendar-header">
               <span class="neon-date-picker__calendar-title-readonly">

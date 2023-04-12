@@ -29,7 +29,7 @@ describe('NeonDatePicker', () => {
   it('renders open', async () => {
     const { container, html } = harness;
 
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     expect(html()).toMatchSnapshot();
   });
@@ -38,7 +38,7 @@ describe('NeonDatePicker', () => {
     const { container, html, rerender } = harness;
 
     await rerender({ locale: 'de-DE' });
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     expect(html()).toMatchSnapshot();
   });
@@ -48,7 +48,7 @@ describe('NeonDatePicker', () => {
       props: { modelValue: null },
     });
 
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     expect(html()).toMatchSnapshot();
   });
@@ -58,7 +58,7 @@ describe('NeonDatePicker', () => {
     const { container, emitted } = render(NeonDatePicker, {
       props: { modelValue: null },
     });
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     // when
     const dateButton = container.querySelectorAll('.neon-date-picker__calendar-date')[30] as HTMLButtonElement;
@@ -72,7 +72,7 @@ describe('NeonDatePicker', () => {
     const { container, emitted } = render(NeonDatePicker, {
       props: { modelValue: null },
     });
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     // when
     const clearButton = container.querySelector('.neon-date-picker__calendar-clear-button') as HTMLButtonElement;
@@ -84,7 +84,7 @@ describe('NeonDatePicker', () => {
   it('closes popup', async () => {
     // given
     const { container } = harness;
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     // when
     const doneButton = container.querySelector('.neon-date-picker__calendar-done-button') as HTMLButtonElement;
@@ -99,7 +99,7 @@ describe('NeonDatePicker', () => {
       props: { disabled: true },
     });
     // when
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     // then
     expect(container.querySelector('.neon-date-picker--open')).toBeNull();
@@ -108,7 +108,7 @@ describe('NeonDatePicker', () => {
   it('displays list of months when clicking change date', async () => {
     // given
     const { container } = harness;
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     // when
     const changeDateButton = container.querySelector('.neon-date-picker__calendar-header-title') as HTMLButtonElement;
@@ -120,7 +120,7 @@ describe('NeonDatePicker', () => {
   it('displays list of years when clicking change year', async () => {
     // given
     const { container } = harness;
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     const changeDateButton = container.querySelector('.neon-date-picker__calendar-header-title') as HTMLButtonElement;
     await fireEvent.click(changeDateButton);
@@ -134,7 +134,7 @@ describe('NeonDatePicker', () => {
   it('navigates to previous decade', async () => {
     // given
     const { container } = harness;
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     const changeDateButton = container.querySelector('.neon-date-picker__calendar-header-title') as HTMLButtonElement;
     await fireEvent.click(changeDateButton);
@@ -150,7 +150,7 @@ describe('NeonDatePicker', () => {
   it('navigates to next decade', async () => {
     // given
     const { container } = harness;
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     const changeDateButton = container.querySelector('.neon-date-picker__calendar-header-title') as HTMLButtonElement;
     await fireEvent.click(changeDateButton);
@@ -166,7 +166,7 @@ describe('NeonDatePicker', () => {
   it('selects year', async () => {
     // given
     const { container } = harness;
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     const changeDateButton = container.querySelector('.neon-date-picker__calendar-header-title') as HTMLButtonElement;
     await fireEvent.click(changeDateButton);
@@ -184,7 +184,7 @@ describe('NeonDatePicker', () => {
   it('navigates to previous year', async () => {
     // given
     const { container } = harness;
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     const changeDateButton = container.querySelector('.neon-date-picker__calendar-header-title') as HTMLButtonElement;
     await fireEvent.click(changeDateButton);
@@ -200,7 +200,7 @@ describe('NeonDatePicker', () => {
   it('navigates to next year', async () => {
     // given
     const { container } = harness;
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     const changeDateButton = container.querySelector('.neon-date-picker__calendar-header-title') as HTMLButtonElement;
     await fireEvent.click(changeDateButton);
@@ -216,7 +216,7 @@ describe('NeonDatePicker', () => {
   it('selects month', async () => {
     // given
     const { container } = harness;
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     const changeDateButton = container.querySelector('.neon-date-picker__calendar-header-title') as HTMLButtonElement;
     await fireEvent.click(changeDateButton);
@@ -234,7 +234,7 @@ describe('NeonDatePicker', () => {
     const { container } = render(NeonDatePicker, {
       props: { modelValue: null },
     });
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     // when
     const previousMonthButton = container.querySelector('.neon-date-picker__previous-button') as HTMLButtonElement;
@@ -251,7 +251,7 @@ describe('NeonDatePicker', () => {
     const { container } = render(NeonDatePicker, {
       props: { modelValue: null },
     });
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     // when
     const previousMonthButton = container.querySelector('.neon-date-picker__previous-button') as HTMLButtonElement;
@@ -267,7 +267,7 @@ describe('NeonDatePicker', () => {
     const { container } = render(NeonDatePicker, {
       props: { modelValue: null },
     });
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     // when
     const nextMonthButton = container.querySelector('.neon-date-picker__next-button') as HTMLButtonElement;
@@ -284,7 +284,7 @@ describe('NeonDatePicker', () => {
     const { container } = render(NeonDatePicker, {
       props: { modelValue: null },
     });
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     // when
     const nextMonthButton = container.querySelector('.neon-date-picker__next-button') as HTMLButtonElement;
@@ -326,7 +326,7 @@ describe('NeonDatePicker', () => {
     const { container } = render(NeonDatePicker, {
       props: { modelValue: null, disabledDates: ['2023-03-29'] },
     });
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     // then
     const dateButton = container.querySelector('.neon-date-picker__calendar-date--disabled') as HTMLButtonElement;
@@ -368,7 +368,7 @@ describe('NeonDatePicker', () => {
       },
     });
     // when
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     const changeDateButton = container.querySelector('.neon-date-picker__calendar-header-title') as HTMLButtonElement;
     await fireEvent.click(changeDateButton);
@@ -385,7 +385,7 @@ describe('NeonDatePicker', () => {
       },
     });
     // when
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     const changeDateButton = container.querySelector('.neon-date-picker__calendar-header-title') as HTMLButtonElement;
     await fireEvent.click(changeDateButton);
@@ -405,7 +405,7 @@ describe('NeonDatePicker', () => {
       },
     });
     // when
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     const changeDateButton = container.querySelector('.neon-date-picker__calendar-header-title') as HTMLButtonElement;
     await fireEvent.click(changeDateButton);
@@ -429,7 +429,7 @@ describe('NeonDatePicker', () => {
       },
     });
     // when
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     const changeDateButton = container.querySelector('.neon-date-picker__calendar-header-title') as HTMLButtonElement;
     await fireEvent.click(changeDateButton);
@@ -452,7 +452,7 @@ describe('NeonDatePicker', () => {
       },
     });
     // when
-    const trigger = container.querySelector('.neon-date-picker__button') as HTMLInputElement;
+    const trigger = container.querySelector('.neon-date-picker__button-click-capture') as HTMLInputElement;
     await fireEvent.click(trigger);
     // then
     const previousDecadeButton = container.querySelector('.neon-date-picker__previous-button') as HTMLButtonElement;
