@@ -10,7 +10,7 @@
     ]"
     class="neon-date-picker"
   >
-    <neon-dropdown v-model="calendarOpen" @update:modelValue="resetToCalendar()">
+    <neon-dropdown ref="dropdown" v-model="calendarOpen" :placement="placement" @update:modelValue="resetToCalendar()">
       <template #dropdown-button>
         <neon-input
           :color="color"

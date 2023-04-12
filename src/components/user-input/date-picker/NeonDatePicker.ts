@@ -5,6 +5,7 @@ import NeonDropdown from '@/components/presentation/dropdown/NeonDropdown.vue';
 import NeonButton from '@/components/user-input/button/NeonButton.vue';
 import NeonInput from '@/components/user-input/input/NeonInput.vue';
 import { NeonDateUtils } from '@/common/utils/NeonDateUtils';
+import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
 
 /**
  * <strong>NeonDatePicker</strong> is the equivalent of the native
@@ -52,6 +53,10 @@ export default defineComponent({
      * Maximum allowed date value in the <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> format.
      */
     max: { type: String, default: null },
+    /**
+     * The placement of the dropdown calendar popup.
+     */
+    placement: { type: String as () => NeonDropdownPlacement, default: NeonDropdownPlacement.BottomLeft },
     /**
      * Disabled dates, a list of <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> format
      * dates for which to disable selection.
@@ -110,6 +115,7 @@ export default defineComponent({
     const attrs = useAttrs();
     const optional = !attrs.required;
 
+    const dropdown = ref<HTMLElement | null>(null);
     const calendarRef = ref<HTMLElement | null>(null);
     const calendarOpen = ref<boolean>(false);
     const monthSelectionOpen = ref<boolean>(false);
@@ -289,6 +295,7 @@ export default defineComponent({
       attrs,
       calendar,
       calendarOpen,
+      dropdown,
       formattedValue,
       isChangeDateDisabled,
       isChangeYearDisabled,

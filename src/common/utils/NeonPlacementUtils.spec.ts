@@ -28,6 +28,20 @@ describe('NeonPlacementUtils', () => {
       offsetHeight: 90,
     };
 
+    Object.defineProperty(global.document.body, 'getBoundingClientRect', {
+      value: () => ({
+        bottom: 900,
+        height: 900,
+        left: 0,
+        right: 450,
+        top: 0,
+        width: 450,
+        x: 0,
+        y: 0,
+      }),
+      writable: true,
+    });
+
     Object.defineProperty(global.document.documentElement, 'clientWidth', {
       value: 450,
       writable: true,

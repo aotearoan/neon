@@ -3,6 +3,20 @@ import { NeonDropdownPlacement } from '../enums/NeonDropdownPlacement';
 
 describe('NeonDropdownPlacementUtils', () => {
   beforeEach(() => {
+    Object.defineProperty(global.document.body, 'getBoundingClientRect', {
+      value: () => ({
+        bottom: 400,
+        height: 400,
+        left: 0,
+        right: 400,
+        top: 0,
+        width: 400,
+        x: 0,
+        y: 0,
+      }),
+      writable: true,
+    });
+
     Object.defineProperty(global.document.documentElement, 'clientWidth', {
       value: 400,
       writable: true,

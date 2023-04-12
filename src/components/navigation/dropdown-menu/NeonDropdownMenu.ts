@@ -184,6 +184,7 @@ export default defineComponent({
       highlightedKey,
       highlightedIndex,
       attrs,
+      emit,
       changeHighlighted,
       keyboardHandler,
       onBlur,

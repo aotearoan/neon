@@ -10,7 +10,7 @@
     class="neon-dropdown-menu"
     v-bind="attrs"
     @blur="onBlur()"
-    @button="$emit('button-ref', $event)"
+    @button="emit('button-ref', $event)"
     @focus="onFocus()"
     @update:modelValue="open = $event"
     @dropdown-placement="onPlacement"
