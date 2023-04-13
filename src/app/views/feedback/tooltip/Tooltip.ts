@@ -1,26 +1,26 @@
 import { defineComponent, onMounted, ref } from 'vue';
-import { NeonCard, NeonCardBody, NeonTooltip } from '@/neon';
+import { NeonButton, NeonCard, NeonCardBody, NeonTooltip } from '@/neon';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'Tooltip',
   components: {
     NeonTooltip,
+    NeonButton,
     NeonCard,
     NeonCardBody,
     ComponentDocumentation,
+    Editor,
   },
   setup() {
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('Contextual information popups');
 
-    const examples = ref([
-      {
-        title: 'Tooltip styles',
-        template: `<div>
+    const styleTemplate = `<div>
   <p>Hover over
   <neon-tooltip>
     <template #target>
@@ -52,11 +52,9 @@ export default defineComponent({
       kielbasa ham hock sirloin ground round strip steak jowl jerky short ribs pork loin frankfurter.</p>
     </template>
   </neon-tooltip>
-</div>`,
-      },
-      {
-        title: 'Tooltip placement',
-        template: `<div>
+</div>`;
+
+    const placementTemplate = `<div>
   <!-- top -->
   <p>Tooltip placement
   <neon-tooltip>
@@ -97,16 +95,15 @@ export default defineComponent({
       <span>Tooltip content</span>
     </template>
   </neon-tooltip>.</p>
-</div>`,
-      },
-    ]);
+</div>`;
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonTooltip')));
 
     return {
       menuModel,
       headline,
-      examples,
+      styleTemplate,
+      placementTemplate,
     };
   },
 });

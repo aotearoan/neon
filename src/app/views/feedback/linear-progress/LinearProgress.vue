@@ -13,7 +13,7 @@
           <h4 class="neon-h5">Percentage</h4>
           <div class="example--horizontal">
             <neon-linear-progress :value="progressPercentage" />
-            <neon-button label="Complete" size="s" @click="progressPercentage = 1.00" />
+            <neon-button label="Complete" size="s" @click="progressPercentage = 1.0" />
           </div>
           <h4 class="neon-h5">Counter</h4>
           <div class="example--horizontal">

@@ -16,7 +16,7 @@
     :role="switchStyle"
     class="neon-switch no-style"
     tabindex="-1"
-    @click="toggleSwitch"
+    @click.stop.prevent="toggleSwitch"
     @keydown.enter.stop.prevent="toggleSwitch"
     @keydown.space.stop.prevent="toggleSwitch"
   >

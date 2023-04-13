@@ -24,6 +24,7 @@
           <neon-select v-model="selectMedium" :options="model" placeholder="Select item" size="m" />
           <neon-select v-model="selectLarge" :options="model" placeholder="Select item" size="l" />
         </div>
+        <editor v-model="sizesTemplate" />
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Selects with colors and icons</h2>
@@ -34,12 +35,14 @@
           <neon-select v-model="selectWarning" :options="modelWithIcons" color="warn" placeholder="Select item(s)" />
           <neon-select v-model="selectError" :options="modelWithIcons" color="error" placeholder="Select item(s)" />
         </div>
+        <editor v-model="colorsTemplate" />
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Multiple selection</h2>
         <div class="neon-vertically-spaced">
           <neon-select v-model="selectMulti" :multiple="true" :options="modelWithIcons" placeholder="Select item(s)" />
         </div>
+        <editor v-model="multiSelectTemplate" />
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Grouped options</h2>
@@ -52,6 +55,7 @@
             placeholder="Select item(s)"
           />
         </div>
+        <editor v-model="groupedTemplate" />
       </neon-card-body>
     </neon-card>
   </component-documentation>

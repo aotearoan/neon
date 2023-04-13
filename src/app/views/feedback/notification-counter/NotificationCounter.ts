@@ -1,6 +1,7 @@
 import { defineComponent, onMounted, ref } from 'vue';
 import { NeonCard, NeonCardBody, NeonNotificationCounter, NeonSwitch } from '@/neon';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 
@@ -12,43 +13,26 @@ export default defineComponent({
     NeonNotificationCounter,
     NeonSwitch,
     ComponentDocumentation,
+    Editor,
   },
   setup() {
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('A component for notifying the user of new items');
 
-    const data = ref({
-      active: true,
-      toggleActive: () => {
-        data.value = { ...data.value, active: !data.value.active };
-      },
-    });
+    const active = ref(true);
 
-    const example = ref(`<div class="example--vertical">
-  <div class="example--horizontal example--margin-top">
-    <span class="positioned-element">No value<neon-notification-counter :active="active" /></span>
-    <span class="positioned-element">With value<neon-notification-counter :count="9" :active="active" /></span>
-    <span class="positioned-element">Large number<neon-notification-counter :count="42" :active="active" /></span>
-    <span class="positioned-element">With color<neon-notification-counter :count="9" color="brand" :active="active" /></span>
-  </div>
-  <neon-switch label="Activate notifications" :model-value="active" @update:modelValue="toggleActive()" />
-</div>`);
-
-    const examples = ref([
-      {
-        title: 'Notification counters',
-        template: example.value,
-        data,
-      },
-    ]);
+    const template = `<neon-notification-counter :active="active" />
+<neon-notification-counter :count="9" :active="active" />
+<neon-notification-counter :count="42" :active="active" />
+<neon-notification-counter :count="9" color="brand" :active="active" />`;
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonNotificationCounter')));
 
     return {
       menuModel,
       headline,
-      example,
-      examples,
+      active,
+      template,
     };
   },
 });

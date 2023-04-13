@@ -25,11 +25,11 @@
       }
     }
 
-    &--outline-border {
+    &.neon-tooltip--outline-border {
       border-radius: var(--neon-border-radius);
     }
 
-    &__content-wrapper {
+    .neon-tooltip__content-wrapper {
       z-index: var(--neon-z-index-above-3);
       position: absolute;
       display: none;
@@ -38,14 +38,14 @@
       user-select: none;
     }
 
-    &__arrow,
-    &__arrow-overlay {
+    .neon-tooltip__arrow,
+    .neon-tooltip__arrow-overlay {
       position: absolute;
       width: 0;
       height: 0;
     }
 
-    &--tooltip {
+    &.neon-tooltip--tooltip {
       .neon-tooltip__arrow {
         z-index: var(--neon-z-index-above);
       }
@@ -55,7 +55,7 @@
       z-index: var(--neon-z-index-above-2);
     }
 
-    &__content {
+    .neon-tooltip__content {
       max-width: var(--neon-tooltip-max-width);
       max-height: var(--neon-tooltip-max-height);
       margin: auto;
@@ -70,10 +70,11 @@
       color: var(--neon-color-inverse);
       border: var(--neon-border-width-tooltip) solid var(--neon-border-color);
       box-shadow: var(--neon-box-shadow-tooltip);
+      z-index: var(--neon-z-index-above);
     }
 
-    &--top,
-    &--bottom {
+    &.neon-tooltip--top,
+    &.neon-tooltip--bottom {
       .neon-tooltip__content-wrapper {
         left: 50%;
         margin-left: calc(-0.5 * var(--neon-tooltip-max-width));
@@ -88,7 +89,7 @@
       }
     }
 
-    &--top {
+    &.neon-tooltip--top {
       .neon-tooltip__content-wrapper {
         bottom: calc(100% + var(--neon-base-space));
       }
@@ -100,7 +101,7 @@
       }
     }
 
-    &--bottom {
+    &.neon-tooltip--bottom {
       .neon-tooltip__content-wrapper {
         top: calc(100% + var(--neon-base-space));
       }
@@ -112,8 +113,8 @@
       }
     }
 
-    &--left,
-    &--right {
+    &.neon-tooltip--left,
+    &.neon-tooltip--right {
       .neon-tooltip__content-wrapper {
         height: var(--neon-tooltip-max-height);
         top: calc(50% - 1rem);
@@ -129,7 +130,7 @@
       }
     }
 
-    &--left {
+    &.neon-tooltip--left {
       .neon-tooltip__content-wrapper {
         right: calc(100% + var(--neon-base-space));
       }
@@ -145,7 +146,7 @@
       }
     }
 
-    &--right {
+    &.neon-tooltip--right {
       .neon-tooltip__content-wrapper {
         left: calc(100% + var(--neon-base-space));
       }
@@ -161,7 +162,7 @@
       }
     }
 
-    &--open {
+    &.neon-tooltip--open {
       .neon-tooltip__content-wrapper {
         display: flex;
         animation: tooltipFadeIn 0.5s ease-in-out;
@@ -183,7 +184,7 @@
     }
 
     /** Popover styles */
-    &--popover {
+    &.neon-tooltip--popover {
       .neon-tooltip {
         &__content {
           max-width: var(--neon-popover-max-width);

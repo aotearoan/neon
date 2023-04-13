@@ -1,6 +1,7 @@
 import { defineComponent, onMounted, ref } from 'vue';
 import { NeonCard, NeonCardBody, NeonSkeletonLoader } from '@/neon';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 
@@ -11,29 +12,20 @@ export default defineComponent({
     NeonCardBody,
     NeonSkeletonLoader,
     ComponentDocumentation,
+    Editor,
   },
   setup() {
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('Indicate initial loading progress');
 
-    const example = ref(`<div class="example--vertical">
-  <neon-skeleton-loader :count="5" />
-</div>`);
-
-    const examples = ref([
-      {
-        title: 'Skeleton loader with 5 rows',
-        template: example.value,
-      },
-    ]);
+    const template = '<neon-skeleton-loader :count="5" />';
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonSkeletonLoader')));
 
     return {
       menuModel,
       headline,
-      example,
-      examples,
+      template,
     };
   },
 });

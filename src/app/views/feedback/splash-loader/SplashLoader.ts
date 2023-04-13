@@ -1,6 +1,7 @@
 import { defineComponent, onMounted, ref } from 'vue';
 import { NeonButton, NeonCard, NeonCardBody, NeonLink, NeonSplashLoader } from '@/neon';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 
@@ -13,40 +14,31 @@ export default defineComponent({
     NeonLink,
     NeonSplashLoader,
     ComponentDocumentation,
+    Editor,
   },
   setup() {
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('Indicate loading progress');
 
-    const data = ref({
-      open: false,
-      openLoader: () => {
-        setTimeout(() => {
-          data.value = { ...data.value, open: false };
-        }, 2500);
-        data.value = { ...data.value, open: true };
-      },
-    });
+    const open = ref(false);
+    const openLoader = () => {
+      setTimeout(() => {
+        open.value = false;
+      }, 2500);
+      open.value = true;
+    };
 
-    const examples = ref([
-      {
-        title: 'Splash loader example',
-        template: `
-          <div class="example--vertical">
-          <neon-button label="Show loader" @click="openLoader()" />
-          <neon-splash-loader v-if="open" :fullscreen="true" :overlay="true" size="xl" color="brand" />
-          </div>`,
-        data,
-      },
-    ]);
+    const template = `<neon-button label="Show loader" @click="openLoader()" />
+<neon-splash-loader v-if="open" :fullscreen="true" :overlay="true" size="xl" color="brand" />`;
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonSplashLoader')));
 
     return {
       menuModel,
-      data,
+      open,
       headline,
-      examples,
+      template,
+      openLoader,
     };
   },
 });

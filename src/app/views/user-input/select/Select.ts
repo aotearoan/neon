@@ -3,6 +3,7 @@ import { NeonCard, NeonCardBody, NeonLink, NeonSelect } from '@/neon';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names,vue/no-reserved-component-names
@@ -13,6 +14,7 @@ export default defineComponent({
     NeonLink,
     NeonSelect,
     ComponentDocumentation,
+    Editor,
   },
   setup() {
     const menuModel = ref<MenuModel | null>(null);
@@ -211,7 +213,6 @@ export default defineComponent({
         ],
       },
     ]);
-
 
     const sizesTemplate = `<neon-select v-model="selectSmall" :options="model" placeholder="Select item" size="s" />
 <neon-select v-model="selectMedium" :options="model" placeholder="Select item" size="m" />
