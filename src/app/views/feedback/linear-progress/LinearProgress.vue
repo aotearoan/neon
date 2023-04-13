@@ -71,8 +71,13 @@
           </div>
           <h4 class="neon-h5">Gradient</h4>
           <div class="example--horizontal">
-            <neon-linear-progress :output="false" :total="55" :value="progressNoOutput" alternate-color="success"
-                                  color="success" />
+            <neon-linear-progress
+              :output="false"
+              :total="55"
+              :value="progressNoOutput"
+              alternate-color="success"
+              color="success"
+            />
           </div>
         </div>
         <editor v-model="colorExamples" />

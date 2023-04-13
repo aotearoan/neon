@@ -19,7 +19,8 @@
             question="Are you sure you want to accept incoming requests?"
             title="Incoming requests"
             @cancel="toggleOpen(false)"
-            @confirm="toggleOpen(false)">
+            @confirm="toggleOpen(false)"
+          >
           </neon-dialog>
         </div>
         <editor v-model="template" />

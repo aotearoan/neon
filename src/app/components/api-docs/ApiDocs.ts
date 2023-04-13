@@ -53,10 +53,14 @@ export default defineComponent({
 
     const lookupLink = (typeName?: string) => {
       if (typeName) {
-        const isEnum = enumList.indexOf(typeName) >= 0;
-        const isModel = modelList.indexOf(typeName) >= 0;
+        const matches = typeName.match(/.*(Neon[a-zA-Z]+)/);
+        if (matches && matches[1]) {
+          const neonType = matches[1];
+          const isEnum = enumList.indexOf(neonType) >= 0;
+          const isModel = modelList.indexOf(neonType) >= 0;
 
-        return isEnum ? `/enums/${typeName}` : isModel ? `/models/${typeName}` : undefined;
+          return isEnum ? `/enums/${neonType}` : isModel ? `/models/${neonType}` : undefined;
+        }
       }
       return undefined;
     };

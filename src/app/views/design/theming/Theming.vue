@@ -19,9 +19,8 @@
         <neon-anchor id="dark-mode" />
         <h2 class="neon-h4">Dark mode</h2>
         <p>
-          Neon supports both light and dark modes. These are supported by changing the mode class
-          attached to the HTML root element of the page. The classes are <em>neon-mode--light</em> and
-          <em>neon-mode--dark</em>.
+          Neon supports both light and dark modes. These are supported by changing the mode class attached to the HTML
+          root element of the page. The classes are <em>neon-mode--light</em> and <em>neon-mode--dark</em>.
         </p>
         <p>
           Use

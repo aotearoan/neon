@@ -25,7 +25,9 @@
           Neon uses the browser locale as a default for representing dates & numbers in a format the user expects. See
           <neon-link
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat"
-            target="_blank">Intl.NumberFormat
+            target="_blank"
+          >
+            Intl.NumberFormat
           </neon-link>
           for more on how numbers are formatted.
         </p>

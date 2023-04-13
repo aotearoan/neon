@@ -64,7 +64,7 @@ export default defineComponent({
       },
     ]);
 
-    const modelWithIcons = ([
+    const modelWithIcons = ref([
       {
         key: 'k1',
         label: 'Item 1',
@@ -104,7 +104,7 @@ export default defineComponent({
       },
     ]);
 
-    const groupedModel = ([
+    const groupedModel = ref([
       {
         group: 'Africa',
         options: [

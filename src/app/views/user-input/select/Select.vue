@@ -1,10 +1,5 @@
 <template>
-  <component-documentation
-    v-if="menuModel"
-    :headline="headline"
-    :model="menuModel"
-    class="select-examples"
-  >
+  <component-documentation v-if="menuModel" :headline="headline" :model="menuModel" class="select-examples">
     <neon-card>
       <neon-card-body>
         <p>
@@ -50,8 +45,12 @@
         <h2 class="neon-h3">Grouped options</h2>
         <div class="neon-vertically-spaced">
           <neon-select v-model="selectGrouped" :grouped-options="groupedModel" placeholder="Select item" />
-          <neon-select v-model="selectGroupedMulti" :grouped-options="groupedModel" :multiple="true"
-                       placeholder="Select item(s)" />
+          <neon-select
+            v-model="selectGroupedMulti"
+            :grouped-options="groupedModel"
+            :multiple="true"
+            placeholder="Select item(s)"
+          />
         </div>
       </neon-card-body>
     </neon-card>
