@@ -14,8 +14,7 @@
       :toggleOnIf="true"
     >
       <h2 v-if="descriptionIndex === -1" class="neon-h3 component-documentation__description-heading">Description</h2>
-      <slot v-if="descriptionIndex === -1"></slot>
-      <examples :examples="examples" />
+      <slot name="default"></slot>
     </neon-tab>
     <neon-tab
       v-if="descriptionIndex >= 0"
@@ -24,7 +23,7 @@
       :toggleOnIf="true"
     >
       <h2 v-if="$slots.default" class="neon-h3">Description</h2>
-      <slot></slot>
+      <slot name="description"></slot>
     </neon-tab>
     <neon-tab v-if="apiIndex >= 0" :selected="selected === tabs[apiIndex].key" :tab="tabs[apiIndex]" :toggleOnIf="true">
       <h3 class="component-documentation__tab-title">API</h3>

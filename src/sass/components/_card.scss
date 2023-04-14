@@ -129,7 +129,7 @@
       &.neon-card--horizontal-breakpoint-mobile-l {
         @include responsive.responsive(larger-than-mobile-large) {
           @include horizontal-card-responsive;
-          
+
           &.neon-card--with-horizontal-borders {
             @include horizontal-card-responsive-borders;
           }
@@ -167,7 +167,7 @@
 
     .neon-card-body--full-width {
       padding: 0;
-      width: calc(100% + 2 * var(--neon-border-width));
+      width: calc(100% + var(--neon-border-width));
 
       img {
         margin-left: calc(-1 * var(--neon-border-width));
@@ -181,8 +181,8 @@
       }
 
       & > * {
-        max-width: calc(100% + 2 * var(--neon-border-width));
-        width: 100%;
+        max-width: calc(100% + var(--neon-border-width));
+        width: calc(100% + var(--neon-border-width));
       }
 
       &:first-child {
@@ -208,7 +208,7 @@
       }
     }
 
-    .neon-card-footer {
+    & > .neon-card-footer {
       &:not(:first-child) {
         padding-top: 0;
       }

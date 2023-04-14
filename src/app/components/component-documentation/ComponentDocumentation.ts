@@ -2,7 +2,6 @@ import { computed, defineComponent, onMounted, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import Examples from '../examples/Examples.vue';
 import ApiDocs from '../api-docs/ApiDocs.vue';
-import type { ExampleModel } from '../example/ExampleModel';
 import type { NeonTabModel } from '@/neon';
 import { NeonTab, NeonTabs } from '@/neon';
 import type { DocumentationModel } from '../ApiModel';
@@ -24,7 +23,6 @@ export default defineComponent({
   props: {
     model: { type: Object as () => MenuModel, required: true },
     headline: { type: String, required: true },
-    examples: { type: Array as () => Array<ExampleModel>, default: () => [] },
   },
   setup(props) {
     const router = useRouter();

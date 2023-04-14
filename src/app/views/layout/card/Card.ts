@@ -2,7 +2,8 @@ import { defineComponent, onMounted, ref } from 'vue';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
-import { NeonCard, NeonCardBody, NeonCardHeader } from '@/neon';
+import { NeonButton, NeonCard, NeonCardBody, NeonCardFooter, NeonCardHeader } from '@/neon';
+import Editor from '@/app/components/editor/Editor.vue';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
@@ -11,13 +12,18 @@ export default defineComponent({
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
+    NeonCardFooter,
+    NeonButton,
     ComponentDocumentation,
+    Editor,
   },
   setup() {
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('A component for content layout within a page');
 
-    const example = `<neon-card>
+    const baseUrl = import.meta.env.VITE_BASE_URL;
+
+    const verticalExample = `<neon-card>
   <neon-card-header>
     <h4>Card header</h4>
   </neon-card-header>
@@ -28,7 +34,7 @@ export default defineComponent({
     <p>Another card body. Cards can also have full width sections without an padding (this is useful for adding images, charts, etc). The following section is full width:</p>
   </neon-card-body>
   <neon-card-body :full-width="true">
-    <img :src="baseUrl + 'images/taranaki.jpg'">
+    <img :src="baseUrl + 'images/taranaki.jpg'" />
   </neon-card-body>
   <neon-card-body>
     <p>Place card actions inside the <strong>NeonCardFooter</strong> below:</p>
@@ -52,29 +58,14 @@ export default defineComponent({
   </neon-card-footer>
 </neon-card>`;
 
-    const examples = ref([
-      {
-        title: 'Vertical card',
-        template: example,
-        noCard: true,
-        data: {
-          baseUrl: import.meta.env.VITE_BASE_URL,
-        },
-      },
-      {
-        title: 'Horizontal card',
-        template: horizontalExample,
-        noCard: true,
-      },
-    ]);
-
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonCard')));
 
     return {
       menuModel,
       headline,
       horizontalExample,
-      examples,
+      verticalExample,
+      baseUrl,
     };
   },
 });

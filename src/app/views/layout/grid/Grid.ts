@@ -1,5 +1,5 @@
 import { defineComponent, onMounted, ref } from 'vue';
-import { NeonCard, NeonCardBody, NeonGrid, NeonGridArea, NeonLink } from '@/neon';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonGrid, NeonGridArea, NeonLink } from '@/neon';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
@@ -12,6 +12,7 @@ export default defineComponent({
   components: {
     NeonCard,
     NeonCardBody,
+    NeonCardHeader,
     NeonGrid,
     NeonGridArea,
     NeonLink,
@@ -22,26 +23,18 @@ export default defineComponent({
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('Use CSS grid for page content');
 
-    const examples = ref([
+    const layouts = [
       {
-        title: 'Grid example',
-        template: `
-          <neon-grid id="content" :layouts="layouts">
-          <neon-grid-area id="section-content">
-            <span>Grid area (scroll me)</span>
-          </neon-grid-area>
-          </neon-grid>`,
-        data: {
-          layouts: [
-            {
-              breakpoint: NeonResponsive.All,
-              grid: [['section-content']],
-            },
-          ],
-        },
-        fixedContent: true,
+        breakpoint: NeonResponsive.All,
+        grid: [['section-content']],
       },
-    ]);
+    ];
+
+    const template = `<neon-grid id="content" :layouts="layouts">
+  <neon-grid-area id="section-content">
+    <span>Grid area (scroll me)</span>
+  </neon-grid-area>
+</neon-grid>`;
 
     const layoutExample = ref(`const layouts = [
   {
@@ -71,8 +64,9 @@ export default defineComponent({
     return {
       menuModel,
       headline,
-      examples,
+      template,
       layoutExample,
+      layouts,
     };
   },
 });

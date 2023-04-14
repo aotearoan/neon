@@ -1,5 +1,5 @@
 import { computed, defineComponent, onMounted, ref } from 'vue';
-import { NeonButton, NeonCard, NeonCardBody, NeonLink } from '@/neon';
+import { NeonButton, NeonCard, NeonCardBody, NeonCardHeader, NeonLink } from '@/neon';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
@@ -16,6 +16,7 @@ export default defineComponent({
     NeonButton,
     NeonCard,
     NeonCardBody,
+    NeonCardHeader,
     NeonLink,
     ComponentDocumentation,
     Editor,
@@ -24,133 +25,94 @@ export default defineComponent({
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('Display temporary notifications to the user');
 
-    const data = ref({
-      infoAlert: (placement?: NeonAlertPlacement) => {
-        NeonAlertService.info({ title: 'Info alert', message: 'This is an example of an info alert.', placement });
-      },
-      successAlert: (placement?: NeonAlertPlacement) => {
-        NeonAlertService.success({
-          title: 'Success alert',
-          message: 'This is an example of a success alert.',
-          placement,
-        });
-      },
-      warnAlert: (placement?: NeonAlertPlacement) => {
-        NeonAlertService.warn({
-          title: 'Warn alert',
-          message: 'This is an example of a warning alert.',
-          placement,
-        });
-      },
-      errorAlert: (placement?: NeonAlertPlacement) => {
-        NeonAlertService.error({ title: 'Error alert', message: 'This is an example of an error alert.', placement });
-      },
-      alertSingleAction: () => {
-        NeonAlertService.info({
-          title: 'Alert with single action',
-          message: 'This is an example of an alert with a single action.',
-          primaryAction: {
-            label: 'Dismiss',
-            callback: () => {
-              console.log('Dismiss clicked');
-            },
-          },
-        });
-      },
-      alertBothActions: () => {
-        NeonAlertService.info({
-          title: 'Alert with single action',
-          message: 'This is an example of an alert with a single action.',
-          primaryAction: {
-            label: 'Action',
-            callback: () => {
-              console.log('Action clicked');
-            },
-          },
-          secondaryAction: {
-            label: 'Cancel',
-            callback: () => {
-              console.log('Cancel clicked');
-            },
-          },
-        });
-      },
-      toastInfo: (placement?: NeonVerticalPosition) => {
-        NeonToastService.info({ title: 'This is an info toast', placement });
-      },
-      toastSuccess: (placement?: NeonVerticalPosition) => {
-        NeonToastService.success({ title: 'This is a success toast', placement });
-      },
-      toastWarn: (placement?: NeonVerticalPosition) => {
-        NeonToastService.warn({ title: 'This is a warning toast', placement });
-      },
-      toastError: (placement?: NeonVerticalPosition) => {
-        NeonToastService.error({ title: 'This is an error toast', placement });
-      },
-    });
+    const infoAlert = (placement?: NeonAlertPlacement) => {
+      NeonAlertService.info({ title: 'Info alert', message: 'This is an example of an info alert.', placement });
+    };
 
-    const examples = ref([
-      {
-        title: 'Different types of alert',
-        template: `
-          <div class="example--horizontal">
-          <neon-button color="info" label="Info" @click="infoAlert()" />
-          <neon-button color="success" label="Success" @click="successAlert()" />
-          <neon-button color="warn" label="Warning" @click="warnAlert()" />
-          <neon-button color="error" label="Error" @click="errorAlert()" />
-          </div>`,
-        data,
-        components: {
-          NeonButton,
+    const successAlert = (placement?: NeonAlertPlacement) => {
+      NeonAlertService.success({
+        title: 'Success alert',
+        message: 'This is an example of a success alert.',
+        placement,
+      });
+    };
+
+    const warnAlert = (placement?: NeonAlertPlacement) => {
+      NeonAlertService.warn({
+        title: 'Warn alert',
+        message: 'This is an example of a warning alert.',
+        placement,
+      });
+    };
+
+    const errorAlert = (placement?: NeonAlertPlacement) => {
+      NeonAlertService.error({ title: 'Error alert', message: 'This is an example of an error alert.', placement });
+    };
+
+    const alertSingleAction = () => {
+      NeonAlertService.info({
+        title: 'Alert with single action',
+        message: 'This is an example of an alert with a single action.',
+        primaryAction: {
+          label: 'Dismiss',
+          callback: () => {
+            console.log('Dismiss clicked');
+          },
         },
-      },
-      {
-        title: 'Alert placement',
-        template: `
-          <div class="example--horizontal">
-          <neon-button label="Top left" @click="infoAlert('top-left')" />
-          <neon-button label="Top right" @click="infoAlert('top-right')" />
-          <neon-button label="Bottom left" @click="infoAlert('bottom-left')" />
-          <neon-button label="Bottom right" @click="infoAlert('bottom-right')" />
-          </div>`,
-        data,
-        components: {
-          NeonButton,
+      });
+    };
+
+    const alertBothActions = () => {
+      NeonAlertService.info({
+        title: 'Alert with single action',
+        message: 'This is an example of an alert with a single action.',
+        primaryAction: {
+          label: 'Action',
+          callback: () => {
+            console.log('Action clicked');
+          },
         },
-      },
-      {
-        title: 'Alerts with actions',
-        template: `
-          <div class="example--horizontal">
-          <neon-button label="Single action" @click="alertSingleAction()" />
-          <neon-button label="Both actions" @click="alertBothActions()" />
-          </div>`,
-        data,
-        components: {
-          NeonButton,
+        secondaryAction: {
+          label: 'Cancel',
+          callback: () => {
+            console.log('Cancel clicked');
+          },
         },
-      },
-      {
-        title: 'Toast alerts',
-        template: `
-          <div class="example--vertical">
-          <div class="example--horizontal">
-            <neon-button label="Toast top" @click="toastInfo()" />
-            <neon-button label="Toast bottom" @click="toastInfo('bottom')" />
-          </div>
-          <div class="example--horizontal">
-            <neon-button color="info" label="Toast info" @click="toastInfo()" />
-            <neon-button color="success" label="Toast success" @click="toastSuccess()" />
-            <neon-button color="warn" label="Toast warning" @click="toastWarn()" />
-            <neon-button color="error" label="Toast error" @click="toastError()" />
-          </div>
-          </div>`,
-        data,
-        components: {
-          NeonButton,
-        },
-      },
-    ]);
+      });
+    };
+
+    const toastInfo = (placement?: NeonVerticalPosition) => {
+      NeonToastService.info({ title: 'This is an info toast', placement });
+    };
+    const toastSuccess = (placement?: NeonVerticalPosition) => {
+      NeonToastService.success({ title: 'This is a success toast', placement });
+    };
+    const toastWarn = (placement?: NeonVerticalPosition) => {
+      NeonToastService.warn({ title: 'This is a warning toast', placement });
+    };
+    const toastError = (placement?: NeonVerticalPosition) => {
+      NeonToastService.error({ title: 'This is an error toast', placement });
+    };
+
+    const typesTemplate = `<neon-button color="info" label="Info" @click="infoAlert()" />
+<neon-button color="success" label="Success" @click="successAlert()" />
+<neon-button color="warn" label="Warning" @click="warnAlert()" />
+<neon-button color="error" label="Error" @click="errorAlert()" />`;
+
+    const alertPlacementTemplate = `<neon-button label="Top left" @click="infoAlert('top-left')" />
+<neon-button label="Top right" @click="infoAlert('top-right')" />
+<neon-button label="Bottom left" @click="infoAlert('bottom-left')" />
+<neon-button label="Bottom right" @click="infoAlert('bottom-right')" />`;
+
+    const withActionsTemplate = `<neon-button label="Single action" @click="alertSingleAction()" />
+<neon-button label="Both actions" @click="alertBothActions()" />`;
+
+    const toastTemplate = `<neon-button label="Toast top" @click="toastInfo()" />
+<neon-button label="Toast bottom" @click="toastInfo('bottom')" />
+<neon-button color="info" label="Toast info" @click="toastInfo()" />
+<neon-button color="success" label="Toast success" @click="toastSuccess()" />
+<neon-button color="warn" label="Toast warning" @click="toastWarn()" />
+<neon-button color="error" label="Toast error" @click="toastError()" />`;
 
     const infoExample = computed(
       () => `const alertMessage = { title: 'message title', message: 'Message' };
@@ -197,8 +159,6 @@ NeonToastService.error(toastMessage);`,
     return {
       menuModel,
       headline,
-      data,
-      examples,
       infoExample,
       successExample,
       warnExample,
@@ -207,6 +167,20 @@ NeonToastService.error(toastMessage);`,
       successToast,
       warnToast,
       errorToast,
+      typesTemplate,
+      alertPlacementTemplate,
+      withActionsTemplate,
+      toastTemplate,
+      toastInfo,
+      toastSuccess,
+      toastWarn,
+      toastError,
+      infoAlert,
+      successAlert,
+      warnAlert,
+      errorAlert,
+      alertSingleAction,
+      alertBothActions,
     };
   },
 });

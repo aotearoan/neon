@@ -15,6 +15,7 @@ $fixed-content-height: 348rem;
     position: relative;
 
     &--fixed-content {
+      z-index: var(--neon-z-index-default);
       height: $fixed-content-height;
       margin-bottom: 0 !important;
       overflow-y: auto;

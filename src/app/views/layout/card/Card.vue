@@ -1,5 +1,5 @@
 <template>
-  <component-documentation v-if="menuModel" :examples="examples" :model="menuModel" :headline="headline">
+  <component-documentation v-if="menuModel" :headline="headline" :model="menuModel">
     <neon-card>
       <neon-card-body>
         <p>
@@ -24,6 +24,49 @@
           The <strong>NeonCardFooter</strong> is designed to be placed at the bottom of a card and contains the key
           actions related to the card content.
         </p>
+      </neon-card-body>
+      <neon-card-body>
+        <h2 class="neon-h3">Vertical card</h2>
+        <neon-card>
+          <neon-card-header>
+            <h4>Card header</h4>
+          </neon-card-header>
+          <neon-card-body>
+            <p>Card body</p>
+          </neon-card-body>
+          <neon-card-body>
+            <p>Another card body. Cards can also have full width sections without an padding (this is useful for adding
+              images, charts, etc). The following section is full width:</p>
+          </neon-card-body>
+          <neon-card-body :full-width="true">
+            <img :src="baseUrl + 'images/taranaki.jpg'" />
+          </neon-card-body>
+          <neon-card-body>
+            <p>Place card actions inside the <strong>NeonCardFooter</strong> below:</p>
+          </neon-card-body>
+          <neon-card-footer>
+            <neon-button label="Cancel" />
+            <neon-button color="primary" label="Accept" />
+          </neon-card-footer>
+        </neon-card>
+        <editor v-model="verticalExample" />
+      </neon-card-body>
+      <neon-card-body>
+        <h2 class="neon-h3">Horizontal card</h2>
+        <neon-card orientation="horizontal">
+          <neon-card-header>
+            <h4>Header</h4>
+          </neon-card-header>
+          <neon-card-body>
+            <p>Spicy jalapeno bacon ipsum dolor amet biltong porchetta cupim sausage pork loin. Ham porchetta
+              brisket.</p>
+          </neon-card-body>
+          <neon-card-footer>
+            <neon-button label="Cancel" size="s" />
+            <neon-button color="primary" label="Accept" size="s" />
+          </neon-card-footer>
+        </neon-card>
+        <editor v-model="horizontalExample" />
       </neon-card-body>
     </neon-card>
   </component-documentation>
