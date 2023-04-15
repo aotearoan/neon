@@ -170,7 +170,8 @@
     & + h5,
     & + .neon-h5,
     & + h6,
-    & + .neon-h6 {
+    & + .neon-h6,
+    & + .neon-card {
       margin-top: calc(8 * var(--neon-base-space));
     }
   }

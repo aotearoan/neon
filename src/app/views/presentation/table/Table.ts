@@ -1,7 +1,7 @@
 import { defineComponent, onMounted, ref } from 'vue';
 import { NeonCard, NeonCardBody, NeonCardHeader, NeonNote } from '@/neon';
-import Examples from '@/app/components/examples/Examples.vue';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 
@@ -13,17 +13,15 @@ export default defineComponent({
     NeonCardBody,
     NeonCardHeader,
     NeonNote,
-    Examples,
     ComponentDocumentation,
+    Editor,
+
   },
   setup() {
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('CSS table styles');
 
-    const examples = ref([
-      {
-        title: 'Table style example',
-        template: `<table>
+    const template = `<table>
   <thead>
     <tr>
       <th>header 1</th>
@@ -40,16 +38,14 @@ export default defineComponent({
       <td>Value 4</td>
     </tr>
   </tbody>
-</table>`,
-      },
-    ]);
+</table>`;
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonTable')));
 
     return {
       menuModel,
       headline,
-      examples,
+      template,
     };
   },
 });

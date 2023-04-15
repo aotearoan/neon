@@ -4,6 +4,7 @@ import { NeonCard, NeonCardBody, NeonCardHeader, NeonIcon, NeonLink, NeonNote } 
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
@@ -16,21 +17,15 @@ export default defineComponent({
     NeonLink,
     NeonNote,
     ComponentDocumentation,
+    Editor,
   },
   setup() {
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('Display icons and other SVGs');
 
-    const examples = ref([
-      {
-        title: 'Icon colors',
-        template: `<div class="icons-wrapper">
-  <neon-icon name="contrast" />
-  <neon-icon color="primary" name="contrast" />
-  <neon-icon :disabled="true" name="contrast" />
-</div>`,
-      },
-    ]);
+    const template = `<neon-icon name="contrast" />
+<neon-icon color="primary" name="contrast" />
+<neon-icon :disabled="true" name="contrast" />`;
 
     const icons = computed(() => NeonIconRegistry.list());
 
@@ -39,7 +34,7 @@ export default defineComponent({
     return {
       menuModel,
       headline,
-      examples,
+      template,
       icons,
     };
   },
