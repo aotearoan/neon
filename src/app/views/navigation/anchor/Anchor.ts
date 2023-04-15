@@ -1,8 +1,8 @@
 import { NeonActionMenu, NeonCard, NeonCardBody } from '@/neon';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
-import Editor from '@/app/components/editor/Editor.vue';
 import { defineComponent, onMounted, ref } from 'vue';
 
 export default defineComponent({

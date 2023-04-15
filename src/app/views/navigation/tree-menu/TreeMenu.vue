@@ -1,5 +1,5 @@
 <template>
-  <component-documentation v-if="menuModel" :examples="examples" :model="menuModel" :headline="headline">
+  <component-documentation v-if="menuModel" :headline="headline" :model="menuModel">
     <neon-card>
       <neon-card-body>
         <p>
@@ -7,6 +7,11 @@
           <strong>NeonSideNav</strong> component. The top level is the page group, second level the actual pages and the
           third level is the (optional) page fragments.
         </p>
+      </neon-card-body>
+      <neon-card-body>
+        <h2 class="neon-h3">Example</h2>
+        <neon-tree-menu :model="model" />
+        <editor v-model="template" />
       </neon-card-body>
     </neon-card>
   </component-documentation>

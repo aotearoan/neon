@@ -1,7 +1,6 @@
 <template>
   <component-documentation
     v-if="menuModel"
-    :examples="examples"
     :headline="headline"
     :model="menuModel"
     class="action-menu-examples"
@@ -17,6 +16,20 @@
           Use these in the same way you would use tabs - to break up the presentation of information to the user when
           there is too much information to display at once.
         </p>
+      </neon-card-body>
+      <neon-card-body>
+        <h2 class="neon-h3">Basic example</h2>
+        <neon-action-menu :model="model" :model-value="selected" color="primary" @update:modelValue="toggleSelected" />
+        <editor v-model="basicTemplate" />
+      </neon-card-body>
+      <neon-card-body>
+        <h2 class="neon-h3">With counts</h2>
+        <neon-action-menu :model="modelWithCounts"
+                          :model-value="selected2"
+                          color="primary"
+                          @update:modelValue="toggleSelected2"
+        />
+        <editor v-model="withCountsTemplate" />
       </neon-card-body>
     </neon-card>
   </component-documentation>

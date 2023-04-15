@@ -4,7 +4,6 @@ import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 import Editor from '@/app/components/editor/Editor.vue';
 import { defineComponent, onMounted, ref } from 'vue';
-import type { ExampleModel } from '@/app/components/example/ExampleModel';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
@@ -23,30 +22,24 @@ export default defineComponent({
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonStepper')));
 
-    const examples = ref<Array<ExampleModel>>([
-      {
-        title: 'Default Stepper',
-        template: `<neon-stepper
+    const defaultTemplate = `<neon-stepper
   :model-value="2"
   :steps="['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5 with the long name']"
   :completed-index="3"
-/>`,
-      },
-      {
-        title: 'Color Example',
-        template: `<neon-stepper
+/>`;
+
+    const colorTemplate = `<neon-stepper
   color="success"
   :model-value="3"
   :steps="['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5 with the long name']"
   :completed-index="3"
-/>`,
-      },
-    ]);
+/>`;
 
     return {
       menuModel,
       headline,
-      examples,
+      defaultTemplate,
+      colorTemplate,
     };
   },
 });

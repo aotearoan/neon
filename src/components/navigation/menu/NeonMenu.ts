@@ -81,7 +81,12 @@ export default defineComponent({
       menuItems.value = results.filter((item) => item !== null) as NeonPriorityMenuItem[];
     };
 
-    const routeMatches = (path: string) => route?.path.indexOf(path) >= 0;
+    const routeMatches = (path: string) => {
+      console.log('---------------');
+      console.log(route?.path);
+      console.log(path);
+      return route?.path.indexOf(path) >= 0;
+    };
 
     const onClick = (key: string) => {
       emit('click', key);

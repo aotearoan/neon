@@ -22,7 +22,9 @@
           dropdown-style="text-button"
         />
         <neon-link
+          v-else
           :key="`${item.key}Link`"
+          :class="{ 'router-link-active': routeMatches(item.href) }"
           :href="item.href"
           :no-style="true"
           :tabindex="item.disabled ? -1 : 0"
