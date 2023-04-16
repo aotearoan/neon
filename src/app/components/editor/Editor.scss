@@ -2,7 +2,7 @@
 @use 'src/sass/includes/responsive';
 
 .editor__wrapper {
-  border-radius: var(--neon-border-radius);
+  border-radius: 0;
   overflow: hidden;
   position: relative;
   margin-top: calc(8 * var(--neon-base-space));
@@ -91,7 +91,7 @@
     &__actions {
       position: absolute;
       top: 0;
-      right: 0;
+      right: var(--neon-base-space);
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -125,7 +125,7 @@
       }
 
       &:hover:not(:disabled) {
-        background-color: var(--neon-color-neutral-d2);
+        background-color: rgba(var(--neon-rgb-neutral-d2), 0.5);
         cursor: pointer;
       }
 
