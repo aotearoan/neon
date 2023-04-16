@@ -21,12 +21,21 @@
         </p>
       </neon-card-body>
       <neon-card-body>
-        <h2 class="neon-h3">Size example</h2>
+        <h2 class="neon-h3">Size examples</h2>
         <div class="neon-vertically-spaced date-example">
           <neon-date-picker v-model="dateSmall" size="s" />
           <neon-date-picker v-model="dateMedium" size="m" />
           <neon-date-picker v-model="dateLarge" size="l" />
         </div>
+        <editor v-model="dateSizeExamples" />
+      </neon-card-body>
+      <neon-card-body>
+        <h2 class="neon-h3">Color examples</h2>
+        <div class="neon-vertically-spaced date-example">
+          <neon-date-picker v-model="dateSmall" color="brand" />
+          <neon-date-picker v-model="dateLarge" color="info" />
+        </div>
+        <editor v-model="dateColorExamples" />
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Disabled examples</h2>
@@ -35,9 +44,20 @@
           <neon-date-picker v-model="dateDisabled" :disabled="true" />
           <label>Disabled specific date selection</label>
           <neon-date-picker v-model="datesDisabled" :disabled-dates="disabledDates" />
-          <label>Specified date range (min={{ minDate }}, max={{ maxDate }})</label>
+          <label>Specified date range<br />(min={{ minDate }}, max={{ maxDate }})</label>
           <neon-date-picker v-model="dateValidRange" :max="maxDate" :min="minDate" />
         </div>
+        <editor v-model="dateDisabledExamples" />
+      </neon-card-body>
+      <neon-card-body>
+        <h2 class="neon-h3">Locale example</h2>
+        <neon-date-picker v-model="dateLocale" locale="ja-JP" />
+        <editor v-model="dateLocaleExample" />
+      </neon-card-body>
+      <neon-card-body>
+        <h2 class="neon-h3">Placement example</h2>
+        <neon-date-picker v-model="datePlacement" placement="top-left" />
+        <editor v-model="datePlacementExample" />
       </neon-card-body>
     </neon-card>
   </component-documentation>
