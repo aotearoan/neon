@@ -139,7 +139,7 @@ export default defineComponent({
 
     const emitModelValue = NeonDebounceUtils.debounce((value: string) => {
       emit('update:modelValue', value);
-    });
+    }, props.debounce);
 
     const iconName = computed(() => {
       switch (props.state) {
