@@ -392,9 +392,9 @@
 
     /* link */
     --neon-rgb-link: var(--neon-rgb-primary-l1);
-    --neon-color-link: var(--neon-color-primary-l1);
-    --neon-color-link-hover: var(--neon-color-primary-l2);
-    --neon-color-link-visited: var(--neon-color-primary-l2);
+    --neon-color-link: rgba(var(--neon-rgb-primary-l1), 0.75);
+    --neon-color-link-hover: var(--neon-color-primary-l1);
+    --neon-color-link-visited: rgba(var(--neon-rgb-primary-l2), 0.667);
 
     /* action menu */
     --neon-color-action-menu-hover: var(--neon-color-neutral-d3);
@@ -662,10 +662,10 @@
     --neon-color-note: var(--neon-color-text);
 
     /* link */
-    --neon-rgb-link: var(--neon-rgb-primary-l1);
-    --neon-color-link: var(--neon-color-primary-d1);
+    --neon-rgb-link: var(--neon-rgb-primary-d1);
+    --neon-color-link: rgba(var(--neon-rgb-primary-d1), 0.75);
     --neon-color-link-hover: var(--neon-color-primary-d1);
-    --neon-color-link-visited: var(--neon-color-primary-d2);
+    --neon-color-link-visited: rgba(var(--neon-rgb-primary-d2), 0.667);
 
     /* action menu */
     --neon-color-action-menu-hover: var(--neon-color-neutral-l4);
