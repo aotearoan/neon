@@ -1,6 +1,5 @@
 import { computed, defineComponent, onMounted, ref } from 'vue';
-import { NeonIconRegistry } from '@/common/utils/NeonIconRegistry';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonIcon, NeonLink, NeonNote } from '@/neon';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonIcon, NeonIconRegistry, NeonLink, NeonNote } from '@/neon';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';

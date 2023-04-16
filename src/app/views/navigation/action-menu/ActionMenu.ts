@@ -55,18 +55,10 @@ export default defineComponent({
 
     const selected = ref('option-1');
 
-    const toggleSelected = (newSelected: string) => {
-      selected.value = newSelected;
-    };
-
     const selected2 = ref('option-1');
 
-    const toggleSelected2 = (newSelected: string) => {
-      selected2.value = newSelected;
-    };
-
-    const basicTemplate = '<neon-action-menu :model="model" color="primary" :model-value="selected" @update:modelValue="toggleSelected" />';
-    const withCountsTemplate = '<neon-action-menu :model="modelWithCounts" color="primary" :model-value="selected2" @update:modelValue="toggleSelected2" />';
+    const basicTemplate = '<neon-action-menu v-model="selected" :model="model" color="primary" />';
+    const withCountsTemplate = '<neon-action-menu v-model="selected2" :model="modelWithCounts" color="primary" />';
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonActionMenu')));
 
@@ -79,8 +71,6 @@ export default defineComponent({
       selected2,
       basicTemplate,
       withCountsTemplate,
-      toggleSelected,
-      toggleSelected2,
     };
   },
 });

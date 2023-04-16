@@ -31,7 +31,7 @@ export default defineComponent({
      */
     multiple: { type: Boolean, default: false },
     /**
-     * HTML file input accept property for filtering the files the user is allowed to select. THis is a mime type,
+     * HTML file input accept property for filtering the files the user is allowed to select. This is a mime type,
      * e.g. 'application/pdf'.
      */
     accept: { type: String, default: null },

@@ -1,4 +1,3 @@
-import type { Ref } from 'vue';
 import { defineComponent, onMounted, ref } from 'vue';
 import { NeonCard, NeonCardBody, NeonDropdown } from '@/neon';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
@@ -37,113 +36,123 @@ export default defineComponent({
     const blOpen = ref(false);
     const hoverOpen = ref(false);
 
-    const data: Record<string, Ref<boolean>> = {
-      sOpen,
-      mOpen,
-      lOpen,
-      disabledOpen,
-      withIconOpen,
-      iconOnlyOpen,
-      noIndicatorOpen,
-      textOpen,
-      solidButtonOpen,
-      primaryOpen,
-      warnTextOpen,
-      badgeSquareOpen,
-      badgeCircularOpen,
-      trOpen,
-      blOpen,
-      hoverOpen,
-    };
-
-    const toggleOpen = (key: string) => {
-      if (data[key]) {
-        data[key].value = !data[key].value;
-      }
-    };
-
-    const sizeExamples = `<neon-dropdown :model-value="sOpen" size="s" label="Small" @update:modelValue="toggleOpen('sOpen')">
+    const sizeExamples = `<neon-dropdown v-model="sOpen" label="Small" size="s">
   <neon-card-body>
     <p>Dropdown contents</p>
   </neon-card-body>
 </neon-dropdown>
-<neon-dropdown :model-value="mOpen" size="m" label="Medium" @update:modelValue="toggleOpen('mOpen')">
+<neon-dropdown v-model="mOpen" label="Medium" size="m">
   <neon-card-body>
     <p>Dropdown contents</p>
   </neon-card-body>
 </neon-dropdown>
-<neon-dropdown :model-value="lOpen" size="l" label="Large" @update:modelValue="toggleOpen('lOpen')">
+<neon-dropdown v-model="lOpen" label="Large" size="l">
   <neon-card-body>
     <p>Dropdown contents</p>
   </neon-card-body>
 </neon-dropdown>`;
 
-    const buttonStyleExamples = `<neon-dropdown :model-value="solidButtonOpen" dropdown-style="solid-button" label="Solid" @update:modelValue="toggleOpen('solidButtonOpen')">
+    const buttonStyleExamples = `<neon-dropdown v-model="solidButtonOpen"
+               dropdown-style="solid-button"
+               label="Solid"
+>
   <neon-card-body>
     <p>Dropdown contents</p>
   </neon-card-body>
 </neon-dropdown>
-<neon-dropdown :model-value="textOpen" dropdown-style="text-button" label="Text" @update:modelValue="toggleOpen('textOpen')">
+<neon-dropdown v-model="textOpen"
+               dropdown-style="text-button"
+               label="Text"
+>
   <neon-card-body>
     <p>Dropdown contents</p>
   </neon-card-body>
 </neon-dropdown>`;
 
-    const badgeStyleExamples = `<neon-dropdown :model-value="badgeSquareOpen" dropdown-style="square-badge" label="XD" @update:modelValue="toggleOpen('badgeSquareOpen')">
+    const badgeStyleExamples = `<neon-dropdown v-model="badgeSquareOpen"
+               dropdown-style="square-badge"
+               label="XD"
+>
   <neon-card-body>
     <p>Dropdown contents</p>
   </neon-card-body>
 </neon-dropdown>
-<neon-dropdown :model-value="badgeCircularOpen" dropdown-style="circular-badge" label="XD" @update:modelValue="toggleOpen('badgeCircularOpen')">
+<neon-dropdown v-model="badgeCircularOpen"
+               dropdown-style="circular-badge"
+               label="XD"
+>
   <neon-card-body>
     <p>Dropdown contents</p>
   </neon-card-body>
 </neon-dropdown>`;
 
-    const iconExamples = `<neon-dropdown :model-value="withIconOpen" icon="plus" label="With icon" @update:modelValue="toggleOpen('withIconOpen')">
+    const iconExamples = `<neon-dropdown v-model="withIconOpen"
+               icon="plus"
+               label="With icon"
+>
   <neon-card-body>
     <p>Dropdown contents</p>
   </neon-card-body>
 </neon-dropdown>
-<neon-dropdown :model-value="iconOnlyOpen" icon="plus" @update:modelValue="toggleOpen('iconOnlyOpen')">
+<neon-dropdown v-model="iconOnlyOpen" icon="plus">
   <neon-card-body>
     <p>Dropdown contents</p>
   </neon-card-body>
 </neon-dropdown>
-<neon-dropdown :model-value="badgeSquareOpen" dropdown-style="square-badge" icon="user" @update:modelValue="toggleOpen('badgeSquareOpen')">
+<neon-dropdown v-model="badgeSquareOpen"
+               dropdown-style="square-badge"
+               icon="user"
+>
   <neon-card-body>
     <p>Dropdown contents</p>
   </neon-card-body>
 </neon-dropdown>
-<neon-dropdown :model-value="noIndicatorOpen" label="No indicator" :indicator="false" @update:modelValue="toggleOpen('noIndicatorOpen')">
+<neon-dropdown v-model="noIndicatorOpen"
+               :indicator="false"
+               label="No indicator"
+>
   <neon-card-body>
     <p>Dropdown contents</p>
   </neon-card-body>
 </neon-dropdown>`;
 
-    const colorExamples = `<neon-dropdown :model-value="primaryOpen" color="primary" label="Primary" @update:modelValue="toggleOpen('primaryOpen')">
+    const colorExamples = `<neon-dropdown v-model="primaryOpen"
+               color="primary"
+               label="Primary"
+>
   <neon-card-body>
     <p>Dropdown contents</p>
   </neon-card-body>
 </neon-dropdown>
-<neon-dropdown :model-value="warnTextOpen" color="warn" dropdown-style="text-button" label="Warning" @update:modelValue="toggleOpen('warnTextOpen')">
+<neon-dropdown v-model="warnTextOpen"
+               color="warn"
+               dropdown-style="text-button"
+               label="Warning"
+>
   <neon-card-body>
     <p>Dropdown contents</p>
   </neon-card-body>
 </neon-dropdown>`;
 
-    const positionExamples = `<neon-dropdown :model-value="blOpen" label="Bottom left aligned" @update:modelValue="toggleOpen('blOpen')">
+    const positionExamples = `<neon-dropdown v-model="blOpen" label="Bottom left aligned">
   <neon-card-body>
     <p>Bacon ipsum dolor amet t-bone ribeye</p>
   </neon-card-body>
 </neon-dropdown>
-<neon-dropdown :model-value="trOpen" placement="top-right" label="Top right aligned" @update:modelValue="toggleOpen('trOpen')">
+<neon-dropdown v-model="trOpen"
+               label="Top right aligned"
+               placement="top-right"
+>
   <neon-card-body>
     <p>Bacon ipsum dolor amet t-bone ribeye</p>
   </neon-card-body>
 </neon-dropdown>`;
 
-    const openOnHoverExample = `<neon-dropdown :open-on-hover="true" :model-value="hoverOpen" dropdown-style="text-button" label="Open on hover" @update:modelValue="toggleOpen('hoverOpen')">
+    const openOnHoverExample = `<neon-dropdown v-model="hoverOpen"
+               :open-on-hover="true"
+               dropdown-style="text-button"
+               label="Open on hover"
+>
   <neon-card-body>
     <p>Bacon ipsum dolor amet t-bone ribeye</p>
   </neon-card-body>
@@ -177,7 +186,6 @@ export default defineComponent({
       trOpen,
       blOpen,
       hoverOpen,
-      toggleOpen,
     };
   },
 });

@@ -13,9 +13,7 @@ import 'prismjs/themes/prism-tomorrow.css';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import Normalizer from 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace';
-import { NeonClipboardService } from '@/common/utils/NeonClipboardService';
-import { NeonToastService } from '@/common/utils/NeonToastService';
-import { NeonButton, NeonIcon } from '@/neon';
+import { NeonButton, NeonClipboardService, NeonIcon, NeonToastService } from '@/neon';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names

@@ -35,6 +35,17 @@
       }
     },
     {
+      "name": "disabled",
+      "description": "Display label with disabled state.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
       "name": "optionalLabel",
       "description": "The default \"optional\" label text.",
       "type": {

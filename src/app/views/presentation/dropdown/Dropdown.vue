@@ -19,17 +19,17 @@
       <neon-card-body>
         <h2 class="neon-h3">Dropdown sizes</h2>
         <div class="example--horizontal">
-          <neon-dropdown :model-value="sOpen" label="Small" size="s" @update:modelValue="toggleOpen('sOpen')">
+          <neon-dropdown v-model="sOpen" label="Small" size="s">
             <neon-card-body>
               <p>Dropdown contents</p>
             </neon-card-body>
           </neon-dropdown>
-          <neon-dropdown :model-value="mOpen" label="Medium" size="m" @update:modelValue="toggleOpen('mOpen')">
+          <neon-dropdown v-model="mOpen" label="Medium" size="m">
             <neon-card-body>
               <p>Dropdown contents</p>
             </neon-card-body>
           </neon-dropdown>
-          <neon-dropdown :model-value="lOpen" label="Large" size="l" @update:modelValue="toggleOpen('lOpen')">
+          <neon-dropdown v-model="lOpen" label="Large" size="l">
             <neon-card-body>
               <p>Dropdown contents</p>
             </neon-card-body>
@@ -40,21 +40,12 @@
       <neon-card-body>
         <h2 class="neon-h3">Dropdown colors</h2>
         <div class="example--horizontal">
-          <neon-dropdown :model-value="primaryOpen"
-                         color="primary"
-                         label="Primary"
-                         @update:modelValue="toggleOpen('primaryOpen')"
-          >
+          <neon-dropdown v-model="primaryOpen" color="primary" label="Primary">
             <neon-card-body>
               <p>Dropdown contents</p>
             </neon-card-body>
           </neon-dropdown>
-          <neon-dropdown :model-value="warnTextOpen"
-                         color="warn"
-                         dropdown-style="text-button"
-                         label="Warning"
-                         @update:modelValue="toggleOpen('warnTextOpen')"
-          >
+          <neon-dropdown v-model="warnTextOpen" color="warn" dropdown-style="text-button" label="Warning">
             <neon-card-body>
               <p>Dropdown contents</p>
             </neon-card-body>
@@ -65,34 +56,22 @@
       <neon-card-body>
         <h2 class="neon-h3">Dropdown with icons</h2>
         <div class="example--horizontal">
-          <neon-dropdown :model-value="withIconOpen"
-                         icon="plus"
-                         label="With icon"
-                         @update:modelValue="toggleOpen('withIconOpen')"
-          >
+          <neon-dropdown v-model="withIconOpen" icon="plus" label="With icon">
             <neon-card-body>
               <p>Dropdown contents</p>
             </neon-card-body>
           </neon-dropdown>
-          <neon-dropdown :model-value="iconOnlyOpen" icon="plus" @update:modelValue="toggleOpen('iconOnlyOpen')">
+          <neon-dropdown v-model="iconOnlyOpen" icon="plus">
             <neon-card-body>
               <p>Dropdown contents</p>
             </neon-card-body>
           </neon-dropdown>
-          <neon-dropdown :model-value="badgeSquareOpen"
-                         dropdown-style="square-badge"
-                         icon="user"
-                         @update:modelValue="toggleOpen('badgeSquareOpen')"
-          >
+          <neon-dropdown v-model="badgeSquareOpen" dropdown-style="square-badge" icon="user">
             <neon-card-body>
               <p>Dropdown contents</p>
             </neon-card-body>
           </neon-dropdown>
-          <neon-dropdown :indicator="false"
-                         :model-value="noIndicatorOpen"
-                         label="No indicator"
-                         @update:modelValue="toggleOpen('noIndicatorOpen')"
-          >
+          <neon-dropdown v-model="noIndicatorOpen" :indicator="false" label="No indicator">
             <neon-card-body>
               <p>Dropdown contents</p>
             </neon-card-body>
@@ -103,20 +82,12 @@
       <neon-card-body>
         <h2 class="neon-h3">Dropdown button styles</h2>
         <div class="example--horizontal">
-          <neon-dropdown :model-value="solidButtonOpen"
-                         dropdown-style="solid-button"
-                         label="Solid"
-                         @update:modelValue="toggleOpen('solidButtonOpen')"
-          >
+          <neon-dropdown v-model="solidButtonOpen" dropdown-style="solid-button" label="Solid">
             <neon-card-body>
               <p>Dropdown contents</p>
             </neon-card-body>
           </neon-dropdown>
-          <neon-dropdown :model-value="textOpen"
-                         dropdown-style="text-button"
-                         label="Text"
-                         @update:modelValue="toggleOpen('textOpen')"
-          >
+          <neon-dropdown v-model="textOpen" dropdown-style="text-button" label="Text">
             <neon-card-body>
               <p>Dropdown contents</p>
             </neon-card-body>
@@ -127,20 +98,12 @@
       <neon-card-body>
         <h2 class="neon-h3">Dropdown badge styles</h2>
         <div class="example--horizontal">
-          <neon-dropdown :model-value="badgeSquareOpen"
-                         dropdown-style="square-badge"
-                         label="XD"
-                         @update:modelValue="toggleOpen('badgeSquareOpen')"
-          >
+          <neon-dropdown v-model="badgeSquareOpen" dropdown-style="square-badge" label="XD">
             <neon-card-body>
               <p>Dropdown contents</p>
             </neon-card-body>
           </neon-dropdown>
-          <neon-dropdown :model-value="badgeCircularOpen"
-                         dropdown-style="circular-badge"
-                         label="XD"
-                         @update:modelValue="toggleOpen('badgeCircularOpen')"
-          >
+          <neon-dropdown v-model="badgeCircularOpen" dropdown-style="circular-badge" label="XD">
             <neon-card-body>
               <p>Dropdown contents</p>
             </neon-card-body>
@@ -151,16 +114,12 @@
       <neon-card-body>
         <h2 class="neon-h3">Dropdown positions</h2>
         <div class="example--horizontal">
-          <neon-dropdown :model-value="blOpen" label="Bottom left aligned" @update:modelValue="toggleOpen('blOpen')">
+          <neon-dropdown v-model="blOpen" label="Bottom left aligned">
             <neon-card-body>
               <p>Bacon ipsum dolor amet t-bone ribeye</p>
             </neon-card-body>
           </neon-dropdown>
-          <neon-dropdown :model-value="trOpen"
-                         label="Top right aligned"
-                         placement="top-right"
-                         @update:modelValue="toggleOpen('trOpen')"
-          >
+          <neon-dropdown v-model="trOpen" label="Top right aligned" placement="top-right">
             <neon-card-body>
               <p>Bacon ipsum dolor amet t-bone ribeye</p>
             </neon-card-body>
@@ -171,12 +130,7 @@
       <neon-card-body>
         <h2 class="neon-h3">Dropdown open on hover</h2>
         <div class="example--horizontal">
-          <neon-dropdown :model-value="hoverOpen"
-                         :open-on-hover="true"
-                         dropdown-style="text-button"
-                         label="Open on hover"
-                         @update:modelValue="toggleOpen('hoverOpen')"
-          >
+          <neon-dropdown v-model="hoverOpen" :open-on-hover="true" dropdown-style="text-button" label="Open on hover">
             <neon-card-body>
               <p>Bacon ipsum dolor amet t-bone ribeye</p>
             </neon-card-body>

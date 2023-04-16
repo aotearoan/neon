@@ -24,12 +24,14 @@
             </template>
             <template #scrolling>
               <h6>Scrolling content</h6>
-              <p>Spicy jalapeno bacon ipsum dolor amet biltong porchetta cupim sausage pork loin. Ham porchetta brisket,
+              <p>
+                Spicy jalapeno bacon ipsum dolor amet biltong porchetta cupim sausage pork loin. Ham porchetta brisket,
                 kielbasa ham hock sirloin ground round strip steak jowl jerky short ribs pork loin frankfurter. Flank
                 turkey cupim chuck pastrami picanha short loin shankle. Tongue pork loin turducken, tenderloin pork
                 belly ham boudin spare ribs sirloin pancetta jerky picanha corned beef ribeye alcatra. Kielbasa salami
                 flank cow, beef sausage biltong jerky prosciutto strip steak. Meatball prosciutto ham hock salami, jowl
-                tongue kevin fatback ground round beef ribs bacon pork loin meatloaf turducken strip steak.</p>
+                tongue kevin fatback ground round beef ribs bacon pork loin meatloaf turducken strip steak.
+              </p>
             </template>
           </neon-side-nav>
         </div>

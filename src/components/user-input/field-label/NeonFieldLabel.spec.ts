@@ -34,6 +34,13 @@ describe('NeonFieldLabel', () => {
     expect(container.querySelector('.neon-field-label__optional')?.textContent).toEqual('Optional');
   });
 
+  it('renders disabled', () => {
+    // given
+    const { container } = render(NeonFieldLabel, { props: { label, disabled: true } });
+    // when / then
+    expect(container.querySelector('.neon-field-label--disabled')).toBeDefined();
+  });
+
   it('renders custom optional text', () => {
     // given
     const optionalLabel = 'not mandatory';

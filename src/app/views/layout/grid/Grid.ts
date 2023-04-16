@@ -1,10 +1,9 @@
 import { defineComponent, onMounted, ref } from 'vue';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonGrid, NeonGridArea, NeonLink } from '@/neon';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonGrid, NeonGridArea, NeonLink, NeonResponsive } from '@/neon';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 import Editor from '@/app/components/editor/Editor.vue';
-import { NeonResponsive } from '@/common/enums/NeonResponsive';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names

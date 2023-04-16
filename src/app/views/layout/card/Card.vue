@@ -35,8 +35,10 @@
             <p>Card body</p>
           </neon-card-body>
           <neon-card-body>
-            <p>Another card body. Cards can also have full width sections without an padding (this is useful for adding
-              images, charts, etc). The following section is full width:</p>
+            <p>
+              Another card body. Cards can also have full width sections without an padding (this is useful for adding
+              images, charts, etc). The following section is full width:
+            </p>
           </neon-card-body>
           <neon-card-body :full-width="true">
             <img :src="baseUrl + 'images/taranaki.jpg'" />
@@ -58,8 +60,9 @@
             <h4>Header</h4>
           </neon-card-header>
           <neon-card-body>
-            <p>Spicy jalapeno bacon ipsum dolor amet biltong porchetta cupim sausage pork loin. Ham porchetta
-              brisket.</p>
+            <p>
+              Spicy jalapeno bacon ipsum dolor amet biltong porchetta cupim sausage pork loin. Ham porchetta brisket.
+            </p>
           </neon-card-body>
           <neon-card-footer>
             <neon-button label="Cancel" size="s" />

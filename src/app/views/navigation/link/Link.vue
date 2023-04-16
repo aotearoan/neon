@@ -12,12 +12,14 @@
       <neon-card-body>
         <h2 class="neon-h3">Link examples</h2>
         <div>
-          <p>This is some text with a
+          <p>
+            This is some text with a
             <neon-link href="/">link</neon-link>
             embedded in it.
           </p>
           <neon-link href="/">Router link</neon-link>
-          <neon-link :external-indicator="true" href="http://www.getskeleton.com" target="_blank">External link
+          <neon-link :external-indicator="true" href="http://www.getskeleton.com" target="_blank"
+            >External link
           </neon-link>
           <neon-link aria-label="Link title" @click="toast()">Link with click handler</neon-link>
         </div>

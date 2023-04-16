@@ -1,3 +1,5 @@
+@use '../includes/responsive';
+
 @mixin field-label {
   .neon-field-label {
     &__container {
@@ -5,6 +7,23 @@
       align-items: center;
       margin-bottom: calc(2 * var(--neon-base-space));
       gap: calc(1.5 * var(--neon-base-space));
+    }
+
+    & + .neon-field-label {
+      margin-top: calc(4 * var(--neon-base-space));
+
+      @include responsive.responsive(tablet) {
+        margin-top: calc(3 * var(--neon-base-space));
+      }
+
+      @include responsive.responsive(mobile-large) {
+        margin-top: calc(2 * var(--neon-base-space));
+      }
+    }
+
+    &.neon-field-label--disabled {
+      cursor: not-allowed;
+      color: var(--neon-color-disabled-dark);
     }
   }
 }

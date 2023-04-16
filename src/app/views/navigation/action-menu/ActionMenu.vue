@@ -1,10 +1,5 @@
 <template>
-  <component-documentation
-    v-if="menuModel"
-    :headline="headline"
-    :model="menuModel"
-    class="action-menu-examples"
-  >
+  <component-documentation v-if="menuModel" :headline="headline" :model="menuModel" class="action-menu-examples">
     <neon-card>
       <neon-card-body>
         <p>
@@ -19,16 +14,12 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Basic example</h2>
-        <neon-action-menu :model="model" :model-value="selected" color="primary" @update:modelValue="toggleSelected" />
+        <neon-action-menu v-model="selected" :model="model" color="primary" />
         <editor v-model="basicTemplate" />
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">With counts</h2>
-        <neon-action-menu :model="modelWithCounts"
-                          :model-value="selected2"
-                          color="primary"
-                          @update:modelValue="toggleSelected2"
-        />
+        <neon-action-menu v-model="selected2" :model="modelWithCounts" color="primary" />
         <editor v-model="withCountsTemplate" />
       </neon-card-body>
     </neon-card>

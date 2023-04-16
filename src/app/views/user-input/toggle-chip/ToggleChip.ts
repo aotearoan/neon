@@ -1,6 +1,7 @@
 import { defineComponent, onMounted, ref } from 'vue';
-import { NeonCard, NeonCardBody, NeonToggleChip } from '@/neon';
+import { NeonCard, NeonCardBody, NeonNote, NeonToggleChip } from '@/neon';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 
@@ -8,107 +9,84 @@ export default defineComponent({
   name: 'ToggleChip',
   components: {
     ComponentDocumentation,
+    Editor,
     NeonCard,
     NeonCardBody,
     NeonToggleChip,
+    NeonNote,
   },
   setup() {
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('Chips for toggling state');
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const data = ref<Record<string, any>>({
-      checked1: true,
-      checked2: true,
-      checked3: true,
-      checked4: true,
-      checked5: true,
-      checked6: true,
-      checked7: true,
-      checked8: true,
-      checked9: true,
-      checked10: true,
-      checked11: true,
-      checked12: true,
-      checked13: false,
-      checked14: true,
-      checked15: false,
-      checked16: false,
-      checked17: false,
-      toggleChecked: (key: string) => {
-        data.value[key] = !data.value[key];
-        data.value = { ...data.value };
-      },
-    });
+    const checked1 = ref(true);
+    const checked2 = ref(true);
+    const checked3 = ref(true);
+    const checked4 = ref(true);
+    const checked5 = ref(true);
+    const checked6 = ref(true);
+    const checked7 = ref(true);
+    const checked8 = ref(true);
+    const checked9 = ref(true);
+    const checked10 = ref(true);
+    const checked11 = ref(true);
+    const checked12 = ref(true);
+    const checked13 = ref(false);
+    const checked14 = ref(true);
+    const checked15 = ref(false);
+    const checked16 = ref(false);
+    const checked17 = ref(false);
 
-    const sizeTemplate = `<div class="example--vertical">
-  <neon-toggle-chip size="xs" label="Extra Small" :model-value="checked1" @update:modelValue="toggleChecked('checked1')"/>
-  <neon-toggle-chip size="s" label="Small" :model-value="checked2" @update:modelValue="toggleChecked('checked2')"/>
-  <neon-toggle-chip label="Medium" :model-value="checked3" @update:modelValue="toggleChecked('checked3')"/>
-  <neon-toggle-chip size="l" label="Large" :model-value="checked4" @update:modelValue="toggleChecked('checked4')"/>
-</div>`;
+    const sizeTemplate = `<neon-toggle-chip v-model="checked1" label="Extra Small" size="xs" />
+<neon-toggle-chip v-model="checked2" label="Small" size="s" />
+<neon-toggle-chip v-model="checked3" label="Medium" />
+<neon-toggle-chip v-model="checked4" label="Large" size="l" />`;
 
-    const noCheckTemplate = `<div class="example--vertical">
-  <neon-toggle-chip :show-check="false" size="xs" label="Extra small" :model-value="checked5" @update:modelValue="toggleChecked('checked5')"/>
-  <neon-toggle-chip :show-check="false" size="s" label="Small" :model-value="checked6" @update:modelValue="toggleChecked('checked6')"/>
-  <neon-toggle-chip :show-check="false" size="m" label="Medium" :model-value="checked7" @update:modelValue="toggleChecked('checked7')"/>
-  <neon-toggle-chip :show-check="false" size="l" label="Large" :model-value="checked8" @update:modelValue="toggleChecked('checked8')"/>
-</div>`;
+    const noCheckTemplate = `<neon-toggle-chip v-model="checked5" :show-check="false" label="Extra small" size="xs" />
+<neon-toggle-chip v-model="checked6" :show-check="false" label="Small" size="s" />
+<neon-toggle-chip v-model="checked7" :show-check="false" label="Medium" size="m" />
+<neon-toggle-chip v-model="checked8" :show-check="false" label="Large" size="l" />`;
 
-    const colorTemplate = `<div class="example--vertical">
-  <neon-toggle-chip label="Brand" color="brand" :model-value="checked9" @update:modelValue="toggleChecked('checked9')"/>
-  <neon-toggle-chip label="Primary" color="primary" :model-value="checked10" @update:modelValue="toggleChecked('checked10')"/>
-  <neon-toggle-chip label="Info" color="info" :model-value="checked11" @update:modelValue="toggleChecked('checked11')"/>
-  <neon-toggle-chip label="Warning" color="warn" :model-value="checked12" @update:modelValue="toggleChecked('checked12')"/>
-</div>`;
+    const colorTemplate = `<neon-toggle-chip v-model="checked9" color="brand" label="Brand" />
+<neon-toggle-chip v-model="checked10" color="primary" label="Primary" />
+<neon-toggle-chip v-model="checked11" color="info" label="Info" />
+<neon-toggle-chip v-model="checked12" color="warn" label="Warning" />`;
 
-    const fewOptionsTemplate = `<div class="example--horizontal">
-  <neon-toggle-chip :show-check="false" size="s" label="Bacon" :model-value="checked13" @update:modelValue="toggleChecked('checked13')"/>
-  <neon-toggle-chip :show-check="false" size="s" label="Cheese" :model-value="checked14" @update:modelValue="toggleChecked('checked14')"/>
-  <neon-toggle-chip :show-check="false" size="s" label="Pineapple" :model-value="checked15" @update:modelValue="toggleChecked('checked15')"/>
-  <neon-toggle-chip :show-check="false" size="s" label="Mushrooms" :model-value="checked16" @update:modelValue="toggleChecked('checked16')"/>
-</div>`;
+    const fewOptionsTemplate = `<neon-toggle-chip v-model="checked13" :show-check="false" label="Bacon" size="s" />
+<neon-toggle-chip v-model="checked14" :show-check="false" label="Cheese" size="s" />
+<neon-toggle-chip v-model="checked15" :show-check="false" label="Pineapple" size="s" />
+<neon-toggle-chip v-model="checked16" :show-check="false" label="Mushrooms" size="s" />`;
 
-    const stateTemplate = `<div class="example--vertical">
-  <neon-toggle-chip size="m" label="Disabled" color="primary" :disabled="true" :model-value="checked17" @update:modelValue="toggleChecked('checked17')"/>
-</div>`;
-
-    const examples = ref([
-      {
-        title: 'Toggle chip sizes',
-        template: sizeTemplate,
-        data,
-      },
-      {
-        title: 'Toggle chip with no check',
-        template: noCheckTemplate,
-        data,
-      },
-      {
-        title: 'Toggle chip colors',
-        template: colorTemplate,
-        data,
-      },
-      {
-        title: 'Group toggle chips',
-        tip: 'Use toggle chips as an alternative to a multi-select with only a few options',
-        template: fewOptionsTemplate,
-        data,
-      },
-      {
-        title: 'Disabled toggle chip',
-        template: stateTemplate,
-        data,
-      },
-    ]);
+    const stateTemplate =
+      '<neon-toggle-chip v-model="checked17" :disabled="true" color="primary" label="Disabled" size="m" />';
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonToggleChip')));
 
     return {
       menuModel,
       headline,
-      data,
-      examples,
+      checked1,
+      checked2,
+      checked3,
+      checked4,
+      checked5,
+      checked6,
+      checked7,
+      checked8,
+      checked9,
+      checked10,
+      checked11,
+      checked12,
+      checked13,
+      checked14,
+      checked15,
+      checked16,
+      checked17,
+      sizeTemplate,
+      noCheckTemplate,
+      colorTemplate,
+      fewOptionsTemplate,
+      stateTemplate,
     };
   },
 });

@@ -3,12 +3,14 @@ import { NeonCard, NeonCardBody, NeonCardHeader, NeonNumber } from '@/neon';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'Number',
   components: {
     ComponentDocumentation,
+    Editor,
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
@@ -17,81 +19,103 @@ export default defineComponent({
   setup() {
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('HTML number input component');
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const data = ref<Record<string, any>>({
-      smallNumber: null,
-      mediumNumber: null,
-      largeNumber: 0,
-      hcNumber: -45,
-      primaryNumber: 1,
-      brandNumber: 2.5,
-      minMaxNumber: 30,
-      decimalMinMaxNumber: 5,
-      notEditableNumber: 10,
-      noButtonsNumber: 10,
-      percentageNumber: 0.42,
-      customNumber: 10.35,
-      disabledNumber: 10,
-      updateNumber: (key: string, value: string) => {
-        data.value[key] = value;
-        data.value = { ...data.value };
-      },
-    });
 
-    const numberSizeExamples = `<div class="neon-vertically-spaced">
-  <neon-number size="s" :model-value="smallNumber" placeholder="Value" @update:modelValue="updateNumber('smallNumber', $event)" />
-  <neon-number size="m" :model-value="mediumNumber" placeholder="Value" @update:modelValue="updateNumber('mediumNumber', $event)" />
-  <neon-number size="l" :model-value="largeNumber" placeholder="Value" @update:modelValue="updateNumber('largeNumber', $event)" />
-</div>`;
+    const smallNumber = ref(null);
+    const mediumNumber = ref(null);
+    const largeNumber = ref(0);
+    const hcNumber = ref(-45);
+    const primaryNumber = ref(1);
+    const brandNumber = ref(2.5);
+    const minMaxNumber = ref(30);
+    const decimalMinMaxNumber = ref(5);
+    const notEditableNumber = ref(10);
+    const noButtonsNumber = ref(10);
+    const percentageNumber = ref(0.42);
+    const customNumber = ref(10.35);
+    const disabledNumber = ref(10);
 
-    const numberColorExamples = `<div class="neon-vertically-spaced">
-  <neon-number color="high-contrast" :model-value="hcNumber" placeholder="Value" @update:modelValue="updateNumber('hcNumber', $event)" />
-  <neon-number color="primary" :model-value="primaryNumber" placeholder="Value" @update:modelValue="updateNumber('primaryNumber', $event)" />
-  <neon-number color="brand" :model-value="brandNumber" placeholder="Value" @update:modelValue="updateNumber('brandNumber', $event)" />
-</div>`;
+    const numberSizeExamples = `<neon-number v-model="smallNumber"
+             placeholder="Value"
+             size="s"
+/>
+<neon-number v-model="mediumNumber"
+             placeholder="Value"
+             size="m"
+/>
+<neon-number v-model="largeNumber"
+             placeholder="Value"
+             size="l"
+/>`;
 
-    const numberValueExamples = `<div class="neon-vertically-spaced">
-  <label>spinButtons = false</label>
-  <neon-number :model-value="noButtonsNumber" :spin-buttons="false" placeholder="Value" @update:modelValue="updateNumber('noButtonsNumber', $event)" />
-  <label>Editable = false</label>
-  <neon-number :model-value="notEditableNumber" :editable="false" placeholder="Value" @update:modelValue="updateNumber('notEditableNumber', $event)" />
-  <label>With min, max, step</label>
-  <neon-number :model-value="minMaxNumber" :min="20" :max="90" :step="10" placeholder="Value" @update:modelValue="updateNumber('minMaxNumber', $event)" />
-  <label>Decimal min, max, step</label>
-  <neon-number :model-value="decimalMinMaxNumber" :decimals="2" :min="-10.00" :max="10.00" :step="0.05" placeholder="Value" @update:modelValue="updateNumber('decimalMinMaxNumber', $event)" />
-  <label>Percentage</label>
-  <neon-number :model-value="percentageNumber" :percentage="true" placeholder="Value" @update:modelValue="updateNumber('percentageNumber', $event)" />
-  <label>Custom template</label>
-  <neon-number :model-value="customNumber" value-template="\${value}" :step="0.05" :decimals="2" placeholder="Value" @update:modelValue="updateNumber('customNumber', $event)" />
-  <label>Disabled</label>
-  <neon-number disabled="disabled" :model-value="disabledNumber" placeholder="Value" @update:modelValue="updateNumber('disabled', $event)" />
-</div>`;
+    const numberColorExamples = `<neon-number v-model="hcNumber"
+             color="high-contrast"
+             placeholder="Value"
+/>
+<neon-number v-model="primaryNumber"
+             color="primary"
+             placeholder="Value"
+/>
+<neon-number v-model="brandNumber"
+             color="brand"
+             placeholder="Value"
+/>`;
 
-    const examples = ref([
-      {
-        title: 'Number sizes',
-        template: numberSizeExamples,
-        data,
-      },
-      {
-        title: 'Various number options',
-        template: numberValueExamples,
-        data,
-      },
-      {
-        title: 'Number colors',
-        template: numberColorExamples,
-        data,
-      },
-    ]);
+    const numberValueExamples = `<neon-number v-model="noButtonsNumber"
+             :spin-buttons="false"
+             placeholder="Value"
+/>
+<neon-number v-model="notEditableNumber"
+             :editable="false"
+             placeholder="Value"
+/>
+<neon-number v-model="minMaxNumber"
+             :max="90"
+             :min="20"
+             :step="10" placeholder="Value"
+/>
+<neon-number v-model="decimalMinMaxNumber"
+             :decimals="2"
+             :max="10.00"
+             :min="-10.00"
+             :step="0.05"
+             placeholder="Value"
+/>
+<neon-number v-model="percentageNumber"
+             :percentage="true"
+             placeholder="Value"
+/>
+<neon-number v-model="customNumber"
+             :decimals="2"
+             :step="0.05"
+             placeholder="Value"
+             value-template="\${value}"
+/>
+<neon-number v-model="disabledNumber"
+             disabled="disabled"
+             placeholder="Value"
+/>`;
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonNumber')));
 
     return {
       menuModel,
       headline,
-      data,
-      examples,
+      smallNumber,
+      mediumNumber,
+      largeNumber,
+      hcNumber,
+      primaryNumber,
+      brandNumber,
+      minMaxNumber,
+      decimalMinMaxNumber,
+      notEditableNumber,
+      noButtonsNumber,
+      percentageNumber,
+      customNumber,
+      disabledNumber,
+      numberSizeExamples,
+      numberValueExamples,
+      numberColorExamples,
     };
   },
 });

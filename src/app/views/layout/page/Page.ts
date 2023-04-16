@@ -6,14 +6,14 @@ import {
   NeonGrid,
   NeonGridArea,
   NeonPage,
+  NeonResponsive,
   NeonSideNav,
-  NeonTopNav
+  NeonTopNav,
 } from '@/neon';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
 import Editor from '@/app/components/editor/Editor.vue';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
-import { NeonResponsive } from '@/common/enums/NeonResponsive';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names

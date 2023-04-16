@@ -50,14 +50,11 @@
           border-bottom-right-radius: var(--neon-border-radius);
         }
       }
-
-      &:not(:last-child) {
-        border-right: none;
-      }
     }
   }
 
-  .neon-field-group > *:not(:last-child) {
-    margin-right: 1rem;
+  .neon-button {
+    margin-left: calc(-1 * var(--neon-border-width));
+    z-index: var(--neon-z-index-above);
   }
 }

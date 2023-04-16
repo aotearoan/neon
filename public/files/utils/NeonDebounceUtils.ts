@@ -1,5 +1,5 @@
 export class NeonDebounceUtils {
-  private static debounceTimeout = 300;
+  private static debounceTimeout = 150;
 
   public static setGlobalDebounceTimeout(debounceTimeout: number) {
     NeonDebounceUtils.debounceTimeout = debounceTimeout;

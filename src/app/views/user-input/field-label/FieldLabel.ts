@@ -21,8 +21,14 @@ export default defineComponent({
 
     const inputValue = ref<string>('Input value');
 
-    const example = `<neon-field-label :optional="true" label="Test label" label-for="input1">
-    <neon-input v-model="inputValue" id="input1" />
+    const example = `<neon-field-label label="Default label" label-for="input1">
+  <neon-input id="input1" v-model="inputValue" />
+</neon-field-label>
+<neon-field-label :optional="true" label="Optional label" label-for="input2">
+  <neon-input id="input2" v-model="inputValue" />
+</neon-field-label>
+<neon-field-label :disabled="true" label="Disabled label" label-for="input3">
+  <neon-input id="input3" v-model="inputValue" :disabled="true" />
 </neon-field-label>`;
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonFieldLabel')));

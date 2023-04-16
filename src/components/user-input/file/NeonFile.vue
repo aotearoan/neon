@@ -10,9 +10,9 @@
   >
     <neon-list
       v-if="!directUpload"
-      v-model="fileList"
       :color="color"
       :disabled="disabled"
+      :modelValue="fileList"
       :size="size"
       @close="remove"
     />
@@ -26,7 +26,7 @@
       :tabindex="-1"
       class="neon-file__input"
       type="file"
-      @change="onInput"
+      @input="onInput"
     />
     <div class="neon-button-group neon-file__actions">
       <neon-button

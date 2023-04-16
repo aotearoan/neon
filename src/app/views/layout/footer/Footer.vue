@@ -1,10 +1,5 @@
 <template>
-  <component-documentation
-    v-if="menuModel"
-    :headline="headline"
-    :model="menuModel"
-    class="footer-examples"
-  >
+  <component-documentation v-if="menuModel" :headline="headline" :model="menuModel" class="footer-examples">
     <neon-card>
       <neon-card-body>
         <p>

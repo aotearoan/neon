@@ -3,12 +3,14 @@ import { NeonCard, NeonCardBody, NeonCardHeader, NeonInput } from '@/neon';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names,vue/no-reserved-component-names
   name: 'Input',
   components: {
     ComponentDocumentation,
+    Editor,
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
@@ -18,96 +20,146 @@ export default defineComponent({
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('HTML input and textarea component');
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const data = ref<Record<string, any>>({
-      small: '',
-      medium: '',
-      large: '',
-      ready: '',
-      loading: '',
-      success: '',
-      error: '',
-      lowContrast: '',
-      highContrast: '',
-      brand: '',
-      primary: '',
-      info: '',
-      disabled: '',
-      textArea: '',
-      textAreaDisabled: '',
-      updateInput: (key: string, value: string) => {
-        data.value[key] = value;
-        data.value = { ...data.value };
-      },
-    });
+    const small = ref('');
+    const medium = ref('');
+    const large = ref('');
+    const ready = ref('');
+    const loading = ref('');
+    const success = ref('');
+    const error = ref('');
+    const lowContrast = ref('');
+    const highContrast = ref('');
+    const brand = ref('');
+    const primary = ref('');
+    const info = ref('');
+    const disabled = ref('');
+    const textArea = ref('');
+    const textAreaDisabled = ref('');
 
-    const inputSizeExamples = `<div class="neon-vertically-spaced">
-  <neon-input type="text" size="s" :model-value="small" placeholder="Type here" @update:modelValue="updateInput('small', $event)" />
-  <neon-input type="text" size="m" :model-value="medium" placeholder="Type here" @update:modelValue="updateInput('medium', $event)" />
-  <neon-input type="text" size="l" :model-value="large" placeholder="Type here" @update:modelValue="updateInput('large', $event)" />
-</div>`;
+    const inputSizeExamples = `<neon-input v-model="small"
+                      placeholder="Type here"
+                      size="s"
+                      type="text"
+          />
+          <neon-input v-model="medium"
+                      placeholder="Type here"
+                      size="m"
+                      type="text"
+          />
+          <neon-input v-model="large"
+                      placeholder="Type here"
+                      size="l"
+                      type="text"
+          />`;
 
-    const inputStateExamples = `<div class="neon-vertically-spaced">
-  <neon-input type="text" size="l" state="ready" :model-value="ready" placeholder="Type here" @update:modelValue="updateInput('ready', $event)" />
-  <neon-input type="text" size="l" state="loading" :model-value="loading" placeholder="Type here" @update:modelValue="updateInput('loading', $event)" />
-  <neon-input type="text" size="l" state="success" :model-value="success" placeholder="Type here" @update:modelValue="updateInput('success', $event)" />
-  <neon-input type="text" size="l" state="error" :model-value="error" placeholder="Type here" @update:modelValue="updateInput('error', $event)" />
-</div>`;
+    const inputStateExamples = `<neon-input v-model="ready"
+            placeholder="Type here"
+            size="l" state="ready"
+            type="text"
+/>
+<neon-input v-model="loading"
+            placeholder="Type here"
+            size="l"
+            state="loading"
+            type="text"
+/>
+<neon-input v-model="success"
+            placeholder="Type here"
+            size="l"
+            state="success"
+            type="text"
+/>
+<neon-input v-model="error"
+            placeholder="Type here"
+            size="l"
+            state="error"
+            type="text"
+/>`;
 
-    const inputColorExamples = `<div class="neon-vertically-spaced">
-  <neon-input color="low-contrast" type="text" :model-value="lowContrast" placeholder="Type here" @update:modelValue="updateInput('lowContrast', $event)" />
-  <neon-input color="high-contrast" type="text" :model-value="highContrast" placeholder="Type here" @update:modelValue="updateInput('highContrast', $event)" />
-  <neon-input color="brand" type="text" :model-value="brand" placeholder="Type here" @update:modelValue="updateInput('brand', $event)" />
-  <neon-input color="primary" type="text" :model-value="primary" placeholder="Type here" @update:modelValue="updateInput('primary', $event)" />
-  <neon-input color="info" type="text" :model-value="info" placeholder="Type here" @update:modelValue="updateInput('info', $event)" />
-  <neon-input disabled="disabled" type="text" :model-value="disabled" placeholder="Type here" @update:modelValue="updateInput('disabled', $event)" />
-</div>`;
+    const inputColorExamples = `<neon-input v-model="lowContrast"
+            color="low-contrast"
+            placeholder="Type here"
+            type="text"
+/>
+<neon-input v-model="highContrast"
+            color="high-contrast"
+            placeholder="Type here"
+            type="text"
+/>
+<neon-input v-model="brand"
+            color="brand"
+            placeholder="Type here"
+            type="text"
+/>
+<neon-input v-model="primary"
+            color="primary"
+            placeholder="Type here"
+            type="text"
+/>
+<neon-input v-model="info"
+            color="info"
+            placeholder="Type here"
+            type="text"
+/>
+<neon-input v-model="disabled"
+            isabled="disabled"
+            placeholder="Type here"
+            type="text"
+/>`;
 
-    const textareaExamples = `<div class="neon-vertically-spaced">
-  <neon-input type="text" :maxlength="100" :rows="5" :model-value="textArea" placeholder="Type here" @update:modelValue="updateInput('', $event)" />
-  <neon-input disabled="disabled" :maxlength="100" :rows="5" type="text" :model-value="textAreaDisabled" placeholder="Type here" @update:modelValue="updateInput('', $event)" />
-</div>`;
+    const textareaExamples = `<neon-input v-model="textArea"
+            :maxlength="100"
+            :rows="5"
+            placeholder="Type here"
+            type="text"
+/>
+<neon-input v-model="textAreaDisabled"
+            :maxlength="100"
+            :rows="5"
+            disabled="disabled"
+            placeholder="Type here"
+            type="text"
+/>`;
 
-    const messageExamples = `<div class="neon-vertically-spaced">
-  <neon-input type="text" message="Bacon ipsum dolor amet venison" :maxlength="100" :model-value="textArea" placeholder="Type here" @update:modelValue="updateInput('', $event)" />
-  <neon-input :maxlength="100" message-level="error" message="Bacon ipsum dolor amet venison" type="text" :model-value="textAreaDisabled" placeholder="Type here" @update:modelValue="updateInput('', $event)" />
-</div>`;
-
-    const examples = ref([
-      {
-        title: 'Input sizes',
-        template: inputSizeExamples,
-        data,
-      },
-      {
-        title: 'Input colors',
-        template: inputColorExamples,
-        data,
-      },
-      {
-        title: 'Input states',
-        template: inputStateExamples,
-        data,
-      },
-      {
-        title: 'Textarea examples',
-        template: textareaExamples,
-        data,
-      },
-      {
-        title: 'Message examples',
-        template: messageExamples,
-        data,
-      },
-    ]);
+    const messageExamples = `<neon-input v-model="textArea"
+            :maxlength="100"
+            message="Bacon ipsum dolor amet venison"
+            placeholder="Type here"
+            type="text"
+/>
+<neon-input v-model="textAreaDisabled"
+            :maxlength="100"
+            message="Bacon ipsum dolor amet venison"
+            message-level="error"
+            placeholder="Type here"
+            type="text"
+/>`;
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonInput')));
 
     return {
       menuModel,
       headline,
-      data,
-      examples,
+      small,
+      medium,
+      large,
+      ready,
+      loading,
+      success,
+      error,
+      lowContrast,
+      highContrast,
+      brand,
+      primary,
+      info,
+      disabled,
+      textArea,
+      textAreaDisabled,
+      inputSizeExamples,
+      inputStateExamples,
+      inputColorExamples,
+      textareaExamples,
+      messageExamples,
     };
   },
 });

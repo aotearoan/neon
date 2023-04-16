@@ -1,4 +1,3 @@
-import type { Ref } from 'vue';
 import { defineComponent, onMounted, ref } from 'vue';
 import { NeonCard, NeonCardBody, NeonExpansionPanel } from '@/neon';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
@@ -28,73 +27,57 @@ export default defineComponent({
     const expanded7 = ref(false);
     const expanded8 = ref(false);
 
-    const data: Record<string, Ref<boolean>> = {
-      expanded1,
-      expanded2,
-      expanded3,
-      expanded4,
-      expanded5,
-      expanded6,
-      expanded7,
-      expanded8,
-    };
-
-    const toggleExpanded = (key: string) => {
-      if (data[key]) {
-        data[key].value = !data[key].value;
-      }
-    };
-
     const content = `Spicy jalapeno bacon ipsum dolor amet biltong porchetta cupim sausage pork loin. Ham porchetta
 brisket, kielbasa ham hock sirloin ground round strip steak jowl jerky short ribs pork loin frankfurter.`;
 
-    const sizesTemplate = `<neon-expansion-panel :model-value="expanded1"
+    const sizesTemplate = `<neon-expansion-panel v-model="expanded1"
                       label="Small"
                       size="s"
-                      @update:modelValue="toggleExpanded('expanded1')">
+>
   <p>{{ content }}</p>
 </neon-expansion-panel>
-<neon-expansion-panel :model-value="expanded2"
+<neon-expansion-panel v-model="expanded2"
                       label="Medium"
                       size="m"
-                      @update:modelValue="toggleExpanded('expanded2')">
+>
   <p>{{ content }}</p>
 </neon-expansion-panel>
-<neon-expansion-panel :model-value="expanded3"
+<neon-expansion-panel v-model="expanded3"
                       label="Large"
                       size="l"
-                      @update:modelValue="toggleExpanded('expanded3')">
+>
   <p>{{ content }}</p>
 </neon-expansion-panel>`;
 
-    const moreTemplate = `<neon-expansion-panel :model-value="expanded4"
-                      icon="contrast" label="With icon"
-                      @update:modelValue="toggleExpanded('expanded4')">
+    const moreTemplate = `<neon-expansion-panel v-model="expanded4"
+                      icon="contrast"
+                      label="With icon"
+>
   <p>{{ content }}</p>
 </neon-expansion-panel>
-<neon-expansion-panel :model-value="expanded5"
+<neon-expansion-panel v-model="expanded5"
                       color="success"
                       icon="contrast"
                       label="Colored label"
-                      @update:modelValue="toggleExpanded('expanded5')">
+>
   <p>{{ content }}</p>
 </neon-expansion-panel>
-<neon-expansion-panel :full-width="true"
-                      :model-value="expanded6"
+<neon-expansion-panel v-model="expanded6"
+                      :full-width="true"
                       label="Full width"
-                      @update:modelValue="toggleExpanded('expanded6')">
+>
   <p>{{ content }}</p>
 </neon-expansion-panel>
-<neon-expansion-panel :model-value="expanded7"
+<neon-expansion-panel v-model="expanded7"
                       :disabled="true"
                       label="Disabled"
-                      @update:modelValue="toggleExpanded('expanded7')">
+>
   <p>{{ content }}</p>
 </neon-expansion-panel>
-<neon-expansion-panel :model-value="expanded8"
-                      position="bottom"
+<neon-expansion-panel v-model="expanded8"
                       label="From bottom"
-                      @update:modelValue="toggleExpanded('expanded8')">
+                      position="bottom"
+>
   <p>{{ content }}</p>
 </neon-expansion-panel>`;
 
@@ -114,7 +97,6 @@ brisket, kielbasa ham hock sirloin ground round strip steak jowl jerky short rib
       expanded6,
       expanded7,
       expanded8,
-      toggleExpanded,
     };
   },
 });

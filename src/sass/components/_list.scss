@@ -12,7 +12,7 @@
           @if (not($color == 'low-contrast' or $color == 'neutral')) {
             @include svg.color-with-svg(rgba($list-foreground-rgb, 0.75));
           } @else {
-            @include svg.color-with-svg(rgba(var(--neon-color-text), 0.75));
+            @include svg.color-with-svg(rgba(var(--neon-rgb-text), 0.75));
           }
 
           &:hover,

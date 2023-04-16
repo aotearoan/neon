@@ -1,10 +1,9 @@
 import { defineComponent, onMounted, ref } from 'vue';
-import { NeonCard, NeonCardBody, NeonLink } from '@/neon';
+import { NeonCard, NeonCardBody, NeonLink, NeonToastService } from '@/neon';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
 import Editor from '@/app/components/editor/Editor.vue';
-import { NeonToastService } from '@/common/utils/NeonToastService';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names,vue/no-reserved-component-names

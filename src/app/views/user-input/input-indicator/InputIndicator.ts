@@ -3,11 +3,13 @@ import { NeonCard, NeonCardBody, NeonCardHeader, NeonFieldGroup, NeonInput, Neon
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
 export default defineComponent({
   name: 'InputIndicator',
   components: {
     ComponentDocumentation,
+    Editor,
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
@@ -19,43 +21,33 @@ export default defineComponent({
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('Indicate read only information about an input');
 
-    const data = ref({
-      field1: '',
-      field2: '',
-      field3: '',
-    });
+    const field1 = ref('');
+    const field2 = ref('');
+    const field3 = ref('');
 
-    const inputIndicatorExamples = `<div class="neon-vertically-spaced">
-  <neon-field-group>
-    <neon-input type="text" size="s" v-model="field1" placeholder="Rate" />
-    <neon-input-indicator size="s" label="%" />
-  </neon-field-group>
-  <neon-field-group>
-    <neon-input-indicator icon="user" aria-label="Username" for="userField" />
-    <neon-input id="userField" type="text" v-model="field2" placeholder="Username" />
-  </neon-field-group>
-  <neon-field-group>
-    <neon-input-indicator size="l" icon="mail" />
-    <neon-input type="text" size="l" v-model="field3" placeholder="Username" />
-    <neon-input-indicator size="l" label="@aol.com" />
-  </neon-field-group>
-</div>`;
-
-    const examples = ref([
-      {
-        title: 'Input Indicator Examples',
-        template: inputIndicatorExamples,
-        data,
-      },
-    ]);
+    const inputIndicatorExamples = `<neon-field-group>
+  <neon-input v-model="field1" placeholder="Rate" size="s" type="text" />
+  <neon-input-indicator label="%" size="s" />
+</neon-field-group>
+<neon-field-group>
+  <neon-input-indicator aria-label="Username" for="userField" icon="user" />
+  <neon-input id="userField" v-model="field2" placeholder="Username" type="text" />
+</neon-field-group>
+<neon-field-group>
+  <neon-input-indicator icon="mail" size="l" />
+  <neon-input v-model="field3" placeholder="Username" size="l" type="text" />
+  <neon-input-indicator label="@aol.com" size="l" />
+</neon-field-group>`;
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonInputIndicator')));
 
     return {
       menuModel,
       headline,
-      data,
-      examples,
+      inputIndicatorExamples,
+      field1,
+      field2,
+      field3,
     };
   },
 });

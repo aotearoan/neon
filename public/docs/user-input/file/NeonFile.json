@@ -39,7 +39,7 @@
     },
     {
       "name": "accept",
-      "description": "HTML file input accept property for filtering the files the user is allowed to select. THis is a mime type,\ne.g. 'application/pdf'.",
+      "description": "HTML file input accept property for filtering the files the user is allowed to select. This is a mime type,\ne.g. 'application/pdf'.",
       "type": {
         "name": "string"
       },

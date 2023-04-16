@@ -1,9 +1,4 @@
-export interface NeonTreeMenuLinkModel {
-  label: string;
-  key: string;
-  href?: string;
-  anchors?: string[];
-}
+import type { NeonTreeMenuLinkModel } from './NeonTreeMenuLinkModel';
 
 export interface NeonTreeMenuSectionModel {
   label: string;

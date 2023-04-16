@@ -369,18 +369,18 @@ export class Menu {
                 component: 'NeonColor',
               },
               {
-                path: 'drop-zone',
-                page: 'DropZone',
-                name: 'Drop Zone',
-                keywords: 'drag upload file input',
-                component: 'NeonDropZone',
-              },
-              {
                 path: 'date-picker',
                 page: 'DatePicker',
                 name: 'Date Picker',
                 keywords: 'date time picker calendar locale',
                 component: 'NeonDatePicker',
+              },
+              {
+                path: 'drop-zone',
+                page: 'DropZone',
+                name: 'Drop Zone',
+                keywords: 'drag upload file input',
+                component: 'NeonDropZone',
               },
               {
                 path: 'field-group',

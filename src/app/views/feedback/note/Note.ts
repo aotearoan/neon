@@ -2,9 +2,7 @@ import { defineComponent, onMounted, ref } from 'vue';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
-import NeonNote from '@/components/feedback/note/NeonNote.vue';
-import NeonCardBody from '@/components/layout/card/body/NeonCardBody.vue';
-import NeonCard from '@/components/layout/card/NeonCard.vue';
+import { NeonCard, NeonCardBody, NeonNote } from '@/neon';
 import Editor from '@/app/components/editor/Editor.vue';
 
 export default defineComponent({

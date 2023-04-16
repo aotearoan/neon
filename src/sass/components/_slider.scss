@@ -51,7 +51,7 @@ $neon-width-slider-tooltip: 201rem;
     position: relative;
 
     @each $color in palettes.$neon-functional-colors {
-      &--#{$color} {
+      &.neon-slider--#{$color} {
         $neon-color-slider-fill: var(--neon-color-#{$color});
         /* create a transparent fixed width container to position centered above the thumb, that way we can center the
            variable width contents using flex */

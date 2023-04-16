@@ -12,22 +12,13 @@
       <neon-card-body>
         <h2 class="neon-h3">Expansion panel sizes</h2>
         <div class="example--vertical example-expansion-panel">
-          <neon-expansion-panel :model-value="expanded1"
-                                label="Small"
-                                size="s"
-                                @update:modelValue="toggleExpanded('expanded1')">
+          <neon-expansion-panel v-model="expanded1" label="Small" size="s">
             <p>{{ content }}</p>
           </neon-expansion-panel>
-          <neon-expansion-panel :model-value="expanded2"
-                                label="Medium"
-                                size="m"
-                                @update:modelValue="toggleExpanded('expanded2')">
+          <neon-expansion-panel v-model="expanded2" label="Medium" size="m">
             <p>{{ content }}</p>
           </neon-expansion-panel>
-          <neon-expansion-panel :model-value="expanded3"
-                                label="Large"
-                                size="l"
-                                @update:modelValue="toggleExpanded('expanded3')">
+          <neon-expansion-panel v-model="expanded3" label="Large" size="l">
             <p>{{ content }}</p>
           </neon-expansion-panel>
         </div>
@@ -36,35 +27,19 @@
       <neon-card-body>
         <h2 class="neon-h3">More styles</h2>
         <div class="example--vertical example-expansion-panel">
-          <neon-expansion-panel :model-value="expanded4"
-                                icon="contrast"
-                                label="With icon"
-                                @update:modelValue="toggleExpanded('expanded4')">
+          <neon-expansion-panel v-model="expanded4" icon="contrast" label="With icon">
             <p>{{ content }}</p>
           </neon-expansion-panel>
-          <neon-expansion-panel :model-value="expanded5"
-                                color="success"
-                                icon="contrast"
-                                label="Colored label"
-                                @update:modelValue="toggleExpanded('expanded5')">
+          <neon-expansion-panel v-model="expanded5" color="success" icon="contrast" label="Colored label">
             <p>{{ content }}</p>
           </neon-expansion-panel>
-          <neon-expansion-panel :full-width="true"
-                                :model-value="expanded6"
-                                label="Full width"
-                                @update:modelValue="toggleExpanded('expanded6')">
+          <neon-expansion-panel v-model="expanded6" :full-width="true" label="Full width">
             <p>{{ content }}</p>
           </neon-expansion-panel>
-          <neon-expansion-panel :disabled="true"
-                                :model-value="expanded7"
-                                label="Disabled"
-                                @update:modelValue="toggleExpanded('expanded7')">
+          <neon-expansion-panel v-model="expanded7" :disabled="true" label="Disabled">
             <p>{{ content }}</p>
           </neon-expansion-panel>
-          <neon-expansion-panel :model-value="expanded8"
-                                label="From bottom"
-                                position="bottom"
-                                @update:modelValue="toggleExpanded('expanded8')">
+          <neon-expansion-panel v-model="expanded8" label="From bottom" position="bottom">
             <p>{{ content }}</p>
           </neon-expansion-panel>
         </div>

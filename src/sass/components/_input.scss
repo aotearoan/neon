@@ -58,10 +58,10 @@ $message-height: calc(var(--neon-font-size-s) * var(--neon-line-height-ratio));
           .neon-input__text,
           .neon-input__textarea {
             @if (not index(palettes.$neon-neutral-colors, $color)) {
-              background-color: rgba(var(--neon-color-#{$color}), 0.125);
+              background-color: rgba(var(--neon-rgb-#{$color}), 0.125);
 
               &::placeholder {
-                color: rgba(var(--neon-color-#{$color}), 0.75);
+                color: rgba(var(--neon-rgb-#{$color}), 0.75);
               }
             } @else {
               border-color: rgb($input-rgb);

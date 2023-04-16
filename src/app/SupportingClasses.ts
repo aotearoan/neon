@@ -47,7 +47,8 @@ export const modelList: string[] = [
   'NeonTabModel',
   'NeonToastMessage',
   'NeonToggleModel',
-  'NeonTreeMenuModel',
+  'NeonTreeMenuLinkModel',
+  'NeonTreeMenuSectionModel',
 ];
 
 export const utilsList: string[] = [

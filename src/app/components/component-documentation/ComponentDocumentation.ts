@@ -1,6 +1,5 @@
 import { computed, defineComponent, onMounted, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import Examples from '../examples/Examples.vue';
 import ApiDocs from '../api-docs/ApiDocs.vue';
 import type { NeonTabModel } from '@/neon';
 import { NeonTab, NeonTabs } from '@/neon';
@@ -16,7 +15,6 @@ export default defineComponent({
   name: 'ComponentDocumentation',
   components: {
     ApiDocs,
-    Examples,
     NeonTab,
     NeonTabs,
   },

@@ -45,14 +45,10 @@ loin meatloaf turducken strip steak.`;
 
     const selected = ref('tab1');
 
-    const toggleSelected = (newSelected: string) => {
-      selected.value = newSelected;
-    };
-
-    const template = `<neon-tabs :tabs="tabs" :model-value="selected" @update:modelValue="toggleSelected">
-  <neon-tab v-for="(tab, index) in tabs" :key="tab.key" :tab="tab" :selected="selected === tab.key">
+    const template = `<neon-tabs v-model="selected" :tabs="tabs">
+  <neon-tab v-for="(tab, index) in tabs" :key="tab.key" :selected="selected === tab.key" :tab="tab">
     <h6>Tab {{ index + 1 }}</h6>
-    <span>${tabContent}</span>
+    <span>{{ tabContent }}</span>
   </neon-tab>
 </neon-tabs>`;
 
@@ -65,7 +61,6 @@ loin meatloaf turducken strip steak.`;
       template,
       tabs,
       tabContent,
-      toggleSelected,
     };
   },
 });

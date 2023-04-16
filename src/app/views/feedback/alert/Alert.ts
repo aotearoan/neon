@@ -1,13 +1,19 @@
 import { computed, defineComponent, onMounted, ref } from 'vue';
-import { NeonButton, NeonCard, NeonCardBody, NeonCardHeader, NeonLink } from '@/neon';
+import {
+  NeonAlertPlacement,
+  NeonAlertService,
+  NeonButton,
+  NeonCard,
+  NeonCardBody,
+  NeonCardHeader,
+  NeonLink,
+  NeonToastService,
+  NeonVerticalPosition,
+} from '@/neon';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 import Editor from '@/app/components/editor/Editor.vue';
-import type { NeonAlertPlacement } from '@/common/enums/NeonAlertPlacement';
-import type { NeonVerticalPosition } from '@/common/enums/NeonVerticalPosition';
-import { NeonAlertService } from '@/common/utils/NeonAlertService';
-import { NeonToastService } from '@/common/utils/NeonToastService';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names

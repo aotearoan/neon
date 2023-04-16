@@ -109,7 +109,8 @@ export type { NeonTabModel } from './common/models/NeonTabModel';
 export type { NeonToastMessage } from './common/models/NeonToastMessage';
 export type { NeonToastModel } from './components/feedback/alert/NeonToastModel';
 export type { NeonToggleModel } from './common/models/NeonToggleModel';
-export type { NeonTreeMenuLinkModel, NeonTreeMenuSectionModel } from './common/models/NeonTreeMenuModel';
+export type { NeonTreeMenuLinkModel } from './common/models/NeonTreeMenuLinkModel';
+export type { NeonTreeMenuSectionModel } from './common/models/NeonTreeMenuSectionModel';
 
 /* utils */
 export { NeonAlertService } from './common/utils/NeonAlertService';

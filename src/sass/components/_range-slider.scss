@@ -78,7 +78,7 @@
       cursor: not-allowed;
     }
 
-    &__output-range-separator {
+    &.neon-range-slider__output-range-separator {
       margin-left: calc(1.5 * var(--neon-base-space));
       margin-right: calc(1.5 * var(--neon-base-space));
       font-weight: var(--neon-font-weight-bold);

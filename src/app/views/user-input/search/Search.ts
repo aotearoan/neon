@@ -1,10 +1,11 @@
+import type { Ref } from 'vue';
 import { defineComponent, onMounted, ref } from 'vue';
-import { NeonCard, NeonCardBody, NeonSelect } from '@/neon';
+import type { NeonSearchOption } from '@/neon';
+import { NeonCard, NeonCardBody, NeonFunctionalColor, NeonSearch } from '@/neon';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import type { NeonSearchOption } from '@/common/models/NeonSearchOption';
+import Editor from '@/app/components/editor/Editor.vue';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
@@ -12,249 +13,271 @@ export default defineComponent({
   components: {
     NeonCard,
     NeonCardBody,
-    NeonSelect,
+    NeonSearch,
     ComponentDocumentation,
+    Editor,
   },
   setup() {
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('A search input field');
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const data = ref<Record<string, any>>({
-      filterSmall: '',
-      searchSmall: '',
-      filterMedium: '',
-      searchMedium: '',
-      filterLarge: '',
-      searchLarge: '',
-      filterMulti: '',
-      searchMulti: [],
-      filterBrand: '',
-      searchBrand: '',
-      filterInfo: '',
-      searchInfo: '',
-      filterSuccess: '',
-      searchSuccess: '',
-      filterWarning: '',
-      searchWarning: '',
-      updateSelection: (key: string, value: string | Array<string>) => {
-        data.value[key] = value;
-        data.value = { ...data.value };
-      },
-      updateFilter: (key: string, value?: string) => {
-        data.value[key] = value;
-        data.value = { ...data.value };
-      },
-      model: [
-        {
-          key: 'k1',
-          label: 'Avocado',
-          separatorBefore: true,
-        },
-        {
-          key: 'k2',
-          label: 'Bacon',
-          separatorBefore: true,
-        },
-        {
-          key: 'k3',
-          label: 'Chicken',
-          separatorBefore: true,
-        },
-        {
-          key: 'k4',
-          label: 'Mushroom',
-          separatorBefore: true,
-        },
-        {
-          key: 'k5',
-          label: 'Pineapple',
-          separatorBefore: true,
-        },
-        {
-          key: 'k6',
-          label: 'Tomato',
-          separatorBefore: true,
-        },
-      ],
-      modelWithIcons: [
-        {
-          key: 'k1',
-          label: 'Item 1',
-          icon: 'contrast',
-          separatorBefore: true,
-        },
-        {
-          key: 'k2',
-          label: 'Item 2',
-          icon: 'user',
-          separatorBefore: true,
-        },
-        {
-          key: 'k3',
-          label: 'Item 3',
-          icon: 'plus',
-          separatorBefore: true,
-        },
-        {
-          key: 'k4',
-          label: 'Item 4',
-          icon: 'download',
-          separatorBefore: true,
-        },
-        {
-          key: 'k5',
-          label: 'Item 5',
-          icon: 'hammer',
-          separatorBefore: true,
-        },
-        {
-          key: 'k6',
-          label: 'Item 6',
-          icon: 'images',
-          separatorBefore: true,
-        },
-      ],
-      coloredChips: [
-        {
-          key: 'k1',
-          label: 'Item 1',
-          separatorBefore: true,
-          chipColor: NeonFunctionalColor.Primary,
-        },
-        {
-          key: 'k2',
-          label: 'Item 2',
-          separatorBefore: true,
-          chipColor: NeonFunctionalColor.Primary,
-        },
-        {
-          key: 'k3',
-          label: 'Item 3',
-          separatorBefore: true,
-          chipColor: NeonFunctionalColor.Primary,
-        },
-        {
-          key: 'k4',
-          label: 'Item 4',
-          separatorBefore: true,
-          chipColor: NeonFunctionalColor.Primary,
-        },
-        {
-          key: 'k5',
-          label: 'Item 5',
-          separatorBefore: true,
-          chipColor: NeonFunctionalColor.Primary,
-        },
-        {
-          key: 'k6',
-          label: 'Item 6',
-          separatorBefore: true,
-          chipColor: NeonFunctionalColor.Primary,
-        },
-      ],
-      filterOptions: (
-        model: NeonSearchOption[],
-        selected: string | NeonSearchOption[],
-        filter: string,
-        multiple = false,
-      ) => {
-        const fltr = filter.toLowerCase();
-        if (multiple) {
-          return model
-            .filter((m) => !(selected as NeonSearchOption[]).find((s) => s.key === m.key))
-            .filter((item) => item.label.toString().toLowerCase().indexOf(fltr) >= 0);
-        } else {
-          return model
-            .filter((m) => m.key !== selected)
-            .filter((item) => item.label.toString().toLowerCase().indexOf(fltr) >= 0);
-        }
-      },
-    });
+    const searchSmall = ref('');
+    const searchMedium = ref('');
+    const searchLarge = ref('');
+    const searchMulti = ref([]);
+    const searchColored = ref([]);
+    const searchBrand = ref('');
+    const searchInfo = ref('');
+    const searchSuccess = ref('');
+    const searchWarning = ref('');
 
-    const examples = ref([
+    const filterSmall = ref('');
+    const filterMedium = ref('');
+    const filterLarge = ref('');
+    const filterMulti = ref('');
+    const filterColored = ref('');
+    const filterBrand = ref('');
+    const filterInfo = ref('');
+    const filterSuccess = ref('');
+    const filterWarning = ref('');
+
+    const filters: Record<string, Ref<string | undefined>> = {
+      filterSmall,
+      filterMedium,
+      filterLarge,
+      filterMulti,
+      filterColored,
+      filterBrand,
+      filterInfo,
+      filterSuccess,
+      filterWarning,
+    };
+
+    const updateFilter = (key: string, value: string | undefined) => {
+      if (filters[key]) {
+        filters[key].value = value;
+      }
+    };
+
+    const model = ref([
       {
-        title: 'Multiple selection',
-        template: `
-          <div class="neon-vertically-spaced">
-          <neon-search :multiple="true" placeholder="Search"
-                       :options="filterOptions(modelWithIcons, searchMulti, filterMulti, true)"
-                       :model-value="searchMulti"
-                       @filter-changed="updateFilter('filterMulti', $event)"
-                       @update:modelValue="updateSelection('searchMulti')" />
-          </div>`,
-        data,
+        key: 'k1',
+        label: 'Avocado',
+        separatorBefore: true,
       },
       {
-        title: 'Colored chips',
-        template: `
-          <div class="neon-vertically-spaced">
-          <neon-search :multiple="true" placeholder="Search"
-                       :options="filterOptions(coloredChips, searchMulti, filterMulti, true)"
-                       :model-value="searchMulti"
-                       @filter-changed="filterMulti = $event"
-                       @update:modelValue="updateSelection('searchMulti')" />
-          </div>`,
-        data,
+        key: 'k2',
+        label: 'Bacon',
+        separatorBefore: true,
       },
       {
-        title: 'Search sizes',
-        template: `
-          <div class="neon-vertically-spaced">
-          <neon-search size="s" placeholder="Search"
-                       :options="filterOptions(model, searchSmall, filterSmall)"
-                       :model-value="searchSmall"
-                       @filter-changed="filterSmall = $event"
-                       @update:modelValue="updateSelection('searchSmall')" />
-          <neon-search size="m" placeholder="Search"
-                       :options="filterOptions(model, searchMedium, filterMedium)"
-                       :model-value="searchMedium"
-                       @filter-changed="filterMedium = $event"
-                       @update:modelValue="updateSelection('searchMedium')" />
-          <neon-search size="l" placeholder="Search"
-                       :options="filterOptions(model, searchLarge, filterLarge)"
-                       :model-value="searchLarge"
-                       @filter-changed="filterLarge = $event"
-                       @update:modelValue="updateSelection('searchLarge')" />
-          </div>`,
-        data,
+        key: 'k3',
+        label: 'Chicken',
+        separatorBefore: true,
       },
       {
-        title: 'Search with colors and icons',
-        template: `
-          <div class="neon-vertically-spaced">
-          <neon-search color="brand" placeholder="Search"
-                       :options="filterOptions(modelWithIcons, searchBrand, filterBrand)"
-                       :model-value="searchBrand"
-                       @filter-changed="filterBrand = $event"
-                       @update:modelValue="updateSelection('searchBrand')" />
-          <neon-search color="info" placeholder="Search"
-                       :options="filterOptions(modelWithIcons, searchInfo, filterInfo)"
-                       :model-value="searchInfo"
-                       @filter-changed="filterInfo = $event"
-                       @update:modelValue="updateSelection('searchInfo')" />
-          <neon-search color="success" placeholder="Search"
-                       :options="filterOptions(modelWithIcons, searchSuccess, filterSuccess)"
-                       :model-value="searchSuccess"
-                       @filter-changed="filterSuccess = $event"
-                       @update:modelValue="updateSelection('searchSuccess')" />
-          <neon-search color="warn" placeholder="Search"
-                       :options="filterOptions(modelWithIcons, searchWarning, filterWarning)"
-                       :model-value="searchWarning"
-                       @filter-changed="filterWarning = $event"
-                       @update:modelValue="updateSelection('searchWarning')" />
-          </div>`,
-        data,
+        key: 'k4',
+        label: 'Mushroom',
+        separatorBefore: true,
+      },
+      {
+        key: 'k5',
+        label: 'Pineapple',
+        separatorBefore: true,
+      },
+      {
+        key: 'k6',
+        label: 'Tomato',
+        separatorBefore: true,
       },
     ]);
+
+    const modelWithIcons = ref([
+      {
+        key: 'k1',
+        label: 'Item 1',
+        icon: 'contrast',
+        separatorBefore: true,
+      },
+      {
+        key: 'k2',
+        label: 'Item 2',
+        icon: 'user',
+        separatorBefore: true,
+      },
+      {
+        key: 'k3',
+        label: 'Item 3',
+        icon: 'plus',
+        separatorBefore: true,
+      },
+      {
+        key: 'k4',
+        label: 'Item 4',
+        icon: 'download',
+        separatorBefore: true,
+      },
+      {
+        key: 'k5',
+        label: 'Item 5',
+        icon: 'hammer',
+        separatorBefore: true,
+      },
+      {
+        key: 'k6',
+        label: 'Item 6',
+        icon: 'images',
+        separatorBefore: true,
+      },
+    ]);
+
+    const coloredChips = ref([
+      {
+        key: 'k1',
+        label: 'Item 1',
+        separatorBefore: true,
+        chipColor: NeonFunctionalColor.Primary,
+      },
+      {
+        key: 'k2',
+        label: 'Item 2',
+        separatorBefore: true,
+        chipColor: NeonFunctionalColor.Primary,
+      },
+      {
+        key: 'k3',
+        label: 'Item 3',
+        separatorBefore: true,
+        chipColor: NeonFunctionalColor.Primary,
+      },
+      {
+        key: 'k4',
+        label: 'Item 4',
+        separatorBefore: true,
+        chipColor: NeonFunctionalColor.Primary,
+      },
+      {
+        key: 'k5',
+        label: 'Item 5',
+        separatorBefore: true,
+        chipColor: NeonFunctionalColor.Primary,
+      },
+      {
+        key: 'k6',
+        label: 'Item 6',
+        separatorBefore: true,
+        chipColor: NeonFunctionalColor.Primary,
+      },
+    ]);
+
+    const filterOptions = (
+      model: NeonSearchOption[],
+      selected: string | NeonSearchOption[],
+      filter: string,
+      multiple = false,
+    ) => {
+      const fltr = filter.toLowerCase();
+      if (multiple) {
+        return model
+          .filter((m) => !(selected as NeonSearchOption[]).find((s) => s.key === m.key))
+          .filter((item) => item.label.toString().toLowerCase().indexOf(fltr) >= 0);
+      } else {
+        return model
+          .filter((m) => m.key !== selected)
+          .filter((item) => item.label.toString().toLowerCase().indexOf(fltr) >= 0);
+      }
+    };
+
+    const multipleTemplate = `<neon-search v-model="searchMulti"
+             :multiple="true"
+             :options="filterOptions(modelWithIcons, searchMulti, filterMulti, true)"
+             placeholder="Search"
+             @filter-changed="updateFilter('filterMulti', $event)"
+/>`;
+
+    const coloredTemplate = `<neon-search v-model="searchMulti"
+             :multiple="true"
+             :options="filterOptions(coloredChips, searchMulti, filterMulti, true)"
+             placeholder="Search"
+             @filter-changed="filterMulti = $event"
+/>`;
+
+    const sizesTemplate = `<neon-search v-model="searchSmall"
+             :options="filterOptions(model, searchSmall, filterSmall)"
+             placeholder="Search"
+             size="s"
+             @filter-changed="filterSmall = $event"
+/>
+<neon-search v-model="searchMedium"
+             :options="filterOptions(model, searchMedium, filterMedium)"
+             placeholder="Search"
+             size="m"
+             @filter-changed="filterMedium = $event"
+/>
+<neon-search v-model="searchLarge"
+             :options="filterOptions(model, searchLarge, filterLarge)"
+             placeholder="Search"
+             size="l"
+             @filter-changed="filterLarge = $event"
+/>`;
+
+    const colorsTemplate = `<neon-search v-model="searchBrand"
+             :options="filterOptions(modelWithIcons, searchBrand, filterBrand)"
+             color="brand"
+             placeholder="Search"
+             @filter-changed="filterBrand = $event"
+/>
+<neon-search v-model="searchInfo"
+             :options="filterOptions(modelWithIcons, searchInfo, filterInfo)"
+             color="info"
+             placeholder="Search"
+             @filter-changed="filterInfo = $event"
+/>
+<neon-search v-model="searchSuccess"
+             :options="filterOptions(modelWithIcons, searchSuccess, filterSuccess)"
+             color="success"
+             placeholder="Search"
+             @filter-changed="filterSuccess = $event"
+/>
+<neon-search v-model="searchWarning"
+             :options="filterOptions(modelWithIcons, searchWarning, filterWarning)"
+             color="warn"
+             placeholder="Search"
+             @filter-changed="filterWarning = $event"
+/>`;
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonSearch')));
 
     return {
       menuModel,
       headline,
-      data,
-      examples,
+      searchSmall,
+      searchMedium,
+      searchLarge,
+      searchMulti,
+      searchColored,
+      searchBrand,
+      searchInfo,
+      searchSuccess,
+      searchWarning,
+      filterSmall,
+      filterMedium,
+      filterLarge,
+      filterMulti,
+      filterColored,
+      filterBrand,
+      filterInfo,
+      filterSuccess,
+      filterWarning,
+      model,
+      modelWithIcons,
+      coloredChips,
+      multipleTemplate,
+      colorsTemplate,
+      sizesTemplate,
+      coloredTemplate,
+      updateFilter,
+      filterOptions,
     };
   },
 });

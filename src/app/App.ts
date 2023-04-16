@@ -1,7 +1,6 @@
 import { computed, defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
 import { Menu } from './Menu';
-import { NeonMode } from '@/common/enums/NeonMode';
-import type { NeonTreeMenuLinkModel, NeonTreeMenuSectionModel } from '@/common/models/NeonTreeMenuModel';
+import type { NeonTreeMenuLinkModel, NeonTreeMenuSectionModel } from '@/neon';
 import {
   NeonAlert,
   NeonButton,
@@ -13,15 +12,16 @@ import {
   NeonIcon,
   NeonInput,
   NeonLink,
+  NeonMode,
+  NeonModeUtils,
   NeonPage,
+  NeonResponsive,
+  NeonResponsiveUtils,
   NeonSideNav,
   NeonSwitch,
   NeonTopNav,
   NeonTreeMenu,
 } from '@/neon';
-import { NeonModeUtils } from '@/common/utils/NeonModeUtils';
-import { NeonResponsive } from '@/common/enums/NeonResponsive';
-import { NeonResponsiveUtils } from '@/common/utils/NeonResponsiveUtils';
 import { useRoute, useRouter } from 'vue-router';
 
 export interface AppMenuGroup {

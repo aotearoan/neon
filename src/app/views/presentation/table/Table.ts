@@ -15,7 +15,6 @@ export default defineComponent({
     NeonNote,
     ComponentDocumentation,
     Editor,
-
   },
   setup() {
     const menuModel = ref<MenuModel | null>(null);

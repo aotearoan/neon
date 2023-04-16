@@ -3,12 +3,14 @@ import { NeonCard, NeonCardBody, NeonCardHeader, NeonSlider } from '@/neon';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'Slider',
   components: {
     ComponentDocumentation,
+    Editor,
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
@@ -18,92 +20,59 @@ export default defineComponent({
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('HTML single value slider input');
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const data = ref<Record<string, any>>({
-      basicSlider: 50,
-      minMaxSlider: 0,
-      outputSlider: 50,
-      legendSlider: 50,
-      tooltipSlider: 50,
-      percentageSlider: 0.42,
-      decimalSlider: 50.0,
-      noFormattingSlider: 2020,
-      templateSlider: 100.0,
-      disabledSlider: 50,
-      primarySlider: 50,
-      brandSlider: 50,
-      warnSlider: 50,
-      updateSlider: (key: string, value?: string) => {
-        data.value[key] = value;
-        data.value = { ...data.value };
-      },
-    });
+    const basicSlider = ref(50);
+    const minMaxSlider = ref(0);
+    const outputSlider = ref(50);
+    const legendSlider = ref(50);
+    const tooltipSlider = ref(50);
+    const percentageSlider = ref(0.42);
+    const decimalSlider = ref(50.0);
+    const noFormattingSlider = ref(2020);
+    const templateSlider = ref(100.0);
+    const disabledSlider = ref(50);
+    const primarySlider = ref(50);
+    const brandSlider = ref(50);
+    const warnSlider = ref(50);
 
-    const coreExamples = `<div class="neon-vertically-spaced">
-  <label>Basic slider</label>
-  <neon-slider id="basicSliderId" :model-value="basicSlider" @update:modelValue="updateSlider('basicSlider')" />
-  <label>With Min, max and step</label>
-  <neon-slider :model-value="minMaxSlider" :min="-100" :max="100" :step="10" @update:modelValue="updateSlider('minMaxSlider')" />
-  <label>Disabled</label>
-  <neon-slider :model-value="disabledSlider" :disabled="true" @update:modelValue="updateSlider('disabledSlider')" />
-</div>`;
+    const coreExamples = `<neon-slider id="basicSliderId" v-model="basicSlider" />
+<neon-slider v-model="minMaxSlider" :max="100" :min="-100" :step="10" />
+<neon-slider v-model="disabledSlider" :disabled="true" />`;
 
-    const formattingExamples = `<div class="neon-vertically-spaced">
-  <label>Percentage</label>
-  <neon-slider :model-value="percentageSlider" :percentage="true" @update:modelValue="updateSlider('percentageSlider')" />
-  <label>Decimal values</label>
-  <neon-slider :model-value="decimalSlider" :decimals="2" @update:modelValue="updateSlider('decimalSlider')" />
-  <label>Formatting disabled (e.g. year)</label>
-  <neon-slider :model-value="noFormattingSlider" :disable-formatting="true" :min="2000" :max="2050" @update:modelValue="updateSlider('noFormattingSlider')" />
-  <label>With template (e.g. currency)</label>
-  <neon-slider :model-value="templateSlider" :max="200.0" :step="0.5" :decimals="2" value-template="\${value}" @update:modelValue="updateSlider('templateSlider')" />
-</div>`;
+    const formattingExamples = `<neon-slider v-model="percentageSlider" :percentage="true" />
+<neon-slider v-model="decimalSlider" :decimals="2" />
+<neon-slider v-model="noFormattingSlider" :disable-formatting="true" :max="2050" :min="2000" />
+<neon-slider v-model="templateSlider" :decimals="2" :max="200.0" :step="0.5" value-template="\${value}" />`;
 
-    const colorExamples = `<div class="neon-vertically-spaced">
-  <neon-slider :model-value="primarySlider" color="primary" @update:modelValue="updateSlider('primarySlider')" />
-  <neon-slider :model-value="brandSlider" color="brand" @update:modelValue="updateSlider('brandSlider')" />
-  <neon-slider :model-value="warnSlider" color="warn" @update:modelValue="updateSlider('warnSlider')" />
-</div>`;
+    const colorExamples = `<neon-slider v-model="primarySlider" color="primary" />
+<neon-slider v-model="brandSlider" color="brand" />
+<neon-slider v-model="warnSlider" color="warn" />`;
 
-    const displayExamples = `<div class="neon-vertically-spaced">
-  <label>Output hidden</label>
-  <neon-slider :model-value="outputSlider" :output="false" @update:modelValue="updateSlider('outputSlider')" />
-  <label>Legend hidden</label>
-  <neon-slider :model-value="legendSlider" :legend="false" @update:modelValue="updateSlider('legendSlider')" />
-  <label>Tooltip hidden</label>
-  <neon-slider :model-value="tooltipSlider" :tooltip="false" @update:modelValue="updateSlider('tooltipSlider')" />
-</div>`;
-
-    const examples = ref([
-      {
-        title: 'Basic usage',
-        template: coreExamples,
-        data,
-      },
-      {
-        title: 'Formatting options',
-        template: formattingExamples,
-        data,
-      },
-      {
-        title: 'Slider colors',
-        template: colorExamples,
-        data,
-      },
-      {
-        title: 'Display options',
-        template: displayExamples,
-        data,
-      },
-    ]);
+    const displayExamples = `<neon-slider v-model="outputSlider" :output="false" />
+<neon-slider v-model="legendSlider" :legend="false" />
+<neon-slider v-model="tooltipSlider" :tooltip="false" />`;
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonSlider')));
 
     return {
       menuModel,
       headline,
-      data,
-      examples,
+      basicSlider,
+      minMaxSlider,
+      outputSlider,
+      legendSlider,
+      tooltipSlider,
+      percentageSlider,
+      decimalSlider,
+      noFormattingSlider,
+      templateSlider,
+      disabledSlider,
+      primarySlider,
+      brandSlider,
+      warnSlider,
+      coreExamples,
+      formattingExamples,
+      colorExamples,
+      displayExamples,
     };
   },
 });

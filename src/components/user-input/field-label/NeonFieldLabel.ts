@@ -24,6 +24,10 @@ export default defineComponent({
      */
     optional: { type: Boolean, default: false },
     /**
+     * Display label with disabled state.
+     */
+    disabled: { type: Boolean, default: false },
+    /**
      * The default "optional" label text.
      */
     optionalLabel: { type: String, default: 'Optional' },
