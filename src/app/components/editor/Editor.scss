@@ -1,6 +1,5 @@
 @use 'src/sass/includes/layout';
 @use 'src/sass/includes/responsive';
-@use 'src/sass/includes/scrollbars';
 
 .editor__wrapper {
   border-radius: var(--neon-border-radius);
@@ -44,7 +43,6 @@
         display: flex;
         overflow: visible;
         color: var(--neon-color-text-light);
-        @include scrollbars.scrollbars;
       }
 
       &__editor {
@@ -60,10 +58,6 @@
         font-variant-ligatures: discretionary-ligatures;
         font-variation-settings: var(--monospaced-font-variation-settings);
 
-        &::selection {
-          background-color: rgba(var(--neon-background-rgb-selection), 0.667);
-        }
-
         &:focus {
           outline: none;
         }
@@ -71,6 +65,25 @@
     }
 
     &__container {
+      background-color: var(--neon-background-color-pre);
+      scrollbar-color: rgba(var(--neon-rgb-low-contrast), 0.25) transparent;
+      scrollbar-width: thin;
+      scroll-behavior: smooth;
+
+      &::-webkit-scrollbar {
+        width: var(--neon-width-scrollbar);
+        height: var(--neon-width-scrollbar);
+
+        &-thumb {
+          background: rgba(var(--neon-rgb-low-contrast), 0.25);
+          border-radius: var(--neon-border-radius-scrollbar);
+        }
+
+        &-track-piece {
+          background: transparent;
+        }
+      }
+
       max-height: 400rem;
       overflow: auto;
     }
@@ -103,14 +116,17 @@
       }
     }
 
-    &__copy {
-      opacity: 0.85;
+    &__copy.neon-button {
       transition: opacity ease-in-out var(--neon-animation-speed-fast);
 
-      &:hover {
-        background: none !important;
+      &,
+      &:focus {
+        background-color: rgba(var(--neon-rgb-neutral-d3), 0.2);
+      }
+
+      &:hover:not(:disabled) {
+        background-color: var(--neon-color-neutral-d2);
         cursor: pointer;
-        opacity: 1;
       }
 
       &:last-child {

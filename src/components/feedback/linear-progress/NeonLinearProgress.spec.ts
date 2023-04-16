@@ -30,12 +30,25 @@ describe('NeonLinearProgress', () => {
   });
 
   it('renders output as %', (done) => {
-    const { html } = render(NeonLinearProgress, {
-      props: { value: 0.4 },
+    const { getByText, html } = render(NeonLinearProgress, {
+      props: { value: 0.425 },
     });
     expect(html()).toMatch('width: 0%;');
     setTimeout(() => {
-      expect(html()).toMatch('width: 40%;');
+      expect(html()).toMatch('width: 42.5%;');
+      getByText('42.5%');
+      done();
+    }, 2000);
+  });
+
+  it('renders output as % with locale', (done) => {
+    const { getByText, html } = render(NeonLinearProgress, {
+      props: { value: 0.425, locale: 'de-DE' },
+    });
+    expect(html()).toMatch('width: 0%;');
+    setTimeout(() => {
+      expect(html()).toMatch('width: 42.5%;');
+      getByText('42,5%');
       done();
     }, 2000);
   });

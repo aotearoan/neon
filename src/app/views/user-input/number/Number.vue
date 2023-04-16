@@ -22,18 +22,20 @@
       <neon-card-body>
         <h2 class="neon-h3">Various number options</h2>
         <div class="neon-vertically-spaced">
-          <label>spinButtons = false</label>
-          <neon-number v-model="noButtonsNumber" :spin-buttons="false" placeholder="Value" />
+          <label>spinButtons = true</label>
+          <neon-number v-model="noButtonsNumber" :spin-buttons="true" placeholder="Value" />
           <label>Editable = false</label>
           <neon-number v-model="notEditableNumber" :editable="false" placeholder="Value" />
+          <neon-number v-model="notEditableNumber" :editable="false" :spin-buttons="true" placeholder="Value" />
           <label>With min, max, step</label>
-          <neon-number v-model="minMaxNumber" :max="90" :min="20" :step="10" placeholder="Value" />
+          <neon-number v-model="minMaxNumber" :max="90" :min="20" :spin-buttons="true" :step="10" placeholder="Value" />
           <label>Decimal min, max, step</label>
           <neon-number
             v-model="decimalMinMaxNumber"
             :decimals="2"
             :max="10.0"
             :min="-10.0"
+            :spin-buttons="true"
             :step="0.05"
             placeholder="Value"
           />
@@ -49,6 +51,7 @@
           />
           <label>Disabled</label>
           <neon-number v-model="disabledNumber" disabled="disabled" placeholder="Value" />
+          <neon-number v-model="disabledNumber" :spin-buttons="true" disabled="disabled" placeholder="Value" />
         </div>
         <editor v-model="numberValueExamples" />
       </neon-card-body>
@@ -57,7 +60,8 @@
         <div class="neon-vertically-spaced">
           <neon-number v-model="hcNumber" color="high-contrast" placeholder="Value" />
           <neon-number v-model="primaryNumber" color="primary" placeholder="Value" />
-          <neon-number v-model="brandNumber" color="brand" placeholder="Value" />
+          <neon-number v-model="brandNumber" :spin-buttons="true" color="brand" placeholder="Value" />
+          <neon-number v-model="infoNumber" :editable="false" :spin-buttons="true" color="info" placeholder="Value" />
         </div>
         <editor v-model="numberColorExamples" />
       </neon-card-body>

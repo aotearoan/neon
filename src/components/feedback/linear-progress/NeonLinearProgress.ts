@@ -40,6 +40,10 @@ export default defineComponent({
      */
     size: { type: String as () => NeonSize, default: NeonSize.Medium },
     /**
+     * The locale used for display purposes. This defaults to the browser's locale if none is provided.
+     */
+    locale: { type: String, default: null },
+    /**
      * Display the text output indicating the current state of progress
      */
     output: { type: Boolean, default: true },
@@ -78,8 +82,10 @@ export default defineComponent({
 
     const computedOutput = computed(() => {
       return props.total
-        ? `${NeonNumberUtils.formatNumber(calculatedValue.value, { decimals: props.decimals })} / ${props.total}`
-        : `${NeonNumberUtils.formatNumber(computedPercentage.value, { decimals: props.decimals })}%`;
+        ? `${NeonNumberUtils.formatNumber(calculatedValue.value, { decimals: props.decimals }, props.locale)} / ${
+            props.total
+          }`
+        : `${NeonNumberUtils.formatNumber(computedPercentage.value, { decimals: props.decimals }, props.locale)}%`;
     });
 
     const incrementValue = (value: number) => {

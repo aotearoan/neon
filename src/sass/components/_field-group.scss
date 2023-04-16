@@ -51,6 +51,12 @@
         }
       }
     }
+
+    & > .neon-input {
+      & > input:focus {
+        max-width: 100%;
+      }
+    }
   }
 
   .neon-button {

@@ -164,6 +164,16 @@ describe('NeonSlider', () => {
     expect(container.querySelector('.neon-slider__tooltip')?.textContent).toEqual('$42.36');
   });
 
+  it('renders formatted tooltip with template with locale', async () => {
+    // given
+    const value = 42.355;
+    const { container, rerender } = harness;
+    // eslint-disable-next-line no-template-curly-in-string
+    await rerender({ modelValue: value, valueTemplate: '${value}', decimals: 2, locale: 'de-DE' });
+    // when / then
+    expect(container.querySelector('.neon-slider__tooltip')?.textContent).toEqual('$42,36');
+  });
+
   it('renders formatted min/max', async () => {
     // given
     const value = 5000;

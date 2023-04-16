@@ -60,6 +60,10 @@ export default defineComponent({
      */
     percentage: { type: Boolean, default: false },
     /**
+     * The locale used for display purposes. This defaults to the browser's locale if none is provided.
+     */
+    locale: { type: String, default: null },
+    /**
      * The minimum range value
      */
     min: { type: Number, default: 0 },
@@ -98,8 +102,8 @@ export default defineComponent({
 
       return !props.disableFormatting
         ? [
-            NeonNumberUtils.formatNumber(props.modelValue[0], options),
-            NeonNumberUtils.formatNumber(props.modelValue[1], options),
+            NeonNumberUtils.formatNumber(props.modelValue[0], options, props.locale),
+            NeonNumberUtils.formatNumber(props.modelValue[1], options, props.locale),
           ]
         : [`${props.modelValue[0]}`, `${props.modelValue[1]}`];
     });

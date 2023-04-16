@@ -48,6 +48,10 @@ export default defineComponent({
      */
     size: { type: String as () => NeonSize, default: NeonSize.Medium },
     /**
+     * The locale used for display purposes. This defaults to the browser's locale if none is provided.
+     */
+    locale: { type: String, default: null },
+    /**
      * Placeholder text to display in the input
      */
     placeholder: { type: String, default: null },
@@ -62,7 +66,7 @@ export default defineComponent({
     /**
      * Show/hide spin buttons. NOTE: The user can still use up/down arrow keys when the input has focus.
      */
-    spinButtons: { type: Boolean, default: true },
+    spinButtons: { type: Boolean, default: false },
     /**
      * Automatically applies % formatting, e.g. if the value = 0.15 it will be displayed as 15%.
      */
@@ -142,11 +146,15 @@ export default defineComponent({
     const formattedValue = computed(() => {
       return props.modelValue !== null &&
         (props.valueTemplate !== undefined || computedDecimals.value !== undefined || props.percentage !== undefined)
-        ? NeonNumberUtils.formatNumber(props.modelValue, {
-            decimals: computedDecimals.value,
-            format: props.valueTemplate,
-            percentage: props.percentage,
-          })
+        ? NeonNumberUtils.formatNumber(
+            props.modelValue,
+            {
+              decimals: computedDecimals.value,
+              format: props.valueTemplate,
+              percentage: props.percentage,
+            },
+            props.locale,
+          )
         : props.modelValue;
     });
 
@@ -155,7 +163,7 @@ export default defineComponent({
     });
 
     const displayValue = computed(() => {
-      return focus.value ? `${rawValue.value}` : formattedValue.value;
+      return focus.value ? (rawValue.value ? `${rawValue.value}` : '') : formattedValue.value;
     });
 
     const computedStep = computed(() => {

@@ -11,7 +11,7 @@ describe('NeonNumber', () => {
 
   beforeEach(() => {
     harness = render(NeonNumber, {
-      props: { modelValue, debounce: 0 },
+      props: { modelValue, debounce: 0, spinButtons: true },
     });
   });
 
@@ -465,5 +465,15 @@ describe('NeonNumber', () => {
     });
     // then
     expect(emitted()['update:modelValue'][0]).toEqual([modelValue + 1]);
+  });
+
+  it('renders formatted value with locale', async () => {
+    // given
+    const { container, rerender } = harness;
+    await rerender({ modelValue: 1000, locale: 'de-DE' });
+    // when / then
+    const input = container.querySelector('.neon-input__textfield') as HTMLInputElement;
+    expect(input?.value).toEqual('1.000');
+    expect(input?.getAttribute('aria-valuenow')).toEqual('1000');
   });
 });

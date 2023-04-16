@@ -68,6 +68,17 @@
       }
     },
     {
+      "name": "locale",
+      "description": "The locale used for display purposes. This defaults to the browser's locale if none is provided.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
       "name": "output",
       "description": "Display the text output indicating the current state of progress",
       "type": {

@@ -26,6 +26,10 @@ export default defineComponent({
      */
     color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
     /**
+     * The locale used for display purposes. This defaults to the browser's locale if none is provided.
+     */
+    locale: { type: String, default: null },
+    /**
      * Show/hide the output.
      */
     output: { type: Boolean, default: true },
@@ -101,11 +105,15 @@ export default defineComponent({
 
     const formatNumber = (value: number) => {
       return !props.disableFormatting
-        ? NeonNumberUtils.formatNumber(value, {
-            decimals: props.decimals,
-            format: props.valueTemplate,
-            percentage: props.percentage,
-          })
+        ? NeonNumberUtils.formatNumber(
+            value,
+            {
+              decimals: props.decimals,
+              format: props.valueTemplate,
+              percentage: props.percentage,
+            },
+            props.locale,
+          )
         : value;
     };
 

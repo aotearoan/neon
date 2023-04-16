@@ -52,16 +52,17 @@ $message-height: calc(var(--neon-font-size-s) * var(--neon-line-height-ratio));
     position: relative;
 
     @each $color in palettes.$neon-functional-colors {
-      $input-rgb: var(--neon-color-#{$color});
+      $input-rgb: var(--neon-rgb-#{$color});
       &.neon-input--#{$color} {
         &.neon-input--focused {
           .neon-input__text,
           .neon-input__textarea {
             @if (not index(palettes.$neon-neutral-colors, $color)) {
-              background-color: rgba(var(--neon-rgb-#{$color}), 0.125);
+              border-color: rgb($input-rgb);
+              background-color: rgba(var(--neon-rgb-#{$color}), 0.03125);
 
               &::placeholder {
-                color: rgba(var(--neon-rgb-#{$color}), 0.75);
+                color: rgba(var(--neon-rgb-#{$color}), 0.5);
               }
             } @else {
               border-color: rgb($input-rgb);

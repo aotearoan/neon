@@ -40,6 +40,15 @@ describe('NeonRangeSlider', () => {
     expect(container.querySelector('.neon-range-slider__output-range')?.textContent).toEqual('5,000 : 10,000');
   });
 
+  it('renders output with locale', async () => {
+    // given
+    const value = [5000, 10000];
+    const { container, rerender } = harness;
+    await rerender({ modelValue: value, locale: 'de-DE' });
+    // when / then
+    expect(container.querySelector('.neon-range-slider__output-range')?.textContent).toEqual('5.000 : 10.000');
+  });
+
   it('renders output disabled formatting', async () => {
     // given
     const value = [5000, 10000];

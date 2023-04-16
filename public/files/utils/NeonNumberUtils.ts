@@ -8,7 +8,7 @@ export class NeonNumberUtils {
   public static PercentageFormat = '{value}%';
   public static ValuePlaceholder = '{value}';
 
-  public static formatNumber(value: number, options?: NeonNumberFormatOptions) {
+  public static formatNumber(value: number, options?: NeonNumberFormatOptions, locale?: string | null) {
     const formatOptions =
       options && (options.decimals || options.minimumFractionDigits)
         ? {
@@ -17,7 +17,7 @@ export class NeonNumberUtils {
           }
         : {};
     const formatted = Number(options && options.percentage ? 100 * value : value).toLocaleString(
-      undefined,
+      locale || navigator.language,
       formatOptions,
     );
 

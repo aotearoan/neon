@@ -163,8 +163,10 @@ export default defineComponent({
             break;
           case 'Enter':
           case 'Space':
-            clickOption(props.options[highlightedIndex.value]);
-            $event.preventDefault();
+            if (!($event.target as HTMLElement).classList.contains('neon-search__input')) {
+              clickOption(props.options[highlightedIndex.value]);
+              $event.preventDefault();
+            }
             break;
           case 'Tab':
             if (!$event.ctrlKey && !$event.metaKey && !$event.altKey) {
@@ -204,7 +206,7 @@ export default defineComponent({
       emitInputEvent((props.modelValue as NeonSearchOption[]).filter((v) => v.key !== removed.key));
 
     const computedOptions = computed(() => {
-      return props.options.filter((opt) => opt.label !== filter.value);
+      return props.multiple ? props.options : props.options.filter((opt) => opt.label !== filter.value);
     });
 
     return {
