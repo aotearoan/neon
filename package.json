@@ -1,7 +1,7 @@
 {
   "name": "@aotearoan/neon",
   "description": "Neon is a lightweight design library of Vue 3 components with minimal dependencies.",
-  "version": "8.0.1-beta.1",
+  "version": "8.0.2-beta.1",
   "main": "./dist/neoon.cjs.js",
   "module": "dist/neon.es.js",
   "types": "dist/neon.d.ts",

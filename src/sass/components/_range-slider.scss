@@ -41,6 +41,10 @@
         }
       }
 
+      .neon-slider__tooltip {
+        bottom: 4rem;
+      }
+
       &.neon-slider--disabled {
         .neon-slider__input {
           &::-webkit-slider-runnable-track {
@@ -74,6 +78,13 @@
       }
     }
 
+    .neon-range-slider__lower.neon-slider--no-legend,
+    .neon-range-slider__upper {
+      .neon-slider__tooltip {
+        bottom: -19rem;
+      }
+    }
+    
     &.neon-range-slider--disabled {
       cursor: not-allowed;
     }
