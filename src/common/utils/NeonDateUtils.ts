@@ -9,7 +9,8 @@ export class NeonDateUtils {
    */
   public static stringToNeonDate(date: string, locale?: string): NeonDate {
     const loc = locale || navigator.language;
-    const dateObj = new Date(date);
+    const now = new Date();
+    const dateObj = new Date(date.length === 10 ? `${date}T${now.toISOString().split('T')[1]}` : date);
     let time;
     if (date.length > 10) {
       time = dateObj.toLocaleString(
@@ -21,11 +22,12 @@ export class NeonDateUtils {
     }
 
     const result: NeonDate = {
-      year: +dateObj.toLocaleString(loc, { year: 'numeric' }),
-      month: +dateObj.toLocaleString(loc, { month: 'numeric' }),
+      year: +dateObj.toLocaleString('en-US', { year: 'numeric' }),
+      yearFormatted: dateObj.toLocaleString(loc, { year: 'numeric' }),
+      month: +dateObj.toLocaleString('en-US', { month: 'numeric' }),
       monthShortName: dateObj.toLocaleString(loc, { month: 'short' }),
       monthLongName: dateObj.toLocaleString(loc, { month: 'long' }),
-      day: +dateObj.toLocaleString(loc, { day: 'numeric' }),
+      day: +dateObj.toLocaleString('en-US', { day: 'numeric' }),
       dayFormatted: dateObj.toLocaleString(loc, { day: '2-digit' }),
     };
 
@@ -39,6 +41,10 @@ export class NeonDateUtils {
   public static dateToIso(date: Date, time = false): string {
     const dateString = date.toISOString();
     return time ? dateString : dateString.split('T')[0];
+  }
+
+  public static dmyToIso(day: number, month: number, year: number): string {
+    return `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`;
   }
 
   public static dowNames(locale?: string): Array<string> {
@@ -68,7 +74,7 @@ export class NeonDateUtils {
     });
   }
 
-  public static toCalendarPage(
+  public static toCalendarConfiguration(
     selectedDate?: string,
     currentPageMonth?: number,
     currentPageYear?: number,

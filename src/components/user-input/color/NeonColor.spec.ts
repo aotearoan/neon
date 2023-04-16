@@ -10,7 +10,7 @@ describe('NeonColor', () => {
 
   beforeEach(() => {
     harness = render(NeonColor, {
-      props: { modelValue: value },
+      props: { modelValue: value, debounce: 0 },
     });
   });
 

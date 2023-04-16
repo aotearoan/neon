@@ -40,7 +40,7 @@
       min-width: 100%;
       display: flex;
       opacity: 0;
-      z-index: 0;
+      z-index: var(--neon-z-index-above);
       position: absolute;
       top: 0;
       left: 0;
@@ -202,7 +202,7 @@
           }
         }
 
-        .neon-date-picker__button-click-capture {
+        &:not(.neon-date-picker--disabled) .neon-date-picker__button-click-capture {
           &:focus {
             border: var(--neon-border);
             border-color: var(--neon-color-#{$color});

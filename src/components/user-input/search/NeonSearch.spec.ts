@@ -26,7 +26,7 @@ describe('NeonSearch', () => {
   let harness: RenderResult;
 
   beforeEach(() => {
-    harness = render(NeonSearch, { props: { modelValue, placeholder, options } });
+    harness = render(NeonSearch, { props: { modelValue, placeholder, options, debounce: 0 } });
   });
 
   it('renders default color', () => {

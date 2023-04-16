@@ -13,7 +13,7 @@ describe('NeonInput', () => {
 
   beforeEach(() => {
     harness = render(NeonInput, {
-      props: { modelValue, id },
+      props: { modelValue, id, debounce: 0 },
     });
   });
 

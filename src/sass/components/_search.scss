@@ -122,7 +122,7 @@
           max-height: calc(var(--neon-size-m) - 2 * var(--neon-border-width));
 
           .neon-icon {
-            top: calc(1.5 * var(--neon-base-space));
+            top: calc(1.2 * var(--neon-base-space));
             right: calc(2.5 * var(--neon-base-space));
           }
         }
@@ -141,7 +141,7 @@
           max-height: calc(var(--neon-size-l) - 2 * var(--neon-border-width));
 
           .neon-icon {
-            top: calc(1.5 * var(--neon-base-space));
+            top: calc(1.2 * var(--neon-base-space));
             right: calc(3.5 * var(--neon-base-space));
           }
         }

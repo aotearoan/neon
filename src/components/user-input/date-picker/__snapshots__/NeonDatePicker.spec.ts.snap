@@ -13,7 +13,7 @@ exports[`NeonDatePicker renders change decade replacement strings 1`] = `
         <!--v-if-->
         <!--v-if-->
       </div>
-      <div aria-label="Open calendar" class="neon-date-picker__button-click-capture" role="button" tabindex="0"></div>
+      <div aria-label="Open calendar" tabindex="0" class="neon-date-picker__button-click-capture" role="button"></div>
     </div>
     <div class="neon-dropdown__click-blocker"></div>
     <div class="neon-dropdown__content--bottom-left neon-dropdown__content" style="">
@@ -100,7 +100,7 @@ exports[`NeonDatePicker renders change month replacement strings 1`] = `
         <!--v-if-->
         <!--v-if-->
       </div>
-      <div aria-label="string 1" class="neon-date-picker__button-click-capture" role="button" tabindex="0"></div>
+      <div aria-label="string 1" tabindex="0" class="neon-date-picker__button-click-capture" role="button"></div>
     </div>
     <div class="neon-dropdown__click-blocker"></div>
     <div class="neon-dropdown__content--bottom-left neon-dropdown__content" style="display: none;">
@@ -275,7 +275,7 @@ exports[`NeonDatePicker renders change year replacement strings 1`] = `
         <!--v-if-->
         <!--v-if-->
       </div>
-      <div aria-label="Open calendar" class="neon-date-picker__button-click-capture" role="button" tabindex="0"></div>
+      <div aria-label="Open calendar" tabindex="0" class="neon-date-picker__button-click-capture" role="button"></div>
     </div>
     <div class="neon-dropdown__click-blocker"></div>
     <div class="neon-dropdown__content--bottom-left neon-dropdown__content" style="">
@@ -374,7 +374,7 @@ exports[`NeonDatePicker renders closed 1`] = `
         <!--v-if-->
         <!--v-if-->
       </div>
-      <div aria-label="Open calendar" class="neon-date-picker__button-click-capture" role="button" tabindex="0"></div>
+      <div aria-label="Open calendar" tabindex="0" class="neon-date-picker__button-click-capture" role="button"></div>
     </div>
     <div class="neon-dropdown__click-blocker"></div>
     <div class="neon-dropdown__content--bottom-left neon-dropdown__content" style="display: none;">
@@ -546,7 +546,7 @@ exports[`NeonDatePicker renders open 1`] = `
         <!--v-if-->
         <!--v-if-->
       </div>
-      <div aria-label="Open calendar" class="neon-date-picker__button-click-capture" role="button" tabindex="0"></div>
+      <div aria-label="Open calendar" tabindex="0" class="neon-date-picker__button-click-capture" role="button"></div>
     </div>
     <div class="neon-dropdown__click-blocker"></div>
     <div class="neon-dropdown__content--bottom-left neon-dropdown__content" style="">
@@ -718,7 +718,7 @@ exports[`NeonDatePicker renders with defaults of today 1`] = `
         <!--v-if-->
         <!--v-if-->
       </div>
-      <div aria-label="Open calendar" class="neon-date-picker__button-click-capture" role="button" tabindex="0"></div>
+      <div aria-label="Open calendar" tabindex="0" class="neon-date-picker__button-click-capture" role="button"></div>
     </div>
     <div class="neon-dropdown__click-blocker"></div>
     <div class="neon-dropdown__content--bottom-left neon-dropdown__content" style="">
@@ -893,7 +893,7 @@ exports[`NeonDatePicker renders with locale 1`] = `
         <!--v-if-->
         <!--v-if-->
       </div>
-      <div aria-label="Open calendar" class="neon-date-picker__button-click-capture" role="button" tabindex="0"></div>
+      <div aria-label="Open calendar" tabindex="0" class="neon-date-picker__button-click-capture" role="button"></div>
     </div>
     <div class="neon-dropdown__click-blocker"></div>
     <div class="neon-dropdown__content--bottom-left neon-dropdown__content" style="">

@@ -11,7 +11,7 @@ describe('NeonNumber', () => {
 
   beforeEach(() => {
     harness = render(NeonNumber, {
-      props: { modelValue },
+      props: { modelValue, debounce: 0 },
     });
   });
 

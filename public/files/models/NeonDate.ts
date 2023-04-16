@@ -1,5 +1,6 @@
 export interface NeonDate {
   year: number;
+  yearFormatted: string;
   month: number;
   monthShortName: string;
   monthLongName: string;

@@ -10,9 +10,12 @@ import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
 /**
  * <strong>NeonDatePicker</strong> is the equivalent of the native
  * <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date" target="_blank">HTML Date Input</a>.
- * It accepts an <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> date string as values &
+ * It accepts an <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> date string &
  * allows the user to select a date. Dates are formatted with the provided locale, if none is provided the browser
  * locale is used as a default. On touch devices the native date picker is presented to the user.
+ *
+ * The input date is displayed to the user WITHOUT any adjustment for their timezone, however 'Today' on the calendar is
+ * highlighted for the user's timezone.
  *
  * This component interaction was inspired by this <a href="https://icehaunter.github.io/vue3-datepicker" target="_blank">vue-datepicker</a>
  */
@@ -125,17 +128,15 @@ export default defineComponent({
       if (props.modelValue) {
         const formattedDate = NeonDateUtils.stringToNeonDate(props.modelValue, props.locale);
         if (formattedDate) {
-          const { dayFormatted, monthShortName, year } = formattedDate;
-          return `${dayFormatted} ${monthShortName} ${year}`;
+          const { dayFormatted, monthShortName, yearFormatted } = formattedDate;
+          return `${dayFormatted} ${monthShortName} ${yearFormatted}`;
         }
       }
 
       return '';
     });
 
-    const isoDate = (year: number, month: number, day: number) => {
-      return `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`;
-    };
+    const isoDate = (day: number, month: number, year: number) => NeonDateUtils.dmyToIso(day, month, year);
 
     const todayDate = new Date();
     const locale = props.locale || navigator.language;
@@ -149,7 +150,7 @@ export default defineComponent({
     const pageDecadeStart = ref(Math.floor(pageYear.value / 10) * 10);
 
     const calendar = computed(() =>
-      NeonDateUtils.toCalendarPage(
+      NeonDateUtils.toCalendarConfiguration(
         props.modelValue,
         pageMonth.value,
         pageYear.value,
@@ -159,8 +160,8 @@ export default defineComponent({
     );
 
     const today = computed(() => {
-      const { year, month, day } = calendar.value.today;
-      return isoDate(year, month, day);
+      const { day, month, year } = calendar.value.today;
+      return NeonDateUtils.dmyToIso(day, month, year);
     });
 
     const openCalendar = () => {
@@ -202,11 +203,11 @@ export default defineComponent({
     };
 
     const isPreviousDisabled = computed(
-      () => props.min && props.min >= isoDate(calendar.value.pageYear, calendar.value.pageMonth, 1),
+      () => props.min && props.min >= NeonDateUtils.dmyToIso(1, calendar.value.pageMonth, calendar.value.pageYear),
     );
     const isNextDisabled = computed(() => {
       const { pageYear, pageMonth, lastDayOfMonth } = calendar.value;
-      return props.max && props.max <= isoDate(pageYear, pageMonth, lastDayOfMonth);
+      return props.max && props.max <= NeonDateUtils.dmyToIso(lastDayOfMonth, pageMonth, pageYear);
     });
     const isChangeDateDisabled = computed(() => isPreviousDisabled.value && isNextDisabled.value);
 
@@ -222,8 +223,12 @@ export default defineComponent({
       yearSelectionOpen.value = true;
     };
 
-    const isPreviousYearDisabled = computed(() => props.min && props.min >= isoDate(calendar.value.pageYear, 1, 1));
-    const isNextYearDisabled = computed(() => props.max && props.max <= isoDate(calendar.value.pageYear, 12, 31));
+    const isPreviousYearDisabled = computed(
+      () => props.min && props.min >= NeonDateUtils.dmyToIso(1, 1, calendar.value.pageYear),
+    );
+    const isNextYearDisabled = computed(
+      () => props.max && props.max <= NeonDateUtils.dmyToIso(31, 12, calendar.value.pageYear),
+    );
     const isChangeYearDisabled = computed(() => isPreviousYearDisabled.value && isNextYearDisabled.value);
 
     const onPreviousDecade = () => {
@@ -235,10 +240,10 @@ export default defineComponent({
     };
 
     const isPreviousDecadeDisabled = computed(
-      () => props.min && props.min >= isoDate(Math.floor(calendar.value.pageYear / 10) * 10, 1, 1),
+      () => props.min && props.min >= NeonDateUtils.dmyToIso(1, 1, Math.floor(calendar.value.pageYear / 10) * 10),
     );
     const isNextDecadeDisabled = computed(
-      () => props.max && props.max <= isoDate(Math.floor(calendar.value.pageYear / 10) * 10 + 9, 12, 31),
+      () => props.max && props.max <= NeonDateUtils.dmyToIso(31, 12, Math.floor(calendar.value.pageYear / 10) * 10 + 9),
     );
 
     const resetToCalendar = () => {

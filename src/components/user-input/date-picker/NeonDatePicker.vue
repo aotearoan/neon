@@ -26,10 +26,10 @@
         />
         <div
           :aria-label="openCalendarLabel"
+          :tabindex="disabled ? -1 : 0"
           class="neon-date-picker__button-click-capture"
           role="button"
-          tabindex="0"
-          @click="openCalendar()"
+          @click="!disabled && openCalendar()"
           @keydown.enter.stop.prevent="openCalendar()"
           @keydown.space.stop.prevent="openCalendar()"
         ></div>
@@ -207,21 +207,21 @@
                   :circular="true"
                   :class="{
                     'neon-date-picker__calendar-date--selected':
-                      modelValue === isoDate(calendar.pageYear, calendar.pageMonth, dateCol),
+                      modelValue === isoDate(dateCol, calendar.pageMonth, calendar.pageYear),
                     'neon-date-picker__calendar-date--today':
-                      today === isoDate(calendar.pageYear, calendar.pageMonth, dateCol),
+                      today === isoDate(dateCol, calendar.pageMonth, calendar.pageYear),
                     'neon-date-picker__calendar-date--disabled': isDisabled(
-                      isoDate(calendar.pageYear, calendar.pageMonth, dateCol),
+                      isoDate(dateCol, calendar.pageMonth, calendar.pageYear),
                     ),
                   }"
                   :color="color"
-                  :disabled="isDisabled(isoDate(calendar.pageYear, calendar.pageMonth, dateCol))"
+                  :disabled="isDisabled(isoDate(dateCol, calendar.pageMonth, calendar.pageYear))"
                   :label="`${dateCol}`"
-                  :tabindex="isDisabled(isoDate(calendar.pageYear, calendar.pageMonth, dateCol)) ? -1 : 0"
+                  :tabindex="isDisabled(isoDate(dateCol, calendar.pageMonth, calendar.pageYear)) ? -1 : 0"
                   button-style="text"
                   class="neon-date-picker__calendar-date"
                   size="m"
-                  @click="emitDate(isoDate(calendar.pageYear, calendar.pageMonth, dateCol))"
+                  @click="emitDate(isoDate(dateCol, calendar.pageMonth, calendar.pageYear))"
                 />
                 <div
                   v-else

@@ -82,9 +82,6 @@ export default defineComponent({
     };
 
     const routeMatches = (path: string) => {
-      console.log('---------------');
-      console.log(route?.path);
-      console.log(path);
       return route?.path.indexOf(path) >= 0;
     };
 
