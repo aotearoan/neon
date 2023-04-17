@@ -12,7 +12,7 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Splash loader example</h2>
-        <div class="example--vertical">
+        <div class="neon--vertical">
           <neon-button label="Show loader" @click="openLoader()" />
           <neon-splash-loader v-if="open" :fullscreen="true" :overlay="true" color="brand" size="xl" />
         </div>

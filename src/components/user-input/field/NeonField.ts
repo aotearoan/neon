@@ -1,12 +1,13 @@
 import { defineComponent } from 'vue';
 import NeonLabel from '@/components/presentation/label/NeonLabel.vue';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 /**
  * An HTML label implementation supporting optional labels. Use in the same way as an HTML label either wrapping the input
  * or using the label alongside the input.
  */
 export default defineComponent({
-  name: 'NeonFieldLabel',
+  name: 'NeonField',
   components: {
     NeonLabel,
   },
@@ -31,5 +32,13 @@ export default defineComponent({
      * The default "optional" label text.
      */
     optionalLabel: { type: String, default: 'Optional' },
+    /**
+     * Message to display below the input field.
+     */
+    message: { type: String, default: null },
+    /**
+     * The color of message displayed under input. Can be any functional color.
+     */
+    messageColor: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
   },
 });

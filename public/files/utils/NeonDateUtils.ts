@@ -6,11 +6,12 @@ export class NeonDateUtils {
    * Convert an ISO 8601 formatted string to a locale formatted date with a three letter month, a 2 digit day and a locale formatted time.
    * @param date The date/time as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string.
    * @param locale The locale for which to convert the date for display purposes, defaults to browser locale.
+   * @param strict Do not add time component to localise the date.
    */
-  public static stringToNeonDate(date: string, locale?: string): NeonDate {
+  public static stringToNeonDate(date: string, locale?: string, strict = false): NeonDate {
     const loc = locale || navigator.language;
     const now = new Date();
-    const dateObj = new Date(date.length === 10 ? `${date}T${now.toISOString().split('T')[1]}` : date);
+    const dateObj = new Date(!strict && date.length === 10 ? `${date}T${now.toISOString().split('T')[1]}` : date);
     let time;
     if (date.length > 10) {
       time = dateObj.toLocaleString(
@@ -83,7 +84,7 @@ export class NeonDateUtils {
   ): NeonCalendarConfig {
     const loc = locale || navigator.language;
     const today = NeonDateUtils.stringToNeonDate(NeonDateUtils.dateToIso(new Date()), loc);
-    const selected = selectedDate ? NeonDateUtils.stringToNeonDate(selectedDate, loc) : undefined;
+    const selected = selectedDate ? NeonDateUtils.stringToNeonDate(selectedDate, loc, true) : undefined;
     // month indexed from 1-12
     const pageMonth = currentPageMonth || today.month;
 

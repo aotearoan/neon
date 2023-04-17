@@ -1,0 +1,92 @@
+{
+  "displayName": "NeonLabel",
+  "description": "An HTML label implementation supporting optional labels. Use in the same way as an HTML label either wrapping the input\nor using the label alongside the input.",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "label",
+      "description": "The label text to render.",
+      "type": {
+        "name": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "labelFor",
+      "description": "The equivalent of the <em>for</em> attribute on an HTML label.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "optional",
+      "description": "Display an \"optional\" indicator with the label.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "disabled",
+      "description": "Display label with disabled state.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "optionalLabel",
+      "description": "The default \"optional\" label text.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Optional'"
+      }
+    },
+    {
+      "name": "message",
+      "description": "Message to display below the input field.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "messageColor",
+      "description": "The color of message displayed under input. Can be any functional color.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "optionally wrap the field with the label"
+    }
+  ],
+  "sourceFiles": [
+    "./src/components/user-input/field/NeonField.vue",
+    "/Users/andrew/dev/projects/neon/src/components/user-input/field/NeonField.ts"
+  ]
+}

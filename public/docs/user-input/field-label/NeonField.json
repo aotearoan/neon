@@ -1,5 +1,5 @@
 {
-  "displayName": "NeonFieldLabel",
+  "displayName": "NeonField",
   "description": "An HTML label implementation supporting optional labels. Use in the same way as an HTML label either wrapping the input\nor using the label alongside the input.",
   "tags": {},
   "exportName": "default",
@@ -64,7 +64,7 @@
     }
   ],
   "sourceFiles": [
-    "./src/components/user-input/field-label/NeonFieldLabel.vue",
-    "/Users/andrew/dev/projects/neon/src/components/user-input/field-label/NeonFieldLabel.ts"
+    "./src/components/user-input/field/NeonField.vue",
+    "/Users/andrew/dev/projects/neon/src/components/user-input/field/NeonField.ts"
   ]
 }

@@ -11,7 +11,7 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Button sizes</h2>
-        <div class="example--horizontal">
+        <div class="neon--horizontal">
           <neon-button label="Small button" size="s" />
           <neon-button label="Medium button" size="m" />
           <neon-button label="Large button" size="l" />
@@ -20,7 +20,7 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Neutral colors</h2>
-        <div class="example--horizontal example--wrap">
+        <div class="neon--horizontal example--wrap">
           <neon-button color="low-contrast" label="Low contrast" />
           <neon-button color="neutral" label="Neutral" />
           <neon-button color="high-contrast" label="High contrast" />
@@ -32,7 +32,7 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Brand colors</h2>
-        <div class="example--horizontal example--wrap">
+        <div class="neon--horizontal example--wrap">
           <neon-button color="brand" label="Brand" />
           <neon-button color="primary" label="Primary" />
         </div>
@@ -40,7 +40,7 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Functional colors</h2>
-        <div class="example--horizontal example--wrap">
+        <div class="neon--horizontal example--wrap">
           <neon-button color="info" label="Info" />
           <neon-button color="success" label="Success" />
           <neon-button color="warn" label="Warn" />
@@ -57,7 +57,7 @@
             </p>
           </neon-note>
           <br />
-          <div class="example--horizontal example--wrap">
+          <div class="neon--horizontal example--wrap">
             <neon-button alternate-color="primary" color="primary" label="Primary" />
             <neon-button alternate-color="info" color="success" label="Success" />
             <neon-button alternate-color="primary" color="brand" label="Mixed" />
@@ -68,7 +68,7 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Button styles</h2>
-        <div class="example--vertical">
+        <div class="neon--vertical">
           <neon-button button-style="solid" label="Solid button" />
           <neon-button button-style="outline" label="Outline button" />
           <neon-button button-style="text" label="Text button" />
@@ -82,7 +82,7 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Buttons with icons</h2>
-        <div class="example--horizontal">
+        <div class="neon--horizontal">
           <neon-button icon="plus" label="With icon" />
           <neon-button icon="plus" icon-position="right" label="Positioned right" />
         </div>
@@ -90,7 +90,7 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Icon only buttons</h2>
-        <div class="example--horizontal">
+        <div class="neon--horizontal">
           <neon-button icon="plus" />
           <neon-button :circular="true" icon="plus" />
         </div>
@@ -98,7 +98,7 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Button states</h2>
-        <div class="example--vertical">
+        <div class="neon--vertical">
           <neon-note color="info">
             <span>
               <strong>Note:</strong> add button states (<strong>loading, success, error</strong>) to indicate the result

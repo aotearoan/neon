@@ -13,10 +13,10 @@
   >
     <div class="neon-drawer__overlay"></div>
     <div
+      id="neonDrawerDesc"
+      ref="drawer"
       class="neon-drawer__container"
       :class="{ 'neon-drawer__container--full-width': fullWidth }"
-      ref="drawer"
-      id="neonDrawerDesc"
     >
       <!-- @slot the contents of the drawer -->
       <slot></slot>

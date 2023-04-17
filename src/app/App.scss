@@ -1,6 +1,7 @@
 // This structure allows you to not only use the theme and light/dark modes,
 // but to also use the defined variables, mixins and functions in your own components and pages.
 @use 'src/sass/includes/responsive';
+@use 'src/sass/includes/svg';
 @use 'src/sass/theme';
 @use './sass/fonts';
 @use './sass/global';
@@ -11,6 +12,19 @@
 .app {
   &.neon {
     overscroll-behavior: none;
+
+    .app-side-nav,
+    .app-top-nav {
+      .homepage-logo {
+        @include svg.color-with-svg(var(--neon-color-text-strong));
+      }
+    }
+
+    .neon-vertically-spaced {
+      & > *:not(:last-child):not(label) {
+        margin-bottom: calc(4 * var(--neon-base-space));
+      }
+    }
 
     .app-side-nav {
       & > hr {

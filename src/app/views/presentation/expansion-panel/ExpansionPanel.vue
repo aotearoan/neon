@@ -11,7 +11,7 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Expansion panel sizes</h2>
-        <div class="example--vertical example-expansion-panel">
+        <div class="neon--vertical example-expansion-panel">
           <neon-expansion-panel v-model="expanded1" label="Small" size="s">
             <p>{{ content }}</p>
           </neon-expansion-panel>
@@ -26,7 +26,7 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">More styles</h2>
-        <div class="example--vertical example-expansion-panel">
+        <div class="neon--vertical example-expansion-panel">
           <neon-expansion-panel v-model="expanded4" icon="contrast" label="With icon">
             <p>{{ content }}</p>
           </neon-expansion-panel>

@@ -6,7 +6,7 @@
           <h2 class="neon-h3">Different types of alert</h2>
         </neon-card-header>
         <neon-card-body>
-          <div class="example--horizontal">
+          <div class="neon--horizontal">
             <neon-button color="info" label="Info" @click="infoAlert()" />
             <neon-button color="success" label="Success" @click="successAlert()" />
             <neon-button color="warn" label="Warning" @click="warnAlert()" />
@@ -20,7 +20,7 @@
           <h2 class="neon-h3">Alert placement</h2>
         </neon-card-header>
         <neon-card-body>
-          <div class="example--horizontal">
+          <div class="neon--horizontal">
             <neon-button label="Top left" @click="infoAlert('top-left')" />
             <neon-button label="Top right" @click="infoAlert('top-right')" />
             <neon-button label="Bottom left" @click="infoAlert('bottom-left')" />
@@ -34,7 +34,7 @@
           <h2 class="neon-h3">Alerts with actions</h2>
         </neon-card-header>
         <neon-card-body>
-          <div class="example--horizontal">
+          <div class="neon--horizontal">
             <neon-button label="Single action" @click="alertSingleAction()" />
             <neon-button label="Both actions" @click="alertBothActions()" />
           </div>
@@ -46,12 +46,12 @@
           <h2 class="neon-h3">Toast alerts</h2>
         </neon-card-header>
         <neon-card-body>
-          <div class="example--vertical">
-            <div class="example--horizontal">
+          <div class="neon--vertical">
+            <div class="neon--horizontal">
               <neon-button label="Toast top" @click="toastInfo()" />
               <neon-button label="Toast bottom" @click="toastInfo('bottom')" />
             </div>
-            <div class="example--horizontal">
+            <div class="neon--horizontal">
               <neon-button color="info" label="Toast info" @click="toastInfo()" />
               <neon-button color="success" label="Toast success" @click="toastSuccess()" />
               <neon-button color="warn" label="Toast warning" @click="toastWarn()" />

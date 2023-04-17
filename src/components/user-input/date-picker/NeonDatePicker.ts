@@ -126,7 +126,7 @@ export default defineComponent({
 
     const formattedValue = computed(() => {
       if (props.modelValue) {
-        const formattedDate = NeonDateUtils.stringToNeonDate(props.modelValue, props.locale);
+        const formattedDate = NeonDateUtils.stringToNeonDate(props.modelValue, props.locale, true);
         if (formattedDate) {
           const { dayFormatted, monthShortName, yearFormatted } = formattedDate;
           return `${dayFormatted} ${monthShortName} ${yearFormatted}`;

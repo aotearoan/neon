@@ -75,6 +75,12 @@ export class Menu {
                 anchors: ['Introduction', 'Brand palettes', 'Functional palettes', 'Neutral palettes', 'Color classes'],
               },
               {
+                path: 'palette-creator',
+                page: 'PaletteCreator',
+                name: 'Palette Creator',
+                keywords: 'color colour palette generator creator rgb css variables',
+              },
+              {
                 path: 'icons',
                 page: 'Icons',
               },
@@ -390,11 +396,10 @@ export class Menu {
                 component: 'NeonFieldGroup',
               },
               {
-                path: 'field-label',
-                page: 'FieldLabel',
-                name: 'Field Label',
-                keywords: 'label field input optional mandatory',
-                component: 'NeonFieldLabel',
+                path: 'field',
+                page: 'Field',
+                keywords: 'label field input optional mandatory message error',
+                component: 'NeonField',
               },
               {
                 path: 'file',

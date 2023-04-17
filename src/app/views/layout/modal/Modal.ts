@@ -27,7 +27,7 @@ export default defineComponent({
       open.value = newOpen;
     };
 
-    const template = `<div class="example--horizontal">
+    const template = `<div class="neon--horizontal">
   <neon-button label="Open modal" @click="toggleOpen(true)"></neon-button>
   <neon-modal :open="open" @close="toggleOpen(false)">
     <neon-card size="m">

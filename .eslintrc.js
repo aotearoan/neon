@@ -16,6 +16,7 @@ module.exports = {
     semi: ["error", "always"],
     "comma-dangle": ["error", "always-multiline"],
     "vue/multi-word-component-names": "off",
+    "vue/attributes-order": "warn",
     "space-before-function-paren": [
       "error",
       {

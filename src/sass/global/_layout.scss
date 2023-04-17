@@ -52,10 +52,4 @@
   .neon-app {
     width: 100%;
   }
-
-  .neon-vertically-spaced {
-    & > *:not(:last-child):not(label) {
-      margin-bottom: calc(4 * var(--neon-base-space));
-    }
-  }
 }

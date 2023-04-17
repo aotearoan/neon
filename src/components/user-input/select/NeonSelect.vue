@@ -2,6 +2,8 @@
   <div class="neon-select__wrapper">
     <neon-dropdown
       ref="dropdown"
+      v-bind="sanitizedAttributes"
+      v-model="open"
       class="neon-select"
       :class="[`neon-select--${color}`, { 'neon-select--grouped': groupedOptions, 'neon-select--multiple': multiple }]"
       :size="size"
@@ -9,8 +11,6 @@
       :label="computedLabel"
       :icon="computedIcon"
       :disabled="disabled"
-      v-bind="sanitizedAttributes"
-      v-model="open"
       role="listbox"
       :aria-activedescendant="multiple ? modelValue[0] : modelValue"
       :aria-multiselectable="multiple"
@@ -30,6 +30,7 @@
           <li v-if="group.group !== ''" :key="group.group" class="neon-select__option-title">{{ group.group }}</li>
           <li
             v-for="option in group.options"
+            :id="option.key"
             :key="option.key"
             class="neon-select__option"
             :class="[
@@ -44,7 +45,6 @@
               `neon-select__option--${size}`,
             ]"
             role="option"
-            :id="option.key"
             :aria-selected="multiple ? modelValue.indexOf(option.key) >= 0 : option.key === modelValue"
             @click="!option.disabled && clickOption(option)"
             @mouseover="changeHighlighted(option.key)"
@@ -62,8 +62,8 @@
                   switch-style="checkbox"
                 />
                 <neon-icon
-                  class="neon-select__option-icon"
                   v-if="option.icon"
+                  class="neon-select__option-icon"
                   :name="option.icon"
                   :disabled="option.disabled"
                 />
@@ -76,10 +76,10 @@
     </neon-dropdown>
     <select
       class="neon-select__native"
-      @input="nativeSelectChange"
       :multiple="multiple"
       :disabled="disabled"
       v-bind="sanitizedAttributes"
+      @input="nativeSelectChange"
     >
       <option value="" disabled :selected="multiple ? modelValue.length === 0 : modelValue === ''" hidden>
         {{ placeholder }}

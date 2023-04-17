@@ -1,5 +1,5 @@
 <template>
-  <article class="neon-grid" :id="id">
+  <article :id="id" class="neon-grid">
     <!-- @slot contents of the grid, namely neon-grid-area components -->
     <slot></slot>
   </article>

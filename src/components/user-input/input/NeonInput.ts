@@ -87,14 +87,6 @@ export default defineComponent({
      * Debounce time in ms, set to 0 to disable.
      */
     debounce: { type: Number, default: 300 },
-    /**
-     * Message to display below the input field.
-     */
-    message: { type: String, default: null },
-    /**
-     * Alert level of message displayed under input. Can be any functional color.
-     */
-    messageLevel: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
   },
   emits: [
     /**

@@ -22,9 +22,9 @@
       :aria-valuemax="computedMax"
       :aria-valuenow="modelValue"
       :disabled="disabled"
-      @input="changeValue"
       class="neon-slider__input"
       v-bind="sanitizedAttributes"
+      @input="changeValue"
     />
     <div v-if="legend" class="neon-slider__legend">
       <span class="neon-slider__legend-item">{{ formattedMin }}</span>

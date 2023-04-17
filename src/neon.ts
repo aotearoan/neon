@@ -20,7 +20,7 @@ export { default as NeonDropZone } from './components/user-input/drop-zone/NeonD
 export { default as NeonExpansionIndicator } from './components/presentation/expansion-indicator/NeonExpansionIndicator.vue';
 export { default as NeonExpansionPanel } from './components/presentation/expansion-panel/NeonExpansionPanel.vue';
 export { default as NeonFieldGroup } from './components/user-input/field-group/NeonFieldGroup.vue';
-export { default as NeonFieldLabel } from './components/user-input/field-label/NeonFieldLabel.vue';
+export { default as NeonField } from './components/user-input/field/NeonField.vue';
 export { default as NeonFile } from './components/user-input/file/NeonFile.vue';
 export { default as NeonFilterList } from './components/user-input/filter-list/NeonFilterList.vue';
 export { default as NeonFooter } from './components/layout/footer/NeonFooter.vue';

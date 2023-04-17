@@ -54,27 +54,6 @@
         </div>
         <editor v-model="textareaExamples" />
       </neon-card-body>
-      <neon-card-body>
-        <h2 class="neon-h3">Message examples</h2>
-        <div class="neon-vertically-spaced">
-          <neon-input
-            v-model="textArea"
-            :maxlength="100"
-            message="Bacon ipsum dolor amet venison"
-            placeholder="Type here"
-            type="text"
-          />
-          <neon-input
-            v-model="textAreaDisabled"
-            :maxlength="100"
-            message="Bacon ipsum dolor amet venison"
-            message-level="error"
-            placeholder="Type here"
-            type="text"
-          />
-        </div>
-        <editor v-model="messageExamples" />
-      </neon-card-body>
     </neon-card>
   </component-documentation>
 </template>

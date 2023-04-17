@@ -1,4 +1,5 @@
-@import './colors';
+@import './palette';
+@import './color-variables';
 
 .neon {
   /*********************
@@ -248,8 +249,8 @@
     --neon-rgb-text-strong: var(--neon-rgb-text-strong-light);
     --neon-color-text-strong: var(--neon-color-text-strong-light);
 
-    --neon-rgb-inverse: 17, 17, 17;
-    --neon-color-inverse: #111;
+    --neon-rgb-inverse: var(--neon-rgb-text-strong-dark);
+    --neon-color-inverse: var(--neon-color-text-strong-dark);
 
     --neon-rgb-low-contrast: var(--neon-rgb-low-contrast-l1);
     --neon-rgb-neutral: var(--neon-rgb-neutral-l1);
@@ -519,8 +520,8 @@
     --neon-rgb-text-strong: var(--neon-rgb-text-strong-dark);
     --neon-color-text-strong: var(--neon-color-text-strong-dark);
 
-    --neon-rgb-inverse: 255, 255, 255;
-    --neon-color-inverse: #fff;
+    --neon-rgb-inverse: var(--neon-rgb-text-strong-light);
+    --neon-color-inverse: var(--neon-color-text-strong-light);
 
     --neon-rgb-low-contrast: var(--neon-rgb-low-contrast-d1);
     --neon-rgb-neutral: var(--neon-rgb-neutral-d1);

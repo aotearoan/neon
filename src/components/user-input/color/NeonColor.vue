@@ -18,6 +18,7 @@
     >
     </neon-input>
     <neon-input
+      :id="id"
       v-model="localValue"
       :color="color"
       :disabled="disabled"

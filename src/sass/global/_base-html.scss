@@ -1,5 +1,6 @@
 @use '../includes/scrollbars';
 @use '../includes/layout';
+@use '../includes/responsive';
 @use '../includes/note';
 
 @mixin base-html {
@@ -267,5 +268,35 @@
 
   .neon-color-text-error {
     color: var(--neon-color-error);
+  }
+
+  .neon--vertical {
+    display: flex;
+    flex-direction: column;
+
+    & > *:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: calc(4 * var(--neon-base-space));
+    }
+  }
+
+  .neon--horizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    & > *:not(:last-child) {
+      margin-right: calc(4 * var(--neon-base-space));
+    }
+
+    @include responsive.responsive(mobile-large) {
+      flex-direction: column;
+      align-items: flex-start;
+
+      & > *:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: calc(3 * var(--neon-base-space));
+      }
+    }
   }
 }

@@ -121,20 +121,6 @@ export default defineComponent({
             type="text"
 />`;
 
-    const messageExamples = `<neon-input v-model="textArea"
-            :maxlength="100"
-            message="Bacon ipsum dolor amet venison"
-            placeholder="Type here"
-            type="text"
-/>
-<neon-input v-model="textAreaDisabled"
-            :maxlength="100"
-            message="Bacon ipsum dolor amet venison"
-            message-level="error"
-            placeholder="Type here"
-            type="text"
-/>`;
-
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonInput')));
 
     return {
@@ -159,7 +145,6 @@ export default defineComponent({
       inputStateExamples,
       inputColorExamples,
       textareaExamples,
-      messageExamples,
     };
   },
 });

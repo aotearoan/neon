@@ -1,5 +1,6 @@
 <template>
   <div
+    ref="tooltip"
     tabindex="0"
     class="neon-tooltip"
     :class="[
@@ -9,19 +10,18 @@
       `neon-tooltip--outline-${outlineStyle}`,
       `neon-tooltip--outline-color-${outlineColor}`,
     ]"
-    ref="tooltip"
+    :aria-describedby="id"
     @keydown.enter="toggleTooltip()"
     @keydown.esc="closeTooltip()"
     @keydown.space="toggleTooltip()"
     @keypress.space.prevent=""
     @mouseenter="openTooltip()"
     @mouseleave="closeTooltip()"
-    :aria-describedby="id"
   >
-    <div class="neon-tooltip__content-wrapper" ref="content">
+    <div ref="content" class="neon-tooltip__content-wrapper">
       <div class="neon-tooltip__arrow"></div>
-      <div class="neon-tooltip__arrow-overlay" v-if="tooltipStyle === 'popover'"></div>
-      <div class="neon-tooltip__content" role="tooltip" :id="id">
+      <div v-if="tooltipStyle === 'popover'" class="neon-tooltip__arrow-overlay"></div>
+      <div :id="id" class="neon-tooltip__content" role="tooltip">
         <!-- @slot the tooltip content -->
         <slot name="content"></slot>
       </div>

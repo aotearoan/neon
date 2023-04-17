@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue';
+import { defineComponent, ref, watch } from 'vue';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import NeonButton from '@/components/user-input/button/NeonButton.vue';
 import NeonCard from '@/components/layout/card/NeonCard.vue';
@@ -63,7 +63,9 @@ export default defineComponent({
      */
     'confirm',
   ],
-  setup(_props, { emit }) {
+  setup(props, { emit }) {
+    const actions = ref<HTMLDivElement | null>(null);
+
     const cancel = () => {
       emit('cancel');
     };
@@ -72,7 +74,18 @@ export default defineComponent({
       emit('confirm');
     };
 
+    watch(
+      () => props.open,
+      () => {
+        if (actions.value) {
+          const button = actions.value.querySelector('.neon-dialog__confirm-button') as HTMLButtonElement;
+          button?.focus();
+        }
+      },
+    );
+
     return {
+      actions,
       cancel,
       confirm,
     };

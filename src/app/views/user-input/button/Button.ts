@@ -43,7 +43,7 @@ export default defineComponent({
   <p>Use with care! It is recommended to avoid using too many variations of these buttons on a single site.</p>
 </neon-note>
 <br />
-<div class="example--horizontal example--wrap">
+<div class="neon--horizontal example--wrap">
   <neon-button color="primary" alternate-color="primary" label="Primary" />
   <neon-button color="success" alternate-color="info" label="Success" />
   <neon-button color="brand" alternate-color="primary" label="Mixed" />

@@ -10,7 +10,7 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3>">Examples</h2>
-        <div class="example--horizontal">
+        <div class="neon--horizontal">
           <neon-expansion-indicator :expanded="false" />
           <neon-expansion-indicator :expanded="true" />
           <neon-expansion-indicator :expanded="false" color="primary" />

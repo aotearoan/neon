@@ -35,7 +35,7 @@ export default defineComponent({
 <neon-label alternate-color="primary" color="brand" label="Covfefe" />
 <neon-label alternate-color="brand" color="primary" label="Hamberders" />`;
 
-    const withIconsTemplate = `<div class="example--horizontal">
+    const withIconsTemplate = `<div class="neon--horizontal">
   <neon-label icon="check" size="xs" color="warn" label="Extra small" />
   <neon-label icon="check" color="error" label="Small" />
   <neon-label icon="lock" icon-position="right" color="high-contrast" label="Icon right" />

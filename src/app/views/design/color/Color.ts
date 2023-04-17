@@ -1,4 +1,4 @@
-import { defineComponent, ref } from 'vue';
+import { defineComponent } from 'vue';
 import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader, NeonNote } from '@/neon';
 import Editor from '@/app/components/editor/Editor.vue';
 
@@ -14,24 +14,19 @@ export default defineComponent({
     Editor,
   },
   setup() {
-    const example = ref({
-      template: `<div>
-  <div class="neon-color-text">This is the default text color</div>
-  <div class="color-example-inverse-bg neon-color-inverse">This is the inverse text color</div>
-  <div class="neon-color-text-brand">This is the brand text color</div>
-  <div class="neon-color-text-primary">This is the primary text color</div>
-  <div class="neon-color-text-info">This is the info text color</div>
-  <div class="neon-color-text-success">This is the success text color</div>
-  <div class="neon-color-text-warn">This is the warn text color</div>
-  <div class="neon-color-text-error">This is the error text color</div>
-  <div class="neon-color-text-neutral">This is the neutral text color</div>
-  <div class="neon-color-text-high-contrast">This is the high-contrast text color</div>
-  <div class="neon-color-text-low-contrast">This is the low-contrast text color</div>
-</div>`,
-      noCard: true,
-    });
+    const example = `<div class="neon-color-text">This is the default text color</div>
+<div class="color-example-inverse-bg neon-color-inverse">This is the inverse text color</div>
+<div class="neon-color-text-brand">This is the brand text color</div>
+<div class="neon-color-text-primary">This is the primary text color</div>
+<div class="neon-color-text-info">This is the info text color</div>
+<div class="neon-color-text-success">This is the success text color</div>
+<div class="neon-color-text-warn">This is the warn text color</div>
+<div class="neon-color-text-error">This is the error text color</div>
+<div class="neon-color-text-neutral">This is the neutral text color</div>
+<div class="neon-color-text-high-contrast">This is the high-contrast text color</div>
+<div class="neon-color-text-low-contrast">This is the low-contrast text color</div>`;
 
-    const colorPalette = ref(`  --neon-rgb-brand-l5: 251, 240, 255; // #fbf0ff
+    const colorPalette = `  --neon-rgb-brand-l5: 251, 240, 255; // #fbf0ff
   --neon-color-brand-l5: rgb(var(--neon-rgb-brand-l5));
   --neon-rgb-brand-l4: 250, 206, 255; // #faceff
   --neon-color-brand-l4: rgb(var(--neon-rgb-brand-l4));
@@ -51,7 +46,7 @@ export default defineComponent({
   --neon-color-brand-d4: rgb(var(--neon-rgb-brand-d4));
   --neon-rgb-brand-d5: 32, 25, 37; // #201925
   --neon-color-brand-d5: rgb(var(--neon-rgb-brand-d5));
-`);
+`;
 
     return {
       example,

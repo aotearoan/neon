@@ -10,6 +10,10 @@ export default defineComponent({
   },
   props: {
     /**
+     * Id of the input, will be attached to the native color input control.
+     */
+    id: { type: String },
+    /**
      * The Hexadecimal color code.
      */
     modelValue: { type: String, required: true },

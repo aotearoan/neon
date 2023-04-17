@@ -10,7 +10,7 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Toggle chip sizes</h2>
-        <div class="example--vertical">
+        <div class="neon--vertical">
           <neon-toggle-chip v-model="checked1" label="Extra Small" size="xs" />
           <neon-toggle-chip v-model="checked2" label="Small" size="s" />
           <neon-toggle-chip v-model="checked3" label="Medium" />
@@ -20,7 +20,7 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Toggle chip with no check</h2>
-        <div class="example--vertical">
+        <div class="neon--vertical">
           <neon-toggle-chip v-model="checked5" :show-check="false" label="Extra small" size="xs" />
           <neon-toggle-chip v-model="checked6" :show-check="false" label="Small" size="s" />
           <neon-toggle-chip v-model="checked7" :show-check="false" label="Medium" size="m" />
@@ -30,7 +30,7 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Toggle chip colors</h2>
-        <div class="example--vertical">
+        <div class="neon--vertical">
           <neon-toggle-chip v-model="checked9" color="brand" label="Brand" />
           <neon-toggle-chip v-model="checked10" color="primary" label="Primary" />
           <neon-toggle-chip v-model="checked11" color="info" label="Info" />
@@ -46,7 +46,7 @@
           >
         </neon-note>
         <br />
-        <div class="example--horizontal">
+        <div class="neon--horizontal">
           <neon-toggle-chip v-model="checked13" :show-check="false" label="Bacon" size="s" />
           <neon-toggle-chip v-model="checked14" :show-check="false" label="Cheese" size="s" />
           <neon-toggle-chip v-model="checked15" :show-check="false" label="Pineapple" size="s" />
@@ -56,7 +56,7 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Disabled toggle chip</h2>
-        <div class="example--vertical">
+        <div class="neon--vertical">
           <neon-toggle-chip v-model="checked17" :disabled="true" color="primary" label="Disabled" size="m" />
         </div>
         <editor v-model="stateTemplate" />

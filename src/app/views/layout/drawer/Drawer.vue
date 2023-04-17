@@ -11,7 +11,7 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Drawer examples</h2>
-        <div class="example--horizontal">
+        <div class="neon--horizontal">
           <!-- Left -->
           <neon-button label="Open left" @click="onOpenLeft(true)"></neon-button>
           <neon-drawer :open="openLeft" position="left" @close="onOpenLeft(false)">

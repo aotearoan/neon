@@ -5,6 +5,13 @@
   "tags": {},
   "props": [
     {
+      "name": "id",
+      "description": "Id of the input, will be attached to the native color input control.",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
       "name": "modelValue",
       "description": "The Hexadecimal color code.",
       "type": {

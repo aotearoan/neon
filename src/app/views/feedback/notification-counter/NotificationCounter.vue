@@ -9,8 +9,8 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Notification counters</h2>
-        <div class="example--vertical">
-          <div class="example--horizontal example--margin-top">
+        <div class="neon--vertical">
+          <div class="neon--horizontal example--margin-top">
             <span class="positioned-element">No value<neon-notification-counter :active="active" /></span>
             <span class="positioned-element">With value<neon-notification-counter :active="active" :count="9" /></span>
             <span class="positioned-element"

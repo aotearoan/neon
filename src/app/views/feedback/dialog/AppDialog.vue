@@ -9,7 +9,7 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Dialog example</h2>
-        <div class="example--horizontal">
+        <div class="neon--horizontal">
           <neon-button label="Open dialog" @click="toggleOpen(true)"></neon-button>
           <neon-dialog
             :open="open"

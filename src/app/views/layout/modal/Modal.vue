@@ -9,7 +9,7 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Modal example</h2>
-        <div class="example--horizontal">
+        <div class="neon--horizontal">
           <neon-button label="Open modal" @click="toggleOpen(true)"></neon-button>
           <neon-modal :open="open" @close="toggleOpen(false)">
             <neon-card size="m">

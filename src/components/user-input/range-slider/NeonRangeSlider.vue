@@ -1,12 +1,12 @@
 <template>
   <div
-    class="neon-range-slider"
     :class="{
       'neon-range-slider--disabled': disabled,
       'neon-range-slider--all-upper-bound': modelValue[0] === modelValue[1] && modelValue[0] === max,
     }"
+    class="neon-range-slider"
   >
-    <output class="neon-slider__output" v-if="output">
+    <output v-if="output" class="neon-slider__output">
       <span class="neon-range-slider__output-range">
         <span>{{ formattedValues[0] }}</span>
         <span class="neon-range-slider__output-range-separator"> : </span>
@@ -15,43 +15,43 @@
     </output>
     <neon-slider
       :id="ids && ids[0]"
-      :color="color"
       :aria-label="lowerBoundLabel"
-      :modelValue="modelValue[0]"
-      @update:modelValue="changeLowerBound"
-      :upperBound="modelValue[1]"
-      :disabled="disabled"
-      :min="min"
-      :max="max"
-      :step="step"
+      :color="color"
       :decimals="decimals"
-      :value-template="valueTemplate"
       :disableFormatting="disableFormatting"
-      :percentage="percentage"
-      :tooltip="tooltip"
+      :disabled="disabled"
       :legend="legend"
-      class="neon-range-slider__lower"
+      :max="max"
+      :min="min"
+      :modelValue="modelValue[0]"
       :output="false"
+      :percentage="percentage"
+      :step="step"
+      :tooltip="tooltip"
+      :upperBound="modelValue[1]"
+      :value-template="valueTemplate"
+      class="neon-range-slider__lower"
+      @update:modelValue="changeLowerBound"
     ></neon-slider>
     <neon-slider
       :id="ids && ids[1]"
-      :color="color"
       :aria-label="upperBoundLabel"
-      :modelValue="modelValue[1]"
-      @update:modelValue="changeUpperBound"
-      :lowerBound="modelValue[0]"
-      :disabled="disabled"
-      :min="min"
-      :max="max"
-      :step="step"
+      :color="color"
       :decimals="decimals"
-      :value-template="valueTemplate"
       :disableFormatting="disableFormatting"
-      :percentage="percentage"
-      :tooltip="tooltip"
+      :disabled="disabled"
       :legend="false"
-      class="neon-range-slider__upper"
+      :lowerBound="modelValue[0]"
+      :max="max"
+      :min="min"
+      :modelValue="modelValue[1]"
       :output="false"
+      :percentage="percentage"
+      :step="step"
+      :tooltip="tooltip"
+      :value-template="valueTemplate"
+      class="neon-range-slider__upper"
+      @update:modelValue="changeUpperBound"
     ></neon-slider>
   </div>
 </template>

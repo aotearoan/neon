@@ -11,7 +11,6 @@ exports[`NeonDatePicker renders change decade replacement strings 1`] = `
           </svg>
         </div>
         <!--v-if-->
-        <!--v-if-->
       </div>
       <div aria-label="Open calendar" tabindex="0" class="neon-date-picker__button-click-capture" role="button"></div>
     </div>
@@ -82,7 +81,6 @@ exports[`NeonDatePicker renders change decade replacement strings 1`] = `
   <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--low-contrast neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input">
     <!--v-if-->
     <!--v-if-->
-    <!--v-if-->
   </div>
 </div>
 `;
@@ -97,7 +95,6 @@ exports[`NeonDatePicker renders change month replacement strings 1`] = `
             <path class="neon-svg--fill" d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20 V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"></path>
           </svg>
         </div>
-        <!--v-if-->
         <!--v-if-->
       </div>
       <div aria-label="string 1" tabindex="0" class="neon-date-picker__button-click-capture" role="button"></div>
@@ -257,7 +254,6 @@ exports[`NeonDatePicker renders change month replacement strings 1`] = `
   <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--low-contrast neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input">
     <!--v-if-->
     <!--v-if-->
-    <!--v-if-->
   </div>
 </div>
 `;
@@ -272,7 +268,6 @@ exports[`NeonDatePicker renders change year replacement strings 1`] = `
             <path class="neon-svg--fill" d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20 V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"></path>
           </svg>
         </div>
-        <!--v-if-->
         <!--v-if-->
       </div>
       <div aria-label="Open calendar" tabindex="0" class="neon-date-picker__button-click-capture" role="button"></div>
@@ -356,7 +351,6 @@ exports[`NeonDatePicker renders change year replacement strings 1`] = `
   <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--low-contrast neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input">
     <!--v-if-->
     <!--v-if-->
-    <!--v-if-->
   </div>
 </div>
 `;
@@ -371,7 +365,6 @@ exports[`NeonDatePicker renders closed 1`] = `
             <path class="neon-svg--fill" d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20 V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"></path>
           </svg>
         </div>
-        <!--v-if-->
         <!--v-if-->
       </div>
       <div aria-label="Open calendar" tabindex="0" class="neon-date-picker__button-click-capture" role="button"></div>
@@ -528,7 +521,6 @@ exports[`NeonDatePicker renders closed 1`] = `
   <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--low-contrast neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input">
     <!--v-if-->
     <!--v-if-->
-    <!--v-if-->
   </div>
 </div>
 `;
@@ -543,7 +535,6 @@ exports[`NeonDatePicker renders open 1`] = `
             <path class="neon-svg--fill" d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20 V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"></path>
           </svg>
         </div>
-        <!--v-if-->
         <!--v-if-->
       </div>
       <div aria-label="Open calendar" tabindex="0" class="neon-date-picker__button-click-capture" role="button"></div>
@@ -700,7 +691,6 @@ exports[`NeonDatePicker renders open 1`] = `
   <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--low-contrast neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input">
     <!--v-if-->
     <!--v-if-->
-    <!--v-if-->
   </div>
 </div>
 `;
@@ -715,7 +705,6 @@ exports[`NeonDatePicker renders with defaults of today 1`] = `
             <path class="neon-svg--fill" d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20 V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"></path>
           </svg>
         </div>
-        <!--v-if-->
         <!--v-if-->
       </div>
       <div aria-label="Open calendar" tabindex="0" class="neon-date-picker__button-click-capture" role="button"></div>
@@ -875,7 +864,6 @@ exports[`NeonDatePicker renders with defaults of today 1`] = `
   <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--low-contrast neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input">
     <!--v-if-->
     <!--v-if-->
-    <!--v-if-->
   </div>
 </div>
 `;
@@ -890,7 +878,6 @@ exports[`NeonDatePicker renders with locale 1`] = `
             <path class="neon-svg--fill" d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20 V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"></path>
           </svg>
         </div>
-        <!--v-if-->
         <!--v-if-->
       </div>
       <div aria-label="Open calendar" tabindex="0" class="neon-date-picker__button-click-capture" role="button"></div>
@@ -1045,7 +1032,6 @@ exports[`NeonDatePicker renders with locale 1`] = `
     </div>
   </div>
   <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--low-contrast neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input">
-    <!--v-if-->
     <!--v-if-->
     <!--v-if-->
   </div>
