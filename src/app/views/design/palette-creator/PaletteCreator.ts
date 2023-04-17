@@ -1,5 +1,14 @@
 import { defineComponent, onMounted, ref } from 'vue';
-import { NeonButton, NeonCard, NeonCardBody, NeonCardHeader, NeonColor, NeonDialog, NeonField } from '@/neon';
+import {
+  NeonButton,
+  NeonCard,
+  NeonCardBody,
+  NeonCardFooter,
+  NeonCardHeader,
+  NeonColor,
+  NeonDialog,
+  NeonField
+} from '@/neon';
 
 export default defineComponent({
   name: 'PaletteCreator',
@@ -8,6 +17,7 @@ export default defineComponent({
     NeonCard,
     NeonCardHeader,
     NeonCardBody,
+    NeonCardFooter,
     NeonColor,
     NeonDialog,
     NeonField,

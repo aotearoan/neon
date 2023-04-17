@@ -5,19 +5,26 @@
         <div>
           <h1 class="neon-h3">Palette creator</h1>
           <p>Generate a custom palette for using with Neon</p>
+        </div>
+      </neon-card-header>
+      <neon-card-body class="palette-creator__header">
+        <div>
           <p>
             To integrate your palette with Neon click the export button at the top right which will generate a file
             <em>palette.scss</em> which contains all color definitions for Neon. This can be directly imported into an
             application to override the Neon color system.
           </p>
         </div>
+      </neon-card-body>
+      <neon-card-footer>
         <div class="neon-button-group">
-          <neon-button button-style="text" label="Reset palette" @click="openConfirmResetDialog = true" />
+          <neon-button button-style="text" label="Reset palette" size="s" @click="openConfirmResetDialog = true" />
           <neon-button
             color="brand"
             icon="download"
             icon-position="right"
             label="Export colors"
+            size="s"
             @click="exportColors()"
           />
           <neon-dialog
@@ -32,7 +39,7 @@
           >
           </neon-dialog>
         </div>
-      </neon-card-header>
+      </neon-card-footer>
     </neon-card>
     <neon-card>
       <neon-card-body>
