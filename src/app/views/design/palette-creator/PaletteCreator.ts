@@ -123,7 +123,8 @@ export default defineComponent({
     const neutralPalettes = ['low-contrast', 'neutral', 'high-contrast'];
     const brandPalettes = ['brand', 'primary'];
     const functionalPalettes = ['info', 'success', 'warn', 'error'];
-    const steps = ['l5', 'l4', 'l3', 'l2', 'l1', 'd1', 'd2', 'd3', 'd4', 'd5'];
+    const stepsLight = ['l5', 'l4', 'l3', 'l2', 'l1'];
+    const stepsDark = ['d1', 'd2', 'd3', 'd4', 'd5'];
 
     const paletteKey = 'created-palette';
     const ready = ref<boolean>(false);
@@ -206,7 +207,8 @@ export default defineComponent({
       neutralPalettes,
       brandPalettes,
       functionalPalettes,
-      steps,
+      stepsLight,
+      stepsDark,
       setStyle,
       exportColors,
       resetPalette,

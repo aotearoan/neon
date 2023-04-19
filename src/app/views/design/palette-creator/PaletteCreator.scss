@@ -1,5 +1,56 @@
 .palette-creator {
-  &__header {
-    align-items: flex-start;
+  .neon-card .neon-card-body:not(.palette-creator__text-vars) .neon-color--m {
+    margin-bottom: var(--neon-base-space);
+
+    .neon-color__indicator {
+      border-radius: 0;
+      width: 116rem;
+      height: 50rem;
+      top: -13rem;
+      position: absolute;
+      left: 78rem;
+      border: none;
+    }
+
+    .neon-color__input {
+      width: 100rem;
+      height: 45rem;
+      top: -3rem;
+      left: 52rem;
+    }
+  }
+
+  .palette-creator__light-palette,
+  .palette-creator__dark-palette {
+    padding: calc(4 * var(--neon-base-space));
+
+    & > div {
+      position: relative;
+
+      & > span {
+        position: absolute;
+        top: -6rem;
+        left: 90rem;
+        text-transform: uppercase;
+        font-weight: var(--neon-font-weight-semi-bold);
+        pointer-events: none;
+        touch-action: none;
+      }
+    }
+  }
+
+  .neon--vertical.palette-creator__palette-group {
+    margin-right: 0;
+  }
+  
+  .palette-creator__light-palette {
+    margin-bottom: 0 !important;
+    background-color: black;
+    color: var(--neon-color-text-strong-dark);
+  }
+
+  .palette-creator__dark-palette {
+    background-color: white;
+    color: var(--neon-color-text-strong-light);
   }
 }

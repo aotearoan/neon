@@ -1,13 +1,13 @@
 <template>
-  <div v-if="ready">
+  <div v-if="ready" class="palette-creator">
     <neon-card>
-      <neon-card-header class="palette-creator__header">
+      <neon-card-header>
         <div>
           <h1 class="neon-h3">Palette creator</h1>
           <p>Generate a custom palette for using with Neon</p>
         </div>
       </neon-card-header>
-      <neon-card-body class="palette-creator__header">
+      <neon-card-body>
         <div>
           <p>
             To integrate your palette with Neon click the export button at the top right which will generate a file
@@ -42,7 +42,7 @@
       </neon-card-footer>
     </neon-card>
     <neon-card>
-      <neon-card-body>
+      <neon-card-body class="palette-creator__text-vars">
         <h2 class="neon-h4">Text variables</h2>
         <div class="neon--horizontal">
           <div class="neon--vertical">
@@ -82,45 +82,90 @@
       <neon-card-body>
         <h2 class="neon-h4">Neutral palettes</h2>
         <div class="neon--horizontal">
-          <div v-for="neutralPalette in neutralPalettes" :key="neutralPalette" class="neon--vertical">
+          <div v-for="neutralPalette in neutralPalettes"
+               :key="neutralPalette"
+               class="neon--vertical palette-creator__palette-group">
             <h3 class="neon-h5">{{ neutralPalette }}</h3>
-            <neon-color
-              v-for="step in steps"
-              :key="`${neutralPalette}-${step}`"
-              :class="`--neon-rgb-${neutralPalette}-${step}`"
-              :model-value="palette[`--neon-rgb-${neutralPalette}-${step}`]"
-              @update:modelValue="setStyle(`--neon-rgb-${neutralPalette}-${step}`, $event)"
-            />
+            <div class="palette-creator__light-palette">
+              <div v-for="step in stepsLight" :key="`${neutralPalette}-${step}`">
+                <neon-color
+                  :class="`--neon-rgb-${neutralPalette}-${step}`"
+                  :model-value="palette[`--neon-rgb-${neutralPalette}-${step}`]"
+                  @update:modelValue="setStyle(`--neon-rgb-${neutralPalette}-${step}`, $event)"
+                />
+                <span>{{ step }}</span>
+              </div>
+            </div>
+            <div class="palette-creator__dark-palette">
+              <div v-for="step in stepsDark" :key="`${neutralPalette}-${step}`">
+                <neon-color
+                  :class="`--neon-rgb-${neutralPalette}-${step}`"
+                  :model-value="palette[`--neon-rgb-${neutralPalette}-${step}`]"
+                  @update:modelValue="setStyle(`--neon-rgb-${neutralPalette}-${step}`, $event)"
+                />
+                <span>{{ step }}</span>
+              </div>
+            </div>
           </div>
         </div>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h4">Brand palettes</h2>
         <div class="neon--horizontal">
-          <div v-for="brandPalette in brandPalettes" :key="brandPalette" class="neon--vertical">
+          <div v-for="brandPalette in brandPalettes"
+               :key="brandPalette"
+               class="neon--vertical palette-creator__palette-group">
             <h3 class="neon-h5">{{ brandPalette }}</h3>
-            <neon-color
-              v-for="step in steps"
-              :key="`${brandPalette}-${step}`"
-              :class="`--neon-rgb-${brandPalette}-${step}`"
-              :model-value="palette[`--neon-rgb-${brandPalette}-${step}`]"
-              @update:modelValue="setStyle(`--neon-rgb-${brandPalette}-${step}`, $event)"
-            />
+            <div class="palette-creator__light-palette">
+              <div v-for="step in stepsLight" :key="`${brandPalette}-${step}`">
+                <neon-color
+                  :class="`--neon-rgb-${brandPalette}-${step}`"
+                  :model-value="palette[`--neon-rgb-${brandPalette}-${step}`]"
+                  @update:modelValue="setStyle(`--neon-rgb-${brandPalette}-${step}`, $event)"
+                />
+                <span>{{ step }}</span>
+              </div>
+            </div>
+            <div class="palette-creator__dark-palette">
+              <div v-for="step in stepsDark" :key="`${brandPalette}-${step}`">
+                <neon-color
+                  :class="`--neon-rgb-${brandPalette}-${step}`"
+                  :model-value="palette[`--neon-rgb-${brandPalette}-${step}`]"
+                  @update:modelValue="setStyle(`--neon-rgb-${brandPalette}-${step}`, $event)"
+                />
+                <span>{{ step }}</span>
+              </div>
+            </div>
           </div>
         </div>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h4">Functional palettes</h2>
         <div class="neon--horizontal">
-          <div v-for="functionalPalette in functionalPalettes" :key="functionalPalette" class="neon--vertical">
+          <div v-for="functionalPalette in functionalPalettes"
+               :key="functionalPalette"
+               class="neon--vertical palette-creator__palette-group">
             <h3 class="neon-h5">{{ functionalPalette }}</h3>
-            <neon-color
-              v-for="step in steps"
-              :key="`${functionalPalette}-${step}`"
-              :class="`--neon-rgb-${functionalPalette}-${step}`"
-              :model-value="palette[`--neon-rgb-${functionalPalette}-${step}`]"
-              @update:modelValue="setStyle(`--neon-rgb-${functionalPalette}-${step}`, $event)"
-            />
+            <div class="palette-creator__light-palette">
+              <div v-for="step in stepsLight" :key="`${functionalPalette}-${step}`">
+                <neon-color
+                  :class="`--neon-rgb-${functionalPalette}-${step}`"
+                  :model-value="palette[`--neon-rgb-${functionalPalette}-${step}`]"
+                  @update:modelValue="setStyle(`--neon-rgb-${functionalPalette}-${step}`, $event)"
+                />
+                <span>{{ step }}</span>
+              </div>
+            </div>
+            <div class="palette-creator__dark-palette">
+              <div v-for="step in stepsDark" :key="`${functionalPalette}-${step}`">
+                <neon-color
+                  :class="`--neon-rgb-${functionalPalette}-${step}`"
+                  :model-value="palette[`--neon-rgb-${functionalPalette}-${step}`]"
+                  @update:modelValue="setStyle(`--neon-rgb-${functionalPalette}-${step}`, $event)"
+                />
+                <span>{{ step }}</span>
+              </div>
+            </div>
           </div>
         </div>
       </neon-card-body>
