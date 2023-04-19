@@ -24,3 +24,4 @@ yarn-error.log*
 /neon.iml
 /tsconfig.tsbuildinfo
 /*.tgz
+/version.ts

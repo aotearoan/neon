@@ -5,6 +5,13 @@
   "exportName": "default",
   "props": [
     {
+      "name": "id",
+      "description": "Id for the dropdown button.",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
       "name": "modelValue",
       "description": "Whether the dropdown is currently open.",
       "type": {

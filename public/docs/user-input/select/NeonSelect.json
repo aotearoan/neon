@@ -5,6 +5,13 @@
   "exportName": "default",
   "props": [
     {
+      "name": "id",
+      "description": "Id for the dropdown button",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
       "name": "placeholder",
       "description": "Placeholder to display as button label when there is no option selected.",
       "type": {

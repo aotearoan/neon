@@ -23,6 +23,7 @@ import {
   NeonTreeMenu,
 } from '@/neon';
 import { useRoute, useRouter } from 'vue-router';
+import { version } from '@/../version';
 
 export interface AppMenuGroup {
   group: string;
@@ -90,8 +91,8 @@ export default defineComponent({
       return children.length > 0
         ? { ...item, children }
         : item.label.toString().toLowerCase().indexOf(lowercaseFilter.value) >= 0
-        ? item
-        : undefined;
+          ? item
+          : undefined;
     };
 
     const filteredModel = computed((): AppMenuGroup[] => {
@@ -130,9 +131,7 @@ export default defineComponent({
       },
     ]);
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    const version = ref(PACKAGE_VERSION);
+    const versionString = `v${version}`;
 
     const setMode = (mode: NeonMode) => {
       document.documentElement.classList.remove(`neon-mode--${selectedMode.value}`);
@@ -186,15 +185,15 @@ export default defineComponent({
           key: item.path,
           children: item.children
             ? item.children.map((child) => ({
-                label: child.name || child.page || child.path,
-                key: child.path,
-                keywords:
-                  (child.keywords || '') +
-                  (child.component ? ` ${child.component.toLowerCase()}` : '') +
-                  (child.subComponents ? '' + child.subComponents.map((sc) => sc.name.toLowerCase()).join(' ') : ''),
-                href: `/${item.path}/${child.path}`,
-                anchors: child.anchors,
-              }))
+              label: child.name || child.page || child.path,
+              key: child.path,
+              keywords:
+                (child.keywords || '') +
+                (child.component ? ` ${child.component.toLowerCase()}` : '') +
+                (child.subComponents ? '' + child.subComponents.map((sc) => sc.name.toLowerCase()).join(' ') : ''),
+              href: `/${item.path}/${child.path}`,
+              anchors: child.anchors,
+            }))
             : [],
         })),
       }));
@@ -251,7 +250,7 @@ export default defineComponent({
       isMobile,
       isTablet,
       layouts,
-      version,
+      versionString,
       filteredModel,
       expandAll,
       switchMode,

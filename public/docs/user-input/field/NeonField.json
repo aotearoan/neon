@@ -1,5 +1,5 @@
 {
-  "displayName": "NeonLabel",
+  "displayName": "NeonField",
   "description": "An HTML label implementation supporting optional labels. Use in the same way as an HTML label either wrapping the input\nor using the label alongside the input.",
   "tags": {},
   "exportName": "default",
