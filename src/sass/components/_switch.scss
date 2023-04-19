@@ -49,6 +49,10 @@
 }
 
 @mixin switch {
+  label.neon-field + label.neon-switch {
+    margin-top: calc(var(--neon-font-size-xs) + 4 * var(--neon-base-space));
+  }
+
   .neon-switch {
     display: flex;
     flex-direction: row;

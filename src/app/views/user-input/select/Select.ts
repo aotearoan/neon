@@ -1,5 +1,5 @@
 import { defineComponent, onMounted, ref } from 'vue';
-import { NeonCard, NeonCardBody, NeonLink, NeonSelect } from '@/neon';
+import { NeonCard, NeonCardBody, NeonField, NeonLink, NeonSelect, NeonSwitch } from '@/neon';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
@@ -13,6 +13,8 @@ export default defineComponent({
     NeonCardBody,
     NeonLink,
     NeonSelect,
+    NeonSwitch,
+    NeonField,
     ComponentDocumentation,
     Editor,
   },
@@ -20,6 +22,7 @@ export default defineComponent({
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('Styled HTML select equivalent');
 
+    const checked2 = ref(true);
     const selectSmall = ref('');
     const selectMedium = ref('');
     const selectLarge = ref('');
@@ -251,6 +254,7 @@ export default defineComponent({
       colorsTemplate,
       multiSelectTemplate,
       groupedTemplate,
+      checked2,
     };
   },
 });

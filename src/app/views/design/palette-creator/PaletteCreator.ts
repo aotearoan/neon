@@ -7,7 +7,7 @@ import {
   NeonCardHeader,
   NeonColor,
   NeonDialog,
-  NeonField
+  NeonField,
 } from '@/neon';
 
 export default defineComponent({

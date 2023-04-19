@@ -82,9 +82,11 @@
       <neon-card-body>
         <h2 class="neon-h4">Neutral palettes</h2>
         <div class="neon--horizontal">
-          <div v-for="neutralPalette in neutralPalettes"
-               :key="neutralPalette"
-               class="neon--vertical palette-creator__palette-group">
+          <div
+            v-for="neutralPalette in neutralPalettes"
+            :key="neutralPalette"
+            class="neon--vertical palette-creator__palette-group"
+          >
             <h3 class="neon-h5">{{ neutralPalette }}</h3>
             <div class="palette-creator__light-palette">
               <div v-for="step in stepsLight" :key="`${neutralPalette}-${step}`">
@@ -112,9 +114,11 @@
       <neon-card-body>
         <h2 class="neon-h4">Brand palettes</h2>
         <div class="neon--horizontal">
-          <div v-for="brandPalette in brandPalettes"
-               :key="brandPalette"
-               class="neon--vertical palette-creator__palette-group">
+          <div
+            v-for="brandPalette in brandPalettes"
+            :key="brandPalette"
+            class="neon--vertical palette-creator__palette-group"
+          >
             <h3 class="neon-h5">{{ brandPalette }}</h3>
             <div class="palette-creator__light-palette">
               <div v-for="step in stepsLight" :key="`${brandPalette}-${step}`">
@@ -142,9 +146,11 @@
       <neon-card-body>
         <h2 class="neon-h4">Functional palettes</h2>
         <div class="neon--horizontal">
-          <div v-for="functionalPalette in functionalPalettes"
-               :key="functionalPalette"
-               class="neon--vertical palette-creator__palette-group">
+          <div
+            v-for="functionalPalette in functionalPalettes"
+            :key="functionalPalette"
+            class="neon--vertical palette-creator__palette-group"
+          >
             <h3 class="neon-h5">{{ functionalPalette }}</h3>
             <div class="palette-creator__light-palette">
               <div v-for="step in stepsLight" :key="`${functionalPalette}-${step}`">
