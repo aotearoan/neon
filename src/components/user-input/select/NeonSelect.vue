@@ -47,8 +47,8 @@
             ]"
             class="neon-select__option"
             role="option"
-            @click="!option.disabled && clickOption(option)"
             @mouseover="changeHighlighted(option.key)"
+            @click.stop.prevent="!option.disabled && clickOption(option)"
           >
             <div class="neon-select__option-container">
               <!-- @slot provide a custom template for an option.<br />Bindings: <strong>option</strong>

@@ -33,11 +33,12 @@
           <neon-select v-model="selectInfo" :options="modelWithIcons" color="info" placeholder="Select item(s)" />
           <neon-select v-model="selectSuccess" :options="modelWithIcons" color="success" placeholder="Select item(s)" />
           <neon-select v-model="selectWarning" :options="modelWithIcons" color="warn" placeholder="Select item(s)" />
-          <neon-select id="select1"
-                       v-model="selectError"
-                       :options="modelWithIcons"
-                       color="error"
-                       placeholder="Select item(s)"
+          <neon-select
+            id="select1"
+            v-model="selectError"
+            :options="modelWithIcons"
+            color="error"
+            placeholder="Select item(s)"
           />
         </div>
         <editor v-model="colorsTemplate" />
