@@ -21,6 +21,7 @@
           class="neon-dropdown__button-wrapper"
         >
           <neon-button
+            :id="id"
             :alternate-color="alternateColor"
             :aria-expanded="modelValue"
             :button-style="dropdownStyle === 'text-button' ? 'text' : 'solid'"
@@ -40,6 +41,7 @@
         </div>
         <div
           v-else
+          :id="id"
           ref="dropdownButton"
           :tabindex="!disabled ? 0 : undefined"
           class="neon-dropdown__badge"

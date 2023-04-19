@@ -24,6 +24,10 @@ export default defineComponent({
   },
   props: {
     /**
+     * Id for the dropdown button
+     */
+    id: { type: String },
+    /**
      * Placeholder to display as button label when there is no option selected.
      */
     placeholder: { type: String, required: true },
@@ -147,15 +151,14 @@ export default defineComponent({
       if (open.value) {
         switch ($event.code) {
           case 'ArrowUp':
-          case 'ArrowDown':
-            {
-              const reverseOffset = isReverse() ? -1 : 1;
-              if ($event.code === 'ArrowUp') {
-                navigateBy(-1 * reverseOffset, $event);
-              } else {
-                navigateBy(1 * reverseOffset, $event);
-              }
+          case 'ArrowDown': {
+            const reverseOffset = isReverse() ? -1 : 1;
+            if ($event.code === 'ArrowUp') {
+              navigateBy(-1 * reverseOffset, $event);
+            } else {
+              navigateBy(1 * reverseOffset, $event);
             }
+          }
             break;
           case 'Enter':
           case 'Space':

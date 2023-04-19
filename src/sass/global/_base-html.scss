@@ -159,6 +159,7 @@
   blockquote,
   .neon-note,
   table,
+  label,
   p {
     & + h1,
     & + .neon-h1,
@@ -212,10 +213,6 @@
       content: '';
       padding-bottom: 100%;
     }
-  }
-
-  label:not(.no-style) {
-    color: var(--neon-label-color);
   }
 
   .neon-color-text {

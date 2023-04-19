@@ -1,26 +1,27 @@
 <template>
   <div class="neon-select__wrapper">
     <neon-dropdown
+      :id="id"
       ref="dropdown"
-      v-bind="sanitizedAttributes"
       v-model="open"
-      class="neon-select"
-      :class="[`neon-select--${color}`, { 'neon-select--grouped': groupedOptions, 'neon-select--multiple': multiple }]"
-      :size="size"
-      :color="color"
-      :label="computedLabel"
-      :icon="computedIcon"
-      :disabled="disabled"
-      role="listbox"
       :aria-activedescendant="multiple ? modelValue[0] : modelValue"
       :aria-multiselectable="multiple"
+      :class="[`neon-select--${color}`, { 'neon-select--grouped': groupedOptions, 'neon-select--multiple': multiple }]"
+      :color="color"
+      :disabled="disabled"
+      :icon="computedIcon"
+      :label="computedLabel"
+      :size="size"
+      class="neon-select"
+      role="listbox"
+      v-bind="sanitizedAttributes"
       @dropdown-placement="onPlacement"
     >
       <ul class="no-style neon-select__options">
         <li
           v-if="placeholderAsOption"
-          class="neon-select__option neon-select__option--disabled neon-select__option-placeholder"
           :class="`neon-select__option--${size}`"
+          class="neon-select__option neon-select__option--disabled neon-select__option-placeholder"
         >
           <div class="neon-select__option-container">
             <span class="neon-select__option-label">{{ placeholder }}</span>
@@ -32,7 +33,7 @@
             v-for="option in group.options"
             :id="option.key"
             :key="option.key"
-            class="neon-select__option"
+            :aria-selected="multiple ? modelValue.indexOf(option.key) >= 0 : option.key === modelValue"
             :class="[
               {
                 'neon-select__option--disabled': option.disabled,
@@ -44,8 +45,8 @@
               },
               `neon-select__option--${size}`,
             ]"
+            class="neon-select__option"
             role="option"
-            :aria-selected="multiple ? modelValue.indexOf(option.key) >= 0 : option.key === modelValue"
             @click="!option.disabled && clickOption(option)"
             @mouseover="changeHighlighted(option.key)"
           >
@@ -53,19 +54,19 @@
               <!-- @slot provide a custom template for an option.<br />Bindings: <strong>option</strong>
               (<em>NeonSelectOption</em>). This slot is purely for formatting the option, all accessibility actions
               still apply. -->
-              <slot name="option" :option="option">
+              <slot :option="option" name="option">
                 <neon-switch
                   v-if="multiple"
-                  :size="size === 'l' ? 'm' : 's'"
                   :color="color"
                   :modelValue="modelValue.indexOf(option.key) >= 0"
+                  :size="size === 'l' ? 'm' : 's'"
                   switch-style="checkbox"
                 />
                 <neon-icon
                   v-if="option.icon"
-                  class="neon-select__option-icon"
-                  :name="option.icon"
                   :disabled="option.disabled"
+                  :name="option.icon"
+                  class="neon-select__option-icon"
                 />
                 <span class="neon-select__option-label">{{ option.label }}</span>
               </slot>
@@ -75,13 +76,13 @@
       </ul>
     </neon-dropdown>
     <select
-      class="neon-select__native"
-      :multiple="multiple"
       :disabled="disabled"
+      :multiple="multiple"
+      class="neon-select__native"
       v-bind="sanitizedAttributes"
       @input="nativeSelectChange"
     >
-      <option value="" disabled :selected="multiple ? modelValue.length === 0 : modelValue === ''" hidden>
+      <option :selected="multiple ? modelValue.length === 0 : modelValue === ''" disabled hidden value="">
         {{ placeholder }}
       </option>
       <template v-if="groupedOptions">
@@ -89,11 +90,11 @@
           <option
             v-for="(option, index) in group.options"
             :key="`${option.key}-native`"
-            :value="option.key"
             :data-index="index"
+            :disabled="option.disabled"
             :multiple="multiple"
             :selected="multiple ? modelValue.indexOf(option.key) >= 0 : option.key === modelValue"
-            :disabled="option.disabled"
+            :value="option.key"
           >
             {{ option.label }}
           </option>
@@ -103,11 +104,11 @@
         <option
           v-for="(option, index) in options"
           :key="`${option.key}-native`"
-          :value="option.key"
           :data-index="index"
+          :disabled="option.disabled"
           :multiple="multiple"
           :selected="multiple ? modelValue.indexOf(option.key) >= 0 : option.key === modelValue"
-          :disabled="option.disabled"
+          :value="option.key"
         >
           {{ option.label }}
         </option>

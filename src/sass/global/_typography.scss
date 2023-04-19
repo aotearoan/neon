@@ -93,15 +93,10 @@
     @include typography.neon-h6;
   }
 
-  label {
-    &:not(.no-style) {
-      font-size: var(--neon-font-size-xs);
-      font-weight: var(--neon-font-weight-semi-bold);
-      letter-spacing: var(--neon-letter-spacing-m);
-      text-transform: uppercase;
-      user-select: none;
-      margin-bottom: calc(2 * var(--neon-base-space));
-    }
+  label:not(.no-style):not(.neon-field) {
+    width: fit-content;
+    margin-bottom: calc(2 * var(--neon-base-space));
+    @include typography.label;
   }
 
   @include responsive.responsive(mobile-large) {

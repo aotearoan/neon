@@ -46,3 +46,12 @@
   margin-top: 0;
   font-size: var(--neon-h6-size);
 }
+
+@mixin label {
+  color: var(--neon-label-color);
+  font-size: var(--neon-font-size-xs);
+  font-weight: var(--neon-font-weight-semi-bold);
+  letter-spacing: var(--neon-letter-spacing-m);
+  text-transform: uppercase;
+  user-select: none;
+}

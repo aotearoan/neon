@@ -27,6 +27,10 @@ export default defineComponent({
   },
   props: {
     /**
+     * Id for the dropdown button.
+     */
+    id: { type: String },
+    /**
      * Whether the dropdown is currently open.
      */
     modelValue: { type: Boolean, required: true },
