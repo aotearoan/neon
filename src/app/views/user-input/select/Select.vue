@@ -33,14 +33,12 @@
           <neon-select v-model="selectInfo" :options="modelWithIcons" color="info" placeholder="Select item(s)" />
           <neon-select v-model="selectSuccess" :options="modelWithIcons" color="success" placeholder="Select item(s)" />
           <neon-select v-model="selectWarning" :options="modelWithIcons" color="warn" placeholder="Select item(s)" />
-          <div class="neon--horizontal">
-            <neon-field label="This is a select" label-for="select1">
-              <neon-select id="select1" v-model="selectError" :options="modelWithIcons" color="error"
-                           placeholder="Select item(s)" />
-            </neon-field>
-            <neon-switch v-model="checked2" label="Medium" />
-          </div>
-          <h4>Hai</h4>
+          <neon-select id="select1"
+                       v-model="selectError"
+                       :options="modelWithIcons"
+                       color="error"
+                       placeholder="Select item(s)"
+          />
         </div>
         <editor v-model="colorsTemplate" />
       </neon-card-body>

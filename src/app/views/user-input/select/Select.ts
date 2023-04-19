@@ -1,5 +1,5 @@
 import { defineComponent, onMounted, ref } from 'vue';
-import { NeonCard, NeonCardBody, NeonField, NeonLink, NeonSelect, NeonSwitch } from '@/neon';
+import { NeonCard, NeonCardBody, NeonField, NeonLink, NeonSelect } from '@/neon';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
@@ -13,7 +13,6 @@ export default defineComponent({
     NeonCardBody,
     NeonLink,
     NeonSelect,
-    NeonSwitch,
     NeonField,
     ComponentDocumentation,
     Editor,
@@ -22,7 +21,6 @@ export default defineComponent({
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('Styled HTML select equivalent');
 
-    const checked2 = ref(true);
     const selectSmall = ref('');
     const selectMedium = ref('');
     const selectLarge = ref('');
@@ -225,7 +223,12 @@ export default defineComponent({
 <neon-select v-model="selectInfo" :options="modelWithIcons" color="info" placeholder="Select item(s)" />
 <neon-select v-model="selectSuccess" :options="modelWithIcons" color="success" placeholder="Select item(s)" />
 <neon-select v-model="selectWarning" :options="modelWithIcons" color="warn" placeholder="Select item(s)" />
-<neon-select v-model="selectError" :options="modelWithIcons" color="error" placeholder="Select item(s)" />`;
+<neon-select id="select1"
+             v-model="selectError"
+             :options="modelWithIcons"
+             color="error"
+             placeholder="Select item(s)"
+/>`;
 
     const multiSelectTemplate = `<neon-select v-model="selectMulti" :multiple="true" :options="modelWithIcons" placeholder="Select item(s)" />`;
     const groupedTemplate = `<neon-select v-model="selectGrouped" :grouped-options="groupedModel" placeholder="Select item" />
@@ -254,7 +257,6 @@ export default defineComponent({
       colorsTemplate,
       multiSelectTemplate,
       groupedTemplate,
-      checked2,
     };
   },
 });
