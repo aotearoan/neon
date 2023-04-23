@@ -1,8 +1,8 @@
 {
   "name": "@aotearoan/neon",
   "description": "Neon is a lightweight design library of Vue 3 components with minimal dependencies.",
-  "version": "9.2.4",
-  "main": "./dist/neoon.cjs.js",
+  "version": "9.2.6",
+  "main": "./dist/neon.cjs.js",
   "module": "dist/neon.es.js",
   "types": "dist/neon.d.ts",
   "exports": {
@@ -21,7 +21,8 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
-    "lint:scss": "stylelint ./src/**/*.scss"
+    "lint:scss": "stylelint ./src/**/*.scss",
+    "gh-pages-deploy": "node gh-pages-deploy.js"
   },
   "sideEffects": false,
   "files": [
