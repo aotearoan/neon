@@ -1,12 +1,11 @@
 {
+  "displayName": "NeonToggle",
   "description": "<p>A toggle component for selecting one value from a range of options. This is equivalent to a radio button group. It can be styled as a <em>Toggle</em> or as <em>Radio buttons</em>.",
   "tags": {},
   "exportName": "default",
-  "displayName": "NeonToggle",
   "props": [
     {
       "name": "name",
-      "tags": {},
       "description": "The name of the radio button group.",
       "type": {
         "name": "string"
@@ -14,8 +13,7 @@
       "required": true
     },
     {
-      "name": "value",
-      "tags": {},
+      "name": "modelValue",
       "description": "The key of the selected option.",
       "type": {
         "name": "string"
@@ -24,70 +22,59 @@
     },
     {
       "name": "model",
-      "tags": {},
       "description": "The list of options to present to the user.",
       "type": {
-        "name": "Array",
-        "elements": [
-          {
-            "name": "NeonToggleModel"
-          }
-        ]
+        "name": "Array as () => Array<NeonToggleModel>"
       },
       "required": true
     },
     {
       "name": "toggleStyle",
-      "tags": {},
       "description": "The style of toggle to display to the user.",
       "type": {
-        "name": "NeonToggleStyle"
+        "name": "String as () => NeonToggleStyle"
       },
       "defaultValue": {
-        "func": false,
-        "value": "NeonToggleStyle.Toggle"
+        "func": true,
+        "value": "() => NeonToggleStyle.Toggle"
       }
     },
     {
       "name": "size",
-      "tags": {},
       "description": "The size of the toggle.",
       "type": {
-        "name": "NeonSize"
+        "name": "String as () => NeonSize"
       },
       "defaultValue": {
-        "func": false,
-        "value": "NeonSize.Medium"
+        "func": true,
+        "value": "() => NeonSize.Medium"
       }
     },
     {
       "name": "orientation",
-      "tags": {},
       "description": "The orientation of the toggle if the style is a radio button group.",
       "type": {
-        "name": "NeonOrientation"
+        "name": "String as () => NeonOrientation"
       },
       "defaultValue": {
-        "func": false,
-        "value": "NeonOrientation.Vertical"
+        "func": true,
+        "value": "() => NeonOrientation.Vertical"
       }
     },
     {
       "name": "color",
-      "tags": {},
       "description": "The color of the toggle.",
       "type": {
-        "name": "NeonFunctionalColor"
+        "name": "String as () => NeonFunctionalColor"
       },
       "defaultValue": {
-        "func": false,
-        "value": "NeonFunctionalColor.Neutral"
+        "func": true,
+        "value": "() => NeonFunctionalColor.Neutral"
       }
     },
     {
       "name": "disabled",
-      "tags": {},
-      "description": "Whether or not the toggle is disabled.",
+      "description": "Whether the toggle is disabled.",
       "type": {
         "name": "boolean"
       },
@@ -99,7 +86,7 @@
   ],
   "events": [
     {
-      "name": "input",
+      "name": "update:modelValue",
       "description": "Emitted when the selected value changes.",
       "type": {
         "names": [
@@ -107,5 +94,9 @@
         ]
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/user-input/toggle/NeonToggle.vue",
+    "/Users/andrew/dev/projects/neon/src/components/user-input/toggle/NeonToggle.ts"
   ]
 }

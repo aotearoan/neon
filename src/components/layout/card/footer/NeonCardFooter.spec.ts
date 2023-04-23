@@ -1,17 +1,11 @@
-import { mount } from '@vue/test-utils';
+import { render } from '@testing-library/vue';
 import NeonCardFooter from './NeonCardFooter.vue';
 
 describe('NeonCardFooter', () => {
   it('renders default slot contents', () => {
     // given
-    const slotValue = 'xd';
-    const wrapper = mount(NeonCardFooter, {
-      propsData: {},
-      slots: {
-        default: `<p>${slotValue}</p>`,
-      },
-    });
+    const { html } = render(NeonCardFooter, { slots: { default: '<p>test</p>' } });
     // when / then
-    expect(wrapper.find('.neon-card-footer p').text()).toEqual(slotValue);
+    expect(html()).toMatch('<p>test</p>');
   });
 });

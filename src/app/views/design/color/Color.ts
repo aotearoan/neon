@@ -1,46 +1,56 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader } from '../../../../components';
-import Example from '../../../components/example/Example.vue';
-import Editor from '../../../components/editor/Editor.vue';
+import { defineComponent } from 'vue';
+import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader, NeonNote } from '@/neon';
+import Editor from '@/app/components/editor/Editor.vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Color',
   components: {
     NeonAnchor,
     NeonCard,
     NeonCardHeader,
     NeonCardBody,
-    Example,
+    NeonNote,
     Editor,
   },
-})
-export default class Color extends Vue {
-  private example = {
-    template: `<div>
-  <div class="neon-color-text">This is the default text color</div>
-  <div class="color-example-inverse-bg neon-color-inverse">This is the inverse text color</div>
-  <div class="neon-color-text-brand">This is the brand text color</div>
-  <div class="neon-color-text-primary">This is the primary text color</div>
-  <div class="neon-color-text-info">This is the info text color</div>
-  <div class="neon-color-text-success">This is the success text color</div>
-  <div class="neon-color-text-warn">This is the warn text color</div>
-  <div class="neon-color-text-error">This is the error text color</div>
-  <div class="neon-color-text-neutral">This is the neutral text color</div>
-  <div class="neon-color-text-high-contrast">This is the high-contrast text color</div>
-  <div class="neon-color-text-low-contrast">This is the low contrast text color</div>
-</div>`,
-    noCard: true,
-  };
+  setup() {
+    const example = `<div class="neon-color-text">This is the default text color</div>
+<div class="color-example-inverse-bg neon-color-inverse">This is the inverse text color</div>
+<div class="neon-color-text-brand">This is the brand text color</div>
+<div class="neon-color-text-primary">This is the primary text color</div>
+<div class="neon-color-text-info">This is the info text color</div>
+<div class="neon-color-text-success">This is the success text color</div>
+<div class="neon-color-text-warn">This is the warn text color</div>
+<div class="neon-color-text-error">This is the error text color</div>
+<div class="neon-color-text-neutral">This is the neutral text color</div>
+<div class="neon-color-text-high-contrast">This is the high-contrast text color</div>
+<div class="neon-color-text-low-contrast">This is the low-contrast text color</div>`;
 
-  private colorPalette = `$neon-info-palette: (
-  l5: #f6e9ff,
-  l4: #ebd4ff,
-  l3: #ddbcfe,
-  l2: #cba1fa,
-  l1: #b683f3,
-  d1: #7f50ba,
-  d2: #644190,
-  d3: #4d346b,
-  d4: #39294c,
-  d5: #292033,
-);`;
-}
+    const colorPalette = `  --neon-rgb-brand-l5: 251, 240, 255; // #fbf0ff
+  --neon-color-brand-l5: rgb(var(--neon-rgb-brand-l5));
+  --neon-rgb-brand-l4: 250, 206, 255; // #faceff
+  --neon-color-brand-l4: rgb(var(--neon-rgb-brand-l4));
+  --neon-rgb-brand-l3: 244, 172, 255; // #f4acff
+  --neon-color-brand-l3: rgb(var(--neon-rgb-brand-l3));
+  --neon-rgb-brand-l2: 233, 137, 255; // #e989ff
+  --neon-color-brand-l2: rgb(var(--neon-rgb-brand-l2));
+  --neon-rgb-brand-l1: 218, 100, 255; // #da64ff
+  --neon-color-brand-l1: rgb(var(--neon-rgb-brand-l1));
+  --neon-rgb-brand-d1: 141, 7, 237; // #8d07ed
+  --neon-color-brand-d1: rgb(var(--neon-rgb-brand-d1));
+  --neon-rgb-brand-d2: 120, 29, 193; // #781dc1
+  --neon-color-brand-d2: rgb(var(--neon-rgb-brand-d2));
+  --neon-rgb-brand-d3: 90, 29, 140; // #5a1d8c
+  --neon-color-brand-d3: rgb(var(--neon-rgb-brand-d3));
+  --neon-rgb-brand-d4: 58, 26, 83; // #3a1a53
+  --neon-color-brand-d4: rgb(var(--neon-rgb-brand-d4));
+  --neon-rgb-brand-d5: 32, 25, 37; // #201925
+  --neon-color-brand-d5: rgb(var(--neon-rgb-brand-d5));
+`;
+
+    return {
+      example,
+      colorPalette,
+    };
+  },
+});

@@ -1,0 +1,106 @@
+.neon {
+  --neon-color-text-dark: rgb(var(--neon-rgb-text-dark));
+  --neon-color-text-strong-dark: rgb(var(--neon-rgb-text-strong-dark));
+
+  --neon-color-text-light: rgb(var(--neon-rgb-text-light));
+  --neon-color-text-strong-light: rgb(var(--neon-rgb-text-strong-light));
+
+  --neon-color-neutral-l5: rgb(var(--neon-rgb-neutral-l5));
+  --neon-color-neutral-l4: rgb(var(--neon-rgb-neutral-l4));
+  --neon-color-neutral-l3: rgb(var(--neon-rgb-neutral-l3));
+  --neon-color-neutral-l2: rgb(var(--neon-rgb-neutral-l2));
+  --neon-color-neutral-l1: rgb(var(--neon-rgb-neutral-l1));
+  --neon-color-neutral-d1: rgb(var(--neon-rgb-neutral-d1));
+  --neon-color-neutral-d2: rgb(var(--neon-rgb-neutral-d2));
+  --neon-color-neutral-d3: rgb(var(--neon-rgb-neutral-d3));
+  --neon-color-neutral-d4: rgb(var(--neon-rgb-neutral-d4));
+  --neon-color-neutral-d5: rgb(var(--neon-rgb-neutral-d5));
+
+  --neon-color-low-contrast-l5: rgb(var(--neon-rgb-low-contrast-l5));
+  --neon-color-low-contrast-l4: rgb(var(--neon-rgb-low-contrast-l4));
+  --neon-color-low-contrast-l3: rgb(var(--neon-rgb-low-contrast-l3));
+  --neon-color-low-contrast-l2: rgb(var(--neon-rgb-low-contrast-l2));
+  --neon-color-low-contrast-l1: rgb(var(--neon-rgb-low-contrast-l1));
+  --neon-color-low-contrast-d1: rgb(var(--neon-rgb-low-contrast-d1));
+  --neon-color-low-contrast-d2: rgb(var(--neon-rgb-low-contrast-d2));
+  --neon-color-low-contrast-d3: rgb(var(--neon-rgb-low-contrast-d3));
+  --neon-color-low-contrast-d4: rgb(var(--neon-rgb-low-contrast-d4));
+  --neon-color-low-contrast-d5: rgb(var(--neon-rgb-low-contrast-d5));
+
+  --neon-color-high-contrast-l5: rgb(var(--neon-rgb-high-contrast-l5));
+  --neon-color-high-contrast-l4: rgb(var(--neon-rgb-high-contrast-l4));
+  --neon-color-high-contrast-l3: rgb(var(--neon-rgb-high-contrast-l3));
+  --neon-color-high-contrast-l2: rgb(var(--neon-rgb-high-contrast-l2));
+  --neon-color-high-contrast-l1: rgb(var(--neon-rgb-high-contrast-l1));
+  --neon-color-high-contrast-d1: rgb(var(--neon-rgb-high-contrast-d1));
+  --neon-color-high-contrast-d2: rgb(var(--neon-rgb-high-contrast-d2));
+  --neon-color-high-contrast-d3: rgb(var(--neon-rgb-high-contrast-d3));
+  --neon-color-high-contrast-d4: rgb(var(--neon-rgb-high-contrast-d4));
+  --neon-color-high-contrast-d5: rgb(var(--neon-rgb-high-contrast-d5));
+
+  --neon-color-brand-l5: rgb(var(--neon-rgb-brand-l5));
+  --neon-color-brand-l4: rgb(var(--neon-rgb-brand-l4));
+  --neon-color-brand-l3: rgb(var(--neon-rgb-brand-l3));
+  --neon-color-brand-l2: rgb(var(--neon-rgb-brand-l2));
+  --neon-color-brand-l1: rgb(var(--neon-rgb-brand-l1));
+  --neon-color-brand-d1: rgb(var(--neon-rgb-brand-d1));
+  --neon-color-brand-d2: rgb(var(--neon-rgb-brand-d2));
+  --neon-color-brand-d3: rgb(var(--neon-rgb-brand-d3));
+  --neon-color-brand-d4: rgb(var(--neon-rgb-brand-d4));
+  --neon-color-brand-d5: rgb(var(--neon-rgb-brand-d5));
+
+  --neon-color-primary-l5: rgb(var(--neon-rgb-primary-l5));
+  --neon-color-primary-l4: rgb(var(--neon-rgb-primary-l4));
+  --neon-color-primary-l3: rgb(var(--neon-rgb-primary-l3));
+  --neon-color-primary-l2: rgb(var(--neon-rgb-primary-l2));
+  --neon-color-primary-l1: rgb(var(--neon-rgb-primary-l1));
+  --neon-color-primary-d1: rgb(var(--neon-rgb-primary-d1));
+  --neon-color-primary-d2: rgb(var(--neon-rgb-primary-d2));
+  --neon-color-primary-d3: rgb(var(--neon-rgb-primary-d3));
+  --neon-color-primary-d4: rgb(var(--neon-rgb-primary-d4));
+  --neon-color-primary-d5: rgb(var(--neon-rgb-primary-d5));
+
+  --neon-color-info-l5: rgb(var(--neon-rgb-info-l5));
+  --neon-color-info-l4: rgb(var(--neon-rgb-info-l4));
+  --neon-color-info-l3: rgb(var(--neon-rgb-info-l3));
+  --neon-color-info-l2: rgb(var(--neon-rgb-info-l2));
+  --neon-color-info-l1: rgb(var(--neon-rgb-info-l1));
+  --neon-color-info-d1: rgb(var(--neon-rgb-info-d1));
+  --neon-color-info-d2: rgb(var(--neon-rgb-info-d2));
+  --neon-color-info-d3: rgb(var(--neon-rgb-info-d3));
+  --neon-color-info-d4: rgb(var(--neon-rgb-info-d4));
+  --neon-color-info-d5: rgb(var(--neon-rgb-info-d5));
+
+  --neon-color-success-l5: rgb(var(--neon-rgb-success-l5));
+  --neon-color-success-l4: rgb(var(--neon-rgb-success-l4));
+  --neon-color-success-l3: rgb(var(--neon-rgb-success-l3));
+  --neon-color-success-l2: rgb(var(--neon-rgb-success-l2));
+  --neon-color-success-l1: rgb(var(--neon-rgb-success-l1));
+  --neon-color-success-d1: rgb(var(--neon-rgb-success-d1));
+  --neon-color-success-d2: rgb(var(--neon-rgb-success-d2));
+  --neon-color-success-d3: rgb(var(--neon-rgb-success-d3));
+  --neon-color-success-d4: rgb(var(--neon-rgb-success-d4));
+  --neon-color-success-d5: rgb(var(--neon-rgb-success-d5));
+
+  --neon-color-warn-l5: rgb(var(--neon-rgb-warn-l5));
+  --neon-color-warn-l4: rgb(var(--neon-rgb-warn-l4));
+  --neon-color-warn-l3: rgb(var(--neon-rgb-warn-l3));
+  --neon-color-warn-l2: rgb(var(--neon-rgb-warn-l2));
+  --neon-color-warn-l1: rgb(var(--neon-rgb-warn-l1));
+  --neon-color-warn-d1: rgb(var(--neon-rgb-warn-d1));
+  --neon-color-warn-d2: rgb(var(--neon-rgb-warn-d2));
+  --neon-color-warn-d3: rgb(var(--neon-rgb-warn-d3));
+  --neon-color-warn-d4: rgb(var(--neon-rgb-warn-d4));
+  --neon-color-warn-d5: rgb(var(--neon-rgb-warn-d5));
+
+  --neon-color-error-l5: rgb(var(--neon-rgb-error-l5));
+  --neon-color-error-l4: rgb(var(--neon-rgb-error-l4));
+  --neon-color-error-l3: rgb(var(--neon-rgb-error-l3));
+  --neon-color-error-l2: rgb(var(--neon-rgb-error-l2));
+  --neon-color-error-l1: rgb(var(--neon-rgb-error-l1));
+  --neon-color-error-d1: rgb(var(--neon-rgb-error-d1));
+  --neon-color-error-d2: rgb(var(--neon-rgb-error-d2));
+  --neon-color-error-d3: rgb(var(--neon-rgb-error-d3));
+  --neon-color-error-d4: rgb(var(--neon-rgb-error-d4));
+  --neon-color-error-d5: rgb(var(--neon-rgb-error-d5));
+}

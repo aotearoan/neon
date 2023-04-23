@@ -1,94 +1,98 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonList } from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import { defineComponent, onMounted, ref } from 'vue';
+import type { NeonListItem } from '@/neon';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonList } from '@/neon';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'List',
   components: {
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
     NeonList,
     ComponentDocumentation,
+    Editor,
   },
-})
-export default class List extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('A vertical list of removable items');
 
-  private headline = 'A vertical list of removable items';
+    const items = ref<Array<NeonListItem>>([
+      {
+        key: 'key1',
+        label: 'Item 1',
+      },
+      {
+        key: 'key2',
+        label: 'Item 2',
+      },
+      {
+        key: 'key3',
+        label: 'Item 3',
+      },
+      {
+        key: 'key4',
+        label: 'Item 4',
+      },
+    ]);
 
-  private items = [
-    {
-      key: 'key1',
-      label: 'Item 1',
-    },
-    {
-      key: 'key2',
-      label: 'Item 2',
-    },
-    {
-      key: 'key3',
-      label: 'Item 3',
-    },
-    {
-      key: 'key4',
-      label: 'Item 4',
-    },
-  ];
+    const smallItems = ref([...items.value]);
+    const mediumItems = ref([...items.value]);
+    const largeItems = ref([...items.value]);
+    const hcItems = ref([...items.value]);
+    const brandItems = ref([...items.value]);
+    const warnItems = ref([...items.value]);
+    const disabledItems = ref([...items.value]);
 
-  private data = {
-    smallItems: [...this.items],
-    mediumItems: [...this.items],
-    largeItems: [...this.items],
-    hcItems: [...this.items],
-    brandItems: [...this.items],
-    warnItems: [...this.items],
-    disabledItems: [...this.items],
-    onClose: (key: string) => console.log(`${key} removed`),
-  };
+    const onClose = (key: string) => console.log(`${key} removed`);
 
-  private sizeExamples = `<div class="neon-vertically-spaced">
-  <h4>Small</h4>
-  <neon-list size="s" v-model="smallItems" @close="onClose" />
-  <h4>Medium</h4>
-  <neon-list v-model="mediumItems" @close="onClose" />
-  <h4>Large</h4>
-  <neon-list size="l" v-model="largeItems" @close="onClose" />
-</div>`;
+    const sizeExamples = `<neon-list v-model="smallItems"
+           size="s"
+           @close="onClose"
+/>
+<neon-list v-model="mediumItems"
+           @close="onClose"
+/>
+<neon-list v-model="largeItems"
+           size="l"
+           @close="onClose"
+/>`;
 
-  private colorExamples = `<div class="neon-vertically-spaced">
-  <h4>High contrast</h4>
-  <neon-list color="high-contrast" v-model="hcItems" @close="onClose" />
-  <h4>Brand</h4>
-  <neon-list color="brand" v-model="brandItems" @close="onClose" />
-  <h4>Warn</h4>
-  <neon-list color="warn" v-model="warnItems" @close="onClose" />
-</div>`;
+    const colorExamples = `<neon-list v-model="hcItems"
+           color="high-contrast"
+           @close="onClose"
+/>
+<neon-list v-model="brandItems"
+           color="brand"
+           @close="onClose"
+/>
+<neon-list v-model="warnItems"
+           color="warn"
+           @close="onClose"
+/>`;
 
-  private stateExamples = `<div class="neon-vertically-spaced">
-  <h4>Disabled</h4>
-  <neon-list :disabled="true" v-model="disabledItems" />
-</div>`;
+    const stateExamples = '<neon-list v-model="disabledItems" :disabled="true" />';
 
-  private examples = [
-    {
-      title: 'List sizes',
-      template: this.sizeExamples,
-      data: this.data,
-    },
-    {
-      title: 'List colors',
-      template: this.colorExamples,
-      data: this.data,
-    },
-    {
-      title: 'List states',
-      template: this.stateExamples,
-      data: this.data,
-    },
-  ];
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonList')));
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonList');
-  }
-}
+    return {
+      menuModel,
+      headline,
+      sizeExamples,
+      colorExamples,
+      stateExamples,
+      smallItems,
+      mediumItems,
+      largeItems,
+      hcItems,
+      brandItems,
+      warnItems,
+      disabledItems,
+      onClose,
+    };
+  },
+});

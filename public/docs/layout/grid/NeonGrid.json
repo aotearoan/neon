@@ -1,26 +1,19 @@
 {
+  "displayName": "NeonGrid",
   "description": "<p>A CSS grid component for top level layout within a page. This component provides functionality to dynamically\ngenerate the grid CSS and inject it into the page as well as defining the grid for different responsive breakpoints.\nThe defined grid can be updated programmatically which is useful for adding/removing items from the grid.</p>\n\n<p>NeonGrid provides a slot for a set of NeonGridArea components, defining the contents for the various grid areas on\nthe page.</p>",
   "tags": {},
-  "displayName": "NeonGrid",
   "exportName": "default",
   "props": [
     {
       "name": "layouts",
-      "tags": {},
       "description": "The grid layouts",
       "type": {
-        "name": "Array",
-        "elements": [
-          {
-            "name": "NeonGridModel"
-          }
-        ]
+        "name": "Array as () => Array<NeonGridModel>"
       },
       "required": true
     },
     {
       "name": "id",
-      "tags": {},
       "description": "Id of the grid, should be unique on the page",
       "type": {
         "name": "string"
@@ -33,5 +26,9 @@
       "name": "default",
       "description": "contents of the grid, namely neon-grid-area components"
     }
+  ],
+  "sourceFiles": [
+    "./src/components/layout/grid/NeonGrid.vue",
+    "/Users/andrew/dev/projects/neon/src/components/layout/grid/NeonGrid.ts"
   ]
 }

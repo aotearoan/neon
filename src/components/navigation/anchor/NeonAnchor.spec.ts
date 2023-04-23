@@ -1,14 +1,13 @@
-import { mount } from '@vue/test-utils';
+import { render } from '@testing-library/vue';
 import NeonAnchor from './NeonAnchor.vue';
 
 describe('NeonAnchor', () => {
   it('renders anchor with id', () => {
     // given
     const id = 'xdd';
-    const wrapper = mount(NeonAnchor, {
-      propsData: { id },
-    });
+    const { html } = render(NeonAnchor, { props: { id } });
+
     // when / then
-    expect(wrapper.find('a').attributes().id).toEqual(id);
+    expect(html()).toMatch(`id="${id}"`);
   });
 });

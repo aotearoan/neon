@@ -1,39 +1,65 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonFunctionalColor, NeonSearchOption, NeonSelect } from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import type { Ref } from 'vue';
+import { defineComponent, onMounted, ref } from 'vue';
+import type { NeonSearchOption } from '@/neon';
+import { NeonCard, NeonCardBody, NeonFunctionalColor, NeonSearch } from '@/neon';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Search',
   components: {
     NeonCard,
     NeonCardBody,
-    NeonSelect,
+    NeonSearch,
     ComponentDocumentation,
+    Editor,
   },
-})
-export default class Search extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('A search input field');
 
-  private headline = 'A search input field';
+    const searchSmall = ref('');
+    const searchMedium = ref('');
+    const searchLarge = ref('');
+    const searchMulti = ref([]);
+    const searchColored = ref([]);
+    const searchBrand = ref('');
+    const searchInfo = ref('');
+    const searchSuccess = ref('');
+    const searchWarning = ref('');
 
-  private data = {
-    filterSmall: '',
-    searchSmall: '',
-    filterMedium: '',
-    searchMedium: '',
-    filterLarge: '',
-    searchLarge: '',
-    filterMulti: '',
-    searchMulti: [],
-    filterBrand: '',
-    searchBrand: '',
-    filterInfo: '',
-    searchInfo: '',
-    filterSuccess: '',
-    searchSuccess: '',
-    filterWarning: '',
-    searchWarning: '',
-    model: [
+    const filterSmall = ref('');
+    const filterMedium = ref('');
+    const filterLarge = ref('');
+    const filterMulti = ref('');
+    const filterColored = ref('');
+    const filterBrand = ref('');
+    const filterInfo = ref('');
+    const filterSuccess = ref('');
+    const filterWarning = ref('');
+
+    const filters: Record<string, Ref<string | undefined>> = {
+      filterSmall,
+      filterMedium,
+      filterLarge,
+      filterMulti,
+      filterColored,
+      filterBrand,
+      filterInfo,
+      filterSuccess,
+      filterWarning,
+    };
+
+    const updateFilter = (key: string, value: string | undefined) => {
+      if (filters[key]) {
+        filters[key].value = value;
+      }
+    };
+
+    const model = ref([
       {
         key: 'k1',
         label: 'Avocado',
@@ -64,8 +90,9 @@ export default class Search extends Vue {
         label: 'Tomato',
         separatorBefore: true,
       },
-    ],
-    modelWithIcons: [
+    ]);
+
+    const modelWithIcons = ref([
       {
         key: 'k1',
         label: 'Item 1',
@@ -102,8 +129,9 @@ export default class Search extends Vue {
         icon: 'images',
         separatorBefore: true,
       },
-    ],
-    coloredChips: [
+    ]);
+
+    const coloredChips = ref([
       {
         key: 'k1',
         label: 'Item 1',
@@ -140,8 +168,9 @@ export default class Search extends Vue {
         separatorBefore: true,
         chipColor: NeonFunctionalColor.Primary,
       },
-    ],
-    filterOptions: (
+    ]);
+
+    const filterOptions = (
       model: NeonSearchOption[],
       selected: string | NeonSearchOption[],
       filter: string,
@@ -157,46 +186,98 @@ export default class Search extends Vue {
           .filter((m) => m.key !== selected)
           .filter((item) => item.label.toString().toLowerCase().indexOf(fltr) >= 0);
       }
-    },
-  };
+    };
 
-  private examples = [
-    {
-      title: `Multiple selection`,
-      template: `<div class="neon-vertically-spaced">
-  <neon-search :multiple="true" placeholder="Search" :options="filterOptions(modelWithIcons, searchMulti, filterMulti, true)" v-model="searchMulti" @filter-changed="filterMulti = $event" />
-</div>`,
-      data: this.data,
-    },
-    {
-      title: `Colored chips`,
-      template: `<div class="neon-vertically-spaced">
-  <neon-search :multiple="true" placeholder="Search" :options="filterOptions(coloredChips, searchMulti, filterMulti, true)" v-model="searchMulti" @filter-changed="filterMulti = $event" />
-</div>`,
-      data: this.data,
-    },
-    {
-      title: `Search sizes`,
-      template: `<div class="neon-vertically-spaced">
-  <neon-search size="s" placeholder="Search" :options="filterOptions(model, searchSmall, filterSmall)" v-model="searchSmall" @filter-changed="filterSmall = $event" />
-  <neon-search size="m" placeholder="Search" :options="filterOptions(model, searchMedium, filterMedium)" v-model="searchMedium" @filter-changed="filterMedium = $event" />
-  <neon-search size="l" placeholder="Search" :options="filterOptions(model, searchLarge, filterLarge)" v-model="searchLarge" @filter-changed="filterLarge = $event" />
-</div>`,
-      data: this.data,
-    },
-    {
-      title: `Search with colors and icons`,
-      template: `<div class="neon-vertically-spaced">
-  <neon-search color="brand" placeholder="Search" :options="filterOptions(modelWithIcons, searchBrand, filterBrand)" v-model="searchBrand" @filter-changed="filterBrand = $event" />
-  <neon-search color="info" placeholder="Search" :options="filterOptions(modelWithIcons, searchInfo, filterInfo)" v-model="searchInfo" @filter-changed="filterInfo = $event" />
-  <neon-search color="success" placeholder="Search" :options="filterOptions(modelWithIcons, searchSuccess, filterSuccess)" v-model="searchSuccess" @filter-changed="filterSuccess = $event" />
-  <neon-search color="warn" placeholder="Search" :options="filterOptions(modelWithIcons, searchWarning, filterWarning)" v-model="searchWarning" @filter-changed="filterWarning = $event" />
-</div>`,
-      data: this.data,
-    },
-  ];
+    const multipleTemplate = `<neon-search v-model="searchMulti"
+             :multiple="true"
+             :options="filterOptions(modelWithIcons, searchMulti, filterMulti, true)"
+             placeholder="Search"
+             @filter-changed="updateFilter('filterMulti', $event)"
+/>`;
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonSearch');
-  }
-}
+    const coloredTemplate = `<neon-search v-model="searchMulti"
+             :multiple="true"
+             :options="filterOptions(coloredChips, searchMulti, filterMulti, true)"
+             placeholder="Search"
+             @filter-changed="filterMulti = $event"
+/>`;
+
+    const sizesTemplate = `<neon-search v-model="searchSmall"
+             :options="filterOptions(model, searchSmall, filterSmall)"
+             placeholder="Search"
+             size="s"
+             @filter-changed="filterSmall = $event"
+/>
+<neon-search v-model="searchMedium"
+             :options="filterOptions(model, searchMedium, filterMedium)"
+             placeholder="Search"
+             size="m"
+             @filter-changed="filterMedium = $event"
+/>
+<neon-search v-model="searchLarge"
+             :options="filterOptions(model, searchLarge, filterLarge)"
+             placeholder="Search"
+             size="l"
+             @filter-changed="filterLarge = $event"
+/>`;
+
+    const colorsTemplate = `<neon-search v-model="searchBrand"
+             :options="filterOptions(modelWithIcons, searchBrand, filterBrand)"
+             color="brand"
+             placeholder="Search"
+             @filter-changed="filterBrand = $event"
+/>
+<neon-search v-model="searchInfo"
+             :options="filterOptions(modelWithIcons, searchInfo, filterInfo)"
+             color="info"
+             placeholder="Search"
+             @filter-changed="filterInfo = $event"
+/>
+<neon-search v-model="searchSuccess"
+             :options="filterOptions(modelWithIcons, searchSuccess, filterSuccess)"
+             color="success"
+             placeholder="Search"
+             @filter-changed="filterSuccess = $event"
+/>
+<neon-search v-model="searchWarning"
+             :options="filterOptions(modelWithIcons, searchWarning, filterWarning)"
+             color="warn"
+             placeholder="Search"
+             @filter-changed="filterWarning = $event"
+/>`;
+
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonSearch')));
+
+    return {
+      menuModel,
+      headline,
+      searchSmall,
+      searchMedium,
+      searchLarge,
+      searchMulti,
+      searchColored,
+      searchBrand,
+      searchInfo,
+      searchSuccess,
+      searchWarning,
+      filterSmall,
+      filterMedium,
+      filterLarge,
+      filterMulti,
+      filterColored,
+      filterBrand,
+      filterInfo,
+      filterSuccess,
+      filterWarning,
+      model,
+      modelWithIcons,
+      coloredChips,
+      multipleTemplate,
+      colorsTemplate,
+      sizesTemplate,
+      coloredTemplate,
+      updateFilter,
+      filterOptions,
+    };
+  },
+});

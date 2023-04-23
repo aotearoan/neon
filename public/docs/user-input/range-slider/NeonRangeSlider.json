@@ -1,42 +1,30 @@
 {
-  "exportName": "default",
   "displayName": "NeonRangeSlider",
+  "exportName": "default",
   "description": "",
   "tags": {},
   "props": [
     {
-      "name": "value",
-      "tags": {},
+      "name": "modelValue",
       "description": "This is the <em>v-model</em> property which is an array containing the lower and upper bounds of the selected range.",
       "type": {
-        "name": "Array",
-        "elements": [
-          {
-            "name": "number"
-          }
-        ]
+        "name": "Array as () => Array<number>"
       },
       "required": true
     },
     {
       "name": "ids",
-      "tags": {},
       "description": "The list of ids for the lower bound and upper bound inputs, e.g. ['lowerBoundId', 'upperBoundId']",
       "type": {
-        "name": "Array",
-        "elements": [
-          {
-            "name": "string"
-          }
-        ]
-      }
+        "name": "Array as () => Array<string>"
+      },
+      "required": false
     },
     {
       "name": "color",
-      "tags": {},
       "description": "Slider color.",
       "type": {
-        "name": "boolean"
+        "name": "String as () => NeonFunctionalColor"
       },
       "defaultValue": {
         "func": false,
@@ -45,7 +33,6 @@
     },
     {
       "name": "output",
-      "tags": {},
       "description": "Disable output display if set to false",
       "type": {
         "name": "boolean"
@@ -57,7 +44,6 @@
     },
     {
       "name": "legend",
-      "tags": {},
       "description": "Disable legend if set to false",
       "type": {
         "name": "boolean"
@@ -69,7 +55,6 @@
     },
     {
       "name": "tooltip",
-      "tags": {},
       "description": "Disable tooltip if set to false",
       "type": {
         "name": "boolean"
@@ -81,31 +66,30 @@
     },
     {
       "name": "step",
-      "tags": {},
       "description": "The size of steps between values the user can select. Defaults to 1 unless percentage = true in which case it will\ndefault to 0.01.",
       "type": {
         "name": "number"
-      }
+      },
+      "required": false
     },
     {
       "name": "decimals",
-      "tags": {},
       "description": "The rounding precision for display purposes",
       "type": {
         "name": "number"
-      }
+      },
+      "required": false
     },
     {
       "name": "valueTemplate",
-      "tags": {},
       "description": "A format template string used for display purposes. Use the placeholder {value} to reference the value in the\nformat string. e.g. value = 90, ${value} => $90",
       "type": {
         "name": "string"
-      }
+      },
+      "required": false
     },
     {
       "name": "disableFormatting",
-      "tags": {},
       "description": "Disable formatting, e.g. in the case of a year value -> display as 2020, not 2,020.",
       "type": {
         "name": "boolean"
@@ -117,7 +101,6 @@
     },
     {
       "name": "percentage",
-      "tags": {},
       "description": "Automatically applies % formatting, e.g. if the value = 0.15 it will be displayed as 15%",
       "type": {
         "name": "boolean"
@@ -128,8 +111,18 @@
       }
     },
     {
+      "name": "locale",
+      "description": "The locale used for display purposes. This defaults to the browser's locale if none is provided.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
       "name": "min",
-      "tags": {},
       "description": "The minimum range value",
       "type": {
         "name": "number"
@@ -141,15 +134,14 @@
     },
     {
       "name": "max",
-      "tags": {},
       "description": "The maximum range value. The default value is 100 except when percentage = true the default is 1 (100%).",
       "type": {
         "name": "number"
-      }
+      },
+      "required": false
     },
     {
       "name": "disabled",
-      "tags": {},
       "description": "Component disabled state.",
       "type": {
         "name": "boolean"
@@ -161,10 +153,9 @@
     },
     {
       "name": "lowerBoundLabel",
-      "tags": {},
       "description": "ARIA label for the lower bound slider.",
       "type": {
-        "name": "TranslateResult"
+        "name": "string"
       },
       "defaultValue": {
         "func": false,
@@ -173,10 +164,9 @@
     },
     {
       "name": "upperBoundLabel",
-      "tags": {},
       "description": "ARIA label for the upper bound slider.",
       "type": {
-        "name": "TranslateResult"
+        "name": "string"
       },
       "defaultValue": {
         "func": false,
@@ -186,7 +176,7 @@
   ],
   "events": [
     {
-      "name": "input",
+      "name": "update:modelValue",
       "description": "Event triggered when the lower or upper bounds of the value change.",
       "type": {
         "names": [
@@ -194,5 +184,9 @@
         ]
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/user-input/range-slider/NeonRangeSlider.vue",
+    "/Users/andrew/dev/projects/neon/src/components/user-input/range-slider/NeonRangeSlider.ts"
   ]
 }

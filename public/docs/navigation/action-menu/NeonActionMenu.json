@@ -1,26 +1,19 @@
 {
+  "displayName": "NeonActionMenu",
   "description": "An action menu is designed for the NeonSideNav component and is designed to behave like tabs where selecting a different item switches the contents in the main page.",
   "tags": {},
   "exportName": "default",
-  "displayName": "NeonActionMenu",
   "props": [
     {
       "name": "model",
-      "tags": {},
       "description": "The list of action items to display in the menu.",
       "type": {
-        "name": "Array",
-        "elements": [
-          {
-            "name": "NeonActionMenuModel"
-          }
-        ]
+        "name": "Array as () => Array<NeonActionMenuModel>"
       },
       "required": true
     },
     {
-      "name": "value",
-      "tags": {},
+      "name": "modelValue",
       "description": "The key of the selected model action item.",
       "type": {
         "name": "string"
@@ -29,10 +22,9 @@
     },
     {
       "name": "color",
-      "tags": {},
       "description": "The toggle chip color.",
       "type": {
-        "name": "NeonFunctionalColor"
+        "name": "String as () => NeonFunctionalColor"
       },
       "defaultValue": {
         "func": false,
@@ -42,7 +34,7 @@
   ],
   "events": [
     {
-      "name": "input",
+      "name": "update:modelValue",
       "description": "emitted when the user clicks on a new action menu item.",
       "type": {
         "names": [
@@ -50,5 +42,9 @@
         ]
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/navigation/action-menu/NeonActionMenu.vue",
+    "/Users/andrew/dev/projects/neon/src/components/navigation/action-menu/NeonActionMenu.ts"
   ]
 }

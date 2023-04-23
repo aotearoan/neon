@@ -1,48 +1,27 @@
 {
+  "displayName": "NeonFilterList",
   "description": "<p><strong>NeonFilterList</strong> is an alternative component to a select where the values are displayed in a\nvisible list to the user. This component is particularly useful for presenting filters to the user and also provides\nthe option of displaying the item counts with each list item.</p>",
   "tags": {},
   "exportName": "default",
-  "displayName": "NeonFilterList",
   "props": [
     {
       "name": "items",
-      "tags": {},
       "description": "The list if items to display",
       "type": {
-        "name": "Array",
-        "elements": [
-          {
-            "name": "NeonFilterListItem"
-          }
-        ]
+        "name": "Array as () => Array<NeonFilterListItem>"
       },
       "required": true
     },
     {
-      "name": "value",
-      "tags": {},
+      "name": "modelValue",
       "description": "Either a single string, indicating the key of the selected item or an array of selected keys in the case\nmultiple = true.",
       "type": {
-        "name": "union",
-        "elements": [
-          {
-            "name": "string"
-          },
-          {
-            "name": "Array",
-            "elements": [
-              {
-                "name": "string"
-              }
-            ]
-          }
-        ]
+        "name": "string|Array as () => Array<string>"
       },
       "required": true
     },
     {
       "name": "multiple",
-      "tags": {},
       "description": "Allow multi-select of items.",
       "type": {
         "name": "boolean"
@@ -54,10 +33,9 @@
     },
     {
       "name": "size",
-      "tags": {},
       "description": "The size of the list items - Small, Medium or Large.",
       "type": {
-        "name": "NeonSize"
+        "name": "String as () => NeonSize"
       },
       "defaultValue": {
         "func": false,
@@ -66,10 +44,9 @@
     },
     {
       "name": "color",
-      "tags": {},
       "description": "The color of the selected list items..",
       "type": {
-        "name": "NeonFunctionalColor"
+        "name": "String as () => NeonFunctionalColor"
       },
       "defaultValue": {
         "func": false,
@@ -78,38 +55,51 @@
     },
     {
       "name": "displayCount",
-      "tags": {},
       "description": "The number of visible items. If there are more items they will be placed behind an expansion\nbutton which toggles displaying displayCount items and all items.",
       "type": {
         "name": "number"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     },
     {
       "name": "showMoreLabel",
-      "tags": {},
-      "description": "Label for the Show more toggle if <em>displayCount</em> is set. The default is 'Show {count} more'",
+      "description": "Label for the Show more toggle if <em>displayCount</em> is set. The default is 'Show {count} more' where {count} is substituted with the display count",
       "type": {
-        "name": "TranslateResult"
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Show {count} more'"
       }
     },
     {
       "name": "showLessLabel",
-      "tags": {},
       "description": "Label for the expanded Show more toggle if <em>displayCount</em> is set. The default is 'Show less'.",
       "type": {
-        "name": "TranslateResult"
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Show less'"
       }
     }
   ],
   "events": [
     {
-      "name": "input",
-      "description": "emitted when the user selects or toggles the selection of an item..",
+      "name": "update:modelValue",
+      "description": "emitted when the user selects or toggles the selection of an item.",
       "type": {
         "names": [
           "string | string[]"
         ]
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/user-input/filter-list/NeonFilterList.vue",
+    "/Users/andrew/dev/projects/neon/src/components/user-input/filter-list/NeonFilterList.ts"
   ]
 }

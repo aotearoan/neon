@@ -1,35 +1,38 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonLink, NeonSelect } from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonLink, NeonSelect } from '@/neon';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names,vue/no-reserved-component-names
+  name: 'Select',
   components: {
     NeonCard,
     NeonCardBody,
     NeonLink,
     NeonSelect,
     ComponentDocumentation,
+    Editor,
   },
-})
-export default class Select extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Styled HTML select equivalent');
 
-  private headline = 'Styled HTML select equivalent';
+    const selectSmall = ref('');
+    const selectMedium = ref('');
+    const selectLarge = ref('');
+    const selectMulti = ref([]);
+    const selectGrouped = ref('');
+    const selectGroupedMulti = ref([]);
+    const selectBrand = ref('');
+    const selectInfo = ref('');
+    const selectSuccess = ref('');
+    const selectWarning = ref('');
+    const selectError = ref('');
 
-  private data = {
-    selectSmall: '',
-    selectMedium: '',
-    selectLarge: '',
-    selectMulti: [],
-    selectGrouped: '',
-    selectGroupedMulti: [],
-    selectBrand: '',
-    selectInfo: '',
-    selectSuccess: '',
-    selectWarning: '',
-    selectError: '',
-    model: [
+    const model = ref([
       {
         key: 'k1',
         label: 'Item 1',
@@ -61,8 +64,9 @@ export default class Select extends Vue {
         disabled: true,
         separatorBefore: true,
       },
-    ],
-    modelWithIcons: [
+    ]);
+
+    const modelWithIcons = ref([
       {
         key: 'k1',
         label: 'Item 1',
@@ -100,8 +104,9 @@ export default class Select extends Vue {
         disabled: true,
         separatorBefore: true,
       },
-    ],
-    groupedModel: [
+    ]);
+
+    const groupedModel = ref([
       {
         group: 'Africa',
         options: [
@@ -207,48 +212,50 @@ export default class Select extends Vue {
           },
         ],
       },
-    ],
-  };
+    ]);
 
-  private examples = [
-    {
-      title: 'Select sizes',
-      template: `<div class="neon-vertically-spaced">
-  <neon-select size="s" placeholder="Select item" :options="model" v-model="selectSmall" />
-  <neon-select size="m" placeholder="Select item" :options="model" v-model="selectMedium" />
-  <neon-select size="l" placeholder="Select item" :options="model" v-model="selectLarge" />
-</div>`,
-      data: this.data,
-    },
-    {
-      title: 'Selects with colors and icons',
-      template: `<div class="neon-vertically-spaced">
-  <neon-select color="brand" placeholder="Select item(s)" :options="modelWithIcons" v-model="selectBrand" />
-  <neon-select color="info" placeholder="Select item(s)" :options="modelWithIcons" v-model="selectInfo" />
-  <neon-select color="success" placeholder="Select item(s)" :options="modelWithIcons" v-model="selectSuccess" />
-  <neon-select color="warn" placeholder="Select item(s)" :options="modelWithIcons" v-model="selectWarning" />
-  <neon-select color="error" placeholder="Select item(s)" :options="modelWithIcons" v-model="selectError" />
-</div>`,
-      data: this.data,
-    },
-    {
-      title: 'Multiple selection',
-      template: `<div class="neon-vertically-spaced">
-  <neon-select :multiple="true" placeholder="Select item(s)" :options="modelWithIcons" v-model="selectMulti" />
-</div>`,
-      data: this.data,
-    },
-    {
-      title: 'Grouped options',
-      template: `<div class="neon-vertically-spaced">
-  <neon-select placeholder="Select item" :grouped-options="groupedModel" v-model="selectGrouped" />
-  <neon-select :multiple="true" placeholder="Select item(s)" :grouped-options="groupedModel" v-model="selectGroupedMulti" />
-</div>`,
-      data: this.data,
-    },
-  ];
+    const sizesTemplate = `<neon-select v-model="selectSmall" :options="model" placeholder="Select item" size="s" />
+<neon-select v-model="selectMedium" :options="model" placeholder="Select item" size="m" />
+<neon-select v-model="selectLarge" :options="model" placeholder="Select item" size="l" />`;
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonSelect');
-  }
-}
+    const colorsTemplate = `<neon-select v-model="selectBrand" :options="modelWithIcons" color="brand" placeholder="Select item(s)" />
+<neon-select v-model="selectInfo" :options="modelWithIcons" color="info" placeholder="Select item(s)" />
+<neon-select v-model="selectSuccess" :options="modelWithIcons" color="success" placeholder="Select item(s)" />
+<neon-select v-model="selectWarning" :options="modelWithIcons" color="warn" placeholder="Select item(s)" />
+<neon-select id="select1"
+             v-model="selectError"
+             :options="modelWithIcons"
+             color="error"
+             placeholder="Select item(s)"
+/>`;
+
+    const multiSelectTemplate = `<neon-select v-model="selectMulti" :multiple="true" :options="modelWithIcons" placeholder="Select item(s)" />`;
+    const groupedTemplate = `<neon-select v-model="selectGrouped" :grouped-options="groupedModel" placeholder="Select item" />
+<neon-select v-model="selectGroupedMulti" :grouped-options="groupedModel" :multiple="true" placeholder="Select item(s)" />`;
+
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonSelect')));
+
+    return {
+      menuModel,
+      headline,
+      selectSmall,
+      selectMedium,
+      selectLarge,
+      selectMulti,
+      selectGrouped,
+      selectGroupedMulti,
+      selectBrand,
+      selectInfo,
+      selectSuccess,
+      selectWarning,
+      selectError,
+      model,
+      modelWithIcons,
+      groupedModel,
+      sizesTemplate,
+      colorsTemplate,
+      multiSelectTemplate,
+      groupedTemplate,
+    };
+  },
+});

@@ -1,13 +1,12 @@
 {
-  "description": "<p>Expansion panels are used to show and hide content that may be less important or too large to display on screen\nall of the time. They can also be used to expand lists of items, e.g. <em>Show more</em>. The expansion panel consists\nof a button which, when clicked, toggles the open/closed state of the expansion panel and a slot for the content to\ndisplay on expansion.</p>",
+  "displayName": "NeonExpansionPanel",
+  "description": "<p>Expansion panels are used to show and hide content that may be less important or too large to display on screen\nall the time. They can also be used to expand lists of items, e.g. <em>Show more</em>. The expansion panel consists\nof a button which, when clicked, toggles the open/closed state of the expansion panel and a slot for the content to\ndisplay on expansion.</p>",
   "tags": {},
   "exportName": "default",
-  "displayName": "NeonExpansionPanel",
   "props": [
     {
-      "name": "value",
-      "tags": {},
-      "description": "A boolean indicating whether or not the expansion panel is expanded.",
+      "name": "modelValue",
+      "description": "A boolean indicating whether the expansion panel is expanded.",
       "type": {
         "name": "boolean"
       },
@@ -15,35 +14,39 @@
     },
     {
       "name": "label",
-      "tags": {},
       "description": "The label of the expansion button",
       "type": {
-        "name": "TranslateResult"
+        "name": "string"
       },
       "required": true
     },
     {
       "name": "id",
-      "tags": {},
       "description": "Provide an id to support aria-controls. The id will be placed on the expansion panel content wrapper and the\naria-controls on the header (triggering the expansion).",
       "type": {
         "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     },
     {
       "name": "icon",
-      "tags": {},
       "description": "An icon to display to the left of the label",
       "type": {
         "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     },
     {
       "name": "position",
-      "tags": {},
       "description": "The position of the expansion button. This can be located above the content to expand or below it.",
       "type": {
-        "name": "NeonVerticalPosition"
+        "name": "String as () => NeonVerticalPosition"
       },
       "defaultValue": {
         "func": false,
@@ -52,10 +55,9 @@
     },
     {
       "name": "size",
-      "tags": {},
       "description": "The size of the expansion panel button.",
       "type": {
-        "name": "NeonSize"
+        "name": "String as () => NeonSize"
       },
       "defaultValue": {
         "func": false,
@@ -64,10 +66,9 @@
     },
     {
       "name": "color",
-      "tags": {},
       "description": "The color of the expansion panel button.",
       "type": {
-        "name": "NeonFunctionalColor"
+        "name": "String as () => NeonFunctionalColor"
       },
       "defaultValue": {
         "func": false,
@@ -76,7 +77,6 @@
     },
     {
       "name": "fullWidth",
-      "tags": {},
       "description": "Whether the label and expansion indicator should be flush with the width of the container.",
       "type": {
         "name": "boolean"
@@ -88,7 +88,6 @@
     },
     {
       "name": "disabled",
-      "tags": {},
       "description": "The disabled state of the expansion panel",
       "type": {
         "name": "boolean"
@@ -101,7 +100,7 @@
   ],
   "events": [
     {
-      "name": "input",
+      "name": "update:modelValue",
       "description": "Emitted when the expansion panel button is clicked.",
       "type": {
         "names": [
@@ -115,5 +114,9 @@
       "name": "default",
       "description": "The expansion panel contents"
     }
+  ],
+  "sourceFiles": [
+    "./src/components/presentation/expansion-panel/NeonExpansionPanel.vue",
+    "/Users/andrew/dev/projects/neon/src/components/presentation/expansion-panel/NeonExpansionPanel.ts"
   ]
 }

@@ -1,48 +1,48 @@
 <template>
   <neon-link
     v-if="href"
-    :href="href"
-    v-bind="$attrs"
-    v-on="$listeners"
-    class="neon-button"
+    ref="button"
     :class="classes"
+    :href="href"
+    :tabindex="!disabled ? 0 : -1"
+    class="neon-button"
     outline-style="none"
     role="button"
-    @keydown.space.native="click()"
-    @keypress.space.native.prevent=""
-    :tabindex="!disabled ? 0 : -1"
+    v-bind="attrs"
+    @keydown.space="click()"
+    @keypress.space.prevent=""
   >
     <neon-icon
       v-if="icon || state !== 'ready'"
-      :name="iconName"
       :color="buttonStyle !== 'solid' ? color : undefined"
-      :inverse="buttonStyle === 'solid'"
+      :inverse="buttonStyle === 'solid' || inverse"
+      :name="iconName"
     />
     <span v-if="label" class="neon-button__label">{{ label }}</span>
   </neon-link>
   <button
     v-else
-    v-bind="$attrs"
-    v-on="$listeners"
-    :disabled="disabled || state !== 'ready'"
-    class="neon-button"
     :class="classes"
+    :disabled="disabled || state !== 'ready'"
+    :tabindex="!disabled ? 0 : -1"
+    class="neon-button"
+    v-bind="attrs"
   >
     <neon-icon
       v-if="icon || state !== 'ready'"
-      :name="iconName"
-      :disabled="disabled"
       :color="buttonStyle !== 'solid' ? color : undefined"
-      :inverse="buttonStyle === 'solid'"
+      :disabled="disabled"
+      :inverse="buttonStyle === 'solid' || inverse"
+      :name="iconName"
     />
     <span v-if="label" class="neon-button__label">{{ label }}</span>
     <neon-expansion-indicator
       v-if="indicator"
       :color="color"
-      class="neon-button__indicator"
-      :expanded="indicatorExpanded"
-      :inverse="buttonStyle === 'solid'"
       :disabled="disabled"
+      :expanded="indicatorExpanded"
+      :inverse="buttonStyle === 'solid' || inverse"
+      class="neon-button__indicator"
     />
   </button>
 </template>

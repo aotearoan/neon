@@ -1,7 +1,7 @@
 <template>
   <div
-    class="neon-drop-zone"
     ref="dropzone"
+    class="neon-drop-zone"
     :class="[
       {
         'neon-drop-zone--disabled': disabled,

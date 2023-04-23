@@ -1,32 +1,33 @@
 {
+  "displayName": "NeonLabel",
   "description": "Labels are used to tag or emphasize properties of an item in the UI. Labels can be text only, icon only or contain both text and icons.",
   "tags": {},
   "exportName": "default",
-  "displayName": "NeonLabel",
   "props": [
     {
       "name": "label",
-      "tags": {},
       "description": "The label text",
       "type": {
-        "name": "TranslateResult"
+        "name": "string"
       },
       "required": true
     },
     {
       "name": "icon",
-      "tags": {},
       "description": "The name of the optional label icon",
       "type": {
         "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     },
     {
       "name": "iconPosition",
-      "tags": {},
       "description": "The icon position if there is also text in the label. This is either left or right.",
       "type": {
-        "name": "NeonHorizontalPosition"
+        "name": "String as () => NeonHorizontalPosition"
       },
       "defaultValue": {
         "func": false,
@@ -35,10 +36,9 @@
     },
     {
       "name": "size",
-      "tags": {},
       "description": "The label size",
       "type": {
-        "name": "NeonLabelSize"
+        "name": "String as () => NeonLabelSize"
       },
       "defaultValue": {
         "func": false,
@@ -47,10 +47,9 @@
     },
     {
       "name": "color",
-      "tags": {},
       "description": "The label color",
       "type": {
-        "name": "NeonFunctionalColor"
+        "name": "String as () => NeonFunctionalColor"
       },
       "defaultValue": {
         "func": false,
@@ -59,11 +58,18 @@
     },
     {
       "name": "alternateColor",
-      "tags": {},
       "description": "Alternate color for creating gradient labels. NOTE: can also be the same color as 'color'.",
       "type": {
-        "name": "NeonFunctionalColor"
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/presentation/label/NeonLabel.vue",
+    "/Users/andrew/dev/projects/neon/src/components/presentation/label/NeonLabel.ts"
   ]
 }

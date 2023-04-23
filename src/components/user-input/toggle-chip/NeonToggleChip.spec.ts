@@ -1,256 +1,231 @@
-import Vue from 'vue';
-import { mount } from '@vue/test-utils';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
+import type { RenderResult } from '@testing-library/vue';
+import { fireEvent, render } from '@testing-library/vue';
 import NeonToggleChip from './NeonToggleChip.vue';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-
-Vue.component('NeonIcon', NeonIcon);
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 describe('NeonToggleChip', () => {
   const label = 'xd';
+  let harness: RenderResult;
 
-  it('renders checked state true', () => {
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: true, label },
-    });
-    expect(wrapper.find('.neon-toggle-chip--checked').element).toBeDefined();
-    expect(wrapper.find('.neon-toggle-chip').attributes('aria-pressed')).toEqual('true');
+  beforeEach(() => {
+    harness = render(NeonToggleChip, { props: { modelValue: true, label } });
   });
 
-  it('renders checked state false', () => {
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: false, label },
-    });
-    expect(wrapper.find('.neon-toggle-chip--checked').element).toBeUndefined();
-    expect(wrapper.find('.neon-toggle-chip').attributes('aria-pressed')).toBeUndefined();
+  it('renders checked state true', () => {
+    const { html } = harness;
+
+    const result = html();
+    expect(result).toMatch('neon-toggle-chip--checked');
+    expect(result).toMatch('aria-pressed="true"');
+  });
+
+  it('renders checked state false', async () => {
+    const { html, rerender } = harness;
+
+    await rerender({ modelValue: false });
+    const result = html();
+    expect(result).not.toMatch('neon-toggle-chip--checked');
+    expect(result).not.toMatch('aria-pressed="true"');
   });
 
   it('renders checked icon when true', () => {
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: true, label },
-    });
-    expect(wrapper.find('.neon-icon').element).toBeDefined();
+    const { html } = harness;
+
+    const result = html();
+    expect(result).toMatch('neon-icon');
   });
 
-  it('does not render checked icon when false', () => {
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: false, label },
-    });
-    expect(wrapper.find('.neon-icon').element).toBeUndefined();
+  it('does not render checked icon when false', async () => {
+    const { html, rerender } = harness;
+
+    await rerender({ modelValue: false });
+    const result = html();
+    expect(result).not.toMatch('neon-icon');
   });
 
-  it('renders checked icon when true and showCheck true', () => {
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: true, showCheck: true, label },
-    });
-    expect(wrapper.find('.neon-icon').element).toBeDefined();
+  it('renders checked icon when true and showCheck true', async () => {
+    const { html, rerender } = harness;
+
+    await rerender({ modelValue: true, showCheck: true, label });
+    const result = html();
+    expect(result).toMatch('neon-toggle-chip--show-check');
+    expect(result).toMatch('neon-icon');
   });
 
-  it('does not render checked icon when true and showCheck false', () => {
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: true, showCheck: false, label },
-    });
-    expect(wrapper.find('.neon-icon').element).toBeUndefined();
+  it('does not render checked icon when true and showCheck false', async () => {
+    const { html, rerender } = harness;
+
+    await rerender({ modelValue: true, showCheck: false, label });
+    const result = html();
+    expect(result).not.toMatch('neon-toggle-chip--show-check');
+    expect(result).not.toMatch('neon-icon');
   });
 
   it('renders icon enabled', () => {
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: true, label },
-    });
-    expect(wrapper.find('.neon-icon--disabled').element).toBeUndefined();
+    const { html } = harness;
+
+    const result = html();
+    expect(result).not.toMatch('neon-icon--disabled');
   });
 
-  it('renders icon disabled', () => {
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: true, label, disabled: true },
-    });
-    expect(wrapper.find('.neon-icon--disabled').element).toBeDefined();
+  it('renders icon disabled', async () => {
+    const { html, rerender } = harness;
+
+    await rerender({ modelValue: true, disabled: true });
+    const result = html();
+    expect(result).toMatch('neon-icon--disabled');
   });
 
   it('renders default size', () => {
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: false, label },
-    });
-    expect(wrapper.find('.neon-toggle-chip--m').element).toBeDefined();
+    const { html } = harness;
+
+    const result = html();
+    expect(result).toMatch('neon-toggle-chip--m');
   });
 
-  it('renders provided size', () => {
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: false, label, size: NeonSize.Small },
-    });
-    expect(wrapper.find('.neon-toggle-chip--s').element).toBeDefined();
+  it('renders size', async () => {
+    const { html, rerender } = harness;
+
+    await rerender({ modelValue: true, size: NeonSize.Small });
+    const result = html();
+    expect(result).toMatch('neon-toggle-chip--s');
   });
 
   it('renders default color', () => {
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: false, label },
-    });
-    expect(wrapper.find('.neon-toggle-chip--primary').element).toBeDefined();
+    const { html } = harness;
+
+    const result = html();
+    expect(result).toMatch('neon-toggle-chip--primary');
   });
 
-  it('renders provided color', () => {
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: false, label, color: NeonFunctionalColor.Info },
-    });
-    expect(wrapper.find('.neon-toggle-chip--info').element).toBeDefined();
+  it('renders color', async () => {
+    const { html, rerender } = harness;
+
+    await rerender({ modelValue: true, size: NeonFunctionalColor.Info });
+    const result = html();
+    expect(result).toMatch('neon-toggle-chip--info');
   });
 
-  it('renders default disabled false', () => {
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: false, label },
-    });
-    expect(wrapper.find('.neon-toggle-chip--disabled').element).toBeUndefined();
-    expect(wrapper.find('.neon-toggle-chip').attributes('aria-disabled')).toBeUndefined();
+  it('renders default disabled false', async () => {
+    const { html, rerender } = harness;
+
+    await rerender({ modelValue: false, label });
+    const result = html();
+    expect(result).not.toMatch('neon-toggle-chip--disabled');
+    expect(result).toMatch('aria-disabled="false"');
   });
 
-  it('renders disabled true', () => {
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: false, label, disabled: true },
-    });
-    expect(wrapper.find('.neon-toggle-chip--disabled').element).toBeDefined();
-    expect(wrapper.find('.neon-toggle-chip').attributes('aria-disabled')).toEqual('true');
+  it('renders disabled true', async () => {
+    const { html, rerender } = harness;
+
+    await rerender({ modelValue: false, label, disabled: true });
+    const result = html();
+    expect(result).toMatch('neon-toggle-chip--disabled');
+    expect(result).toMatch('aria-disabled="true"');
   });
 
-  it('renders default showCheck true', () => {
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: false, label },
-    });
-    expect(wrapper.find('.neon-toggle-chip--show-check').element).toBeDefined();
+  it('renders default showCheck true', async () => {
+    const { html, rerender } = harness;
+
+    await rerender({ modelValue: false, label });
+    const result = html();
+    expect(result).toMatch('neon-toggle-chip--show-check');
   });
 
-  it('renders showCheck false', () => {
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: false, label, showCheck: false },
-    });
-    expect(wrapper.find('.neon-toggle-chip--show-check').element).toBeUndefined();
+  it('renders default showCheck false', async () => {
+    const { html, rerender } = harness;
+
+    await rerender({ modelValue: false, label, showCheck: false });
+    const result = html();
+    expect(result).not.toMatch('neon-toggle-chip--show-check');
   });
 
-  it('renders label', () => {
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: false, label },
-    });
-    expect(wrapper.find('.neon-toggle-chip__label').text()).toEqual(label);
+  it('renders default showCheck false', () => {
+    const { getByText } = harness;
+    getByText(label);
   });
 
-  it('renders input unchecked', () => {
-    // given
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: false, label },
-    });
-    // when
-    const checkbox = wrapper.find('.neon-toggle-chip__input').element as HTMLInputElement;
-    // then
-    expect(checkbox.checked).toEqual(false);
+  it('renders input unchecked', async () => {
+    const { container, rerender } = harness;
+    await rerender({ modelValue: false, label });
+    expect((container.querySelector('.neon-toggle-chip__input') as HTMLInputElement)?.checked).toEqual(false);
   });
 
   it('renders input checked', () => {
-    // given
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: true, label },
-    });
-    // when
-    const checkbox = wrapper.find('.neon-toggle-chip__input').element as HTMLInputElement;
-    // then
-    expect(checkbox.checked).toEqual(true);
+    const { container } = harness;
+    expect((container.querySelector('.neon-toggle-chip__input') as HTMLInputElement)?.checked).toEqual(true);
   });
 
   it('renders input not disabled', () => {
-    // given
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: false, label },
-    });
-    // when
-    const checkbox = wrapper.find('.neon-toggle-chip__input').element as HTMLInputElement;
-    // then
-    expect(checkbox.disabled).toEqual(false);
+    const { html } = harness;
+    expect(html()).toMatch('disabled="false"');
   });
 
-  it('renders input disabled', () => {
-    // given
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: true, label, disabled: true },
-    });
-    // when
-    const checkbox = wrapper.find('.neon-toggle-chip__input').element as HTMLInputElement;
-    // then
-    expect(checkbox.disabled).toEqual(true);
+  it('renders input not disabled', async () => {
+    const { html, rerender } = harness;
+    await rerender({ modelValue: true, disabled: true });
+    expect(html()).toMatch('disabled="true"');
   });
 
-  it('does not emit event when disabled', () => {
-    // given
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: false, label, disabled: true },
-    });
-    // when
-    wrapper.find('.neon-toggle-chip').trigger('click');
-    // then
-    expect(wrapper.emitted().input).toBeUndefined();
+  it('does not emit event when disabled', async () => {
+    const { container, emitted, rerender } = harness;
+    await rerender({ modelValue: false, label, disabled: true });
+    await fireEvent.click(container.querySelector('.neon-toggle-chip__input') as HTMLInputElement);
+    expect(emitted()['update:modelValue']).toBeUndefined();
   });
 
-  it('toggles chip on when clicked', () => {
-    // given
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: false, label },
-    });
-    // when
-    wrapper.find('.neon-toggle-chip').trigger('click');
-    // then
-    expect(wrapper.emitted().input[0]).toEqual([true]);
+  it('emits event when clicked', async () => {
+    const { container, emitted, rerender } = harness;
+    await rerender({ modelValue: false, label });
+    await fireEvent.click(container.querySelector('.neon-toggle-chip__input') as HTMLInputElement);
+    expect(emitted()['update:modelValue']).toEqual([[true]]);
   });
 
-  it('toggles chip off when clicked', () => {
-    // given
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: true, label },
-    });
-    // when
-    wrapper.find('.neon-toggle-chip').trigger('click');
-    // then
-    expect(wrapper.emitted().input[0]).toEqual([false]);
+  it('toggles chip off when clicked', async () => {
+    const { container, emitted, rerender } = harness;
+    await rerender({ modelValue: true, label });
+    await fireEvent.click(container.querySelector('.neon-toggle-chip__input') as HTMLInputElement);
+    expect(emitted()['update:modelValue']).toEqual([[false]]);
   });
 
-  it('toggles chip toggle when enter pressed', () => {
-    // given
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: false, label },
+  it('toggles chip toggle when enter pressed', async () => {
+    const { container, emitted, rerender } = harness;
+    await rerender({ modelValue: false, label });
+    await fireEvent.keyDown(container.querySelector('.neon-toggle-chip') as HTMLLabelElement, {
+      key: 'Enter',
+      code: 'Enter',
     });
-    // when
-    wrapper.find('.neon-toggle-chip').trigger('keydown.enter');
-    // then
-    expect(wrapper.emitted().input[0]).toEqual([true]);
+    expect(emitted()['update:modelValue']).toEqual([[true]]);
   });
 
-  it('does not toggle chip when enter pressed and disabled', () => {
-    // given
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: false, label, disabled: true },
+  it('does not toggle chip when enter pressed and disabled', async () => {
+    const { container, emitted, rerender } = harness;
+    await rerender({ modelValue: false, label, disabled: true });
+    await fireEvent.keyDown(container.querySelector('.neon-toggle-chip') as HTMLLabelElement, {
+      key: 'Enter',
+      code: 'Enter',
     });
-    // when
-    wrapper.find('.neon-toggle-chip').trigger('keydown.enter');
-    // then
-    expect(wrapper.emitted().input).toBeUndefined();
+    expect(emitted()['update:modelValue']).toBeUndefined();
   });
 
-  it('toggles chip toggle when space pressed', () => {
-    // given
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: false, label },
+  it('toggles chip toggle when space pressed', async () => {
+    const { container, emitted, rerender } = harness;
+    await rerender({ modelValue: false, label });
+    await fireEvent.keyDown(container.querySelector('.neon-toggle-chip') as HTMLLabelElement, {
+      key: 'Space',
+      code: 'Space',
     });
-    // when
-    wrapper.find('.neon-toggle-chip').trigger('keydown.space');
-    // then
-    expect(wrapper.emitted().input[0]).toEqual([true]);
+    expect(emitted()['update:modelValue']).toEqual([[true]]);
   });
 
-  it('does not toggle chip when space pressed and disabled', () => {
-    // given
-    const wrapper = mount(NeonToggleChip, {
-      propsData: { value: false, label, disabled: true },
+  it('does not toggle chip when space pressed and disabled', async () => {
+    const { container, emitted, rerender } = harness;
+    await rerender({ modelValue: false, label, disabled: true });
+    await fireEvent.keyDown(container.querySelector('.neon-toggle-chip') as HTMLLabelElement, {
+      key: 'Space',
+      code: 'Space',
     });
-    // when
-    wrapper.find('.neon-toggle-chip').trigger('keydown.space');
-    // then
-    expect(wrapper.emitted().input).toBeUndefined();
+    expect(emitted()['update:modelValue']).toBeUndefined();
   });
 });

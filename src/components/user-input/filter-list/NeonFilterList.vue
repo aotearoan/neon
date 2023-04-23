@@ -1,47 +1,47 @@
 <template>
   <div
-    class="neon-filter-list"
+    :aria-activedescendant="(multiple && modelValue[0]) || (!multiple && modelValue) || null"
+    :aria-multiselectable="multiple"
     :class="[
       `neon-filter-list--${color}`,
       `neon-list--${size}`,
       `neon-filter-list--${size}`,
       { 'neon-filter-list--multiple': multiple },
     ]"
+    class="neon-filter-list"
     role="listbox"
-    :aria-activedescendant="multiple ? value[0] : value"
-    :aria-multiselectable="multiple"
   >
     <div
       v-for="item in visibleItems"
       :key="item.key"
-      class="neon-list__item neon-filter-list__item"
+      :aria-selected="selected[item.key]"
       :class="[
         {
           'neon-filter-list__item--disabled': item.disabled,
+          'neon-filter-list__item--enabled': !item.disabled,
           'neon-filter-list__item--selected': selected[item.key],
         },
       ]"
       :tabindex="!item.disabled ? 0 : -1"
+      class="neon-list__item neon-filter-list__item"
       role="option"
-      :aria-selected="selected[item.key]"
-      @click="!item.disabled && toggleItem(item.key, $event)"
-      @keydown.enter="!item.disabled && toggleItem(item.key)"
-      @keydown.space="!item.disabled && toggleItem(item.key)"
-      @keypress.space.prevent=""
+      @click.stop.prevent="!item.disabled && toggleItem(item.key, $event)"
+      @keydown.enter.stop.prevent="!item.disabled && toggleItem(item.key)"
+      @keydown.space.stop.prevent="!item.disabled && toggleItem(item.key)"
     >
       <span class="neon-filter-list__item-label">{{ item.label }}</span>
       <span v-if="item.count" class="neon-filter-list__item-count">{{ item.count.toLocaleString() }}</span>
       <neon-icon
         v-if="!item.disabled && selected[item.key]"
-        class="neon-filter-list__item-close"
-        name="times"
         :color="color"
         :disabled="item.disabled"
+        class="neon-filter-list__item-close"
+        name="times"
       />
     </div>
-    <neon-link v-if="displayShowAllToggle()" @click="toggleShowAll()" class="neon-filter-list__show-toggle">{{
-      toggleShowAllLabel
-    }}</neon-link>
+    <neon-link v-if="displayShowAllToggle" class="neon-filter-list__show-toggle" @click="toggleShowAll()">
+      {{ toggleShowAllLabel }}
+    </neon-link>
   </div>
 </template>
 

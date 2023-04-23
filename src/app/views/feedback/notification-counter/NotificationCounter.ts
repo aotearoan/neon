@@ -1,44 +1,38 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonNotificationCounter } from '../../../../components';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import { Menu, MenuModel } from '../../../Menu';
-import NeonSwitch from '../../../../components/user-input/switch/NeonSwitch';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonNotificationCounter, NeonSwitch } from '@/neon';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
 
-@Component({
+export default defineComponent({
+  name: 'NotificationCounter',
   components: {
     NeonCard,
     NeonCardBody,
     NeonNotificationCounter,
     NeonSwitch,
     ComponentDocumentation,
+    Editor,
   },
-})
-export default class NotificationCounter extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('A component for notifying the user of new items');
 
-  private headline = 'A component for notifying the user of new items';
+    const active = ref(true);
 
-  private example = `<div class="example--vertical">
-  <div class="example--horizontal example--margin-top">
-    <span class="positioned-element">No value<neon-notification-counter :active="active" /></span>
-    <span class="positioned-element">With value<neon-notification-counter count="9" :active="active" /></span>
-    <span class="positioned-element">Large number<neon-notification-counter count="42" :active="active" /></span>
-    <span class="positioned-element">With color<neon-notification-counter count="9" color="brand" :active="active" /></span>
-  </div>
-  <neon-switch label="Activate notifications" v-model="active" />
-</div>`;
+    const template = `<neon-notification-counter :active="active" />
+<neon-notification-counter :count="9" :active="active" />
+<neon-notification-counter :count="42" :active="active" />
+<neon-notification-counter :count="9" color="brand" :active="active" />`;
 
-  private examples = [
-    {
-      title: 'Notification counters',
-      template: this.example,
-      data: {
-        active: true,
-      },
-    },
-  ];
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonNotificationCounter')));
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonNotificationCounter');
-  }
-}
+    return {
+      menuModel,
+      headline,
+      active,
+      template,
+    };
+  },
+});

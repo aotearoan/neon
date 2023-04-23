@@ -1,4 +1,4 @@
-import { Component, Vue } from 'vue-property-decorator';
+import { computed, defineComponent, ref, useAttrs } from 'vue';
 import NeonInput from '../input/NeonInput.vue';
 
 /**
@@ -8,27 +8,39 @@ import NeonInput from '../input/NeonInput.vue';
  * display of the password.
  * </p>
  */
-@Component({
+export default defineComponent({
+  name: 'NeonPassword',
   components: {
     NeonInput,
   },
-})
-export default class NeonPassword extends Vue {
-  private show = false;
-
-  private get sanitizedListeners(): Record<string, Function | Function[]> {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { iconClicked, ...sanitized } = this.$listeners;
-    return sanitized;
-  }
-
-  private iconClicked() {
-    this.show = !this.show;
+  emits: [
     /**
      * Emitted when the show/hide password icon is clicked
      *
      * @type {void}
      */
-    this.$emit('icon-click');
-  }
-}
+    'icon-click',
+  ],
+  setup(props, { emit }) {
+    const attrs = useAttrs();
+
+    const show = ref(false);
+
+    const sanitizedAttributes = computed(() => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { iconClick, ...sanitized } = attrs;
+      return sanitized;
+    });
+
+    const iconClicked = () => {
+      show.value = !show.value;
+      emit('icon-click');
+    };
+
+    return {
+      show,
+      sanitizedAttributes,
+      iconClicked,
+    };
+  },
+});

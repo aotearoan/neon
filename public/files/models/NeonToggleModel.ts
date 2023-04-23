@@ -1,8 +1,6 @@
-import { TranslateResult } from 'vue-i18n';
-
 export interface NeonToggleModel {
   key: string;
-  label?: TranslateResult;
+  label?: string;
   icon?: string;
   disabled?: boolean;
 }

@@ -1,0 +1,223 @@
+@use '../includes/palettes';
+@use '../includes/responsive';
+@use '../includes/outline';
+
+@mixin date-picker {
+  .neon-date-picker {
+    position: relative;
+
+    .neon-date-picker__button {
+      z-index: var(--neon-z-index-default);
+
+      input {
+        pointer-events: none;
+        user-select: none;
+        font-variant: tabular-nums;
+      }
+
+      &,
+      .neon-icon {
+        cursor: default;
+        user-select: none;
+      }
+    }
+
+    .neon-date-picker__button-click-capture {
+      position: absolute;
+      z-index: var(--neon-z-index-above);
+      border-radius: var(--neon-border-radius-input);
+      width: 100%;
+      height: 100%;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .neon-date-picker__native-input {
+      pointer-events: none;
+      width: 100%;
+      min-width: 100%;
+      display: flex;
+      opacity: 0;
+      z-index: var(--neon-z-index-above);
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      @include responsive.touchscreen {
+        pointer-events: all;
+      }
+    }
+
+    &__calendar {
+      $cell-size: 36rem;
+      user-select: none;
+      padding: calc(3 * var(--neon-base-space));
+      font-variant: tabular-nums;
+      min-width: 304rem;
+      width: 304rem;
+
+      &-header {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: calc(2 * var(--neon-base-space));
+
+        &-actions {
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+        }
+
+        &-actions button {
+          margin-left: var(--neon-base-space);
+        }
+      }
+
+      .neon-date-picker__calendar-header-title {
+        flex: 0 1 auto;
+        font-size: var(--neon-font-size-s);
+      }
+
+      &-change-date-button {
+        margin-left: var(--neon-base-space);
+      }
+
+      &-dows,
+      &-dates {
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+
+      &-dow {
+        margin: calc(0.5 * var(--neon-base-space));
+        text-align: center;
+        width: $cell-size;
+        min-width: $cell-size;
+        text-transform: uppercase;
+        font-size: var(--neon-font-size-xs);
+        letter-spacing: var(--neon-letter-spacing-m);
+        color: var(--neon-color-low-contrast);
+      }
+
+      .neon-date-picker__calendar-date {
+        margin: calc(0.5 * var(--neon-base-space));
+        justify-content: center;
+        min-width: $cell-size;
+        width: $cell-size;
+        min-height: $cell-size;
+        height: $cell-size;
+        border-radius: 50%;
+        font-size: var(--neon-font-size-s);
+        cursor: pointer;
+        color: var(--neon-color-text-strong);
+        background-color: transparent;
+
+        &--empty {
+          cursor: default;
+        }
+
+        &.neon-date-picker__calendar-date--disabled {
+          cursor: not-allowed;
+          color: var(--neon-color-disabled-light);
+        }
+      }
+    }
+
+    .neon-date-picker__calendar-options {
+      margin-top: calc(2 * var(--neon-base-space));
+      display: inline-flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: calc(2 * var(--neon-base-space));
+
+      .neon-date-picker__calendar-option {
+        width: 84rem;
+        max-width: 88rem;
+        font-size: var(--neon-font-size-s);
+        cursor: pointer;
+        color: var(--neon-color-text-strong);
+        background-color: transparent;
+
+        &.neon-date-picker__calendar-option--disabled {
+          cursor: not-allowed;
+          color: var(--neon-color-disabled-light);
+        }
+      }
+    }
+
+    .neon-date-picker__calendar-title-readonly {
+      align-self: center;
+      font-weight: var(--neon-font-weight-semi-bold);
+    }
+
+    @each $color in palettes.$neon-functional-colors {
+      &--#{$color} {
+        .neon-date-picker__calendar-date--today,
+        .neon-date-picker__calendar-options .neon-date-picker__calendar-option--today {
+          color: var(--neon-color-#{$color});
+          background-color: rgba(var(--neon-rgb-#{$color}), 0.125);
+          font-weight: var(--neon-font-weight-bold);
+        }
+
+        .neon-date-picker__calendar-date--selected:not(:disabled) {
+          &,
+          &.neon-date-picker__calendar-date--selected:active,
+          &.neon-date-picker__calendar-date--selected:focus,
+          &.neon-date-picker__calendar-date--selected:hover {
+            color: var(--neon-color-inverse);
+            background-color: var(--neon-color-#{$color});
+            font-weight: var(--neon-font-weight-bold);
+          }
+        }
+
+        .neon-date-picker__calendar-option--selected:not(:disabled) {
+          &,
+          &.neon-date-picker__calendar-option--selected:active,
+          &.neon-date-picker__calendar-option--selected:focus,
+          &.neon-date-picker__calendar-option--selected:hover {
+            color: var(--neon-color-inverse);
+            background-color: var(--neon-color-#{$color});
+            font-weight: var(--neon-font-weight-bold);
+          }
+        }
+
+        button.neon-date-picker__calendar-option:not(:disabled):not(.neon-date-picker__calendar-option--selected),
+        button.neon-date-picker__calendar-date:not(:disabled):not(.neon-date-picker__calendar-date--selected) {
+          &:focus,
+          &:active,
+          &:hover {
+            color: var(--neon-color-#{$color});
+            background-color: rgba(var(--neon-rgb-#{$color}), 0.25);
+          }
+        }
+
+        button.neon-date-picker__calendar-option:not(:disabled):not(.neon-date-picker__calendar-option--selected),
+        button.neon-date-picker__calendar-date:not(:disabled):not(.neon-date-picker__calendar-date--selected) {
+          &:focus,
+          &:active {
+            color: var(--neon-color-#{$color});
+            background-color: rgba(var(--neon-rgb-#{$color}), 0.25);
+            font-weight: var(--neon-font-weight-bold);
+          }
+        }
+
+        &:not(.neon-date-picker--disabled) .neon-date-picker__button-click-capture {
+          &:focus {
+            border: var(--neon-border);
+            border-color: var(--neon-color-#{$color});
+          }
+        }
+      }
+    }
+
+    hr {
+      margin-top: calc(2 * var(--neon-base-space));
+      margin-bottom: calc(2 * var(--neon-base-space));
+    }
+
+    .neon-button-group > .neon-button + .neon-button {
+      margin-left: calc(2 * var(--neon-base-space));
+    }
+  }
+}

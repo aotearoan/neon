@@ -1,12 +1,11 @@
 {
+  "displayName": "NeonLinearProgress",
   "description": "A component for displaying linear progress. The progress can be displayed as a percentage (default) or\nas a counter (x / y).",
   "tags": {},
   "exportName": "default",
-  "displayName": "NeonLinearProgress",
   "props": [
     {
       "name": "value",
-      "tags": {},
       "description": "If no total is provided (default) the current % completion is expressed as a %, e.g. 0.15 = 15%,\nIn the case of a total being provided this is the count of items from the total, i.e. the 'x' in 'x / y '.",
       "type": {
         "name": "number"
@@ -15,26 +14,31 @@
     },
     {
       "name": "total",
-      "tags": {},
       "description": "When the total is provided the display is 'x / y' where total is the 'y' in 'x / y'.",
       "type": {
         "name": "number"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     },
     {
       "name": "label",
-      "tags": {},
       "description": "A label to display above the progress bar",
       "type": {
-        "name": "TranslateResult"
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     },
     {
       "name": "color",
-      "tags": {},
       "description": "The progress bar color",
       "type": {
-        "name": "NeonFunctionalColor"
+        "name": "String as () => NeonFunctionalColor"
       },
       "defaultValue": {
         "func": false,
@@ -43,18 +47,20 @@
     },
     {
       "name": "alternateColor",
-      "tags": {},
       "description": "The alternate color for displaying the progress as a gradient",
       "type": {
-        "name": "NeonFunctionalColor"
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     },
     {
       "name": "size",
-      "tags": {},
       "description": "The component size, NeonSize.Small or NeonSize.Medium",
       "type": {
-        "name": "NeonSize"
+        "name": "String as () => NeonSize"
       },
       "defaultValue": {
         "func": false,
@@ -62,8 +68,18 @@
       }
     },
     {
+      "name": "locale",
+      "description": "The locale used for display purposes. This defaults to the browser's locale if none is provided.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
       "name": "output",
-      "tags": {},
       "description": "Display the text output indicating the current state of progress",
       "type": {
         "name": "boolean"
@@ -75,23 +91,28 @@
     },
     {
       "name": "completedIcon",
-      "tags": {},
       "description": "Display an icon on completion",
       "type": {
         "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     },
     {
       "name": "completedIconColor",
-      "tags": {},
       "description": "Specify the icon color (default = alternate-color || color)",
       "type": {
-        "name": "NeonFunctionalColor"
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     },
     {
       "name": "decimals",
-      "tags": {},
       "description": "The decimals to use for rounding",
       "type": {
         "name": "number"
@@ -101,5 +122,9 @@
         "value": "0"
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/feedback/linear-progress/NeonLinearProgress.vue",
+    "/Users/andrew/dev/projects/neon/src/components/feedback/linear-progress/NeonLinearProgress.ts"
   ]
 }

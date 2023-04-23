@@ -1,24 +1,22 @@
 {
+  "displayName": "NeonDropZone",
   "description": "Defines a file drop zone.",
   "tags": {},
-  "displayName": "NeonDropZone",
   "exportName": "default",
   "props": [
     {
       "name": "state",
-      "tags": {},
       "description": "The state of the drop zone, used to indicate loading. ACCEPTS <em>Ready</em> and <em>Loading</em> states ONLY.",
       "type": {
-        "name": "NeonState"
+        "name": "String as () => NeonState"
       },
       "defaultValue": {
-        "func": false,
-        "value": "NeonState.Ready"
+        "func": true,
+        "value": "() => NeonState.Ready"
       }
     },
     {
       "name": "disabled",
-      "tags": {},
       "description": "The disabled state of the drop zone",
       "type": {
         "name": "boolean"
@@ -30,10 +28,13 @@
     },
     {
       "name": "circular",
-      "tags": {},
       "description": "Display the drop zone as a circle instead of square",
       "type": {
         "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
       }
     }
   ],
@@ -52,5 +53,9 @@
     {
       "name": "default"
     }
+  ],
+  "sourceFiles": [
+    "./src/components/user-input/drop-zone/NeonDropZone.vue",
+    "/Users/andrew/dev/projects/neon/src/components/user-input/drop-zone/NeonDropZone.ts"
   ]
 }

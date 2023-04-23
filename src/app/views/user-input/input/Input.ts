@@ -1,91 +1,150 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonInput } from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonInput } from '@/neon';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names,vue/no-reserved-component-names
+  name: 'Input',
   components: {
     ComponentDocumentation,
+    Editor,
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
     NeonInput,
   },
-})
-export default class Input extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('HTML input and textarea component');
 
-  private headline = 'HTML input and textarea component';
+    const small = ref('');
+    const medium = ref('');
+    const large = ref('');
+    const ready = ref('');
+    const loading = ref('');
+    const success = ref('');
+    const error = ref('');
+    const lowContrast = ref('');
+    const highContrast = ref('');
+    const brand = ref('');
+    const primary = ref('');
+    const info = ref('');
+    const disabled = ref('');
+    const textArea = ref('');
+    const textAreaDisabled = ref('');
 
-  private data = {
-    small: '',
-    medium: '',
-    large: '',
-    ready: '',
-    loading: '',
-    success: '',
-    error: '',
-    lowContrast: '',
-    highContrast: '',
-    brand: '',
-    primary: '',
-    info: '',
-    disabled: '',
-    textArea: '',
-    textAreaDisabled: '',
-  };
+    const inputSizeExamples = `<neon-input v-model="small"
+                      placeholder="Type here"
+                      size="s"
+                      type="text"
+          />
+          <neon-input v-model="medium"
+                      placeholder="Type here"
+                      size="m"
+                      type="text"
+          />
+          <neon-input v-model="large"
+                      placeholder="Type here"
+                      size="l"
+                      type="text"
+          />`;
 
-  private inputSizeExamples = `<div class="neon-vertically-spaced">
-  <neon-input type="text" size="s" v-model="small" placeholder="Type here" />
-  <neon-input type="text" size="m" v-model="medium" placeholder="Type here" />
-  <neon-input type="text" size="l" v-model="large" placeholder="Type here" />
-</div>`;
+    const inputStateExamples = `<neon-input v-model="ready"
+            placeholder="Type here"
+            size="l" state="ready"
+            type="text"
+/>
+<neon-input v-model="loading"
+            placeholder="Type here"
+            size="l"
+            state="loading"
+            type="text"
+/>
+<neon-input v-model="success"
+            placeholder="Type here"
+            size="l"
+            state="success"
+            type="text"
+/>
+<neon-input v-model="error"
+            placeholder="Type here"
+            size="l"
+            state="error"
+            type="text"
+/>`;
 
-  private inputStateExamples = `<div class="neon-vertically-spaced">
-  <neon-input type="text" size="l" state="ready" v-model="ready" placeholder="Type here" />
-  <neon-input type="text" size="l" state="loading" v-model="loading" placeholder="Type here" />
-  <neon-input type="text" size="l" state="success" v-model="success" placeholder="Type here" />
-  <neon-input type="text" size="l" state="error" v-model="error" placeholder="Type here" />
-</div>`;
+    const inputColorExamples = `<neon-input v-model="lowContrast"
+            color="low-contrast"
+            placeholder="Type here"
+            type="text"
+/>
+<neon-input v-model="highContrast"
+            color="high-contrast"
+            placeholder="Type here"
+            type="text"
+/>
+<neon-input v-model="brand"
+            color="brand"
+            placeholder="Type here"
+            type="text"
+/>
+<neon-input v-model="primary"
+            color="primary"
+            placeholder="Type here"
+            type="text"
+/>
+<neon-input v-model="info"
+            color="info"
+            placeholder="Type here"
+            type="text"
+/>
+<neon-input v-model="disabled"
+            isabled="disabled"
+            placeholder="Type here"
+            type="text"
+/>`;
 
-  private inputColorExamples = `<div class="neon-vertically-spaced">
-  <neon-input color="low-contrast" type="text" v-model="lowContrast" placeholder="Type here" />
-  <neon-input color="high-contrast" type="text" v-model="highContrast" placeholder="Type here" />
-  <neon-input color="brand" type="text" v-model="brand" placeholder="Type here" />
-  <neon-input color="primary" type="text" v-model="primary" placeholder="Type here" />
-  <neon-input color="info" type="text" v-model="info" placeholder="Type here" />
-  <neon-input disabled="disabled" type="text" v-model="disabled" placeholder="Type here" />
-</div>`;
+    const textareaExamples = `<neon-input v-model="textArea"
+            :maxlength="100"
+            :rows="5"
+            placeholder="Type here"
+            type="text"
+/>
+<neon-input v-model="textAreaDisabled"
+            :maxlength="100"
+            :rows="5"
+            disabled="disabled"
+            placeholder="Type here"
+            type="text"
+/>`;
 
-  private textareaExamples = `<div class="neon-vertically-spaced">
-  <neon-input type="text" maxlength="100" rows="5" v-model="textArea" placeholder="Type here" />
-  <neon-input disabled="disabled" maxlength="100" rows="5" type="text" v-model="textAreaDisabled" placeholder="Type here" />
-</div>`;
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonInput')));
 
-  private examples = [
-    {
-      title: 'Input sizes',
-      template: this.inputSizeExamples,
-      data: this.data,
-    },
-    {
-      title: 'Input colors',
-      template: this.inputColorExamples,
-      data: this.data,
-    },
-    {
-      title: 'Input states',
-      template: this.inputStateExamples,
-      data: this.data,
-    },
-    {
-      title: 'Textarea examples',
-      template: this.textareaExamples,
-      data: this.data,
-    },
-  ];
-
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonInput');
-  }
-}
+    return {
+      menuModel,
+      headline,
+      small,
+      medium,
+      large,
+      ready,
+      loading,
+      success,
+      error,
+      lowContrast,
+      highContrast,
+      brand,
+      primary,
+      info,
+      disabled,
+      textArea,
+      textAreaDisabled,
+      inputSizeExamples,
+      inputStateExamples,
+      inputColorExamples,
+      textareaExamples,
+    };
+  },
+});

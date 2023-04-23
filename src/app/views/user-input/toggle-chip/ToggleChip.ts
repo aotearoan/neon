@@ -1,103 +1,92 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonToggleChip } from '../../../../components';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import { Menu, MenuModel } from '../../../Menu';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonNote, NeonToggleChip } from '@/neon';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
 
-@Component({
+export default defineComponent({
+  name: 'ToggleChip',
   components: {
     ComponentDocumentation,
+    Editor,
     NeonCard,
     NeonCardBody,
     NeonToggleChip,
+    NeonNote,
   },
-})
-export default class ToggleChip extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Chips for toggling state');
 
-  private headline = 'Chips for toggling state';
+    const checked1 = ref(true);
+    const checked2 = ref(true);
+    const checked3 = ref(true);
+    const checked4 = ref(true);
+    const checked5 = ref(true);
+    const checked6 = ref(true);
+    const checked7 = ref(true);
+    const checked8 = ref(true);
+    const checked9 = ref(true);
+    const checked10 = ref(true);
+    const checked11 = ref(true);
+    const checked12 = ref(true);
+    const checked13 = ref(false);
+    const checked14 = ref(true);
+    const checked15 = ref(false);
+    const checked16 = ref(false);
+    const checked17 = ref(false);
 
-  private data = {
-    checked1: true,
-    checked2: true,
-    checked3: true,
-    checked4: true,
-    checked5: true,
-    checked6: true,
-    checked7: true,
-    checked8: true,
-    checked9: true,
-    checked10: true,
-    checked11: true,
-    checked12: true,
-    checked13: false,
-    checked14: true,
-    checked15: false,
-    checked16: false,
-    checked17: false,
-  };
+    const sizeTemplate = `<neon-toggle-chip v-model="checked1" label="Extra Small" size="xs" />
+<neon-toggle-chip v-model="checked2" label="Small" size="s" />
+<neon-toggle-chip v-model="checked3" label="Medium" />
+<neon-toggle-chip v-model="checked4" label="Large" size="l" />`;
 
-  private sizeTemplate = `<div class="example--vertical">
-  <neon-toggle-chip size="xs" label="Extra Small" v-model="checked1" />
-  <neon-toggle-chip size="s" label="Small" v-model="checked2" />
-  <neon-toggle-chip label="Medium" v-model="checked3" />
-  <neon-toggle-chip size="l" label="Large" v-model="checked4" />
-</div>`;
+    const noCheckTemplate = `<neon-toggle-chip v-model="checked5" :show-check="false" label="Extra small" size="xs" />
+<neon-toggle-chip v-model="checked6" :show-check="false" label="Small" size="s" />
+<neon-toggle-chip v-model="checked7" :show-check="false" label="Medium" size="m" />
+<neon-toggle-chip v-model="checked8" :show-check="false" label="Large" size="l" />`;
 
-  private noCheckTemplate = `<div class="example--vertical">
-  <neon-toggle-chip :show-check="false" size="xs" label="Extra small" v-model="checked5" />
-  <neon-toggle-chip :show-check="false" size="s" label="Small" v-model="checked6" />
-  <neon-toggle-chip :show-check="false" size="m" label="Medium" v-model="checked7" />
-  <neon-toggle-chip :show-check="false" size="l" label="Large" v-model="checked8" />
-</div>`;
+    const colorTemplate = `<neon-toggle-chip v-model="checked9" color="brand" label="Brand" />
+<neon-toggle-chip v-model="checked10" color="primary" label="Primary" />
+<neon-toggle-chip v-model="checked11" color="info" label="Info" />
+<neon-toggle-chip v-model="checked12" color="warn" label="Warning" />`;
 
-  private colorTemplate = `<div class="example--vertical">
-  <neon-toggle-chip label="Brand" color="brand" v-model="checked9" />
-  <neon-toggle-chip label="Primary" color="primary" v-model="checked10" />
-  <neon-toggle-chip label="Info" color="info" v-model="checked11" />
-  <neon-toggle-chip label="Warning" color="warn" v-model="checked12" />
-</div>`;
+    const fewOptionsTemplate = `<neon-toggle-chip v-model="checked13" :show-check="false" label="Bacon" size="s" />
+<neon-toggle-chip v-model="checked14" :show-check="false" label="Cheese" size="s" />
+<neon-toggle-chip v-model="checked15" :show-check="false" label="Pineapple" size="s" />
+<neon-toggle-chip v-model="checked16" :show-check="false" label="Mushrooms" size="s" />`;
 
-  private fewOptionsTemplate = `<div class="example--horizontal">
-  <neon-toggle-chip :show-check="false" size="s" label="Bacon" v-model="checked13" />
-  <neon-toggle-chip :show-check="false" size="s" label="Cheese" v-model="checked14" />
-  <neon-toggle-chip :show-check="false" size="s" label="Pineapple" v-model="checked15" />
-  <neon-toggle-chip :show-check="false" size="s" label="Mushrooms" v-model="checked16" />
-</div>`;
+    const stateTemplate =
+      '<neon-toggle-chip v-model="checked17" :disabled="true" color="primary" label="Disabled" size="m" />';
 
-  private stateTemplate = `<div class="example--vertical">
-  <neon-toggle-chip size="m" label="Disabled" color="primary" :disabled="true" v-model="checked17" />
-</div>`;
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonToggleChip')));
 
-  private examples = [
-    {
-      title: 'Toggle chip sizes',
-      template: this.sizeTemplate,
-      data: this.data,
-    },
-    {
-      title: 'Toggle chip with no check',
-      template: this.noCheckTemplate,
-      data: this.data,
-    },
-    {
-      title: 'Toggle chip colors',
-      template: this.colorTemplate,
-      data: this.data,
-    },
-    {
-      title: 'Group toggle chips',
-      tip: 'Use toggle chips as an alternative to a multi-select with only a few options',
-      template: this.fewOptionsTemplate,
-      data: this.data,
-    },
-    {
-      title: 'Disabled toggle chip',
-      template: this.stateTemplate,
-      data: this.data,
-    },
-  ];
-
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonToggleChip');
-  }
-}
+    return {
+      menuModel,
+      headline,
+      checked1,
+      checked2,
+      checked3,
+      checked4,
+      checked5,
+      checked6,
+      checked7,
+      checked8,
+      checked9,
+      checked10,
+      checked11,
+      checked12,
+      checked13,
+      checked14,
+      checked15,
+      checked16,
+      checked17,
+      sizeTemplate,
+      noCheckTemplate,
+      colorTemplate,
+      fewOptionsTemplate,
+      stateTemplate,
+    };
+  },
+});

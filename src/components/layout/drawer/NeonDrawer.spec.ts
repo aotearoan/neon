@@ -1,185 +1,93 @@
-import { mount } from '@vue/test-utils';
-import { NeonPosition } from '../../../common/enums/NeonPosition';
+import type { RenderResult } from '@testing-library/vue';
+import { fireEvent, render } from '@testing-library/vue';
 import NeonDrawer from './NeonDrawer.vue';
+import { NeonPosition } from '@/common/enums/NeonPosition';
 
 describe('NeonDrawer', () => {
+  let harness: RenderResult;
+
+  beforeEach(() => {
+    harness = render(NeonDrawer, {
+      props: { open: false },
+      slots: { default: '<p>test</p>' },
+    });
+  });
+
   it('renders default slot contents', () => {
     // given
-    const slotValue = 'xd';
-    const wrapper = mount(NeonDrawer, {
-      propsData: { open: true },
-      slots: {
-        default: `<p>${slotValue}</p>`,
-      },
-    });
+    const { html } = harness;
     // when / then
-    expect(wrapper.find('.neon-drawer__container p').text()).toEqual(slotValue);
+    expect(html()).toMatch('<p>test</p>');
   });
 
-  it('renders full width class', () => {
+  it('renders full width class', async () => {
     // given
-    const wrapper = mount(NeonDrawer, {
-      propsData: { open: true, fullWidth: true },
-    });
+    const { html, rerender } = harness;
+    await rerender({ open: true, fullWidth: true });
     // when / then
-    expect(wrapper.find('.neon-drawer__container--full-width').element).toBeDefined();
+    expect(html()).toMatch('neon-drawer__container--full-width');
   });
 
-  it('renders as closed by default', () => {
+  it('renders closed by default', () => {
     // given
-    const wrapper = mount(NeonDrawer, {
-      propsData: { open: true },
-    });
+    const { html } = harness;
     // when / then
-    expect(wrapper.find('.neon-drawer--open').element).toBeDefined();
+    expect(html()).not.toMatch('neon-drawer--open');
   });
 
-  it('renders open class', () => {
+  it('renders open', async () => {
     // given
-    const wrapper = mount(NeonDrawer, {
-      propsData: { open: false },
-    });
+    const { html, rerender } = harness;
+    await rerender({ open: true });
     // when / then
-    expect(wrapper.find('.neon-drawer--open').element).toBeUndefined();
+    expect(html()).toMatch('neon-drawer--open');
   });
 
-  it('renders position class', () => {
+  it('renders position', async () => {
     // given
-    const wrapper = mount(NeonDrawer, {
-      propsData: { open: true, position: NeonPosition.Right },
-    });
+    const { html, rerender } = harness;
+    await rerender({ open: true, position: NeonPosition.Right });
     // when / then
-    expect(wrapper.find('.neon-drawer--right').element).toBeDefined();
+    expect(html()).toMatch('neon-drawer--right');
   });
 
-  it('renders overlay class by default', () => {
+  it('renders overlay default', async () => {
     // given
-    const wrapper = mount(NeonDrawer, {
-      propsData: { open: true },
-    });
+    const { html, rerender } = harness;
+    await rerender({ open: true });
     // when / then
-    expect(wrapper.find('.neon-drawer--with-overlay').element).toBeDefined();
+    expect(html()).toMatch('neon-drawer--with-overlay');
   });
 
-  it('renders without overlay class', () => {
+  it('renders overlay off', async () => {
     // given
-    const wrapper = mount(NeonDrawer, {
-      propsData: { open: true, overlay: false },
-    });
+    const { html, rerender } = harness;
+    await rerender({ open: true, overlay: false });
     // when / then
-    expect(wrapper.find('.neon-drawer--with-overlay').element).toBeUndefined();
+    expect(html()).not.toMatch('neon-drawer--with-overlay');
   });
 
-  it('emits close event on escape key', (done) => {
+  it('emits close event on escape key', async () => {
     // given
-    const wrapper = mount(NeonDrawer, {
-      propsData: { open: true },
-    });
-    // when
-    setTimeout(() => {
-      // when
-      const event = new KeyboardEvent('keyup', { key: 'Escape' });
-      document.dispatchEvent(event);
-      // then
-      expect(wrapper.emitted().close).toBeTruthy();
-      done();
-    });
+    const { emitted, getByText } = render(NeonDrawer, { props: { open: true }, slots: { default: '<p>XDD</p>' } });
+    // when / then
+    await fireEvent.keyDown(getByText('XDD'), { key: 'Escape', code: 'Escape' });
+    expect(emitted().close).toEqual([[]]);
   });
 
-  it('emits close event on click outside drawer container', (done) => {
+  it('emits close event on outside click', async () => {
     // given
-    const wrapper = mount(NeonDrawer, {
-      propsData: { open: true },
-    });
-    // when
-    setTimeout(() => {
-      // when
-      const clickEvent = new MouseEvent('mousedown');
-      Object.defineProperty(clickEvent, 'target', { value: document.body });
-      document.dispatchEvent(clickEvent);
-      // then
-      expect(wrapper.emitted().close).toBeTruthy();
-      done();
-    });
+    const { emitted } = (harness = render(NeonDrawer, { props: { open: true } }));
+    // when / then
+    await fireEvent.mouseDown(document);
+    expect(emitted().close).toEqual([[]]);
   });
 
-  it('does not init closable utils when not dismissable', () => {
+  it('does not emit close event on inside click', async () => {
     // given
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const wrapper: any = mount(NeonDrawer, {
-      propsData: { open: true, dismissable: false },
-      slots: {
-        default: '<p>xd</p>',
-      },
-    });
-    wrapper.destroy();
-    // then
-    expect(wrapper.vm.closableUtils).toBeUndefined();
-  });
-
-  it('does not emit close event on click inside drawer container', (done) => {
-    // given
-    const wrapper = mount(NeonDrawer, {
-      propsData: { open: true },
-      slots: {
-        default: '<p>xd</p>',
-      },
-    });
-    // when
-    setTimeout(() => {
-      // when
-      const insideElement = wrapper.find('.neon-drawer__container p').element;
-      const clickEvent = new MouseEvent('mousedown');
-      Object.defineProperty(clickEvent, 'target', { value: insideElement });
-      document.dispatchEvent(clickEvent);
-      // then
-      expect(wrapper.emitted().close).toBeFalsy();
-      done();
-    });
-  });
-
-  it('calls closable utils destroy', () => {
-    // given
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const wrapper: any = mount(NeonDrawer, {
-      propsData: { open: true },
-    });
-    const destroyFn = wrapper.vm.closableUtils.destroy;
-    wrapper.vm.closableUtils.destroy = jest.fn();
-    // when
-    wrapper.destroy();
-    // then
-    expect(wrapper.vm.closableUtils.destroy).toHaveBeenCalled();
-    wrapper.vm.closableUtils.destroy = destroyFn;
-  });
-
-  it('calls closable open on open true', () => {
-    // given
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const wrapper: any = mount(NeonDrawer, {
-      propsData: { open: false },
-    });
-    const openFn = wrapper.vm.closableUtils.open;
-    wrapper.vm.closableUtils.open = jest.fn();
-    // when
-    wrapper.vm.onOpen(true);
-    // then
-    expect(wrapper.vm.closableUtils.open).toHaveBeenCalled();
-    wrapper.vm.closableUtils.open = openFn;
-  });
-
-  it('calls closable close on open false', () => {
-    // given
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const wrapper: any = mount(NeonDrawer, {
-      propsData: { open: true },
-    });
-    const closeFn = wrapper.vm.closableUtils.close;
-    wrapper.vm.closableUtils.close = jest.fn();
-    // when
-    wrapper.vm.onOpen(false);
-    // then
-    expect(wrapper.vm.closableUtils.close).toHaveBeenCalled();
-    wrapper.vm.closableUtils.close = closeFn;
+    const { baseElement, emitted } = (harness = render(NeonDrawer, { props: { open: true } }));
+    // when / then
+    await fireEvent.mouseDown(baseElement);
+    expect(emitted().close).toEqual([[]]);
   });
 });

@@ -1,8 +1,6 @@
-import { TranslateResult } from 'vue-i18n';
-
 export interface NeonMenuItem {
   key: string;
-  label: TranslateResult;
+  label: string;
   href?: string;
   icon?: string;
   disabled?: boolean;

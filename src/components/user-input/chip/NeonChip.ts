@@ -1,9 +1,8 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { TranslateResult } from 'vue-i18n';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
-import { NeonChipAction } from '../../../common/enums/NeonChipAction';
+import { computed, defineComponent, ref, useAttrs } from 'vue';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
+import { NeonChipAction } from '@/common/enums/NeonChipAction';
 
 /**
  * <p>
@@ -17,99 +16,105 @@ import { NeonChipAction } from '../../../common/enums/NeonChipAction';
  *   the case of removable tabs, use backspace and delete to remove a tab. Escape will blur a focussed tab.
  * </p>
  */
-@Component({
+export default defineComponent({
+  name: 'NeonChip',
   components: {
     NeonIcon,
   },
-})
-export default class NeonChip extends Vue {
-  readonly $refs!: {
-    chip: HTMLDivElement;
-  };
+  props: {
+    /**
+     * The chip label
+     */
+    label: { type: String, required: true },
+    /**
+     * The size of the chip.
+     */
+    size: { type: String as () => NeonSize, default: NeonSize.Medium },
+    /**
+     * The chip color.
+     */
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    /**
+     * The action when clicking on a chip. Can be click or remove.
+     */
+    action: { type: String as () => NeonChipAction, default: NeonChipAction.Click },
+    /**
+     * The chip disabled state.
+     */
+    disabled: { type: Boolean, default: false },
+    /**
+     * This is the name of an icon which can optionally be added to the chip.
+     */
+    icon: { type: String, default: null },
+  },
+  emits: [
+    /**
+     * Emitted when the chip is closed by the user.
+     *
+     * @type {void}
+     */
+    'close',
+    /**
+     * Emitted when the chip is clicked on.
+     *
+     * @type {void}
+     */
+    'click',
+  ],
+  setup(props, { emit }) {
+    const attrs = useAttrs();
 
-  private open = true;
-  active = false;
-  /**
-   * The chip label
-   */
-  @Prop({ required: true })
-  public label!: TranslateResult;
+    const chip = ref(null);
+    const open = ref(true);
+    const active = ref(false);
 
-  /**
-   * The size of the chip.
-   */
-  @Prop({ default: NeonSize.Medium })
-  public size!: NeonSize;
-
-  /**
-   * The chip color.
-   */
-  @Prop({ default: NeonFunctionalColor.LowContrast })
-  public color!: NeonFunctionalColor;
-
-  /**
-   * The action when clicking on a chip. Can be click or remove.
-   */
-  @Prop({ default: NeonChipAction.Click })
-  public action!: NeonChipAction;
-
-  /**
-   * The chip disabled state.
-   */
-  @Prop({ default: false })
-  public disabled!: boolean;
-
-  /**
-   * This is the name of an icon which can optionally be added to the chip.
-   */
-  @Prop()
-  public icon?: string;
-
-  private clicked() {
-    if (!this.disabled) {
-      switch (this.action) {
-        case NeonChipAction.Remove:
-          this.open = false;
-          /**
-           * Emitted when the chip is closed by the user.
-           *
-           * @type {void}
-           */
-          this.$emit('close');
-          break;
-        case NeonChipAction.Click:
-          /**
-           * Emitted when the chip is clicked on.
-           *
-           * @type {void}
-           */
-          this.$emit('click');
-          break;
+    const role = computed(() => {
+      if (!props.disabled) {
+        switch (props.action) {
+          case NeonChipAction.Remove:
+            return 'button';
+          case NeonChipAction.Click:
+            return 'link';
+        }
       }
-    }
-  }
 
-  private get role() {
-    if (!this.disabled) {
-      switch (this.action) {
-        case NeonChipAction.Remove:
-          return 'button';
-        case NeonChipAction.Click:
-          return 'link';
+      return undefined;
+    });
+
+    const clicked = () => {
+      if (!props.disabled) {
+        switch (props.action) {
+          case NeonChipAction.Remove:
+            open.value = false;
+            emit('close');
+            break;
+          case NeonChipAction.Click:
+            emit('click');
+            break;
+        }
       }
-    }
+    };
 
-    return undefined;
-  }
+    const keyUp = () => {
+      active.value = false;
+    };
 
-  private keyUp() {
-    this.active = false;
-  }
+    const keyDown = () => {
+      if (!props.disabled) {
+        active.value = true;
+        clicked();
+      }
+    };
 
-  private keyDown() {
-    if (!this.disabled) {
-      this.active = true;
-      this.clicked();
-    }
-  }
-}
+    return {
+      chip,
+      open,
+      active,
+      role,
+      attrs,
+      keyUp,
+      keyDown,
+      clicked,
+    };
+  },
+});

@@ -1,12 +1,11 @@
 {
+  "displayName": "NeonToggleChip",
   "description": "<p>\nA Toggle chip component used to indicate an on/off state in form inputs. This is equivalent to a checkbox. This is a\nvariation of a checkbox/switch which can be used as an on/off button to trigger an action or used in a group for\nfiltering.\n</p>",
   "tags": {},
   "exportName": "default",
-  "displayName": "NeonToggleChip",
   "props": [
     {
-      "name": "value",
-      "tags": {},
+      "name": "modelValue",
       "description": "The toggle chip model.",
       "type": {
         "name": "boolean"
@@ -15,19 +14,17 @@
     },
     {
       "name": "label",
-      "tags": {},
       "description": "The toggle label.",
       "type": {
-        "name": "TranslateResult"
+        "name": "string"
       },
       "required": true
     },
     {
       "name": "size",
-      "tags": {},
       "description": "The size of the toggle chip.",
       "type": {
-        "name": "NeonSize"
+        "name": "String as () => NeonSize"
       },
       "defaultValue": {
         "func": false,
@@ -36,10 +33,9 @@
     },
     {
       "name": "color",
-      "tags": {},
       "description": "The toggle chip color.",
       "type": {
-        "name": "NeonFunctionalColor"
+        "name": "String as () => NeonFunctionalColor"
       },
       "defaultValue": {
         "func": false,
@@ -48,8 +44,7 @@
     },
     {
       "name": "showCheck",
-      "tags": {},
-      "description": "Whether or not to display a checked icon on the toggle chip when it is 'on'.",
+      "description": "Whether to display a checked icon on the toggle chip when it is 'on'.",
       "type": {
         "name": "boolean"
       },
@@ -60,7 +55,6 @@
     },
     {
       "name": "disabled",
-      "tags": {},
       "description": "Disabled state of the toggle chip.",
       "type": {
         "name": "boolean"
@@ -73,7 +67,7 @@
   ],
   "events": [
     {
-      "name": "input",
+      "name": "update:modelValue",
       "description": "Emitted when the toggle chip is toggled on or off.",
       "type": {
         "names": [
@@ -81,5 +75,9 @@
         ]
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/user-input/toggle-chip/NeonToggleChip.vue",
+    "/Users/andrew/dev/projects/neon/src/components/user-input/toggle-chip/NeonToggleChip.ts"
   ]
 }

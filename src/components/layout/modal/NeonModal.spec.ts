@@ -1,160 +1,106 @@
-import { mount } from '@vue/test-utils';
+import type { RenderResult } from '@testing-library/vue';
+import { fireEvent, render } from '@testing-library/vue';
 import NeonModal from './NeonModal.vue';
-import NeonButton from '../../user-input/button/NeonButton.vue';
-import Vue from 'vue';
-
-Vue.component('NeonButton', NeonButton);
 
 describe('NeonModal', () => {
+  const props = { open: true };
+  let harness: RenderResult;
+
+  beforeEach(() => {
+    harness = render(NeonModal, {
+      props,
+      slots: {
+        default: '<p>test</p>',
+      },
+    });
+  });
+
   it('renders default slot contents', () => {
     // given
-    const slotValue = 'xd';
-    const wrapper = mount(NeonModal, {
-      propsData: { open: true },
-      slots: {
-        default: `<p>${slotValue}</p>`,
-      },
-    });
+    const { html } = harness;
     // when / then
-    expect(wrapper.find('.neon-modal__container p').text()).toEqual(slotValue);
+    expect(html()).toMatch('<p>test</p>');
   });
 
-  it('renders as closed by default', () => {
+  it('renders closed', async () => {
     // given
-    const wrapper = mount(NeonModal, {
-      propsData: { open: true },
-    });
+    const { html, rerender } = harness;
+    await rerender({ open: false });
     // when / then
-    expect(wrapper.find('.neon-modal--open').element).toBeDefined();
+    expect(html()).not.toMatch('neon-modal--open');
   });
 
-  it('renders open class', () => {
+  it('renders open', () => {
     // given
-    const wrapper = mount(NeonModal, {
-      propsData: { open: false },
-    });
+    const { html } = harness;
     // when / then
-    expect(wrapper.find('.neon-modal--open').element).toBeUndefined();
+    expect(html()).toMatch('neon-modal--open');
   });
 
-  it('emits close event on escape key', (done) => {
+  it('renders opaque', async () => {
     // given
-    const wrapper = mount(NeonModal, {
-      propsData: { open: true },
-    });
-    // when
-    setTimeout(() => {
-      // when
-      const event = new KeyboardEvent('keyup', { key: 'Escape' });
-      document.dispatchEvent(event);
-      // then
-      expect(wrapper.emitted().close).toBeTruthy();
-      done();
-    });
+    const { html, rerender } = harness;
+    await rerender({ opaque: true });
+    // when / then
+    expect(html()).toMatch('neon-modal__overlay--opaque');
   });
 
-  it('emits close event on click outside modal container', (done) => {
+  it('renders transparent', () => {
     // given
-    const wrapper = mount(NeonModal, {
-      propsData: { open: true },
-    });
-    // when
-    setTimeout(() => {
-      // when
-      const clickEvent = new MouseEvent('mousedown');
-      Object.defineProperty(clickEvent, 'target', { value: document.body });
-      document.dispatchEvent(clickEvent);
-      // then
-      expect(wrapper.emitted().close).toBeTruthy();
-      done();
-    });
+    const { html } = harness;
+    // when / then
+    expect(html()).not.toMatch('neon-modal__overlay--opaque');
   });
 
-  it('does not emit close event on click outside modal container when dismissable = false', (done) => {
+  it('renders top nav visible', async () => {
     // given
-    const wrapper = mount(NeonModal, {
-      propsData: { open: true, dismissable: false },
-    });
-    // when
-    setTimeout(() => {
-      // when
-      const clickEvent = new MouseEvent('mousedown');
-      Object.defineProperty(clickEvent, 'target', { value: document.body });
-      document.dispatchEvent(clickEvent);
-      // then
-      expect(wrapper.emitted().close).toBeFalsy();
-      done();
-    });
+    const { html, rerender } = harness;
+    await rerender({ showTopNav: true });
+    // when / then
+    expect(html()).toMatch('neon-modal__overlay--show-top-nav');
   });
 
-  it('does not emit close event on click inside modal container', (done) => {
+  it('renders over top nav', () => {
     // given
-    const wrapper = mount(NeonModal, {
-      propsData: { open: true },
-      slots: {
-        default: '<p>xd</p>',
-      },
-    });
-    // when
-    setTimeout(() => {
-      // when
-      const insideElement = wrapper.find('.neon-modal__container p').element;
-      const clickEvent = new MouseEvent('mousedown');
-      Object.defineProperty(clickEvent, 'target', { value: insideElement });
-      document.dispatchEvent(clickEvent);
-      // then
-      expect(wrapper.emitted().close).toBeFalsy();
-      done();
-    });
+    const { html } = harness;
+    // when / then
+    expect(html()).not.toMatch('neon-modal__overlay--show-top-nav');
   });
 
-  it('calls closable utils destroy', () => {
+  it('emits close event on escape key', async () => {
     // given
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const wrapper: any = mount(NeonModal, {
-      propsData: { open: true },
-      slots: {
-        default: '<p>xd</p>',
-      },
-    });
-    const destroyFn = wrapper.vm.closableUtils.destroy;
-    wrapper.vm.closableUtils.destroy = jest.fn();
+    const { emitted, getByText } = harness;
     // when
-    wrapper.destroy();
+    await fireEvent.keyDown(getByText('test'), { key: 'Escape', code: 'Escape' });
     // then
-    expect(wrapper.vm.closableUtils.destroy).toHaveBeenCalled();
-    wrapper.vm.closableUtils.destroy = destroyFn;
+    expect(emitted().close).toBeDefined();
   });
 
-  it('does not init closable utils when not dismissable', () => {
+  it('emits close event on click outside modal container', async () => {
     // given
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const wrapper: any = mount(NeonModal, {
-      propsData: { open: true, dismissable: false },
-      slots: {
-        default: '<p>xd</p>',
-      },
-    });
-    wrapper.destroy();
-    // then
-    expect(wrapper.vm.closableUtils).toBeUndefined();
-  });
-
-  it('calls closable open on open true', () => {
-    // given
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const wrapper: any = mount(NeonModal, {
-      propsData: { open: false },
-      slots: {
-        default: '<p>xd</p>',
-      },
-    });
-    const openFn = wrapper.vm.closableUtils.open;
-    wrapper.vm.closableUtils.open = jest.fn();
+    const { emitted } = harness;
     // when
-    wrapper.vm.onOpen(true);
+    await fireEvent.mouseDown(document);
     // then
-    expect(wrapper.vm.closableUtils.open).toHaveBeenCalled();
-    wrapper.vm.closableUtils.open = openFn;
+    expect(emitted().close).toBeDefined();
+  });
+
+  it('does not emit close event on click outside modal container when dismissible = false', async () => {
+    // given
+    const { emitted, rerender } = harness;
+    await rerender({ open: true, dismissible: false });
+    // when
+    await fireEvent.mouseDown(document);
+    // then
+    expect(emitted().close).toBeUndefined();
+  });
+
+  it('does not emit close event on click inside modal container', async () => {
+    // given
+    const { emitted, getByText } = harness;
+    // when
+    await fireEvent.mouseDown(getByText('test'));
+    // then
+    expect(emitted().close).toBeUndefined();
   });
 });

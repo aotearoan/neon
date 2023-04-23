@@ -1,5 +1,5 @@
 <template>
-  <component-documentation v-if="menuModel" :model="menuModel" :headline="headline">
+  <component-documentation v-if="menuModel" :headline="headline" :model="menuModel">
     <neon-card>
       <neon-card-body>
         <p>
@@ -11,7 +11,7 @@
           E.g. to create an anchor to scroll to the fragment <strong>#functional-palettes</strong> place the following
           <strong>NeonAnchor</strong> component inside the element to scroll to:
         </p>
-        <editor :read-only="true" language="html" :value="example" />
+        <editor v-model="example" language="html" />
       </neon-card-body>
     </neon-card>
   </component-documentation>

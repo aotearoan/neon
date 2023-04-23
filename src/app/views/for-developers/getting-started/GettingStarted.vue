@@ -10,40 +10,38 @@
         <neon-anchor id="installation" />
         <h2 class="neon-h4">Installation</h2>
         <p>Install with NPM:</p>
-        <editor :read-only="true" language="bash" value="npm install @aotearoan/neon" />
+        <editor language="bash" modelValue="npm install @aotearoan/neon" />
         <p>or yarn:</p>
-        <editor :read-only="true" language="bash" value="yarn add @aotearoan/neon" />
+        <editor language="bash" modelValue="yarn add @aotearoan/neon" />
       </neon-card-body>
       <neon-card-body>
         <neon-anchor id="typescript" />
         <h2 class="neon-h4">Javascript/Typescript</h2>
         <p>Import components and supporting classes like so:</p>
-        <editor :read-only="true" language="typescript" :value="importComponents" />
+        <editor v-model="importComponents" language="typescript" />
       </neon-card-body>
       <neon-card-body>
         <neon-anchor id="sass" />
         <h2 class="neon-h4">SASS</h2>
-        <span>First select a theme:</span>
-        <ul>
-          <li>smooth</li>
-          <li>classic</li>
-          <li>sharp</li>
-        </ul>
+        <p>Import the theme:</p>
+        <editor language="scss" modelValue="@use '@aotearoan/neon/theme';" />
         <p>
-          To use a theme without any customization simply import the basic theme file, e.g. to import the
-          <em>classic</em> theme:
+          Alternatively the theme can be imported with a list of used components to minimise the final package size:
         </p>
-        <editor :read-only="true" language="scss" value="@import '~@aotearoan/neon/themes/classic';" />
-        <p>If, however you would like to override/customize the theme then you need to include the following:</p>
-        <editor :read-only="true" language="scss" :value="allTheSass" />
+        <editor v-model="allTheSass" language="scss" />
+      </neon-card-body>
+      <neon-card-body>
+        <neon-anchor id="html" />
+        <h2 class="neon-h4">HTML</h2>
         <p>
-          Finally, the theme and mode (light/dark) need to be set on the document, e.g. to set the
-          <em>classic</em> theme and <em>dark</em> mode:
+          Add the necessary <em>app</em> & <em>neon</em> styles to the HTML element as well as the light/dark mode, e.g.
+          to set dark mode by default:
         </p>
-        <editor :read-only="true" language="html" :value="darkModeExample" />
+        <editor v-model="darkModeExample" language="html" />
         <p>
           For more information on dynamically changing the mode see
-          <neon-link href="/design/theming#dark-mode">Dark mode</neon-link>.
+          <neon-link href="/design/theming#dark-mode">Dark mode</neon-link>
+          .
         </p>
       </neon-card-body>
     </neon-card>

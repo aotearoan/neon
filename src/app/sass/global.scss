@@ -1,0 +1,138 @@
+// global SASS overrides
+@use 'src/sass/includes/responsive';
+@use 'src/sass/includes/layout';
+@use 'src/sass/includes/hidden';
+
+body {
+  font-size: var(--neon-base-font-size);
+
+  .title {
+    margin-left: calc(8 * var(--neon-base-space));
+    font-family: var(--neon-body-font-family);
+    font-weight: lighter;
+  }
+}
+
+header {
+  .neon-top-nav__container {
+    justify-content: space-between;
+
+    .top-nav-actions {
+      display: flex;
+    }
+  }
+
+  .homepage-link {
+    display: flex;
+  }
+
+  .tagline {
+    margin-left: calc(4 * var(--neon-base-space));
+    font-family: var(--neon-heading-font-family);
+    font-size: var(--neon-font-size-l);
+    font-weight: var(--neon-font-weight-light);
+    opacity: 0.9;
+    letter-spacing: var(--neon-letter-spacing-s);
+    line-height: var(--neon-line-height-one);
+    user-select: none;
+    position: relative;
+    top: 3rem;
+
+    @include responsive.responsive(tablet) {
+      display: none;
+    }
+  }
+}
+
+.example__output,
+.no-style--font {
+  .neon-h0,
+  .neon-h1,
+  .neon-h2,
+  .neon-h3,
+  .neon-h4,
+  .neon-h5,
+  .neon-h6,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  }
+}
+
+.neon-card + .neon-card {
+  @include layout.margin-top;
+}
+
+.positioned-element {
+  position: relative;
+  display: flex;
+  width: fit-content;
+}
+
+.neon-dropdown__content {
+  p {
+    white-space: nowrap;
+  }
+}
+
+blockquote,
+.neon-note {
+  max-width: var(--neon-max-paragraph-width);
+}
+
+.menu-filter {
+  @include hidden.hidden;
+}
+
+.neon-top-nav + .neon-side-nav {
+  .neon-side-nav__scrolling {
+    border-top: var(--neon-border);
+  }
+}
+
+a[href]:not(.neon-link--no-style):not(.neon-link) {
+  display: inline-flex;
+  position: relative;
+
+  &:after {
+    content: '';
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    background-color: transparent;
+    border-radius: var(--neon-border-radius);
+    transition: background-color var(--neon-animation-speed-slow) ease-in-out, color var(--neon-animation-speed-slow) ease-in-out;
+  }
+
+  &:focus {
+    outline: none;
+    color: var(--neon-color-link);
+
+    &:after {
+      background-color: var(--neon-color-link);
+    }
+  }
+
+  &:hover {
+    color: var(--neon-color-link);
+
+    &:after {
+      background-color: var(--neon-color-link);
+    }
+  }
+}
+
+.example-inverse-bg {
+  background-color: var(--neon-color-primary);
+  border-radius: var(--neon-border-radius);
+  padding: calc(2 * var(--neon-base-space));
+}

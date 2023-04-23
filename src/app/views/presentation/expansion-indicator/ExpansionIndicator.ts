@@ -1,37 +1,37 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonExpansionIndicator } from '../../../../components';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import { Menu, MenuModel } from '../../../Menu';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonExpansionIndicator } from '@/neon';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
 
-@Component({
+export default defineComponent({
+  name: 'ExpansionIndicator',
   components: {
     NeonCard,
     NeonCardBody,
     NeonExpansionIndicator,
     ComponentDocumentation,
+    Editor,
   },
-})
-export default class ExpansionIndicator extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Indicate expanded / collapsed');
 
-  private headline = 'Indicate expanded / collapsed';
+    const template = `<neon-expansion-indicator :expanded="false" />
+<neon-expansion-indicator :expanded="true" />
+<neon-expansion-indicator :expanded="false" color="primary" />
+<div class="example-inverse-bg">
+  <neon-expansion-indicator :expanded="false" :inverse="true" />
+</div>
+<neon-expansion-indicator :disabled="true" />`;
 
-  private examples = [
-    {
-      title: 'Examples',
-      template: `<div class="example--horizontal">
-  <neon-expansion-indicator :expanded="false" />
-  <neon-expansion-indicator :expanded="true" />
-  <neon-expansion-indicator :expanded="false" color="primary" />
-  <div class="example-inverse-bg">
-    <neon-expansion-indicator :expanded="false" :inverse="true" />
-  </div>
-  <neon-expansion-indicator :disabled="true" />
-</div>`,
-    },
-  ];
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonExpansionIndicator')));
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonExpansionIndicator');
-  }
-}
+    return {
+      menuModel,
+      headline,
+      template,
+    };
+  },
+});

@@ -1,24 +1,25 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonDropdownMenu, NeonLink } from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonDropdownMenu, NeonLink } from '@/neon';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
-@Component({
+export default defineComponent({
+  name: 'DropdownMenu',
   components: {
     NeonCard,
     NeonCardBody,
     NeonDropdownMenu,
     NeonLink,
     ComponentDocumentation,
+    Editor,
   },
-})
-export default class DropdownMenu extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Display navigation and actions in a dropdown');
 
-  private headline = 'Display navigation and actions in a dropdown';
-
-  private data = {
-    model: [
+    const model = ref([
       {
         key: 'k1',
         label: 'Clickable option',
@@ -43,8 +44,9 @@ export default class DropdownMenu extends Vue {
         separatorBefore: true,
         disabled: true,
       },
-    ],
-    modelWithIcons: [
+    ]);
+
+    const modelWithIcons = ref([
       {
         key: 'k1',
         label: 'Clickable option',
@@ -73,34 +75,28 @@ export default class DropdownMenu extends Vue {
         separatorBefore: true,
         disabled: true,
       },
-    ],
-  };
+    ]);
 
-  private examples = [
-    {
-      title: 'Dropdown sizes',
-      template: `<div class="neon-vertically-spaced">
-  <neon-dropdown-menu size="s" label="Small menu" :model="model" />
-  <neon-dropdown-menu size="m" label="Medium menu" :model="model" />
-  <neon-dropdown-menu size="l" label="Large menu" :model="model" />
-</div>`,
-      data: this.data,
-    },
-    {
-      title: 'Dropdowns with colors and icons',
-      template: `<div class="neon-vertically-spaced">
-  <neon-dropdown-menu color="brand" label="Brand" :model="modelWithIcons" />
-  <neon-dropdown-menu color="primary" label="Primary" :model="modelWithIcons" />
-  <neon-dropdown-menu color="info" label="Info" :model="modelWithIcons" />
-  <neon-dropdown-menu color="success" label="Success" :model="modelWithIcons" />
-  <neon-dropdown-menu color="warn" label="Warning" :model="modelWithIcons" />
-  <neon-dropdown-menu color="error" label="Error" :model="modelWithIcons" />
-</div>`,
-      data: this.data,
-    },
-  ];
+    const sizeTemplate = `<neon-dropdown-menu size="s" label="Small menu" :model="model" />
+<neon-dropdown-menu size="m" label="Medium menu" :model="model" />
+<neon-dropdown-menu size="l" label="Large menu" :model="model" />`;
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonDropdownMenu');
-  }
-}
+    const colorTemplate = `<neon-dropdown-menu color="brand" label="Brand" :model="modelWithIcons" />
+<neon-dropdown-menu color="primary" label="Primary" :model="modelWithIcons" />
+<neon-dropdown-menu color="info" label="Info" :model="modelWithIcons" />
+<neon-dropdown-menu color="success" label="Success" :model="modelWithIcons" />
+<neon-dropdown-menu color="warn" label="Warning" :model="modelWithIcons" />
+<neon-dropdown-menu color="error" label="Error" :model="modelWithIcons" />`;
+
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonDropdownMenu')));
+
+    return {
+      menuModel,
+      headline,
+      model,
+      modelWithIcons,
+      sizeTemplate,
+      colorTemplate,
+    };
+  },
+});

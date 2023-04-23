@@ -7,6 +7,19 @@
     </neon-card>
     <neon-card>
       <neon-card-body>
+        <neon-anchor id="units-&-spacing" />
+        <h2 class="neon-h4">Units & Spacing</h2>
+        <p>
+          Neon uses <strong>rems</strong> as the units of measurement across the entire component library. By default,
+          Neon will set the rems:px ratio to 1:1 in the document HTML element. This means 24px = 24rems which makes
+          calculations easier to reason about.
+        </p>
+        <p>
+          Spacing is all relative to the CSS variable <em>--neon-base-space</em> which has a default value of
+          <em>4rem</em> (=4px). So adjusting all spacing is as simple as changing this variable.
+        </p>
+      </neon-card-body>
+      <neon-card-body>
         <neon-anchor id="desktop-layout" />
         <h2 class="neon-h4">Desktop layout</h2>
         <p>
@@ -70,8 +83,10 @@
           The <em>responsive</em> layout is the same as the desktop layout with the exception of the Side Nav being
           removed due to the narrower width. Instead of displaying the Side Nav at smaller screen sizes it is
           recommended to provide the side navigation content in a
-          <neon-link href="/layout/drawer">NeonDrawer</neon-link> component triggered by a
-          <neon-link href="/user-input/button">NeonButton</neon-link>.
+          <neon-link href="/layout/drawer">NeonDrawer</neon-link>
+          component triggered by a
+          <neon-link href="/user-input/button">NeonButton</neon-link>
+          .
         </p>
         <div class="layout-example">
           <neon-link class="layout-example__label" href="/layout/page">NeonPage</neon-link>
@@ -114,10 +129,11 @@
         <p>
           Neon's approach to page <strong>content</strong> layout is to use CSS Grid to create the top level layout and
           use flexbox for the layout at lower levels. CSS Grid layout is achieved via the
-          <neon-link href="/layout/grid">NeonGrid</neon-link> component.
-          <neon-link href="/layout/grid">NeonGrid</neon-link> is a CSS Grid based container designed to help simplify
-          page application layout and responsiveness by abstracting CSS Grid and allowing applications to define this
-          programmatically in Typescript.
+          <neon-link href="/layout/grid">NeonGrid</neon-link>
+          component.
+          <neon-link href="/layout/grid">NeonGrid</neon-link>
+          is a CSS Grid based container designed to help simplify page application layout and responsiveness by
+          abstracting CSS Grid and allowing applications to define this programmatically in Typescript.
         </p>
         <p>
           This provides developers with the benefits of using CSS Grid without dealing with the steep learning curve and
@@ -125,7 +141,8 @@
         </p>
         <p>
           For more information about responsiveness in Neon see the
-          <neon-link href="/design/responsiveness">Responsiveness</neon-link> page.
+          <neon-link href="/design/responsiveness">Responsiveness</neon-link>
+          page.
         </p>
       </neon-card-body>
     </neon-card>

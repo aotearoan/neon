@@ -4,6 +4,7 @@ export class NeonClipboardSupport {
   public constructor() {
     const permissions = navigator.permissions;
     if (permissions) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       permissions.query({ name: 'clipboard-write' }).then(
         (result: PermissionStatus) => {

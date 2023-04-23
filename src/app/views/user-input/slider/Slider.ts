@@ -1,97 +1,78 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonSlider } from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonSlider } from '@/neon';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Slider',
   components: {
     ComponentDocumentation,
+    Editor,
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
     NeonSlider,
   },
-})
-export default class Slider extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('HTML single value slider input');
 
-  private headline = 'HTML single value slider input';
+    const basicSlider = ref(50);
+    const minMaxSlider = ref(0);
+    const outputSlider = ref(50);
+    const legendSlider = ref(50);
+    const tooltipSlider = ref(50);
+    const percentageSlider = ref(0.42);
+    const decimalSlider = ref(50.0);
+    const noFormattingSlider = ref(2020);
+    const templateSlider = ref(100.0);
+    const disabledSlider = ref(50);
+    const primarySlider = ref(50);
+    const brandSlider = ref(50);
+    const warnSlider = ref(50);
 
-  private data = {
-    basicSlider: 50,
-    minMaxSlider: 0,
-    outputSlider: 50,
-    legendSlider: 50,
-    tooltipSlider: 50,
-    percentageSlider: 0.42,
-    decimalSlider: 50.0,
-    noFormattingSlider: 2020,
-    templateSlider: 100.0,
-    disabledSlider: 50,
-    primarySlider: 50,
-    brandSlider: 50,
-    warnSlider: 50,
-  };
+    const coreExamples = `<neon-slider id="basicSliderId" v-model="basicSlider" />
+<neon-slider v-model="minMaxSlider" :max="100" :min="-100" :step="10" />
+<neon-slider v-model="disabledSlider" :disabled="true" />`;
 
-  private coreExamples = `<div class="neon-vertically-spaced">
-  <label>Basic slider</label>
-  <neon-slider id="basicSliderId" v-model="basicSlider" />
-  <label>With Min, max and step</label>
-  <neon-slider v-model="minMaxSlider" :min="-100" :max="100" :step="10" />
-  <label>Disabled</label>
-  <neon-slider v-model="disabledSlider" :disabled="true" />
-</div>`;
+    const formattingExamples = `<neon-slider v-model="percentageSlider" :percentage="true" />
+<neon-slider v-model="decimalSlider" :decimals="2" />
+<neon-slider v-model="noFormattingSlider" :disable-formatting="true" :max="2050" :min="2000" />
+<neon-slider v-model="templateSlider" :decimals="2" :max="200.0" :step="0.5" value-template="\${value}" />`;
 
-  private formattingExamples = `<div class="neon-vertically-spaced">
-  <label>Percentage</label>
-  <neon-slider v-model="percentageSlider" :percentage="true" />
-  <label>Decimal values</label>
-  <neon-slider v-model="decimalSlider" :decimals="2" />
-  <label>Formatting disabled (e.g. year)</label>
-  <neon-slider v-model="noFormattingSlider" :disable-formatting="true" :min="2000" :max="2050" />
-  <label>With template (e.g. currency)</label>
-  <neon-slider v-model="templateSlider" :max="200.0" :step="0.5" :decimals="2" value-template="\${value}" />
-</div>`;
+    const colorExamples = `<neon-slider v-model="primarySlider" color="primary" />
+<neon-slider v-model="brandSlider" color="brand" />
+<neon-slider v-model="warnSlider" color="warn" />`;
 
-  private colorExamples = `<div class="neon-vertically-spaced">
-  <neon-slider v-model="primarySlider" color="primary" />
-  <neon-slider v-model="brandSlider" color="brand" />
-  <neon-slider v-model="warnSlider" color="warn" />
-</div>`;
+    const displayExamples = `<neon-slider v-model="outputSlider" :output="false" />
+<neon-slider v-model="legendSlider" :legend="false" />
+<neon-slider v-model="tooltipSlider" :tooltip="false" />`;
 
-  private displayExamples = `<div class="neon-vertically-spaced">
-  <label>Output hidden</label>
-  <neon-slider v-model="outputSlider" :output="false" />
-  <label>Legend hidden</label>
-  <neon-slider v-model="legendSlider" :legend="false" />
-  <label>Tooltip hidden</label>
-  <neon-slider v-model="tooltipSlider" :tooltip="false" />
-</div>`;
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonSlider')));
 
-  private examples = [
-    {
-      title: 'Basic usage',
-      template: this.coreExamples,
-      data: this.data,
-    },
-    {
-      title: 'Formatting options',
-      template: this.formattingExamples,
-      data: this.data,
-    },
-    {
-      title: 'Slider colors',
-      template: this.colorExamples,
-      data: this.data,
-    },
-    {
-      title: 'Display options',
-      template: this.displayExamples,
-      data: this.data,
-    },
-  ];
-
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonSlider');
-  }
-}
+    return {
+      menuModel,
+      headline,
+      basicSlider,
+      minMaxSlider,
+      outputSlider,
+      legendSlider,
+      tooltipSlider,
+      percentageSlider,
+      decimalSlider,
+      noFormattingSlider,
+      templateSlider,
+      disabledSlider,
+      primarySlider,
+      brandSlider,
+      warnSlider,
+      coreExamples,
+      formattingExamples,
+      colorExamples,
+      displayExamples,
+    };
+  },
+});

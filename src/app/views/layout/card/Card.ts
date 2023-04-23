@@ -1,22 +1,29 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader } from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import { defineComponent, onMounted, ref } from 'vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import { NeonButton, NeonCard, NeonCardBody, NeonCardFooter, NeonCardHeader } from '@/neon';
+import Editor from '@/app/components/editor/Editor.vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Card',
   components: {
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
+    NeonCardFooter,
+    NeonButton,
     ComponentDocumentation,
+    Editor,
   },
-})
-export default class Card extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('A component for content layout within a page');
 
-  private headline = 'A component for content layout within a page';
+    const baseUrl = import.meta.env.VITE_BASE_URL;
 
-  private example = `<neon-card>
+    const verticalExample = `<neon-card>
   <neon-card-header>
     <h4>Card header</h4>
   </neon-card-header>
@@ -27,7 +34,7 @@ export default class Card extends Vue {
     <p>Another card body. Cards can also have full width sections without an padding (this is useful for adding images, charts, etc). The following section is full width:</p>
   </neon-card-body>
   <neon-card-body :full-width="true">
-    <img src="https://i.picsum.photos/id/610/2000/300.jpg?hmac=Oa-gKut7zX0Q1zmsjyrhmJvSMP72MB0jeJN3zPOiucc">
+    <img :src="baseUrl + 'images/taranaki.jpg'" />
   </neon-card-body>
   <neon-card-body>
     <p>Place card actions inside the <strong>NeonCardFooter</strong> below:</p>
@@ -38,7 +45,7 @@ export default class Card extends Vue {
   </neon-card-footer>
 </neon-card>`;
 
-  private horizontalExample = `<neon-card orientation="horizontal">
+    const horizontalExample = `<neon-card orientation="horizontal">
   <neon-card-header>
     <h4>Header</h4>
   </neon-card-header>
@@ -51,20 +58,14 @@ export default class Card extends Vue {
   </neon-card-footer>
 </neon-card>`;
 
-  private examples = [
-    {
-      title: 'Vertical card',
-      template: this.example,
-      noCard: true,
-    },
-    {
-      title: 'Horizontal card',
-      template: this.horizontalExample,
-      noCard: true,
-    },
-  ];
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonCard')));
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonCard');
-  }
-}
+    return {
+      menuModel,
+      headline,
+      horizontalExample,
+      verticalExample,
+      baseUrl,
+    };
+  },
+});

@@ -1,7 +1,7 @@
 {
+  "displayName": "NeonPage",
   "description": "A \"page\" component, this is defined as a wrapper around the contents (NeonGrid, etc) and footer which provides the\ncorrect responsive layout accounting for NeonTopNav and NeonSideNav components being used.",
   "tags": {},
-  "displayName": "NeonPage",
   "exportName": "default",
   "slots": [
     {
@@ -16,5 +16,9 @@
       "name": "content",
       "description": "The main page content"
     }
+  ],
+  "sourceFiles": [
+    "./src/components/layout/page/NeonPage.vue",
+    "/Users/andrew/dev/projects/neon/src/components/layout/page/NeonPage.ts"
   ]
 }

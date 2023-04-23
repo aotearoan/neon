@@ -1,10 +1,9 @@
-import Vue from 'vue';
-import { Component, Prop } from 'vue-property-decorator';
-import { NeonPlacement } from '../../../common/enums/NeonPlacement';
-import { NeonTooltipStyle } from '../../../common/enums/NeonTooltipStyle';
-import { NeonTooltipPlacementUtils } from '../../../common/utils/NeonTooltipPlacementUtils';
-import { NeonOutlineStyle } from '../../../common/enums/NeonOutlineStyle';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { defineComponent, ref } from 'vue';
+import { NeonPlacement } from '@/common/enums/NeonPlacement';
+import { NeonTooltipStyle } from '@/common/enums/NeonTooltipStyle';
+import { NeonTooltipPlacementUtils } from '@/common/utils/NeonTooltipPlacementUtils';
+import { NeonOutlineStyle } from '@/common/enums/NeonOutlineStyle';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 /**
  * <p>
@@ -13,78 +12,74 @@ import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
  * </p>
  * <p>To use <strong>NeonTooltip</strong> provide the <em>target</em> and <em>content slots</em>.</p>
  */
-@Component
-export default class NeonTooltip extends Vue {
-  $refs!: {
-    tooltip: HTMLElement;
-    content: HTMLElement;
-  };
+export default defineComponent({
+  name: 'NeonTooltip',
+  props: {
+    /**
+     * Id of the tooltip.
+     */
+    id: { type: String, default: null },
+    /**
+     * Placement of the tooltip contents.
+     */
+    placement: { type: String as () => NeonPlacement, default: NeonPlacement.Top },
+    /**
+     * Style of the tooltip, use <em>Tooltip</em> for a simple tooltip, use <em>Popover</em> for larger more complex
+     * content.
+     */
+    tooltipStyle: { type: String as () => NeonTooltipStyle, default: NeonTooltipStyle.Tooltip },
+    /**
+     * Style of the outline to use when the tooltip target has focus, use <em>text</em> for tooltips wrapping text and
+     * <em>border</em> for tooltips wrapping "block" elements, e.g. buttons.
+     */
+    outlineStyle: { type: String as () => NeonOutlineStyle, default: NeonOutlineStyle.Text },
+    /**
+     * Color of the tooltip target when it is focussed.
+     */
+    outlineColor: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Primary },
+    /**
+     * Restrict placement to within this container.
+     */
+    placementContainer: { type: Object as () => HTMLElement, default: null },
+  },
+  setup(props) {
+    const tooltip = ref<HTMLElement | null>(null);
+    const content = ref<HTMLElement | null>(null);
+    const tooltipPlacement = ref<NeonPlacement | null>(props.placement);
+    const open = ref(false);
 
-  private tooltipPlacement: NeonPlacement;
-  open = false;
+    const recalculatePlacement = () => {
+      tooltipPlacement.value = NeonTooltipPlacementUtils.calculatePlacement(
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        tooltip.value!,
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        content.value!,
+        props.placement,
+        props.placementContainer,
+      );
+    };
 
-  /**
-   * Id of the tooltip.
-   */
-  @Prop({ required: false })
-  private id?: string;
+    const openTooltip = () => {
+      open.value = true;
+      setTimeout(recalculatePlacement);
+    };
 
-  /**
-   * Placement of the tooltip contents.
-   */
-  @Prop({ default: NeonPlacement.Top })
-  private placement!: NeonPlacement;
+    const closeTooltip = () => {
+      open.value = false;
+    };
 
-  /**
-   * Style of the tooltip, use <em>Tooltip</em> for a simple tooltip, use <em>Popover</em> for larger more complex
-   * content.
-   */
-  @Prop({ default: NeonTooltipStyle.Tooltip })
-  private tooltipStyle!: NeonTooltipStyle;
+    const toggleTooltip = () => {
+      open.value ? closeTooltip() : openTooltip();
+    };
 
-  /**
-   * Style of the outline to use when the tooltip target has focus, use <em>text</em> for tooltips wrapping text and
-   * <em>border</em> for tooltips wrapping "block" elements, e.g. buttons.
-   */
-  @Prop({ default: NeonOutlineStyle.Text })
-  private outlineStyle!: NeonOutlineStyle;
-
-  /**
-   * Color of the tooltip target when it is focussed.
-   */
-  @Prop({ default: NeonFunctionalColor.Primary })
-  private outlineColor!: NeonFunctionalColor;
-
-  /**
-   * Restrict placement to within this container.
-   */
-  @Prop({ required: false })
-  private placementContainer?: HTMLElement;
-
-  public constructor() {
-    super();
-    this.tooltipPlacement = this.placement;
-  }
-
-  private recalculatePlacement() {
-    this.tooltipPlacement = NeonTooltipPlacementUtils.calculatePlacement(
-      this.$refs.tooltip,
-      this.$refs.content,
-      this.placement,
-      this.placementContainer,
-    );
-  }
-
-  openTooltip() {
-    this.open = true;
-    setTimeout(this.recalculatePlacement);
-  }
-
-  private closeTooltip() {
-    this.open = false;
-  }
-
-  private toggleTooltip() {
-    this.open ? this.closeTooltip() : this.openTooltip();
-  }
-}
+    return {
+      tooltip,
+      tooltipPlacement,
+      content,
+      open,
+      toggleTooltip,
+      closeTooltip,
+      openTooltip,
+    };
+  },
+});

@@ -1,4 +1,3 @@
-import { Component, Vue } from 'vue-property-decorator';
+import { defineComponent } from 'vue';
 
-@Component({})
-export default class NotFound extends Vue {}
+export default defineComponent({ name: 'NotFound' });

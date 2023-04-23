@@ -1,33 +1,31 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonSkeletonLoader } from '../../../../components';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import { Menu, MenuModel } from '../../../Menu';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonSkeletonLoader } from '@/neon';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
 
-@Component({
+export default defineComponent({
+  name: 'SkeletonLoader',
   components: {
     NeonCard,
     NeonCardBody,
     NeonSkeletonLoader,
     ComponentDocumentation,
+    Editor,
   },
-})
-export default class SkeletonLoader extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Indicate initial loading progress');
 
-  private headline = 'Indicate initial loading progress';
+    const template = '<neon-skeleton-loader :count="5" />';
 
-  private example = `<div class="example--vertical">
-  <neon-skeleton-loader :count="5" />
-</div>`;
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonSkeletonLoader')));
 
-  private examples = [
-    {
-      title: 'Skeleton loader with 5 rows',
-      template: this.example,
-    },
-  ];
-
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonSkeletonLoader');
-  }
-}
+    return {
+      menuModel,
+      headline,
+      template,
+    };
+  },
+});

@@ -1,0 +1,136 @@
+@use '../includes/palettes';
+
+@mixin stepper {
+  .neon-stepper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    user-select: none;
+    min-height: calc(12 * var(--neon-base-space));
+    max-width: 100%;
+
+    .neon-stepper__step {
+      position: relative;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      flex: 1 1 auto;
+      width: 100%;
+
+      &:not(:first-child) {
+        &:before {
+          position: absolute;
+          z-index: var(--neon-z-index-default);
+          content: '';
+          width: 100%;
+          left: -50%;
+          top: calc(3 * var(--neon-base-space) - 1rem);
+          height: 1rem;
+          border-top: 1rem dashed var(--neon-color-stepper-disabled);
+        }
+      }
+
+      &-indicator-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        z-index: var(--neon-z-index-above);
+        width: calc(16 * var(--neon-base-space));
+        height: calc(8 * var(--neon-base-space));
+      }
+
+      &-indicator {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(5 * var(--neon-base-space));
+        height: calc(5 * var(--neon-base-space));
+        border-radius: 50%;
+        border: 1rem solid var(--neon-background-color-card);
+        margin-top: 1rem;
+        background: var(--neon-color-stepper-disabled);
+        transition: all var(--neon-animation-speed-fast) ease-in-out;
+
+        .neon-stepper__step-completed-icon,
+        .neon-stepper__step-completing-icon {
+          width: calc(2.5 * var(--neon-base-space));
+          height: calc(2.5 * var(--neon-base-space));
+
+          svg {
+            path,
+            circle {
+              fill: var(--neon-color-stepper-indicator);
+            }
+
+            circle {
+              stroke: var(--neon-color-stepper-indicator);
+            }
+          }
+        }
+      }
+
+      &-title {
+        z-index: 1;
+        font-size: var(--neon-font-size-xs);
+        font-weight: var(--neon-font-weight-normal);
+        color: var(--neon-color-stepper-disabled);
+        text-align: center;
+      }
+
+      &--has-value {
+        .neon-stepper__step-indicator-wrapper,
+        .neon-stepper__step-title {
+          cursor: pointer;
+        }
+      }
+
+      &--active,
+      &--has-value {
+        .neon-stepper__step-title {
+          color: var(--neon-color-text-strong);
+        }
+      }
+
+      &--active {
+        .neon-stepper__step-indicator {
+          margin-top: -1rem;
+          width: calc(6.5 * var(--neon-base-space));
+          height: calc(6.5 * var(--neon-base-space));
+        }
+
+        .neon-stepper__step-title {
+          font-weight: var(--neon-font-weight-bold);
+        }
+      }
+    }
+
+    @each $color in palettes.$neon-functional-colors {
+      &--#{$color} {
+        .neon-stepper__step--active,
+        .neon-stepper__step--has-value {
+          .neon-stepper__step-indicator {
+            background: var(--neon-color-#{$color});
+          }
+        }
+
+        .neon-stepper__step--active, {
+          .neon-stepper__step-title {
+            font-weight: var(--neon-font-weight-bold);
+            color: var(--neon-color-#{$color});
+          }
+        }
+
+        .neon-stepper__step--display-stepper {
+          &:not(:first-child) {
+            &:before {
+              border-top: 1rem solid var(--neon-color-#{$color});
+            }
+          }
+        }
+      }
+    }
+  }
+}

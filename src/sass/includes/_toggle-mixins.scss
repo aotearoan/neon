@@ -1,25 +1,25 @@
 @mixin toggle-size($font-size, $size) {
   label {
-    font-size: $font-size;
-    font-weight: 400;
-    letter-spacing: $neon-letter-spacing-s;
-    line-height: $neon-line-height-one;
-    min-height: $size;
-    height: $size;
-    z-index: $z-index-default;
+    font-size: var(--neon-font-size-#{$font-size});
+    font-weight: var(--neon-font-weight-normal);
+    letter-spacing: var(--neon-letter-spacing-s);
+    line-height: var(--neon-line-height-one);
+    min-height: var(--neon-size-#{$size});
+    height: var(--neon-size-#{$size});
+    z-index: var(--neon-z-index-default);
 
     &.neon-toggle__label--with-icon {
-      width: $size;
+      width: var(--neon-size-#{$size});
       padding: 0;
 
       .neon-icon {
-        width: round($font-size * $neon-line-height-one);
-        height: round($font-size * $neon-line-height-one);
+        width: calc(var(--neon-font-size-#{$font-size}) * var(--neon-line-height-one));
+        height: calc(var(--neon-font-size-#{$font-size}) * var(--neon-line-height-one));
       }
     }
 
     &.neon-toggle__label--checked {
-      z-index: $z-index-above;
+      z-index: var(--neon-z-index-above);
     }
   }
 }
@@ -35,8 +35,8 @@
   .neon-toggle__label--checked {
     .neon-toggle__radio-button {
       &-indicator {
-        width: $control-size - 6px;
-        height: $control-size - 6px;
+        width: $control-size - 6rem;
+        height: $control-size - 6rem;
       }
     }
   }
@@ -46,42 +46,42 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  border-radius: $neon-border-radius;
+  border-radius: var(--neon-border-radius);
   overflow: hidden;
 
   &.neon-toggle--s {
-    @include toggle-size($neon-font-size-s, $neon-size-s);
+    @include toggle-size('s', 's');
   }
 
   &.neon-toggle--m {
-    @include toggle-size($neon-font-size-s, $neon-size-m);
+    @include toggle-size('s', 'm');
   }
 
   &.neon-toggle--l {
-    @include toggle-size($neon-font-size-m, $neon-size-l);
+    @include toggle-size('m', 'l');
   }
 
   .neon-toggle__label {
     &:first-child {
-      border-top-left-radius: $neon-border-radius;
-      border-bottom-left-radius: $neon-border-radius;
+      border-top-left-radius: var(--neon-border-radius);
+      border-bottom-left-radius: var(--neon-border-radius);
     }
 
     &:last-child {
-      border-top-right-radius: $neon-border-radius;
-      border-bottom-right-radius: $neon-border-radius;
+      border-top-right-radius: var(--neon-border-radius);
+      border-bottom-right-radius: var(--neon-border-radius);
     }
   }
 }
 
 @mixin radio-button-layout {
   .neon-toggle__label {
-    letter-spacing: $neon-letter-spacing-s;
+    letter-spacing: var(--neon-letter-spacing-s);
   }
 
   .neon-toggle__radio-button {
-    border-radius: $neon-border-radius-radio-button;
-    margin-right: 3 * $neon-base-space;
+    border-radius: var(--neon-border-radius-radio-button);
+    margin-right: calc(3 * var(--neon-base-space));
     align-items: center;
     justify-content: center;
   }
@@ -89,20 +89,20 @@
   .neon-toggle__label--checked {
     .neon-toggle__radio-button {
       &-indicator {
-        border-radius: $neon-border-radius-radio-button;
+        border-radius: var(--neon-border-radius-radio-button);
       }
     }
   }
 
   &.neon-toggle--s {
-    @include radio-button-size(14px, $neon-font-size-s, $neon-size-s);
+    @include radio-button-size(14rem, 's', 's');
   }
 
   &.neon-toggle--m {
-    @include radio-button-size(14px, $neon-font-size-s, $neon-size-m);
+    @include radio-button-size(14rem, 's', 'm');
   }
 
   &.neon-toggle--l {
-    @include radio-button-size(16px, $neon-font-size-m, $neon-size-l);
+    @include radio-button-size(16rem, 'm', 'l');
   }
 }

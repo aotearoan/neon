@@ -1,26 +1,26 @@
-.icons-wrapper {
+.neon-card .icons-wrapper {
   flex-direction: row;
   flex-wrap: wrap;
 
   .icon-container {
-    min-width: 40 * $neon-base-space;
-    min-height: 40 * $neon-base-space;
+    min-width: calc(40 * var(--neon-base-space));
+    min-height: calc(40 * var(--neon-base-space));
     justify-content: center;
     align-items: center;
 
     label {
-      margin-top: 4 * $neon-base-space;
+      margin-top: calc(4 * var(--neon-base-space));
     }
   }
 
   .neon-icon {
-    width: 10 * $neon-base-space;
-    height: 10 * $neon-base-space;
+    width: calc(10 * var(--neon-base-space));
+    height: calc(10 * var(--neon-base-space));
   }
 
   label {
     text-transform: lowercase;
-    font-size: $neon-font-size-m;
+    font-size: var(--neon-font-size-m);
     user-select: all;
   }
 }

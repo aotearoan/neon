@@ -1,90 +1,88 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { NeonToggleModel } from '../../../common/models/NeonToggleModel';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonToggleStyle } from '../../../common/enums/NeonToggleStyle';
-import { NeonOrientation } from '../../../common/enums/NeonOrientation';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
+import { computed, defineComponent, useAttrs } from 'vue';
+import type { NeonToggleModel } from '@/common/models/NeonToggleModel';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonToggleStyle } from '@/common/enums/NeonToggleStyle';
+import { NeonOrientation } from '@/common/enums/NeonOrientation';
+import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 
 /**
  * <p>A toggle component for selecting one value from a range of options. This is equivalent to a radio button group. It can be styled as a <em>Toggle</em> or as <em>Radio buttons</em>.
  */
-@Component({
+export default defineComponent({
+  name: 'NeonToggle',
   components: {
     NeonIcon,
   },
-})
-export default class NeonToggle extends Vue {
-  /**
-   * The name of the radio button group.
-   */
-  @Prop({ required: true })
-  public name!: string;
-
-  /**
-   * The key of the selected option.
-   */
-  @Prop({ required: true })
-  public value!: string;
-
-  /**
-   * The list of options to present to the user.
-   */
-  @Prop({ required: true })
-  public model!: NeonToggleModel[];
-
-  /**
-   * The style of toggle to display to the user.
-   */
-  @Prop({ default: NeonToggleStyle.Toggle })
-  public toggleStyle!: NeonToggleStyle;
-
-  /**
-   * The size of the toggle.
-   */
-  @Prop({ default: NeonSize.Medium })
-  public size!: NeonSize;
-
-  /**
-   * The orientation of the toggle if the style is a radio button group.
-   */
-  @Prop({ default: NeonOrientation.Vertical })
-  public orientation!: NeonOrientation;
-
-  /**
-   * The color of the toggle.
-   */
-  @Prop({ default: NeonFunctionalColor.Neutral })
-  public color!: NeonFunctionalColor;
-
-  /**
-   * Whether or not the toggle is disabled.
-   */
-  @Prop({ default: false })
-  public disabled!: boolean;
-
-  private get sanitizedListeners() {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { input, ...listeners } = this.$listeners;
-    return { listeners, input: this.onInput };
-  }
-
-  private onInput(event: InputEvent) {
-    const key = (event.target as HTMLInputElement).value;
-    this.emitInput(key);
-  }
-
-  private selectOption(option: NeonToggleModel) {
-    if (!this.disabled && !option.disabled) {
-      this.emitInput(option.key);
-    }
-  }
-
-  private emitInput(key: string) {
+  props: {
+    /**
+     * The name of the radio button group.
+     */
+    name: { type: String, required: true },
+    /**
+     * The key of the selected option.
+     */
+    modelValue: { type: String, required: true },
+    /**
+     * The list of options to present to the user.
+     */
+    model: { type: Array as () => Array<NeonToggleModel>, required: true },
+    /**
+     * The style of toggle to display to the user.
+     */
+    toggleStyle: { type: String as () => NeonToggleStyle, default: () => NeonToggleStyle.Toggle },
+    /**
+     * The size of the toggle.
+     */
+    size: { type: String as () => NeonSize, default: () => NeonSize.Medium },
+    /**
+     * The orientation of the toggle if the style is a radio button group.
+     */
+    orientation: { type: String as () => NeonOrientation, default: () => NeonOrientation.Vertical },
+    /**
+     * The color of the toggle.
+     */
+    color: { type: String as () => NeonFunctionalColor, default: () => NeonFunctionalColor.Neutral },
+    /**
+     * Whether the toggle is disabled.
+     */
+    disabled: { type: Boolean, default: false },
+  },
+  emits: [
     /**
      * Emitted when the selected value changes.
      * @type {boolean} The key of the selected model item.
      */
-    this.$emit('input', key);
-  }
-}
+    'update:modelValue',
+  ],
+  setup(props, { emit }) {
+    const attrs = useAttrs();
+    const emitInput = (key: string) => {
+      emit('update:modelValue', key);
+    };
+
+    const onInput = (key: string) => {
+      if (!props.disabled) {
+        emitInput(key);
+      }
+    };
+
+    const sanitizedAttributes = computed(() => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { onClick, ...sanitized } = attrs;
+      return sanitized;
+    });
+
+    const selectOption = (option: NeonToggleModel) => {
+      if (!props.disabled && !option.disabled) {
+        emitInput(option.key);
+      }
+    };
+
+    return {
+      selectOption,
+      onInput,
+      sanitizedAttributes,
+    };
+  },
+});

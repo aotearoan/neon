@@ -1,42 +1,39 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonFile } from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonFile } from '@/neon';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'File',
   components: {
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
     NeonFile,
     ComponentDocumentation,
+    Editor,
   },
-})
-export default class File extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('HTML file upload input');
 
-  private headline = 'HTML file upload input';
+    const files = ref([]);
 
-  private data = {
-    files: [],
-  };
+    const fileExamples = `<neon-file @update:modelValue="files = $event" label="Select file" />
+<neon-file @update:modelValue="files = $event" color="brand" :multiple="true" label="Add files" icon="plus" />
+<neon-file @update:modelValue="files = $event" :multiple="true" label="Add SVG files" />
+<neon-file @update:modelValue="files = $event" :direct-upload="true" :multiple="true" label="Direct upload" />`;
 
-  private fileExamples = `<div class="neon-vertically-spaced">
-  <neon-file @input="files = $event" label="Select file" />
-  <neon-file @input="files = $event" color="brand" :multiple="true" label="Add files" icon="plus" />
-  <neon-file @input="files = $event" :multiple="true" label="Add SVG files" />
-  <neon-file @input="files = $event" :direct-upload="true" :multiple="true" label="Direct upload" />
-</div>`;
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonFile')));
 
-  private examples = [
-    {
-      title: 'File example',
-      template: this.fileExamples,
-      data: this.data,
-    },
-  ];
-
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonFile');
-  }
-}
+    return {
+      menuModel,
+      headline,
+      fileExamples,
+      files,
+    };
+  },
+});

@@ -1,9 +1,11 @@
-.api-docs {
-  &__wrapper:not(:last-child) {
-    margin-bottom: 8 * $neon-base-space;
+@use 'src/sass/includes/responsive';
 
-    @include responsive(mobile-large) {
-      margin-bottom: 4 * $neon-base-space;
+.app .api-docs {
+  &__wrapper:not(:last-child) {
+    margin-bottom: calc(8 * var(--neon-base-space));
+
+    @include responsive.responsive(mobile-large) {
+      margin-bottom: calc(4 * var(--neon-base-space));
     }
   }
 
@@ -14,22 +16,22 @@
   }
 
   &__desktop {
-    margin-top: 2 * $neon-base-space;
+    margin-top: calc(2 * var(--neon-base-space));
   }
 
   &__section {
-    margin-top: 6 * $neon-base-space;
+    margin-top: calc(6 * var(--neon-base-space));
   }
 
   &__title {
-    margin-bottom: -2 * $neon-base-space;
+    margin-bottom: calc(-2 * var(--neon-base-space));
   }
 
   &__type,
   &__default {
-    font-family: $neon-font-family-monospaced;
+    font-family: var(--neon-font-family-monospaced);
     font-variant-ligatures: discretionary-ligatures;
-    font-variation-settings: $monospaced-font-variation-settings;
+    font-variation-settings: var(--monospaced-font-variation-settings);
     white-space: nowrap;
   }
 
@@ -38,15 +40,17 @@
     flex-wrap: nowrap;
     align-items: center;
     white-space: nowrap;
+    color: var(--app-color-api-docs-name);
 
     .neon-label {
-      margin-left: 2 * $neon-base-space;
+      margin-left: calc(2 * var(--neon-base-space));
     }
   }
 
   .api-docs__description {
     display: inline !important;
     letter-spacing: normal;
+    color: var(--neon-color-high-contrast);
   }
 
   table {
@@ -58,7 +62,7 @@
     }
   }
 
-  @include responsive(desktop-large) {
+  @include responsive.responsive(desktop-large) {
     &__desktop {
       display: flex;
     }
@@ -68,7 +72,7 @@
     }
   }
 
-  @include responsive(desktop) {
+  @include responsive.responsive(desktop) {
     &__desktop {
       display: none;
     }
@@ -78,7 +82,7 @@
 
       .api-docs {
         &__title {
-          margin-top: 2 * $neon-base-space;
+          margin-top: calc(2 * var(--neon-base-space));
           margin-bottom: 0;
         }
 
@@ -86,27 +90,31 @@
           display: flex;
           flex-direction: row;
           align-items: center;
-          padding-top: $neon-base-space;
+          padding-top: var(--neon-base-space);
 
           label {
             margin-bottom: 0;
-            margin-right: 2 * $neon-base-space;
+            margin-right: calc(2 * var(--neon-base-space));
           }
 
           .neon-label {
-            margin-left: 2 * $neon-base-space;
+            margin-left: calc(2 * var(--neon-base-space));
+          }
+
+          &:first-child {
+            border-bottom: var(--neon-border-width-table) var(--neon-border-style) var(--neon-color-neutral);
           }
         }
 
         &__name {
-          font-size: $neon-font-size-l;
+          font-size: var(--neon-font-size-l);
         }
 
         &__property,
         &__event,
         &__slot {
           &:not(:first-of-type) {
-            margin-top: 4 * $neon-base-space;
+            margin-top: calc(4 * var(--neon-base-space));
           }
         }
       }

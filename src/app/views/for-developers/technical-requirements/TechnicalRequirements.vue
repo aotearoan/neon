@@ -10,11 +10,9 @@
         <neon-anchor id="browser-support" />
         <h2 class="neon-h4">Browser Support</h2>
         <p>
-          Neon aims to support all popular modern browsers.
-          <em
-            >However, based on Microsoft's recommendations, it must be pointed out the legacy Microsoft browsers
-            <strong>IE11 and non Chromium Edge (pre v79)</strong> are specifically <strong>not supported</strong>.</em
-          >
+          Neon aims to support all popular modern browsers. However, based on Microsoft's recommendations, it must be
+          pointed out the legacy Microsoft browsers
+          <strong>IE11 and non Chromium Edge (pre v79)</strong> are specifically <strong>not supported</strong>.
         </p>
         <p>
           With that in mind, Neon strives to use semantic native HTML and fallbacks (where possible) so you may find
@@ -28,8 +26,8 @@
         <neon-anchor id="framework-support" />
         <h2 class="neon-h4">Framework Support</h2>
         <p>
-          Currently Neon is built using VueJS 2.0 therefore the supported VueJS version is also 2.0. Neon is built using
-          Typescript and classes so is positioned well for a quick transition to Vue 3.0 in the near future.
+          Neon is built using Vue 3 therefore the supported Vue version is also 3.<br />Versions of Neon 5.2.0 & below
+          support VueJS 2.x.
         </p>
       </neon-card-body>
     </neon-card>

@@ -1,97 +1,82 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonRangeSlider } from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonRangeSlider } from '@/neon';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
-@Component({
+export default defineComponent({
+  name: 'RangeSlider',
   components: {
     ComponentDocumentation,
+    Editor,
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
     NeonRangeSlider,
   },
-})
-export default class RangeSlider extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Select a range of discrete values');
 
-  private headline = 'Select a range of discrete values';
+    const basicSlider = ref([20, 80]);
+    const minMaxSlider = ref([-50, 50]);
+    const outputSlider = ref([20, 80]);
+    const legendSlider = ref([20, 80]);
+    const tooltipSlider = ref([20, 80]);
+    const percentageSlider = ref([0.25, 0.75]);
+    const decimalSlider = ref([21.5, 82.5]);
+    const noFormattingSlider = ref([2015, 2020]);
+    const templateSlider = ref([75.25, 125.75]);
+    const disabledSlider = ref([20, 80]);
+    const primarySlider = ref([20, 80]);
+    const brandSlider = ref([20, 80]);
+    const warnSlider = ref([20, 80]);
 
-  private data = {
-    basicSlider: [20, 80],
-    minMaxSlider: [-50, 50],
-    outputSlider: [20, 80],
-    legendSlider: [20, 80],
-    tooltipSlider: [20, 80],
-    percentageSlider: [0.25, 0.75],
-    decimalSlider: [21.5, 82.5],
-    noFormattingSlider: [2015, 2020],
-    templateSlider: [75.25, 125.75],
-    disabledSlider: [20, 80],
-    primarySlider: [20, 80],
-    brandSlider: [20, 80],
-    warnSlider: [20, 80],
-  };
+    const coreExamples = `<neon-range-slider id="basicSliderId" v-model="basicSlider" />
+<neon-range-slider :max="100" :min="-100" v-model="minMaxSlider" :step="10" />
+<neon-range-slider :disabled="true" v-model="disabledSlider" />`;
 
-  private coreExamples = `<div class="neon-vertically-spaced">
-  <label>Basic range slider</label>
-  <neon-range-slider id="basicSliderId" v-model="basicSlider" />
-  <label>With Min, max and step</label>
-  <neon-range-slider v-model="minMaxSlider" :min="-100" :max="100" :step="10" />
-  <label>Disabled</label>
-  <neon-range-slider v-model="disabledSlider" :disabled="true" />
-</div>`;
+    const formattingExamples = `<neon-range-slider v-model="percentageSlider" :percentage="true" />
+<neon-range-slider v-model="decimalSlider" :decimals="2" />
+<neon-range-slider v-model="noFormattingSlider" :disable-formatting="true" :max="2050" :min="2000" />
+<neon-range-slider v-model="templateSlider"
+                   :decimals="2"
+                   :max="200.0"
+                   :step="0.5"
+                   value-template="\${value}"
+/>`;
 
-  private formattingExamples = `<div class="neon-vertically-spaced">
-  <label>Percentage</label>
-  <neon-range-slider v-model="percentageSlider" :percentage="true" />
-  <label>Decimal values</label>
-  <neon-range-slider v-model="decimalSlider" :decimals="2" />
-  <label>Formatting disabled (e.g. year)</label>
-  <neon-range-slider v-model="noFormattingSlider" :disable-formatting="true" :min="2000" :max="2050" />
-  <label>With template (e.g. currency)</label>
-  <neon-range-slider v-model="templateSlider" :max="200.0" :step="0.5" :decimals="2" value-template="\${value}" />
-</div>`;
+    const colorExamples = `<neon-range-slider v-model="primarySlider" color="primary" />
+<neon-range-slider v-model="brandSlider" color="brand" />
+<neon-range-slider v-model="warnSlider" color="warn" />`;
 
-  private colorExamples = `<div class="neon-vertically-spaced">
-  <neon-range-slider v-model="primarySlider" color="primary" />
-  <neon-range-slider v-model="brandSlider" color="brand" />
-  <neon-range-slider v-model="warnSlider" color="warn" />
-</div>`;
+    const displayExamples = `<neon-range-slider v-model="outputSlider" :output="false" />
+<neon-range-slider v-model="legendSlider" :legend="false" />
+<neon-range-slider v-model="tooltipSlider" :tooltip="false" />`;
 
-  private displayExamples = `<div class="neon-vertically-spaced">
-  <label>Output hidden</label>
-  <neon-range-slider v-model="outputSlider" :output="false" />
-  <label>Legend hidden</label>
-  <neon-range-slider v-model="legendSlider" :legend="false" />
-  <label>Tooltip hidden</label>
-  <neon-range-slider v-model="tooltipSlider" :tooltip="false" />
-</div>`;
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonRangeSlider')));
 
-  private examples = [
-    {
-      title: 'Basic usage',
-      template: this.coreExamples,
-      data: this.data,
-    },
-    {
-      title: 'Formatting options',
-      template: this.formattingExamples,
-      data: this.data,
-    },
-    {
-      title: 'Rangle slider colors',
-      template: this.colorExamples,
-      data: this.data,
-    },
-    {
-      title: 'Display options',
-      template: this.displayExamples,
-      data: this.data,
-    },
-  ];
-
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonRangeSlider');
-  }
-}
+    return {
+      menuModel,
+      headline,
+      basicSlider,
+      minMaxSlider,
+      outputSlider,
+      legendSlider,
+      tooltipSlider,
+      percentageSlider,
+      decimalSlider,
+      noFormattingSlider,
+      templateSlider,
+      disabledSlider,
+      primarySlider,
+      brandSlider,
+      warnSlider,
+      coreExamples,
+      formattingExamples,
+      colorExamples,
+      displayExamples,
+    };
+  },
+});

@@ -1,43 +1,51 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonColor } from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonColor } from '@/neon';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Color',
   components: {
     ComponentDocumentation,
+    Editor,
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
     NeonColor,
   },
-})
-export default class Color extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Enhanced HTML native color picker');
 
-  private headline = 'Enhanced HTML native color picker';
+    const colorSmall = ref('#BADA55');
+    const colorMedium = ref('#BADA55');
+    const colorLarge = ref('#BADA55');
 
-  private data = {
-    colorSmall: '#FF6F61',
-    colorMedium: '#FF6F61',
-    colorLarge: '#FF6F61',
-  };
+    const colorSizeExamples = `<neon-color v-model="colorSmall"
+            placeholder="Choose a color"
+            size="s"
+/>
+<neon-color v-model="colorMedium"
+            placeholder="Choose a color"
+            size="m"
+/>
+<neon-color v-model="colorLarge"
+            placeholder="Choose a color"
+            size="l"
+/>`;
 
-  private colorSizeExamples = `<div class="neon-vertically-spaced">
-  <neon-color size="s" v-model="colorSmall" placeholder="Choose a color" />
-  <neon-color size="m" v-model="colorMedium" placeholder="Choose a color" />
-  <neon-color size="l" v-model="colorLarge" placeholder="Choose a color" />
-</div>`;
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonColor')));
 
-  private examples = [
-    {
-      title: 'Color input sizes',
-      template: this.colorSizeExamples,
-      data: this.data,
-    },
-  ];
-
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonColor');
-  }
-}
+    return {
+      menuModel,
+      headline,
+      colorSmall,
+      colorMedium,
+      colorLarge,
+      colorSizeExamples,
+    };
+  },
+});

@@ -1,14 +1,17 @@
-import { mount } from '@vue/test-utils';
+import { render } from '@testing-library/vue';
 import NeonSkeletonLoader from './NeonSkeletonLoader.vue';
 
-describe('NeonSkeletonLoader', () => {
+describe('NeonNotificationCounter', () => {
+  const count = 5;
+
   it('renders correct number of loading bars', () => {
-    // given
-    const count = 5;
-    const wrapper = mount(NeonSkeletonLoader, {
-      propsData: { count },
-    });
-    // when / then
-    expect(wrapper.findAll('.neon-skeleton-loader__item').length).toEqual(count);
+    const { html } = render(NeonSkeletonLoader, { props: { count } });
+    expect(html()).toEqual(`<div class="neon-skeleton-loader">
+  <div class="neon-skeleton-loader__item"></div>
+  <div class="neon-skeleton-loader__item"></div>
+  <div class="neon-skeleton-loader__item"></div>
+  <div class="neon-skeleton-loader__item"></div>
+  <div class="neon-skeleton-loader__item"></div>
+</div>`);
   });
 });

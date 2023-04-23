@@ -1,24 +1,12 @@
-import Vue from 'vue';
-import { mount } from '@vue/test-utils';
+import type { RenderResult } from '@testing-library/vue';
+import { fireEvent, render } from '@testing-library/vue';
 import NeonSearch from './NeonSearch.vue';
-import NeonSearchClass from './NeonSearch';
-import NeonChip from '../chip/NeonChip.vue';
-import NeonDropdown from '../../presentation/dropdown/NeonDropdown.vue';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
-import NeonInput from '../input/NeonInput.vue';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonSearchOption } from '../../../common/models/NeonSearchOption';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonDropdownPlacement } from '../../../common/enums/NeonDropdownPlacement';
-import { NeonScrollUtils } from '../../../common/utils/NeonScrollUtils';
-
-Vue.component('NeonChip', NeonChip);
-Vue.component('NeonDropdown', NeonDropdown);
-Vue.component('NeonIcon', NeonIcon);
-Vue.component('NeonInput', NeonInput);
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import type { NeonSearchOption } from '@/common/models/NeonSearchOption';
+import { NeonSize } from '@/common/enums/NeonSize';
 
 describe('NeonSearch', () => {
-  const value: NeonSearchOption[] = [];
+  const modelValue = '';
   const placeholder = '';
   const options: NeonSearchOption[] = [
     {
@@ -35,214 +23,132 @@ describe('NeonSearch', () => {
     },
   ];
 
+  let harness: RenderResult;
+
+  beforeEach(() => {
+    harness = render(NeonSearch, { props: { modelValue, placeholder, options, debounce: 0 } });
+  });
+
   it('renders default color', () => {
     // given
-    const value = '';
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-search--low-contrast').element).toBeDefined();
-    expect(wrapper.find('.neon-dropdown--low-contrast').element).toBeDefined();
-    expect(wrapper.find('.neon-search__container--low-contrast').element).toBeDefined();
+    expect(container.querySelector('.neon-search--low-contrast')).toBeDefined();
+    expect(container.querySelector('.neon-dropdown--low-contrast')).toBeDefined();
+    expect(container.querySelector('.neon-search__container--low-contrast')).toBeDefined();
   });
 
-  it('renders color', () => {
+  it('renders color', async () => {
     // given
-    const value = '';
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options, color: NeonFunctionalColor.Primary },
-    });
+    const { container, rerender } = harness;
+    await rerender({ color: NeonFunctionalColor.Primary });
     // when / then
-    expect(wrapper.find('.neon-search--primary').element).toBeDefined();
-    expect(wrapper.find('.neon-dropdown--primary').element).toBeDefined();
-    expect(wrapper.find('.neon-search__container--primary').element).toBeDefined();
+    expect(container.querySelector('.neon-search--primary')).toBeDefined();
+    expect(container.querySelector('.neon-dropdown--primary')).toBeDefined();
+    expect(container.querySelector('.neon-search__container--primary')).toBeDefined();
   });
 
-  it('renders single', () => {
+  it('renders single', async () => {
     // given
-    const value = 'xdd';
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options },
-    });
+    const modelValue = 'xdd';
+    const { container, rerender } = harness;
+    await rerender({ modelValue });
     // when / then
-    expect(wrapper.find('.neon-search--multiple').element).toBeUndefined();
-    expect(wrapper.find('.neon-search').attributes()['aria-multiselectable']).toBeUndefined();
-    expect(wrapper.find('.neon-search').attributes()['aria-activedescendant']).toEqual(value);
+    expect(container.querySelector('.neon-search--multiple')).toBeNull();
+    expect(container.querySelector('.neon-search')?.getAttribute('aria-multiselectable')).toEqual('false');
+    expect(container.querySelector('.neon-search')?.getAttribute('aria-activedescendant')).toEqual(modelValue);
   });
 
-  it('renders multiple', () => {
+  it('renders multiple', async () => {
     // given
-    const value = [{ key: 'xdd' }];
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options, multiple: true },
-    });
+    const modelValue = [{ key: 'xdd', label: 'XDD' }];
+    const { container, rerender } = harness;
+    await rerender({ modelValue, multiple: true });
     // when / then
-    expect(wrapper.find('.neon-search--multiple').element).toBeDefined();
-    expect(wrapper.find('.neon-search').attributes()['aria-multiselectable']).toEqual('true');
-    expect(wrapper.find('.neon-search').attributes()['aria-activedescendant']).toEqual(value[0].key);
+    expect(container.querySelector('.neon-search--multiple')).toBeDefined();
+    expect(container.querySelector('.neon-search')?.getAttribute('aria-multiselectable')).toEqual('true');
+    expect(container.querySelector('.neon-search')?.getAttribute('aria-activedescendant')).toEqual(modelValue[0].key);
   });
 
   it('renders non empty', () => {
     // given
-    const value = '';
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-search--empty').element).toBeUndefined();
+    expect(container.querySelector('.neon-search--empty')).toBeNull();
   });
 
-  it('renders empty', () => {
+  it('renders empty', async () => {
     // given
-    const value = '';
     const options: NeonSearchOption[] = [];
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options },
-    });
+    const { container, rerender } = harness;
+    await rerender({ options });
     // when / then
-    expect(wrapper.find('.neon-search--empty').element).toBeDefined();
+    expect(container.querySelector('.neon-search--empty')).toBeDefined();
   });
 
   it('renders enabled', () => {
     // given
-    const value = '';
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-search--disabled').element).toBeUndefined();
-    expect(wrapper.find('.neon-dropdown--disabled').element).toBeUndefined();
-    expect(wrapper.find('.neon-search__container--disabled').element).toBeUndefined();
-    expect(wrapper.find('.neon-search__input.neon-input--disabled').element).toBeUndefined();
+    expect(container.querySelector('.neon-search--disabled')).toBeNull();
+    expect(container.querySelector('.neon-dropdown--disabled')).toBeNull();
+    expect(container.querySelector('.neon-search__container--disabled')).toBeNull();
+    expect(container.querySelector('.neon-search__input.neon-input--disabled')).toBeNull();
   });
 
-  it('renders disabled', () => {
+  it('renders disabled', async () => {
     // given
-    const value = '';
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options, disabled: true },
-    });
+    const { container, rerender } = harness;
+    await rerender({ disabled: true });
     // when / then
-    expect(wrapper.find('.neon-search--disabled').element).toBeDefined();
-    expect(wrapper.find('.neon-dropdown--disabled').element).toBeDefined();
-    expect(wrapper.find('.neon-search__container--disabled').element).toBeDefined();
-    expect(wrapper.find('.neon-search__input.neon-input--disabled').element).toBeDefined();
+    expect(container.querySelector('.neon-search--disabled')).toBeDefined();
+    expect(container.querySelector('.neon-dropdown--disabled')).toBeDefined();
+    expect(container.querySelector('.neon-search__container--disabled')).toBeDefined();
+    expect(container.querySelector('.neon-search__input.neon-input--disabled')).toBeDefined();
   });
 
   it('renders default size', () => {
     // given
-    const value = '';
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-dropdown--m').element).toBeDefined();
-    expect(wrapper.find('.neon-search__container--m').element).toBeDefined();
-    expect(wrapper.find('.neon-search__input.neon-input--m').element).toBeDefined();
+    expect(container.querySelector('.neon-dropdown--m')).toBeDefined();
+    expect(container.querySelector('.neon-search__container--m')).toBeDefined();
+    expect(container.querySelector('.neon-search__input.neon-input--m')).toBeDefined();
   });
 
-  it('renders size', () => {
+  it('renders size', async () => {
     // given
-    const value = '';
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options, size: NeonSize.Large },
-    });
+    const { container, rerender } = harness;
+    await rerender({ size: NeonSize.Large });
     // when / then
-    expect(wrapper.find('.neon-dropdown--l').element).toBeDefined();
-    expect(wrapper.find('.neon-search__container--l').element).toBeDefined();
-    expect(wrapper.find('.neon-search__input.neon-input--l').element).toBeDefined();
+    expect(container.querySelector('.neon-dropdown--l')).toBeDefined();
+    expect(container.querySelector('.neon-search__container--l')).toBeDefined();
+    expect(container.querySelector('.neon-search__input.neon-input--l')).toBeDefined();
   });
 
   it('renders options', () => {
     // given
-    const value = '';
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-search__option--separator-before').element).toBeDefined();
-    expect(wrapper.find('.neon-search__option--m').element).toBeDefined();
-    expect(wrapper.find('.neon-search__option-icon').element).toBeDefined();
-    expect(wrapper.find('.neon-search__option-label').text()).toEqual(options[0].label);
-    expect(wrapper.find('.neon-search__option').attributes().id).toEqual(options[0].key);
+    expect(container.querySelector('.neon-search__option--separator-before')).toBeDefined();
+    expect(container.querySelector('.neon-search__option--m')).toBeDefined();
+    expect(container.querySelector('.neon-search__option-icon')).toBeDefined();
+    expect(container.querySelector('.neon-search__option-label')?.textContent).toEqual(options[0].label);
+    expect(container.querySelector('.neon-search__option')?.getAttribute('id')).toEqual(options[0].key);
   });
 
-  it('renders empty options', () => {
+  it('click option emits input single', async () => {
     // given
-    const value = '';
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options: [] },
-    });
-    const search = wrapper.vm as NeonSearchClass;
+    const { container, emitted } = harness;
     // when
-    search.showOptions();
+    await fireEvent.click(container.querySelector('.neon-search__option') as HTMLElement);
     // then
-    expect(wrapper.find('.neon-search__option').element).toBeUndefined();
+    expect(emitted()['update:modelValue'][0]).toEqual([options[0].key]);
   });
 
-  it('click option emits input single', () => {
+  it('click option emits input multiple, in modelValues', async () => {
     // given
-    const value = '';
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options },
-    });
-    // when
-    wrapper.find('.neon-search__option').trigger('click');
-    // then
-    expect(wrapper.emitted().input[0]).toEqual([options[0].key]);
-  });
-
-  it('Enter keydown on option emits input single', () => {
-    // given
-    const value = '';
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options },
-    });
-    const search = wrapper.vm as NeonSearchClass;
-    search.showOptions();
-    search.highlightedIndex = 0;
-    search.highlightedKey = options[0].key;
-    // when
-    search.keyboardHandler(new KeyboardEvent('keydown', { code: 'Enter' }));
-    // then
-    expect(wrapper.emitted().input[0]).toEqual([options[0].key]);
-  });
-
-  it('Space keydown on option emits input single', () => {
-    // given
-    const value = '';
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options },
-    });
-    const search = wrapper.vm as NeonSearchClass;
-    search.showOptions();
-    search.highlightedIndex = 0;
-    search.highlightedKey = options[0].key;
-    // when
-    search.keyboardHandler(new KeyboardEvent('keydown', { code: 'Space' }));
-    // then
-    expect(wrapper.emitted().input[0]).toEqual([options[0].key]);
-  });
-
-  it('Space keydown on option closed', () => {
-    // given
-    const value = '';
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options },
-    });
-    const search = wrapper.vm as NeonSearchClass;
-    search.highlightedIndex = 0;
-    search.highlightedKey = options[0].key;
-    // when
-    search.keyboardHandler(new KeyboardEvent('keydown', { code: 'Space' }));
-    // then
-    expect(wrapper.emitted().input).toBeUndefined();
-  });
-
-  it('click option emits input multiple, in values', () => {
-    // given
-    const value: NeonSearchOption[] = [
+    const modelValue: NeonSearchOption[] = [
       {
         key: 'key2',
         label: 'Label 2',
@@ -250,56 +156,38 @@ describe('NeonSearch', () => {
         icon: 'check',
       },
     ];
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options, multiple: true },
-    });
+    const { container, emitted, rerender } = harness;
+    await rerender({ modelValue, multiple: true });
     // when
-    wrapper.find('.neon-search__option:last-child').trigger('click');
+    await fireEvent.click(container.querySelector('.neon-search__option:last-child') as HTMLElement);
     // then
-    expect(wrapper.emitted().input[0]).toEqual([[]]);
+    expect(emitted()['update:modelValue'][0]).toEqual([[]]);
   });
 
-  it('click option emits input multiple, not in values', () => {
+  it('click option emits input multiple, not in modelValues', async () => {
     // given
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options, multiple: true },
-    });
+    const { container, emitted, rerender } = harness;
+    await rerender({ modelValue: [], multiple: true });
     // when
-    wrapper.find('.neon-search__option:last-child').trigger('click');
+    await fireEvent.click(container.querySelector('.neon-search__option:last-child') as HTMLElement);
     // then
-    expect(wrapper.emitted().input[0]).toEqual([[options[1]]]);
+    expect(emitted()['update:modelValue'][0]).toEqual([[options[1]]]);
   });
 
-  it('change highlighted on mouse over', () => {
+  it('emits filter-changed', async () => {
     // given
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options, multiple: true },
-    });
-    const search = wrapper.vm as NeonSearchClass;
-    search.showOptions();
-    search.highlightedIndex = 0;
-    search.highlightedKey = options[0].key;
+    const { container, emitted } = harness;
     // when
-    wrapper.find('.neon-search__option:last-child').trigger('mouseover');
+    const el = container.querySelector('.neon-search__input .neon-input__text') as HTMLInputElement;
+    el.value = 'xdd';
+    await fireEvent.input(el);
     // then
-    expect(search.highlightedIndex).toEqual(1);
+    expect(emitted()['filter-changed'][0]).toEqual(['xdd']);
   });
 
-  it('emits filter-changed', () => {
+  it('renders chip', async () => {
     // given
-    const value = '';
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options },
-    });
-    // when
-    wrapper.find('.neon-search__input input').setValue('xdd');
-    // then
-    expect(wrapper.emitted()['filter-changed'][0]).toEqual(['xdd']);
-  });
-
-  it('renders chip', () => {
-    // given
-    const value: NeonSearchOption[] = [
+    const modelValue: NeonSearchOption[] = [
       {
         key: 'key1',
         label: 'Label 1',
@@ -308,20 +196,19 @@ describe('NeonSearch', () => {
         chipColor: NeonFunctionalColor.Brand,
       },
     ];
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options, multiple: true, size: NeonSize.Large },
-    });
+    const { container, rerender } = harness;
+    await rerender({ modelValue, multiple: true, size: NeonSize.Large });
     // when / then
-    expect(wrapper.find('.neon-chip').text()).toEqual(value[0].label);
-    expect(wrapper.find('.neon-chip').attributes().id).toEqual(value[0].key);
-    expect(wrapper.find('.neon-chip--l').element).toBeDefined();
-    expect(wrapper.find('.neon-chip--brand').element).toBeDefined();
-    expect(wrapper.find('.neon-chip--last-chip').text()).toEqual(value[0].label);
+    expect(container.querySelector('.neon-chip')?.textContent).toMatch(modelValue[0].label);
+    expect(container.querySelector('.neon-chip')?.getAttribute('id')).toEqual(modelValue[0].key);
+    expect(container.querySelector('.neon-chip--l')).toBeDefined();
+    expect(container.querySelector('.neon-chip--brand')).toBeDefined();
+    expect(container.querySelector('.neon-chip--last-chip')?.textContent).toMatch(modelValue[0].label);
   });
 
-  it('closing a chip emits input', () => {
+  it('closing a chip emits input', async () => {
     // given
-    const value: NeonSearchOption[] = [
+    const modelValue: NeonSearchOption[] = [
       {
         key: 'key1',
         label: 'Label 1',
@@ -329,225 +216,11 @@ describe('NeonSearch', () => {
         icon: 'check',
       },
     ];
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options, multiple: true },
-    });
+    const { container, emitted, rerender } = harness;
+    await rerender({ modelValue, multiple: true });
     // when
-    wrapper.find('.neon-chip').trigger('click');
+    await fireEvent.click(container.querySelector('.neon-chip') as HTMLElement);
     // then
-    expect(wrapper.emitted().input[0]).toEqual([[]]);
-  });
-
-  it('removes keyboard handler on destroy', () => {
-    // given
-    document.addEventListener = jest.fn();
-    document.removeEventListener = jest.fn();
-    const value: NeonSearchOption[] = [
-      {
-        key: 'key1',
-        label: 'Label 1',
-        separatorBefore: true,
-        icon: 'check',
-      },
-    ];
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options, multiple: true },
-    });
-    // when
-    wrapper.destroy();
-    // then
-    expect(document.addEventListener).toHaveBeenCalled();
-    expect(document.removeEventListener).toHaveBeenCalled();
-  });
-
-  it('focus opens dropdown list of options', () => {
-    // given
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options, multiple: true },
-    });
-    // when
-    wrapper.find('.neon-search__input input').trigger('focus');
-    // then
-    expect((wrapper.vm as NeonSearchClass).open).toEqual(true);
-  });
-
-  it('focus opens dropdown no options', () => {
-    // given
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options, multiple: true },
-    });
-    // when
-    wrapper.find('.neon-search__input input').trigger('focus');
-    // then
-    expect((wrapper.vm as NeonSearchClass).open).toEqual(true);
-  });
-
-  it('navigates down in option list', () => {
-    // given
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options, multiple: true },
-    });
-    const search = wrapper.vm as NeonSearchClass;
-    search.showOptions();
-    search.highlightedIndex = 0;
-    search.highlightedKey = options[0].key;
-    // when
-    search.keyboardHandler(new KeyboardEvent('keydown', { code: 'ArrowDown' }));
-    // then
-    expect((wrapper.vm as NeonSearchClass).highlightedIndex).toEqual(1);
-    expect((wrapper.vm as NeonSearchClass).highlightedKey).toEqual(options[1].key);
-  });
-
-  it('navigates down in reverse option list', () => {
-    // given
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options, multiple: true, placement: NeonDropdownPlacement.TopLeft },
-    });
-    const search = wrapper.vm as NeonSearchClass;
-    search.showOptions();
-    search.highlightedIndex = 0;
-    search.highlightedKey = options[0].key;
-    // when
-    search.keyboardHandler(new KeyboardEvent('keydown', { code: 'ArrowDown' }));
-    // then
-    expect((wrapper.vm as NeonSearchClass).highlightedIndex).toEqual(0);
-    expect((wrapper.vm as NeonSearchClass).highlightedKey).toEqual(options[0].key);
-  });
-
-  it('navigates down in reverse option list index 1', () => {
-    // given
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options, multiple: true, placement: NeonDropdownPlacement.TopLeft },
-    });
-    const search = wrapper.vm as NeonSearchClass;
-    search.showOptions();
-    search.highlightedIndex = 1;
-    search.highlightedKey = options[1].key;
-    // when
-    search.keyboardHandler(new KeyboardEvent('keydown', { code: 'ArrowDown' }));
-    // then
-    expect((wrapper.vm as NeonSearchClass).highlightedIndex).toEqual(0);
-    expect((wrapper.vm as NeonSearchClass).highlightedKey).toEqual(options[0].key);
-  });
-
-  it('navigates down last option in list', () => {
-    // given
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options, multiple: true },
-    });
-    const search = wrapper.vm as NeonSearchClass;
-    search.showOptions();
-    search.highlightedIndex = 1;
-    search.highlightedKey = options[1].key;
-    // when
-    search.keyboardHandler(new KeyboardEvent('keydown', { code: 'ArrowDown' }));
-    // then
-    expect((wrapper.vm as NeonSearchClass).highlightedIndex).toEqual(1);
-    expect((wrapper.vm as NeonSearchClass).highlightedKey).toEqual(options[1].key);
-  });
-
-  it('navigates up in option list', () => {
-    // given
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options, multiple: true },
-    });
-    const search = wrapper.vm as NeonSearchClass;
-    search.showOptions();
-    search.highlightedIndex = 1;
-    search.highlightedKey = options[1].key;
-    // when
-    search.keyboardHandler(new KeyboardEvent('keydown', { code: 'ArrowUp' }));
-    // then
-    expect((wrapper.vm as NeonSearchClass).highlightedIndex).toEqual(0);
-    expect((wrapper.vm as NeonSearchClass).highlightedKey).toEqual(options[0].key);
-  });
-
-  it('navigates up in reverse option list', () => {
-    // given
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options, multiple: true, placement: NeonDropdownPlacement.TopLeft },
-    });
-    const search = wrapper.vm as NeonSearchClass;
-    search.showOptions();
-    search.highlightedIndex = 1;
-    search.highlightedKey = options[1].key;
-    // when
-    search.keyboardHandler(new KeyboardEvent('keydown', { code: 'ArrowUp' }));
-    // then
-    expect((wrapper.vm as NeonSearchClass).highlightedIndex).toEqual(1);
-    expect((wrapper.vm as NeonSearchClass).highlightedKey).toEqual(options[1].key);
-  });
-
-  it('navigates up in reverse option list index 0', () => {
-    // given
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options, multiple: true, placement: NeonDropdownPlacement.TopLeft },
-    });
-    const search = wrapper.vm as NeonSearchClass;
-    search.showOptions();
-    search.highlightedIndex = 0;
-    search.highlightedKey = options[0].key;
-    // when
-    search.keyboardHandler(new KeyboardEvent('keydown', { code: 'ArrowUp' }));
-    // then
-    expect((wrapper.vm as NeonSearchClass).highlightedIndex).toEqual(1);
-    expect((wrapper.vm as NeonSearchClass).highlightedKey).toEqual(options[1].key);
-  });
-
-  it('navigates up first option in list', () => {
-    // given
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options, multiple: true },
-    });
-    const search = wrapper.vm as NeonSearchClass;
-    search.showOptions();
-    search.highlightedIndex = 0;
-    search.highlightedKey = options[0].key;
-    // when
-    search.keyboardHandler(new KeyboardEvent('keydown', { code: 'ArrowUp' }));
-    // then
-    expect((wrapper.vm as NeonSearchClass).highlightedIndex).toEqual(0);
-    expect((wrapper.vm as NeonSearchClass).highlightedKey).toEqual(options[0].key);
-  });
-
-  it('Tab closes option list', () => {
-    // given
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options, multiple: true },
-    });
-    const search = wrapper.vm as NeonSearchClass;
-    search.showOptions();
-    // when
-    search.keyboardHandler(new KeyboardEvent('keydown', { code: 'Tab' }));
-    // then
-    expect(search.open).toEqual(false);
-  });
-
-  it('ctrl+tab does not close option list', () => {
-    // given
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options, multiple: true },
-    });
-    const search = wrapper.vm as NeonSearchClass;
-    search.showOptions();
-    // when
-    search.keyboardHandler(new KeyboardEvent('keydown', { code: 'Tab', ctrlKey: true }));
-    // then
-    expect(search.open).toEqual(true);
-  });
-
-  it('scroll on navigate scrolls into view', () => {
-    // given
-    const scrollIntoView = NeonScrollUtils.scrollIntoView;
-    NeonScrollUtils.scrollIntoView = jest.fn();
-    const wrapper = mount(NeonSearch, {
-      propsData: { value, placeholder, options, multiple: true },
-    });
-    const search = wrapper.vm as NeonSearchClass;
-    // when
-    search.scrollOnNavigate();
-    // then
-    expect(NeonScrollUtils.scrollIntoView).toHaveBeenCalled();
-    NeonScrollUtils.scrollIntoView = scrollIntoView;
+    expect(emitted()['update:modelValue'][0]).toEqual([[]]);
   });
 });

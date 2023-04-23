@@ -1,0 +1,153 @@
+@use '../includes/responsive';
+@use '../includes/layout';
+
+@mixin drawer {
+  .neon-drawer {
+    &__container {
+      position: fixed;
+      overflow: hidden;
+      margin: 0;
+      z-index: var(--neon-z-index-top);
+      @include layout.padding($multiplier: 0.75);
+      transition: margin-left ease-in-out var(--neon-animation-speed-slow),
+      margin-right ease-in-out var(--neon-animation-speed-slow), margin-top ease-in-out var(--neon-animation-speed-slow),
+      margin-bottom ease-in-out var(--neon-animation-speed-slow);
+      background-color: var(--neon-background-color-card);
+      box-shadow: var(--neon-box-shadow);
+
+      &--full-width {
+        padding: 0;
+      }
+    }
+
+    &--left,
+    &--right {
+      .neon-drawer__container {
+        top: 0;
+        width: var(--neon-side-nav-width);
+        @include layout.min-height(100);
+        @include layout.height(100);
+      }
+    }
+
+    &--left {
+      .neon-drawer__container {
+        left: 0;
+        border-right: var(--neon-border-width-drawer) var(--neon-border-style) var(--neon-border-color);
+        border-top-right-radius: var(--neon-border-radius-drawer);
+        border-bottom-right-radius: var(--neon-border-radius-drawer);
+      }
+
+      &:not(.neon-drawer--open) .neon-drawer__container {
+        margin-left: -200%;
+      }
+    }
+
+    &--right {
+      .neon-drawer__container {
+        right: 0;
+        border-left: var(--neon-border-width-drawer) var(--neon-border-style) var(--neon-border-color);
+        border-top-left-radius: var(--neon-border-radius-drawer);
+        border-bottom-left-radius: var(--neon-border-radius-drawer);
+      }
+
+      &:not(.neon-drawer--open) .neon-drawer__container {
+        margin-right: -200%;
+      }
+    }
+
+    &--top,
+    &--bottom {
+      .neon-drawer__container {
+        left: 0;
+        @include layout.width(100);
+      }
+    }
+
+    &--top {
+      .neon-drawer__container {
+        top: 0;
+        margin-top: 0;
+        border-bottom: var(--neon-border-width-drawer) var(--neon-border-style) var(--neon-border-color);
+        border-bottom-left-radius: var(--neon-border-radius-drawer);
+        border-bottom-right-radius: var(--neon-border-radius-drawer);
+      }
+
+      &:not(.neon-drawer--open) .neon-drawer__container {
+        margin-top: -200%;
+      }
+    }
+
+    &--bottom {
+      .neon-drawer__container {
+        bottom: 0;
+        border-top: var(--neon-border-width-drawer) var(--neon-border-style) var(--neon-border-color);
+        border-top-left-radius: var(--neon-border-radius-drawer);
+        border-top-right-radius: var(--neon-border-radius-drawer);
+      }
+
+      &:not(.neon-drawer--open) .neon-drawer__container {
+        margin-bottom: -200%;
+      }
+    }
+
+    .neon-drawer__overlay {
+      opacity: 0;
+      z-index: var(--neon-z-index-below);
+      position: fixed;
+      pointer-events: none;
+      top: 0;
+      left: 0;
+      @include layout.width(100);
+      @include layout.min-height(100);
+      @include layout.height(100);
+    }
+
+    &.neon-drawer--open {
+      .neon-drawer__overlay {
+        opacity: 1;
+        pointer-events: auto;
+        z-index: var(--neon-z-index-top);
+        transition: opacity ease-in-out calc(0.5 * var(--neon-animation-speed-fast));
+      }
+    }
+
+    &--with-overlay {
+      .neon-drawer__overlay {
+        background-color: var(--neon-background-color-overlay);
+      }
+    }
+  }
+
+  .neon-page--with-top-nav {
+    .neon-drawer--top {
+      .neon-drawer__overlay {
+        z-index: var(--neon-z-index-above-2);
+      }
+
+      .neon-drawer__container {
+        z-index: var(--neon-z-index-above-2);
+      }
+    }
+
+    .neon-drawer--top {
+      .neon-drawer__container {
+        @include responsive.responsive(larger-than-tablet) {
+          margin-top: var(--neon-top-nav-height-desktop);
+        }
+
+        @include responsive.responsive(tablet) {
+          margin-top: var(--neon-top-nav-height-tablet);
+        }
+
+        @include responsive.responsive(mobile-large) {
+          margin-top: var(--neon-top-nav-height-mobile);
+        }
+      }
+
+      &:not(.neon-drawer--open) .neon-drawer__container {
+        margin-top: -200%;
+      }
+    }
+  }
+}

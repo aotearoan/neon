@@ -1,32 +1,34 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonTopNav } from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonTopNav } from '@/neon';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
-@Component({
+export default defineComponent({
+  name: 'TopNav',
   components: {
     NeonCard,
     NeonCardBody,
+    NeonCardHeader,
     NeonTopNav,
     ComponentDocumentation,
+    Editor,
   },
-})
-export default class TopNav extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Display fixed content at the top of the page');
 
-  private headline = 'Display fixed content at the top of the page';
-
-  private examples = [
-    {
-      title: 'Top Nav example',
-      template: `<neon-top-nav>
+    const template = `<neon-top-nav>
   <span>Top navigation content</span>
-</neon-top-nav>`,
-      fixedContent: true,
-    },
-  ];
+</neon-top-nav>`;
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonTopNav');
-  }
-}
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonTopNav')));
+
+    return {
+      menuModel,
+      headline,
+      template,
+    };
+  },
+});

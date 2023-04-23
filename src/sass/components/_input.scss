@@ -1,0 +1,181 @@
+@use '../includes/palettes';
+
+@mixin input-size($size, $font-size) {
+  .neon-input__text,
+  .neon-input__textarea {
+    font-size: var(--neon-font-size-#{$font-size});
+  }
+
+  .neon-input__text {
+    height: var(--neon-size-#{$size});
+  }
+
+  &.neon-input--state-loading,
+  &.neon-input--state-success,
+  &.neon-input--state-error,
+  &.neon-input--with-icon {
+    .neon-input__text {
+      padding-right: var(--neon-size-#{$size});
+    }
+
+    .neon-icon {
+      position: absolute;
+      width: calc(var(--neon-font-size-#{$font-size}) * var(--neon-line-height-one));
+      height: calc(var(--neon-font-size-#{$font-size}) * var(--neon-line-height-one));
+      right: calc(0.5 * (var(--neon-size-#{$size}) - var(--neon-font-size-#{$font-size})));
+      top: calc(0.5 * (var(--neon-size-#{$size}) - var(--neon-font-size-#{$font-size})) - 1rem);
+      cursor: default;
+      border-radius: 50%;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &.neon-input--with-icon {
+    .neon-input__icon:not(.neon-input__icon--read-only) {
+      cursor: pointer;
+
+      &:active {
+        top: calc(0.5 * (var(--neon-size-#{$size}) - var(--neon-font-size-#{$font-size})) + 1rem);
+      }
+    }
+  }
+}
+
+@mixin input {
+  .neon-input {
+    width: 100%;
+    position: relative;
+
+    @each $color in palettes.$neon-functional-colors {
+      $input-rgb: var(--neon-rgb-#{$color});
+      &.neon-input--#{$color} {
+        &.neon-input--focused {
+          .neon-input__text,
+          .neon-input__textarea {
+            @if (not index(palettes.$neon-neutral-colors, $color)) {
+              border-color: rgb($input-rgb);
+              background-color: rgba(var(--neon-rgb-#{$color}), 0.03125);
+
+              &::placeholder {
+                color: rgba(var(--neon-rgb-#{$color}), 0.5);
+              }
+            } @else {
+              border-color: rgb($input-rgb);
+              background-color: var(--neon-background-color-input-active);
+            }
+          }
+        }
+
+        .neon-icon:focus {
+          background-color: rgba($input-rgb, 0.125);
+          box-shadow: 0 0 0 2rem rgba($input-rgb, 0.125);
+        }
+      }
+    }
+
+    &.neon-input--with-state-highlight.neon-input--state-success {
+      .neon-input__text,
+      .neon-input__textarea {
+        background-color: rgba(var(--neon-rgb-success), 0.125);
+
+        &::placeholder {
+          color: rgba(var(--neon-rgb-success), 0.75);
+        }
+      }
+    }
+
+    &.neon-input--with-state-highlight.neon-input--state-error {
+      &,
+      &.neon-input--focused {
+        .neon-input__text,
+        .neon-input__textarea {
+          background-color: rgba(var(--neon-rgb-error), 0.125);
+
+          &::placeholder {
+            color: rgba(var(--neon-rgb-error), 0.75);
+          }
+        }
+      }
+    }
+
+    &--s {
+      @include input-size('s', 's');
+    }
+
+    &--m {
+      @include input-size('m', 'm');
+    }
+
+    &--l {
+      @include input-size('l', 'm');
+    }
+
+    &__text,
+    &__textarea {
+      border-radius: var(--neon-border-radius-input);
+      border: var(--neon-border-width) var(--neon-border-style);
+      padding: var(--neon-base-space) calc(2.5 * var(--neon-base-space));
+      line-height: var(--neon-line-height-one);
+      outline: none;
+      font-family: var(--neon-body-font-family);
+      width: 100%;
+      border-color: var(--neon-border-color-input);
+      color: var(--neon-color-text);
+      background-color: var(--neon-background-color-input);
+      box-shadow: var(--neon-inset-shadow);
+
+      &::placeholder {
+        font-family: var(--neon-body-font-family);
+        letter-spacing: var(--neon-letter-spacing-s);
+        color: var(--neon-color-placeholder);
+      }
+
+      &-counter {
+        position: absolute;
+        bottom: calc(2 * var(--neon-base-space));
+        right: calc(2 * var(--neon-base-space));
+        user-select: none;
+        font-size: var(--neon-font-size-s);
+        letter-spacing: var(--neon-letter-spacing-s);
+        color: var(--neon-color-placeholder);
+      }
+    }
+
+    &:not(.neon-input--placeholder-visible) {
+      input[type='password'] {
+        font-weight: bold;
+        letter-spacing: calc(2 * var(--neon-letter-spacing-m));
+      }
+    }
+
+    &__text[type='number'],
+    &__text[inputmode='tel'],
+    &__text[inputmode='decimal'],
+    &__text[inputmode='numeric'] {
+      font-variant: tabular-nums;
+    }
+
+    &--disabled {
+      .neon-input__text,
+      .neon-input__textarea {
+        box-shadow: none;
+        border-color: var(--neon-color-disabled-dark);
+        background-color: var(--neon-color-disabled-dark);
+
+        &,
+        &::placeholder {
+          color: var(--neon-color-disabled-light);
+          -webkit-text-fill-color: var(--neon-color-disabled-light);
+        }
+      }
+
+      input,
+      textarea {
+        cursor: not-allowed;
+      }
+    }
+  }
+}

@@ -1,23 +1,24 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonActionMenu, NeonCard, NeonCardBody } from '../../../../components';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import { Menu, MenuModel } from '../../../Menu';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonActionMenu, NeonCard, NeonCardBody } from '@/neon';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
 
-@Component({
+export default defineComponent({
+  name: 'ActionMenu',
   components: {
     NeonCard,
     NeonCardBody,
     NeonActionMenu,
     ComponentDocumentation,
+    Editor,
   },
-})
-export default class ActionMenu extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Side navigation actions');
 
-  private headline = 'Side navigation actions';
-
-  private data = {
-    model: [
+    const model = ref([
       {
         label: 'Option 1',
         key: 'option-1',
@@ -31,8 +32,9 @@ export default class ActionMenu extends Vue {
         key: 'option-3',
         disabled: true,
       },
-    ],
-    modelWithCounts: [
+    ]);
+
+    const modelWithCounts = ref([
       {
         label: 'Option 1',
         key: 'option-1',
@@ -49,25 +51,26 @@ export default class ActionMenu extends Vue {
         disabled: true,
         count: 911,
       },
-    ],
-    selected: 'option-1',
-    selected2: 'option-1',
-  };
+    ]);
 
-  private examples = [
-    {
-      title: 'Basic example',
-      template: `<neon-action-menu :model="model" color="primary" v-model="selected"></neon-action-menu>`,
-      data: this.data,
-    },
-    {
-      title: 'With counts',
-      template: `<neon-action-menu :model="modelWithCounts" color="primary" v-model="selected2"></neon-action-menu>`,
-      data: this.data,
-    },
-  ];
+    const selected = ref('option-1');
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonActionMenu');
-  }
-}
+    const selected2 = ref('option-1');
+
+    const basicTemplate = '<neon-action-menu v-model="selected" :model="model" color="primary" />';
+    const withCountsTemplate = '<neon-action-menu v-model="selected2" :model="modelWithCounts" color="primary" />';
+
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonActionMenu')));
+
+    return {
+      menuModel,
+      headline,
+      model,
+      modelWithCounts,
+      selected,
+      selected2,
+      basicTemplate,
+      withCountsTemplate,
+    };
+  },
+});

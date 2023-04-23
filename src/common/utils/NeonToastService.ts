@@ -1,5 +1,5 @@
 import { NeonEventBus } from './NeonEventBus';
-import { NeonToastMessage } from '../models/NeonToastMessage';
+import type { NeonToastMessage } from '../models/NeonToastMessage';
 import { NeonAlertLevel } from '../enums/NeonAlertLevel';
 
 /**
@@ -38,12 +38,12 @@ export class NeonToastService {
     NeonToastService.emit(NeonAlertLevel.Error, alert);
   }
 
+  public static generateEventKey(eventType: NeonAlertLevel) {
+    return `${NeonEventBus.messagePrefix}-toast-${eventType}`;
+  }
+
   private static emit(eventType: NeonAlertLevel, alert: NeonToastMessage) {
     const eventKey = NeonToastService.generateEventKey(eventType);
     NeonEventBus.emit(eventKey, alert);
-  }
-
-  public static generateEventKey(eventType: NeonAlertLevel) {
-    return `${NeonEventBus.messagePrefix}-toast-${eventType}`;
   }
 }

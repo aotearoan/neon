@@ -1,9 +1,8 @@
-import { TranslateResult } from 'vue-i18n';
 import { enumList, modelList, utilsList } from './SupportingClasses';
 
-export interface MenuGroup {
-  group: TranslateResult;
-  children: MenuModel[];
+export interface SubComponent {
+  path: string;
+  name: string;
 }
 
 export interface MenuModel {
@@ -11,15 +10,15 @@ export interface MenuModel {
   path: string;
   page?: string;
   keywords?: string;
-  name?: TranslateResult;
+  name?: string;
   component?: string;
   subComponents?: SubComponent[];
   children?: MenuModel[];
 }
 
-export interface SubComponent {
-  path: string;
-  name: string;
+export interface MenuGroup {
+  group: string;
+  children: MenuModel[];
 }
 
 export class Menu {
@@ -37,7 +36,13 @@ export class Menu {
                 page: 'GettingStarted',
                 name: 'Getting Started',
                 keywords: 'installation sass css scss instructions yarn npm',
-                anchors: ['Installation', 'Typescript', 'SASS'],
+                anchors: ['Installation', 'Typescript', 'SASS', 'HTML'],
+              },
+              {
+                path: 'add-a-component',
+                page: 'AddingAComponent',
+                name: 'Adding Components',
+                keywords: 'add new component',
               },
               {
                 path: 'accessibility',
@@ -48,7 +53,8 @@ export class Menu {
                 page: 'I18n',
                 name: 'i18n',
                 keywords:
-                  'internationalization internationalisation languages translations translationresult multilanguage multi-language',
+                  'internationalization internationalisation languages translations translationresult multilanguage multi-language number date format',
+                anchors: ['Text Strings', 'Dates & Numbers'],
               },
               {
                 path: 'technical-requirements',
@@ -69,9 +75,19 @@ export class Menu {
                 anchors: ['Introduction', 'Brand palettes', 'Functional palettes', 'Neutral palettes', 'Color classes'],
               },
               {
+                path: 'palette-creator',
+                page: 'PaletteCreator',
+                name: 'Palette Creator',
+                keywords: 'color colour palette generator creator rgb css variables',
+              },
+              {
+                path: 'icons',
+                page: 'Icons',
+              },
+              {
                 path: 'layout',
                 page: 'Layout',
-                anchors: ['Desktop layout', 'Responsive layout', 'Page content'],
+                anchors: ['Units & Spacing', 'Desktop layout', 'Responsive layout', 'Page content'],
                 keywords: 'mobile tablet grid responsiveness',
               },
               {
@@ -113,7 +129,8 @@ export class Menu {
               },
               {
                 path: 'dialog',
-                page: 'Dialog',
+                page: 'AppDialog',
+                name: 'Dialog',
                 keywords: 'modal alert',
                 component: 'NeonDialog',
               },
@@ -264,6 +281,11 @@ export class Menu {
                 component: 'NeonMenu',
               },
               {
+                path: 'stepper',
+                page: 'Stepper',
+                component: 'NeonStepper',
+              },
+              {
                 path: 'tree-menu',
                 page: 'TreeMenu',
                 name: 'Tree Menu',
@@ -313,11 +335,6 @@ export class Menu {
                 component: 'NeonLabel',
               },
               {
-                path: 'logo',
-                page: 'Logo',
-                component: 'NeonLogo',
-              },
-              {
                 path: 'table',
                 page: 'Table',
                 component: 'NeonTable',
@@ -358,6 +375,13 @@ export class Menu {
                 component: 'NeonColor',
               },
               {
+                path: 'date-picker',
+                page: 'DatePicker',
+                name: 'Date Picker',
+                keywords: 'date time picker calendar locale',
+                component: 'NeonDatePicker',
+              },
+              {
                 path: 'drop-zone',
                 page: 'DropZone',
                 name: 'Drop Zone',
@@ -370,6 +394,12 @@ export class Menu {
                 name: 'Field Group',
                 keywords: 'input indicator combi button dropdown',
                 component: 'NeonFieldGroup',
+              },
+              {
+                path: 'field',
+                page: 'Field',
+                keywords: 'label field input optional mandatory message error',
+                component: 'NeonField',
               },
               {
                 path: 'file',
@@ -433,6 +463,13 @@ export class Menu {
                 page: 'Select',
                 keywords: 'dropdown',
                 component: 'NeonSelect',
+              },
+              {
+                path: 'selectable-card',
+                page: 'SelectableCard',
+                name: 'Selectable Card',
+                keywords: 'selectable card checklist checkbox list',
+                component: 'NeonSelectableCard',
               },
               {
                 path: 'slider',
@@ -509,13 +546,14 @@ export class Menu {
         return { ...item, path };
       } else if (item.children) {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const [head, ..._tail] = item.children
+        const [head, ...tail] = item.children
           .map((child) => findComponent(child, path))
           .filter((child) => child !== null);
         return head || null;
       }
       return null;
     }
+
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [head, ...tail] = Menu.menu().flatMap((group) =>
       group.children.flatMap((item) => findComponent(item)).filter((item) => item !== null),

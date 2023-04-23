@@ -1,0 +1,94 @@
+@use '../includes/palettes';
+
+@mixin linear-progress {
+  .neon-linear-progress {
+    user-select: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    @each $color in palettes.$neon-functional-colors {
+      &.neon-linear-progress--#{$color} {
+        $progress-rgb: var(--neon-rgb-#{$color});
+
+        .neon-linear-progress__bar {
+          background: rgba($progress-rgb, var(--neon-opacity-background-progress));
+        }
+
+        .neon-linear-progress__indicator {
+          background: rgb($progress-rgb);
+        }
+
+        @each $alternateColor in palettes.$neon-functional-colors {
+          &.neon-linear-progress--alternate-color-#{$alternateColor} {
+            .neon-linear-progress__indicator {
+              background: linear-gradient(
+                              90deg,
+                              var(--neon-color-#{$alternateColor}) 0%,
+                              rgb($progress-rgb) 100%
+              );
+            }
+          }
+        }
+      }
+    }
+
+    &__bar {
+      overflow: hidden;
+      border-radius: var(--neon-border-radius);
+    }
+
+    &,
+    &__container,
+    &__bar,
+    &__indicator {
+      display: flex;
+      flex: 1 0 auto;
+    }
+
+    &__icon {
+      width: var(--neon-font-size-l);
+      height: var(--neon-font-size-l);
+      margin-left: calc(2 * var(--neon-base-space));
+    }
+
+    &--s {
+      .neon-linear-progress__bar,
+      .neon-linear-progress__indicator {
+        height: var(--neon-base-space);
+      }
+    }
+
+    &--m {
+      .neon-linear-progress__bar,
+      .neon-linear-progress__indicator {
+        height: calc(2 * var(--neon-base-space));
+      }
+    }
+
+    &--l {
+      .neon-linear-progress__bar,
+      .neon-linear-progress__indicator {
+        height: calc(3 * var(--neon-base-space));
+      }
+    }
+
+    &__indicator {
+      align-items: flex-end;
+      justify-content: center;
+      border-radius: var(--neon-border-radius) var(--neon-border-radius-progress-indicator) var(--neon-border-radius-progress-indicator) var(--neon-border-radius);
+      transition: all 25ms ease-in-out;
+
+      &--completed {
+        border-top-right-radius: var(--neon-border-radius);
+        border-bottom-right-radius: var(--neon-border-radius);
+      }
+    }
+
+    &__output {
+      margin-left: calc(2 * var(--neon-base-space));
+      font-weight: var(--neon-font-weight-bold);
+      font-variant: tabular-nums;
+    }
+  }
+}

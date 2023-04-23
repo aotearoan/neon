@@ -1,0 +1,64 @@
+{
+  "displayName": "NeonStepper",
+  "description": "A stepper component for assisting users in navigating through complex flows.",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "steps",
+      "description": "An ordered list of the step names, these values are used for display purposes.",
+      "type": {
+        "name": "Array as () => Array<string>"
+      },
+      "required": true
+    },
+    {
+      "name": "completedIndex",
+      "description": "The index of the highest completed step (regardless of the current step the user has selected).\nThis is used to display the completed steps to the user.",
+      "type": {
+        "name": "number"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "-1"
+      }
+    },
+    {
+      "name": "modelValue",
+      "description": "The index of the step that is currently selected.",
+      "type": {
+        "name": "number"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "0"
+      }
+    },
+    {
+      "name": "color",
+      "description": "The color of the Stepper component.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Brand"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "update:modelValue",
+      "description": "Emitted when the selected step is changed.",
+      "type": {
+        "names": [
+          "number"
+        ]
+      }
+    }
+  ],
+  "sourceFiles": [
+    "./src/components/navigation/stepper/NeonStepper.vue",
+    "/Users/andrew/dev/projects/neon/src/components/navigation/stepper/NeonStepper.ts"
+  ]
+}

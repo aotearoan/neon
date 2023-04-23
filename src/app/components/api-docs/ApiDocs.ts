@@ -1,85 +1,87 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { NeonNote } from '../../../components';
-import { DocumentationModel, EventModel, PropertyModel, PropTypeModel } from '../ApiModel';
-import { enumList, modelList } from '../../SupportingClasses';
+import { computed, defineComponent } from 'vue';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonLabel, NeonLink, NeonNote } from '@/neon';
+import type { DocumentationModel, EventModel, PropertyModel, PropTypeModel } from '../ApiModel';
+import { enumList, modelList } from '@/app/SupportingClasses';
 
-@Component({
+export default defineComponent({
+  name: 'ApiDocs',
   components: {
+    NeonCard,
+    NeonCardHeader,
+    NeonCardBody,
+    NeonLabel,
+    NeonLink,
     NeonNote,
   },
-})
-export default class ApiDocs extends Vue {
-  @Prop({ required: true })
-  public apiModel!: DocumentationModel;
+  props: {
+    apiModel: { type: Object as () => DocumentationModel, required: true },
+    componentName: { type: String, required: true },
+  },
+  setup(props) {
+    const hasProps = computed(() => props.apiModel.props?.length > 0);
+    const hasEvents = computed(() => props.apiModel.events?.length > 0);
+    const hasSlots = computed(() => (props.apiModel.slots || []).length > 0);
+    const hasDocs = computed(() => hasProps.value || hasEvents || hasSlots);
 
-  @Prop({ required: true })
-  public componentName!: string;
+    const isArray = (prop: PropertyModel) => prop.type?.name === 'Array';
 
-  private isArray(prop: PropertyModel) {
-    return prop.type?.name === 'Array';
-  }
+    const typeName = (prop: PropertyModel) => {
+      if (prop.tags?.type) {
+        return prop.tags.type[0].description;
+      } else if (prop.type) {
+        const type: PropTypeModel = prop.type;
 
-  private typeName(prop: PropertyModel) {
-    if (prop.tags?.type) {
-      return prop.tags.type[0].description;
-    } else if (prop.type) {
-      const type: PropTypeModel = prop.type;
+        if (isArray(prop) || prop.type.name === 'union') {
+          return type.elements
+            ?.map((e) => {
+              if (e.name === 'Array' && e.elements) {
+                const elementNames =
+                  e.elements.length > 1 ? `(${e.elements.map((ae) => ae.name).join(' | ')}})` : e.elements[0].name;
+                return `${elementNames}[]`;
+              }
 
-      if (this.isArray(prop) || prop.type.name === 'union') {
-        return type.elements
-          ?.map((e) => {
-            if (e.name === 'Array' && e.elements) {
-              const elementNames =
-                e.elements.length > 1 ? `(${e.elements.map((ae) => ae.name).join(' | ')}})` : e.elements[0].name;
-              return `${elementNames}[]`;
-            }
+              return e.name;
+            })
+            .join(' | ');
+        }
 
-            return e.name;
-          })
-          .join(' | ');
+        return type.name;
       }
 
-      return type.name;
-    }
+      return undefined;
+    };
 
-    return undefined;
-  }
+    const lookupLink = (typeName?: string) => {
+      if (typeName) {
+        const matches = typeName.match(/.*(Neon[a-zA-Z]+)/);
+        if (matches && matches[1]) {
+          const neonType = matches[1];
+          const isEnum = enumList.indexOf(neonType) >= 0;
+          const isModel = modelList.indexOf(neonType) >= 0;
 
-  private typeLink(prop: PropertyModel) {
-    return this.lookupLink(this.typeName(prop));
-  }
+          return isEnum ? `/enums/${neonType}` : isModel ? `/models/${neonType}` : undefined;
+        }
+      }
+      return undefined;
+    };
 
-  private eventTypeName(event: EventModel) {
-    return event.type?.names[0] || undefined;
-  }
+    const typeLink = (prop: PropertyModel) => lookupLink(typeName(prop));
 
-  private eventTypeLink(event: EventModel) {
-    return this.lookupLink(this.eventTypeName(event));
-  }
+    const eventTypeName = (event: EventModel) => event.type?.names[0] || undefined;
 
-  private lookupLink(typeName?: string) {
-    if (typeName) {
-      const isEnum = enumList.indexOf(typeName) >= 0;
-      const isModel = modelList.indexOf(typeName) >= 0;
+    const eventTypeLink = (event: EventModel) => lookupLink(eventTypeName(event));
 
-      return isEnum ? `/enums/${typeName}` : isModel ? `/models/${typeName}` : undefined;
-    }
-    return undefined;
-  }
-
-  private get hasDocs() {
-    return this.hasProps || this.hasEvents || this.hasSlots;
-  }
-
-  private get hasProps() {
-    return this.apiModel.props?.length > 0;
-  }
-
-  private get hasEvents() {
-    return this.apiModel.events?.length > 0;
-  }
-
-  private get hasSlots() {
-    return (this.apiModel.slots || []).length > 0;
-  }
-}
+    return {
+      hasProps,
+      hasEvents,
+      hasSlots,
+      hasDocs,
+      isArray,
+      typeName,
+      typeLink,
+      lookupLink,
+      eventTypeName,
+      eventTypeLink,
+    };
+  },
+});

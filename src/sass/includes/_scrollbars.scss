@@ -1,0 +1,19 @@
+@mixin scrollbars {
+  scrollbar-color: var(--neon-color-scrollbar) transparent;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    width: var(--neon-width-scrollbar);
+    height: var(--neon-width-scrollbar);
+
+    &-thumb {
+      background: var(--neon-color-scrollbar);
+      border-radius: var(--neon-border-radius-scrollbar);
+    }
+
+    &-track-piece {
+      background: transparent;
+    }
+  }
+}

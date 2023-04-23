@@ -1,12 +1,16 @@
 {
+  "displayName": "NeonFieldGroup",
   "description": "Used to compose a group of inputs, buttons and input indicators into a single component.",
   "tags": {},
-  "displayName": "NeonFieldGroup",
   "exportName": "default",
   "slots": [
     {
       "name": "default",
       "description": "The slot for the inputs, buttons and input indicators to compose into a single component"
     }
+  ],
+  "sourceFiles": [
+    "./src/components/user-input/field-group/NeonFieldGroup.vue",
+    "/Users/andrew/dev/projects/neon/src/components/user-input/field-group/NeonFieldGroup.ts"
   ]
 }

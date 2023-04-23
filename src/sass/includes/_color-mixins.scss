@@ -1,0 +1,13 @@
+$color-levels: (l5, l4, l3, l2, l1, d1, d2, d3, d4, d5);
+
+@mixin generate-color-classes($prefix) {
+  @each $level in $color-levels {
+    .neon-#{$prefix}-color-#{$level} {
+      color: var(--neon-color-#{$prefix}-#{$level});
+    }
+
+    .neon-#{$prefix}-bg-color-#{$level} {
+      background-color: var(--neon-color-#{$prefix}-#{$level});
+    }
+  }
+}

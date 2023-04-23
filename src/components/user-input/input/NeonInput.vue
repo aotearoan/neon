@@ -1,12 +1,11 @@
 <template>
   <div
-    class="neon-input"
     :class="[
       {
-        'neon-input--with-icon': icon || (value && value.length > 0),
+        'neon-input--with-icon': !hideIcon && (icon || (modelValue && modelValue.length > 0)),
         'neon-input--disabled': disabled,
         'neon-input--focused': focused,
-        'neon-input--placeholder-visible': placeholder && (!value || value.length === 0),
+        'neon-input--placeholder-visible': placeholder && (!modelValue || modelValue.length === 0),
         'neon-input--with-state-highlight': stateHighlight,
         'neon-input--with-state-icon': stateIcon,
       },
@@ -14,50 +13,55 @@
       `neon-input--${color}`,
       `neon-input--state-${state}`,
     ]"
+    class="neon-input"
   >
     <input
       v-if="!rows"
-      ref="neonInput"
       :id="id"
+      ref="neonInput"
+      :aria-placeholder="computedPlaceholder"
+      :disabled="disabled"
+      :placeholder="computedPlaceholder"
       :tabindex="tabindex"
       :type="type"
-      :value="value"
-      :disabled="disabled"
-      :placeholder="computedPlaceholder()"
-      @input="changeValue"
-      @blur="onBlur"
-      @focus="onFocus"
+      :value="modelValue"
       class="neon-input__textfield neon-input__text"
       v-bind="sanitizedAttributes"
-      v-on="sanitizedListeners"
+      @blur="onBlur"
+      @focus="!disabled && onFocus()"
+      @input.stop.prevent="!disabled && changeValue($event)"
     />
     <textarea
       v-else
-      :rows="rows"
       :id="id"
-      :tabindex="tabindex"
-      :value="value"
+      :aria-placeholder="computedPlaceholder"
       :disabled="disabled"
-      :placeholder="computedPlaceholder()"
-      @input="changeValue"
-      @blur="onBlur"
-      @focus="onFocus"
+      :placeholder="computedPlaceholder"
+      :rows="rows"
+      :tabindex="tabindex"
+      :value="modelValue"
       class="neon-input__textfield neon-input__textarea"
       v-bind="sanitizedAttributes"
-      v-on="sanitizedListeners"
+      @blur="onBlur"
+      @focus="onFocus"
+      @input.stop.prevent="changeValue"
     ></textarea>
     <neon-icon
       v-if="iconVisible"
-      :name="iconName"
-      :tabindex="disabled || !icon ? false : 0"
-      :disabled="disabled"
+      :class="{ 'neon-input__icon--read-only': iconReadonly }"
       :color="iconColor"
-      role="button"
-      @click.native="iconClicked"
-      @keydown.enter.native="iconClicked"
-      @keydown.space.native="iconClicked"
+      :disabled="disabled"
+      :name="iconName"
+      :role="!iconReadonly && 'button'"
+      :tabindex="disabled || !icon || iconReadonly ? false : 0"
+      class="neon-input__icon"
+      @click="!iconReadonly && iconClicked($event)"
+      @keydown.enter="!iconReadonly && iconClicked($event)"
+      @keydown.space="!iconReadonly && iconClicked($event)"
     />
-    <span v-if="maxlength" class="neon-input__textarea-counter">{{ `${value.length}/${maxlength}` }}</span>
+    <span v-if="maxlength && maxlength > 0" class="neon-input__textarea-counter">
+      {{ `${modelValue.length}/${maxlength}` }}
+    </span>
   </div>
 </template>
 

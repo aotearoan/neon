@@ -1,590 +1,479 @@
-import Vue from 'vue';
-import { mount } from '@vue/test-utils';
-import NeonNumberClass from './NeonNumber';
 import NeonNumber from './NeonNumber.vue';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonInputMode } from '../../../common/enums/NeonInputMode';
-import NeonButton from '../button/NeonButton.vue';
-import NeonFieldGroup from '../field-group/NeonFieldGroup.vue';
-import NeonInput from '../input/NeonInput.vue';
-
-Vue.component('NeonButton', NeonButton);
-Vue.component('NeonFieldGroup', NeonFieldGroup);
-Vue.component('NeonInput', NeonInput);
+import type { RenderResult } from '@testing-library/vue';
+import { fireEvent, render } from '@testing-library/vue';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonInputMode } from '@/common/enums/NeonInputMode';
 
 describe('NeonNumber', () => {
-  it('renders default size', () => {
-    // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value },
+  const modelValue = 42;
+  let harness: RenderResult;
+
+  beforeEach(() => {
+    harness = render(NeonNumber, {
+      props: { modelValue, debounce: 0, spinButtons: true },
     });
-    // when / then
-    expect(wrapper.find('.neon-number--m').element).toBeDefined();
-    expect(wrapper.find('.neon-input--m').element).toBeDefined();
-    expect(wrapper.findAll('.neon-button--m').length).toEqual(2);
   });
 
-  it('renders size', () => {
+  it('renders default size', () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, size: NeonSize.Large },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-number--l').element).toBeDefined();
-    expect(wrapper.find('.neon-input--l').element).toBeDefined();
-    expect(wrapper.findAll('.neon-button--l').length).toEqual(2);
+    expect(container.querySelector('.neon-number--m')).toBeDefined();
+    expect(container.querySelector('.neon-input--m')).toBeDefined();
+    expect(container.querySelectorAll('.neon-button--m').length).toEqual(2);
+  });
+
+  it('renders size', async () => {
+    // given
+    const { container, rerender } = harness;
+    // when
+    await rerender({ size: NeonSize.Large });
+    // then
+    expect(container.querySelector('.neon-number--l')).toBeDefined();
+    expect(container.querySelector('.neon-input--l')).toBeDefined();
+    expect(container.querySelectorAll('.neon-button--l').length).toEqual(2);
   });
 
   it('renders default color', () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-number--low-contrast').element).toBeDefined();
-    expect(wrapper.find('.neon-input--low-contrast').element).toBeDefined();
-    expect(wrapper.findAll('.neon-button--low-contrast').length).toEqual(2);
+    expect(container.querySelector('.neon-number--low-contrast')).toBeDefined();
+    expect(container.querySelector('.neon-input--low-contrast')).toBeDefined();
+    expect(container.querySelectorAll('.neon-button--low-contrast').length).toEqual(2);
   });
 
-  it('renders color', () => {
+  it('renders color', async () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, color: NeonFunctionalColor.Primary },
-    });
-    // when / then
-    expect(wrapper.find('.neon-number--primary').element).toBeDefined();
-    expect(wrapper.find('.neon-input--primary').element).toBeDefined();
-    expect(wrapper.findAll('.neon-button--primary').length).toEqual(2);
+    const { container, rerender } = harness;
+    // when
+    await rerender({ color: NeonFunctionalColor.Primary });
+    // then
+    expect(container.querySelector('.neon-number--primary')).toBeDefined();
+    expect(container.querySelector('.neon-input--primary')).toBeDefined();
+    expect(container.querySelectorAll('.neon-button--primary').length).toEqual(2);
   });
 
   it('renders enabled', () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-number--disabled').element).toBeUndefined();
-    expect(wrapper.find('.neon-input--disabled').element).toBeUndefined();
-    expect(wrapper.findAll('.neon-button--disabled').length).toEqual(0);
+    expect(container.querySelector('.neon-number--disabled')).toBeNull();
+    expect(container.querySelector('.neon-input--disabled')).toBeNull();
+    expect(container.querySelectorAll('.neon-button--disabled').length).toEqual(0);
   });
 
-  it('renders disabled', () => {
+  it('renders disabled', async () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, disabled: true },
-    });
+    const { container, rerender } = harness;
+    // when
+    await rerender({ disabled: true });
     // when / then
-    expect(wrapper.find('.neon-number--disabled').element).toBeDefined();
-    expect(wrapper.find('.neon-input--disabled').element).toBeDefined();
-    expect(wrapper.findAll('.neon-button--disabled').length).toEqual(2);
+    expect(container.querySelector('.neon-number--disabled')).toBeDefined();
+    expect(container.querySelector('.neon-input--disabled')).toBeDefined();
+    expect(container.querySelectorAll('.neon-button--disabled').length).toEqual(2);
   });
 
   it('renders input editable by default', () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-number--editable').element).toBeDefined();
-    expect(wrapper.find('.neon-input--disabled').element).toBeUndefined();
+    expect(container.querySelector('.neon-number--editable')).toBeDefined();
+    expect(container.querySelector('.neon-input--disabled')).toBeNull();
   });
 
-  it('renders input non editable', () => {
+  it('renders input non editable', async () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, editable: false },
-    });
-    // when / then
-    expect(wrapper.find('.neon-number--editable').element).toBeUndefined();
-    expect(wrapper.find('.neon-input--disabled').element).toBeDefined();
+    const { container, rerender } = harness;
+    // when
+    await rerender({ editable: false });
+    // then
+    expect(container.querySelector('.neon-number--editable')).toBeNull();
+    expect(container.querySelector('.neon-input--disabled')).toBeDefined();
   });
 
-  it('renders decrement spin button disabled when at min', () => {
+  it('renders decrement spin button disabled when at min', async () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, min: value },
-    });
-    // when / then
-    expect(wrapper.find('.neon-number__decrement.neon-button--disabled').element).toBeDefined();
+    const { container, rerender } = harness;
+    // when
+    await rerender({ min: modelValue });
+    // then
+    expect(container.querySelector('.neon-number__decrement.neon-button--disabled')).toBeDefined();
   });
 
-  it('renders increment spin button disabled when at max', () => {
+  it('renders increment spin button disabled when at max', async () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, max: value },
-    });
-    // when / then
-    expect(wrapper.find('.neon-number__increment.neon-button--disabled').element).toBeDefined();
+    const { container, rerender } = harness;
+    // when
+    await rerender({ max: modelValue });
+    // then
+    expect(container.querySelector('.neon-number__increment.neon-button--disabled')).toBeDefined();
   });
 
   it('renders spin buttons by default', () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-number--with-buttons').element).toBeDefined();
-    expect(wrapper.findAll('.neon-button').length).toEqual(2);
+    expect(container.querySelector('.neon-number--with-buttons')).toBeDefined();
+    expect(container.querySelectorAll('.neon-button').length).toEqual(2);
   });
 
-  it('renders without spin buttons', () => {
+  it('renders without spin buttons', async () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, spinButtons: false },
-    });
-    // when / then
-    expect(wrapper.find('.neon-number--with-buttons').element).toBeUndefined();
-    expect(wrapper.findAll('.neon-button').length).toEqual(0);
+    const { container, rerender } = harness;
+    // when
+    await rerender({ spinButtons: false });
+    // then
+    expect(container.querySelector('.neon-number--with-buttons')).toBeNull();
+    expect(container.querySelectorAll('.neon-button').length).toEqual(0);
   });
 
   it('renders default decrement label', () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-number__decrement').attributes()['aria-label']).toEqual('Decrement');
+    expect(container.querySelector('.neon-number__decrement')?.getAttribute('aria-label')).toEqual('Decrement');
   });
 
-  it('renders decrement label', () => {
+  it('renders decrement label', async () => {
     // given
-    const value = 42;
+    const { container, rerender } = harness;
     const decrementLabel = 'XDD';
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, decrementLabel },
-    });
-    // when / then
-    expect(wrapper.find('.neon-number__decrement').attributes()['aria-label']).toEqual(decrementLabel);
+    // when
+    await rerender({ decrementLabel });
+    // then
+    expect(container.querySelector('.neon-number__decrement')?.getAttribute('aria-label')).toEqual(decrementLabel);
   });
 
   it('renders default increment label', () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-number__increment').attributes()['aria-label']).toEqual('Increment');
+    expect(container.querySelector('.neon-number__increment')?.getAttribute('aria-label')).toEqual('Increment');
   });
 
-  it('renders increment label', () => {
+  it('renders increment label', async () => {
     // given
-    const value = 42;
+    const { container, rerender } = harness;
     const incrementLabel = 'XDD';
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, incrementLabel },
-    });
-    // when / then
-    expect(wrapper.find('.neon-number__increment').attributes()['aria-label']).toEqual(incrementLabel);
-  });
-
-  it('emits default decrement of 1', () => {
-    // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value },
-    });
     // when
-    wrapper.find('.neon-number__decrement').trigger('click');
+    await rerender({ incrementLabel });
     // then
-    expect(wrapper.emitted().input[0]).toEqual([value - 1]);
+    expect(container.querySelector('.neon-number__increment')?.getAttribute('aria-label')).toEqual(incrementLabel);
   });
 
-  it('emits step decrement', () => {
+  it('emits default decrement of 1', async () => {
     // given
-    const value = 42;
+    const { container, emitted } = harness;
+    // when
+    await fireEvent.click(container.querySelector('.neon-number__decrement') as HTMLElement);
+    // then
+    expect(emitted()['update:modelValue'][0]).toEqual([modelValue - 1]);
+  });
+
+  it('emits step decrement', async () => {
+    // given
+    const { container, emitted, rerender } = harness;
     const step = 5;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, step },
-    });
+    await rerender({ step });
     // when
-    wrapper.find('.neon-number__decrement').trigger('click');
+    await fireEvent.click(container.querySelector('.neon-number__decrement') as HTMLElement);
     // then
-    expect(wrapper.emitted().input[0]).toEqual([value - step]);
+    expect(emitted()['update:modelValue'][0]).toEqual([modelValue - step]);
   });
 
-  it('does not emit when decrement disabled', () => {
+  it('does not emit when decrement disabled', async () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, disabled: true },
-    });
+    const { container, emitted, rerender } = harness;
+    await rerender({ disabled: true });
     // when
-    wrapper.find('.neon-number__decrement').trigger('click');
+    await fireEvent.click(container.querySelector('.neon-number__decrement') as HTMLElement);
     // then
-    expect(wrapper.emitted().input).toBeUndefined();
+    expect(emitted()['update:modelValue']).toBeUndefined();
   });
 
-  it('emits default increment of 1', () => {
+  it('emits default increment of 1', async () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value },
-    });
+    const { container, emitted } = harness;
     // when
-    wrapper.find('.neon-number__increment').trigger('click');
+    await fireEvent.click(container.querySelector('.neon-number__increment') as HTMLElement);
     // then
-    expect(wrapper.emitted().input[0]).toEqual([value + 1]);
+    expect(emitted()['update:modelValue'][0]).toEqual([modelValue + 1]);
   });
 
-  it('emits step increment', () => {
+  it('emits step increment', async () => {
     // given
-    const value = 42;
+    const { container, emitted, rerender } = harness;
     const step = 5;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, step },
-    });
+    await rerender({ step });
     // when
-    wrapper.find('.neon-number__increment').trigger('click');
+    await fireEvent.click(container.querySelector('.neon-number__increment') as HTMLElement);
     // then
-    expect(wrapper.emitted().input[0]).toEqual([value + step]);
+    expect(emitted()['update:modelValue'][0]).toEqual([modelValue + step]);
   });
 
-  it('does not emit when increment disabled', () => {
+  it('does not emit when increment disabled', async () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, disabled: true },
-    });
+    const { container, emitted, rerender } = harness;
+    await rerender({ disabled: true });
     // when
-    wrapper.find('.neon-number__increment').trigger('click');
+    await fireEvent.click(container.querySelector('.neon-number__increment') as HTMLElement);
     // then
-    expect(wrapper.emitted().input).toBeUndefined();
+    expect(emitted()['update:modelValue']).toBeUndefined();
   });
 
-  it('renders input max', () => {
+  it('renders input max', async () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, max: 50 },
-    });
+    const { container, rerender } = harness;
+    await rerender({ max: 50 });
     // when / then
-    expect(wrapper.find('.neon-input__textfield').attributes().max).toEqual('50');
-    expect(wrapper.find('.neon-input__textfield').attributes()['aria-valuemax']).toEqual('50');
+    expect(container.querySelector('.neon-input__textfield')?.getAttribute('max')).toEqual('50');
+    expect(container.querySelector('.neon-input__textfield')?.getAttribute('aria-valuemax')).toEqual('50');
   });
 
-  it('renders input min', () => {
+  it('renders input min', async () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, min: 11 },
-    });
+    const { container, rerender } = harness;
+    await rerender({ min: 11 });
     // when / then
-    expect(wrapper.find('.neon-input__textfield').attributes().min).toEqual('11');
-    expect(wrapper.find('.neon-input__textfield').attributes()['aria-valuemin']).toEqual('11');
+    expect(container.querySelector('.neon-input__textfield')?.getAttribute('min')).toEqual('11');
+    expect(container.querySelector('.neon-input__textfield')?.getAttribute('aria-valuemin')).toEqual('11');
   });
 
   it('renders default step', () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-input__textfield').attributes().step).toEqual('1');
+    expect(container.querySelector('.neon-input__textfield')?.getAttribute('step')).toEqual('1');
   });
 
-  it('renders step', () => {
+  it('renders step', async () => {
     // given
-    const value = 42;
     const step = 5;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, step },
-    });
+    const { container, rerender } = harness;
+    await rerender({ step });
     // when / then
-    expect(wrapper.find('.neon-input__textfield').attributes().step).toEqual('5');
+    expect(container.querySelector('.neon-input__textfield')?.getAttribute('step')).toEqual('5');
   });
 
-  it('renders formatted value (default)', () => {
+  it('renders formatted value (default)', async () => {
     // given
-    const value = 1000;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value },
-    });
+    const { container, rerender } = harness;
+    await rerender({ modelValue: 1000 });
     // when / then
-    expect((wrapper.find('.neon-input__textfield').element as HTMLInputElement).value).toEqual('1,000');
-    expect(wrapper.find('.neon-input__textfield').attributes()['aria-valuenow']).toEqual('1000');
+    const input = container.querySelector('.neon-input__textfield') as HTMLInputElement;
+    expect(input?.value).toEqual('1,000');
+    expect(input?.getAttribute('aria-valuenow')).toEqual('1000');
   });
 
-  it('renders formatted value with decimals', () => {
+  it('renders formatted value with decimals', async () => {
     // given
-    const value = 1000;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, decimals: 2 },
-    });
+    const { container, rerender } = harness;
+    await rerender({ modelValue: 1000, decimals: 2 });
     // when / then
-    expect((wrapper.find('.neon-input__textfield').element as HTMLInputElement).value).toEqual('1,000.00');
-    expect(wrapper.find('.neon-input__textfield').attributes()['aria-valuenow']).toEqual('1000');
+    const input = container.querySelector('.neon-input__textfield') as HTMLInputElement;
+    expect(input?.value).toEqual('1,000.00');
+    expect(input?.getAttribute('aria-valuenow')).toEqual('1000');
   });
 
-  it('renders raw value when focussed', () => {
+  it('renders raw value when focussed', async () => {
     // given
-    const value = 1000;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value },
-    });
-    const vm = wrapper.vm as NeonNumberClass;
+    const mv = 1000;
+    const expected = '1000.00';
+    const { container, rerender } = harness;
+    await rerender({ modelValue: mv, decimals: 2 });
+    const el = container.querySelector('.neon-input__textfield') as HTMLInputElement;
     // when
-    vm.onFocus();
+    await fireEvent.focus(el);
     // then
-    expect(vm.displayValue).toEqual(value);
+    expect(el.value).toEqual(expected);
   });
 
-  it('renders formatted value when blurred', () => {
+  it('renders formatted value when blurred', async () => {
     // given
-    const value = 1000;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value },
-    });
-    const vm = wrapper.vm as NeonNumberClass;
+    const mv = 1000;
+    const { container, rerender } = harness;
+    await rerender({ modelValue: mv, decimals: 2 });
+    const el = container.querySelector('.neon-input__textfield') as HTMLInputElement;
     // when
-    vm.onFocus();
-    vm.onBlur();
+    await fireEvent.focus(el);
+    await fireEvent.blur(el);
     // then
-    expect(vm.displayValue).toEqual('1,000');
+    expect(el.value).toEqual('1,000.00');
   });
 
-  it('renders default input mode', () => {
+  it('renders default input mode', async () => {
     // given
-    const value = 1000;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value },
-    });
+    const { container, rerender } = harness;
+    await rerender({ modelValue: 1000 });
+    const el = container.querySelector('.neon-input__textfield') as HTMLInputElement;
     // when / then
-    expect(wrapper.find('.neon-input__textfield').attributes().inputmode).toEqual(NeonInputMode.Numeric);
+    expect(el?.getAttribute('inputmode')).toEqual(NeonInputMode.Numeric);
   });
 
-  it('renders input mode', () => {
+  it('renders input mode', async () => {
     // given
-    const value = 1000;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, inputmode: NeonInputMode.Decimal },
-    });
+    const inputmode = NeonInputMode.Decimal;
+    const { container, rerender } = harness;
+    await rerender({ modelValue: 1000, inputmode });
+    const el = container.querySelector('.neon-input__textfield') as HTMLInputElement;
     // when / then
-    expect(wrapper.find('.neon-input__textfield').attributes().inputmode).toEqual(NeonInputMode.Decimal);
+    expect(el?.getAttribute('inputmode')).toEqual(NeonInputMode.Decimal);
   });
 
-  it('renders percentage', () => {
+  it('renders percentage', async () => {
     // given
     const value = 0.42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, percentage: true },
-    });
+    const { container, rerender } = harness;
+    await rerender({ modelValue: value, percentage: true });
     // when / then
-    expect((wrapper.find('.neon-input__textfield').element as HTMLInputElement).value).toEqual('42%');
+    const input = container.querySelector('.neon-input__textfield') as HTMLInputElement;
+    expect(input?.value).toEqual('42%');
   });
 
-  it('renders using valueTemplate', () => {
+  it('renders using valueTemplate', async () => {
     // given
     const value = 5.42;
-    const wrapper = mount(NeonNumber, {
-      // eslint-disable-next-line no-template-curly-in-string
-      propsData: { value, valueTemplate: '${value}' },
-    });
+    const { container, rerender } = harness;
+    // eslint-disable-next-line no-template-curly-in-string
+    await rerender({ modelValue: value, valueTemplate: '${value}' });
     // when / then
-    expect((wrapper.find('.neon-input__textfield').element as HTMLInputElement).value).toEqual('$5.42');
+    const input = container.querySelector('.neon-input__textfield') as HTMLInputElement;
+    expect(input?.value).toEqual('$5.42');
   });
 
-  it('emits input when value changed', () => {
+  it('emits input when value changed', async () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value },
-    });
+    const { container, emitted } = harness;
     // when
-    wrapper.find('.neon-input__textfield').setValue('50');
+    const el = container.querySelector('.neon-input__textfield') as HTMLInputElement;
+    el.value = '50';
+    await fireEvent.input(el);
     // then
-    expect(wrapper.emitted().input[0]).toEqual([50]);
+    expect(emitted()['update:modelValue'][0]).toEqual([50]);
   });
 
-  it('emits null for empty value', () => {
+  it('emits null for empty value', async () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value },
-    });
+    const { container, emitted } = harness;
     // when
-    wrapper.find('.neon-input__textfield').setValue('');
+    const el = container.querySelector('.neon-input__textfield') as HTMLInputElement;
+    el.value = '';
+    await fireEvent.input(el);
     // then
-    expect(wrapper.emitted().input[0]).toEqual([null]);
+    expect(emitted()['update:modelValue'][0]).toEqual([null]);
   });
 
-  it('does not emit a value when invalid input', () => {
+  it('does not emit a value when invalid input', async () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value },
-    });
+    const { container, emitted } = harness;
     // when
-    wrapper.find('.neon-input__textfield').setValue(NaN);
+    const el = container.querySelector('.neon-input__textfield') as HTMLInputElement;
+    el.value = '' + NaN;
+    await fireEvent.input(el);
     // then
-    expect(wrapper.emitted().input).toBeUndefined();
+    expect(emitted()['update:modelValue']).toBeUndefined();
   });
 
-  it('does not emit input when value changed and disabled', () => {
+  it('does not emit input when value changed and disabled', async () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, disabled: true },
-    });
+    const { container, emitted, rerender } = harness;
+    await rerender({ disabled: true });
     // when
-    wrapper.find('.neon-input__textfield').setValue('50');
+    const el = container.querySelector('.neon-input__textfield') as HTMLInputElement;
+    expect(el.disabled).toEqual(true);
+    el.value = '50';
+    await fireEvent.input(el);
     // then
-    expect(wrapper.emitted().input).toBeUndefined();
+    expect(emitted()['update:modelValue']).toBeUndefined();
   });
 
-  it('calculates computedValue valid number', () => {
+  it('decrements value with down arrow', async () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value },
-    });
-    const vm = wrapper.vm as NeonNumberClass;
-    // when / then
-    expect(vm.computedValue).toEqual(value);
-  });
-
-  it('calculates computedValue with decimals', () => {
-    // given
-    const value = 42.357;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, decimals: 2 },
-    });
-    const vm = wrapper.vm as NeonNumberClass;
-    // when / then
-    expect(vm.computedValue).toEqual(42.36);
-  });
-
-  it('calculates computedValue null', () => {
-    // given
-    const value = null;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value },
-    });
-    const vm = wrapper.vm as NeonNumberClass;
-    // when / then
-    expect(vm.computedValue).toEqual(0);
-  });
-
-  it('calculates rawValue valid number', () => {
-    // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value },
-    });
-    const vm = wrapper.vm as NeonNumberClass;
-    // when / then
-    expect(vm.rawValue).toEqual(value);
-  });
-
-  it('calculates rawValue with decimals', () => {
-    // given
-    const value = 42.3;
-    const decimals = 2;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, decimals },
-    });
-    const vm = wrapper.vm as NeonNumberClass;
-    // when / then
-    expect(vm.rawValue).toEqual('42.30');
-  });
-
-  it('calculates rawValue null', () => {
-    // given
-    const value = null;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value },
-    });
-    const vm = wrapper.vm as NeonNumberClass;
-    // when / then
-    expect(vm.rawValue).toEqual(value);
-  });
-
-  it('decrements value with down arrow', () => {
-    // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value },
-    });
+    const { container, emitted } = harness;
     // when
-    wrapper.find('.neon-input__textfield').trigger('keydown.down.prevent');
-    // then
-    expect(wrapper.emitted().input[0]).toEqual([41]);
-  });
-
-  it('does not decrement value when at min', () => {
-    // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, min: value },
+    await fireEvent.keyDown(container.querySelector('.neon-input__textfield') as HTMLInputElement, {
+      key: 'ArrowDown',
+      code: 'ArrowDown',
     });
-    // when
-    wrapper.find('.neon-input__textfield').trigger('keydown.down.prevent');
     // then
-    expect(wrapper.emitted().input).toBeUndefined();
+    expect(emitted()['update:modelValue'][0]).toEqual([41]);
   });
 
-  it('emits min value when decrementing past min', () => {
+  it('does not decrement value when at min', async () => {
     // given
-    const value = 42;
+    const { container, emitted, rerender } = harness;
+    await rerender({ min: modelValue });
+    // when
+    await fireEvent.keyDown(container.querySelector('.neon-input__textfield') as HTMLInputElement, {
+      key: 'ArrowDown',
+      code: 'ArrowDown',
+    });
+    // then
+    expect(emitted()['update:modelValue']).toBeUndefined();
+  });
+
+  it('emits min value when decrementing past min', async () => {
+    // given
     const step = 5;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, min: value - 1, step },
-    });
+    const { container, emitted, rerender } = harness;
+    await rerender({ min: modelValue - 1, step });
     // when
-    wrapper.find('.neon-input__textfield').trigger('keydown.down.prevent');
+    await fireEvent.keyDown(container.querySelector('.neon-input__textfield') as HTMLInputElement, {
+      key: 'ArrowDown',
+      code: 'ArrowDown',
+    });
     // then
-    expect(wrapper.emitted().input[0]).toEqual([value - 1]);
+    expect(emitted()['update:modelValue'][0]).toEqual([modelValue - 1]);
   });
 
-  it('increments value with up arrow', () => {
+  it('increments value with up arrow', async () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value },
-    });
+    const { container, emitted } = harness;
     // when
-    wrapper.find('.neon-input__textfield').trigger('keydown.up.prevent');
+    await fireEvent.keyDown(container.querySelector('.neon-input__textfield') as HTMLInputElement, {
+      key: 'ArrowUp',
+      code: 'ArrowUp',
+    });
     // then
-    expect(wrapper.emitted().input[0]).toEqual([43]);
+    expect(emitted()['update:modelValue'][0]).toEqual([43]);
   });
 
-  it('does not increment value when at max', () => {
+  it('does not increment value when at max', async () => {
     // given
-    const value = 42;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, max: value },
-    });
+    const { container, emitted, rerender } = harness;
+    await rerender({ max: modelValue });
     // when
-    wrapper.find('.neon-input__textfield').trigger('keydown.up.prevent');
+    await fireEvent.keyDown(container.querySelector('.neon-input__textfield') as HTMLInputElement, {
+      key: 'ArrowUp',
+      code: 'ArrowUp',
+    });
     // then
-    expect(wrapper.emitted().input).toBeUndefined();
+    expect(emitted()['update:modelValue']).toBeUndefined();
   });
 
-  it('emits max value when incrementing past max', () => {
+  it('emits max value when incrementing past max', async () => {
     // given
-    const value = 42;
     const step = 5;
-    const wrapper = mount(NeonNumber, {
-      propsData: { value, max: value + 1, step },
-    });
+    const { container, emitted, rerender } = harness;
+    await rerender({ max: modelValue + 1, step });
     // when
-    wrapper.find('.neon-input__textfield').trigger('keydown.up.prevent');
+    await fireEvent.keyDown(container.querySelector('.neon-input__textfield') as HTMLInputElement, {
+      key: 'ArrowUp',
+      code: 'ArrowUp',
+    });
     // then
-    expect(wrapper.emitted().input[0]).toEqual([value + 1]);
+    expect(emitted()['update:modelValue'][0]).toEqual([modelValue + 1]);
+  });
+
+  it('renders formatted value with locale', async () => {
+    // given
+    const { container, rerender } = harness;
+    await rerender({ modelValue: 1000, locale: 'de-DE' });
+    // when / then
+    const input = container.querySelector('.neon-input__textfield') as HTMLInputElement;
+    expect(input?.value).toEqual('1.000');
+    expect(input?.getAttribute('aria-valuenow')).toEqual('1000');
   });
 });

@@ -1,8 +1,6 @@
-import { TranslateResult } from 'vue-i18n';
-
 export interface NeonDropdownMenuItem {
   key: string;
-  label: TranslateResult;
+  label: string;
   href?: string;
   icon?: string;
   separatorBefore?: boolean;

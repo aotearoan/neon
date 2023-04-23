@@ -1,19 +1,24 @@
-$neon-height-component-header-desktop: 160px;
-$neon-height-component-header-mobile: 77px;
+@use 'src/sass/includes/layout';
+@use 'src/sass/includes/responsive';
+@use 'src/sass/includes/scrollbars';
+
+$neon-height-component-header-desktop: 160rem;
+$neon-height-component-header-mobile: 77rem;
+$fixed-content-height: 348rem;
 
 .component-documentation {
-  margin-top: $neon-height-component-header-desktop - 0.5 * $spacing-vertical-desktop;
+  margin-top: calc(#{$neon-height-component-header-desktop} - 0.5 * var(--neon-spacing-vertical-desktop));
 
   &__description-heading {
     display: none;
   }
 
-  @include responsive(tablet) {
-    margin-top: $neon-height-component-header-desktop - $spacing-vertical-tablet;
+  @include responsive.responsive(tablet) {
+    margin-top: calc(#{$neon-height-component-header-desktop} - var(--neon-spacing-vertical-tablet));
   }
 
-  @include responsive(mobile-large) {
-    margin-top: $neon-height-component-header-mobile - 0.5 * $neon-spacing-vertical-mobile;
+  @include responsive.responsive(mobile-large) {
+    margin-top: calc(#{$neon-height-component-header-mobile} - 0.5 * var(--neon-spacing-vertical-mobile));
 
     &__description-heading {
       display: flex;
@@ -26,32 +31,32 @@ $neon-height-component-header-mobile: 77px;
 
   &__header {
     position: fixed;
-    z-index: $z-index-above-2;
-    @include padding(1, true);
+    z-index: var(--neon-z-index-above-2);
+    @include layout.padding(1, true);
     padding-bottom: 0 !important;
-    max-width: $neon-max-page-width - $neon-side-nav-width;
+    max-width: calc(var(--neon-max-page-width) - var(--neon-side-nav-width));
+    top: 0;
+    left: var(--neon-side-nav-width);
+    width: calc(100vw - var(--neon-side-nav-width));
 
-    @if ($neon-theme == smooth) {
-      top: 0;
-    } @else {
-      top: $neon-top-nav-height-desktop;
-    }
-
-    left: $neon-side-nav-width;
-    width: calc(100vw - #{$neon-side-nav-width});
-
-    @include responsive(tablet) {
-      top: $neon-top-nav-height-tablet;
+    @include responsive.responsive(tablet) {
+      top: var(--neon-top-nav-height-tablet);
       left: 0;
       width: 100vw;
     }
 
-    @include responsive(mobile-large) {
-      top: $neon-top-nav-height-mobile;
+    @include responsive.responsive(mobile-large) {
+      top: var(--neon-top-nav-height-mobile);
     }
 
     .neon-tabs {
       position: relative;
+    }
+
+    &,
+    &:before {
+      background-color: var(--neon-background-color-footer);
+      border-bottom: var(--neon-border);
     }
 
     &:before {
@@ -62,7 +67,7 @@ $neon-height-component-header-mobile: 77px;
       top: 0;
       left: 0;
       overflow: hidden;
-      z-index: -1;
+      z-index: var(--neon-z-index-below);
     }
   }
 
@@ -71,7 +76,7 @@ $neon-height-component-header-mobile: 77px;
   .examples > h2 {
     display: none;
 
-    @include responsive(mobile-large) {
+    @include responsive.responsive(mobile-large) {
       display: flex;
     }
   }
@@ -79,7 +84,7 @@ $neon-height-component-header-mobile: 77px;
   &__header-container,
   .neon-tab {
     width: 100%;
-    max-width: 1024px;
+    max-width: 1024rem;
     margin: auto;
   }
 
@@ -88,69 +93,171 @@ $neon-height-component-header-mobile: 77px;
     padding-bottom: 0;
 
     &:nth-child(2) {
-      padding-top: 4 * $neon-base-space;
+      padding-top: calc(4 * var(--neon-base-space));
     }
 
-    @include responsive(mobile-large) {
+    @include responsive.responsive(mobile-large) {
       &:nth-child(3),
       &:nth-child(4) {
-        margin-top: 8 * $neon-base-space;
+        margin-top: calc(8 * var(--neon-base-space));
       }
     }
   }
 
   &__headline {
-    margin-bottom: 8 * $neon-base-space;
-    font-weight: 300;
-    font-size: $neon-h6-size;
-    letter-spacing: $neon-letter-spacing-m;
+    margin-bottom: calc(8 * var(--neon-base-space));
+    font-weight: var(--neon-font-weight-light);
+    font-size: var(--neon-h6-size);
+    letter-spacing: var(--neon-letter-spacing-m);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 
-    @include responsive(mobile-large) {
-      margin-bottom: 2 * $neon-base-space;
-      font-size: $neon-font-size-m;
+    @include responsive.responsive(mobile-large) {
+      margin-bottom: calc(2 * var(--neon-base-space));
+      font-size: var(--neon-font-size-m);
     }
   }
 
   .examples:not(:first-child) {
-    margin-top: 8 * $neon-base-space;
+    margin-top: calc(8 * var(--neon-base-space));
+  }
+}
+
+.app .example {
+  & + .example {
+    margin-top: calc(8 * var(--neon-base-space));
   }
 
-  @include responsive(mobile-large) {
-    .neon-h0 {
-      font-size: $neon-h1-size;
-    }
+  &__output {
+    border-radius: var(--neon-border-radius) !important;
+    margin-bottom: calc(4 * var(--neon-base-space)) !important;
+    position: relative;
 
-    .neon-h1,
-    h1 {
-      font-size: $neon-h2-size;
-    }
+    &--fixed-content {
+      z-index: var(--neon-z-index-default);
+      height: $fixed-content-height;
+      margin-bottom: 0 !important;
+      overflow-y: auto;
 
-    .neon-h2,
-    h2 {
-      font-size: $neon-h3-size;
-    }
+      @include scrollbars.scrollbars;
 
-    .neon-h3,
+      .neon-side-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100% !important;
+        min-height: 100% !important;
+        border-right: 1rem var(--neon-border-style) var(--neon-border-color);
+
+        h6 {
+          margin-bottom: 0;
+        }
+      }
+
+      .neon-top-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-bottom: 1rem var(--neon-border-style) var(--neon-border-color);
+      }
+
+      .neon-page {
+        height: $fixed-content-height;
+        overflow-y: hidden;
+
+        &__container {
+          min-height: 100% !important;
+        }
+
+        .neon-side-nav {
+          top: var(--neon-top-nav-height-desktop);
+
+          @include responsive.responsive(tablet) {
+            top: var(--neon-top-nav-height-tablet);
+          }
+
+          @include responsive.responsive(mobile-large) {
+            top: var(--neon-top-nav-height-mobile);
+          }
+        }
+
+        .neon-grid {
+          min-height: 100%;
+          width: calc(100% - var(--neon-side-nav-width));
+
+          @include responsive.responsive(tablet) {
+            width: 100%;
+          }
+
+          .neon-grid-area {
+            border: 1rem var(--neon-border-style) var(--neon-border-color);
+            border-radius: var(--neon-border-radius);
+            @include layout.padding;
+          }
+        }
+      }
+    }
+  }
+
+  &__code {
+    &--fixed-content {
+      @include layout.margin;
+      margin-top: 0 !important;
+    }
+  }
+
+  &--no-card {
     h3 {
-      font-size: $neon-h4-size;
+      margin-bottom: calc(4 * var(--neon-base-space));
+    }
+  }
+
+  &__title {
+    h3 {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  &--vertical {
+    display: flex;
+    flex-direction: column;
+
+    & > *:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: calc(3 * var(--neon-base-space));
+    }
+  }
+
+  &--horizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    & > *:not(:last-child) {
+      margin-right: calc(4 * var(--neon-base-space));
     }
 
-    .neon-h4,
-    h4 {
-      font-size: $neon-h5-size;
-    }
+    @include responsive.responsive(mobile-large) {
+      flex-direction: column;
+      align-items: flex-start;
 
-    .neon-h5,
-    h5 {
-      font-size: $neon-h6-size;
+      & > *:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: calc(3 * var(--neon-base-space));
+      }
     }
+  }
 
-    .neon-h6,
-    h6 {
-      font-size: $neon-font-size-m;
-    }
+  &--padded {
+    padding: calc(4 * var(--neon-base-space));
+  }
+
+  &--info {
+    background-color: var(--neon-color-info);
+  }
+
+  &--margin-top {
+    margin-top: calc(2 * var(--neon-base-space));
   }
 }

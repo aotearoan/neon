@@ -1,0 +1,53 @@
+@use '../includes/layout';
+@use '../includes/responsive';
+@use '../includes/scrollbars';
+
+@mixin side-nav {
+  .neon-side-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: var(--neon-background-color-side-nav);
+    border-right: var(--neon-border);
+
+    @include responsive.responsive(larger-than-tablet) {
+      width: var(--neon-side-nav-width);
+      @include layout.min-height(100);
+      @include layout.height(100);
+    }
+
+    @include responsive.responsive(tablet) {
+      display: none;
+    }
+
+    &__sticky {
+      @include layout.padding-horizontal(0.75, 0.75);
+      @include layout.padding-vertical(1, 0.75);
+      flex: 1 0 auto;
+    }
+
+    &__scrolling {
+      @include scrollbars.scrollbars;
+      @include layout.padding-horizontal(0.75, 0.75);
+      @include layout.padding-vertical(1, 0.75);
+      overflow-y: auto;
+      height: 100%;
+    }
+
+    &--full-width {
+      .neon-side-nav {
+        &__sticky,
+        &__scrolling {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .neon-page--with-top-nav .neon-side-nav {
+    @include responsive.responsive(larger-than-tablet) {
+      @include layout.min-height(100, 'var(--neon-top-nav-height-desktop)');
+      @include layout.height(100, 'var(--neon-top-nav-height-desktop)');
+    }
+  }
+}

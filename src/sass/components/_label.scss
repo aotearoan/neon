@@ -1,0 +1,98 @@
+@use '../includes/palettes';
+@use '../includes/layout';
+@use '../includes/gradient';
+
+@mixin neon-label-size($neon-label-height, $neon-height-scalar, $neon-label-font-size) {
+  height: calc(var(--neon-size-#{$neon-label-height}) - #{$neon-height-scalar} * var(--neon-base-space));
+  min-width: calc(var(--neon-size-#{$neon-label-height}) - #{$neon-height-scalar} * var(--neon-base-space));
+  font-size: var(--neon-font-size-#{$neon-label-font-size});
+
+  .neon-label__label {
+    line-height: var(--neon-font-size-#{$neon-label-font-size});
+  }
+
+  .neon-icon {
+    width: var(--neon-font-size-#{$neon-label-font-size});
+    height: var(--neon-font-size-#{$neon-label-font-size});
+  }
+}
+
+@mixin label {
+  .neon-label {
+    @each $color in palettes.$neon-functional-colors {
+      &--#{$color} {
+        color: var(--neon-color-#{$color});
+        background: rgba(var(--neon-rgb-#{$color}), 0.15);
+
+        @each $alternateColor in palettes.$neon-functional-colors {
+          &.neon-label--alternate-color-#{$alternateColor} {
+            background: linear-gradient(90deg, rgba(var(--neon-rgb-#{$color}), 0.15), rgba(var(--neon-rgb-#{$alternateColor}), 0.15));
+
+            .neon-label__label {
+              @include gradient.neon-gradient-text($color, $alternateColor);
+            }
+          }
+        }
+      }
+    }
+
+
+    &--xxs {
+      padding: 0 var(--neon-base-space);
+      @include neon-label-size('xxs', 0, 'xxs');
+    }
+
+    &--xs {
+      padding: 0 calc(1.5 * var(--neon-base-space));
+      @include neon-label-size('xs', 1, 'xs');
+    }
+
+    &--s {
+      padding: 0 calc(2 * var(--neon-base-space));
+      @include neon-label-size('s', 1, 's');
+    }
+
+    &--m {
+      padding: 0 calc(3.5 * var(--neon-base-space));
+      @include neon-label-size('m', 1, 'm');
+    }
+
+    &--l {
+      padding: 0 calc(4 * var(--neon-base-space));
+      @include neon-label-size('l', 1, 'l');
+    }
+
+    text-transform: uppercase;
+    border-radius: var(--neon-border-radius-label);
+    letter-spacing: var(--neon-letter-spacing-s);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    min-width: fit-content;
+    width: fit-content;
+    font-weight: var(--neon-font-weight-semi-bold);
+
+    &__label {
+      white-space: nowrap;
+    }
+
+    &--with-icon {
+      &:not(.neon-label--with-label) {
+        padding: 0;
+      }
+
+      &.neon-label--with-label {
+        &.neon-label--icon-left .neon-icon {
+          margin-right: var(--neon-base-space);
+        }
+
+        &.neon-label--icon-right .neon-icon {
+          order: 1;
+          margin-left: var(--neon-base-space);
+        }
+      }
+    }
+  }
+}

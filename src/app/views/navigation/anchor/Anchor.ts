@@ -1,10 +1,13 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonActionMenu, NeonCard, NeonCardBody } from '../../../../components';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import { Menu, MenuModel } from '../../../Menu';
-import Editor from '../../../components/editor/Editor.vue';
+import { NeonActionMenu, NeonCard, NeonCardBody } from '@/neon';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import { defineComponent, onMounted, ref } from 'vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Anchor',
   components: {
     NeonCard,
     NeonCardBody,
@@ -12,15 +15,17 @@ import Editor from '../../../components/editor/Editor.vue';
     ComponentDocumentation,
     Editor,
   },
-})
-export default class Anchor extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('HTML fragment scrolling helper');
+    const example = ref('<neon-anchor id="functional-palettes" />');
 
-  private headline = 'HTML fragment scrolling helper';
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonAnchor')));
 
-  private example = '<neon-anchor id="functional-palettes" />';
-
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonAnchor');
-  }
-}
+    return {
+      menuModel,
+      headline,
+      example,
+    };
+  },
+});

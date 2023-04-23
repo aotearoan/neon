@@ -1,12 +1,16 @@
 {
+  "displayName": "NeonFooter",
   "description": "The page footer component. Place directly inside the NeonPage component to have it rendered at the bottom of the page even when the content is shorter than the page.",
   "tags": {},
-  "displayName": "NeonFooter",
   "exportName": "default",
   "slots": [
     {
       "name": "default",
       "description": "footer contents"
     }
+  ],
+  "sourceFiles": [
+    "./src/components/layout/footer/NeonFooter.vue",
+    "/Users/andrew/dev/projects/neon/src/components/layout/footer/NeonFooter.ts"
   ]
 }

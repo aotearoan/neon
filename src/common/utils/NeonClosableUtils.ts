@@ -6,7 +6,7 @@ export class NeonClosableUtils {
   public constructor(target: HTMLElement, closeCallback: () => void) {
     this.target = target;
     this.closeCallback = closeCallback;
-    document.addEventListener('keyup', this.escapeKeyListener.bind(this), { passive: true });
+    document.addEventListener('keydown', this.escapeKeyListener.bind(this), { passive: true });
     document.addEventListener('mousedown', this.handleOutsideClick.bind(this), { passive: true });
     document.addEventListener('touchstart', this.handleOutsideClick.bind(this), { passive: true });
   }
@@ -17,7 +17,7 @@ export class NeonClosableUtils {
   }
 
   public destroy() {
-    document.removeEventListener('keyup', this.escapeKeyListener.bind(this));
+    document.removeEventListener('keydown', this.escapeKeyListener.bind(this));
     document.removeEventListener('mousedown', this.handleOutsideClick.bind(this));
     document.removeEventListener('touchstart', this.handleOutsideClick.bind(this));
   }
@@ -28,14 +28,6 @@ export class NeonClosableUtils {
     }
   }
 
-  private handleOutsideClick(event: MouseEvent | TouchEvent) {
-    const target = event.target && (event.target as Element);
-    if (target && !this.target.contains(target)) {
-      this.close();
-    }
-    return true;
-  }
-
   public close() {
     this.closeCallback();
 
@@ -43,5 +35,13 @@ export class NeonClosableUtils {
       document.body.classList.remove('neon-closable--open');
       this._open = false;
     }
+  }
+
+  private handleOutsideClick(event: MouseEvent | TouchEvent) {
+    const target = event.target && (event.target as Element);
+    if (target && !this.target.contains(target)) {
+      this.close();
+    }
+    return true;
   }
 }

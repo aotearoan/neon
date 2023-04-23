@@ -1,7 +1,6 @@
-import { Component, Vue } from 'vue-property-decorator';
+import { defineComponent } from 'vue';
 
 /**
  * The page footer component. Place directly inside the NeonPage component to have it rendered at the bottom of the page even when the content is shorter than the page.
  */
-@Component
-export default class NeonFooter extends Vue {}
+export default defineComponent({ name: 'NeonFooter' });

@@ -1,5 +1,6 @@
-import { Component, Vue } from 'vue-property-decorator';
+import { defineComponent, onMounted, ref } from 'vue';
 import {
+  NeonButton,
   NeonCard,
   NeonCardBody,
   NeonCardHeader,
@@ -7,13 +8,18 @@ import {
   NeonInput,
   NeonInputIndicator,
   NeonSelect,
-} from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+} from '@/neon';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
-@Component({
+export default defineComponent({
+  name: 'FieldGroup',
   components: {
     ComponentDocumentation,
+    Editor,
+    NeonButton,
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
@@ -22,16 +28,13 @@ import ComponentDocumentation from '../../../components/component-documentation/
     NeonFieldGroup,
     NeonSelect,
   },
-})
-export default class FieldGroup extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Compose richer input components');
 
-  private headline = 'Compose richer input components';
-
-  private data = {
-    indexFilter: '',
-    currency: 'NZD',
-    currencies: [
+    const indexFilter = ref('');
+    const currency = ref('NZD');
+    const currencies = ref([
       {
         key: 'CAD',
         label: 'CAD',
@@ -57,35 +60,32 @@ export default class FieldGroup extends Vue {
         label: 'USD',
         separatorBefore: true,
       },
-    ],
-  };
+    ]);
 
-  private inputIndicatorExamples = `<div class="neon-vertically-spaced">
-  <neon-field-group>
-    <neon-input-indicator size="s" label="Salary" />
-    <neon-input size="s" type="text" color="primary" v-model="indexFilter" placeholder="Enter amount" />
-    <neon-select size="s" color="primary" v-model="currency" :options="currencies" placeholder="Currency" />
-  </neon-field-group>
-  <neon-field-group>
-    <neon-input type="text" color="primary" v-model="indexFilter" placeholder="Enter rate" />
-    <neon-input-indicator label="%" />
-  </neon-field-group>
-  <neon-field-group>
-    <neon-input-indicator size="l" label="$" />
-    <neon-input size="l" type="text" v-model="indexFilter" placeholder="Enter amount" />
-    <neon-button size="l" label="Submit" />
-  </neon-field-group>
-</div>`;
+    const inputIndicatorExamples = `<neon-field-group>
+  <neon-input-indicator size="s" label="Salary" />
+  <neon-input size="s" type="text" color="primary" v-model="indexFilter" placeholder="Enter amount" />
+  <neon-select size="s" color="primary" v-model="currency" :options="currencies" placeholder="Currency" />
+</neon-field-group>
+<neon-field-group>
+  <neon-input type="text" color="primary" v-model="indexFilter" placeholder="Enter rate" />
+  <neon-input-indicator label="%" />
+</neon-field-group>
+<neon-field-group>
+  <neon-input-indicator size="l" label="$" />
+  <neon-input size="l" type="text" v-model="indexFilter" placeholder="Enter amount" />
+  <neon-button size="l" label="Submit" />
+</neon-field-group>`;
 
-  private examples = [
-    {
-      title: 'Field Group Examples',
-      template: this.inputIndicatorExamples,
-      data: this.data,
-    },
-  ];
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonFieldGroup')));
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonFieldGroup');
-  }
-}
+    return {
+      menuModel,
+      headline,
+      inputIndicatorExamples,
+      indexFilter,
+      currency,
+      currencies,
+    };
+  },
+});

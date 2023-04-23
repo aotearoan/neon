@@ -1,34 +1,43 @@
-import { Component, Vue, Watch } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader } from '../../../components';
-import { Route } from 'vue-router';
-import Editor from '../../components/editor/Editor.vue';
+import { defineComponent, ref, watch } from 'vue';
+import { useRoute } from 'vue-router';
+import { NeonCard, NeonCardBody, NeonCardHeader } from '@/neon';
+import Editor from '@/app/components/editor/Editor.vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names,vue/no-reserved-component-names
+  name: 'Source',
   components: {
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
     Editor,
   },
-})
-export default class Source extends Vue {
-  private className: string | null = null;
-  private ghLink: string | null = null;
+  setup() {
+    const route = useRoute();
+    const className = ref<string | null>(null);
+    const ghLink = ref<string | null>(null);
+    const template = ref<string | null>(null);
 
-  private template: string | null = null;
+    watch(
+      () => route.path,
+      (to) => {
+        className.value = to.split('/').pop() || null;
+        if (className.value && className.value.indexOf('Neon') === 0) {
+          fetch(`${import.meta.env.VITE_RESOURCE_URL}files/${to}.ts`).then((response) => {
+            response.text().then((file) => {
+              template.value = file;
+            });
+          });
+          ghLink.value = `https://github.com/aotearoan/neon/tree/master/src/common${to}.ts`;
+        }
+      },
+      { immediate: true },
+    );
 
-  @Watch('$route', { immediate: true })
-  private onRoute(to: Route) {
-    const path = to.path;
-    this.className = path.split('/').pop() || null;
-    if (this.className) {
-      fetch(`${process.env.VUE_APP_RESOURCE_URL}files/${path}.ts`).then((response) => {
-        response.text().then((file) => {
-          this.template = file;
-        });
-      });
-
-      this.ghLink = `https://github.com/aotearoan/neon/tree/master/src/common${path}.ts`;
-    }
-  }
-}
+    return {
+      className,
+      ghLink,
+      template,
+    };
+  },
+});

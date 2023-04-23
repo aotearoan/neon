@@ -40,4 +40,3 @@ glob(commonSource + '**/!(*.spec).ts', {}, (err, files) => {
     fs.copyFile(f, `${filePath}${fileName}`, () => {});
   });
 });
-

@@ -1,148 +1,134 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { NeonNumberUtils } from '../../../common/utils/NeonNumberUtils';
-import NeonSlider from '../slider/NeonSlider.vue';
-import { TranslateResult } from 'vue-i18n';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { computed, defineComponent } from 'vue';
+import { NeonNumberUtils } from '@/common/utils/NeonNumberUtils';
+import NeonSlider from '@/components/user-input/slider/NeonSlider.vue';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 /**
  *
  */
-@Component({
+export default defineComponent({
+  name: 'NeonRangeSlider',
   components: {
     NeonSlider,
   },
-})
-export class NeonRangeSlider extends Vue {
-  /**
-   * This is the <em>v-model</em> property which is an array containing the lower and upper bounds of the selected range.
-   */
-  @Prop({ required: true })
-  private value!: number[];
+  props: {
+    /**
+     * This is the <em>v-model</em> property which is an array containing the lower and upper bounds of the selected range.
+     */
+    modelValue: { type: Array as () => Array<number>, required: true },
+    /**
+     * The list of ids for the lower bound and upper bound inputs, e.g. ['lowerBoundId', 'upperBoundId']
+     */
+    ids: { type: Array as () => Array<string>, required: false },
 
-  /**
-   * The list of ids for the lower bound and upper bound inputs, e.g. ['lowerBoundId', 'upperBoundId']
-   */
-  @Prop()
-  private ids?: string[];
-
-  /**
-   * Slider color.
-   */
-  @Prop({ default: NeonFunctionalColor.LowContrast })
-  private color!: boolean;
-
-  /**
-   * Disable output display if set to false
-   */
-  @Prop({ default: true })
-  private output!: boolean;
-
-  /**
-   * Disable legend if set to false
-   */
-  @Prop({ default: true })
-  private legend!: boolean;
-
-  /**
-   * Disable tooltip if set to false
-   */
-  @Prop({ default: true })
-  private tooltip!: boolean;
-
-  /**
-   * The size of steps between values the user can select. Defaults to 1 unless percentage = true in which case it will
-   * default to 0.01.
-   */
-  @Prop()
-  private step?: number;
-
-  /**
-   * The rounding precision for display purposes
-   */
-  @Prop()
-  private decimals?: number;
-
-  /**
-   * A format template string used for display purposes. Use the placeholder {value} to reference the value in the
-   * format string. e.g. value = 90, ${value} => $90
-   */
-  @Prop()
-  private valueTemplate?: string;
-
-  /**
-   * Disable formatting, e.g. in the case of a year value -> display as 2020, not 2,020.
-   */
-  @Prop({ default: false })
-  private disableFormatting!: boolean;
-
-  /**
-   * Automatically applies % formatting, e.g. if the value = 0.15 it will be displayed as 15%
-   */
-  @Prop({ default: false })
-  private percentage!: boolean;
-
-  /**
-   * The minimum range value
-   */
-  @Prop({ default: 0 })
-  private min!: number;
-
-  /**
-   * The maximum range value. The default value is 100 except when percentage = true the default is 1 (100%).
-   */
-  @Prop()
-  private max?: number;
-
-  /**
-   * Component disabled state.
-   */
-  @Prop({ default: false })
-  private disabled!: boolean;
-
-  /**
-   * ARIA label for the lower bound slider.
-   */
-  @Prop({ default: 'Lower bound' })
-  private lowerBoundLabel!: TranslateResult;
-
-  /**
-   * ARIA label for the upper bound slider.
-   */
-  @Prop({ default: 'Upper bound' })
-  private upperBoundLabel!: TranslateResult;
-
-  private get formattedValues(): string[] {
-    const options = {
-      decimals: this.decimals,
-      format: this.valueTemplate,
-      percentage: this.percentage,
-    };
-
-    return !this.disableFormatting
-      ? [NeonNumberUtils.formatNumber(this.value[0], options), NeonNumberUtils.formatNumber(this.value[1], options)]
-      : [`${this.value[0]}`, `${this.value[1]}`];
-  }
-
-  private changeLowerBound(value: number) {
-    const values = [...this.value];
-    values[0] = +value;
-    this.emitValues(values);
-  }
-
-  private changeUpperBound(value: number) {
-    const values = [...this.value];
-    values[1] = +value;
-    this.emitValues(values);
-  }
-
-  private emitValues(values: number[]) {
+    /**
+     * Slider color.
+     */
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    /**
+     * Disable output display if set to false
+     */
+    output: { type: Boolean, default: true },
+    /**
+     * Disable legend if set to false
+     */
+    legend: { type: Boolean, default: true },
+    /**
+     * Disable tooltip if set to false
+     */
+    tooltip: { type: Boolean, default: true },
+    /**
+     * The size of steps between values the user can select. Defaults to 1 unless percentage = true in which case it will
+     * default to 0.01.
+     */
+    step: { type: Number, required: false },
+    /**
+     * The rounding precision for display purposes
+     */
+    decimals: { type: Number, required: false },
+    /**
+     * A format template string used for display purposes. Use the placeholder {value} to reference the value in the
+     * format string. e.g. value = 90, ${value} => $90
+     */
+    valueTemplate: { type: String, required: false },
+    /**
+     * Disable formatting, e.g. in the case of a year value -> display as 2020, not 2,020.
+     */
+    disableFormatting: { type: Boolean, default: false },
+    /**
+     * Automatically applies % formatting, e.g. if the value = 0.15 it will be displayed as 15%
+     */
+    percentage: { type: Boolean, default: false },
+    /**
+     * The locale used for display purposes. This defaults to the browser's locale if none is provided.
+     */
+    locale: { type: String, default: null },
+    /**
+     * The minimum range value
+     */
+    min: { type: Number, default: 0 },
+    /**
+     * The maximum range value. The default value is 100 except when percentage = true the default is 1 (100%).
+     */
+    max: { type: Number, required: false },
+    /**
+     * Component disabled state.
+     */
+    disabled: { type: Boolean, default: false },
+    /**
+     * ARIA label for the lower bound slider.
+     */
+    lowerBoundLabel: { type: String, default: 'Lower bound' },
+    /**
+     * ARIA label for the upper bound slider.
+     */
+    upperBoundLabel: { type: String, default: 'Upper bound' },
+  },
+  emits: [
     /**
      * Event triggered when the lower or upper bounds of the value change.
      *
      * @type {number[]} An array containing the raw numeric upper and lower bounds of the selection.
      */
-    this.$emit('input', values);
-  }
-}
+    'update:modelValue',
+  ],
+  setup(props, { emit }) {
+    const formattedValues = computed((): string[] => {
+      const options = {
+        decimals: props.decimals,
+        format: props.valueTemplate,
+        percentage: props.percentage,
+      };
 
-export default NeonRangeSlider;
+      return !props.disableFormatting
+        ? [
+            NeonNumberUtils.formatNumber(props.modelValue[0], options, props.locale),
+            NeonNumberUtils.formatNumber(props.modelValue[1], options, props.locale),
+          ]
+        : [`${props.modelValue[0]}`, `${props.modelValue[1]}`];
+    });
+
+    const emitValues = (values: number[]) => {
+      emit('update:modelValue', values);
+    };
+
+    const changeLowerBound = (value: number) => {
+      const values = props.modelValue.map((v) => v);
+      values[0] = +value;
+      emitValues(values);
+    };
+
+    const changeUpperBound = (value: number) => {
+      const values = props.modelValue.map((v) => v);
+      values[1] = +value;
+      emitValues(values);
+    };
+
+    return {
+      formattedValues,
+      changeLowerBound,
+      changeUpperBound,
+      emitValues,
+    };
+  },
+});

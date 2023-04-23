@@ -1,11 +1,11 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader } from '../../../components';
+import { defineComponent } from 'vue';
+import { NeonCard, NeonCardBody, NeonCardHeader } from '@/neon';
 
-@Component({
+export default defineComponent({
+  nme: 'Models',
   components: {
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
   },
-})
-export default class Models extends Vue {}
+});

@@ -1,7 +1,0 @@
-@mixin neon-input-indicator-color-import {
-  .neon-input-indicator {
-    border: $neon-border-width $neon-border-style $neon-border-color-input;
-    background-color: $neon-background-color-input-indicator;
-    @include color-with-svg($neon-color-input-indicator);
-  }
-}

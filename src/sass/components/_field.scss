@@ -1,0 +1,47 @@
+@use '../includes/responsive';
+@use '../includes/typography';
+
+$message-height: calc(var(--neon-font-size-s) * var(--neon-line-height-ratio));
+
+@mixin field {
+  .neon-field {
+    width: fit-content;
+    margin-bottom: calc(2 * var(--neon-base-space));
+
+    & + .neon-field {
+      margin-top: calc(4 * var(--neon-base-space));
+
+      @include responsive.responsive(tablet) {
+        margin-top: calc(3 * var(--neon-base-space));
+      }
+
+      @include responsive.responsive(mobile-large) {
+        margin-top: calc(2 * var(--neon-base-space));
+      }
+    }
+
+    &__label-wrapper {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: var(--neon-base-space);
+      gap: calc(1.5 * var(--neon-base-space));
+      @include typography.label;
+    }
+
+    &.neon-field--disabled {
+      cursor: not-allowed;
+      color: var(--neon-color-disabled-dark);
+    }
+
+    &--with-message {
+      .neon-field__message {
+        bottom: 0;
+        font-size: var(--neon-font-size-s);
+        min-height: $message-height;
+        text-transform: none;
+        letter-spacing: initial;
+        font-weight: var(--neon-font-weight-normal);
+      }
+    }
+  }
+}

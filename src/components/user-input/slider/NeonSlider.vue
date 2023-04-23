@@ -8,24 +8,23 @@
       },
       `neon-slider--${color}`,
     ]"
-    :style="'--min: ' + min + ';--max: ' + computedMax + ';--val: ' + value"
+    :style="'--min: ' + min + ';--max: ' + computedMax + ';--val: ' + modelValue"
   >
     <output v-if="output" :for="id" class="neon-slider__output">{{ formattedValue }}</output>
     <input
       :id="id"
       type="range"
-      :value="value"
+      :value="modelValue"
       :step="computedStep"
       :min="min"
       :max="computedMax"
       :aria-valuemin="min"
       :aria-valuemax="computedMax"
-      :aria-valuenow="value"
+      :aria-valuenow="modelValue"
       :disabled="disabled"
-      @input="changeValue"
       class="neon-slider__input"
       v-bind="sanitizedAttributes"
-      v-on="sanitizedListeners"
+      @input="changeValue"
     />
     <div v-if="legend" class="neon-slider__legend">
       <span class="neon-slider__legend-item">{{ formattedMin }}</span>

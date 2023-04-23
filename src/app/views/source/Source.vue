@@ -4,7 +4,7 @@
       <h1 class="neon-h3">{{ className }}</h1>
     </neon-card-header>
     <neon-card-body>
-      <editor language="typescript" :value="template" :read-only="true" :gh-link="ghLink" />
+      <editor v-model="template" :gh-link="ghLink" language="typescript" />
     </neon-card-body>
   </neon-card>
 </template>

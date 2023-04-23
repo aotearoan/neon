@@ -1,4 +1,4 @@
-import { NeonResponsive } from '../enums/NeonResponsive';
+import type { NeonResponsive } from '../enums/NeonResponsive';
 
 export class NeonGridModel {
   /**

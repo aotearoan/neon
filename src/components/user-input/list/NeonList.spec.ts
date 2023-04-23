@@ -1,12 +1,9 @@
-import Vue from 'vue';
-import { mount } from '@vue/test-utils';
 import NeonList from './NeonList.vue';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
-import { NeonListItem } from '../../../common/models/NeonListItem';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-
-Vue.component('NeonIcon', NeonIcon);
+import type { NeonListItem } from '@/common/models/NeonListItem';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import type { RenderResult } from '@testing-library/vue';
+import { fireEvent, render } from '@testing-library/vue';
 
 describe('NeonList', () => {
   const value: NeonListItem[] = [
@@ -20,101 +17,98 @@ describe('NeonList', () => {
     },
   ];
 
-  it('renders list item label', () => {
-    const wrapper = mount(NeonList, {
-      propsData: { value: [value[0]] },
+  let harness: RenderResult;
+
+  beforeEach(() => {
+    harness = render(NeonList, {
+      props: { modelValue: [value[0]] },
     });
-    expect(wrapper.find('.neon-list__item span').text()).toEqual(value[0].label);
+  });
+
+  it('renders list item label', () => {
+    const { getByText } = harness;
+    getByText(value[0].label);
   });
 
   it('renders close button when not disabled', () => {
-    const wrapper = mount(NeonList, {
-      propsData: { value: [value[0]] },
-    });
-    expect(wrapper.find('.neon-list__item .neon-icon').element).toBeDefined();
+    const { container } = harness;
+    expect(container.querySelector('.neon-list__item .neon-icon')).toBeDefined();
   });
 
-  it('renders disabled', () => {
-    const wrapper = mount(NeonList, {
-      propsData: { value: [value[0]], disabled: true },
-    });
-    expect(wrapper.find('.neon-list--disabled').element).toBeDefined();
-    expect(wrapper.find('.neon-list__item .neon-icon').element).toBeUndefined();
+  it('renders disabled', async () => {
+    const { container, rerender } = harness;
+    await rerender({ disabled: true });
+    expect(container.querySelector('.neon-list--disabled')).toBeDefined();
+    expect(container.querySelector('.neon-list__item .neon-icon')).toBeNull();
   });
 
   it('renders default size', () => {
-    const wrapper = mount(NeonList, {
-      propsData: { value },
-    });
-    expect(wrapper.find('.neon-list--m').element).toBeDefined();
+    const { container } = harness;
+    expect(container.querySelector('.neon-list--m')).toBeDefined();
   });
 
-  it('renders size', () => {
-    const wrapper = mount(NeonList, {
-      propsData: { value, size: NeonSize.Large },
-    });
-    expect(wrapper.find('.neon-list--l').element).toBeDefined();
+  it('renders size', async () => {
+    const { container, rerender } = harness;
+    await rerender({ size: NeonSize.Large });
+    expect(container.querySelector('.neon-list--l')).toBeDefined();
   });
 
   it('renders default color', () => {
-    const wrapper = mount(NeonList, {
-      propsData: { value },
-    });
-    expect(wrapper.find('.neon-list--low-contrast').element).toBeDefined();
+    const { container } = harness;
+    expect(container.querySelector('.neon-list--low-contrast')).toBeDefined();
   });
 
-  it('renders size', () => {
-    const wrapper = mount(NeonList, {
-      propsData: { value, color: NeonFunctionalColor.Primary },
-    });
-    expect(wrapper.find('.neon-list--primary').element).toBeDefined();
+  it('renders size', async () => {
+    const { container, rerender } = harness;
+    await rerender({ color: NeonFunctionalColor.Primary });
+    expect(container.querySelector('.neon-list--primary')).toBeDefined();
   });
 
-  it('emits event on remove by click', () => {
+  it('emits event on remove by click', async () => {
     // given
-    const wrapper = mount(NeonList, {
-      propsData: { value: [...value] },
-    });
+    const { container, emitted, rerender } = harness;
+    await rerender({ modelValue: [...value] });
     // when
-    wrapper.find('.neon-list__item:first-child').trigger('click');
+    const el = container.querySelector('.neon-list__item:first-child') as HTMLElement;
+    await fireEvent.click(el);
     // then
-    expect(wrapper.emitted().input[0]).toEqual([[value[1]]]);
-    expect(wrapper.emitted().close[0]).toEqual([value[0].key]);
+    expect(emitted()['update:modelValue'][0]).toEqual([[value[1]]]);
+    expect(emitted().close[0]).toEqual([value[0].key]);
   });
 
-  it('emits event on remove by keydown enter', () => {
+  it('emits event on remove by keydown enter', async () => {
     // given
-    const wrapper = mount(NeonList, {
-      propsData: { value: [...value] },
-    });
+    const { container, emitted, rerender } = harness;
+    await rerender({ modelValue: [...value] });
     // when
-    wrapper.find('.neon-list__item:first-child').trigger('keydown.enter');
+    const el = container.querySelector('.neon-list__item:first-child') as HTMLElement;
+    await fireEvent.keyDown(el, { key: 'Enter', code: 'Enter' });
     // then
-    expect(wrapper.emitted().input[0]).toEqual([[value[1]]]);
-    expect(wrapper.emitted().close[0]).toEqual([value[0].key]);
+    expect(emitted()['update:modelValue'][0]).toEqual([[value[1]]]);
+    expect(emitted().close[0]).toEqual([value[0].key]);
   });
 
-  it('emits event on remove by keydown space', () => {
+  it('emits event on remove by keydown space', async () => {
     // given
-    const wrapper = mount(NeonList, {
-      propsData: { value: [...value] },
-    });
+    const { container, emitted, rerender } = harness;
+    await rerender({ modelValue: [...value] });
     // when
-    wrapper.find('.neon-list__item:first-child').trigger('keydown.space');
+    const el = container.querySelector('.neon-list__item:first-child') as HTMLElement;
+    await fireEvent.keyDown(el, { key: 'Space', code: 'Space' });
     // then
-    expect(wrapper.emitted().input[0]).toEqual([[value[1]]]);
-    expect(wrapper.emitted().close[0]).toEqual([value[0].key]);
+    expect(emitted()['update:modelValue'][0]).toEqual([[value[1]]]);
+    expect(emitted().close[0]).toEqual([value[0].key]);
   });
 
-  it('does not emits event when disabled', () => {
+  it('does not emit event when disabled', async () => {
     // given
-    const wrapper = mount(NeonList, {
-      propsData: { value, disabled: true },
-    });
+    const { container, emitted, rerender } = harness;
+    await rerender({ modelValue: [...value], disabled: true });
     // when
-    wrapper.find('.neon-list__item:first-child').trigger('click');
+    const el = container.querySelector('.neon-list__item:first-child') as HTMLElement;
+    await fireEvent.click(el);
     // then
-    expect(wrapper.emitted().input).toBeUndefined();
-    expect(wrapper.emitted().close).toBeUndefined();
+    expect(emitted()['update:modelValue']).toBeUndefined();
+    expect(emitted().close).toBeUndefined();
   });
 });

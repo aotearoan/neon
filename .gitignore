@@ -22,3 +22,6 @@ yarn-error.log*
 *.sln
 *.sw?
 /neon.iml
+/tsconfig.tsbuildinfo
+/*.tgz
+/version.ts

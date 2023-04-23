@@ -1,7 +1,8 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader, NeonLink, NeonNote } from '../../../../components';
+import { defineComponent } from 'vue';
+import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader, NeonLink, NeonNote } from '@/neon';
 
-@Component({
+export default defineComponent({
+  name: 'TechnicalRequirements',
   components: {
     NeonAnchor,
     NeonCard,
@@ -10,5 +11,4 @@ import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader, NeonLink, NeonNote 
     NeonLink,
     NeonNote,
   },
-})
-export default class TechnicalRequirements extends Vue {}
+});

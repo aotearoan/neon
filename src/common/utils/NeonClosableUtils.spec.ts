@@ -28,6 +28,7 @@ describe('NeonClosableUtils', () => {
     const closeFn = closableUtils.close;
     closableUtils.close = jest.fn();
     // when
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     closableUtils.escapeKeyListener({ key: 'Escape' });
     // then
@@ -41,6 +42,7 @@ describe('NeonClosableUtils', () => {
     const closeFn = closableUtils.close;
     closableUtils.close = jest.fn();
     // when
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     closableUtils.escapeKeyListener({ key: 'Enter' });
     // then

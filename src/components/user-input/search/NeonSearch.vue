@@ -2,7 +2,9 @@
   <div class="neon-search__wrapper">
     <neon-dropdown
       ref="dropdown"
-      class="neon-search"
+      v-model="open"
+      :aria-activedescendant="multiple ? modelValue[0] && modelValue[0].key : modelValue"
+      :aria-multiselectable="multiple"
       :class="[
         `neon-search--${color}`,
         {
@@ -11,52 +13,51 @@
           'neon-search--empty': computedOptions.length === 0,
         },
       ]"
-      :size="size"
       :color="color"
       :disabled="disabled"
-      v-bind="sanitizedAttributes"
-      v-model="open"
-      v-on="sanitizedListeners"
+      :size="size"
+      class="neon-search"
       role="listbox"
-      :aria-activedescendant="multiple ? value[0] && value[0].key : value"
-      :aria-multiselectable="multiple"
+      v-bind="sanitizedAttributes"
+      @dropdown-placement="onPlacement"
     >
       <template #dropdown-button>
         <div
           ref="dropdownButton"
-          class="neon-search__container"
           :class="[
             `neon-search__container--${size}`,
             `neon-search__container--${color}`,
             { 'neon-search__container--disabled': disabled },
           ]"
+          class="neon-search__container"
         >
-          <neon-icon name="search" color="low-contrast" class="neon-search__search-icon" />
+          <neon-icon class="neon-search__search-icon" color="low-contrast" name="search" />
           <template v-if="multiple">
             <neon-chip
-              v-for="(selected, index) in value"
+              v-for="(selected, index) in modelValue"
+              :id="selected.key"
               :key="selected.key"
-              :label="selected.label"
+              :class="{ 'neon-chip--last-chip': index === modelValue.length - 1 }"
               :color="selected.chipColor"
+              :disabled="disabled"
+              :label="selected.label"
               :size="size"
               action="remove"
-              role="option"
-              :id="selected.key"
               aria-selected="true"
-              :class="{ 'neon-chip--last-chip': index === value.length - 1 }"
+              role="option"
               @close="removeSelected(selected)"
-              :disabled="disabled"
             />
           </template>
           <neon-input
-            :value="filter"
+            :disabled="disabled"
+            :modelValue="filter"
             :placeholder="placeholder"
             :size="size"
-            @input="onFilterChange"
-            @icon-click="onFilterChange('')"
-            @focus="showOptions()"
             class="neon-search__input"
-            :disabled="disabled"
+            v-bind="sanitizedAttributes"
+            @focus="showOptions()"
+            @update:modelValue="onFilterChange"
+            @icon-click="onFilterChange('')"
           />
         </div>
       </template>
@@ -64,8 +65,8 @@
         <ul class="no-style neon-search__options">
           <li
             v-for="option in computedOptions"
+            :id="option.key"
             :key="option.key"
-            class="neon-search__option"
             :class="[
               {
                 'neon-search__option--separator-before': option.separatorBefore,
@@ -73,9 +74,9 @@
               },
               `neon-search__option--${size}`,
             ]"
-            role="option"
-            :id="option.key"
             aria-selected="false"
+            class="neon-search__option"
+            role="option"
             @click="clickOption(option)"
             @mouseover="changeHighlighted(option.key)"
           >
@@ -83,8 +84,8 @@
               <!-- @slot provide a custom template for an option.<br />Bindings: <strong>option</strong>
               (<em>NeonSearchOption</em>). This slot is purely for formatting the option, all accessibility actions
               still apply. -->
-              <slot name="option" :option="option">
-                <neon-icon class="neon-search__option-icon" v-if="option.icon" :name="option.icon" />
+              <slot :option="option" name="option">
+                <neon-icon v-if="option.icon" :name="option.icon" class="neon-search__option-icon" />
                 <span class="neon-search__option-label">{{ option.label }}</span>
               </slot>
             </div>

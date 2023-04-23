@@ -5,6 +5,7 @@ describe('NeonPlacementUtils', () => {
     // given
     // eslint-disable-next-line no-global-assign
     document = {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       documentElement: {
         clientWidth: 450,
@@ -26,15 +27,33 @@ describe('NeonPlacementUtils', () => {
       offsetWidth: 50,
       offsetHeight: 90,
     };
-    // eslint-disable-next-line no-global-assign
-    document = {
-      // @ts-ignore
-      documentElement: {
-        clientWidth: 450,
-        clientHeight: 900,
-      },
-    };
+
+    Object.defineProperty(global.document.body, 'getBoundingClientRect', {
+      value: () => ({
+        bottom: 900,
+        height: 900,
+        left: 0,
+        right: 450,
+        top: 0,
+        width: 450,
+        x: 0,
+        y: 0,
+      }),
+      writable: true,
+    });
+
+    Object.defineProperty(global.document.documentElement, 'clientWidth', {
+      value: 450,
+      writable: true,
+    });
+
+    Object.defineProperty(global.document.documentElement, 'clientHeight', {
+      value: 900,
+      writable: true,
+    });
+
     // when
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const result = NeonPlacementUtils.calculateBounds(placementContainer);
     // then
@@ -52,6 +71,7 @@ describe('NeonPlacementUtils', () => {
     const maxWidth = 1000;
     const maxHeight = 2000;
     // when
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const result = NeonPlacementUtils.calculateAvailableSpace(triggerElement, maxWidth, maxHeight);
     // then
@@ -69,6 +89,7 @@ describe('NeonPlacementUtils', () => {
     const maxWidth = 1000;
     const maxHeight = 2000;
     // when
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const result = NeonPlacementUtils.calculateAvailableSpace(triggerElement, maxWidth, maxHeight, placementContainer);
     // then

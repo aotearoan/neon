@@ -1,5 +1,5 @@
 <template>
-  <component-documentation v-if="menuModel" :examples="examples" :model="menuModel" :headline="headline">
+  <component-documentation v-if="menuModel" :headline="headline" :model="menuModel">
     <neon-card>
       <neon-card-body>
         <p>
@@ -8,6 +8,22 @@
           handler).
         </p>
         <p>NOTE: HTML &lt;a&gt; links are styled in the same way as <strong>NeonLink</strong> components.</p>
+      </neon-card-body>
+      <neon-card-body>
+        <h2 class="neon-h3">Link examples</h2>
+        <div>
+          <p>
+            This is some text with a
+            <neon-link href="/">link</neon-link>
+            embedded in it.
+          </p>
+          <neon-link href="/">Router link</neon-link>
+          <neon-link :external-indicator="true" href="http://www.getskeleton.com" target="_blank"
+            >External link
+          </neon-link>
+          <neon-link aria-label="Link title" @click="toast()">Link with click handler</neon-link>
+        </div>
+        <editor v-model="template" />
       </neon-card-body>
     </neon-card>
   </component-documentation>

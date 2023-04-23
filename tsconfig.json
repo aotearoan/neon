@@ -1,45 +1,56 @@
 {
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": [
+    "env.d.ts",
+    "**/*.d.ts",
+    "src/**/*",
+    "src/**/*.vue"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "**/*.spec.ts"
+  ],
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    "target": "es2020",
+    "module": "es2020",
+    "lib": [
+      "dom",
+      "es2020"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "rootDirs": [
+      "src"
+    ],
+    "outDir": "dist/",
+    "allowJs": true,
     "strict": true,
     "jsx": "react",
+    "isolatedModules": true,
     "importHelpers": true,
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "baseUrl": "/neon/",
     "declaration": true,
-    "declarationDir": "./dist/@aotearoan",
+    "declarationDir": "./dist/",
     "types": [
-      "webpack-env",
       "jest",
-      "node"
-    ],
-    "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    },
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
+      "node",
+      "vue",
+      "jsdom-global",
+      "vite/client"
     ]
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "tests/**/*.ts",
-    "tests/**/*.tsx",
-    "node_modules/@types/node/globals.d.ts",
-    "node_modules/@types/node/globals.d.ts"
+  "references": [
+    {
+      "path": "./tsconfig.base.json"
+    }
   ],
-  "exclude": [
-    "node_modules"
-  ]
 }

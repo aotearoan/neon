@@ -1,13 +1,12 @@
 {
+  "displayName": "NeonNotificationCounter",
   "description": "A component for displaying notification counts to the user.",
   "tags": {},
-  "displayName": "NeonNotificationCounter",
   "exportName": "default",
   "props": [
     {
       "name": "active",
-      "tags": {},
-      "description": "Whether or not the notification is active",
+      "description": "Whether the notification is active",
       "type": {
         "name": "boolean"
       },
@@ -18,10 +17,9 @@
     },
     {
       "name": "color",
-      "tags": {},
       "description": "The notification color",
       "type": {
-        "name": "NeonFunctionalColor"
+        "name": "String as () => NeonFunctionalColor"
       },
       "defaultValue": {
         "func": false,
@@ -30,11 +28,18 @@
     },
     {
       "name": "count",
-      "tags": {},
       "description": "The count of notifications to display, if greater than 9 <em>9+</em> is displayed",
       "type": {
         "name": "number"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/feedback/notification-counter/NeonNotificationCounter.vue",
+    "/Users/andrew/dev/projects/neon/src/components/feedback/notification-counter/NeonNotificationCounter.ts"
   ]
 }

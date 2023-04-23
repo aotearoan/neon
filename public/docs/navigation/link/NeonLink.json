@@ -1,20 +1,22 @@
 {
+  "displayName": "NeonLink",
   "description": "An HTML anchor component which handles VueRouter links (internal), href links (external) and clickable links (no href).",
   "tags": {},
   "exportName": "default",
-  "displayName": "NeonLink",
   "props": [
     {
       "name": "href",
-      "tags": {},
       "description": "The href of the link, this can be an internal (relative or absolute) or an external link.",
       "type": {
         "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
       }
     },
     {
       "name": "noStyle",
-      "tags": {},
       "description": "set to true if you would like a completely unstyled link. This is useful for creating a complex component which may use NeonLink.",
       "type": {
         "name": "boolean"
@@ -26,10 +28,9 @@
     },
     {
       "name": "outlineStyle",
-      "tags": {},
       "description": "Style of the outline to use when the link has focus, use <em>text</em> for wrapping text content and\n<em>border</em> for tooltips wrapping \"block\" elements, e.g. buttons.",
       "type": {
-        "name": "NeonOutlineStyle"
+        "name": "String as () => NeonOutlineStyle"
       },
       "defaultValue": {
         "func": false,
@@ -38,7 +39,6 @@
     },
     {
       "name": "externalIndicator",
-      "tags": {},
       "description": "Display an external link icon to the right of the link indicating clicking it will take the user to another site.",
       "type": {
         "name": "boolean"
@@ -65,5 +65,9 @@
       "name": "default",
       "description": "the content of the link"
     }
+  ],
+  "sourceFiles": [
+    "./src/components/navigation/link/NeonLink.vue",
+    "/Users/andrew/dev/projects/neon/src/components/navigation/link/NeonLink.ts"
   ]
 }

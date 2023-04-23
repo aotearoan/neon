@@ -1,105 +1,85 @@
-import Vue from 'vue';
-import { mount } from '@vue/test-utils';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 import NeonSplashLoader from './NeonSplashLoader.vue';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonSize } from '../../../common/enums/NeonSize';
-
-Vue.component('NeonIcon', NeonIcon);
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { render } from '@testing-library/vue';
 
 describe('NeonSplashLoader', () => {
   it('renders default color', (done) => {
     // given
-    const wrapper = mount(NeonSplashLoader, {
-      propsData: {},
-    });
+    const { html } = render(NeonSplashLoader, { props: {} });
     // when / then
     setTimeout(() => {
-      expect(wrapper.find('.neon-icon--primary').element).toBeDefined();
+      expect(html()).toMatch('neon-icon--primary');
       done();
     });
   });
 
   it('renders color', (done) => {
     // given
-    const wrapper = mount(NeonSplashLoader, {
-      propsData: { color: NeonFunctionalColor.Brand },
-    });
+    const { html } = render(NeonSplashLoader, { props: { color: NeonFunctionalColor.Brand } });
     // when / then
     setTimeout(() => {
-      expect(wrapper.find('.neon-icon--brand').element).toBeDefined();
+      expect(html()).toMatch('neon-icon--brand');
       done();
     });
   });
 
   it('renders default size', (done) => {
     // given
-    const wrapper = mount(NeonSplashLoader, {
-      propsData: {},
-    });
+    const { html } = render(NeonSplashLoader, { props: {} });
     // when / then
     setTimeout(() => {
-      expect(wrapper.find('.neon-splash-loader--l').element).toBeDefined();
+      expect(html()).toMatch('neon-splash-loader--l');
       done();
     });
   });
 
   it('renders size', (done) => {
     // given
-    const wrapper = mount(NeonSplashLoader, {
-      propsData: { size: NeonSize.Medium },
-    });
+    const { html } = render(NeonSplashLoader, { props: { size: NeonSize.Medium } });
     // when / then
     setTimeout(() => {
-      expect(wrapper.find('.neon-splash-loader--m').element).toBeDefined();
+      expect(html()).toMatch('neon-splash-loader--m');
       done();
     });
   });
 
   it('renders overlay', (done) => {
     // given
-    const wrapper = mount(NeonSplashLoader, {
-      propsData: {},
-    });
+    const { html } = render(NeonSplashLoader, { props: {} });
     // when / then
     setTimeout(() => {
-      expect(wrapper.find('.neon-splash-loader--with-overlay').element).toBeDefined();
+      expect(html()).toMatch('neon-splash-loader--with-overlay');
       done();
     });
   });
 
   it('renders without overlay', (done) => {
     // given
-    const wrapper = mount(NeonSplashLoader, {
-      propsData: { overlay: false },
-    });
+    const { html } = render(NeonSplashLoader, { props: { overlay: false } });
     // when / then
     setTimeout(() => {
-      expect(wrapper.find('.neon-splash-loader--with-overlay').element).toBeUndefined();
+      expect(html()).not.toMatch('neon-splash-loader--with-overlay');
       done();
     });
   });
 
   it('renders fullscreen', (done) => {
     // given
-    const wrapper = mount(NeonSplashLoader, {
-      propsData: { fullscreen: true },
-    });
+    const { html } = render(NeonSplashLoader, { props: { fullscreen: true } });
     // when / then
     setTimeout(() => {
-      expect(wrapper.find('.neon-splash-loader--fullscreen').element).toBeDefined();
+      expect(html()).toMatch('neon-splash-loader--fullscreen');
       done();
     });
   });
 
   it('renders without fullscreen', (done) => {
     // given
-    const wrapper = mount(NeonSplashLoader, {
-      propsData: {},
-    });
+    const { html } = render(NeonSplashLoader, { props: {} });
     // when / then
     setTimeout(() => {
-      expect(wrapper.find('.neon-splash-loader--fullscreen').element).toBeUndefined();
+      expect(html()).not.toMatch('neon-splash-loader--fullscreen');
       done();
     });
   });

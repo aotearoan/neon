@@ -1,0 +1,192 @@
+@use '../includes/palettes';
+@use '../includes/layout';
+@use '../includes/responsive';
+@use '../includes/scrollbars';
+@use '../includes/outline';
+@use '../includes/svg';
+
+@mixin alert-container {
+  .neon-alert__wrapper .neon-alert {
+    position: fixed;
+    z-index: var(--neon-z-index-top);
+    user-select: none;
+    pointer-events: none;
+    touch-action: none;
+    width: var(--neon-width-alert);
+    max-width: var(--neon-width-alert);
+
+    @include layout.max-height(100);
+
+    overflow-y: auto;
+    overflow-x: visible;
+    padding: calc(2 * var(--neon-base-space));
+
+    @include scrollbars.scrollbars;
+
+    &--top-right {
+      top: 0;
+      right: 0;
+    }
+
+    &--bottom-right {
+      bottom: 0;
+      right: 0;
+    }
+
+    &--top-right,
+    &--bottom-right {
+      @include responsive.responsive(mobile-large) {
+        right: auto;
+        min-width: 100vw;
+      }
+    }
+
+    &--top-left {
+      top: 0;
+      left: 0;
+    }
+
+    &--bottom-left {
+      bottom: 0;
+      left: 0;
+    }
+
+    &--top-left,
+    &--bottom-left {
+      @include responsive.responsive(mobile-large) {
+        left: auto;
+        min-width: 100vw;
+      }
+    }
+
+    &__message {
+      pointer-events: visible;
+      touch-action: auto;
+      height: 100%;
+      min-height: calc(20 * var(--neon-base-space));
+      margin: var(--neon-base-space);
+      border-radius: var(--neon-border-radius-alert);
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      position: relative;
+      font-size: var(--neon-font-size-m);
+      box-shadow: var(--neon-box-shadow-alert);
+      overflow: hidden;
+
+      @each $color in palettes.$alert-colors {
+        $alert-rgb: var(--neon-rgb-alert-#{$color});
+
+        &.neon-alert__message--#{$color} {
+          background-color: var(--neon-background-color-alert-#{$color});
+          @include svg.color-with-svg(rgb($alert-rgb));
+          color: var(--neon-color-inverse);
+
+          &:focus-within:not(.neon-alert__message--with-actions) {
+            @include outline.box-shadow-outline($alert-rgb);
+          }
+
+          .neon-alert__title {
+            color: rgb(var(--neon-rgb-alert-#{$color}));
+          }
+
+          .neon-alert__actions {
+            border-left: var(--neon-border-width-alert) var(--neon-border-style) rgba($alert-rgb, var(--neon-border-opacity-alert-action));
+
+            .neon-alert__action {
+              transition: all var(--neon-animation-speed-fast) ease-in-out;
+              color: rgba($alert-rgb, 0.5);
+
+              &:focus,
+              &:hover {
+                color: rgb($alert-rgb);
+                text-decoration: none;
+                background-color: rgba($alert-rgb, 0.125);
+              }
+            }
+          }
+
+          .neon-alert__action + .neon-alert__action {
+            border-top: var(--neon-border-width-alert) var(--neon-border-style) rgba($alert-rgb, var(--neon-border-opacity-alert-action));
+          }
+        }
+      }
+
+      &--dismissable:not(.neon-alert__message--with-actions) {
+        cursor: pointer;
+      }
+
+      .neon-icon {
+        min-width: calc(8 * var(--neon-base-space));
+        width: calc(8 * var(--neon-base-space));
+        min-height: calc(8 * var(--neon-base-space));
+        height: calc(8 * var(--neon-base-space));
+        margin: calc(2 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) calc(3 * var(--neon-base-space));
+        align-self: center;
+      }
+    }
+
+    &__title {
+      line-height: var(--neon-line-height-one);
+      font-size: var(--neon-font-size-m);
+      font-weight: var(--neon-font-weight-bold);
+      font-family: var(--neon-heading-font-family);
+      letter-spacing: var(--neon-letter-spacing-m);
+    }
+
+    &__body {
+      font-size: var(--neon-font-size-s);
+    }
+
+    .neon-alert__actions {
+      margin-left: calc(2 * var(--neon-base-space));
+
+      .neon-alert__action {
+        padding: calc(2 * var(--neon-base-space));
+        font-size: var(--neon-font-size-xs);
+        text-transform: uppercase;
+        letter-spacing: var(--neon-letter-spacing-m);
+        height: 100%;
+        display: flex;
+        align-items: center;
+        width: var(--neon-width-alert-action);
+        justify-content: center;
+        font-weight: var(--neon-font-weight-bold);
+
+        &:focus {
+          border-radius: 0;
+
+          &:first-child {
+            border-top-right-radius: calc(2 * var(--neon-border-radius));
+          }
+
+          &:last-child {
+            border-bottom-right-radius: calc(2 * var(--neon-border-radius));
+          }
+        }
+      }
+    }
+
+    &__content {
+      padding-top: calc(2 * var(--neon-base-space));
+      padding-bottom: calc(2 * var(--neon-base-space));
+      justify-content: center;
+      flex: 1 1 auto;
+      outline: none;
+    }
+  }
+
+  .neon-alert-transition {
+    &-enter-active,
+    &-leave-active {
+      transition: all ease-in-out var(--neon-animation-speed-slow);
+    }
+
+    &-enter,
+    &-leave-to {
+      opacity: 0;
+      height: 0;
+      transform: scale(0);
+    }
+  }
+}

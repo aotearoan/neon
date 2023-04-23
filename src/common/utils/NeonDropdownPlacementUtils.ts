@@ -1,7 +1,7 @@
 import { NeonDropdownPlacementObject } from '../models/NeonDropdownPlacementObject';
 import { NeonPlacement } from '../enums/NeonPlacement';
-import { NeonDropdownPlacement } from '../enums/NeonDropdownPlacement';
-import { NeonAvailableSpace } from '../models/NeonAvailableSpace';
+import type { NeonDropdownPlacement } from '../enums/NeonDropdownPlacement';
+import type { NeonAvailableSpace } from '../models/NeonAvailableSpace';
 import { NeonPlacementUtils } from './NeonPlacementUtils';
 
 export class NeonDropdownPlacementUtils {
@@ -11,9 +11,8 @@ export class NeonDropdownPlacementUtils {
     placement: NeonDropdownPlacement,
     placementContainer?: HTMLElement,
   ): NeonDropdownPlacement {
-    const placementObject: NeonDropdownPlacementObject = NeonDropdownPlacementObject.toNeonDropdownPlacementObject(
-      placement,
-    );
+    const placementObject: NeonDropdownPlacementObject =
+      NeonDropdownPlacementObject.toNeonDropdownPlacementObject(placement);
     const { maxWidth, maxHeight } = NeonPlacementUtils.calculateBounds(placementContainer);
     const availableMajorSpace = NeonPlacementUtils.calculateAvailableSpace(
       triggerElement,

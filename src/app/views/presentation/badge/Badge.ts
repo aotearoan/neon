@@ -1,65 +1,52 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonBadge, NeonCard, NeonCardBody } from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonBadge, NeonCard, NeonCardBody } from '@/neon';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Badge',
   components: {
     NeonCard,
     NeonCardBody,
     NeonBadge,
     ComponentDocumentation,
+    Editor,
   },
-})
-export default class Badge extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('User avatar badges');
 
-  private headline = 'User avatar badges';
+    const sizesTemplate = `<neon-badge size="s" label="SM" />
+<neon-badge size="m" label="MD" />
+<neon-badge size="l" label="LG" />`;
 
-  private examples = [
-    {
-      title: 'Badge sizes',
-      template: `<div class="example--horizontal">
-  <neon-badge size="s" label="SM" />
-  <neon-badge size="m" label="MD" />
-  <neon-badge size="l" label="LG" />
-</div>`,
-    },
-    {
-      title: 'Badge shapes',
-      template: `<div class="example--horizontal">
-  <neon-badge label="SQ" />
-  <neon-badge :circular="true" label="CI" />
-</div>`,
-    },
-    {
-      title: 'Badge styles',
-      template: `<div class="example--horizontal">
-  <neon-badge label="LB" />
-  <neon-badge icon="user" />
-  <neon-badge :image="baseUrl + 'images/doge.jpg'" />
-</div>`,
-      data: {
-        baseUrl: process.env.VUE_APP_BASE_URL,
-      },
-    },
-    {
-      title: 'Badge colors',
-      template: `<div class="example--horizontal">
-  <neon-badge label="LB" color="brand" />
-  <neon-badge icon="user" color="success" />
-</div>`,
-    },
-    {
-      title: 'Gradient badges',
-      template: `<div class="example--horizontal">
-  <neon-badge icon="user" color="primary" alternate-color="primary" />
-  <neon-badge label="LB" color="info" alternate-color="brand" />
-</div>`,
-    },
-  ];
+    const shapesTemplate = `<neon-badge label="SQ" />
+<neon-badge :circular="true" label="CI" />`;
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonBadge');
-  }
-}
+    const stylesTemplate = `<neon-badge label="LB" />
+<neon-badge icon="user" />
+<neon-badge :image="baseUrl + 'images/doge.jpg'" />`;
+
+    const colorsTemplate = `<neon-badge label="LB" color="brand" />
+<neon-badge icon="user" color="success" />`;
+
+    const gradientsTemplate = `<neon-badge icon="user" color="brand" alternate-color="warn" />
+<neon-badge label="LB" color="info" alternate-color="brand" />`;
+
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonBadge')));
+
+    return {
+      baseUrl: import.meta.env.VITE_BASE_URL,
+      menuModel,
+      headline,
+      sizesTemplate,
+      shapesTemplate,
+      stylesTemplate,
+      colorsTemplate,
+      gradientsTemplate,
+    };
+  },
+});

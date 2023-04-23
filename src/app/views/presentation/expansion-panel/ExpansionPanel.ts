@@ -1,75 +1,102 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonExpansionPanel } from '../../../../components';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import { Menu, MenuModel } from '../../../Menu';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonExpansionPanel } from '@/neon';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
 
-@Component({
+export default defineComponent({
+  name: 'ExpansionPanel',
   components: {
     NeonCard,
     NeonCardBody,
     NeonExpansionPanel,
     ComponentDocumentation,
+    Editor,
   },
-})
-export default class ExpansionPanel extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Expandable/collapsible container for content');
 
-  private headline = 'Expandable/collapsible container for content';
+    const expanded1 = ref(false);
+    const expanded2 = ref(false);
+    const expanded3 = ref(false);
+    const expanded4 = ref(false);
+    const expanded5 = ref(false);
+    const expanded6 = ref(false);
+    const expanded7 = ref(false);
+    const expanded8 = ref(false);
 
-  private data = {
-    expanded1: false,
-    expanded2: false,
-    expanded3: false,
-    expanded4: false,
-    expanded5: false,
-    expanded6: false,
-    expanded7: false,
-    expanded8: false,
-  };
+    const content = `Spicy jalapeno bacon ipsum dolor amet biltong porchetta cupim sausage pork loin. Ham porchetta
+brisket, kielbasa ham hock sirloin ground round strip steak jowl jerky short ribs pork loin frankfurter.`;
 
-  private content = `<p>Spicy jalapeno bacon ipsum dolor amet biltong porchetta cupim sausage pork loin. Ham porchetta
-brisket, kielbasa ham hock sirloin ground round strip steak jowl jerky short ribs pork loin frankfurter.</p>`;
+    const sizesTemplate = `<neon-expansion-panel v-model="expanded1"
+                      label="Small"
+                      size="s"
+>
+  <p>{{ content }}</p>
+</neon-expansion-panel>
+<neon-expansion-panel v-model="expanded2"
+                      label="Medium"
+                      size="m"
+>
+  <p>{{ content }}</p>
+</neon-expansion-panel>
+<neon-expansion-panel v-model="expanded3"
+                      label="Large"
+                      size="l"
+>
+  <p>{{ content }}</p>
+</neon-expansion-panel>`;
 
-  private examples = [
-    {
-      title: 'Expansion panel sizes',
-      template: `<div class="example--vertical example-expansion-panel">
-  <neon-expansion-panel v-model="expanded1" label="Small" size="s">
-    ${this.content}
-  </neon-expansion-panel>
-  <neon-expansion-panel v-model="expanded2" label="Medium" size="m">
-    ${this.content}
-  </neon-expansion-panel>
-  <neon-expansion-panel v-model="expanded3" label="Large" size="l">
-    ${this.content}
-  </neon-expansion-panel>
-</div>`,
-      data: this.data,
-    },
-    {
-      title: 'More styles',
-      template: `<div class="example--vertical example-expansion-panel">
-  <neon-expansion-panel v-model="expanded4" icon="contrast" label="With icon">
-    ${this.content}
-  </neon-expansion-panel>
-  <neon-expansion-panel v-model="expanded5" color="success" icon="contrast" label="Colored label">
-    ${this.content}
-  </neon-expansion-panel>
-  <neon-expansion-panel :full-width="true" v-model="expanded6" label="Full width">
-    ${this.content}
-  </neon-expansion-panel>
-  <neon-expansion-panel v-model="expanded7" :disabled="true" label="Disabled">
-    ${this.content}
-  </neon-expansion-panel>
-  <neon-expansion-panel v-model="expanded8" position="bottom" label="From bottom">
-    ${this.content}
-  </neon-expansion-panel>
-</div>`,
-      data: this.data,
-    },
-  ];
+    const moreTemplate = `<neon-expansion-panel v-model="expanded4"
+                      icon="contrast"
+                      label="With icon"
+>
+  <p>{{ content }}</p>
+</neon-expansion-panel>
+<neon-expansion-panel v-model="expanded5"
+                      color="success"
+                      icon="contrast"
+                      label="Colored label"
+>
+  <p>{{ content }}</p>
+</neon-expansion-panel>
+<neon-expansion-panel v-model="expanded6"
+                      :full-width="true"
+                      label="Full width"
+>
+  <p>{{ content }}</p>
+</neon-expansion-panel>
+<neon-expansion-panel v-model="expanded7"
+                      :disabled="true"
+                      label="Disabled"
+>
+  <p>{{ content }}</p>
+</neon-expansion-panel>
+<neon-expansion-panel v-model="expanded8"
+                      label="From bottom"
+                      position="bottom"
+>
+  <p>{{ content }}</p>
+</neon-expansion-panel>`;
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonExpansionPanel');
-  }
-}
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonExpansionPanel')));
+
+    return {
+      menuModel,
+      headline,
+      sizesTemplate,
+      moreTemplate,
+      content,
+      expanded1,
+      expanded2,
+      expanded3,
+      expanded4,
+      expanded5,
+      expanded6,
+      expanded7,
+      expanded8,
+    };
+  },
+});

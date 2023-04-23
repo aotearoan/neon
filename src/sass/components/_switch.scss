@@ -1,0 +1,248 @@
+@use '../includes/palettes';
+@use '../includes/svg';
+
+@mixin switch-style($neon-switch-size, $spacing-multiplier) {
+  --neon-switch-height: calc(var(--neon-size-#{$neon-switch-size}) - #{$spacing-multiplier} * var(--neon-base-space));
+  --neon-switch-margin: calc(0.5 * (var(--neon-size-#{$neon-switch-size}) - var(--neon-switch-height)));
+
+  height: var(--neon-switch-height);
+  margin-top: var(--neon-switch-margin);
+  margin-bottom: var(--neon-switch-margin);
+
+  &.neon-switch--switch {
+    .neon-switch__switch {
+      height: var(--neon-switch-height);
+      width: calc(2 * var(--neon-switch-height));
+      padding: 2rem;
+      overflow: hidden;
+    }
+
+    --neon-switch-indicator-size: calc(var(--neon-switch-height) - 4rem);
+
+    .neon-switch__indicator {
+      height: var(--neon-switch-indicator-size);
+      width: var(--neon-switch-indicator-size);
+      left: 0;
+      transition: all var(--neon-animation-speed-fast) ease-in;
+    }
+
+    &.neon-switch--checked {
+      .neon-switch__indicator {
+        left: calc(2 * var(--neon-switch-height) - var(--neon-switch-indicator-size) - 4rem);
+      }
+    }
+  }
+}
+
+@mixin checkbox-style($size, $padding-multiplier) {
+  --checkbox-height: calc(0.5 * var(--neon-size-#{$size}));
+  --checkbox-margin: calc(0.5 * (var(--neon-size-#{$size}) - var(--checkbox-height)));
+  height: var(--checkbox-height);
+  margin-top: var(--checkbox-margin);
+  margin-bottom: var(--checkbox-margin);
+
+  .neon-switch__checkbox {
+    height: var(--checkbox-height);
+    width: var(--checkbox-height);
+    padding: calc(#{$padding-multiplier} * var(--neon-base-space));
+  }
+}
+
+@mixin switch {
+  label.neon-field + label.neon-switch {
+    margin-top: calc(var(--neon-font-size-xs) + 4 * var(--neon-base-space));
+  }
+
+  .neon-switch {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    color: var(--neon-color-text);
+
+    &:focus {
+      outline: none;
+    }
+
+    &__label {
+      user-select: none;
+      display: flex;
+      align-items: center;
+    }
+
+    &__input {
+      display: none;
+    }
+
+    &--s {
+      font-size: var(--neon-font-size-s);
+    }
+
+    &--m {
+      font-size: var(--neon-font-size-s);
+    }
+
+    &--l {
+      font-size: var(--neon-font-size-m);
+    }
+
+    &--switch {
+      @each $color in palettes.$neon-functional-colors {
+        &.neon-switch--#{$color} {
+          &.neon-switch--checked:not(.neon-switch--disabled) {
+            .neon-switch__switch {
+              background-color: var(--neon-color-#{$color});
+
+              &:focus {
+                box-shadow: 0 0 0 4rem rgba(var(--neon-rgb-#{$color}), 0.3), var(--neon-inset-shadow-switch);
+              }
+            }
+          }
+        }
+      }
+
+      &.neon-switch--s {
+        @include switch-style('s', 3);
+      }
+
+      &.neon-switch--m {
+        @include switch-style('m', 4);
+      }
+
+      &.neon-switch--l {
+        @include switch-style('l', 5);
+      }
+
+      .neon-switch__switch {
+        display: inline-flex;
+        position: relative;
+        align-items: center;
+        border-radius: var(--neon-border-radius-switch);
+        outline: none;
+        pointer-events: none;
+        touch-action: none;
+        background-color: var(--neon-color-switch-off);
+        transition: background-color var(--neon-animation-speed-fast) ease-in;
+        box-shadow: var(--neon-inset-shadow-switch);
+
+        &:focus {
+          box-shadow: 0 0 0 4rem rgba(var(--neon-rgb-low-contrast), 0.3), var(--neon-inset-shadow-switch);
+        }
+
+      }
+
+      .neon-switch__indicator {
+        display: flex;
+        position: relative;
+        border-radius: var(--neon-border-radius-switch-indicator);
+        background-color: var(--neon-color-switch-indicator);
+        box-shadow: 0 0 2rem 1rem rgba(var(--neon-rgb-neutral-d5), 0.3);
+      }
+
+      &.neon-switch--disabled {
+        .neon-switch__switch,
+        .neon-switch__indicator {
+          box-shadow: none;
+        }
+
+        .neon-switch__switch {
+          background-color: var(--neon-color-switch-disabled);
+        }
+
+        .neon-switch__indicator {
+          background-color: var(--neon-color-switch-indicator-disabled);
+        }
+      }
+    }
+
+    &--checkbox {
+      @each $color in palettes.$neon-functional-colors {
+        &.neon-switch--#{$color}:not(.neon-switch--disabled) {
+          .neon-switch__checkbox {
+            border-color: var(--neon-border-color-input);
+            box-shadow: var(--neon-inset-shadow);
+
+            &:focus {
+              box-shadow: 0 0 0 4rem rgba(var(--neon-rgb-low-contrast), 0.3);
+            }
+          }
+
+          &.neon-switch--checked {
+            .neon-switch__checkbox {
+              border-color: var(--neon-color-#{$color});
+              background: var(--neon-color-#{$color});
+
+              &:focus {
+                box-shadow: 0 0 0 4rem rgba(var(--neon-rgb-#{$color}), 0.3);
+              }
+            }
+          }
+
+          &:not(.neon-switch--checked) {
+            &:hover {
+              .neon-switch__checkbox {
+                background-color: rgba(var(--neon-rgb-switch-off), 0.125);
+              }
+            }
+          }
+        }
+      }
+
+      .neon-switch__checkbox {
+        border: var(--neon-border-width-checkbox) var(--neon-border-style);
+        border-radius: var(--neon-border-radius-checkbox);
+        outline: none;
+        pointer-events: none;
+        touch-action: none;
+
+        svg {
+          display: none;
+        }
+      }
+
+      &.neon-switch--checked {
+        .neon-switch__checkbox {
+          svg {
+            display: flex;
+          }
+        }
+      }
+
+      &.neon-switch--s {
+        @include checkbox-style('s', 0.5);
+      }
+
+      &.neon-switch--m {
+        @include checkbox-style('m', 0.75);
+      }
+
+      &.neon-switch--l {
+        @include checkbox-style('l', 1);
+      }
+    }
+
+    &.neon-switch--disabled {
+      cursor: not-allowed;
+
+      .neon-switch__checkbox {
+        box-shadow: none;
+        border: none;
+        background-color: var(--neon-color-switch-disabled);
+        @include svg.color-with-svg(var(--neon-color-switch-indicator-disabled));
+      }
+    }
+
+    &--right {
+      .neon-switch__label {
+        margin-left: calc(2 * var(--neon-base-space));
+      }
+    }
+
+    &--left {
+      .neon-switch__label {
+        order: -1;
+        margin-right: calc(2 * var(--neon-base-space));
+      }
+    }
+  }
+}

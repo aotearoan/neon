@@ -1,19 +1,25 @@
 .layout-example {
-  border-radius: $neon-border-radius;
-  padding: 4 * $neon-base-space;
-  margin: 2 * $neon-base-space;
+  border: 2rem solid var(--neon-color-neutral);
+  border-radius: var(--neon-border-radius);
+  padding: calc(4 * var(--neon-base-space));
+  margin: calc(2 * var(--neon-base-space));
   user-select: none;
 
-  &__label {
-    font-size: $neon-font-size-s;
-    margin-left: 2 * $neon-base-space;
+  .layout-example__label,
+  .layout-example__link {
+    color: var(--neon-color-neutral) !important;
   }
 
-  &__content {
+  .layout-example__label {
+    font-size: var(--neon-font-size-s);
+    margin-left: calc(2 * var(--neon-base-space));
+  }
+
+  .layout-example__content {
     flex-direction: row;
   }
 
-  &__side-nav {
+  .layout-example__side-nav {
     width: 25%;
 
     &-section {
@@ -21,8 +27,8 @@
     }
   }
 
-  &__grid-wrapper {
-    flex: 1 0 auto;
+  .layout-example__grid-wrapper {
+    flex: 1 1 auto;
     width: 75%;
   }
 }

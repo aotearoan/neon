@@ -1,71 +1,57 @@
-@import 'responsive';
+@use 'sass:map';
+@use 'responsive';
 
-// mobile spacing
-$spacing-horizontal-mobile: $neon-spacing-vertical-mobile * $neon-spacing-horizontal-multiplier;
-// tablet spacing
-$spacing-vertical-tablet: $neon-spacing-vertical-mobile * $neon-spacing-multiplier-tablet;
-$spacing-horizontal-tablet: $spacing-horizontal-mobile * $neon-spacing-multiplier-tablet;
-// desktop spacing
-$spacing-vertical-desktop: $neon-spacing-vertical-mobile * $neon-spacing-multiplier-desktop;
-$spacing-horizontal-desktop: $spacing-horizontal-mobile * $neon-spacing-multiplier-desktop;
-
-$spacing: (
-  mobile: (
-    $neon-spacing-vertical-mobile,
-    $spacing-horizontal-mobile,
-  ),
-  mobile-large: (
-    $neon-spacing-vertical-mobile,
-    $spacing-horizontal-mobile,
-  ),
-  tablet: (
-    $spacing-vertical-tablet,
-    $spacing-horizontal-tablet,
-  ),
-  larger-than-tablet: (
-    $spacing-vertical-desktop,
-    $spacing-horizontal-desktop,
-  ),
-  desktop: (
-    $spacing-vertical-desktop,
-    $spacing-horizontal-desktop,
-  ),
-  desktop-large: (
-    $spacing-vertical-desktop,
-    $spacing-horizontal-desktop,
-  ),
+$spacings: (
+        mobile: (
+                'neon-spacing-vertical-mobile',
+                'neon-spacing-horizontal-mobile',
+        ),
+        mobile-large: (
+                'neon-spacing-vertical-mobile',
+                'neon-spacing-horizontal-mobile',
+        ),
+        tablet: (
+                'neon-spacing-vertical-tablet',
+                'neon-spacing-horizontal-tablet',
+        ),
+        larger-than-tablet: (
+                'neon-spacing-vertical-desktop',
+                'neon-spacing-horizontal-desktop',
+        ),
+        desktop: (
+                'neon-spacing-vertical-desktop',
+                'neon-spacing-horizontal-desktop',
+        ),
+        desktop-large: (
+                'neon-spacing-vertical-desktop',
+                'neon-spacing-horizontal-desktop',
+        ),
 );
 
 @mixin spacing-horizontal($paddingOrMargin, $breakpoint, $multiplier) {
-  @include responsive($breakpoint) {
-    #{$paddingOrMargin}: $multiplier * nth(map-get($spacing, $breakpoint), 2);
+  @include responsive.responsive($breakpoint) {
+    #{$paddingOrMargin}: calc(#{$multiplier} * var(--#{nth(map.get($spacings, $breakpoint), 2)}));
   }
 }
 
 @mixin spacing-vertical($paddingOrMargin, $breakpoint, $multiplier) {
-  @include responsive($breakpoint) {
-    #{$paddingOrMargin}: $multiplier * nth(map-get($spacing, $breakpoint), 1);
+  @include responsive.responsive($breakpoint) {
+    #{$paddingOrMargin}: calc(#{$multiplier} * var(--#{nth(map.get($spacings, $breakpoint), 1)}));
   }
 }
 
 @mixin spacing-top($paddingOrMargin, $breakpoint) {
-  @include responsive($breakpoint) {
-    #{$paddingOrMargin}-top: nth(map-get($spacing, $breakpoint), 1);
+  @include responsive.responsive($breakpoint) {
+    #{$paddingOrMargin}-top: var(--#{nth(map.get($spacings, $breakpoint), 1)});
   }
 }
 
 @mixin spacing($paddingOrMargin, $breakpoint, $multiplier: 1, $square: false) {
-  @include responsive($breakpoint) {
+  @include responsive.responsive($breakpoint) {
     @if ($square) {
-      #{$paddingOrMargin}: $multiplier *
-        nth(map-get($spacing, $breakpoint), 1)
-        $multiplier *
-        nth(map-get($spacing, $breakpoint), 1);
+      #{$paddingOrMargin}: calc(#{$multiplier} * var(--#{nth(map.get($spacings, $breakpoint), 1)}));
     } @else {
-      #{$paddingOrMargin}: $multiplier *
-        nth(map-get($spacing, $breakpoint), 1)
-        $multiplier *
-        nth(map-get($spacing, $breakpoint), 2);
+      #{$paddingOrMargin}: calc(#{$multiplier} * var(--#{nth(map.get($spacings, $breakpoint), 1)})) calc(#{$multiplier} * var(--#{nth(map.get($spacings, $breakpoint), 2)}));
     }
   }
 }
@@ -94,22 +80,22 @@ $spacing: (
   @include padding-mobile($multiplier, $square);
 }
 
-@mixin padding-horizontal($multiplier: 1) {
-  @include spacing-horizontal('padding-left', larger-than-tablet, $multiplier);
-  @include spacing-horizontal('padding-left', tablet, $multiplier);
-  @include spacing-horizontal('padding-left', mobile-large, $multiplier);
-  @include spacing-horizontal('padding-right', larger-than-tablet, $multiplier);
-  @include spacing-horizontal('padding-right', tablet, $multiplier);
-  @include spacing-horizontal('padding-right', mobile-large, $multiplier);
+@mixin padding-horizontal($multiplier-left: 1, $multiplier-right: 1) {
+  @include spacing-horizontal('padding-left', larger-than-tablet, $multiplier-left);
+  @include spacing-horizontal('padding-left', tablet, $multiplier-left);
+  @include spacing-horizontal('padding-left', mobile-large, $multiplier-left);
+  @include spacing-horizontal('padding-right', larger-than-tablet, $multiplier-right);
+  @include spacing-horizontal('padding-right', tablet, $multiplier-right);
+  @include spacing-horizontal('padding-right', mobile-large, $multiplier-right);
 }
 
-@mixin padding-vertical($multiplier: 1) {
-  @include spacing-vertical('padding-top', larger-than-tablet, $multiplier);
-  @include spacing-vertical('padding-top', tablet, $multiplier);
-  @include spacing-vertical('padding-top', mobile-large, $multiplier);
-  @include spacing-vertical('padding-bottom', larger-than-tablet, $multiplier);
-  @include spacing-vertical('padding-bottom', tablet, $multiplier);
-  @include spacing-vertical('padding-bottom', mobile-large, $multiplier);
+@mixin padding-vertical($multiplier-top: 1, $multiplier-bottom: 1) {
+  @include spacing-vertical('padding-top', larger-than-tablet, $multiplier-top);
+  @include spacing-vertical('padding-top', tablet, $multiplier-top);
+  @include spacing-vertical('padding-top', mobile-large, $multiplier-top);
+  @include spacing-vertical('padding-bottom', larger-than-tablet, $multiplier-bottom);
+  @include spacing-vertical('padding-bottom', tablet, $multiplier-bottom);
+  @include spacing-vertical('padding-bottom', mobile-large, $multiplier-bottom);
 }
 
 // margin mixins
@@ -156,26 +142,26 @@ $spacing: (
 }
 
 // height
-@mixin min-height($n, $offset: 0px) {
-  min-height: calc(#{$n} * var(--vh, 1vh) - #{$offset});
+@mixin min-height($n, $offset: 0rem) {
+  min-height: calc(#{$n} * var(--vh, 1vh) - (#{$offset}));
 }
 
-@mixin max-height($n, $offset: 0px) {
-  max-height: calc(#{$n} * var(--vh, 1vh) - #{$offset});
+@mixin max-height($n, $offset: 0rem) {
+  max-height: calc(#{$n} * var(--vh, 1vh) - (#{$offset}));
 }
 
-@mixin height($n, $offset: 0px) {
-  height: calc(#{$n} * var(--vh, 1vh) - #{$offset});
+@mixin height($n, $offset: 0rem) {
+  height: calc(#{$n} * var(--vh, 1vh) - (#{$offset}));
 }
 
 // width
-@mixin width($n, $offset: 0px) {
-  width: calc(#{$n} * var(--vw, 1vw) - #{$offset});
+@mixin width($n, $offset: 0rem) {
+  width: calc(#{$n} * var(--vw, 1vw) - (#{$offset}));
 }
 
 @mixin side-nav-offset {
-  @include responsive(larger-than-tablet) {
-    margin-left: $neon-side-nav-width;
-    width: auto;
+  @include responsive.responsive(larger-than-tablet) {
+    margin-left: var(--neon-side-nav-width);
+    width: calc(100vw - var(--neon-side-nav-width));
   }
 }

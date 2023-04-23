@@ -1,74 +1,58 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonToggle } from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import { defineComponent, onMounted, ref } from 'vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
+import { NeonCard, NeonCardBody, NeonChip, NeonToggle } from '@/neon';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Chip',
   components: {
     NeonCard,
     NeonCardBody,
+    NeonChip,
     NeonToggle,
     ComponentDocumentation,
+    Editor,
   },
-})
-export default class Chip extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Removable chips for tagging and inputs');
 
-  private headline = 'Removable chips for tagging and inputs';
+    const click = () => console.log('clicked!');
+    const remove = () => console.log('removed!');
 
-  private data = {
-    click: () => console.log('clicked!'),
-    remove: () => console.log('removed!'),
-  };
+    const chipSizes = `<neon-chip label="Small" size="s" />
+<neon-chip label="Medium" size="m" />
+<neon-chip label="Large" size="l" />`;
 
-  private chipSizes = `<div class="neon-vertically-spaced">
-  <neon-chip label="Small" size="s" />
-  <neon-chip label="Medium" size="m" />
-  <neon-chip label="Large" size="l" />
-</div>`;
+    const chipColors = `<neon-chip label="Neutral" />
+<neon-chip label="Low Contrast" color="low-contrast" />
+<neon-chip label="High Contrast" color="high-contrast" />
+<neon-chip label="Brand" color="brand" />
+<neon-chip label="Info" color="info" />
+<neon-chip label="Success" color="success" />
+<neon-chip label="Warning" color="warn" />
+<neon-chip label="Error" color="error" />`;
 
-  private chipColors = `<div class="neon-vertically-spaced">
-  <neon-chip label="Neutral" />
-  <neon-chip label="Low Contrast" color="low-contrast" />
-  <neon-chip label="High Contrast" color="high-contrast" />
-  <neon-chip label="Brand" color="brand" />
-  <neon-chip label="Info" color="info" />
-  <neon-chip label="Success" color="success" />
-  <neon-chip label="Warning" color="warn" />
-  <neon-chip label="Error" color="error" />
-</div>`;
+    const chipActions = `<neon-chip label="Clickable" color="info" @click="click" />
+<neon-chip action="remove" label="Removable" color="info" @close="remove" />
+<neon-chip :disabled="true" action="remove" label="Disabled" color="info" />`;
 
-  private chipActions = `<div class="neon-vertically-spaced">
-  <neon-chip label="Clickable" color="info" @click="click" />
-  <neon-chip action="remove" label="Removable" color="info" @close="remove" />
-  <neon-chip :disabled="true" action="remove" label="Disabled" color="info" />
-</div>`;
+    const chipIcons = `<neon-chip icon="moon" label="With icon" />`;
 
-  private chipIcons = `<div class="neon-vertically-spaced">
-  <neon-chip icon="moon" label="With icon" />
-</div>`;
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonChip')));
 
-  private examples = [
-    {
-      title: 'Chip sizes',
-      template: this.chipSizes,
-    },
-    {
-      title: 'Chip colors',
-      template: this.chipColors,
-    },
-    {
-      title: 'Chip actions',
-      template: this.chipActions,
-      data: this.data,
-    },
-    {
-      title: 'Chip with icon',
-      template: this.chipIcons,
-    },
-  ];
-
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonChip');
-  }
-}
+    return {
+      menuModel,
+      headline,
+      chipSizes,
+      chipColors,
+      chipActions,
+      chipIcons,
+      click,
+      remove,
+    };
+  },
+});

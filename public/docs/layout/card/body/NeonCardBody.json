@@ -1,12 +1,11 @@
 {
+  "displayName": "NeonCardFooter",
   "description": "A \"body\" card section. Cards can contain multiple card body sections.",
   "tags": {},
-  "displayName": "NeonCardBody",
   "exportName": "default",
   "props": [
     {
       "name": "fullWidth",
-      "tags": {},
       "description": "If true, this will remove all padding from the card body. This is useful for presenting images and also tabs as well as other content.",
       "type": {
         "name": "boolean"
@@ -22,5 +21,9 @@
       "name": "default",
       "description": "card body content"
     }
+  ],
+  "sourceFiles": [
+    "./src/components/layout/card/body/NeonCardBody.vue",
+    "/Users/andrew/dev/projects/neon/src/components/layout/card/body/NeonCardBody.ts"
   ]
 }

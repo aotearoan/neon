@@ -1,28 +1,48 @@
 {
+  "displayName": "NeonDrawer",
   "description": "A modal dialog component. This will be rendered above the content of the main window and can either be dismissed by the user or configured to require user interaction before dismissal.",
   "tags": {},
   "exportName": "default",
-  "displayName": "NeonModal",
   "props": [
     {
       "name": "open",
-      "tags": {},
-      "description": "Whether or not the modal is currently open.",
+      "description": "Whether the modal is currently open.",
       "type": {
         "name": "boolean"
       },
       "required": true
     },
     {
-      "name": "dismissable",
-      "tags": {},
-      "description": "Whether or not the user is allowed to dismiss the modal by clicking outside of the modal or pressing escape.",
+      "name": "dismissible",
+      "description": "Whether the user is allowed to dismiss the modal by clicking outside the modal or pressing escape.",
       "type": {
         "name": "boolean"
       },
       "defaultValue": {
         "func": false,
         "value": "true"
+      }
+    },
+    {
+      "name": "opaque",
+      "description": "Increase the opacity so that the page behind the modal is no longer visible",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "showTopNav",
+      "description": "Keep the top nav visible when the modal is open",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
       }
     }
   ],
@@ -42,5 +62,9 @@
       "name": "default",
       "description": "modal contents"
     }
+  ],
+  "sourceFiles": [
+    "./src/components/layout/modal/NeonModal.vue",
+    "/Users/andrew/dev/projects/neon/src/components/layout/modal/NeonModal.ts"
   ]
 }

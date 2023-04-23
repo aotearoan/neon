@@ -1,33 +1,34 @@
 <template>
   <label
-    class="neon-toggle-chip no-style"
+    :aria-disabled="disabled"
+    :aria-pressed="modelValue"
     :class="[
       `neon-toggle-chip--${size}`,
       `neon-toggle-chip--${color}`,
       {
         'neon-toggle-chip--disabled': disabled,
-        'neon-toggle-chip--checked': value,
+        'neon-toggle-chip--checked': modelValue,
         'neon-toggle-chip--show-check': showCheck,
       },
     ]"
-    tabindex="0"
+    class="neon-toggle-chip no-style"
     role="button"
-    :aria-pressed="value"
-    :aria-disabled="disabled"
+    tabindex="0"
     @keydown.enter="toggleChip"
     @keydown.space="toggleChip"
     @keypress.space.prevent=""
   >
-    <neon-icon v-if="value && showCheck" class="neon-toggle-chip__checked" :disabled="disabled" name="check" />
+    <neon-icon v-if="modelValue && showCheck" :disabled="disabled" class="neon-toggle-chip__checked" name="check" />
     <span class="neon-toggle-chip__label">{{ label }}</span>
     <input
-      type="checkbox"
-      class="neon-toggle-chip__input"
-      :checked="value"
+      :checked="modelValue"
       :disabled="disabled"
-      v-on="sanitizedListeners"
-      v-bind="$attrs"
+      class="neon-toggle-chip__input"
       tabindex="-1"
+      type="checkbox"
+      v-bind="sanitizedAttributes"
+      @click.prevent.stop="toggleChip"
+      @input.prevent.stop="toggleChip"
     />
   </label>
 </template>

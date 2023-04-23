@@ -1,15 +1,13 @@
-import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonSelectGroup } from '../../../common/models/NeonSelectGroup';
-import { NeonSelectOption } from '../../../common/models/NeonSelectOption';
-import { TranslateResult } from 'vue-i18n';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import NeonDropdown from '../../presentation/dropdown/NeonDropdown.vue';
-import NeonDropdownClass from '../../presentation/dropdown/NeonDropdown';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
-import NeonSwitch from '../switch/NeonSwitch.vue';
-import { NeonDropdownPlacement } from '../../../common/enums/NeonDropdownPlacement';
-import { NeonScrollUtils } from '../../../common/utils/NeonScrollUtils';
+import { computed, defineComponent, onMounted, onUnmounted, ref, useAttrs, watch } from 'vue';
+import { NeonSize } from '@/common/enums/NeonSize';
+import type { NeonSelectGroup } from '@/common/models/NeonSelectGroup';
+import type { NeonSelectOption } from '@/common/models/NeonSelectOption';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import NeonDropdown from '@/components/presentation/dropdown/NeonDropdown.vue';
+import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
+import NeonSwitch from '@/components/user-input/switch/NeonSwitch.vue';
+import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
+import { NeonScrollUtils } from '@/common/utils/NeonScrollUtils';
 
 /**
  * <p>The <strong>NeonSelect</strong> is the equivalent of an HTML &lt;select&gt; form control. On touch devices
@@ -17,264 +15,268 @@ import { NeonScrollUtils } from '../../../common/utils/NeonScrollUtils';
  * <p><strong>Note:</strong> As well as the options described below, pass through attributes supported by
  * <a href="/presentation/dropdown">NeonDropdown</a> to change the style of the dropdown button.</p>
  */
-@Component({
+export default defineComponent({
+  name: 'NeonSelect',
   components: {
     NeonDropdown,
     NeonIcon,
     NeonSwitch,
   },
-})
-export default class NeonSelect extends Vue {
-  readonly $refs!: {
-    dropdown: NeonDropdownClass;
-  };
-
-  open = false;
-  highlightedKey: string | null = null;
-  highlightedIndex = -1;
-
-  /**
-   * Placeholder to display as button label when there is no option selected.
-   */
-  @Prop({ required: true })
-  public placeholder!: TranslateResult;
-
-  /**
-   * Display the placeholder as the first option in the select, this is useful as an alternative to a label.
-   */
-  @Prop({ default: false })
-  public placeholderAsOption!: boolean;
-
-  /**
-   * Optional placeholder icon.
-   */
-  @Prop()
-  public placeholderIcon?: string;
-
-  /**
-   * A list of options to render in the select.
-   */
-  @Prop()
-  public options!: NeonSelectOption[];
-
-  /**
-   * A list of grouped options to render in the select.
-   */
-  @Prop()
-  public groupedOptions?: NeonSelectGroup[];
-
-  /**
-   * Either a single string, indicating the key of the selected option or an array of selected keys in the case
-   * multiple = true.
-   */
-  @Prop({ required: true })
-  public value!: string | string[];
-
-  /**
-   * Allow multi-select.
-   */
-  @Prop({ default: false })
-  public multiple!: boolean;
-
-  /**
-   * Placeholder when multiple values are selected.
-   */
-  @Prop()
-  public multiselectPlaceholder?: TranslateResult;
-
-  /**
-   * Disable the select
-   */
-  @Prop({ default: false })
-  public disabled!: boolean;
-
-  /**
-   * The size of the dropdown - Small, Medium or Large.
-   */
-  @Prop({ default: NeonSize.Medium })
-  public size!: NeonSize;
-
-  /**
-   * The color of the select.
-   */
-  @Prop({ default: NeonFunctionalColor.LowContrast })
-  public color!: NeonFunctionalColor;
-
-  @Watch('open')
-  toggleOpen(open: boolean) {
-    if (open) {
-      this.highlightedKey = this.flattenedOptions[0].key;
-      this.highlightedIndex = 0;
-    }
-  }
-
-  public mounted() {
-    document.addEventListener('keydown', this.keyboardHandler);
-  }
-
-  public beforeDestroy() {
-    document.removeEventListener('keydown', this.keyboardHandler);
-  }
-
-  get computedOptions(): NeonSelectGroup[] {
-    return (
-      this.groupedOptions || [
-        {
-          group: '',
-          options: this.options,
-        },
-      ]
-    );
-  }
-
-  get flattenedOptions(): NeonSelectOption[] {
-    return this.options || this.groupedOptions?.flatMap((group) => group.options);
-  }
-
-  get sanitizedListeners(): Record<string, Function | Function[]> {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { input, ...sanitized } = this.$listeners;
-    return sanitized;
-  }
-
-  get sanitizedAttributes(): Record<string, string> {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { size, disabled, label, icon, color, ...sanitized } = this.$attrs;
-    return sanitized;
-  }
-
-  get computedLabel() {
-    if (this.multiple && this.value.length > 0) {
-      if (this.multiselectPlaceholder) {
-        return this.multiselectPlaceholder;
-      } else if (this.value.length > 1) {
-        return `${this.value.length} items selected`;
-      } else {
-        const selected = this.flattenedOptions.find((option) => option.key === this.value[0]);
-        return selected?.label || '';
-      }
-    } else if (this.value) {
-      const selected = this.flattenedOptions.find((option) => option.key === this.value);
-
-      if (selected) {
-        return selected.label;
-      }
-    }
-
-    return this.placeholder;
-  }
-
-  get computedIcon() {
-    if (this.value) {
-      const selected = this.flattenedOptions.find((option) => option.key === this.value);
-
-      if (selected) {
-        return selected.icon;
-      }
-    }
-
-    return this.placeholderIcon;
-  }
-
-  private clickOption(option: NeonSelectOption) {
-    if (this.multiple) {
-      const values = [...this.value];
-      const index = values.findIndex((v) => v === option.key);
-      if (index >= 0) {
-        values.splice(index, 1);
-      } else {
-        values.push(option.key);
-      }
-      this.emitInputEvent(values);
-    } else if (this.value !== option.key) {
-      this.open = false;
-      this.emitInputEvent(option.key);
-    }
-  }
-
-  nativeSelectChange(event: Event) {
-    const selectedKeys = Array.from((event.target as HTMLSelectElement).options)
-      .filter((opt) => opt.selected)
-      .map((opt) => opt.value);
-    const selectedOptions = this.flattenedOptions.filter((v) => selectedKeys.indexOf(v.key) >= 0);
-    const value = this.multiple ? selectedOptions.map((value) => value.key) : selectedOptions[0].key;
-    this.emitInputEvent(value);
-  }
-
-  private emitInputEvent(value: string | string[]) {
+  props: {
+    /**
+     * Id for the dropdown button
+     */
+    id: { type: String },
+    /**
+     * Placeholder to display as button label when there is no option selected.
+     */
+    placeholder: { type: String, required: true },
+    /**
+     * Display the placeholder as the first option in the select, this is useful as an alternative to a label.
+     */
+    placeholderAsOption: { type: Boolean, default: false },
+    /**
+     * Optional placeholder icon.
+     */
+    placeholderIcon: { type: String, required: false },
+    /**
+     * A list of options to render in the select.
+     */
+    options: { type: Array as () => Array<NeonSelectOption>, required: false },
+    /**
+     * A list of grouped options to render in the select.
+     */
+    groupedOptions: { type: Array as () => Array<NeonSelectGroup>, required: false },
+    /**
+     * Either a single string, indicating the key of the selected option or an array of selected keys in the case
+     * multiple = true.
+     */
+    modelValue: { type: [String, Array as () => Array<string>], required: true },
+    /**
+     * Allow multi-select.
+     */
+    multiple: { type: Boolean, default: false },
+    /**
+     * Placeholder when multiple values are selected.
+     */
+    multiselectPlaceholder: { type: String, required: false },
+    /**
+     * Disable the select
+     */
+    disabled: { type: Boolean, default: false },
+    /**
+     * The size of the dropdown - Small, Medium or Large.
+     */
+    size: { type: String as () => NeonSize, default: NeonSize.Medium },
+    /**
+     * The color of the select.
+     */
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+  },
+  emits: [
     /**
      * emitted when the user changes the selection.
      * @type {string | string[]} either the selected option's key (single select) or an array of the selected keys
      * (multi-select).
      */
-    this.$emit('input', value);
-  }
+    'update:modelValue',
+  ],
+  setup(props, { emit }) {
+    const attrs = useAttrs();
 
-  private changeHighlighted(key: string) {
-    this.highlightedKey = key;
-    this.highlightedIndex = this.flattenedOptions.findIndex((opt) => opt.key === key);
-  }
+    const dropdown = ref<HTMLElement | null>(null);
 
-  keyboardHandler($event: KeyboardEvent) {
-    if (this.open) {
-      switch ($event.code) {
-        case 'ArrowUp':
-        case 'ArrowDown':
-          {
-            const reverseOffset = this.isReverse() ? -1 : 1;
-            if ($event.code === 'ArrowUp') {
-              this.navigateBy(-1 * reverseOffset, $event);
-            } else {
-              this.navigateBy(1 * reverseOffset, $event);
+    const open = ref(false);
+    const dropdownPlacement = ref<NeonDropdownPlacement | null>(null);
+    const highlightedKey = ref<string | null>(null);
+    const highlightedIndex = ref(-1);
+
+    const flattenedOptions = computed((): NeonSelectOption[] => {
+      return props.options || props.groupedOptions?.flatMap((group) => group.options) || [];
+    });
+
+    const isReverse = () => {
+      if (!props.groupedOptions) {
+        switch (dropdownPlacement.value) {
+          case NeonDropdownPlacement.TopLeft:
+          case NeonDropdownPlacement.TopRight:
+          case NeonDropdownPlacement.LeftBottom:
+          case NeonDropdownPlacement.RightBottom:
+            return true;
+        }
+      }
+
+      return false;
+    };
+
+    const scrollOnNavigate = () => {
+      const element = dropdown.value?.querySelector('.neon-select__option--highlighted') as HTMLElement;
+
+      if (element) {
+        NeonScrollUtils.scrollIntoView(element);
+      }
+    };
+
+    const navigateBy = (offset: number, $event: KeyboardEvent) => {
+      const newIndex = highlightedIndex.value + offset;
+      if (newIndex >= 0 && newIndex <= flattenedOptions.value.length - 1) {
+        highlightedIndex.value = newIndex;
+        highlightedKey.value = flattenedOptions.value[highlightedIndex.value].key;
+        $event.preventDefault();
+        setTimeout(scrollOnNavigate);
+      }
+    };
+
+    const emitInputEvent = (value: string | string[]) => {
+      emit('update:modelValue', value);
+    };
+
+    const clickOption = (option: NeonSelectOption) => {
+      if (props.multiple) {
+        const values = [...props.modelValue];
+        const index = values.findIndex((v) => v === option.key);
+        if (index >= 0) {
+          values.splice(index, 1);
+        } else {
+          values.push(option.key);
+        }
+        emitInputEvent(values);
+      } else if (props.modelValue !== option.key) {
+        open.value = false;
+        emitInputEvent(option.key);
+      }
+    };
+
+    const keyboardHandler = ($event: KeyboardEvent) => {
+      if (open.value) {
+        switch ($event.code) {
+          case 'ArrowUp':
+          case 'ArrowDown':
+            {
+              const reverseOffset = isReverse() ? -1 : 1;
+              if ($event.code === 'ArrowUp') {
+                navigateBy(-1 * reverseOffset, $event);
+              } else {
+                navigateBy(1 * reverseOffset, $event);
+              }
             }
-          }
-          break;
-        case 'Enter':
-        case 'Space':
-          if (!this.flattenedOptions[this.highlightedIndex].disabled) {
-            this.clickOption(this.flattenedOptions[this.highlightedIndex]);
-            $event.preventDefault();
-          }
-          break;
-        case 'Tab':
-          if (!$event.ctrlKey && !$event.metaKey && !$event.altKey) {
-            this.open = false;
-          }
-          break;
+            break;
+          case 'Enter':
+          case 'Space':
+            if (!flattenedOptions.value[highlightedIndex.value].disabled) {
+              clickOption(flattenedOptions.value[highlightedIndex.value]);
+              $event.preventDefault();
+            }
+            break;
+          case 'Tab':
+            if (!$event.ctrlKey && !$event.metaKey && !$event.altKey) {
+              open.value = false;
+            }
+            break;
+        }
       }
-    }
-  }
+    };
 
-  private navigateBy(offset: number, $event: KeyboardEvent) {
-    const newIndex = this.highlightedIndex + offset;
-    if (newIndex >= 0 && newIndex <= this.flattenedOptions.length - 1) {
-      this.highlightedIndex = newIndex;
-      this.highlightedKey = this.flattenedOptions[this.highlightedIndex].key;
-      $event.preventDefault();
-      setTimeout(this.scrollOnNavigate);
-    }
-  }
+    const computedOptions = computed((): Array<NeonSelectGroup> => {
+      return (
+        props.groupedOptions || [
+          {
+            group: '',
+            options: props.options || [],
+          },
+        ]
+      );
+    });
 
-  private isReverse() {
-    if (!this.groupedOptions) {
-      switch (this.$refs.dropdown.getPlacement()) {
-        case NeonDropdownPlacement.TopLeft:
-        case NeonDropdownPlacement.TopRight:
-        case NeonDropdownPlacement.LeftBottom:
-        case NeonDropdownPlacement.RightBottom:
-          return true;
+    const sanitizedAttributes = computed(() => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { ...sanitized } = attrs;
+      return sanitized;
+    });
+
+    const computedLabel = computed(() => {
+      if (props.multiple && props.modelValue.length > 0) {
+        if (props.multiselectPlaceholder) {
+          return props.multiselectPlaceholder;
+        } else if (props.modelValue.length > 1) {
+          return `${props.modelValue.length} items selected`;
+        } else {
+          const selected = flattenedOptions.value.find((option) => option.key === props.modelValue[0]);
+          return selected?.label || '';
+        }
+      } else if (props.modelValue) {
+        const selected = flattenedOptions.value.find((option) => option.key === props.modelValue);
+
+        if (selected) {
+          return selected.label;
+        }
       }
-    }
 
-    return false;
-  }
+      return props.placeholder;
+    });
 
-  scrollOnNavigate() {
-    const element = this.$el.querySelector('.neon-select__option--highlighted') as HTMLElement;
-    NeonScrollUtils.scrollIntoView(element);
-  }
+    const computedIcon = computed(() => {
+      if (props.modelValue) {
+        const selected = flattenedOptions.value.find((option) => option.key === props.modelValue);
 
-  public get dropdown() {
-    return this.$refs.dropdown;
-  }
-}
+        if (selected) {
+          return selected.icon;
+        }
+      }
+
+      return props.placeholderIcon;
+    });
+
+    const nativeSelectChange = (event: Event) => {
+      const selectedKeys = Array.from((event.target as HTMLSelectElement).options)
+        .filter((opt) => opt.selected)
+        .map((opt) => opt.value);
+      const selectedOptions = flattenedOptions.value.filter((v) => selectedKeys.indexOf(v.key) >= 0);
+      const value = props.multiple ? selectedOptions.map((value) => value.key) : selectedOptions[0].key;
+      emitInputEvent(value);
+    };
+
+    const changeHighlighted = (key: string) => {
+      highlightedKey.value = key;
+      highlightedIndex.value = flattenedOptions.value.findIndex((opt) => opt.key === key);
+    };
+
+    const onPlacement = (placement: NeonDropdownPlacement) => {
+      dropdownPlacement.value = placement;
+    };
+
+    onMounted(() => {
+      document.addEventListener('keydown', keyboardHandler);
+    });
+
+    onUnmounted(() => {
+      document.removeEventListener('keydown', keyboardHandler);
+    });
+
+    watch(
+      () => open.value,
+      (open: boolean) => {
+        if (open) {
+          highlightedKey.value = flattenedOptions.value[0].key;
+          highlightedIndex.value = 0;
+        }
+      },
+    );
+
+    return {
+      dropdown,
+      open,
+      highlightedKey,
+      highlightedIndex,
+      flattenedOptions,
+      computedLabel,
+      sanitizedAttributes,
+      computedOptions,
+      computedIcon,
+      clickOption,
+      nativeSelectChange,
+      changeHighlighted,
+      onPlacement,
+    };
+  },
+});

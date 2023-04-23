@@ -1,28 +1,26 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonNote } from '../../../../components';
-import Examples from '../../../components/examples/Examples.vue';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import { Menu, MenuModel } from '../../../Menu';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonNote } from '@/neon';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names,vue/no-reserved-component-names
+  name: 'Table',
   components: {
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
     NeonNote,
-    Examples,
     ComponentDocumentation,
+    Editor,
   },
-})
-export default class Table extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('CSS table styles');
 
-  private headline = 'CSS table styles';
-
-  private examples = [
-    {
-      title: 'Table style example',
-      template: `<table>
+    const template = `<table>
   <thead>
     <tr>
       <th>header 1</th>
@@ -39,11 +37,14 @@ export default class Table extends Vue {
       <td>Value 4</td>
     </tr>
   </tbody>
-</table>`,
-    },
-  ];
+</table>`;
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonTable');
-  }
-}
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonTable')));
+
+    return {
+      menuModel,
+      headline,
+      template,
+    };
+  },
+});

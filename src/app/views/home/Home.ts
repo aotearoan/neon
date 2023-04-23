@@ -1,28 +1,15 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonLink } from '../../../components';
+import { defineComponent } from 'vue';
+import { NeonButton, NeonCard, NeonCardBody, NeonCardHeader, NeonIcon, NeonLink } from '@/neon';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Home',
   components: {
+    NeonButton,
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
+    NeonIcon,
     NeonLink,
   },
-})
-export default class Home extends Vue {
-  private static readonly developerType = [
-    'React',
-    'Angular',
-    'GWT',
-    'Scala.js',
-    'Less',
-    'Lodash',
-    'JQuery',
-    'Bootstrap',
-    'Tailwind CSS',
-  ];
-
-  private get developers() {
-    return Home.developerType[Math.floor(Math.random() * 10) % Home.developerType.length];
-  }
-}
+});

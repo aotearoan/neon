@@ -1,67 +1,102 @@
 // This structure allows you to not only use the theme and light/dark modes,
 // but to also use the defined variables, mixins and functions in your own components and pages.
-@import 'sass/fonts';
-$monospaced-font-variation-settings: 'wdth' 100, 'wght' 450;
-$neon-font-family-monospaced: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', Courier, monospace;
+@use 'src/sass/includes/responsive';
+@use 'src/sass/includes/svg';
+@use 'src/sass/theme';
+@use './sass/fonts';
+@use './sass/global';
+@use './sass/variables';
+@use './components/components';
+@use './views/views';
 
 .app {
-  overscroll-behavior: none;
+  &.neon {
+    overscroll-behavior: none;
 
-  $neon-heading-font-family: Geomanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
-    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
-
-  &.neon-theme--classic {
-    @import '../../themes/classic/theme';
-    @import './sass/app';
-    @import './sass/classic';
-
-    &.neon-mode--dark {
-      @import '../../themes/classic/dark';
-      @import './sass/dark';
-    }
-
-    &.neon-mode--light {
-      @import '../../themes/classic/light';
-      @import './sass/light';
-    }
-  }
-
-  &.neon-theme--smooth {
-    @import '../../themes/smooth/theme';
-    @import './sass/app';
-    @import './sass/smooth';
-
-    &.neon-mode--dark {
-      @import '../../themes/smooth/dark';
-      @import './sass/dark';
-    }
-
-    &.neon-mode--light {
-      @import '../../themes/smooth/light';
-      @import './sass/light';
-    }
-  }
-
-  &.neon-theme--sharp {
-    @import '../../themes/sharp/theme';
-    @import './sass/app';
-    @import './sass/sharp';
-
-    &.neon-mode--dark {
-      @import '../../themes/sharp/dark';
-      @import './sass/dark';
-
-      .neon-drawer .neon-side-nav__sticky {
-        border-bottom: $neon-border;
+    .app-side-nav,
+    .app-top-nav {
+      .homepage-logo {
+        @include svg.color-with-svg(var(--neon-color-text-strong));
       }
     }
 
-    &.neon-mode--light {
-      @import '../../themes/sharp/light';
-      @import './sass/light';
+    .neon-vertically-spaced {
+      & > *:not(:last-child):not(label) {
+        margin-bottom: calc(4 * var(--neon-base-space));
+      }
+    }
 
-      .neon-drawer .neon-side-nav__sticky {
-        border-bottom: $neon-border;
+    .app-side-nav {
+      & > hr {
+        display: none;
+      }
+
+      .tagline {
+        display: flex;
+        margin-top: calc(2 * var(--neon-base-space));
+        margin-bottom: calc(8 * var(--neon-base-space));
+      }
+
+      .neon-side-nav__sticky {
+        padding-bottom: calc(2 * var(--neon-base-space));
+      }
+
+      .neon-side-nav__scrolling {
+        padding-top: 0;
+      }
+
+      .side-nav-actions {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: calc(4 * var(--neon-base-space));
+
+        .neon-select {
+          width: 100%;
+        }
+
+        & > .neon-button {
+          margin-left: calc(2 * var(--neon-base-space));
+        }
+      }
+    }
+
+    .app-top-nav {
+      @include responsive.responsive(larger-than-tablet) {
+        display: none !important;
+      }
+
+      .top-nav-logo-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        & > * {
+          margin-right: calc(2 * var(--neon-base-space));
+        }
+
+        .neon-link__label {
+          display: flex;
+        }
+
+        .homepage-logo {
+          width: 96rem;
+          height: 25.2rem;
+
+          @include responsive.responsive(mobile-large) {
+            width: 64rem;
+            height: 16.8rem;
+          }
+        }
+      }
+    }
+
+    .app-footer {
+      max-width: calc(var(--neon-max-page-width) - var(--neon-side-nav-width));
+
+      .neon-footer__container {
+        align-items: center;
       }
     }
   }

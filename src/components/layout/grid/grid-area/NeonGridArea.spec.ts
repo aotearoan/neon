@@ -1,28 +1,29 @@
-import { mount } from '@vue/test-utils';
+import type { RenderResult } from '@testing-library/vue';
+import { render } from '@testing-library/vue';
 import NeonGridArea from './NeonGridArea.vue';
 
 describe('NeonGridArea', () => {
-  const id = 'area1';
+  const id = 'test';
+  let harness: RenderResult;
 
-  it('renders id as class', () => {
-    // given
-    const wrapper = mount(NeonGridArea, {
-      propsData: { id },
+  beforeEach(() => {
+    harness = render(NeonGridArea, {
+      props: { id },
+      slots: { default: '<p>test</p>' },
     });
-    // when / then
-    expect(wrapper.find(`.${id}`).element).toBeDefined();
   });
 
   it('renders default slot contents', () => {
     // given
-    const slotValue = 'xd';
-    const wrapper = mount(NeonGridArea, {
-      propsData: { id },
-      slots: {
-        default: `<p>${slotValue}</p>`,
-      },
-    });
+    const { html } = harness;
     // when / then
-    expect(wrapper.find('.neon-grid-area p').text()).toEqual(slotValue);
+    expect(html()).toMatch('<p>test</p>');
+  });
+
+  it('renders id as class', () => {
+    // given
+    const { html } = harness;
+    // when / then
+    expect(html()).toMatch(`class="neon-grid-area ${id}"`);
   });
 });

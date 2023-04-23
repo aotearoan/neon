@@ -1,5 +1,5 @@
 <template>
-  <component-documentation v-if="menuModel" :examples="examples" :model="menuModel" :headline="headline">
+  <component-documentation v-if="menuModel" :headline="headline" :model="menuModel">
     <neon-card>
       <neon-card-body>
         <p>
@@ -12,6 +12,16 @@
           Once the screen width is reduced to the <em>mobile-large</em> breakpoint the tabs are exploded and displayed
           in a single full-width column, with the tab buttons hidden.
         </p>
+      </neon-card-body>
+      <neon-card-body>
+        <h2 class="neon-h3">Tabbed content</h2>
+        <neon-tabs v-model="selected" :tabs="tabs">
+          <neon-tab v-for="(tab, index) in tabs" :key="tab.key" :selected="selected === tab.key" :tab="tab">
+            <h6>Tab {{ index + 1 }}</h6>
+            <span>{{ tabContent }}</span>
+          </neon-tab>
+        </neon-tabs>
+        <editor v-model="template" />
       </neon-card-body>
     </neon-card>
   </component-documentation>

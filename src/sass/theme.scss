@@ -1,0 +1,245 @@
+@use './includes/color-mixins';
+@use './includes/dependencies';
+@use './includes/typography';
+@use './global/global';
+@use './components/components';
+
+@import './variables';
+
+/*********************
+* Global Variables
+*********************/
+$neon-components: null !default;
+
+@include color-mixins.generate-color-classes('neutral');
+@include color-mixins.generate-color-classes('low-contrast');
+@include color-mixins.generate-color-classes('high-contrast');
+@include color-mixins.generate-color-classes('brand');
+@include color-mixins.generate-color-classes('primary');
+@include color-mixins.generate-color-classes('info');
+@include color-mixins.generate-color-classes('success');
+@include color-mixins.generate-color-classes('warn');
+@include color-mixins.generate-color-classes('error');
+
+.neon {
+  /***********************
+  * Theme common
+  ************************/
+  @include global.base-html;
+  @include global.typography;
+  @include global.layout;
+  @include global.table;
+
+  /***********************
+  * Theme components
+  ************************/
+  $neon-flattened-components: dependencies.flatten-dependencies($neon-components);
+
+  @if index($neon-flattened-components, NeonToggle) {
+    @include components.toggle;
+  }
+
+  @if index($neon-flattened-components, NeonTopNav) {
+    @include components.top-nav;
+  }
+
+  @if index($neon-flattened-components, NeonPage) {
+    @include components.page;
+  }
+
+  @if index($neon-flattened-components, NeonFooter) {
+    @include components.footer;
+  }
+
+  @if index($neon-flattened-components, NeonGrid) {
+    @include components.grid;
+  }
+
+  @if index($neon-flattened-components, NeonCard) {
+    @include components.card;
+  }
+
+  @if index($neon-flattened-components, NeonSwitch) {
+    @include components.switch;
+  }
+
+  @if index($neon-flattened-components, NeonSideNav) {
+    @include components.side-nav;
+  }
+
+  @if index($neon-flattened-components, NeonButton) {
+    @include components.button;
+  }
+
+  @if index($neon-flattened-components, NeonLabel) {
+    @include components.label;
+  }
+
+  @if index($neon-flattened-components, NeonBadge) {
+    @include components.badge;
+  }
+
+  @if index($neon-flattened-components, NeonNote) {
+    @include components.note;
+  }
+
+  @if index($neon-flattened-components, NeonLink) {
+    @include components.link;
+  }
+
+  @if index($neon-flattened-components, NeonIcon) {
+    @include components.icon;
+  }
+
+  @if index($neon-flattened-components, NeonTreeMenu) {
+    @include components.tree-menu;
+  }
+
+  @if index($neon-flattened-components, NeonActionMenu) {
+    @include components.action-menu;
+  }
+
+  @if index($neon-flattened-components, NeonFieldGroup) {
+    @include components.field-group;
+  }
+
+  @if index($neon-flattened-components, NeonDrawer) {
+    @include components.drawer;
+  }
+
+  @if index($neon-flattened-components, NeonModal) {
+    @include components.modal;
+  }
+
+  @if index($neon-flattened-components, NeonInput) {
+    @include components.input;
+  }
+
+  @if index($neon-flattened-components, NeonDropZone) {
+    @include components.drop-zone;
+  }
+
+  @if index($neon-flattened-components, NeonFile) {
+    @include components.file;
+  }
+
+  @if index($neon-flattened-components, NeonAlert) {
+    @include components.alert-container;
+  }
+
+  @if index($neon-flattened-components, NeonNotificationCounter) {
+    @include components.notification-counter;
+  }
+
+  @if index($neon-flattened-components, NeonExpansionIndicator) {
+    @include components.expansion-indicator;
+  }
+
+  @if index($neon-flattened-components, NeonDropdown) {
+    @include components.dropdown;
+  }
+
+  @if index($neon-flattened-components, NeonDropdownMenu) {
+    @include components.dropdown-menu;
+  }
+
+  @if index($neon-flattened-components, NeonAnchor) {
+    @include components.anchor;
+  }
+
+  @if index($neon-flattened-components, NeonTabs) {
+    @include components.tabs;
+  }
+
+  @if index($neon-flattened-components, NeonExpansionPanel) {
+    @include components.expansion-panel;
+  }
+
+  @if index($neon-flattened-components, NeonInputIndicator) {
+    @include components.input-indicator;
+  }
+
+  @if index($neon-flattened-components, NeonSkeletonLoader) {
+    @include components.skeleton-loader;
+  }
+
+  @if index($neon-flattened-components, NeonChip) {
+    @include components.chip;
+  }
+
+  @if index($neon-flattened-components, NeonAlert) {
+    @include components.toast-container;
+  }
+
+  @if index($neon-flattened-components, NeonSplashLoader) {
+    @include components.splash-loader;
+  }
+
+  @if index($neon-flattened-components, NeonSelect) {
+    @include components.select;
+  }
+
+  @if index($neon-flattened-components, NeonToggleChip) {
+    @include components.toggle-chip;
+  }
+
+  @if index($neon-flattened-components, NeonTooltip) {
+    @include components.tooltip;
+  }
+
+  @if index($neon-flattened-components, NeonMenu) {
+    @include components.menu;
+  }
+
+  @if index($neon-flattened-components, NeonList) {
+    @include components.list;
+  }
+
+  @if index($neon-flattened-components, NeonFilterList) {
+    @include components.filter-list;
+  }
+
+  @if index($neon-flattened-components, NeonSearch) {
+    @include components.search;
+  }
+
+  @if index($neon-flattened-components, NeonColor) {
+    @include components.color;
+  }
+
+  @if index($neon-flattened-components, NeonNumber) {
+    @include components.number;
+  }
+
+  @if index($neon-flattened-components, NeonSlider) {
+    @include components.slider;
+  }
+
+  @if index($neon-flattened-components, NeonRangeSlider) {
+    @include components.range-slider;
+  }
+
+  @if index($neon-flattened-components, NeonDialog) {
+    @include components.dialog;
+  }
+
+  @if index($neon-flattened-components, NeonLinearProgress) {
+    @include components.linear-progress;
+  }
+
+  @if index($neon-flattened-components, NeonStepper) {
+    @include components.stepper;
+  }
+
+  @if index($neon-flattened-components, NeonSelectableCard) {
+    @include components.selectable-card;
+  }
+
+  @if index($neon-flattened-components, NeonDatePicker) {
+    @include components.date-picker;
+  }
+
+  @if index($neon-flattened-components, NeonField) {
+    @include components.field;
+  }
+}

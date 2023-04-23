@@ -1,0 +1,118 @@
+@use '../includes/palettes';
+@use '../includes/svg';
+
+@mixin chip-size($size, $font-size, $icon-size, $padding) {
+  height: calc(var(--neon-size-#{$size}) - 2 * var(--neon-base-space));
+  font-size: var(--neon-font-size-#{$font-size});
+  transition: transform var(--neon-animation-speed-fast) ease-in-out;
+  padding-left: calc(#{$padding} * var(--neon-base-space));
+
+  &.neon-chip--click {
+    padding-right: calc(#{$padding} * var(--neon-base-space));
+  }
+
+  &.neon-chip--remove {
+    padding-right: calc(0.667 * #{$padding} * var(--neon-base-space));
+  }
+
+  .neon-icon:not(.neon-chip__close) {
+    max-height: var(--neon-font-size-#{$font-size});
+    max-width: var(--neon-font-size-#{$font-size});
+  }
+
+  .neon-chip__close {
+    max-height: calc(#{$icon-size} * var(--neon-base-space));
+    max-width: calc(#{$icon-size} * var(--neon-base-space));
+    margin-left: calc(1.5 * var(--neon-base-space));
+  }
+}
+
+@mixin chip {
+  .neon-chip {
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex: 0 0 auto;
+    user-select: none;
+    border-radius: var(--neon-border-radius-chip);
+    width: fit-content;
+    font-weight: var(--neon-font-weight-normal);
+    letter-spacing: var(--neon-letter-spacing-m);
+
+    @each $color in palettes.$neon-functional-colors {
+      &.neon-chip--#{$color} {
+        &:not(.neon-chip--disabled) {
+          $neon-chip-rgb: var(--neon-rgb-#{$color});
+          $neon-chip-color: var(--neon-color-#{$color});
+          border: var(--neon-border-width) var(--neon-border-style) $neon-chip-color;
+          background-color: rgba($neon-chip-rgb, var(--neon-opacity-toggle-chip));
+          @include svg.color-with-svg($neon-chip-color);
+
+          &:focus,
+          &:hover {
+            background-color: rgba($neon-chip-rgb, calc(2 * var(--neon-opacity-toggle-chip)));
+          }
+        }
+
+        &.neon-chip--disabled {
+          background-color: var(--neon-color-disabled-dark);
+          @include svg.color-with-svg(var(--neon-color-disabled-light));
+          border: var(--neon-border-width) var(--neon-border-style) var(--neon-color-disabled-light);
+        }
+      }
+    }
+
+    &--s {
+      @include chip-size('s', 'xs', 4, 3);
+    }
+
+    &--m {
+      @include chip-size('m', 's', 4.5, 3);
+    }
+
+    &--l {
+      @include chip-size('l', 'm', 5, 5);
+    }
+
+    &__close {
+      opacity: 0.5;
+    }
+
+    &:not(.neon-chip--disabled) {
+      cursor: pointer;
+
+      &:active,
+      &.neon-chip--active {
+        transform: scale(0.95);
+      }
+    }
+
+    &--remove:not(.neon-chip--disabled) {
+      &:focus,
+      &:hover {
+        .neon-chip__close {
+          opacity: 1;
+        }
+      }
+    }
+
+    .neon-icon + .neon-chip__label {
+      margin-left: calc(2 * var(--neon-base-space));
+    }
+
+    &--disabled {
+      cursor: not-allowed;
+
+      .neon-chip__close {
+        opacity: 1;
+      }
+    }
+  }
+
+  .neon-transition-chip-leave-active {
+    transform: scale(0.5);
+    transition: transform var(--neon-animation-speed-fast) ease-in-out;
+  }
+}

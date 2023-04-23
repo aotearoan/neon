@@ -19,20 +19,16 @@
           the look they want without any hassle.
         </p>
         <p>
-          Each functional color palette is generated from a single reference color. From this the light and dark color
-          steps are generated (l1-l5 & d1-d5). Another important feature of the palette generator is ensuring accessible
-          contrast ratios of the colors when used in combination with text in light and dark modes.
+          Each functional color palette is comprised of 10 color steps - l1-l5 are the light colors used for the dark
+          mode & d1-d5 are the steps used for the light mode. It is also worth noting that the colors are defined as
+          both RGB variables (e.g. '255, 128, 42') and the actual color variable. The RGB variables are necessary where
+          opacity is applied to colors in order to work with CSS variables.
         </p>
         <p>
-          It is possible to override the reference colors that palettes are generated from by overriding the color
-          variables in the theme's variable file. E.g. to override the primary color set the variable
-          <strong>$neon-color-primary</strong> in your SASS overrides file.
+          Colors can be overridden using CSS variables, you will find all CSS base color variables in the
+          src/sass/colors.scss file, e.g. to override the <em>brand</em> palette:
         </p>
-        <p>
-          Alternatively, if you would like to change an entire palette you can do so by overriding the palette map, e.g.
-          to override the info palette in SASS set:
-        </p>
-        <editor language="scss" :read-only="true" :value="colorPalette" />
+        <editor v-model="colorPalette" language="scss" />
       </neon-card-body>
       <neon-card-body class="color-palettes">
         <neon-anchor id="brand-palettes" />
@@ -44,18 +40,18 @@
             <div
               v-for="i in 5"
               :key="`l${i}`"
-              class="color-item neon-dark-text"
               :ref="`brandl${6 - i}`"
               :class="`neon-brand-bg-color-l${6 - i}`"
+              class="color-item neon-dark-text"
             >
               {{ `l${6 - i}` }}
             </div>
             <div
               v-for="i in 5"
               :key="`d${i}`"
-              class="color-item neon-light-text"
               :ref="`brandd${i}`"
               :class="`neon-brand-bg-color-d${i}`"
+              class="color-item neon-light-text"
             >
               {{ `d${i}` }}
             </div>
@@ -68,18 +64,18 @@
             <div
               v-for="i in 5"
               :key="`l${i}`"
-              class="color-item neon-dark-text"
               :ref="`primaryl${6 - i}`"
               :class="`neon-primary-bg-color-l${6 - i}`"
+              class="color-item neon-dark-text"
             >
               {{ `l${6 - i}` }}
             </div>
             <div
               v-for="i in 5"
               :key="`d${i}`"
-              class="color-item neon-light-text"
               :ref="`primaryd${i}`"
               :class="`neon-primary-bg-color-d${i}`"
+              class="color-item neon-light-text"
             >
               {{ `d${i}` }}
             </div>
@@ -96,18 +92,18 @@
             <div
               v-for="i in 5"
               :key="`l${i}`"
-              class="color-item neon-dark-text"
               :ref="`infol${6 - i}`"
               :class="`neon-info-bg-color-l${6 - i}`"
+              class="color-item neon-dark-text"
             >
               {{ `l${6 - i}` }}
             </div>
             <div
               v-for="i in 5"
               :key="`d${i}`"
-              class="color-item neon-light-text"
               :ref="`infod${i}`"
               :class="`neon-info-bg-color-d${i}`"
+              class="color-item neon-light-text"
             >
               {{ `d${i}` }}
             </div>
@@ -120,18 +116,18 @@
             <div
               v-for="i in 5"
               :key="`l${i}`"
-              class="color-item neon-dark-text"
               :ref="`successl${6 - i}`"
               :class="`neon-success-bg-color-l${6 - i}`"
+              class="color-item neon-dark-text"
             >
               {{ `l${6 - i}` }}
             </div>
             <div
               v-for="i in 5"
               :key="`d${i}`"
-              class="color-item neon-light-text"
               :ref="`successd${i}`"
               :class="`neon-success-bg-color-d${i}`"
+              class="color-item neon-light-text"
             >
               {{ `d${i}` }}
             </div>
@@ -144,18 +140,18 @@
             <div
               v-for="i in 5"
               :key="`l${i}`"
-              class="color-item neon-dark-text"
               :ref="`warnl${6 - i}`"
               :class="`neon-warn-bg-color-l${6 - i}`"
+              class="color-item neon-dark-text"
             >
               {{ `l${6 - i}` }}
             </div>
             <div
               v-for="i in 5"
               :key="`d${i}`"
-              class="color-item neon-light-text"
               :ref="`warnd${i}`"
               :class="`neon-warn-bg-color-d${i}`"
+              class="color-item neon-light-text"
             >
               {{ `d${i}` }}
             </div>
@@ -168,18 +164,18 @@
             <div
               v-for="i in 5"
               :key="`l${i}`"
-              class="color-item neon-dark-text"
               :ref="`errorl${6 - i}`"
               :class="`neon-error-bg-color-l${6 - i}`"
+              class="color-item neon-dark-text"
             >
               {{ `l${6 - i}` }}
             </div>
             <div
               v-for="i in 5"
               :key="`d${i}`"
-              class="color-item neon-light-text"
               :ref="`errord${i}`"
               :class="`neon-error-bg-color-d${i}`"
+              class="color-item neon-light-text"
             >
               {{ `d${i}` }}
             </div>
@@ -196,18 +192,18 @@
             <div
               v-for="i in 5"
               :key="`l${i}`"
-              class="color-item neon-dark-text"
               :ref="`neutrall${6 - i}`"
               :class="`neon-neutral-bg-color-l${6 - i}`"
+              class="color-item neon-dark-text"
             >
               {{ `l${6 - i}` }}
             </div>
             <div
               v-for="i in 5"
               :key="`d${i}`"
-              class="color-item neon-light-text"
               :ref="`neutrald${i}`"
               :class="`neon-neutral-bg-color-d${i}`"
+              class="color-item neon-light-text"
             >
               {{ `d${i}` }}
             </div>
@@ -223,18 +219,18 @@
             <div
               v-for="i in 5"
               :key="`l${i}`"
-              class="color-item neon-dark-text"
               :ref="`high-contrastl${6 - i}`"
               :class="`neon-high-contrast-bg-color-l${6 - i}`"
+              class="color-item neon-dark-text"
             >
               {{ `l${6 - i}` }}
             </div>
             <div
               v-for="i in 5"
               :key="`d${i}`"
-              class="color-item neon-light-text"
               :ref="`high-contrastd${i}`"
               :class="`neon-high-contrast-bg-color-d${i}`"
+              class="color-item neon-light-text"
             >
               {{ `d${i}` }}
             </div>
@@ -250,18 +246,18 @@
             <div
               v-for="i in 5"
               :key="`l${i}`"
-              class="color-item neon-dark-text"
               :ref="`low-contrastl${6 - i}`"
               :class="`neon-low-contrast-bg-color-l${6 - i}`"
+              class="color-item neon-dark-text"
             >
               {{ `l${6 - i}` }}
             </div>
             <div
               v-for="i in 5"
               :key="`d${i}`"
-              class="color-item neon-light-text"
               :ref="`low-contrastd${i}`"
               :class="`neon-low-contrast-bg-color-d${i}`"
+              class="color-item neon-light-text"
             >
               {{ `d${i}` }}
             </div>
@@ -282,7 +278,20 @@
           palette
         </p>
         <h3 class="neon-h5">Text colors</h3>
-        <example :example="example" />
+        <div>
+          <div class="neon-color-text">This is the default text color</div>
+          <div class="color-example-inverse-bg neon-color-inverse">This is the inverse text color</div>
+          <div class="neon-color-text-brand">This is the brand text color</div>
+          <div class="neon-color-text-primary">This is the primary text color</div>
+          <div class="neon-color-text-info">This is the info text color</div>
+          <div class="neon-color-text-success">This is the success text color</div>
+          <div class="neon-color-text-warn">This is the warn text color</div>
+          <div class="neon-color-text-error">This is the error text color</div>
+          <div class="neon-color-text-neutral">This is the neutral text color</div>
+          <div class="neon-color-text-high-contrast">This is the high-contrast text color</div>
+          <div class="neon-color-text-low-contrast">This is the low-contrast text color</div>
+        </div>
+        <editor v-model="example" />
       </neon-card-body>
     </neon-card>
   </div>

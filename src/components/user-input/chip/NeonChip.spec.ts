@@ -1,276 +1,215 @@
-import { mount } from '@vue/test-utils';
-import NeonChipClass from './NeonChip';
+import type { RenderResult } from '@testing-library/vue';
+import { fireEvent, render } from '@testing-library/vue';
 import NeonChip from './NeonChip.vue';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonChipAction } from '../../../common/enums/NeonChipAction';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonChipAction } from '@/common/enums/NeonChipAction';
 
 describe('NeonChip', () => {
+  const label = 'xdd';
+  let harness: RenderResult;
+
+  beforeEach(() => {
+    harness = render(NeonChip, {
+      props: { label },
+    });
+  });
+
   it('renders label', () => {
     // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-chip__label').text()).toEqual(label);
+    expect(container.querySelector('.neon-chip__label')?.textContent).toEqual(label);
   });
 
   it('renders open by default', () => {
     // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-chip').element).toBeDefined();
+    expect(container.querySelector('.neon-chip')).toBeDefined();
   });
 
   it('renders default size', () => {
     // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-chip--m').element).toBeDefined();
+    expect(container.querySelector('.neon-chip--m')).toBeDefined();
   });
 
-  it('renders size', () => {
+  it('renders size', async () => {
     // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label, size: NeonSize.Large },
-    });
+    const { container, rerender } = harness;
+    await rerender({ size: NeonSize.Large });
     // when / then
-    expect(wrapper.find('.neon-chip--l').element).toBeDefined();
+    expect(container.querySelector('.neon-chip--l')).toBeDefined();
   });
 
   it('renders default color', () => {
     // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-chip--low-contrast').element).toBeDefined();
+    expect(container.querySelector('.neon-chip--low-contrast')).toBeDefined();
   });
 
-  it('renders color', () => {
+  it('renders color', async () => {
     // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label, color: NeonFunctionalColor.Primary },
-    });
+    const { container, rerender } = harness;
+    await rerender({ color: NeonFunctionalColor.Primary });
     // when / then
-    expect(wrapper.find('.neon-chip--primary').element).toBeDefined();
+    expect(container.querySelector('.neon-chip--primary')).toBeDefined();
   });
 
-  it('renders icon with color', () => {
+  it('renders icon with color', async () => {
     // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label, icon: 'check', color: NeonFunctionalColor.Primary },
-    });
+    const { container, rerender } = harness;
+    await rerender({ icon: 'check', color: NeonFunctionalColor.Primary });
     // when / then
-    expect(wrapper.find('.neon-chip__icon').element).toBeDefined();
-    expect(wrapper.find('.neon-icon--primary').element).toBeDefined();
+    expect(container.querySelector('.neon-chip__icon')).toBeDefined();
+    expect(container.querySelector('.neon-icon--primary')).toBeDefined();
   });
 
   it('renders default action', () => {
     // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-chip--click').element).toBeDefined();
-    expect(wrapper.find('.neon-chip__close').element).toBeUndefined();
+    expect(container.querySelector('.neon-chip--click')).toBeDefined();
+    expect(container.querySelector('.neon-chip__close')).toBeNull();
   });
 
-  it('renders removable', () => {
+  it('renders removable', async () => {
     // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label, action: NeonChipAction.Remove },
-    });
+    const { container, rerender } = harness;
+    await rerender({ action: NeonChipAction.Remove });
     // when / then
-    expect(wrapper.find('.neon-chip--remove').element).toBeDefined();
-    expect(wrapper.find('.neon-chip__close').element).toBeDefined();
+    expect(container.querySelector('.neon-chip--remove')).toBeDefined();
+    expect(container.querySelector('.neon-chip__close')).toBeDefined();
   });
 
-  it('emits close event when removable and clicked', () => {
+  it('emits close event when removable and clicked', async () => {
     // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label, action: NeonChipAction.Remove },
-    });
+    const { emitted, getByText, rerender } = harness;
+    await rerender({ action: NeonChipAction.Remove });
     // when
-    wrapper.find('.neon-chip').trigger('click');
+    await fireEvent.click(getByText(label));
     // then
-    expect(wrapper.emitted().close[0]).toBeDefined();
+    expect(emitted().close[0]).toBeDefined();
   });
 
-  it('does not emit close event when disabled', () => {
+  it('does not emit close event when disabled', async () => {
     // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label, action: NeonChipAction.Remove, disabled: true },
-    });
+    const { emitted, getByText, rerender } = harness;
+    await rerender({ action: NeonChipAction.Remove, disabled: true });
     // when
-    wrapper.find('.neon-chip').trigger('click');
+    await fireEvent.click(getByText(label));
     // then
-    expect(wrapper.emitted().close).toBeUndefined();
+    expect(emitted().close).toBeUndefined();
   });
 
-  it('emits click event when clicked', () => {
+  it('emits click event when clicked', async () => {
     // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label },
-    });
+    const { emitted, getByText } = harness;
     // when
-    wrapper.find('.neon-chip').trigger('click');
+    await fireEvent.click(getByText(label));
     // then
-    expect(wrapper.emitted().click[0]).toBeDefined();
+    expect(emitted().click[0]).toBeDefined();
   });
 
-  it('does not emit click event when disabled', () => {
+  it('does not emit click event when disabled', async () => {
     // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label, action: NeonChipAction.Remove },
-    });
+    const { emitted, getByText, rerender } = harness;
+    await rerender({ disabled: true });
     // when
-    wrapper.find('.neon-chip').trigger('click');
+    await fireEvent.click(getByText(label));
     // then
-    expect(wrapper.emitted().click).toBeUndefined();
+    expect(emitted().click).toBeUndefined();
   });
 
-  it('emits click event when space keydown', () => {
+  it('emits click event when space keydown', async () => {
     // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label },
-    });
+    const { emitted, getByText } = harness;
     // when
-    wrapper.find('.neon-chip').trigger('keydown.space');
+    await fireEvent.keyDown(getByText(label), { key: 'Space', code: 'Space' });
     // then
-    expect(wrapper.emitted().click[0]).toBeDefined();
+    expect(emitted().click[0]).toBeDefined();
   });
 
-  it('does not emit click event when space keydown and disabled', () => {
+  it('does not emit click event when space keydown and disabled', async () => {
     // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label, disabled: true },
-    });
+    const { emitted, getByText, rerender } = harness;
+    await rerender({ disabled: true });
     // when
-    wrapper.find('.neon-chip').trigger('keydown.space');
+    await fireEvent.keyDown(getByText(label), { key: 'Space', code: 'Space' });
     // then
-    expect(wrapper.emitted().click).toBeUndefined();
+    expect(emitted().click).toBeUndefined();
   });
 
-  it('emits close event when delete keydown and removable', () => {
+  it('emits close event when delete keydown and removable', async () => {
     // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label, action: NeonChipAction.Remove },
-    });
+    const { emitted, getByText, rerender } = harness;
+    await rerender({ action: NeonChipAction.Remove });
     // when
-    wrapper.find('.neon-chip').trigger('keydown.delete');
+    await fireEvent.keyDown(getByText(label), { key: 'Delete', code: 'Delete' });
     // then
-    expect(wrapper.emitted().close[0]).toBeDefined();
+    expect(emitted().close[0]).toBeDefined();
   });
 
-  it('renders active', () => {
+  it('emits click event when enter keydown', async () => {
     // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label },
-    });
-    const vm = wrapper.vm as NeonChipClass;
+    const { emitted, getByText } = harness;
+    // when
+    await fireEvent.keyDown(getByText(label), { key: 'Enter', code: 'Enter' });
+    // then
+    expect(emitted().click[0]).toBeDefined();
+  });
+
+  it('does not emit click event when enter keydown and disabled', async () => {
+    // given
+    const { emitted, getByText, rerender } = harness;
+    await rerender({ disabled: true });
+    // when
+    await fireEvent.keyDown(getByText(label), { key: 'Enter', code: 'Enter' });
+    // then
+    expect(emitted().click).toBeUndefined();
+  });
+
+  it('renders disabled', async () => {
+    // given
+    const { container, rerender } = harness;
+    await rerender({ disabled: true });
     // when / then
-    wrapper.find('.neon-chip').trigger('keydown.enter');
-    expect(vm.active).toEqual(true);
-    wrapper.find('.neon-chip').trigger('keyup');
-    expect(vm.active).toEqual(false);
-  });
-
-  it('emits click event when enter keydown', () => {
-    // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label },
-    });
-    // when
-    wrapper.find('.neon-chip').trigger('keydown.enter');
-    // then
-    expect(wrapper.emitted().click[0]).toBeDefined();
-  });
-
-  it('does not emit click event when enter keydown and disabled', () => {
-    // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label, disabled: true },
-    });
-    // when
-    wrapper.find('.neon-chip').trigger('keydown.enter');
-    // then
-    expect(wrapper.emitted().click).toBeUndefined();
-  });
-
-  it('renders disabled', () => {
-    // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label, disabled: true },
-    });
-    // when / then
-    expect(wrapper.find('.neon-chip--disabled')).toBeDefined();
-    expect(wrapper.find('.neon-chip--disabled').attributes()['aria-disabled']).toEqual('true');
-    expect(wrapper.find('.neon-chip--disabled').attributes().tabindex).toBeUndefined();
+    expect(container.querySelector('.neon-chip--disabled')).toBeDefined();
+    expect(container.querySelector('.neon-chip--disabled')?.getAttribute('aria-disabled')).toEqual('true');
+    expect(container.querySelector('.neon-chip--disabled')?.getAttribute('tabindex')).toBeNull();
   });
 
   it('renders not disabled by default', () => {
     // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-chip--disabled').element).toBeUndefined();
-    expect(wrapper.find('.neon-chip').attributes().tabindex).toEqual('0');
+    expect(container.querySelector('.neon-chip--disabled')).toBeNull();
+    expect(container.querySelector('.neon-chip')?.getAttribute('tabindex')).toEqual('0');
   });
 
-  it('renders button role when removable', () => {
+  it('renders button role when removable', async () => {
     // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label, action: NeonChipAction.Remove },
-    });
+    const { container, rerender } = harness;
+    await rerender({ action: NeonChipAction.Remove });
     // when / then
-    expect(wrapper.find('.neon-chip').attributes().role).toEqual('button');
+    expect(container.querySelector('.neon-chip')?.getAttribute('role')).toEqual('button');
   });
 
   it('renders link role when clickable', () => {
     // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label },
-    });
+    const { container } = harness;
     // when / then
-    expect(wrapper.find('.neon-chip').attributes().role).toEqual('link');
+    expect(container.querySelector('.neon-chip')?.getAttribute('role')).toEqual('link');
   });
 
-  it('renders undefined role when disabled', () => {
+  it('renders undefined role when disabled', async () => {
     // given
-    const label = 'xdd';
-    const wrapper = mount(NeonChip, {
-      propsData: { label, disabled: true },
-    });
+    const { container, rerender } = harness;
+    await rerender({ disabled: true });
     // when / then
-    expect(wrapper.find('.neon-chip').attributes().role).toBeUndefined();
+    expect(container.querySelector('.neon-chip')?.getAttribute('role')).toBeNull();
   });
 });

@@ -1,84 +1,75 @@
-import Vue from 'vue';
-import { mount } from '@vue/test-utils';
-import NeonIcon from '../icon/NeonIcon.vue';
+import type { RenderResult } from '@testing-library/vue';
+import { render } from '@testing-library/vue';
 import NeonLabel from './NeonLabel.vue';
-import { NeonLabelSize } from '../../../common/enums/NeonLabelSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import { NeonHorizontalPosition } from '../../../common/enums/NeonHorizontalPosition';
-
-Vue.component('NeonIcon', NeonIcon);
+import { NeonLabelSize } from '@/common/enums/NeonLabelSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonHorizontalPosition } from '@/common/enums/NeonHorizontalPosition';
 
 describe('NeonLabel', () => {
   const label = 'test label';
+  const icon = 'check';
 
-  it('renders label', () => {
-    const wrapper = mount(NeonLabel, {
-      propsData: { label },
-    });
-    expect(wrapper.find('.neon-label--with-label .neon-label__label').text()).toEqual(label);
+  let harness: RenderResult;
+
+  beforeEach(() => {
+    harness = render(NeonLabel, { props: { label } });
   });
 
-  it('renders icon', () => {
-    const icon = 'check';
-    const wrapper = mount(NeonLabel, {
-      propsData: { label, icon },
-    });
-    expect(wrapper.find('.neon-label--with-icon .neon-label__icon').element).toBeDefined();
+  it('renders label', () => {
+    const { getByText, html } = harness;
+    getByText(label);
+    expect(html()).toMatch('neon-label--with-label');
+    expect(html()).toMatch('neon-label__label');
+  });
+
+  it('renders icon', async () => {
+    const { html, rerender } = harness;
+
+    await rerender({ icon });
+    expect(html()).toMatch('neon-label--with-icon');
+    expect(html()).toMatch('neon-label__icon');
   });
 
   it('renders default size', () => {
-    const icon = 'check';
-    const wrapper = mount(NeonLabel, {
-      propsData: { label, icon },
-    });
-    expect(wrapper.find('.neon-label--s').element).toBeDefined();
+    const { html } = harness;
+    expect(html()).toMatch('neon-label--s');
   });
 
-  it('renders size', () => {
-    const icon = 'check';
-    const wrapper = mount(NeonLabel, {
-      propsData: { label, icon, size: NeonLabelSize.ExtraSmall },
-    });
-    expect(wrapper.find('.neon-label--xs').element).toBeDefined();
+  it('renders size', async () => {
+    const { html, rerender } = harness;
+    await rerender({ size: NeonLabelSize.ExtraSmall });
+
+    expect(html()).toMatch('neon-label--xs');
   });
 
   it('renders default color', () => {
-    const icon = 'check';
-    const wrapper = mount(NeonLabel, {
-      propsData: { label, icon },
-    });
-    expect(wrapper.find('.neon-label--neutral').element).toBeDefined();
+    const { html } = harness;
+    expect(html()).toMatch('neon-label--neutral');
   });
 
-  it('renders color', () => {
-    const icon = 'check';
-    const wrapper = mount(NeonLabel, {
-      propsData: { label, icon, color: NeonFunctionalColor.Primary },
-    });
-    expect(wrapper.find('.neon-label--primary').element).toBeDefined();
+  it('renders color', async () => {
+    const { html, rerender } = harness;
+    await rerender({ color: NeonFunctionalColor.Primary });
+
+    expect(html()).toMatch('neon-label--primary');
   });
 
-  it('renders alternate color', () => {
-    const icon = 'check';
-    const wrapper = mount(NeonLabel, {
-      propsData: { label, icon, alternateColor: NeonFunctionalColor.Primary },
-    });
-    expect(wrapper.find('.neon-label--alternate-color-primary').element).toBeDefined();
+  it('renders alternate color', async () => {
+    const { html, rerender } = harness;
+    await rerender({ alternateColor: NeonFunctionalColor.Primary });
+
+    expect(html()).toMatch('neon-label--alternate-color-primary');
   });
 
-  it('renders icon position left', () => {
-    const icon = 'check';
-    const wrapper = mount(NeonLabel, {
-      propsData: { label, icon },
-    });
-    expect(wrapper.find('.neon-label--icon-left').element).toBeDefined();
+  it('renders icon position left', async () => {
+    const { html, rerender } = harness;
+    await rerender({ icon });
+    expect(html()).toMatch('neon-label--icon-left');
   });
 
-  it('renders icon position right', () => {
-    const icon = 'check';
-    const wrapper = mount(NeonLabel, {
-      propsData: { label, icon, iconPosition: NeonHorizontalPosition.Right },
-    });
-    expect(wrapper.find('.neon-label--icon-right').element).toBeDefined();
+  it('renders icon position right', async () => {
+    const { html, rerender } = harness;
+    await rerender({ icon, iconPosition: NeonHorizontalPosition.Right });
+    expect(html()).toMatch('neon-label--icon-right');
   });
 });

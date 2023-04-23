@@ -1,3 +1,5 @@
+@use 'src/sass/includes/responsive';
+
 .not-found {
   height: 75%;
   display: flex;
@@ -6,24 +8,25 @@
   justify-content: center;
   text-align: center;
 
-  @include responsive(mobile-large) {
+  @include responsive.responsive(mobile-large) {
     height: 60%;
   }
 
   h1 {
     font-size: 20vw;
-    font-weight: 900;
+    font-weight: var(--neon-font-weight-bold);
+    color: var(--app-color-404);
 
-    @include responsive(tablet) {
+    @include responsive.responsive(tablet) {
       font-size: 30vw;
     }
   }
 
   h2 {
-    font-weight: 900;
+    font-weight: var(--neon-font-weight-bold);
   }
 
   p {
-    font-size: $neon-font-size-l;
+    font-size: var(--neon-font-size-l);
   }
 }

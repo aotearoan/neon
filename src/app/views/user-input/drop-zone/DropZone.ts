@@ -1,9 +1,12 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonDropZone, NeonInput } from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonDropZone, NeonInput } from '@/neon';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
-@Component({
+export default defineComponent({
+  name: 'DropZone',
   components: {
     NeonCard,
     NeonCardBody,
@@ -11,30 +14,25 @@ import ComponentDocumentation from '../../../components/component-documentation/
     NeonInput,
     NeonDropZone,
     ComponentDocumentation,
+    Editor,
   },
-})
-export default class DropZone extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('A target for uploading files');
 
-  private headline = 'A target for uploading files';
+    const dropZoneExamples = `<neon-drop-zone>
+  <span>Drop files here to upload</span>
+</neon-drop-zone>
+<neon-drop-zone :circular="true" :disabled="false">
+  <span>Circular drop zone</span>
+</neon-drop-zone>`;
 
-  private dropZoneExamples = `<div class="neon-horizontal drop-zone-examples">
-  <neon-drop-zone>
-    <span>Drop files here to upload</span>
-  </neon-drop-zone>
-  <neon-drop-zone :circular="true" :disabled="false">
-    <span>Circular drop zone</span>
-  </neon-drop-zone>
-</div>`;
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonDropZone')));
 
-  private examples = [
-    {
-      title: 'Drop zone example',
-      template: this.dropZoneExamples,
-    },
-  ];
-
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonDropZone');
-  }
-}
+    return {
+      menuModel,
+      headline,
+      dropZoneExamples,
+    };
+  },
+});

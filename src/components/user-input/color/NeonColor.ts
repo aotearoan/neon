@@ -1,52 +1,57 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import NeonInput from '../input/NeonInput.vue';
+import { computed, defineComponent, useAttrs } from 'vue';
+import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import NeonInput from '@/components/user-input/input/NeonInput.vue';
 
-@Component({
+export default defineComponent({
+  name: 'NeonColor',
   components: {
     NeonInput,
   },
-})
-export class NeonColor extends Vue {
-  /**
-   * The Hexadecimal color code.
-   */
-  @Prop({ required: true })
-  private value!: string;
-
-  /**
-   * Disable color picker
-   */
-  @Prop({ default: false })
-  private disabled!: boolean;
-
-  /**
-   * The size of the color picker, one of NeonSize.Small | NeonSize.Medium | NeonSize.Large.
-   */
-  @Prop({ default: NeonSize.Medium })
-  private size!: NeonSize;
-
-  /**
-   * Color of the input
-   */
-  @Prop({ default: NeonFunctionalColor.LowContrast })
-  private color!: NeonFunctionalColor;
-
-  /**
-   * This is the placeholder for the text input when no value is provided.
-   */
-  @Prop({ required: false })
-  private placeholder?: string;
-
-  private changeValue(event: Event) {
+  props: {
     /**
-     * event triggered when the value changes.
-     *
-     * @type {string}
+     * Id of the input, will be attached to the native color input control.
      */
-    this.$emit('input', event);
-  }
-}
+    id: { type: String },
+    /**
+     * The Hexadecimal color code.
+     */
+    modelValue: { type: String, required: true },
+    /**
+     * Disable color picker
+     */
+    disabled: { type: Boolean, default: false },
+    /**
+     * Only display the color picker
+     */
+    pickerOnly: { type: Boolean, default: false },
+    /**
+     * The size of the color picker, one of NeonSize.Small | NeonSize.Medium | NeonSize.Large.
+     */
+    size: { type: String as () => NeonSize, default: NeonSize.Medium },
+    /**
+     * Color of the input
+     */
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    /**
+     * This is the placeholder for the text input when no value is provided.
+     */
+    placeholder: { type: String, required: false },
+  },
+  setup(props, { emit }) {
+    const attrs = useAttrs();
+    const localValue = computed({
+      get() {
+        return props.modelValue;
+      },
+      set(val: string) {
+        emit('update:modelValue', val);
+      },
+    });
 
-export default NeonColor;
+    return {
+      attrs,
+      localValue,
+    };
+  },
+});

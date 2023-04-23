@@ -1,58 +1,61 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { NeonSize } from '../../../common/enums/NeonSize';
-import { NeonListItem } from '../../../common/models/NeonListItem';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
+import { defineComponent } from 'vue';
+import { NeonSize } from '@/common/enums/NeonSize';
+import type { NeonListItem } from '@/common/models/NeonListItem';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 
 /**
  * Renders a list of removable items. This can be used as an alternative to removable chips where a vertical list is
  * more appropriate.
  */
-@Component({
+export default defineComponent({
+  name: 'NeonList',
   components: {
     NeonIcon,
   },
-})
-export default class NeonList extends Vue {
-  /**
-   * The list items.
-   */
-  @Prop({ required: true })
-  public value!: NeonListItem[];
+  props: {
+    /**
+     * The list items.
+     */
+    modelValue: { type: Array as () => Array<NeonListItem>, required: true },
+    /**
+     * The file component size
+     */
+    size: { type: String as () => NeonSize, default: NeonSize.Medium },
+    /**
+     * The file component color
+     */
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    /**
+     * The disabled state of the component
+     */
+    disabled: { type: Boolean, default: false },
+  },
+  emits: [
+    /**
+     * Emitted when an item is removed from the list
+     * @type {NeonListItem[]} updated list of items
+     */
+    'update:modelValue',
+    /**
+     * Emitted when an item is removed from the list
+     * @type {string} key of the item removed
+     */
+    'close',
+  ],
+  setup(props, { emit }) {
+    const remove = (key: string) => {
+      if (!props.disabled) {
+        emit(
+          'update:modelValue',
+          props.modelValue.filter((v) => v.key !== key),
+        );
+        emit('close', key);
+      }
+    };
 
-  /**
-   * The file component size
-   */
-  @Prop({ default: NeonSize.Medium })
-  public size!: NeonSize;
-
-  /**
-   * The file component color
-   */
-  @Prop({ default: NeonFunctionalColor.LowContrast })
-  public color!: NeonFunctionalColor;
-
-  /**
-   * The disabled state of the component
-   */
-  @Prop({ default: false })
-  public disabled!: boolean;
-
-  private remove(key: string) {
-    if (!this.disabled) {
-      /**
-       * Emitted when an item is removed from the list
-       * @type {NeonListItem[]} updated list of items
-       */
-      this.$emit(
-        'input',
-        this.value.filter((v) => v.key !== key),
-      );
-      /**
-       * Emitted when an item is removed from the list
-       * @type {string} key of the item removed
-       */
-      this.$emit('close', key);
-    }
-  }
-}
+    return {
+      remove,
+    };
+  },
+});

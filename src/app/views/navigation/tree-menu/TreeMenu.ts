@@ -1,23 +1,24 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonTreeMenu } from '../../../../components';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import { Menu, MenuModel } from '../../../Menu';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonTreeMenu } from '@/neon';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
 
-@Component({
+export default defineComponent({
+  name: 'TreeMenu',
   components: {
     NeonCard,
     NeonCardBody,
     NeonTreeMenu,
     ComponentDocumentation,
+    Editor,
   },
-})
-export default class TreeMenu extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('A multi-level menu for the side nav');
 
-  private headline = 'A multi-level menu for the side nav';
-
-  private data = {
-    model: [
+    const model = ref([
       {
         key: 'feedback',
         label: 'Feedback',
@@ -74,17 +75,17 @@ export default class TreeMenu extends Vue {
           },
         ],
       },
-    ],
-  };
+    ]);
 
-  private examples = [
-    {
-      template: `<neon-tree-menu :model="model"></neon-tree-menu>`,
-      data: this.data,
-    },
-  ];
+    const template = '<neon-tree-menu :model="model" />';
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonTreeMenu');
-  }
-}
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonTreeMenu')));
+
+    return {
+      menuModel,
+      headline,
+      model,
+      template,
+    };
+  },
+});

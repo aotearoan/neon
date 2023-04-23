@@ -1,0 +1,96 @@
+@use '../includes/palettes';
+@use '../includes/layout';
+@use '../includes/responsive';
+@use '../includes/note';
+
+@mixin note {
+  .neon-note {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+    border-radius: 0 var(--neon-border-radius) var(--neon-border-radius) 0;
+
+    color: var(--neon-color-note);
+
+    strong {
+      color: var(--neon-color-text);
+    }
+
+    @each $color in palettes.$neon-functional-colors {
+      &--#{$color} {
+        background-color: var(--neon-background-color-note);
+        border-left: var(--neon-border-width-note) var(--neon-border-style) var(--neon-color-#{$color});
+      }
+    }
+
+    .neon-button.neon-button--s.neon-button--icon-only {
+      min-width: var(--neon-size-xs);
+      width: var(--neon-size-xs);
+      height: var(--neon-size-xs);
+      opacity: 0.75;
+
+      &:hover {
+        background-color: transparent;
+        opacity: 1;
+      }
+    }
+
+    span {
+      display: inline;
+    }
+
+    & + p {
+      margin-top: calc(4 * var(--neon-base-space));
+    }
+
+    justify-content: space-between;
+
+    &__icon.neon-icon {
+      margin-right: calc(4 * var(--neon-base-space));
+      width: calc(1.5 * var(--neon-font-size-m));
+      min-width: calc(1.5 * var(--neon-font-size-m));
+      height: calc(1.5 * var(--neon-font-size-m));
+      min-height: calc(1.5 * var(--neon-font-size-m));
+    }
+
+    &__container {
+      @include layout.padding(0.85);
+      width: 100%;
+      justify-items: flex-start;
+      align-items: flex-start;
+      flex-direction: row;
+    }
+
+    &__close {
+      align-self: flex-start;
+
+      &.neon-button {
+        @include responsive.responsive(larger-than-tablet) {
+          margin: calc(2 * var(--neon-base-space));
+        }
+
+        @include responsive.responsive(tablet) {
+          margin: var(--neon-base-space);
+        }
+
+        @include responsive.responsive(mobile-large) {
+          margin: calc(0.5 * var(--neon-base-space));
+        }
+      }
+    }
+  }
+
+  @include note.neon-note-margins(4, '.neon-note');
+
+  blockquote {
+    color: var(--neon-color-note);
+
+    strong {
+      color: var(--neon-color-text);
+    }
+
+    background-color: var(--neon-background-color-note);
+    border-left: var(--neon-border-width-note) var(--neon-border-style) var(--neon-color-primary);
+  }
+}

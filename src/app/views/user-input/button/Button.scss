@@ -1,3 +1,5 @@
+@use 'src/sass/includes/layout';
+
 .buttons {
   h4,
   .neon-button__label {
@@ -7,10 +9,10 @@
 
 .full-width-buttons {
   .neon-button:not(:last-child) {
-    margin-bottom: 4 * $neon-base-space;
+    margin-bottom: calc(4 * var(--neon-base-space));
   }
 }
 
 .link-buttons {
-  @include padding;
+  @include layout.padding;
 }

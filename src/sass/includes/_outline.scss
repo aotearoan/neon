@@ -1,8 +1,8 @@
-@mixin box-shadow-outline($outline-color) {
-  box-shadow: 0 0 0 4px rgba($outline-color, 0.3);
+@mixin box-shadow-outline($outline-rgb) {
+  box-shadow: 0 0 0 4rem rgba($outline-rgb, 0.3);
 }
 
-@mixin focus-text-outline($outline-color) {
+@mixin focus-text-outline($outline-rgb) {
   &--outline-text {
     display: inline-flex;
     position: relative;
@@ -14,44 +14,44 @@
       left: 0;
       bottom: 0;
       width: 100%;
-      height: 2px;
+      height: 2rem;
       display: flex;
       background-color: transparent;
-      border-radius: $neon-border-radius;
-      transition: background-color $neon-animation-speed-slow ease-in-out, color $neon-animation-speed-slow ease-in-out;
+      border-radius: var(--neon-border-radius);
+      transition: background-color var(--neon-animation-speed-slow) ease-in-out, color var(--neon-animation-speed-slow) ease-in-out;
     }
 
     &:focus {
-      color: $outline-color;
+      color: rgb($outline-rgb);
 
       &:after {
-        background-color: $outline-color;
+        background-color: rgb($outline-rgb);
       }
     }
   }
 }
 
-@mixin focus-border-outline($outline-color) {
+@mixin focus-border-outline($outline-rgb) {
   &--outline-border {
     &:focus {
-      @include box-shadow-outline($outline-color);
+      @include box-shadow-outline($outline-rgb);
     }
   }
 }
 
-@mixin focus-bullet-outline($outline-color) {
+@mixin focus-bullet-outline($outline-rgb) {
   &--outline-bullet {
     position: relative;
 
     &:before {
-      transition: all $neon-animation-speed-fast ease-in-out;
+      transition: all var(--neon-animation-speed-fast) ease-in-out;
       content: '';
       opacity: 0;
       position: absolute;
       display: flex;
       align-self: center;
       right: 0;
-      border-radius: $neon-border-radius;
+      border-radius: var(--neon-border-radius);
       width: 0;
       height: 0;
       background-color: transparent;
@@ -59,32 +59,32 @@
 
     &:focus {
       &:before {
-        width: 2 * $neon-base-space;
-        height: 2 * $neon-base-space;
-        background-color: $outline-color;
+        width: calc(2 * var(--neon-base-space));
+        height: calc(2 * var(--neon-base-space));
+        background-color: rgb($outline-rgb);
         opacity: 1;
       }
     }
   }
 }
 
-@mixin focus-background-outline($outline-color) {
+@mixin focus-background-outline($outline-rgb) {
   &--outline-background {
-    transition: all $neon-animation-speed-fast ease-in-out;
+    transition: all var(--neon-animation-speed-fast) ease-in-out;
 
     &:focus {
-      background-color: rgba($outline-color, 0.125);
+      background-color: rgba($outline-rgb, 0.125);
     }
   }
 }
 
-@mixin focus-outline-styles($outline-color) {
+@mixin focus-outline-styles($outline-rgb) {
   &:focus {
     outline: none;
   }
 
-  @include focus-text-outline($outline-color);
-  @include focus-border-outline($outline-color);
-  @include focus-bullet-outline($outline-color);
-  @include focus-background-outline($outline-color);
+  @include focus-text-outline($outline-rgb);
+  @include focus-border-outline($outline-rgb);
+  @include focus-bullet-outline($outline-rgb);
+  @include focus-background-outline($outline-rgb);
 }

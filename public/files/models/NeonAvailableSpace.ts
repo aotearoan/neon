@@ -1,4 +1,4 @@
-import { NeonPosition } from '../enums/NeonPosition';
+import type { NeonPosition } from '../enums/NeonPosition';
 
 export type NeonAvailableSpace = { [key in NeonPosition]: number } & {
   top: number;

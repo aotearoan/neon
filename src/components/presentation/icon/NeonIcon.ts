@@ -1,6 +1,6 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { NeonIconRegistry } from '../../../common/utils/NeonIconRegistry';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
+import { computed, defineComponent, useAttrs } from 'vue';
+import { NeonIconRegistry } from '@/common/utils/NeonIconRegistry';
+import type { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 /**
  * <p>A component for rendering SVG images. These images are generally, but not limited to, <em>icons</em>. This
@@ -18,37 +18,39 @@ import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
  *
  * For more detailed information please see <a href="/presentation/icon">Icons</a>.
  */
-@Component
-export default class NeonIcon extends Vue {
-  /**
-   * The name of an icon registered in the icon registry.
-   */
-  @Prop({ required: true })
-  name!: string;
+export default defineComponent({
+  name: 'NeonIcon',
+  props: {
+    /**
+     * The name of an icon registered in the icon registry.
+     */
+    name: { type: String, required: true },
+    /**
+     * The color to render the icon. By default, it will be the current text color (light text in dark mode or dark text in light mode).
+     */
+    color: { type: String as () => NeonFunctionalColor, default: null },
+    /**
+     * Set the icon color to the inverse text color
+     */
+    inverse: { type: Boolean, default: false },
+    /**
+     * Apply a disabled style to the icon
+     */
+    disabled: { type: Boolean, default: false },
+  },
+  setup(props) {
+    const attrs = useAttrs();
+    const icon = computed(() => {
+      const _icon = NeonIconRegistry.getIcon(props.name);
+      if (!_icon) {
+        console.error(`icon ${props.name} doesn't exist! Register icon with NeonIconRegistry.addIcon(name, svg);`);
+      }
+      return _icon;
+    });
 
-  /**
-   * The color to render the icon. By default it will be the current text color (light text in dark mode or dark text in light mode).
-   */
-  @Prop()
-  public color?: NeonFunctionalColor;
-
-  /**
-   * Set the icon color to the inverse text color
-   */
-  @Prop({ default: false })
-  public inverse!: boolean;
-
-  /**
-   * Apply a disabled style to the icon
-   */
-  @Prop({ default: false })
-  public disabled!: boolean;
-
-  get icon() {
-    const _icon = NeonIconRegistry.getIcon(this.name);
-    if (!_icon) {
-      console.error(`icon ${this.name} doesn't exist! Register icon with NeonIconRegistry.addIcon(name, svg);`);
-    }
-    return _icon;
-  }
-}
+    return {
+      attrs,
+      icon,
+    };
+  },
+});

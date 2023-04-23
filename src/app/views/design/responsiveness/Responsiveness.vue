@@ -29,31 +29,32 @@
         <neon-anchor id="sass-mixins" />
         <h2 class="neon-h4">SASS Mixins</h2>
         <p>A SASS mixin <strong>responsive(breakpoint)</strong> is provided for convenience, e.g.</p>
-        <editor :value="sassExample" :read-only="true" language="scss" />
+        <editor v-model="sassExample" language="scss" />
       </neon-card-body>
       <neon-card-body>
         <neon-anchor id="typescript" />
         <h2 class="neon-h4">Typescript</h2>
         <p>
-          <neon-link href="/utils/NeonResponsiveUtils">NeonResponsiveUtils</neon-link> also defines the same breakpoints
-          for use in Typescript/Javascript.
+          <neon-link href="/utils/NeonResponsiveUtils">NeonResponsiveUtils</neon-link>
+          also defines the same breakpoints for use in Typescript/Javascript.
         </p>
         <p>
           Using SASS breakpoints should be preferred, however sometimes this is not enough. Use
           NeonResponsiveUtils.breakpoints in combination with a window resize listener to manage changes in the
           responsive breakpoints, e.g.
         </p>
-        <editor :value="typescriptExample" :read-only="true" language="typescript" />
+        <editor v-model="typescriptExample" language="typescript" />
       </neon-card-body>
       <neon-card-body>
         <neon-anchor id="page-content" />
         <h2 class="neon-h4">Page content</h2>
         <p>
           Neon's approach to page content layout is to use CSS Grid via the
-          <neon-link href="/layout/grid">NeonGrid</neon-link> component.
-          <neon-link href="/layout/grid">NeonGrid</neon-link> is a CSS Grid based container designed to help simplify
-          page application layout and responsiveness by abstracting CSS Grid and allowing applications to define this
-          programmatically in Typescript.
+          <neon-link href="/layout/grid">NeonGrid</neon-link>
+          component.
+          <neon-link href="/layout/grid">NeonGrid</neon-link>
+          is a CSS Grid based container designed to help simplify page application layout and responsiveness by
+          abstracting CSS Grid and allowing applications to define this programmatically in Typescript.
         </p>
         <p>
           This provides developers with the benefits of using CSS Grid without dealing with the steep learning curve and

@@ -1,0 +1,65 @@
+@use '../includes/palettes';
+
+@mixin selectable-card {
+  .neon-selectable-card {
+    --neon-border-radius-card: var(--neon-border-radius-selectable-card);
+    cursor: pointer;
+    user-select: none;
+    box-shadow: var(--neon-box-shadow-selectable-card);
+    transition: all var(--neon-animation-speed-fast) ease-in-out;
+    outline: none;
+
+    & > .neon-card-header,
+    & > .neon-card-body,
+    & > .neon-card-footer {
+      background-color: var(--neon-background-color-selectable-card);
+    }
+
+    &__checkbox {
+      cursor: pointer;
+      margin-left: calc(2 * var(--neon-base-space));
+    }
+
+    &:not(.neon-selectable-card--disabled):active {
+      transform: scale(0.99);
+    }
+
+    @each $color in palettes.$neon-functional-colors {
+      &--#{$color} {
+        &:focus-visible {
+          border: var(--neon-border-width) var(--neon-border-style) var(--neon-color-#{$color});
+        }
+
+        &:not(.neon-selectable-card--disabled) {
+          &:hover > .neon-card-header,
+          &:hover > .neon-card-body,
+          &:hover > .neon-card-footer {
+            background-color: rgba(var(--neon-rgb-#{$color}), 0.03125);
+          }
+
+          &.neon-selectable-card--selected > div {
+            background-color: rgba(var(--neon-rgb-#{$color}), 0.0625);
+          }
+        }
+      }
+    }
+
+    & + .neon-selectable-card {
+      margin-top: calc(0.25 * var(--neon-base-space));
+    }
+
+    &--disabled {
+      color: var(--neon-color-disabled-dark);
+      box-shadow: none;
+
+      .neon-card {
+        border-color: var(--neon-color-disabled-dark);
+      }
+
+      &,
+      .neon-switch {
+        cursor: not-allowed;
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@use '../includes/layout';
+@use '../includes/responsive';
+
+@mixin grid {
+  .neon-grid {
+    width: 100vw;
+    max-width: var(--neon-max-page-width);
+    @include layout.min-height(100, 'var(--neon-footer-height-desktop)');
+    @include layout.padding(0.5, true);
+    display: grid;
+
+    .neon-grid-area {
+      @include layout.margin(0.5, true);
+      display: flex;
+    }
+  }
+
+  .neon-page--with-side-nav .neon-grid {
+    @include layout.side-nav-offset;
+    max-width: calc(var(--neon-max-page-width) - var(--neon-side-nav-width));
+  }
+
+  .neon-page--with-top-nav .neon-page__container {
+    .neon-grid {
+      @include responsive.responsive(larger-than-tablet) {
+        @include layout.min-height(100, 'var(--neon-top-nav-height-desktop) + var(--neon-footer-height-desktop)');
+      }
+
+      @include responsive.responsive(tablet) {
+        @include layout.min-height(100, 'var(--neon-top-nav-height-tablet) + var(--neon-footer-height-tablet)');
+      }
+
+      @include responsive.responsive(mobile-large) {
+        @include layout.min-height(100, 'var(--neon-top-nav-height-mobile) + var(--neon-footer-height-mobile)');
+      }
+    }
+  }
+
+  .neon-grid {
+    .neon-grid-area {
+      @include responsive.responsive(larger-than-tablet) {
+        max-width: calc(100vw - 2 * var(--neon-spacing-vertical-desktop));
+      }
+
+      @include responsive.responsive(tablet) {
+        max-width: calc(100vw - 2 * var(--neon-spacing-vertical-tablet));
+      }
+
+      @include responsive.responsive(mobile-large) {
+        max-width: calc(100vw - 2 * var(--neon-spacing-vertical-mobile));
+      }
+    }
+  }
+
+  .neon-page--with-side-nav .neon-grid {
+    .neon-grid-area {
+      @include responsive.responsive(larger-than-tablet) {
+        max-width: calc(100vw - var(--neon-side-nav-width) + 2 * var(--neon-spacing-vertical-desktop));
+      }
+    }
+  }
+}

@@ -1,38 +1,36 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonInput } from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonPassword } from '@/neon';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Password',
   components: {
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
-    NeonInput,
+    NeonPassword,
     ComponentDocumentation,
+    Editor,
   },
-})
-export default class Password extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('An HTML password input');
 
-  private headline = 'An HTML password input';
+    const value = ref('1234567');
 
-  private data = {
-    value: '1234567',
-  };
+    const passwordExample = '<neon-password v-model="value" />';
 
-  private passwordExample = `<div class="neon-vertically-spaced">
-  <neon-password v-model="value" />
-</div>`;
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonPassword')));
 
-  private examples = [
-    {
-      template: this.passwordExample,
-      data: this.data,
-    },
-  ];
-
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonPassword');
-  }
-}
+    return {
+      menuModel,
+      headline,
+      value,
+      passwordExample,
+    };
+  },
+});

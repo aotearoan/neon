@@ -1,5 +1,6 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { defineComponent, onMounted, ref } from 'vue';
 import { PrismEditor } from 'vue-prism-editor';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import Prism from 'prismjs';
 import 'vue-prism-editor/dist/prismeditor.min.css';
@@ -9,55 +10,50 @@ import 'prismjs/components/prism-json';
 import 'prismjs/components/prism-scss';
 import 'prismjs/components/prism-typescript';
 import 'prismjs/themes/prism-tomorrow.css';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import Normalizer from 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace';
+import { NeonButton, NeonClipboardService, NeonIcon, NeonToastService } from '@/neon';
 
-import { NeonClipboardService } from '../../../common/utils/NeonClipboardService';
-import { NeonToastService } from '../../../common/utils/NeonToastService';
-import NeonButton from '../../../components/user-input/button/NeonButton.vue';
-import NeonIcon from '../../../components/presentation/icon/NeonIcon.vue';
-
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Editor',
   components: {
     NeonButton,
     NeonIcon,
     PrismEditor,
   },
-})
-export default class Editor extends Vue {
-  private clipboard = NeonClipboardService;
+  props: {
+    modelValue: { type: String, required: true },
+    readOnly: { type: Boolean, default: true },
+    language: { type: String, default: 'html' },
+    ghLink: { type: String, default: null },
+  },
+  setup(props, { emit }) {
+    const clipboard = ref(NeonClipboardService);
 
-  @Prop({ required: true })
-  public value!: string;
-
-  @Prop({ default: false })
-  public readOnly!: boolean;
-
-  @Prop({ default: 'html' })
-  public language!: string;
-
-  @Prop()
-  public ghLink?: string;
-
-  public mounted() {
-    Prism.plugins.NormalizeWhitespace = new Normalizer({
-      'remove-trailing': true,
-      'left-trim': true,
-      'right-trim': true,
+    onMounted(() => {
+      Prism.plugins.NormalizeWhitespace = new Normalizer({
+        'remove-trailing': true,
+        'left-trim': true,
+        'right-trim': true,
+      });
     });
-  }
 
-  private highlighter(code: string) {
-    return Prism.highlight(code, Prism.languages[this.language], this.language);
-  }
+    const highlighter = (code: string) => Prism.highlight(code, Prism.languages[props.language], props.language);
 
-  private onEdit(newValue: string) {
-    this.$emit('input', newValue);
-  }
+    const onEdit = (newValue: string) => emit('update:modelValue', newValue);
 
-  private copyText() {
-    this.clipboard.copyTo(this.value).then(() => {
-      NeonToastService.success({ title: 'Copied text' });
-    });
-  }
-}
+    const copyText = () =>
+      clipboard.value.copyTo(props.modelValue).then(() => {
+        NeonToastService.success({ title: 'Copied text' });
+      });
+
+    return {
+      clipboard,
+      highlighter,
+      onEdit,
+      copyText,
+    };
+  },
+});

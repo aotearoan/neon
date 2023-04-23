@@ -1,0 +1,40 @@
+@use '../includes/layout';
+@use '../includes/responsive';
+
+@mixin top-nav {
+  .neon-top-nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    z-index: var(--neon-z-index-above-3);
+    background-color: var(--neon-background-color-top-nav);
+    border-bottom: var(--neon-border-width) var(--neon-border-style) var(--neon-border-color-top-nav);
+
+    &__container {
+      @include layout.padding-vertical(0.75, 0.75);
+      @include layout.padding-horizontal(1, 1);
+      // account for side nav
+      @include layout.spacing-horizontal('padding-left', larger-than-tablet, 0.75);
+
+      width: 100%;
+      max-width: var(--neon-max-page-width);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    @include responsive.responsive(larger-than-tablet) {
+      height: var(--neon-top-nav-height-desktop);
+    }
+
+    @include responsive.responsive(tablet) {
+      height: var(--neon-top-nav-height-tablet);
+    }
+
+    @include responsive.responsive(mobile-large) {
+      height: var(--neon-top-nav-height-mobile);
+    }
+  }
+}

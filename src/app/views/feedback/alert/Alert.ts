@@ -1,53 +1,61 @@
-import { Component, Vue } from 'vue-property-decorator';
+import { computed, defineComponent, onMounted, ref } from 'vue';
 import {
   NeonAlertPlacement,
   NeonAlertService,
   NeonButton,
   NeonCard,
   NeonCardBody,
+  NeonCardHeader,
+  NeonLink,
   NeonToastService,
   NeonVerticalPosition,
-} from '../../../../components';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import { Menu, MenuModel } from '../../../Menu';
-import Editor from '../../../components/editor/Editor.vue';
+} from '@/neon';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import Editor from '@/app/components/editor/Editor.vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Alert',
   components: {
     NeonButton,
     NeonCard,
     NeonCardBody,
+    NeonCardHeader,
+    NeonLink,
     ComponentDocumentation,
     Editor,
   },
-})
-export default class Alert extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Display temporary notifications to the user');
 
-  private headline = 'Display temporary notifications to the user';
-
-  private data = {
-    infoAlert: (placement?: NeonAlertPlacement) => {
+    const infoAlert = (placement?: NeonAlertPlacement) => {
       NeonAlertService.info({ title: 'Info alert', message: 'This is an example of an info alert.', placement });
-    },
-    successAlert: (placement?: NeonAlertPlacement) => {
+    };
+
+    const successAlert = (placement?: NeonAlertPlacement) => {
       NeonAlertService.success({
         title: 'Success alert',
         message: 'This is an example of a success alert.',
         placement,
       });
-    },
-    warnAlert: (placement?: NeonAlertPlacement) => {
+    };
+
+    const warnAlert = (placement?: NeonAlertPlacement) => {
       NeonAlertService.warn({
         title: 'Warn alert',
         message: 'This is an example of a warning alert.',
         placement,
       });
-    },
-    errorAlert: (placement?: NeonAlertPlacement) => {
+    };
+
+    const errorAlert = (placement?: NeonAlertPlacement) => {
       NeonAlertService.error({ title: 'Error alert', message: 'This is an example of an error alert.', placement });
-    },
-    alertSingleAction: () => {
+    };
+
+    const alertSingleAction = () => {
       NeonAlertService.info({
         title: 'Alert with single action',
         message: 'This is an example of an alert with a single action.',
@@ -58,8 +66,9 @@ export default class Alert extends Vue {
           },
         },
       });
-    },
-    alertBothActions: () => {
+    };
+
+    const alertBothActions = () => {
       NeonAlertService.info({
         title: 'Alert with single action',
         message: 'This is an example of an alert with a single action.',
@@ -76,109 +85,108 @@ export default class Alert extends Vue {
           },
         },
       });
-    },
-    toastInfo: (placement?: NeonVerticalPosition) => {
+    };
+
+    const toastInfo = (placement?: NeonVerticalPosition) => {
       NeonToastService.info({ title: 'This is an info toast', placement });
-    },
-    toastSuccess: (placement?: NeonVerticalPosition) => {
+    };
+    const toastSuccess = (placement?: NeonVerticalPosition) => {
       NeonToastService.success({ title: 'This is a success toast', placement });
-    },
-    toastWarn: (placement?: NeonVerticalPosition) => {
+    };
+    const toastWarn = (placement?: NeonVerticalPosition) => {
       NeonToastService.warn({ title: 'This is a warning toast', placement });
-    },
-    toastError: (placement?: NeonVerticalPosition) => {
+    };
+    const toastError = (placement?: NeonVerticalPosition) => {
       NeonToastService.error({ title: 'This is an error toast', placement });
-    },
-  };
+    };
 
-  private get infoExample() {
-    return `const alertMessage = { title: 'message title', message: 'Message' };
-NeonAlertService.info(alertMessage);`;
-  }
+    const typesTemplate = `<neon-button color="info" label="Info" @click="infoAlert()" />
+<neon-button color="success" label="Success" @click="successAlert()" />
+<neon-button color="warn" label="Warning" @click="warnAlert()" />
+<neon-button color="error" label="Error" @click="errorAlert()" />`;
 
-  private get successExample() {
-    return `const alertMessage = { title: 'message title', message: 'Message' };
-NeonAlertService.success(alertMessage);`;
-  }
+    const alertPlacementTemplate = `<neon-button label="Top left" @click="infoAlert('top-left')" />
+<neon-button label="Top right" @click="infoAlert('top-right')" />
+<neon-button label="Bottom left" @click="infoAlert('bottom-left')" />
+<neon-button label="Bottom right" @click="infoAlert('bottom-right')" />`;
 
-  private get warnExample() {
-    return `const alertMessage = { title: 'message title', message: 'Message' };
-NeonAlertService.warn(alertMessage);`;
-  }
+    const withActionsTemplate = `<neon-button label="Single action" @click="alertSingleAction()" />
+<neon-button label="Both actions" @click="alertBothActions()" />`;
 
-  private get errorExample() {
-    return `const alertMessage = { title: 'message title', message: 'Message' };
-NeonAlertService.error(alertMessage);`;
-  }
+    const toastTemplate = `<neon-button label="Toast top" @click="toastInfo()" />
+<neon-button label="Toast bottom" @click="toastInfo('bottom')" />
+<neon-button color="info" label="Toast info" @click="toastInfo()" />
+<neon-button color="success" label="Toast success" @click="toastSuccess()" />
+<neon-button color="warn" label="Toast warning" @click="toastWarn()" />
+<neon-button color="error" label="Toast error" @click="toastError()" />`;
 
-  private get infoToast() {
-    return `const toastMessage = { title: 'message title' };
-NeonToastService.info(toastMessage);`;
-  }
+    const infoExample = computed(
+      () => `const alertMessage = { title: 'message title', message: 'Message' };
+NeonAlertService.info(alertMessage);`,
+    );
 
-  private get successToast() {
-    return `const toastMessage = { title: 'message title' };
-NeonToastService.success(toastMessage);`;
-  }
+    const successExample = computed(
+      () => `const alertMessage = { title: 'message title', message: 'Message' };
+NeonAlertService.success(alertMessage);`,
+    );
 
-  private get warnToast() {
-    return `const toastMessage = { title: 'message title' };
-NeonToastService.warn(toastMessage);`;
-  }
+    const warnExample = computed(
+      () => `const alertMessage = { title: 'message title', message: 'Message' };
+NeonAlertService.warn(alertMessage);`,
+    );
 
-  private get errorToast() {
-    return `const toastMessage = { title: 'message title' };
-NeonToastService.error(toastMessage);`;
-  }
+    const errorExample = computed(
+      () => `const alertMessage = { title: 'message title', message: 'Message' };
+NeonAlertService.error(alertMessage);`,
+    );
 
-  private examples = [
-    {
-      title: 'Different types of alert',
-      template: `<div class="example--horizontal">
-  <neon-button color="info" label="Info" @click="infoAlert()" />
-  <neon-button color="success" label="Success" @click="successAlert()" />
-  <neon-button color="warn" label="Warning" @click="warnAlert()" />
-  <neon-button color="error" label="Error" @click="errorAlert()" />
-</div>`,
-      data: this.data,
-    },
-    {
-      title: 'Alert placement',
-      template: `<div class="example--horizontal">
-  <neon-button label="Top left" @click="infoAlert('top-left')" />
-  <neon-button label="Top right" @click="infoAlert('top-right')" />
-  <neon-button label="Bottom left" @click="infoAlert('bottom-left')" />
-  <neon-button label="Bottom right" @click="infoAlert('bottom-right')" />
-</div>`,
-      data: this.data,
-    },
-    {
-      title: 'Alerts with actions',
-      template: `<div class="example--horizontal">
-  <neon-button label="Single action" @click="alertSingleAction()" />
-  <neon-button label="Both actions" @click="alertBothActions()" />
-</div>`,
-      data: this.data,
-    },
-    {
-      title: 'Toast alerts',
-      template: `<div class="example--vertical">
-  <div class="example--horizontal">
-    <neon-button label="Toast top" @click="toastInfo()" />
-    <neon-button label="Toast bottom" @click="toastInfo('bottom')" />
-  </div>
-  <div class="example--horizontal">
-    <neon-button color="info" label="Toast info" @click="toastInfo()" />
-    <neon-button color="success" label="Toast success" @click="toastSuccess()" />
-    <neon-button color="warn" label="Toast warning" @click="toastWarn()" />
-    <neon-button color="error" label="Toast error" @click="toastError()" />
-  </div>
-</div>`,
-      data: this.data,
-    },
-  ];
+    const infoToast = computed(
+      () => `const toastMessage = { title: 'message title' };
+NeonToastService.info(toastMessage);`,
+    );
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonAlert');
-  }
-}
+    const successToast = computed(
+      () => `const toastMessage = { title: 'message title' };
+NeonToastService.success(toastMessage);`,
+    );
+
+    const warnToast = computed(
+      () => `const toastMessage = { title: 'message title' };
+NeonToastService.warn(toastMessage);`,
+    );
+
+    const errorToast = computed(
+      () => `const toastMessage = { title: 'message title' };
+NeonToastService.error(toastMessage);`,
+    );
+
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonAlert')));
+
+    return {
+      menuModel,
+      headline,
+      infoExample,
+      successExample,
+      warnExample,
+      errorExample,
+      infoToast,
+      successToast,
+      warnToast,
+      errorToast,
+      typesTemplate,
+      alertPlacementTemplate,
+      withActionsTemplate,
+      toastTemplate,
+      toastInfo,
+      toastSuccess,
+      toastWarn,
+      toastError,
+      infoAlert,
+      successAlert,
+      warnAlert,
+      errorAlert,
+      alertSingleAction,
+      alertBothActions,
+    };
+  },
+});

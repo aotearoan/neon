@@ -1,0 +1,162 @@
+@use '../includes/palettes';
+@use '../includes/layout';
+@use '../includes/responsive';
+@use '../includes/outline';
+
+@mixin expansion-panel {
+  .neon-expansion-panel {
+    flex: 1 0 auto;
+    max-height: fit-content;
+
+    @each $color in palettes.$neon-functional-colors {
+      &--#{$color}:not(.neon-expansion-panel--disabled) {
+        $expansion-panel-rgb: var(--neon-rgb-#{$color});
+
+        .neon-expansion-panel__label-container {
+          color: rgb($expansion-panel-rgb);
+          @include outline.focus-text-outline($expansion-panel-rgb);
+        }
+      }
+    }
+
+    &__header {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      flex: 1 0 auto;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      letter-spacing: var(--neon-letter-spacing-s);
+      font-weight: var(--neon-font-weight-light);
+      @include layout.padding-horizontal(0.75, 0.75);
+      padding-top: 0;
+      padding-bottom: 0;
+      user-select: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &__label-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      pointer-events: none;
+      touch-action: none;
+      outline: none;
+
+      .neon-icon {
+        margin-right: calc(2 * var(--neon-base-space));
+      }
+    }
+
+    &__content {
+      @include layout.padding-horizontal(0.75, 0.75);
+      padding-bottom: calc(0.75 * var(--neon-spacing-vertical-desktop));
+
+      @include responsive.responsive(tablet) {
+        padding-bottom: calc(0.75 * var(--neon-spacing-vertical-tablet));
+      }
+
+      @include responsive.responsive(mobile-large) {
+        padding-bottom: calc(0.75 * var(--neon-spacing-vertical-mobile));
+      }
+    }
+
+    &--s {
+      &:not(.neon-expansion-panel--expanded) {
+        height: var(--neon-size-s);
+        max-height: var(--neon-size-s);
+      }
+
+      .neon-expansion-panel__header {
+        height: var(--neon-size-s);
+        max-height: var(--neon-size-s);
+        font-size: var(--neon-font-size-s);
+
+        .neon-icon {
+          width: var(--neon-font-size-s);
+          height: var(--neon-font-size-s);
+        }
+      }
+    }
+
+    &--m {
+      &:not(.neon-expansion-panel--expanded) {
+        height: var(--neon-size-m);
+        max-height: var(--neon-size-m);
+      }
+
+      .neon-expansion-panel__header {
+        height: var(--neon-size-m);
+        max-height: var(--neon-size-m);
+        font-size: var(--neon-font-size-m);
+
+        .neon-icon {
+          width: var(--neon-font-size-m);
+          height: var(--neon-font-size-m);
+        }
+      }
+    }
+
+    &--l {
+      &:not(.neon-expansion-panel--expanded) {
+        height: var(--neon-size-l);
+        max-height: var(--neon-size-l);
+      }
+
+      .neon-expansion-panel__header {
+        height: var(--neon-size-l);
+        max-height: var(--neon-size-l);
+        font-size: var(--neon-font-size-l);
+
+        .neon-icon {
+          width: var(--neon-font-size-l);
+          height: var(--neon-font-size-l);
+        }
+      }
+    }
+
+    &--disabled {
+      .neon-expansion-panel__header {
+        cursor: not-allowed;
+        color: var(--neon-color-disabled-light);
+      }
+    }
+
+    &--top {
+      border-bottom: var(--neon-border-width-expansion-panel) var(--neon-border-style) var(--neon-border-color);
+    }
+
+    &--bottom {
+      .neon-expansion-panel__header {
+        order: 1;
+        justify-content: center;
+        border-top: var(--neon-border-width-expansion-panel) var(--neon-border-style) var(--neon-border-color);
+
+        .neon-expansion-panel__label-container {
+          margin-right: calc(2 * var(--neon-base-space));
+        }
+      }
+
+      .neon-expansion-panel__content {
+        @include layout.padding-vertical(0.75, 0.75);
+      }
+    }
+
+    .neon-expansion-indicator {
+      margin-right: -3rem;
+    }
+
+    &--full-width {
+      .neon-expansion-panel__header,
+      .neon-expansion-panel__content {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}

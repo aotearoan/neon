@@ -1,32 +1,35 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonButton, NeonCard, NeonCardBody, NeonModal } from '../../../../components';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import { Menu, MenuModel } from '../../../Menu';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonButton, NeonCard, NeonCardBody, NeonCardFooter, NeonCardHeader, NeonModal } from '@/neon';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import Editor from '@/app/components/editor/Editor.vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Modal',
   components: {
     NeonButton,
     NeonModal,
     NeonCard,
     NeonCardBody,
+    NeonCardFooter,
+    NeonCardHeader,
     ComponentDocumentation,
+    Editor,
   },
-})
-export default class Modal extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Display modal content over the page');
 
-  private headline = 'Display modal content over the page';
+    const open = ref(false);
+    const toggleOpen = (newOpen: boolean) => {
+      open.value = newOpen;
+    };
 
-  private data = {
-    open: false,
-  };
-
-  private examples = [
-    {
-      title: 'Modal example',
-      template: `<div class="example--horizontal">
-  <neon-button label="Open modal" @click="open = true"></neon-button>
-  <neon-modal :open="open" @close="open = false">
+    const template = `<div class="neon--horizontal">
+  <neon-button label="Open modal" @click="toggleOpen(true)"></neon-button>
+  <neon-modal :open="open" @close="toggleOpen(false)">
     <neon-card size="m">
       <neon-card-header>
         <h3>Modal title</h3>
@@ -41,17 +44,21 @@ export default class Modal extends Vue {
         </p>
       </neon-card-body>
       <neon-card-footer>
-        <neon-button label="Cancel" button-style="text" @click="open = false" />
-        <neon-button label="Accept" color="primary" @click="open = false" />
+        <neon-button label="Cancel" button-style="text" @click="toggleOpen(false)" />
+        <neon-button label="Accept" color="primary" @click="toggleOpen(false)" />
       </neon-card-footer>
     </neon-card>
   </neon-modal>
-</div>`,
-      data: this.data,
-    },
-  ];
+</div>`;
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonModal');
-  }
-}
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonModal')));
+
+    return {
+      menuModel,
+      headline,
+      open,
+      template,
+      toggleOpen,
+    };
+  },
+});

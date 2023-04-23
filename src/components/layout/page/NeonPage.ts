@@ -1,24 +1,26 @@
-import { Component, Vue } from 'vue-property-decorator';
+import { defineComponent, onMounted, onUnmounted } from 'vue';
 
 /**
  * A "page" component, this is defined as a wrapper around the contents (NeonGrid, etc) and footer which provides the
  * correct responsive layout accounting for NeonTopNav and NeonSideNav components being used.
  */
-@Component
-export default class NeonPage extends Vue {
-  public created() {
-    window.addEventListener('resize', this.handleResize, { passive: true });
-    this.handleResize();
-  }
+export default defineComponent({
+  name: 'NeonPage',
+  setup() {
+    const handleResize = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}rem`);
+      const vw = window.innerWidth * 0.01;
+      document.documentElement.style.setProperty('--vw', `${vw}rem`);
+    };
 
-  public beforeDestroy() {
-    window.removeEventListener('resize', this.handleResize);
-  }
+    onMounted(() => {
+      window.addEventListener('resize', handleResize, { passive: true });
+      handleResize();
+    });
 
-  public handleResize() {
-    const vh = (window.innerHeight * 0.01).toFixed(2);
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-    const vw = (window.innerWidth * 0.01).toFixed(2);
-    document.documentElement.style.setProperty('--vw', `${vw}px`);
-  }
-}
+    onUnmounted(() => {
+      window.removeEventListener('resize', handleResize);
+    });
+  },
+});

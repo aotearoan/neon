@@ -1,4 +1,4 @@
-import { NeonAvailableSpace } from '../models/NeonAvailableSpace';
+import type { NeonAvailableSpace } from '../models/NeonAvailableSpace';
 
 export class NeonPlacementUtils {
   public static calculateAvailableSpace(
@@ -39,9 +39,16 @@ export class NeonPlacementUtils {
 
   public static calculateBounds(placementContainer?: HTMLElement) {
     const root = document.documentElement;
+    const bodyRect = document.body.getBoundingClientRect();
+    const bodyHeight = bodyRect.height + bodyRect.y;
+    const bodyWidth = bodyRect.width + bodyRect.x;
     return {
-      maxWidth: placementContainer ? Math.min(placementContainer.offsetWidth, root.clientWidth) : root.clientWidth,
-      maxHeight: placementContainer ? Math.min(placementContainer.offsetHeight, root.clientHeight) : root.clientHeight,
+      maxWidth: placementContainer
+        ? Math.min(placementContainer.offsetWidth, root.clientWidth, bodyWidth)
+        : Math.min(root.clientWidth, bodyWidth),
+      maxHeight: placementContainer
+        ? Math.min(placementContainer.offsetHeight, root.clientHeight, bodyHeight)
+        : Math.min(root.clientHeight, bodyHeight),
     };
   }
 }

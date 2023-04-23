@@ -1,138 +1,104 @@
-import Vue from 'vue';
-import { mount } from '@vue/test-utils';
+import type { RenderResult } from '@testing-library/vue';
+import { fireEvent, render } from '@testing-library/vue';
 import NeonNote from './NeonNote.vue';
-import { NeonFunctionalColor } from '../../../common/enums/NeonFunctionalColor';
-import NeonButton from '../../user-input/button/NeonButton.vue';
-import NeonIcon from '../../presentation/icon/NeonIcon.vue';
-
-Vue.component('NeonButton', NeonButton);
-Vue.component('NeonIcon', NeonIcon);
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 describe('NeonNote', () => {
+  let harness: RenderResult;
+
+  beforeEach(() => {
+    harness = render(NeonNote, { props: {}, slots: { default: '<p>test</p>' } });
+  });
+
   it('correctly maps icon name, primary', () => {
-    // given
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const wrapper: any = mount(NeonNote, {
-      propsData: {},
-    });
+    const { html } = harness;
     // when / then
-    expect(wrapper.vm.iconName).toBeUndefined();
+    expect(html()).not.toMatch('icon');
   });
 
-  it('correctly maps icon name, info', () => {
-    // given
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const wrapper: any = mount(NeonNote, {
-      propsData: { color: NeonFunctionalColor.Info },
-    });
+  it('correctly maps icon name, info', async () => {
+    const { html, rerender } = harness;
+    await rerender({ color: NeonFunctionalColor.Info });
     // when / then
-    expect(wrapper.vm.iconName).toEqual('info-circle');
+    expect(html()).toMatch('neon-icon--info');
   });
 
-  it('correctly maps icon name, success', () => {
-    // given
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const wrapper: any = mount(NeonNote, {
-      propsData: { color: NeonFunctionalColor.Success },
-    });
+  it('correctly maps icon name, success', async () => {
+    const { html, rerender } = harness;
+    await rerender({ color: NeonFunctionalColor.Success });
     // when / then
-    expect(wrapper.vm.iconName).toEqual('check-circle');
+    expect(html()).toMatch('neon-icon--success');
   });
 
-  it('correctly maps icon name, warn', () => {
-    // given
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const wrapper: any = mount(NeonNote, {
-      propsData: { color: NeonFunctionalColor.Warn },
-    });
+  it('correctly maps icon name, warn', async () => {
+    const { html, rerender } = harness;
+    await rerender({ color: NeonFunctionalColor.Warn });
     // when / then
-    expect(wrapper.vm.iconName).toEqual('exclamation-circle');
+    expect(html()).toMatch('neon-icon--warn');
   });
 
-  it('correctly maps icon name, error', () => {
-    // given
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const wrapper: any = mount(NeonNote, {
-      propsData: { color: NeonFunctionalColor.Error },
-    });
+  it('correctly maps icon name, error', async () => {
+    const { html, rerender } = harness;
+    await rerender({ color: NeonFunctionalColor.Error });
     // when / then
-    expect(wrapper.vm.iconName).toEqual('times-circle');
+    expect(html()).toMatch('neon-icon--error');
   });
 
-  it('correctly maps icon false', () => {
-    // given
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const wrapper: any = mount(NeonNote, {
-      propsData: { icon: false, color: NeonFunctionalColor.Error },
-    });
+  it('correctly maps icon false', async () => {
+    const { html, rerender } = harness;
+    await rerender({ icon: false, color: NeonFunctionalColor.Error });
     // when / then
-    expect(wrapper.vm.iconName).toBeUndefined();
+    expect(html()).not.toMatch('icon');
   });
 
-  it('renders correct color class', () => {
-    // given
-    const wrapper = mount(NeonNote, {
-      propsData: { color: NeonFunctionalColor.Error },
-    });
+  it('renders correct color class', async () => {
+    const { html, rerender } = harness;
+    await rerender({ color: NeonFunctionalColor.Error });
     // when / then
-    expect(wrapper.find('.neon-note--error').element).toBeDefined();
+    expect(html()).toMatch('neon-note--error');
   });
 
-  it('clicking close emits close event', () => {
-    // given
-    const wrapper = mount(NeonNote, {
-      propsData: { closable: true },
-    });
-    // when
-    const closeButton = wrapper.find('.neon-note__close');
-    closeButton.trigger('click');
+  it('clicking close emits close event', async () => {
+    const { container, emitted, rerender } = harness;
+    await rerender({ closable: true, color: NeonFunctionalColor.Error });
+    await fireEvent.click(container.querySelector('.neon-note__close') as HTMLButtonElement);
     // when / then
-    expect(wrapper.emitted()['close-note'][0]).toBeDefined();
+    expect(emitted()['close-note']).toBeDefined();
   });
 
-  it('space keydown on close emits close event', () => {
-    // given
-    const wrapper = mount(NeonNote, {
-      propsData: { closable: true },
+  it('space keydown on close emits close event', async () => {
+    const { container, emitted, rerender } = harness;
+    await rerender({ closable: true, color: NeonFunctionalColor.Error });
+    await fireEvent.keyDown(container.querySelector('.neon-note__close') as HTMLButtonElement, {
+      key: 'Space',
+      code: 'Space',
     });
-    // when
-    const closeButton = wrapper.find('.neon-note__close');
-    closeButton.trigger('keypress.space.stop');
     // when / then
-    expect(wrapper.emitted()['close-note'][0]).toBeDefined();
+    expect(emitted()['close-note']).toBeDefined();
   });
 
-  it('enter keydown on close emits close event', () => {
-    // given
-    const wrapper = mount(NeonNote, {
-      propsData: { closable: true },
+  it('enter keydown on close emits close event', async () => {
+    const { container, emitted, rerender } = harness;
+    await rerender({ closable: true, color: NeonFunctionalColor.Error });
+    await fireEvent.keyDown(container.querySelector('.neon-note__close') as HTMLButtonElement, {
+      key: 'Enter',
+      code: 'Enter',
     });
-    // when
-    const closeButton = wrapper.find('.neon-note__close');
-    closeButton.trigger('keydown.enter');
     // when / then
-    expect(wrapper.emitted()['close-note'][0]).toBeDefined();
+    expect(emitted()['close-note']).toBeDefined();
   });
 
-  it('close button missing when closable = false', () => {
-    // given
-    const wrapper = mount(NeonNote, {
-      propsData: { closable: false },
-    });
+  it('close button missing when closable = false', async () => {
+    const { html, rerender } = harness;
+    await rerender({ closable: false, color: NeonFunctionalColor.Error });
     // when / then
-    expect(wrapper.find('.neon-note__close').element).toBeUndefined();
+    expect(html()).not.toMatch('neon-note__close');
   });
 
-  it('renders default slot contents', () => {
-    // given
-    const slotValue = 'xd';
-    const wrapper = mount(NeonNote, {
-      propsData: {},
-      slots: {
-        default: `<p>${slotValue}</p>`,
-      },
-    });
+  it('renders default slot contents', async () => {
+    const { html, rerender } = harness;
+    await rerender({ color: NeonFunctionalColor.Error });
     // when / then
-    expect(wrapper.find('.neon-note__container p').text()).toEqual(slotValue);
+    expect(html()).toMatch('<p>test</p>');
   });
 });

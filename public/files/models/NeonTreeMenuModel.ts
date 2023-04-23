@@ -1,15 +1,14 @@
-import { TranslateResult } from 'vue-i18n';
-
-export interface NeonTreeMenuSectionModel {
-  label: TranslateResult;
-  key: string;
-  children?: NeonTreeMenuLinkModel[];
-  expanded?: boolean;
-}
-
 export interface NeonTreeMenuLinkModel {
-  label: TranslateResult;
+  label: string;
   key: string;
   href?: string;
   anchors?: string[];
+}
+
+export interface NeonTreeMenuSectionModel {
+  label: string;
+  key: string;
+  children?: NeonTreeMenuLinkModel[];
+  expanded?: boolean;
+  disabled?: boolean;
 }

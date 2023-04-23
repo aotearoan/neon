@@ -1,36 +1,39 @@
 {
+  "displayName": "NeonInputIndicator",
   "description": "Use input indicators to provide additional information for input fields. This can be useful to add the field units or\na connected label or icon.\n<br />\nNOTE: An input indicator is an HTML <em>label</em> so attributes like, e.g. <em>for</em> are accepted.",
   "tags": {},
   "exportName": "default",
-  "displayName": "NeonInputIndicator",
   "props": [
     {
       "name": "label",
-      "tags": {},
       "description": "The label to display",
       "type": {
-        "name": "TranslateResult"
-      }
+        "name": "string"
+      },
+      "required": false
     },
     {
       "name": "icon",
-      "tags": {},
       "description": "The icon to display",
       "type": {
         "name": "string"
-      }
+      },
+      "required": false
     },
     {
       "name": "size",
-      "tags": {},
       "description": "The size of the input indicator",
       "type": {
-        "name": "NeonSize"
+        "name": "String as () => NeonSize"
       },
       "defaultValue": {
         "func": false,
         "value": "NeonSize.Medium"
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/user-input/input-indicator/NeonInputIndicator.vue",
+    "/Users/andrew/dev/projects/neon/src/components/user-input/input-indicator/NeonInputIndicator.ts"
   ]
 }

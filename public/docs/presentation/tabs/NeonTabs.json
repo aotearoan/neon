@@ -1,26 +1,19 @@
 {
+  "displayName": "NeonTabs",
   "description": "A component for displaying tabbed content.",
   "tags": {},
-  "displayName": "NeonTabs",
   "exportName": "default",
   "props": [
     {
       "name": "tabs",
-      "tags": {},
       "description": "The list of tabs to display.",
       "type": {
-        "name": "Array",
-        "elements": [
-          {
-            "name": "NeonTabModel"
-          }
-        ]
+        "name": "Array as () => Array<NeonTabModel>"
       },
       "required": true
     },
     {
-      "name": "value",
-      "tags": {},
+      "name": "modelValue",
       "description": "The key of the selected tab.",
       "type": {
         "name": "string"
@@ -29,10 +22,9 @@
     },
     {
       "name": "color",
-      "tags": {},
       "description": "The tab highlight color (excludes low-contrast).",
       "type": {
-        "name": "NeonFunctionalColor"
+        "name": "String as () => NeonFunctionalColor"
       },
       "defaultValue": {
         "func": false,
@@ -41,10 +33,9 @@
     },
     {
       "name": "size",
-      "tags": {},
       "description": "The tab size.",
       "type": {
-        "name": "NeonSize"
+        "name": "String as () => NeonSize"
       },
       "defaultValue": {
         "func": false,
@@ -53,7 +44,6 @@
     },
     {
       "name": "underline",
-      "tags": {},
       "description": "Display a border underlining all tabs. When tabs are in an element with a border-bottom it is preferable to omit the tabs border-bottom",
       "type": {
         "name": "boolean"
@@ -66,7 +56,7 @@
   ],
   "events": [
     {
-      "name": "input",
+      "name": "update:modelValue",
       "description": "Emitted when the selected tab is changed.",
       "type": {
         "names": [
@@ -78,7 +68,11 @@
   "slots": [
     {
       "name": "default",
-      "description": "Add tabs here (NeonTab). NOTE: Tabs can also be added outside of the component if preferred"
+      "description": "Add tabs here (NeonTab). NOTE: Tabs can also be added outside the component if preferred"
     }
+  ],
+  "sourceFiles": [
+    "./src/components/presentation/tabs/NeonTabs.vue",
+    "/Users/andrew/dev/projects/neon/src/components/presentation/tabs/NeonTabs.ts"
   ]
 }

@@ -1,0 +1,57 @@
+@mixin neon-h0 {
+  font-weight: var(--neon-h0-weight);
+  margin-bottom: var(--neon-typography-margin-unit);
+  margin-top: 0;
+  font-size: var(--neon-h0-size);
+}
+
+@mixin neon-h1 {
+  font-weight: var(--neon-h1-weight);
+  margin-bottom: var(--neon-typography-margin-unit);
+  margin-top: 0;
+  font-size: var(--neon-h1-size);
+}
+
+@mixin neon-h2 {
+  font-weight: var(--neon-h2-weight);
+  margin-bottom: var(--neon-typography-margin-unit);
+  margin-top: 0;
+  font-size: var(--neon-h2-size);
+}
+
+@mixin neon-h3 {
+  font-weight: var(--neon-h3-weight);
+  margin-bottom: var(--neon-typography-margin-unit);
+  margin-top: 0;
+  font-size: var(--neon-h3-size);
+}
+
+@mixin neon-h4 {
+  font-weight: var(--neon-h4-weight);
+  margin-bottom: var(--neon-typography-margin-unit);
+  margin-top: 0;
+  font-size: var(--neon-h4-size);
+}
+
+@mixin neon-h5 {
+  font-weight: var(--neon-h5-weight);
+  margin-bottom: var(--neon-typography-margin-unit);
+  margin-top: 0;
+  font-size: var(--neon-h5-size);
+}
+
+@mixin neon-h6 {
+  font-weight: var(--neon-h6-weight);
+  margin-bottom: var(--neon-typography-margin-unit);
+  margin-top: 0;
+  font-size: var(--neon-h6-size);
+}
+
+@mixin label {
+  color: var(--neon-label-color);
+  font-size: var(--neon-font-size-xs);
+  font-weight: var(--neon-font-weight-semi-bold);
+  letter-spacing: var(--neon-letter-spacing-m);
+  text-transform: uppercase;
+  user-select: none;
+}

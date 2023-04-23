@@ -1,179 +1,191 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonDropdown } from '../../../../components';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
-import { Menu, MenuModel } from '../../../Menu';
+import { defineComponent, onMounted, ref } from 'vue';
+import { NeonCard, NeonCardBody, NeonDropdown } from '@/neon';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import Editor from '@/app/components/editor/Editor.vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Dropdown',
   components: {
     NeonCard,
     NeonCardBody,
     NeonDropdown,
     ComponentDocumentation,
+    Editor,
   },
-})
-export default class Dropdown extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Display content in a popup over the page');
 
-  private headline = 'Display content in a popup over the page';
-  private data = {
-    sOpen: false,
-    mOpen: false,
-    lOpen: false,
-    disabledOpen: false,
-    withIconOpen: false,
-    iconOnlyOpen: false,
-    noIndicatorOpen: false,
-    textOpen: false,
-    solidButtonOpen: false,
-    primaryOpen: false,
-    warnTextOpen: false,
-    badgeSquareOpen: false,
-    badgeCircularOpen: false,
-    trOpen: false,
-    blOpen: false,
-    hoverOpen: false,
-  };
+    const sOpen = ref(false);
+    const mOpen = ref(false);
+    const lOpen = ref(false);
+    const disabledOpen = ref(false);
+    const withIconOpen = ref(false);
+    const iconOnlyOpen = ref(false);
+    const noIndicatorOpen = ref(false);
+    const textOpen = ref(false);
+    const solidButtonOpen = ref(false);
+    const primaryOpen = ref(false);
+    const warnTextOpen = ref(false);
+    const badgeSquareOpen = ref(false);
+    const badgeCircularOpen = ref(false);
+    const trOpen = ref(false);
+    const blOpen = ref(false);
+    const hoverOpen = ref(false);
 
-  private sizeExamples = `<div class="example--horizontal">
-  <neon-dropdown v-model="sOpen" size="s" label="Small">
-    <neon-card-body>
-      <p>Dropdown contents</p>
-    </neon-card-body>
-  </neon-dropdown>
-  <neon-dropdown v-model="mOpen" size="m" label="Medium">
-    <neon-card-body>
-      <p>Dropdown contents</p>
-    </neon-card-body>
-  </neon-dropdown>
-  <neon-dropdown v-model="lOpen" size="l" label="Large">
-    <neon-card-body>
-      <p>Dropdown contents</p>
-    </neon-card-body>
-  </neon-dropdown>
-</div>`;
+    const sizeExamples = `<neon-dropdown v-model="sOpen" label="Small" size="s">
+  <neon-card-body>
+    <p>Dropdown contents</p>
+  </neon-card-body>
+</neon-dropdown>
+<neon-dropdown v-model="mOpen" label="Medium" size="m">
+  <neon-card-body>
+    <p>Dropdown contents</p>
+  </neon-card-body>
+</neon-dropdown>
+<neon-dropdown v-model="lOpen" label="Large" size="l">
+  <neon-card-body>
+    <p>Dropdown contents</p>
+  </neon-card-body>
+</neon-dropdown>`;
 
-  private buttonStyleExamples = `<div class="example--horizontal">
-  <neon-dropdown v-model="solidButtonOpen" dropdown-style="solid-button" label="Solid">
-    <neon-card-body>
-      <p>Dropdown contents</p>
-    </neon-card-body>
-  </neon-dropdown>
-  <neon-dropdown v-model="textOpen" dropdown-style="text-button" label="Text">
-    <neon-card-body>
-      <p>Dropdown contents</p>
-    </neon-card-body>
-  </neon-dropdown>
-</div>`;
+    const buttonStyleExamples = `<neon-dropdown v-model="solidButtonOpen"
+               dropdown-style="solid-button"
+               label="Solid"
+>
+  <neon-card-body>
+    <p>Dropdown contents</p>
+  </neon-card-body>
+</neon-dropdown>
+<neon-dropdown v-model="textOpen"
+               dropdown-style="text-button"
+               label="Text"
+>
+  <neon-card-body>
+    <p>Dropdown contents</p>
+  </neon-card-body>
+</neon-dropdown>`;
 
-  private badgeStyleExamples = `<div class="example--horizontal">
-  <neon-dropdown v-model="badgeSquareOpen" dropdown-style="square-badge" label="XD">
-    <neon-card-body>
-      <p>Dropdown contents</p>
-    </neon-card-body>
-  </neon-dropdown>
-  <neon-dropdown v-model="badgeCircularOpen" dropdown-style="circular-badge" label="XD">
-    <neon-card-body>
-      <p>Dropdown contents</p>
-    </neon-card-body>
-  </neon-dropdown>
-</div>`;
+    const badgeStyleExamples = `<neon-dropdown v-model="badgeSquareOpen"
+               dropdown-style="square-badge"
+               label="XD"
+>
+  <neon-card-body>
+    <p>Dropdown contents</p>
+  </neon-card-body>
+</neon-dropdown>
+<neon-dropdown v-model="badgeCircularOpen"
+               dropdown-style="circular-badge"
+               label="XD"
+>
+  <neon-card-body>
+    <p>Dropdown contents</p>
+  </neon-card-body>
+</neon-dropdown>`;
 
-  private iconExamples = `<div class="example--horizontal">
-  <neon-dropdown v-model="withIconOpen" icon="plus" label="With icon">
-    <neon-card-body>
-      <p>Dropdown contents</p>
-    </neon-card-body>
-  </neon-dropdown>
-  <neon-dropdown v-model="iconOnlyOpen" icon="plus">
-    <neon-card-body>
-      <p>Dropdown contents</p>
-    </neon-card-body>
-  </neon-dropdown>
-  <neon-dropdown v-model="badgeSquareOpen" dropdown-style="square-badge" icon="user">
-    <neon-card-body>
-      <p>Dropdown contents</p>
-    </neon-card-body>
-  </neon-dropdown>
-  <neon-dropdown v-model="noIndicatorOpen" label="No indicator" :indicator="false">
-    <neon-card-body>
-      <p>Dropdown contents</p>
-    </neon-card-body>
-  </neon-dropdown>
-</div>`;
+    const iconExamples = `<neon-dropdown v-model="withIconOpen"
+               icon="plus"
+               label="With icon"
+>
+  <neon-card-body>
+    <p>Dropdown contents</p>
+  </neon-card-body>
+</neon-dropdown>
+<neon-dropdown v-model="iconOnlyOpen" icon="plus">
+  <neon-card-body>
+    <p>Dropdown contents</p>
+  </neon-card-body>
+</neon-dropdown>
+<neon-dropdown v-model="badgeSquareOpen"
+               dropdown-style="square-badge"
+               icon="user"
+>
+  <neon-card-body>
+    <p>Dropdown contents</p>
+  </neon-card-body>
+</neon-dropdown>
+<neon-dropdown v-model="noIndicatorOpen"
+               :indicator="false"
+               label="No indicator"
+>
+  <neon-card-body>
+    <p>Dropdown contents</p>
+  </neon-card-body>
+</neon-dropdown>`;
 
-  private colorExamples = `<div class="example--horizontal">
-  <neon-dropdown v-model="primaryOpen" color="primary" label="Primary">
-    <neon-card-body>
-      <p>Dropdown contents</p>
-    </neon-card-body>
-  </neon-dropdown>
-  <neon-dropdown v-model="warnTextOpen" color="warn" dropdown-style="text-button" label="Warning">
-    <neon-card-body>
-      <p>Dropdown contents</p>
-    </neon-card-body>
-  </neon-dropdown>
-</div>`;
+    const colorExamples = `<neon-dropdown v-model="primaryOpen"
+               color="primary"
+               label="Primary"
+>
+  <neon-card-body>
+    <p>Dropdown contents</p>
+  </neon-card-body>
+</neon-dropdown>
+<neon-dropdown v-model="warnTextOpen"
+               color="warn"
+               dropdown-style="text-button"
+               label="Warning"
+>
+  <neon-card-body>
+    <p>Dropdown contents</p>
+  </neon-card-body>
+</neon-dropdown>`;
 
-  private positionExamples = `<div class="example--horizontal">
-  <neon-dropdown v-model="blOpen" label="Bottom left aligned">
-    <neon-card-body>
-      <p>Bacon ipsum dolor amet t-bone ribeye</p>
-    </neon-card-body>
-  </neon-dropdown>
-  <neon-dropdown v-model="trOpen" placement="top-right" label="Top right aligned">
-    <neon-card-body>
-      <p>Bacon ipsum dolor amet t-bone ribeye</p>
-    </neon-card-body>
-  </neon-dropdown>
-</div>`;
+    const positionExamples = `<neon-dropdown v-model="blOpen" label="Bottom left aligned">
+  <neon-card-body>
+    <p>Bacon ipsum dolor amet t-bone ribeye</p>
+  </neon-card-body>
+</neon-dropdown>
+<neon-dropdown v-model="trOpen"
+               label="Top right aligned"
+               placement="top-right"
+>
+  <neon-card-body>
+    <p>Bacon ipsum dolor amet t-bone ribeye</p>
+  </neon-card-body>
+</neon-dropdown>`;
 
-  private openOnHoverExample = `<div class="example--horizontal">
-  <neon-dropdown :open-on-hover="true" v-model="hoverOpen" dropdown-style="text-button" label="Open on hover">
-    <neon-card-body>
-      <p>Bacon ipsum dolor amet t-bone ribeye</p>
-    </neon-card-body>
-  </neon-dropdown>
-</div>`;
+    const openOnHoverExample = `<neon-dropdown v-model="hoverOpen"
+               :open-on-hover="true"
+               dropdown-style="text-button"
+               label="Open on hover"
+>
+  <neon-card-body>
+    <p>Bacon ipsum dolor amet t-bone ribeye</p>
+  </neon-card-body>
+</neon-dropdown>`;
 
-  private examples = [
-    {
-      title: 'Dropdown sizes',
-      template: this.sizeExamples,
-      data: this.data,
-    },
-    {
-      title: 'Dropdown colors',
-      template: this.colorExamples,
-      data: this.data,
-    },
-    {
-      title: 'Dropdown with icons',
-      template: this.iconExamples,
-      data: this.data,
-    },
-    {
-      title: 'Dropdown button styles',
-      template: this.buttonStyleExamples,
-      data: this.data,
-    },
-    {
-      title: 'Dropdown badge styles',
-      template: this.badgeStyleExamples,
-      data: this.data,
-    },
-    {
-      title: 'Dropdown positions',
-      template: this.positionExamples,
-      data: this.data,
-    },
-    {
-      title: 'Dropdown open on hover',
-      template: this.openOnHoverExample,
-      data: this.data,
-    },
-  ];
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonDropdown')));
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonDropdown');
-  }
-}
+    return {
+      menuModel,
+      headline,
+      sizeExamples,
+      colorExamples,
+      iconExamples,
+      buttonStyleExamples,
+      badgeStyleExamples,
+      positionExamples,
+      openOnHoverExample,
+      sOpen,
+      mOpen,
+      lOpen,
+      disabledOpen,
+      withIconOpen,
+      iconOnlyOpen,
+      noIndicatorOpen,
+      textOpen,
+      solidButtonOpen,
+      primaryOpen,
+      warnTextOpen,
+      badgeSquareOpen,
+      badgeCircularOpen,
+      trOpen,
+      blOpen,
+      hoverOpen,
+    };
+  },
+});

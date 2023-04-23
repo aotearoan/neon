@@ -1,61 +1,59 @@
-import { Component, Vue } from 'vue-property-decorator';
-import { NeonCard, NeonCardBody, NeonNote } from '../../../../components';
-import { Menu, MenuModel } from '../../../Menu';
-import ComponentDocumentation from '../../../components/component-documentation/ComponentDocumentation.vue';
+import { defineComponent, onMounted, ref } from 'vue';
+import type { MenuModel } from '@/app/Menu';
+import { Menu } from '@/app/Menu';
+import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
+import { NeonCard, NeonCardBody, NeonNote } from '@/neon';
+import Editor from '@/app/components/editor/Editor.vue';
 
-@Component({
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Note',
   components: {
     NeonNote,
     NeonCard,
     NeonCardBody,
     ComponentDocumentation,
+    Editor,
   },
-})
-export default class Note extends Vue {
-  private menuModel: MenuModel | null = null;
+  setup() {
+    const menuModel = ref<MenuModel | null>(null);
+    const headline = ref('Display on page notifications to users');
 
-  private headline = 'Display on page notifications to users';
+    const noteOpen = ref(true);
+    const closeNote = () => (noteOpen.value = false);
 
-  private data = {
-    noteOpen: true,
-  };
+    const blockQuoteTemplate = `<blockquote>
+  <span><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue bottle activated charcoal bicycle rights adaptogen.</span>
+</blockquote>`;
 
-  private examples = [
-    {
-      title: 'Blockquote',
-      template: `<blockquote>
-  <span><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue bottle
-      activated charcoal bicycle rights adaptogen.</span>
-</blockquote>`,
-    },
-    {
-      title: 'Default note',
-      template: `<neon-note>
+    const defaultNoteTemplate = `<neon-note>
   <span><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue bottle activated charcoal bicycle rights adaptogen.</span>
-</neon-note>`,
-    },
-    {
-      title: 'Note with close',
-      template: `<neon-note v-if="noteOpen" :closable="true" @close-note="noteOpen = false">
-  <span><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue bottle activated charcoal bicycle rights adaptogen.</span>
-</neon-note>`,
-      data: this.data,
-    },
-    {
-      title: 'Colored note',
-      template: `<neon-note color="warn">
-  <span><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue bottle activated charcoal bicycle rights adaptogen.</span>
-</neon-note>`,
-    },
-    {
-      title: 'Colored note without icon',
-      template: `<neon-note color="error" :icon="false">
-  <span><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue bottle activated charcoal bicycle rights adaptogen.</span>
-</neon-note>`,
-    },
-  ];
+</neon-note>`;
 
-  public mounted() {
-    this.menuModel = Menu.getComponentConfig('NeonNote');
-  }
-}
+    const withCloseTemplate = `<neon-note v-if="noteOpen" :closable="true" @close-note="closeNote()">
+  <span><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue bottle activated charcoal bicycle rights adaptogen.</span>
+</neon-note>`;
+
+    const coloredTemplate = `<neon-note color="warn">
+  <span><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue bottle activated charcoal bicycle rights adaptogen.</span>
+</neon-note>`;
+
+    const coloredWithoutIconTemplate = `<neon-note :icon="false" color="error">
+  <span><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue bottle activated charcoal bicycle rights adaptogen.</span>
+</neon-note>`;
+
+    onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonNote')));
+
+    return {
+      menuModel,
+      headline,
+      noteOpen,
+      blockQuoteTemplate,
+      defaultNoteTemplate,
+      withCloseTemplate,
+      coloredTemplate,
+      coloredWithoutIconTemplate,
+      closeNote,
+    };
+  },
+});

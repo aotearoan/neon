@@ -1,13 +1,12 @@
 {
+  "displayName": "NeonAlert",
   "description": "NeonAlert is a component for presenting temporary notifications to the user. Place the component once inside your app\nand use <strong>NeonAlertService</strong> to send events to the component.",
   "tags": {},
   "exportName": "default",
-  "displayName": "NeonAlert",
   "props": [
     {
-      "name": "dismissable",
-      "tags": {},
-      "description": "Whether or not alert messages are dismissable by clicking on them. This can also be set per alert message.",
+      "name": "dismissible",
+      "description": "Whether alert messages are dismissible by clicking on them. This can also be set per alert message.",
       "type": {
         "name": "boolean"
       },
@@ -18,7 +17,6 @@
     },
     {
       "name": "duration",
-      "tags": {},
       "description": "Duration to display messages before removing them. This can also be set per alert message. Set the duration to 0 to\ndisable the duration timer, NOTE: this requires the user to dismiss the alert by clicking on it.",
       "type": {
         "name": "number"
@@ -28,5 +26,9 @@
         "value": "2500"
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/feedback/alert/NeonAlert.vue",
+    "/Users/andrew/dev/projects/neon/src/components/feedback/alert/NeonAlert.ts"
   ]
 }

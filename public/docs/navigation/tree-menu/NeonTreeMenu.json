@@ -1,26 +1,19 @@
 {
+  "displayName": "NeonTreeMenu",
   "description": "Three level tree menu. This is useful for displaying a hierarchical navigation in NeonSideNav.The top level of the\nmenu is expandable on click but will not navigate to a page. The second level is links to pages and the third level\nis the fragments on that page.",
   "tags": {},
   "exportName": "default",
-  "displayName": "NeonTreeMenu",
   "props": [
     {
       "name": "model",
-      "tags": {},
       "description": "The tree model defining the menu.",
       "type": {
-        "name": "Array",
-        "elements": [
-          {
-            "name": "NeonTreeMenuSectionModel"
-          }
-        ]
+        "name": "Array as () => Array<NeonTreeMenuSectionModel>"
       },
       "required": true
     },
     {
       "name": "expandAll",
-      "tags": {},
       "description": "Expand all nodes in the tree, this is useful for providing filtering (e.g. the Neon showcase side navigation menu).",
       "type": {
         "name": "boolean"
@@ -41,5 +34,9 @@
         ]
       }
     }
+  ],
+  "sourceFiles": [
+    "./src/components/navigation/tree-menu/NeonTreeMenu.vue",
+    "/Users/andrew/dev/projects/neon/src/components/navigation/tree-menu/NeonTreeMenu.ts"
   ]
 }
