@@ -58,5 +58,8 @@ jobs:
         with:
           node-version: latest
           registry-url: https://npm.pkg.github.com/
+      - run: |
+          git config user.name "aotearoan"
+          git config user.email "andrew@aotearoan.com"
       - run: npm install
       - run: npm run gh-pages-deploy
