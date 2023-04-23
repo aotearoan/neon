@@ -123,8 +123,8 @@
         </neon-grid>
         <neon-footer class="app-footer">
           <span>
-            {{ versionString !== "0" ? `v${versionString}` : ""
-            }} &copy; copyright aotearoan {{ new Date().getFullYear() }}
+            {{ versionString !== '0' ? `v${versionString}` : '' }} &copy; copyright aotearoan
+            {{ new Date().getFullYear() }}
           </span>
         </neon-footer>
       </template>

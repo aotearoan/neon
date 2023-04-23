@@ -180,6 +180,23 @@
     }
   }
 
+  h1,
+  .neon-h1,
+  h2,
+  .neon-h2,
+  h3,
+  .neon-h3,
+  h4,
+  .neon-h4,
+  h5,
+  .neon-h5,
+  h6,
+  .neon-h6 {
+    & + label.neon-switch {
+      margin-top: 0;
+    }
+  }
+
   .neon-monospaced {
     font-family: var(--neon-font-family-monospaced);
     font-variant-ligatures: discretionary-ligatures;

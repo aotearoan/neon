@@ -91,8 +91,8 @@ export default defineComponent({
       return children.length > 0
         ? { ...item, children }
         : item.label.toString().toLowerCase().indexOf(lowercaseFilter.value) >= 0
-          ? item
-          : undefined;
+        ? item
+        : undefined;
     };
 
     const filteredModel = computed((): AppMenuGroup[] => {
@@ -185,15 +185,15 @@ export default defineComponent({
           key: item.path,
           children: item.children
             ? item.children.map((child) => ({
-              label: child.name || child.page || child.path,
-              key: child.path,
-              keywords:
-                (child.keywords || '') +
-                (child.component ? ` ${child.component.toLowerCase()}` : '') +
-                (child.subComponents ? '' + child.subComponents.map((sc) => sc.name.toLowerCase()).join(' ') : ''),
-              href: `/${item.path}/${child.path}`,
-              anchors: child.anchors,
-            }))
+                label: child.name || child.page || child.path,
+                key: child.path,
+                keywords:
+                  (child.keywords || '') +
+                  (child.component ? ` ${child.component.toLowerCase()}` : '') +
+                  (child.subComponents ? '' + child.subComponents.map((sc) => sc.name.toLowerCase()).join(' ') : ''),
+                href: `/${item.path}/${child.path}`,
+                anchors: child.anchors,
+              }))
             : [],
         })),
       }));

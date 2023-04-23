@@ -92,6 +92,7 @@ export type { NeonAlertAction } from './common/models/NeonAlertAction';
 export type { NeonAlertMessage } from './common/models/NeonAlertMessage';
 export type { NeonAlertModel } from './components/feedback/alert/NeonAlertModel';
 export type { NeonAvailableSpace } from './common/models/NeonAvailableSpace';
+export type { NeonContrastAccessibility } from './common/models/NeonContrastAccessibility';
 export type { NeonDate } from './common/models/NeonDate';
 export type { NeonDropdownMenuItem } from './common/models/NeonDropdownMenuItem';
 export type { NeonDropdownPlacementObject } from './common/models/NeonDropdownPlacementObject';

@@ -1,4 +1,4 @@
-import { defineComponent, onMounted, ref } from 'vue';
+import { computed, defineComponent, onMounted, ref } from 'vue';
 import {
   NeonButton,
   NeonCard,
@@ -8,7 +8,10 @@ import {
   NeonColor,
   NeonDialog,
   NeonField,
+  NeonSwitch,
+  NeonTooltip,
 } from '@/neon';
+import { NeonColorUtils } from '@/common/utils/NeonColorUtils';
 
 export default defineComponent({
   name: 'PaletteCreator',
@@ -21,6 +24,8 @@ export default defineComponent({
     NeonColor,
     NeonDialog,
     NeonField,
+    NeonSwitch,
+    NeonTooltip,
   },
   setup() {
     const keys = [
@@ -130,29 +135,67 @@ export default defineComponent({
     const ready = ref<boolean>(false);
     const openConfirmResetDialog = ref<boolean>(false);
 
-    const toHex = (rgbString: string) => {
-      const [r, g, b] = rgbString.split(', ');
-      const rHex = (+r).toString(16);
-      const gHex = (+g).toString(16);
-      const bHex = (+b).toString(16);
-      return `#${rHex.length === 1 ? `0${rHex}` : rHex}${gHex.length === 1 ? `0${gHex}` : gHex}${
-        bHex.length === 1 ? `0${bHex}` : bHex
-      }`;
-    };
-
     const toRGB = (hexString: string) => {
-      return ` ${Number.parseInt(hexString.substring(1, 3), 16)}, ${Number.parseInt(
-        hexString.substring(3, 5),
-        16,
-      )}, ${Number.parseInt(hexString.substring(5, 7), 16)}`;
+      const [r, g, b] = NeonColorUtils.toRgb(hexString);
+      return ` ${r}, ${g}, ${b}`;
     };
 
     const palette = ref<Record<string, string>>({});
+
     const setStyle = (key: string, value: string) => {
       palette.value[key] = value;
+      palette.value = { ...palette.value };
       document.documentElement.style.setProperty(key, toRGB(value));
       localStorage.setItem(paletteKey, JSON.stringify(palette.value));
     };
+
+    const generatePalette = (colorPaletteKey: string, color: string) => {
+      const darkText = palette.value['--neon-rgb-text-dark'];
+      const lightText = palette.value['--neon-rgb-text-light'];
+      const newPalette = NeonColorUtils.generatePalette(color, darkText, lightText);
+      Object.entries(newPalette).forEach(([key, value]) => {
+        const colorKey = `--neon-rgb-${colorPaletteKey}-${key}`;
+        palette.value[colorKey] = value;
+        document.documentElement.style.setProperty(colorKey, toRGB(value));
+      });
+      palette.value = { ...palette.value };
+      localStorage.setItem(paletteKey, JSON.stringify(palette.value));
+    };
+
+    const accessibility = computed(() => {
+      const result: Record<string, Record<string, string | number | null>> = {};
+
+      Object.entries(palette.value).forEach(([key, value]) => {
+        if (key.indexOf('text') === -1) {
+          const isDark = key[key.length - 2] === 'd';
+          const accessibleNormal = NeonColorUtils.isAccessible(
+            palette.value[isDark ? '--neon-rgb-text-light' : '--neon-rgb-text-dark'],
+            value,
+          );
+          const { normalAA, normalAAA } = accessibleNormal;
+
+          const accessibleLarge = NeonColorUtils.isAccessible(
+            palette.value[isDark ? '--neon-rgb-text-strong-light' : '--neon-rgb-text-strong-dark'],
+            value,
+          );
+          const { largeAA, largeAAA } = accessibleLarge;
+
+          result[key] = {
+            ratioLarge: accessibleLarge.ratio,
+            ratioNormal: accessibleNormal.ratio,
+            large: largeAAA ? 'AAA' : largeAA ? 'AA' : null,
+            normal: normalAAA ? 'AAA' : normalAA ? 'AA' : null,
+          };
+        } else {
+          result[key] = {
+            large: null,
+            normal: null,
+          };
+        }
+      });
+
+      return result;
+    });
 
     onMounted(() => {
       const createdPalette = localStorage.getItem(paletteKey);
@@ -165,9 +208,16 @@ export default defineComponent({
       } else {
         const docElement = getComputedStyle(document.documentElement);
         keys.forEach((key) => {
-          palette.value[key] = toHex(docElement.getPropertyValue(key).trim());
+          palette.value[key] = NeonColorUtils.rgbToHex(
+            docElement
+              .getPropertyValue(key)
+              .trim()
+              .split(', ')
+              .map((value) => +value),
+          );
         });
       }
+      palette.value = { ...palette.value };
       ready.value = true;
     });
 
@@ -186,7 +236,7 @@ export default defineComponent({
 `;
 
       keys.forEach((key) => {
-        fileString += `  ${key}: ${toRGB(palette.value[key])};
+        fileString += `  ${key}:${toRGB(palette.value[key])};
 `;
       });
 
@@ -200,7 +250,15 @@ export default defineComponent({
       hiddenElement.click();
     };
 
+    const toggleNeutral = ref(false);
+    const toggleBrand = ref(false);
+    const toggleFunctional = ref(false);
+
     return {
+      toggleNeutral,
+      toggleBrand,
+      toggleFunctional,
+      accessibility,
       ready,
       openConfirmResetDialog,
       palette,
@@ -212,6 +270,7 @@ export default defineComponent({
       setStyle,
       exportColors,
       resetPalette,
+      generatePalette,
     };
   },
 });

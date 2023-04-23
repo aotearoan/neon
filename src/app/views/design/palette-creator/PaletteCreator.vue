@@ -80,8 +80,17 @@
         </div>
       </neon-card-body>
       <neon-card-body>
-        <h2 class="neon-h4">Neutral palettes</h2>
         <div class="neon--horizontal">
+          <h2 class="neon-h4">Neutral palettes</h2>
+          <neon-tooltip>
+            <template #target>
+              <neon-switch v-model="toggleNeutral" label="Toggle details" />
+            </template>
+            <template #content>Display the WCAG contrast info for small & large text</template>
+          </neon-tooltip>
+        </div>
+        <br />
+        <div :class="{ 'palette-creator__palette-group--hide': !toggleNeutral }" class="neon--horizontal">
           <div
             v-for="neutralPalette in neutralPalettes"
             :key="neutralPalette"
@@ -91,85 +100,269 @@
             <div class="palette-creator__light-palette">
               <div v-for="step in stepsLight" :key="`${neutralPalette}-${step}`">
                 <neon-color
-                  :class="`--neon-rgb-${neutralPalette}-${step}`"
                   :model-value="palette[`--neon-rgb-${neutralPalette}-${step}`]"
                   @update:modelValue="setStyle(`--neon-rgb-${neutralPalette}-${step}`, $event)"
                 />
-                <span>{{ step }}</span>
+                <span class="palette-creator__color-level">{{ step }}</span>
+                <span
+                  v-if="accessibility[`--neon-rgb-${neutralPalette}-${step}`]"
+                  :class="
+                    accessibility[`--neon-rgb-${neutralPalette}-${step}`].large === 'AAA'
+                      ? 'palette-creator__color--large-aaa'
+                      : 'palette-creator__color--large-aa'
+                  "
+                >
+                  {{
+                    accessibility[`--neon-rgb-${neutralPalette}-${step}`].large ||
+                    accessibility[`--neon-rgb-${neutralPalette}-${step}`].ratioLarge
+                  }}
+                </span>
+                <span
+                  v-if="accessibility[`--neon-rgb-${neutralPalette}-${step}`]"
+                  :class="
+                    accessibility[`--neon-rgb-${neutralPalette}-${step}`].normal === 'AAA'
+                      ? 'palette-creator__color--normal-aaa'
+                      : 'palette-creator__color--normal-aa'
+                  "
+                >
+                  {{
+                    accessibility[`--neon-rgb-${neutralPalette}-${step}`].normal ||
+                    accessibility[`--neon-rgb-${neutralPalette}-${step}`].ratioNormal
+                  }}
+                </span>
               </div>
             </div>
             <div class="palette-creator__dark-palette">
               <div v-for="step in stepsDark" :key="`${neutralPalette}-${step}`">
                 <neon-color
-                  :class="`--neon-rgb-${neutralPalette}-${step}`"
                   :model-value="palette[`--neon-rgb-${neutralPalette}-${step}`]"
                   @update:modelValue="setStyle(`--neon-rgb-${neutralPalette}-${step}`, $event)"
                 />
-                <span>{{ step }}</span>
+                <span class="palette-creator__color-level">{{ step }}</span>
+                <span
+                  v-if="accessibility[`--neon-rgb-${neutralPalette}-${step}`]"
+                  :class="
+                    accessibility[`--neon-rgb-${neutralPalette}-${step}`].large === 'AAA'
+                      ? 'palette-creator__color--large-aaa'
+                      : 'palette-creator__color--large-aa'
+                  "
+                >
+                  {{
+                    accessibility[`--neon-rgb-${neutralPalette}-${step}`].large ||
+                    accessibility[`--neon-rgb-${neutralPalette}-${step}`].ratioLarge
+                  }}
+                </span>
+                <span
+                  v-if="accessibility[`--neon-rgb-${neutralPalette}-${step}`]"
+                  :class="
+                    accessibility[`--neon-rgb-${neutralPalette}-${step}`].normal === 'AAA'
+                      ? 'palette-creator__color--normal-aaa'
+                      : 'palette-creator__color--normal-aa'
+                  "
+                >
+                  {{
+                    accessibility[`--neon-rgb-${neutralPalette}-${step}`].normal ||
+                    accessibility[`--neon-rgb-${neutralPalette}-${step}`].ratioNormal
+                  }}
+                </span>
               </div>
             </div>
           </div>
         </div>
       </neon-card-body>
       <neon-card-body>
-        <h2 class="neon-h4">Brand palettes</h2>
         <div class="neon--horizontal">
+          <h2 class="neon-h4">Brand palettes</h2>
+          <neon-tooltip>
+            <template #target>
+              <neon-switch v-model="toggleBrand" label="Toggle details" />
+            </template>
+            <template #content>Display the WCAG contrast info for small & large text</template>
+          </neon-tooltip>
+        </div>
+        <br />
+        <div :class="{ 'palette-creator__palette-group--hide': !toggleBrand }" class="neon--horizontal">
           <div
             v-for="brandPalette in brandPalettes"
             :key="brandPalette"
             class="neon--vertical palette-creator__palette-group"
           >
             <h3 class="neon-h5">{{ brandPalette }}</h3>
+            <neon-field label="Generate from">
+              <neon-color
+                :model-value="palette[`--neon-rgb-${brandPalette}-l1`]"
+                class="neon--vertical palette-creator__select-reference"
+                size="s"
+                @update:modelValue="generatePalette(brandPalette, $event)"
+              />
+            </neon-field>
             <div class="palette-creator__light-palette">
               <div v-for="step in stepsLight" :key="`${brandPalette}-${step}`">
                 <neon-color
-                  :class="`--neon-rgb-${brandPalette}-${step}`"
                   :model-value="palette[`--neon-rgb-${brandPalette}-${step}`]"
                   @update:modelValue="setStyle(`--neon-rgb-${brandPalette}-${step}`, $event)"
                 />
-                <span>{{ step }}</span>
+                <span class="palette-creator__color-level">{{ step }}</span>
+                <span
+                  v-if="accessibility[`--neon-rgb-${brandPalette}-${step}`]"
+                  :class="
+                    accessibility[`--neon-rgb-${brandPalette}-${step}`].large === 'AAA'
+                      ? 'palette-creator__color--large-aaa'
+                      : 'palette-creator__color--large-aa'
+                  "
+                >
+                  {{
+                    accessibility[`--neon-rgb-${brandPalette}-${step}`].large ||
+                    accessibility[`--neon-rgb-${brandPalette}-${step}`].ratioLarge
+                  }}
+                </span>
+                <span
+                  v-if="accessibility[`--neon-rgb-${brandPalette}-${step}`]"
+                  :class="
+                    accessibility[`--neon-rgb-${brandPalette}-${step}`].normal === 'AAA'
+                      ? 'palette-creator__color--normal-aaa'
+                      : 'palette-creator__color--normal-aa'
+                  "
+                >
+                  {{
+                    accessibility[`--neon-rgb-${brandPalette}-${step}`].normal ||
+                    accessibility[`--neon-rgb-${brandPalette}-${step}`].ratioNormal
+                  }}
+                </span>
               </div>
             </div>
             <div class="palette-creator__dark-palette">
               <div v-for="step in stepsDark" :key="`${brandPalette}-${step}`">
                 <neon-color
-                  :class="`--neon-rgb-${brandPalette}-${step}`"
                   :model-value="palette[`--neon-rgb-${brandPalette}-${step}`]"
                   @update:modelValue="setStyle(`--neon-rgb-${brandPalette}-${step}`, $event)"
                 />
-                <span>{{ step }}</span>
+                <span class="palette-creator__color-level">{{ step }}</span>
+                <span
+                  v-if="accessibility[`--neon-rgb-${brandPalette}-${step}`]"
+                  :class="
+                    accessibility[`--neon-rgb-${brandPalette}-${step}`].large === 'AAA'
+                      ? 'palette-creator__color--large-aaa'
+                      : 'palette-creator__color--large-aa'
+                  "
+                >
+                  {{
+                    accessibility[`--neon-rgb-${brandPalette}-${step}`].large ||
+                    accessibility[`--neon-rgb-${brandPalette}-${step}`].ratioLarge
+                  }}
+                </span>
+                <span
+                  v-if="accessibility[`--neon-rgb-${brandPalette}-${step}`]"
+                  :class="
+                    accessibility[`--neon-rgb-${brandPalette}-${step}`].normal === 'AAA'
+                      ? 'palette-creator__color--normal-aaa'
+                      : 'palette-creator__color--normal-aa'
+                  "
+                >
+                  {{
+                    accessibility[`--neon-rgb-${brandPalette}-${step}`].normal ||
+                    accessibility[`--neon-rgb-${brandPalette}-${step}`].ratioNormal
+                  }}
+                </span>
               </div>
             </div>
           </div>
         </div>
       </neon-card-body>
       <neon-card-body>
-        <h2 class="neon-h4">Functional palettes</h2>
         <div class="neon--horizontal">
+          <h2 class="neon-h4">Functional palettes</h2>
+          <neon-tooltip>
+            <template #target>
+              <neon-switch v-model="toggleFunctional" label="Toggle details" />
+            </template>
+            <template #content>Display the WCAG contrast info for small & large text</template>
+          </neon-tooltip>
+        </div>
+        <br />
+        <div :class="{ 'palette-creator__palette-group--hide': !toggleFunctional }" class="neon--horizontal">
           <div
             v-for="functionalPalette in functionalPalettes"
             :key="functionalPalette"
             class="neon--vertical palette-creator__palette-group"
           >
             <h3 class="neon-h5">{{ functionalPalette }}</h3>
+            <neon-field label="Generate from">
+              <neon-color
+                :model-value="palette[`--neon-rgb-${functionalPalette}-l1`]"
+                class="neon--vertical palette-creator__select-reference"
+                size="s"
+                @update:modelValue="generatePalette(functionalPalette, $event)"
+              />
+            </neon-field>
             <div class="palette-creator__light-palette">
               <div v-for="step in stepsLight" :key="`${functionalPalette}-${step}`">
                 <neon-color
-                  :class="`--neon-rgb-${functionalPalette}-${step}`"
                   :model-value="palette[`--neon-rgb-${functionalPalette}-${step}`]"
                   @update:modelValue="setStyle(`--neon-rgb-${functionalPalette}-${step}`, $event)"
                 />
-                <span>{{ step }}</span>
+                <span class="palette-creator__color-level">{{ step }}</span>
+                <span
+                  v-if="accessibility[`--neon-rgb-${functionalPalette}-${step}`]"
+                  :class="
+                    accessibility[`--neon-rgb-${functionalPalette}-${step}`].large === 'AAA'
+                      ? 'palette-creator__color--large-aaa'
+                      : 'palette-creator__color--large-aa'
+                  "
+                >
+                  {{
+                    accessibility[`--neon-rgb-${functionalPalette}-${step}`].large ||
+                    accessibility[`--neon-rgb-${functionalPalette}-${step}`].ratioLarge
+                  }}
+                </span>
+                <span
+                  v-if="accessibility[`--neon-rgb-${functionalPalette}-${step}`]"
+                  :class="
+                    accessibility[`--neon-rgb-${functionalPalette}-${step}`].normal === 'AAA'
+                      ? 'palette-creator__color--normal-aaa'
+                      : 'palette-creator__color--normal-aa'
+                  "
+                >
+                  {{
+                    accessibility[`--neon-rgb-${functionalPalette}-${step}`].normal ||
+                    accessibility[`--neon-rgb-${functionalPalette}-${step}`].ratioNormal
+                  }}
+                </span>
               </div>
             </div>
             <div class="palette-creator__dark-palette">
               <div v-for="step in stepsDark" :key="`${functionalPalette}-${step}`">
                 <neon-color
-                  :class="`--neon-rgb-${functionalPalette}-${step}`"
                   :model-value="palette[`--neon-rgb-${functionalPalette}-${step}`]"
                   @update:modelValue="setStyle(`--neon-rgb-${functionalPalette}-${step}`, $event)"
                 />
-                <span>{{ step }}</span>
+                <span class="palette-creator__color-level">{{ step }}</span>
+                <span
+                  v-if="accessibility[`--neon-rgb-${functionalPalette}-${step}`]"
+                  :class="
+                    accessibility[`--neon-rgb-${functionalPalette}-${step}`].large === 'AAA'
+                      ? 'palette-creator__color--large-aaa'
+                      : 'palette-creator__color--large-aa'
+                  "
+                >
+                  {{
+                    accessibility[`--neon-rgb-${functionalPalette}-${step}`].large ||
+                    accessibility[`--neon-rgb-${functionalPalette}-${step}`].ratioLarge
+                  }}
+                </span>
+                <span
+                  v-if="accessibility[`--neon-rgb-${functionalPalette}-${step}`]"
+                  :class="
+                    accessibility[`--neon-rgb-${functionalPalette}-${step}`].normal === 'AAA'
+                      ? 'palette-creator__color--normal-aaa'
+                      : 'palette-creator__color--normal-aa'
+                  "
+                >
+                  {{
+                    accessibility[`--neon-rgb-${functionalPalette}-${step}`].normal ||
+                    accessibility[`--neon-rgb-${functionalPalette}-${step}`].ratioNormal
+                  }}
+                </span>
               </div>
             </div>
           </div>
