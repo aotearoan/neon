@@ -1,21 +1,21 @@
 name: Deploy to github pages
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 jobs:
   gh-pages-deploy:
     name: Deploying to gh-pages
     runs-on: ubuntu-latest
     steps:
-    - name: Set up Node.js
-      uses: actions/setup-node@master
-      with:
-        node-version: 12.x
-    - name: Checkout branch
-      uses: actions/checkout@v2
-    - name: Clean install dependencies
-      run: yarn install --frozen-lockfile
-    - name: Run deploy script
-      run: |
-        git config user.name "aotearoan" && git config user.email "andrew@aotearoan.com"
-        yarn run gh-pages-deploy
+      - name: Set up Node.js
+        uses: actions/setup-node@main
+        with:
+          node-version: 12.x
+      - name: Checkout branch
+        uses: actions/checkout@v2
+      - name: Clean install dependencies
+        run: npm install
+      - name: Run deploy script
+        run: |
+          git config user.name "aotearoan" && git config user.email "andrew@aotearoan.com"
+          npm run gh-pages-deploy

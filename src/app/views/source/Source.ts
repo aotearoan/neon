@@ -28,7 +28,7 @@ export default defineComponent({
               template.value = file;
             });
           });
-          ghLink.value = `https://github.com/aotearoan/neon/tree/master/src/common${to}.ts`;
+          ghLink.value = `https://github.com/aotearoan/neon/tree/main/src/common${to}.ts`;
         }
       },
       { immediate: true },
