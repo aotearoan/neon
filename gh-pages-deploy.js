@@ -5,7 +5,7 @@ const fs = require("fs");
   try {
     await execa("git", ["checkout", "--orphan", "gh-pages"]);
     console.log("Building...");
-    await execa("npm", ["run", "build"]);
+    await execa("npm", ["run", "build-app"]);
     await execa("git", ["--work-tree", "dist", "add", "--all"]);
     await execa("git", ["--work-tree", "dist", "commit", "-m", "gh-pages"]);
     console.log("Pushing to gh-pages...");
