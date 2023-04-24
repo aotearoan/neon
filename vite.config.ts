@@ -21,7 +21,7 @@ export default defineConfig({
   build: {
     minify: true,
     reportCompressedSize: true,
-    emptyOutDir: false,
+    emptyOutDir: true,
     outDir: './dist',
     sourcemap: true,
     lib: {
