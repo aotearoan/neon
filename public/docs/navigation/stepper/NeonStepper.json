@@ -56,9 +56,5 @@
         ]
       }
     }
-  ],
-  "sourceFiles": [
-    "./src/components/navigation/stepper/NeonStepper.vue",
-    "/Users/andrew/dev/projects/neon/src/components/navigation/stepper/NeonStepper.ts"
   ]
 }

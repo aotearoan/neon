@@ -187,9 +187,5 @@
         ]
       }
     }
-  ],
-  "sourceFiles": [
-    "./src/components/user-input/number/NeonNumber.vue",
-    "/Users/andrew/dev/projects/neon/src/components/user-input/number/NeonNumber.ts"
   ]
 }

@@ -94,9 +94,5 @@
         ]
       }
     }
-  ],
-  "sourceFiles": [
-    "./src/components/user-input/toggle/NeonToggle.vue",
-    "/Users/andrew/dev/projects/neon/src/components/user-input/toggle/NeonToggle.ts"
   ]
 }

@@ -109,9 +109,5 @@
         ]
       }
     }
-  ],
-  "sourceFiles": [
-    "./src/components/user-input/switch/NeonSwitch.vue",
-    "/Users/andrew/dev/projects/neon/src/components/user-input/switch/NeonSwitch.ts"
   ]
 }

@@ -56,9 +56,5 @@
         ]
       }
     }
-  ],
-  "sourceFiles": [
-    "./src/components/navigation/menu/NeonMenu.vue",
-    "/Users/andrew/dev/projects/neon/src/components/navigation/menu/NeonMenu.ts"
   ]
 }

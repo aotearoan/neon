@@ -15,9 +15,5 @@
         "value": "1"
       }
     }
-  ],
-  "sourceFiles": [
-    "./src/components/feedback/skeleton-loader/NeonSkeletonLoader.vue",
-    "/Users/andrew/dev/projects/neon/src/components/feedback/skeleton-loader/NeonSkeletonLoader.ts"
   ]
 }

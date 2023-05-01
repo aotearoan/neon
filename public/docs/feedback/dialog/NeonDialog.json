@@ -106,9 +106,5 @@
         ]
       }
     }
-  ],
-  "sourceFiles": [
-    "./src/components/feedback/dialog/NeonDialog.vue",
-    "/Users/andrew/dev/projects/neon/src/components/feedback/dialog/NeonDialog.ts"
   ]
 }

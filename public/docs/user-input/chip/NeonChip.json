@@ -87,9 +87,5 @@
         ]
       }
     }
-  ],
-  "sourceFiles": [
-    "./src/components/user-input/chip/NeonChip.vue",
-    "/Users/andrew/dev/projects/neon/src/components/user-input/chip/NeonChip.ts"
   ]
 }

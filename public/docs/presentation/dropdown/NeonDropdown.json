@@ -219,9 +219,5 @@
       "name": "default",
       "description": "The content of the open dropdown"
     }
-  ],
-  "sourceFiles": [
-    "./src/components/presentation/dropdown/NeonDropdown.vue",
-    "/Users/andrew/dev/projects/neon/src/components/presentation/dropdown/NeonDropdown.ts"
   ]
 }

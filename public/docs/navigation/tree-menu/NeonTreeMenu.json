@@ -34,9 +34,5 @@
         ]
       }
     }
-  ],
-  "sourceFiles": [
-    "./src/components/navigation/tree-menu/NeonTreeMenu.vue",
-    "/Users/andrew/dev/projects/neon/src/components/navigation/tree-menu/NeonTreeMenu.ts"
   ]
 }

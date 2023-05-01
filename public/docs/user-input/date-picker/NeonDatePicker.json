@@ -232,9 +232,5 @@
         "value": "'Next decade'"
       }
     }
-  ],
-  "sourceFiles": [
-    "./src/components/user-input/date-picker/NeonDatePicker.vue",
-    "/Users/andrew/dev/projects/neon/src/components/user-input/date-picker/NeonDatePicker.ts"
   ]
 }

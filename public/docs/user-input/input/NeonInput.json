@@ -229,9 +229,5 @@
         ]
       }
     }
-  ],
-  "sourceFiles": [
-    "./src/components/user-input/input/NeonInput.vue",
-    "/Users/andrew/dev/projects/neon/src/components/user-input/input/NeonInput.ts"
   ]
 }

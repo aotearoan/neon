@@ -80,9 +80,5 @@
       "name": "target",
       "description": "the tooltip target, i.e. the text, icon or otherwise which when hovered over triggers the tooltip to open"
     }
-  ],
-  "sourceFiles": [
-    "./src/components/feedback/tooltip/NeonTooltip.vue",
-    "/Users/andrew/dev/projects/neon/src/components/feedback/tooltip/NeonTooltip.ts"
   ]
 }

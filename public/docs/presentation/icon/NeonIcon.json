@@ -45,9 +45,5 @@
         "value": "false"
       }
     }
-  ],
-  "sourceFiles": [
-    "./src/components/presentation/icon/NeonIcon.vue",
-    "/Users/andrew/dev/projects/neon/src/components/presentation/icon/NeonIcon.ts"
   ]
 }

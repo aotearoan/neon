@@ -26,9 +26,5 @@
       "name": "default",
       "description": "contents of the grid, namely neon-grid-area components"
     }
-  ],
-  "sourceFiles": [
-    "./src/components/layout/grid/NeonGrid.vue",
-    "/Users/andrew/dev/projects/neon/src/components/layout/grid/NeonGrid.ts"
   ]
 }

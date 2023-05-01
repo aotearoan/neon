@@ -12,9 +12,5 @@
       },
       "required": true
     }
-  ],
-  "sourceFiles": [
-    "./src/components/navigation/anchor/NeonAnchor.vue",
-    "/Users/andrew/dev/projects/neon/src/components/navigation/anchor/NeonAnchor.ts"
   ]
 }

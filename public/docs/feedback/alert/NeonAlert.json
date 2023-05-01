@@ -26,9 +26,5 @@
         "value": "2500"
       }
     }
-  ],
-  "sourceFiles": [
-    "./src/components/feedback/alert/NeonAlert.vue",
-    "/Users/andrew/dev/projects/neon/src/components/feedback/alert/NeonAlert.ts"
   ]
 }

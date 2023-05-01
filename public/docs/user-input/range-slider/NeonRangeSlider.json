@@ -184,9 +184,5 @@
         ]
       }
     }
-  ],
-  "sourceFiles": [
-    "./src/components/user-input/range-slider/NeonRangeSlider.vue",
-    "/Users/andrew/dev/projects/neon/src/components/user-input/range-slider/NeonRangeSlider.ts"
   ]
 }

@@ -138,9 +138,5 @@
         }
       ]
     }
-  ],
-  "sourceFiles": [
-    "./src/components/user-input/select/NeonSelect.vue",
-    "/Users/andrew/dev/projects/neon/src/components/user-input/select/NeonSelect.ts"
   ]
 }

@@ -67,9 +67,5 @@
         "value": "null"
       }
     }
-  ],
-  "sourceFiles": [
-    "./src/components/presentation/label/NeonLabel.vue",
-    "/Users/andrew/dev/projects/neon/src/components/presentation/label/NeonLabel.ts"
   ]
 }

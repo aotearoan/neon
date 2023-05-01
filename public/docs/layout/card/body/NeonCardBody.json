@@ -21,9 +21,5 @@
       "name": "default",
       "description": "card body content"
     }
-  ],
-  "sourceFiles": [
-    "./src/components/layout/card/body/NeonCardBody.vue",
-    "/Users/andrew/dev/projects/neon/src/components/layout/card/body/NeonCardBody.ts"
   ]
 }
