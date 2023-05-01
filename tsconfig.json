@@ -4,7 +4,8 @@
     "env.d.ts",
     "**/*.d.ts",
     "src/**/*",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "version.ts"
   ],
   "exclude": [
     "dist",
@@ -36,6 +37,7 @@
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "esModuleInterop": true,
+    "composite": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "declaration": true,
@@ -52,5 +54,5 @@
     {
       "path": "./tsconfig.base.json"
     }
-  ],
+  ]
 }

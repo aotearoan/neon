@@ -32,6 +32,9 @@
     "dist/_virtual/**",
     "dist/common/**",
     "dist/components/**",
+    "dist/src/neon.d.ts",
+    "dist/src/common/**",
+    "dist/src/components/**",
     "src/sass/**"
   ],
   "keywords": [
