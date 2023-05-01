@@ -9,8 +9,6 @@
     outline-style="none"
     role="button"
     v-bind="attrs"
-    @keydown.space="click()"
-    @keypress.space.prevent=""
   >
     <neon-icon
       v-if="icon || state !== 'ready'"

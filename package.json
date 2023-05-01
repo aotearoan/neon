@@ -3,8 +3,8 @@
   "description": "Neon is a lightweight design library of Vue 3 components with minimal dependencies.",
   "version": "9.2.9",
   "main": "./dist/neon.cjs.js",
-  "module": "dist/neon.es.js",
-  "types": "dist/neon.d.ts",
+  "module": "./dist/neon.es.js",
+  "types": "./dist/src/neon.d.ts",
   "exports": {
     ".": {
       "import": "./dist/neon.es.js",
@@ -17,7 +17,7 @@
     "dev": "node doc-gen.js && genversion --es6 --semi ./version.ts && vite",
     "build": "genversion --es6 --semi ./version.ts && vite build && vue-tsc --emitDeclarationOnly",
     "build-app": "genversion --es6 --semi ./version.ts && vite --config vite.config.app.ts build",
-    "test": "genversion --es6 --semi ./version.ts && jest --no-cache",
+    "test": "genversion --es6 --semi ./version.ts && TZ=UTC jest --no-cache --maxWorkers=2",
     "preview": "npm run build-app && vite preview --port 4173",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",

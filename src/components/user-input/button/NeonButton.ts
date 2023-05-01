@@ -125,7 +125,10 @@ export default defineComponent({
       ];
     });
 
-    const click = () => button.value?.click();
+    const click = () => {
+      console.log(button.value);
+      button.value?.click();
+    };
 
     return {
       iconName,
