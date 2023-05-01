@@ -41,7 +41,6 @@
           <span class="top-nav-actions">
             <neon-button
               :circular="true"
-              :label="!isMobile ? 'GitHub' : undefined"
               :size="isMobile ? 's' : 'l'"
               :transparent="true"
               aria-label="View on GitHub"

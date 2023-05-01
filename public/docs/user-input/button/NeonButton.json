@@ -126,6 +126,17 @@
       }
     },
     {
+      "name": "transparent",
+      "description": "For text buttons, do not display the background. This is useful for icon buttons in headers.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
       "name": "outline",
       "description": "Whether to display a button outline when the button has focus",
       "type": {
