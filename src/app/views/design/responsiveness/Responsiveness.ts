@@ -20,20 +20,20 @@ export default defineComponent({
   // add desired larger-than-tablet responsive styling here
 }`);
 
-    const typescriptExample = ref(`private responsiveView = false;
+    const typescriptExample = ref(`const responsiveView = ref<boolean>(false);
+
+const handleResize = () => {
+  responsiveView.value = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.MobileLarge]).matches;
+}
 
 onMounted(() => {
-  window.addEventListener('resize', this.handleResize, { passive: true });
-  this.handleResize();
+  window.addEventListener('resize', handleResize, { passive: true });
+  handleResize();
 });
 
 onUnmounted(() => {
-  window.removeEventListener('resize', this.handleResize);
-});
-
-private handleResize() {
-  this.responsiveView = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.MobileLarge]).matches;
-}`);
+  window.removeEventListener('resize', handleResize);
+});`);
 
     return {
       sassExample,
