@@ -121,6 +121,20 @@ describe('NeonButton', () => {
     expect(html()).toMatch('neon-button--outline');
   });
 
+  it('renders text style', async () => {
+    const { html, rerender } = harness;
+    await rerender({ ...props, buttonStyle: NeonButtonStyle.Text });
+    expect(html()).toMatch('neon-button--text');
+    expect(html()).not.toMatch('neon-button--text-transparent');
+  });
+
+  it('renders transparent text style', async () => {
+    const { html, rerender } = harness;
+    await rerender({ ...props, buttonStyle: NeonButtonStyle.Text, transparent: true });
+    expect(html()).toMatch('neon-button--text');
+    expect(html()).toMatch('neon-button--text-transparent');
+  });
+
   it('renders icon position left', async () => {
     const { html, rerender } = harness;
     await rerender({ ...props, icon });

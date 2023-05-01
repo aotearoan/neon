@@ -65,6 +65,10 @@ export default defineComponent({
      */
     disabled: { type: Boolean, default: false },
     /**
+     * For text buttons, do not display the background. This is useful for icon buttons in headers.
+     */
+    transparent: { type: Boolean, default: false },
+    /**
      * Whether to display a button outline when the button has focus
      */
     outline: { type: Boolean, default: true },
@@ -112,6 +116,7 @@ export default defineComponent({
         `neon-button--${props.buttonStyle}`,
         `neon-button--state-${props.state}`,
         {
+          'neon-button--text-transparent': props.transparent && props.buttonStyle === NeonButtonStyle.Text,
           'neon-button--disabled': props.disabled,
           'neon-button--inverse': props.inverse,
           'neon-button--circular': props.circular,

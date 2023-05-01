@@ -6,6 +6,7 @@
           <span class="logo-wrapper top-nav-logo-wrapper">
             <neon-button
               :size="isMobile ? 's' : 'm'"
+              :transparent="true"
               aria-label="Open menu"
               button-style="text"
               color="primary"
@@ -42,6 +43,7 @@
               :circular="true"
               :label="!isMobile ? 'GitHub' : undefined"
               :size="isMobile ? 's' : 'l'"
+              :transparent="true"
               aria-label="View on GitHub"
               button-style="text"
               class="github-link"
@@ -52,6 +54,7 @@
             <neon-button
               :circular="true"
               :size="isMobile ? 's' : 'l'"
+              :transparent="true"
               aria-label="light/dark toggle"
               button-style="text"
               color="high-contrast"
@@ -75,6 +78,7 @@
               <span class="side-nav-actions">
                 <neon-button
                   :circular="true"
+                  :transparent="true"
                   aria-label="View on GitHub"
                   button-style="text"
                   class="github-link"
@@ -84,6 +88,7 @@
                 />
                 <neon-button
                   :circular="true"
+                  :transparent="true"
                   aria-label="Light/dark toggle"
                   button-style="text"
                   color="high-contrast"
