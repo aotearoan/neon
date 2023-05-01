@@ -52,7 +52,7 @@
   "events": [
     {
       "name": "click",
-      "description": "Emitted when the user triggers the link by clicking on it or hitting Enter when the link has focus.",
+      "description": "Emitted when the user triggers the link by clicking on it or hitting Enter or Space when the link has focus.",
       "type": {
         "names": [
           "void"

@@ -1,7 +1,7 @@
 import { computed, defineComponent, useAttrs } from 'vue';
 import { NeonOutlineStyle } from '@/common/enums/NeonOutlineStyle';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 
 /**
  * An HTML anchor component which handles VueRouter links (internal), href links (external) and clickable links (no href).
@@ -32,13 +32,14 @@ export default defineComponent({
   },
   emits: [
     /**
-     * Emitted when the user triggers the link by clicking on it or hitting Enter when the link has focus.
+     * Emitted when the user triggers the link by clicking on it or hitting Enter or Space when the link has focus.
      * @type {void}
      */
     'click',
   ],
   setup(props, { emit }) {
     const attrs = useAttrs();
+    const router = useRouter();
     const route = useRoute();
     const routerUrl = computed(() => (props.href?.indexOf('//') === -1 ? props.href : undefined));
 
@@ -55,12 +56,23 @@ export default defineComponent({
       emit('click');
     };
 
+    const onSpace = async () => {
+      onClick();
+
+      if (routerUrl.value) {
+        await router.push(props.href);
+      } else if (props.href) {
+        window.location.replace(props.href);
+      }
+    };
+
     return {
       routerUrl,
       sanitizedAttributes,
       activeRoute,
       exactRoute,
       onClick,
+      onSpace,
     };
   },
 });

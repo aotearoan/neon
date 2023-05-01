@@ -11,7 +11,7 @@
     v-bind="sanitizedAttributes"
     @click="onClick"
     @keydown.enter="onClick"
-    @keydown.space.stop.prevent="onClick"
+    @keydown.space.prevent="onSpace"
   >
     <span class="neon-link__label">
       <!-- @slot the content of the link -->
@@ -36,7 +36,7 @@
     v-bind="sanitizedAttributes"
     @click="onClick"
     @keydown.enter="onClick"
-    @keydown.space.stop.prevent="onClick"
+    @keydown.space.prevent="onSpace"
   >
     <span class="neon-link__label">
       <!-- @slot the content of the link -->
@@ -57,7 +57,7 @@
     v-bind="sanitizedAttributes"
     @click="onClick"
     @keydown.enter="onClick"
-    @keydown.space.stop.prevent="onClick"
+    @keydown.space.prevent="onSpace"
   >
     <span class="neon-link__label">
       <!-- @slot the content of the link -->

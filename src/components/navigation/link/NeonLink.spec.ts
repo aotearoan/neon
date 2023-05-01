@@ -8,8 +8,19 @@ describe('NeonLink', () => {
   const href = 'http://www.getskeleton.com';
   const props = { href };
   let harness: RenderResult;
+  const replace = jest.fn();
 
   beforeEach(async () => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    delete window.location;
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    window.location = {
+      replace,
+    };
+
     harness = render(NeonLink, {
       props,
       slots: {
@@ -76,7 +87,7 @@ describe('NeonLink', () => {
 
   it('emits click event', async () => {
     const { container, emitted, rerender } = harness;
-    await rerender({ href: '/test' });
+    await rerender({ href: 'http://getskeleton.com' });
     await fireEvent.click(container.querySelector('.neon-link') as HTMLAnchorElement);
     expect(emitted().click).toEqual([[]]);
   });
@@ -89,5 +100,27 @@ describe('NeonLink', () => {
       code: 'Enter',
     });
     expect(emitted().click).toEqual([[]]);
+  });
+
+  it('click external link on space keydown', async () => {
+    const { container, rerender } = harness;
+    const href = 'http://getskeleton.com';
+    await rerender({ href });
+    await fireEvent.keyDown(container.querySelector('.neon-link') as HTMLAnchorElement, {
+      key: 'Space',
+      code: 'Space',
+    });
+    expect(replace).toHaveBeenCalledWith(href);
+  });
+
+  it('clicks router link on space keydown', async () => {
+    const { container, rerender } = harness;
+    const href = '/test';
+    await rerender({ href });
+    await fireEvent.keyDown(container.querySelector('.neon-link') as HTMLAnchorElement, {
+      key: 'Space',
+      code: 'Space',
+    });
+    expect(router.push).toHaveBeenCalledWith(href);
   });
 });

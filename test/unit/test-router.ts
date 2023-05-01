@@ -1,7 +1,7 @@
 import { createMemoryHistory, createRouter } from 'vue-router';
 import { defineComponent } from 'vue';
 
-export const router = createRouter({
+const internalRouter = createRouter({
   history: createMemoryHistory(),
   routes: [
     {
@@ -16,3 +16,7 @@ export const router = createRouter({
     },
   ]
 });
+
+internalRouter.push = jest.fn();
+
+export const router = internalRouter;
