@@ -4,17 +4,11 @@
       <neon-card-body>
         <p>
           <strong>NeonDatePicker</strong> is the equivalent of the native
-          <neon-link
-            :external-indicator="true"
-            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date"
-            target="_blank"
-          >
+          <neon-link href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date" target="_blank">
             HTML Date Input
           </neon-link>
           . It accepts an
-          <neon-link :external-indicator="true" href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">
-            ISO 8601
-          </neon-link>
+          <neon-link href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank"> ISO 8601 </neon-link>
           date string as values & allows the user to select a date. Dates are formatted with the provided locale, if
           none is provided the browser locale is used as a default. On touch devices the native date picker is presented
           to the user.

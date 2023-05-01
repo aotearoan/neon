@@ -3,7 +3,7 @@
     <neon-card>
       <neon-card-header>
         <div>
-          <h1 class="neon-h3">Palette creator</h1>
+          <h1>Palette creator</h1>
           <p>Generate a custom palette for using with Neon</p>
         </div>
       </neon-card-header>

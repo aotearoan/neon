@@ -2,7 +2,7 @@
   <div>
     <neon-card>
       <neon-card-header>
-        <h1 class="neon-h3">Theming</h1>
+        <h1>Theming</h1>
       </neon-card-header>
     </neon-card>
     <neon-card>

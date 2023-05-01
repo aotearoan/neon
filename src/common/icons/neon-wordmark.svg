@@ -1,24 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 336 336" version="1.1"
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 1336 336" version="1.1"
      xmlns="http://www.w3.org/2000/svg" xml:space="preserve"
      style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <g transform="matrix(0.959252,-1.05313,0.780267,0.710714,-25.1371,119.248)">
-        <g transform="matrix(0.472715,0.700463,-0.518976,0.638024,73.7694,-58.4754)">
-            <use xlink:href="#_Image1" x="32.491" y="38.685" width="271.398px" height="259.801px"
+    <g transform="matrix(0.959252,-1.05313,0.780267,0.710714,974.863,119.248)">
+        <g transform="matrix(0.472715,0.700463,-0.518976,0.638024,-398.945,-758.938)">
+            <use xlink:href="#_Image1" x="1034.71" y="38.685" width="271.398px" height="259.801px"
                  transform="matrix(0.997785,0,0,0.999233,0,0)"/>
         </g>
     </g>
-    <g transform="matrix(1.42392,0,0,1.05543,162.366,-8.07434)">
-        <g transform="matrix(0.702286,-0,-0,0.947482,-114.027,7.65029)">
-            <use xlink:href="#_Image2" x="206.059" y="30" width="99.981px" height="276px"
+    <g transform="matrix(1.42392,0,0,1.05543,1162.37,-8.07434)">
+        <g transform="matrix(0.702286,-0,-0,0.947482,-816.313,7.65029)">
+            <use xlink:href="#_Image2" x="1206.25" y="30" width="99.981px" height="276px"
                  transform="matrix(0.999807,0,0,1,0,0)"/>
         </g>
     </g>
-    <g transform="matrix(1.42225,0,0,1.05543,-13.6025,-8.07434)">
-        <g transform="matrix(0.70311,-0,-0,0.947482,9.56407,7.65029)">
-            <use xlink:href="#_Image3" x="30.041" y="30" width="99.863px" height="276px"
+    <g transform="matrix(1.42225,0,0,1.05543,986.397,-8.07434)">
+        <g transform="matrix(0.70311,-0,-0,0.947482,-693.546,7.65029)">
+            <use xlink:href="#_Image3" x="1031.41" y="30" width="99.863px" height="276px"
                  transform="matrix(0.998635,0,0,1,0,0)"/>
+        </g>
+    </g>
+    <g transform="matrix(24.5315,0,0,24.5315,-860.671,-2168.12)">
+        <g transform="matrix(16,0,0,16,35.2206,100.863)">
+            <path fill="currentColor" class="neon-svg--fill"
+                  d="M0.07,-0L0.219,-0L0.219,-0.55L0.23,-0.55L0.388,-0L0.644,-0L0.644,-0.7L0.496,-0.7L0.496,-0.15L0.486,-0.15L0.324,-0.7L0.07,-0.7L0.07,-0Z"
+                  style="fill-rule:nonzero;"/>
+        </g>
+        <g transform="matrix(16,0,0,16,46.6446,100.863)">
+            <path fill="currentColor" class="neon-svg--fill"
+                  d="M0.308,0.013C0.41,0.013 0.512,-0.031 0.55,-0.149L0.42,-0.179C0.4,-0.135 0.354,-0.116 0.306,-0.116C0.237,-0.116 0.186,-0.158 0.185,-0.227L0.567,-0.227L0.567,-0.264C0.567,-0.42 0.466,-0.54 0.304,-0.54C0.157,-0.54 0.035,-0.428 0.035,-0.263C0.035,-0.104 0.147,0.013 0.308,0.013ZM0.186,-0.324C0.193,-0.371 0.236,-0.419 0.304,-0.419C0.366,-0.419 0.413,-0.377 0.42,-0.324L0.186,-0.324Z"
+                  style="fill-rule:nonzero;"/>
+        </g>
+        <g transform="matrix(16,0,0,16,56.2766,100.863)">
+            <path fill="currentColor" class="neon-svg--fill"
+                  d="M0.316,0.013C0.48,0.013 0.596,-0.107 0.596,-0.263C0.596,-0.419 0.481,-0.54 0.316,-0.54C0.152,-0.54 0.035,-0.42 0.035,-0.263C0.035,-0.107 0.151,0.013 0.316,0.013ZM0.316,-0.126C0.238,-0.126 0.183,-0.185 0.183,-0.263C0.183,-0.342 0.238,-0.401 0.316,-0.401C0.394,-0.401 0.448,-0.342 0.448,-0.263C0.448,-0.185 0.394,-0.126 0.316,-0.126Z"
+                  style="fill-rule:nonzero;"/>
+        </g>
+        <g transform="matrix(16,0,0,16,66.3726,100.863)">
+            <path fill="currentColor" class="neon-svg--fill"
+                  d="M0.06,-0L0.206,-0L0.206,-0.306C0.206,-0.359 0.243,-0.399 0.296,-0.399C0.347,-0.399 0.383,-0.36 0.383,-0.307L0.383,-0L0.529,-0L0.529,-0.354C0.529,-0.457 0.455,-0.54 0.344,-0.54C0.283,-0.54 0.24,-0.513 0.216,-0.479L0.206,-0.479L0.206,-0.527L0.06,-0.527L0.06,-0Z"
+                  style="fill-rule:nonzero;"/>
         </g>
     </g>
     <defs>

@@ -2,7 +2,7 @@
   <div v-if="selected && tabs.length > 0" class="component-documentation">
     <div class="component-documentation__header">
       <div class="component-documentation__header-container">
-        <h1 class="component-documentation__title neon-h2">{{ componentTitle }}</h1>
+        <h1 class="component-documentation__title">{{ componentTitle }}</h1>
         <span v-if="headline" class="component-documentation__headline neon-color-text-neutral">{{ headline }}</span>
         <neon-tabs v-model="selected" :tabs="tabs" />
       </div>

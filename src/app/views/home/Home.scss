@@ -10,18 +10,18 @@
     @include layout.padding;
   }
 
-  .neon-logo {
-    $logo-height: 100rem;
+  .neon-icon--name-neon-logo {
+    $logo-height: 200rem;
     height: $logo-height;
-    width: calc(#{$logo-height} * var(--neon-logo-width-multiplier));
+    width: $logo-height;
     max-width: 100%;
     align-self: center;
-    margin-top: calc(32 * var(--neon-base-space));
+    margin-top: calc(16 * var(--neon-base-space));
     margin-bottom: calc(5 * var(--neon-base-space));
 
     @include responsive.responsive(tablet) {
       height: 0.75 * $logo-height;
-      width: calc(#{0.75 * $logo-height} * var(--neon-logo-width-multiplier));
+      width: 0.75 * $logo-height;
     }
   }
 

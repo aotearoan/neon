@@ -2,7 +2,7 @@
   <div>
     <neon-card>
       <neon-card-header>
-        <h1 class="neon-h3">Layout</h1>
+        <h1>Layout</h1>
       </neon-card-header>
     </neon-card>
     <neon-card>

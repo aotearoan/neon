@@ -35,6 +35,7 @@ import menu from '@/common/icons/menu.svg';
 import minus from '@/common/icons/minus.svg';
 import moon from '@/common/icons/moon.svg';
 import neonLogo from '@/common/icons/neon-logo.svg';
+import neonWordmark from '@/common/icons/neon-wordmark.svg';
 import palette from '@/common/icons/palette.svg';
 import plus from '@/common/icons/plus.svg';
 import send from '@/common/icons/send.svg';
@@ -85,6 +86,7 @@ export class RegisterIcons {
     NeonIconRegistry.addIcon('minus', minus);
     NeonIconRegistry.addIcon('moon', moon);
     NeonIconRegistry.addIcon('neon-logo', neonLogo);
+    NeonIconRegistry.addIcon('neon-wordmark', neonWordmark);
     NeonIconRegistry.addIcon('palette', palette);
     NeonIconRegistry.addIcon('plus', plus);
     NeonIconRegistry.addIcon('send', send);

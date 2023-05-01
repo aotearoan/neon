@@ -2,7 +2,7 @@
   <div>
     <neon-card>
       <neon-card-header>
-        <h1 class="neon-h3">Responsiveness</h1>
+        <h1>Responsiveness</h1>
       </neon-card-header>
     </neon-card>
     <neon-card>

@@ -34,7 +34,7 @@
               </div>
             </neon-drawer>
             <neon-link aria-label="home" class="homepage-link" href="/" outline-style="none">
-              <neon-icon aria-label="Neon logo" class="homepage-logo" color="high-contrast" name="neon-logo" />
+              <neon-icon aria-label="Neon logo" class="homepage-logo" color="high-contrast" name="neon-wordmark" />
             </neon-link>
             <span class="tagline neon-color-text-brand">A Vue 3 Design System</span>
           </span>
@@ -68,12 +68,9 @@
         <neon-side-nav class="app-side-nav">
           <template #sticky>
             <div class="app-header">
-              <span class="logo-wrapper side-nav-logo-wrapper">
-                <neon-link aria-label="home" class="homepage-link" href="/" outline-style="none">
-                  <neon-icon aria-label="Neon logo" class="homepage-logo" color="high-contrast" name="neon-logo" />
-                </neon-link>
-                <span class="tagline neon-color-text-brand">A Vue 3 Design System</span>
-              </span>
+              <neon-link aria-label="home" class="homepage-link" href="/" outline-style="none">
+                <neon-icon aria-label="Neon logo" class="homepage-logo" color="high-contrast" name="neon-wordmark" />
+              </neon-link>
               <span class="side-nav-actions">
                 <neon-button
                   :circular="true"
@@ -97,6 +94,7 @@
                 />
               </span>
             </div>
+            <span class="tagline neon-color-text-brand">A Vue 3 Design System</span>
             <label class="menu-filter" for="menuFilterSideNav">Filter menu</label>
             <neon-input id="menuFilterSideNav" v-model="indexFilter" placeholder="Filter..." size="m" type="text" />
           </template>
@@ -145,17 +143,6 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-  }
-
-  .homepage-logo {
-    width: 128rem;
-    height: 33.6rem;
-
-    svg {
-      path {
-        fill: var(--neon-color-text-strong);
-      }
-    }
   }
 }
 </style>

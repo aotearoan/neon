@@ -2,13 +2,13 @@
   <div>
     <neon-card>
       <neon-card-header>
-        <h1 class="neon-h3">i18n Internationalization</h1>
+        <h1>i18n Internationalization</h1>
       </neon-card-header>
     </neon-card>
     <neon-card>
       <neon-card-body>
         <neon-anchor id="text-strings" />
-        <h1 class="neon-h3">Text Strings</h1>
+        <h1>Text Strings</h1>
         <p>
           Neon does not support i18n implicitly but rather adopts the approach of providing default English strings as
           component parameters where text is necessary. This means Neon works out of the box with English and can easily
@@ -20,7 +20,7 @@
       </neon-card-body>
       <neon-card-body>
         <neon-anchor id="dates-&-numbers" />
-        <h1 class="neon-h3">Dates & Numbers</h1>
+        <h1>Dates & Numbers</h1>
         <p>
           Neon uses the browser locale as a default for representing dates & numbers in a format the user expects. See
           <neon-link

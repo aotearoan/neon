@@ -75,7 +75,7 @@ export class NeonColorUtils {
 
       if (ratio >= 4.5) {
         result.normalAA = true;
-        result.largeAA = true;
+        result.largeAAA = true;
 
         if (ratio >= 7) {
           result.normalAAA = true;

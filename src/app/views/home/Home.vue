@@ -1,6 +1,7 @@
 <template>
   <div class="homepage">
     <div class="homepage__content">
+      <neon-icon name="neon-logo" />
       <h1>What is Neon?</h1>
       <p>Neon is a super lightweight library of Vue 3 components for building performant Vue applications.</p>
       <neon-button
@@ -55,10 +56,10 @@
           <h2>Customization</h2>
           <p>
             Neon uses CSS variables extensively to allow for customisation of component styles. It also uses
-            <neon-link :external-indicator="true" href="http://getbem.com/" target="_blank">BEM</neon-link>
+            <neon-link href="http://getbem.com/" target="_blank">BEM</neon-link>
             for CSS class definitions which makes for easy to read production source with better support for recording
             E2E tests. Further to this, targeting Neon's CSS classes is possible as Neon uses
-            <neon-link :external-indicator="true" href="https://semver.org/" target="_blank">SEMVER</neon-link>
+            <neon-link href="https://semver.org/" target="_blank">SEMVER</neon-link>
             , so if a class changes you'll know about it.
           </p>
           <neon-button
@@ -125,7 +126,7 @@
       </div>
       <span class="powered-by neon-color-text-neutral">
         This site was developed using
-        <neon-link :external-indicator="true" href="https://vuejs.org/" target="_blank">VueJS</neon-link> and Neon o‿o
+        <neon-link href="https://vuejs.org/" target="_blank">Vue</neon-link> and Neon o‿o
       </span>
     </div>
   </div>

@@ -2,7 +2,7 @@
   <div>
     <neon-card>
       <neon-card-header>
-        <h1 class="neon-h3">Adding a new component</h1>
+        <h1>Adding a new component</h1>
       </neon-card-header>
     </neon-card>
     <neon-card>

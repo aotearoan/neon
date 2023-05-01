@@ -48,9 +48,8 @@
       .side-nav-actions {
         display: flex;
         flex-direction: row;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
-        margin-bottom: calc(4 * var(--neon-base-space));
 
         .neon-select {
           width: 100%;
@@ -62,7 +61,22 @@
       }
     }
 
+    .homepage-logo {
+      width: 163rem;
+      height: 40rem;
+    }
+
     .app-top-nav {
+      .homepage-logo {
+        width: 122rem;
+        height: 30rem;
+
+        @include responsive.responsive(mobile-large) {
+          width: 81.5rem;
+          height: 20rem;
+        }
+      }
+
       @include responsive.responsive(larger-than-tablet) {
         display: none !important;
       }
@@ -74,20 +88,6 @@
 
         & > * {
           margin-right: calc(2 * var(--neon-base-space));
-        }
-
-        .neon-link__label {
-          display: flex;
-        }
-
-        .homepage-logo {
-          width: 96rem;
-          height: 25.2rem;
-
-          @include responsive.responsive(mobile-large) {
-            width: 64rem;
-            height: 16.8rem;
-          }
         }
       }
     }

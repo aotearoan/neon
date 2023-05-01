@@ -2,7 +2,7 @@
   <div>
     <neon-card>
       <neon-card-header>
-        <h1 class="neon-h3">Typography</h1>
+        <h1>Typography</h1>
       </neon-card-header>
     </neon-card>
     <neon-card>
@@ -18,7 +18,7 @@
           <span><strong>Note:</strong> use the class <em>neon-h0</em> to display H0 text.</span>
         </neon-note>
         <h2 class="neon-h4 typography-scale">Typography scale</h2>
-        <div class="no-style--font">
+        <div class="no-style--font typography-sample">
           <span class="neon-h0">H0 heading</span>
           <h1 role="presentation">H1 heading</h1>
           <h2 role="presentation">H2 heading</h2>
@@ -40,7 +40,7 @@
     </neon-card>
     <neon-card>
       <neon-card-header>
-        <h1 class="neon-h3">Body Text</h1>
+        <h1>Body Text</h1>
       </neon-card-header>
       <neon-card-body>
         <neon-anchor id="body-text" />
@@ -79,7 +79,8 @@
         <h2 class="neon-h4">Colored text</h2>
         <p>
           To find out how to adjust text colors, see
-          <neon-link href="/design/color#color-classes">Color classes</neon-link>.
+          <neon-link href="/design/color#color-classes">Color classes</neon-link>
+          .
         </p>
         <h2 class="neon-h4">Monospaced text</h2>
         <p class="neon-monospaced">Use the class <em>neon-monospaced</em> to display text in monospace.</p>
