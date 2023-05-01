@@ -218,6 +218,7 @@
                   :disabled="isDisabled(isoDate(dateCol, calendar.pageMonth, calendar.pageYear))"
                   :label="`${dateCol}`"
                   :tabindex="isDisabled(isoDate(dateCol, calendar.pageMonth, calendar.pageYear)) ? -1 : 0"
+                  :transparent="true"
                   button-style="text"
                   class="neon-date-picker__calendar-date"
                   size="m"

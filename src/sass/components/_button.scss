@@ -180,16 +180,10 @@
 
     &--m {
       @include button-medium;
-      @include responsive.responsive(tablet) {
-        @include button-small;
-      }
     }
 
     &--l {
       @include button-large;
-      @include responsive.responsive(tablet) {
-        @include button-medium;
-      }
     }
 
     &--xl {

@@ -138,102 +138,102 @@ exports[`NeonDatePicker renders change month replacement strings 1`] = `
         <hr>
         <div class="neon-date-picker__calendar-dates">
           <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div>
-          <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">1</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">2</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">3</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">4</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">5</span>
             <!--v-if-->
           </button>
         </div>
-        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">6</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">7</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">8</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">9</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">10</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">11</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">12</span>
             <!--v-if-->
           </button></div>
-        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">13</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">14</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">15</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date--today neon-date-picker__calendar-date neon-date-picker__calendar-date--today neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date--today neon-date-picker__calendar-date neon-date-picker__calendar-date--today neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">16</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">17</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">18</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">19</span>
             <!--v-if-->
           </button></div>
-        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">20</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">21</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">22</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">23</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">24</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">25</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">26</span>
             <!--v-if-->
           </button></div>
-        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">27</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">28</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">29</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">30</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">31</span>
             <!--v-if-->
           </button>
@@ -411,99 +411,99 @@ exports[`NeonDatePicker renders closed 1`] = `
           <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div>
           <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div>
           <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div>
-          <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">1</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">2</span>
             <!--v-if-->
           </button>
         </div>
-        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">3</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">4</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">5</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">6</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">7</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">8</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">9</span>
             <!--v-if-->
           </button></div>
-        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">10</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">11</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">12</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">13</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">14</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date--selected neon-date-picker__calendar-date neon-date-picker__calendar-date--selected neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">15</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date--selected neon-date-picker__calendar-date neon-date-picker__calendar-date--selected neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">16</span>
             <!--v-if-->
           </button></div>
-        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">17</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">18</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">19</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">20</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">21</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">22</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">23</span>
             <!--v-if-->
           </button></div>
-        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">24</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">25</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">26</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">27</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">28</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">29</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">30</span>
             <!--v-if-->
           </button></div>
@@ -581,99 +581,99 @@ exports[`NeonDatePicker renders open 1`] = `
           <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div>
           <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div>
           <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div>
-          <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">1</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">2</span>
             <!--v-if-->
           </button>
         </div>
-        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">3</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">4</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">5</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">6</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">7</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">8</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">9</span>
             <!--v-if-->
           </button></div>
-        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">10</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">11</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">12</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">13</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">14</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date--selected neon-date-picker__calendar-date neon-date-picker__calendar-date--selected neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">15</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date--selected neon-date-picker__calendar-date neon-date-picker__calendar-date--selected neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">16</span>
             <!--v-if-->
           </button></div>
-        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">17</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">18</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">19</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">20</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">21</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">22</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">23</span>
             <!--v-if-->
           </button></div>
-        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">24</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">25</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">26</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">27</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">28</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">29</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">30</span>
             <!--v-if-->
           </button></div>
@@ -748,102 +748,102 @@ exports[`NeonDatePicker renders with defaults of today 1`] = `
         <hr>
         <div class="neon-date-picker__calendar-dates">
           <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div>
-          <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">1</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">2</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">3</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">4</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">5</span>
             <!--v-if-->
           </button>
         </div>
-        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">6</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">7</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">8</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">9</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">10</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">11</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">12</span>
             <!--v-if-->
           </button></div>
-        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">13</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">14</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">15</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date--today neon-date-picker__calendar-date neon-date-picker__calendar-date--today neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date--today neon-date-picker__calendar-date neon-date-picker__calendar-date--today neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">16</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">17</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">18</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">19</span>
             <!--v-if-->
           </button></div>
-        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">20</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">21</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">22</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">23</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">24</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">25</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">26</span>
             <!--v-if-->
           </button></div>
-        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">27</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">28</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">29</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">30</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">31</span>
             <!--v-if-->
           </button>
@@ -924,99 +924,99 @@ exports[`NeonDatePicker renders with locale 1`] = `
           <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div>
           <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div>
           <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div>
-          <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">1</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">2</span>
             <!--v-if-->
           </button>
         </div>
-        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">3</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">4</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">5</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">6</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">7</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">8</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">9</span>
             <!--v-if-->
           </button></div>
-        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">10</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">11</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">12</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">13</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">14</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date--selected neon-date-picker__calendar-date neon-date-picker__calendar-date--selected neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">15</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date--selected neon-date-picker__calendar-date neon-date-picker__calendar-date--selected neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">16</span>
             <!--v-if-->
           </button></div>
-        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">17</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">18</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">19</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">20</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">21</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">22</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">23</span>
             <!--v-if-->
           </button></div>
-        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+        <div class="neon-date-picker__calendar-dates"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">24</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">25</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">26</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">27</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">28</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">29</span>
             <!--v-if-->
-          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
+          </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button neon-date-picker__calendar-date neon-date-picker__calendar-date" tabindex="0">
             <!--v-if--><span class="neon-button__label">30</span>
             <!--v-if-->
           </button></div>
