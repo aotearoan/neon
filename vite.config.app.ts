@@ -6,7 +6,7 @@ import { dependencies } from './package.json';
 import EnvironmentPlugin from 'vite-plugin-environment';
 
 const renderChunks = (deps: Record<string, string>) => {
-  let chunks: Record<string, any> = {};
+  const chunks: Record<string, Array<string>> = {};
   Object.keys(deps).forEach((key) => {
     if (['vue', 'vue-router'].includes(key)) return;
     chunks[key] = [key];
