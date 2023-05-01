@@ -472,7 +472,7 @@
 
     /* overlays */
     --neon-background-color-overlay: rgba(var(--neon-rgb-neutral-d5), 0.75);
-    --neon-background-color-overlay-opaque: rgba(var(--neon-rgb-neutral-d5), 1);
+    --neon-background-color-overlay-opaque: var(--neon-color-neutral-d5);
 
     /* toggle chips */
     --neon-border-width-toggle-chip: 0;
@@ -743,7 +743,7 @@
 
     /* overlays */
     --neon-background-color-overlay: rgba(var(--neon-rgb-neutral-d5), 0.75);
-    --neon-background-color-overlay-opaque: rgba(var(--neon-rgb-neutral-d5), 1);
+    --neon-background-color-overlay-opaque: var(--neon-color-neutral-l5);
 
     /* toggle chips */
     --neon-color-toggle-chip-text: var(--neon-color-text);
