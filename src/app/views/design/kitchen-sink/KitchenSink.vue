@@ -126,7 +126,7 @@
             />
           </neon-field>
           <neon-toggle-chip v-model="testToggleChip" :color="selectedPalette" :disabled="disabled" label="Medium" />
-          <neon-button :color="selectedPalette" :disabled="disabled" icon="plus" label="Solid button" />
+          <neon-button :color="selectedPalette" :disabled="disabled" icon="plus" label="Solid button" size="l" />
           <neon-button
             :color="selectedPalette"
             :disabled="disabled"
@@ -163,7 +163,7 @@
           />
           <neon-note :color="selectedPalette">
             <span
-              ><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue
+            ><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue
               bottle activated charcoal bicycle rights adaptogen.</span
             >
           </neon-note>

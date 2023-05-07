@@ -30,6 +30,17 @@
         "func": false,
         "value": "NeonSize.Medium"
       }
+    },
+    {
+      "name": "disabled",
+      "description": "Disabled style when used in combination with disabled inputs",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
     }
   ]
 }
