@@ -15,9 +15,5 @@
         "value": "false"
       }
     }
-  ],
-  "sourceFiles": [
-    "./src/components/presentation/logo/NeonLogo.vue",
-    "/Users/andrew/dev/projects/neon/src/components/presentation/logo/NeonLogo.ts"
   ]
 }
