@@ -22,7 +22,7 @@
       position: relative;
       display: flex;
       flex: 1 1 auto;
-      width: fit-content;
+      max-width: fit-content;
     }
 
     &__options {

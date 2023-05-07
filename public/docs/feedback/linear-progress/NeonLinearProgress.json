@@ -5,7 +5,7 @@
   "exportName": "default",
   "props": [
     {
-      "name": "value",
+      "name": "modelValue",
       "description": "If no total is provided (default) the current % completion is expressed as a %, e.g. 0.15 = 15%,\nIn the case of a total being provided this is the count of items from the total, i.e. the 'x' in 'x / y '.",
       "type": {
         "name": "number"

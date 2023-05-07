@@ -8,16 +8,13 @@
 
   .neon-input__text {
     height: var(--neon-size-#{$size});
+    padding-right: var(--neon-size-#{$size});
   }
 
   &.neon-input--state-loading,
   &.neon-input--state-success,
   &.neon-input--state-error,
   &.neon-input--with-icon {
-    .neon-input__text {
-      padding-right: var(--neon-size-#{$size});
-    }
-
     .neon-icon {
       position: absolute;
       width: calc(var(--neon-font-size-#{$font-size}) * var(--neon-line-height-one));

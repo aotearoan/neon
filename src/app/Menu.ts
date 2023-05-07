@@ -85,6 +85,12 @@ export class Menu {
                 page: 'Icons',
               },
               {
+                path: 'kitchen-sink',
+                page: 'KitchenSink',
+                name: 'Kitchen Sink',
+                keywords: 'showcase palettes',
+              },
+              {
                 path: 'layout',
                 page: 'Layout',
                 anchors: ['Units & Spacing', 'Desktop layout', 'Responsive layout', 'Page content'],

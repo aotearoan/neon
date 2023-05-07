@@ -12,30 +12,31 @@
         <div class="neon--vertical">
           <h4 class="neon-h5">Percentage</h4>
           <div class="neon--horizontal">
-            <neon-linear-progress :value="progressPercentage" />
+            <neon-linear-progress :model-value="progressPercentage" />
             <neon-button label="Complete" size="s" @click="progressPercentage = 1.0" />
           </div>
           <h4 class="neon-h5">Counter</h4>
           <div class="neon--horizontal">
-            <neon-linear-progress :total="55" :value="progressCounter" />
+            <neon-linear-progress :model-value="progressCounter" :total="55" />
             <neon-button label="Complete" size="s" @click="progressCounter = 55" />
           </div>
           <h4 class="neon-h5">No output</h4>
           <div class="neon--horizontal">
-            <neon-linear-progress :output="false" :total="55" :value="progressNoOutput" />
+            <neon-linear-progress :model-value="progressNoOutput" :output="false" :total="55" />
             <neon-button label="Complete" size="s" @click="progressNoOutput = 55" />
           </div>
           <h4 class="neon-h5">With label</h4>
           <div class="neon--horizontal">
-            <neon-linear-progress :total="55" :value="progressLabel" label="Label goes here" />
+            <neon-linear-progress :model-value="progressLabel" :total="55" label="Label goes here" />
           </div>
           <h4 class="neon-h5">With completion icon</h4>
           <div class="neon--horizontal">
-            <neon-linear-progress :total="55" :value="progressCompletedIcon" color="success" completed-icon="check" />
+            <neon-linear-progress :model-value="progressCompletedIcon" :total="55" color="success"
+                                  completed-icon="check" />
           </div>
           <h4 class="neon-h5">With completed icon</h4>
           <div class="neon--horizontal">
-            <neon-linear-progress :total="55" :value="progressLabel" label="Label goes here" />
+            <neon-linear-progress :model-value="progressLabel" :total="55" label="Label goes here" />
           </div>
         </div>
         <editor v-model="styleExamples" />
@@ -45,15 +46,15 @@
         <div class="neon--vertical">
           <h4 class="neon-h5">Small</h4>
           <div class="neon--horizontal">
-            <neon-linear-progress :value="progressPercentage" size="s" />
+            <neon-linear-progress :model-value="progressPercentage" size="s" />
           </div>
           <h4 class="neon-h5">Medium (default)</h4>
           <div class="neon--horizontal">
-            <neon-linear-progress :total="55" :value="progressCounter" />
+            <neon-linear-progress :model-value="progressCounter" :total="55" />
           </div>
           <h4 class="neon-h5">Large</h4>
           <div class="neon--horizontal">
-            <neon-linear-progress :output="false" :total="55" :value="progressNoOutput" size="l" />
+            <neon-linear-progress :model-value="progressNoOutput" :output="false" :total="55" size="l" />
           </div>
         </div>
         <editor v-model="sizeExamples" />
@@ -63,18 +64,18 @@
         <div class="neon--vertical">
           <h4 class="neon-h5">Default (primary)</h4>
           <div class="neon--horizontal">
-            <neon-linear-progress :value="progressPercentage" />
+            <neon-linear-progress :model-value="progressPercentage" />
           </div>
           <h4 class="neon-h5">Color override</h4>
           <div class="neon--horizontal">
-            <neon-linear-progress :total="55" :value="progressCounter" color="info" />
+            <neon-linear-progress :model-value="progressCounter" :total="55" color="info" />
           </div>
           <h4 class="neon-h5">Gradient</h4>
           <div class="neon--horizontal">
             <neon-linear-progress
+              :model-value="progressNoOutput"
               :output="false"
               :total="55"
-              :value="progressNoOutput"
               alternate-color="success"
               color="success"
             />

@@ -18,7 +18,7 @@ export default defineComponent({
      * If no total is provided (default) the current % completion is expressed as a %, e.g. 0.15 = 15%,
      * In the case of a total being provided this is the count of items from the total, i.e. the 'x' in 'x / y '.
      */
-    value: { type: Number, required: true },
+    modelValue: { type: Number, required: true },
     /**
      * When the total is provided the display is 'x / y' where total is the 'y' in 'x / y'.
      */
@@ -83,8 +83,8 @@ export default defineComponent({
     const computedOutput = computed(() => {
       return props.total
         ? `${NeonNumberUtils.formatNumber(calculatedValue.value, { decimals: props.decimals }, props.locale)} / ${
-            props.total
-          }`
+          props.total
+        }`
         : `${NeonNumberUtils.formatNumber(computedPercentage.value, { decimals: props.decimals }, props.locale)}%`;
     });
 
@@ -98,7 +98,7 @@ export default defineComponent({
     };
 
     watch(
-      () => props.value,
+      () => props.modelValue,
       (value: number) => {
         incrementValue(value);
       },

@@ -6,7 +6,7 @@ import { NeonSize } from '@/common/enums/NeonSize';
 describe('NeonLinearProgress', () => {
   it('renders output with total', (done) => {
     const { getByText, html } = render(NeonLinearProgress, {
-      props: { value: 9, total: 42 },
+      props: { modelValue: 9, total: 42 },
     });
     getByText('0 / 42');
     setTimeout(() => {
@@ -21,7 +21,7 @@ describe('NeonLinearProgress', () => {
 
   it('renders indicator width', (done) => {
     const { html } = render(NeonLinearProgress, {
-      props: { value: 10, total: 40 },
+      props: { modelValue: 10, total: 40 },
     });
     setTimeout(() => {
       expect(html()).toMatch('width: 25%;');
@@ -31,7 +31,7 @@ describe('NeonLinearProgress', () => {
 
   it('renders output as %', (done) => {
     const { getByText, html } = render(NeonLinearProgress, {
-      props: { value: 0.425 },
+      props: { modelValue: 0.425 },
     });
     expect(html()).toMatch('width: 0%;');
     setTimeout(() => {
@@ -43,7 +43,7 @@ describe('NeonLinearProgress', () => {
 
   it('renders output as % with locale', (done) => {
     const { getByText, html } = render(NeonLinearProgress, {
-      props: { value: 0.425, locale: 'de-DE' },
+      props: { modelValue: 0.425, locale: 'de-DE' },
     });
     expect(html()).toMatch('width: 0%;');
     setTimeout(() => {
@@ -55,35 +55,35 @@ describe('NeonLinearProgress', () => {
 
   it('renders label', () => {
     const { getByText } = render(NeonLinearProgress, {
-      props: { value: 0.4, label: 'XDD' },
+      props: { modelValue: 0.4, label: 'XDD' },
     });
     getByText('XDD');
   });
 
   it('renders color override', () => {
     const { html } = render(NeonLinearProgress, {
-      props: { value: 0.4, color: NeonFunctionalColor.Brand },
+      props: { modelValue: 0.4, color: NeonFunctionalColor.Brand },
     });
     expect(html()).toMatch('neon-linear-progress--brand');
   });
 
   it('renders alternate color override', () => {
     const { html } = render(NeonLinearProgress, {
-      props: { value: 0.4, alternateColor: NeonFunctionalColor.Brand },
+      props: { modelValue: 0.4, alternateColor: NeonFunctionalColor.Brand },
     });
     expect(html()).toMatch('neon-linear-progress--alternate-color-brand');
   });
 
   it('renders size override', () => {
     const { html } = render(NeonLinearProgress, {
-      props: { value: 0.4, size: NeonSize.Large },
+      props: { modelValue: 0.4, size: NeonSize.Large },
     });
     expect(html()).toMatch('neon-linear-progress--l');
   });
 
   it('renders completed icon', (done) => {
     const { html } = render(NeonLinearProgress, {
-      props: { value: 1, decimals: 2, completedIcon: 'check' },
+      props: { modelValue: 1, decimals: 2, completedIcon: 'check' },
     });
     setTimeout(() => {
       expect(html()).toMatch('neon-linear-progress__indicator--completed');
@@ -94,7 +94,12 @@ describe('NeonLinearProgress', () => {
 
   it('renders completed icon color override', (done) => {
     const { html } = render(NeonLinearProgress, {
-      props: { value: 1, decimals: 2, completedIcon: 'check', completedIconColor: NeonFunctionalColor.LowContrast },
+      props: {
+        modelValue: 1,
+        decimals: 2,
+        completedIcon: 'check',
+        completedIconColor: NeonFunctionalColor.LowContrast
+      },
     });
     setTimeout(() => {
       expect(html()).toMatch('neon-icon--low-contrast');
@@ -104,7 +109,7 @@ describe('NeonLinearProgress', () => {
 
   it('renders completed icon alternate color override', (done) => {
     const { html } = render(NeonLinearProgress, {
-      props: { value: 1, decimals: 2, completedIcon: 'check', alternateColor: NeonFunctionalColor.LowContrast },
+      props: { modelValue: 1, decimals: 2, completedIcon: 'check', alternateColor: NeonFunctionalColor.LowContrast },
     });
     setTimeout(() => {
       expect(html()).toMatch('neon-icon--low-contrast');

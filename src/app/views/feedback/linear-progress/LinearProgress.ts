@@ -25,28 +25,28 @@ export default defineComponent({
     const progressCompletedIcon = ref(55);
 
     const styleExamples = `<div>
-  <neon-linear-progress :value="progressPercentage" />
+  <neon-linear-progress :model-value="progressPercentage" />
   <neon-button size="s" label="Complete" @click="progressPercentage = 1.00" />
 </div>
 <div>
-  <neon-linear-progress :value="progressCounter" :total="55" />
+  <neon-linear-progress :model-value="progressCounter" :total="55" />
   <neon-button size="s" label="Complete" @click="progressCounter = 55" />
 </div>
 <div>
-  <neon-linear-progress :value="progressNoOutput" :total="55" :output="false" />
+  <neon-linear-progress :model-value="progressNoOutput" :total="55" :output="false" />
   <neon-button size="s" label="Complete" @click="progressNoOutput = 55" />
 </div>
-<neon-linear-progress :value="progressLabel" label="Label goes here" :total="55" />
-<neon-linear-progress :value="progressCompletedIcon" :total="55" completed-icon="check" color="success" />
-<neon-linear-progress :value="progressLabel" label="Label goes here" :total="55" />`;
+<neon-linear-progress :model-value="progressLabel" label="Label goes here" :total="55" />
+<neon-linear-progress :model-value="progressCompletedIcon" :total="55" completed-icon="check" color="success" />
+<neon-linear-progress :model-value="progressLabel" label="Label goes here" :total="55" />`;
 
-    const sizeExamples = `<neon-linear-progress size="s" :value="progressPercentage" />
-<neon-linear-progress :value="progressCounter" :total="55" />
-<neon-linear-progress size="l" :value="progressNoOutput" :total="55" :output="false" />`;
+    const sizeExamples = `<neon-linear-progress size="s" :model-value="progressPercentage" />
+<neon-linear-progress :model-value="progressCounter" :total="55" />
+<neon-linear-progress size="l" :model-value="progressNoOutput" :total="55" :output="false" />`;
 
-    const colorExamples = `<neon-linear-progress :value="progressPercentage" />
-<neon-linear-progress color="info" :value="progressCounter" :total="55" />
-<neon-linear-progress color="success" alternate-color="success" :value="progressNoOutput" :total="55" :output="false" />`;
+    const colorExamples = `<neon-linear-progress :model-value="progressPercentage" />
+<neon-linear-progress color="info" :model-value="progressCounter" :total="55" />
+<neon-linear-progress color="success" alternate-color="success" :model-value="progressNoOutput" :total="55" :output="false" />`;
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonLinearProgress')));
 
