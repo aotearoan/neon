@@ -211,6 +211,17 @@ export default defineComponent({
       }
     };
 
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (
+        event.key !== 'Backspace' &&
+        props.maxlength &&
+        props.modelValue &&
+        props.modelValue.length >= props.maxlength
+      ) {
+        event.preventDefault();
+      }
+    };
+
     const computedPlaceholder = computed(() => {
       if (props.placeholder) {
         return props.placeholder;
@@ -242,6 +253,7 @@ export default defineComponent({
       onBlur,
       iconClicked,
       changeValue,
+      onKeyDown,
     };
   },
 });

@@ -44,6 +44,7 @@
       v-bind="sanitizedAttributes"
       @blur="onBlur"
       @focus="onFocus"
+      @keydown="onKeyDown"
       @input.stop.prevent="changeValue"
     ></textarea>
     <neon-icon
