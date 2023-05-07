@@ -46,6 +46,17 @@
       }
     },
     {
+      "name": "disabled",
+      "description": "Display the label as disabled",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
       "name": "color",
       "description": "The label color",
       "type": {
