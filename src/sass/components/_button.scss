@@ -166,8 +166,8 @@
     }
 
     .neon-icon {
-      width: var(--neon-h5-size);
-      height: var(--neon-h5-size);
+      width: var(--neon-h4-size);
+      height: var(--neon-h4-size);
     }
   }
 }
@@ -176,6 +176,7 @@
   .neon-button {
     margin-left: 0;
     margin-right: 0;
+    cursor: pointer;
 
     &--s {
       @include button-small;
@@ -337,6 +338,7 @@
         &:not(.neon-button--text-transparent) {
           background: var(--neon-color-disabled-background);
         }
+
         color: var(--neon-color-disabled-text);
       }
     }
