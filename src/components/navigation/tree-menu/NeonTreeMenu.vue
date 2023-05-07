@@ -34,6 +34,7 @@
               class="neon-tree-menu__link"
               outline-style="none"
               tabindex="-1"
+              @click="onClick(link.key)"
             >
               <span
                 class="neon-tree-menu__link-label neon-tree-menu__link-label--outline-text"
