@@ -91,6 +91,7 @@
     &__actions {
       position: absolute;
       top: 0;
+      gap: calc(2 * var(--neon-base-space));
       right: var(--neon-base-space);
       display: flex;
       flex-direction: row;
