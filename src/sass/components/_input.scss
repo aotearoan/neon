@@ -58,7 +58,11 @@
       cursor: pointer;
 
       &:active {
-        top: calc(0.5 * (var(--neon-size-#{$size}) - var(--neon-font-size-#{$font-size})) + 1rem);
+        @if ($size == 's') {
+          top: calc(1.5 * var(--neon-base-space));
+        } @else {
+          top: calc(1.75 * var(--neon-base-space));
+        }
       }
     }
   }
