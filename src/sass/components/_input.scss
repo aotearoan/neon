@@ -17,10 +17,33 @@
   &.neon-input--with-icon {
     .neon-icon {
       position: absolute;
-      width: calc(var(--neon-font-size-#{$font-size}) * var(--neon-line-height-one));
-      height: calc(var(--neon-font-size-#{$font-size}) * var(--neon-line-height-one));
-      right: calc(0.5 * (var(--neon-size-#{$size}) - var(--neon-font-size-#{$font-size})));
-      top: calc(0.5 * (var(--neon-size-#{$size}) - var(--neon-font-size-#{$font-size})) - 1rem);
+
+      @if ($size == 's') {
+        width: calc(var(--neon-size-#{$size}) - 2.5 * var(--neon-base-space));
+        height: calc(var(--neon-size-#{$size}) - 2.5 * var(--neon-base-space));
+        top: calc(1.25 * var(--neon-base-space));
+        right: calc(1.25 * var(--neon-base-space));
+
+        padding: calc(0.5 * var(--neon-base-space));
+        &.neon-icon--name-close {
+          padding: var(--neon-base-space);
+        }
+      } @else {
+        width: calc(var(--neon-size-#{$size}) - 3 * var(--neon-base-space));
+        height: calc(var(--neon-size-#{$size}) - 3 * var(--neon-base-space));
+        top: calc(1.5 * var(--neon-base-space));
+        right: calc(1.5 * var(--neon-base-space));
+
+        padding: calc(1 * var(--neon-base-space));
+
+        &.neon-icon--name-close {
+          @if ($size == 'l') {
+            padding: calc(2.75 * var(--neon-base-space));
+          } @else {
+            padding: calc(1.75 * var(--neon-base-space));
+          }
+        }
+      }
       cursor: default;
       border-radius: 50%;
 
