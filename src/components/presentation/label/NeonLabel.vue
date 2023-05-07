@@ -9,10 +9,11 @@
       {
         'neon-label--with-icon': icon,
         'neon-label--with-label': label,
+        'neon-label--disabled': disabled,
       },
     ]"
   >
-    <neon-icon v-if="icon" class="neon-label__icon" :color="color" :name="icon"></neon-icon>
+    <neon-icon v-if="icon" class="neon-label__icon" :color="color" :disabled="disabled" :name="icon" />
     <span v-if="label" class="neon-label__label">{{ label }}</span>
   </div>
 </template>

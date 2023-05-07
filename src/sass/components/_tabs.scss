@@ -7,34 +7,35 @@
   .neon-tabs {
     @each $color in palettes.$neon-functional-colors {
       &.neon-tabs--#{$color} {
-        $tab-color: var(--neon-color-#{$color});
+        $tab-selected-color: var(--neon-color-tab-selected-#{$color});
+        $tab-hover-color: var(--neon-color-tab-hover-#{$color});
 
         .neon-tabs__menu-item {
-          &:hover:not(.neon-tabs__menu-item--selected),
-          &:active:not(.neon-tabs__menu-item--selected) {
-            @include svg.color-with-svg($tab-color);
+          &--selected {
+            @include svg.color-with-svg($tab-selected-color);
 
             .neon-tabs__menu-item-container:before {
-              background-color: $tab-color;
+              background-color: $tab-selected-color;
             }
           }
 
-          &--selected {
-            @include svg.color-with-svg($tab-color);
+          &:hover,
+          &:active {
+            @include svg.color-with-svg($tab-hover-color);
 
             .neon-tabs__menu-item-container:before {
-              background-color: $tab-color;
+              background-color: $tab-hover-color;
             }
           }
 
           &-container:focus:before {
-            background-color: $tab-color;
+            background-color: $tab-hover-color;
           }
         }
 
         .neon-tab {
           &:focus:before {
-            background-color: $tab-color;
+            background-color: $tab-hover-color;
           }
         }
       }

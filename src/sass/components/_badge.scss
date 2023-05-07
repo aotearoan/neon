@@ -30,8 +30,8 @@
     }
 
     &--disabled {
-      color: var(--neon-color-disabled-light);
-      background: var(--neon-color-disabled-dark);
+      color: var(--neon-color-disabled-text);
+      background: var(--neon-color-disabled-background);
       cursor: not-allowed;
     }
 

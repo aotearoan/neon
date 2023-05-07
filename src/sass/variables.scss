@@ -289,13 +289,12 @@
 
     --neon-label-color: var(--neon-color-neutral-l1);
 
-    --neon-rgb-disabled-light: var(--neon-rgb-neutral-d2);
-    --neon-rgb-disabled-medium: var(--neon-rgb-neutral-d3);
-    --neon-rgb-disabled-dark: var(--neon-rgb-neutral-d4);
-
-    --neon-color-disabled-light: var(--neon-color-low-contrast-d3);
-    --neon-color-disabled-medium: var(--neon-color-low-contrast-d4);
-    --neon-color-disabled-dark: var(--neon-color-low-contrast-d5);
+    --neon-rgb-disabled-text: var(--neon-rgb-disabled-text-dark);
+    --neon-rgb-disabled-border: var(--neon-rgb-disabled-border-dark);
+    --neon-rgb-disabled-background: var(--neon-rgb-disabled-background-dark);
+    --neon-color-disabled-text: var(--neon-color-disabled-text-dark);
+    --neon-color-disabled-border: var(--neon-color-disabled-border-dark);
+    --neon-color-disabled-background: var(--neon-color-disabled-background-dark);
 
     /* switch */
     --neon-rgb-switch-off: var(--neon-rgb-neutral-d2);
@@ -303,8 +302,6 @@
     --neon-color-switch-indicator: var(--neon-color-neutral-d4);
     --neon-inset-shadow-switch: inset 0 2rem 2rem rgba(0, 0, 0, 0.014), inset 0 4rem 4rem rgba(0, 0, 0, 0.028),
     inset 0 12rem 12rem rgba(0, 0, 0, 0.03);
-    --neon-color-switch-disabled: var(--neon-color-disabled-medium);
-    --neon-color-switch-indicator-disabled: var(--neon-color-disabled-light);
 
     /* solid buttons */
     --neon-color-solid-button: var(--neon-color-inverse);
@@ -393,9 +390,9 @@
 
     /* link */
     --neon-rgb-link: var(--neon-rgb-primary-l1);
-    --neon-color-link: rgba(var(--neon-rgb-primary-l1), 0.75);
-    --neon-color-link-hover: var(--neon-color-primary-l1);
-    --neon-color-link-visited: rgba(var(--neon-rgb-primary-l2), 0.667);
+    --neon-color-link: var(--neon-color-primary-l1);
+    --neon-color-link-hover: var(--neon-color-primary-l2);
+    --neon-color-link-visited: rgba(var(--neon-rgb-primary-l1), 0.6);
 
     /* action menu */
     --neon-color-action-menu-hover: var(--neon-color-neutral-d3);
@@ -410,7 +407,7 @@
 
     /* toggle */
     --neon-color-toggle-selected: var(--neon-color-neutral-d5);
-    --neon-border-color-toggle: var(--neon-color-neutral-d3);
+    --neon-border-color-toggle: var(--neon-color-neutral-d2);
     --neon-opacity-toggle: 0.125;
     --neon-opacity-toggle-selected: 0.33;
     --neon-opacity-toggle-hover: 0.25;
@@ -424,7 +421,7 @@
     --neon-border-color-input: var(--neon-color-neutral-d2);
     --neon-background-color-input: rgba(var(--neon-rgb-neutral-d5), 0.5);
     --neon-background-color-input-active: var(--neon-color-neutral-d5);
-    --neon-color-placeholder: var(--neon-color-disabled-light);
+    --neon-color-placeholder: var(--neon-color-low-contrast-d3);
 
     /* drop zone */
     --neon-rgb-drop-zone-background: var(--neon-rgb-neutral-d5);
@@ -457,6 +454,24 @@
 
     /* tabs */
     --neon-border-color-tabs-underline: transparent;
+    --neon-color-tab-selected-low-contrast: var(--neon-color-low-contrast-l1);
+    --neon-color-tab-selected-neutral: var(--neon-color-neutral-l1);
+    --neon-color-tab-selected-high-contrast: var(--neon-color-high-contrast-l1);
+    --neon-color-tab-selected-brand: var(--neon-color-brand-l1);
+    --neon-color-tab-selected-primary: var(--neon-color-primary-l1);
+    --neon-color-tab-selected-info: var(--neon-color-info-l1);
+    --neon-color-tab-selected-success: var(--neon-color-success-l1);
+    --neon-color-tab-selected-warn: var(--neon-color-warn-l1);
+    --neon-color-tab-selected-error: var(--neon-color-error-l1);
+    --neon-color-tab-hover-low-contrast: var(--neon-color-low-contrast-l2);
+    --neon-color-tab-hover-neutral: var(--neon-color-neutral-l2);
+    --neon-color-tab-hover-high-contrast: var(--neon-color-high-contrast-l2);
+    --neon-color-tab-hover-brand: var(--neon-color-brand-l2);
+    --neon-color-tab-hover-primary: var(--neon-color-primary-l2);
+    --neon-color-tab-hover-info: var(--neon-color-info-l2);
+    --neon-color-tab-hover-success: var(--neon-color-success-l2);
+    --neon-color-tab-hover-warn: var(--neon-color-warn-l2);
+    --neon-color-tab-hover-error: var(--neon-color-error-l2);
 
     /* footer */
     --neon-background-color-footer: var(--neon-background-color);
@@ -496,12 +511,11 @@
     --neon-background-color-side-nav: var(--neon-background-color-card);
 
     /* input indicators */
-    --neon-background-color-input-indicator: var(--neon-color-high-contrast-d2);
+    --neon-background-color-input-indicator: var(--neon-background-color-input);
     --neon-color-input-indicator: var(--neon-color-neutral);
 
     /* stepper */
-    --neon-color-stepper-indicator: var(--neon-color-high-contrast-d3);
-    --neon-color-stepper-disabled: var(--neon-color-disabled-light);
+    --neon-color-stepper-indicator: var(--neon-color-inverse);
 
     /* selectable card */
     --neon-background-color-selectable-card: rgba(var(--neon-rgb-neutral-d5), 0.5);
@@ -561,13 +575,12 @@
 
     --neon-label-color: var(--neon-color-neutral-d1);
 
-    --neon-rgb-disabled-light: var(--neon-rgb-low-contrast-l5);
-    --neon-rgb-disabled-medium: var(--neon-rgb-low-contrast-l4);
-    --neon-rgb-disabled-dark: var(--neon-rgb-high-contrast-l3);
-
-    --neon-color-disabled-light: var(--neon-color-low-contrast-l5);
-    --neon-color-disabled-medium: var(--neon-color-low-contrast-l4);
-    --neon-color-disabled-dark: var(--neon-color-low-contrast-l3);
+    --neon-rgb-disabled-text: var(--neon-rgb-disabled-text-light);
+    --neon-rgb-disabled-border: var(--neon-rgb-disabled-border-light);
+    --neon-rgb-disabled-background: var(--neon-rgb-disabled-background-light);
+    --neon-color-disabled-text: var(--neon-color-disabled-text-light);
+    --neon-color-disabled-border: var(--neon-color-disabled-border-light);
+    --neon-color-disabled-background: var(--neon-color-disabled-background-light);
 
     /* switch */
     --neon-rgb-switch-off: var(--neon-rgb-neutral-l3);
@@ -575,8 +588,6 @@
     --neon-color-switch-indicator: var(--neon-color-high-contrast-l5);
     --neon-inset-shadow-switch: inset 0 2rem 2rem rgba(0, 0, 0, 0.014), inset 0 4rem 4rem rgba(0, 0, 0, 0.028),
     inset 0 12rem 12rem rgba(0, 0, 0, 0.03);
-    --neon-color-switch-disabled: var(--neon-color-disabled-light);
-    --neon-color-switch-indicator-disabled: var(--neon-color-disabled-dark);
 
     /* solid buttons */
     --neon-color-solid-button: var(--neon-color-inverse);
@@ -664,9 +675,9 @@
 
     /* link */
     --neon-rgb-link: var(--neon-rgb-primary-d1);
-    --neon-color-link: rgba(var(--neon-rgb-primary-d1), 0.75);
-    --neon-color-link-hover: var(--neon-color-primary-d1);
-    --neon-color-link-visited: rgba(var(--neon-rgb-primary-d2), 0.667);
+    --neon-color-link: var(--neon-color-primary-d1);
+    --neon-color-link-hover: var(--neon-color-primary-d2);
+    --neon-color-link-visited: rgba(var(--neon-rgb-primary-d1), 0.6);
 
     /* action menu */
     --neon-color-action-menu-hover: var(--neon-color-neutral-l4);
@@ -693,7 +704,7 @@
 
     /* input */
     --neon-border-color-input: var(--neon-color-neutral-l3);
-    --neon-background-color-input: rgba(var(--neon-rgb-high-contrast-l4), 0.75);
+    --neon-background-color-input: var(--neon-color-high-contrast-l5);
     --neon-background-color-input-active: rgba(var(--neon-rgb-high-contrast-l4), 0.5);
     --neon-color-placeholder: var(--neon-color-low-contrast-l3);
 
@@ -728,6 +739,24 @@
 
     /* tabs */
     --neon-border-color-tabs-underline: transparent;
+    --neon-color-tab-selected-low-contrast: var(--neon-color-low-contrast-d2);
+    --neon-color-tab-selected-neutral: var(--neon-color-neutral-d2);
+    --neon-color-tab-selected-high-contrast: var(--neon-color-high-contrast-d2);
+    --neon-color-tab-selected-brand: var(--neon-color-brand-d2);
+    --neon-color-tab-selected-primary: var(--neon-color-primary-d2);
+    --neon-color-tab-selected-info: var(--neon-color-info-d2);
+    --neon-color-tab-selected-success: var(--neon-color-success-d2);
+    --neon-color-tab-selected-warn: var(--neon-color-warn-d2);
+    --neon-color-tab-selected-error: var(--neon-color-error-d2);
+    --neon-color-tab-hover-low-contrast: var(--neon-color-low-contrast-d1);
+    --neon-color-tab-hover-neutral: var(--neon-color-neutral-d1);
+    --neon-color-tab-hover-high-contrast: var(--neon-color-high-contrast-d1);
+    --neon-color-tab-hover-brand: var(--neon-color-brand-d1);
+    --neon-color-tab-hover-primary: var(--neon-color-primary-d1);
+    --neon-color-tab-hover-info: var(--neon-color-info-d1);
+    --neon-color-tab-hover-success: var(--neon-color-success-d1);
+    --neon-color-tab-hover-warn: var(--neon-color-warn-d1);
+    --neon-color-tab-hover-error: var(--neon-color-error-d1);
 
     /* footer */
     --neon-background-color-footer: var(--neon-background-color);
@@ -766,12 +795,11 @@
     --neon-background-color-side-nav: var(--neon-background-color-card);
 
     /* input indicators */
-    --neon-background-color-input-indicator: var(--neon-color-high-contrast-l3);
+    --neon-background-color-input-indicator: var(--neon-background-color-input);
     --neon-color-input-indicator: var(--neon-color-neutral);
 
     /* stepper */
     --neon-color-stepper-indicator: var(--neon-color-high-contrast-l5);
-    --neon-color-stepper-disabled: var(--neon-color-disabled-dark);
 
     /* selectable card */
     --neon-background-color-selectable-card: rgba(var(--neon-rgb-high-contrast-l4), 0.5);

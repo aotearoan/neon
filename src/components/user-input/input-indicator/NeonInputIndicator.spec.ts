@@ -21,6 +21,13 @@ describe('NeonInputIndicator', () => {
     expect(container.querySelector('.neon-input-indicator--with-icon')).toBeDefined();
   });
 
+  it('renders disabled', () => {
+    // given
+    const { container } = render(NeonInputIndicator, { props: { disabled: true } });
+    // when / then
+    expect(container.querySelector('.neon-input-indicator--disabled')).toBeDefined();
+  });
+
   it('renders default size', () => {
     // given
     const { container } = render(NeonInputIndicator, { props: {} });

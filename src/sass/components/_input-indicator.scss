@@ -9,9 +9,12 @@
     user-select: none;
     font-weight: var(--neon-font-weight-normal);
     letter-spacing: var(--neon-letter-spacing-s);
-    border: var(--neon-border-width) var(--neon-border-style) var(--neon-border-color-input);
-    background-color: var(--neon-background-color-input-indicator);
-    @include svg.color-with-svg(var(--neon-color-input-indicator));
+
+    &:not(.neon-input-indicator--disabled) {
+      border: var(--neon-border-width) var(--neon-border-style) var(--neon-border-color-input);
+      background-color: var(--neon-background-color-input-indicator);
+      color: var(--neon-color-input-indicator);
+    }
 
     &__label {
       display: flex;
@@ -71,6 +74,12 @@
         width: var(--neon-font-size-l);
         height: var(--neon-font-size-l);
       }
+    }
+
+    &.neon-input-indicator--disabled {
+      border: var(--neon-border-width) var(--neon-border-style) var(--neon-color-disabled-border);
+      background-color: var(--neon-color-disabled-background);
+      color: var(--neon-color-disabled-text);
     }
   }
 }

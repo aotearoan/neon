@@ -73,12 +73,12 @@
 
       &--disabled {
         box-shadow: none;
-        border-color: var(--neon-color-disabled-dark);
-        background-color: var(--neon-color-disabled-dark);
-        @include svg.color-with-svg(var(--neon-color-disabled-light));
+        border-color: var(--neon-color-disabled-border);
+        background-color: var(--neon-color-disabled-background);
+        @include svg.color-with-svg(var(--neon-color-disabled-text));
 
         &::placeholder {
-          color: var(--neon-color-disabled-light);
+          color: var(--neon-color-disabled-text);
         }
       }
 

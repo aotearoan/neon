@@ -27,11 +27,11 @@
 
       &--disabled {
         .neon-svg--fill {
-          fill: var(--neon-color-disabled-light);
+          fill: var(--neon-color-disabled-text);
         }
 
         .neon-svg--stroke {
-          stroke: var(--neon-color-disabled-light);
+          stroke: var(--neon-color-disabled-text);
         }
       }
     }

@@ -28,7 +28,7 @@
           left: -50%;
           top: calc(3 * var(--neon-base-space) - 1rem);
           height: 1rem;
-          border-top: 1rem dashed var(--neon-color-stepper-disabled);
+          border-top: 1rem dashed var(--neon-color-disabled-border);
         }
       }
 
@@ -51,7 +51,7 @@
         border-radius: 50%;
         border: 1rem solid var(--neon-background-color-card);
         margin-top: 1rem;
-        background: var(--neon-color-stepper-disabled);
+        background: var(--neon-color-disabled-border);
         transition: all var(--neon-animation-speed-fast) ease-in-out;
 
         .neon-stepper__step-completed-icon,
@@ -76,7 +76,7 @@
         z-index: 1;
         font-size: var(--neon-font-size-xs);
         font-weight: var(--neon-font-weight-normal);
-        color: var(--neon-color-stepper-disabled);
+        color: var(--neon-color-disabled-text);
         text-align: center;
       }
 

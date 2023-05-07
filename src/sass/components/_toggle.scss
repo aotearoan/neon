@@ -13,7 +13,8 @@
 
     &__label {
       user-select: none;
-      padding: calc(2 * var(--neon-base-space)) calc(3 * var(--neon-base-space));
+      cursor: pointer;
+      padding: calc(2 * var(--neon-base-space)) 0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -59,13 +60,14 @@
 
           &.neon-toggle--disabled .neon-toggle__label,
           .neon-toggle__label--disabled {
-            @include svg.color-with-svg(rgba($toggle-rgb, 0.2));
+            @include svg.color-with-svg(var(--neon-color-disabled-text));
+            background-color: var(--neon-color-disabled-background);
           }
 
           &.neon-toggle--disabled .neon-toggle__label--checked,
           .neon-toggle__label--disabled.neon-toggle__label--checked {
-            @include svg.color-with-svg(rgba($toggle-rgb, 0.33));
-            background-color: rgba($toggle-rgb, 0.125);
+            @include svg.color-with-svg(var(--neon-color-disabled-background));
+            background-color: var(--neon-color-disabled-text);
           }
         }
       }
@@ -110,15 +112,15 @@
 
       &.neon-toggle--disabled .neon-toggle__label,
       .neon-toggle__label--disabled {
-        color: var(--neon-color-disabled-light);
+        color: var(--neon-color-disabled-text);
 
         .neon-toggle__radio-button {
-          background: var(--neon-color-disabled-dark);
-          color: var(--neon-color-disabled-light);
-          border-color: var(--neon-color-disabled-dark);
+          background: var(--neon-color-disabled-background);
+          color: var(--neon-color-disabled-text);
+          border: var(--neon-border-style) var(--neon-border-width) var(--neon-color-disabled-border);
 
           &-indicator {
-            background-color: var(--neon-color-disabled-light);
+            background-color: var(--neon-color-disabled-text);
           }
         }
       }
@@ -126,6 +128,7 @@
 
     &--horizontal {
       flex-direction: row;
+      gap: calc(6 * var(--neon-base-space));
     }
 
     &--disabled {

@@ -31,8 +31,12 @@
           </div>
           <h4 class="neon-h5">With completion icon</h4>
           <div class="neon--horizontal">
-            <neon-linear-progress :model-value="progressCompletedIcon" :total="55" color="success"
-                                  completed-icon="check" />
+            <neon-linear-progress
+              :model-value="progressCompletedIcon"
+              :total="55"
+              color="success"
+              completed-icon="check"
+            />
           </div>
           <h4 class="neon-h5">With completed icon</h4>
           <div class="neon--horizontal">

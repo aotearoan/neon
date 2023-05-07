@@ -83,8 +83,8 @@ export default defineComponent({
     const computedOutput = computed(() => {
       return props.total
         ? `${NeonNumberUtils.formatNumber(calculatedValue.value, { decimals: props.decimals }, props.locale)} / ${
-          props.total
-        }`
+            props.total
+          }`
         : `${NeonNumberUtils.formatNumber(computedPercentage.value, { decimals: props.decimals }, props.locale)}%`;
     });
 

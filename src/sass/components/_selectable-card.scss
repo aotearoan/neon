@@ -49,11 +49,11 @@
     }
 
     &--disabled {
-      color: var(--neon-color-disabled-dark);
+      color: var(--neon-color-disabled-background);
       box-shadow: none;
 
       .neon-card {
-        border-color: var(--neon-color-disabled-dark);
+        border-color: var(--neon-color-disabled-border);
       }
 
       &,

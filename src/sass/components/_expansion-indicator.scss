@@ -1,3 +1,5 @@
+@use '../includes/svg';
+
 @mixin expansion-indicator {
   .neon-expansion-indicator__line1,
   .neon-expansion-indicator__line2 {
@@ -45,6 +47,10 @@
       .neon-expansion-indicator__line2 {
         transform: rotate(35deg);
       }
+    }
+
+    &.neon-expansion-indicator--disabled {
+      @include svg.svg-colors(var(--neon-color-disabled-text));
     }
   }
 }

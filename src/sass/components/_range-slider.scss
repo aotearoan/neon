@@ -12,8 +12,8 @@
 }
 
 @mixin range-slider-track-lower-disabled {
-  $disabled-track-color: var(--neon-color-disabled-dark);
-  background: linear-gradient($disabled-track-color, $disabled-track-color) 0 / var(--sx) 100% no-repeat var(--neon-color-disabled-light);
+  $disabled-track-color: var(--neon-color-disabled-background);
+  background: linear-gradient($disabled-track-color, $disabled-track-color) 0 / var(--sx) 100% no-repeat var(--neon-color-disabled-text);
 }
 
 @mixin range-slider {
@@ -41,8 +41,14 @@
         }
       }
 
+      .neon-slider__legend {
+        position: absolute;
+        bottom: calc(-14.5 * var(--neon-base-space));
+        width: 100%;
+      }
+
       .neon-slider__tooltip {
-        bottom: 4rem;
+        bottom: calc(-1.5 * var(--neon-base-space));
       }
 
       &.neon-slider--disabled {
@@ -81,12 +87,16 @@
     .neon-range-slider__lower.neon-slider--no-legend,
     .neon-range-slider__upper {
       .neon-slider__tooltip {
-        bottom: -19rem;
+        bottom: calc(-1.5 * var(--neon-base-space));
       }
     }
     
     &.neon-range-slider--disabled {
       cursor: not-allowed;
+
+      .neon-slider__output {
+        color: var(--neon-color-disabled-text);
+      }
     }
 
     &.neon-range-slider__output-range-separator {
@@ -113,7 +123,7 @@
     .neon-range-slider__lower,
     .neon-range-slider__upper {
       position: absolute;
-      top: 24rem;
+      top: calc(3 * var(--neon-base-space));
       width: 100%;
     }
 

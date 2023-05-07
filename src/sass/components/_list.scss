@@ -32,8 +32,8 @@
           &,
           &:focus,
           &:hover {
-            background-color: var(--neon-color-disabled-dark);
-            color: rgba(var(--neon-rgb-disabled-light), 0.75);
+            background-color: var(--neon-color-disabled-background);
+            color: rgba(var(--neon-rgb-disabled-text), 0.75);
           }
         }
       }

@@ -1,4 +1,5 @@
 @use '../includes/palettes';
+@use '../includes/svg';
 @use '../includes/layout';
 @use '../includes/gradient';
 
@@ -21,7 +22,7 @@
   .neon-label {
     @each $color in palettes.$neon-functional-colors {
       &--#{$color} {
-        color: var(--neon-color-#{$color});
+        @include svg.color-with-svg(var(--neon-color-#{$color}));
         background: rgba(var(--neon-rgb-#{$color}), 0.15);
 
         @each $alternateColor in palettes.$neon-functional-colors {
@@ -36,6 +37,10 @@
       }
     }
 
+    &.neon-label--disabled {
+      @include svg.color-with-svg(var(--neon-color-disabled-text));
+      background: var(--neon-color-disabled-background);
+    }
 
     &--xxs {
       padding: 0 var(--neon-base-space);

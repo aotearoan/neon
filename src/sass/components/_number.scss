@@ -63,10 +63,10 @@
     .neon-button--disabled {
       &.neon-number__decrement,
       &.neon-number__increment {
-        background-color: var(--neon-color-disabled-dark);
+        background-color: var(--neon-color-disabled-background);
 
         .neon-svg--fill {
-          fill: var(--neon-color-disabled-light);
+          fill: var(--neon-color-disabled-text);
         }
 
         border: none;
@@ -76,7 +76,7 @@
     &:not(.neon-number--editable) {
       &:not(.neon-number--disabled) .neon-number__input .neon-input__textfield {
         box-shadow: none;
-        background-color: var(--neon-color-disabled-dark);
+        background-color: var(--neon-color-disabled-background);
         color: inherit;
         -webkit-text-fill-color: inherit;
       }
@@ -86,12 +86,12 @@
       .neon-button--disabled {
         &.neon-number__decrement,
         &.neon-number__increment {
-          border: var(--neon-border-width) var(--neon-border-style) var(--neon-color-disabled-dark);
+          border: var(--neon-border-width) var(--neon-border-style) var(--neon-color-disabled-border);
         }
       }
 
       &:not(.neon-number--with-buttons) .neon-input__textfield {
-        border: var(--neon-border-width) var(--neon-border-style) var(--neon-color-disabled-dark);
+        border: var(--neon-border-width) var(--neon-border-style) var(--neon-color-disabled-border);
       }
     }
 

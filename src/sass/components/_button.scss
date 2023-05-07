@@ -49,7 +49,10 @@
 
 @mixin outline-button($color) {
   border: var(--neon-border-width-outline-button) var(--neon-border-style) var(--neon-background-outline-button-active-#{$color});
-  @include svg.color-with-svg(var(--neon-background-outline-button-active-#{$color}));
+  &:not(.neon-button--disabled) {
+    color: var(--neon-background-outline-button-active-#{$color});
+    @include svg.svg-colors(var(--neon-background-outline-button-active-#{$color}));
+  }
 
   &:hover:not(:disabled),
   &:active:not(:disabled) {
@@ -270,7 +273,7 @@
 
     @each $color in palettes.$neon-button-colors {
       &--#{$color} {
-        &.neon-button--solid {
+        &.neon-button--solid:not(.neon-button--disabled) {
           @if ($color == 'inverse') {
             color: var(--neon-color-solid-button-inverse);
             @include svg.color-with-svg(var(--neon-color-solid-button-inverse));
@@ -311,8 +314,8 @@
       }
 
       &.neon-button--disabled {
-        color: var(--neon-color-disabled-light);
-        background: var(--neon-color-disabled-dark);
+        color: var(--neon-color-disabled-text);
+        background: var(--neon-color-disabled-background);
         box-shadow: none;
       }
     }
@@ -321,17 +324,20 @@
       background: transparent;
 
       &.neon-button--disabled {
-        color: var(--neon-color-disabled-light);
-        border-color: var(--neon-color-disabled-light);
+        color: var(--neon-color-disabled-text);
+        border-color: var(--neon-color-disabled-border);
       }
     }
 
-    &--text {
+    &.neon-button--text {
       background-color: transparent;
       border: none;
 
       &.neon-button--disabled {
-        color: var(--neon-color-disabled-light);
+        &:not(.neon-button--text-transparent) {
+          background: var(--neon-color-disabled-background);
+        }
+        color: var(--neon-color-disabled-text);
       }
     }
 

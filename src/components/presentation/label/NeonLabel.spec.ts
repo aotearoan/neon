@@ -30,6 +30,13 @@ describe('NeonLabel', () => {
     expect(html()).toMatch('neon-label__icon');
   });
 
+  it('renders disabled', async () => {
+    const { html, rerender } = harness;
+
+    await rerender({ disabled: true });
+    expect(html()).toMatch('neon-label--disabled');
+  });
+
   it('renders default size', () => {
     const { html } = harness;
     expect(html()).toMatch('neon-label--s');

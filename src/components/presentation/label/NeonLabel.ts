@@ -30,6 +30,10 @@ export default defineComponent({
      */
     size: { type: String as () => NeonLabelSize, default: NeonLabelSize.Small },
     /**
+     * Display the label as disabled
+     */
+    disabled: { type: Boolean, default: false },
+    /**
      * The label color
      */
     color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Neutral },

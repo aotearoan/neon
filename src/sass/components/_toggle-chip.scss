@@ -102,9 +102,9 @@
 
     &--disabled {
       cursor: not-allowed;
-      opacity: 0.85;
-      color: var(--neon-color-disabled-light);
-      border-color: var(--neon-border-color-toggle-chip);
+      background-color: var(--neon-color-disabled-background);
+      color: var(--neon-color-disabled-text);
+      border-color: var(--neon-color-disabled-border);
     }
   }
 }

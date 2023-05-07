@@ -13,6 +13,7 @@
     <neon-icon
       v-if="icon || state !== 'ready'"
       :color="buttonStyle !== 'solid' ? color : undefined"
+      :disabled="disabled"
       :inverse="buttonStyle === 'solid' || inverse"
       :name="iconName"
     />

@@ -98,7 +98,7 @@ describe('NeonLinearProgress', () => {
         modelValue: 1,
         decimals: 2,
         completedIcon: 'check',
-        completedIconColor: NeonFunctionalColor.LowContrast
+        completedIconColor: NeonFunctionalColor.LowContrast,
       },
     });
     setTimeout(() => {

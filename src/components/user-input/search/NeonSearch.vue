@@ -31,7 +31,7 @@
           ]"
           class="neon-search__container"
         >
-          <neon-icon class="neon-search__search-icon" color="low-contrast" name="search" />
+          <neon-icon :disabled="disabled" class="neon-search__search-icon" color="low-contrast" name="search" />
           <template v-if="multiple">
             <neon-chip
               v-for="(selected, index) in modelValue"

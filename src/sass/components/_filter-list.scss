@@ -95,11 +95,11 @@
         &,
         &:focus,
         &:hover {
-          color: rgba(var(--neon-rgb-disabled-light), 0.75);
+          color: rgba(var(--neon-rgb-disabled-text), 0.75);
         }
 
         &.neon-filter-list__item--selected {
-          background-color: rgba(var(--neon-rgb-disabled-dark), 0.25);
+          background-color: rgba(var(--neon-rgb-disabled-background), 0.25);
         }
 
       }

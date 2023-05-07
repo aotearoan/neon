@@ -30,7 +30,11 @@ $message-height: calc(var(--neon-font-size-s) * var(--neon-line-height-ratio));
 
     &.neon-field--disabled {
       cursor: not-allowed;
-      color: var(--neon-color-disabled-dark);
+
+      .neon-field__message,
+      .neon-field__label {
+        color: var(--neon-color-disabled-text);
+      }
     }
 
     &--with-message {

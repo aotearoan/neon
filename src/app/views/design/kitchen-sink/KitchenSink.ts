@@ -24,6 +24,7 @@ import {
   NeonNote,
   NeonNotificationCounter,
   NeonNumber,
+  NeonRangeSlider,
   NeonSearch,
   type NeonSearchOption,
   NeonSelect,
@@ -65,6 +66,7 @@ export default defineComponent({
     NeonNote,
     NeonNotificationCounter,
     NeonNumber,
+    NeonRangeSlider,
     NeonSearch,
     NeonSelect,
     NeonSelectableCard,
@@ -77,12 +79,11 @@ export default defineComponent({
     NeonTreeMenu,
   },
   setup() {
-
     const disabled = ref<boolean>(false);
     const selectedPalette = ref<NeonFunctionalColor>(NeonFunctionalColor.LowContrast);
     const paletteOptions: Array<NeonSelectOption> = Object.entries(NeonFunctionalColor).map(([label, key]) => ({
       key,
-      label: label === 'LowContrast' ? 'Low contrast' : (label === 'HighContrast' ? 'High contrast' : label),
+      label: label === 'LowContrast' ? 'Low contrast' : label === 'HighContrast' ? 'High contrast' : label,
     }));
 
     const toggleModel: Array<NeonToggleModel> = [
@@ -234,7 +235,7 @@ export default defineComponent({
     const tabs = [
       {
         key: 'tab1',
-        icon: 'heart',
+        icon: 'user',
         label: 'Tab one',
       },
       {
@@ -381,11 +382,14 @@ export default defineComponent({
       testSearch.value = testSearch.value.map((value) => ({ ...value, chipColor: palette }));
     };
 
-    const filteredSearchOptions = computed(() => searchOptions.value
-      .filter((option) => !testSearch.value.includes(option))
-      .filter((option) => option.label.toLowerCase().indexOf(searchFilter.value.toLowerCase()) >= 0));
+    const filteredSearchOptions = computed(() =>
+      searchOptions.value
+        .filter((option) => !testSearch.value.includes(option))
+        .filter((option) => option.label.toLowerCase().indexOf(searchFilter.value.toLowerCase()) >= 0),
+    );
 
     const testNumber = ref<number>(42);
+    const testRangeSlider = ref<Array<number>>([22, 86]);
     const testSlider = ref<number>(42);
     const testProgress = ref<number>(0.42);
     const testSelect = ref<string>('');
@@ -439,6 +443,7 @@ export default defineComponent({
       testMenu,
       testTreeMenu,
       testSelectableCard,
+      testRangeSlider,
       onPalette,
     };
   },

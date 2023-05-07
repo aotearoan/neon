@@ -32,15 +32,15 @@ $neon-width-slider-tooltip: 201rem;
 
 @mixin disabled-track {
   cursor: not-allowed;
-  $disabled-track-color: var(--neon-color-disabled-light);
-  background: linear-gradient($disabled-track-color, $disabled-track-color) 0 / var(--sx) 100% no-repeat var(--neon-color-disabled-dark);
+  $disabled-track-color: var(--neon-color-disabled-text);
+  background: linear-gradient($disabled-track-color, $disabled-track-color) 0 / var(--sx) 100% no-repeat var(--neon-color-disabled-background);
 }
 
 @mixin thumb-disabled {
   cursor: not-allowed;
-  background: var(--neon-color-disabled-light);
+  background: var(--neon-color-disabled-text);
   box-shadow: none;
-  border-color: var(--neon-color-disabled-light);
+  border-color: var(--neon-color-disabled-text);
 }
 
 @mixin slider {
@@ -236,7 +236,12 @@ $neon-width-slider-tooltip: 201rem;
     }
   }
 
-  &.neon-slider--disabled {
+  .neon-slider.neon-slider--disabled {
+    .neon-slider__output,
+    .neon-slider__legend {
+      color: var(--neon-color-disabled-text);
+    }
+
     .neon-slider__input {
       &::-webkit-slider-runnable-track {
         @include disabled-track;

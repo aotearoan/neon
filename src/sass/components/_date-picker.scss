@@ -119,7 +119,7 @@
 
         &.neon-date-picker__calendar-date--disabled {
           cursor: not-allowed;
-          color: var(--neon-color-disabled-light);
+          color: var(--neon-color-disabled-text);
         }
       }
     }
@@ -141,7 +141,7 @@
 
         &.neon-date-picker__calendar-option--disabled {
           cursor: not-allowed;
-          color: var(--neon-color-disabled-light);
+          color: var(--neon-color-disabled-text);
         }
       }
     }

@@ -64,10 +64,10 @@ a[href]:not(.neon-link--no-style) {
 
     &--outline-text {
       &:hover {
-        color: var(--neon-color-link);
+        color: var(--neon-color-link-hover);
 
         &:after {
-          background-color: var(--neon-color-link);
+          background-color: var(--neon-color-link-hover);
         }
       }
     }
@@ -75,7 +75,7 @@ a[href]:not(.neon-link--no-style) {
     &__external-indicator {
       width: var(--neon-font-size-s);
       height: var(--neon-font-size-s);
-      margin-left: var(--neon-base-space);
+      margin-left: calc(2 * var(--neon-base-space));
       vertical-align: -2rem;
       opacity: 0.5;
     }

@@ -159,13 +159,13 @@
       .neon-input__text,
       .neon-input__textarea {
         box-shadow: none;
-        border-color: var(--neon-color-disabled-dark);
-        background-color: var(--neon-color-disabled-dark);
+        border-color: var(--neon-color-disabled-border);
+        background-color: var(--neon-color-disabled-background);
 
         &,
         &::placeholder {
-          color: var(--neon-color-disabled-light);
-          -webkit-text-fill-color: var(--neon-color-disabled-light);
+          color: var(--neon-color-disabled-text);
+          -webkit-text-fill-color: var(--neon-color-disabled-text);
         }
       }
 

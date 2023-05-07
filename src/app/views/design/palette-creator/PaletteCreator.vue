@@ -79,6 +79,57 @@
           </div>
         </div>
       </neon-card-body>
+      <neon-card-body class="palette-creator__text-vars">
+        <h2 class="neon-h4">Disabled variables</h2>
+        <div class="neon--horizontal">
+          <div class="neon--vertical">
+            <neon-field for="disabledBackgroundDark" label="Disabled background dark">
+              <neon-color
+                id="disabledBackgroundDark"
+                :model-value="palette['--neon-rgb-disabled-background-dark']"
+                @update:modelValue="setStyle('--neon-rgb-disabled-background-dark', $event)"
+              />
+            </neon-field>
+            <neon-field for="disabledBorderDark" label="Disabled border dark">
+              <neon-color
+                id="disabledBorderDark"
+                :model-value="palette['--neon-rgb-disabled-border-dark']"
+                @update:modelValue="setStyle('--neon-rgb-disabled-border-dark', $event)"
+              />
+            </neon-field>
+            <neon-field for="disabledTextDark" label="Disabled text dark">
+              <neon-color
+                id="disabledTextDark"
+                :model-value="palette['--neon-rgb-disabled-text-dark']"
+                @update:modelValue="setStyle('--neon-rgb-disabled-text-dark', $event)"
+              />
+            </neon-field>
+          </div>
+          <div class="neon--vertical">
+            <neon-field for="disabledBackgroundLight" label="Disabled background light">
+              <neon-color
+                id="disabledBackgroundLight"
+                :model-value="palette['--neon-rgb-disabled-background-light']"
+                @update:modelValue="setStyle('--neon-rgb-disabled-background-light', $event)"
+              />
+            </neon-field>
+            <neon-field for="disabledBorderLight" label="Disabled border light">
+              <neon-color
+                id="disabledBorderLight"
+                :model-value="palette['--neon-rgb-disabled-border-light']"
+                @update:modelValue="setStyle('--neon-rgb-disabled-border-light', $event)"
+              />
+            </neon-field>
+            <neon-field for="disabledTextLight" label="Disabled text light">
+              <neon-color
+                id="disabledTextLight"
+                :model-value="palette['--neon-rgb-disabled-text-light']"
+                @update:modelValue="setStyle('--neon-rgb-disabled-text-light', $event)"
+              />
+            </neon-field>
+          </div>
+        </div>
+      </neon-card-body>
       <neon-card-body>
         <div class="neon--horizontal">
           <h2 class="neon-h4">Neutral palettes</h2>

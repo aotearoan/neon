@@ -28,15 +28,15 @@
   @include toggle-size($font-size, $size);
 
   .neon-toggle__radio-button {
-    width: $control-size;
-    height: $control-size;
+    width: 1.25 * $control-size;
+    height: 1.25 * $control-size;
   }
 
   .neon-toggle__label--checked {
     .neon-toggle__radio-button {
       &-indicator {
-        width: $control-size - 6rem;
-        height: $control-size - 6rem;
+        width: 0.75 * $control-size;
+        height: 0.75 * $control-size;
       }
     }
   }

@@ -24,7 +24,9 @@
     }
 
     &--disabled {
-      opacity: 0.5;
+      color: var(--neon-color-disabled-text);
+      background-color: transparent;
+      border-color: var(--neon-color-disabled-border);
       cursor: not-allowed;
     }
 

@@ -26,5 +26,9 @@ export default defineComponent({
      * The size of the input indicator
      */
     size: { type: String as () => NeonSize, default: NeonSize.Medium },
+    /**
+     * Disabled style when used in combination with disabled inputs
+     */
+    disabled: { type: Boolean, default: false },
   },
 });
