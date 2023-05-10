@@ -84,9 +84,10 @@ export default defineComponent({
      */
     maxlength: { type: Number, default: null },
     /**
-     * Debounce time in ms, set to 0 to disable.
+     * Debounce time in ms, if no value is provided the default value set in NeonDebounceUtils is used (=300ms).
+     * Set to 0 to disable debounce.
      */
-    debounce: { type: Number, default: 300 },
+    debounce: { type: Number, default: undefined },
   },
   emits: [
     /**
