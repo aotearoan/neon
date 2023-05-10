@@ -163,7 +163,7 @@
           />
           <neon-note :color="selectedPalette">
             <span
-            ><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue
+              ><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue
               bottle activated charcoal bicycle rights adaptogen.</span
             >
           </neon-note>

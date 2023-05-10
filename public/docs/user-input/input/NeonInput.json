@@ -182,13 +182,13 @@
     },
     {
       "name": "debounce",
-      "description": "Debounce time in ms, set to 0 to disable.",
+      "description": "Debounce time in ms, if no value is provided the default value set in NeonDebounceUtils is used (=300ms).\nSet to 0 to disable debounce.",
       "type": {
         "name": "number"
       },
       "defaultValue": {
         "func": false,
-        "value": "300"
+        "value": "undefined"
       }
     }
   ],

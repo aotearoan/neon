@@ -31,6 +31,7 @@
           <neon-badge label="LB" />
           <neon-badge icon="user" />
           <neon-badge :image="baseUrl + 'images/doge.jpg'" />
+          <neon-badge :circular="true" jazzicon-id="Test user" />
         </div>
         <editor v-model="stylesTemplate" />
       </neon-card-body>

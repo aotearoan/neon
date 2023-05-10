@@ -28,7 +28,8 @@ export default defineComponent({
 
     const stylesTemplate = `<neon-badge label="LB" />
 <neon-badge icon="user" />
-<neon-badge :image="baseUrl + 'images/doge.jpg'" />`;
+<neon-badge :image="baseUrl + 'images/doge.jpg'" />
+<neon-badge :circular="true" jazzicon-id="Test user" />`;
 
     const colorsTemplate = `<neon-badge label="LB" color="brand" />
 <neon-badge icon="user" color="success" />`;

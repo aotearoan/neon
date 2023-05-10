@@ -99,6 +99,7 @@
       &,
       .neon-badge__image {
         border-radius: var(--neon-border-radius);
+        overflow: hidden;
       }
     }
 
@@ -106,6 +107,7 @@
       &,
       .neon-badge__image {
         border-radius: 50%;
+        overflow: hidden;
       }
     }
   }

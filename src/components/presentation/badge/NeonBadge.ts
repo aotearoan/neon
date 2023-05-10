@@ -1,7 +1,9 @@
-import { defineComponent } from 'vue';
+import { computed, defineComponent } from 'vue';
 import { NeonSize } from '@/common/enums/NeonSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
+import { NeonJazziconUtils } from '@/common/utils/NeonJazziconUtils';
+import { NeonColorUtils } from '@/common/utils/NeonColorUtils';
 
 /**
  * A badge is a small square or circular component for representing user avatars. These can be in the form of an image, an icon or a two character string (e.g. the user's initials).
@@ -45,8 +47,49 @@ export default defineComponent({
      */
     disabled: { type: Boolean, default: false },
     /**
+     * Apply the generated Jazzicon style based on the unique identified provided (e.g. a wallet address, name, etc)
+     */
+    jazziconId: { type: String, default: null },
+    /**
      * Badge image alt text.
      */
     imageAlt: { type: String, default: 'Badge' },
+  },
+  setup(props) {
+    const getColor = (key: NeonFunctionalColor) => {
+      let colorString = getComputedStyle(document.documentElement).getPropertyValue(`--neon-rgb-${key}-l1`);
+      if (colorString.length === 0) {
+        colorString = '0, 0, 0';
+      }
+      const colorRgb = colorString
+        .trim()
+        .split(', ')
+        .map((str) => +str);
+      return NeonColorUtils.rgbToHex(colorRgb);
+    };
+
+    const palette = computed(() => [
+      '#000000',
+      getColor(NeonFunctionalColor.Brand),
+      getColor(NeonFunctionalColor.Primary),
+      getColor(NeonFunctionalColor.Info),
+      getColor(NeonFunctionalColor.Success),
+      getColor(NeonFunctionalColor.Warn),
+      getColor(NeonFunctionalColor.Error),
+    ]);
+
+    const svg = computed(() =>
+      props.jazziconId
+        ? NeonJazziconUtils.genSvg(
+          palette.value,
+          props.jazziconId,
+          props.size === NeonSize.Small ? 32 : props.size === NeonSize.Medium ? 40 : 48,
+        )
+        : null,
+    );
+
+    return {
+      svg,
+    };
   },
 });

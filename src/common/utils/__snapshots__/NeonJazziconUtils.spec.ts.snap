@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NeonJazziconUtils renders jazzicons 1`] = `
+<svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="32" height="32">
+  <rect x="0" y="0" width="32" height="32" transform="translate(0 0) rotate(0.0 16 16)" fill="#666666"></rect>
+  <rect x="0" y="0" width="32" height="32" transform="translate(1.1409489889637223 6.439504089942269) rotate(224.4 16 16)" fill="#ffffff"></rect>
+  <rect x="0" y="0" width="32" height="32" transform="translate(-1.2528046450621513 -21.241258963003112) rotate(313.2 16 16)" fill="#000000"></rect>
+  <rect x="0" y="0" width="32" height="32" transform="translate(13.637224070387488 24.889953777971208) rotate(144.4 16 16)" fill="undefined"></rect>
+</svg>
+`;
+
+exports[`NeonJazziconUtils renders jazzicons 2`] = `
+<svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="32" height="32">
+  <rect x="0" y="0" width="32" height="32" transform="translate(0 0) rotate(0.0 16 16)" fill="#000000"></rect>
+  <rect x="0" y="0" width="32" height="32" transform="translate(-6.718492075605844 2.3090033120392337) rotate(180.9 16 16)" fill="#666666"></rect>
+  <rect x="0" y="0" width="32" height="32" transform="translate(-0.2225313310323077 -16.740563608535048) rotate(274.7 16 16)" fill="#ffffff"></rect>
+  <rect x="0" y="0" width="32" height="32" transform="translate(9.981358448505167 -26.404615582276236) rotate(440.8 16 16)" fill="undefined"></rect>
+</svg>
+`;
+
+exports[`NeonJazziconUtils renders jazzicons 3`] = `
+<svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="64" height="64">
+  <rect x="0" y="0" width="64" height="64" transform="translate(0 0) rotate(0.0 32 32)" fill="#ff1800"></rect>
+  <rect x="0" y="0" width="64" height="64" transform="translate(0.5394866348947869 -2.4291338427200637) rotate(371.7 32 32)" fill="#e7ff00"></rect>
+  <rect x="0" y="0" width="64" height="64" transform="translate(36.11125979293032 -22.149669364154377) rotate(487.3 32 32)" fill="#66005c"></rect>
+  <rect x="0" y="0" width="64" height="64" transform="translate(32.015699249238175 -52.37192969784017) rotate(371.7 32 32)" fill="undefined"></rect>
+</svg>
+`;
+
+exports[`NeonJazziconUtils renders jazzicons 4`] = `
+<svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="64" height="64">
+  <rect x="0" y="0" width="64" height="64" transform="translate(0 0) rotate(0.0 32 32)" fill="#ff00.0361822783015668400"></rect>
+  <rect x="0" y="0" width="64" height="64" transform="translate(0.46849290721454095 6.442424109267294) rotate(148.0 32 32)" fill="#f6ff00"></rect>
+  <rect x="0" y="0" width="64" height="64" transform="translate(10.270409110358345 31.663375166094795) rotate(147.9 32 32)" fill="#660062"></rect>
+  <rect x="0" y="0" width="64" height="64" transform="translate(42.60843338187566 15.987876672655743) rotate(172.9 32 32)" fill="undefined"></rect>
+</svg>
+`;
+
+exports[`NeonJazziconUtils renders jazzicons 5`] = `
+<svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="64" height="64">
+  <rect x="0" y="0" width="64" height="64" transform="translate(0 0) rotate(0.0 32 32)" fill="#f0ede0"></rect>
+  <rect x="0" y="0" width="64" height="64" transform="translate(-2.447986482966687 11.373404163400103) rotate(127.0 32 32)" fill="#35ff00"></rect>
+  <rect x="0" y="0" width="64" height="64" transform="translate(7.249870688857548 -33.459996643863185) rotate(458.2 32 32)" fill="#001566"></rect>
+  <rect x="0" y="0" width="64" height="64" transform="translate(12.438852936747866 -43.873659459047886) rotate(455.4 32 32)" fill="undefined"></rect>
+</svg>
+`;
+
+exports[`NeonJazziconUtils renders jazzicons 6`] = `
+<svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="64" height="64">
+  <rect x="0" y="0" width="64" height="64" transform="translate(0 0) rotate(0.0 32 32)" fill="#eef0e0"></rect>
+  <rect x="0" y="0" width="64" height="64" transform="translate(2.920421620956669 4.172687764328594) rotate(166.6 32 32)" fill="#00.0600846708286553660066"></rect>
+  <rect x="0" y="0" width="64" height="64" transform="translate(-9.435688998454925 -28.95825177650139) rotate(355.0 32 32)" fill="#00ff26"></rect>
+  <rect x="0" y="0" width="64" height="64" transform="translate(36.0595495198541 38.37936461054924) rotate(139.9 32 32)" fill="undefined"></rect>
+</svg>
+`;

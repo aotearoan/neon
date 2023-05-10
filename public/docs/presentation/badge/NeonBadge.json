@@ -93,6 +93,17 @@
       }
     },
     {
+      "name": "jazziconId",
+      "description": "Apply the generated Jazzicon style based on the unique identified provided (e.g. a wallet address, name, etc)",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
       "name": "imageAlt",
       "description": "Badge image alt text.",
       "type": {

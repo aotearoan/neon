@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NeonBadge renders jazzicon 1`] = `
+<div class="neon-badge--low-contrast neon-badge--m neon-badge--square neon-badge">
+  <div class="neon-badge__image"><svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="40" height="40">
+      <rect x="0" y="0" width="40" height="40" transform="translate(0 0) rotate(0.0 20 20)" fill="#000000"></rect>
+      <rect x="0" y="0" width="40" height="40" transform="translate(2.650148400696 8.247754092555605) rotate(190.1 20 20)" fill="#000000"></rect>
+      <rect x="0" y="0" width="40" height="40" transform="translate(-14.763630954718767 9.149803696525677) rotate(248.4 20 20)" fill="#000000"></rect>
+      <rect x="0" y="0" width="40" height="40" transform="translate(25.82597178845803 -20.278135901172035) rotate(402.3 20 20)" fill="#000000"></rect>
+    </svg></div>
+</div>
+`;

@@ -21,6 +21,13 @@ describe('NeonBadge', () => {
     expect(img.getAttribute('alt')).toEqual('Badge');
   });
 
+  it('renders jazzicon', () => {
+    // given
+    const { html } = render(NeonBadge, { props: { jazziconId: 'Test Jazzicon' } });
+
+    expect(html()).toMatchSnapshot();
+  });
+
   it('renders image with imageAlt', () => {
     // given
     const image = '/test.jpg';

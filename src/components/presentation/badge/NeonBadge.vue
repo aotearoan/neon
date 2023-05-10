@@ -14,7 +14,8 @@
     ]"
     class="neon-badge"
   >
-    <span v-if="label" class="neon-badge__label">{{ label }}</span>
+    <div v-if="jazziconId" class="neon-badge__image" v-html="svg" />
+    <span v-else-if="label" class="neon-badge__label">{{ label }}</span>
     <img v-else-if="image" :alt="imageAlt" :src="image" class="neon-badge__image" />
     <neon-icon v-else-if="icon" :disabled="disabled" :inverse="!!color" :name="icon" class="neon-badge__icon" />
   </div>
