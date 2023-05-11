@@ -1,6 +1,4 @@
 import { NeonRandomUtils } from './NeonRandomUtils';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonColorUtils } from '@/common/utils/NeonColorUtils';
 
 export class NeonJazziconUtils {
   private static readonly shapeCount = 4;
@@ -9,35 +7,15 @@ export class NeonJazziconUtils {
 
   /**
    * Returns base-64 encoded data URI
+   * @param palette the color palettes to use when generating the Jazzicon
    * @param name used for random seed
    * @param size size in pixels to generate
    */
-  public static genSvg(name: string, size: number): string {
-    return NeonJazziconUtils.generateIdenticon(size, NeonRandomUtils.rand(name)).outerHTML;
+  public static genSvg(palette: Array<string>, name: string, size: number): string {
+    return NeonJazziconUtils.generateIdenticon(palette, size, NeonRandomUtils.rand(name)).outerHTML;
   }
 
-  private static getColor(key: NeonFunctionalColor) {
-    let colorString = getComputedStyle(document.documentElement).getPropertyValue(`--neon-rgb-${key}-l1`);
-    if (colorString.length === 0) {
-      colorString = '0, 0, 0';
-    }
-    const colorRgb = colorString
-      .trim()
-      .split(', ')
-      .map((str) => +str);
-    return NeonColorUtils.rgbToHex(colorRgb);
-  }
-
-  private static generateIdenticon(diameter: number, rand: () => number): SVGElement {
-    const palette = [
-      '#000000',
-      NeonJazziconUtils.getColor(NeonFunctionalColor.Brand),
-      NeonJazziconUtils.getColor(NeonFunctionalColor.Primary),
-      NeonJazziconUtils.getColor(NeonFunctionalColor.Info),
-      NeonJazziconUtils.getColor(NeonFunctionalColor.Success),
-      NeonJazziconUtils.getColor(NeonFunctionalColor.Warn),
-      NeonJazziconUtils.getColor(NeonFunctionalColor.Error),
-    ];
+  private static generateIdenticon(palette: Array<string>, diameter: number, rand: () => number): SVGElement {
     const remainingColors = NeonJazziconUtils.hueShift(palette.slice(), rand);
 
     const svg = document.createElementNS(NeonJazziconUtils.svgns, 'svg');

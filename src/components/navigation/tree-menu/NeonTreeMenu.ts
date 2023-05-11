@@ -36,7 +36,7 @@ export default defineComponent({
 
     const click = ($event: KeyboardEvent) => {
       const target = $event.target as HTMLSpanElement;
-      if (target?.parentElement) {
+      if (target.parentElement) {
         target.parentElement.click();
       }
     };

@@ -9,6 +9,10 @@ export class NeonModeUtils {
     return NeonModeUtils.mode;
   }
 
+  public static getCallbacks() {
+    return NeonModeUtils.callbacks;
+  }
+
   public static init(defaultMode?: NeonMode) {
     if (defaultMode) {
       NeonModeUtils.defaultMode = defaultMode;
@@ -29,7 +33,7 @@ export class NeonModeUtils {
 
   public static addListener(key: string, callback: (value: NeonMode) => void) {
     if (window.matchMedia) {
-      if (Object.keys(NeonModeUtils.callbacks).length === 0 && typeof MediaQueryList !== 'undefined') {
+      if (Object.keys(NeonModeUtils.callbacks).length === 0) {
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', NeonModeUtils.onDarkChange);
         window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', NeonModeUtils.onLightChange);
         window
@@ -46,8 +50,7 @@ export class NeonModeUtils {
     delete NeonModeUtils.callbacks[key];
     if (
       Object.keys(NeonModeUtils.callbacks).length === 0 &&
-      window.matchMedia &&
-      typeof MediaQueryList !== 'undefined'
+      window.matchMedia
     ) {
       window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', NeonModeUtils.onDarkChange);
       window.matchMedia('(prefers-color-scheme: light)').removeEventListener('change', NeonModeUtils.onLightChange);
@@ -57,15 +60,15 @@ export class NeonModeUtils {
     }
   }
 
-  private static onDarkChange(e: MediaQueryListEvent) {
+  static onDarkChange(e: MediaQueryListEvent) {
     NeonModeUtils.onChange(e, NeonMode.Dark);
   }
 
-  private static onLightChange(e: MediaQueryListEvent) {
+  static onLightChange(e: MediaQueryListEvent) {
     NeonModeUtils.onChange(e, NeonMode.Light);
   }
 
-  private static onNoPreferenceChange(e: MediaQueryListEvent) {
+  static onNoPreferenceChange(e: MediaQueryListEvent) {
     NeonModeUtils.onChange(e, NeonModeUtils.defaultMode);
   }
 

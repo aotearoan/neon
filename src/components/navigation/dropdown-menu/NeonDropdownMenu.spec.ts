@@ -3,6 +3,9 @@ import NeonDropdownMenu from './NeonDropdownMenu.vue';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import { NeonSize } from '@/common/enums/NeonSize';
 import { router } from '@/../test/unit/test-router';
+import { nextTick } from 'vue';
+import { NeonDropdownPlacementUtils } from '@/common/utils/NeonDropdownPlacementUtils';
+import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
 
 describe('NeonDropdownMenu', () => {
   const model = [
@@ -53,6 +56,10 @@ describe('NeonDropdownMenu', () => {
       grouped: true,
     },
   ];
+
+  afterEach(() => {
+    jest.resetAllMocks();
+  });
 
   it('renders default color', () => {
     // given
@@ -121,6 +128,23 @@ describe('NeonDropdownMenu', () => {
     expect(container.querySelector('.neon-dropdown--open-on-hover')).toBeDefined();
   });
 
+  it('changes highlighted on mouse over', async () => {
+    // given
+    const { container } = render(NeonDropdownMenu, {
+      props: {
+        model,
+      },
+      global: { plugins: [router] },
+    });
+    // when
+    const dd = container.querySelector('.neon-dropdown') as HTMLElement;
+    await fireEvent.click(dd);
+    const listItem = container.querySelectorAll('.neon-dropdown-menu__item')[1];
+    await fireEvent.mouseOver(listItem);
+    // then
+    expect(listItem.classList.contains('neon-dropdown-menu__item--highlighted')).toEqual(true);
+  });
+
   it('renders enabled', () => {
     // given
     const { container } = render(NeonDropdownMenu, {
@@ -131,6 +155,32 @@ describe('NeonDropdownMenu', () => {
     });
     // when / then
     expect(container.querySelector('.neon-dropdown--disabled')).toBeNull();
+  });
+
+  it('recalculates placement on resize', async () => {
+    // given
+    const { container } = render(NeonDropdownMenu, {
+      props: {
+        model,
+      },
+      global: { plugins: [router] },
+    });
+    // when
+    const dd = container.querySelector('.neon-dropdown__button') as HTMLElement;
+    await fireEvent.click(dd);
+
+    Object.defineProperty(global, 'innerHeight', {
+      value: 200,
+      writable: true,
+    });
+
+    jest.spyOn(NeonDropdownPlacementUtils, 'calculatePlacement').mockReturnValue(NeonDropdownPlacement.TopLeft);
+
+    global.dispatchEvent(new Event('resize'));
+    await nextTick();
+    // then
+    const containerEl = container.querySelector('.neon-dropdown__content') as HTMLElement;
+    expect(containerEl.classList.contains('neon-dropdown__content--top-left')).toEqual(true);
   });
 
   it('renders disabled', () => {

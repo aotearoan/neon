@@ -114,6 +114,7 @@ describe('NeonLink', () => {
   });
 
   it('clicks router link on space keydown', async () => {
+    const spy = jest.spyOn(router, 'push');
     const { container, rerender } = harness;
     const href = '/test';
     await rerender({ href });
@@ -121,6 +122,6 @@ describe('NeonLink', () => {
       key: 'Space',
       code: 'Space',
     });
-    expect(router.push).toHaveBeenCalledWith(href);
+    expect(spy).toHaveBeenCalledWith(href);
   });
 });

@@ -71,6 +71,17 @@
         "func": false,
         "value": "NeonFunctionalColor.LowContrast"
       }
+    },
+    {
+      "name": "placement",
+      "description": "Placement of the dropdown contents.",
+      "type": {
+        "name": "String as () => NeonDropdownPlacement"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonDropdownPlacement.BottomLeft"
+      }
     }
   ],
   "events": [

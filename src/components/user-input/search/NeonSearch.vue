@@ -15,6 +15,7 @@
       ]"
       :color="color"
       :disabled="disabled"
+      :placement="dropdownPlacement"
       :size="size"
       class="neon-search"
       role="listbox"

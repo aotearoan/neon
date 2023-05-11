@@ -72,6 +72,10 @@ export default defineComponent({
      * The color of the select.
      */
     color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    /**
+     * Placement of the dropdown contents.
+     */
+    placement: { type: String as () => NeonDropdownPlacement, default: NeonDropdownPlacement.BottomLeft },
   },
   emits: [
     /**
@@ -87,12 +91,17 @@ export default defineComponent({
     const dropdown = ref<HTMLElement | null>(null);
 
     const open = ref(false);
-    const dropdownPlacement = ref<NeonDropdownPlacement | null>(null);
+    const dropdownPlacement = ref<NeonDropdownPlacement>(props.placement);
     const highlightedKey = ref<string | null>(null);
     const highlightedIndex = ref(-1);
 
     const flattenedOptions = computed((): NeonSelectOption[] => {
-      return props.options || props.groupedOptions?.flatMap((group) => group.options) || [];
+      if (props.options) {
+        return props.options;
+      } else if (props.groupedOptions) {
+        return props.groupedOptions?.flatMap((group) => group.options);
+      }
+      return [];
     });
 
     const isReverse = () => {
@@ -151,15 +160,14 @@ export default defineComponent({
       if (open.value) {
         switch ($event.code) {
           case 'ArrowUp':
-          case 'ArrowDown':
-            {
-              const reverseOffset = isReverse() ? -1 : 1;
-              if ($event.code === 'ArrowUp') {
-                navigateBy(-1 * reverseOffset, $event);
-              } else {
-                navigateBy(1 * reverseOffset, $event);
-              }
+          case 'ArrowDown': {
+            const reverseOffset = isReverse() ? -1 : 1;
+            if ($event.code === 'ArrowUp') {
+              navigateBy(-1 * reverseOffset, $event);
+            } else {
+              navigateBy(1 * reverseOffset, $event);
             }
+          }
             break;
           case 'Enter':
           case 'Space':

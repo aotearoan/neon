@@ -132,4 +132,14 @@ describe('NeonTreeMenu', () => {
     // then
     expect(emitted().click[0]).toEqual(['feedback']);
   });
+
+  it('emits click event on space keydown link label', async () => {
+    // given
+    const { getByText, emitted } = harness;
+    // when
+    const link = getByText('Alert');
+    await fireEvent.keyDown(link, { key: 'Space', code: 'Space' });
+    // then
+    expect(emitted().click[0]).toEqual(['alert']);
+  });
 });

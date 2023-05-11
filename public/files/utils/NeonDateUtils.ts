@@ -130,10 +130,6 @@ export class NeonDateUtils {
       }
     }
 
-    if (dates[dates.length - 1].length === 0) {
-      delete dates[dates.length - 1];
-    }
-
     return {
       today,
       selected,

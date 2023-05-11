@@ -17,6 +17,4 @@ const internalRouter = createRouter({
   ]
 });
 
-internalRouter.push = jest.fn();
-
 export const router = internalRouter;

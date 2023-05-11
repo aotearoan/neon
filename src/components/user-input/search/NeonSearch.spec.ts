@@ -4,6 +4,9 @@ import NeonSearch from './NeonSearch.vue';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import type { NeonSearchOption } from '@/common/models/NeonSearchOption';
 import { NeonSize } from '@/common/enums/NeonSize';
+import { nextTick } from 'vue';
+import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
+import { NeonDropdownPlacementUtils } from '@/common/utils/NeonDropdownPlacementUtils';
 
 describe('NeonSearch', () => {
   const modelValue = '';
@@ -27,6 +30,10 @@ describe('NeonSearch', () => {
 
   beforeEach(() => {
     harness = render(NeonSearch, { props: { modelValue, placeholder, options, debounce: 0 } });
+  });
+
+  afterEach(() => {
+    jest.resetAllMocks();
   });
 
   it('renders default color', () => {
@@ -183,6 +190,76 @@ describe('NeonSearch', () => {
     await fireEvent.input(el);
     // then
     expect(emitted()['filter-changed'][0]).toEqual(['xdd']);
+  });
+
+  it('focus highlights first option', async () => {
+    // given
+    const { container } = harness;
+    // when
+    const el = container.querySelector('.neon-search__input .neon-input__text') as HTMLInputElement;
+    await fireEvent.focus(el);
+    await nextTick();
+    // then
+    expect(container.querySelectorAll('.neon-search__option')[0].classList.contains('neon-search__option--highlighted')).toBeDefined();
+  });
+
+  it('triggers isReverse placement TopLeft', async () => {
+    // given
+    jest.spyOn(NeonDropdownPlacementUtils, 'calculatePlacement').mockReturnValue(NeonDropdownPlacement.TopLeft);
+    const { container } = render(NeonSearch, {
+      props: {
+        modelValue,
+        placeholder,
+        options,
+        debounce: 0,
+        placement: NeonDropdownPlacement.TopLeft
+      }
+    });
+    // when
+    const el = container.querySelector('.neon-search__input .neon-input__text') as HTMLInputElement;
+    await fireEvent.focus(el);
+    await nextTick();
+    await fireEvent.keyDown(el, { key: 'ArrowDown', code: 'ArrowDown' });
+    await nextTick();
+    // then
+    const contentEl = container.querySelector('.neon-dropdown__content') as HTMLElement;
+    expect(contentEl.classList.contains('neon-dropdown__content--top-left')).toEqual(true);
+  });
+
+  it('triggers isReverse placement TopRight', async () => {
+    // given
+    jest.spyOn(NeonDropdownPlacementUtils, 'calculatePlacement').mockReturnValue(NeonDropdownPlacement.TopRight);
+    const { container } = render(NeonSearch, {
+      props: {
+        modelValue,
+        placeholder,
+        options,
+        debounce: 0,
+        placement: NeonDropdownPlacement.TopRight
+      }
+    });
+    // when
+    const el = container.querySelector('.neon-search__input .neon-input__text') as HTMLInputElement;
+    await fireEvent.focus(el);
+    await nextTick();
+    await fireEvent.keyDown(el, { key: 'ArrowDown', code: 'ArrowDown' });
+    await nextTick();
+    // then
+    const contentEl = container.querySelector('.neon-dropdown__content') as HTMLElement;
+    expect(contentEl.classList.contains('neon-dropdown__content--top-right')).toEqual(true);
+  });
+
+  it('arrow key highlights different option', async () => {
+    // given
+    const { container } = harness;
+    // when
+    const el = container.querySelector('.neon-search__input .neon-input__text') as HTMLInputElement;
+    await fireEvent.focus(el);
+    await nextTick();
+    await fireEvent.keyDown(el, { key: 'ArrowDown', code: 'ArrowDown' });
+    await nextTick();
+    // then
+    expect(container.querySelectorAll('.neon-search__option')[1].classList.contains('neon-search__option--highlighted')).toBeDefined();
   });
 
   it('renders chip', async () => {

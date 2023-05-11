@@ -55,6 +55,10 @@ export default defineComponent({
      * The color of the search.
      */
     color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    /**
+     * Placement of the dropdown contents.
+     */
+    placement: { type: String as () => NeonDropdownPlacement, default: NeonDropdownPlacement.BottomLeft },
   },
   emits: [
     /**
@@ -73,7 +77,7 @@ export default defineComponent({
     const attrs = useAttrs();
 
     const dropdown = ref<HTMLElement | null>(null);
-    const dropdownPlacement = ref<NeonDropdownPlacement | null>(null);
+    const dropdownPlacement = ref<NeonDropdownPlacement>(props.placement);
 
     const open = ref(false);
     const highlightedKey = ref<string | null>(null);
@@ -151,15 +155,14 @@ export default defineComponent({
       if (open.value) {
         switch ($event.code) {
           case 'ArrowUp':
-          case 'ArrowDown':
-            {
-              const reverseOffset = isReverse() ? -1 : 1;
-              if ($event.code === 'ArrowUp') {
-                navigateBy(-1 * reverseOffset, $event);
-              } else {
-                navigateBy(1 * reverseOffset, $event);
-              }
+          case 'ArrowDown': {
+            const reverseOffset = isReverse() ? -1 : 1;
+            if ($event.code === 'ArrowUp') {
+              navigateBy(-1 * reverseOffset, $event);
+            } else {
+              navigateBy(1 * reverseOffset, $event);
             }
+          }
             break;
           case 'Enter':
           case 'Space':
@@ -216,6 +219,7 @@ export default defineComponent({
       filter,
       sanitizedAttributes,
       computedOptions,
+      dropdownPlacement,
       onPlacement,
       onFilterChange,
       clickOption,
