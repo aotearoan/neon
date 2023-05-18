@@ -1,7 +1,6 @@
 import { NeonDateUtils } from '@/common/utils/NeonDateUtils';
 
 describe('NeonDateUtils', () => {
-
   beforeEach(() => {
     jest.useFakeTimers().setSystemTime(new Date('2023-03-16T12:12:12'));
   });
@@ -62,27 +61,11 @@ describe('NeonDateUtils', () => {
   });
 
   it('generates dowNames', () => {
-    expect(NeonDateUtils.dowNames('en-US')).toEqual([
-      'Mon',
-      'Tue',
-      'Wed',
-      'Thu',
-      'Fri',
-      'Sat',
-      'Sun',
-    ]);
+    expect(NeonDateUtils.dowNames('en-US')).toEqual(['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']);
   });
 
   it('generates dowNames missing locale', () => {
-    expect(NeonDateUtils.dowNames()).toEqual([
-      'Mon',
-      'Tue',
-      'Wed',
-      'Thu',
-      'Fri',
-      'Sat',
-      'Sun',
-    ]);
+    expect(NeonDateUtils.dowNames()).toEqual(['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']);
   });
 
   it('generates monthNames', () => {
@@ -121,77 +104,16 @@ describe('NeonDateUtils', () => {
 
   it('generates calendar configs', () => {
     expect(NeonDateUtils.toCalendarConfiguration()).toEqual({
-      'dates': [
-        [
-          null,
-          null,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        [
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12
-        ],
-        [
-          13,
-          14,
-          15,
-          16,
-          17,
-          18,
-          19
-        ],
-        [
-          20,
-          21,
-          22,
-          23,
-          24,
-          25,
-          26
-        ],
-        [
-          27,
-          28,
-          29,
-          30,
-          31,
-          null,
-          null
-        ]
+      dates: [
+        [null, null, 1, 2, 3, 4, 5],
+        [6, 7, 8, 9, 10, 11, 12],
+        [13, 14, 15, 16, 17, 18, 19],
+        [20, 21, 22, 23, 24, 25, 26],
+        [27, 28, 29, 30, 31, null, null],
       ],
-      dowNames: [
-        'Mon',
-        'Tue',
-        'Wed',
-        'Thu',
-        'Fri',
-        'Sat',
-        'Sun'
-      ],
+      dowNames: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
       lastDayOfMonth: 31,
-      months: [
-        'Jan',
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-        'Nov',
-        'Dec'
-      ],
+      months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       pageDecadeStart: 2020,
       pageMonth: 3,
       pageMonthName: 'March',
@@ -203,84 +125,23 @@ describe('NeonDateUtils', () => {
         monthLongName: 'March',
         monthShortName: 'Mar',
         year: 2023,
-        yearFormatted: '2023'
-      }
+        yearFormatted: '2023',
+      },
     });
   });
 
   it('generates calendar configs with selected date', () => {
     expect(NeonDateUtils.toCalendarConfiguration('2023-03-18', 3, 2023)).toEqual({
-      'dates': [
-        [
-          null,
-          null,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        [
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12
-        ],
-        [
-          13,
-          14,
-          15,
-          16,
-          17,
-          18,
-          19
-        ],
-        [
-          20,
-          21,
-          22,
-          23,
-          24,
-          25,
-          26
-        ],
-        [
-          27,
-          28,
-          29,
-          30,
-          31,
-          null,
-          null
-        ]
+      dates: [
+        [null, null, 1, 2, 3, 4, 5],
+        [6, 7, 8, 9, 10, 11, 12],
+        [13, 14, 15, 16, 17, 18, 19],
+        [20, 21, 22, 23, 24, 25, 26],
+        [27, 28, 29, 30, 31, null, null],
       ],
-      dowNames: [
-        'Mon',
-        'Tue',
-        'Wed',
-        'Thu',
-        'Fri',
-        'Sat',
-        'Sun'
-      ],
+      dowNames: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
       lastDayOfMonth: 31,
-      months: [
-        'Jan',
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-        'Nov',
-        'Dec'
-      ],
+      months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       pageDecadeStart: 2020,
       pageMonth: 3,
       pageMonthName: 'March',
@@ -301,8 +162,8 @@ describe('NeonDateUtils', () => {
         monthLongName: 'March',
         monthShortName: 'Mar',
         year: 2023,
-        yearFormatted: '2023'
-      }
+        yearFormatted: '2023',
+      },
     });
   });
 });

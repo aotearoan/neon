@@ -3,7 +3,7 @@
     <neon-dropdown
       ref="dropdown"
       v-model="open"
-      :aria-activedescendant="multiple ? modelValue[0] && modelValue[0].key : modelValue"
+      :aria-activedescendant="multiple && Array.isArray(modelValue) ? modelValue[0] && modelValue[0].key : modelValue"
       :aria-multiselectable="multiple"
       :class="[
         `neon-search--${color}`,
@@ -33,7 +33,7 @@
           class="neon-search__container"
         >
           <neon-icon :disabled="disabled" class="neon-search__search-icon" color="low-contrast" name="search" />
-          <template v-if="multiple">
+          <template v-if="multiple && Array.isArray(modelValue)">
             <neon-chip
               v-for="(selected, index) in modelValue"
               :id="selected.key"

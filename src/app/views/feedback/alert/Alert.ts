@@ -187,6 +187,8 @@ NeonToastService.error(toastMessage);`,
       errorAlert,
       alertSingleAction,
       alertBothActions,
+      NeonAlertPlacement,
+      NeonVerticalPosition,
     };
   },
 });

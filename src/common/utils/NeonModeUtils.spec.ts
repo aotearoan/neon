@@ -27,7 +27,7 @@ describe('NeonModeUtils', () => {
     Object.defineProperty(window, 'matchMedia', {
       value: () => ({
         addEventListener: (key: string, cb: (e: MediaQueryListEvent) => void) => cb(new MediaQueryListEvent()),
-        removeEventListener: jest.fn()
+        removeEventListener: jest.fn(),
       }),
       writable: true,
     });

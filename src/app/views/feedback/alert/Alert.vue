@@ -21,10 +21,10 @@
         </neon-card-header>
         <neon-card-body>
           <div class="neon--horizontal">
-            <neon-button label="Top left" @click="infoAlert('top-left')" />
-            <neon-button label="Top right" @click="infoAlert('top-right')" />
-            <neon-button label="Bottom left" @click="infoAlert('bottom-left')" />
-            <neon-button label="Bottom right" @click="infoAlert('bottom-right')" />
+            <neon-button label="Top left" @click="infoAlert(NeonAlertPlacement.TopLeft)" />
+            <neon-button label="Top right" @click="infoAlert(NeonAlertPlacement.TopRight)" />
+            <neon-button label="Bottom left" @click="infoAlert(NeonAlertPlacement.BottomLeft)" />
+            <neon-button label="Bottom right" @click="infoAlert(NeonAlertPlacement.BottomRight)" />
           </div>
         </neon-card-body>
         <neon-card-body>
@@ -49,7 +49,7 @@
           <div class="neon--vertical">
             <div class="neon--horizontal">
               <neon-button label="Toast top" @click="toastInfo()" />
-              <neon-button label="Toast bottom" @click="toastInfo('bottom')" />
+              <neon-button label="Toast bottom" @click="toastInfo(NeonVerticalPosition.Bottom)" />
             </div>
             <div class="neon--horizontal">
               <neon-button color="info" label="Toast info" @click="toastInfo()" />

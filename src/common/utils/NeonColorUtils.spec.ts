@@ -20,34 +20,22 @@ describe('NeonColorUtils', () => {
 
   it('converts rgb to xyz', () => {
     expect(NeonColorUtils.rgbToXyz([128, 128, 128])).toEqual([
-      0.5998708056221469,
-      0.5998708256178397,
-      0.5998708056221468,
+      0.5998708056221469, 0.5998708256178397, 0.5998708056221468,
     ]);
   });
 
   it('converts rgb to xyz with black', () => {
-    expect(NeonColorUtils.rgbToXyz([0, 0, 0])).toEqual([
-      0.137931034,
-      0.137931034,
-      0.137931034,
-    ]);
+    expect(NeonColorUtils.rgbToXyz([0, 0, 0])).toEqual([0.137931034, 0.137931034, 0.137931034]);
   });
 
   it('converts rgb to Lab', () => {
     expect(NeonColorUtils.rgbToLab([128, 128, 128])).toEqual([
-      53.585015771669404,
-      -0.000009997846384113274,
-      0.00000399913857584977,
+      53.585015771669404, -0.000009997846384113274, 0.00000399913857584977,
     ]);
   });
 
   it('converts rgb to Hcl', () => {
-    expect(NeonColorUtils.rgbToHcl([128, 128, 128])).toEqual([
-      158,
-      0.00001076801010721928,
-      53.585015771669404,
-    ]);
+    expect(NeonColorUtils.rgbToHcl([128, 128, 128])).toEqual([158, 0.00001076801010721928, 53.585015771669404]);
   });
 
   it('checks accessibility & fails', () => {

@@ -81,10 +81,10 @@ export default defineComponent({
     const svg = computed(() =>
       props.jazziconId
         ? NeonJazziconUtils.genSvg(
-          palette.value,
-          props.jazziconId,
-          props.size === NeonSize.Small ? 32 : props.size === NeonSize.Medium ? 40 : 48,
-        )
+            palette.value,
+            props.jazziconId,
+            props.size === NeonSize.Small ? 32 : props.size === NeonSize.Medium ? 40 : 48,
+          )
         : null,
     );
 

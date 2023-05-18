@@ -341,7 +341,9 @@ describe('NeonSelect', () => {
       await fireEvent.click(el);
       await nextTick();
       // then
-      expect(container.querySelectorAll('.neon-select__option')[0].classList.contains('neon-select__option--highlighted')).toBeDefined();
+      expect(
+        container.querySelectorAll('.neon-select__option')[0].classList.contains('neon-select__option--highlighted'),
+      ).toBeDefined();
     });
 
     it('arrow key highlights different option', async () => {
@@ -356,7 +358,9 @@ describe('NeonSelect', () => {
       await fireEvent.keyDown(el, { key: 'ArrowDown', code: 'ArrowDown' });
       await nextTick();
       // then
-      expect(container.querySelectorAll('.neon-select__option')[1].classList.contains('neon-select__option--highlighted')).toBeDefined();
+      expect(
+        container.querySelectorAll('.neon-select__option')[1].classList.contains('neon-select__option--highlighted'),
+      ).toBeDefined();
     });
 
     it('arrow key highlights different option, placement TopLeft', async () => {
@@ -373,7 +377,9 @@ describe('NeonSelect', () => {
       await fireEvent.keyDown(el, { key: 'ArrowDown', code: 'ArrowDown' });
       await nextTick();
       // then
-      expect(container.querySelectorAll('.neon-select__option')[1].classList.contains('neon-select__option--highlighted')).toBeDefined();
+      expect(
+        container.querySelectorAll('.neon-select__option')[1].classList.contains('neon-select__option--highlighted'),
+      ).toBeDefined();
     });
   });
 });

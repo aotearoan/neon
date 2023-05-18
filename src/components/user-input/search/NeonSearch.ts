@@ -77,7 +77,7 @@ export default defineComponent({
     const attrs = useAttrs();
 
     const dropdown = ref<HTMLElement | null>(null);
-    const dropdownPlacement = ref<NeonDropdownPlacement>(props.placement);
+    const dropdownPlacement = ref<NeonDropdownPlacement | undefined>(props.placement);
 
     const open = ref(false);
     const highlightedKey = ref<string | null>(null);
@@ -155,14 +155,15 @@ export default defineComponent({
       if (open.value) {
         switch ($event.code) {
           case 'ArrowUp':
-          case 'ArrowDown': {
-            const reverseOffset = isReverse() ? -1 : 1;
-            if ($event.code === 'ArrowUp') {
-              navigateBy(-1 * reverseOffset, $event);
-            } else {
-              navigateBy(1 * reverseOffset, $event);
+          case 'ArrowDown':
+            {
+              const reverseOffset = isReverse() ? -1 : 1;
+              if ($event.code === 'ArrowUp') {
+                navigateBy(-1 * reverseOffset, $event);
+              } else {
+                navigateBy(1 * reverseOffset, $event);
+              }
             }
-          }
             break;
           case 'Enter':
           case 'Space':

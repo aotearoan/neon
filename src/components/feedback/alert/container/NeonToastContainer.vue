@@ -6,7 +6,7 @@
         :key="message.id"
         :aria-labelledby="`toastTitle${index}`"
         :class="[`neon-toast__message--${message.level}`, { 'neon-toast__message--dismissible': message.dismissible }]"
-        :role="message.duration > 0 ? 'alert' : 'alertdialog'"
+        :role="message.duration && message.duration > 0 ? 'alert' : 'alertdialog'"
         class="neon-toast__message"
         @click="message.dismissible && closeMessage(message.id)"
       >

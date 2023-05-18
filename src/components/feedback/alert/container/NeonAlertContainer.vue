@@ -13,7 +13,7 @@
             'neon-alert__message--with-actions': message.primaryAction,
           },
         ]"
-        :role="message.primaryAction ? 'dialog' : message.duration > 0 ? 'alert' : 'alertdialog'"
+        :role="message.primaryAction ? 'dialog' : message.duration && message.duration > 0 ? 'alert' : 'alertdialog'"
         class="neon-alert__message"
         @click="!message.primaryAction && message.dismissible && closeMessage(message.id)"
       >

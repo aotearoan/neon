@@ -5,6 +5,7 @@ export interface TagModel {
 
 export interface TagsModel {
   type?: TagModel[];
+  ignore?: boolean;
 }
 
 export interface NameModel {
@@ -28,10 +29,12 @@ export interface PropDefaultModel {
 export interface SlotModel {
   name: string;
   description: string;
+  scoped: boolean;
 }
 
 export interface PropertyModel {
   name?: string;
+  description?: string;
   required?: boolean;
   type?: PropTypeModel;
   defaultValue?: PropDefaultModel;

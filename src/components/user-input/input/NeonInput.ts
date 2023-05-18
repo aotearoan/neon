@@ -204,7 +204,7 @@ export default defineComponent({
       }
     };
 
-    const changeValue = (event: InputEvent) => {
+    const changeValue = (event: Event) => {
       const val = (event.target as HTMLInputElement).value;
       const v = props.maxlength && val.length > props.maxlength ? val.substring(0, props.maxlength) : val;
       if (props.modelValue !== v) {

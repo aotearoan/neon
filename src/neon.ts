@@ -17,9 +17,7 @@ export { default as NeonDrawer } from './components/layout/drawer/NeonDrawer.vue
 export { default as NeonDropdown } from './components/presentation/dropdown/NeonDropdown.vue';
 export { default as NeonDropdownMenu } from './components/navigation/dropdown-menu/NeonDropdownMenu.vue';
 export { default as NeonDropZone } from './components/user-input/drop-zone/NeonDropZone.vue';
-export {
-  default as NeonExpansionIndicator
-} from './components/presentation/expansion-indicator/NeonExpansionIndicator.vue';
+export { default as NeonExpansionIndicator } from './components/presentation/expansion-indicator/NeonExpansionIndicator.vue';
 export { default as NeonExpansionPanel } from './components/presentation/expansion-panel/NeonExpansionPanel.vue';
 export { default as NeonFieldGroup } from './components/user-input/field-group/NeonFieldGroup.vue';
 export { default as NeonField } from './components/user-input/field/NeonField.vue';
@@ -38,9 +36,7 @@ export { default as NeonList } from './components/user-input/list/NeonList.vue';
 export { default as NeonMenu } from './components/navigation/menu/NeonMenu.vue';
 export { default as NeonModal } from './components/layout/modal/NeonModal.vue';
 export { default as NeonNote } from './components/feedback/note/NeonNote.vue';
-export {
-  default as NeonNotificationCounter
-} from './components/feedback/notification-counter/NeonNotificationCounter.vue';
+export { default as NeonNotificationCounter } from './components/feedback/notification-counter/NeonNotificationCounter.vue';
 export { default as NeonNumber } from './components/user-input/number/NeonNumber.vue';
 export { default as NeonPage } from './components/layout/page/NeonPage.vue';
 export { default as NeonPassword } from './components/user-input/password/NeonPassword.vue';

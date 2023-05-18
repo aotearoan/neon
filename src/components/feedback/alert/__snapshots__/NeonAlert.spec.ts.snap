@@ -3,22 +3,22 @@
 exports[`NeonAlert matches snapshot 1`] = `
 <div class="neon-alert__wrapper" dismissable="true">
   <div class="neon-alert--top-left neon-alert">
-    <transition-group-stub></transition-group-stub>
+    <transition-group-stub name="neon-alert-transition" appear="false" persisted="false" css="true"></transition-group-stub>
   </div>
   <div class="neon-alert--top-right neon-alert">
-    <transition-group-stub></transition-group-stub>
+    <transition-group-stub name="neon-alert-transition" appear="false" persisted="false" css="true"></transition-group-stub>
   </div>
   <div class="neon-alert--bottom-left neon-alert">
-    <transition-group-stub></transition-group-stub>
+    <transition-group-stub name="neon-alert-transition" appear="false" persisted="false" css="true"></transition-group-stub>
   </div>
   <div class="neon-alert--bottom-right neon-alert">
-    <transition-group-stub></transition-group-stub>
+    <transition-group-stub name="neon-alert-transition" appear="false" persisted="false" css="true"></transition-group-stub>
   </div>
   <div class="neon-alert--top neon-alert">
-    <transition-group-stub></transition-group-stub>
+    <transition-group-stub name="neon-alert-transition" appear="false" persisted="false" css="true"></transition-group-stub>
   </div>
   <div class="neon-alert--bottom neon-alert">
-    <transition-group-stub></transition-group-stub>
+    <transition-group-stub name="neon-alert-transition" appear="false" persisted="false" css="true"></transition-group-stub>
   </div>
 </div>
 `;

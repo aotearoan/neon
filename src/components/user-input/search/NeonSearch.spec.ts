@@ -200,7 +200,9 @@ describe('NeonSearch', () => {
     await fireEvent.focus(el);
     await nextTick();
     // then
-    expect(container.querySelectorAll('.neon-search__option')[0].classList.contains('neon-search__option--highlighted')).toBeDefined();
+    expect(
+      container.querySelectorAll('.neon-search__option')[0].classList.contains('neon-search__option--highlighted'),
+    ).toBeDefined();
   });
 
   it('triggers isReverse placement TopLeft', async () => {
@@ -212,8 +214,8 @@ describe('NeonSearch', () => {
         placeholder,
         options,
         debounce: 0,
-        placement: NeonDropdownPlacement.TopLeft
-      }
+        placement: NeonDropdownPlacement.TopLeft,
+      },
     });
     // when
     const el = container.querySelector('.neon-search__input .neon-input__text') as HTMLInputElement;
@@ -235,8 +237,8 @@ describe('NeonSearch', () => {
         placeholder,
         options,
         debounce: 0,
-        placement: NeonDropdownPlacement.TopRight
-      }
+        placement: NeonDropdownPlacement.TopRight,
+      },
     });
     // when
     const el = container.querySelector('.neon-search__input .neon-input__text') as HTMLInputElement;
@@ -259,7 +261,9 @@ describe('NeonSearch', () => {
     await fireEvent.keyDown(el, { key: 'ArrowDown', code: 'ArrowDown' });
     await nextTick();
     // then
-    expect(container.querySelectorAll('.neon-search__option')[1].classList.contains('neon-search__option--highlighted')).toBeDefined();
+    expect(
+      container.querySelectorAll('.neon-search__option')[1].classList.contains('neon-search__option--highlighted'),
+    ).toBeDefined();
   });
 
   it('renders chip', async () => {

@@ -1,5 +1,5 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
   "include": [
     "env.d.ts",
     "**/*.d.ts",
@@ -31,7 +31,7 @@
     "outDir": "dist/",
     "allowJs": true,
     "strict": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "isolatedModules": true,
     "importHelpers": true,
     "moduleResolution": "node",
