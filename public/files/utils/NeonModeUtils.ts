@@ -48,10 +48,7 @@ export class NeonModeUtils {
 
   public static removeListener(key: string) {
     delete NeonModeUtils.callbacks[key];
-    if (
-      Object.keys(NeonModeUtils.callbacks).length === 0 &&
-      window.matchMedia
-    ) {
+    if (Object.keys(NeonModeUtils.callbacks).length === 0 && window.matchMedia) {
       window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', NeonModeUtils.onDarkChange);
       window.matchMedia('(prefers-color-scheme: light)').removeEventListener('change', NeonModeUtils.onLightChange);
       window

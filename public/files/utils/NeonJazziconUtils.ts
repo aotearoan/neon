@@ -138,7 +138,7 @@ export class NeonJazziconUtils {
     return { h, s, l };
   }
 
-  private static hslToHex(hsl: Record<string, any>) {
+  private static hslToHex(hsl: Record<string, number>) {
     const h = hsl.h;
     let { s, l } = hsl;
     s /= 100;

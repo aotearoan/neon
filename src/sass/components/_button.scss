@@ -79,8 +79,9 @@
 }
 
 @mixin text-button($color) {
+  color: var(--neon-color-#{$color});
+
   &:not(.neon-button--text-transparent) {
-    color: var(--neon-color-#{$color});
     background: var(--neon-background-color-text-button);
   }
 
