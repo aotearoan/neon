@@ -19,6 +19,7 @@
         'neon-toggle__label--disabled': disabled || option.disabled,
         'neon-toggle__label--checked': option.key === modelValue,
         'neon-toggle__label--with-icon': option.icon,
+        'neon-toggle__label--with-text': option.label,
       }"
       :tabindex="!disabled && !option.disabled ? 0 : undefined"
       class="neon-toggle__label no-style"

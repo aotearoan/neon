@@ -7,15 +7,18 @@
     min-height: var(--neon-size-#{$size});
     height: var(--neon-size-#{$size});
     z-index: var(--neon-z-index-default);
+    gap: calc(2 * var(--neon-base-space));
 
     &.neon-toggle__label--with-icon {
-      width: var(--neon-size-#{$size});
-      padding: 0;
-
       .neon-icon {
         width: calc(var(--neon-font-size-#{$font-size}) * var(--neon-line-height-one));
         height: calc(var(--neon-font-size-#{$font-size}) * var(--neon-line-height-one));
       }
+    }
+
+    &.neon-toggle__label--with-icon:not(.neon-toggle__label--with-text) {
+      width: var(--neon-size-#{$size});
+      padding: 0;
     }
 
     &.neon-toggle__label--checked {

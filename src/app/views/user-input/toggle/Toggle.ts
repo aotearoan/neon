@@ -23,6 +23,7 @@ export default defineComponent({
       {
         key: 'key-1',
         label: 'Label 1',
+        icon: 'chevron-left',
       },
       {
         key: 'key-2',
