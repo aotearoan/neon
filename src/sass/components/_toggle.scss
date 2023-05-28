@@ -14,7 +14,6 @@
     &__label {
       user-select: none;
       cursor: pointer;
-      padding: calc(2 * var(--neon-base-space)) 0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -30,6 +29,10 @@
     }
 
     &--toggle {
+      .neon-toggle__label {
+        padding: calc(2 * var(--neon-base-space)) calc(3 * var(--neon-base-space));
+      }
+
       @include toggle-mixins.toggle-layout;
 
       @each $color in palettes.$neon-functional-colors {
@@ -74,6 +77,10 @@
     }
 
     &--radio-buttons {
+      .neon-toggle__label {
+        padding: calc(2 * var(--neon-base-space)) 0;
+      }
+
       @include toggle-mixins.radio-button-layout;
 
       @each $color in palettes.$neon-functional-colors {

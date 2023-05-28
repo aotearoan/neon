@@ -382,9 +382,6 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-
-    & > .neon-button + .neon-button {
-      margin-left: calc(4 * var(--neon-base-space));
-    }
+    gap: calc(4 * var(--neon-base-space));
   }
 }
