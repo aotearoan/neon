@@ -5,7 +5,7 @@
   .neon-page {
     position: relative;
     left: 0;
-    width: 100%;
+    width: 100vw;
 
     &--with-top-nav .neon-page__container {
       @include responsive.responsive(larger-than-tablet) {
