@@ -4,6 +4,12 @@
 
 @mixin select {
   .neon-select {
+    width: 100%;
+
+    .neon-expansion-indicator {
+      margin-left: auto;
+    }
+
     @each $color in palettes.$neon-functional-colors {
       &--#{$color} {
         .neon-select__option {
@@ -22,7 +28,7 @@
       position: relative;
       display: flex;
       flex: 1 1 auto;
-      max-width: fit-content;
+      max-width: 100%;
     }
 
     &__options {
