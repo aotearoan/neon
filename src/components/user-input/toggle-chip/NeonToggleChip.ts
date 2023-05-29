@@ -21,9 +21,9 @@ export default defineComponent({
      */
     modelValue: { type: Boolean, required: true },
     /**
-     * The toggle label.
+     * The toggle label. Required unless overriding the slot contents.
      */
-    label: { type: String, required: true },
+    label: { type: String },
     /**
      * The size of the toggle chip.
      */

@@ -14,11 +14,10 @@
     },
     {
       "name": "label",
-      "description": "The toggle label.",
+      "description": "The toggle label. Required unless overriding the slot contents.",
       "type": {
         "name": "string"
-      },
-      "required": true
+      }
     },
     {
       "name": "size",
@@ -79,7 +78,7 @@
   "slots": [
     {
       "name": "default",
-      "description": "override the default contents"
+      "description": "override the label with custom contents"
     }
   ]
 }
