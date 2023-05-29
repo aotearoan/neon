@@ -20,6 +20,16 @@ describe('NeonToggleChip', () => {
     expect(result).toMatch('aria-pressed="true"');
   });
 
+  it('renders default slot contents', () => {
+    // given
+    const { html } = render(NeonToggleChip, {
+      props: { modelValue: true, label },
+      slots: { default: '<p>test</p>' },
+    });
+    // when / then
+    expect(html()).toMatch('<p>test</p>');
+  });
+
   it('renders checked state false', async () => {
     const { html, rerender } = harness;
 

@@ -51,7 +51,7 @@ export default defineComponent({
   emits: [
     /**
      * Emitted when the selected value changes.
-     * @type {boolean} The key of the selected model item.
+     * @type {string} The key of the selected model item.
      */
     'update:modelValue',
   ],

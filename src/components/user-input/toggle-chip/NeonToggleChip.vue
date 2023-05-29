@@ -18,8 +18,11 @@
     @keydown.space="toggleChip"
     @keypress.space.prevent=""
   >
-    <neon-icon v-if="modelValue && showCheck" :disabled="disabled" class="neon-toggle-chip__checked" name="check" />
-    <span class="neon-toggle-chip__label">{{ label }}</span>
+    <!-- @slot override the default contents -->
+    <slot>
+      <neon-icon v-if="modelValue && showCheck" :disabled="disabled" class="neon-toggle-chip__checked" name="check" />
+      <span class="neon-toggle-chip__label">{{ label }}</span>
+    </slot>
     <input
       :checked="modelValue"
       :disabled="disabled"

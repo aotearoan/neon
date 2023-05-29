@@ -90,7 +90,7 @@
       "description": "Emitted when the selected value changes.",
       "type": {
         "names": [
-          "boolean"
+          "string"
         ]
       }
     }
