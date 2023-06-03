@@ -10,7 +10,7 @@
       <neon-card-body>
         <h2 class="neon-h3">Linear progress styles</h2>
         <neon-stack>
-          <div class="neon--vertical">
+          <neon-stack>
             <h4 class="neon-h5">Percentage</h4>
             <neon-inline>
               <neon-linear-progress :model-value="progressPercentage" />
@@ -43,14 +43,14 @@
             <neon-inline>
               <neon-linear-progress :model-value="progressLabel" :total="55" label="Label goes here" />
             </neon-inline>
-          </div>
+          </neon-stack>
           <editor v-model="styleExamples" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Linear progress sizes</h2>
         <neon-stack>
-          <div class="neon--vertical">
+          <neon-stack>
             <h4 class="neon-h5">Small</h4>
             <neon-inline>
               <neon-linear-progress :model-value="progressPercentage" size="s" />
@@ -63,14 +63,14 @@
             <neon-inline>
               <neon-linear-progress :model-value="progressNoOutput" :output="false" :total="55" size="l" />
             </neon-inline>
-          </div>
+          </neon-stack>
           <editor v-model="sizeExamples" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Linear progress colors</h2>
         <neon-stack>
-          <div class="neon--vertical">
+          <neon-stack>
             <h4 class="neon-h5">Default (primary)</h4>
             <neon-inline>
               <neon-linear-progress :model-value="progressPercentage" />
@@ -89,7 +89,7 @@
                 color="success"
               />
             </neon-inline>
-          </div>
+          </neon-stack>
           <editor v-model="colorExamples" />
         </neon-stack>
       </neon-card-body>

@@ -79,7 +79,7 @@
       <neon-card-body>
         <h2 class="neon-h3">Button styles</h2>
         <neon-stack>
-          <div class="neon--vertical">
+          <neon-stack>
             <neon-button button-style="solid" label="Solid button" />
             <neon-button button-style="outline" label="Outline button" />
             <neon-button button-style="text" label="Text button" />
@@ -88,7 +88,7 @@
             </neon-note>
             <neon-button href="/" label="Link button" target="_blank" />
             <neon-button :full-width="true" button-style="outline" label="Full width button" />
-          </div>
+          </neon-stack>
           <editor v-model="styleExamples" />
         </neon-stack>
       </neon-card-body>
@@ -115,7 +115,7 @@
       <neon-card-body>
         <h2 class="neon-h3">Button states</h2>
         <neon-stack>
-          <div class="neon--vertical">
+          <neon-stack>
             <neon-note color="info">
               <span>
                 <strong>Note:</strong> add button states (<strong>loading, success, error</strong>) to indicate the
@@ -131,7 +131,7 @@
             <neon-button color="primary" icon="plus" label="Success button with icon" state="success" />
             <neon-button color="error" label="Error" state="error" />
             <neon-button color="error" icon="plus" label="Error button with icon" state="error" />
-          </div>
+          </neon-stack>
           <editor v-model="stateExamples" />
         </neon-stack>
       </neon-card-body>

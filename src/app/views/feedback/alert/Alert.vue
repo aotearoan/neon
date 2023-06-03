@@ -46,7 +46,7 @@
           <h2 class="neon-h3">Toast alerts</h2>
         </neon-card-header>
         <neon-card-body>
-          <div class="neon--vertical">
+          <neon-stack>
             <neon-inline>
               <neon-button label="Toast top" @click="toastInfo()" />
               <neon-button label="Toast bottom" @click="toastInfo(NeonVerticalPosition.Bottom)" />
@@ -57,7 +57,7 @@
               <neon-button color="warn" label="Toast warning" @click="toastWarn()" />
               <neon-button color="error" label="Toast error" @click="toastError()" />
             </neon-inline>
-          </div>
+          </neon-stack>
         </neon-card-body>
         <neon-card-body>
           <editor v-model="toastTemplate" />

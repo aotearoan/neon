@@ -13,10 +13,10 @@
       <neon-card-body>
         <h2 class="neon-h3">Splash loader example</h2>
         <neon-stack>
-          <div class="neon--vertical">
+          <neon-stack>
             <neon-button label="Show loader" @click="openLoader()" />
             <neon-splash-loader v-if="open" :fullscreen="true" :overlay="true" color="brand" size="xl" />
-          </div>
+          </neon-stack>
           <editor v-model="template" />
         </neon-stack>
       </neon-card-body>

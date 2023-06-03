@@ -25,7 +25,7 @@
     </neon-card>
     <neon-card>
       <neon-card-body>
-        <div class="neon--vertical">
+        <neon-stack>
           <neon-link :external-indicator="true" href="https://getskeleton.com">Test link</neon-link>
           <neon-label :color="selectedPalette" label="Test label" />
           <br />
@@ -187,7 +187,7 @@
               <span>Pig doner tri-tip tongue pork, shank kevin pork belly shoulder</span>
             </neon-card-body>
           </neon-selectable-card>
-        </div>
+        </neon-stack>
       </neon-card-body>
     </neon-card>
   </neon-stack>

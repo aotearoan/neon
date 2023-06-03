@@ -12,7 +12,7 @@
       <neon-card-body>
         <h2 class="neon-h3">Expansion panel sizes</h2>
         <neon-stack>
-          <div class="neon--vertical example-expansion-panel">
+          <neon-stack class="example-expansion-panel">
             <neon-expansion-panel v-model="expanded1" label="Small" size="s">
               <p>{{ content }}</p>
             </neon-expansion-panel>
@@ -22,14 +22,14 @@
             <neon-expansion-panel v-model="expanded3" label="Large" size="l">
               <p>{{ content }}</p>
             </neon-expansion-panel>
-          </div>
+          </neon-stack>
           <editor v-model="sizesTemplate" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">More styles</h2>
         <neon-stack>
-          <div class="neon--vertical example-expansion-panel">
+          <neon-stack class="example-expansion-panel">
             <neon-expansion-panel v-model="expanded4" icon="contrast" label="With icon">
               <p>{{ content }}</p>
             </neon-expansion-panel>
@@ -45,7 +45,7 @@
             <neon-expansion-panel v-model="expanded8" label="From bottom" position="bottom">
               <p>{{ content }}</p>
             </neon-expansion-panel>
-          </div>
+          </neon-stack>
           <editor v-model="moreTemplate" />
         </neon-stack>
       </neon-card-body>

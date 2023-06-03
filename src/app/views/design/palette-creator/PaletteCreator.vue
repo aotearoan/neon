@@ -45,89 +45,85 @@
       <neon-card-body class="palette-creator__text-vars">
         <h2 class="neon-h4">Text variables</h2>
         <neon-inline>
-          <div class="neon--vertical">
-            <neon-field for="textDark" label="Text dark">
-              <neon-color
-                id="textDark"
-                :model-value="palette['--neon-rgb-text-dark']"
-                @update:modelValue="setStyle('--neon-rgb-text-dark', $event)"
-              />
-            </neon-field>
-            <neon-field for="textDarkStrong" label="Text dark strong">
-              <neon-color
-                id="textDarkStrong"
-                :model-value="palette['--neon-rgb-text-strong-dark']"
-                @update:modelValue="setStyle('--neon-rgb-text-strong-dark', $event)"
-              />
-            </neon-field>
-          </div>
-          <div class="neon--vertical">
-            <neon-field for="textLight" label="Text light">
-              <neon-color
-                id="textLight"
-                :model-value="palette['--neon-rgb-text-light']"
-                @update:modelValue="setStyle('--neon-rgb-text-light', $event)"
-              />
-            </neon-field>
-            <neon-field for="textLightStrong" label="Text light strong">
-              <neon-color
-                id="textLightStrong"
-                :model-value="palette['--neon-rgb-text-strong-light']"
-                @update:modelValue="setStyle('--neon-rgb-text-strong-light', $event)"
-              />
-            </neon-field>
-          </div>
+          <neon-field for="textDark" label="Text dark">
+            <neon-color
+              id="textDark"
+              :model-value="palette['--neon-rgb-text-dark']"
+              @update:modelValue="setStyle('--neon-rgb-text-dark', $event)"
+            />
+          </neon-field>
+          <neon-field for="textDarkStrong" label="Text dark strong">
+            <neon-color
+              id="textDarkStrong"
+              :model-value="palette['--neon-rgb-text-strong-dark']"
+              @update:modelValue="setStyle('--neon-rgb-text-strong-dark', $event)"
+            />
+          </neon-field>
+        </neon-inline>
+        <neon-inline>
+          <neon-field for="textLight" label="Text light">
+            <neon-color
+              id="textLight"
+              :model-value="palette['--neon-rgb-text-light']"
+              @update:modelValue="setStyle('--neon-rgb-text-light', $event)"
+            />
+          </neon-field>
+          <neon-field for="textLightStrong" label="Text light strong">
+            <neon-color
+              id="textLightStrong"
+              :model-value="palette['--neon-rgb-text-strong-light']"
+              @update:modelValue="setStyle('--neon-rgb-text-strong-light', $event)"
+            />
+          </neon-field>
         </neon-inline>
       </neon-card-body>
       <neon-card-body class="palette-creator__text-vars">
         <h2 class="neon-h4">Disabled variables</h2>
-        <neon-inline>
-          <div class="neon--vertical">
-            <neon-field for="disabledBackgroundDark" label="Disabled background dark">
-              <neon-color
-                id="disabledBackgroundDark"
-                :model-value="palette['--neon-rgb-disabled-background-dark']"
-                @update:modelValue="setStyle('--neon-rgb-disabled-background-dark', $event)"
-              />
-            </neon-field>
-            <neon-field for="disabledBorderDark" label="Disabled border dark">
-              <neon-color
-                id="disabledBorderDark"
-                :model-value="palette['--neon-rgb-disabled-border-dark']"
-                @update:modelValue="setStyle('--neon-rgb-disabled-border-dark', $event)"
-              />
-            </neon-field>
-            <neon-field for="disabledTextDark" label="Disabled text dark">
-              <neon-color
-                id="disabledTextDark"
-                :model-value="palette['--neon-rgb-disabled-text-dark']"
-                @update:modelValue="setStyle('--neon-rgb-disabled-text-dark', $event)"
-              />
-            </neon-field>
-          </div>
-          <div class="neon--vertical">
-            <neon-field for="disabledBackgroundLight" label="Disabled background light">
-              <neon-color
-                id="disabledBackgroundLight"
-                :model-value="palette['--neon-rgb-disabled-background-light']"
-                @update:modelValue="setStyle('--neon-rgb-disabled-background-light', $event)"
-              />
-            </neon-field>
-            <neon-field for="disabledBorderLight" label="Disabled border light">
-              <neon-color
-                id="disabledBorderLight"
-                :model-value="palette['--neon-rgb-disabled-border-light']"
-                @update:modelValue="setStyle('--neon-rgb-disabled-border-light', $event)"
-              />
-            </neon-field>
-            <neon-field for="disabledTextLight" label="Disabled text light">
-              <neon-color
-                id="disabledTextLight"
-                :model-value="palette['--neon-rgb-disabled-text-light']"
-                @update:modelValue="setStyle('--neon-rgb-disabled-text-light', $event)"
-              />
-            </neon-field>
-          </div>
+        <neon-inline breakpoint="tablet">
+          <neon-field for="disabledBackgroundDark" label="Disabled bg dark">
+            <neon-color
+              id="disabledBackgroundDark"
+              :model-value="palette['--neon-rgb-disabled-background-dark']"
+              @update:modelValue="setStyle('--neon-rgb-disabled-background-dark', $event)"
+            />
+          </neon-field>
+          <neon-field for="disabledBorderDark" label="Disabled border dark">
+            <neon-color
+              id="disabledBorderDark"
+              :model-value="palette['--neon-rgb-disabled-border-dark']"
+              @update:modelValue="setStyle('--neon-rgb-disabled-border-dark', $event)"
+            />
+          </neon-field>
+          <neon-field for="disabledTextDark" label="Disabled text dark">
+            <neon-color
+              id="disabledTextDark"
+              :model-value="palette['--neon-rgb-disabled-text-dark']"
+              @update:modelValue="setStyle('--neon-rgb-disabled-text-dark', $event)"
+            />
+          </neon-field>
+        </neon-inline>
+        <neon-inline breakpoint="tablet">
+          <neon-field for="disabledBackgroundLight" label="Disabled bg light">
+            <neon-color
+              id="disabledBackgroundLight"
+              :model-value="palette['--neon-rgb-disabled-background-light']"
+              @update:modelValue="setStyle('--neon-rgb-disabled-background-light', $event)"
+            />
+          </neon-field>
+          <neon-field for="disabledBorderLight" label="Disabled border light">
+            <neon-color
+              id="disabledBorderLight"
+              :model-value="palette['--neon-rgb-disabled-border-light']"
+              @update:modelValue="setStyle('--neon-rgb-disabled-border-light', $event)"
+            />
+          </neon-field>
+          <neon-field for="disabledTextLight" label="Disabled text light">
+            <neon-color
+              id="disabledTextLight"
+              :model-value="palette['--neon-rgb-disabled-text-light']"
+              @update:modelValue="setStyle('--neon-rgb-disabled-text-light', $event)"
+            />
+          </neon-field>
         </neon-inline>
       </neon-card-body>
       <neon-card-body>
@@ -142,10 +138,10 @@
         </neon-inline>
         <br />
         <neon-inline :class="{ 'palette-creator__palette-group--hide': !toggleNeutral }" breakpoint="desktop">
-          <div
+          <neon-stack
             v-for="neutralPalette in neutralPalettes"
             :key="neutralPalette"
-            class="neon--vertical palette-creator__palette-group"
+            class="palette-creator__palette-group"
           >
             <h3 class="neon-h5">{{ neutralPalette }}</h3>
             <div class="palette-creator__light-palette">
@@ -218,7 +214,7 @@
                 </span>
               </div>
             </div>
-          </div>
+          </neon-stack>
         </neon-inline>
       </neon-card-body>
       <neon-card-body>
@@ -233,16 +229,12 @@
         </neon-inline>
         <br />
         <neon-inline :class="{ 'palette-creator__palette-group--hide': !toggleBrand }" breakpoint="desktop">
-          <div
-            v-for="brandPalette in brandPalettes"
-            :key="brandPalette"
-            class="neon--vertical palette-creator__palette-group"
-          >
+          <neon-stack v-for="brandPalette in brandPalettes" :key="brandPalette" class="palette-creator__palette-group">
             <h3 class="neon-h5">{{ brandPalette }}</h3>
             <neon-field label="Generate from">
               <neon-color
                 :model-value="palette[`--neon-rgb-${brandPalette}-l1`]"
-                class="neon--vertical palette-creator__select-reference"
+                class="palette-creator__select-reference"
                 size="s"
                 @update:modelValue="generatePalette(brandPalette, $event)"
               />
@@ -317,7 +309,7 @@
                 </span>
               </div>
             </div>
-          </div>
+          </neon-stack>
         </neon-inline>
       </neon-card-body>
       <neon-card-body>
@@ -332,16 +324,16 @@
         </neon-inline>
         <br />
         <neon-inline :class="{ 'palette-creator__palette-group--hide': !toggleFunctional }" breakpoint="desktop">
-          <div
+          <neon-stack
             v-for="functionalPalette in functionalPalettes"
             :key="functionalPalette"
-            class="neon--vertical palette-creator__palette-group"
+            class="palette-creator__palette-group"
           >
             <h3 class="neon-h5">{{ functionalPalette }}</h3>
             <neon-field label="Generate from">
               <neon-color
                 :model-value="palette[`--neon-rgb-${functionalPalette}-l1`]"
-                class="neon--vertical palette-creator__select-reference"
+                class="palette-creator__select-reference"
                 size="s"
                 @update:modelValue="generatePalette(functionalPalette, $event)"
               />
@@ -416,7 +408,7 @@
                 </span>
               </div>
             </div>
-          </div>
+          </neon-stack>
         </neon-inline>
       </neon-card-body>
     </neon-card>

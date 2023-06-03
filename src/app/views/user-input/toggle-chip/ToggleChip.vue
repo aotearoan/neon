@@ -11,36 +11,36 @@
       <neon-card-body>
         <h2 class="neon-h3">Toggle chip sizes</h2>
         <neon-stack>
-          <div class="neon--vertical">
+          <neon-stack>
             <neon-toggle-chip v-model="checked1" label="Extra Small" size="xs" />
             <neon-toggle-chip v-model="checked2" label="Small" size="s" />
             <neon-toggle-chip v-model="checked3" label="Medium" />
             <neon-toggle-chip v-model="checked4" label="Large" size="l" />
-          </div>
+          </neon-stack>
           <editor v-model="sizeTemplate" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Toggle chip with no check</h2>
         <neon-stack>
-          <div class="neon--vertical">
+          <neon-stack>
             <neon-toggle-chip v-model="checked5" :show-check="false" label="Extra small" size="xs" />
             <neon-toggle-chip v-model="checked6" :show-check="false" label="Small" size="s" />
             <neon-toggle-chip v-model="checked7" :show-check="false" label="Medium" size="m" />
             <neon-toggle-chip v-model="checked8" :show-check="false" label="Large" size="l" />
-          </div>
+          </neon-stack>
           <editor v-model="noCheckTemplate" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Toggle chip colors</h2>
         <neon-stack>
-          <div class="neon--vertical">
+          <neon-stack>
             <neon-toggle-chip v-model="checked9" color="brand" label="Brand" />
             <neon-toggle-chip v-model="checked10" color="primary" label="Primary" />
             <neon-toggle-chip v-model="checked11" color="info" label="Info" />
             <neon-toggle-chip v-model="checked12" color="warn" label="Warning" />
-          </div>
+          </neon-stack>
           <editor v-model="colorTemplate" />
         </neon-stack>
       </neon-card-body>
@@ -64,9 +64,9 @@
       <neon-card-body>
         <h2 class="neon-h3">Disabled toggle chip</h2>
         <neon-stack>
-          <div class="neon--vertical">
+          <neon-stack>
             <neon-toggle-chip v-model="checked17" :disabled="true" color="primary" label="Disabled" size="m" />
-          </div>
+          </neon-stack>
           <editor v-model="stateTemplate" />
         </neon-stack>
       </neon-card-body>

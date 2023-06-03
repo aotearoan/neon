@@ -219,14 +219,4 @@
   .neon-color-text-error {
     color: var(--neon-color-error);
   }
-
-  .neon--vertical {
-    display: flex;
-    flex-direction: column;
-
-    & > *:not(:last-child) {
-      margin-right: 0;
-      margin-bottom: calc(4 * var(--neon-base-space));
-    }
-  }
 }

@@ -1,4 +1,8 @@
 .palette-creator {
+  .neon-field {
+    max-width: 250rem;
+  }
+
   .neon-card .neon-card-body:not(.palette-creator__text-vars) .neon-color--m {
     margin-bottom: var(--neon-base-space);
 
@@ -38,11 +42,6 @@
       }
     }
   }
-
-  .neon--vertical.palette-creator__palette-group {
-    margin-right: 0;
-  }
-
 
   .palette-creator__dark-palette,
   .palette-creator__light-palette {
@@ -84,6 +83,10 @@
     .palette-creator__color--normal-aa {
       color: var(--neon-color-text-dark);
     }
+  }
+
+  .palette-creator__palette-group {
+    max-width: fit-content;
   }
 
   .palette-creator__palette-group--hide {
