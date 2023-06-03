@@ -44,7 +44,7 @@
     <neon-card>
       <neon-card-body class="palette-creator__text-vars">
         <h2 class="neon-h4">Text variables</h2>
-        <div class="neon--horizontal">
+        <neon-inline>
           <div class="neon--vertical">
             <neon-field for="textDark" label="Text dark">
               <neon-color
@@ -77,11 +77,11 @@
               />
             </neon-field>
           </div>
-        </div>
+        </neon-inline>
       </neon-card-body>
       <neon-card-body class="palette-creator__text-vars">
         <h2 class="neon-h4">Disabled variables</h2>
-        <div class="neon--horizontal">
+        <neon-inline>
           <div class="neon--vertical">
             <neon-field for="disabledBackgroundDark" label="Disabled background dark">
               <neon-color
@@ -128,10 +128,10 @@
               />
             </neon-field>
           </div>
-        </div>
+        </neon-inline>
       </neon-card-body>
       <neon-card-body>
-        <div class="neon--horizontal">
+        <neon-inline>
           <h2 class="neon-h4">Neutral palettes</h2>
           <neon-tooltip>
             <template #target>
@@ -139,9 +139,9 @@
             </template>
             <template #content>Display the WCAG contrast info for small & large text</template>
           </neon-tooltip>
-        </div>
+        </neon-inline>
         <br />
-        <div :class="{ 'palette-creator__palette-group--hide': !toggleNeutral }" class="neon--horizontal">
+        <neon-inline :class="{ 'palette-creator__palette-group--hide': !toggleNeutral }" breakpoint="desktop">
           <div
             v-for="neutralPalette in neutralPalettes"
             :key="neutralPalette"
@@ -219,10 +219,10 @@
               </div>
             </div>
           </div>
-        </div>
+        </neon-inline>
       </neon-card-body>
       <neon-card-body>
-        <div class="neon--horizontal">
+        <neon-inline>
           <h2 class="neon-h4">Brand palettes</h2>
           <neon-tooltip>
             <template #target>
@@ -230,9 +230,9 @@
             </template>
             <template #content>Display the WCAG contrast info for small & large text</template>
           </neon-tooltip>
-        </div>
+        </neon-inline>
         <br />
-        <div :class="{ 'palette-creator__palette-group--hide': !toggleBrand }" class="neon--horizontal">
+        <neon-inline :class="{ 'palette-creator__palette-group--hide': !toggleBrand }" breakpoint="desktop">
           <div
             v-for="brandPalette in brandPalettes"
             :key="brandPalette"
@@ -318,10 +318,10 @@
               </div>
             </div>
           </div>
-        </div>
+        </neon-inline>
       </neon-card-body>
       <neon-card-body>
-        <div class="neon--horizontal">
+        <neon-inline>
           <h2 class="neon-h4">Functional palettes</h2>
           <neon-tooltip>
             <template #target>
@@ -329,9 +329,9 @@
             </template>
             <template #content>Display the WCAG contrast info for small & large text</template>
           </neon-tooltip>
-        </div>
+        </neon-inline>
         <br />
-        <div :class="{ 'palette-creator__palette-group--hide': !toggleFunctional }" class="neon--horizontal">
+        <neon-inline :class="{ 'palette-creator__palette-group--hide': !toggleFunctional }" breakpoint="desktop">
           <div
             v-for="functionalPalette in functionalPalettes"
             :key="functionalPalette"
@@ -417,7 +417,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </neon-inline>
       </neon-card-body>
     </neon-card>
   </neon-stack>

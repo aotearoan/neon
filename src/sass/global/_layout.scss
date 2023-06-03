@@ -18,19 +18,6 @@
     flex-direction: column;
   }
 
-  .neon-row,
-  .neon-horizontal {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    @include layout.margin-vertical;
-
-    @include responsive.responsive(tablet) {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  }
-
   .neon-space-evenly {
     width: 100%;
     justify-content: space-evenly;

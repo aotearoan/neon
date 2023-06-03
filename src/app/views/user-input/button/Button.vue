@@ -12,47 +12,47 @@
       <neon-card-body>
         <h2 class="neon-h3">Button sizes</h2>
         <neon-stack>
-          <div class="neon--horizontal">
+          <neon-inline>
             <neon-button label="Small button" size="s" />
             <neon-button label="Medium button" size="m" />
             <neon-button label="Large button" size="l" />
-          </div>
+          </neon-inline>
           <editor v-model="sizeExamples" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Neutral colors</h2>
         <neon-stack>
-          <div class="neon--horizontal example--wrap">
+          <neon-inline class="example--wrap">
             <neon-button color="low-contrast" label="Low contrast" />
             <neon-button color="neutral" label="Neutral" />
             <neon-button color="high-contrast" label="High contrast" />
             <div class="example--padded example--info">
               <neon-button :inverse="true" label="Inverse" />
             </div>
-          </div>
+          </neon-inline>
           <editor v-model="neutralColorExamples" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Brand colors</h2>
         <neon-stack>
-          <div class="neon--horizontal example--wrap">
+          <neon-inline class="example--wrap">
             <neon-button color="brand" label="Brand" />
             <neon-button color="primary" label="Primary" />
-          </div>
+          </neon-inline>
           <editor v-model="brandColorExamples" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Functional colors</h2>
         <neon-stack>
-          <div class="neon--horizontal example--wrap">
+          <neon-inline class="example--wrap">
             <neon-button color="info" label="Info" />
             <neon-button color="success" label="Success" />
             <neon-button color="warn" label="Warn" />
             <neon-button color="error" label="Error" />
-          </div>
+          </neon-inline>
           <editor v-model="functionalColorExamples" />
         </neon-stack>
       </neon-card-body>
@@ -66,12 +66,12 @@
               </p>
             </neon-note>
             <br />
-            <div class="neon--horizontal example--wrap">
+            <neon-inline class="example--wrap">
               <neon-button alternate-color="primary" color="primary" label="Primary" />
               <neon-button alternate-color="info" color="success" label="Success" />
               <neon-button alternate-color="primary" color="brand" label="Mixed" />
               <neon-button :circular="true" alternate-color="info" color="brand" icon="plus" />
-            </div>
+            </neon-inline>
           </div>
           <editor v-model="gradientExamples" />
         </neon-stack>
@@ -95,20 +95,20 @@
       <neon-card-body>
         <h2 class="neon-h3">Buttons with icons</h2>
         <neon-stack>
-          <div class="neon--horizontal">
+          <neon-inline>
             <neon-button icon="plus" label="With icon" />
             <neon-button icon="plus" icon-position="right" label="Positioned right" />
-          </div>
+          </neon-inline>
           <editor v-model="withIconExamples" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Icon only buttons</h2>
         <neon-stack>
-          <div class="neon--horizontal">
+          <neon-inline>
             <neon-button icon="plus" />
             <neon-button :circular="true" icon="plus" />
-          </div>
+          </neon-inline>
           <editor v-model="iconOnlyExamples" />
         </neon-stack>
       </neon-card-body>

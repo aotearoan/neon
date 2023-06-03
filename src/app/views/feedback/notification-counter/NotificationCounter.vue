@@ -10,16 +10,16 @@
       <neon-card-body>
         <h2 class="neon-h3">Notification counters</h2>
         <neon-stack>
-          <div class="neon--horizontal example--margin-top">
+          <neon-inline class="example--margin-top">
             <span class="positioned-element">No value<neon-notification-counter :active="active" /></span>
             <span class="positioned-element">With value<neon-notification-counter :active="active" :count="9" /></span>
             <span class="positioned-element"
-              >Large number<neon-notification-counter :active="active" :count="42"
+            >Large number<neon-notification-counter :active="active" :count="42"
             /></span>
             <span class="positioned-element"
-              >With color<neon-notification-counter :active="active" :count="9" color="brand"
+            >With color<neon-notification-counter :active="active" :count="9" color="brand"
             /></span>
-          </div>
+          </neon-inline>
           <neon-switch v-model="active" label="Activate notifications" />
           <editor v-model="template" />
         </neon-stack>

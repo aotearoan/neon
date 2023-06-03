@@ -35,16 +35,4 @@ $message-height: calc(var(--neon-font-size-s) * var(--neon-line-height-ratio));
       }
     }
   }
-
-  .neon--horizontal {
-    gap: calc(4 * var(--neon-base-space));
-
-    @include responsive.responsive(tablet) {
-      gap: calc(3 * var(--neon-base-space));
-    }
-
-    @include responsive.responsive(mobile-large) {
-      gap: calc(2 * var(--neon-base-space));
-    }
-  }
 }

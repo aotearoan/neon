@@ -4,8 +4,10 @@
   .neon-linear-progress {
     user-select: none;
     flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
+    width: 100%;
 
     @each $color in palettes.$neon-functional-colors {
       &.neon-linear-progress--#{$color} {

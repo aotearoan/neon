@@ -21,7 +21,7 @@
       <neon-card-body>
         <h2 class="neon-h3">Dropdown sizes</h2>
         <neon-stack>
-          <div class="neon--horizontal">
+          <neon-inline>
             <neon-dropdown v-model="sOpen" label="Small" size="s">
               <neon-card-body>
                 <p>Dropdown contents</p>
@@ -37,14 +37,14 @@
                 <p>Dropdown contents</p>
               </neon-card-body>
             </neon-dropdown>
-          </div>
+          </neon-inline>
           <editor v-model="sizeExamples" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Dropdown colors</h2>
         <neon-stack>
-          <div class="neon--horizontal">
+          <neon-inline>
             <neon-dropdown v-model="primaryOpen" color="primary" label="Primary">
               <neon-card-body>
                 <p>Dropdown contents</p>
@@ -55,14 +55,14 @@
                 <p>Dropdown contents</p>
               </neon-card-body>
             </neon-dropdown>
-          </div>
+          </neon-inline>
           <editor v-model="colorExamples" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Dropdown with icons</h2>
         <neon-stack>
-          <div class="neon--horizontal">
+          <neon-inline>
             <neon-dropdown v-model="withIconOpen" icon="plus" label="With icon">
               <neon-card-body>
                 <p>Dropdown contents</p>
@@ -83,14 +83,14 @@
                 <p>Dropdown contents</p>
               </neon-card-body>
             </neon-dropdown>
-          </div>
+          </neon-inline>
           <editor v-model="iconExamples" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Dropdown button styles</h2>
         <neon-stack>
-          <div class="neon--horizontal">
+          <neon-inline>
             <neon-dropdown v-model="solidButtonOpen" dropdown-style="solid-button" label="Solid">
               <neon-card-body>
                 <p>Dropdown contents</p>
@@ -101,14 +101,14 @@
                 <p>Dropdown contents</p>
               </neon-card-body>
             </neon-dropdown>
-          </div>
+          </neon-inline>
           <editor v-model="buttonStyleExamples" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Dropdown badge styles</h2>
         <neon-stack>
-          <div class="neon--horizontal">
+          <neon-inline>
             <neon-dropdown v-model="badgeSquareOpen" dropdown-style="square-badge" label="XD">
               <neon-card-body>
                 <p>Dropdown contents</p>
@@ -119,14 +119,14 @@
                 <p>Dropdown contents</p>
               </neon-card-body>
             </neon-dropdown>
-          </div>
+          </neon-inline>
           <editor v-model="badgeStyleExamples" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Dropdown positions</h2>
         <neon-stack>
-          <div class="neon--horizontal">
+          <neon-inline>
             <neon-dropdown v-model="blOpen" label="Bottom left aligned">
               <neon-card-body>
                 <p>Bacon ipsum dolor amet t-bone ribeye</p>
@@ -137,20 +137,20 @@
                 <p>Bacon ipsum dolor amet t-bone ribeye</p>
               </neon-card-body>
             </neon-dropdown>
-          </div>
+          </neon-inline>
           <editor v-model="positionExamples" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Dropdown open on hover</h2>
         <neon-stack>
-          <div class="neon--horizontal">
+          <neon-inline>
             <neon-dropdown v-model="hoverOpen" :open-on-hover="true" dropdown-style="text-button" label="Open on hover">
               <neon-card-body>
                 <p>Bacon ipsum dolor amet t-bone ribeye</p>
               </neon-card-body>
             </neon-dropdown>
-          </div>
+          </neon-inline>
           <editor v-model="openOnHoverExample" />
         </neon-stack>
       </neon-card-body>

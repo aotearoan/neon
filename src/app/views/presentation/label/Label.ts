@@ -1,5 +1,5 @@
 import { defineComponent, onMounted, ref } from 'vue';
-import { NeonCard, NeonCardBody, NeonLabel, NeonStack } from '@/neon';
+import { NeonCard, NeonCardBody, NeonInline, NeonLabel, NeonStack } from '@/neon';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
 import Editor from '@/app/components/editor/Editor.vue';
 import type { MenuModel } from '@/app/Menu';
@@ -13,6 +13,7 @@ export default defineComponent({
     NeonCardBody,
     NeonLabel,
     NeonStack,
+    NeonInline,
     ComponentDocumentation,
     Editor,
   },
@@ -36,11 +37,9 @@ export default defineComponent({
 <neon-label alternate-color="primary" color="brand" label="Covfefe" />
 <neon-label alternate-color="brand" color="primary" label="Hamberders" />`;
 
-    const withIconsTemplate = `<div class="neon--horizontal">
-  <neon-label icon="check" size="xs" color="warn" label="Extra small" />
-  <neon-label icon="check" color="error" label="Small" />
-  <neon-label icon="lock" icon-position="right" color="high-contrast" label="Icon right" />
-</div>`;
+    const withIconsTemplate = `<neon-label icon="check" size="xs" color="warn" label="Extra small" />
+<neon-label icon="check" color="error" label="Small" />
+<neon-label icon="lock" icon-position="right" color="high-contrast" label="Icon right" />`;
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonLabel')));
 

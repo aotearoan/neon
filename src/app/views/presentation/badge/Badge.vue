@@ -13,53 +13,53 @@
       <neon-card-body>
         <h2 class="neon-h3">Badge sizes</h2>
         <neon-stack>
-          <div class="neon--horizontal">
+          <neon-inline>
             <neon-badge label="SM" size="s" />
             <neon-badge label="MD" size="m" />
             <neon-badge label="LG" size="l" />
-          </div>
+          </neon-inline>
           <editor v-model="sizesTemplate" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Badge shapes</h2>
         <neon-stack>
-          <div class="neon--horizontal">
+          <neon-inline>
             <neon-badge label="SQ" />
             <neon-badge :circular="true" label="CI" />
-          </div>
+          </neon-inline>
           <editor v-model="shapesTemplate" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Badge styles</h2>
         <neon-stack>
-          <div class="neon--horizontal">
+          <neon-inline>
             <neon-badge label="LB" />
             <neon-badge icon="user" />
             <neon-badge :image="baseUrl + 'images/doge.jpg'" />
             <neon-badge :circular="true" jazzicon-id="Test user" />
-          </div>
+          </neon-inline>
           <editor v-model="stylesTemplate" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Badge colors</h2>
         <neon-stack>
-          <div class="neon--horizontal">
+          <neon-inline>
             <neon-badge color="brand" label="LB" />
             <neon-badge color="success" icon="user" />
-          </div>
+          </neon-inline>
           <editor v-model="colorsTemplate" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Gradient badges</h2>
         <neon-stack>
-          <div class="neon--horizontal">
+          <neon-inline>
             <neon-badge alternate-color="warn" color="brand" icon="user" />
             <neon-badge alternate-color="brand" color="info" label="LB" />
-          </div>
+          </neon-inline>
           <editor v-model="gradientsTemplate" />
         </neon-stack>
       </neon-card-body>

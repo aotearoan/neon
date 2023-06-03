@@ -1,5 +1,14 @@
 import { defineComponent, onMounted, ref } from 'vue';
-import { NeonButton, NeonCard, NeonCardBody, NeonCardFooter, NeonCardHeader, NeonModal, NeonStack } from '@/neon';
+import {
+  NeonButton,
+  NeonCard,
+  NeonCardBody,
+  NeonCardFooter,
+  NeonCardHeader,
+  NeonInline,
+  NeonModal,
+  NeonStack,
+} from '@/neon';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
@@ -16,6 +25,7 @@ export default defineComponent({
     NeonCardFooter,
     NeonCardHeader,
     NeonStack,
+    NeonInline,
     ComponentDocumentation,
     Editor,
   },
@@ -28,8 +38,7 @@ export default defineComponent({
       open.value = newOpen;
     };
 
-    const template = `<div class="neon--horizontal">
-  <neon-button label="Open modal" @click="toggleOpen(true)"></neon-button>
+    const template = `<neon-button label="Open modal" @click="toggleOpen(true)"></neon-button>
   <neon-modal :open="open" @close="toggleOpen(false)">
     <neon-card size="m">
       <neon-card-header>
@@ -49,8 +58,7 @@ export default defineComponent({
         <neon-button label="Accept" color="primary" @click="toggleOpen(false)" />
       </neon-card-footer>
     </neon-card>
-  </neon-modal>
-</div>`;
+  </neon-modal>`;
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonModal')));
 

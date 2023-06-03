@@ -12,7 +12,7 @@
       <neon-card-body>
         <h2 class="neon-h3">Drawer examples</h2>
         <neon-stack>
-          <div class="neon--horizontal">
+          <neon-inline gap="m">
             <!-- Left -->
             <neon-button label="Open left" @click="onOpenLeft(true)"></neon-button>
             <neon-drawer :open="openLeft" position="left" @close="onOpenLeft(false)">
@@ -35,7 +35,7 @@
               <br />
               <neon-button label="Close" style="align-self: flex-end" @click="onOpenBottom(false)" />
             </neon-drawer>
-          </div>
+          </neon-inline>
           <editor v-model="template" />
         </neon-stack>
       </neon-card-body>

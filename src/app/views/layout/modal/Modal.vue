@@ -10,7 +10,7 @@
       <neon-card-body>
         <h2 class="neon-h3">Modal example</h2>
         <neon-stack>
-          <div class="neon--horizontal">
+          <neon-inline>
             <neon-button label="Open modal" @click="toggleOpen(true)"></neon-button>
             <neon-modal :open="open" @close="toggleOpen(false)">
               <neon-card size="m">
@@ -32,7 +32,7 @@
                 </neon-card-footer>
               </neon-card>
             </neon-modal>
-          </div>
+          </neon-inline>
           <editor v-model="template" />
         </neon-stack>
       </neon-card-body>

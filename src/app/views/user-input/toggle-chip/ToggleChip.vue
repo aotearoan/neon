@@ -49,15 +49,15 @@
         <neon-stack>
           <neon-note color="info">
             <span
-              ><strong>Note:</strong> Use toggle chips as an alternative to a multi-select with only a few options</span
+            ><strong>Note:</strong> Use toggle chips as an alternative to a multi-select with only a few options</span
             >
           </neon-note>
-          <div class="neon--horizontal">
+          <neon-inline>
             <neon-toggle-chip v-model="checked13" :show-check="false" label="Bacon" size="s" />
             <neon-toggle-chip v-model="checked14" :show-check="false" label="Cheese" size="s" />
             <neon-toggle-chip v-model="checked15" :show-check="false" label="Pineapple" size="s" />
             <neon-toggle-chip v-model="checked16" :show-check="false" label="Mushrooms" size="s" />
-          </div>
+          </neon-inline>
           <editor v-model="fewOptionsTemplate" />
         </neon-stack>
       </neon-card-body>

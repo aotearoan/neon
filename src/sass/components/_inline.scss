@@ -6,6 +6,8 @@
     align-items: center;
     justify-content: flex-start;
     width: 100%;
+    max-width: 100%;
+    flex-wrap: wrap;
 
     &--gap-s {
       gap: var(--neon-gap-desktop-s);
@@ -73,6 +75,22 @@
         align-items: flex-start;
         justify-content: center;
       }
+    }
+
+    & > h1,
+    & > h2,
+    & > h3,
+    & > h4,
+    & > h5,
+    & > h6,
+    & > .neon-h0,
+    & > .neon-h1,
+    & > .neon-h2,
+    & > .neon-h3,
+    & > .neon-h4,
+    & > .neon-h5,
+    & > .neon-h6 {
+      margin-bottom: 0;
     }
   }
 }

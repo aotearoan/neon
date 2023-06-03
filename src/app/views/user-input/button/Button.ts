@@ -1,5 +1,5 @@
 import { defineComponent, onMounted, ref } from 'vue';
-import { NeonButton, NeonCard, NeonCardBody, NeonNote, NeonStack } from '@/neon';
+import { NeonButton, NeonCard, NeonCardBody, NeonInline, NeonNote, NeonStack } from '@/neon';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
 import Editor from '@/app/components/editor/Editor.vue';
 import type { MenuModel } from '@/app/Menu';
@@ -14,6 +14,7 @@ export default defineComponent({
     NeonButton,
     NeonNote,
     NeonStack,
+    NeonInline,
     ComponentDocumentation,
     Editor,
   },
@@ -44,12 +45,12 @@ export default defineComponent({
   <p>Use with care! It is recommended to avoid using too many variations of these buttons on a single site.</p>
 </neon-note>
 <br />
-<div class="neon--horizontal example--wrap">
+<neon-inline class="example--wrap">
   <neon-button color="primary" alternate-color="primary" label="Primary" />
   <neon-button color="success" alternate-color="info" label="Success" />
   <neon-button color="brand" alternate-color="primary" label="Mixed" />
   <neon-button color="brand" alternate-color="info" :circular="true" icon="plus" />
-</div>`;
+</neon-inline>`;
 
     const styleExamples = `<neon-button button-style="solid" label="Solid button" />
 <neon-button button-style="outline" label="Outline button" />
