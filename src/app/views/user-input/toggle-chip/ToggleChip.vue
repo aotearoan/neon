@@ -49,7 +49,7 @@
         <neon-stack>
           <neon-note color="info">
             <span
-            ><strong>Note:</strong> Use toggle chips as an alternative to a multi-select with only a few options</span
+              ><strong>Note:</strong> Use toggle chips as an alternative to a multi-select with only a few options</span
             >
           </neon-note>
           <neon-inline>
