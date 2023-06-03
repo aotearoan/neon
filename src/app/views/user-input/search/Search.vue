@@ -14,7 +14,7 @@
       <neon-card-body>
         <h2 class="neon-h3">Multiple selection</h2>
         <neon-stack>
-          <div class="neon-vertically-spaced">
+          <neon-stack>
             <neon-search
               v-model="searchMulti"
               :multiple="true"
@@ -22,14 +22,14 @@
               placeholder="Search"
               @filter-changed="updateFilter('filterMulti', $event)"
             />
-          </div>
+          </neon-stack>
           <editor v-model="multipleTemplate" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Colored chips</h2>
         <neon-stack>
-          <div class="neon-vertically-spaced">
+          <neon-stack>
             <neon-search
               v-model="searchColored"
               :multiple="true"
@@ -37,14 +37,14 @@
               placeholder="Search"
               @filter-changed="filterColored = $event"
             />
-          </div>
+          </neon-stack>
           <editor v-model="coloredTemplate" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Search sizes</h2>
         <neon-stack>
-          <div class="neon-vertically-spaced">
+          <neon-stack>
             <neon-search
               v-model="searchSmall"
               :options="filterOptions(model, searchSmall, filterSmall)"
@@ -66,14 +66,14 @@
               size="l"
               @filter-changed="filterLarge = $event"
             />
-          </div>
+          </neon-stack>
           <editor v-model="sizesTemplate" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Search with colors and icons</h2>
         <neon-stack>
-          <div class="neon-vertically-spaced">
+          <neon-stack>
             <neon-search
               v-model="searchBrand"
               :options="filterOptions(modelWithIcons, searchBrand, filterBrand)"
@@ -102,7 +102,7 @@
               placeholder="Search"
               @filter-changed="filterWarning = $event"
             />
-          </div>
+          </neon-stack>
           <editor v-model="colorsTemplate" />
         </neon-stack>
       </neon-card-body>

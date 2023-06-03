@@ -16,7 +16,7 @@
       <neon-card-body>
         <h2 class="neon-h3">Field Group Examples</h2>
         <neon-stack>
-          <div class="neon-vertically-spaced">
+          <neon-stack>
             <neon-field-group>
               <neon-input-indicator label="Salary" size="s" />
               <neon-input v-model="indexFilter" color="primary" placeholder="Enter amount" size="s" type="text" />
@@ -31,7 +31,7 @@
               <neon-input v-model="indexFilter" placeholder="Enter amount" size="l" type="text" />
               <neon-button label="Submit" size="l" />
             </neon-field-group>
-          </div>
+          </neon-stack>
           <editor v-model="inputIndicatorExamples" />
         </neon-stack>
       </neon-card-body>

@@ -10,9 +10,9 @@
       <neon-card-body>
         <h2 class="neon-h3">Example</h2>
         <neon-stack>
-          <div class="neon-vertically-spaced">
+          <neon-stack>
             <neon-password v-model="value" />
-          </div>
+          </neon-stack>
           <editor v-model="passwordExample" />
         </neon-stack>
       </neon-card-body>

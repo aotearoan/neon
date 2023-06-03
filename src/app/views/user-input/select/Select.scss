@@ -1,5 +1,6 @@
 .select-examples {
   .neon-select {
     min-width: calc(50 * var(--neon-base-space));
+    width: fit-content;
   }
 }

@@ -15,18 +15,18 @@
       <neon-card-body>
         <h2 class="neon-h3">Number sizes</h2>
         <neon-stack>
-          <div class="neon-vertically-spaced">
+          <neon-stack>
             <neon-number v-model="smallNumber" placeholder="Value" size="s" />
             <neon-number v-model="mediumNumber" placeholder="Value" size="m" />
             <neon-number v-model="largeNumber" placeholder="Value" size="l" />
-          </div>
+          </neon-stack>
           <editor v-model="numberSizeExamples" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Various number options</h2>
         <neon-stack>
-          <div class="neon-vertically-spaced">
+          <neon-stack>
             <label>spinButtons = true</label>
             <neon-number v-model="noButtonsNumber" :spin-buttons="true" placeholder="Value" />
             <label>Editable = false</label>
@@ -64,19 +64,19 @@
             <label>Disabled</label>
             <neon-number v-model="disabledNumber" disabled="disabled" placeholder="Value" />
             <neon-number v-model="disabledNumber" :spin-buttons="true" disabled="disabled" placeholder="Value" />
-          </div>
+          </neon-stack>
           <editor v-model="numberValueExamples" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Number colors</h2>
         <neon-stack>
-          <div class="neon-vertically-spaced">
+          <neon-stack>
             <neon-number v-model="hcNumber" color="high-contrast" placeholder="Value" />
             <neon-number v-model="primaryNumber" color="primary" placeholder="Value" />
             <neon-number v-model="brandNumber" :spin-buttons="true" color="brand" placeholder="Value" />
             <neon-number v-model="infoNumber" :editable="false" :spin-buttons="true" color="info" placeholder="Value" />
-          </div>
+          </neon-stack>
           <editor v-model="numberColorExamples" />
         </neon-stack>
       </neon-card-body>

@@ -20,12 +20,6 @@
       }
     }
 
-    .neon-vertically-spaced {
-      & > *:not(:last-child):not(label) {
-        margin-bottom: calc(4 * var(--neon-base-space));
-      }
-    }
-
     .app-side-nav {
       & > hr {
         display: none;

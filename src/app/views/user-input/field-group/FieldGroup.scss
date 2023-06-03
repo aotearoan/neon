@@ -1,11 +1,5 @@
 .field-group-examples {
-  .example__output {
-    .neon-vertically-spaced {
-      max-width: 500rem;
-    }
-
-    .neon-select {
-      min-width: 100rem;
-    }
+  .neon-field-group {
+    max-width: 500rem;
   }
 }

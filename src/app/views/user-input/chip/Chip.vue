@@ -19,18 +19,18 @@
       <neon-card-body>
         <h2 class="neon-h3">Chip sizes</h2>
         <neon-stack>
-          <div class="neon-vertically-spaced">
+          <neon-stack>
             <neon-chip label="Small" size="s" />
             <neon-chip label="Medium" size="m" />
             <neon-chip label="Large" size="l" />
-          </div>
+          </neon-stack>
           <editor v-model="chipSizes" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Chip colors</h2>
         <neon-stack>
-          <div class="neon-vertically-spaced">
+          <neon-stack>
             <neon-chip label="Neutral" />
             <neon-chip color="low-contrast" label="Low Contrast" />
             <neon-chip color="high-contrast" label="High Contrast" />
@@ -39,27 +39,27 @@
             <neon-chip color="success" label="Success" />
             <neon-chip color="warn" label="Warning" />
             <neon-chip color="error" label="Error" />
-          </div>
+          </neon-stack>
           <editor v-model="chipColors" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Chip actions</h2>
         <neon-stack>
-          <div class="neon-vertically-spaced">
+          <neon-stack>
             <neon-chip color="info" label="Clickable" @click="click" />
             <neon-chip action="remove" color="info" label="Removable" @close="remove" />
             <neon-chip :disabled="true" action="remove" color="info" label="Disabled" />
-          </div>
+          </neon-stack>
           <editor v-model="chipActions" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Chip with icon</h2>
         <neon-stack>
-          <div class="neon-vertically-spaced">
+          <neon-stack>
             <neon-chip icon="moon" label="With icon" />
-          </div>
+          </neon-stack>
           <editor v-model="chipIcons" />
         </neon-stack>
       </neon-card-body>

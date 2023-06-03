@@ -18,7 +18,7 @@
       <neon-card-body>
         <h2 class="neon-h3">Input Indicator Examples</h2>
         <neon-stack>
-          <div class="neon-vertically-spaced">
+          <neon-stack>
             <neon-field-group>
               <neon-input v-model="field1" placeholder="Rate" size="s" type="text" />
               <neon-input-indicator label="%" size="s" />
@@ -32,7 +32,7 @@
               <neon-input v-model="field3" placeholder="Username" size="l" type="text" />
               <neon-input-indicator label="@aol.com" size="l" />
             </neon-field-group>
-          </div>
+          </neon-stack>
           <editor v-model="inputIndicatorExamples" />
         </neon-stack>
       </neon-card-body>

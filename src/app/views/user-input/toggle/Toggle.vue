@@ -10,22 +10,22 @@
       <neon-card-body>
         <h2 class="neon-h3">Toggle sizes</h2>
         <neon-stack>
-          <div class="neon-vertically-spaced">
+          <neon-stack>
             <neon-toggle v-model="selected1" :model="model" name="toggle-1" size="s" />
             <neon-toggle v-model="selected2" :model="model" name="toggle-2" size="m" />
             <neon-toggle v-model="selected3" :model="model" name="toggle-3" size="l" />
-          </div>
+          </neon-stack>
           <editor v-model="toggleSizes" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Toggle colors</h2>
         <neon-stack>
-          <div class="neon-vertically-spaced">
+          <neon-stack>
             <neon-toggle v-model="selected4" :model="model" name="toggle-4" />
             <neon-toggle v-model="selected5" :model="model" color="info" name="toggle-5" />
             <neon-toggle v-model="selected6" :model="model" color="success" name="toggle-6" />
-          </div>
+          </neon-stack>
           <editor v-model="toggleColors" />
         </neon-stack>
       </neon-card-body>
@@ -39,7 +39,7 @@
       <neon-card-body>
         <h2 class="neon-h3">Radio buttons</h2>
         <neon-stack>
-          <div class="neon-vertically-spaced">
+          <neon-stack>
             <neon-toggle
               v-model="selected8"
               :model="model"
@@ -49,7 +49,7 @@
               toggle-style="radio-buttons"
             />
             <neon-toggle v-model="selected9" :model="model" name="toggle-9" toggle-style="radio-buttons" />
-          </div>
+          </neon-stack>
           <editor v-model="radioButtons" />
         </neon-stack>
       </neon-card-body>

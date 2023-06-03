@@ -12,7 +12,7 @@
       <neon-card-body>
         <h2 class="neon-h3">File examples</h2>
         <neon-stack>
-          <div class="neon-vertically-spaced">
+          <neon-stack>
             <neon-file label="Select file" @update:modelValue="files = $event" />
             <neon-file
               :multiple="true"
@@ -33,7 +33,7 @@
               label="Direct upload"
               @update:modelValue="files = $event"
             />
-          </div>
+          </neon-stack>
           <editor v-model="fileExamples" />
         </neon-stack>
       </neon-card-body>
