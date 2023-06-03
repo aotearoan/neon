@@ -229,6 +229,12 @@ export class Menu {
                 ],
               },
               {
+                path: 'inline',
+                page: 'Inline',
+                keywords: 'layout horizontal',
+                component: 'NeonInline',
+              },
+              {
                 path: 'modal',
                 page: 'Modal',
                 keywords: 'dialog',

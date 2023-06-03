@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NeonSelectableCard matches snapshot 1`] = `
-<div class="neon-card--horizontal neon-card--s neon-card--horizontal-breakpoint-mobile-l neon-card--horizontal-breakpoint-no-break neon-card neon-selectable-card--brand neon-selectable-card neon-selectable-card--brand neon-selectable-card" tabindex="0">
+<div class="neon-card--horizontal neon-card--s neon-card--horizontal-breakpoint-mobile-large neon-card--horizontal-breakpoint-no-break neon-card neon-selectable-card--brand neon-selectable-card neon-selectable-card--brand neon-selectable-card" tabindex="0">
   <!-- @slot card contents -->
   <div class="neon-card-header">
     <!-- @slot card header content --><label aria-checked="false" aria-disabled="false" class="neon-switch--checkbox neon-switch--s neon-switch--brand neon-switch--right neon-switch no-style neon-selectable-card__checkbox" role="checkbox" tabindex="-1">

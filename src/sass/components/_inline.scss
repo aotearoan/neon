@@ -1,8 +1,9 @@
 @use '../includes/responsive';
 
-@mixin stack {
-  .neon-stack {
-    flex-direction: column;
+@mixin inline {
+  .neon-inline {
+    flex-direction: row;
+    align-items: center;
     justify-content: flex-start;
     width: 100%;
 
@@ -39,6 +40,38 @@
 
       @include responsive.responsive(mobile-large) {
         gap: var(--neon-gap-mobile-l);
+      }
+    }
+
+    &--breakpoint-mobile {
+      @include responsive.responsive(mobile) {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+      }
+    }
+
+    &--breakpoint-mobile-large {
+      @include responsive.responsive(mobile-large) {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+      }
+    }
+
+    &--breakpoint-tablet {
+      @include responsive.responsive(tablet) {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+      }
+    }
+
+    &--breakpoint-desktop {
+      @include responsive.responsive(desktop) {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
       }
     }
   }

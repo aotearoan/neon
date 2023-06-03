@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NeonInline renders slot contents 1`] = `
+<div class="neon-inline--gap-l neon-inline--breakpoint-mobile-large neon-inline">
+  <!-- @slot stack contents -->
+  <p>test</p>
+</div>
+`;

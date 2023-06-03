@@ -246,4 +246,8 @@ $neon-components: null !default;
   @if index($neon-flattened-components, NeonStack) {
     @include components.stack;
   }
+
+  @if index($neon-flattened-components, NeonInline) {
+    @include components.inline;
+  }
 }

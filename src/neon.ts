@@ -27,6 +27,7 @@ export { default as NeonFooter } from './components/layout/footer/NeonFooter.vue
 export { default as NeonGrid } from './components/layout/grid/NeonGrid.vue';
 export { default as NeonGridArea } from './components/layout/grid/grid-area/NeonGridArea.vue';
 export { default as NeonIcon } from './components/presentation/icon/NeonIcon.vue';
+export { default as NeonInline } from './components/layout/inline/NeonInline.vue';
 export { default as NeonInput } from './components/user-input/input/NeonInput.vue';
 export { default as NeonInputIndicator } from './components/user-input/input-indicator/NeonInputIndicator.vue';
 export { default as NeonLabel } from './components/presentation/label/NeonLabel.vue';
