@@ -1,5 +1,5 @@
 import { defineComponent, onMounted, ref } from 'vue';
-import { NeonButton, NeonCard, NeonCardBody, NeonTooltip } from '@/neon';
+import { NeonButton, NeonCard, NeonCardBody, NeonStack, NeonTooltip } from '@/neon';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
@@ -13,6 +13,7 @@ export default defineComponent({
     NeonButton,
     NeonCard,
     NeonCardBody,
+    NeonStack,
     ComponentDocumentation,
     Editor,
   },

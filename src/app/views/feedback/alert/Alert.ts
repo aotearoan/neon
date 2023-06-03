@@ -7,6 +7,7 @@ import {
   NeonCardBody,
   NeonCardHeader,
   NeonLink,
+  NeonStack,
   NeonToastService,
   NeonVerticalPosition,
 } from '@/neon';
@@ -24,6 +25,7 @@ export default defineComponent({
     NeonCardBody,
     NeonCardHeader,
     NeonLink,
+    NeonStack,
     ComponentDocumentation,
     Editor,
   },

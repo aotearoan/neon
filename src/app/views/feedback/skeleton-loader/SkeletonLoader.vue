@@ -9,10 +9,12 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Skeleton loader with 5 rows</h2>
-        <div class="neon--vertical">
-          <neon-skeleton-loader :count="5" />
-        </div>
-        <editor v-model="template" />
+        <neon-stack>
+          <div class="neon--vertical">
+            <neon-skeleton-loader :count="5" />
+          </div>
+          <editor v-model="template" />
+        </neon-stack>
       </neon-card-body>
     </neon-card>
   </component-documentation>

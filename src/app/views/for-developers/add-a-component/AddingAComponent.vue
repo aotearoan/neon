@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <neon-stack>
     <neon-card>
       <neon-card-header>
         <h1>Adding a new component</h1>
@@ -9,26 +9,31 @@
       <neon-card-body>
         <neon-anchor id="installation" />
         <h2 class="neon-h4">Checklists</h2>
-        <p>
-          It is recommended to refer to existing similar components when creating new components for Neon. This will
-          help with understanding what is required in terms of documentation, examples & testing. Below are checklists
-          covering all necessary steps in creating a new component.
-        </p>
-        <h3 class="neon-h5">Vue Component + Typescript</h3>
-        <ol>
-          <li>Increment minor version in package.json & set patch version to 0.</li>
-          <li>Decide on a component name & in which of the sections the component belongs.</li>
-          <li>Create component vue/ts files in the relevant directory.</li>
-          <li>Add component vue file export to <em>src/neon.ts</em>.</li>
-          <li>Question: should this component define a 2 way bound modelValue?</li>
-          <li>Write unit tests for the component (aim for 100% coverage!).</li>
-          <li>
-            Use JSDoc comments to document the component & it's properties. These will be extracted & used for API
-            documentation later. Document the <em>emits</em>, i.e. the events emitted by the component. This will also
-            be extracted & used in generating the API documentation.
-          </li>
-        </ol>
-        <br />
+        <neon-stack>
+          <p>
+            It is recommended to refer to existing similar components when creating new components for Neon. This will
+            help with understanding what is required in terms of documentation, examples & testing. Below are checklists
+            covering all necessary steps in creating a new component.
+          </p>
+          <div>
+            <h3 class="neon-h5">Vue Component + Typescript</h3>
+            <ol>
+              <li>Increment minor version in package.json & set patch version to 0.</li>
+              <li>Decide on a component name & in which of the sections the component belongs.</li>
+              <li>Create component vue/ts files in the relevant directory.</li>
+              <li>Add component vue file export to <em>src/neon.ts</em>.</li>
+              <li>Question: should this component define a 2 way bound modelValue?</li>
+              <li>Write unit tests for the component (aim for 100% coverage!).</li>
+              <li>
+                Use JSDoc comments to document the component & it's properties. These will be extracted & used for API
+                documentation later. Document the <em>emits</em>, i.e. the events emitted by the component. This will
+                also be extracted & used in generating the API documentation.
+              </li>
+            </ol>
+          </div>
+        </neon-stack>
+      </neon-card-body>
+      <neon-card-body>
         <h3 class="neon-h5">Styles</h3>
         <ol>
           <li>
@@ -53,7 +58,8 @@
           </li>
           <li>Make sure to use rems instead of pixels. 1rem=1px in Neon.</li>
         </ol>
-        <br />
+      </neon-card-body>
+      <neon-card-body>
         <h3 class="neon-h5">Examples + Documentation</h3>
         <ol>
           <li>
@@ -72,7 +78,7 @@
         </ol>
       </neon-card-body>
     </neon-card>
-  </div>
+  </neon-stack>
 </template>
 
 <script lang="ts" src="./AddingAComponent.ts"></script>

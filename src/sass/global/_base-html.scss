@@ -1,7 +1,6 @@
 @use '../includes/scrollbars';
 @use '../includes/layout';
 @use '../includes/responsive';
-@use '../includes/note';
 
 @mixin base-html {
   background-color: var(--neon-background-color);
@@ -71,10 +70,6 @@
         content: "0" counter(li);
       }
     }
-
-    & + p {
-      margin-top: calc(4 * var(--neon-base-space));
-    }
   }
 
   ul {
@@ -107,10 +102,6 @@
         line-height: var(--neon-line-height-ratio);
       }
     }
-
-    & + p {
-      margin-top: calc(4 * var(--neon-base-space));
-    }
   }
 
   pre.neon--preformatted {
@@ -126,16 +117,6 @@
     }
   }
 
-  p + pre {
-    margin-top: 0;
-  }
-
-  p + ul,
-  p + ol,
-  pre + p {
-    margin-top: calc(2 * var(--neon-base-space));
-  }
-
   blockquote {
     display: flex;
     flex-direction: row;
@@ -147,54 +128,7 @@
       display: inline;
     }
 
-    & + p {
-      margin-top: calc(4 * var(--neon-base-space));
-    }
-
     @include layout.padding(0.85);
-  }
-
-  @include note.neon-note-margins(1, 'blockquote');
-
-  blockquote,
-  .neon-note,
-  table,
-  label,
-  .neon--horizontal,
-  .neon--vertical,
-  p {
-    & + h1,
-    & + .neon-h1,
-    & + h2,
-    & + .neon-h2,
-    & + h3,
-    & + .neon-h3,
-    & + h4,
-    & + .neon-h4,
-    & + h5,
-    & + .neon-h5,
-    & + h6,
-    & + .neon-h6,
-    & + .neon-card {
-      margin-top: calc(8 * var(--neon-base-space));
-    }
-  }
-
-  h1,
-  .neon-h1,
-  h2,
-  .neon-h2,
-  h3,
-  .neon-h3,
-  h4,
-  .neon-h4,
-  h5,
-  .neon-h5,
-  h6,
-  .neon-h6 {
-    & + label.neon-switch {
-      margin-top: 0;
-    }
   }
 
   .neon-monospaced {

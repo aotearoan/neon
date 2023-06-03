@@ -1,7 +1,7 @@
 import type { Ref } from 'vue';
 import { defineComponent, onMounted, ref } from 'vue';
 import type { NeonSearchOption } from '@/neon';
-import { NeonCard, NeonCardBody, NeonFunctionalColor, NeonSearch } from '@/neon';
+import { NeonCard, NeonCardBody, NeonFunctionalColor, NeonSearch, NeonStack } from '@/neon';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
@@ -14,6 +14,7 @@ export default defineComponent({
     NeonCard,
     NeonCardBody,
     NeonSearch,
+    NeonStack,
     ComponentDocumentation,
     Editor,
   },

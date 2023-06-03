@@ -246,6 +246,12 @@ export class Menu {
                 component: 'NeonSideNav',
               },
               {
+                path: 'stack',
+                page: 'Stack',
+                keywords: 'layout vertical',
+                component: 'NeonStack',
+              },
+              {
                 path: 'top-nav',
                 page: 'TopNav',
                 name: 'Top Nav',
@@ -395,17 +401,17 @@ export class Menu {
                 component: 'NeonDropZone',
               },
               {
+                path: 'field',
+                page: 'Field',
+                keywords: 'label field input optional mandatory message error',
+                component: 'NeonField',
+              },
+              {
                 path: 'field-group',
                 page: 'FieldGroup',
                 name: 'Field Group',
                 keywords: 'input indicator combi button dropdown',
                 component: 'NeonFieldGroup',
-              },
-              {
-                path: 'field',
-                page: 'Field',
-                keywords: 'label field input optional mandatory message error',
-                component: 'NeonField',
               },
               {
                 path: 'file',

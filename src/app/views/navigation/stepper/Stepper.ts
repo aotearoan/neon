@@ -1,4 +1,4 @@
-import { NeonActionMenu, NeonCard, NeonCardBody, NeonStepper } from '@/neon';
+import { NeonActionMenu, NeonCard, NeonCardBody, NeonStack, NeonStepper } from '@/neon';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
@@ -13,6 +13,7 @@ export default defineComponent({
     NeonCardBody,
     NeonActionMenu,
     NeonStepper,
+    NeonStack,
     ComponentDocumentation,
     Editor,
   },

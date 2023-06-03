@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <neon-stack>
     <neon-card>
       <neon-card-header>
         <h1>Theming</h1>
@@ -18,18 +18,20 @@
       <neon-card-body>
         <neon-anchor id="dark-mode" />
         <h2 class="neon-h4">Dark mode</h2>
-        <p>
-          Neon supports both light and dark modes. These are supported by changing the mode class attached to the HTML
-          root element of the page. The classes are <em>neon-mode--light</em> and <em>neon-mode--dark</em>.
-        </p>
-        <p>
-          Use
-          <neon-link href="/utils/NeonModeUtils">NeonModeUtils</neon-link>
-          to listen to native color scheme switching.
-        </p>
+        <neon-stack>
+          <p>
+            Neon supports both light and dark modes. These are supported by changing the mode class attached to the HTML
+            root element of the page. The classes are <em>neon-mode--light</em> and <em>neon-mode--dark</em>.
+          </p>
+          <p>
+            Use
+            <neon-link href="/utils/NeonModeUtils">NeonModeUtils</neon-link>
+            to listen to native color scheme switching.
+          </p>
+        </neon-stack>
       </neon-card-body>
     </neon-card>
-  </div>
+  </neon-stack>
 </template>
 
 <script lang="ts" src="./Theming.ts"></script>

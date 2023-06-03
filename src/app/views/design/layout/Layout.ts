@@ -1,4 +1,4 @@
-import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader, NeonLink } from '@/neon';
+import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader, NeonLink, NeonStack } from '@/neon';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
@@ -10,5 +10,6 @@ export default defineComponent({
     NeonCardHeader,
     NeonCardBody,
     NeonLink,
+    NeonStack,
   },
 });

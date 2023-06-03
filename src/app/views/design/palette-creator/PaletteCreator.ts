@@ -8,6 +8,7 @@ import {
   NeonColor,
   NeonDialog,
   NeonField,
+  NeonStack,
   NeonSwitch,
   NeonTooltip,
 } from '@/neon';
@@ -24,6 +25,7 @@ export default defineComponent({
     NeonColor,
     NeonDialog,
     NeonField,
+    NeonStack,
     NeonSwitch,
     NeonTooltip,
   },

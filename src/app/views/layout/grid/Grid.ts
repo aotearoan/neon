@@ -1,5 +1,14 @@
 import { defineComponent, onMounted, ref } from 'vue';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonGrid, NeonGridArea, NeonLink, NeonResponsive } from '@/neon';
+import {
+  NeonCard,
+  NeonCardBody,
+  NeonCardHeader,
+  NeonGrid,
+  NeonGridArea,
+  NeonLink,
+  NeonResponsive,
+  NeonStack,
+} from '@/neon';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
@@ -15,6 +24,7 @@ export default defineComponent({
     NeonGrid,
     NeonGridArea,
     NeonLink,
+    NeonStack,
     ComponentDocumentation,
     Editor,
   },

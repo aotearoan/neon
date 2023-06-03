@@ -84,7 +84,7 @@
 
   .neon-toggle__radio-button {
     border-radius: var(--neon-border-radius-radio-button);
-    margin-right: calc(3 * var(--neon-base-space));
+    margin-right: var(--neon-base-space);
     align-items: center;
     justify-content: center;
   }

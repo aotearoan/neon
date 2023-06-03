@@ -1,5 +1,5 @@
 <template>
-  <div class="kitchen-sink-page">
+  <neon-stack class="kitchen-sink-page">
     <neon-card>
       <neon-card-header>
         <h2 class="neon-h3">Kitchen Sink</h2>
@@ -190,7 +190,7 @@
         </div>
       </neon-card-body>
     </neon-card>
-  </div>
+  </neon-stack>
 </template>
 
 <script lang="ts" src="./KitchenSink.ts"></script>

@@ -77,6 +77,8 @@
     }
 
     &--radio-buttons {
+      align-items: flex-start;
+
       .neon-toggle__label {
         padding: calc(2 * var(--neon-base-space)) 0;
       }

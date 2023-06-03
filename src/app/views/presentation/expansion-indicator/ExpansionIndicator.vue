@@ -10,16 +10,18 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3>">Examples</h2>
-        <div class="neon--horizontal">
-          <neon-expansion-indicator :expanded="false" />
-          <neon-expansion-indicator :expanded="true" />
-          <neon-expansion-indicator :expanded="false" color="primary" />
-          <div class="example-inverse-bg">
-            <neon-expansion-indicator :expanded="false" :inverse="true" />
+        <neon-stack>
+          <div class="neon--horizontal">
+            <neon-expansion-indicator :expanded="false" />
+            <neon-expansion-indicator :expanded="true" />
+            <neon-expansion-indicator :expanded="false" color="primary" />
+            <div class="example-inverse-bg">
+              <neon-expansion-indicator :expanded="false" :inverse="true" />
+            </div>
+            <neon-expansion-indicator :disabled="true" />
           </div>
-          <neon-expansion-indicator :disabled="true" />
-        </div>
-        <editor v-model="template" />
+          <editor v-model="template" />
+        </neon-stack>
       </neon-card-body>
     </neon-card>
   </component-documentation>

@@ -1,5 +1,5 @@
 <template>
-  <div v-if="ready" class="palette-creator">
+  <neon-stack v-if="ready" class="palette-creator">
     <neon-card>
       <neon-card-header>
         <div>
@@ -420,7 +420,7 @@
         </div>
       </neon-card-body>
     </neon-card>
-  </div>
+  </neon-stack>
 </template>
 
 <script lang="ts" src="./PaletteCreator.ts" />

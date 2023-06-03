@@ -8,6 +8,7 @@ import {
   NeonInput,
   NeonInputIndicator,
   NeonSelect,
+  NeonStack,
 } from '@/neon';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
@@ -27,6 +28,7 @@ export default defineComponent({
     NeonInputIndicator,
     NeonFieldGroup,
     NeonSelect,
+    NeonStack,
   },
   setup() {
     const menuModel = ref<MenuModel | null>(null);

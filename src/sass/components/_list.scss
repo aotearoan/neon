@@ -3,6 +3,8 @@
 
 @mixin list {
   .neon-list {
+    gap: var(--neon-base-space);
+
     @each $color in palettes.$neon-functional-colors {
       &--#{$color} {
         $list-foreground-rgb: var(--neon-rgb-#{$color});
@@ -67,10 +69,6 @@
         min-width: calc(4 * var(--neon-base-space));
         min-height: calc(4 * var(--neon-base-space));
         height: calc(4 * var(--neon-base-space));
-      }
-
-      & + .neon-list__item {
-        margin-top: var(--neon-base-space);
       }
     }
 

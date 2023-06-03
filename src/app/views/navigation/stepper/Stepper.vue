@@ -10,22 +10,26 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Default Stepper</h2>
-        <neon-stepper
-          :completed-index="3"
-          :model-value="2"
-          :steps="['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5 with the long name']"
-        />
-        <editor v-model="defaultTemplate" />
+        <neon-stack>
+          <neon-stepper
+            :completed-index="3"
+            :model-value="2"
+            :steps="['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5 with the long name']"
+          />
+          <editor v-model="defaultTemplate" />
+        </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Color Example</h2>
-        <neon-stepper
-          :completed-index="3"
-          :model-value="3"
-          :steps="['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5 with the long name']"
-          color="success"
-        />
-        <editor v-model="colorTemplate" />
+        <neon-stack>
+          <neon-stepper
+            :completed-index="3"
+            :model-value="3"
+            :steps="['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5 with the long name']"
+            color="success"
+          />
+          <editor v-model="colorTemplate" />
+        </neon-stack>
       </neon-card-body>
     </neon-card>
   </component-documentation>

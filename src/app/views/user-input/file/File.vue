@@ -11,18 +11,31 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">File examples</h2>
-        <div class="neon-vertically-spaced">
-          <neon-file label="Select file" @update:modelValue="files = $event" />
-          <neon-file :multiple="true" color="brand" icon="plus" label="Add files" @update:modelValue="files = $event" />
-          <neon-file
-            :multiple="true"
-            accept="image/svg+xml"
-            label="Add SVG files"
-            @update:modelValue="files = $event"
-          />
-          <neon-file :direct-upload="true" :multiple="true" label="Direct upload" @update:modelValue="files = $event" />
-        </div>
-        <editor v-model="fileExamples" />
+        <neon-stack>
+          <div class="neon-vertically-spaced">
+            <neon-file label="Select file" @update:modelValue="files = $event" />
+            <neon-file
+              :multiple="true"
+              color="brand"
+              icon="plus"
+              label="Add files"
+              @update:modelValue="files = $event"
+            />
+            <neon-file
+              :multiple="true"
+              accept="image/svg+xml"
+              label="Add SVG files"
+              @update:modelValue="files = $event"
+            />
+            <neon-file
+              :direct-upload="true"
+              :multiple="true"
+              label="Direct upload"
+              @update:modelValue="files = $event"
+            />
+          </div>
+          <editor v-model="fileExamples" />
+        </neon-stack>
       </neon-card-body>
     </neon-card>
   </component-documentation>

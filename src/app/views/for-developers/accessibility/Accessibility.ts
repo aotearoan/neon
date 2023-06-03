@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonLink, NeonNote } from '@/neon';
+import { NeonCard, NeonCardBody, NeonCardHeader, NeonLink, NeonNote, NeonStack } from '@/neon';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
@@ -10,5 +10,6 @@ export default defineComponent({
     NeonCardBody,
     NeonLink,
     NeonNote,
+    NeonStack,
   },
 });

@@ -48,6 +48,7 @@ export { default as NeonSelectableCard } from './components/user-input/selectabl
 export { default as NeonSkeletonLoader } from './components/feedback/skeleton-loader/NeonSkeletonLoader.vue';
 export { default as NeonSlider } from './components/user-input/slider/NeonSlider.vue';
 export { default as NeonSplashLoader } from './components/feedback/splash-loader/NeonSplashLoader.vue';
+export { default as NeonStack } from './components/layout/stack/NeonStack.vue';
 export { default as NeonStepper } from './components/navigation/stepper/NeonStepper.vue';
 export { default as NeonSwitch } from './components/user-input/switch/NeonSwitch.vue';
 export { default as NeonTab } from './components/presentation/tabs/tab/NeonTab.vue';

@@ -216,8 +216,8 @@
       margin-bottom: calc(2 * var(--neon-base-space));
     }
 
-    .neon-button-group > .neon-button + .neon-button {
-      margin-left: calc(2 * var(--neon-base-space));
+    .neon-button-group {
+      gap: calc(2 * var(--neon-base-space));
     }
   }
 }

@@ -5,7 +5,6 @@
   border-radius: 0;
   overflow: hidden;
   position: relative;
-  margin-top: calc(8 * var(--neon-base-space));
 
   .editor {
     font-family: var(--neon-font-family-monospaced);
@@ -133,21 +132,6 @@
       &:last-child {
         margin-right: calc(2 * var(--neon-base-space));
       }
-    }
-  }
-}
-
-p + .editor__wrapper {
-  margin-top: calc(2 * var(--neon-base-space));
-}
-
-.editor__wrapper {
-  & + p,
-  & + .editor__wrapper {
-    margin-top: calc(8 * var(--neon-base-space));
-
-    @include responsive.responsive(mobile-large) {
-      margin-top: calc(4 * var(--neon-base-space));
     }
   }
 }

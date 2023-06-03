@@ -1,0 +1,45 @@
+@use '../includes/responsive';
+
+@mixin stack {
+  .neon-stack {
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+
+    &--gap-s {
+      gap: var(--neon-gap-stack-desktop-s);
+
+      @include responsive.responsive(tablet) {
+        gap: var(--neon-gap-stack-tablet-s);
+      }
+
+      @include responsive.responsive(mobile-large) {
+        gap: var(--neon-gap-stack-mobile-s);
+      }
+    }
+
+    &--gap-m {
+      gap: var(--neon-gap-stack-desktop-m);
+
+      @include responsive.responsive(tablet) {
+        gap: var(--neon-gap-stack-tablet-m);
+      }
+
+      @include responsive.responsive(mobile-large) {
+        gap: var(--neon-gap-stack-mobile-m);
+      }
+    }
+
+    &--gap-l {
+      gap: var(--neon-gap-stack-desktop-l);
+
+      @include responsive.responsive(tablet) {
+        gap: var(--neon-gap-stack-tablet-l);
+      }
+
+      @include responsive.responsive(mobile-large) {
+        gap: var(--neon-gap-stack-mobile-l);
+      }
+    }
+  }
+}

@@ -242,4 +242,8 @@ $neon-components: null !default;
   @if index($neon-flattened-components, NeonField) {
     @include components.field;
   }
+
+  @if index($neon-flattened-components, NeonStack) {
+    @include components.stack;
+  }
 }

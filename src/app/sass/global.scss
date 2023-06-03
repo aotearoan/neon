@@ -64,10 +64,6 @@ header {
   }
 }
 
-.neon-card + .neon-card {
-  @include layout.margin-top;
-}
-
 .positioned-element {
   position: relative;
   display: flex;

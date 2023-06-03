@@ -123,6 +123,7 @@
           NeonSelectableCard: [NeonCard, NeonCardHeader, NeonSwitch, NeonIcon],
           NeonDatePicker: [NeonDropdown, NeonBadge, NeonButton, NeonExpansionIndicator, NeonIcon, NeonLink, NeonInput],
           NeonField: [NeonLabel, NeonIcon],
+          NeonStack: [],
   );
 
   $neon-flattened-components: [];

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <neon-stack>
     <neon-card>
       <neon-card-header>
         <h1>Colors</h1>
@@ -9,26 +9,30 @@
       <neon-card-body>
         <neon-anchor id="introduction" />
         <h2 class="neon-h4">Introduction</h2>
-        <p>
-          Neon uses the concept of <strong>Functional colors</strong> where colors have semantic meaning, e.g. a brand
-          color or a warning color.
-        </p>
-        <p>
-          Throughout Neon there are many components supporting colors. When this is the case, the component supports
-          each of the functional colors which allows great flexibility for designers and developers to quickly create
-          the look they want without any hassle.
-        </p>
-        <p>
-          Each functional color palette is comprised of 10 color steps - l1-l5 are the light colors used for the dark
-          mode & d1-d5 are the steps used for the light mode. It is also worth noting that the colors are defined as
-          both RGB variables (e.g. '255, 128, 42') and the actual color variable. The RGB variables are necessary where
-          opacity is applied to colors in order to work with CSS variables.
-        </p>
-        <p>
-          Colors can be overridden using CSS variables, you will find all CSS base color variables in the
-          src/sass/colors.scss file, e.g. to override the <em>brand</em> palette:
-        </p>
-        <editor v-model="colorPalette" language="scss" />
+        <neon-stack>
+          <p>
+            Neon uses the concept of <strong>Functional colors</strong> where colors have semantic meaning, e.g. a brand
+            color or a warning color.
+          </p>
+          <p>
+            Throughout Neon there are many components supporting colors. When this is the case, the component supports
+            each of the functional colors which allows great flexibility for designers and developers to quickly create
+            the look they want without any hassle.
+          </p>
+          <p>
+            Each functional color palette is comprised of 10 color steps - l1-l5 are the light colors used for the dark
+            mode & d1-d5 are the steps used for the light mode. It is also worth noting that the colors are defined as
+            both RGB variables (e.g. '255, 128, 42') and the actual color variable. The RGB variables are necessary
+            where opacity is applied to colors in order to work with CSS variables.
+          </p>
+          <neon-stack gap="s">
+            <p>
+              Colors can be overridden using CSS variables, you will find all CSS base color variables in the
+              src/sass/colors.scss file, e.g. to override the <em>brand</em> palette:
+            </p>
+            <editor v-model="colorPalette" language="scss" />
+          </neon-stack>
+        </neon-stack>
       </neon-card-body>
       <neon-card-body class="color-palettes">
         <neon-anchor id="brand-palettes" />
@@ -273,28 +277,32 @@
       <neon-card-body>
         <neon-anchor id="color-classes" />
         <h2 class="neon-h4">Color classes</h2>
-        <p>
-          Neon provides convenience classes for text colors as well as the full complement of background colors for each
-          palette
-        </p>
-        <h3 class="neon-h5">Text colors</h3>
-        <div>
-          <div class="neon-color-text">This is the default text color</div>
-          <div class="color-example-inverse-bg neon-color-inverse">This is the inverse text color</div>
-          <div class="neon-color-text-brand">This is the brand text color</div>
-          <div class="neon-color-text-primary">This is the primary text color</div>
-          <div class="neon-color-text-info">This is the info text color</div>
-          <div class="neon-color-text-success">This is the success text color</div>
-          <div class="neon-color-text-warn">This is the warn text color</div>
-          <div class="neon-color-text-error">This is the error text color</div>
-          <div class="neon-color-text-neutral">This is the neutral text color</div>
-          <div class="neon-color-text-high-contrast">This is the high-contrast text color</div>
-          <div class="neon-color-text-low-contrast">This is the low-contrast text color</div>
-        </div>
-        <editor v-model="example" />
+        <neon-stack>
+          <p>
+            Neon provides convenience classes for text colors as well as the full complement of background colors for
+            each palette
+          </p>
+          <neon-stack gap="s">
+            <h3 class="neon-h5">Text colors</h3>
+            <div>
+              <div class="neon-color-text">This is the default text color</div>
+              <div class="color-example-inverse-bg neon-color-inverse">This is the inverse text color</div>
+              <div class="neon-color-text-brand">This is the brand text color</div>
+              <div class="neon-color-text-primary">This is the primary text color</div>
+              <div class="neon-color-text-info">This is the info text color</div>
+              <div class="neon-color-text-success">This is the success text color</div>
+              <div class="neon-color-text-warn">This is the warn text color</div>
+              <div class="neon-color-text-error">This is the error text color</div>
+              <div class="neon-color-text-neutral">This is the neutral text color</div>
+              <div class="neon-color-text-high-contrast">This is the high-contrast text color</div>
+              <div class="neon-color-text-low-contrast">This is the low-contrast text color</div>
+            </div>
+            <editor v-model="example" />
+          </neon-stack>
+        </neon-stack>
       </neon-card-body>
     </neon-card>
-  </div>
+  </neon-stack>
 </template>
 
 <script lang="ts" src="./Color.ts"></script>

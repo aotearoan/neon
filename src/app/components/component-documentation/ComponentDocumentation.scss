@@ -125,10 +125,6 @@ $fixed-content-height: 348rem;
 }
 
 .app .example {
-  & + .example {
-    margin-top: calc(8 * var(--neon-base-space));
-  }
-
   &__output {
     border-radius: var(--neon-border-radius) !important;
     margin-bottom: calc(4 * var(--neon-base-space)) !important;

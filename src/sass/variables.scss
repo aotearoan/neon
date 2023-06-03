@@ -11,6 +11,19 @@
   --neon-max-paragraph-width: 70ch;
   --neon-max-page-width: 1920rem;
 
+  /* stack */
+  --neon-gap-stack-desktop-s: var(--neon-base-space);
+  --neon-gap-stack-tablet-s: var(--neon-base-space);
+  --neon-gap-stack-mobile-s: var(--neon-base-space);
+
+  --neon-gap-stack-desktop-m: calc(4 * var(--neon-base-space));
+  --neon-gap-stack-tablet-m: calc(3 * var(--neon-base-space));
+  --neon-gap-stack-mobile-m: calc(2 * var(--neon-base-space));
+
+  --neon-gap-stack-desktop-l: calc(6 * var(--neon-base-space));
+  --neon-gap-stack-tablet-l: calc(5 * var(--neon-base-space));
+  --neon-gap-stack-mobile-l: calc(4 * var(--neon-base-space));
+
   /* ratio of horizontal to vertical spacing, e.g. 1 = square padding */
   --neon-spacing-horizontal-multiplier: 1;
   /* ratio of tablet to mobile spacing */

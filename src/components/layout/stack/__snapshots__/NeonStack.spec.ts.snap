@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NeonStack renders slot contents 1`] = `
+<div class="neon-stack--gap-l neon-stack">
+  <!-- @slot stack contents -->
+  <p>test</p>
+</div>
+`;

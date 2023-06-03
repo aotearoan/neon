@@ -10,39 +10,49 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Default example</h2>
-        <neon-selectable-card v-for="(_item, index) in selected" :key="index" v-model="selected[index]">
-          <neon-card-body>
-            <span>Pig doner tri-tip tongue pork, shank kevin pork belly shoulder</span>
-          </neon-card-body>
-        </neon-selectable-card>
-        <editor v-model="example" />
+        <neon-stack>
+          <neon-stack class="card-list">
+            <neon-selectable-card v-for="(_item, index) in selected" :key="index" v-model="selected[index]">
+              <neon-card-body>
+                <span>Pig doner tri-tip tongue pork, shank kevin pork belly shoulder</span>
+              </neon-card-body>
+            </neon-selectable-card>
+          </neon-stack>
+          <editor v-model="example" />
+        </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Color example</h2>
-        <neon-selectable-card v-model="selectedColor" color="info">
-          <neon-card-body>
-            <span>Pig doner tri-tip tongue pork, shank kevin pork belly shoulder</span>
-          </neon-card-body>
-        </neon-selectable-card>
-        <editor v-model="exampleColor" />
+        <neon-stack>
+          <neon-selectable-card v-model="selectedColor" color="info">
+            <neon-card-body>
+              <span>Pig doner tri-tip tongue pork, shank kevin pork belly shoulder</span>
+            </neon-card-body>
+          </neon-selectable-card>
+          <editor v-model="exampleColor" />
+        </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Size example</h2>
-        <neon-selectable-card v-model="selectedSize" size="m">
-          <neon-card-body>
-            <span>Pig doner tri-tip tongue pork, shank kevin pork belly shoulder</span>
-          </neon-card-body>
-        </neon-selectable-card>
-        <editor v-model="exampleSize" />
+        <neon-stack>
+          <neon-selectable-card v-model="selectedSize" size="m">
+            <neon-card-body>
+              <span>Pig doner tri-tip tongue pork, shank kevin pork belly shoulder</span>
+            </neon-card-body>
+          </neon-selectable-card>
+          <editor v-model="exampleSize" />
+        </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Disabled example</h2>
-        <neon-selectable-card v-model="selectedDisabled" :disabled="true">
-          <neon-card-body>
-            <span>Pig doner tri-tip tongue pork, shank kevin pork belly shoulder</span>
-          </neon-card-body>
-        </neon-selectable-card>
-        <editor v-model="exampleDisabled" />
+        <neon-stack>
+          <neon-selectable-card v-model="selectedDisabled" :disabled="true">
+            <neon-card-body>
+              <span>Pig doner tri-tip tongue pork, shank kevin pork belly shoulder</span>
+            </neon-card-body>
+          </neon-selectable-card>
+          <editor v-model="exampleDisabled" />
+        </neon-stack>
       </neon-card-body>
     </neon-card>
   </component-documentation>

@@ -3,7 +3,7 @@ import ComponentDocumentation from '@/app/components/component-documentation/Com
 import Editor from '@/app/components/editor/Editor.vue';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
-import { NeonButton, NeonCard, NeonCardBody, NeonDrawer } from '@/neon';
+import { NeonButton, NeonCard, NeonCardBody, NeonDrawer, NeonStack } from '@/neon';
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
@@ -13,6 +13,7 @@ export default defineComponent({
     NeonDrawer,
     NeonCard,
     NeonCardBody,
+    NeonStack,
     ComponentDocumentation,
     Editor,
   },

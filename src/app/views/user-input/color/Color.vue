@@ -10,12 +10,14 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Color input sizes</h2>
-        <div class="neon-vertically-spaced">
-          <neon-color v-model="colorSmall" placeholder="Choose a color" size="s" />
-          <neon-color v-model="colorMedium" placeholder="Choose a color" size="m" />
-          <neon-color v-model="colorLarge" placeholder="Choose a color" size="l" />
-        </div>
-        <editor v-model="colorSizeExamples" />
+        <neon-stack>
+          <div class="neon-vertically-spaced">
+            <neon-color v-model="colorSmall" placeholder="Choose a color" size="s" />
+            <neon-color v-model="colorMedium" placeholder="Choose a color" size="m" />
+            <neon-color v-model="colorLarge" placeholder="Choose a color" size="l" />
+          </div>
+          <editor v-model="colorSizeExamples" />
+        </neon-stack>
       </neon-card-body>
     </neon-card>
   </component-documentation>

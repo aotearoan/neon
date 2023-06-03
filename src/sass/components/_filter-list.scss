@@ -3,6 +3,8 @@
 
 @mixin filter-list {
   .neon-filter-list {
+    gap: calc(0.5 * var(--neon-base-space));
+
     @each $color in palettes.$neon-functional-colors {
       &.neon-filter-list--#{$color} {
         $list-rgb: var(--neon-rgb-#{$color});

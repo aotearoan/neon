@@ -14,10 +14,6 @@
     margin: 0;
     max-width: var(--neon-max-paragraph-width);
     line-height: var(--neon-line-height-ratio);
-
-    & + p {
-      margin-top: calc(4 * var(--neon-base-space));
-    }
   }
 
   em {

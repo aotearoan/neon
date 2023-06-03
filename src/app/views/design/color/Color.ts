@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue';
-import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader, NeonNote } from '@/neon';
+import { NeonAnchor, NeonCard, NeonCardBody, NeonCardHeader, NeonNote, NeonStack } from '@/neon';
 import Editor from '@/app/components/editor/Editor.vue';
 
 export default defineComponent({
@@ -11,6 +11,7 @@ export default defineComponent({
     NeonCardHeader,
     NeonCardBody,
     NeonNote,
+    NeonStack,
     Editor,
   },
   setup() {

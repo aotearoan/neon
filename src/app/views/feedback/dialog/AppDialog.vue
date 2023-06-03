@@ -9,7 +9,7 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Dialog example</h2>
-        <div class="neon--horizontal">
+        <neon-stack gap="m">
           <neon-button label="Open dialog" @click="toggleOpen(true)"></neon-button>
           <neon-dialog
             :open="open"
@@ -22,8 +22,8 @@
             @confirm="toggleOpen(false)"
           >
           </neon-dialog>
-        </div>
-        <editor v-model="template" />
+          <editor v-model="template" />
+        </neon-stack>
       </neon-card-body>
     </neon-card>
   </component-documentation>

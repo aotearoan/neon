@@ -11,20 +11,24 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Menu sizes</h2>
-        <div class="neon-vertically-spaced">
-          <neon-menu :menu="menu" size="s" @click="onClick" />
-          <neon-menu :menu="menu" size="m" @click="onClick" />
-          <neon-menu :menu="menu" size="l" @click="onClick" />
-        </div>
-        <editor v-model="sizesTemplate" />
+        <neon-stack>
+          <div class="neon-vertically-spaced">
+            <neon-menu :menu="menu" size="s" @click="onClick" />
+            <neon-menu :menu="menu" size="m" @click="onClick" />
+            <neon-menu :menu="menu" size="l" @click="onClick" />
+          </div>
+          <editor v-model="sizesTemplate" />
+        </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Menu colors</h2>
-        <div class="neon-vertically-spaced">
-          <neon-menu :menu="menu" color="primary" />
-          <neon-menu :menu="menu" color="info" />
-        </div>
-        <editor v-model="colorsTemplate" />
+        <neon-stack>
+          <div class="neon-vertically-spaced">
+            <neon-menu :menu="menu" color="primary" />
+            <neon-menu :menu="menu" color="info" />
+          </div>
+          <editor v-model="colorsTemplate" />
+        </neon-stack>
       </neon-card-body>
     </neon-card>
   </component-documentation>

@@ -9,7 +9,7 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Notification counters</h2>
-        <div class="neon--vertical">
+        <neon-stack>
           <div class="neon--horizontal example--margin-top">
             <span class="positioned-element">No value<neon-notification-counter :active="active" /></span>
             <span class="positioned-element">With value<neon-notification-counter :active="active" :count="9" /></span>
@@ -22,7 +22,7 @@
           </div>
           <neon-switch v-model="active" label="Activate notifications" />
           <editor v-model="template" />
-        </div>
+        </neon-stack>
       </neon-card-body>
     </neon-card>
   </component-documentation>

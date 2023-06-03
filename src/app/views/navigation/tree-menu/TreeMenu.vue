@@ -10,8 +10,10 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Example</h2>
-        <neon-tree-menu :model="model" />
-        <editor v-model="template" />
+        <neon-stack>
+          <neon-tree-menu :model="model" />
+          <editor v-model="template" />
+        </neon-stack>
       </neon-card-body>
     </neon-card>
   </component-documentation>

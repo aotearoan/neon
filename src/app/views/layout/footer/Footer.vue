@@ -9,10 +9,12 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Footer example</h2>
-        <neon-footer>
-          <span>Footer content</span>
-        </neon-footer>
-        <editor v-model="template" />
+        <neon-stack>
+          <neon-footer>
+            <span>Footer content</span>
+          </neon-footer>
+          <editor v-model="template" />
+        </neon-stack>
       </neon-card-body>
     </neon-card>
   </component-documentation>
