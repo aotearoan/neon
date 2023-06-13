@@ -9,15 +9,17 @@
       </neon-card-body>
       <neon-card-body>
         <h2 class="neon-h3">Drop zone example</h2>
-        <neon-inline class="drop-zone-examples">
-          <neon-drop-zone>
-            <span>Drop files here to upload</span>
-          </neon-drop-zone>
-          <neon-drop-zone :circular="true" :disabled="false">
-            <span>Circular drop zone</span>
-          </neon-drop-zone>
-        </neon-inline>
-        <editor v-model="dropZoneExamples" />
+        <neon-stack>
+          <neon-inline class="drop-zone-examples">
+            <neon-drop-zone>
+              <span>Drop files here to upload</span>
+            </neon-drop-zone>
+            <neon-drop-zone :circular="true" :disabled="false">
+              <span>Circular drop zone</span>
+            </neon-drop-zone>
+          </neon-inline>
+          <editor v-model="dropZoneExamples" />
+        </neon-stack>
       </neon-card-body>
     </neon-card>
   </component-documentation>

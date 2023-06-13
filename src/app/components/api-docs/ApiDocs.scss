@@ -15,10 +15,6 @@
     text-overflow: ellipsis;
   }
 
-  &__desktop {
-    margin-top: calc(2 * var(--neon-base-space));
-  }
-
   &__section {
     margin-top: calc(6 * var(--neon-base-space));
   }
@@ -62,60 +58,44 @@
     }
   }
 
-  @include responsive.responsive(desktop-large) {
-    &__desktop {
-      display: flex;
-    }
+  &__responsive {
+    display: flex;
 
-    &__responsive {
-      display: none;
-    }
-  }
+    .api-docs {
+      &__title {
+        margin-top: calc(2 * var(--neon-base-space));
+        margin-bottom: 0;
+      }
 
-  @include responsive.responsive(desktop) {
-    &__desktop {
-      display: none;
-    }
+      &__attribute {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-top: var(--neon-base-space);
 
-    &__responsive {
-      display: flex;
-
-      .api-docs {
-        &__title {
-          margin-top: calc(2 * var(--neon-base-space));
+        label {
           margin-bottom: 0;
+          margin-right: calc(2 * var(--neon-base-space));
         }
 
-        &__attribute {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          padding-top: var(--neon-base-space);
-
-          label {
-            margin-bottom: 0;
-            margin-right: calc(2 * var(--neon-base-space));
-          }
-
-          .neon-label {
-            margin-left: calc(2 * var(--neon-base-space));
-          }
-
-          &:first-child {
-            border-bottom: var(--neon-border-width-table) var(--neon-border-style) var(--neon-color-neutral);
-          }
+        .neon-label {
+          margin-left: calc(2 * var(--neon-base-space));
         }
 
-        &__name {
-          font-size: var(--neon-font-size-l);
+        &:first-child {
+          border-bottom: var(--neon-border-width-table) var(--neon-border-style) var(--neon-color-neutral);
         }
+      }
 
-        &__property,
-        &__event,
-        &__slot {
-          &:not(:first-of-type) {
-            margin-top: calc(4 * var(--neon-base-space));
-          }
+      &__name {
+        font-size: var(--neon-font-size-l);
+      }
+
+      &__property,
+      &__event,
+      &__slot {
+        &:not(:first-of-type) {
+          margin-top: calc(4 * var(--neon-base-space));
         }
       }
     }
