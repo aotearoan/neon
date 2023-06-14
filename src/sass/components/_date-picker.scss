@@ -6,6 +6,10 @@
   .neon-date-picker {
     position: relative;
 
+    .neon-dropdown__content {
+      min-width: fit-content;
+    }
+
     .neon-date-picker__button {
       z-index: var(--neon-z-index-default);
 
