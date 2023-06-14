@@ -21,6 +21,7 @@ export default defineComponent({
   props: {
     model: { type: Object as () => MenuModel, required: true },
     headline: { type: String, required: true },
+    apiDocs: { type: Boolean, default: true },
   },
   setup(props) {
     const router = useRouter();
@@ -54,25 +55,27 @@ export default defineComponent({
     const apiIndex = computed(() => tabs.value.findIndex((tab) => tab.key === 'api'));
 
     onMounted(() => {
-      const url = `${import.meta.env.VITE_RESOURCE_URL}docs/${path.value}/${componentName.value}.json`;
-      fetch(url).then((response) => {
-        response.json().then(
-          (api) => {
-            apiModel.value = api;
-          },
-          () => console.info(`no component JSON at ${url}`),
-        );
-      });
+      if (props.apiDocs) {
+        const url = `${import.meta.env.VITE_RESOURCE_URL}docs/${path.value}/${componentName.value}.json`;
+        fetch(url).then((response) => {
+          response.json().then(
+            (api) => {
+              apiModel.value = api;
+            },
+            () => console.info(`no component JSON at ${url}`),
+          );
+        });
 
-      (props.model.subComponents || []).forEach((subComp) => {
-        fetch(`${import.meta.env.VITE_RESOURCE_URL}docs/${path.value}/${subComp.path}/${subComp.name}.json`).then(
-          (response) => {
-            response.json().then((api) => {
-              subApiModels.value.push({ api, name: subComp.name });
-            });
-          },
-        );
-      });
+        (props.model.subComponents || []).forEach((subComp) => {
+          fetch(`${import.meta.env.VITE_RESOURCE_URL}docs/${path.value}/${subComp.path}/${subComp.name}.json`).then(
+            (response) => {
+              response.json().then((api) => {
+                subApiModels.value.push({ api, name: subComp.name });
+              });
+            },
+          );
+        });
+      }
 
       const anchors = (props.model.anchors || []).map((anchor) => anchor.toLowerCase());
       tabs.value = defaultTabs.value.filter((item) => anchors.indexOf(item.key) >= 0);

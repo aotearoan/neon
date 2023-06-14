@@ -1,5 +1,5 @@
 <template>
-  <component-documentation v-if="menuModel" :headline="headline" :model="menuModel">
+  <component-documentation v-if="menuModel" :api-docs="false" :headline="headline" :model="menuModel">
     <neon-stack>
       <neon-note color="warn">
         <span>
@@ -12,20 +12,20 @@
           <neon-stack>
             <table>
               <thead>
-                <tr>
-                  <th>header 1</th>
-                  <th>header 2</th>
-                </tr>
+              <tr>
+                <th>header 1</th>
+                <th>header 2</th>
+              </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Value 1</td>
-                  <td>Value 2</td>
-                </tr>
-                <tr>
-                  <td>Value 3</td>
-                  <td>Value 4</td>
-                </tr>
+              <tr>
+                <td>Value 1</td>
+                <td>Value 2</td>
+              </tr>
+              <tr>
+                <td>Value 3</td>
+                <td>Value 4</td>
+              </tr>
               </tbody>
             </table>
             <editor v-model="template" />
