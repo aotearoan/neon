@@ -7,7 +7,7 @@
     {
       "name": "modelValue",
       "type": {
-        "name": "Object as () => Array<NeonToastModel>"
+        "name": "Array as () => Array<NeonToastModel>"
       },
       "required": true
     },
