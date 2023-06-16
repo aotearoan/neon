@@ -31,6 +31,7 @@ export const modelList: string[] = [
   'NeonAlertAction',
   'NeonAlertMessage',
   'NeonAvailableSpace',
+  'NeonCardListModel',
   'NeonCalendarConfig',
   'NeonContrastAccessibility',
   'NeonDate',

@@ -1,0 +1,95 @@
+@use '../includes/palettes';
+
+@mixin card-list {
+  .neon-card-list {
+    &__results-end {
+      align-self: center;
+      user-select: none;
+      margin-top: 16rem;
+      font-size: var(--neon-font-size-s);
+      color: var(--neon-color-low-contrast);
+    }
+
+    &__show-more {
+      align-self: center;
+      user-select: none;
+      margin-top: calc(4 * var(--neon-base-space));
+      font-size: var(--neon-font-size-s);
+      color: var(--neon-color-low-contrast);
+    }
+
+    .neon-card-list__cards {
+      gap: calc(0.25 * var(--neon-base-space));
+
+      .neon-link {
+        width: 100%;
+
+        &:hover,
+        &:focus {
+          &::after {
+            display: none;
+          }
+        }
+
+        .neon-link__label {
+          display: flex;
+          width: 100%;
+          min-width: 100%;
+        }
+      }
+    }
+
+    &__header {
+      align-items: center;
+      margin-bottom: calc(4 * var(--neon-base-space));
+    }
+
+    &__total {
+      white-space: nowrap;
+      user-select: none;
+      font-size: var(--neon-font-size-l);
+      font-weight: var(--neon-font-weight-semi-bold);
+      width: 30%;
+      text-align: right;
+    }
+
+    &__card {
+      color: var(--neon-color-text);
+      --neon-border-radius-card: var(--neon-border-radius-card-list);
+      user-select: none;
+      box-shadow: var(--neon-box-shadow-card-list);
+      transition: all var(--neon-animation-speed-fast) ease-in-out;
+      outline: none;
+      width: 100%;
+
+      & > .neon-card-header,
+      & > .neon-card-body,
+      & > .neon-card-footer {
+        background-color: var(--neon-background-color-card-list);
+      }
+
+      @each $color in palettes.$neon-functional-colors {
+        &--#{$color} {
+          &:not(.neon-card-list__card--disabled) {
+            &:hover > .neon-card-header,
+            &:hover > .neon-card-body,
+            &:hover > .neon-card-footer {
+              background-color: rgba(var(--neon-rgb-#{$color}), 0.03125);
+            }
+          }
+        }
+      }
+
+      &--clickable {
+        cursor: pointer;
+      }
+
+      &--disabled {
+        cursor: not-allowed;
+        background-color: var(--neon-color-disabled-background);
+        color: var(--neon-color-disabled-text);
+        border-color: var(--neon-color-disabled-border);
+      }
+    }
+  }
+}

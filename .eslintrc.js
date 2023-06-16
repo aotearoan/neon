@@ -17,6 +17,7 @@ module.exports = {
     "comma-dangle": ["error", "always-multiline"],
     "vue/multi-word-component-names": "off",
     "vue/attributes-order": "warn",
+    "vue/no-unused-vars": "off",
     "space-before-function-paren": [
       "error",
       {

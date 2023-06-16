@@ -1,0 +1,17 @@
+.card-contents {
+  .card-title {
+    font-weight: var(--neon-font-weight-semi-bold);
+    font-size: var(--neon-font-size-s);
+  }
+
+  .card-description {
+    color: var(--neon-color-low-contrast);
+    font-size: var(--neon-font-size-xs);
+  }
+}
+
+.neon-card-list__card--disabled {
+  .card-description {
+    color: var(--neon-color-disabled-text);
+  }
+}

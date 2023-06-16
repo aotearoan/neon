@@ -250,4 +250,8 @@ $neon-components: null !default;
   @if index($neon-flattened-components, NeonInline) {
     @include components.inline;
   }
+
+  @if index($neon-flattened-components, NeonCardList) {
+    @include components.card-list;
+  }
 }

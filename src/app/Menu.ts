@@ -206,6 +206,19 @@ export class Menu {
                 ],
               },
               {
+                path: 'card-list',
+                page: 'CardList',
+                name: 'Card List',
+                keywords: 'list table cards results',
+                component: 'NeonCardList',
+                subComponents: [
+                  {
+                    path: 'card',
+                    name: 'NeonCardListCard',
+                  },
+                ],
+              },
+              {
                 path: 'drawer',
                 page: 'Drawer',
                 keywords: 'slide out panel',

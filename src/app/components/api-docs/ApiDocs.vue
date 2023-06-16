@@ -24,9 +24,9 @@
               <div class="api-docs__attribute">
                 <label>Type</label>
                 <neon-link v-if="typeLink(prop)" :href="typeLink(prop)" class="api-docs__type"
-                >{{ typeName(prop) }}{{ isArray(prop) ? "[]" : "" }}
+                  >{{ typeName(prop) }}{{ isArray(prop) ? '[]' : '' }}
                 </neon-link>
-                <span v-else class="api-docs__type">{{ typeName(prop) }}{{ isArray(prop) ? "[]" : "" }}</span>
+                <span v-else class="api-docs__type">{{ typeName(prop) }}{{ isArray(prop) ? '[]' : '' }}</span>
               </div>
               <div v-if="prop.defaultValue" class="api-docs__attribute">
                 <label>Default</label>

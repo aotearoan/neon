@@ -1,0 +1,123 @@
+{
+  "displayName": "NeonCardList",
+  "description": "Represent lists of objects as cards. This is intended to be a more responsive replacement for tables. This component\nwill display a list of items as cards with a count (x of y) and a <em>Show more</em> button to load more results.\nThere is also a slot for adding filtering or other content above the list. A slot is provided with card model & index\nparameters for customising how to display the model for each card.",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "model",
+      "description": "Model for a card in the list. This is passed through to the #card slot allowing the parent component to provide\nthe card layout.",
+      "type": {
+        "name": "Array as () => Array<NeonCardListModel>"
+      },
+      "required": true
+    },
+    {
+      "name": "total",
+      "description": "For pagination - the total count of records including those not displayed.",
+      "type": {
+        "name": "number"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "color",
+      "description": "Specify a hover color for the cards.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "clickable",
+      "description": "Specify cards are clickable. This will return click events when cards are clicked on. NOTE: use the href in the\ncard model instead of clickable=true if cards are links.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "ofLabel",
+      "description": "override the default 'x of y' text.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'of'"
+      }
+    },
+    {
+      "name": "showMoreLabel",
+      "description": "override the 'Show more' text.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Show more'"
+      }
+    },
+    {
+      "name": "endOfResultsLabel",
+      "description": "override the 'End of results' text.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'End of results'"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "show-more",
+      "description": "Emitted when the 'Show more' button is clicked.",
+      "type": {
+        "names": [
+          "void"
+        ]
+      }
+    },
+    {
+      "name": "click",
+      "description": "Emitted when a cards are clickable & a card is clicked & not disabled.",
+      "type": {
+        "names": [
+          "number"
+        ]
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "filters",
+      "description": "slot for providing filters for the card list aligned next to the result count"
+    },
+    {
+      "name": "card",
+      "scoped": true,
+      "description": "slot for rendering card contents, two parameters are available: cardModel (the model item to be rendered) & index",
+      "bindings": [
+        {
+          "name": "cardModel",
+          "title": "binding"
+        },
+        {
+          "name": "index",
+          "title": "binding"
+        }
+      ]
+    }
+  ]
+}

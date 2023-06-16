@@ -250,6 +250,9 @@
   /* selectable card */
   --neon-border-radius-selectable-card: calc(1.5 * var(--neon-base-space));
 
+  /* card list */
+  --neon-border-radius-card-list: calc(1.5 * var(--neon-base-space));
+
   /**********************
   * DARK THEME VARIABLES
   **********************/
@@ -392,7 +395,6 @@
     --neon-background-outline-button-hover-error: var(--neon-color-error-l2);
     --neon-background-outline-button-active-error: var(--neon-color-error-l1);
 
-
     /* text button */
     --neon-background-color-text-button: rgba(var(--neon-rgb-neutral-d3), 0.2);
     --neon-background-color-text-button-hover: rgba(var(--neon-rgb-neutral-d3), 0.4);
@@ -534,6 +536,10 @@
     /* selectable card */
     --neon-background-color-selectable-card: rgba(var(--neon-rgb-neutral-d5), 0.5);
     --neon-box-shadow-selectable-card: 0 -2rem 4rem 0 rgba(var(--neon-rgb-neutral-d5), 0.2), 0 2rem 4rem 0 rgba(var(--neon-rgb-neutral-d5), 0.3);
+
+    /* card list */
+    --neon-background-color-card-list: rgba(var(--neon-rgb-neutral-d5), 0.5);
+    --neon-box-shadow-card-list: 0 -2rem 4rem 0 rgba(var(--neon-rgb-neutral-d5), 0.2), 0 2rem 4rem 0 rgba(var(--neon-rgb-neutral-d5), 0.3);
   }
 
   /*********************
@@ -818,5 +824,9 @@
     /* selectable card */
     --neon-background-color-selectable-card: rgba(var(--neon-rgb-high-contrast-l4), 0.5);
     --neon-box-shadow-selectable-card: 0 -2rem 4rem 0 rgba(var(--neon-rgb-neutral-l3), 0.1), 0 2rem 4rem 0 rgba(var(--neon-rgb-neutral-l3), 0.15);
+
+    /* card list */
+    --neon-background-color-card-list: rgba(var(--neon-rgb-high-contrast-l4), 0.5);
+    --neon-box-shadow-card-list: 0 -2rem 4rem 0 rgba(var(--neon-rgb-neutral-l3), 0.1), 0 2rem 4rem 0 rgba(var(--neon-rgb-neutral-l3), 0.15);
   }
 }

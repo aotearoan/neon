@@ -125,6 +125,7 @@
           NeonField: [NeonLabel, NeonIcon],
           NeonStack: [],
           NeonInline: [],
+          NeonCardList: [NeonButton, NeonExpansionIndicator, NeonIcon, NeonLink, NeonCard, NeonCardBody, NeonInline, NeonStack],
   );
 
   $neon-flattened-components: [];
