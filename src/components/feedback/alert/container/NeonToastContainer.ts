@@ -12,7 +12,7 @@ export default defineComponent({
     NeonIcon,
   },
   props: {
-    modelValue: { type: Object as () => Array<NeonToastModel>, required: true },
+    modelValue: { type: Array as () => Array<NeonToastModel>, required: true },
     placement: { type: String as () => NeonVerticalPosition, required: true },
   },
   setup(props, { emit }) {

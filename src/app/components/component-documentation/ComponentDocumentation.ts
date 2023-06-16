@@ -21,7 +21,7 @@ export default defineComponent({
   props: {
     model: { type: Object as () => MenuModel, required: true },
     headline: { type: String, required: true },
-    apiDocs: { type: Boolean, default: true },
+    showApiDocs: { type: Boolean, default: true },
   },
   setup(props) {
     const router = useRouter();
@@ -55,7 +55,7 @@ export default defineComponent({
     const apiIndex = computed(() => tabs.value.findIndex((tab) => tab.key === 'api'));
 
     onMounted(() => {
-      if (props.apiDocs) {
+      if (props.showApiDocs) {
         const url = `${import.meta.env.VITE_RESOURCE_URL}docs/${path.value}/${componentName.value}.json`;
         fetch(url).then((response) => {
           response.json().then(
