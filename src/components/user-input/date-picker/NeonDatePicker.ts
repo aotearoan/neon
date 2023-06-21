@@ -141,13 +141,21 @@ export default defineComponent({
     const todayDate = new Date();
     const locale = props.locale || navigator.language;
 
-    const pageMonth = ref(
-      props.modelValue ? +props.modelValue.substring(5, 7) : +todayDate.toLocaleString(locale, { month: 'numeric' }),
-    );
-    const pageYear = ref(
-      props.modelValue ? +props.modelValue.substring(0, 4) : +todayDate.toLocaleString(locale, { year: 'numeric' }),
-    );
-    const pageDecadeStart = ref(Math.floor(pageYear.value / 10) * 10);
+    const pageMonth = ref<number>(todayDate.getMonth());
+    const pageYear = ref<number>(todayDate.getFullYear());
+    const pageDecadeStart = ref<number>(Math.floor(pageYear.value / 10) * 10);
+
+    const resetCalendarPages = () => {
+      pageMonth.value = props.modelValue
+        ? +props.modelValue.substring(5, 7)
+        : +todayDate.toLocaleString(locale, { month: 'numeric' });
+      pageYear.value = props.modelValue
+        ? +props.modelValue.substring(0, 4)
+        : +todayDate.toLocaleString(locale, { year: 'numeric' });
+      pageDecadeStart.value = Math.floor(pageYear.value / 10) * 10;
+    };
+
+    resetCalendarPages();
 
     const calendar = computed(() =>
       NeonDateUtils.toCalendarConfiguration(
@@ -166,6 +174,7 @@ export default defineComponent({
 
     const openCalendar = () => {
       if (!props.disabled) {
+        resetCalendarPages();
         calendarOpen.value = true;
         if (calendarRef.value) {
           const selected = calendarRef.value.querySelector('.neon-date-picker__calendar-date--selected') as HTMLElement;
