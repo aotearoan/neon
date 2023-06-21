@@ -12,8 +12,8 @@
       <neon-card-body>
         <neon-stack>
           <h2 class="neon-h3">Basic example</h2>
-          <neon-card-list :model="filteredModel" :clickable="true" :total="total" color="brand" @show-more="onShowMore">
-            <template #filters>
+          <neon-card-list :clickable="true" :model="filteredModel" :total="total" color="brand" @show-more="onShowMore">
+            <template #header>
               <neon-input v-model="filter" placeholder="Filter results…" size="s" />
             </template>
             <template #card="{ cardModel, index }">
@@ -30,13 +30,13 @@
         <neon-stack>
           <h2 class="neon-h3">Links example</h2>
           <neon-card-list
-            :model="linkFilteredModel"
             :clickable="true"
+            :model="linkFilteredModel"
             :total="linkTotal"
             color="brand"
             @show-more="onLinkShowMore"
           >
-            <template #filters>
+            <template #header>
               <neon-input v-model="linkFilter" placeholder="Filter results…" size="s" />
             </template>
             <template #card="{ cardModel, index }">

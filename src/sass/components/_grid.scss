@@ -9,9 +9,25 @@
     @include layout.padding(0.5, true);
     display: grid;
 
+    @include responsive.responsive(mobile-large) {
+      display: flex;
+      flex-direction: column;
+    }
+
     .neon-grid-area {
       @include layout.margin(0.5, true);
       display: flex;
+
+      & > .neon-card {
+        &,
+        & > .neon-card-body {
+          flex: 1 0 auto;
+
+          @include responsive.responsive(mobile-large) {
+            flex: 0 0 auto;
+          }
+        }
+      }
     }
   }
 

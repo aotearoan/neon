@@ -26,7 +26,7 @@ export default defineComponent({
     const headline = ref('Display a list of cards');
 
     const template = `<neon-card-list :model="model" :total="total" color="brand" @show-more="onShowMore">
-  <template #filters>
+  <template #header>
     <neon-input v-model="filter" placeholder="Filter results…" size="s" />
   </template>
   <template #card="{ cardModel, index }">
@@ -38,7 +38,7 @@ export default defineComponent({
 </neon-card-list>`;
 
     const linkTemplate = `<neon-card-list :model="linkFilteredModel" :clickable="true" :total="linkTotal" color="brand" @show-more="onLinkShowMore">
-  <template #filters>
+  <template #header>
     <neon-input v-model="linkFilter" placeholder="Filter results…" size="s" />
   </template>
   <template #card="{ cardModel, index }">

@@ -8,14 +8,14 @@ describe('NeonCardList', () => {
   const modelWithLinks = cardListModelFixture(5, 'http://getskeleton.com', 0);
   const modelNoLinks = cardListModelFixture(5, undefined, 0);
 
-  it('renders filters slot contents', () => {
+  it('renders header slot contents', () => {
     // given
     const { html } = render(NeonCardList, {
       props: {
         model: modelWithLinks,
         total: modelWithLinks.length,
       },
-      slots: { filters: '<p>test</p>' },
+      slots: { header: '<p>test</p>' },
       global: { plugins: [router] },
     });
     // when / then

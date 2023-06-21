@@ -12,20 +12,20 @@
           <neon-stack>
             <table>
               <thead>
-              <tr>
-                <th>header 1</th>
-                <th>header 2</th>
-              </tr>
+                <tr>
+                  <th>header 1</th>
+                  <th>header 2</th>
+                </tr>
               </thead>
               <tbody>
-              <tr>
-                <td>Value 1</td>
-                <td>Value 2</td>
-              </tr>
-              <tr>
-                <td>Value 3</td>
-                <td>Value 4</td>
-              </tr>
+                <tr>
+                  <td>Value 1</td>
+                  <td>Value 2</td>
+                </tr>
+                <tr>
+                  <td>Value 3</td>
+                  <td>Value 4</td>
+                </tr>
               </tbody>
             </table>
             <editor v-model="template" />

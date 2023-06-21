@@ -1,8 +1,8 @@
 <template>
   <div class="neon-card-list">
-    <neon-inline class="neon-card-list__header" breakpoint="">
-      <!-- @slot slot for providing filters for the card list aligned next to the result count -->
-      <slot name="filters"></slot>
+    <neon-inline breakpoint="" class="neon-card-list__header">
+      <!-- @slot slot for providing filters or titles for the card list aligned next to the result count -->
+      <slot name="header"></slot>
       <span v-if="total" class="neon-card-list__total">{{ n(model.length) }} {{ ofLabel }} {{ n(total) }}</span>
     </neon-inline>
     <neon-stack class="neon-card-list__cards">
@@ -38,8 +38,8 @@
       v-else
       :button-style="NeonButtonStyle.Text"
       :color="NeonFunctionalColor.Neutral"
-      :size="NeonSize.Small"
       :label="showMoreLabel"
+      :size="NeonSize.Small"
       class="neon-card-list__show-more"
       @click="emit('show-more', $event)"
     />

@@ -101,8 +101,8 @@
   ],
   "slots": [
     {
-      "name": "filters",
-      "description": "slot for providing filters for the card list aligned next to the result count"
+      "name": "header",
+      "description": "slot for providing filters or titles for the card list aligned next to the result count"
     },
     {
       "name": "card",
