@@ -1,0 +1,113 @@
+{
+  "displayName": "NeonSwitch",
+  "description": "<p>\nA Switch or Checkbox component used to indicate an on/off state. This is equivalent to a checkbox. The switch supports\nboth <em>Switch</em> and <em>Checkbox</em> styles which can be used in different scenarios.\n</p>",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "modelValue",
+      "description": "The switch model.",
+      "type": {
+        "name": "boolean"
+      },
+      "required": true
+    },
+    {
+      "name": "label",
+      "description": "The switch label, the label can be optional only in the case the switch is part of a more complex component.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "indeterminate",
+      "description": "The indeterminate state of the checkbox.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "size",
+      "description": "The size of the switch.",
+      "type": {
+        "name": "String as () => NeonSize"
+      },
+      "defaultValue": {
+        "func": true,
+        "value": "() => NeonSize.Medium"
+      }
+    },
+    {
+      "name": "color",
+      "description": "The switch color.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": true,
+        "value": "() => NeonFunctionalColor.Primary"
+      }
+    },
+    {
+      "name": "switchStyle",
+      "description": "Style the switch as a <em>Switch</em> or a <em>Checkbox</em>.",
+      "type": {
+        "name": "String as () => NeonSwitchStyle"
+      },
+      "defaultValue": {
+        "func": true,
+        "value": "() => NeonSwitchStyle.Switch"
+      }
+    },
+    {
+      "name": "labelPosition",
+      "description": "The position of the switch label.",
+      "type": {
+        "name": "String as () => NeonHorizontalPosition"
+      },
+      "defaultValue": {
+        "func": true,
+        "value": "() => NeonHorizontalPosition.Right"
+      }
+    },
+    {
+      "name": "disabled",
+      "description": "Disabled state of the switch.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "indeterminate-change",
+      "description": "Emitted when an indeterminate checkbox is toggled to checked.",
+      "type": {
+        "names": [
+          "boolean"
+        ]
+      }
+    },
+    {
+      "name": "update:modelValue",
+      "description": "Emitted when the switch is toggled checked or unchecked.",
+      "type": {
+        "names": [
+          "boolean"
+        ]
+      }
+    }
+  ]
+}

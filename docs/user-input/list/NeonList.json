@@ -1,0 +1,69 @@
+{
+  "displayName": "NeonList",
+  "description": "Renders a list of removable items. This can be used as an alternative to removable chips where a vertical list is\nmore appropriate.",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "modelValue",
+      "description": "The list items.",
+      "type": {
+        "name": "Array as () => Array<NeonListItem>"
+      },
+      "required": true
+    },
+    {
+      "name": "size",
+      "description": "The file component size",
+      "type": {
+        "name": "String as () => NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "color",
+      "description": "The file component color",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    },
+    {
+      "name": "disabled",
+      "description": "The disabled state of the component",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "update:modelValue",
+      "description": "Emitted when an item is removed from the list",
+      "type": {
+        "names": [
+          "NeonListItem[]"
+        ]
+      }
+    },
+    {
+      "name": "close",
+      "description": "Emitted when an item is removed from the list",
+      "type": {
+        "names": [
+          "string"
+        ]
+      }
+    }
+  ]
+}

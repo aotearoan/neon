@@ -1,0 +1,1 @@
+import{u as e,x as r,y as t,I as n}from"./vendor-7a8d752b.js";import{_ as s}from"../index.js";const a=e({name:"NeonCardFooter"}),c={class:"neon-card-footer"};function d(o,p,_,f,i,m){return r(),t("div",c,[n(o.$slots,"default")])}const $=s(a,[["render",d]]);export{$ as N};

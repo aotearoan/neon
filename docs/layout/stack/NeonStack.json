@@ -1,0 +1,25 @@
+{
+  "displayName": "NeonStack",
+  "description": "A vertical layout component. NeonStack provides a way of laying out it's contents with standard gaps at each\nbreakpoint. For cases where the gap needs to be different it is recommended to just use a <em>div</em> & apply a gap\nusing CSS. Alternatively, NeonStack could be used by also applying a gap in CSS.",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "gap",
+      "description": "Size of the gap between items",
+      "type": {
+        "name": "String as () => NeonSize"
+      },
+      "defaultValue": {
+        "func": true,
+        "value": "() => NeonSize.Large"
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "stack contents"
+    }
+  ]
+}
