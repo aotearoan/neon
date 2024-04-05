@@ -1,0 +1,1 @@
+import{l as a,_ as o}from"../index.js";import{u as n,x as s,y as t,I as r,P as p}from"./vendor-7a8d752b.js";const c=n({name:"NeonStack",props:{gap:{type:String,default:()=>a.Large}}});function l(e,i,f,m,d,_){return s(),t("div",{class:p([`neon-stack--gap-${e.gap}`,"neon-stack"])},[r(e.$slots,"default")],2)}const $=o(c,[["render",l]]);export{$ as N};

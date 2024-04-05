@@ -1,0 +1,49 @@
+{
+  "displayName": "NeonIcon",
+  "description": "<p>A component for rendering SVG images. These images are generally, but not limited to, <em>icons</em>. This\ncomponent can render any SVG of any size. Size is not restricted in the NeonIcon component but rather in the\ncomponents using the icons. Generally, when talking about icons, this component is only used to build other\ncomponents. But you may also find it useful for rendering SVG images, e.g. illustrations.</p>\n\n<p>There is an icon registry where strings containing SVGs can be registered with a name and that name can be used\nwith the NeonIcon component to render the image. Use the classes <em>neon-svg-fill</em> and <em>neon-svg--stroke</em>\nin the SVG elements to automatically apply the functional colors.</p>\n\n<p>This provides the advantage of only registering the icons you actually need, dynamically switching colors in\nTypescript/CSS without using a large icon font and not having to duplicate icon images to support multiple\ncolor variations (including light and dark modes).</p>\n\nFor more detailed information please see <a href=\"/presentation/icon\">Icons</a>.",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "name",
+      "description": "The name of an icon registered in the icon registry.",
+      "type": {
+        "name": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "color",
+      "description": "The color to render the icon. By default, it will be the current text color (light text in dark mode or dark text in light mode).",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "inverse",
+      "description": "Set the icon color to the inverse text color",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "disabled",
+      "description": "Apply a disabled style to the icon",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    }
+  ]
+}

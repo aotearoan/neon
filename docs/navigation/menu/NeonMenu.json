@@ -1,0 +1,60 @@
+{
+  "displayName": "NeonMenu",
+  "description": "<p>\n  <strong>NeonMenu</strong> is a responsive aware menu that progressively collapses options into the mobile menu as\n  the screen size gets smaller. This is a more flexible option than moving directly to a hamburger menu at tablet and\n  below. It is a best effort approach to keep displaying the most important menu items for as long as possible,\n  giving the user a better experience.\n</p>",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "menu",
+      "description": "The menu configuration. This can have two levels, i.e. a top level horizontal menu and, if required, a dropdown\nmenu containing the second level. The highlighted 'active' menu is determined by the current Vue route.",
+      "type": {
+        "name": "Array as () => Array<NeonMenuModel>"
+      },
+      "required": true
+    },
+    {
+      "name": "color",
+      "description": "The menu highlight color (excludes low-contrast and neutral).",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Brand"
+      }
+    },
+    {
+      "name": "size",
+      "description": "The menu size.",
+      "type": {
+        "name": "String as () => NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Large"
+      }
+    },
+    {
+      "name": "priorityMenuEnabled",
+      "description": "Whether to enable the priority menu which automatically calculates the available screen space and displays\nas many of the menu items as possible, moving the remaining items into the overflow menu.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "click",
+      "description": "Emitted when a user clicks on a menu item.",
+      "type": {
+        "names": [
+          "string"
+        ]
+      }
+    }
+  ]
+}

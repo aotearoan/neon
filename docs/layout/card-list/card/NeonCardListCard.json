@@ -1,0 +1,58 @@
+{
+  "displayName": "NeonCardListCard",
+  "description": "Represents a card in a card list.",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "color",
+      "description": "Specify a hover color for the card.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "disabled",
+      "description": "Render card as disabled.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "clickable",
+      "description": "Specify card is clickable. This will return click events when the card is clicked on. NOTE: use the href in the\ncard model instead of clickable=true if card is a link.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "click",
+      "description": "Emitted when a card is clickable & the card is clicked & not disabled.",
+      "type": {
+        "names": [
+          "void"
+        ]
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "slot for rendering card contents"
+    }
+  ]
+}
