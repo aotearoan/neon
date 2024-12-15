@@ -1,5 +1,21 @@
 # Changelog
 
+## [16.0.0](https://github.com/aotearoan/neon/compare/v6.0.0...v16.0.0) (2024-12-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* versions & build ([#191](https://github.com/aotearoan/neon/issues/191))
+
+### Miscellaneous Chores
+
+* release 16.0.0 ([#193](https://github.com/aotearoan/neon/issues/193)) ([3bce5c6](https://github.com/aotearoan/neon/commit/3bce5c615516398eb542c610ef15eb33f3ca85b4))
+
+
+### Code Refactoring
+
+* versions & build ([#191](https://github.com/aotearoan/neon/issues/191)) ([f283b35](https://github.com/aotearoan/neon/commit/f283b35ac5059d7f517cc64d207b5957b9f5ea02))
+
 ## [15.0.0](https://github.com/aotearoan/neon/compare/v14.6.0...v15.0.0) (2024-12-15)
 
 ### ⚠ BREAKING CHANGES
