@@ -52,6 +52,10 @@ describe('NeonNumberUtils', () => {
       expect(NeonNumberUtils.formatNumber(0.422, { percentage: true })).toEqual('42.2%');
     });
 
+    it('format currency', () => {
+      expect(NeonNumberUtils.formatNumber(1123.0, { style: 'currency', currency: 'USD' })).toEqual('$1,123.00');
+    });
+
     it('format decimals', () => {
       expect(NeonNumberUtils.formatNumber(0.426, { decimals: 2 })).toEqual('0.43');
     });
