@@ -4,7 +4,7 @@ on:
   push:
     tags:
       - '*'
-
+jobs:
   build:
     runs-on: ubuntu-latest
     steps:
@@ -13,7 +13,6 @@ on:
         with:
           node-version: latest
       - run: npm install
-
   publish-npm:
     needs: build
     runs-on: ubuntu-latest
@@ -31,7 +30,6 @@ on:
           npm publish aotearoan-neon-${VERSION}.tgz --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
-
   publish-gpr:
     needs: build
     runs-on: ubuntu-latest
@@ -49,7 +47,6 @@ on:
           npm publish aotearoan-neon-${VERSION}.tgz --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
   publish-gh-pages:
     needs: build
     runs-on: ubuntu-latest
