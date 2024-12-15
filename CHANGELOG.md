@@ -1,5 +1,16 @@
 # Changelog
 
+## [7.0.0](https://github.com/aotearoan/neon/compare/v6.0.0...v7.0.0) (2024-12-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* versions & build ([#191](https://github.com/aotearoan/neon/issues/191))
+
+### Code Refactoring
+
+* versions & build ([#191](https://github.com/aotearoan/neon/issues/191)) ([f283b35](https://github.com/aotearoan/neon/commit/f283b35ac5059d7f517cc64d207b5957b9f5ea02))
+
 ## [15.0.0](https://github.com/aotearoan/neon/compare/v14.6.0...v15.0.0) (2024-12-15)
 
 ### ⚠ BREAKING CHANGES
