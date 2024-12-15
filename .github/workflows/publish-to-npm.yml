@@ -2,8 +2,9 @@ name: Publish to npm
 
 on:
   push:
-    branches: [ main ]
-jobs:
+    # Pattern matched against refs/tags
+    tags:
+      - '*'           # Push events to every tag not containing /jobs:
   build:
     runs-on: ubuntu-latest
     steps:
