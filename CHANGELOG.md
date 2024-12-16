@@ -1,5 +1,12 @@
 # Changelog
 
+## [16.0.7](https://github.com/aotearoan/neon/compare/v16.0.6...v16.0.7) (2024-12-16)
+
+
+### Bug Fixes
+
+* add space css vars ([#209](https://github.com/aotearoan/neon/issues/209)) ([2f39e31](https://github.com/aotearoan/neon/commit/2f39e31e910cd6031cfab5eed0db74432eccc049))
+
 ## [16.0.6](https://github.com/aotearoan/neon/compare/v16.0.5...v16.0.6) (2024-12-16)
 
 
