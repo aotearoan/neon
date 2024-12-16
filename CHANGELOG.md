@@ -1,5 +1,12 @@
 # Changelog
 
+## [16.0.1](https://github.com/aotearoan/neon/compare/v16.0.0...v16.0.1) (2024-12-16)
+
+
+### Bug Fixes
+
+* doc-gen & models ([#195](https://github.com/aotearoan/neon/issues/195)) ([3725940](https://github.com/aotearoan/neon/commit/372594023bd8a4dba1d29c1f99a22aa10f158ea4))
+
 ## [16.0.0](https://github.com/aotearoan/neon/compare/v6.0.0...v16.0.0) (2024-12-15)
 
 
