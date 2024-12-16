@@ -119,5 +119,9 @@
   "repository": "https://github.com/aotearoan/neon.git",
   "bugs": {
     "url": "https://github.com/aotearoan/neon/issues"
+  },
+  "engines": {
+    "npm": "~9.6.7",
+    "node": "~18.17.1"
   }
 }
