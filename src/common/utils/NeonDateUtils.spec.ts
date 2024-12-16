@@ -2,7 +2,7 @@ import { NeonDateUtils } from '@/common/utils/NeonDateUtils';
 
 describe('NeonDateUtils', () => {
   beforeEach(() => {
-    jest.useFakeTimers().setSystemTime(new Date('2023-03-16T12:12:12'));
+    jest.useFakeTimers().setSystemTime(new Date('2023-03-16T12:12:12Z'));
   });
 
   afterEach(() => {
@@ -10,7 +10,7 @@ describe('NeonDateUtils', () => {
   });
 
   it('converts a string to a NeonDate', () => {
-    expect(NeonDateUtils.stringToNeonDate('2023-01-01T12:12:12')).toEqual({
+    expect(NeonDateUtils.stringToNeonDate('2023-01-01T12:12:12Z')).toEqual({
       day: 1,
       dayFormatted: '01',
       month: 1,
@@ -48,11 +48,11 @@ describe('NeonDateUtils', () => {
   });
 
   it('date to iso', () => {
-    expect(NeonDateUtils.dateToIso(new Date('2023-01-01'))).toEqual('2023-01-01');
+    expect(NeonDateUtils.dateToIso(new Date('2023-02-01'))).toEqual('2023-02-01');
   });
 
   it('date to iso with time', () => {
-    expect(NeonDateUtils.dateToIso(new Date('2023-01-01T12:12:12'), true)).toEqual('2023-01-01T12:12:12.000Z');
+    expect(NeonDateUtils.dateToIso(new Date('2023-02-01T12:12:12Z'), true)).toEqual('2023-02-01T12:12:12.000Z');
   });
 
   it('dmy to iso', () => {
@@ -61,7 +61,7 @@ describe('NeonDateUtils', () => {
   });
 
   it('generates dowNames', () => {
-    expect(NeonDateUtils.dowNames('en-US')).toEqual(['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']);
+    expect(NeonDateUtils.dowNames('es-AR')).toEqual(['lun', 'mar', 'mié', 'jue', 'vie', 'sáb', 'dom']);
   });
 
   it('generates dowNames missing locale', () => {
@@ -69,19 +69,19 @@ describe('NeonDateUtils', () => {
   });
 
   it('generates monthNames', () => {
-    expect(NeonDateUtils.monthNames('en-US')).toEqual([
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'May',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec',
+    expect(NeonDateUtils.monthNames('es-AR')).toEqual([
+      'ene',
+      'feb',
+      'mar',
+      'abr',
+      'may',
+      'jun',
+      'jul',
+      'ago',
+      'sept',
+      'oct',
+      'nov',
+      'dic',
     ]);
   });
 

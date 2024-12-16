@@ -54,9 +54,15 @@
     .neon-tree-menu__section-link {
       font-size: var(--neon-font-size-l);
       font-weight: var(--neon-font-weight-bold);
+
+      &:visited {
+        color: var(--neon-color-text);
+      }
     }
 
     .neon-tree-menu__section {
+      color: var(--neon-color-text);
+
       & > .neon-tree-menu__link {
         font-size: var(--neon-font-size-m);
       }
