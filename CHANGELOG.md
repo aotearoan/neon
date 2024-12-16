@@ -1,5 +1,12 @@
 # Changelog
 
+## [16.0.2](https://github.com/aotearoan/neon/compare/v16.0.1...v16.0.2) (2024-12-16)
+
+
+### Bug Fixes
+
+* gh page deploy ([#197](https://github.com/aotearoan/neon/issues/197)) ([a91ca41](https://github.com/aotearoan/neon/commit/a91ca41083575bd9bb70bcada245ca41f06eca38))
+
 ## [16.0.1](https://github.com/aotearoan/neon/compare/v16.0.0...v16.0.1) (2024-12-16)
 
 
