@@ -1,5 +1,12 @@
 # Changelog
 
+## [16.0.5](https://github.com/aotearoan/neon/compare/v16.0.4...v16.0.5) (2024-12-16)
+
+
+### Bug Fixes
+
+* label font & card padding fixes ([#204](https://github.com/aotearoan/neon/issues/204)) ([ab14697](https://github.com/aotearoan/neon/commit/ab14697366d6dbd96e7dc631e18ef09691f63b65))
+
 ## [16.0.4](https://github.com/aotearoan/neon/compare/v16.0.3...v16.0.4) (2024-12-16)
 
 
