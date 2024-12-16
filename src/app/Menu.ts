@@ -546,7 +546,13 @@ export class Menu {
           {
             path: 'utils',
             name: 'Utils',
-            children: utilsList.map((e) => ({ path: e })),
+            children: utilsList.map((pathString) => {
+              const parts = pathString.split('/');
+              return {
+                path: pathString,
+                name: parts[parts.length - 1],
+              };
+            }) as MenuModel[],
           },
         ],
       },
