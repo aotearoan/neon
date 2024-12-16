@@ -12,11 +12,11 @@ export class NeonNumberUtils {
     const formatOptions =
       options && (options.decimals || options.minimumFractionDigits || options.style || options.currency)
         ? {
-          minimumFractionDigits: options.decimals || options.minimumFractionDigits,
-          maximumFractionDigits: options.decimals,
-          style: options.style,
-          currency: options.currency,
-        }
+            minimumFractionDigits: options.decimals || options.minimumFractionDigits,
+            maximumFractionDigits: options.decimals,
+            style: options.style,
+            currency: options.currency,
+          }
         : {};
     const formatted = Number(options && options.percentage ? 100 * value : value).toLocaleString(
       locale || navigator.language,
