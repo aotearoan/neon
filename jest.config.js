@@ -1,4 +1,5 @@
 module.exports = {
+  globalSetup: '<rootDir>/test/unit/globalSetup.js',
   setupFiles: ['./test/unit/setup.ts'],
   preset: 'ts-jest/presets/default-esm',
   moduleFileExtensions: ['ts', 'js', 'vue'],

@@ -51,7 +51,8 @@
       & > .neon-card-header,
       & > .neon-card-body,
       & > .neon-card-footer {
-        @include layout.padding(0.5);
+        @include layout.padding-horizontal(0.5, 0.5);
+        @include layout.padding-vertical(0.25, 0.25);
       }
     }
 
