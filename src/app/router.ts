@@ -33,7 +33,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "source" */ './views/source/Source.vue'),
   },
   {
-    path: '/utils/:util',
+    path: '/utils/:util+',
     name: 'Utils',
     component: () => import(/* webpackChunkName: "source" */ './views/source/Source.vue'),
   },
