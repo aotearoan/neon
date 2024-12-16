@@ -1,0 +1,69 @@
+{
+  "displayName": "NeonLink",
+  "description": "An HTML anchor component which handles VueRouter links (internal), href links (external) and clickable links (no href).",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "href",
+      "description": "The href of the link, this can be an internal (relative or absolute) or an external link.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "noStyle",
+      "description": "set to true if you would like a completely unstyled link. This is useful for creating a complex component which may use NeonLink.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "outlineStyle",
+      "description": "Style of the outline to use when the link has focus, use <em>text</em> for wrapping text content and\n<em>border</em> for tooltips wrapping \"block\" elements, e.g. buttons.",
+      "type": {
+        "name": "String as () => NeonOutlineStyle"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonOutlineStyle.Text"
+      }
+    },
+    {
+      "name": "externalIndicator",
+      "description": "Display an external link icon to the right of the link indicating clicking it will take the user to another site.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "click",
+      "description": "Emitted when the user triggers the link by clicking on it or hitting Enter or Space when the link has focus.",
+      "type": {
+        "names": [
+          "void"
+        ]
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "the content of the link"
+    }
+  ]
+}

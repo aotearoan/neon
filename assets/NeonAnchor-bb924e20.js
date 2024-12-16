@@ -1,0 +1,1 @@
+import{u as o,x as n,y as r}from"./vendor-7a8d752b.js";import{_ as t}from"../index.js";const s=o({name:"NeonAnchor",props:{id:{type:String,required:!0}}}),c=["id"];function a(e,i,p,d,_,m){return n(),r("a",{id:e.id,class:"neon-anchor"},null,8,c)}const l=t(s,[["render",a]]);export{l as N};

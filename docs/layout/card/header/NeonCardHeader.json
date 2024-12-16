@@ -1,0 +1,12 @@
+{
+  "displayName": "NeonCardHeader",
+  "description": "A card header section, used to contain titles and secondary actions (e.g. favorite button). This is normally the\nfirst section in a card but may also be placed below other sections, e.g. a full width section containing an image.",
+  "tags": {},
+  "exportName": "default",
+  "slots": [
+    {
+      "name": "default",
+      "description": "card header content"
+    }
+  ]
+}

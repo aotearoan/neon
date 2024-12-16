@@ -1,0 +1,120 @@
+{
+  "displayName": "NeonSearch",
+  "description": "<p>\n  The <strong>NeonSearch</strong> component is equivalent to an HTML &lt;input type=\"search\"&gt; element. It is\n  useful as an alternative to <em>NeonSelect</em> to provide filtered results when the universe of results is very\n  large and/or the results need to be requested from a server side API.\n</p>\n<p><strong>NeonSearch</strong> provides input chips in the case the search allows multiple selection.</p>",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "modelValue",
+      "description": "Either a string indicating the key of the selected option ('' if there is no selection) or an array of selected\nNeonSearchOption in the case when multiple = true (necessary to display them as chips).",
+      "type": {
+        "name": "string|Array as () => Array<NeonSearchOption>"
+      },
+      "required": true
+    },
+    {
+      "name": "placeholder",
+      "description": "Placeholder to display in search input when there is no search string entered.",
+      "type": {
+        "name": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "options",
+      "description": "The list of search results.",
+      "type": {
+        "name": "Array as () => Array<NeonSearchOption>"
+      },
+      "required": true
+    },
+    {
+      "name": "multiple",
+      "description": "Allow multi-select.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "disabled",
+      "description": "Disable the search",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "size",
+      "description": "The size of the dropdown - Small, Medium or Large.",
+      "type": {
+        "name": "String as () => NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "color",
+      "description": "The color of the search.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    },
+    {
+      "name": "placement",
+      "description": "Placement of the dropdown contents.",
+      "type": {
+        "name": "String as () => NeonDropdownPlacement"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonDropdownPlacement.BottomLeft"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "update:modelValue",
+      "description": "emitted when the user changes the selection.",
+      "type": {
+        "names": [
+          "string | NeonSearchOption[]"
+        ]
+      }
+    },
+    {
+      "name": "filter-changed",
+      "description": "emitted when the user types in filter box.",
+      "type": {
+        "names": [
+          "string"
+        ]
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "option",
+      "scoped": true,
+      "description": "provide a custom template for an option.<br />Bindings: <strong>option</strong>",
+      "bindings": [
+        {
+          "name": "option",
+          "title": "binding"
+        }
+      ]
+    }
+  ]
+}

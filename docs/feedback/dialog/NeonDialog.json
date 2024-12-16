@@ -1,0 +1,110 @@
+{
+  "displayName": "NeonDialog",
+  "description": "A dialog component for confirming simple actions. This will be rendered above the content of the main window and\npresent just two options to the user, one to proceed with the action and the other to cancel it.",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "color",
+      "description": "The color of the button for the confirm (positive) action.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Primary"
+      }
+    },
+    {
+      "name": "alternateColor",
+      "description": "Alternate confirm button color for creating a gradient button. NOTE: can also be the same color as 'color'.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "cancelLabel",
+      "description": "The label of the button for the cancel (negative) action.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Cancel'"
+      }
+    },
+    {
+      "name": "confirmLabel",
+      "description": "The label of the button for the confirm (positive) action.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Confirm'"
+      }
+    },
+    {
+      "name": "title",
+      "description": "The dialog title",
+      "type": {
+        "name": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "question",
+      "description": "The dialog question. Can be html (rendered using v-html).",
+      "type": {
+        "name": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "open",
+      "description": "Whether the dialog is open.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "opaque",
+      "description": "Increase the opacity so that the page behind the modal is no longer visible",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "cancel",
+      "description": "emitted when the user clicks the cancel (negative) action button.",
+      "type": {
+        "names": [
+          "void"
+        ]
+      }
+    },
+    {
+      "name": "confirm",
+      "description": "emitted when the user clicks the confirm (positive) action button.",
+      "type": {
+        "names": [
+          "void"
+        ]
+      }
+    }
+  ]
+}
