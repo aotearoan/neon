@@ -83,7 +83,7 @@ $neon-width-slider-tooltip: 201rem;
 
     .neon-slider__output {
       font-size: var(--neon-font-size-s);
-      margin-bottom: var(--neon-base-space);
+      margin-bottom: var(--neon-space-4);
       display: flex;
       font-variant-numeric: tabular-nums;
     }
@@ -109,7 +109,7 @@ $neon-width-slider-tooltip: 201rem;
         line-height: 1;
         font-weight: var(--neon-font-weight-bold);
         letter-spacing: 0;
-        padding: calc(2 * var(--neon-base-space));
+        padding: var(--neon-space-8);
         border-radius: var(--neon-border-radius-slider-tooltip);
         box-shadow: var(--neon-card-box-shadow);
         color: var(--neon-color-inverse);

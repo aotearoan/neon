@@ -7,19 +7,19 @@
     .neon-card-body {
       min-height: var(--neon-min-height-dialog);
       justify-content: space-between;
-      padding: calc(6 * var(--neon-base-space));
+      padding: var(--neon-space-24);
     }
 
     .neon-button {
-      margin-top: calc(2 * var(--neon-base-space));
+      margin-top: var(--neon-space-8);
     }
 
     &__title {
-      margin-bottom: calc(2 * var(--neon-base-space));
+      margin-bottom: var(--neon-space-8);
     }
 
     &__question {
-      margin-bottom: calc(6 * var(--neon-base-space));
+      margin-bottom: var(--neon-space-24);
       font-size: var(--neon-font-size-s);
       font-style: var(--neon-font-style-dialog);
       letter-spacing: var(--neon-letter-spacing-s);

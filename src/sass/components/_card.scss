@@ -87,7 +87,7 @@
       flex-direction: row;
       justify-content: flex-end;
       align-items: center;
-      gap: calc(4 * var(--neon-base-space));
+      gap: var(--neon-space-16);
     }
 
     .neon-card-header {

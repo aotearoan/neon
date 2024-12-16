@@ -16,11 +16,11 @@
   .neon-drop-zone--circular {
     width: 250rem;
     height: 250rem;
-    margin-left: calc(8 * var(--neon-base-space));
+    margin-left: var(--neon-space-32);
 
     @include responsive.responsive(tablet) {
       margin-left: 0;
-      margin-top: calc(4 * var(--neon-base-space));
+      margin-top: var(--neon-space-16);
     }
   }
 }

@@ -13,7 +13,7 @@
       display: flex;
       justify-content: center;
       width: 100%;
-      max-width: calc(var(--neon-max-page-width) + 4 * var(--neon-base-space));
+      max-width: calc(var(--neon-max-page-width) + var(--neon-space-16));
       line-height: var(--neon-line-height-one);
 
       @include responsive.responsive(larger-than-tablet) {

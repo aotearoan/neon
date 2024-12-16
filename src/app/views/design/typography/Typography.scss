@@ -1,4 +1,4 @@
 .typography-scale {
-  margin-top: calc(8 * var(--neon-base-space)) !important;
-  margin-bottom: calc(3 * var(--neon-base-space));
+  margin-top: var(--neon-space-32) !important;
+  margin-bottom: var(--neon-space-12);
 }

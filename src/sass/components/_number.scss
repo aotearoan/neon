@@ -114,7 +114,7 @@
     }
 
     .neon-input .neon-input__textfield {
-      padding-right: calc(2 * var(--neon-base-space));
+      padding-right: var(--neon-space-8);
       font-variant: tabular-nums;
       border-right: none;
       -moz-appearance: textfield;

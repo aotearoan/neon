@@ -9,8 +9,8 @@
       width: 100%;
       letter-spacing: var(--neon-letter-spacing-s);
       border-radius: var(--neon-border-radius);
-      padding-top: calc(0.5 * var(--neon-base-space));
-      padding-bottom: calc(0.5 * var(--neon-base-space));
+      padding-top: var(--neon-space-2);
+      padding-bottom: var(--neon-space-2);
       margin: 0;
       text-decoration: none;
       user-select: none;
@@ -74,7 +74,7 @@
       &--expanded {
         .neon-tree-menu__links {
           display: flex;
-          padding-bottom: calc(2 * var(--neon-base-space));
+          padding-bottom: var(--neon-space-8);
         }
       }
 
@@ -89,14 +89,14 @@
       .neon-tree-menu__link {
         font-weight: var(--neon-font-weight-normal);
         font-size: var(--neon-font-size-s);
-        margin-bottom: calc(0.5 * var(--neon-base-space));
+        margin-bottom: var(--neon-space-2);
         color: var(--neon-color-text);
       }
 
       .neon-tree-menu__anchor {
         font-weight: var(--neon-font-weight-normal);
-        margin-bottom: calc(0.5 * var(--neon-base-space));
-        padding-left: calc(4 * var(--neon-base-space));
+        margin-bottom: var(--neon-space-2);
+        padding-left: var(--neon-space-16);
         font-size: var(--neon-font-size-s);
         color: var(--neon-color-text);
       }

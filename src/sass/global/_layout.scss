@@ -27,7 +27,7 @@
     justify-content: flex-start;
 
     & > *:not(:last-child) {
-      margin-right: calc(4 * var(--neon-base-space));
+      margin-right: var(--neon-space-16);
     }
   }
 

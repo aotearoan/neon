@@ -42,18 +42,18 @@
     > li {
       counter-increment: li;
       max-width: var(--neon-max-paragraph-width);
-      margin-left: calc(8 * var(--neon-base-space));
+      margin-left: var(--neon-space-32);
 
       &::before {
         display: inline-flex;
         content: counter(li);
-        margin-right: calc(4 * var(--neon-base-space));
-        width: calc(6 * var(--neon-base-space));
+        margin-right: var(--neon-space-16);
+        width: var(--neon-space-24);
         justify-content: flex-start;
         font-variant: tabular-nums;
         color: var(--neon-color-neutral);
         position: absolute;
-        left: calc(6 * var(--neon-base-space));
+        left: var(--neon-space-24);
       }
     }
 
@@ -90,12 +90,12 @@
     &:not(.no-style) > li {
       display: inline;
       max-width: var(--neon-max-paragraph-width);
-      padding-left: calc(7 * var(--neon-base-space));
+      padding-left: calc(7 * var(--neon-space-4));
 
       &:before {
         content: '•';
-        padding-right: calc(2 * var(--neon-base-space));
-        margin-left: calc(-7 * var(--neon-base-space));
+        padding-right: var(--neon-space-8);
+        margin-left: calc(-7 * var(--neon-space-4));
         display: inline-flex;
         align-items: center;
         font-size: var(--neon-font-size-l);

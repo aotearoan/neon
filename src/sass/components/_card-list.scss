@@ -13,13 +13,13 @@
     &__show-more {
       align-self: center;
       user-select: none;
-      margin-top: calc(4 * var(--neon-base-space));
+      margin-top: var(--neon-space-16);
       font-size: var(--neon-font-size-s);
       color: var(--neon-color-low-contrast);
     }
 
     .neon-card-list__cards {
-      gap: calc(0.25 * var(--neon-base-space));
+      gap: var(--neon-space-1);
 
       .neon-link {
         width: 100%;
@@ -41,7 +41,7 @@
 
     &__header {
       align-items: center;
-      margin-bottom: calc(4 * var(--neon-base-space));
+      margin-bottom: var(--neon-space-16);
     }
 
     &__total {

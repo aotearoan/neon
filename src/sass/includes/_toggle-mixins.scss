@@ -7,7 +7,7 @@
     min-height: var(--neon-size-#{$size});
     height: var(--neon-size-#{$size});
     z-index: var(--neon-z-index-default);
-    gap: calc(2 * var(--neon-base-space));
+    gap: var(--neon-space-8);
 
     &.neon-toggle__label--with-icon {
       .neon-icon {
@@ -84,7 +84,7 @@
 
   .neon-toggle__radio-button {
     border-radius: var(--neon-border-radius-radio-button);
-    margin-right: var(--neon-base-space);
+    margin-right: var(--neon-space-4);
     align-items: center;
     justify-content: center;
   }

@@ -90,15 +90,15 @@
     &__actions {
       position: absolute;
       top: 0;
-      gap: calc(2 * var(--neon-base-space));
-      right: var(--neon-base-space);
+      gap: var(--neon-space-8);
+      right: var(--neon-space-4);
       display: flex;
       flex-direction: row;
       align-items: center;
       height: var(--neon-size-l);
 
       @include responsive.responsive(tablet) {
-        height: calc(var(--neon-size-m) + var(--neon-base-space));
+        height: calc(var(--neon-size-m) + var(--neon-space-4));
 
         .editor__copy {
           height: var(--neon-size-m);
@@ -107,7 +107,7 @@
       }
 
       @include responsive.responsive(mobile-large) {
-        height: calc(var(--neon-size-s) + var(--neon-base-space));
+        height: calc(var(--neon-size-s) + var(--neon-space-4));
 
         .editor__copy {
           height: var(--neon-size-s);
@@ -130,7 +130,7 @@
       }
 
       &:last-child {
-        margin-right: calc(2 * var(--neon-base-space));
+        margin-right: var(--neon-space-8);
       }
     }
   }

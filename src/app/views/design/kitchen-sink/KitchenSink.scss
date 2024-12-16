@@ -1,7 +1,7 @@
 .kitchen-sink-page {
   .kitchen-sink-page__controls {
     flex-direction: row;
-    gap: calc(4 * var(--neon-base-space));
+    gap: var(--neon-space-16);
 
     .neon-select {
       width: 200rem;

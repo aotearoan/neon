@@ -4,7 +4,7 @@
   }
 
   .neon-card .neon-card-body:not(.palette-creator__text-vars) .neon-color--m {
-    margin-bottom: var(--neon-base-space);
+    margin-bottom: var(--neon-space-4);
 
     .neon-color__indicator {
       border-radius: 0;
@@ -26,7 +26,7 @@
 
   .palette-creator__light-palette,
   .palette-creator__dark-palette {
-    padding: calc(4 * var(--neon-base-space));
+    padding: var(--neon-space-16);
 
     & > div {
       position: relative;

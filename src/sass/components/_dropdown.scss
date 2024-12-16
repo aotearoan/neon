@@ -6,22 +6,22 @@
   .neon-dropdown__content {
     &--top-left,
     &--top-right {
-      bottom: calc(100% + #{$offset} * var(--neon-base-space));
+      bottom: calc(100% + #{$offset} * var(--neon-space-4));
     }
 
     &--bottom-left,
     &--bottom-right {
-      top: calc(100% + #{$offset} * var(--neon-base-space));
+      top: calc(100% + #{$offset} * var(--neon-space-4));
     }
 
     &--left-top,
     &--left-bottom {
-      right: calc(100% + #{$offset} * var(--neon-base-space));
+      right: calc(100% + #{$offset} * var(--neon-space-4));
     }
 
     &--right-top,
     &--right-bottom {
-      left: calc(100% + #{$offset} * var(--neon-base-space));
+      left: calc(100% + #{$offset} * var(--neon-space-4));
     }
   }
 }
@@ -166,7 +166,7 @@
       align-items: center;
 
       .neon-expansion-indicator {
-        margin-left: calc(2 * var(--neon-base-space));
+        margin-left: var(--neon-space-8);
       }
 
       .neon-badge {

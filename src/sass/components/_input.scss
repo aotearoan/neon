@@ -19,28 +19,28 @@
       position: absolute;
 
       @if ($size == 's') {
-        width: calc(var(--neon-size-#{$size}) - 2.5 * var(--neon-base-space));
-        height: calc(var(--neon-size-#{$size}) - 2.5 * var(--neon-base-space));
-        top: calc(1.25 * var(--neon-base-space));
-        right: calc(1.25 * var(--neon-base-space));
+        width: calc(var(--neon-size-#{$size}) - var(--neon-space-10));
+        height: calc(var(--neon-size-#{$size}) - var(--neon-space-10));
+        top: calc(1.25 * var(--neon-space-4));
+        right: calc(1.25 * var(--neon-space-4));
 
-        padding: calc(0.5 * var(--neon-base-space));
+        padding: var(--neon-space-2);
         &.neon-icon--name-close {
-          padding: var(--neon-base-space);
+          padding: var(--neon-space-4);
         }
       } @else {
-        width: calc(var(--neon-size-#{$size}) - 3 * var(--neon-base-space));
-        height: calc(var(--neon-size-#{$size}) - 3 * var(--neon-base-space));
-        top: calc(1.5 * var(--neon-base-space));
-        right: calc(1.5 * var(--neon-base-space));
+        width: calc(var(--neon-size-#{$size}) - var(--neon-space-12));
+        height: calc(var(--neon-size-#{$size}) - var(--neon-space-12));
+        top: var(--neon-space-6);
+        right: var(--neon-space-6);
 
-        padding: calc(1 * var(--neon-base-space));
+        padding: var(--neon-space-4);
 
         &.neon-icon--name-close {
           @if ($size == 'l') {
-            padding: calc(2.75 * var(--neon-base-space));
+            padding: calc(2.75 * var(--neon-space-4));
           } @else {
-            padding: calc(1.75 * var(--neon-base-space));
+            padding: calc(1.75 * var(--neon-space-4));
           }
         }
       }
@@ -59,9 +59,9 @@
 
       &:active {
         @if ($size == 's') {
-          top: calc(1.5 * var(--neon-base-space));
+          top: var(--neon-space-6);
         } @else {
-          top: calc(1.75 * var(--neon-base-space));
+          top: calc(1.75 * var(--neon-space-4));
         }
       }
     }
@@ -141,7 +141,7 @@
     &__textarea {
       border-radius: var(--neon-border-radius-input);
       border: var(--neon-border-width) var(--neon-border-style);
-      padding: var(--neon-base-space) calc(2.5 * var(--neon-base-space));
+      padding: var(--neon-space-4) var(--neon-space-10);
       line-height: var(--neon-line-height-one);
       outline: none;
       font-family: var(--neon-body-font-family);
@@ -159,8 +159,8 @@
 
       &-counter {
         position: absolute;
-        bottom: calc(2 * var(--neon-base-space));
-        right: calc(2 * var(--neon-base-space));
+        bottom: var(--neon-space-8);
+        right: var(--neon-space-8);
         user-select: none;
         font-size: var(--neon-font-size-s);
         letter-spacing: var(--neon-letter-spacing-s);

@@ -75,7 +75,7 @@ a[href]:not(.neon-link--no-style) {
     &__external-indicator {
       width: var(--neon-font-size-s);
       height: var(--neon-font-size-s);
-      margin-left: calc(2 * var(--neon-base-space));
+      margin-left: var(--neon-space-8);
       vertical-align: -2rem;
       opacity: 0.5;
     }
@@ -88,13 +88,13 @@ a[href]:not(.neon-link--no-style) {
 
     &.neon-link--outline-text.neon-link--with-external-indicator {
       &:after {
-        width: calc(100% - 4.5 * var(--neon-base-space));
+        width: calc(100% - 4.5 * var(--neon-space-4));
       }
 
       &:hover,
       &:focus {
         &:after {
-          width: calc(100% - 4.5 * var(--neon-base-space));
+          width: calc(100% - 4.5 * var(--neon-space-4));
         }
       }
     }

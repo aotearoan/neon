@@ -8,7 +8,7 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     user-select: none;
-    min-height: calc(12 * var(--neon-base-space));
+    min-height: var(--neon-space-48);
     max-width: 100%;
 
     .neon-stepper__step {
@@ -26,7 +26,7 @@
           content: '';
           width: 100%;
           left: -50%;
-          top: calc(3 * var(--neon-base-space) - 1rem);
+          top: calc(var(--neon-space-12) - 1rem);
           height: 1rem;
           border-top: 1rem dashed var(--neon-color-disabled-border);
         }
@@ -38,16 +38,16 @@
         align-items: center;
         flex-direction: column;
         z-index: var(--neon-z-index-above);
-        width: calc(16 * var(--neon-base-space));
-        height: calc(8 * var(--neon-base-space));
+        width: var(--neon-space-64);
+        height: var(--neon-space-32);
       }
 
       &-indicator {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: calc(5 * var(--neon-base-space));
-        height: calc(5 * var(--neon-base-space));
+        width: var(--neon-space-20);
+        height: var(--neon-space-20);
         border-radius: 50%;
         border: 1rem solid var(--neon-background-color-card);
         margin-top: 1rem;
@@ -56,8 +56,8 @@
 
         .neon-stepper__step-completed-icon,
         .neon-stepper__step-completing-icon {
-          width: calc(2.5 * var(--neon-base-space));
-          height: calc(2.5 * var(--neon-base-space));
+          width: var(--neon-space-10);
+          height: var(--neon-space-10);
 
           svg {
             path,
@@ -97,8 +97,8 @@
       &--active {
         .neon-stepper__step-indicator {
           margin-top: -1rem;
-          width: calc(6.5 * var(--neon-base-space));
-          height: calc(6.5 * var(--neon-base-space));
+          width: calc(6.5 * var(--neon-space-4));
+          height: calc(6.5 * var(--neon-space-4));
         }
 
         .neon-stepper__step-title {

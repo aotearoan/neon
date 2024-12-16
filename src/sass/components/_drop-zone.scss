@@ -2,7 +2,7 @@
 
 @mixin drop-zone {
   .neon-drop-zone {
-    border: calc(0.5 * var(--neon-base-space)) dashed rgba(var(--neon-rgb-drop-zone), 0.5);
+    border: var(--neon-space-2) dashed rgba(var(--neon-rgb-drop-zone), 0.5);
     border-radius: var(--neon-border-radius);
     @include layout.padding(1, true);
     cursor: copy;

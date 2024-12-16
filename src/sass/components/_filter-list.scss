@@ -3,7 +3,7 @@
 
 @mixin filter-list {
   .neon-filter-list {
-    gap: calc(0.5 * var(--neon-base-space));
+    gap: var(--neon-space-2);
 
     @each $color in palettes.$neon-functional-colors {
       &.neon-filter-list--#{$color} {
@@ -57,13 +57,13 @@
       justify-content: flex-start;
 
       &-label {
-        margin-right: calc(2 * var(--neon-base-space));
+        margin-right: var(--neon-space-8);
       }
 
       &-count {
         width: fit-content;
         min-width: fit-content;
-        margin-right: calc(6 * var(--neon-base-space));
+        margin-right: var(--neon-space-24);
         font-size: var(--neon-font-size-xs);
         font-weight: var(--neon-font-weight-bold);
         font-variant: tabular-nums;
@@ -72,7 +72,7 @@
 
       &--selected:not(.neon-filter-list__item--disabled) {
         .neon-filter-list__item-count {
-          margin-right: calc(2 * var(--neon-base-space));
+          margin-right: var(--neon-space-8);
         }
       }
 
@@ -117,7 +117,7 @@
     &__show-toggle {
       align-self: center;
       font-size: var(--neon-font-size-s);
-      margin-top: calc(2 * var(--neon-base-space));
+      margin-top: var(--neon-space-8);
     }
   }
 }

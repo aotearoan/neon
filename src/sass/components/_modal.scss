@@ -103,8 +103,8 @@
 
     &__container {
       @include responsive.responsive(larger-than-mobile-large) {
-        padding-left: calc(2 * var(--neon-base-space));
-        padding-right: calc(2 * var(--neon-base-space));
+        padding-left: var(--neon-space-8);
+        padding-right: var(--neon-space-8);
       }
     }
 
@@ -113,7 +113,7 @@
       top: 0;
       right: 0;
       display: flex;
-      margin: calc(0.5 * var(--neon-base-space));
+      margin: var(--neon-space-2);
 
       @include responsive.responsive(larger-than-mobile-large) {
         display: none;

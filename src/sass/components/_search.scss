@@ -40,7 +40,7 @@
 
     &__search-icon {
       position: absolute;
-      left: calc(4 * var(--neon-base-space) + var(--neon-border-width));
+      left: calc(var(--neon-space-16) + var(--neon-border-width));
     }
 
     &__container {
@@ -49,9 +49,9 @@
       flex-wrap: wrap;
       align-items: center;
       border-radius: var(--neon-border-radius);
-      padding-left: calc(10 * var(--neon-base-space));
-      padding-top: calc(0.5 * var(--neon-base-space));
-      padding-bottom: calc(0.5 * var(--neon-base-space));
+      padding-left: var(--neon-space-40);
+      padding-top: var(--neon-space-2);
+      padding-bottom: var(--neon-space-2);
       border: var(--neon-border-width) var(--neon-border-style) var(--neon-border-color-input);
       background-color: var(--neon-background-color-input);
       box-shadow: var(--neon-inset-shadow);
@@ -83,10 +83,10 @@
       }
 
       .neon-chip {
-        margin: calc(0.5 * var(--neon-base-space));
+        margin: var(--neon-space-2);
 
         & + .neon-input {
-          margin-left: var(--neon-base-space);
+          margin-left: var(--neon-space-4);
         }
       }
 
@@ -94,7 +94,7 @@
         min-height: var(--neon-size-s);
 
         .neon-search__search-icon {
-          top: calc(0.5 * (var(--neon-size-s) - var(--neon-font-size-s)) + 0.75 * var(--neon-base-space));
+          top: calc(0.5 * (var(--neon-size-s) - var(--neon-font-size-s)) + 0.75 * var(--neon-space-4));
           width: var(--neon-font-size-s);
           height: var(--neon-font-size-s);
         }
@@ -103,8 +103,8 @@
           max-height: calc(var(--neon-size-s) - 2 * var(--neon-border-width));
 
           .neon-icon {
-            top: var(--neon-base-space);
-            right: calc(2 * var(--neon-base-space));
+            top: var(--neon-space-4);
+            right: var(--neon-space-8);
           }
         }
       }
@@ -113,7 +113,7 @@
         min-height: var(--neon-size-m);
 
         .neon-search__search-icon {
-          top: calc(0.5 * (var(--neon-size-m) - var(--neon-font-size-m)) + 0.75 * var(--neon-base-space));
+          top: calc(0.5 * (var(--neon-size-m) - var(--neon-font-size-m)) + 0.75 * var(--neon-space-4));
           width: var(--neon-font-size-m);
           height: var(--neon-font-size-m);
         }
@@ -122,8 +122,8 @@
           max-height: calc(var(--neon-size-m) - 2 * var(--neon-border-width));
 
           .neon-icon {
-            top: calc(1.2 * var(--neon-base-space));
-            right: calc(2.5 * var(--neon-base-space));
+            top: calc(1.2 * var(--neon-space-4));
+            right: var(--neon-space-10);
           }
         }
       }
@@ -132,7 +132,7 @@
         min-height: var(--neon-size-l);
 
         .neon-search__search-icon {
-          top: calc(0.5 * (var(--neon-size-l) - var(--neon-font-size-m)) + 0.75 * var(--neon-base-space));
+          top: calc(0.5 * (var(--neon-size-l) - var(--neon-font-size-m)) + 0.75 * var(--neon-space-4));
           width: var(--neon-font-size-m);
           height: var(--neon-font-size-m);
         }
@@ -141,8 +141,8 @@
           max-height: calc(var(--neon-size-l) - 2 * var(--neon-border-width));
 
           .neon-icon {
-            top: calc(1.2 * var(--neon-base-space));
-            right: calc(3.5 * var(--neon-base-space));
+            top: calc(1.2 * var(--neon-space-4));
+            right: calc(3.5 * var(--neon-space-4));
           }
         }
       }
@@ -192,17 +192,17 @@
         font-weight: var(--neon-font-weight-bold);
         font-size: var(--neon-font-size-xs);
         text-transform: uppercase;
-        padding: calc(3 * var(--neon-base-space)) calc(4 * var(--neon-base-space)) var(--neon-base-space);
+        padding: var(--neon-space-12) var(--neon-space-16) var(--neon-space-4);
         letter-spacing: var(--neon-letter-spacing-s);
       }
 
       .neon-icon {
-        margin-right: calc(3 * var(--neon-base-space));
+        margin-right: var(--neon-space-12);
       }
 
       .neon-search__option-container {
-        padding-left: calc(4 * var(--neon-base-space));
-        padding-right: calc(4 * var(--neon-base-space));
+        padding-left: var(--neon-space-16);
+        padding-right: var(--neon-space-16);
         height: var(--neon-size-m);
         flex: 1 1 auto;
         font-size: var(--neon-font-size-s);
