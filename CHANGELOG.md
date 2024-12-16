@@ -1,5 +1,12 @@
 # Changelog
 
+## [16.0.4](https://github.com/aotearoan/neon/compare/v16.0.3...v16.0.4) (2024-12-16)
+
+
+### Bug Fixes
+
+* card & date fixes ([#202](https://github.com/aotearoan/neon/issues/202)) ([3cdad27](https://github.com/aotearoan/neon/commit/3cdad27669b740610af945513d7505f909ea8a16))
+
 ## [16.0.3](https://github.com/aotearoan/neon/compare/v16.0.2...v16.0.3) (2024-12-16)
 
 
