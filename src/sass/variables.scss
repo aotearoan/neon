@@ -258,6 +258,7 @@
   **********************/
   &.neon-mode--dark {
     --neon-background-color-card: var(--neon-color-neutral-d4);
+    --neon-border-card: var(--neon-border);
     --neon-background-color: var(--neon-color-neutral-d5);
 
     --neon-rgb-text: var(--neon-rgb-text-light);
@@ -543,10 +544,11 @@
   }
 
   /*********************
-  * LIGHT VARIABLE
+  * LIGHT THEME VARIABLES
   *********************/
   &.neon-mode--light {
     --neon-background-color-card: var(--neon-color-high-contrast-l5);
+    --neon-border-card: var(--neon-border);
     --neon-background-color: var(--neon-color-high-contrast-l4);
 
     --neon-rgb-text: var(--neon-rgb-text-dark);
