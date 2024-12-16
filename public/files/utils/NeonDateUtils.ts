@@ -4,9 +4,12 @@ import type { NeonDate } from '@/common/models/NeonDate';
 export class NeonDateUtils {
   /**
    * Convert an ISO 8601 formatted string to a locale formatted date with a three letter month, a 2 digit day and a locale formatted time.
+   *
    * @param date The date/time as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string.
    * @param locale The locale for which to convert the date for display purposes, defaults to browser locale.
    * @param strict Do not add time component to localise the date.
+   *
+   * @returns a NeonDate object representing the provided date.
    */
   public static stringToNeonDate(date: string, locale?: string, strict = false): NeonDate {
     const loc = locale || navigator.language;
@@ -39,15 +42,39 @@ export class NeonDateUtils {
     return result;
   }
 
+  /**
+   * Convert a date object to an ISO 8601 formatted string. By default, the time is not considered.
+   *
+   * @param date Javascript date object
+   * @param time {boolean} Whether to consider the time as part of the conversion to the ISO string.
+   *
+   * @returns an ISO 8601 formatted date string, optionally with the time as well
+   */
   public static dateToIso(date: Date, time = false): string {
     const dateString = date.toISOString();
     return time ? dateString : dateString.split('T')[0];
   }
 
+  /**
+   * Convert the params received into an ISO 8601 formatted string with only date in it.
+   *
+   * @param day The number of the day to be used.
+   * @param month The number of the month to be used.
+   * @param year The number of the year to be used.
+   *
+   * @returns an ISO 8601 formatted date string for the given parameters
+   */
   public static dmyToIso(day: number, month: number, year: number): string {
     return `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`;
   }
 
+  /**
+   * Returns the days of the week starting at Monday day name translated using the locale received as a first element.
+   *
+   * @param locale The locale for which to convert the date for display purposes, defaults to browser locale.
+   *
+   * @returns an array with the days of the week named according to the locale received.
+   */
   public static dowNames(locale?: string): Array<string> {
     const loc = locale || navigator.language;
     const date = new Date();
@@ -66,6 +93,12 @@ export class NeonDateUtils {
     return weekdays;
   }
 
+  /**
+   * Returns the months of the year starting at January month name translated using the locale received as a first element.
+   *
+   * @param locale The locale for which to convert the date for display purposes, defaults to browser locale.
+   * @returns an array with the month names of the year, all named according to the locale received.
+   */
   public static monthNames(locale?: string): Array<string> {
     const loc = locale || navigator.language;
 

@@ -42,7 +42,7 @@
     justify-content: space-between;
 
     &__icon.neon-icon {
-      margin-right: calc(4 * var(--neon-base-space));
+      margin-right: var(--neon-space-16);
       width: calc(1.5 * var(--neon-font-size-m));
       min-width: calc(1.5 * var(--neon-font-size-m));
       height: calc(1.5 * var(--neon-font-size-m));
@@ -62,15 +62,15 @@
 
       &.neon-button {
         @include responsive.responsive(larger-than-tablet) {
-          margin: calc(2 * var(--neon-base-space));
+          margin: var(--neon-space-8);
         }
 
         @include responsive.responsive(tablet) {
-          margin: var(--neon-base-space);
+          margin: var(--neon-space-4);
         }
 
         @include responsive.responsive(mobile-large) {
-          margin: calc(0.5 * var(--neon-base-space));
+          margin: var(--neon-space-2);
         }
       }
     }

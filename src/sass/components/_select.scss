@@ -88,7 +88,7 @@
         font-weight: var(--neon-font-weight-bold);
         font-size: var(--neon-font-size-xs);
         text-transform: uppercase;
-        padding: calc(3 * var(--neon-base-space)) calc(4 * var(--neon-base-space)) var(--neon-base-space);
+        padding: var(--neon-space-12) var(--neon-space-16) var(--neon-space-4);
         letter-spacing: var(--neon-letter-spacing-s);
       }
 
@@ -98,12 +98,12 @@
       }
 
       .neon-icon {
-        margin-right: calc(3 * var(--neon-base-space));
+        margin-right: var(--neon-space-12);
       }
 
       .neon-select__option-container {
-        padding-left: calc(4 * var(--neon-base-space));
-        padding-right: calc(4 * var(--neon-base-space));
+        padding-left: var(--neon-space-16);
+        padding-right: var(--neon-space-16);
         height: var(--neon-size-m);
         flex: 1 1 auto;
         font-size: var(--neon-font-size-s);
@@ -117,7 +117,7 @@
 
     &--grouped:not(.neon-select--multiple) {
       .neon-select__option {
-        padding-left: calc(4 * var(--neon-base-space));
+        padding-left: var(--neon-space-16);
       }
     }
 

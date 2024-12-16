@@ -16,8 +16,8 @@
     width: $logo-height;
     max-width: 100%;
     align-self: center;
-    margin-top: calc(16 * var(--neon-base-space));
-    margin-bottom: calc(5 * var(--neon-base-space));
+    margin-top: var(--neon-space-64);
+    margin-bottom: var(--neon-space-20);
 
     @include responsive.responsive(tablet) {
       height: 0.75 * $logo-height;
@@ -28,17 +28,17 @@
   h1 {
     @include typography.neon-h0;
     text-align: center;
-    margin-top: calc(16 * var(--neon-base-space));
+    margin-top: var(--neon-space-64);
 
     @include responsive.responsive(tablet) {
       @include typography.neon-h1;
-      margin-top: calc(16 * var(--neon-base-space));
+      margin-top: var(--neon-space-64);
     }
   }
 
   .powered-by {
     font-weight: var(--neon-font-weight-light);
-    margin-top: calc(10 * var(--neon-base-space));
+    margin-top: var(--neon-space-40);
     text-align: center;
   }
 
@@ -56,7 +56,7 @@
   .neon-button {
     margin-left: auto;
     margin-right: auto;
-    margin-top: calc(8 * var(--neon-base-space));
+    margin-top: var(--neon-space-32);
   }
 
   .highlights {
@@ -70,7 +70,7 @@
     .highlight {
       @include layout.padding;
       align-items: center;
-      width: calc(100 * var(--neon-base-space));
+      width: calc(100 * var(--neon-space-4));
       @include layout.margin(1, true);
 
       h2 {
@@ -84,14 +84,14 @@
       }
 
       @include responsive.responsive(mobile-large) {
-        width: calc(82 * var(--neon-base-space));
+        width: calc(82 * var(--neon-space-4));
       }
     }
 
     .highlight-icon {
-      width: calc(24 * var(--neon-base-space));
-      height: calc(24 * var(--neon-base-space));
-      margin: calc(4 * var(--neon-base-space));
+      width: var(--neon-space-96);
+      height: var(--neon-space-96);
+      margin: var(--neon-space-16);
     }
   }
 }

@@ -93,19 +93,19 @@ $fixed-content-height: 348rem;
     padding-bottom: 0;
 
     &:nth-child(2) {
-      padding-top: calc(4 * var(--neon-base-space));
+      padding-top: var(--neon-space-16);
     }
 
     @include responsive.responsive(mobile-large) {
       &:nth-child(3),
       &:nth-child(4) {
-        margin-top: calc(8 * var(--neon-base-space));
+        margin-top: var(--neon-space-32);
       }
     }
   }
 
   &__headline {
-    margin-bottom: calc(8 * var(--neon-base-space));
+    margin-bottom: var(--neon-space-32);
     font-weight: var(--neon-font-weight-light);
     font-size: var(--neon-h6-size);
     letter-spacing: var(--neon-letter-spacing-m);
@@ -114,20 +114,20 @@ $fixed-content-height: 348rem;
     text-overflow: ellipsis;
 
     @include responsive.responsive(mobile-large) {
-      margin-bottom: calc(2 * var(--neon-base-space));
+      margin-bottom: var(--neon-space-8);
       font-size: var(--neon-font-size-m);
     }
   }
 
   .examples:not(:first-child) {
-    margin-top: calc(8 * var(--neon-base-space));
+    margin-top: var(--neon-space-32);
   }
 }
 
 .app .example {
   &__output {
     border-radius: var(--neon-border-radius) !important;
-    margin-bottom: calc(4 * var(--neon-base-space)) !important;
+    margin-bottom: var(--neon-space-16) !important;
     position: relative;
 
     &--fixed-content {
@@ -205,7 +205,7 @@ $fixed-content-height: 348rem;
 
   &--no-card {
     h3 {
-      margin-bottom: calc(4 * var(--neon-base-space));
+      margin-bottom: var(--neon-space-16);
     }
   }
 
@@ -221,7 +221,7 @@ $fixed-content-height: 348rem;
 
     & > *:not(:last-child) {
       margin-right: 0;
-      margin-bottom: calc(3 * var(--neon-base-space));
+      margin-bottom: var(--neon-space-12);
     }
   }
 
@@ -231,7 +231,7 @@ $fixed-content-height: 348rem;
     align-items: center;
 
     & > *:not(:last-child) {
-      margin-right: calc(4 * var(--neon-base-space));
+      margin-right: var(--neon-space-16);
     }
 
     @include responsive.responsive(mobile-large) {
@@ -240,13 +240,13 @@ $fixed-content-height: 348rem;
 
       & > *:not(:last-child) {
         margin-right: 0;
-        margin-bottom: calc(3 * var(--neon-base-space));
+        margin-bottom: var(--neon-space-12);
       }
     }
   }
 
   &--padded {
-    padding: calc(4 * var(--neon-base-space));
+    padding: var(--neon-space-16);
   }
 
   &--info {
@@ -254,6 +254,6 @@ $fixed-content-height: 348rem;
   }
 
   &--margin-top {
-    margin-top: calc(2 * var(--neon-base-space));
+    margin-top: var(--neon-space-8);
   }
 }

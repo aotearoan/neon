@@ -24,7 +24,7 @@
       touch-action: auto;
       height: var(--neon-size-l);
       min-width: var(--neon-width-toast);
-      margin: var(--neon-base-space);
+      margin: var(--neon-space-4);
       overflow: hidden;
       border-radius: calc(2 * var(--neon-border-radius));
       display: flex;
@@ -32,7 +32,7 @@
       align-items: center;
       justify-content: space-between;
       position: relative;
-      padding: calc(3 * var(--neon-base-space)) calc(3.5 * var(--neon-base-space));
+      padding: var(--neon-space-12) calc(3.5 * var(--neon-space-4));
       box-shadow: var(--neon-box-shadow-alert);
 
       @each $color in palettes.$alert-colors {
@@ -57,7 +57,7 @@
         width: var(--neon-font-size-l);
         min-height: var(--neon-font-size-l);
         height: var(--neon-font-size-l);
-        margin-left: calc(3.5 * var(--neon-base-space));
+        margin-left: calc(3.5 * var(--neon-space-4));
         opacity: 0.5;
         outline: none;
       }

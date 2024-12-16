@@ -10,8 +10,8 @@ $message-height: calc(var(--neon-font-size-s) * var(--neon-line-height-ratio));
     &__label-wrapper {
       display: inline-flex;
       align-items: center;
-      margin-bottom: var(--neon-base-space);
-      gap: calc(1.5 * var(--neon-base-space));
+      margin-bottom: var(--neon-space-4);
+      gap: var(--neon-space-6);
       @include typography.label;
     }
 

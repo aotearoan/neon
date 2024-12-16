@@ -3,7 +3,7 @@
 
 @mixin list {
   .neon-list {
-    gap: var(--neon-base-space);
+    gap: var(--neon-space-4);
 
     @each $color in palettes.$neon-functional-colors {
       &--#{$color} {
@@ -65,29 +65,29 @@
       }
 
       .neon-icon {
-        width: calc(4 * var(--neon-base-space));
-        min-width: calc(4 * var(--neon-base-space));
-        min-height: calc(4 * var(--neon-base-space));
-        height: calc(4 * var(--neon-base-space));
+        width: var(--neon-space-16);
+        min-width: var(--neon-space-16);
+        min-height: var(--neon-space-16);
+        height: var(--neon-space-16);
       }
     }
 
     &--s {
       .neon-list__item {
-        padding: calc(0.25 * var(--neon-base-space)) calc(1.5 * var(--neon-base-space));
+        padding: var(--neon-space-1) var(--neon-space-6);
       }
     }
 
     &--m {
       .neon-list__item {
-        padding: calc(1.25 * var(--neon-base-space)) calc(2 * var(--neon-base-space));
+        padding: calc(1.25 * var(--neon-space-4)) var(--neon-space-8);
       }
     }
 
     &--l {
       .neon-list__item {
         font-size: var(--neon-font-size-m);
-        padding: calc(1.375 * var(--neon-base-space)) calc(3 * var(--neon-base-space));
+        padding: calc(1.375 * var(--neon-space-4)) var(--neon-space-12);
       }
     }
 

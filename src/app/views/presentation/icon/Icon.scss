@@ -3,18 +3,18 @@
   flex-wrap: wrap;
 
   .icon-container {
-    min-width: calc(40 * var(--neon-base-space));
-    min-height: calc(40 * var(--neon-base-space));
+    min-width: calc(40 * var(--neon-space-4));
+    min-height: calc(40 * var(--neon-space-4));
     justify-content: center;
     align-items: center;
 
     label {
-      margin-top: calc(4 * var(--neon-base-space));
+      margin-top: var(--neon-space-16);
     }
   }
 
   .neon-icon {
-    height: calc(10 * var(--neon-base-space));
+    height: var(--neon-space-40);
   }
 
   label {

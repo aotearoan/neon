@@ -7,7 +7,7 @@ body {
   font-size: var(--neon-base-font-size);
 
   .title {
-    margin-left: calc(8 * var(--neon-base-space));
+    margin-left: var(--neon-space-32);
     font-family: var(--neon-body-font-family);
     font-weight: lighter;
   }
@@ -27,7 +27,7 @@ header {
   }
 
   .tagline {
-    margin-left: calc(4 * var(--neon-base-space));
+    margin-left: var(--neon-space-16);
     font-family: var(--neon-heading-font-family);
     font-size: var(--neon-font-size-l);
     font-weight: var(--neon-font-weight-light);
@@ -130,5 +130,5 @@ a[href]:not(.neon-link--no-style):not(.neon-link) {
 .example-inverse-bg {
   background-color: var(--neon-color-primary);
   border-radius: var(--neon-border-radius);
-  padding: calc(2 * var(--neon-base-space));
+  padding: var(--neon-space-8);
 }

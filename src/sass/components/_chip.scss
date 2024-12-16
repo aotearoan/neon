@@ -2,17 +2,17 @@
 @use '../includes/svg';
 
 @mixin chip-size($size, $font-size, $icon-size, $padding) {
-  height: calc(var(--neon-size-#{$size}) - 2 * var(--neon-base-space));
+  height: calc(var(--neon-size-#{$size}) - var(--neon-space-8));
   font-size: var(--neon-font-size-#{$font-size});
   transition: transform var(--neon-animation-speed-fast) ease-in-out;
-  padding-left: calc(#{$padding} * var(--neon-base-space));
+  padding-left: calc(#{$padding} * var(--neon-space-4));
 
   &.neon-chip--click {
-    padding-right: calc(#{$padding} * var(--neon-base-space));
+    padding-right: calc(#{$padding} * var(--neon-space-4));
   }
 
   &.neon-chip--remove {
-    padding-right: calc(0.667 * #{$padding} * var(--neon-base-space));
+    padding-right: calc(0.667 * #{$padding} * var(--neon-space-4));
   }
 
   .neon-icon:not(.neon-chip__close) {
@@ -21,9 +21,9 @@
   }
 
   .neon-chip__close {
-    max-height: calc(#{$icon-size} * var(--neon-base-space));
-    max-width: calc(#{$icon-size} * var(--neon-base-space));
-    margin-left: calc(1.5 * var(--neon-base-space));
+    max-height: calc(#{$icon-size} * var(--neon-space-4));
+    max-width: calc(#{$icon-size} * var(--neon-space-4));
+    margin-left: var(--neon-space-6);
   }
 }
 
@@ -99,7 +99,7 @@
     }
 
     .neon-icon + .neon-chip__label {
-      margin-left: calc(2 * var(--neon-base-space));
+      margin-left: var(--neon-space-8);
     }
 
     &--disabled {

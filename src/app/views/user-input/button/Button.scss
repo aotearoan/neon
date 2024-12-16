@@ -9,7 +9,7 @@
 
 .full-width-buttons {
   .neon-button:not(:last-child) {
-    margin-bottom: calc(4 * var(--neon-base-space));
+    margin-bottom: var(--neon-space-16);
   }
 }
 

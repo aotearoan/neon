@@ -13,7 +13,7 @@
           font-weight: var(--neon-font-weight-semi-bold);
           text-transform: uppercase;
           text-align: left;
-          padding: 0 calc(6 * var(--neon-base-space)) 0 0;
+          padding: 0 var(--neon-space-24) 0 0;
           letter-spacing: var(--neon-letter-spacing-m);
           border-bottom: var(--neon-border-width-table) var(--neon-border-style) var(--neon-label-color);
           color: var(--neon-label-color);
@@ -35,7 +35,7 @@
           --padding-td-vertical: calc(0.5 * (var(--neon-size-m) - var(--neon-line-height-ratio) * var(--neon-font-size-m)));
           vertical-align: top;
           text-align: left;
-          padding: var(--padding-td-vertical) calc(6 * var(--neon-base-space)) var(--padding-td-vertical) 0;
+          padding: var(--padding-td-vertical) var(--neon-space-24) var(--padding-td-vertical) 0;
           font-weight: var(--neon-font-weight-normal);
           letter-spacing: var(--neon-letter-spacing-m);
 
@@ -49,7 +49,7 @@
           }
 
           .neon-label--xs {
-            margin-top: calc(0.5 * (var(--neon-line-height-ratio) * var(--neon-font-size-m) - (var(--neon-size-xs) - var(--neon-base-space))));
+            margin-top: calc(0.5 * (var(--neon-line-height-ratio) * var(--neon-font-size-m) - (var(--neon-size-xs) - var(--neon-space-4))));
           }
         }
       }

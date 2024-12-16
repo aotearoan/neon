@@ -263,14 +263,14 @@
 
     &--icon-left {
       .neon-icon {
-        margin-right: calc(2 * var(--neon-base-space));
+        margin-right: var(--neon-space-8);
       }
     }
 
     &--icon-right {
       .neon-icon {
         order: 1;
-        margin-left: calc(2 * var(--neon-base-space));
+        margin-left: var(--neon-space-8);
       }
     }
 
@@ -365,7 +365,7 @@
     }
 
     &__indicator:not(:first-child) {
-      margin-left: calc(2 * var(--neon-base-space));
+      margin-left: var(--neon-space-8);
     }
 
     .neon-link__label {
@@ -383,6 +383,6 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    gap: calc(4 * var(--neon-base-space));
+    gap: var(--neon-space-16);
   }
 }

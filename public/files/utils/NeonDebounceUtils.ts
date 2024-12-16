@@ -7,7 +7,7 @@ export class NeonDebounceUtils {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public static debounce(fn: (...args: any[]) => void, timeout = NeonDebounceUtils.debounceTimeout) {
-    let timer: NodeJS.Timer;
+    let timer: number;
 
     if (timeout > 0) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -15,7 +15,7 @@ export class NeonDebounceUtils {
         if (timer) {
           clearTimeout(timer);
         }
-        timer = setTimeout(() => fn(...args), timeout);
+        timer = window.setTimeout(() => fn(...args), timeout);
       };
     }
 

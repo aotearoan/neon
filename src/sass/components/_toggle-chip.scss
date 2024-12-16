@@ -4,8 +4,8 @@
 @mixin neon-toggle-chip-size($neon-toggle-chip-size, $neon-toggle-chip-padding) {
   height: var(--neon-size-#{$neon-toggle-chip-size});
   font-size: var(--neon-font-size-#{$neon-toggle-chip-size});
-  padding-left: calc(#{$neon-toggle-chip-padding} * var(--neon-base-space));
-  padding-right: calc(#{$neon-toggle-chip-padding} * var(--neon-base-space));
+  padding-left: calc(#{$neon-toggle-chip-padding} * var(--neon-space-4));
+  padding-right: calc(#{$neon-toggle-chip-padding} * var(--neon-space-4));
 
   &.neon-toggle-chip--checked {
     .neon-toggle-chip__checked {
@@ -75,7 +75,7 @@
 
     &--checked {
       .neon-toggle-chip__checked {
-        margin-right: calc(2 * var(--neon-base-space));
+        margin-right: var(--neon-space-8);
         opacity: 1;
       }
     }

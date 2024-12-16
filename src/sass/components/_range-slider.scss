@@ -20,7 +20,7 @@
   .neon-range-slider {
     position: relative;
     width: 100%;
-    height: calc(16 * var(--neon-base-space));
+    height: var(--neon-space-64);
 
     .neon-range-slider__lower {
       @each $color in palettes.$neon-functional-colors {
@@ -43,12 +43,12 @@
 
       .neon-slider__legend {
         position: absolute;
-        bottom: calc(-14.5 * var(--neon-base-space));
+        bottom: calc(-14.5 * var(--neon-space-4));
         width: 100%;
       }
 
       .neon-slider__tooltip {
-        bottom: calc(-1.5 * var(--neon-base-space));
+        bottom: calc(-1 * var(--neon-space-6));
       }
 
       &.neon-slider--disabled {
@@ -87,10 +87,10 @@
     .neon-range-slider__lower.neon-slider--no-legend,
     .neon-range-slider__upper {
       .neon-slider__tooltip {
-        bottom: calc(-1.5 * var(--neon-base-space));
+        bottom: calc(-1 * var(--neon-space-6));
       }
     }
-    
+
     &.neon-range-slider--disabled {
       cursor: not-allowed;
 
@@ -100,8 +100,8 @@
     }
 
     &.neon-range-slider__output-range-separator {
-      margin-left: calc(1.5 * var(--neon-base-space));
-      margin-right: calc(1.5 * var(--neon-base-space));
+      margin-left: var(--neon-space-6);
+      margin-right: var(--neon-space-6);
       font-weight: var(--neon-font-weight-bold);
       opacity: 0.25;
       top: -1rem;
@@ -111,7 +111,7 @@
     .neon-slider__output {
       font-size: var(--neon-font-size-s);
       font-variant-numeric: tabular-nums;
-      height: calc(4 * var(--neon-base-space));
+      height: var(--neon-space-16);
       display: flex;
     }
 
@@ -123,7 +123,7 @@
     .neon-range-slider__lower,
     .neon-range-slider__upper {
       position: absolute;
-      top: calc(3 * var(--neon-base-space));
+      top: var(--neon-space-12);
       width: 100%;
     }
 

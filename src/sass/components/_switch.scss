@@ -2,7 +2,7 @@
 @use '../includes/svg';
 
 @mixin switch-style($neon-switch-size, $spacing-multiplier) {
-  --neon-switch-height: calc(var(--neon-size-#{$neon-switch-size}) - #{$spacing-multiplier} * var(--neon-base-space));
+  --neon-switch-height: calc(var(--neon-size-#{$neon-switch-size}) - #{$spacing-multiplier} * var(--neon-space-4));
   --neon-switch-margin: calc(0.5 * (var(--neon-size-#{$neon-switch-size}) - var(--neon-switch-height)));
 
   height: var(--neon-switch-height);
@@ -44,13 +44,13 @@
   .neon-switch__checkbox {
     height: var(--checkbox-height);
     width: var(--checkbox-height);
-    padding: calc(#{$padding-multiplier} * var(--neon-base-space));
+    padding: calc(#{$padding-multiplier} * var(--neon-space-4));
   }
 }
 
 @mixin switch {
   label.neon-field + label.neon-switch {
-    margin-top: calc(var(--neon-font-size-xs) + 4 * var(--neon-base-space));
+    margin-top: calc(var(--neon-font-size-xs) + var(--neon-space-16));
   }
 
   .neon-switch {
@@ -243,14 +243,14 @@
 
     &--right {
       .neon-switch__label {
-        margin-left: calc(2 * var(--neon-base-space));
+        margin-left: var(--neon-space-8);
       }
     }
 
     &--left {
       .neon-switch__label {
         order: -1;
-        margin-right: calc(2 * var(--neon-base-space));
+        margin-right: var(--neon-space-8);
       }
     }
   }

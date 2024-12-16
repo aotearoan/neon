@@ -5,8 +5,8 @@
   .neon-menu__item {
     height: var(--neon-size-#{$size});
     font-size: var(--neon-font-size-#{$size});
-    padding-left: calc(5 * var(--neon-base-space));
-    padding-right: calc(5 * var(--neon-base-space));
+    padding-left: var(--neon-space-20);
+    padding-right: var(--neon-space-20);
     border-radius: var(--neon-border-radius);
 
     .neon-link {
@@ -30,7 +30,7 @@
     .neon-dropdown .neon-dropdown__button .neon-icon {
       width: var(--neon-font-size-#{$size});
       height: var(--neon-font-size-#{$size});
-      margin-right: calc(2 * var(--neon-base-space));
+      margin-right: var(--neon-space-8);
       padding-right: 0;
     }
   }
@@ -126,7 +126,7 @@
       font-family: var(--neon-heading-font-family);
 
       &.neon-menu__responsive-menu:not(:first-child) {
-        margin-left: calc(5 * var(--neon-base-space));
+        margin-left: var(--neon-space-20);
       }
 
       &.neon-menu__responsive-menu--hidden {

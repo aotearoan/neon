@@ -11,18 +11,44 @@
   --neon-max-paragraph-width: 70ch;
   --neon-max-page-width: 1920rem;
 
+  /* spacings */
+  --neon-space-1: calc(0.25 * var(--neon-base-space));
+  --neon-space-2: calc(0.5 * var(--neon-base-space));
+  --neon-space-4: var(--neon-base-space);
+  --neon-space-6: calc(1.5 * var(--neon-base-space));
+  --neon-space-8: calc(2 * var(--neon-base-space));
+  --neon-space-10: calc(2.5 * var(--neon-base-space));
+  --neon-space-12: calc(3 * var(--neon-base-space));
+  --neon-space-16: calc(4 * var(--neon-base-space));
+  --neon-space-20: calc(5 * var(--neon-base-space));
+  --neon-space-24: calc(6 * var(--neon-base-space));
+  --neon-space-32: calc(8 * var(--neon-base-space));
+  --neon-space-40: calc(10 * var(--neon-base-space));
+  --neon-space-48: calc(12 * var(--neon-base-space));
+  --neon-space-52: calc(13 * var(--neon-base-space));
+  --neon-space-56: calc(14 * var(--neon-base-space));
+  --neon-space-64: calc(16 * var(--neon-base-space));
+  --neon-space-72: calc(18 * var(--neon-base-space));
+  --neon-space-80: calc(20 * var(--neon-base-space));
+  --neon-space-84: calc(21 * var(--neon-base-space));
+  --neon-space-96: calc(24 * var(--neon-base-space));
+  --neon-space-120: calc(30 * var(--neon-base-space));
+  --neon-space-128: calc(32 * var(--neon-base-space));
+  --neon-space-144: calc(36 * var(--neon-base-space));
+  --neon-space-192: calc(48 * var(--neon-base-space));
+
   /* stack */
   --neon-gap-stack-desktop-s: var(--neon-base-space);
   --neon-gap-stack-tablet-s: var(--neon-base-space);
   --neon-gap-stack-mobile-s: var(--neon-base-space);
 
-  --neon-gap-stack-desktop-m: calc(4 * var(--neon-base-space));
-  --neon-gap-stack-tablet-m: calc(3 * var(--neon-base-space));
-  --neon-gap-stack-mobile-m: calc(2 * var(--neon-base-space));
+  --neon-gap-stack-desktop-m: var(--neon-space-16);
+  --neon-gap-stack-tablet-m: var(--neon-space-12);
+  --neon-gap-stack-mobile-m: var(--neon-space-8);
 
-  --neon-gap-stack-desktop-l: calc(6 * var(--neon-base-space));
-  --neon-gap-stack-tablet-l: calc(5 * var(--neon-base-space));
-  --neon-gap-stack-mobile-l: calc(4 * var(--neon-base-space));
+  --neon-gap-stack-desktop-l: var(--neon-space-24);
+  --neon-gap-stack-tablet-l: var(--neon-space-20);
+  --neon-gap-stack-mobile-l: var(--neon-space-16);
 
   /* ratio of horizontal to vertical spacing, e.g. 1 = square padding */
   --neon-spacing-horizontal-multiplier: 1;
@@ -32,7 +58,7 @@
   --neon-spacing-multiplier-desktop: 2;
 
   /* mobile spacing */
-  --neon-spacing-vertical-mobile: calc(4 * var(--neon-base-space));
+  --neon-spacing-vertical-mobile: var(--neon-space-16);
   --neon-spacing-horizontal-mobile: calc(var(--neon-spacing-vertical-mobile) * var(--neon-spacing-horizontal-multiplier));
   /* tablet spacing */
   --neon-spacing-vertical-tablet: calc(var(--neon-spacing-vertical-mobile) * var(--neon-spacing-multiplier-tablet));
@@ -63,7 +89,7 @@
   /* typography */
   --neon-typography-scale: 1.125; // Major second https://type-scale.com/
   --neon-base-font-size: 16rem;
-  --neon-typography-margin-unit: calc(2 * var(--neon-base-space)); // base typography bottom margin unit
+  --neon-typography-margin-unit: var(--neon-space-8); // base typography bottom margin unit
 
 
   --neon-font-size-xxs: calc(var(--neon-base-font-size) / (var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale)));
@@ -126,14 +152,14 @@
   --neon-background-gradient-offset-hover: 50%;
 
   /* smaller sizes for labels only */
-  --neon-size-xxs: calc(4 * var(--neon-base-space));
-  --neon-size-xs: calc(6 * var(--neon-base-space));
+  --neon-size-xxs: var(--neon-space-16);
+  --neon-size-xs: var(--neon-space-24);
   /* standard label & input sizes */
-  --neon-size-s: calc(8 * var(--neon-base-space));
-  --neon-size-m: calc(10 * var(--neon-base-space));
-  --neon-size-l: calc(12 * var(--neon-base-space));
+  --neon-size-s: var(--neon-space-32);
+  --neon-size-m: var(--neon-space-40);
+  --neon-size-l: var(--neon-space-48);
   /* buttons only */
-  --neon-size-xl: calc(16 * var(--neon-base-space));
+  --neon-size-xl: var(--neon-space-64);
 
   /* box shadows */
   --neon-box-shadow: 0 0 0 0 rgba(#000, 0);
@@ -141,17 +167,17 @@
   --neon-inset-shadow: inset 0 0 0 0 rgba(#000, 0);
 
   /* top nav */
-  --neon-top-nav-height-mobile: calc(var(--neon-size-s) + 4 * var(--neon-base-space));
-  --neon-top-nav-height-tablet: calc(var(--neon-size-m) + 6 * var(--neon-base-space));
-  --neon-top-nav-height-desktop: calc(var(--neon-size-l) + 8 * var(--neon-base-space));
+  --neon-top-nav-height-mobile: calc(var(--neon-size-s) + var(--neon-space-16));
+  --neon-top-nav-height-tablet: calc(var(--neon-size-m) + var(--neon-space-24));
+  --neon-top-nav-height-desktop: calc(var(--neon-size-l) + var(--neon-space-32));
 
   /* footer */
-  --neon-footer-height-mobile: calc(var(--neon-font-size-s) + 8 * var(--neon-base-space));
-  --neon-footer-height-tablet: calc(var(--neon-font-size-s) + 8 * var(--neon-base-space));
-  --neon-footer-height-desktop: calc(var(--neon-base-font-size) + 12 * var(--neon-base-space));
+  --neon-footer-height-mobile: calc(var(--neon-font-size-s) + var(--neon-space-32));
+  --neon-footer-height-tablet: calc(var(--neon-font-size-s) + var(--neon-space-32));
+  --neon-footer-height-desktop: calc(var(--neon-base-font-size) + var(--neon-space-48));
 
   /* side nav */
-  --neon-side-nav-width: calc(80 * var(--neon-base-space));
+  --neon-side-nav-width: calc(80 * var(--neon-space-4));
 
   /* card */
   --neon-border-radius-card: 12rem;

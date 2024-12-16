@@ -2,10 +2,10 @@
 
 .app .api-docs {
   &__wrapper:not(:last-child) {
-    margin-bottom: calc(8 * var(--neon-base-space));
+    margin-bottom: var(--neon-space-32);
 
     @include responsive.responsive(mobile-large) {
-      margin-bottom: calc(4 * var(--neon-base-space));
+      margin-bottom: var(--neon-space-16);
     }
   }
 
@@ -16,11 +16,11 @@
   }
 
   &__section {
-    margin-top: calc(6 * var(--neon-base-space));
+    margin-top: var(--neon-space-24);
   }
 
   &__title {
-    margin-bottom: calc(-2 * var(--neon-base-space));
+    margin-bottom: calc(-1 * var(--neon-space-8));
   }
 
   &__type,
@@ -39,7 +39,7 @@
     color: var(--app-color-api-docs-name);
 
     .neon-label {
-      margin-left: calc(2 * var(--neon-base-space));
+      margin-left: var(--neon-space-8);
     }
   }
 
@@ -63,7 +63,7 @@
 
     .api-docs {
       &__title {
-        margin-top: calc(2 * var(--neon-base-space));
+        margin-top: var(--neon-space-8);
         margin-bottom: 0;
       }
 
@@ -71,15 +71,15 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding-top: var(--neon-base-space);
+        padding-top: var(--neon-space-4);
 
         label {
           margin-bottom: 0;
-          margin-right: calc(2 * var(--neon-base-space));
+          margin-right: var(--neon-space-8);
         }
 
         .neon-label {
-          margin-left: calc(2 * var(--neon-base-space));
+          margin-left: var(--neon-space-8);
         }
 
         &:first-child {
@@ -95,7 +95,7 @@
       &__event,
       &__slot {
         &:not(:first-of-type) {
-          margin-top: calc(4 * var(--neon-base-space));
+          margin-top: var(--neon-space-16);
         }
       }
     }

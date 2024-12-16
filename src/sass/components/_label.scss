@@ -4,8 +4,8 @@
 @use '../includes/gradient';
 
 @mixin neon-label-size($neon-label-height, $neon-height-scalar, $neon-label-font-size) {
-  height: calc(var(--neon-size-#{$neon-label-height}) - #{$neon-height-scalar} * var(--neon-base-space));
-  min-width: calc(var(--neon-size-#{$neon-label-height}) - #{$neon-height-scalar} * var(--neon-base-space));
+  height: calc(var(--neon-size-#{$neon-label-height}) - #{$neon-height-scalar} * var(--neon-space-4));
+  min-width: calc(var(--neon-size-#{$neon-label-height}) - #{$neon-height-scalar} * var(--neon-space-4));
   font-size: var(--neon-font-size-#{$neon-label-font-size});
 
   .neon-label__label {
@@ -43,27 +43,27 @@
     }
 
     &--xxs {
-      padding: 0 var(--neon-base-space);
+      padding: 0 var(--neon-space-4);
       @include neon-label-size('xxs', 0, 'xxs');
     }
 
     &--xs {
-      padding: 0 calc(1.5 * var(--neon-base-space));
+      padding: 0 var(--neon-space-6);
       @include neon-label-size('xs', 1, 'xs');
     }
 
     &--s {
-      padding: 0 calc(2 * var(--neon-base-space));
+      padding: 0 var(--neon-space-8);
       @include neon-label-size('s', 1, 's');
     }
 
     &--m {
-      padding: 0 calc(3.5 * var(--neon-base-space));
+      padding: 0 calc(3.5 * var(--neon-space-4));
       @include neon-label-size('m', 1, 'm');
     }
 
     &--l {
-      padding: 0 calc(4 * var(--neon-base-space));
+      padding: 0 var(--neon-space-16);
       @include neon-label-size('l', 1, 'l');
     }
 
@@ -90,12 +90,12 @@
 
       &.neon-label--with-label {
         &.neon-label--icon-left .neon-icon {
-          margin-right: var(--neon-base-space);
+          margin-right: var(--neon-space-4);
         }
 
         &.neon-label--icon-right .neon-icon {
           order: 1;
-          margin-left: var(--neon-base-space);
+          margin-left: var(--neon-space-4);
         }
       }
     }

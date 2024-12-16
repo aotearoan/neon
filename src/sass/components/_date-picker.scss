@@ -57,7 +57,7 @@
     &__calendar {
       $cell-size: 36rem;
       user-select: none;
-      padding: calc(3 * var(--neon-base-space));
+      padding: var(--neon-space-12);
       font-variant: tabular-nums;
       min-width: 304rem;
       width: 304rem;
@@ -65,7 +65,7 @@
       &-header {
         flex-direction: row;
         justify-content: space-between;
-        margin-bottom: calc(2 * var(--neon-base-space));
+        margin-bottom: var(--neon-space-8);
 
         &-actions {
           flex-direction: row;
@@ -74,7 +74,7 @@
         }
 
         &-actions button {
-          margin-left: var(--neon-base-space);
+          margin-left: var(--neon-space-4);
         }
       }
 
@@ -84,7 +84,7 @@
       }
 
       &-change-date-button {
-        margin-left: var(--neon-base-space);
+        margin-left: var(--neon-space-4);
       }
 
       &-dows,
@@ -94,7 +94,7 @@
       }
 
       &-dow {
-        margin: calc(0.5 * var(--neon-base-space));
+        margin: var(--neon-space-2);
         text-align: center;
         width: $cell-size;
         min-width: $cell-size;
@@ -105,7 +105,7 @@
       }
 
       .neon-date-picker__calendar-date {
-        margin: calc(0.5 * var(--neon-base-space));
+        margin: var(--neon-space-2);
         justify-content: center;
         min-width: $cell-size;
         width: $cell-size;
@@ -129,11 +129,11 @@
     }
 
     .neon-date-picker__calendar-options {
-      margin-top: calc(2 * var(--neon-base-space));
+      margin-top: var(--neon-space-8);
       display: inline-flex;
       flex-direction: row;
       flex-wrap: wrap;
-      gap: calc(2 * var(--neon-base-space));
+      gap: var(--neon-space-8);
 
       .neon-date-picker__calendar-option {
         width: 84rem;
@@ -216,12 +216,12 @@
     }
 
     hr {
-      margin-top: calc(2 * var(--neon-base-space));
-      margin-bottom: calc(2 * var(--neon-base-space));
+      margin-top: var(--neon-space-8);
+      margin-bottom: var(--neon-space-8);
     }
 
     .neon-button-group {
-      gap: calc(2 * var(--neon-base-space));
+      gap: var(--neon-space-8);
     }
   }
 }

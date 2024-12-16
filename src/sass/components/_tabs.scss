@@ -68,7 +68,7 @@
       @include svg.color-with-svg(var(--neon-color-low-contrast));
 
       & + .neon-tabs__menu-item {
-        margin-left: calc(6 * var(--neon-base-space));
+        margin-left: var(--neon-space-24);
       }
 
       &:focus {
@@ -98,9 +98,9 @@
 
       .neon-tabs__menu-item-container:focus {
         &:before {
-          margin-left: var(--neon-base-space);
-          margin-right: var(--neon-base-space);
-          width: calc(100% - 2 * var(--neon-base-space));
+          margin-left: var(--neon-space-4);
+          margin-right: var(--neon-space-4);
+          width: calc(100% - var(--neon-space-8));
         }
       }
     }
@@ -113,7 +113,7 @@
         svg {
           width: var(--neon-font-size-m);
           height: var(--neon-font-size-m);
-          margin-right: var(--neon-base-space);
+          margin-right: var(--neon-space-4);
         }
       }
     }
@@ -126,7 +126,7 @@
         svg {
           width: var(--neon-font-size-l);
           height: var(--neon-font-size-l);
-          margin-right: calc(2 * var(--neon-base-space));
+          margin-right: var(--neon-space-8);
         }
       }
     }
@@ -139,7 +139,7 @@
         svg {
           width: var(--neon-font-size-l);
           height: var(--neon-font-size-l);
-          margin-right: calc(2 * var(--neon-base-space));
+          margin-right: var(--neon-space-8);
         }
       }
     }
@@ -158,10 +158,10 @@
     &:before {
       content: '';
       position: absolute;
-      top: var(--neon-base-space);
+      top: var(--neon-space-4);
       right: 0;
-      width: calc(2 * var(--neon-base-space));
-      height: calc(2 * var(--neon-base-space));
+      width: var(--neon-space-8);
+      height: var(--neon-space-8);
       border-radius: var(--neon-border-radius);
       display: flex;
       transition: all var(--neon-animation-speed-fast) ease-in-out;

@@ -17,7 +17,7 @@
 
     &__checkbox {
       cursor: pointer;
-      margin-left: calc(2 * var(--neon-base-space));
+      margin-left: var(--neon-space-8);
     }
 
     &:not(.neon-selectable-card--disabled):active {
@@ -45,7 +45,7 @@
     }
 
     & + .neon-selectable-card {
-      margin-top: calc(0.25 * var(--neon-base-space));
+      margin-top: var(--neon-space-1);
     }
 
     &--disabled {

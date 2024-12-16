@@ -19,7 +19,7 @@
 
     overflow-y: auto;
     overflow-x: visible;
-    padding: calc(2 * var(--neon-base-space));
+    padding: var(--neon-space-8);
 
     @include scrollbars.scrollbars;
 
@@ -63,8 +63,8 @@
       pointer-events: visible;
       touch-action: auto;
       height: 100%;
-      min-height: calc(20 * var(--neon-base-space));
-      margin: var(--neon-base-space);
+      min-height: var(--neon-space-80);
+      margin: var(--neon-space-4);
       border-radius: var(--neon-border-radius-alert);
       display: flex;
       flex-direction: row;
@@ -117,11 +117,11 @@
       }
 
       .neon-icon {
-        min-width: calc(8 * var(--neon-base-space));
-        width: calc(8 * var(--neon-base-space));
-        min-height: calc(8 * var(--neon-base-space));
-        height: calc(8 * var(--neon-base-space));
-        margin: calc(2 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) calc(3 * var(--neon-base-space));
+        min-width: var(--neon-space-32);
+        width: var(--neon-space-32);
+        min-height: var(--neon-space-32);
+        height: var(--neon-space-32);
+        margin: var(--neon-space-8) var(--neon-space-8) var(--neon-space-8) var(--neon-space-12);
         align-self: center;
       }
     }
@@ -139,10 +139,10 @@
     }
 
     .neon-alert__actions {
-      margin-left: calc(2 * var(--neon-base-space));
+      margin-left: var(--neon-space-8);
 
       .neon-alert__action {
-        padding: calc(2 * var(--neon-base-space));
+        padding: var(--neon-space-8);
         font-size: var(--neon-font-size-xs);
         text-transform: uppercase;
         letter-spacing: var(--neon-letter-spacing-m);
@@ -168,8 +168,8 @@
     }
 
     &__content {
-      padding-top: calc(2 * var(--neon-base-space));
-      padding-bottom: calc(2 * var(--neon-base-space));
+      padding-top: var(--neon-space-8);
+      padding-bottom: var(--neon-space-8);
       justify-content: center;
       flex: 1 1 auto;
       outline: none;

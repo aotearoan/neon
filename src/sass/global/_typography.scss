@@ -91,7 +91,7 @@
 
   label:not(.no-style):not(.neon-field) {
     width: fit-content;
-    margin-bottom: calc(2 * var(--neon-base-space));
+    margin-bottom: var(--neon-space-8);
     @include typography.label;
   }
 

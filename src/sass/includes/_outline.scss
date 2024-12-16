@@ -59,8 +59,8 @@
 
     &:focus {
       &:before {
-        width: calc(2 * var(--neon-base-space));
-        height: calc(2 * var(--neon-base-space));
+        width: var(--neon-space-8);
+        height: var(--neon-space-8);
         background-color: rgb($outline-rgb);
         opacity: 1;
       }
