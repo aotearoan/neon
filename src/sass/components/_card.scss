@@ -44,7 +44,7 @@
   .neon-card {
     position: relative;
     border-radius: var(--neon-border-radius-card);
-    border: var(--neon-border);
+    border: var(--neon-border-card);
     box-shadow: var(--neon-card-box-shadow);
 
     &--s {
