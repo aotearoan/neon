@@ -29,21 +29,24 @@ export default defineComponent({
             key: 'alert',
             label: 'Alert',
             href: '/feedback/alert',
-            anchors: ['Description', 'API', 'Examples'],
           },
           {
             key: 'note',
             label: 'Note',
             href: '/feedback/note',
-            anchors: ['Description', 'API', 'Examples'],
           },
           {
             key: 'notification-counter',
             label: 'Notification Counter',
             href: '/feedback/notification-counter',
-            anchors: ['Description', 'API', 'Examples'],
           },
         ],
+      },
+      {
+        key: 'layoutCard',
+        label: 'Layout Card',
+        href: '/layout/Card',
+        expanded: false,
       },
       {
         key: 'navigation',
@@ -53,26 +56,35 @@ export default defineComponent({
           {
             key: 'action-menu',
             label: 'Action Menu',
-            href: '/navigation/action-menu',
-            anchors: ['Description', 'API', 'Examples'],
           },
           {
             key: 'dropdown-menu',
             label: 'Dropdown Menu',
             href: '/navigation/dropdown-menu',
-            anchors: ['Description', 'API', 'Examples'],
           },
           {
             key: 'link',
             label: 'Link',
             href: '/navigation/link',
-            anchors: ['Description', 'API', 'Examples'],
           },
           {
             key: 'tree-menu',
             label: 'Tree Menu',
             href: '/navigation/tree-menu',
-            anchors: ['Description', 'API', 'Examples'],
+          },
+        ],
+      },
+      {
+        key: 'presentation',
+        label: 'Presentation',
+        href: '/navigation/tree-menu',
+        expanded: true,
+        children: [
+          {
+            key: 'tree-menu',
+            label: 'Tree Menu',
+            href: '/navigation/tree-menu',
+            anchors: ['Examples', 'API'],
           },
         ],
       },

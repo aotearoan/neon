@@ -10,7 +10,6 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: 8081,
-    base: '/neon/',
   },
   resolve: {
     alias: {
@@ -31,7 +30,7 @@ export default defineConfig({
     },
     rollupOptions: {
       input: {
-        neon: './src/neon.ts'
+        neon: './src/neon.ts',
       },
       external: ['vue', 'vue-router'],
       output: [

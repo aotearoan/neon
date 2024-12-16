@@ -17,6 +17,7 @@
       cursor: pointer;
     }
 
+    a.neon-tree-menu__section-link [href]:not([href='']),
     a.neon-tree-menu__link,
     a.neon-tree-menu__anchor {
       &.neon-link {

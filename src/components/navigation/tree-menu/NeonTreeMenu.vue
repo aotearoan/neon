@@ -11,7 +11,8 @@
         class="neon-tree-menu__section"
       >
         <neon-link
-          :no-style="true"
+          :href="section.href"
+          :no-style="!section.href"
           class="neon-tree-menu__section-link"
           outline-style="none"
           tabindex="-1"
@@ -22,6 +23,8 @@
             role="link"
             tabindex="0"
             @keydown.space.stop.prevent="!section.disabled && onClick(section.key)"
+            @keydown.enter="section.href && click($event)"
+            @keydown.space="section.href && click($event)"
           >
             {{ section.label }}
           </span>

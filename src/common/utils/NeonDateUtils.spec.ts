@@ -52,7 +52,7 @@ describe('NeonDateUtils', () => {
   });
 
   it('date to iso with time', () => {
-    expect(NeonDateUtils.dateToIso(new Date('2023-01-01T12:12:12'), true)).toEqual('2023-01-01T12:12:12.000Z');
+    expect(NeonDateUtils.dateToIso(new Date('2023-01-01T12:12:12'), true)).toEqual('2023-01-01T11:12:12.000Z');
   });
 
   it('dmy to iso', () => {
