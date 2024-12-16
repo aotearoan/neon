@@ -18,7 +18,7 @@
     "dev": "node doc-gen.js && npm run gen:version && vite",
     "build": "npm run gen:version && vite build && vue-tsc --emitDeclarationOnly",
     "build:app": "npm run gen:version && vite --config vite.config.app.ts build",
-    "test": "cross-env TZ=UTC && npm run gen:version && jest --no-cache --maxWorkers=2",
+    "test": "npm run gen:version && cross-env TZ=UTC jest --no-cache --maxWorkers=2",
     "preview": "npm run build:app && vite preview --port 4173",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
