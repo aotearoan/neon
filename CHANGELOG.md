@@ -1,5 +1,12 @@
 # Changelog
 
+## [16.0.3](https://github.com/aotearoan/neon/compare/v16.0.2...v16.0.3) (2024-12-16)
+
+
+### Bug Fixes
+
+* tree menu bugfixes ([#199](https://github.com/aotearoan/neon/issues/199)) ([af107b0](https://github.com/aotearoan/neon/commit/af107b0cec98042277e78d710f072d7a67cfccc2))
+
 ## [16.0.2](https://github.com/aotearoan/neon/compare/v16.0.1...v16.0.2) (2024-12-16)
 
 
