@@ -1,5 +1,12 @@
 # Changelog
 
+## [16.0.6](https://github.com/aotearoan/neon/compare/v16.0.5...v16.0.6) (2024-12-16)
+
+
+### Bug Fixes
+
+* add card border var ([#207](https://github.com/aotearoan/neon/issues/207)) ([debbcbb](https://github.com/aotearoan/neon/commit/debbcbbbcd06f3e2bbf58efba3f49ab85973802f))
+
 ## [16.0.5](https://github.com/aotearoan/neon/compare/v16.0.4...v16.0.5) (2024-12-16)
 
 
