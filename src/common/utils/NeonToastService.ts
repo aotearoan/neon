@@ -8,47 +8,47 @@ import { NeonAlertLevel } from '../enums/NeonAlertLevel';
  */
 export class NeonToastService {
   /**
-   * Send an info message
+   * Send an info message.
    *
-   * @param alert {NeonToastMessage}
+   * @param toast Info toast message.
    */
-  public static info(alert: NeonToastMessage) {
-    NeonToastService.emit(NeonAlertLevel.Info, alert);
+  public static info(toast: NeonToastMessage) {
+    NeonToastService.emit(NeonAlertLevel.Info, toast);
   }
 
   /**
-   * Send a success message
+   * Send a success message.
    *
-   * @param alert {NeonToastMessage}
+   * @param toast Success toast message.
    */
-  public static success(alert: NeonToastMessage) {
-    NeonToastService.emit(NeonAlertLevel.Success, alert);
+  public static success(toast: NeonToastMessage) {
+    NeonToastService.emit(NeonAlertLevel.Success, toast);
   }
 
   /**
-   * Send a warning message
+   * Send a warning message.
    *
-   * @param alert {NeonToastMessage}
+   * @param toast Warning toast message.
    */
-  public static warn(alert: NeonToastMessage) {
-    NeonToastService.emit(NeonAlertLevel.Warn, alert);
+  public static warn(toast: NeonToastMessage) {
+    NeonToastService.emit(NeonAlertLevel.Warn, toast);
   }
 
   /**
-   * Send an error message
+   * Send an error message.
    *
-   * @param alert {NeonToastMessage}
+   * @param toast Error toast message.
    */
-  public static error(alert: NeonToastMessage) {
-    NeonToastService.emit(NeonAlertLevel.Error, alert);
+  public static error(toast: NeonToastMessage) {
+    NeonToastService.emit(NeonAlertLevel.Error, toast);
   }
 
   /**
    * Generate an event key so that all events are published on the correct topic.
    *
-   * @param eventType {NeonAlertLevel} Alert level of the event
+   * @param eventType Alert level of the event
    *
-   * @returns {string} The event key for sending a message on <a href="/utils/NeonEventBus">NeonEventBus</a>.
+   * @returns The event key for sending a message on <a href="/utils/NeonEventBus">NeonEventBus</a>.
    */
   public static generateEventKey(eventType: NeonAlertLevel) {
     return `${NeonEventBus.messagePrefix}-toast-${eventType}`;

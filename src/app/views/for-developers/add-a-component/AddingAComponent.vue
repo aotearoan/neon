@@ -18,11 +18,10 @@
           <div>
             <h3 class="neon-h5">Vue Component + Typescript</h3>
             <ol>
-              <li>Increment minor version in package.json & set patch version to 0.</li>
               <li>Decide on a component name & in which of the sections the component belongs.</li>
               <li>Create component vue/ts files in the relevant directory.</li>
               <li>Add component vue file export to <em>src/neon.ts</em>.</li>
-              <li>Question: should this component define a 2 way bound modelValue?</li>
+              <li>Question: should this component define a 2 way bound modelValue (v-model)?</li>
               <li>Write unit tests for the component (aim for 100% coverage!).</li>
               <li>
                 Use JSDoc comments to document the component & it's properties. These will be extracted & used for API
@@ -63,8 +62,8 @@
         <h3 class="neon-h5">Examples + Documentation</h3>
         <ol>
           <li>
-            Once the component has been created run <em>doc-gen.js</em> to generate the new documentation JSON files for
-            the app. This is run before serving so restarting the app will automatically generate the docs.
+            Once the component has been created run <em>npm run gen:docs</em> to generate the new documentation JSON
+            files for the app. This is run before serving so restarting the app will automatically generate the docs.
           </li>
           <li>
             Create the example/documentation for the component under <em>src/app/views</em>. The directory structure

@@ -2,28 +2,52 @@
 @use 'src/sass/includes/responsive';
 
 .source-page {
-  .editor__container {
-    @include responsive.responsive(larger-than-tablet) {
-      @include layout.max-height(
-                      100,
-                      calc(var(--neon-top-nav-height-desktop) + var(--neon-footer-height-desktop) + var(--neon-h3-size) * var(--neon-line-height-one) + 5.75 *
-                      var(--neon-spacing-vertical-desktop) + 3 * var(--neon-border-width))
-      );
-    }
+  .source-page__property {
+    margin-bottom: var(--neon-space-16);
 
-    @include responsive.responsive(tablet) {
-      @include layout.max-height(
-                      100,
-                      calc(var(--neon-top-nav-height-tablet) + var(--neon-footer-height-tablet) + var(--neon-h3-size) * var(--neon-line-height-one) + 5.75 *
-                      var(--neon-spacing-vertical-tablet) + 3 * var(--neon-border-width))
-      );
+    &:last-child {
+      .source-page__separator {
+        display: none;
+      }
     }
-    @include responsive.responsive(mobile-large) {
-      @include layout.max-height(
-                      100,
-                      calc(var(--neon-top-nav-height-mobile) + var(--neon-footer-height-mobile) + var(--neon-h4-size) * var(--neon-line-height-one) + 6.5 *
-                      var(--neon-spacing-vertical-mobile) + 3 * var(--neon-border-width))
-      );
+  }
+
+  &__summary {
+    & + .source-page__summary,
+    p + p {
+      margin-top: var(--neon-space-16);
     }
+  }
+
+  &__property-value {
+    font-family: var(--neon-font-family-monospaced);
+    font-weight: var(--neon-font-weight-semi-bold);
+    color: var(--neon-color-info);
+  }
+
+  &__property-description {
+    font-size: var(--neon-font-size-s);
+  }
+
+  .source-page__separator {
+    margin: var(--neon-space-8) 0;
+  }
+
+  &__param-separator {
+    margin: 0 var(--neon-space-8);
+  }
+
+  &__param-name {
+    font-family: var(--neon-font-family-monospaced);
+    font-weight: var(--neon-font-weight-semi-bold);
+    color: var(--neon-color-neutral);
+  }
+
+  &__params-title,
+  &__returns-title {
+    color: var(--neon-color-neutral);
+    font-size: var(--neon-font-size-xs);
+    margin-top: var(--neon-space-16);
+    text-transform: uppercase;
   }
 }

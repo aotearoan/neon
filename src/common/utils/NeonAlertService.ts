@@ -7,36 +7,36 @@ import { NeonAlertLevel } from '../enums/NeonAlertLevel';
  */
 export class NeonAlertService {
   /**
-   * Send an info message
+   * Send an info message.
    *
-   * @param alert {NeonAlertMessage}
+   * @param alert The info message to display.
    */
   public static info(alert: NeonAlertMessage) {
     NeonAlertService.emit(NeonAlertLevel.Info, alert);
   }
 
   /**
-   * Send a success message
+   * Send a success message.
    *
-   * @param alert {NeonAlertMessage}
+   * @param alert The success message to display.
    */
   public static success(alert: NeonAlertMessage) {
     NeonAlertService.emit(NeonAlertLevel.Success, alert);
   }
 
   /**
-   * Send a warning message
+   * Send a warning message.
    *
-   * @param alert {NeonAlertMessage}
+   * @param alert The warning message to display.
    */
   public static warn(alert: NeonAlertMessage) {
     NeonAlertService.emit(NeonAlertLevel.Warn, alert);
   }
 
   /**
-   * Send an error message
+   * Send an error message.
    *
-   * @param alert {NeonAlertMessage}
+   * @param alert The error message to display.
    */
   public static error(alert: NeonAlertMessage) {
     NeonAlertService.emit(NeonAlertLevel.Error, alert);
@@ -45,9 +45,9 @@ export class NeonAlertService {
   /**
    * Generate an event key so that all events are published on the correct topic.
    *
-   * @param eventType {NeonAlertLevel} Alert level of the event
+   * @param eventType Alert level of the event.
    *
-   * @returns {string} The event key for sending a message on <a href="/utils/NeonEventBus">NeonEventBus</a>.
+   * @returns The event key for sending a message on <a href="/utils/NeonEventBus">NeonEventBus</a>.
    */
   public static generateEventKey(eventType: NeonAlertLevel) {
     return `${NeonEventBus.messagePrefix}-alert-${eventType}`;

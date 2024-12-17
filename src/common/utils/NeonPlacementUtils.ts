@@ -8,12 +8,12 @@ export class NeonPlacementUtils {
    * Calculate the available space in all directions between a trigger element & the edges of the screen or a defined
    * container element.
    *
-   * @param triggerElement {HTMLElement} The trigger element to calculate available space.
-   * @param maxWidth {number} Maximum available width (screen width or placement container width).
-   * @param maxHeight {number} Maximum available height (screen height or placement container height).
-   * @param placementContainer {HTMLElement} Bounding container to use for calculation.
+   * @param triggerElement The trigger element to calculate available space.
+   * @param maxWidth Maximum available width (screen width or placement container width).
+   * @param maxHeight Maximum available height (screen height or placement container height).
+   * @param placementContainer Bounding container to use for calculation.
    *
-   * @returns {NeonAvailableSpace} An object defining the available space from the trigger element to the screen or
+   * @returns An object defining the available space from the trigger element to the screen or
    * container edge in each direction.
    */
   public static calculateAvailableSpace(
@@ -55,9 +55,9 @@ export class NeonPlacementUtils {
   /**
    * Calculate the maximum available on screen width & height of an element.
    *
-   * @param placementContainer {HTMLElement} The element for which to calculate the maximum width & height.
+   * @param placementContainer The element for which to calculate the maximum width & height.
    *
-   * @returns {{ maxHeight: number, maxWidth: number }} The maximum width & height of the element.
+   * @returns The maximum width & height of the element.
    */
   public static calculateBounds(placementContainer?: HTMLElement) {
     const root = document.documentElement;

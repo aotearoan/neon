@@ -1,0 +1,5325 @@
+{
+	"id": 0,
+	"name": "@aotearoan/neon",
+	"variant": "project",
+	"kind": 1,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "NeonAlertLevel",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 2,
+					"name": "NeonAlertLevel",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Alert levels are the severity levels to be used with <a href=\"/feedback/alert#examples\">NeonAlert & NeonToast</a>\ncomponents to inform the user of the severity of a message."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 6,
+							"name": "Error",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Error level, use for indicating a problem that the user <strong>cannot</strong> recover from."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonAlertLevel.ts",
+									"line": 13,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonAlertLevel.ts#L13"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "error"
+							}
+						},
+						{
+							"id": 3,
+							"name": "Info",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Information level, use for standard informational messages."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonAlertLevel.ts",
+									"line": 7,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonAlertLevel.ts#L7"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "info"
+							}
+						},
+						{
+							"id": 4,
+							"name": "Success",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Success level, use for indicating successful actions."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonAlertLevel.ts",
+									"line": 9,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonAlertLevel.ts#L9"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "success"
+							}
+						},
+						{
+							"id": 5,
+							"name": "Warn",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Warning level, use for indicating a problem that the user <strong>can</strong> recover from."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonAlertLevel.ts",
+									"line": 11,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonAlertLevel.ts#L11"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "warn"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								6,
+								3,
+								4,
+								5
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonAlertLevel.ts",
+							"line": 5,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonAlertLevel.ts#L5"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						2
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonAlertLevel.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonAlertLevel.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 7,
+			"name": "NeonAlertPlacement",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 8,
+					"name": "NeonAlertPlacement",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Placement values for use with the <a href=\"/feedback/alert#examples\">NeonAlert</a> component. This is used to\ndescribe the positioning of alerts on the screen."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 11,
+							"name": "BottomLeft",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Position alerts in the <strong>bottom left</strong> of the screen"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonAlertPlacement.ts",
+									"line": 11,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonAlertPlacement.ts#L11"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "bottom-left"
+							}
+						},
+						{
+							"id": 12,
+							"name": "BottomRight",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Position alerts in the <strong>bottom right</strong> of the screen"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonAlertPlacement.ts",
+									"line": 13,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonAlertPlacement.ts#L13"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "bottom-right"
+							}
+						},
+						{
+							"id": 9,
+							"name": "TopLeft",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Position alerts in the <strong>top left</strong> of the screen"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonAlertPlacement.ts",
+									"line": 7,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonAlertPlacement.ts#L7"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "top-left"
+							}
+						},
+						{
+							"id": 10,
+							"name": "TopRight",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Position alerts in the <strong>top right</strong> of the screen"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonAlertPlacement.ts",
+									"line": 9,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonAlertPlacement.ts#L9"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "top-right"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								11,
+								12,
+								9,
+								10
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonAlertPlacement.ts",
+							"line": 5,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonAlertPlacement.ts#L5"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						8
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonAlertPlacement.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonAlertPlacement.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 13,
+			"name": "NeonButtonSize",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 14,
+					"name": "NeonButtonSize",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Describes the different sizes of <a href=\"/user-input/button\">NeonButton</a> components."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 18,
+							"name": "ExtraLarge",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Extra large buttons are by default <em>64 rem</em> in size"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonButtonSize.ts",
+									"line": 12,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonButtonSize.ts#L12"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "xl"
+							}
+						},
+						{
+							"id": 17,
+							"name": "Large",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Large buttons are by default <em>48 rem</em> in size"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonButtonSize.ts",
+									"line": 10,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonButtonSize.ts#L10"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "l"
+							}
+						},
+						{
+							"id": 16,
+							"name": "Medium",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Medium buttons are by default <em>40 rem</em> in size"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonButtonSize.ts",
+									"line": 8,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonButtonSize.ts#L8"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "m"
+							}
+						},
+						{
+							"id": 15,
+							"name": "Small",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Small buttons are by default <em>32 rem</em> in size"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonButtonSize.ts",
+									"line": 6,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonButtonSize.ts#L6"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "s"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								18,
+								17,
+								16,
+								15
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonButtonSize.ts",
+							"line": 4,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonButtonSize.ts#L4"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						14
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonButtonSize.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonButtonSize.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 19,
+			"name": "NeonButtonStyle",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 20,
+					"name": "NeonButtonStyle",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Describes the different <a href=\"/user-input/button\">NeonButton</a> styles."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 22,
+							"name": "Outline",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Outline buttons appear with a border & no background color. Outline buttons should be used for secondary actions\nor alternate actions outside the main flow to minimise distraction for the user."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonButtonStyle.ts",
+									"line": 11,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonButtonStyle.ts#L11"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "outline"
+							}
+						},
+						{
+							"id": 21,
+							"name": "Solid",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Solid buttons are solid color buttons. Use these for primary or secondary actions (usually low contrast color)."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonButtonStyle.ts",
+									"line": 6,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonButtonStyle.ts#L6"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "solid"
+							}
+						},
+						{
+							"id": 23,
+							"name": "Text",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Text buttons appear as text without a background. Text buttons are usually used for icons buttons or secondary\nactions."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonButtonStyle.ts",
+									"line": 16,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonButtonStyle.ts#L16"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "text"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								22,
+								21,
+								23
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonButtonStyle.ts",
+							"line": 4,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonButtonStyle.ts#L4"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						20
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonButtonStyle.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonButtonStyle.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 24,
+			"name": "NeonChipAction",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 25,
+					"name": "NeonChipAction",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Describes the different actions available for the interaction with the <a href=\"/user-input/chip\">NeonChip</a>\ncomponent."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 26,
+							"name": "Click",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The Click action triggers a click event in the component."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonChipAction.ts",
+									"line": 7,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonChipAction.ts#L7"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "click"
+							}
+						},
+						{
+							"id": 27,
+							"name": "Remove",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The Remove action triggers the removal of the component. This can be used for filter chips."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonChipAction.ts",
+									"line": 9,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonChipAction.ts#L9"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "remove"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								26,
+								27
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonChipAction.ts",
+							"line": 5,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonChipAction.ts#L5"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						25
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonChipAction.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonChipAction.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 28,
+			"name": "NeonDropdownPlacement",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 29,
+					"name": "NeonDropdownPlacement",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Describes placement of dropdown related components like:\n<ul class=\"no-style\">\n <li><a href=\"/user-input/select\">NeonSelect</a></li>\n <li><a href=\"/navigation/dropdown-menu\">NeonDropdownMenu</a></li>\n <li><a href=\"/presentation/dropdown\">NeonDropdown</a></li>\n</ul>\n\n<p>The placement has a <strong>primary placement</strong> (the first direction) & a <strong>secondary placement</strong>\n(the second direction). The primary placement is the location of the popup relative to the triggering element (e.g.\nthe select button). With the secondary placement defining the alignment relative to the trigger. E.g. BottomLeft will\nopen the dropdown below the trigger element with the left-hand edges aligned.</p>\n\n<p>The placement utilities are smart & dynamic. They listen to resize events & aim for best effort based on where the\ndropdown is opened. E.g. in the case above with BottomLeft if there is not enough visible room to align the component\nto the left then it will try to align to the right & likewise if there is not enough space below the trigger it will\nalign to the top (& reverse the option order in the case of a select).</p>"
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 32,
+							"name": "BottomLeft",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Placement below trigger element, aligned to the left"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDropdownPlacement.ts",
+									"line": 25,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonDropdownPlacement.ts#L25"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "bottom-left"
+							}
+						},
+						{
+							"id": 33,
+							"name": "BottomRight",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Placement below trigger element, aligned to the right"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDropdownPlacement.ts",
+									"line": 27,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonDropdownPlacement.ts#L27"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "bottom-right"
+							}
+						},
+						{
+							"id": 35,
+							"name": "LeftBottom",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Placement to the left of the trigger element, aligned to the bottom"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDropdownPlacement.ts",
+									"line": 31,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonDropdownPlacement.ts#L31"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "left-bottom"
+							}
+						},
+						{
+							"id": 34,
+							"name": "LeftTop",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Placement to the left of the trigger element, aligned to the top"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDropdownPlacement.ts",
+									"line": 29,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonDropdownPlacement.ts#L29"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "left-top"
+							}
+						},
+						{
+							"id": 37,
+							"name": "RightBottom",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Placement to the right of the trigger element, aligned to the bottom"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDropdownPlacement.ts",
+									"line": 35,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonDropdownPlacement.ts#L35"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "right-bottom"
+							}
+						},
+						{
+							"id": 36,
+							"name": "RightTop",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Placement to the right of the trigger element, aligned to the top"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDropdownPlacement.ts",
+									"line": 33,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonDropdownPlacement.ts#L33"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "right-top"
+							}
+						},
+						{
+							"id": 30,
+							"name": "TopLeft",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Placement above trigger element, aligned to the left"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDropdownPlacement.ts",
+									"line": 21,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonDropdownPlacement.ts#L21"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "top-left"
+							}
+						},
+						{
+							"id": 31,
+							"name": "TopRight",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Placement above trigger element, aligned to the right"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDropdownPlacement.ts",
+									"line": 23,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonDropdownPlacement.ts#L23"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "top-right"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								32,
+								33,
+								35,
+								34,
+								37,
+								36,
+								30,
+								31
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonDropdownPlacement.ts",
+							"line": 19,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonDropdownPlacement.ts#L19"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						29
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonDropdownPlacement.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonDropdownPlacement.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 38,
+			"name": "NeonDropdownStyle",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 39,
+					"name": "NeonDropdownStyle",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Dropdown trigger style for describing the triggering element of dropdowns & selects like:\n<ul class=\"no-style\">\n <li><a href=\"/user-input/select\">NeonSelect</a></li>\n <li><a href=\"/navigation/dropdown-menu\">NeonDropdownMenu</a></li>\n <li><a href=\"/presentation/dropdown\">NeonDropdown</a></li>\n</ul>"
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 43,
+							"name": "CircularBadge",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "A circular <a href=\"/presentation/badge\">NeonBadge</a>"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDropdownStyle.ts",
+									"line": 17,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonDropdownStyle.ts#L17"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "circular-badge"
+							}
+						},
+						{
+							"id": 40,
+							"name": "SolidButton",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "A <a href=\"/user-input/button\">NeonButton</a> in the solid color style"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDropdownStyle.ts",
+									"line": 11,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonDropdownStyle.ts#L11"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "solid-button"
+							}
+						},
+						{
+							"id": 42,
+							"name": "SquareBadge",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "A square <a href=\"/presentation/badge\">NeonBadge</a>"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDropdownStyle.ts",
+									"line": 15,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonDropdownStyle.ts#L15"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "square-badge"
+							}
+						},
+						{
+							"id": 41,
+							"name": "Text",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "A <a href=\"/user-input/button\">NeonButton</a> in the text style"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDropdownStyle.ts",
+									"line": 13,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonDropdownStyle.ts#L13"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "text-button"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								43,
+								40,
+								42,
+								41
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonDropdownStyle.ts",
+							"line": 9,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonDropdownStyle.ts#L9"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						39
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonDropdownStyle.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonDropdownStyle.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 44,
+			"name": "NeonFunctionalColor",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 45,
+					"name": "NeonFunctionalColor",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The core color palettes available for styling components in Neon. See the design section\n<a href=\"/design/color\">Color</a> page for more details on color palettes."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 49,
+							"name": "Brand",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Brand is the main brand color palette, this is useful for branded CTAs, text & controls."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonFunctionalColor.ts",
+									"line": 16,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonFunctionalColor.ts#L16"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "brand"
+							}
+						},
+						{
+							"id": 54,
+							"name": "Error",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Error can be used to convey issues/actions that are severe & that the user may not be able to recover from."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonFunctionalColor.ts",
+									"line": 26,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonFunctionalColor.ts#L26"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "error"
+							}
+						},
+						{
+							"id": 48,
+							"name": "HighContrast",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "High contrast is a higher contrast palette than can be used for increased accessibility or for a stronger black &\nwhite application."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonFunctionalColor.ts",
+									"line": 14,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonFunctionalColor.ts#L14"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "high-contrast"
+							}
+						},
+						{
+							"id": 51,
+							"name": "Info",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Info can be used to convey informational context, e.g. notes & alerts"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonFunctionalColor.ts",
+									"line": 20,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonFunctionalColor.ts#L20"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "info"
+							}
+						},
+						{
+							"id": 46,
+							"name": "LowContrast",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Low contrast is a more subtle neutral palette which can be used for secondary actions & supporting text."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonFunctionalColor.ts",
+									"line": 7,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonFunctionalColor.ts#L7"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "low-contrast"
+							}
+						},
+						{
+							"id": 47,
+							"name": "Neutral",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Neutral is the base greyscale palette."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonFunctionalColor.ts",
+									"line": 9,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonFunctionalColor.ts#L9"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "neutral"
+							}
+						},
+						{
+							"id": 50,
+							"name": "Primary",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Primary is the main application color palette. For most applications this will be used by default."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonFunctionalColor.ts",
+									"line": 18,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonFunctionalColor.ts#L18"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "primary"
+							}
+						},
+						{
+							"id": 52,
+							"name": "Success",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Success can be used to convey successful actions."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonFunctionalColor.ts",
+									"line": 22,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonFunctionalColor.ts#L22"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "success"
+							}
+						},
+						{
+							"id": 53,
+							"name": "Warn",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Warn can be used to convey issues/actions that are less severe but may still impact the user."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonFunctionalColor.ts",
+									"line": 24,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonFunctionalColor.ts#L24"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "warn"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								49,
+								54,
+								48,
+								51,
+								46,
+								47,
+								50,
+								52,
+								53
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonFunctionalColor.ts",
+							"line": 5,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonFunctionalColor.ts#L5"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						45
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonFunctionalColor.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonFunctionalColor.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 55,
+			"name": "NeonHorizontalPosition",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 56,
+					"name": "NeonHorizontalPosition",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Describes the horizontal positioning of certain elements in the context of a component. An example would be an icon\nin a button or label as well as the label for a checkbox or switch."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 57,
+							"name": "Left",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Left horizontal positioning."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonHorizontalPosition.ts",
+									"line": 7,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonHorizontalPosition.ts#L7"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "left"
+							}
+						},
+						{
+							"id": 58,
+							"name": "Right",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Right horizontal positioning."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonHorizontalPosition.ts",
+									"line": 9,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonHorizontalPosition.ts#L9"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "right"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								57,
+								58
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonHorizontalPosition.ts",
+							"line": 5,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonHorizontalPosition.ts#L5"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						56
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonHorizontalPosition.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonHorizontalPosition.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 59,
+			"name": "NeonInputMode",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 60,
+					"name": "NeonInputMode",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Describes the supported <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode\">HTML\ninput modes</a> that can be used with\n<a href=\"/user-input/input\">NeonInput</a> & <a href=\"/user-input/number\">NeonNumber</a>. This is used primarily for\ntriggering keyboard context on mobile devices."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 63,
+							"name": "Decimal",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The decimal mode. Opens a numeric keyboard for decimal input."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonInputMode.ts",
+									"line": 13,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputMode.ts#L13"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "decimal"
+							}
+						},
+						{
+							"id": 67,
+							"name": "Email",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The email mode. Allows the mobile device to provide an email optimised keyboard with email suggestions /\nautocompletion."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonInputMode.ts",
+									"line": 24,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputMode.ts#L24"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "email"
+							}
+						},
+						{
+							"id": 61,
+							"name": "None",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The default - no context is provided."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonInputMode.ts",
+									"line": 9,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputMode.ts#L9"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "none"
+							}
+						},
+						{
+							"id": 64,
+							"name": "Numeric",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The numeric mode. Opens a numeric keyboard for numeric input."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonInputMode.ts",
+									"line": 15,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputMode.ts#L15"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "numeric"
+							}
+						},
+						{
+							"id": 66,
+							"name": "Search",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The search mode. Allows the mobile device to provide a keyboard optimised for search."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonInputMode.ts",
+									"line": 19,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputMode.ts#L19"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "search"
+							}
+						},
+						{
+							"id": 65,
+							"name": "Tel",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The telephone mode. Allows the mobile device to provide recent numbers / phone number search."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonInputMode.ts",
+									"line": 17,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputMode.ts#L17"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "tel"
+							}
+						},
+						{
+							"id": 62,
+							"name": "Text",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The text mode. Opens a text keyboard."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonInputMode.ts",
+									"line": 11,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputMode.ts#L11"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "text"
+							}
+						},
+						{
+							"id": 68,
+							"name": "Url",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The url mode. Allows the mobile device to provide a URL optimised keyboard."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonInputMode.ts",
+									"line": 28,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputMode.ts#L28"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "url"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								63,
+								67,
+								61,
+								64,
+								66,
+								65,
+								62,
+								68
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonInputMode.ts",
+							"line": 7,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputMode.ts#L7"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						60
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonInputMode.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputMode.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 69,
+			"name": "NeonInputType",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 70,
+					"name": "NeonInputType",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types\">HTML input\ntypes</a> for use with <a href=\"/user-input/input\">NeonInput</a>.\n\nNOTE: prefer the specific components for Number, Password, Date, File, Search fields."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 71,
+							"name": "Date",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Date input for selecting dates from a calendar. Use <a href=\"/user-input/date-picker\">NeonDatePicker</a>."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonInputType.ts",
+									"line": 9,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputType.ts#L9"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "date"
+							}
+						},
+						{
+							"id": 72,
+							"name": "DateTime",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Date time input for selecting dates including a specific time."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonInputType.ts",
+									"line": 11,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputType.ts#L11"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "datetime-local"
+							}
+						},
+						{
+							"id": 73,
+							"name": "Email",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Email input for entering email addresses."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonInputType.ts",
+									"line": 13,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputType.ts#L13"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "email"
+							}
+						},
+						{
+							"id": 74,
+							"name": "File",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "File input for opening a file dialog. Use <a href=\"/user-input/file\">NeonDatePicker</a> or\n<a href=\"/user-input/drop-zone\">NeonDropZone</a>."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonInputType.ts",
+									"line": 18,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputType.ts#L18"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "file"
+							}
+						},
+						{
+							"id": 75,
+							"name": "Number",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Number input for entering numeric values. Use <a href=\"/user-input/number\">NeonNumber</a>"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonInputType.ts",
+									"line": 20,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputType.ts#L20"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "number"
+							}
+						},
+						{
+							"id": 76,
+							"name": "Password",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Password input for entering passwords. Use <a href=\"/user-input/password\">NeonPassword</a>"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonInputType.ts",
+									"line": 22,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputType.ts#L22"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "password"
+							}
+						},
+						{
+							"id": 77,
+							"name": "Range",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Range input for a slider control. Use <a href=\"/user-input/slider\">NeonSlider</a> or\n<a href=\"/user-input/range-slider\">NeonRangeSlider</a>"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonInputType.ts",
+									"line": 27,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputType.ts#L27"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "range"
+							}
+						},
+						{
+							"id": 78,
+							"name": "Search",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Search input for searching. Use <a href=\"/user-input/search\">NeonSearch</a>"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonInputType.ts",
+									"line": 29,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputType.ts#L29"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "search"
+							}
+						},
+						{
+							"id": 79,
+							"name": "Tel",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Telephone number input."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonInputType.ts",
+									"line": 31,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputType.ts#L31"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "tel"
+							}
+						},
+						{
+							"id": 80,
+							"name": "Text",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Text input for single or multiline text input."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonInputType.ts",
+									"line": 33,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputType.ts#L33"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "text"
+							}
+						},
+						{
+							"id": 81,
+							"name": "Time",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Time input."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonInputType.ts",
+									"line": 35,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputType.ts#L35"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "time"
+							}
+						},
+						{
+							"id": 82,
+							"name": "Url",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "URL input for entering web addresses."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonInputType.ts",
+									"line": 37,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputType.ts#L37"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "url"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								71,
+								72,
+								73,
+								74,
+								75,
+								76,
+								77,
+								78,
+								79,
+								80,
+								81,
+								82
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonInputType.ts",
+							"line": 7,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputType.ts#L7"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						70
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonInputType.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonInputType.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 83,
+			"name": "NeonLabelSize",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 84,
+					"name": "NeonLabelSize",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The size options for the <a href=\"/presentation/label\">NeonLabel</a> component."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 85,
+							"name": "ExtraExtraSmall",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Extra extra small, default is 16 rem."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonLabelSize.ts",
+									"line": 6,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonLabelSize.ts#L6"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "xxs"
+							}
+						},
+						{
+							"id": 86,
+							"name": "ExtraSmall",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Extra small, default is 20 rem."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonLabelSize.ts",
+									"line": 8,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonLabelSize.ts#L8"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "xs"
+							}
+						},
+						{
+							"id": 89,
+							"name": "Large",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Large, default is 44 rem."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonLabelSize.ts",
+									"line": 14,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonLabelSize.ts#L14"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "l"
+							}
+						},
+						{
+							"id": 88,
+							"name": "Medium",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Medium, default is 36 rem."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonLabelSize.ts",
+									"line": 12,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonLabelSize.ts#L12"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "m"
+							}
+						},
+						{
+							"id": 87,
+							"name": "Small",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Small, default is 28 rem."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonLabelSize.ts",
+									"line": 10,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonLabelSize.ts#L10"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "s"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								85,
+								86,
+								89,
+								88,
+								87
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonLabelSize.ts",
+							"line": 4,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonLabelSize.ts#L4"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						84
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonLabelSize.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonLabelSize.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 90,
+			"name": "NeonMode",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 91,
+					"name": "NeonMode",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The different modes that can be used in Neon. See <a href=\"/design/theming#dark-mode\">Dark mode</a> for more details."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 93,
+							"name": "Dark",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Dark mode"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonMode.ts",
+									"line": 8,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonMode.ts#L8"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "dark"
+							}
+						},
+						{
+							"id": 92,
+							"name": "Light",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Light mode"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonMode.ts",
+									"line": 6,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonMode.ts#L6"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "light"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								93,
+								92
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonMode.ts",
+							"line": 4,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonMode.ts#L4"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						91
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonMode.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonMode.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 94,
+			"name": "NeonOrientation",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 95,
+					"name": "NeonOrientation",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The orientation options for the <a href=\"/layout/card\">NeonCard</a> & <a href=\"/user-input/toggle\">radio button</a>\ncomponents."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 97,
+							"name": "Horizontal",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Horizontal orientation with content flowing across the page"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonOrientation.ts",
+									"line": 9,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonOrientation.ts#L9"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "horizontal"
+							}
+						},
+						{
+							"id": 96,
+							"name": "Vertical",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Vertical orientation with content flowing down the page"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonOrientation.ts",
+									"line": 7,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonOrientation.ts#L7"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "vertical"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								97,
+								96
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonOrientation.ts",
+							"line": 5,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonOrientation.ts#L5"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						95
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonOrientation.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonOrientation.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 98,
+			"name": "NeonOutlineStyle",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 99,
+					"name": "NeonOutlineStyle",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Describes the different outline accessibility styles available in Neon. These are displayed when the component has\nfocus. Generally these are internal use only with defaults provided for all interactive components. However, this can\nbe provided for the <a href=\"/navigation/link\">NeonLink</a> & <a href=\"/feedback/tooltip\">NeonTooltip</a> components\nto override the default when desired."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 103,
+							"name": "Background",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Apply a background color"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonOutlineStyle.ts",
+									"line": 15,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonOutlineStyle.ts#L15"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "background"
+							}
+						},
+						{
+							"id": 102,
+							"name": "Border",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Apply an outline border"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonOutlineStyle.ts",
+									"line": 13,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonOutlineStyle.ts#L13"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "border"
+							}
+						},
+						{
+							"id": 104,
+							"name": "Bullet",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Apply a bullet point"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonOutlineStyle.ts",
+									"line": 17,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonOutlineStyle.ts#L17"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "bullet"
+							}
+						},
+						{
+							"id": 100,
+							"name": "None",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "No outline style is displayed"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonOutlineStyle.ts",
+									"line": 9,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonOutlineStyle.ts#L9"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "none"
+							}
+						},
+						{
+							"id": 101,
+							"name": "Text",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Apply an underline, usually used for text, e.g. links"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonOutlineStyle.ts",
+									"line": 11,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonOutlineStyle.ts#L11"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "text"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								103,
+								102,
+								104,
+								100,
+								101
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonOutlineStyle.ts",
+							"line": 7,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonOutlineStyle.ts#L7"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						99
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonOutlineStyle.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonOutlineStyle.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 105,
+			"name": "NeonPosition",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 106,
+					"name": "NeonPosition",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Placement directions used for placement of the <a href=\"/feedback/tooltip\">NeonTooltip</a> &\n<a href=\"/layout/drawer\">NeonDrawer</a> components when active."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 109,
+							"name": "Bottom",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Place the tooltip contents to the <em>left</em> of the trigger element."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonPosition.ts",
+									"line": 11,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonPosition.ts#L11"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "bottom"
+							}
+						},
+						{
+							"id": 108,
+							"name": "Left",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Place the tooltip contents <em>below</em> the trigger element."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonPosition.ts",
+									"line": 9,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonPosition.ts#L9"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "left"
+							}
+						},
+						{
+							"id": 110,
+							"name": "Right",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Place the tooltip contents to the <em>right</em> of the trigger element."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonPosition.ts",
+									"line": 13,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonPosition.ts#L13"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "right"
+							}
+						},
+						{
+							"id": 107,
+							"name": "Top",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Place the tooltip contents <em>above</em> the trigger element."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonPosition.ts",
+									"line": 7,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonPosition.ts#L7"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "top"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								109,
+								108,
+								110,
+								107
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonPosition.ts",
+							"line": 5,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonPosition.ts#L5"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						106
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonPosition.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonPosition.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 111,
+			"name": "NeonResponsive",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 112,
+					"name": "NeonResponsive",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Responsive breakpoints defined in Neon. These cover both smaller than & larger than cases for ultimate flexibility in\ndefining responsive styles. See the <a href=\"/design/responsiveness\">responsiveness</a> documentation for more\ndetails."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 113,
+							"name": "All",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Defines <em>NO</em> breakpoint. This is only used for defining the global <a href=\"/layout/grid\">NeonGrid</a>\nbreakpoint layout."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonResponsive.ts",
+									"line": 11,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonResponsive.ts#L11"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "all"
+							}
+						},
+						{
+							"id": 114,
+							"name": "Desktop",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Defines a desktop breakpoint of <strong>max-width: 1439px</strong>."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonResponsive.ts",
+									"line": 13,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonResponsive.ts#L13"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "desktop"
+							}
+						},
+						{
+							"id": 115,
+							"name": "DesktopLarge",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Defines a larger than desktop breakpoint of <strong>min-width: 1440px</strong>."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonResponsive.ts",
+									"line": 15,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonResponsive.ts#L15"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "desktop-large"
+							}
+						},
+						{
+							"id": 120,
+							"name": "LargerThanMobile",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Defines a larger than mobile breakpoint of <strong>min-width: 415px</strong>."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonResponsive.ts",
+									"line": 25,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonResponsive.ts#L25"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "larger-than-mobile"
+							}
+						},
+						{
+							"id": 118,
+							"name": "LargerThanMobileLarge",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Defines a larger than mobile large breakpoint of <strong>min-width: 600px</strong>."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonResponsive.ts",
+									"line": 21,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonResponsive.ts#L21"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "larger-than-mobile-l"
+							}
+						},
+						{
+							"id": 116,
+							"name": "LargerThanTablet",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Defines a larger than tablet breakpoint of <strong>min-width: 1025px</strong>."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonResponsive.ts",
+									"line": 17,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonResponsive.ts#L17"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "larger-than-tablet"
+							}
+						},
+						{
+							"id": 121,
+							"name": "Mobile",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Defines a mobile breakpoint of <strong>max-width: 414px</strong>."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonResponsive.ts",
+									"line": 27,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonResponsive.ts#L27"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "mobile"
+							}
+						},
+						{
+							"id": 119,
+							"name": "MobileLarge",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Defines a large mobile breakpoint of <strong>max-width: 599px</strong>."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonResponsive.ts",
+									"line": 23,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonResponsive.ts#L23"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "mobile-large"
+							}
+						},
+						{
+							"id": 117,
+							"name": "Tablet",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Defines a tablet breakpoint of <strong>max-width: 1024px</strong>."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonResponsive.ts",
+									"line": 19,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonResponsive.ts#L19"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "tablet"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								113,
+								114,
+								115,
+								120,
+								118,
+								116,
+								121,
+								119,
+								117
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonResponsive.ts",
+							"line": 6,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonResponsive.ts#L6"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						112
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonResponsive.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonResponsive.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 122,
+			"name": "NeonSize",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 123,
+					"name": "NeonSize",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Describes the available sizing options of most components. NOTE: Some components use a custom enum which expands on\nthe NeonSize options."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 126,
+							"name": "Large",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "A large component size, typically has a default of 48 rem."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonSize.ts",
+									"line": 11,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonSize.ts#L11"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "l"
+							}
+						},
+						{
+							"id": 125,
+							"name": "Medium",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "A medium component size, usually the default size. Which typically has a default of 40 rem."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonSize.ts",
+									"line": 9,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonSize.ts#L9"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "m"
+							}
+						},
+						{
+							"id": 124,
+							"name": "Small",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "A small component size, typically has a default of 32 rem."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonSize.ts",
+									"line": 7,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonSize.ts#L7"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "s"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								126,
+								125,
+								124
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonSize.ts",
+							"line": 5,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonSize.ts#L5"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						123
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonSize.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonSize.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 127,
+			"name": "NeonSplashLoaderSize",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 128,
+					"name": "NeonSplashLoaderSize",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Different sizes of the <a href=\"/feedback/splash-loader\">NeonSplashLoader</a> component's animated icon."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 132,
+							"name": "ExtraLarge",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Extra large size, typically has a default of 96 rem."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonSplashLoaderSize.ts",
+									"line": 12,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonSplashLoaderSize.ts#L12"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "xl"
+							}
+						},
+						{
+							"id": 131,
+							"name": "Large",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Large size, typically has a default of 48 rem."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonSplashLoaderSize.ts",
+									"line": 10,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonSplashLoaderSize.ts#L10"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "l"
+							}
+						},
+						{
+							"id": 130,
+							"name": "Medium",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Medium size, typically has a default of 40 rem."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonSplashLoaderSize.ts",
+									"line": 8,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonSplashLoaderSize.ts#L8"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "m"
+							}
+						},
+						{
+							"id": 129,
+							"name": "Small",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Small size, typically has a default of 32 rem."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonSplashLoaderSize.ts",
+									"line": 6,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonSplashLoaderSize.ts#L6"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "s"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								132,
+								131,
+								130,
+								129
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonSplashLoaderSize.ts",
+							"line": 4,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonSplashLoaderSize.ts#L4"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						128
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonSplashLoaderSize.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonSplashLoaderSize.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 133,
+			"name": "NeonState",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 134,
+					"name": "NeonState",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Input states which can be applied to Neon button & inputs to give user feedback."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 138,
+							"name": "Error",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Error state - indicates there was an erroneous action. Displays the error state of the component & blocks user\ninteraction."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonState.ts",
+									"line": 21,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonState.ts#L21"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "error"
+							}
+						},
+						{
+							"id": 136,
+							"name": "Loading",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Loading state - indicates there is a loading action blocking a component. Displays the loading state of the\ncomponent."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonState.ts",
+									"line": 11,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonState.ts#L11"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "loading"
+							}
+						},
+						{
+							"id": 135,
+							"name": "Ready",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Default state - indicates the user can interact with the component"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonState.ts",
+									"line": 6,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonState.ts#L6"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "ready"
+							}
+						},
+						{
+							"id": 137,
+							"name": "Success",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Success state - indicates there was a successful action & prevents user interaction with a component. Displays the\nsuccess state of the component & blocks user interaction."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonState.ts",
+									"line": 16,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonState.ts#L16"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "success"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								138,
+								136,
+								135,
+								137
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonState.ts",
+							"line": 4,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonState.ts#L4"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						134
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonState.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonState.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 139,
+			"name": "NeonSwitchStyle",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 140,
+					"name": "NeonSwitchStyle",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Describes the available <a href=\"/user-input/switch\">NeonSwitch</a> styles."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 142,
+							"name": "Checkbox",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Checkbox style - styles component as a traditional HTML checkbox."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonSwitchStyle.ts",
+									"line": 8,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonSwitchStyle.ts#L8"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "checkbox"
+							}
+						},
+						{
+							"id": 141,
+							"name": "Switch",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Switch style - styles component as a switch button with on/off states."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonSwitchStyle.ts",
+									"line": 6,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonSwitchStyle.ts#L6"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "switch"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								142,
+								141
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonSwitchStyle.ts",
+							"line": 4,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonSwitchStyle.ts#L4"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						140
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonSwitchStyle.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonSwitchStyle.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 143,
+			"name": "NeonTabsStyle",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 144,
+					"name": "NeonTabsStyle",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Describes available tab styles for the <a href=\"/presentation/tabs\">NeonTabs</a> component."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 146,
+							"name": "App",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Mobile <em>App</em> tabs for use in a mobile application layout."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonTabsStyle.ts",
+									"line": 8,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonTabsStyle.ts#L8"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "app"
+							}
+						},
+						{
+							"id": 145,
+							"name": "Web",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Typical tabs for use in a desktop web application."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonTabsStyle.ts",
+									"line": 6,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonTabsStyle.ts#L6"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "web"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								146,
+								145
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonTabsStyle.ts",
+							"line": 4,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonTabsStyle.ts#L4"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						144
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonTabsStyle.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonTabsStyle.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 147,
+			"name": "NeonToggleChipSize",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 148,
+					"name": "NeonToggleChipSize",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The size options for the <a href=\"/user-input/toggle-chip\">NeonToggleChip</a> component."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 149,
+							"name": "ExtraSmall",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Extra small, default is 24 rem."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonToggleChipSize.ts",
+									"line": 6,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonToggleChipSize.ts#L6"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "xs"
+							}
+						},
+						{
+							"id": 152,
+							"name": "Large",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Large, default is 48 rem."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonToggleChipSize.ts",
+									"line": 12,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonToggleChipSize.ts#L12"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "l"
+							}
+						},
+						{
+							"id": 151,
+							"name": "Medium",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Medium, default is 40 rem."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonToggleChipSize.ts",
+									"line": 10,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonToggleChipSize.ts#L10"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "m"
+							}
+						},
+						{
+							"id": 150,
+							"name": "Small",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Small, default is 32 rem."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonToggleChipSize.ts",
+									"line": 8,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonToggleChipSize.ts#L8"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "s"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								149,
+								152,
+								151,
+								150
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonToggleChipSize.ts",
+							"line": 4,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonToggleChipSize.ts#L4"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						148
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonToggleChipSize.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonToggleChipSize.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 153,
+			"name": "NeonToggleStyle",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 154,
+					"name": "NeonToggleStyle",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Describes the available <a href=\"/user-input/toggle\">NeonToggle</a> styles."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 156,
+							"name": "RadioButtons",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Traditional HTML radio button input style."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonToggleStyle.ts",
+									"line": 8,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonToggleStyle.ts#L8"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "radio-buttons"
+							}
+						},
+						{
+							"id": 155,
+							"name": "Toggle",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Toggle style which is a horizontal group of connected buttons with one active member."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonToggleStyle.ts",
+									"line": 6,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonToggleStyle.ts#L6"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "toggle"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								156,
+								155
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonToggleStyle.ts",
+							"line": 4,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonToggleStyle.ts#L4"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						154
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonToggleStyle.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonToggleStyle.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 157,
+			"name": "NeonTooltipStyle",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 158,
+					"name": "NeonTooltipStyle",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Describes the available <a href=\"/feedback/tooltip\">NeonTooltip</a> styles."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 160,
+							"name": "Popover",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Style for presenting longer, multi-line content."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonTooltipStyle.ts",
+									"line": 8,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonTooltipStyle.ts#L8"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "popover"
+							}
+						},
+						{
+							"id": 159,
+							"name": "Tooltip",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Tooltip style for very short (single line) content."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonTooltipStyle.ts",
+									"line": 6,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonTooltipStyle.ts#L6"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "tooltip"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								160,
+								159
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonTooltipStyle.ts",
+							"line": 4,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonTooltipStyle.ts#L4"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						158
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonTooltipStyle.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonTooltipStyle.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 161,
+			"name": "NeonVerticalPosition",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 162,
+					"name": "NeonVerticalPosition",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Describes vertical positioning of <a href=\"/feedback/alert\">NeonToast</a> notifications."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 164,
+							"name": "Bottom",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Position centred at bottom of the screen."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonVerticalPosition.ts",
+									"line": 8,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonVerticalPosition.ts#L8"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "bottom"
+							}
+						},
+						{
+							"id": 163,
+							"name": "Top",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Position centred at top of the screen."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonVerticalPosition.ts",
+									"line": 6,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonVerticalPosition.ts#L6"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "top"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								164,
+								163
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonVerticalPosition.ts",
+							"line": 4,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonVerticalPosition.ts#L4"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						162
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonVerticalPosition.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/enums/NeonVerticalPosition.ts#L1"
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Modules",
+			"children": [
+				1,
+				7,
+				13,
+				19,
+				24,
+				28,
+				38,
+				44,
+				55,
+				59,
+				69,
+				83,
+				90,
+				94,
+				98,
+				105,
+				111,
+				122,
+				127,
+				133,
+				139,
+				143,
+				147,
+				153,
+				157,
+				161
+			]
+		}
+	],
+	"packageName": "@aotearoan/neon",
+	"readme": [
+		{
+			"kind": "text",
+			"text": "![GitHub package.json version](https://img.shields.io/github/package-json/v/aotearoan/neon)\n![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/@aotearoan/neon)\n![GitHub last commit](https://img.shields.io/github/last-commit/aotearoan/neon)\n![npm](https://img.shields.io/npm/dt/@aotearoan/neon)\n![GitHub](https://img.shields.io/github/license/aotearoan/neon)\n\n## Documentation & Demo\n\nFull documentation is available on the [demo site](https://aotearoan.github.io/neon/).\n\n## Installation\n\nInstall with NPM:\n<pre>npm install @aotearoan/neon</pre>\nor yarn:\n<pre>yarn add @aotearoan/neon</pre>\n\n## Usage\n\n### Javascript/Typescript\n\nImport components and supporting classes like so:\n<pre>\nimport { NeonButton } from '@aotearoan/neon';\n\nexport default defineComponent({\n  name: 'SomeComponent',\n  components: {\n    NeonButton,\n  },\n  ...\n});\n</pre>\n\n### SASS\n\nTo import the theme:\n<pre>"
+		}
+	],
+	"symbolIdMap": {
+		"1": {
+			"sourceFileName": "src/common/enums/NeonAlertLevel.ts",
+			"qualifiedName": ""
+		},
+		"2": {
+			"sourceFileName": "src/common/enums/NeonAlertLevel.ts",
+			"qualifiedName": "NeonAlertLevel"
+		},
+		"3": {
+			"sourceFileName": "src/common/enums/NeonAlertLevel.ts",
+			"qualifiedName": "NeonAlertLevel.Info"
+		},
+		"4": {
+			"sourceFileName": "src/common/enums/NeonAlertLevel.ts",
+			"qualifiedName": "NeonAlertLevel.Success"
+		},
+		"5": {
+			"sourceFileName": "src/common/enums/NeonAlertLevel.ts",
+			"qualifiedName": "NeonAlertLevel.Warn"
+		},
+		"6": {
+			"sourceFileName": "src/common/enums/NeonAlertLevel.ts",
+			"qualifiedName": "NeonAlertLevel.Error"
+		},
+		"7": {
+			"sourceFileName": "src/common/enums/NeonAlertPlacement.ts",
+			"qualifiedName": ""
+		},
+		"8": {
+			"sourceFileName": "src/common/enums/NeonAlertPlacement.ts",
+			"qualifiedName": "NeonAlertPlacement"
+		},
+		"9": {
+			"sourceFileName": "src/common/enums/NeonAlertPlacement.ts",
+			"qualifiedName": "NeonAlertPlacement.TopLeft"
+		},
+		"10": {
+			"sourceFileName": "src/common/enums/NeonAlertPlacement.ts",
+			"qualifiedName": "NeonAlertPlacement.TopRight"
+		},
+		"11": {
+			"sourceFileName": "src/common/enums/NeonAlertPlacement.ts",
+			"qualifiedName": "NeonAlertPlacement.BottomLeft"
+		},
+		"12": {
+			"sourceFileName": "src/common/enums/NeonAlertPlacement.ts",
+			"qualifiedName": "NeonAlertPlacement.BottomRight"
+		},
+		"13": {
+			"sourceFileName": "src/common/enums/NeonButtonSize.ts",
+			"qualifiedName": ""
+		},
+		"14": {
+			"sourceFileName": "src/common/enums/NeonButtonSize.ts",
+			"qualifiedName": "NeonButtonSize"
+		},
+		"15": {
+			"sourceFileName": "src/common/enums/NeonButtonSize.ts",
+			"qualifiedName": "NeonButtonSize.Small"
+		},
+		"16": {
+			"sourceFileName": "src/common/enums/NeonButtonSize.ts",
+			"qualifiedName": "NeonButtonSize.Medium"
+		},
+		"17": {
+			"sourceFileName": "src/common/enums/NeonButtonSize.ts",
+			"qualifiedName": "NeonButtonSize.Large"
+		},
+		"18": {
+			"sourceFileName": "src/common/enums/NeonButtonSize.ts",
+			"qualifiedName": "NeonButtonSize.ExtraLarge"
+		},
+		"19": {
+			"sourceFileName": "src/common/enums/NeonButtonStyle.ts",
+			"qualifiedName": ""
+		},
+		"20": {
+			"sourceFileName": "src/common/enums/NeonButtonStyle.ts",
+			"qualifiedName": "NeonButtonStyle"
+		},
+		"21": {
+			"sourceFileName": "src/common/enums/NeonButtonStyle.ts",
+			"qualifiedName": "NeonButtonStyle.Solid"
+		},
+		"22": {
+			"sourceFileName": "src/common/enums/NeonButtonStyle.ts",
+			"qualifiedName": "NeonButtonStyle.Outline"
+		},
+		"23": {
+			"sourceFileName": "src/common/enums/NeonButtonStyle.ts",
+			"qualifiedName": "NeonButtonStyle.Text"
+		},
+		"24": {
+			"sourceFileName": "src/common/enums/NeonChipAction.ts",
+			"qualifiedName": ""
+		},
+		"25": {
+			"sourceFileName": "src/common/enums/NeonChipAction.ts",
+			"qualifiedName": "NeonChipAction"
+		},
+		"26": {
+			"sourceFileName": "src/common/enums/NeonChipAction.ts",
+			"qualifiedName": "NeonChipAction.Click"
+		},
+		"27": {
+			"sourceFileName": "src/common/enums/NeonChipAction.ts",
+			"qualifiedName": "NeonChipAction.Remove"
+		},
+		"28": {
+			"sourceFileName": "src/common/enums/NeonDropdownPlacement.ts",
+			"qualifiedName": ""
+		},
+		"29": {
+			"sourceFileName": "src/common/enums/NeonDropdownPlacement.ts",
+			"qualifiedName": "NeonDropdownPlacement"
+		},
+		"30": {
+			"sourceFileName": "src/common/enums/NeonDropdownPlacement.ts",
+			"qualifiedName": "NeonDropdownPlacement.TopLeft"
+		},
+		"31": {
+			"sourceFileName": "src/common/enums/NeonDropdownPlacement.ts",
+			"qualifiedName": "NeonDropdownPlacement.TopRight"
+		},
+		"32": {
+			"sourceFileName": "src/common/enums/NeonDropdownPlacement.ts",
+			"qualifiedName": "NeonDropdownPlacement.BottomLeft"
+		},
+		"33": {
+			"sourceFileName": "src/common/enums/NeonDropdownPlacement.ts",
+			"qualifiedName": "NeonDropdownPlacement.BottomRight"
+		},
+		"34": {
+			"sourceFileName": "src/common/enums/NeonDropdownPlacement.ts",
+			"qualifiedName": "NeonDropdownPlacement.LeftTop"
+		},
+		"35": {
+			"sourceFileName": "src/common/enums/NeonDropdownPlacement.ts",
+			"qualifiedName": "NeonDropdownPlacement.LeftBottom"
+		},
+		"36": {
+			"sourceFileName": "src/common/enums/NeonDropdownPlacement.ts",
+			"qualifiedName": "NeonDropdownPlacement.RightTop"
+		},
+		"37": {
+			"sourceFileName": "src/common/enums/NeonDropdownPlacement.ts",
+			"qualifiedName": "NeonDropdownPlacement.RightBottom"
+		},
+		"38": {
+			"sourceFileName": "src/common/enums/NeonDropdownStyle.ts",
+			"qualifiedName": ""
+		},
+		"39": {
+			"sourceFileName": "src/common/enums/NeonDropdownStyle.ts",
+			"qualifiedName": "NeonDropdownStyle"
+		},
+		"40": {
+			"sourceFileName": "src/common/enums/NeonDropdownStyle.ts",
+			"qualifiedName": "NeonDropdownStyle.SolidButton"
+		},
+		"41": {
+			"sourceFileName": "src/common/enums/NeonDropdownStyle.ts",
+			"qualifiedName": "NeonDropdownStyle.Text"
+		},
+		"42": {
+			"sourceFileName": "src/common/enums/NeonDropdownStyle.ts",
+			"qualifiedName": "NeonDropdownStyle.SquareBadge"
+		},
+		"43": {
+			"sourceFileName": "src/common/enums/NeonDropdownStyle.ts",
+			"qualifiedName": "NeonDropdownStyle.CircularBadge"
+		},
+		"44": {
+			"sourceFileName": "src/common/enums/NeonFunctionalColor.ts",
+			"qualifiedName": ""
+		},
+		"45": {
+			"sourceFileName": "src/common/enums/NeonFunctionalColor.ts",
+			"qualifiedName": "NeonFunctionalColor"
+		},
+		"46": {
+			"sourceFileName": "src/common/enums/NeonFunctionalColor.ts",
+			"qualifiedName": "NeonFunctionalColor.LowContrast"
+		},
+		"47": {
+			"sourceFileName": "src/common/enums/NeonFunctionalColor.ts",
+			"qualifiedName": "NeonFunctionalColor.Neutral"
+		},
+		"48": {
+			"sourceFileName": "src/common/enums/NeonFunctionalColor.ts",
+			"qualifiedName": "NeonFunctionalColor.HighContrast"
+		},
+		"49": {
+			"sourceFileName": "src/common/enums/NeonFunctionalColor.ts",
+			"qualifiedName": "NeonFunctionalColor.Brand"
+		},
+		"50": {
+			"sourceFileName": "src/common/enums/NeonFunctionalColor.ts",
+			"qualifiedName": "NeonFunctionalColor.Primary"
+		},
+		"51": {
+			"sourceFileName": "src/common/enums/NeonFunctionalColor.ts",
+			"qualifiedName": "NeonFunctionalColor.Info"
+		},
+		"52": {
+			"sourceFileName": "src/common/enums/NeonFunctionalColor.ts",
+			"qualifiedName": "NeonFunctionalColor.Success"
+		},
+		"53": {
+			"sourceFileName": "src/common/enums/NeonFunctionalColor.ts",
+			"qualifiedName": "NeonFunctionalColor.Warn"
+		},
+		"54": {
+			"sourceFileName": "src/common/enums/NeonFunctionalColor.ts",
+			"qualifiedName": "NeonFunctionalColor.Error"
+		},
+		"55": {
+			"sourceFileName": "src/common/enums/NeonHorizontalPosition.ts",
+			"qualifiedName": ""
+		},
+		"56": {
+			"sourceFileName": "src/common/enums/NeonHorizontalPosition.ts",
+			"qualifiedName": "NeonHorizontalPosition"
+		},
+		"57": {
+			"sourceFileName": "src/common/enums/NeonHorizontalPosition.ts",
+			"qualifiedName": "NeonHorizontalPosition.Left"
+		},
+		"58": {
+			"sourceFileName": "src/common/enums/NeonHorizontalPosition.ts",
+			"qualifiedName": "NeonHorizontalPosition.Right"
+		},
+		"59": {
+			"sourceFileName": "src/common/enums/NeonInputMode.ts",
+			"qualifiedName": ""
+		},
+		"60": {
+			"sourceFileName": "src/common/enums/NeonInputMode.ts",
+			"qualifiedName": "NeonInputMode"
+		},
+		"61": {
+			"sourceFileName": "src/common/enums/NeonInputMode.ts",
+			"qualifiedName": "NeonInputMode.None"
+		},
+		"62": {
+			"sourceFileName": "src/common/enums/NeonInputMode.ts",
+			"qualifiedName": "NeonInputMode.Text"
+		},
+		"63": {
+			"sourceFileName": "src/common/enums/NeonInputMode.ts",
+			"qualifiedName": "NeonInputMode.Decimal"
+		},
+		"64": {
+			"sourceFileName": "src/common/enums/NeonInputMode.ts",
+			"qualifiedName": "NeonInputMode.Numeric"
+		},
+		"65": {
+			"sourceFileName": "src/common/enums/NeonInputMode.ts",
+			"qualifiedName": "NeonInputMode.Tel"
+		},
+		"66": {
+			"sourceFileName": "src/common/enums/NeonInputMode.ts",
+			"qualifiedName": "NeonInputMode.Search"
+		},
+		"67": {
+			"sourceFileName": "src/common/enums/NeonInputMode.ts",
+			"qualifiedName": "NeonInputMode.Email"
+		},
+		"68": {
+			"sourceFileName": "src/common/enums/NeonInputMode.ts",
+			"qualifiedName": "NeonInputMode.Url"
+		},
+		"69": {
+			"sourceFileName": "src/common/enums/NeonInputType.ts",
+			"qualifiedName": ""
+		},
+		"70": {
+			"sourceFileName": "src/common/enums/NeonInputType.ts",
+			"qualifiedName": "NeonInputType"
+		},
+		"71": {
+			"sourceFileName": "src/common/enums/NeonInputType.ts",
+			"qualifiedName": "NeonInputType.Date"
+		},
+		"72": {
+			"sourceFileName": "src/common/enums/NeonInputType.ts",
+			"qualifiedName": "NeonInputType.DateTime"
+		},
+		"73": {
+			"sourceFileName": "src/common/enums/NeonInputType.ts",
+			"qualifiedName": "NeonInputType.Email"
+		},
+		"74": {
+			"sourceFileName": "src/common/enums/NeonInputType.ts",
+			"qualifiedName": "NeonInputType.File"
+		},
+		"75": {
+			"sourceFileName": "src/common/enums/NeonInputType.ts",
+			"qualifiedName": "NeonInputType.Number"
+		},
+		"76": {
+			"sourceFileName": "src/common/enums/NeonInputType.ts",
+			"qualifiedName": "NeonInputType.Password"
+		},
+		"77": {
+			"sourceFileName": "src/common/enums/NeonInputType.ts",
+			"qualifiedName": "NeonInputType.Range"
+		},
+		"78": {
+			"sourceFileName": "src/common/enums/NeonInputType.ts",
+			"qualifiedName": "NeonInputType.Search"
+		},
+		"79": {
+			"sourceFileName": "src/common/enums/NeonInputType.ts",
+			"qualifiedName": "NeonInputType.Tel"
+		},
+		"80": {
+			"sourceFileName": "src/common/enums/NeonInputType.ts",
+			"qualifiedName": "NeonInputType.Text"
+		},
+		"81": {
+			"sourceFileName": "src/common/enums/NeonInputType.ts",
+			"qualifiedName": "NeonInputType.Time"
+		},
+		"82": {
+			"sourceFileName": "src/common/enums/NeonInputType.ts",
+			"qualifiedName": "NeonInputType.Url"
+		},
+		"83": {
+			"sourceFileName": "src/common/enums/NeonLabelSize.ts",
+			"qualifiedName": ""
+		},
+		"84": {
+			"sourceFileName": "src/common/enums/NeonLabelSize.ts",
+			"qualifiedName": "NeonLabelSize"
+		},
+		"85": {
+			"sourceFileName": "src/common/enums/NeonLabelSize.ts",
+			"qualifiedName": "NeonLabelSize.ExtraExtraSmall"
+		},
+		"86": {
+			"sourceFileName": "src/common/enums/NeonLabelSize.ts",
+			"qualifiedName": "NeonLabelSize.ExtraSmall"
+		},
+		"87": {
+			"sourceFileName": "src/common/enums/NeonLabelSize.ts",
+			"qualifiedName": "NeonLabelSize.Small"
+		},
+		"88": {
+			"sourceFileName": "src/common/enums/NeonLabelSize.ts",
+			"qualifiedName": "NeonLabelSize.Medium"
+		},
+		"89": {
+			"sourceFileName": "src/common/enums/NeonLabelSize.ts",
+			"qualifiedName": "NeonLabelSize.Large"
+		},
+		"90": {
+			"sourceFileName": "src/common/enums/NeonMode.ts",
+			"qualifiedName": ""
+		},
+		"91": {
+			"sourceFileName": "src/common/enums/NeonMode.ts",
+			"qualifiedName": "NeonMode"
+		},
+		"92": {
+			"sourceFileName": "src/common/enums/NeonMode.ts",
+			"qualifiedName": "NeonMode.Light"
+		},
+		"93": {
+			"sourceFileName": "src/common/enums/NeonMode.ts",
+			"qualifiedName": "NeonMode.Dark"
+		},
+		"94": {
+			"sourceFileName": "src/common/enums/NeonOrientation.ts",
+			"qualifiedName": ""
+		},
+		"95": {
+			"sourceFileName": "src/common/enums/NeonOrientation.ts",
+			"qualifiedName": "NeonOrientation"
+		},
+		"96": {
+			"sourceFileName": "src/common/enums/NeonOrientation.ts",
+			"qualifiedName": "NeonOrientation.Vertical"
+		},
+		"97": {
+			"sourceFileName": "src/common/enums/NeonOrientation.ts",
+			"qualifiedName": "NeonOrientation.Horizontal"
+		},
+		"98": {
+			"sourceFileName": "src/common/enums/NeonOutlineStyle.ts",
+			"qualifiedName": ""
+		},
+		"99": {
+			"sourceFileName": "src/common/enums/NeonOutlineStyle.ts",
+			"qualifiedName": "NeonOutlineStyle"
+		},
+		"100": {
+			"sourceFileName": "src/common/enums/NeonOutlineStyle.ts",
+			"qualifiedName": "NeonOutlineStyle.None"
+		},
+		"101": {
+			"sourceFileName": "src/common/enums/NeonOutlineStyle.ts",
+			"qualifiedName": "NeonOutlineStyle.Text"
+		},
+		"102": {
+			"sourceFileName": "src/common/enums/NeonOutlineStyle.ts",
+			"qualifiedName": "NeonOutlineStyle.Border"
+		},
+		"103": {
+			"sourceFileName": "src/common/enums/NeonOutlineStyle.ts",
+			"qualifiedName": "NeonOutlineStyle.Background"
+		},
+		"104": {
+			"sourceFileName": "src/common/enums/NeonOutlineStyle.ts",
+			"qualifiedName": "NeonOutlineStyle.Bullet"
+		},
+		"105": {
+			"sourceFileName": "src/common/enums/NeonPosition.ts",
+			"qualifiedName": ""
+		},
+		"106": {
+			"sourceFileName": "src/common/enums/NeonPosition.ts",
+			"qualifiedName": "NeonPosition"
+		},
+		"107": {
+			"sourceFileName": "src/common/enums/NeonPosition.ts",
+			"qualifiedName": "NeonPosition.Top"
+		},
+		"108": {
+			"sourceFileName": "src/common/enums/NeonPosition.ts",
+			"qualifiedName": "NeonPosition.Left"
+		},
+		"109": {
+			"sourceFileName": "src/common/enums/NeonPosition.ts",
+			"qualifiedName": "NeonPosition.Bottom"
+		},
+		"110": {
+			"sourceFileName": "src/common/enums/NeonPosition.ts",
+			"qualifiedName": "NeonPosition.Right"
+		},
+		"111": {
+			"sourceFileName": "src/common/enums/NeonResponsive.ts",
+			"qualifiedName": ""
+		},
+		"112": {
+			"sourceFileName": "src/common/enums/NeonResponsive.ts",
+			"qualifiedName": "NeonResponsive"
+		},
+		"113": {
+			"sourceFileName": "src/common/enums/NeonResponsive.ts",
+			"qualifiedName": "NeonResponsive.All"
+		},
+		"114": {
+			"sourceFileName": "src/common/enums/NeonResponsive.ts",
+			"qualifiedName": "NeonResponsive.Desktop"
+		},
+		"115": {
+			"sourceFileName": "src/common/enums/NeonResponsive.ts",
+			"qualifiedName": "NeonResponsive.DesktopLarge"
+		},
+		"116": {
+			"sourceFileName": "src/common/enums/NeonResponsive.ts",
+			"qualifiedName": "NeonResponsive.LargerThanTablet"
+		},
+		"117": {
+			"sourceFileName": "src/common/enums/NeonResponsive.ts",
+			"qualifiedName": "NeonResponsive.Tablet"
+		},
+		"118": {
+			"sourceFileName": "src/common/enums/NeonResponsive.ts",
+			"qualifiedName": "NeonResponsive.LargerThanMobileLarge"
+		},
+		"119": {
+			"sourceFileName": "src/common/enums/NeonResponsive.ts",
+			"qualifiedName": "NeonResponsive.MobileLarge"
+		},
+		"120": {
+			"sourceFileName": "src/common/enums/NeonResponsive.ts",
+			"qualifiedName": "NeonResponsive.LargerThanMobile"
+		},
+		"121": {
+			"sourceFileName": "src/common/enums/NeonResponsive.ts",
+			"qualifiedName": "NeonResponsive.Mobile"
+		},
+		"122": {
+			"sourceFileName": "src/common/enums/NeonSize.ts",
+			"qualifiedName": ""
+		},
+		"123": {
+			"sourceFileName": "src/common/enums/NeonSize.ts",
+			"qualifiedName": "NeonSize"
+		},
+		"124": {
+			"sourceFileName": "src/common/enums/NeonSize.ts",
+			"qualifiedName": "NeonSize.Small"
+		},
+		"125": {
+			"sourceFileName": "src/common/enums/NeonSize.ts",
+			"qualifiedName": "NeonSize.Medium"
+		},
+		"126": {
+			"sourceFileName": "src/common/enums/NeonSize.ts",
+			"qualifiedName": "NeonSize.Large"
+		},
+		"127": {
+			"sourceFileName": "src/common/enums/NeonSplashLoaderSize.ts",
+			"qualifiedName": ""
+		},
+		"128": {
+			"sourceFileName": "src/common/enums/NeonSplashLoaderSize.ts",
+			"qualifiedName": "NeonSplashLoaderSize"
+		},
+		"129": {
+			"sourceFileName": "src/common/enums/NeonSplashLoaderSize.ts",
+			"qualifiedName": "NeonSplashLoaderSize.Small"
+		},
+		"130": {
+			"sourceFileName": "src/common/enums/NeonSplashLoaderSize.ts",
+			"qualifiedName": "NeonSplashLoaderSize.Medium"
+		},
+		"131": {
+			"sourceFileName": "src/common/enums/NeonSplashLoaderSize.ts",
+			"qualifiedName": "NeonSplashLoaderSize.Large"
+		},
+		"132": {
+			"sourceFileName": "src/common/enums/NeonSplashLoaderSize.ts",
+			"qualifiedName": "NeonSplashLoaderSize.ExtraLarge"
+		},
+		"133": {
+			"sourceFileName": "src/common/enums/NeonState.ts",
+			"qualifiedName": ""
+		},
+		"134": {
+			"sourceFileName": "src/common/enums/NeonState.ts",
+			"qualifiedName": "NeonState"
+		},
+		"135": {
+			"sourceFileName": "src/common/enums/NeonState.ts",
+			"qualifiedName": "NeonState.Ready"
+		},
+		"136": {
+			"sourceFileName": "src/common/enums/NeonState.ts",
+			"qualifiedName": "NeonState.Loading"
+		},
+		"137": {
+			"sourceFileName": "src/common/enums/NeonState.ts",
+			"qualifiedName": "NeonState.Success"
+		},
+		"138": {
+			"sourceFileName": "src/common/enums/NeonState.ts",
+			"qualifiedName": "NeonState.Error"
+		},
+		"139": {
+			"sourceFileName": "src/common/enums/NeonSwitchStyle.ts",
+			"qualifiedName": ""
+		},
+		"140": {
+			"sourceFileName": "src/common/enums/NeonSwitchStyle.ts",
+			"qualifiedName": "NeonSwitchStyle"
+		},
+		"141": {
+			"sourceFileName": "src/common/enums/NeonSwitchStyle.ts",
+			"qualifiedName": "NeonSwitchStyle.Switch"
+		},
+		"142": {
+			"sourceFileName": "src/common/enums/NeonSwitchStyle.ts",
+			"qualifiedName": "NeonSwitchStyle.Checkbox"
+		},
+		"143": {
+			"sourceFileName": "src/common/enums/NeonTabsStyle.ts",
+			"qualifiedName": ""
+		},
+		"144": {
+			"sourceFileName": "src/common/enums/NeonTabsStyle.ts",
+			"qualifiedName": "NeonTabsStyle"
+		},
+		"145": {
+			"sourceFileName": "src/common/enums/NeonTabsStyle.ts",
+			"qualifiedName": "NeonTabsStyle.Web"
+		},
+		"146": {
+			"sourceFileName": "src/common/enums/NeonTabsStyle.ts",
+			"qualifiedName": "NeonTabsStyle.App"
+		},
+		"147": {
+			"sourceFileName": "src/common/enums/NeonToggleChipSize.ts",
+			"qualifiedName": ""
+		},
+		"148": {
+			"sourceFileName": "src/common/enums/NeonToggleChipSize.ts",
+			"qualifiedName": "NeonToggleChipSize"
+		},
+		"149": {
+			"sourceFileName": "src/common/enums/NeonToggleChipSize.ts",
+			"qualifiedName": "NeonToggleChipSize.ExtraSmall"
+		},
+		"150": {
+			"sourceFileName": "src/common/enums/NeonToggleChipSize.ts",
+			"qualifiedName": "NeonToggleChipSize.Small"
+		},
+		"151": {
+			"sourceFileName": "src/common/enums/NeonToggleChipSize.ts",
+			"qualifiedName": "NeonToggleChipSize.Medium"
+		},
+		"152": {
+			"sourceFileName": "src/common/enums/NeonToggleChipSize.ts",
+			"qualifiedName": "NeonToggleChipSize.Large"
+		},
+		"153": {
+			"sourceFileName": "src/common/enums/NeonToggleStyle.ts",
+			"qualifiedName": ""
+		},
+		"154": {
+			"sourceFileName": "src/common/enums/NeonToggleStyle.ts",
+			"qualifiedName": "NeonToggleStyle"
+		},
+		"155": {
+			"sourceFileName": "src/common/enums/NeonToggleStyle.ts",
+			"qualifiedName": "NeonToggleStyle.Toggle"
+		},
+		"156": {
+			"sourceFileName": "src/common/enums/NeonToggleStyle.ts",
+			"qualifiedName": "NeonToggleStyle.RadioButtons"
+		},
+		"157": {
+			"sourceFileName": "src/common/enums/NeonTooltipStyle.ts",
+			"qualifiedName": ""
+		},
+		"158": {
+			"sourceFileName": "src/common/enums/NeonTooltipStyle.ts",
+			"qualifiedName": "NeonTooltipStyle"
+		},
+		"159": {
+			"sourceFileName": "src/common/enums/NeonTooltipStyle.ts",
+			"qualifiedName": "NeonTooltipStyle.Tooltip"
+		},
+		"160": {
+			"sourceFileName": "src/common/enums/NeonTooltipStyle.ts",
+			"qualifiedName": "NeonTooltipStyle.Popover"
+		},
+		"161": {
+			"sourceFileName": "src/common/enums/NeonVerticalPosition.ts",
+			"qualifiedName": ""
+		},
+		"162": {
+			"sourceFileName": "src/common/enums/NeonVerticalPosition.ts",
+			"qualifiedName": "NeonVerticalPosition"
+		},
+		"163": {
+			"sourceFileName": "src/common/enums/NeonVerticalPosition.ts",
+			"qualifiedName": "NeonVerticalPosition.Top"
+		},
+		"164": {
+			"sourceFileName": "src/common/enums/NeonVerticalPosition.ts",
+			"qualifiedName": "NeonVerticalPosition.Bottom"
+		}
+	}
+}

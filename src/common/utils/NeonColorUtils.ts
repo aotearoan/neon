@@ -23,11 +23,11 @@ export class NeonColorUtils {
   /**
    * Calculate luminance from RGB color Array.
    *
-   * @param r {number} Red value 0-255.
-   * @param g {number} Green value 0-255.
-   * @param b {number} Blue value 0-255.
+   * @param r Red value 0-255.
+   * @param g Green value 0-255.
+   * @param b Blue value 0-255.
    *
-   * @returns {number} The luminance.
+   * @returns The luminance.
    */
   public static luminance([r, g, b]: Array<number>) {
     const a = [r, g, b].map((v) => {
@@ -40,9 +40,9 @@ export class NeonColorUtils {
   /**
    * Hex color string to RGB Array.
    *
-   * @param hexString {string} Hex color string to transform.
+   * @param hexString Hex color string to transform.
    *
-   * @returns {Array<number>} RGB color array.
+   * @returns RGB color array.
    */
   public static toRgb(hexString: string): Array<number> {
     return [
@@ -55,11 +55,11 @@ export class NeonColorUtils {
   /**
    * Convert RGB color array to xyz color space.
    *
-   * @param r {number} Red value 0-255.
-   * @param g {number} Green value 0-255.
-   * @param b {number} Blue value 0-255.
+   * @param r Red value 0-255.
+   * @param g Green value 0-255.
+   * @param b Blue value 0-255.
    *
-   * @returns {Array<number>} xyz color value.
+   * @returns xyz color value.
    */
   public static rgbToXyz(rgb: Array<number>): Array<number> {
     const [r, g, b] = rgb;
@@ -77,11 +77,11 @@ export class NeonColorUtils {
   /**
    * Convert RGB color array to Lab color space.
    *
-   * @param r {number} Red value 0-255.
-   * @param g {number} Green value 0-255.
-   * @param b {number} Blue value 0-255.
+   * @param r Red value 0-255.
+   * @param g Green value 0-255.
+   * @param b Blue value 0-255.
    *
-   * @returns {Array<number>} Lab color value.
+   * @returns Lab color value.
    */
   public static rgbToLab(rgb: Array<number>): Array<number> {
     const [x, y, z] = NeonColorUtils.rgbToXyz(rgb);
@@ -92,11 +92,11 @@ export class NeonColorUtils {
   /**
    * Convert RGB color array to Hcl color space.
    *
-   * @param r {number} Red value 0-255.
-   * @param g {number} Green value 0-255.
-   * @param b {number} Blue value 0-255.
+   * @param r Red value 0-255.
+   * @param g Green value 0-255.
+   * @param b Blue value 0-255.
    *
-   * @returns {Array<number>} Hcl color value.
+   * @returns Hcl color value.
    */
   public static rgbToHcl(rgb: Array<number>): Array<number> {
     const lab = NeonColorUtils.rgbToLab(rgb);
@@ -106,8 +106,8 @@ export class NeonColorUtils {
   /**
    * Check two hex colors for their contrast accessibility.
    *
-   * @param hex1 {string} Hex color 1.
-   * @param hex2 {string} Hex color 2.
+   * @param hex1 Hex color 1.
+   * @param hex2 Hex color 2.
    *
    * @returns {NeonContrastAccessibility} Accessibility data.
    */
@@ -141,10 +141,10 @@ export class NeonColorUtils {
   /**
    * Calculate the contrast ratio between two colors.
    *
-   * @param rgb1 {Array<number>} First color.
-   * @param rgb2 {Array<number>} Second color.
+   * @param rgb1 First color.
+   * @param rgb2 Second color.
    *
-   * @returns {number} The contrast ratio (x:1).
+   * @returns The contrast ratio (x:1).
    */
   public static contrast(rgb1: Array<number>, rgb2: Array<number>) {
     const lum1 = NeonColorUtils.luminance(rgb1);
@@ -157,11 +157,11 @@ export class NeonColorUtils {
   /**
    * Convert RGB color array to hex color string.
    *
-   * @param r {number} Red value 0-255.
-   * @param g {number} Green value 0-255.
-   * @param b {number} Blue value 0-255.
+   * @param r Red value 0-255.
+   * @param g Green value 0-255.
+   * @param b Blue value 0-255.
    *
-   * @returns {string} hex color string.
+   * @returns hex color string.
    */
   public static rgbToHex(rgb: Array<number>): string {
     const [r, g, b] = rgb;
@@ -178,11 +178,11 @@ export class NeonColorUtils {
    * steps this will search for the closest match to the reference color that meets at least AA contrast requirements.
    * The L2-L5 & D2-D5 steps are then generated based on a Hcl curve.
    *
-   * @param referenceColor {string} Hex string of the reference color from which to generate the palette.
-   * @param darkTextHex {string} The dark text color hex string for calculating the contrast ratio for L1-L5 steps.
-   * @param lightTextHex {string} The light text color hex string for calculating the contrast ratio for D1-D5 steps.
+   * @param referenceColor Hex string of the reference color from which to generate the palette.
+   * @param darkTextHex The dark text color hex string for calculating the contrast ratio for L1-L5 steps.
+   * @param lightTextHex The light text color hex string for calculating the contrast ratio for D1-D5 steps.
    *
-   * @returns {Record<string, string>} A map of the palette's color steps to hex values.
+   * @returns A map of the palette's color steps to hex values.
    */
   public static generatePalette(
     referenceColor: string,

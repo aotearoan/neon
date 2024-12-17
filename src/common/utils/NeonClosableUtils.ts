@@ -10,8 +10,8 @@ export class NeonClosableUtils {
   /**
    * Initialise utility to listen to keyboard, mouse & touch events.
    *
-   * @param target {HTMLElement} The popup <em>closable</em> element.
-   * @param closeCallback {() => void} Callback function triggered when an event fires that should close the target
+   * @param target The popup <em>closable</em> element.
+   * @param closeCallback Callback function triggered when an event fires that should close the target
    * element.
    */
   public constructor(target: HTMLElement, closeCallback: () => void) {
