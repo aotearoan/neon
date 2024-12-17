@@ -48,7 +48,15 @@ import user from '@/common/icons/user.svg';
 import visibilityOff from '@/common/icons/visibility-off.svg';
 import visibilityOn from '@/common/icons/visibility-on.svg';
 
+/**
+ * A helper for initialising the provided set of Neon icons with the
+ * <a href="/utils/NeonIconRegistry">NeonIconRegistry</a>.
+ */
 export class RegisterIcons {
+  /**
+   * Register all Neon default icons in the NeonIconRegistry. Call this in an app's <em>main.ts</em> to use Neon's
+   * provided icons.
+   */
   public static register() {
     NeonIconRegistry.addIcon('align-center', alignCenter);
     NeonIconRegistry.addIcon('align-left', alignLeft);

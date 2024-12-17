@@ -1,6 +1,13 @@
 import { NeonResponsive } from '../enums/NeonResponsive';
 
+/**
+ * Responsive media query utilities.
+ */
 export class NeonResponsiveUtils {
+  /**
+   * The defined list of Neon responsive breakpoints. This can be used with matchMedia queries in javascript to respond
+   * to layout changes.
+   */
   public static readonly breakpoints: Record<NeonResponsive, string> = Object.freeze({
     [NeonResponsive.All]: '', // only use all on its own, never in combination with other breakpoints
     [NeonResponsive.DesktopLarge]: '(min-width: 1440px)',

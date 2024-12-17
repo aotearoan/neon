@@ -1,6 +1,12 @@
+/**
+ * Utility that provides application clipboard support.
+ */
 export class NeonClipboardSupport {
-  public supportClipboard = false;
+  private supportClipboard = false;
 
+  /**
+   * Initialise utility class & check if browser clipboard support is enabled.
+   */
   public constructor() {
     const permissions = navigator.permissions;
     if (permissions) {
@@ -17,6 +23,13 @@ export class NeonClipboardSupport {
     }
   }
 
+  /**
+   * Copy provided string to the clipboard if support is enabled.
+   *
+   * @param value {string} The value to copy.
+   *
+   * @returns {Promise<void>>} A promise indicating when the copy to clipboard is complete.
+   */
   public copyTo(value: string): Promise<void> {
     return this.supportClipboard
       ? navigator.clipboard.writeText(value)
