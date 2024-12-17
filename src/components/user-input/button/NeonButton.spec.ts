@@ -1,5 +1,5 @@
 import type { RenderResult } from '@testing-library/vue';
-import { render } from '@testing-library/vue';
+import { fireEvent, render } from '@testing-library/vue';
 import NeonButton from './NeonButton.vue';
 import { NeonButtonSize } from '@/common/enums/NeonButtonSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
@@ -180,5 +180,20 @@ describe('NeonButton', () => {
     const { html, rerender } = harness;
     await rerender({ icon, indicator: true, indicatorExpanded: true });
     expect(html()).toMatch('neon-expansion-indicator--expanded');
+  });
+
+  it('emits click event on click', async () => {
+    const { getByText, emitted } = harness;
+    await fireEvent.click(getByText(label));
+    expect(emitted().click).toBeDefined();
+  });
+
+  it('blurs element on click', async () => {
+    const { getByText } = harness;
+    const button = getByText(label).parentElement as HTMLButtonElement;
+    expect(button).toBeDefined();
+    button.blur = jest.fn();
+    await fireEvent.click(getByText(label));
+    expect(button.blur).toHaveBeenCalled();
   });
 });

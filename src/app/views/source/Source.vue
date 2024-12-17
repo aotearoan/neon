@@ -2,7 +2,7 @@
   <neon-card v-if="classDocs" class="source-page">
     <neon-card-header>
       <neon-inline gap="m">
-        <h1 class="neon-h3">{{ classDocs.name.split("/").pop() }}</h1>
+        <h1 class="neon-h3">{{ classDocs.name.split('/').pop() }}</h1>
         <neon-button
           :circular="true"
           :href="ghLink"
@@ -17,7 +17,7 @@
     </neon-card-header>
     <neon-card-body v-if="classDocs.children?.[0]?.comment">
       <p
-        v-for="(summary, index) in (classDocs.children?.[0]?.comment?.summary || [])"
+        v-for="(summary, index) in classDocs.children?.[0]?.comment?.summary || []"
         :key="index"
         class="source-page__summary"
         v-html="summary.text"
@@ -27,7 +27,7 @@
     <neon-card-body v-if="isEnum">
       <h2 class="neon-h4">Values</h2>
       <neon-stack
-        v-for="enumValue in (classDocs.children?.[0]?.children || [])"
+        v-for="enumValue in classDocs.children?.[0]?.children || []"
         :key="enumValue.name"
         class="source-page__property"
         gap="m"
@@ -50,7 +50,7 @@
     <neon-card-body v-if="isModel">
       <h2 class="neon-h4">Fields</h2>
       <neon-stack
-        v-for="modelValue in (classDocs.children?.[0]?.children || [])"
+        v-for="modelValue in classDocs.children?.[0]?.children || []"
         :key="modelValue.name"
         class="source-page__property"
         gap="m"
@@ -73,7 +73,7 @@
 
     <neon-card-body v-if="isUtility">
       <h2 class="neon-h4">API</h2>
-      <template v-for="member in (classDocs.children?.[0]?.children || [])">
+      <template v-for="member in classDocs.children?.[0]?.children || []">
         <neon-stack v-if="displayMember(member)" :key="member.name" class="source-page__property" gap="m">
           <neon-stack gap="s">
             <neon-inline v-if="member.flags" gap="s">
