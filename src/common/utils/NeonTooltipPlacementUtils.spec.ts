@@ -1,5 +1,5 @@
 import { NeonTooltipPlacementUtils } from './NeonTooltipPlacementUtils';
-import { NeonPlacement } from '../enums/NeonPlacement';
+import { NeonPosition } from '../enums/NeonPosition';
 
 describe('NeonTooltipPlacementUtils', () => {
   beforeEach(() => {
@@ -31,10 +31,10 @@ describe('NeonTooltipPlacementUtils', () => {
       offsetHeight: 100,
       offsetWidth: 100,
     };
-    const placement = NeonPlacement.Bottom;
+    const placement = NeonPosition.Bottom;
     // when / then
     expect(NeonTooltipPlacementUtils.calculatePlacement(triggerElement, contentElement, placement)).toEqual(
-      NeonPlacement.Bottom,
+      NeonPosition.Bottom,
     );
   });
 
@@ -55,10 +55,10 @@ describe('NeonTooltipPlacementUtils', () => {
       offsetHeight: 100,
       offsetWidth: 100,
     };
-    const placement = NeonPlacement.Top;
+    const placement = NeonPosition.Top;
     // when / then
     expect(NeonTooltipPlacementUtils.calculatePlacement(triggerElement, contentElement, placement)).toEqual(
-      NeonPlacement.Top,
+      NeonPosition.Top,
     );
   });
 
@@ -79,10 +79,10 @@ describe('NeonTooltipPlacementUtils', () => {
       offsetHeight: 100,
       offsetWidth: 100,
     };
-    const placement = NeonPlacement.Right;
+    const placement = NeonPosition.Right;
     // when / then
     expect(NeonTooltipPlacementUtils.calculatePlacement(triggerElement, contentElement, placement)).toEqual(
-      NeonPlacement.Right,
+      NeonPosition.Right,
     );
   });
 
@@ -103,10 +103,10 @@ describe('NeonTooltipPlacementUtils', () => {
       offsetHeight: 100,
       offsetWidth: 100,
     };
-    const placement = NeonPlacement.Left;
+    const placement = NeonPosition.Left;
     // when / then
     expect(NeonTooltipPlacementUtils.calculatePlacement(triggerElement, contentElement, placement)).toEqual(
-      NeonPlacement.Left,
+      NeonPosition.Left,
     );
   });
 
@@ -134,11 +134,11 @@ describe('NeonTooltipPlacementUtils', () => {
       offsetHeight: 40,
       offsetWidth: 200,
     };
-    const placement = NeonPlacement.Bottom;
+    const placement = NeonPosition.Bottom;
     // when / then
     expect(
       NeonTooltipPlacementUtils.calculatePlacement(triggerElement, contentElement, placement, placementContainer),
-    ).toEqual(NeonPlacement.Top);
+    ).toEqual(NeonPosition.Top);
   });
 
   it('calculate same when too large', () => {
@@ -165,10 +165,10 @@ describe('NeonTooltipPlacementUtils', () => {
       offsetHeight: 4000,
       offsetWidth: 4000,
     };
-    const placement = NeonPlacement.Bottom;
+    const placement = NeonPosition.Bottom;
     // when / then
     expect(
       NeonTooltipPlacementUtils.calculatePlacement(triggerElement, contentElement, placement, placementContainer),
-    ).toEqual(NeonPlacement.Bottom);
+    ).toEqual(NeonPosition.Bottom);
   });
 });

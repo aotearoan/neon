@@ -1,5 +1,5 @@
 import { defineComponent, ref } from 'vue';
-import { NeonPlacement } from '@/common/enums/NeonPlacement';
+import { NeonPosition } from '@/common/enums/NeonPosition';
 import { NeonTooltipStyle } from '@/common/enums/NeonTooltipStyle';
 import { NeonTooltipPlacementUtils } from '@/common/utils/NeonTooltipPlacementUtils';
 import { NeonOutlineStyle } from '@/common/enums/NeonOutlineStyle';
@@ -22,7 +22,7 @@ export default defineComponent({
     /**
      * Placement of the tooltip contents.
      */
-    placement: { type: String as () => NeonPlacement, default: NeonPlacement.Top },
+    placement: { type: String as () => NeonPosition, default: NeonPosition.Top },
     /**
      * Style of the tooltip, use <em>Tooltip</em> for a simple tooltip, use <em>Popover</em> for larger more complex
      * content.
@@ -45,7 +45,7 @@ export default defineComponent({
   setup(props) {
     const tooltip = ref<HTMLElement | null>(null);
     const content = ref<HTMLElement | null>(null);
-    const tooltipPlacement = ref<NeonPlacement | null>(props.placement);
+    const tooltipPlacement = ref<NeonPosition | null>(props.placement);
     const open = ref(false);
 
     const recalculatePlacement = () => {

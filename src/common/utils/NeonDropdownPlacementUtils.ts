@@ -1,5 +1,5 @@
 import { NeonDropdownPlacementObject } from '../models/NeonDropdownPlacementObject';
-import { NeonPlacement } from '../enums/NeonPlacement';
+import { NeonPosition } from '../enums/NeonPosition';
 import type { NeonDropdownPlacement } from '../enums/NeonDropdownPlacement';
 import type { NeonAvailableSpace } from '../models/NeonAvailableSpace';
 import { NeonPlacementUtils } from './NeonPlacementUtils';
@@ -58,15 +58,15 @@ export class NeonDropdownPlacementUtils {
     placement: NeonDropdownPlacementObject,
   ) {
     switch (placement.majorPlacement) {
-      case NeonPlacement.Top:
-      case NeonPlacement.Bottom:
+      case NeonPosition.Top:
+      case NeonPosition.Bottom:
         return (
           contentElement.offsetHeight <= availableMajorSpace[placement.majorPlacement] &&
           !!placement.minorPlacement &&
           contentElement.offsetWidth <= availableMinorSpace[placement.minorPlacement]
         );
-      case NeonPlacement.Left:
-      case NeonPlacement.Right:
+      case NeonPosition.Left:
+      case NeonPosition.Right:
         return (
           contentElement.offsetWidth <= availableMajorSpace[placement.majorPlacement] &&
           !!placement.minorPlacement &&

@@ -1,53 +1,53 @@
-import { NeonPlacement } from '../enums/NeonPlacement';
+import { NeonPosition } from '../enums/NeonPosition';
 import { NeonDropdownPlacement } from '../enums/NeonDropdownPlacement';
 
 export class NeonDropdownPlacementObject {
   public static TopLeft = new NeonDropdownPlacementObject(
     NeonDropdownPlacement.TopLeft,
-    NeonPlacement.Top,
-    NeonPlacement.Left,
+    NeonPosition.Top,
+    NeonPosition.Left,
   );
 
   public static TopRight = new NeonDropdownPlacementObject(
     NeonDropdownPlacement.TopRight,
-    NeonPlacement.Top,
-    NeonPlacement.Right,
+    NeonPosition.Top,
+    NeonPosition.Right,
   );
 
   public static BottomLeft = new NeonDropdownPlacementObject(
     NeonDropdownPlacement.BottomLeft,
-    NeonPlacement.Bottom,
-    NeonPlacement.Left,
+    NeonPosition.Bottom,
+    NeonPosition.Left,
   );
 
   public static BottomRight = new NeonDropdownPlacementObject(
     NeonDropdownPlacement.BottomRight,
-    NeonPlacement.Bottom,
-    NeonPlacement.Right,
+    NeonPosition.Bottom,
+    NeonPosition.Right,
   );
 
   public static LeftTop = new NeonDropdownPlacementObject(
     NeonDropdownPlacement.LeftTop,
-    NeonPlacement.Left,
-    NeonPlacement.Top,
+    NeonPosition.Left,
+    NeonPosition.Top,
   );
 
   public static LeftBottom = new NeonDropdownPlacementObject(
     NeonDropdownPlacement.LeftBottom,
-    NeonPlacement.Left,
-    NeonPlacement.Bottom,
+    NeonPosition.Left,
+    NeonPosition.Bottom,
   );
 
   public static RightTop = new NeonDropdownPlacementObject(
     NeonDropdownPlacement.RightTop,
-    NeonPlacement.Right,
-    NeonPlacement.Top,
+    NeonPosition.Right,
+    NeonPosition.Top,
   );
 
   public static RightBottom = new NeonDropdownPlacementObject(
     NeonDropdownPlacement.RightBottom,
-    NeonPlacement.Right,
-    NeonPlacement.Bottom,
+    NeonPosition.Right,
+    NeonPosition.Bottom,
   );
 
   private static PLACEMENTS = {
@@ -84,10 +84,10 @@ export class NeonDropdownPlacementObject {
   };
 
   public placement: NeonDropdownPlacement;
-  public majorPlacement: NeonPlacement;
-  public minorPlacement?: NeonPlacement;
+  public majorPlacement: NeonPosition;
+  public minorPlacement?: NeonPosition;
 
-  private constructor(placement: NeonDropdownPlacement, majorPlacement: NeonPlacement, minorPlacement?: NeonPlacement) {
+  private constructor(placement: NeonDropdownPlacement, majorPlacement: NeonPosition, minorPlacement?: NeonPosition) {
     this.placement = placement;
     this.majorPlacement = majorPlacement;
     this.minorPlacement = minorPlacement;
