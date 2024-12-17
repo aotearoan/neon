@@ -8,7 +8,8 @@
     class="neon-button"
     outline-style="none"
     role="button"
-    v-bind="attrs"
+    v-bind="sanitizedAttributes"
+    @keydown.space.prevent="clickLink"
   >
     <neon-icon
       v-if="icon || state !== 'ready'"
@@ -21,11 +22,13 @@
   </neon-link>
   <button
     v-else
+    ref="button"
     :class="classes"
     :disabled="disabled || state !== 'ready'"
     :tabindex="!disabled ? 0 : -1"
     class="neon-button"
-    v-bind="attrs"
+    v-bind="sanitizedAttributes"
+    @click="clickButton"
   >
     <neon-icon
       v-if="icon || state !== 'ready'"

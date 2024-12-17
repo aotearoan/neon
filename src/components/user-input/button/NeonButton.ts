@@ -91,7 +91,13 @@ export default defineComponent({
      */
     indicatorExpanded: { type: Boolean, default: null },
   },
-  setup(props) {
+  emits: [
+    /**
+     * Emitted when the user clicks on the button or link.
+     */
+    'click',
+  ],
+  setup(props, { emit }) {
     const attrs = useAttrs();
 
     const button = ref<HTMLElement | null>(null);
@@ -130,9 +136,16 @@ export default defineComponent({
       ];
     });
 
-    const click = () => {
-      console.log(button.value);
-      button.value?.click();
+    const clickLink = () => button.value?.click();
+
+    const sanitizedAttributes = computed(() => {
+      const { _onClick, ...sanitized } = attrs;
+      return sanitized;
+    });
+
+    const clickButton = () => {
+      emit('click');
+      button.value?.blur();
     };
 
     return {
@@ -140,7 +153,9 @@ export default defineComponent({
       classes,
       button,
       attrs,
-      click,
+      sanitizedAttributes,
+      clickLink,
+      clickButton,
     };
   },
 });
