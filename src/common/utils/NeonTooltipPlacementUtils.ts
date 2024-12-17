@@ -1,4 +1,4 @@
-import { NeonPlacement } from '../enums/NeonPlacement';
+import { NeonPosition } from '../enums/NeonPosition';
 import { NeonPlacementUtils } from './NeonPlacementUtils';
 import type { NeonAvailableSpace } from '../models/NeonAvailableSpace';
 
@@ -6,9 +6,9 @@ export class NeonTooltipPlacementUtils {
   public static calculatePlacement(
     triggerElement: HTMLElement,
     contentElement: HTMLElement,
-    placement: NeonPlacement,
+    placement: NeonPosition,
     placementContainer?: HTMLElement,
-  ): NeonPlacement {
+  ): NeonPosition {
     const { maxWidth, maxHeight } = NeonPlacementUtils.calculateBounds(placementContainer);
     const availableSpace = NeonPlacementUtils.calculateAvailableSpace(
       triggerElement,
@@ -22,24 +22,24 @@ export class NeonTooltipPlacementUtils {
     return NeonTooltipPlacementUtils.findPlacement(contentElement, availableSpace, placementsOrder);
   }
 
-  private static calculatePlacementOrder(placement: NeonPlacement) {
+  private static calculatePlacementOrder(placement: NeonPosition) {
     switch (placement) {
-      case NeonPlacement.Top:
-        return [NeonPlacement.Top, NeonPlacement.Bottom, NeonPlacement.Left, NeonPlacement.Right];
-      case NeonPlacement.Bottom:
-        return [NeonPlacement.Bottom, NeonPlacement.Top, NeonPlacement.Left, NeonPlacement.Right];
-      case NeonPlacement.Left:
-        return [NeonPlacement.Left, NeonPlacement.Right, NeonPlacement.Top, NeonPlacement.Bottom];
-      case NeonPlacement.Right:
-        return [NeonPlacement.Right, NeonPlacement.Left, NeonPlacement.Top, NeonPlacement.Bottom];
+      case NeonPosition.Top:
+        return [NeonPosition.Top, NeonPosition.Bottom, NeonPosition.Left, NeonPosition.Right];
+      case NeonPosition.Bottom:
+        return [NeonPosition.Bottom, NeonPosition.Top, NeonPosition.Left, NeonPosition.Right];
+      case NeonPosition.Left:
+        return [NeonPosition.Left, NeonPosition.Right, NeonPosition.Top, NeonPosition.Bottom];
+      case NeonPosition.Right:
+        return [NeonPosition.Right, NeonPosition.Left, NeonPosition.Top, NeonPosition.Bottom];
     }
   }
 
   private static findPlacement(
     contentElement: HTMLElement,
     availableSpace: NeonAvailableSpace,
-    placements: NeonPlacement[],
-  ): NeonPlacement {
+    placements: NeonPosition[],
+  ): NeonPosition {
     const firstMatching = placements.findIndex((placement) =>
       NeonTooltipPlacementUtils.validPlacement(contentElement, availableSpace, placement),
     );
@@ -49,14 +49,14 @@ export class NeonTooltipPlacementUtils {
   private static validPlacement(
     contentElement: HTMLElement,
     availableSpace: NeonAvailableSpace,
-    placement: NeonPlacement,
+    placement: NeonPosition,
   ) {
     switch (placement) {
-      case NeonPlacement.Top:
-      case NeonPlacement.Bottom:
+      case NeonPosition.Top:
+      case NeonPosition.Bottom:
         return contentElement.offsetHeight <= availableSpace[placement];
-      case NeonPlacement.Left:
-      case NeonPlacement.Right:
+      case NeonPosition.Left:
+      case NeonPosition.Right:
         return contentElement.offsetWidth <= availableSpace[placement];
     }
   }
