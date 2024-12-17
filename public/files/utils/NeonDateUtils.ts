@@ -1,15 +1,19 @@
 import type { NeonCalendarConfig } from '@/common/models/NeonCalendarConfig';
 import type { NeonDate } from '@/common/models/NeonDate';
 
+/**
+ * Date utilities for general application use as well as internally with the
+ * <a href="/user-input/date-picker">NeonDatePicker</a> component.
+ */
 export class NeonDateUtils {
   /**
    * Convert an ISO 8601 formatted string to a locale formatted date with a three letter month, a 2 digit day and a locale formatted time.
    *
-   * @param date The date/time as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string.
-   * @param locale The locale for which to convert the date for display purposes, defaults to browser locale.
-   * @param strict Do not add time component to localise the date.
+   * @param date {string} The date/time as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string.
+   * @param locale {string} The locale for which to convert the date for display purposes, defaults to browser locale.
+   * @param strict {boolean} Do not add time component to localise the date.
    *
-   * @returns a NeonDate object representing the provided date.
+   * @returns {NeonDate} Object representing the provided date.
    */
   public static stringToNeonDate(date: string, locale?: string, strict = false): NeonDate {
     const loc = locale || navigator.language;
@@ -45,10 +49,10 @@ export class NeonDateUtils {
   /**
    * Convert a date object to an ISO 8601 formatted string. By default, the time is not considered.
    *
-   * @param date Javascript date object
+   * @param date {Date} Javascript date object.
    * @param time {boolean} Whether to consider the time as part of the conversion to the ISO string.
    *
-   * @returns an ISO 8601 formatted date string, optionally with the time as well
+   * @returns {string} an ISO 8601 formatted date, optionally with the time as well.
    */
   public static dateToIso(date: Date, time = false): string {
     const dateString = date.toISOString();
@@ -58,11 +62,11 @@ export class NeonDateUtils {
   /**
    * Convert the params received into an ISO 8601 formatted string with only date in it.
    *
-   * @param day The number of the day to be used.
-   * @param month The number of the month to be used.
-   * @param year The number of the year to be used.
+   * @param day {number} The number of the day to be used.
+   * @param month {number} The number of the month to be used.
+   * @param year {number} The number of the year to be used.
    *
-   * @returns an ISO 8601 formatted date string for the given parameters
+   * @returns {string} an ISO 8601 formatted date for the given parameters.
    */
   public static dmyToIso(day: number, month: number, year: number): string {
     return `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`;
@@ -71,9 +75,9 @@ export class NeonDateUtils {
   /**
    * Returns the days of the week starting at Monday day name translated using the locale received as a first element.
    *
-   * @param locale The locale for which to convert the date for display purposes, defaults to browser locale.
+   * @param locale {string} The locale for which to convert the date for display purposes, defaults to browser locale.
    *
-   * @returns an array with the days of the week named according to the locale received.
+   * @returns {Array<string>} an array with the days of the week named according to the locale received.
    */
   public static dowNames(locale?: string): Array<string> {
     const loc = locale || navigator.language;
@@ -96,8 +100,9 @@ export class NeonDateUtils {
   /**
    * Returns the months of the year starting at January month name translated using the locale received as a first element.
    *
-   * @param locale The locale for which to convert the date for display purposes, defaults to browser locale.
-   * @returns an array with the month names of the year, all named according to the locale received.
+   * @param locale {string} The locale for which to convert the date for display purposes, defaults to browser locale.
+   *
+   * @returns {Array<string>} an array with the month names of the year, all named according to the locale received.
    */
   public static monthNames(locale?: string): Array<string> {
     const loc = locale || navigator.language;
@@ -108,6 +113,18 @@ export class NeonDateUtils {
     });
   }
 
+  /**
+   * Collate & return the data required to drive the calendar popup in
+   * <a href="/user-input/date-picker">NeonDatePicker</a>.
+   *
+   * @param selectedDate {string} ISO-8601 date-only string for the selected date.
+   * @param currentPageMonth {number} month of the current calendar page.
+   * @param currentPageYear {number} year of the current calendar page.
+   * @param currentPageDecadeStart {number} decade start year of the current calendar page.
+   * @param locale {string} user's locale.
+   *
+   * @returns {NeonCalendarConfig} The calendar configuration.
+   */
   public static toCalendarConfiguration(
     selectedDate?: string,
     currentPageMonth?: number,

@@ -2,16 +2,16 @@ import type { NeonAlertPlacement } from '../enums/NeonAlertPlacement';
 import type { NeonAlertAction } from './NeonAlertAction';
 
 /**
- * An alert message.
+ * Model describing an alert message notification to be displayed to the user. See <a href="/feedback/alert">Alerts</a>.
  */
 export interface NeonAlertMessage {
   /**
-   * Optional title of the alert.
+   * Optional title of the alert. NOTE: Either title or message needs to be provided.
    */
   title?: string;
 
   /**
-   * Optional body message.
+   * Optional body message. NOTE: Either title or message needs to be provided.
    */
   message?: string;
 
@@ -39,7 +39,7 @@ export interface NeonAlertMessage {
   primaryAction?: NeonAlertAction;
 
   /**
-   * A second action can be provided to the user.
+   * A second action can be provided to the user. This is usually a 'Dismiss' action for an alert that doesn't expire.
    */
   secondaryAction?: NeonAlertAction;
 }
