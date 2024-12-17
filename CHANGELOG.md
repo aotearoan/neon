@@ -1,5 +1,16 @@
 # Changelog
 
+## [18.0.0](https://github.com/aotearoan/neon/compare/v17.0.0...v18.0.0) (2024-12-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* interface changes & js docs ([#219](https://github.com/aotearoan/neon/issues/219))
+
+### Code Refactoring
+
+* interface changes & js docs ([#219](https://github.com/aotearoan/neon/issues/219)) ([698a995](https://github.com/aotearoan/neon/commit/698a9957d23889648b09b717f1c871fccf850e6b))
+
 ## [17.0.0](https://github.com/aotearoan/neon/compare/v16.1.2...v17.0.0) (2024-12-17)
 
 
