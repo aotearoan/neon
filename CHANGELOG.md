@@ -1,5 +1,16 @@
 # Changelog
 
+## [17.0.0](https://github.com/aotearoan/neon/compare/v16.1.2...v17.0.0) (2024-12-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* toggle chip size enum ([#217](https://github.com/aotearoan/neon/issues/217))
+
+### Code Refactoring
+
+* toggle chip size enum ([#217](https://github.com/aotearoan/neon/issues/217)) ([c15c09f](https://github.com/aotearoan/neon/commit/c15c09fffdec3a857df3083451f4cc098de93de6))
+
 ## [16.1.2](https://github.com/aotearoan/neon/compare/v16.1.1...v16.1.2) (2024-12-17)
 
 
