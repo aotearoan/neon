@@ -45,7 +45,7 @@ export default defineComponent({
             .join(' | ');
         }
 
-        return type.name;
+        return type.name?.replace('Array as () => ', '');
       }
 
       return undefined;
