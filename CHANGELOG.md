@@ -1,5 +1,12 @@
 # Changelog
 
+## [16.1.1](https://github.com/aotearoan/neon/compare/v16.1.0...v16.1.1) (2024-12-17)
+
+
+### Bug Fixes
+
+* style fixes ([#213](https://github.com/aotearoan/neon/issues/213)) ([b8cf95a](https://github.com/aotearoan/neon/commit/b8cf95a8322cff7c820fc8b3a840e00046578731))
+
 ## [16.1.0](https://github.com/aotearoan/neon/compare/v16.0.7...v16.1.0) (2024-12-17)
 
 
