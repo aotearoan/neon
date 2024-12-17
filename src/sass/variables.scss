@@ -37,18 +37,18 @@
   --neon-space-144: calc(36 * var(--neon-base-space));
   --neon-space-192: calc(48 * var(--neon-base-space));
 
-  /* stack */
-  --neon-gap-stack-desktop-s: var(--neon-base-space);
-  --neon-gap-stack-tablet-s: var(--neon-base-space);
-  --neon-gap-stack-mobile-s: var(--neon-base-space);
+  /* stack/inline */
+  --neon-gap-desktop-s: var(--neon-space-4);
+  --neon-gap-tablet-s: var(--neon-space-4);
+  --neon-gap-mobile-s: var(--neon-space-4);
 
-  --neon-gap-stack-desktop-m: var(--neon-space-16);
-  --neon-gap-stack-tablet-m: var(--neon-space-12);
-  --neon-gap-stack-mobile-m: var(--neon-space-8);
+  --neon-gap-desktop-m: var(--neon-space-16);
+  --neon-gap-tablet-m: var(--neon-space-12);
+  --neon-gap-mobile-m: var(--neon-space-8);
 
-  --neon-gap-stack-desktop-l: var(--neon-space-24);
-  --neon-gap-stack-tablet-l: var(--neon-space-20);
-  --neon-gap-stack-mobile-l: var(--neon-space-16);
+  --neon-gap-desktop-l: var(--neon-space-24);
+  --neon-gap-tablet-l: var(--neon-space-20);
+  --neon-gap-mobile-l: var(--neon-space-16);
 
   /* ratio of horizontal to vertical spacing, e.g. 1 = square padding */
   --neon-spacing-horizontal-multiplier: 1;

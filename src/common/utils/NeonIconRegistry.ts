@@ -9,11 +9,11 @@ export class NeonIconRegistry {
   /**
    * Add an icon to the registry.
    *
-   * @param name {string} Icon name, this corresponds to the <em>name</em> property in NeonIcon.
-   * @param svg {string} The string representation of the SVG.
-   * @param overwrite {boolean} Overwrite an existing icon if the name is a duplicate.
+   * @param name Icon name, this corresponds to the <em>name</em> property in NeonIcon.
+   * @param svg The string representation of the SVG.
+   * @param overwrite Overwrite an existing icon if the name is a duplicate.
    *
-   * @returns {boolean} Boolean indicating if the icon was successfully registered.
+   * @returns Boolean indicating if the icon was successfully registered.
    */
   public static addIcon(name: string, svg: string, overwrite = true): boolean {
     const canAdd = overwrite || !NeonIconRegistry.icons[name];
@@ -29,7 +29,7 @@ export class NeonIconRegistry {
   /**
    * Remove an icon from the registry.
    *
-   * @param name {string} The name of the icon to remove.
+   * @param name The name of the icon to remove.
    */
   public static removeIcon(name: string) {
     delete NeonIconRegistry.icons[name];
@@ -38,7 +38,7 @@ export class NeonIconRegistry {
   /**
    * Get an icon SVG by name.
    *
-   * @param name {string} The name of the icon to remove.
+   * @param name The name of the icon to remove.
    *
    * @returns The icon SVG as a string.
    */

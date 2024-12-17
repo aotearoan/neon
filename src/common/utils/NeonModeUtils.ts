@@ -12,7 +12,7 @@ export class NeonModeUtils {
   /**
    * Get the current mode.
    *
-   * @returns {NeonMode} The current user light or dark mode.
+   * @returns The current user light or dark mode.
    */
   public static getMode() {
     return NeonModeUtils.mode;
@@ -21,7 +21,7 @@ export class NeonModeUtils {
   /**
    * Set the initial mode.
    *
-   * @param defaultMode {NeonMode} The mode to set. If no mode is passed in the user preferences are used.
+   * @param defaultMode The mode to set. If no mode is passed in the user preferences are used.
    */
   public static init(defaultMode?: NeonMode) {
     if (defaultMode) {
@@ -44,8 +44,8 @@ export class NeonModeUtils {
   /**
    * Add a callback to listen to mode changes made by the user.
    *
-   * @param key {string} The unique key for the listener.
-   * @param callback {(value: NeonMode) => void} The callback function.
+   * @param key The unique key for the listener.
+   * @param callback The callback function.
    */
   public static addListener(key: string, callback: (value: NeonMode) => void) {
     if (window.matchMedia) {
@@ -65,7 +65,7 @@ export class NeonModeUtils {
   /**
    * Remove a callback listener.
    *
-   * @param key {string} The unique key for the listener.
+   * @param key The unique key for the listener.
    */
   public static removeListener(key: string) {
     delete NeonModeUtils.callbacks[key];

@@ -1,75 +1,35 @@
-export const enumList: string[] = [
-  'NeonAlertLevel',
-  'NeonAlertPlacement',
-  'NeonButtonSize',
-  'NeonButtonStyle',
-  'NeonChipAction',
-  'NeonDropdownPlacement',
-  'NeonDropdownStyle',
-  'NeonFunctionalColor',
-  'NeonHorizontalPosition',
-  'NeonInputMode',
-  'NeonInputType',
-  'NeonLabelSize',
-  'NeonMode',
-  'NeonOrientation',
-  'NeonOutlineStyle',
-  'NeonPlacement',
-  'NeonPosition',
-  'NeonResponsive',
-  'NeonSize',
-  'NeonSplashLoaderSize',
-  'NeonState',
-  'NeonSwitchStyle',
-  'NeonTabsStyle',
-  'NeonToggleStyle',
-  'NeonTooltipStyle',
-  'NeonVerticalPosition',
-];
+import enums from './config/enums.json';
+import models from './config/models.json';
+import utils from './config/utils.json';
+import type { DeclarationReflection } from 'typedoc';
 
-export const modelList: string[] = [
-  'NeonActionMenuModel',
-  'NeonAlertAction',
-  'NeonAlertMessage',
-  'NeonAvailableSpace',
-  'NeonCardListModel',
-  'NeonCalendarConfig',
-  'NeonContrastAccessibility',
-  'NeonDate',
-  'NeonDropdownMenuItem',
-  'NeonDropdownPlacementObject',
-  'NeonFilterListItem',
-  'NeonGridModel',
-  'NeonListItem',
-  'NeonMenuItem',
-  'NeonMenuModel',
-  'NeonNumberFormatOptions',
-  'NeonSearchOption',
-  'NeonSelectGroup',
-  'NeonSelectOption',
-  'NeonTabModel',
-  'NeonToastMessage',
-  'NeonToggleModel',
-  'NeonTreeMenuLinkModel',
-  'NeonTreeMenuSectionModel',
-];
+export const getClassDocs = (classType: string, className: string): DeclarationReflection | null => {
+  switch (classType) {
+    case 'enums':
+      return enums.children.find(
+        (enumConfig) => enumConfig.name === className || enumConfig.name.endsWith(`/${className}`),
+      ) as unknown as DeclarationReflection;
+    case 'models':
+      return models.children.find(
+        (modelConfig) => modelConfig.name === className || modelConfig.name.endsWith(`/${className}`),
+      ) as unknown as DeclarationReflection;
+    case 'utils':
+      return utils.children.find(
+        (utilConfig) => utilConfig.name === className || utilConfig.name.endsWith(`/${className}`),
+      ) as unknown as DeclarationReflection;
+  }
 
-export const utilsList: string[] = [
-  'NeonAlertService',
-  'NeonClipboardService',
-  'NeonClosableUtils',
-  'NeonColorUtils',
-  'NeonDateUtils',
-  'NeonDebounceUtils',
-  'NeonDropdownPlacementUtils',
-  'NeonEventBus',
-  'NeonIconRegistry',
-  'NeonModeUtils',
-  'NeonNumberUtils',
-  'NeonPlacementUtils',
-  'NeonResponsiveUtils',
-  'NeonScrollUtils',
-  'NeonToastService',
-  'NeonTooltipPlacementUtils',
-  'RegisterIcons',
-];
+  return null;
+};
+
+export const enumList: string[] = enums.children
+  .filter((enumConfig) => enumConfig.children)
+  .map((enumConfig) => enumConfig.name);
+
+export const modelList: string[] = models.children
+  .filter((modelConfig) => modelConfig.children)
+  .map((modelConfig) => modelConfig.name);
+
+export const utilsList: string[] = utils.children
+  .filter((utilConfig) => utilConfig.children)
+  .map((utilConfig) => utilConfig.name);

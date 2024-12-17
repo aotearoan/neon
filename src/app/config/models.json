@@ -1,0 +1,5425 @@
+{
+	"id": 0,
+	"name": "@aotearoan/neon",
+	"variant": "project",
+	"kind": 1,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "NeonActionMenuModel",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 2,
+					"name": "NeonActionMenuModel",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Model describing an action menu item. For use with <a href=\"/navigation/action-menu\">NeonActionMenu</a>."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 5,
+							"name": "count",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Optional count to be displayed with an action menu item. This can be used to indicate the number of items in a\ncategory."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonActionMenuModel.ts",
+									"line": 13,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonActionMenuModel.ts#L13"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 7,
+							"name": "disabled",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Boolean indicating if this menu item is currently disabled."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonActionMenuModel.ts",
+									"line": 17,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonActionMenuModel.ts#L17"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 4,
+							"name": "key",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Key of the menu item - returned by model event (on click)."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonActionMenuModel.ts",
+									"line": 8,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonActionMenuModel.ts#L8"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 3,
+							"name": "label",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Display label of the menu item."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonActionMenuModel.ts",
+									"line": 6,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonActionMenuModel.ts#L6"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 6,
+							"name": "selected",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Boolean indicating if this menu item is currently selected."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonActionMenuModel.ts",
+									"line": 15,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonActionMenuModel.ts#L15"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								5,
+								7,
+								4,
+								3,
+								6
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonActionMenuModel.ts",
+							"line": 4,
+							"character": 17,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonActionMenuModel.ts#L4"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						2
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonActionMenuModel.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonActionMenuModel.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 8,
+			"name": "NeonAlertAction",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 9,
+					"name": "NeonAlertAction",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Model describing an alert action. An alert action is a button in an alert notification allowing the user to make\nsimple actions without changing context."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 11,
+							"name": "callback",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "NeonAlertAction.ts",
+									"line": 14,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonAlertAction.ts#L14"
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 12,
+									"name": "__type",
+									"variant": "declaration",
+									"kind": 65536,
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "NeonAlertAction.ts",
+											"line": 14,
+											"character": 12,
+											"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonAlertAction.ts#L14"
+										}
+									],
+									"signatures": [
+										{
+											"id": 13,
+											"name": "__type",
+											"variant": "signature",
+											"kind": 4096,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Callback function - called when the user triggers the action."
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "NeonAlertAction.ts",
+													"line": 14,
+													"character": 12,
+													"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonAlertAction.ts#L14"
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "void"
+											}
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 10,
+							"name": "label",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Label of the action button. Keep it short! ~9 chars is the limit."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonAlertAction.ts",
+									"line": 9,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonAlertAction.ts#L9"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								11,
+								10
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonAlertAction.ts",
+							"line": 5,
+							"character": 17,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonAlertAction.ts#L5"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						9
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonAlertAction.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonAlertAction.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 14,
+			"name": "NeonAlertMessage",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 15,
+					"name": "NeonAlertMessage",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Model describing an alert message notification to be displayed to the user. See <a href=\"/feedback/alert\">Alerts</a>."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 20,
+							"name": "dismissible",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Whether the message can be dismissed by a user click. Default is true."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonAlertMessage.ts",
+									"line": 32,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonAlertMessage.ts#L32"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 19,
+							"name": "duration",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Duration to display the message (default = 2500ms). Set to 0 for the message to never expire (make sure it's\ndismissible)."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonAlertMessage.ts",
+									"line": 27,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonAlertMessage.ts#L27"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 17,
+							"name": "message",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Optional body message. NOTE: Either title or message needs to be provided."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonAlertMessage.ts",
+									"line": 16,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonAlertMessage.ts#L16"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 18,
+							"name": "placement",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Placement of the message. Default is top-right."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonAlertMessage.ts",
+									"line": 21,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonAlertMessage.ts#L21"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "src/common/enums/NeonAlertPlacement.ts",
+									"qualifiedName": "NeonAlertPlacement"
+								},
+								"name": "NeonAlertPlacement",
+								"package": "@aotearoan/neon"
+							}
+						},
+						{
+							"id": 21,
+							"name": "primaryAction",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Provide an action for the user to click on an alert. Actions consist of a label to display for the action and a\ncallback which is invoked when the user clicks on the action. When a user clicks on an action the alert will also\nbe dismissed."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonAlertMessage.ts",
+									"line": 39,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonAlertMessage.ts#L39"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": 9,
+								"name": "NeonAlertAction",
+								"package": "@aotearoan/neon"
+							}
+						},
+						{
+							"id": 22,
+							"name": "secondaryAction",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "A second action can be provided to the user. This is usually a 'Dismiss' action for an alert that doesn't expire."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonAlertMessage.ts",
+									"line": 44,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonAlertMessage.ts#L44"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": 9,
+								"name": "NeonAlertAction",
+								"package": "@aotearoan/neon"
+							}
+						},
+						{
+							"id": 16,
+							"name": "title",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Optional title of the alert. NOTE: Either title or message needs to be provided."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonAlertMessage.ts",
+									"line": 11,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonAlertMessage.ts#L11"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								20,
+								19,
+								17,
+								18,
+								21,
+								22,
+								16
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonAlertMessage.ts",
+							"line": 7,
+							"character": 17,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonAlertMessage.ts#L7"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						15
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonAlertMessage.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonAlertMessage.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 23,
+			"name": "NeonAvailableSpace",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 24,
+					"name": "NeonAvailableSpace",
+					"variant": "declaration",
+					"kind": 4194304,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Used to capture space from an element to the edged of the screen in all directions. This is used with the various\nplacement utilities provided by Neon."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "NeonAvailableSpace.ts",
+							"line": 7,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonAvailableSpace.ts#L7"
+						}
+					],
+					"type": {
+						"type": "intersection",
+						"types": [
+							{
+								"type": "mapped",
+								"parameter": "key",
+								"parameterType": {
+									"type": "reference",
+									"target": {
+										"sourceFileName": "src/common/enums/NeonPosition.ts",
+										"qualifiedName": "NeonPosition"
+									},
+									"name": "NeonPosition",
+									"package": "@aotearoan/neon"
+								},
+								"templateType": {
+									"type": "intrinsic",
+									"name": "number"
+								}
+							},
+							{
+								"type": "reflection",
+								"declaration": {
+									"id": 25,
+									"name": "__type",
+									"variant": "declaration",
+									"kind": 65536,
+									"flags": {},
+									"children": [
+										{
+											"id": 27,
+											"name": "bottom",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Distance in pixels from the bottom of an element to the bottom of the screen."
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "NeonAvailableSpace.ts",
+													"line": 11,
+													"character": 2,
+													"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonAvailableSpace.ts#L11"
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 28,
+											"name": "left",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Distance in pixels from the left of an element to the left of the screen."
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "NeonAvailableSpace.ts",
+													"line": 13,
+													"character": 2,
+													"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonAvailableSpace.ts#L13"
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 29,
+											"name": "right",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Distance in pixels from the right of an element to the right of the screen."
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "NeonAvailableSpace.ts",
+													"line": 15,
+													"character": 2,
+													"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonAvailableSpace.ts#L15"
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 26,
+											"name": "top",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Distance in pixels from the top of an element to the top of the screen."
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "NeonAvailableSpace.ts",
+													"line": 9,
+													"character": 2,
+													"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonAvailableSpace.ts#L9"
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"groups": [
+										{
+											"title": "Properties",
+											"children": [
+												27,
+												28,
+												29,
+												26
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "NeonAvailableSpace.ts",
+											"line": 7,
+											"character": 69,
+											"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonAvailableSpace.ts#L7"
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Type Aliases",
+					"children": [
+						24
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonAvailableSpace.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonAvailableSpace.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 30,
+			"name": "NeonCalendarConfig",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 31,
+					"name": "NeonCalendarConfig",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Model describing calendar state, used internally with <a href=\"/utils/NeonDateUtils\">NeonDateUtils</a> for driving\nthe <a href=\"/user-input/date-picker\">NeonDatePicker</a> popup."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 39,
+							"name": "dates",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "A two-dimensional array of calendar dates for the currently selected month. These are offset to match the days of\nthe week with Monday representing the first column. Nulls are placed in any empty positions.\n<br /><br />\nE.g. for August 2023:\n<pre>\n[\n  [null, 1, 2, 3, 4, 5, 6],\n  [7, 8, 9, 10, 11, 12, 13],\n  [14, 15, 16, 17, 18, 19, 20],\n  [21, 22, 23, 24, 25, 26, 27],\n  [28, 29, 30, 31, null, null, null],\n]\n</pre>"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonCalendarConfig.ts",
+									"line": 43,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonCalendarConfig.ts#L43"
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "array",
+									"elementType": {
+										"type": "union",
+										"types": [
+											{
+												"type": "literal",
+												"value": null
+											},
+											{
+												"type": "intrinsic",
+												"name": "number"
+											}
+										]
+									}
+								}
+							}
+						},
+						{
+							"id": 38,
+							"name": "dowNames",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Short names for the days of the week from Mon-Sun. These values are in the provided locale, if no locale is\nprovided the browser default is used."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonCalendarConfig.ts",
+									"line": 27,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonCalendarConfig.ts#L27"
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							}
+						},
+						{
+							"id": 40,
+							"name": "lastDayOfMonth",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The date of the last day of the currently selected month."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonCalendarConfig.ts",
+									"line": 45,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonCalendarConfig.ts#L45"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 41,
+							"name": "months",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Short names for the months. These values are in the provided locale, if no locale is provided the browser default\nis used."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonCalendarConfig.ts",
+									"line": 50,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonCalendarConfig.ts#L50"
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							}
+						},
+						{
+							"id": 37,
+							"name": "pageDecadeStart",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The decade starting year of the current calendar page. This will always be a 'zero' year e.g. 2020."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonCalendarConfig.ts",
+									"line": 22,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonCalendarConfig.ts#L22"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 34,
+							"name": "pageMonth",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The numeric month of the current calendar page (1-12)"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonCalendarConfig.ts",
+									"line": 13,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonCalendarConfig.ts#L13"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 35,
+							"name": "pageMonthName",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The full name of the month of the current calendar page. This is in the provided locale, if no locale is provided\nthe browser default is used."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonCalendarConfig.ts",
+									"line": 18,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonCalendarConfig.ts#L18"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 36,
+							"name": "pageYear",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The year of the current calendar page"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonCalendarConfig.ts",
+									"line": 20,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonCalendarConfig.ts#L20"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 33,
+							"name": "selected",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The currently selected date"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonCalendarConfig.ts",
+									"line": 11,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonCalendarConfig.ts#L11"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": 56,
+								"name": "NeonDate",
+								"package": "@aotearoan/neon"
+							}
+						},
+						{
+							"id": 32,
+							"name": "today",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The current date"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonCalendarConfig.ts",
+									"line": 9,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonCalendarConfig.ts#L9"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": 56,
+								"name": "NeonDate",
+								"package": "@aotearoan/neon"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								39,
+								38,
+								40,
+								41,
+								37,
+								34,
+								35,
+								36,
+								33,
+								32
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonCalendarConfig.ts",
+							"line": 7,
+							"character": 17,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonCalendarConfig.ts#L7"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						31
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonCalendarConfig.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonCalendarConfig.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 42,
+			"name": "NeonCardListModel",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 43,
+					"name": "NeonCardListModel",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Provides the necessary fields for rendering a card list items as a link. See\n<a href=\"/layout/card-list\">NeonCardList</a>."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 47,
+							"name": "disabled",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Disable the card so it cannot be clicked"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonCardListModel.ts",
+									"line": 21,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonCardListModel.ts#L21"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 45,
+							"name": "href",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Href to open when the user clicks on this card"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonCardListModel.ts",
+									"line": 13,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonCardListModel.ts#L13"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 44,
+							"name": "key",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Used as the key in v-for for the list of cards. If not provided the index is used by default."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonCardListModel.ts",
+									"line": 9,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonCardListModel.ts#L9"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 46,
+							"name": "targetBlank",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Open href in a new tab (target=\"_blank\")"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonCardListModel.ts",
+									"line": 17,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonCardListModel.ts#L17"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								47,
+								45,
+								44,
+								46
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonCardListModel.ts",
+							"line": 5,
+							"character": 17,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonCardListModel.ts#L5"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						43
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonCardListModel.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonCardListModel.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 48,
+			"name": "NeonContrastAccessibility",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 49,
+					"name": "NeonContrastAccessibility",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Used internally in conjunction with the palette generation tools when calculating color accessibility. See\n<a href=\"https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html\">WCAG contrast</a> documentation."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 52,
+							"name": "largeAA",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Boolean indicating if the element has a contrast ratio meeting the AA standard for large text."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonContrastAccessibility.ts",
+									"line": 11,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonContrastAccessibility.ts#L11"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 53,
+							"name": "largeAAA",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Boolean indicating if the element has a contrast ratio meeting the AAA standard for large text."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonContrastAccessibility.ts",
+									"line": 13,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonContrastAccessibility.ts#L13"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 50,
+							"name": "normalAA",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Boolean indicating if the element has a contrast ratio meeting the AA standard for normal-sized text."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonContrastAccessibility.ts",
+									"line": 7,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonContrastAccessibility.ts#L7"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 51,
+							"name": "normalAAA",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Boolean indicating if the element has a contrast ratio meeting the AAA standard for normal-sized text."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonContrastAccessibility.ts",
+									"line": 9,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonContrastAccessibility.ts#L9"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 54,
+							"name": "ratio",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Calculated contrast ratio between a foreground (e.g. text) & background color."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonContrastAccessibility.ts",
+									"line": 17,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonContrastAccessibility.ts#L17"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								52,
+								53,
+								50,
+								51,
+								54
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonContrastAccessibility.ts",
+							"line": 5,
+							"character": 17,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonContrastAccessibility.ts#L5"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						49
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonContrastAccessibility.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonContrastAccessibility.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 55,
+			"name": "NeonDate",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 56,
+					"name": "NeonDate",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Date model object for use with the <a href=\"/user-input/date-picker\">NeonDatePicker</a> &\n<a href=\"/utils/NeonDateUtils\">NeonDateUtils</a>."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 62,
+							"name": "day",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Numeric day of the month for the given date."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDate.ts",
+									"line": 17,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonDate.ts#L17"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 63,
+							"name": "dayFormatted",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Day of the month formatted as a string in the given locale."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDate.ts",
+									"line": 19,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonDate.ts#L19"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 59,
+							"name": "month",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Numeric month value of the date. In the range 1-12."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDate.ts",
+									"line": 11,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonDate.ts#L11"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 61,
+							"name": "monthLongName",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Month long name for the provided locale."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDate.ts",
+									"line": 15,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonDate.ts#L15"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 60,
+							"name": "monthShortName",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Month short name for the provided locale."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDate.ts",
+									"line": 13,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonDate.ts#L13"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 64,
+							"name": "time",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Time string in the <a href=\"https://en.wikipedia.org/wiki/ISO_8601\">ISO-8601 format</a>."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDate.ts",
+									"line": 21,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonDate.ts#L21"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 57,
+							"name": "year",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Numeric year value of the date."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDate.ts",
+									"line": 7,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonDate.ts#L7"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 58,
+							"name": "yearFormatted",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Year value of the date formatted as a string in the provided locale."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDate.ts",
+									"line": 9,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonDate.ts#L9"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								62,
+								63,
+								59,
+								61,
+								60,
+								64,
+								57,
+								58
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonDate.ts",
+							"line": 5,
+							"character": 17,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonDate.ts#L5"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						56
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonDate.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonDate.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 65,
+			"name": "NeonDropdownMenuItem",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 66,
+					"name": "NeonDropdownMenuItem",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Model object for a dropdown menu item. See <a href=\"/navigation/dropdown-menu\">NeonDropdownMenu</a>."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 72,
+							"name": "disabled",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Boolean indicating if this menu item is disabled."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDropdownMenuItem.ts",
+									"line": 16,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonDropdownMenuItem.ts#L16"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 74,
+							"name": "grouped",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Indicates that this menu item is a child of a group."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDropdownMenuItem.ts",
+									"line": 23,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonDropdownMenuItem.ts#L23"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 69,
+							"name": "href",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The URL if this menu item links to another page or an external URL."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDropdownMenuItem.ts",
+									"line": 10,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonDropdownMenuItem.ts#L10"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 70,
+							"name": "icon",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The name of an optional icon to be displayed before the label."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDropdownMenuItem.ts",
+									"line": 12,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonDropdownMenuItem.ts#L12"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 73,
+							"name": "isGroup",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Boolean indicating if this menu item is a group title. If true, all following menu items in the list will be\ngrouped until the next menu item where <strong>isGroup</strong> is true OR the <strong>grouped</strong> flag is false."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDropdownMenuItem.ts",
+									"line": 21,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonDropdownMenuItem.ts#L21"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 67,
+							"name": "key",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "A unique identifier for the menu item."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDropdownMenuItem.ts",
+									"line": 6,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonDropdownMenuItem.ts#L6"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 68,
+							"name": "label",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The display value for the menu item."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDropdownMenuItem.ts",
+									"line": 8,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonDropdownMenuItem.ts#L8"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 71,
+							"name": "separatorBefore",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Boolean to indicate the display of a separator before this menu item in the dropdown list."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonDropdownMenuItem.ts",
+									"line": 14,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonDropdownMenuItem.ts#L14"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								72,
+								74,
+								69,
+								70,
+								73,
+								67,
+								68,
+								71
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonDropdownMenuItem.ts",
+							"line": 4,
+							"character": 17,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonDropdownMenuItem.ts#L4"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						66
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonDropdownMenuItem.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonDropdownMenuItem.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 75,
+			"name": "NeonDropdownPlacementObject",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "NeonDropdownPlacementObject.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonDropdownPlacementObject.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 135,
+			"name": "NeonFilterListItem",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 136,
+					"name": "NeonFilterListItem",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Model describing a filter list item. See <a href=\"/user-input/filter-list\">NeonFilterList</a>."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 139,
+							"name": "count",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Count of items matching this filter option."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonFilterListItem.ts",
+									"line": 10,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonFilterListItem.ts#L10"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 140,
+							"name": "disabled",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Boolean indicating if this item is disabled."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonFilterListItem.ts",
+									"line": 12,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonFilterListItem.ts#L12"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 137,
+							"name": "key",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Unique key identifying this item."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonFilterListItem.ts",
+									"line": 6,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonFilterListItem.ts#L6"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 138,
+							"name": "label",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Display label for this item."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonFilterListItem.ts",
+									"line": 8,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonFilterListItem.ts#L8"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								139,
+								140,
+								137,
+								138
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonFilterListItem.ts",
+							"line": 4,
+							"character": 17,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonFilterListItem.ts#L4"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						136
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonFilterListItem.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonFilterListItem.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 141,
+			"name": "NeonGridModel",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 142,
+					"name": "NeonGridModel",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The model defining the <a href=\"/layout/grid\">NeonGrid</a> layout at different breakpoints."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 143,
+							"name": "breakpoint",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The breakpoint defining when the provided grid configuration applies."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonGridModel.ts",
+									"line": 10,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonGridModel.ts#L10"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "src/common/enums/NeonResponsive.ts",
+									"qualifiedName": "NeonResponsive"
+								},
+								"name": "NeonResponsive",
+								"package": "@aotearoan/neon"
+							}
+						},
+						{
+							"id": 144,
+							"name": "grid",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "A two-dimensional grid of ids defining the layout of the NeonGridAreas with a NeonGrid component's default slot.\n<br />\n<br />\nE.g.\n<pre>\n[\n  ['area1', 'area1', 'area2'],\n  ['area3', 'area4', 'area2'],\n]\n</pre>\n\ndefines a grid with two rows and 3 columns where id=area1 fills the first two columns on the first row, area2 fills\nthe last column (both rows) and areas 3 & 4 fill the first two columns on the second row."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonGridModel.ts",
+									"line": 26,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonGridModel.ts#L26"
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "array",
+									"elementType": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								143,
+								144
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonGridModel.ts",
+							"line": 6,
+							"character": 17,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonGridModel.ts#L6"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						142
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonGridModel.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonGridModel.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 145,
+			"name": "NeonListItem",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 146,
+					"name": "NeonListItem",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Model describing a list item. See <a href=\"/user-input/list\">NeonList</a>."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 147,
+							"name": "key",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Unique key identifying the list item"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonListItem.ts",
+									"line": 6,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonListItem.ts#L6"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 148,
+							"name": "label",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Display label of the list item"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonListItem.ts",
+									"line": 8,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonListItem.ts#L8"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								147,
+								148
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonListItem.ts",
+							"line": 4,
+							"character": 17,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonListItem.ts#L4"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						146
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonListItem.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonListItem.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 149,
+			"name": "NeonMenuItem",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 150,
+					"name": "NeonMenuItem",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Model describing a menu item. See <a href=\"/navigation/menu\">NeonMenu</a>."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 155,
+							"name": "disabled",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Boolean indicating if the menu item is disabled."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonMenuItem.ts",
+									"line": 14,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonMenuItem.ts#L14"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 153,
+							"name": "href",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "URL of a link to open when the menu item is triggered."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonMenuItem.ts",
+									"line": 10,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonMenuItem.ts#L10"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 154,
+							"name": "icon",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Name of an icon to display before the label."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonMenuItem.ts",
+									"line": 12,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonMenuItem.ts#L12"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 151,
+							"name": "key",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Unique identifier for this menu item."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonMenuItem.ts",
+									"line": 6,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonMenuItem.ts#L6"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 152,
+							"name": "label",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Display label for this menu item."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonMenuItem.ts",
+									"line": 8,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonMenuItem.ts#L8"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								155,
+								153,
+								154,
+								151,
+								152
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonMenuItem.ts",
+							"line": 4,
+							"character": 17,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonMenuItem.ts#L4"
+						}
+					],
+					"extendedBy": [
+						{
+							"type": "reference",
+							"target": 157,
+							"name": "NeonMenuModel"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						150
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonMenuItem.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonMenuItem.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 156,
+			"name": "NeonMenuModel",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 157,
+					"name": "NeonMenuModel",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Menu model describing a menu item with children. See <a href=\"/navigation/menu\">NeonMenu</a>."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 158,
+							"name": "children",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "A list of child menu items."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonMenuModel.ts",
+									"line": 8,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonMenuModel.ts#L8"
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"target": 150,
+									"name": "NeonMenuItem",
+									"package": "@aotearoan/neon"
+								}
+							}
+						},
+						{
+							"id": 163,
+							"name": "disabled",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Boolean indicating if the menu item is disabled."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonMenuItem.ts",
+									"line": 14,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonMenuItem.ts#L14"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": 155,
+								"name": "NeonMenuItem.disabled"
+							}
+						},
+						{
+							"id": 161,
+							"name": "href",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "URL of a link to open when the menu item is triggered."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonMenuItem.ts",
+									"line": 10,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonMenuItem.ts#L10"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": 153,
+								"name": "NeonMenuItem.href"
+							}
+						},
+						{
+							"id": 162,
+							"name": "icon",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Name of an icon to display before the label."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonMenuItem.ts",
+									"line": 12,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonMenuItem.ts#L12"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": 154,
+								"name": "NeonMenuItem.icon"
+							}
+						},
+						{
+							"id": 159,
+							"name": "key",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Unique identifier for this menu item."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonMenuItem.ts",
+									"line": 6,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonMenuItem.ts#L6"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": 151,
+								"name": "NeonMenuItem.key"
+							}
+						},
+						{
+							"id": 160,
+							"name": "label",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Display label for this menu item."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonMenuItem.ts",
+									"line": 8,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonMenuItem.ts#L8"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": 152,
+								"name": "NeonMenuItem.label"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								158,
+								163,
+								161,
+								162,
+								159,
+								160
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonMenuModel.ts",
+							"line": 6,
+							"character": 17,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonMenuModel.ts#L6"
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"target": 150,
+							"name": "NeonMenuItem",
+							"package": "@aotearoan/neon"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						157
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonMenuModel.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonMenuModel.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 164,
+			"name": "NeonNumberFormatOptions",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 165,
+					"name": "NeonNumberFormatOptions",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "An options object for defining number formatting options for use with\n<a href=\"/utils/NeonNumberUtils\">NeonNumberUtils</a>."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 171,
+							"name": "currency",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "If the style is 'currency', provide the ISO currency code to the formatter."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonNumberFormatOptions.ts",
+									"line": 22,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonNumberFormatOptions.ts#L22"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 166,
+							"name": "decimals",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The number of decimals digits to display."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonNumberFormatOptions.ts",
+									"line": 7,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonNumberFormatOptions.ts#L7"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 167,
+							"name": "format",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "A display format for the number field. This is a template string with the placeholder <strong>{value}</strong> used\nfor formatting a number value."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonNumberFormatOptions.ts",
+									"line": 12,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonNumberFormatOptions.ts#L12"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 169,
+							"name": "minimumFractionDigits",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Specify a minimum number of decimal digits to display. Equivalent to setting style: 'percent'."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonNumberFormatOptions.ts",
+									"line": 16,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonNumberFormatOptions.ts#L16"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 168,
+							"name": "percentage",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Format the number as a percentage."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonNumberFormatOptions.ts",
+									"line": 14,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonNumberFormatOptions.ts#L14"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 170,
+							"name": "style",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Defines the style formatting option. See\n<a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#options\">NumberFormatOption</a>."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonNumberFormatOptions.ts",
+									"line": 20,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonNumberFormatOptions.ts#L20"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								171,
+								166,
+								167,
+								169,
+								168,
+								170
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonNumberFormatOptions.ts",
+							"line": 5,
+							"character": 17,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonNumberFormatOptions.ts#L5"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						165
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonNumberFormatOptions.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonNumberFormatOptions.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 172,
+			"name": "NeonSearchOption",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 173,
+					"name": "NeonSearchOption",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Model describing a search option. See <a href=\"/user-input/search\">NeonSearch</a>."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 176,
+							"name": "chipColor",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Color of the input chip when the option is selected if NeonSearch multiple=true."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonSearchOption.ts",
+									"line": 17,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonSearchOption.ts#L17"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "src/common/enums/NeonFunctionalColor.ts",
+									"qualifiedName": "NeonFunctionalColor"
+								},
+								"name": "NeonFunctionalColor",
+								"package": "@aotearoan/neon"
+							}
+						},
+						{
+							"id": 177,
+							"name": "icon",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Icon to be displayed before the label."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonSearchOption.ts",
+									"line": 19,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonSearchOption.ts#L19"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 174,
+							"name": "key",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Unique key for the search option.\n<br />\n<br />\nNOTE: Also used as the id of the option for accessibility so make sure it's unique <strong>on the page</strong>."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonSearchOption.ts",
+									"line": 13,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonSearchOption.ts#L13"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 175,
+							"name": "label",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Display label for the option."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonSearchOption.ts",
+									"line": 15,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonSearchOption.ts#L15"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 178,
+							"name": "separatorBefore",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Display a separator before the search option in the dropdown."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonSearchOption.ts",
+									"line": 21,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonSearchOption.ts#L21"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								176,
+								177,
+								174,
+								175,
+								178
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonSearchOption.ts",
+							"line": 6,
+							"character": 17,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonSearchOption.ts#L6"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						173
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonSearchOption.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonSearchOption.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 179,
+			"name": "NeonSelectGroup",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 180,
+					"name": "NeonSelectGroup",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Model describing a select opt-group and it's options. See <a href=\"/user-input/select\">NeonSelect</a>."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 181,
+							"name": "group",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The display label of the group."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonSelectGroup.ts",
+									"line": 8,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonSelectGroup.ts#L8"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 182,
+							"name": "options",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The options belonging to the group."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonSelectGroup.ts",
+									"line": 10,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonSelectGroup.ts#L10"
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"target": 184,
+									"name": "NeonSelectOption",
+									"package": "@aotearoan/neon"
+								}
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								181,
+								182
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonSelectGroup.ts",
+							"line": 6,
+							"character": 17,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonSelectGroup.ts#L6"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						180
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonSelectGroup.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonSelectGroup.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 183,
+			"name": "NeonSelectOption",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 184,
+					"name": "NeonSelectOption",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Model describing a select option. See <a href=\"/user-input/select\">NeonSelect</a>."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 189,
+							"name": "disabled",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Boolean indicating if the option is disabled."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonSelectOption.ts",
+									"line": 19,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonSelectOption.ts#L19"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 187,
+							"name": "icon",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Icon to be displayed before the label."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonSelectOption.ts",
+									"line": 15,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonSelectOption.ts#L15"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 185,
+							"name": "key",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Unique key for the search option.\n<br />\n<br />\nNOTE: Also used as the id of the option for accessibility so make sure it's unique on the page."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonSelectOption.ts",
+									"line": 11,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonSelectOption.ts#L11"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 186,
+							"name": "label",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Display label for the option."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonSelectOption.ts",
+									"line": 13,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonSelectOption.ts#L13"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 188,
+							"name": "separatorBefore",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Boolean indicating if a separator should be displayed before this option."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonSelectOption.ts",
+									"line": 17,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonSelectOption.ts#L17"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								189,
+								187,
+								185,
+								186,
+								188
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonSelectOption.ts",
+							"line": 4,
+							"character": 17,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonSelectOption.ts#L4"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						184
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonSelectOption.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonSelectOption.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 190,
+			"name": "NeonTabModel",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 191,
+					"name": "NeonTabModel",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Model for a tab for use with <a href=\"/presentation/tabs\">NeonTabs</a>."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 194,
+							"name": "icon",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Icon to display with the tab label."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonTabModel.ts",
+									"line": 16,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonTabModel.ts#L16"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 193,
+							"name": "key",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Unique key for the tab.\n<br />\n<br />\nTIP: use this key as the id of the <strong>tab content</strong> to support aria-controls. See\n<a href=\"http://localhost:8083/presentation/tabs#api\">NeonTab API</a>."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonTabModel.ts",
+									"line": 14,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonTabModel.ts#L14"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 192,
+							"name": "label",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Display label for the tab."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonTabModel.ts",
+									"line": 6,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonTabModel.ts#L6"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								194,
+								193,
+								192
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonTabModel.ts",
+							"line": 4,
+							"character": 17,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonTabModel.ts#L4"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						191
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonTabModel.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonTabModel.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 195,
+			"name": "NeonToastMessage",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 196,
+					"name": "NeonToastMessage",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "A 'Toast' style alert message. These are much simpler than normal alerts."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 200,
+							"name": "dismissible",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Whether the message can be dismissed by a user click. Default is true."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonToastMessage.ts",
+									"line": 26,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonToastMessage.ts#L26"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 199,
+							"name": "duration",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Duration to display the message (default = 2500ms). Set to 0 for the message to never expire (make sure it's\ndismissible)."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonToastMessage.ts",
+									"line": 21,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonToastMessage.ts#L21"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 198,
+							"name": "placement",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Placement of the message, either centered at the top or at the bottom. Default is <strong>top</strong>."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonToastMessage.ts",
+									"line": 15,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonToastMessage.ts#L15"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "src/common/enums/NeonVerticalPosition.ts",
+									"qualifiedName": "NeonVerticalPosition"
+								},
+								"name": "NeonVerticalPosition",
+								"package": "@aotearoan/neon"
+							}
+						},
+						{
+							"id": 197,
+							"name": "title",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Toast title."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonToastMessage.ts",
+									"line": 10,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonToastMessage.ts#L10"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								200,
+								199,
+								198,
+								197
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonToastMessage.ts",
+							"line": 6,
+							"character": 17,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonToastMessage.ts#L6"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						196
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonToastMessage.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonToastMessage.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 201,
+			"name": "NeonToggleModel",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 202,
+					"name": "NeonToggleModel",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Model to use with <a href=\"/user-input/toggle\">NeonToggle</a> for defining radio button & toggle control items."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 206,
+							"name": "disabled",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Boolean indicating if item is disabled."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonToggleModel.ts",
+									"line": 12,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonToggleModel.ts#L12"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 205,
+							"name": "icon",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Icon of toggle item."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonToggleModel.ts",
+									"line": 10,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonToggleModel.ts#L10"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 203,
+							"name": "key",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Unique key of toggle item."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonToggleModel.ts",
+									"line": 6,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonToggleModel.ts#L6"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 204,
+							"name": "label",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Display label of toggle item."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonToggleModel.ts",
+									"line": 8,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonToggleModel.ts#L8"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								206,
+								205,
+								203,
+								204
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonToggleModel.ts",
+							"line": 4,
+							"character": 17,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonToggleModel.ts#L4"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						202
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonToggleModel.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonToggleModel.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 207,
+			"name": "NeonTreeMenuLinkModel",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 208,
+					"name": "NeonTreeMenuLinkModel",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Model defining a <a href=\"/navigation/tree-menu\">NeonTreeMenu</a> link."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 212,
+							"name": "anchors",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "A list of page anchor links."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonTreeMenuLinkModel.ts",
+									"line": 12,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonTreeMenuLinkModel.ts#L12"
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							}
+						},
+						{
+							"id": 211,
+							"name": "href",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "URL for the menu item's page."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonTreeMenuLinkModel.ts",
+									"line": 10,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonTreeMenuLinkModel.ts#L10"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 210,
+							"name": "key",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Unique key for the menu item."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonTreeMenuLinkModel.ts",
+									"line": 8,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonTreeMenuLinkModel.ts#L8"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 209,
+							"name": "label",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Display label for the menu item."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonTreeMenuLinkModel.ts",
+									"line": 6,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonTreeMenuLinkModel.ts#L6"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								212,
+								211,
+								210,
+								209
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonTreeMenuLinkModel.ts",
+							"line": 4,
+							"character": 17,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonTreeMenuLinkModel.ts#L4"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						208
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonTreeMenuLinkModel.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonTreeMenuLinkModel.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 213,
+			"name": "NeonTreeMenuSectionModel",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 214,
+					"name": "NeonTreeMenuSectionModel",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Model defining a <a href=\"/navigation/tree-menu\">NeonTreeMenu</a> section."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 218,
+							"name": "children",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Child links of the menu section."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonTreeMenuSectionModel.ts",
+									"line": 14,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonTreeMenuSectionModel.ts#L14"
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"target": 208,
+									"name": "NeonTreeMenuLinkModel",
+									"package": "@aotearoan/neon"
+								}
+							}
+						},
+						{
+							"id": 220,
+							"name": "disabled",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Boolean describing if the menu section is disabled."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonTreeMenuSectionModel.ts",
+									"line": 18,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonTreeMenuSectionModel.ts#L18"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 219,
+							"name": "expanded",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Boolean describing if the menu section is expanded."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonTreeMenuSectionModel.ts",
+									"line": 16,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonTreeMenuSectionModel.ts#L16"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 217,
+							"name": "href",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "URL for the menu section's page."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonTreeMenuSectionModel.ts",
+									"line": 12,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonTreeMenuSectionModel.ts#L12"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 216,
+							"name": "key",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Unique key for the menu section."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonTreeMenuSectionModel.ts",
+									"line": 10,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonTreeMenuSectionModel.ts#L10"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 215,
+							"name": "label",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Display label for the menu section."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonTreeMenuSectionModel.ts",
+									"line": 8,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonTreeMenuSectionModel.ts#L8"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								218,
+								220,
+								219,
+								217,
+								216,
+								215
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonTreeMenuSectionModel.ts",
+							"line": 6,
+							"character": 17,
+							"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonTreeMenuSectionModel.ts#L6"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						214
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonTreeMenuSectionModel.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/358fdb5/src/common/models/NeonTreeMenuSectionModel.ts#L1"
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Modules",
+			"children": [
+				1,
+				8,
+				14,
+				23,
+				30,
+				42,
+				48,
+				55,
+				65,
+				75,
+				135,
+				141,
+				145,
+				149,
+				156,
+				164,
+				172,
+				179,
+				183,
+				190,
+				195,
+				201,
+				207,
+				213
+			]
+		}
+	],
+	"packageName": "@aotearoan/neon",
+	"readme": [
+		{
+			"kind": "text",
+			"text": "![GitHub package.json version](https://img.shields.io/github/package-json/v/aotearoan/neon)\n![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/@aotearoan/neon)\n![GitHub last commit](https://img.shields.io/github/last-commit/aotearoan/neon)\n![npm](https://img.shields.io/npm/dt/@aotearoan/neon)\n![GitHub](https://img.shields.io/github/license/aotearoan/neon)\n\n## Documentation & Demo\n\nFull documentation is available on the [demo site](https://aotearoan.github.io/neon/).\n\n## Installation\n\nInstall with NPM:\n<pre>npm install @aotearoan/neon</pre>\nor yarn:\n<pre>yarn add @aotearoan/neon</pre>\n\n## Usage\n\n### Javascript/Typescript\n\nImport components and supporting classes like so:\n<pre>\nimport { NeonButton } from '@aotearoan/neon';\n\nexport default defineComponent({\n  name: 'SomeComponent',\n  components: {\n    NeonButton,\n  },\n  ...\n});\n</pre>\n\n### SASS\n\nTo import the theme:\n<pre>"
+		}
+	],
+	"symbolIdMap": {
+		"1": {
+			"sourceFileName": "src/common/models/NeonActionMenuModel.ts",
+			"qualifiedName": ""
+		},
+		"2": {
+			"sourceFileName": "src/common/models/NeonActionMenuModel.ts",
+			"qualifiedName": "NeonActionMenuModel"
+		},
+		"3": {
+			"sourceFileName": "src/common/models/NeonActionMenuModel.ts",
+			"qualifiedName": "NeonActionMenuModel.label"
+		},
+		"4": {
+			"sourceFileName": "src/common/models/NeonActionMenuModel.ts",
+			"qualifiedName": "NeonActionMenuModel.key"
+		},
+		"5": {
+			"sourceFileName": "src/common/models/NeonActionMenuModel.ts",
+			"qualifiedName": "NeonActionMenuModel.count"
+		},
+		"6": {
+			"sourceFileName": "src/common/models/NeonActionMenuModel.ts",
+			"qualifiedName": "NeonActionMenuModel.selected"
+		},
+		"7": {
+			"sourceFileName": "src/common/models/NeonActionMenuModel.ts",
+			"qualifiedName": "NeonActionMenuModel.disabled"
+		},
+		"8": {
+			"sourceFileName": "src/common/models/NeonAlertAction.ts",
+			"qualifiedName": ""
+		},
+		"9": {
+			"sourceFileName": "src/common/models/NeonAlertAction.ts",
+			"qualifiedName": "NeonAlertAction"
+		},
+		"10": {
+			"sourceFileName": "src/common/models/NeonAlertAction.ts",
+			"qualifiedName": "NeonAlertAction.label"
+		},
+		"11": {
+			"sourceFileName": "src/common/models/NeonAlertAction.ts",
+			"qualifiedName": "NeonAlertAction.callback"
+		},
+		"12": {
+			"sourceFileName": "src/common/models/NeonAlertAction.ts",
+			"qualifiedName": "__type"
+		},
+		"13": {
+			"sourceFileName": "src/common/models/NeonAlertAction.ts",
+			"qualifiedName": "__type"
+		},
+		"14": {
+			"sourceFileName": "src/common/models/NeonAlertMessage.ts",
+			"qualifiedName": ""
+		},
+		"15": {
+			"sourceFileName": "src/common/models/NeonAlertMessage.ts",
+			"qualifiedName": "NeonAlertMessage"
+		},
+		"16": {
+			"sourceFileName": "src/common/models/NeonAlertMessage.ts",
+			"qualifiedName": "NeonAlertMessage.title"
+		},
+		"17": {
+			"sourceFileName": "src/common/models/NeonAlertMessage.ts",
+			"qualifiedName": "NeonAlertMessage.message"
+		},
+		"18": {
+			"sourceFileName": "src/common/models/NeonAlertMessage.ts",
+			"qualifiedName": "NeonAlertMessage.placement"
+		},
+		"19": {
+			"sourceFileName": "src/common/models/NeonAlertMessage.ts",
+			"qualifiedName": "NeonAlertMessage.duration"
+		},
+		"20": {
+			"sourceFileName": "src/common/models/NeonAlertMessage.ts",
+			"qualifiedName": "NeonAlertMessage.dismissible"
+		},
+		"21": {
+			"sourceFileName": "src/common/models/NeonAlertMessage.ts",
+			"qualifiedName": "NeonAlertMessage.primaryAction"
+		},
+		"22": {
+			"sourceFileName": "src/common/models/NeonAlertMessage.ts",
+			"qualifiedName": "NeonAlertMessage.secondaryAction"
+		},
+		"23": {
+			"sourceFileName": "src/common/models/NeonAvailableSpace.ts",
+			"qualifiedName": ""
+		},
+		"24": {
+			"sourceFileName": "src/common/models/NeonAvailableSpace.ts",
+			"qualifiedName": "NeonAvailableSpace"
+		},
+		"25": {
+			"sourceFileName": "src/common/models/NeonAvailableSpace.ts",
+			"qualifiedName": "__type"
+		},
+		"26": {
+			"sourceFileName": "src/common/models/NeonAvailableSpace.ts",
+			"qualifiedName": "__type.top"
+		},
+		"27": {
+			"sourceFileName": "src/common/models/NeonAvailableSpace.ts",
+			"qualifiedName": "__type.bottom"
+		},
+		"28": {
+			"sourceFileName": "src/common/models/NeonAvailableSpace.ts",
+			"qualifiedName": "__type.left"
+		},
+		"29": {
+			"sourceFileName": "src/common/models/NeonAvailableSpace.ts",
+			"qualifiedName": "__type.right"
+		},
+		"30": {
+			"sourceFileName": "src/common/models/NeonCalendarConfig.ts",
+			"qualifiedName": ""
+		},
+		"31": {
+			"sourceFileName": "src/common/models/NeonCalendarConfig.ts",
+			"qualifiedName": "NeonCalendarConfig"
+		},
+		"32": {
+			"sourceFileName": "src/common/models/NeonCalendarConfig.ts",
+			"qualifiedName": "NeonCalendarConfig.today"
+		},
+		"33": {
+			"sourceFileName": "src/common/models/NeonCalendarConfig.ts",
+			"qualifiedName": "NeonCalendarConfig.selected"
+		},
+		"34": {
+			"sourceFileName": "src/common/models/NeonCalendarConfig.ts",
+			"qualifiedName": "NeonCalendarConfig.pageMonth"
+		},
+		"35": {
+			"sourceFileName": "src/common/models/NeonCalendarConfig.ts",
+			"qualifiedName": "NeonCalendarConfig.pageMonthName"
+		},
+		"36": {
+			"sourceFileName": "src/common/models/NeonCalendarConfig.ts",
+			"qualifiedName": "NeonCalendarConfig.pageYear"
+		},
+		"37": {
+			"sourceFileName": "src/common/models/NeonCalendarConfig.ts",
+			"qualifiedName": "NeonCalendarConfig.pageDecadeStart"
+		},
+		"38": {
+			"sourceFileName": "src/common/models/NeonCalendarConfig.ts",
+			"qualifiedName": "NeonCalendarConfig.dowNames"
+		},
+		"39": {
+			"sourceFileName": "src/common/models/NeonCalendarConfig.ts",
+			"qualifiedName": "NeonCalendarConfig.dates"
+		},
+		"40": {
+			"sourceFileName": "src/common/models/NeonCalendarConfig.ts",
+			"qualifiedName": "NeonCalendarConfig.lastDayOfMonth"
+		},
+		"41": {
+			"sourceFileName": "src/common/models/NeonCalendarConfig.ts",
+			"qualifiedName": "NeonCalendarConfig.months"
+		},
+		"42": {
+			"sourceFileName": "src/common/models/NeonCardListModel.ts",
+			"qualifiedName": ""
+		},
+		"43": {
+			"sourceFileName": "src/common/models/NeonCardListModel.ts",
+			"qualifiedName": "NeonCardListModel"
+		},
+		"44": {
+			"sourceFileName": "src/common/models/NeonCardListModel.ts",
+			"qualifiedName": "NeonCardListModel.key"
+		},
+		"45": {
+			"sourceFileName": "src/common/models/NeonCardListModel.ts",
+			"qualifiedName": "NeonCardListModel.href"
+		},
+		"46": {
+			"sourceFileName": "src/common/models/NeonCardListModel.ts",
+			"qualifiedName": "NeonCardListModel.targetBlank"
+		},
+		"47": {
+			"sourceFileName": "src/common/models/NeonCardListModel.ts",
+			"qualifiedName": "NeonCardListModel.disabled"
+		},
+		"48": {
+			"sourceFileName": "src/common/models/NeonContrastAccessibility.ts",
+			"qualifiedName": ""
+		},
+		"49": {
+			"sourceFileName": "src/common/models/NeonContrastAccessibility.ts",
+			"qualifiedName": "NeonContrastAccessibility"
+		},
+		"50": {
+			"sourceFileName": "src/common/models/NeonContrastAccessibility.ts",
+			"qualifiedName": "NeonContrastAccessibility.normalAA"
+		},
+		"51": {
+			"sourceFileName": "src/common/models/NeonContrastAccessibility.ts",
+			"qualifiedName": "NeonContrastAccessibility.normalAAA"
+		},
+		"52": {
+			"sourceFileName": "src/common/models/NeonContrastAccessibility.ts",
+			"qualifiedName": "NeonContrastAccessibility.largeAA"
+		},
+		"53": {
+			"sourceFileName": "src/common/models/NeonContrastAccessibility.ts",
+			"qualifiedName": "NeonContrastAccessibility.largeAAA"
+		},
+		"54": {
+			"sourceFileName": "src/common/models/NeonContrastAccessibility.ts",
+			"qualifiedName": "NeonContrastAccessibility.ratio"
+		},
+		"55": {
+			"sourceFileName": "src/common/models/NeonDate.ts",
+			"qualifiedName": ""
+		},
+		"56": {
+			"sourceFileName": "src/common/models/NeonDate.ts",
+			"qualifiedName": "NeonDate"
+		},
+		"57": {
+			"sourceFileName": "src/common/models/NeonDate.ts",
+			"qualifiedName": "NeonDate.year"
+		},
+		"58": {
+			"sourceFileName": "src/common/models/NeonDate.ts",
+			"qualifiedName": "NeonDate.yearFormatted"
+		},
+		"59": {
+			"sourceFileName": "src/common/models/NeonDate.ts",
+			"qualifiedName": "NeonDate.month"
+		},
+		"60": {
+			"sourceFileName": "src/common/models/NeonDate.ts",
+			"qualifiedName": "NeonDate.monthShortName"
+		},
+		"61": {
+			"sourceFileName": "src/common/models/NeonDate.ts",
+			"qualifiedName": "NeonDate.monthLongName"
+		},
+		"62": {
+			"sourceFileName": "src/common/models/NeonDate.ts",
+			"qualifiedName": "NeonDate.day"
+		},
+		"63": {
+			"sourceFileName": "src/common/models/NeonDate.ts",
+			"qualifiedName": "NeonDate.dayFormatted"
+		},
+		"64": {
+			"sourceFileName": "src/common/models/NeonDate.ts",
+			"qualifiedName": "NeonDate.time"
+		},
+		"65": {
+			"sourceFileName": "src/common/models/NeonDropdownMenuItem.ts",
+			"qualifiedName": ""
+		},
+		"66": {
+			"sourceFileName": "src/common/models/NeonDropdownMenuItem.ts",
+			"qualifiedName": "NeonDropdownMenuItem"
+		},
+		"67": {
+			"sourceFileName": "src/common/models/NeonDropdownMenuItem.ts",
+			"qualifiedName": "NeonDropdownMenuItem.key"
+		},
+		"68": {
+			"sourceFileName": "src/common/models/NeonDropdownMenuItem.ts",
+			"qualifiedName": "NeonDropdownMenuItem.label"
+		},
+		"69": {
+			"sourceFileName": "src/common/models/NeonDropdownMenuItem.ts",
+			"qualifiedName": "NeonDropdownMenuItem.href"
+		},
+		"70": {
+			"sourceFileName": "src/common/models/NeonDropdownMenuItem.ts",
+			"qualifiedName": "NeonDropdownMenuItem.icon"
+		},
+		"71": {
+			"sourceFileName": "src/common/models/NeonDropdownMenuItem.ts",
+			"qualifiedName": "NeonDropdownMenuItem.separatorBefore"
+		},
+		"72": {
+			"sourceFileName": "src/common/models/NeonDropdownMenuItem.ts",
+			"qualifiedName": "NeonDropdownMenuItem.disabled"
+		},
+		"73": {
+			"sourceFileName": "src/common/models/NeonDropdownMenuItem.ts",
+			"qualifiedName": "NeonDropdownMenuItem.isGroup"
+		},
+		"74": {
+			"sourceFileName": "src/common/models/NeonDropdownMenuItem.ts",
+			"qualifiedName": "NeonDropdownMenuItem.grouped"
+		},
+		"75": {
+			"sourceFileName": "src/common/models/NeonDropdownPlacementObject.ts",
+			"qualifiedName": ""
+		},
+		"135": {
+			"sourceFileName": "src/common/models/NeonFilterListItem.ts",
+			"qualifiedName": ""
+		},
+		"136": {
+			"sourceFileName": "src/common/models/NeonFilterListItem.ts",
+			"qualifiedName": "NeonFilterListItem"
+		},
+		"137": {
+			"sourceFileName": "src/common/models/NeonFilterListItem.ts",
+			"qualifiedName": "NeonFilterListItem.key"
+		},
+		"138": {
+			"sourceFileName": "src/common/models/NeonFilterListItem.ts",
+			"qualifiedName": "NeonFilterListItem.label"
+		},
+		"139": {
+			"sourceFileName": "src/common/models/NeonFilterListItem.ts",
+			"qualifiedName": "NeonFilterListItem.count"
+		},
+		"140": {
+			"sourceFileName": "src/common/models/NeonFilterListItem.ts",
+			"qualifiedName": "NeonFilterListItem.disabled"
+		},
+		"141": {
+			"sourceFileName": "src/common/models/NeonGridModel.ts",
+			"qualifiedName": ""
+		},
+		"142": {
+			"sourceFileName": "src/common/models/NeonGridModel.ts",
+			"qualifiedName": "NeonGridModel"
+		},
+		"143": {
+			"sourceFileName": "src/common/models/NeonGridModel.ts",
+			"qualifiedName": "NeonGridModel.breakpoint"
+		},
+		"144": {
+			"sourceFileName": "src/common/models/NeonGridModel.ts",
+			"qualifiedName": "NeonGridModel.grid"
+		},
+		"145": {
+			"sourceFileName": "src/common/models/NeonListItem.ts",
+			"qualifiedName": ""
+		},
+		"146": {
+			"sourceFileName": "src/common/models/NeonListItem.ts",
+			"qualifiedName": "NeonListItem"
+		},
+		"147": {
+			"sourceFileName": "src/common/models/NeonListItem.ts",
+			"qualifiedName": "NeonListItem.key"
+		},
+		"148": {
+			"sourceFileName": "src/common/models/NeonListItem.ts",
+			"qualifiedName": "NeonListItem.label"
+		},
+		"149": {
+			"sourceFileName": "src/common/models/NeonMenuItem.ts",
+			"qualifiedName": ""
+		},
+		"150": {
+			"sourceFileName": "src/common/models/NeonMenuItem.ts",
+			"qualifiedName": "NeonMenuItem"
+		},
+		"151": {
+			"sourceFileName": "src/common/models/NeonMenuItem.ts",
+			"qualifiedName": "NeonMenuItem.key"
+		},
+		"152": {
+			"sourceFileName": "src/common/models/NeonMenuItem.ts",
+			"qualifiedName": "NeonMenuItem.label"
+		},
+		"153": {
+			"sourceFileName": "src/common/models/NeonMenuItem.ts",
+			"qualifiedName": "NeonMenuItem.href"
+		},
+		"154": {
+			"sourceFileName": "src/common/models/NeonMenuItem.ts",
+			"qualifiedName": "NeonMenuItem.icon"
+		},
+		"155": {
+			"sourceFileName": "src/common/models/NeonMenuItem.ts",
+			"qualifiedName": "NeonMenuItem.disabled"
+		},
+		"156": {
+			"sourceFileName": "src/common/models/NeonMenuModel.ts",
+			"qualifiedName": ""
+		},
+		"157": {
+			"sourceFileName": "src/common/models/NeonMenuModel.ts",
+			"qualifiedName": "NeonMenuModel"
+		},
+		"158": {
+			"sourceFileName": "src/common/models/NeonMenuModel.ts",
+			"qualifiedName": "NeonMenuModel.children"
+		},
+		"159": {
+			"sourceFileName": "src/common/models/NeonMenuItem.ts",
+			"qualifiedName": "NeonMenuItem.key"
+		},
+		"160": {
+			"sourceFileName": "src/common/models/NeonMenuItem.ts",
+			"qualifiedName": "NeonMenuItem.label"
+		},
+		"161": {
+			"sourceFileName": "src/common/models/NeonMenuItem.ts",
+			"qualifiedName": "NeonMenuItem.href"
+		},
+		"162": {
+			"sourceFileName": "src/common/models/NeonMenuItem.ts",
+			"qualifiedName": "NeonMenuItem.icon"
+		},
+		"163": {
+			"sourceFileName": "src/common/models/NeonMenuItem.ts",
+			"qualifiedName": "NeonMenuItem.disabled"
+		},
+		"164": {
+			"sourceFileName": "src/common/models/NeonNumberFormatOptions.ts",
+			"qualifiedName": ""
+		},
+		"165": {
+			"sourceFileName": "src/common/models/NeonNumberFormatOptions.ts",
+			"qualifiedName": "NeonNumberFormatOptions"
+		},
+		"166": {
+			"sourceFileName": "src/common/models/NeonNumberFormatOptions.ts",
+			"qualifiedName": "NeonNumberFormatOptions.decimals"
+		},
+		"167": {
+			"sourceFileName": "src/common/models/NeonNumberFormatOptions.ts",
+			"qualifiedName": "NeonNumberFormatOptions.format"
+		},
+		"168": {
+			"sourceFileName": "src/common/models/NeonNumberFormatOptions.ts",
+			"qualifiedName": "NeonNumberFormatOptions.percentage"
+		},
+		"169": {
+			"sourceFileName": "src/common/models/NeonNumberFormatOptions.ts",
+			"qualifiedName": "NeonNumberFormatOptions.minimumFractionDigits"
+		},
+		"170": {
+			"sourceFileName": "src/common/models/NeonNumberFormatOptions.ts",
+			"qualifiedName": "NeonNumberFormatOptions.style"
+		},
+		"171": {
+			"sourceFileName": "src/common/models/NeonNumberFormatOptions.ts",
+			"qualifiedName": "NeonNumberFormatOptions.currency"
+		},
+		"172": {
+			"sourceFileName": "src/common/models/NeonSearchOption.ts",
+			"qualifiedName": ""
+		},
+		"173": {
+			"sourceFileName": "src/common/models/NeonSearchOption.ts",
+			"qualifiedName": "NeonSearchOption"
+		},
+		"174": {
+			"sourceFileName": "src/common/models/NeonSearchOption.ts",
+			"qualifiedName": "NeonSearchOption.key"
+		},
+		"175": {
+			"sourceFileName": "src/common/models/NeonSearchOption.ts",
+			"qualifiedName": "NeonSearchOption.label"
+		},
+		"176": {
+			"sourceFileName": "src/common/models/NeonSearchOption.ts",
+			"qualifiedName": "NeonSearchOption.chipColor"
+		},
+		"177": {
+			"sourceFileName": "src/common/models/NeonSearchOption.ts",
+			"qualifiedName": "NeonSearchOption.icon"
+		},
+		"178": {
+			"sourceFileName": "src/common/models/NeonSearchOption.ts",
+			"qualifiedName": "NeonSearchOption.separatorBefore"
+		},
+		"179": {
+			"sourceFileName": "src/common/models/NeonSelectGroup.ts",
+			"qualifiedName": ""
+		},
+		"180": {
+			"sourceFileName": "src/common/models/NeonSelectGroup.ts",
+			"qualifiedName": "NeonSelectGroup"
+		},
+		"181": {
+			"sourceFileName": "src/common/models/NeonSelectGroup.ts",
+			"qualifiedName": "NeonSelectGroup.group"
+		},
+		"182": {
+			"sourceFileName": "src/common/models/NeonSelectGroup.ts",
+			"qualifiedName": "NeonSelectGroup.options"
+		},
+		"183": {
+			"sourceFileName": "src/common/models/NeonSelectOption.ts",
+			"qualifiedName": ""
+		},
+		"184": {
+			"sourceFileName": "src/common/models/NeonSelectOption.ts",
+			"qualifiedName": "NeonSelectOption"
+		},
+		"185": {
+			"sourceFileName": "src/common/models/NeonSelectOption.ts",
+			"qualifiedName": "NeonSelectOption.key"
+		},
+		"186": {
+			"sourceFileName": "src/common/models/NeonSelectOption.ts",
+			"qualifiedName": "NeonSelectOption.label"
+		},
+		"187": {
+			"sourceFileName": "src/common/models/NeonSelectOption.ts",
+			"qualifiedName": "NeonSelectOption.icon"
+		},
+		"188": {
+			"sourceFileName": "src/common/models/NeonSelectOption.ts",
+			"qualifiedName": "NeonSelectOption.separatorBefore"
+		},
+		"189": {
+			"sourceFileName": "src/common/models/NeonSelectOption.ts",
+			"qualifiedName": "NeonSelectOption.disabled"
+		},
+		"190": {
+			"sourceFileName": "src/common/models/NeonTabModel.ts",
+			"qualifiedName": ""
+		},
+		"191": {
+			"sourceFileName": "src/common/models/NeonTabModel.ts",
+			"qualifiedName": "NeonTabModel"
+		},
+		"192": {
+			"sourceFileName": "src/common/models/NeonTabModel.ts",
+			"qualifiedName": "NeonTabModel.label"
+		},
+		"193": {
+			"sourceFileName": "src/common/models/NeonTabModel.ts",
+			"qualifiedName": "NeonTabModel.key"
+		},
+		"194": {
+			"sourceFileName": "src/common/models/NeonTabModel.ts",
+			"qualifiedName": "NeonTabModel.icon"
+		},
+		"195": {
+			"sourceFileName": "src/common/models/NeonToastMessage.ts",
+			"qualifiedName": ""
+		},
+		"196": {
+			"sourceFileName": "src/common/models/NeonToastMessage.ts",
+			"qualifiedName": "NeonToastMessage"
+		},
+		"197": {
+			"sourceFileName": "src/common/models/NeonToastMessage.ts",
+			"qualifiedName": "NeonToastMessage.title"
+		},
+		"198": {
+			"sourceFileName": "src/common/models/NeonToastMessage.ts",
+			"qualifiedName": "NeonToastMessage.placement"
+		},
+		"199": {
+			"sourceFileName": "src/common/models/NeonToastMessage.ts",
+			"qualifiedName": "NeonToastMessage.duration"
+		},
+		"200": {
+			"sourceFileName": "src/common/models/NeonToastMessage.ts",
+			"qualifiedName": "NeonToastMessage.dismissible"
+		},
+		"201": {
+			"sourceFileName": "src/common/models/NeonToggleModel.ts",
+			"qualifiedName": ""
+		},
+		"202": {
+			"sourceFileName": "src/common/models/NeonToggleModel.ts",
+			"qualifiedName": "NeonToggleModel"
+		},
+		"203": {
+			"sourceFileName": "src/common/models/NeonToggleModel.ts",
+			"qualifiedName": "NeonToggleModel.key"
+		},
+		"204": {
+			"sourceFileName": "src/common/models/NeonToggleModel.ts",
+			"qualifiedName": "NeonToggleModel.label"
+		},
+		"205": {
+			"sourceFileName": "src/common/models/NeonToggleModel.ts",
+			"qualifiedName": "NeonToggleModel.icon"
+		},
+		"206": {
+			"sourceFileName": "src/common/models/NeonToggleModel.ts",
+			"qualifiedName": "NeonToggleModel.disabled"
+		},
+		"207": {
+			"sourceFileName": "src/common/models/NeonTreeMenuLinkModel.ts",
+			"qualifiedName": ""
+		},
+		"208": {
+			"sourceFileName": "src/common/models/NeonTreeMenuLinkModel.ts",
+			"qualifiedName": "NeonTreeMenuLinkModel"
+		},
+		"209": {
+			"sourceFileName": "src/common/models/NeonTreeMenuLinkModel.ts",
+			"qualifiedName": "NeonTreeMenuLinkModel.label"
+		},
+		"210": {
+			"sourceFileName": "src/common/models/NeonTreeMenuLinkModel.ts",
+			"qualifiedName": "NeonTreeMenuLinkModel.key"
+		},
+		"211": {
+			"sourceFileName": "src/common/models/NeonTreeMenuLinkModel.ts",
+			"qualifiedName": "NeonTreeMenuLinkModel.href"
+		},
+		"212": {
+			"sourceFileName": "src/common/models/NeonTreeMenuLinkModel.ts",
+			"qualifiedName": "NeonTreeMenuLinkModel.anchors"
+		},
+		"213": {
+			"sourceFileName": "src/common/models/NeonTreeMenuSectionModel.ts",
+			"qualifiedName": ""
+		},
+		"214": {
+			"sourceFileName": "src/common/models/NeonTreeMenuSectionModel.ts",
+			"qualifiedName": "NeonTreeMenuSectionModel"
+		},
+		"215": {
+			"sourceFileName": "src/common/models/NeonTreeMenuSectionModel.ts",
+			"qualifiedName": "NeonTreeMenuSectionModel.label"
+		},
+		"216": {
+			"sourceFileName": "src/common/models/NeonTreeMenuSectionModel.ts",
+			"qualifiedName": "NeonTreeMenuSectionModel.key"
+		},
+		"217": {
+			"sourceFileName": "src/common/models/NeonTreeMenuSectionModel.ts",
+			"qualifiedName": "NeonTreeMenuSectionModel.href"
+		},
+		"218": {
+			"sourceFileName": "src/common/models/NeonTreeMenuSectionModel.ts",
+			"qualifiedName": "NeonTreeMenuSectionModel.children"
+		},
+		"219": {
+			"sourceFileName": "src/common/models/NeonTreeMenuSectionModel.ts",
+			"qualifiedName": "NeonTreeMenuSectionModel.expanded"
+		},
+		"220": {
+			"sourceFileName": "src/common/models/NeonTreeMenuSectionModel.ts",
+			"qualifiedName": "NeonTreeMenuSectionModel.disabled"
+		}
+	}
+}

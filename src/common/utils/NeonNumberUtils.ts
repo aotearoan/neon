@@ -4,21 +4,21 @@ import type { NeonNumberFormatOptions } from '../models/NeonNumberFormatOptions'
  * Utilities for helping with number formatting.
  */
 export class NeonNumberUtils {
-  public static parseExample = Intl.NumberFormat([...navigator.languages]).format(1.1);
-  public static decimalSeparator = NeonNumberUtils.parseExample.charAt(1);
-  public static cleanPattern = new RegExp(`[^-+0-9${NeonNumberUtils.decimalSeparator}]`, 'g');
+  private static parseExample = Intl.NumberFormat([...navigator.languages]).format(1.1);
+  private static decimalSeparator = NeonNumberUtils.parseExample.charAt(1);
+  private static cleanPattern = new RegExp(`[^-+0-9${NeonNumberUtils.decimalSeparator}]`, 'g');
 
-  public static PercentageFormat = '{value}%';
-  public static ValuePlaceholder = '{value}';
+  private static valuePlaceholder = '{value}';
+  private static percentageFormat = `${NeonNumberUtils.valuePlaceholder}%`;
 
   /**
    * Format a number for a provided locale.
    *
-   * @param value {number} Number to format.
-   * @param options {NeonNumberFormatOptions} formatting options.
-   * @param locale {string} The user's locale.
+   * @param value Number to format.
+   * @param options formatting options.
+   * @param locale The user's locale.
    *
-   * @returns {string} The formatted number as a string.
+   * @returns The formatted number as a string.
    */
   public static formatNumber(value: number, options?: NeonNumberFormatOptions, locale?: string | null) {
     const formatOptions =
@@ -37,9 +37,9 @@ export class NeonNumberUtils {
 
     if (options) {
       if (options.format) {
-        return options.format.replace(NeonNumberUtils.ValuePlaceholder, formatted);
+        return options.format.replace(NeonNumberUtils.valuePlaceholder, formatted);
       } else if (options.percentage) {
-        return NeonNumberUtils.PercentageFormat.replace(NeonNumberUtils.ValuePlaceholder, formatted);
+        return NeonNumberUtils.percentageFormat.replace(NeonNumberUtils.valuePlaceholder, formatted);
       }
     }
 
@@ -49,9 +49,9 @@ export class NeonNumberUtils {
   /**
    * Parse a number string, removing formatting & returning the numeric value.
    *
-   * @param value {string} The number string to parse.
+   * @param value The number string to parse.
    *
-   * @returns {number} The parsed number.
+   * @returns The parsed number.
    */
   public static parseNumber(value: string) {
     const cleaned = value.replace(NeonNumberUtils.cleanPattern, '');

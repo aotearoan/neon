@@ -4,6 +4,7 @@
  * clash with Neon's messages.
  */
 export class NeonEventBus {
+  /** Message prefix used for Neon internal messages. */
   public static messagePrefix = 'neon-';
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -12,8 +13,8 @@ export class NeonEventBus {
   /**
    * Start listening to event bus events.
    *
-   * @param event {string} The event topic to listen for.
-   * @param callback {(...args: any[]) => void} Callback to be triggered when an event is received.
+   * @param event The event topic to listen for.
+   * @param callback Callback to be triggered when an event is received.
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public static on(event: string, callback: (...args: any[]) => void) {
@@ -26,8 +27,8 @@ export class NeonEventBus {
   /**
    * Stop listening to event bus events.
    *
-   * @param event {string} The event topic to listen for.
-   * @param callback {(...args: any[]) => void} Callback to stop triggering.
+   * @param event The event topic to listen for.
+   * @param callback Callback to stop triggering.
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public static off(event: string, callback: (...args: any[]) => void) {
@@ -37,8 +38,8 @@ export class NeonEventBus {
   /**
    * Emit an event bus event on a specific topic.
    *
-   * @param event {string} The topic on which to send the event.
-   * @param args {any[]} The event arguments to send.
+   * @param event The topic on which to send the event.
+   * @param args The event arguments to send.
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public static emit(event: string, ...args: any[]) {

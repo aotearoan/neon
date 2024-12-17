@@ -531,7 +531,7 @@ export class Menu {
         ],
       },
       {
-        group: 'Source',
+        group: 'API',
         children: [
           {
             path: 'enums',
@@ -545,7 +545,7 @@ export class Menu {
           },
           {
             path: 'utils',
-            name: 'Utils',
+            name: 'Utilities',
             children: utilsList.map((pathString) => {
               const parts = pathString.split('/');
               return {

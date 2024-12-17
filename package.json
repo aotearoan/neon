@@ -14,8 +14,13 @@
     "./sass/includes/*": "./src/sass/includes/*"
   },
   "scripts": {
+    "gen:enum-docs": "npx typedoc --entryPointStrategy expand --json src/app/config/enums.json src/common/enums/**/*",
+    "gen:model-docs": "npx typedoc --entryPointStrategy expand --json src/app/config/models.json src/common/models/**/*",
+    "gen:util-docs": "npx typedoc --entryPointStrategy expand --json src/app/config/utils.json src/common/utils/**",
+    "gen:component-docs": "node doc-gen.js",
+    "gen:docs": "npm run gen:enum-docs && npm run gen:model-docs && npm run gen:util-docs && npm run gen:component-docs",
     "gen:version": "genversion --es6 --semi ./version.ts",
-    "dev": "node doc-gen.js && npm run gen:version && vite",
+    "dev": "npm run gen:docs && npm run gen:version && vite",
     "build": "npm run gen:version && vite build && vue-tsc --emitDeclarationOnly",
     "build:app": "npm run gen:version && vite --config vite.config.app.ts build",
     "test": "npm run gen:version && jest --no-cache --maxWorkers=2",
@@ -104,6 +109,7 @@
     "prismjs": "^1.29.0",
     "sass": "^1.62.1",
     "ts-jest": "^29.1.0",
+    "typedoc": "^0.24.8",
     "typescript": "~5.0.4",
     "vite": "^4.3.8",
     "vite-plugin-css-injected-by-js": "^3.1.1",
