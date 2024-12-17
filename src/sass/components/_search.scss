@@ -94,7 +94,6 @@
         min-height: var(--neon-size-s);
 
         .neon-search__search-icon {
-          top: calc(0.5 * (var(--neon-size-s) - var(--neon-font-size-s)) + 0.75 * var(--neon-space-4));
           width: var(--neon-font-size-s);
           height: var(--neon-font-size-s);
         }
@@ -113,7 +112,6 @@
         min-height: var(--neon-size-m);
 
         .neon-search__search-icon {
-          top: calc(0.5 * (var(--neon-size-m) - var(--neon-font-size-m)) + 0.75 * var(--neon-space-4));
           width: var(--neon-font-size-m);
           height: var(--neon-font-size-m);
         }
@@ -132,7 +130,6 @@
         min-height: var(--neon-size-l);
 
         .neon-search__search-icon {
-          top: calc(0.5 * (var(--neon-size-l) - var(--neon-font-size-m)) + 0.75 * var(--neon-space-4));
           width: var(--neon-font-size-m);
           height: var(--neon-font-size-m);
         }

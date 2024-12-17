@@ -19,13 +19,19 @@
       display: flex;
 
       & > .neon-card {
-        &,
+        flex: 1 0 auto;
+
         & > .neon-card-body {
-          flex: 1 0 auto;
+          flex: 0 1 auto;
 
           @include responsive.responsive(mobile-large) {
             flex: 0 0 auto;
           }
+        }
+
+        & > .neon-card-body:last-child,
+        & > .neon-card-footer:last-child {
+          flex: 1 0 auto;
         }
       }
     }
