@@ -46,12 +46,18 @@ loin meatloaf turducken strip steak.`;
 
     const selected = ref('tab1');
 
-    const template = `<neon-tabs v-model="selected" :tabs="tabs">
+    const templateWeb = `<neon-tabs v-model="selected" :tabs="tabs">
   <neon-tab v-for="(tab, index) in tabs" :key="tab.key" :selected="selected === tab.key" :tab="tab">
     <h6>Tab {{ index + 1 }}</h6>
     <span>{{ tabContent }}</span>
   </neon-tab>
 </neon-tabs>`;
+
+    const templateApp = `<neon-tab v-for="(tab, index) in tabs" :key="tab.key" :selected="selected === tab.key" :tab="tab">
+  <h6>Tab {{ index + 1 }}</h6>
+  <span>{{ tabContent }}</span>
+</neon-tab>
+<neon-tabs v-model="selected" :tabs="tabs" tabs-style="app" />`;
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonTabs')));
 
@@ -59,7 +65,8 @@ loin meatloaf turducken strip steak.`;
       menuModel,
       headline,
       selected,
-      template,
+      templateWeb,
+      templateApp,
       tabs,
       tabContent,
     };

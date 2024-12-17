@@ -1,5 +1,9 @@
 <template>
-  <div :class="[`neon-tabs--${size}`, `neon-tabs--${color}`]" class="neon-tabs" role="tablist">
+  <div
+    :class="[`neon-tabs--${size}`, `neon-tabs--${color}`, `neon-tabs--${tabsStyle}`]"
+    class="neon-tabs"
+    role="tablist"
+  >
     <div :class="{ 'neon-tabs__menu-items--underlined': underline }" class="neon-tabs__menu-items">
       <div
         v-for="(tab, index) in tabs"
@@ -20,12 +24,7 @@
           @keydown.right="onClick(tabs[index + 1 === tabs.length ? 0 : index + 1].key, true)"
           @keydown.left="onClick(tabs[index === 0 ? tabs.length - 1 : index - 1].key, true)"
         >
-          <neon-icon
-            v-if="tab.icon"
-            :color="tab.key === modelValue ? color : undefined"
-            :name="tab.icon"
-            class="neon-tabs__menu-icon"
-          />
+          <neon-icon v-if="tab.icon" :name="tab.icon" class="neon-tabs__menu-icon" />
           <span v-if="tab.label" class="neon-tabs__menu-label">{{ tab.label }}</span>
         </div>
       </div>

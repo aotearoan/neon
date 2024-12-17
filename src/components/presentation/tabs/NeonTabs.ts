@@ -1,6 +1,7 @@
 import { defineComponent } from 'vue';
 import type { NeonTabModel } from '@/common/models/NeonTabModel';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonTabsStyle } from '@/common/enums/NeonTabsStyle';
 import { NeonSize } from '@/common/enums/NeonSize';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 
@@ -22,11 +23,15 @@ export default defineComponent({
      */
     modelValue: { type: String, required: true },
     /**
+     * The tab button style.
+     */
+    tabsStyle: { type: String as () => NeonTabsStyle, default: NeonTabsStyle.Web },
+    /**
      * The tab highlight color (excludes low-contrast).
      */
     color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Primary },
     /**
-     * The tab size.
+     * The tab size (NOTE: web style only)
      */
     size: { type: String as () => NeonSize, default: NeonSize.Medium },
     /**
@@ -54,6 +59,7 @@ export default defineComponent({
 
     return {
       onClick,
+      NeonTabsStyle,
     };
   },
 });
