@@ -12,8 +12,6 @@
 
         .neon-tabs__menu-item {
           &--selected {
-            @include svg.color-with-svg($tab-selected-color);
-
             .neon-tabs__menu-item-container:before {
               background-color: $tab-selected-color;
             }
@@ -21,8 +19,6 @@
 
           &:hover,
           &:active {
-            @include svg.color-with-svg($tab-hover-color);
-
             .neon-tabs__menu-item-container:before {
               background-color: $tab-hover-color;
             }
@@ -41,35 +37,24 @@
       }
     }
 
-    &__menu-items {
+    .neon-tabs__menu-items {
       display: flex;
       flex-direction: row;
       align-items: center;
       font-weight: var(--neon-font-weight-semi-bold);
-
-      &--underlined {
-        border-bottom: var(--neon-border-width-tabs) var(--neon-border-style) var(--neon-border-color-tabs-underline);
-
-        .neon-tabs__menu-item-container:before {
-          bottom: calc(-1 * var(--neon-border-width-tabs));
-        }
-      }
     }
 
-    &__menu-item {
+    .neon-tabs__menu-item {
       position: relative;
       display: flex;
       flex-direction: row;
+      flex-wrap: nowrap;
       align-items: center;
       height: 100%;
       user-select: none;
       cursor: pointer;
       transition: color ease-in-out var(--neon-animation-speed-fast);
       @include svg.color-with-svg(var(--neon-color-low-contrast));
-
-      & + .neon-tabs__menu-item {
-        margin-left: var(--neon-space-24);
-      }
 
       &:focus {
         outline: none;
@@ -81,7 +66,15 @@
         outline: none;
         height: 100%;
         align-items: center;
-        flex-direction: row;
+        color: var(--neon-color-text-strong);
+
+        .neon-svg--stroke {
+          stroke: var(--neon-color-text-strong);
+        }
+
+        .neon-svg--fill {
+          fill: var(--neon-color-text-strong);
+        }
 
         &:before {
           content: '';
@@ -91,55 +84,108 @@
           position: absolute;
           height: var(--neon-border-width-tabs);
           bottom: 0;
-          border-radius: var(--neon-border-radius);
+          border-radius: var(--neon-border-radius-tabs);
           transition: all ease-in-out var(--neon-animation-speed-fast);
         }
       }
+    }
 
-      .neon-tabs__menu-item-container:focus {
-        &:before {
-          margin-left: var(--neon-space-4);
-          margin-right: var(--neon-space-4);
-          width: calc(100% - var(--neon-space-8));
+    &--web {
+      &.neon-tabs--s {
+        .neon-tabs__menu-items {
+          height: var(--neon-size-s);
+          font-size: var(--neon-font-size-m);
+
+          svg {
+            width: var(--neon-font-size-m);
+            height: var(--neon-font-size-m);
+            margin-right: var(--neon-base-space);
+          }
+        }
+      }
+
+      &.neon-tabs--m {
+        .neon-tabs__menu-items {
+          height: var(--neon-size-m);
+          font-size: var(--neon-font-size-l);
+
+          svg {
+            width: var(--neon-font-size-l);
+            height: var(--neon-font-size-l);
+            margin-right: calc(2 * var(--neon-base-space));
+          }
+        }
+      }
+
+      &.neon-tabs--l {
+        .neon-tabs__menu-items {
+          height: var(--neon-size-l);
+          font-size: var(--neon-font-size-l);
+
+          svg {
+            width: var(--neon-font-size-l);
+            height: var(--neon-font-size-l);
+            margin-right: calc(2 * var(--neon-base-space));
+          }
+        }
+      }
+
+      .neon-tabs__menu-items--underlined {
+        border-bottom: var(--neon-border-width-tabs) var(--neon-border-style) var(--neon-border-color-tabs-underline);
+
+        .neon-tabs__menu-item-container:before {
+          bottom: calc(-1 * var(--neon-border-width-tabs));
+        }
+      }
+
+      .neon-tabs__menu-item {
+        & + .neon-tabs__menu-item {
+          margin-left: calc(6 * var(--neon-base-space));
+        }
+
+        &-container {
+          flex-direction: row;
+        }
+
+        .neon-tabs__menu-item-container:focus {
+          &:before {
+            margin-left: var(--neon-base-space);
+            margin-right: var(--neon-base-space);
+            width: calc(100% - 2 * var(--neon-base-space));
+          }
         }
       }
     }
 
-    &--s {
-      .neon-tabs__menu-items {
-        height: var(--neon-size-s);
-        font-size: var(--neon-font-size-m);
+    &--app {
+      border-top: var(--neon-border);
 
-        svg {
-          width: var(--neon-font-size-m);
-          height: var(--neon-font-size-m);
-          margin-right: var(--neon-space-4);
+      .neon-tabs__menu-items--underlined {
+        border-top: var(--neon-border-width-tabs) var(--neon-border-style) var(--neon-border-color-tabs-underline);
+
+        .neon-tabs__menu-item-container:before {
+          top: calc(-1 * (var(--neon-border-width-tabs) + var(--neon-border-width)));
         }
       }
-    }
 
-    &--m {
-      .neon-tabs__menu-items {
-        height: var(--neon-size-m);
-        font-size: var(--neon-font-size-l);
+      .neon-tabs__menu-item {
+        width: 100%;
 
-        svg {
-          width: var(--neon-font-size-l);
-          height: var(--neon-font-size-l);
-          margin-right: var(--neon-space-8);
-        }
-      }
-    }
+        &-container {
+          flex-direction: column;
+          justify-content: center;
+          gap: var(--neon-base-space);
+          width: 100%;
+          padding-top: calc(3 * var(--neon-base-space));
+          padding-bottom: calc(2 * var(--neon-base-space));
+          font-weight: var(--neon-font-weight-semi-bold);
+          font-size: var(--neon-font-size-xs);
+          line-height: 1.26;
 
-    &--l {
-      .neon-tabs__menu-items {
-        height: var(--neon-size-l);
-        font-size: var(--neon-font-size-l);
-
-        svg {
-          width: var(--neon-font-size-l);
-          height: var(--neon-font-size-l);
-          margin-right: var(--neon-space-8);
+          .neon-icon {
+            width: auto;
+            height: 24rem;
+          }
         }
       }
     }
@@ -158,10 +204,10 @@
     &:before {
       content: '';
       position: absolute;
-      top: var(--neon-space-4);
+      top: var(--neon-base-space);
       right: 0;
-      width: var(--neon-space-8);
-      height: var(--neon-space-8);
+      width: calc(2 * var(--neon-base-space));
+      height: calc(2 * var(--neon-base-space));
       border-radius: var(--neon-border-radius);
       display: flex;
       transition: all var(--neon-animation-speed-fast) ease-in-out;

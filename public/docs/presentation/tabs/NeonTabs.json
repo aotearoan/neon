@@ -21,6 +21,17 @@
       "required": true
     },
     {
+      "name": "tabsStyle",
+      "description": "The tab button style.",
+      "type": {
+        "name": "String as () => NeonTabsStyle"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonTabsStyle.Web"
+      }
+    },
+    {
       "name": "color",
       "description": "The tab highlight color (excludes low-contrast).",
       "type": {
@@ -33,7 +44,7 @@
     },
     {
       "name": "size",
-      "description": "The tab size.",
+      "description": "The tab size (NOTE: web style only)",
       "type": {
         "name": "String as () => NeonSize"
       },
