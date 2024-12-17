@@ -23,7 +23,7 @@ export default defineComponent({
       (to) => {
         className.value = to.split('/').pop() || null;
         if (className.value && className.value.indexOf('Neon') === 0) {
-          fetch(`${import.meta.env.VITE_RESOURCE_URL}files/${to}.ts`).then((response) => {
+          fetch(`${import.meta.env.VITE_RESOURCE_URL}files${to}.ts`).then((response) => {
             response.text().then((file) => {
               template.value = file;
             });

@@ -592,7 +592,7 @@ export class Menu {
     }
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [head, ...tail] = Menu.menu().flatMap((group) =>
+    const [head, ..._tail] = Menu.menu().flatMap((group) =>
       group.children.flatMap((item) => findComponent(item)).filter((item) => item !== null),
     );
     return head;

@@ -88,7 +88,7 @@
     }
 
     &:not(.no-style) > li {
-      display: inline;
+      display: inline-flex;
       max-width: var(--neon-max-paragraph-width);
       padding-left: calc(7 * var(--neon-space-4));
 
@@ -97,7 +97,7 @@
         padding-right: var(--neon-space-8);
         margin-left: calc(-7 * var(--neon-space-4));
         display: inline-flex;
-        align-items: center;
+        align-items: flex-start;
         font-size: var(--neon-font-size-l);
         line-height: var(--neon-line-height-ratio);
       }
