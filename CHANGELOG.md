@@ -1,5 +1,12 @@
 # Changelog
 
+## [18.0.1](https://github.com/aotearoan/neon/compare/v18.0.0...v18.0.1) (2024-12-17)
+
+
+### Bug Fixes
+
+* generated files ([#222](https://github.com/aotearoan/neon/issues/222)) ([9d09d1a](https://github.com/aotearoan/neon/commit/9d09d1aa943b2026c6614ff28fdb70c9375ce92e))
+
 ## [18.0.0](https://github.com/aotearoan/neon/compare/v17.0.0...v18.0.0) (2024-12-17)
 
 
