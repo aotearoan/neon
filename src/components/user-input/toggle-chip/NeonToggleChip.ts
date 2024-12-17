@@ -1,5 +1,5 @@
 import { computed, defineComponent, useAttrs } from 'vue';
-import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonToggleChipSize } from '@/common/enums/NeonToggleChipSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 
@@ -27,7 +27,7 @@ export default defineComponent({
     /**
      * The size of the toggle chip.
      */
-    size: { type: String as () => NeonSize, default: NeonSize.Medium },
+    size: { type: String as () => NeonToggleChipSize, default: NeonToggleChipSize.Medium },
     /**
      * The toggle chip color.
      */
