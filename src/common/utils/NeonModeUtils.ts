@@ -1,18 +1,28 @@
 import { NeonMode } from '../enums/NeonMode';
 
+/**
+ * Utility for managing Neon's light & dark modes & defaulting to the user's preference. See
+ * <a href="/design/theming#dark-mode">Dark mode</a>.
+ */
 export class NeonModeUtils {
   private static callbacks: Record<string, (value: NeonMode) => void> = {};
   private static defaultMode: NeonMode = NeonMode.Dark;
   private static mode: NeonMode | null = null;
 
+  /**
+   * Get the current mode.
+   *
+   * @returns {NeonMode} The current user light or dark mode.
+   */
   public static getMode() {
     return NeonModeUtils.mode;
   }
 
-  public static getCallbacks() {
-    return NeonModeUtils.callbacks;
-  }
-
+  /**
+   * Set the initial mode.
+   *
+   * @param defaultMode {NeonMode} The mode to set. If no mode is passed in the user preferences are used.
+   */
   public static init(defaultMode?: NeonMode) {
     if (defaultMode) {
       NeonModeUtils.defaultMode = defaultMode;
@@ -31,6 +41,12 @@ export class NeonModeUtils {
     }
   }
 
+  /**
+   * Add a callback to listen to mode changes made by the user.
+   *
+   * @param key {string} The unique key for the listener.
+   * @param callback {(value: NeonMode) => void} The callback function.
+   */
   public static addListener(key: string, callback: (value: NeonMode) => void) {
     if (window.matchMedia) {
       if (Object.keys(NeonModeUtils.callbacks).length === 0) {
@@ -46,6 +62,11 @@ export class NeonModeUtils {
     }
   }
 
+  /**
+   * Remove a callback listener.
+   *
+   * @param key {string} The unique key for the listener.
+   */
   public static removeListener(key: string) {
     delete NeonModeUtils.callbacks[key];
     if (Object.keys(NeonModeUtils.callbacks).length === 0 && window.matchMedia) {
@@ -55,6 +76,10 @@ export class NeonModeUtils {
         .matchMedia('(prefers-color-scheme: no-preference)')
         .removeEventListener('change', NeonModeUtils.onNoPreferenceChange);
     }
+  }
+
+  static getCallbacks() {
+    return NeonModeUtils.callbacks;
   }
 
   static onDarkChange(e: MediaQueryListEvent) {

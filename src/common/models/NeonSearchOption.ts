@@ -1,12 +1,22 @@
 import type { NeonFunctionalColor } from '../enums/NeonFunctionalColor';
 
 /**
- * Model describing a search option.
+ * Model describing a search option. See <a href="/user-input/search">NeonSearch</a>.
  */
 export interface NeonSearchOption {
-  key: string; // NOTE: Also used as the id of the option for accessibility so make sure it's unique on the page.
+  /**
+   * Unique key for the search option.
+   * <br />
+   * <br />
+   * NOTE: Also used as the id of the option for accessibility so make sure it's unique <strong>on the page</strong>.
+   */
+  key: string;
+  /** Display label for the option. */
   label: string;
-  chipColor?: NeonFunctionalColor; // When multiple=true this is the color of the input chip displayed when this option is selected.
+  /** Color of the input chip when the option is selected if NeonSearch multiple=true. */
+  chipColor?: NeonFunctionalColor;
+  /** Icon to be displayed before the label. */
   icon?: string;
+  /** Display a separator before the search option in the dropdown. */
   separatorBefore?: boolean;
 }

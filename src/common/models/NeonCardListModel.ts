@@ -1,5 +1,6 @@
 /**
- * Provides the necessary fields for rendering card list items as links.
+ * Provides the necessary fields for rendering a card list items as a link. See
+ * <a href="/layout/card-list">NeonCardList</a>.
  */
 export interface NeonCardListModel {
   /**
@@ -7,15 +8,15 @@ export interface NeonCardListModel {
    */
   key?: string;
   /**
-   * href to open when the user clicks on this card
+   * Href to open when the user clicks on this card
    */
   href?: string;
   /**
-   * open href in a new tab (target="_blank")
+   * Open href in a new tab (target="_blank")
    */
   targetBlank?: boolean;
   /**
-   * disable the card so it cannot be clicked
+   * Disable the card so it cannot be clicked
    */
   disabled?: boolean;
 }

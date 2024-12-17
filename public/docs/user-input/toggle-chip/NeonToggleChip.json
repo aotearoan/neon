@@ -23,11 +23,11 @@
       "name": "size",
       "description": "The size of the toggle chip.",
       "type": {
-        "name": "String as () => NeonSize"
+        "name": "String as () => NeonToggleChipSize"
       },
       "defaultValue": {
         "func": false,
-        "value": "NeonSize.Medium"
+        "value": "NeonToggleChipSize.Medium"
       }
     },
     {

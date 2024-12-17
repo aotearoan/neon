@@ -10,7 +10,7 @@ export interface NeonToastMessage {
   title: string;
 
   /**
-   * Placement of the message, either centered at the top or at the bottom. Default is top.
+   * Placement of the message, either centered at the top or at the bottom. Default is <strong>top</strong>.
    */
   placement?: NeonVerticalPosition;
 

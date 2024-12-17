@@ -11,7 +11,6 @@
     </div>
     <div class="editor__actions">
       <neon-button
-        v-if="clipboard.supportClipboard"
         :transparent="true"
         aria-label="Copy"
         button-style="text"

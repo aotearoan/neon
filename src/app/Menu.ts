@@ -486,7 +486,7 @@ export class Menu {
               {
                 path: 'search',
                 page: 'Search',
-                keywords: 'select',
+                keywords: 'select autocomplete',
                 component: 'NeonSearch',
               },
               {

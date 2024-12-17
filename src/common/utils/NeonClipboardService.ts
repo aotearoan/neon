@@ -1,26 +1,16 @@
+/**
+ * Utility that provides application clipboard support.
+ */
 export class NeonClipboardSupport {
-  public supportClipboard = false;
-
-  public constructor() {
-    const permissions = navigator.permissions;
-    if (permissions) {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      permissions.query({ name: 'clipboard-write' }).then(
-        (result: PermissionStatus) => {
-          if (result.state === 'granted' || result.state === 'prompt') {
-            this.supportClipboard = true;
-          }
-        },
-        () => console.info('clipboard-write unsupported'),
-      );
-    }
-  }
-
+  /**
+   * Copy provided string to the clipboard if support is enabled.
+   *
+   * @param value The value to copy.
+   *
+   * @returns A promise indicating when the copy to clipboard is complete.
+   */
   public copyTo(value: string): Promise<void> {
-    return this.supportClipboard
-      ? navigator.clipboard.writeText(value)
-      : Promise.reject(new Error('No clipboard support'));
+    return navigator.clipboard.writeText(value);
   }
 }
 

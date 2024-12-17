@@ -19,11 +19,11 @@
       "name": "placement",
       "description": "Placement of the tooltip contents.",
       "type": {
-        "name": "String as () => NeonPlacement"
+        "name": "String as () => NeonPosition"
       },
       "defaultValue": {
         "func": false,
-        "value": "NeonPlacement.Top"
+        "value": "NeonPosition.Top"
       }
     },
     {

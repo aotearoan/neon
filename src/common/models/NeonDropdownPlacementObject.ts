@@ -1,6 +1,13 @@
 import { NeonPosition } from '../enums/NeonPosition';
 import { NeonDropdownPlacement } from '../enums/NeonDropdownPlacement';
 
+/**
+ * @class
+ * @ignore Internal use only
+ *
+ * Provides default settings for placement utilities as well as 'flipping' strategies if there is no room to place an
+ * element in the desired placement.
+ */
 export class NeonDropdownPlacementObject {
   public static TopLeft = new NeonDropdownPlacementObject(
     NeonDropdownPlacement.TopLeft,
