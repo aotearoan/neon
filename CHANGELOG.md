@@ -1,5 +1,12 @@
 # Changelog
 
+## [16.1.2](https://github.com/aotearoan/neon/compare/v16.1.1...v16.1.2) (2024-12-17)
+
+
+### Bug Fixes
+
+* replace position with placement enum ([#215](https://github.com/aotearoan/neon/issues/215)) ([fd13846](https://github.com/aotearoan/neon/commit/fd13846e4347b08922315ec46965901ce8c2def3))
+
 ## [16.1.1](https://github.com/aotearoan/neon/compare/v16.1.0...v16.1.1) (2024-12-17)
 
 
