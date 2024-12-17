@@ -1,5 +1,12 @@
 # Changelog
 
+## [16.1.0](https://github.com/aotearoan/neon/compare/v16.0.7...v16.1.0) (2024-12-17)
+
+
+### Features
+
+* ap style mobile tabs ([#211](https://github.com/aotearoan/neon/issues/211)) ([1fe5f03](https://github.com/aotearoan/neon/commit/1fe5f030198df597037eb1015458ecf657d1f2df))
+
 ## [16.0.7](https://github.com/aotearoan/neon/compare/v16.0.6...v16.0.7) (2024-12-16)
 
 
