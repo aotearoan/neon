@@ -1,7 +1,7 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonToggleChip from './NeonToggleChip.vue';
-import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonToggleChipSize } from '@/common/enums/NeonToggleChipSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 describe('NeonToggleChip', () => {
@@ -97,7 +97,7 @@ describe('NeonToggleChip', () => {
   it('renders size', async () => {
     const { html, rerender } = harness;
 
-    await rerender({ modelValue: true, size: NeonSize.Small });
+    await rerender({ modelValue: true, size: NeonToggleChipSize.Small });
     const result = html();
     expect(result).toMatch('neon-toggle-chip--s');
   });

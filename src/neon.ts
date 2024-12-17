@@ -85,6 +85,7 @@ export { NeonSplashLoaderSize } from './common/enums/NeonSplashLoaderSize';
 export { NeonState } from './common/enums/NeonState';
 export { NeonSwitchStyle } from './common/enums/NeonSwitchStyle';
 export { NeonTabsStyle } from './common/enums/NeonTabsStyle';
+export { NeonToggleChipSize } from './common/enums/NeonToggleChipSize';
 export { NeonToggleStyle } from './common/enums/NeonToggleStyle';
 export { NeonTooltipStyle } from './common/enums/NeonTooltipStyle';
 export { NeonVerticalPosition } from './common/enums/NeonVerticalPosition';
