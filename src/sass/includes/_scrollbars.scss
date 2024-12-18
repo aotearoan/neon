@@ -21,3 +21,24 @@
     background-color: transparent;
   }
 }
+
+@mixin hide-scrollbars {
+  scrollbar-color: transparent transparent;
+  scrollbar-width: 0;
+
+  &::-webkit-scrollbar {
+    display: none;
+
+    &-thumb {
+      display: none;
+    }
+
+    &-track-piece {
+      display: none;
+    }
+  }
+
+  &::-webkit-scrollbar-corner {
+    display: none;
+  }
+}
