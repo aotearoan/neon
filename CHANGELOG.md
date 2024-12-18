@@ -1,5 +1,12 @@
 # Changelog
 
+## [18.0.2](https://github.com/aotearoan/neon/compare/v18.0.1...v18.0.2) (2024-12-18)
+
+
+### Bug Fixes
+
+* hide-scrollbars mixin ([#226](https://github.com/aotearoan/neon/issues/226)) ([efcd8f1](https://github.com/aotearoan/neon/commit/efcd8f1ba953472d2f679dc2a103eccd8ca198ea))
+
 ## [18.0.1](https://github.com/aotearoan/neon/compare/v18.0.0...v18.0.1) (2024-12-17)
 
 
