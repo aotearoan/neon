@@ -22,9 +22,8 @@
           :role="!message.primaryAction ? 'button' : undefined"
           :tabindex="message.primaryAction ? -1 : 0"
           class="neon-alert__content"
-          @keydown.space="!message.primaryAction && message.dismissible && closeMessage(message.id)"
+          @keydown.space.prevent="!message.primaryAction && message.dismissible && closeMessage(message.id)"
           @keydown.enter="!message.primaryAction && message.dismissible && closeMessage(message.id)"
-          @keypress.space.prevent=""
         >
           <div v-if="message.title" :id="`alertTitle${index}`" class="neon-alert__title">{{ message.title }}</div>
           <div v-if="message.message" :id="`alertMessage${index}`" class="neon-alert__body">{{ message.message }}</div>
@@ -40,11 +39,10 @@
               message.primaryAction.callback();
               closeMessage(message.id);
             "
-            @keydown.space="
+            @keydown.space.prevent="
               message.primaryAction.callback();
               closeMessage(message.id);
             "
-            @keypress.space.prevent=""
           >
             <span class="neon-alert__action-label">{{ message.primaryAction.label }}</span>
           </neon-link>
@@ -58,11 +56,10 @@
               message.secondaryAction.callback();
               closeMessage(message.id);
             "
-            @keydown.space="
+            @keydown.space.prevent="
               message.secondaryAction.callback();
               closeMessage(message.id);
             "
-            @keypress.space.prevent=""
           >
             <span class="neon-alert__action-label">{{ message.secondaryAction.label }}</span>
           </neon-link>

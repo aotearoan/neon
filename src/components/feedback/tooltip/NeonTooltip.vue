@@ -1,8 +1,7 @@
 <template>
   <div
     ref="tooltip"
-    tabindex="0"
-    class="neon-tooltip"
+    :aria-describedby="id"
     :class="[
       { 'neon-tooltip--open': open },
       `neon-tooltip--${tooltipStyle}`,
@@ -10,13 +9,13 @@
       `neon-tooltip--outline-${outlineStyle}`,
       `neon-tooltip--outline-color-${outlineColor}`,
     ]"
-    :aria-describedby="id"
-    @keydown.enter="toggleTooltip()"
-    @keydown.esc="closeTooltip()"
-    @keydown.space="toggleTooltip()"
-    @keypress.space.prevent=""
+    class="neon-tooltip"
+    tabindex="0"
     @mouseenter="openTooltip()"
     @mouseleave="closeTooltip()"
+    @keydown.enter="toggleTooltip()"
+    @keydown.esc="closeTooltip()"
+    @keydown.space.prevent="toggleTooltip()"
   >
     <div ref="content" class="neon-tooltip__content-wrapper">
       <div class="neon-tooltip__arrow"></div>

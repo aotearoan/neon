@@ -32,8 +32,7 @@
           role="menuitem"
           @click="!item.disabled && onClick(item.key)"
           @keydown.enter="!item.disabled && onClick(item.key)"
-          @keydown.space="!item.disabled && onClick(item.key)"
-          @keypress.space.prevent=""
+          @keydown.space.prevent="!item.disabled && onClick(item.key)"
         >
           <neon-icon
             v-if="item.icon"

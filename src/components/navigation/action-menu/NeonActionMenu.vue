@@ -15,8 +15,7 @@
           class="neon-action-menu__link"
           outline-style="none"
           @click="!item.disabled && onClick(item.key)"
-          @keydown.space="!item.disabled && onClick(item.key)"
-          @keypress.space.prevent=""
+          @keydown.space.prevent="!item.disabled && onClick(item.key)"
         >
           <div class="neon-action-menu__link-label">{{ item.label }}</div>
           <div v-if="item.count" class="neon-action-menu__link-count">{{ item.count.toLocaleString() }}</div>
