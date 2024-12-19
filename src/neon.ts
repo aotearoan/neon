@@ -53,6 +53,7 @@ export { default as NeonSlider } from './components/user-input/slider/NeonSlider
 export { default as NeonSplashLoader } from './components/feedback/splash-loader/NeonSplashLoader.vue';
 export { default as NeonStack } from './components/layout/stack/NeonStack.vue';
 export { default as NeonStepper } from './components/navigation/stepper/NeonStepper.vue';
+export { default as NeonSwiper } from './components/layout/swiper/NeonSwiper.vue';
 export { default as NeonSwitch } from './components/user-input/switch/NeonSwitch.vue';
 export { default as NeonTab } from './components/presentation/tabs/tab/NeonTab.vue';
 export { default as NeonTabs } from './components/presentation/tabs/NeonTabs.vue';

@@ -70,6 +70,7 @@
   /* animation */
   --neon-animation-speed-slow: 0.3s;
   --neon-animation-speed-fast: 0.225s;
+  --neon-animation-speed-fastest: 0.05s;
 
   /* borders */
   --neon-border-radius: 6rem;
@@ -568,6 +569,9 @@
     /* card list */
     --neon-background-color-card-list: rgba(var(--neon-rgb-neutral-d5), 0.5);
     --neon-box-shadow-card-list: 0 -2rem 4rem 0 rgba(var(--neon-rgb-neutral-d5), 0.2), 0 2rem 4rem 0 rgba(var(--neon-rgb-neutral-d5), 0.3);
+
+    /* swiper */
+    --neon-background-color-swiper: var(--neon-background-color-card);
   }
 
   /*********************
@@ -857,5 +861,8 @@
     /* card list */
     --neon-background-color-card-list: rgba(var(--neon-rgb-high-contrast-l4), 0.5);
     --neon-box-shadow-card-list: 0 -2rem 4rem 0 rgba(var(--neon-rgb-neutral-l3), 0.1), 0 2rem 4rem 0 rgba(var(--neon-rgb-neutral-l3), 0.15);
+
+    /* swiper */
+    --neon-background-color-swiper: var(--neon-background-color-card);
   }
 }

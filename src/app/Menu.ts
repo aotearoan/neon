@@ -271,6 +271,13 @@ export class Menu {
                 component: 'NeonStack',
               },
               {
+                path: 'swiper',
+                page: 'Swiper',
+                component: 'NeonSwiper',
+                keywords: 'scroll horizontally swipe overflow',
+                anchors: ['Examples', 'API'],
+              },
+              {
                 path: 'top-nav',
                 page: 'TopNav',
                 name: 'Top Nav',
