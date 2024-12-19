@@ -1,5 +1,12 @@
 # Changelog
 
+## [18.0.3](https://github.com/aotearoan/neon/compare/v18.0.2...v18.0.3) (2024-12-19)
+
+
+### Bug Fixes
+
+* refactor keydown.space.prevent ([#228](https://github.com/aotearoan/neon/issues/228)) ([9eaea07](https://github.com/aotearoan/neon/commit/9eaea07b0871d591b2637101b9c6ff7a4babda99))
+
 ## [18.0.2](https://github.com/aotearoan/neon/compare/v18.0.1...v18.0.2) (2024-12-18)
 
 
