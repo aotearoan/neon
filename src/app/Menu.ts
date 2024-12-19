@@ -361,6 +361,14 @@ export class Menu {
                 anchors: ['Examples', 'Description', 'API'],
               },
               {
+                path: 'image-carousel',
+                page: 'ImageCarousel',
+                name: 'Image Carousel',
+                component: 'NeonImageCarousel',
+                keywords: 'swiper touch scroll',
+                anchors: ['Examples', 'API'],
+              },
+              {
                 path: 'label',
                 page: 'Label',
                 component: 'NeonLabel',

@@ -28,6 +28,7 @@ export { default as NeonFooter } from './components/layout/footer/NeonFooter.vue
 export { default as NeonGrid } from './components/layout/grid/NeonGrid.vue';
 export { default as NeonGridArea } from './components/layout/grid/grid-area/NeonGridArea.vue';
 export { default as NeonIcon } from './components/presentation/icon/NeonIcon.vue';
+export { default as NeonImageCarousel } from './components/presentation/image-carousel/NeonImageCarousel.vue';
 export { default as NeonInline } from './components/layout/inline/NeonInline.vue';
 export { default as NeonInput } from './components/user-input/input/NeonInput.vue';
 export { default as NeonInputIndicator } from './components/user-input/input-indicator/NeonInputIndicator.vue';
@@ -97,6 +98,7 @@ export type { NeonAlertMessage } from './common/models/NeonAlertMessage';
 export type { NeonAlertModel } from './components/feedback/alert/NeonAlertModel';
 export type { NeonAvailableSpace } from './common/models/NeonAvailableSpace';
 export type { NeonCardListModel } from './common/models/NeonCardListModel';
+export type { NeonCarouselImage } from './common/models/NeonCarouselImage';
 export type { NeonContrastAccessibility } from './common/models/NeonContrastAccessibility';
 export type { NeonDate } from './common/models/NeonDate';
 export type { NeonDropdownMenuItem } from './common/models/NeonDropdownMenuItem';

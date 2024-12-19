@@ -207,5 +207,11 @@
         "value": "null"
       }
     }
+  ],
+  "events": [
+    {
+      "name": "click",
+      "description": "Emitted when the user clicks on the button or link."
+    }
   ]
 }
