@@ -16,10 +16,9 @@
       v-bind="attrs"
       @click="clicked()"
       @keyup="keyUp"
-      @keydown.space="keyDown()"
+      @keydown.space.prevent="keyDown()"
       @keydown.enter="keyDown()"
       @keydown.delete="action === 'remove' && keyDown()"
-      @keypress.space.prevent=""
     >
       <neon-icon v-if="icon" :color="color" :name="icon" class="neon-chip__icon" />
       <span class="neon-chip__label">{{ label }}</span>

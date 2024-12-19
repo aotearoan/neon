@@ -25,8 +25,7 @@
       class="neon-toggle__label no-style"
       role="radio"
       @keydown.enter="selectOption(option)"
-      @keydown.space="selectOption(option)"
-      @keypress.space.prevent=""
+      @keydown.space.prevent="selectOption(option)"
     >
       <input
         :checked="option.key === modelValue"

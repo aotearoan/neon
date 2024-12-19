@@ -18,9 +18,8 @@
           name="times"
           tabindex="0"
           @click="message.dismissible && closeMessage(message.id)"
-          @keydown.space="message.dismissible && closeMessage(message.id)"
+          @keydown.space.prevent="message.dismissible && closeMessage(message.id)"
           @keydown.enter="message.dismissible && closeMessage(message.id)"
-          @keypress.space.prevent=""
         />
       </div>
     </transition-group>

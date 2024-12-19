@@ -19,8 +19,7 @@
         class="neon-expansion-panel__label-container neon-expansion-panel__label-container--outline-text"
         tabindex="0"
         @keydown.enter="toggleExpanded"
-        @keydown.space="toggleExpanded"
-        @keypress.space.prevent=""
+        @keydown.space.prevent="toggleExpanded"
       >
         <neon-icon v-if="icon" :color="color" :disabled="disabled" :name="icon" />
         <span class="neon-expansion-panel__label">{{ label }}</span>

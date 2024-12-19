@@ -44,8 +44,7 @@
                 role="link"
                 tabindex="0"
                 @keydown.enter="click($event)"
-                @keydown.space="click($event)"
-                @keypress.space.prevent=""
+                @keydown.space.prevent="click($event)"
               >
                 {{ link.label }}
               </span>
@@ -66,9 +65,8 @@
                     class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text"
                     role="link"
                     tabindex="0"
-                    @keydown.space="click($event)"
-                    @keydown.enter="click($event)"
-                    @keypress.space.prevent=""
+                    @keydown.space.prevent="click($event)"
+                    @keydown.enter.prevent="click($event)"
                   >
                     {{ anchor }}
                   </span>

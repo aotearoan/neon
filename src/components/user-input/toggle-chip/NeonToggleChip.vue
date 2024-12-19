@@ -15,8 +15,7 @@
     role="button"
     tabindex="0"
     @keydown.enter="toggleChip"
-    @keydown.space="toggleChip"
-    @keypress.space.prevent=""
+    @keydown.space.prevent="toggleChip"
   >
     <neon-icon v-if="modelValue && showCheck" :disabled="disabled" class="neon-toggle-chip__checked" name="check" />
     <!-- @slot override the label with custom contents -->

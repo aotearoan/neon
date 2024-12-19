@@ -6,6 +6,7 @@
       <neon-button
         v-if="dismissible"
         :circular="true"
+        :transparent="true"
         button-style="text"
         class="neon-modal__close"
         color="low-contrast"
@@ -13,8 +14,6 @@
         size="s"
         tabindex="0"
         @click="close"
-        @keypress.space.stop="close"
-        @keydown.enter="close"
       />
     </div>
     <div
