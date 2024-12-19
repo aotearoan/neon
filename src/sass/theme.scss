@@ -254,4 +254,8 @@ $neon-components: null !default;
   @if index($neon-flattened-components, NeonCardList) {
     @include components.card-list;
   }
+
+  @if index($neon-flattened-components, NeonImageCarousel) {
+    @include components.image-carousel;
+  }
 }

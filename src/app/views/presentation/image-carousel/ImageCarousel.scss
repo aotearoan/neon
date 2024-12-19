@@ -1,0 +1,15 @@
+@use 'src/sass/includes/responsive';
+
+.image-carousel {
+  .image-carousel__wrapper {
+    width: 400rem;
+    height: 400rem;
+    max-width: 100%;
+
+    @include responsive.responsive(mobile-large) {
+      margin: auto;
+      width: 300rem;
+      height: 300rem;
+    }
+  }
+}
