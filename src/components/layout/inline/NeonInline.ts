@@ -14,7 +14,8 @@ export default defineComponent({
      */
     gap: { type: String as () => NeonSize, default: () => NeonSize.Large },
     /**
-     * Breakpoint at which to layout wraps to vertical
+     * Breakpoint at which to layout switches to vertical. TIP: Pass <em>breakpoint=""</em> to override the default
+     * breakpoint & prevent switching to a vertical layout.
      */
     breakpoint: { type: String as () => NeonSize, default: () => NeonResponsive.MobileLarge },
   },
