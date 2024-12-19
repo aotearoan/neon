@@ -1,5 +1,12 @@
 # Changelog
 
+## [18.1.1](https://github.com/aotearoan/neon/compare/v18.1.0...v18.1.1) (2024-12-19)
+
+
+### Bug Fixes
+
+* gh-pages deploy ([#232](https://github.com/aotearoan/neon/issues/232)) ([900991c](https://github.com/aotearoan/neon/commit/900991c9adbd08e665d22a63790455f19a45636c))
+
 ## [18.1.0](https://github.com/aotearoan/neon/compare/v18.0.3...v18.1.0) (2024-12-19)
 
 
