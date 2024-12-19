@@ -1,5 +1,12 @@
 # Changelog
 
+## [18.1.0](https://github.com/aotearoan/neon/compare/v18.0.3...v18.1.0) (2024-12-19)
+
+
+### Features
+
+* image carousel component ([#230](https://github.com/aotearoan/neon/issues/230)) ([0233833](https://github.com/aotearoan/neon/commit/023383338713098673c033afa538d0dd55ceb633))
+
 ## [18.0.3](https://github.com/aotearoan/neon/compare/v18.0.2...v18.0.3) (2024-12-19)
 
 
