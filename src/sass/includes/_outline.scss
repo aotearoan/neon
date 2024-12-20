@@ -12,9 +12,9 @@
       font-weight: bold;
       position: absolute;
       left: 0;
-      bottom: 0;
+      bottom: var(--neon-border-bottom-offset-link);
       width: 100%;
-      height: 2rem;
+      height: var(--neon-border-width-outline);
       display: flex;
       background-color: transparent;
       border-radius: var(--neon-border-radius);
