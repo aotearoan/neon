@@ -236,6 +236,14 @@
   /* note */
   --neon-border-width-note: 8rem;
 
+  /* outline */
+  --neon-border-width-outline: 1rem;
+
+  /* link */
+  --neon-border-width-link: 1rem;
+  --neon-border-width-link-hover: 1rem;
+  --neon-border-bottom-offset-link: 2rem;
+
   /* slider & range slider */
   --neon-height-slider-track: 8rem;
   --neon-height-slider-thumb: calc(3 * var(--neon-height-slider-track));
@@ -434,8 +442,8 @@
     --neon-color-note: var(--neon-color-text);
 
     /* link */
-    --neon-rgb-link: var(--neon-rgb-primary-l1);
     --neon-color-link: var(--neon-color-primary-l1);
+    --neon-rgb-link: var(--neon-rgb-primary-l1); // should match the --neon-color-link color
     --neon-color-link-hover: var(--neon-color-primary-l2);
     --neon-color-link-visited: rgba(var(--neon-rgb-primary-l1), 0.6);
 
@@ -727,8 +735,8 @@
     --neon-color-note: var(--neon-color-text);
 
     /* link */
-    --neon-rgb-link: var(--neon-rgb-primary-d1);
     --neon-color-link: var(--neon-color-primary-d1);
+    --neon-rgb-link: var(--neon-rgb-primary-d1); // should match the --neon-color-link color
     --neon-color-link-hover: var(--neon-color-primary-d2);
     --neon-color-link-visited: rgba(var(--neon-rgb-primary-d1), 0.6);
 

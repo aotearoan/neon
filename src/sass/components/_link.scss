@@ -63,11 +63,17 @@ a[href]:not(.neon-link--no-style) {
     }
 
     &--outline-text {
+      &:after {
+        height: var(--neon-border-width-link);
+        background-color: var(--neon-color-link);
+      }
+
       &:hover {
         color: var(--neon-color-link-hover);
 
         &:after {
           background-color: var(--neon-color-link-hover);
+          height: var(--neon-border-width-link-hover);
         }
       }
     }
