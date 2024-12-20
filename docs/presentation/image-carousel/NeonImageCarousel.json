@@ -1,0 +1,60 @@
+{
+  "displayName": "NeonImageCarousel",
+  "description": "<p>\n  The <strong>NeonImageCarousel</strong> is used to display a carousel of images for the user to swipe\n  through. NOTE: It is recommended to explicitly set the width & height of the carousel via CSS, this will\n  ensure it will not be impacted by images with different aspect ratios. Images are automatically resized to fit the\n  carousel dimensions.\n</p>",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "images",
+      "description": "The images to be displayed in the carousel.",
+      "type": {
+        "name": "Array as () => Array<NeonCarouselImage>"
+      },
+      "required": true
+    },
+    {
+      "name": "imageCountLabel",
+      "description": "Provide an alternative image count label. This can be useful for translations. The default is e.g.\n<em>2 images</em>.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "undefined"
+      }
+    },
+    {
+      "name": "previousLabel",
+      "description": "Provide an alternative label for the Previous button.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Previous'"
+      }
+    },
+    {
+      "name": "nextLabel",
+      "description": "Provide an alternative label for the Next button.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Next'"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "current-image",
+      "description": "The index of the currently visible image.",
+      "type": {
+        "names": [
+          "number"
+        ]
+      }
+    }
+  ]
+}

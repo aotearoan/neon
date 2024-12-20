@@ -1,0 +1,25 @@
+{
+  "displayName": "NeonSwiper",
+  "description": "Automatically handle horizontally overflowing content by placing it in a NeonSwiper component allowing for smooth\nhorizontal scrolling with all input devices.",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "fade",
+      "description": "Display fade in / fade out styling when there is an overflow.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "contents of swiper with which to apply overflow scrolling."
+    }
+  ]
+}

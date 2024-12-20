@@ -1,0 +1,84 @@
+{
+  "displayName": "NeonToggleChip",
+  "description": "<p>\nA Toggle chip component used to indicate an on/off state in form inputs. This is equivalent to a checkbox. This is a\nvariation of a checkbox/switch which can be used as an on/off button to trigger an action or used in a group for\nfiltering.\n</p>",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "modelValue",
+      "description": "The toggle chip model.",
+      "type": {
+        "name": "boolean"
+      },
+      "required": true
+    },
+    {
+      "name": "label",
+      "description": "The toggle label. Required unless overriding the slot contents.",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "size",
+      "description": "The size of the toggle chip.",
+      "type": {
+        "name": "String as () => NeonToggleChipSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonToggleChipSize.Medium"
+      }
+    },
+    {
+      "name": "color",
+      "description": "The toggle chip color.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Primary"
+      }
+    },
+    {
+      "name": "showCheck",
+      "description": "Whether to display a checked icon on the toggle chip when it is 'on'.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    },
+    {
+      "name": "disabled",
+      "description": "Disabled state of the toggle chip.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "update:modelValue",
+      "description": "Emitted when the toggle chip is toggled on or off.",
+      "type": {
+        "names": [
+          "boolean"
+        ]
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "override the label with custom contents"
+    }
+  ]
+}

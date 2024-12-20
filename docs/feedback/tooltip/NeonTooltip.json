@@ -1,0 +1,84 @@
+{
+  "displayName": "NeonTooltip",
+  "description": "<p>\n  Use <strong>NeonTooltip</strong> to display tooltips or popovers. It is recommended that tooltip content should be\n  kept to a single line. Use the popover style for larger content.\n</p>\n<p>To use <strong>NeonTooltip</strong> provide the <em>target</em> and <em>content slots</em>.</p>",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "id",
+      "description": "Id of the tooltip.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "placement",
+      "description": "Placement of the tooltip contents.",
+      "type": {
+        "name": "String as () => NeonPosition"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonPosition.Top"
+      }
+    },
+    {
+      "name": "tooltipStyle",
+      "description": "Style of the tooltip, use <em>Tooltip</em> for a simple tooltip, use <em>Popover</em> for larger more complex\ncontent.",
+      "type": {
+        "name": "String as () => NeonTooltipStyle"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonTooltipStyle.Tooltip"
+      }
+    },
+    {
+      "name": "outlineStyle",
+      "description": "Style of the outline to use when the tooltip target has focus, use <em>text</em> for tooltips wrapping text and\n<em>border</em> for tooltips wrapping \"block\" elements, e.g. buttons.",
+      "type": {
+        "name": "String as () => NeonOutlineStyle"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonOutlineStyle.Text"
+      }
+    },
+    {
+      "name": "outlineColor",
+      "description": "Color of the tooltip target when it is focussed.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Primary"
+      }
+    },
+    {
+      "name": "placementContainer",
+      "description": "Restrict placement to within this container.",
+      "type": {
+        "name": "Object as () => HTMLElement"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "content",
+      "description": "the tooltip content"
+    },
+    {
+      "name": "target",
+      "description": "the tooltip target, i.e. the text, icon or otherwise which when hovered over triggers the tooltip to open"
+    }
+  ]
+}
