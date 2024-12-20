@@ -34,6 +34,16 @@
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
+        <h2 class="neon-h3">Input mode</h2>
+        <neon-stack>
+          <neon-stack gap="m">
+            <neon-input v-model="inputmodeText" placeholder="Default mode" />
+            <neon-input v-model="inputmodeEmail" inputmode="email" placeholder="Email mode" type="email" />
+          </neon-stack>
+          <editor v-model="inputModeExamples" />
+        </neon-stack>
+      </neon-card-body>
+      <neon-card-body>
         <h2 class="neon-h3">Input states</h2>
         <neon-stack>
           <neon-stack>

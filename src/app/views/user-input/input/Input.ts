@@ -36,6 +36,8 @@ export default defineComponent({
     const disabled = ref('');
     const textArea = ref('');
     const textAreaDisabled = ref('');
+    const inputmodeText = ref('');
+    const inputmodeEmail = ref('');
 
     const inputSizeExamples = `<neon-input v-model="small"
                       placeholder="Type here"
@@ -52,6 +54,9 @@ export default defineComponent({
                       size="l"
                       type="text"
           />`;
+
+    const inputModeExamples = `<neon-input v-model="inputmodeText" placeholder="Default mode" />
+<neon-input v-model="inputmodeEmail" placeholder="Email mode" inputmode="email" type="email" />`;
 
     const inputStateExamples = `<neon-input v-model="ready"
             placeholder="Type here"
@@ -142,7 +147,10 @@ export default defineComponent({
       disabled,
       textArea,
       textAreaDisabled,
+      inputmodeText,
+      inputmodeEmail,
       inputSizeExamples,
+      inputModeExamples,
       inputStateExamples,
       inputColorExamples,
       textareaExamples,
