@@ -1,5 +1,12 @@
 # Changelog
 
+## [18.2.1](https://github.com/aotearoan/neon/compare/v18.2.0...v18.2.1) (2024-12-20)
+
+
+### Bug Fixes
+
+* add inputmode to neon-input ([#236](https://github.com/aotearoan/neon/issues/236)) ([4ff6e8c](https://github.com/aotearoan/neon/commit/4ff6e8cda2c9965af1985260f1ed5724c045efce))
+
 ## [18.2.0](https://github.com/aotearoan/neon/compare/v18.1.1...v18.2.0) (2024-12-19)
 
 
