@@ -1,5 +1,12 @@
 # Changelog
 
+## [18.2.0](https://github.com/aotearoan/neon/compare/v18.1.1...v18.2.0) (2024-12-19)
+
+
+### Features
+
+* swiper component ([#234](https://github.com/aotearoan/neon/issues/234)) ([17d5fb3](https://github.com/aotearoan/neon/commit/17d5fb3cf8ca65a7c4e0c89f4d9114c9feb9f49e))
+
 ## [18.1.1](https://github.com/aotearoan/neon/compare/v18.1.0...v18.1.1) (2024-12-19)
 
 
