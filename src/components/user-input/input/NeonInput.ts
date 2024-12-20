@@ -5,6 +5,7 @@ import { NeonSize } from '@/common/enums/NeonSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import { NeonDebounceUtils } from '@/common/utils/NeonDebounceUtils';
+import { NeonInputMode } from '@/common/enums/NeonInputMode';
 
 /**
  * Equivalent of, and wrapper around, an HTML input. Also supports <strong>textarea</strong>.
@@ -41,6 +42,10 @@ export default defineComponent({
      * Color of the input
      */
     color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    /**
+     * The HTML input mode as specified <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode">here</a>.
+     */
+    inputmode: { type: String as () => NeonInputMode, default: NeonInputMode.Text },
     /**
      * The state of the input
      */

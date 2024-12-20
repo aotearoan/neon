@@ -71,6 +71,17 @@
       }
     },
     {
+      "name": "inputmode",
+      "description": "The HTML input mode as specified <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode\">here</a>.",
+      "type": {
+        "name": "String as () => NeonInputMode"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonInputMode.Text"
+      }
+    },
+    {
       "name": "state",
       "description": "The state of the input",
       "type": {

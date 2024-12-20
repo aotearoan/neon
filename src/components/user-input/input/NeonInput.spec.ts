@@ -5,6 +5,7 @@ import { NeonInputType } from '@/common/enums/NeonInputType';
 import { NeonSize } from '@/common/enums/NeonSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import { NeonState } from '@/common/enums/NeonState';
+import { NeonInputMode } from '@/common/enums/NeonInputMode';
 
 describe('NeonInput', () => {
   const modelValue = '';
@@ -107,6 +108,19 @@ describe('NeonInput', () => {
     const { container, rerender } = harness;
     await rerender({ size: NeonSize.Small });
     expect(container.querySelector('.neon-input--s')).toBeDefined();
+  });
+
+  it('renders default inputmode', () => {
+    const { container } = harness;
+    const inputmode = NeonInputMode.Text;
+    expect(container.querySelector('.neon-input__textfield')?.getAttribute('inputmode')).toEqual(inputmode);
+  });
+
+  it('renders inputmode', async () => {
+    const { container, rerender } = harness;
+    const inputmode = NeonInputMode.Email;
+    await rerender({ inputmode });
+    expect(container.querySelector('.neon-input__textfield')?.getAttribute('inputmode')).toEqual(inputmode);
   });
 
   it('renders default color', () => {
