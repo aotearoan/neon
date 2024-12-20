@@ -1,5 +1,12 @@
 # Changelog
 
+## [18.2.2](https://github.com/aotearoan/neon/compare/v18.2.1...v18.2.2) (2024-12-20)
+
+
+### Bug Fixes
+
+* link styles ([#238](https://github.com/aotearoan/neon/issues/238)) ([2fb66d7](https://github.com/aotearoan/neon/commit/2fb66d7c515547020fcdcb64c07a291cb9973ffd))
+
 ## [18.2.1](https://github.com/aotearoan/neon/compare/v18.2.0...v18.2.1) (2024-12-20)
 
 
