@@ -1,5 +1,12 @@
 # Changelog
 
+## [18.2.4](https://github.com/aotearoan/neon/compare/v18.2.3...v18.2.4) (2024-12-26)
+
+
+### Bug Fixes
+
+* add typography CSS vars ([#243](https://github.com/aotearoan/neon/issues/243)) ([7c2723e](https://github.com/aotearoan/neon/commit/7c2723e2f8ec397d4e3ec9eb1a8723440fba9b38))
+
 ## [18.2.3](https://github.com/aotearoan/neon/compare/v18.2.2...v18.2.3) (2024-12-26)
 
 
