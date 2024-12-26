@@ -1,5 +1,12 @@
 # Changelog
 
+## [18.2.8](https://github.com/aotearoan/neon/compare/v18.2.7...v18.2.8) (2024-12-26)
+
+
+### Bug Fixes
+
+* add radio button description slot ([#251](https://github.com/aotearoan/neon/issues/251)) ([8c37fcf](https://github.com/aotearoan/neon/commit/8c37fcf711eb2e36713098e026a265cd0b426fca))
+
 ## [18.2.7](https://github.com/aotearoan/neon/compare/v18.2.6...v18.2.7) (2024-12-26)
 
 
