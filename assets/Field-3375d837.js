@@ -1,0 +1,19 @@
+import{d as c,M as k,_ as v}from"../index.js";import{C}from"./ComponentDocumentation-6caf88ca.js";import{N as D,a as E}from"./NeonCardHeader-5e3d5e8c.js";import{N as M}from"./NeonField-f254ddad.js";import{N as U}from"./NeonStack-fb7ab566.js";import{E as w}from"./Editor-1d4a4353.js";import{u as F,R as s,S as y,D as t,F as B,G as a,A as O,x as P,L as l,H as d,a2 as g}from"./vendor-7a8d752b.js";import"./NeonLabel-387f69e3.js";import"./NeonNote-2bf2c89c.js";import"./NeonInline-e4d49a2a.js";import"./NeonTabs-5786a26a.js";const $=F({name:"Field",components:{NeonCard:D,NeonCardBody:E,NeonField:M,NeonInput:c,NeonStack:U,ComponentDocumentation:C,Editor:w},setup(){const e=s(null),n=s("A field wrapper providing aa label & field messages"),r=s("Input value"),m=`<neon-field label="Default label" label-for="input1">
+  <neon-input id="input1" v-model="inputValue" />
+</neon-field>
+<neon-field :optional="true" label="Optional label" label-for="input2">
+  <neon-input id="input2" v-model="inputValue" />
+</neon-field>
+<neon-field :disabled="true" label="Disabled label" label-for="input3">
+  <neon-input id="input3" v-model="inputValue" :disabled="true" />
+</neon-field>`,f=`<neon-field label="Default label" label-for="input1" message="Pig doner tri-tip tongue pork">
+  <neon-input id="input1" v-model="inputValue" />
+</neon-field>
+<neon-field :optional="true"
+            label="Optional label"
+            label-for="input2"
+            message="Pig doner tri-tip tongue pork"
+            message-color="error"
+>
+  <neon-input id="input2" v-model="inputValue" />
+</neon-field>`;return y(()=>e.value=k.getComponentConfig("NeonField")),{example:m,messagesExample:f,menuModel:e,headline:n,inputValue:r}}}),h=d("p",null,[d("strong",null,"NeonField"),g(" is an input wrapper which provides a"),d("em",null,"label"),g(" supporting an optional indicator as well as messages below the field ")],-1),A=d("h2",{class:"neon-h3"},"Examples",-1),I=d("h2",{class:"neon-h3"},"Message Examples",-1);function S(e,n,r,m,f,G){const p=t("neon-card-body"),u=t("neon-input"),i=t("neon-field"),b=t("editor"),V=t("neon-stack"),_=t("neon-card"),N=t("component-documentation");return e.menuModel?(P(),B(N,{key:0,headline:e.headline,model:e.menuModel},{default:a(()=>[l(_,null,{default:a(()=>[l(p,null,{default:a(()=>[h]),_:1}),l(p,null,{default:a(()=>[A,l(V,null,{default:a(()=>[l(i,{label:"Default label","label-for":"input1"},{default:a(()=>[l(u,{id:"input1",modelValue:e.inputValue,"onUpdate:modelValue":n[0]||(n[0]=o=>e.inputValue=o)},null,8,["modelValue"])]),_:1}),l(i,{optional:!0,label:"Optional label","label-for":"input2"},{default:a(()=>[l(u,{id:"input2",modelValue:e.inputValue,"onUpdate:modelValue":n[1]||(n[1]=o=>e.inputValue=o)},null,8,["modelValue"])]),_:1}),l(i,{disabled:!0,label:"Disabled label","label-for":"input3"},{default:a(()=>[l(u,{id:"input3",modelValue:e.inputValue,"onUpdate:modelValue":n[2]||(n[2]=o=>e.inputValue=o),disabled:!0},null,8,["modelValue"])]),_:1}),l(b,{modelValue:e.example,"onUpdate:modelValue":n[3]||(n[3]=o=>e.example=o)},null,8,["modelValue"])]),_:1})]),_:1}),l(p,null,{default:a(()=>[I,l(V,null,{default:a(()=>[l(i,{label:"Default label","label-for":"input1",message:"Pig doner tri-tip tongue pork"},{default:a(()=>[l(u,{id:"input1",modelValue:e.inputValue,"onUpdate:modelValue":n[4]||(n[4]=o=>e.inputValue=o)},null,8,["modelValue"])]),_:1}),l(i,{optional:!0,label:"Optional label","label-for":"input2",message:"Pig doner tri-tip tongue pork","message-color":"error"},{default:a(()=>[l(u,{id:"input2",modelValue:e.inputValue,"onUpdate:modelValue":n[5]||(n[5]=o=>e.inputValue=o)},null,8,["modelValue"])]),_:1}),l(b,{modelValue:e.messagesExample,"onUpdate:modelValue":n[6]||(n[6]=o=>e.messagesExample=o)},null,8,["modelValue"])]),_:1})]),_:1})]),_:1})]),_:1},8,["headline","model"])):O("",!0)}const X=v($,[["render",S]]);export{X as default};

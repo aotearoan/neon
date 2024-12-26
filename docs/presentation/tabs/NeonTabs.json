@@ -1,0 +1,85 @@
+{
+  "displayName": "NeonTabs",
+  "description": "A component for displaying tabbed content.",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "tabs",
+      "description": "The list of tabs to display.",
+      "type": {
+        "name": "Array as () => Array<NeonTabModel>"
+      },
+      "required": true
+    },
+    {
+      "name": "modelValue",
+      "description": "The key of the selected tab.",
+      "type": {
+        "name": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "tabsStyle",
+      "description": "The tab button style.",
+      "type": {
+        "name": "String as () => NeonTabsStyle"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonTabsStyle.Web"
+      }
+    },
+    {
+      "name": "color",
+      "description": "The tab highlight color (excludes low-contrast).",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Primary"
+      }
+    },
+    {
+      "name": "size",
+      "description": "The tab size (NOTE: web style only)",
+      "type": {
+        "name": "String as () => NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "underline",
+      "description": "Display a border underlining all tabs. When tabs are in an element with a border-bottom it is preferable to omit the tabs border-bottom",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "update:modelValue",
+      "description": "Emitted when the selected tab is changed.",
+      "type": {
+        "names": [
+          "string"
+        ]
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "Add tabs here (NeonTab). NOTE: Tabs can also be added outside the component if preferred"
+    }
+  ]
+}

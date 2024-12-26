@@ -1,0 +1,77 @@
+{
+  "displayName": "NeonDrawer",
+  "description": "A drawer is a slide out panel for representing data which may be secondary or not fit on the main screen. Examples\nare a responsive navigation menu, more details of a selected item on the page. Drawers can be opened from top,\nbottom, left or right and an overlay covers the screen to focus more attention on the drawer contents.",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "open",
+      "description": "Set the drawer to visible.",
+      "type": {
+        "name": "boolean"
+      },
+      "required": true
+    },
+    {
+      "name": "dismissible",
+      "description": "Whether the user is allowed to dismiss the modal by clicking outside the modal or pressing escape.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    },
+    {
+      "name": "fullWidth",
+      "description": "If true, remove the padding applied to the drawer.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "position",
+      "description": "The location of the drawer.",
+      "type": {
+        "name": "String as () => NeonPosition"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonPosition.Left"
+      }
+    },
+    {
+      "name": "overlay",
+      "description": "Display a semi-transparent overlay under the drawer, but over the rest of the page.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "close",
+      "description": "Emitted when the drawer is closed.",
+      "type": {
+        "names": [
+          "void"
+        ]
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "the contents of the drawer"
+    }
+  ]
+}

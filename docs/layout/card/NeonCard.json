@@ -1,0 +1,77 @@
+{
+  "displayName": "NeonCard",
+  "description": "Card component used for the layout of content within a grid or page.",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "orientation",
+      "description": "Change the orientation of a card to horizontal. This is useful for creating long narrow cards spanning the full\npage. NOTE: For responsiveness, horizontal cards are automatically transformed to vertical cards at lower screen\nsizes.",
+      "type": {
+        "name": "String as () => NeonOrientation"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonOrientation.Vertical"
+      }
+    },
+    {
+      "name": "size",
+      "description": "The size of the card, this only adjusts the padding where more compact cards are required.",
+      "type": {
+        "name": "String as () => NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "horizontalBorders",
+      "description": "Whether to display the internal borders between card sections for horizontal cards",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    },
+    {
+      "name": "horizontalBreakpoint",
+      "description": "The breakpoint to switch horizontal cards to vertical cards. Accepts <em>Mobile | MobileLarge | Tablet</em> ONLY.",
+      "tags": {
+        "type": [
+          {
+            "title": "type",
+            "description": "NeonResponsive"
+          }
+        ]
+      },
+      "type": {
+        "name": "String as () => NeonResponsive"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonResponsive.MobileLarge"
+      }
+    },
+    {
+      "name": "noBreak",
+      "description": "If true, do not implement a responsive breakpoint for a horizontal card.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "card contents"
+    }
+  ]
+}

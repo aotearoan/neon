@@ -1,0 +1,75 @@
+{
+  "displayName": "NeonColor",
+  "exportName": "default",
+  "description": "",
+  "tags": {},
+  "props": [
+    {
+      "name": "id",
+      "description": "Id of the input, will be attached to the native color input control.",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "modelValue",
+      "description": "The Hexadecimal color code.",
+      "type": {
+        "name": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "disabled",
+      "description": "Disable color picker",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "pickerOnly",
+      "description": "Only display the color picker",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "size",
+      "description": "The size of the color picker, one of NeonSize.Small | NeonSize.Medium | NeonSize.Large.",
+      "type": {
+        "name": "String as () => NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "color",
+      "description": "Color of the input",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    },
+    {
+      "name": "placeholder",
+      "description": "This is the placeholder for the text input when no value is provided.",
+      "type": {
+        "name": "string"
+      },
+      "required": false
+    }
+  ]
+}

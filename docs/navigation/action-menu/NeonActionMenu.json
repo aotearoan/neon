@@ -1,0 +1,46 @@
+{
+  "displayName": "NeonActionMenu",
+  "description": "An action menu is designed for the NeonSideNav component and is designed to behave like tabs where selecting a different item switches the contents in the main page.",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "model",
+      "description": "The list of action items to display in the menu.",
+      "type": {
+        "name": "Array as () => Array<NeonActionMenuModel>"
+      },
+      "required": true
+    },
+    {
+      "name": "modelValue",
+      "description": "The key of the selected model action item.",
+      "type": {
+        "name": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "color",
+      "description": "The toggle chip color.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Primary"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "update:modelValue",
+      "description": "emitted when the user clicks on a new action menu item.",
+      "type": {
+        "names": [
+          "string"
+        ]
+      }
+    }
+  ]
+}

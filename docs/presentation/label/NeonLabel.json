@@ -1,0 +1,82 @@
+{
+  "displayName": "NeonLabel",
+  "description": "Labels are used to tag or emphasize properties of an item in the UI. Labels can be text only, icon only or contain both text and icons.",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "label",
+      "description": "The label text",
+      "type": {
+        "name": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "icon",
+      "description": "The name of the optional label icon",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "iconPosition",
+      "description": "The icon position if there is also text in the label. This is either left or right.",
+      "type": {
+        "name": "String as () => NeonHorizontalPosition"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonHorizontalPosition.Left"
+      }
+    },
+    {
+      "name": "size",
+      "description": "The label size",
+      "type": {
+        "name": "String as () => NeonLabelSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonLabelSize.Small"
+      }
+    },
+    {
+      "name": "disabled",
+      "description": "Display the label as disabled",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "color",
+      "description": "The label color",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Neutral"
+      }
+    },
+    {
+      "name": "alternateColor",
+      "description": "Alternate color for creating gradient labels. NOTE: can also be the same color as 'color'.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    }
+  ]
+}

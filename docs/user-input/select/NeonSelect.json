@@ -1,0 +1,153 @@
+{
+  "displayName": "NeonSelect",
+  "description": "<p>The <strong>NeonSelect</strong> is the equivalent of an HTML &lt;select&gt; form control. On touch devices\nNeonSelect will use the native select for input. <strong>NeonSelect</strong> supports grouping and multiselect.</p>\n<p><strong>Note:</strong> As well as the options described below, pass through attributes supported by\n<a href=\"/presentation/dropdown\">NeonDropdown</a> to change the style of the dropdown button.</p>",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "id",
+      "description": "Id for the dropdown button",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "placeholder",
+      "description": "Placeholder to display as button label when there is no option selected.",
+      "type": {
+        "name": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "placeholderAsOption",
+      "description": "Display the placeholder as the first option in the select, this is useful as an alternative to a label.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "placeholderIcon",
+      "description": "Optional placeholder icon.",
+      "type": {
+        "name": "string"
+      },
+      "required": false
+    },
+    {
+      "name": "options",
+      "description": "A list of options to render in the select.",
+      "type": {
+        "name": "Array as () => Array<NeonSelectOption>"
+      },
+      "required": false
+    },
+    {
+      "name": "groupedOptions",
+      "description": "A list of grouped options to render in the select.",
+      "type": {
+        "name": "Array as () => Array<NeonSelectGroup>"
+      },
+      "required": false
+    },
+    {
+      "name": "modelValue",
+      "description": "Either a single string, indicating the key of the selected option or an array of selected keys in the case\nmultiple = true.",
+      "type": {
+        "name": "string|Array as () => Array<string>"
+      },
+      "required": true
+    },
+    {
+      "name": "multiple",
+      "description": "Allow multi-select.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "multiselectPlaceholder",
+      "description": "Placeholder when multiple values are selected.",
+      "type": {
+        "name": "string"
+      },
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "description": "Disable the select",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "size",
+      "description": "The size of the dropdown - Small, Medium or Large.",
+      "type": {
+        "name": "String as () => NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "color",
+      "description": "The color of the select.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    },
+    {
+      "name": "placement",
+      "description": "Placement of the dropdown contents.",
+      "type": {
+        "name": "String as () => NeonDropdownPlacement"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonDropdownPlacement.BottomLeft"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "update:modelValue",
+      "description": "emitted when the user changes the selection.",
+      "type": {
+        "names": [
+          "string | string[]"
+        ]
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "option",
+      "scoped": true,
+      "description": "provide a custom template for an option.<br />Bindings: <strong>option</strong>",
+      "bindings": [
+        {
+          "name": "option",
+          "title": "binding"
+        }
+      ]
+    }
+  ]
+}

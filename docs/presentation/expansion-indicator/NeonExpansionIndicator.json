@@ -1,0 +1,52 @@
+{
+  "displayName": "NeonExpansionIndicator",
+  "description": "Custom animated chevron component which is used in dropdowns and expansion panels. This may be useful in creating\nhigher level components but is unlikely to be used on its own.",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "expanded",
+      "description": "Whether the chevron is <em>open</em>.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "inverse",
+      "description": "Display the expansion indicator in the inverse text color",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "disabled",
+      "description": "Display the expansion indicator in the disabled color",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "color",
+      "description": "The color of the chevron.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    }
+  ]
+}

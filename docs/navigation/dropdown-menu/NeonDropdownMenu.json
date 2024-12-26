@@ -1,0 +1,80 @@
+{
+  "displayName": "NeonDropdownMenu",
+  "description": "<p>A dropdown menu consisting of a button to open the menu and a list of menu items. Clicking on a menu item will\nresult in navigating to the provided URL or notifying the parent component via the @click event.</p>\n<p><strong>Note:</strong> As well as the options described below, pass through attributes supported by\n<a href=\"/presentation/dropdown\">NeonDropdown</a> to change the style of the dropdown button.</p>",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "model",
+      "description": "A list of menu items to render in the dropdown menu.",
+      "type": {
+        "name": "Array as () => Array<NeonDropdownMenuItem>"
+      },
+      "required": true
+    },
+    {
+      "name": "size",
+      "description": "The size of the dropdown - Small, Medium or Large.",
+      "type": {
+        "name": "String as () => NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "color",
+      "description": "The dropdown color.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    },
+    {
+      "name": "disabled",
+      "description": "Whether the dropdown button is disabled or not.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "openOnHover",
+      "description": "Instead of opening on click (default), open on hover.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "click",
+      "description": "emitted when the user clicks on a menu item.",
+      "type": {
+        "names": [
+          "NeonDropdownMenuItem"
+        ]
+      }
+    },
+    {
+      "name": "button-ref",
+      "description": "emitted on initialisation",
+      "type": {
+        "names": [
+          "HTMLElement"
+        ]
+      }
+    }
+  ]
+}

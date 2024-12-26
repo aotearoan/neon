@@ -1,0 +1,191 @@
+{
+  "displayName": "NeonNumber",
+  "description": "<p>\n  The <strong>NeonNumber</strong> component is the equivalent of an <strong>&lt;input type=\"number\" /&gt;</strong>\n  with -/+ spin buttons. In addition, it supports formatting as a percentage or with a provided custom template and\n  also pasting of values in the user's locale, e.g. 6,543.12.\n</p>\n<p><strong>NeonNumber</strong> supports all the properties found on an HTML &lt;input&gt;.</p>",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "modelValue",
+      "description": "The value of the number input. Either a valid number or null.",
+      "type": {
+        "name": "number"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "min",
+      "description": "The minimum value the input can accept.",
+      "type": {
+        "name": "number"
+      },
+      "required": false
+    },
+    {
+      "name": "max",
+      "description": "The maximum value the input can accept.",
+      "type": {
+        "name": "number"
+      },
+      "required": false
+    },
+    {
+      "name": "step",
+      "description": "The step value for the spin buttons.",
+      "type": {
+        "name": "number"
+      },
+      "required": false
+    },
+    {
+      "name": "color",
+      "description": "The component color.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    },
+    {
+      "name": "size",
+      "description": "The component size.",
+      "type": {
+        "name": "String as () => NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "locale",
+      "description": "The locale used for display purposes. This defaults to the browser's locale if none is provided.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "placeholder",
+      "description": "Placeholder text to display in the input",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "disabled",
+      "description": "Whether the component is disabled.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "editable",
+      "description": "Enable/disable direct editing of the value.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    },
+    {
+      "name": "spinButtons",
+      "description": "Show/hide spin buttons. NOTE: The user can still use up/down arrow keys when the input has focus.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "percentage",
+      "description": "Automatically applies % formatting, e.g. if the value = 0.15 it will be displayed as 15%.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "decimals",
+      "description": "The rounding precision for display formatting.",
+      "type": {
+        "name": "number"
+      },
+      "required": false
+    },
+    {
+      "name": "valueTemplate",
+      "description": "A template string used for formatting the value for display. Use the placeholder {value} to reference the value in\nthe template string. e.g. value = 90, ${value} => $90.",
+      "type": {
+        "name": "string"
+      },
+      "required": false
+    },
+    {
+      "name": "inputmode",
+      "description": "The HTML inputmode of the component. Either 'numeric' or 'decimal'.",
+      "type": {
+        "name": "String as () => NeonInputMode"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonInputMode.Numeric"
+      }
+    },
+    {
+      "name": "incrementLabel",
+      "description": "ARIA label for the increment spinner button.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Increment'"
+      }
+    },
+    {
+      "name": "decrementLabel",
+      "description": "ARIA label for the decrement spinner button.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Decrement'"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "update:modelValue",
+      "description": "Emitted when the user changes the value of the number via the increment/decrement buttons or manually entering\nthe value.",
+      "type": {
+        "names": [
+          "number | null"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "displayName": "NeonInline",
+  "description": "A horizontal layout component. NeonInline provides a way of laying out it's contents with standard gaps. At the\nspecified breakpoint the layout will wrap to vertical.",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "gap",
+      "description": "Size of the gap between items",
+      "type": {
+        "name": "String as () => NeonSize"
+      },
+      "defaultValue": {
+        "func": true,
+        "value": "() => NeonSize.Large"
+      }
+    },
+    {
+      "name": "breakpoint",
+      "description": "Breakpoint at which to layout switches to vertical. TIP: Pass <em>breakpoint=\"\"</em> to override the default\nbreakpoint & prevent switching to a vertical layout.",
+      "type": {
+        "name": "String as () => NeonSize"
+      },
+      "defaultValue": {
+        "func": true,
+        "value": "() => NeonResponsive.MobileLarge"
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "stack contents"
+    }
+  ]
+}

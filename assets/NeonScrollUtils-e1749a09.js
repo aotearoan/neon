@@ -1,0 +1,1 @@
+class p{static scrollIntoView(o){const s=o.parentElement;o.offsetTop-s.scrollTop>o.offsetHeight*4&&(s.scrollTop=o.offsetTop-o.offsetHeight*4),o.offsetTop<s.scrollTop&&(s.scrollTop=o.offsetTop)}}export{p as N};

@@ -1,0 +1,118 @@
+{
+  "displayName": "NeonBadge",
+  "description": "A badge is a small square or circular component for representing user avatars. These can be in the form of an image, an icon or a two character string (e.g. the user's initials).",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "label",
+      "description": "The two character <em>initials</em> to display on the badge.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "image",
+      "description": "URL of the image to display on the badge.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "icon",
+      "description": "An icon to display on the badge.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "circular",
+      "description": "If true, render the badge as a circle, instead of a square.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "size",
+      "description": "The size of the badge - Small, Medium or Large.",
+      "type": {
+        "name": "String as () => NeonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonSize.Medium"
+      }
+    },
+    {
+      "name": "color",
+      "description": "The color of the badge. This is one of the provided NeonFunctionalColors.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    },
+    {
+      "name": "alternateColor",
+      "description": "Alternate color for creating gradient badges. NOTE: can also be the same color as 'color'.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "disabled",
+      "description": "Display the badge in the disable style",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "jazziconId",
+      "description": "Apply the generated Jazzicon style based on the unique identified provided (e.g. a wallet address, name, etc)",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "imageAlt",
+      "description": "Badge image alt text.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Badge'"
+      }
+    }
+  ]
+}

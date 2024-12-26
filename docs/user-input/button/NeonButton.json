@@ -1,0 +1,217 @@
+{
+  "displayName": "NeonButton",
+  "description": "A button component. Renders an HTML button or, if an href is provided, renders using NeonLink in the style of a button. NeonButton supports all events and attributes of HTML buttons, e.g, @click.",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "href",
+      "description": "Optional href for rendering a button as a link",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "label",
+      "description": "The text to display on a button",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "size",
+      "description": "The button size",
+      "type": {
+        "name": "String as () => NeonButtonSize"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonButtonSize.Medium"
+      }
+    },
+    {
+      "name": "color",
+      "description": "The button color",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    },
+    {
+      "name": "inverse",
+      "description": "Display the button as high-contrast with inverted colors. This is useful for placing a button on a colored background.\nNOTE: Supports Solid & Outline button styles only (gradient & text buttons are not supported)",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "alternateColor",
+      "description": "Solid buttons ONLY. Alternate color for creating a gradient buttons. NOTE: can also be the same color as 'color'.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "icon",
+      "description": "Optional icon to display",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "iconPosition",
+      "description": "Position of the icon if combined with text",
+      "type": {
+        "name": "String as () => NeonHorizontalPosition"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonHorizontalPosition.Left"
+      }
+    },
+    {
+      "name": "buttonStyle",
+      "description": "The style of button",
+      "type": {
+        "name": "String as () => NeonButtonStyle"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonButtonStyle.Solid"
+      }
+    },
+    {
+      "name": "state",
+      "description": "Provide button states of <em>ready, loading, success or error</em> which change the display of the button (with icons) to reflect the state.",
+      "type": {
+        "name": "String as () => NeonState"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonState.Ready"
+      }
+    },
+    {
+      "name": "disabled",
+      "description": "Whether the button is disabled",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "transparent",
+      "description": "For text buttons, do not display the background. This is useful for icon buttons in headers.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "outline",
+      "description": "Whether to display a button outline when the button has focus",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    },
+    {
+      "name": "circular",
+      "description": "Make the button circular. NOTE: This is only for icon only buttons.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "fullWidth",
+      "description": "Make a button extend to the full width of the parent container.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "indicator",
+      "description": "INTERNAL USE ONLY: display a NeonExpansionIndicator on the button (used for dropdown buttons)",
+      "tags": {
+        "ignore": [
+          {
+            "description": true,
+            "title": "ignore"
+          }
+        ]
+      },
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "indicatorExpanded",
+      "description": "INTERNAL USE ONLY: display the NeonExpansionIndicator on the button as <em>open</em> or <em>closed</em>.",
+      "tags": {
+        "ignore": [
+          {
+            "description": true,
+            "title": "ignore"
+          }
+        ]
+      },
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "click",
+      "description": "Emitted when the user clicks on the button or link."
+    }
+  ]
+}

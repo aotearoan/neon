@@ -1,0 +1,198 @@
+{
+  "displayName": "NeonSlider",
+  "description": "<p>\n  The <strong>NeonSlider</strong> component is the equivalent of an <strong>&lt;input type=\"range\" /&gt;</strong>. In\n  addition to this, there is support for automatic formatting the min, max and selected value plus options for\n  percentage formatting and providing custom templates, e.g. currency formatting.\n</p>\n<p><strong>NeonNumber</strong> also supports all relevant properties found on an HTML &lt;input&gt;.</p>",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "modelValue",
+      "description": "The current input <em>value</em>.",
+      "type": {
+        "name": "number"
+      },
+      "required": true
+    },
+    {
+      "name": "id",
+      "description": "id of the range input.",
+      "type": {
+        "name": "string"
+      },
+      "required": false
+    },
+    {
+      "name": "color",
+      "description": "Slider color.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    },
+    {
+      "name": "locale",
+      "description": "The locale used for display purposes. This defaults to the browser's locale if none is provided.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
+      "name": "output",
+      "description": "Show/hide the output.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    },
+    {
+      "name": "legend",
+      "description": "Show/hide the legend.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    },
+    {
+      "name": "tooltip",
+      "description": "Show/hide the tooltip.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    },
+    {
+      "name": "percentage",
+      "description": "Automatically applies % formatting, e.g. if the value = 0.15 it will be displayed as 15%.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "step",
+      "description": "The size of steps between values the user can select. The default value is 1 except when percentage = true the\ndefault is 0.01 (1%).",
+      "type": {
+        "name": "number"
+      },
+      "required": false
+    },
+    {
+      "name": "decimals",
+      "description": "The rounding precision for display purposes.",
+      "type": {
+        "name": "number"
+      },
+      "required": false
+    },
+    {
+      "name": "valueTemplate",
+      "description": "A template string used for formatting the display value. Use the placeholder {value} to reference the value in the\ntemplate string. e.g. value = 90, ${value} => $90.",
+      "type": {
+        "name": "string"
+      },
+      "required": false
+    },
+    {
+      "name": "disableFormatting",
+      "description": "Disable formatting, e.g. in the case of a year value -> display as 2020, not 2,020.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "min",
+      "description": "The minimum range value.",
+      "type": {
+        "name": "number"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "0"
+      }
+    },
+    {
+      "name": "max",
+      "description": "The maximum range value. The default value is 100 except when percentage = true the default is 1 (100%).",
+      "type": {
+        "name": "number"
+      },
+      "required": false
+    },
+    {
+      "name": "lowerBound",
+      "description": "The lower bound within the range of values.",
+      "tags": {
+        "ignore": [
+          {
+            "description": true,
+            "title": "ignore"
+          }
+        ]
+      },
+      "type": {
+        "name": "number"
+      },
+      "required": false
+    },
+    {
+      "name": "upperBound",
+      "description": "The upper bound within the range of values.",
+      "tags": {
+        "ignore": [
+          {
+            "description": true,
+            "title": "ignore"
+          }
+        ]
+      },
+      "type": {
+        "name": "number"
+      },
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "description": "Component disabled state.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "update:modelValue",
+      "description": "Event triggered when the value changes.",
+      "type": {
+        "names": [
+          "number"
+        ]
+      }
+    }
+  ]
+}

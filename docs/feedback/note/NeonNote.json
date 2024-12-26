@@ -1,0 +1,76 @@
+{
+  "displayName": "NeonNote",
+  "description": "NeonNote is a component for displaying important information to the user, such as - notes, hints or quotes.",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "title",
+      "description": "An optional title to be displayed above the note description (aka slot contents).",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "color",
+      "description": "The color of the note. In the case of the colors info, success, warn and error an icon will also be displayed to\nfurther enhance user comprehension.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.LowContrast"
+      }
+    },
+    {
+      "name": "closable",
+      "description": "Whether the note has a close button",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "icon",
+      "description": "Display the associated icon for info, success, warn and error colors.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
+    },
+    {
+      "name": "ariaLabelCloseNote",
+      "description": "Note close button aria label.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Close note'"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "close-note",
+      "description": "emitted when the user clicks the close button on the note",
+      "type": {
+        "names": [
+          "void"
+        ]
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "the contents of the note description"
+    }
+  ]
+}

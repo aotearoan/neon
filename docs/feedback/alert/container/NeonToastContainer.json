@@ -1,0 +1,22 @@
+{
+  "displayName": "NeonToastContainer",
+  "description": "This is an internal component for rendering alerts.",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "modelValue",
+      "type": {
+        "name": "Array as () => Array<NeonToastModel>"
+      },
+      "required": true
+    },
+    {
+      "name": "placement",
+      "type": {
+        "name": "String as () => NeonVerticalPosition"
+      },
+      "required": true
+    }
+  ]
+}

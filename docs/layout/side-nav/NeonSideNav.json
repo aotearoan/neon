@@ -1,0 +1,28 @@
+{
+  "displayName": "NeonSideNav",
+  "description": "A side navigation component. This is displayed at the <em>larger-than-tablet</em> breakpoint and hidden at\n<em>tablet</em> and below. Use this to display menus, navigation or other items related to the main page content. A\nside nave had two slots, one for <em>sticky</em> content which remains visible at all times. The other is for\n<em>scrolling content</em> which is allowed to overflow below the bottom of the page.",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "fullWidth",
+      "description": "If true, removes the side nav component's padding.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "sticky",
+      "description": "sticky (fixed, non-scrolling) content"
+    },
+    {
+      "name": "scrolling"
+    }
+  ]
+}
