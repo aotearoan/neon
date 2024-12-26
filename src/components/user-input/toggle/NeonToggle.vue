@@ -11,7 +11,7 @@
     role="radiogroup"
   >
     <label
-      v-for="option in model"
+      v-for="(option, index) in model"
       :key="option.key"
       :aria-checked="option.key === modelValue"
       :aria-disabled="disabled || option.disabled"
@@ -19,6 +19,7 @@
         'neon-toggle__label--disabled': disabled || option.disabled,
         'neon-toggle__label--checked': option.key === modelValue,
         'neon-toggle__label--with-icon': option.icon,
+        'neon-toggle__label--with-slot-override': slots.option,
         'neon-toggle__label--with-text': option.label,
       }"
       :tabindex="!disabled && !option.disabled ? 0 : undefined"
@@ -41,8 +42,11 @@
       <div v-if="toggleStyle === 'radio-buttons'" class="neon-toggle__radio-button">
         <div v-if="option.key === modelValue" class="neon-toggle__radio-button-indicator"></div>
       </div>
-      <neon-icon v-if="option.icon" :disabled="disabled || option.disabled" :name="option.icon" />
-      <span v-if="option.label">{{ option.label }}</span>
+      <!-- @slot This slot is for overriding the option rendering, it is passed two arguments, <em>option</em> - the option model & <em>index</em> -->
+      <slot :index="index" :option="option" name="option">
+        <neon-icon v-if="option.icon" :disabled="disabled || option.disabled" :name="option.icon" />
+        <span v-if="option.label">{{ option.label }}</span>
+      </slot>
     </label>
   </div>
 </template>

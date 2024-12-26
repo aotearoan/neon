@@ -55,7 +55,7 @@ export default defineComponent({
      */
     'update:modelValue',
   ],
-  setup(props, { emit }) {
+  setup(props, { emit, slots }) {
     const attrs = useAttrs();
     const emitInput = (key: string) => {
       emit('update:modelValue', key);
@@ -83,6 +83,7 @@ export default defineComponent({
       selectOption,
       onInput,
       sanitizedAttributes,
+      slots,
     };
   },
 });
