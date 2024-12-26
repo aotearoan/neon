@@ -5,8 +5,15 @@
   "exportName": "default",
   "props": [
     {
+      "name": "title",
+      "description": "An optional title to be displayed above the note description (aka slot contents).",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
       "name": "color",
-      "description": "The color of the note. In the case of the colors info, success, warn and error an icon will also be displayed to further enhance user comprehension.",
+      "description": "The color of the note. In the case of the colors info, success, warn and error an icon will also be displayed to\nfurther enhance user comprehension.",
       "type": {
         "name": "String as () => NeonFunctionalColor"
       },
@@ -63,7 +70,7 @@
   "slots": [
     {
       "name": "default",
-      "description": "the contents of the note"
+      "description": "the contents of the note description"
     }
   ]
 }

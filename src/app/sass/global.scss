@@ -76,11 +76,6 @@ header {
   }
 }
 
-blockquote,
-.neon-note {
-  max-width: var(--neon-max-paragraph-width);
-}
-
 .menu-filter {
   @include hidden.hidden;
 }

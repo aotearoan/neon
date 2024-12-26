@@ -118,20 +118,6 @@
     }
   }
 
-  blockquote {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    margin: 0;
-    border-radius: 0 var(--neon-border-radius) var(--neon-border-radius) 0;
-
-    span {
-      display: inline;
-    }
-
-    @include layout.padding(0.85);
-  }
-
   .neon-monospaced {
     font-family: var(--neon-font-family-monospaced);
     font-variant-ligatures: discretionary-ligatures;
