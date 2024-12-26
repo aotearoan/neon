@@ -93,6 +93,22 @@
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
+        <h2 class="neon-h3">Responsive buttons</h2>
+        <neon-stack>
+          <neon-note color="info">
+            <span
+              >Use the <em>neon-button-group</em> class to wrap a group of buttons to make them responsive. On mobile
+              they will switch to a reverse column layout & become full width.</span
+            >
+          </neon-note>
+          <div class="neon-button-group">
+            <neon-button button-style="text" color="primary" label="Cancel" />
+            <neon-button color="primary" label="Accept" />
+          </div>
+          <editor v-model="responsiveExample" />
+        </neon-stack>
+      </neon-card-body>
+      <neon-card-body>
         <h2 class="neon-h3">Buttons with icons</h2>
         <neon-stack>
           <neon-inline>

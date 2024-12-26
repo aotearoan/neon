@@ -188,6 +188,13 @@ describe('NeonButton', () => {
     expect(emitted().click).toBeDefined();
   });
 
+  it('does not emit click event when disabled', async () => {
+    const { getByText, emitted, rerender } = harness;
+    await rerender({ disabled: true });
+    await fireEvent.click(getByText(label));
+    expect(emitted().click).toBeUndefined();
+  });
+
   it('blurs element on click', async () => {
     const { getByText } = harness;
     const button = getByText(label).parentElement as HTMLButtonElement;

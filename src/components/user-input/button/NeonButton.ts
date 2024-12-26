@@ -139,12 +139,15 @@ export default defineComponent({
     const clickLink = () => button.value?.click();
 
     const sanitizedAttributes = computed(() => {
-      const { _onClick, ...sanitized } = attrs;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { onClick, ...sanitized } = attrs;
       return sanitized;
     });
 
     const clickButton = () => {
-      emit('click');
+      if (!props.disabled) {
+        emit('click');
+      }
       button.value?.blur();
     };
 

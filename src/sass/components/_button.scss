@@ -173,6 +173,10 @@
   }
 }
 
+@mixin neon-full-width-button {
+  @include neon-full-width-button;
+}
+
 @mixin button {
   .neon-button {
     margin-left: 0;
@@ -384,5 +388,14 @@
     justify-content: flex-end;
     align-items: center;
     gap: var(--neon-space-16);
+
+    @include responsive.responsive(mobile-large) {
+      flex-direction: column-reverse;
+      gap: calc(3 * var(--neon-base-space));
+
+      & > .neon-button {
+        @include neon-full-width-button;
+      }
+    }
   }
 }

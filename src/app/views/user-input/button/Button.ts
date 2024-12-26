@@ -61,6 +61,11 @@ export default defineComponent({
 <neon-button target="_blank" href="/" label="Link button" />
 <neon-button :full-width="true" button-style="outline" label="Full width button" />`;
 
+    const responsiveExample = `<div class="neon-button-group">
+  <neon-button button-style="text" color="primary" label="Cancel"/>
+  <neon-button color="primary" label="Accept"/>
+</div>`;
+
     const withIconExamples = `<neon-button icon="plus" label="With icon" />
 <neon-button icon="plus" icon-position="right" label="Positioned right" />`;
 
@@ -98,6 +103,7 @@ export default defineComponent({
       functionalColorExamples,
       gradientExamples,
       styleExamples,
+      responsiveExample,
       withIconExamples,
       iconOnlyExamples,
       stateExamples,
