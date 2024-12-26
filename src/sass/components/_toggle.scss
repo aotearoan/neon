@@ -18,6 +18,7 @@
       align-items: center;
       justify-content: center;
       white-space: nowrap;
+      border: var(--neon-border-toggle);
 
       &:focus {
         outline: none;
@@ -45,32 +46,30 @@
             $toggle-color: var(--neon-color-text);
           }
 
-          @include svg.color-with-svg(rgba($toggle-rgb, 0.5));
-          background-color: rgba($toggle-rgb, 0.05);
+          @include svg.color-with-svg(rgba($toggle-rgb, var(--neon-opacity-toggle-color)));
 
           .neon-toggle__label:not(.neon-toggle__label--disabled) {
             &.neon-toggle__label--checked {
               @include svg.color-with-svg($toggle-color);
-              background-color: rgba($toggle-rgb, 0.25);
+              border: var(--neon-border-toggle-checked);
             }
 
             &:hover:not(.neon-toggle__label--checked):not(.neon-toggle__label--disabled),
             &:focus:not(.neon-toggle__label--checked) {
-              @include svg.color-with-svg(rgba($toggle-rgb, 0.75));
-              background-color: rgba($toggle-rgb, 0.125);
+              @include svg.color-with-svg($toggle-color);
+              background-color: rgba($toggle-rgb, var(--neon-opacity-toggle-hover));
             }
           }
 
           &.neon-toggle--disabled .neon-toggle__label,
           .neon-toggle__label--disabled {
             @include svg.color-with-svg(var(--neon-color-disabled-text));
-            background-color: var(--neon-color-disabled-background);
           }
 
           &.neon-toggle--disabled .neon-toggle__label--checked,
           .neon-toggle__label--disabled.neon-toggle__label--checked {
-            @include svg.color-with-svg(var(--neon-color-disabled-background));
-            background-color: var(--neon-color-disabled-text);
+            @include svg.color-with-svg(var(--neon-color-disabled-text));
+            border: var(--neon-border-toggle-checked);
           }
         }
       }
@@ -90,7 +89,7 @@
 
           .neon-toggle__label:not(.neon-toggle__label--disabled) {
             .neon-toggle__radio-button {
-              border: var(--neon-border-width-radio-button) var(--neon-border-style) var(--neon-border-color-toggle);
+              border: var(--neon-border-radio-button);
               background: var(--neon-background-radio-button);
             }
 
