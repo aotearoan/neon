@@ -24,24 +24,34 @@ export default defineComponent({
     const closeNote = () => (noteOpen.value = false);
 
     const blockQuoteTemplate = `<blockquote>
-  <span><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue bottle activated charcoal bicycle rights adaptogen.</span>
+  <span><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue
+    bottle activated charcoal bicycle rights adaptogen.</span>
 </blockquote>`;
 
-    const defaultNoteTemplate = `<neon-note>
-  <span><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue bottle activated charcoal bicycle rights adaptogen.</span>
+    const defaultNoteTemplate = `<neon-note title="Note title">
+  <span><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue
+    bottle activated charcoal bicycle rights adaptogen.</span>
 </neon-note>`;
 
     const withCloseTemplate = `<neon-note v-if="noteOpen" :closable="true" @close-note="closeNote()">
-  <span><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue bottle activated charcoal bicycle rights adaptogen.</span>
+  <span><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue
+    bottle activated charcoal bicycle rights adaptogen.</span>
 </neon-note>`;
 
-    const coloredTemplate = `<neon-note color="warn">
-  <span><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue bottle activated charcoal bicycle rights adaptogen.</span>
-</neon-note>`;
-
-    const coloredWithoutIconTemplate = `<neon-note :icon="false" color="error">
-  <span><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue bottle activated charcoal bicycle rights adaptogen.</span>
-</neon-note>`;
+    const coloredTemplate = `<neon-note :icon="false" color="info" title="Note title">
+  <span>Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue
+    bottle activated charcoal bicycle rights adaptogen.</span>
+</neon-note>
+<neon-note :icon="false" color="success" title="Note title">
+  <span>Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue
+    bottle activated charcoal bicycle rights adaptogen.</span>
+</neon-note>
+<neon-note color="warn" title="Note with icon">
+  <span>Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue
+    bottle activated charcoal bicycle rights adaptogen.</span>
+</neon-note>
+<neon-note color="error" title="Note title and icon"></neon-note>
+<neon-note :icon="false" color="brand" title="Note title only"></neon-note>`;
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonNote')));
 
@@ -53,7 +63,6 @@ export default defineComponent({
       defaultNoteTemplate,
       withCloseTemplate,
       coloredTemplate,
-      coloredWithoutIconTemplate,
       closeNote,
     };
   },

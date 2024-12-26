@@ -17,8 +17,8 @@
         <neon-stack>
           <blockquote>
             <span
-              ><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue
-              bottle activated charcoal bicycle rights adaptogen.</span
+              >Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue bottle activated
+              charcoal bicycle rights adaptogen.</span
             >
           </blockquote>
           <editor v-model="blockQuoteTemplate" />
@@ -27,10 +27,10 @@
       <neon-card-body>
         <h2 class="neon-h3">Default note</h2>
         <neon-stack>
-          <neon-note>
+          <neon-note title="Note title">
             <span
-              ><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue
-              bottle activated charcoal bicycle rights adaptogen.</span
+              >Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue bottle activated
+              charcoal bicycle rights adaptogen.</span
             >
           </neon-note>
           <editor v-model="defaultNoteTemplate" />
@@ -41,35 +41,37 @@
         <neon-stack>
           <neon-note v-if="noteOpen" :closable="true" @close-note="closeNote()">
             <span
-              ><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue
-              bottle activated charcoal bicycle rights adaptogen.</span
+              >Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue bottle activated
+              charcoal bicycle rights adaptogen.</span
             >
           </neon-note>
-          <editor v-model="blockQuoteTemplate" />
+          <editor v-model="withCloseTemplate" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
-        <h2 class="neon-h3">Colored note</h2>
+        <h2 class="neon-h3">Colored notes</h2>
         <neon-stack>
-          <neon-note color="warn">
+          <neon-note :icon="false" color="info" title="Note title">
             <span
-              ><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue
-              bottle activated charcoal bicycle rights adaptogen.</span
+              >Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue bottle activated
+              charcoal bicycle rights adaptogen.</span
             >
           </neon-note>
+          <neon-note :icon="false" color="success" title="Note title">
+            <span
+              >Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue bottle activated
+              charcoal bicycle rights adaptogen.</span
+            >
+          </neon-note>
+          <neon-note color="warn" title="Note with icon">
+            <span
+              >Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue bottle activated
+              charcoal bicycle rights adaptogen.</span
+            >
+          </neon-note>
+          <neon-note color="error" title="Note title and icon"></neon-note>
+          <neon-note :icon="false" color="brand" title="Note title only"></neon-note>
           <editor v-model="coloredTemplate" />
-        </neon-stack>
-      </neon-card-body>
-      <neon-card-body>
-        <h2 class="neon-h3">Colored note without icon</h2>
-        <neon-stack>
-          <neon-note :icon="false" color="error">
-            <span
-              ><strong>Note:</strong> Shoreditch swag neutra, sriracha vinyl af tacos viral photo booth pinterest blue
-              bottle activated charcoal bicycle rights adaptogen.</span
-            >
-          </neon-note>
-          <editor v-model="coloredWithoutIconTemplate" />
         </neon-stack>
       </neon-card-body>
     </neon-card>

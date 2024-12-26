@@ -93,24 +93,27 @@
   --neon-typography-margin-unit: var(--neon-space-8); // base typography bottom margin unit
 
 
-  --neon-font-size-xxs: calc(var(--neon-base-font-size) / (var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale)));
-  --neon-font-size-xs: calc(var(--neon-base-font-size) / (var(--neon-typography-scale) * var(--neon-typography-scale)));
-  --neon-font-size-s: calc(var(--neon-base-font-size) / var(--neon-typography-scale));
   --neon-font-size-m: var(--neon-base-font-size);
-  --neon-font-size-l: calc(var(--neon-base-font-size) * var(--neon-typography-scale));
+  --neon-font-size-s: calc(var(--neon-font-size-m) / var(--neon-typography-scale));
+  --neon-font-size-xs: calc(var(--neon-font-size-s) / var(--neon-typography-scale));
+  --neon-font-size-xxs: calc(var(--neon-font-size-xs) / var(--neon-typography-scale));
+
+  --neon-font-size-l: calc(var(--neon-font-size-m) * var(--neon-typography-scale));
+  --neon-font-size-xl: calc(var(--neon-font-size-l) * var(--neon-typography-scale));
+  --neon-font-size-xxl: calc(var(--neon-font-size-xl) * var(--neon-typography-scale));
 
   --neon-letter-spacing-s: 0.25rem;
   --neon-letter-spacing-m: 0.5rem;
   --neon-letter-spacing-l: 1rem;
 
   --neon-h6-size: var(--neon-font-size-l);
-  --neon-h5-size: calc(var(--neon-base-font-size) * var(--neon-typography-scale) * var(--neon-typography-scale));
-  --neon-h4-size: calc(var(--neon-base-font-size) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale));
-  --neon-h3-size: calc(var(--neon-base-font-size) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale));
-  --neon-h2-size: calc(var(--neon-base-font-size) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale));
-  --neon-h1-size: calc(var(--neon-base-font-size) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale));
+  --neon-h5-size: var(--neon-font-size-xl);
+  --neon-h4-size: var(--neon-font-size-xxl);
+  --neon-h3-size: calc(var(--neon-font-size-xxl) * var(--neon-typography-scale));
+  --neon-h2-size: calc(var(--neon-font-size-xxl) * var(--neon-typography-scale) * var(--neon-typography-scale));
+  --neon-h1-size: calc(var(--neon-font-size-xxl) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale));
   /* AKA branding font size, used for landing page & banners etc... */
-  --neon-h0-size: calc(var(--neon-base-font-size) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale));
+  --neon-h0-size: calc(var(--neon-font-size-xxl) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale) * var(--neon-typography-scale));
 
   --neon-font-weight-lighter: 200;
   --neon-font-weight-normal: 400;
@@ -131,7 +134,7 @@
   --neon-letter-spacing-headings: 0;
 
   --neon-line-height-headings-ratio: 1.2;
-  --neon-line-height-ratio: 1.618;
+  --neon-line-height-ratio: 1.4;
   --neon-line-height-one: 1.125; // hack for line-height: 1 to prevent cropping of content below the baseline e.g. 'g'
 
   --neon-system-font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
@@ -235,6 +238,17 @@
 
   /* note */
   --neon-border-width-note: 8rem;
+
+  --neon-font-size-note-title: var(--neon-font-size-xl);
+  --neon-font-size-note-title-mobile: var(--neon-font-size-xl);
+
+  --neon-font-size-note-text: var(--neon-font-size-s);
+  --neon-font-size-note-text-mobile: var(--neon-font-size-m);
+
+  --neon-font-weight-note-title: var(--neon-font-weight-bold);
+  --neon-font-weight-note-text: var(--neon-font-weight-semi-bold);
+
+  --neon-max-width-note: 100%;
 
   /* outline */
   --neon-border-width-outline: 1rem;

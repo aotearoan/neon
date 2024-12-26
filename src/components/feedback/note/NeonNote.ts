@@ -2,6 +2,8 @@ import { computed, defineComponent } from 'vue';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import NeonButton from '@/components/user-input/button/NeonButton.vue';
+import NeonInline from '@/components/layout/inline/NeonInline.vue';
+import NeonStack from '@/components/layout/stack/NeonStack.vue';
 
 /**
  * NeonNote is a component for displaying important information to the user, such as - notes, hints or quotes.
@@ -9,12 +11,19 @@ import NeonButton from '@/components/user-input/button/NeonButton.vue';
 export default defineComponent({
   name: 'NeonNote',
   components: {
-    NeonIcon,
     NeonButton,
+    NeonIcon,
+    NeonInline,
+    NeonStack,
   },
   props: {
     /**
-     * The color of the note. In the case of the colors info, success, warn and error an icon will also be displayed to further enhance user comprehension.
+     * An optional title to be displayed above the note description (aka slot contents).
+     */
+    title: { type: String },
+    /**
+     * The color of the note. In the case of the colors info, success, warn and error an icon will also be displayed to
+     * further enhance user comprehension.
      */
     color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
     /**
@@ -37,7 +46,7 @@ export default defineComponent({
      */
     'close-note',
   ],
-  setup(props, { emit }) {
+  setup(props, { emit, slots }) {
     const iconName = computed(() => {
       if (props.icon) {
         switch (props.color) {
@@ -63,6 +72,7 @@ export default defineComponent({
 
     return {
       iconName,
+      slots,
       closeNote,
     };
   },

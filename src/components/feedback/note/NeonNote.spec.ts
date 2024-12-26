@@ -58,6 +58,22 @@ describe('NeonNote', () => {
     expect(html()).toMatch('neon-note--error');
   });
 
+  it('renders with title', async () => {
+    const { container, getByText, rerender } = harness;
+    const title = 'test title';
+    await rerender({ title });
+    // when / then
+    getByText('test title');
+    expect(container.querySelector('.neon-note--with-title')).toBeDefined();
+  });
+
+  it('renders with title only', () => {
+    const title = 'test title';
+    const { container } = render(NeonNote, { props: { title } });
+    // when / then
+    expect(container.querySelector('.neon-note--with-title-only')).toBeDefined();
+  });
+
   it('clicking close emits close event', async () => {
     const { container, emitted, rerender } = harness;
     await rerender({ closable: true, color: NeonFunctionalColor.Error });

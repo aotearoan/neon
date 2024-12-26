@@ -1,15 +1,27 @@
 <template>
-  <div :class="`neon-note--${color}`" class="neon-note" role="note">
+  <div
+    :class="[
+      `neon-note--${color}`,
+      { 'neon-note--with-title': title, 'neon-note--with-title-only': title && !slots.default },
+    ]"
+    class="neon-note"
+    role="note"
+  >
     <div class="neon-note__container">
-      <neon-icon v-if="iconName" :color="color" :name="iconName" class="neon-note__icon" />
-      <!-- @slot the contents of the note -->
-      <slot></slot>
+      <neon-stack gap="s">
+        <neon-inline gap="s">
+          <neon-icon v-if="iconName" :color="color" :name="iconName" class="neon-note__icon" />
+          <span v-if="title" class="neon-note__title">{{ title }}</span>
+        </neon-inline>
+        <!-- @slot the contents of the note description -->
+        <slot></slot>
+      </neon-stack>
     </div>
     <neon-button
       v-if="closable"
       :aria-label="ariaLabelCloseNote"
       :circular="true"
-      :color="color"
+      :transparent="true"
       button-style="text"
       class="neon-note__close"
       icon="times"

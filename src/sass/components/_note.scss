@@ -6,20 +6,48 @@
   .neon-note {
     display: flex;
     flex-direction: row;
+    max-width: var(--neon-max-width-note);
     width: 100%;
     margin: 0;
     border-radius: 0 var(--neon-border-radius) var(--neon-border-radius) 0;
 
     color: var(--neon-color-note);
+    font-size: var(--neon-font-size-note-text);
+    font-weight: var(--neon-font-weight-note-text);
+    justify-content: space-between;
 
-    strong {
-      color: var(--neon-color-text);
+    @include responsive.responsive(mobile-large) {
+      font-size: var(--neon-font-size-note-text-mobile);
+    }
+
+    .neon-inline {
+      --neon-gap-desktop-s: var(--neon-space-8);
+      --neon-gap-tablet-s: var(--neon-space-8);
+      --neon-gap-mobile-s: var(--neon-space-8);
+    }
+
+    &__title {
+      font-size: var(--neon-font-size-note-title);
+      font-weight: var(--neon-font-weight-note-title);
+      line-height: var(--neon-line-height-one);
+
+      @include responsive.responsive(mobile-large) {
+        font-size: var(--neon-font-size-note-title-mobile);
+      }
     }
 
     @each $color in palettes.$neon-functional-colors {
       &--#{$color} {
         background-color: var(--neon-background-color-note);
         border-left: var(--neon-border-width-note) var(--neon-border-style) var(--neon-color-#{$color});
+
+        .neon-note__title {
+          @if ($color == low-contrast or $color == high-contrast or $color == neutral) {
+            color: var(--neon-color-text-strong);
+          } @else {
+            color: var(--neon-color-#{$color});
+          }
+        }
       }
     }
 
@@ -39,18 +67,15 @@
       display: inline;
     }
 
-    justify-content: space-between;
-
     &__icon.neon-icon {
-      margin-right: var(--neon-space-16);
-      width: calc(1.5 * var(--neon-font-size-m));
-      min-width: calc(1.5 * var(--neon-font-size-m));
-      height: calc(1.5 * var(--neon-font-size-m));
-      min-height: calc(1.5 * var(--neon-font-size-m));
+      width: calc(1.5 * var(--neon-font-size-s));
+      min-width: calc(1.5 * var(--neon-font-size-s));
+      height: calc(1.5 * var(--neon-font-size-s));
+      min-height: calc(1.5 * var(--neon-font-size-s));
     }
 
     &__container {
-      @include layout.padding(0.85);
+      padding: var(--neon-space-12) var(--neon-space-16) var(--neon-space-12) var(--neon-space-20);
       width: 100%;
       justify-items: flex-start;
       align-items: flex-start;
@@ -74,16 +99,35 @@
         }
       }
     }
+
+    &--with-title-only {
+      .neon-note__close {
+        align-self: center;
+      }
+    }
   }
 
   blockquote {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: var(--neon-max-width-note);
+    margin: 0;
+    border-radius: 0 var(--neon-border-radius) var(--neon-border-radius) 0;
+    padding: var(--neon-space-12) var(--neon-space-16) var(--neon-space-12) var(--neon-space-20);
     color: var(--neon-color-note);
-
-    strong {
-      color: var(--neon-color-text);
-    }
-
     background-color: var(--neon-background-color-note);
     border-left: var(--neon-border-width-note) var(--neon-border-style) var(--neon-color-primary);
+    justify-content: space-between;
+    font-size: var(--neon-font-size-note-text);
+    font-weight: var(--neon-font-weight-note-text);
+
+    span {
+      display: inline;
+    }
+
+    @include responsive.responsive(mobile-large) {
+      font-size: var(--neon-font-size-note-text-mobile);
+    }
   }
 }
