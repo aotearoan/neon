@@ -1,4 +1,4 @@
-import { computed, defineComponent, useAttrs } from 'vue';
+import { computed, defineComponent, ref, useAttrs } from 'vue';
 import { NeonToggleChipSize } from '@/common/enums/NeonToggleChipSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
@@ -51,8 +51,11 @@ export default defineComponent({
   ],
   setup(props, { emit }) {
     const attrs = useAttrs();
+    const toggleChipLabel = ref<HTMLLabelElement | null>(null);
+
     const emitInput = (value: boolean) => {
       emit('update:modelValue', value);
+      toggleChipLabel.value?.blur();
     };
 
     const sanitizedAttributes = computed(() => {
@@ -69,6 +72,7 @@ export default defineComponent({
 
     return {
       sanitizedAttributes,
+      toggleChipLabel,
       emitInput,
       toggleChip,
     };

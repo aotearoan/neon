@@ -47,12 +47,12 @@
           $neon-chip-rgb: var(--neon-rgb-#{$color});
           $neon-chip-color: var(--neon-color-#{$color});
           border: var(--neon-border-width) var(--neon-border-style) $neon-chip-color;
-          background-color: rgba($neon-chip-rgb, var(--neon-opacity-toggle-chip));
+          background-color: rgba($neon-chip-rgb, var(--neon-opacity-chip));
           @include svg.color-with-svg($neon-chip-color);
 
           &:focus,
           &:hover {
-            background-color: rgba($neon-chip-rgb, calc(2 * var(--neon-opacity-toggle-chip)));
+            background-color: rgba($neon-chip-rgb, calc(2 * var(--neon-opacity-chip)));
           }
         }
 

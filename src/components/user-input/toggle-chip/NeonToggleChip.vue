@@ -1,5 +1,6 @@
 <template>
   <label
+    ref="toggleChipLabel"
     :aria-disabled="disabled"
     :aria-pressed="modelValue"
     :class="[
