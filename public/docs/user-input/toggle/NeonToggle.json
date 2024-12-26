@@ -94,5 +94,22 @@
         ]
       }
     }
+  ],
+  "slots": [
+    {
+      "name": "option",
+      "scoped": true,
+      "description": "This slot is for overriding the option rendering, it is passed two arguments, <em>option</em> - the option model & <em>index</em>",
+      "bindings": [
+        {
+          "name": "index",
+          "title": "binding"
+        },
+        {
+          "name": "option",
+          "title": "binding"
+        }
+      ]
+    }
   ]
 }

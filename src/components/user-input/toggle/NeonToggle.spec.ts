@@ -36,6 +36,8 @@ describe('NeonToggle', () => {
     },
   ];
 
+  const modelWithDescriptions = model.map((option, index) => ({ ...option, description: `description ${index}` }));
+
   const modelValue = model[0].key;
   const iconValue = iconModel[0].key;
   const props = { name, model, modelValue };
@@ -62,6 +64,18 @@ describe('NeonToggle', () => {
     expect(html()).toMatch('neon-toggle--radio-buttons');
   });
 
+  it('renders radio buttons with label override', () => {
+    // given
+    const { html } = render(NeonToggle, {
+      props: { name, model: modelWithDescriptions, modelValue, toggleStyle: NeonToggleStyle.RadioButtons },
+      slots: {
+        option: '<span>{{ index }} = {{ option.description }}</span>',
+      },
+    });
+    // then
+    expect(html()).toMatchSnapshot();
+  });
+
   it('renders default size', () => {
     // given
     const { html } = harness;
@@ -76,6 +90,25 @@ describe('NeonToggle', () => {
     await rerender({ ...props, size: NeonSize.Large });
     // then
     expect(html()).toMatch('neon-toggle--l');
+  });
+
+  it('renders without slot override class by default', () => {
+    // given
+    const { html } = harness;
+    // when / then
+    expect(html()).not.toMatch('neon-toggle__label--with-slot-override');
+  });
+
+  it('renders with slot override class', () => {
+    // given
+    const { html } = render(NeonToggle, {
+      props: { name, model: modelWithDescriptions, modelValue, toggleStyle: NeonToggleStyle.RadioButtons },
+      slots: {
+        option: '<span>{{ index }} = {{ option.description }}</span>',
+      },
+    });
+    // when / then
+    expect(html()).toMatch('neon-toggle__label--with-slot-override');
   });
 
   it('renders default color', () => {

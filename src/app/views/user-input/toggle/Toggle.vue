@@ -53,6 +53,29 @@
           <editor v-model="radioButtons" />
         </neon-stack>
       </neon-card-body>
+      <neon-card-body>
+        <h2 class="neon-h3">Radio buttons overriding label with slot</h2>
+        <neon-stack>
+          <neon-stack gap="m">
+            <neon-toggle
+              v-model="selected10"
+              :model="modelWithDescriptions"
+              name="toggle-10"
+              toggle-style="radio-buttons"
+            >
+              <template #option="{ option, index }">
+                <neon-stack gap="s">
+                  <span v-if="option.label">{{ option.label }}</span>
+                  <span v-if="option.description" class="neon-color-text-low-contrast">
+                    {{ option.description }}
+                  </span>
+                </neon-stack>
+              </template>
+            </neon-toggle>
+          </neon-stack>
+          <editor v-model="radioButtonsWithDescriptions" />
+        </neon-stack>
+      </neon-card-body>
     </neon-card>
   </component-documentation>
 </template>

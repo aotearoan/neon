@@ -5,7 +5,6 @@
     letter-spacing: var(--neon-letter-spacing-s);
     line-height: var(--neon-line-height-one);
     min-height: var(--neon-size-#{$size});
-    height: var(--neon-size-#{$size});
     z-index: var(--neon-z-index-default);
     gap: var(--neon-space-8);
 
@@ -32,14 +31,18 @@
 
   .neon-toggle__radio-button {
     width: 1.25 * $control-size;
+    min-width: 1.25 * $control-size;
     height: 1.25 * $control-size;
+    min-height: 1.25 * $control-size;
   }
 
   .neon-toggle__label--checked {
     .neon-toggle__radio-button {
       &-indicator {
         width: 0.75 * $control-size;
+        min-width: 0.75 * $control-size;
         height: 0.75 * $control-size;
+        min-height: 0.75 * $control-size;
       }
     }
   }
@@ -62,6 +65,12 @@
 
   &.neon-toggle--l {
     @include toggle-size('m', 'l');
+  }
+
+  .neon-toggle__label--with-slot-override {
+    .neon-toggle__radio-button {
+      align-self: flex-start;
+    }
   }
 
   .neon-toggle__label {
