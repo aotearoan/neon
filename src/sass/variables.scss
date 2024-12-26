@@ -316,6 +316,14 @@
     --neon-rgb-text-strong: var(--neon-rgb-text-strong-light);
     --neon-color-text-strong: var(--neon-color-text-strong-light);
 
+    // alias to new variables
+    --neon-rgb-text-primary: var(--neon-rgb-text-strong);
+    --neon-color-text-primary: var(--neon-color-text-strong);
+    --neon-rgb-text-secondary: var(--neon-rgb-text);
+    --neon-color-text-secondary: var(--neon-color-text);
+    --neon-rgb-text-tertiary: var(--neon-rgb-text-tertiary-light);
+    --neon-color-text-tertiary: rgb(var(--neon-rgb-text-tertiary));
+
     --neon-rgb-inverse: var(--neon-rgb-text-strong-dark);
     --neon-color-inverse: var(--neon-color-text-strong-dark);
 
@@ -608,6 +616,14 @@
     --neon-color-text: var(--neon-color-text-dark);
     --neon-rgb-text-strong: var(--neon-rgb-text-strong-dark);
     --neon-color-text-strong: var(--neon-color-text-strong-dark);
+
+    // alias to new variables
+    --neon-rgb-text-primary: var(--neon-rgb-text-strong);
+    --neon-color-text-primary: var(--neon-color-text-strong);
+    --neon-rgb-text-secondary: var(--neon-rgb-text);
+    --neon-color-text-secondary: var(--neon-color-text);
+    --neon-rgb-text-tertiary: var(--neon-rgb-text-tertiary-dark);
+    --neon-color-text-tertiary: rgb(var(--neon-rgb-text-tertiary));
 
     --neon-rgb-inverse: var(--neon-rgb-text-strong-light);
     --neon-color-inverse: var(--neon-color-text-strong-light);
