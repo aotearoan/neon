@@ -1,5 +1,12 @@
 # Changelog
 
+## [18.2.7](https://github.com/aotearoan/neon/compare/v18.2.6...v18.2.7) (2024-12-26)
+
+
+### Bug Fixes
+
+* button fixes ([#249](https://github.com/aotearoan/neon/issues/249)) ([57880bb](https://github.com/aotearoan/neon/commit/57880bba10fd621738e6f9c2ff09dbba854f17b7))
+
 ## [18.2.6](https://github.com/aotearoan/neon/compare/v18.2.5...v18.2.6) (2024-12-26)
 
 
