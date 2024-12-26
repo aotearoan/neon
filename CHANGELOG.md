@@ -1,5 +1,12 @@
 # Changelog
 
+## [18.2.5](https://github.com/aotearoan/neon/compare/v18.2.4...v18.2.5) (2024-12-26)
+
+
+### Bug Fixes
+
+* toggle style ([#244](https://github.com/aotearoan/neon/issues/244)) ([5c50c6e](https://github.com/aotearoan/neon/commit/5c50c6e72b6236ec9cd5c0bd3b88af4184b8bc14))
+
 ## [18.2.4](https://github.com/aotearoan/neon/compare/v18.2.3...v18.2.4) (2024-12-26)
 
 
