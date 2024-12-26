@@ -481,16 +481,18 @@
     --neon-background-color-pre: var(--neon-color-neutral-d3);
 
     /* toggle */
-    --neon-color-toggle-selected: var(--neon-color-neutral-d5);
-    --neon-border-color-toggle: var(--neon-color-neutral-d2);
-    --neon-opacity-toggle: 0.125;
-    --neon-opacity-toggle-selected: 0.33;
-    --neon-opacity-toggle-hover: 0.25;
+    --neon-border-toggle: var(--neon-border-width) var(--neon-border-style) transparent;
+    --neon-border-toggle-checked: var(--neon-border-width) var(--neon-border-style) var(--neon-border-color);
+    --neon-opacity-toggle-background: 0;
+    --neon-opacity-toggle-color: 0.5;
+    --neon-opacity-toggle-checked: 0;
+    --neon-opacity-toggle-hover: 0.05;
 
     /* radio buttons */
     --neon-background-radio-button: none;
-    --neon-color-radio-button-bg-active: rgba(var(--neon-rgb-neutral-d3), 0.375);
-    --neon-color-radio-button-label: var(--neon-color-neutral-l3);
+    --neon-border-radio-button: var(--neon-border-width) var(--neon-border-style) var(--neon-color-neutral-d2);
+    --neon-color-radio-button-bg-active: rgba(var(--neon-rgb-neutral-l3), 0.375);
+    --neon-color-radio-button-label: var(--neon-color-neutral-d3);
 
     /* input */
     --neon-border-color-input: var(--neon-color-neutral-d2);
@@ -782,14 +784,16 @@
     --neon-background-color-pre: var(--neon-color-neutral-d5);
 
     /* toggle */
-    --neon-color-toggle-selected: var(--neon-color-neutral-l5);
-    --neon-border-color-toggle: var(--neon-color-neutral-l3);
-    --neon-opacity-toggle: 0.125;
-    --neon-opacity-toggle-selected: 0.33;
-    --neon-opacity-toggle-hover: 0.25;
+    --neon-border-toggle: var(--neon-border-width) var(--neon-border-style) transparent;
+    --neon-border-toggle-checked: var(--neon-border-width) var(--neon-border-style) var(--neon-border-color);
+    --neon-opacity-toggle-background: 0;
+    --neon-opacity-toggle-color: 0.5;
+    --neon-opacity-toggle-checked: 0;
+    --neon-opacity-toggle-hover: 0.05;
 
     /* radio buttons */
     --neon-background-radio-button: none;
+    --neon-border-radio-button: var(--neon-border-width) var(--neon-border-style) var(--neon-color-neutral-l3);
     --neon-color-radio-button-bg-active: rgba(var(--neon-rgb-neutral-l3), 0.375);
     --neon-color-radio-button-label: var(--neon-color-neutral-d3);
 
@@ -857,6 +861,11 @@
     --neon-color-loading-1: var(--neon-color-high-contrast-l3);
     --neon-color-loading-2: rgba(var(--neon-rgb-high-contrast-l2), 0.5);
     --neon-color-loading-3: var(--neon-color-high-contrast-l2);
+
+    /* toggle */
+    --neon-margin-toggle-option: 1rem;
+    --neon-border-radius-toggle: 0;
+    --neon-border-radius-toggle-option: 2rem;
 
     /* scrollbars */
     --neon-color-scrollbar: rgba(0, 0, 0, 0.125);
