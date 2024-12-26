@@ -1,5 +1,12 @@
 # Changelog
 
+## [18.2.3](https://github.com/aotearoan/neon/compare/v18.2.2...v18.2.3) (2024-12-26)
+
+
+### Bug Fixes
+
+* note style adjustment ([#240](https://github.com/aotearoan/neon/issues/240)) ([d704f76](https://github.com/aotearoan/neon/commit/d704f76a08e8a39c49a6e797bd9f37738a46a0ff))
+
 ## [18.2.2](https://github.com/aotearoan/neon/compare/v18.2.1...v18.2.2) (2024-12-20)
 
 
