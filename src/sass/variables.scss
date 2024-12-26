@@ -212,6 +212,14 @@
 
   /* chips */
   --neon-border-radius-chip: var(--neon-border-radius);
+  --neon-opacity-chip: 0.23;
+
+  /* toggle chips */
+  --neon-font-weight-toggle-chip: var(--neon-font-weight-bold);
+  --neon-border-width-toggle-chip: 1rem;
+  --neon-border-radius-toggle-chip: 2rem;
+  --neon-opacity-toggle-chip-hover: 0.125;
+  --neon-opacity-toggle-chip-hover-checked: 0.85;
 
   /* scrollbars */
   --neon-width-scrollbar: 8rem;
@@ -571,8 +579,8 @@
     --neon-color-toggle-chip-text: var(--neon-color-text);
     --neon-border-rgb-toggle-chip: var(--neon-rgb-neutral-d3);
     --neon-border-color-toggle-chip: var(--neon-color-neutral-d3);
-    --neon-opacity-toggle-chip: 0.23;
-    --neon-opacity-toggle-chip-hover: 0.33;
+    --neon-background-color-toggle-chip: transparent;
+    --neon-color-toggle-chip-text-checked: var(--neon-color-inverse);
 
     /* slider & range slider */
     --neon-color-slider-track: var(--neon-color-neutral-d3);
@@ -878,8 +886,8 @@
     --neon-color-toggle-chip-text: var(--neon-color-text);
     --neon-border-rgb-toggle-chip: var(--neon-rgb-neutral-l3);
     --neon-border-color-toggle-chip: var(--neon-color-neutral-l3);
-    --neon-opacity-toggle-chip: 0.23;
-    --neon-opacity-toggle-chip-hover: 0.33;
+    --neon-background-color-toggle-chip: transparent;
+    --neon-color-toggle-chip-text-checked: var(--neon-color-inverse);
 
     /* slider & range slider */
     --neon-color-slider-track: var(--neon-color-neutral-l4);

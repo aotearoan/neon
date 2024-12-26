@@ -23,31 +23,31 @@
     width: fit-content;
     cursor: pointer;
     border: var(--neon-border-width-toggle-chip) var(--neon-border-style);
-    border-radius: var(--neon-border-radius);
+    border-radius: var(--neon-border-radius-toggle-chip);
     transition: width ease-in-out var(--neon-animation-speed-fast), background-color ease-in-out var(--neon-animation-speed-fast);
     border-color: var(--neon-border-color-toggle-chip);
-    background-color: rgba(var(--neon-border-rgb-toggle-chip), var(--neon-opacity-toggle-chip));
-    color: rgba(var(--neon-rgb-text), 0.667);
-
-    &:not(.neon-toggle-chip--disabled) {
-      &:focus,
-      &:hover {
-        background-color: rgba(var(--neon-border-rgb-toggle-chip), calc(2 * var(--neon-opacity-toggle-chip-hover)));
-      }
-    }
+    background-color: var(--neon-background-color-toggle-chip);
+    font-weight: var(--neon-font-weight-toggle-chip);
 
     @each $color in palettes.$neon-functional-colors {
       &--#{$color}:not(.neon-toggle-chip--disabled) {
+        color: var(--neon-color-#{$color});
+
+        &:focus,
+        &:hover {
+          background-color: rgba(var(--neon-rgb-#{$color}), var(--neon-opacity-toggle-chip-hover));
+        }
+
         &.neon-toggle-chip--checked {
           border-color: var(--neon-color-#{$color});
-          background-color: rgba(var(--neon-rgb-#{$color}), var(--neon-opacity-toggle-chip));
-          @include svg.color-with-svg(var(--neon-color-#{$color}));
+          background-color: var(--neon-color-#{$color});
+          @include svg.color-with-svg(var(--neon-color-toggle-chip-text-checked));
         }
 
         &.neon-toggle-chip--checked {
           &:focus,
           &:hover {
-            background-color: rgba(var(--neon-rgb-#{$color}), var(--neon-opacity-toggle-chip-hover));
+            background-color: rgba(var(--neon-rgb-#{$color}), var(--neon-opacity-toggle-chip-hover-checked));
           }
         }
       }
