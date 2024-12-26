@@ -1,5 +1,12 @@
 # Changelog
 
+## [18.2.6](https://github.com/aotearoan/neon/compare/v18.2.5...v18.2.6) (2024-12-26)
+
+
+### Bug Fixes
+
+* toggle chip style refresh ([#247](https://github.com/aotearoan/neon/issues/247)) ([d9bc7b4](https://github.com/aotearoan/neon/commit/d9bc7b4eeb2842021b0818f3ce4cf1624506ef4b))
+
 ## [18.2.5](https://github.com/aotearoan/neon/compare/v18.2.4...v18.2.5) (2024-12-26)
 
 
