@@ -24,6 +24,10 @@
       .neon-link {
         width: 100%;
 
+        &::after {
+          display: none;
+        }
+
         &:hover,
         &:focus {
           &::after {

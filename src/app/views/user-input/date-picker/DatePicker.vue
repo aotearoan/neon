@@ -39,11 +39,11 @@
         <h2 class="neon-h3">Disabled examples</h2>
         <neon-stack>
           <neon-stack class="date-example">
-            <label>Disabled input</label>
+            <h3 class="neon-h6">Disabled input</h3>
             <neon-date-picker v-model="dateDisabled" :disabled="true" />
-            <label>Disabled specific date selection</label>
+            <h3 class="neon-h6">Disabled specific date selection</h3>
             <neon-date-picker v-model="datesDisabled" :disabled-dates="disabledDates" />
-            <label>Specified date range<br />(min={{ minDate }}, max={{ maxDate }})</label>
+            <h3 class="neon-h6">Specified date range<br />(min={{ minDate }}, max={{ maxDate }})</h3>
             <neon-date-picker v-model="dateValidRange" :max="maxDate" :min="minDate" />
           </neon-stack>
           <editor v-model="dateDisabledExamples" />
