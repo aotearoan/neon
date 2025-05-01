@@ -27,12 +27,12 @@
         <h2 class="neon-h3">Various number options</h2>
         <neon-stack>
           <neon-stack>
-            <label>spinButtons = true</label>
+            <h3 class="neon-h6">spinButtons = true</h3>
             <neon-number v-model="noButtonsNumber" :spin-buttons="true" placeholder="Value" />
-            <label>Editable = false</label>
+            <h3 class="neon-h6">Editable = false</h3>
             <neon-number v-model="notEditableNumber" :editable="false" placeholder="Value" />
             <neon-number v-model="notEditableNumber" :editable="false" :spin-buttons="true" placeholder="Value" />
-            <label>With min, max, step</label>
+            <h3 class="neon-h6">With min, max, step</h3>
             <neon-number
               v-model="minMaxNumber"
               :max="90"
@@ -41,7 +41,7 @@
               :step="10"
               placeholder="Value"
             />
-            <label>Decimal min, max, step</label>
+            <h3 class="neon-h6">Decimal min, max, step</h3>
             <neon-number
               v-model="decimalMinMaxNumber"
               :decimals="2"
@@ -51,9 +51,9 @@
               :step="0.05"
               placeholder="Value"
             />
-            <label>Percentage</label>
+            <h3 class="neon-h6">Percentage</h3>
             <neon-number v-model="percentageNumber" :percentage="true" placeholder="Value" />
-            <label>Custom template</label>
+            <h3 class="neon-h6">Custom template</h3>
             <neon-number
               v-model="customNumber"
               :decimals="2"
@@ -61,7 +61,7 @@
               placeholder="Value"
               value-template="${value}"
             />
-            <label>Disabled</label>
+            <h3 class="neon-h6">Disabled</h3>
             <neon-number v-model="disabledNumber" disabled="disabled" placeholder="Value" />
             <neon-number v-model="disabledNumber" :spin-buttons="true" disabled="disabled" placeholder="Value" />
           </neon-stack>

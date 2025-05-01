@@ -16,15 +16,15 @@
         <h2 class="neon-h3">Basic usage</h2>
         <neon-stack>
           <neon-stack gap="s">
-            <label>Basic slider</label>
+            <h3 class="neon-h6">Basic slider</h3>
             <neon-slider id="basicSliderId" v-model="basicSlider" />
           </neon-stack>
           <neon-stack gap="s">
-            <label>With Min, max and step</label>
+            <h3 class="neon-h6">With Min, max and step</h3>
             <neon-slider v-model="minMaxSlider" :max="100" :min="-100" :step="10" />
           </neon-stack>
           <neon-stack gap="s">
-            <label>Disabled</label>
+            <h3 class="neon-h6">Disabled</h3>
             <neon-slider v-model="disabledSlider" :disabled="true" />
           </neon-stack>
           <editor v-model="coreExamples" />
@@ -34,19 +34,19 @@
         <h2 class="neon-h3">Formatting options</h2>
         <neon-stack>
           <neon-stack gap="s">
-            <label>Percentage</label>
+            <h3 class="neon-h6">Percentage</h3>
             <neon-slider v-model="percentageSlider" :percentage="true" />
           </neon-stack>
           <neon-stack gap="s">
-            <label>Decimal values</label>
+            <h3 class="neon-h6">Decimal values</h3>
             <neon-slider v-model="decimalSlider" :decimals="2" />
           </neon-stack>
           <neon-stack gap="s">
-            <label>Formatting disabled (e.g. year)</label>
+            <h3 class="neon-h6">Formatting disabled (e.g. year)</h3>
             <neon-slider v-model="noFormattingSlider" :disable-formatting="true" :max="2050" :min="2000" />
           </neon-stack>
           <neon-stack gap="s">
-            <label>With template (e.g. currency)</label>
+            <h3 class="neon-h6">With template (e.g. currency)</h3>
             <neon-slider v-model="templateSlider" :decimals="2" :max="200.0" :step="0.5" value-template="${value}" />
           </neon-stack>
           <editor v-model="formattingExamples" />
@@ -67,15 +67,15 @@
         <h2 class="neon-h3">Display options</h2>
         <neon-stack>
           <neon-stack gap="s">
-            <label>Output hidden</label>
+            <h3 class="neon-h6">Output hidden</h3>
             <neon-slider v-model="outputSlider" :output="false" />
           </neon-stack>
           <neon-stack gap="s">
-            <label>Legend hidden</label>
+            <h3 class="neon-h6">Legend hidden</h3>
             <neon-slider v-model="legendSlider" :legend="false" />
           </neon-stack>
           <neon-stack gap="s">
-            <label>Tooltip hidden</label>
+            <h3 class="neon-h6">Tooltip hidden</h3>
             <neon-slider v-model="tooltipSlider" :tooltip="false" />
           </neon-stack>
           <editor v-model="displayExamples" />

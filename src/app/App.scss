@@ -93,5 +93,9 @@
         align-items: center;
       }
     }
+
+    h3:not(:first-child) {
+      margin-top: var(--neon-space-24);
+    }
   }
 }
