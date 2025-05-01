@@ -1,5 +1,12 @@
 # Changelog
 
+## [18.2.9](https://github.com/aotearoan/neon/compare/v18.2.8...v18.2.9) (2025-05-01)
+
+
+### Bug Fixes
+
+* remove span max width ([#255](https://github.com/aotearoan/neon/issues/255)) ([6ad0ae1](https://github.com/aotearoan/neon/commit/6ad0ae16357da628117d26dfff6a7694e1e9aca7))
+
 ## [18.2.8](https://github.com/aotearoan/neon/compare/v18.2.7...v18.2.8) (2024-12-26)
 
 
