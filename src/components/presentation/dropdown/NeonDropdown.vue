@@ -35,8 +35,10 @@
             aria-haspopup="true"
             class="neon-dropdown__button"
             @blur="onBlur()"
-            @click="toggleOpen()"
             @focus="onFocus()"
+            @click.stop.prevent.capture="toggleOpen"
+            @keydown.enter.stop.prevent.capture="toggleOpen"
+            @keydown.space.stop.prevent.capture="toggleOpen"
           />
         </div>
         <div
@@ -46,9 +48,9 @@
           :tabindex="!disabled ? 0 : undefined"
           class="neon-dropdown__badge"
           role="button"
-          @click="toggleOpen"
-          @keydown.enter="toggleOpen"
-          @keydown.space.stop.prevent="toggleOpen"
+          @click.stop.prevent.capture="toggleOpen"
+          @keydown.enter.stop.prevent.capture="toggleOpen"
+          @keydown.space.stop.prevent.capture="toggleOpen"
         >
           <neon-badge
             :alternate-color="alternateColor"

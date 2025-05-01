@@ -56,14 +56,6 @@
   &.neon-input--with-icon {
     .neon-input__icon:not(.neon-input__icon--read-only) {
       cursor: pointer;
-
-      &:active {
-        @if ($size == 's') {
-          top: var(--neon-space-6);
-        } @else {
-          top: calc(1.75 * var(--neon-space-4));
-        }
-      }
     }
   }
 }

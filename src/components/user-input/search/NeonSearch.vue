@@ -57,6 +57,7 @@
             class="neon-search__input"
             v-bind="sanitizedAttributes"
             @focus="showOptions()"
+            @keydown.enter.prevent.stop.capture=""
             @update:modelValue="onFilterChange"
             @icon-click="onFilterChange('')"
           />
@@ -78,8 +79,10 @@
             aria-selected="false"
             class="neon-search__option"
             role="option"
-            @click="clickOption(option)"
             @mouseover="changeHighlighted(option.key)"
+            @click.stop.prevent.capture="clickOption(option)"
+            @space.stop.prevent.capture="clickOption(option)"
+            @enter.stop.prevent.capture="clickOption(option)"
           >
             <div class="neon-search__option-container">
               <!-- @slot provide a custom template for an option.<br />Bindings: <strong>option</strong>
