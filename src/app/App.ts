@@ -91,8 +91,8 @@ export default defineComponent({
       return children.length > 0
         ? { ...item, children }
         : item.label.toString().toLowerCase().indexOf(lowercaseFilter.value) >= 0
-        ? item
-        : undefined;
+          ? item
+          : undefined;
     };
 
     const filteredModel = computed((): AppMenuGroup[] => {

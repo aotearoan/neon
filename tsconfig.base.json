@@ -13,6 +13,8 @@
       "es2020"
     ],
     "composite": true,
+    "noEmit": false,
+    "declaration": true,
     "types": [
       "node",
       "vite/client"
