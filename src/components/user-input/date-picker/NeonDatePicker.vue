@@ -29,9 +29,9 @@
           :tabindex="disabled ? -1 : 0"
           class="neon-date-picker__button-click-capture"
           role="button"
-          @click="!disabled && openCalendar()"
-          @keydown.enter.stop.prevent="openCalendar()"
-          @keydown.space.stop.prevent="openCalendar()"
+          @click.stop.prevent.capture="!disabled && openCalendar()"
+          @keydown.enter.stop.prevent.capture="openCalendar()"
+          @keydown.space.stop.prevent.capture="openCalendar()"
         ></div>
       </template>
       <template #default>
@@ -51,7 +51,8 @@
                   class="neon-date-picker__previous-button"
                   icon="chevron-left"
                   size="m"
-                  @click="onPreviousDecade()"
+                  @click.stop.prevent.capture="onPreviousDecade()"
+                  @keydown.enter.stop.prevent.capture="onPreviousDecade()"
                 />
                 <neon-button
                   :aria-label="nextDecadeLabel"
@@ -62,7 +63,8 @@
                   class="neon-date-picker__next-button"
                   icon="chevron-right"
                   size="m"
-                  @click="onNextDecade()"
+                  @click.stop.prevent.capture="onNextDecade()"
+                  @keydown.enter.stop.prevent.capture="onNextDecade()"
                 />
               </div>
             </div>
@@ -85,7 +87,8 @@
                 button-style="text"
                 class="neon-date-picker__calendar-option"
                 size="s"
-                @click="selectYear(calendar.pageDecadeStart + index - 1)"
+                @click.stop.prevent.capture="selectYear(calendar.pageDecadeStart + index - 1)"
+                @keydown.enter.stop.prevent.capture="selectYear(calendar.pageDecadeStart + index - 1)"
               />
             </div>
           </template>
@@ -104,7 +107,8 @@
                 icon="switch"
                 icon-position="right"
                 size="m"
-                @click="changeYear()"
+                @click.stop.prevent.capture="changeYear()"
+                @keydown.enter.stop.prevent.capture="changeYear()"
               />
               <div class="neon-date-picker__calendar-header-actions">
                 <neon-button
@@ -116,7 +120,8 @@
                   class="neon-date-picker__previous-button"
                   icon="chevron-left"
                   size="m"
-                  @click="onPreviousYear()"
+                  @click.stop.prevent.capture="onPreviousYear()"
+                  @keydown.enter.stop.prevent.capture="onPreviousYear()"
                 />
                 <neon-button
                   :aria-label="nextYearLabel"
@@ -127,7 +132,8 @@
                   class="neon-date-picker__next-button"
                   icon="chevron-right"
                   size="m"
-                  @click="onNextYear()"
+                  @click.stop.prevent.capture="onNextYear()"
+                  @keydown.enter.stop.prevent.capture="onNextYear()"
                 />
               </div>
             </div>
@@ -149,7 +155,8 @@
                 button-style="text"
                 class="neon-date-picker__calendar-option"
                 size="s"
-                @click="selectMonth(index + 1)"
+                @click.stop.prevent.capture="selectMonth(index + 1)"
+                @keydown.enter.stop.prevent.capture="selectMonth(index + 1)"
               />
             </div>
           </template>
@@ -168,7 +175,8 @@
                 icon="switch"
                 icon-position="right"
                 size="m"
-                @click="changeMonth()"
+                @click.stop.prevent.capture="changeMonth()"
+                @keydown.enter.stop.prevent.capture="changeMonth()"
               />
               <div class="neon-date-picker__calendar-header-actions">
                 <neon-button
@@ -180,7 +188,8 @@
                   class="neon-date-picker__previous-button"
                   icon="chevron-left"
                   size="m"
-                  @click="onPrevious()"
+                  @click.stop.prevent.capture="onPrevious()"
+                  @keydown.enter.stop.prevent.capture="onPrevious()"
                 />
                 <neon-button
                   :aria-label="nextMonthLabel"
@@ -191,7 +200,8 @@
                   class="neon-date-picker__next-button"
                   icon="chevron-right"
                   size="m"
-                  @click="onNext()"
+                  @click.stop.prevent.capture="onNext()"
+                  @keydown.enter.stop.prevent.capture="onNext()"
                 />
               </div>
             </div>
@@ -222,7 +232,10 @@
                   button-style="text"
                   class="neon-date-picker__calendar-date"
                   size="m"
-                  @click="emitDate(isoDate(dateCol, calendar.pageMonth, calendar.pageYear))"
+                  @click.stop.prevent.capture="emitDate(isoDate(dateCol, calendar.pageMonth, calendar.pageYear))"
+                  @keydown.enter.stop.prevent.capture="
+                    emitDate(isoDate(dateCol, calendar.pageMonth, calendar.pageYear))
+                  "
                 />
                 <div
                   v-else
@@ -241,7 +254,8 @@
               class="neon-date-picker__calendar-clear-button"
               color="high-contrast"
               size="s"
-              @click="clear()"
+              @click.stop.prevent.capture="clear()"
+              @keydown.enter.stop.prevent.capture="clear()"
             />
             <neon-button
               :color="color"
@@ -249,7 +263,8 @@
               button-style="text"
               class="neon-date-picker__calendar-done-button"
               size="s"
-              @click="done()"
+              @click.stop.prevent.capture="done()"
+              @keydown.enter.stop.prevent.capture="done()"
             />
           </div>
         </div>

@@ -129,5 +129,8 @@
   "engines": {
     "npm": "~9.6.7",
     "node": "~18.17.1"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.59.0"
   }
 }

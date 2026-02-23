@@ -32,6 +32,7 @@
     "strict": true,
     "jsx": "react-jsx",
     "importHelpers": true,
+    "isolatedModules": true,
     "moduleResolution": "node",
     "verbatimModuleSyntax": true,
     "experimentalDecorators": true,
@@ -51,5 +52,5 @@
     {
       "path": "./tsconfig.json"
     }
-  ],
+  ]
 }

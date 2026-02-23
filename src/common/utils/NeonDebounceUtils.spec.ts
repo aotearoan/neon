@@ -1,4 +1,5 @@
 import { NeonDebounceUtils } from './NeonDebounceUtils';
+import { waitFor } from '@testing-library/vue';
 
 describe('NeonDebounceUtils', () => {
   const setTimeoutSpy = jest.spyOn(global, 'setTimeout');
@@ -6,9 +7,10 @@ describe('NeonDebounceUtils', () => {
 
   afterEach(() => {
     jest.resetAllMocks();
+    NeonDebounceUtils.setGlobalDebounceTimeout(0);
   });
 
-  it('debounces by default', (done) => {
+  it('debounces when timeout is set', (done) => {
     // given
     const debounce = 300;
     NeonDebounceUtils.setGlobalDebounceTimeout(debounce);
@@ -18,10 +20,9 @@ describe('NeonDebounceUtils', () => {
     }, undefined);
     // when
     fn();
-    NeonDebounceUtils.setGlobalDebounceTimeout(0);
   });
 
-  it('skips debounce when timeout is 0', (done) => {
+  it('skips debounce when 0', (done) => {
     // given
     const fn = NeonDebounceUtils.debounce(() => {
       expect(setTimeoutSpy).not.toHaveBeenCalled();
@@ -31,28 +32,46 @@ describe('NeonDebounceUtils', () => {
     fn();
   });
 
-  it('sets custom debounce timeout', (done) => {
+  it('sets custom debounce timeout', async () => {
     // given
     const debounce = 420;
     const fn = NeonDebounceUtils.debounce(() => {
       expect(setTimeoutSpy).toHaveBeenCalledWith(expect.anything(), debounce);
-      done();
     }, debounce);
     // when
-    fn();
+    await waitFor(() => {
+      fn();
+    });
   });
 
-  it('clear existing timer', (done) => {
+  it('clear existing timer', async () => {
     // given
     const debounce = 420;
     const fn = NeonDebounceUtils.debounce((finalCall: boolean) => {
       if (finalCall) {
         expect(clearTimeoutSpy).toHaveBeenCalled();
-        done();
       }
     }, debounce);
     // when
-    fn(false);
-    fn(true);
+    await waitFor(() => {
+      fn(false);
+      fn(true);
+    });
+  });
+
+  it('calls debounced function once without existing timer', () => {
+    jest.useFakeTimers();
+    const debounce = 300;
+    NeonDebounceUtils.setGlobalDebounceTimeout(debounce);
+
+    const fn = jest.fn();
+    const debouncedFn = NeonDebounceUtils.debounce(fn, debounce);
+
+    debouncedFn();
+
+    jest.advanceTimersByTime(debounce);
+
+    expect(fn).toHaveBeenCalledTimes(1);
+    expect(clearTimeoutSpy).not.toHaveBeenCalled();
   });
 });

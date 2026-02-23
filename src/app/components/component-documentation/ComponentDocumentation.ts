@@ -6,7 +6,7 @@ import { NeonTab, NeonTabs } from '@/neon';
 import type { DocumentationModel } from '../ApiModel';
 import type { MenuModel } from '@/app/Menu';
 
-interface SubDocumentationModel {
+export interface SubDocumentationModel {
   api: DocumentationModel;
   name: string;
 }

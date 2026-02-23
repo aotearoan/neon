@@ -29,6 +29,8 @@ export default defineConfig({
     },
   },
   build: {
+    minify: false,
+    sourcemap: false,
     emptyOutDir: true,
     rollupOptions: {
       output: {
