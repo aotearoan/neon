@@ -1,5 +1,12 @@
 # Changelog
 
+## [18.2.10](https://github.com/aotearoan/neon/compare/v18.2.9...v18.2.10) (2026-02-23)
+
+
+### Bug Fixes
+
+* tests & config ([#265](https://github.com/aotearoan/neon/issues/265)) ([3adb4ef](https://github.com/aotearoan/neon/commit/3adb4ef9578b6038064dbda625326068bb6c6e8d))
+
 ## [18.2.9](https://github.com/aotearoan/neon/compare/v18.2.8...v18.2.9) (2025-05-01)
 
 
