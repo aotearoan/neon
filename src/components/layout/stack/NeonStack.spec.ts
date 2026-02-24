@@ -1,7 +1,7 @@
 import type { RenderResult } from '@testing-library/vue';
 import { render } from '@testing-library/vue';
 import NeonStack from './NeonStack.vue';
-import { NeonSize } from '@/neon';
+import { NeonSize } from '@/common/enums/NeonSize';
 
 describe('NeonStack', () => {
   let harness: RenderResult;

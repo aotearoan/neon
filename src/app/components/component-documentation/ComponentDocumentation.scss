@@ -1,6 +1,6 @@
-@use 'src/sass/includes/layout';
-@use 'src/sass/includes/responsive';
-@use 'src/sass/includes/scrollbars';
+@use '../../../sass/includes/layout';
+@use '../../../sass/includes/responsive';
+@use '../../../sass/includes/scrollbars';
 
 $neon-height-component-header-desktop: 160rem;
 $neon-height-component-header-mobile: 77rem;

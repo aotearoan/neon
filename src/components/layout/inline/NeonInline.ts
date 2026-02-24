@@ -1,6 +1,6 @@
 import { defineComponent } from 'vue';
 import { NeonSize } from '@/common/enums/NeonSize';
-import { NeonResponsive } from '@/neon';
+import { NeonResponsive } from '@/common/enums/NeonResponsive';
 
 /**
  * A horizontal layout component. NeonInline provides a way of laying out it's contents with standard gaps. At the
