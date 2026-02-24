@@ -57,7 +57,7 @@ export default defineComponent({
   ],
   setup(props, { emit }) {
     const attrs = useAttrs();
-    const dropdown = ref<HTMLElement | null>(null);
+    const dropdown = ref<InstanceType<typeof NeonDropdown> | null>(null);
     const dropdownPlacement = ref<NeonDropdownPlacement | null>(null);
     const items = ref<Array<HTMLLIElement>>([]);
     const open = ref(false);
@@ -85,9 +85,15 @@ export default defineComponent({
       return false;
     };
 
-    const scrollOnNavigate = () => {
-      const element = dropdown.value?.querySelector('.neon-dropdown-menu__item--highlighted') as HTMLElement;
-      NeonScrollUtils.scrollIntoView(element);
+    const onNavigate = () => {
+      const element: HTMLElement | null = dropdown.value?.dropdownContent?.querySelector(
+        '.neon-dropdown-menu__item--highlighted',
+      ) as HTMLElement;
+
+      if (element) {
+        element.focus();
+        NeonScrollUtils.scrollIntoView(element);
+      }
     };
 
     const navigateBy = (offset: number, $event: KeyboardEvent) => {
@@ -96,7 +102,7 @@ export default defineComponent({
         highlightedIndex.value = newIndex;
         highlightedKey.value = props.model[highlightedIndex.value].key;
         $event.preventDefault();
-        setTimeout(scrollOnNavigate);
+        setTimeout(onNavigate);
       }
     };
 

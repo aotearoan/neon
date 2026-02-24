@@ -88,7 +88,7 @@ export default defineComponent({
   setup(props, { emit }) {
     const attrs = useAttrs();
 
-    const dropdown = ref<HTMLElement | null>(null);
+    const dropdown = ref<InstanceType<typeof NeonDropdown> | null>(null);
 
     const open = ref(false);
     const dropdownPlacement = ref<NeonDropdownPlacement>(props.placement);
@@ -118,21 +118,23 @@ export default defineComponent({
       return false;
     };
 
-    const scrollOnNavigate = () => {
-      const element = dropdown.value?.querySelector('.neon-select__option--highlighted') as HTMLElement;
+    const onNavigate = () => {
+      const element: HTMLElement | null = dropdown.value?.dropdownContent?.querySelector(
+        '.neon-select__option--highlighted',
+      ) as HTMLElement;
 
       if (element) {
+        element.focus();
         NeonScrollUtils.scrollIntoView(element);
       }
     };
-
-    const navigateBy = (offset: number, $event: KeyboardEvent) => {
+    const navigateBy = (offset: number, $event?: KeyboardEvent) => {
       const newIndex = highlightedIndex.value + offset;
       if (newIndex >= 0 && newIndex <= flattenedOptions.value.length - 1) {
         highlightedIndex.value = newIndex;
         highlightedKey.value = flattenedOptions.value[highlightedIndex.value].key;
-        $event.preventDefault();
-        setTimeout(scrollOnNavigate);
+        $event?.preventDefault();
+        setTimeout(onNavigate);
       }
     };
 
@@ -268,6 +270,7 @@ export default defineComponent({
         if (open) {
           highlightedKey.value = flattenedOptions.value[0].key;
           highlightedIndex.value = 0;
+          navigateBy(highlightedIndex.value);
         }
       },
     );

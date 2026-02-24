@@ -1,4 +1,4 @@
-import { defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
+import { defineComponent, defineExpose, onMounted, onUnmounted, ref, watch } from 'vue';
 import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
 import { NeonDropdownPlacementUtils } from '@/common/utils/NeonDropdownPlacementUtils';
 import { NeonClosableUtils } from '@/common/utils/NeonClosableUtils';
@@ -189,6 +189,8 @@ export default defineComponent({
       (value) => emit('button-ref', value),
       { immediate: true },
     );
+
+    defineExpose({ dropdownContent });
 
     return {
       dropdownButton,

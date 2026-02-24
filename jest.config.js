@@ -39,4 +39,12 @@ module.exports = {
   coverageDirectory: '<rootDir>/coverage',
   coverageProvider: 'v8',
   coveragePathIgnorePatterns: ['/node_modules/', '/test/', '/dist/'],
+  coverageThreshold: {
+    global: {
+      statements: 99,
+      branches: 99,
+      functions: 99,
+      lines: 99,
+    },
+  },
 };

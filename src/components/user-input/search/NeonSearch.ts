@@ -76,7 +76,8 @@ export default defineComponent({
   setup(props, { emit }) {
     const attrs = useAttrs();
 
-    const dropdown = ref<HTMLElement | null>(null);
+    const dropdown = ref<InstanceType<typeof NeonDropdown> | null>(null);
+    const searchInput = ref<InstanceType<typeof NeonInput> | null>(null);
     const dropdownPlacement = ref<NeonDropdownPlacement | undefined>(props.placement);
 
     const open = ref(false);
@@ -106,9 +107,15 @@ export default defineComponent({
       return false;
     };
 
-    const scrollOnNavigate = () => {
-      const element = dropdown.value?.querySelector('.neon-search__option--highlighted') as HTMLElement;
-      NeonScrollUtils.scrollIntoView(element);
+    const onNavigate = () => {
+      const element: HTMLElement | null = dropdown.value?.dropdownContent?.querySelector(
+        '.neon-search__option--highlighted',
+      ) as HTMLElement;
+
+      if (element) {
+        element.focus();
+        NeonScrollUtils.scrollIntoView(element);
+      }
     };
 
     const navigateBy = (offset: number, $event: KeyboardEvent) => {
@@ -117,7 +124,7 @@ export default defineComponent({
         highlightedIndex.value = newIndex;
         highlightedKey.value = props.options[highlightedIndex.value].key;
         $event.preventDefault();
-        setTimeout(scrollOnNavigate);
+        setTimeout(onNavigate);
       }
     };
 
@@ -173,7 +180,12 @@ export default defineComponent({
             }
             break;
           case 'Tab':
-            if (!$event.ctrlKey && !$event.metaKey && !$event.altKey) {
+            if (
+              document.activeElement !== searchInput.value?.neonInput &&
+              !$event.ctrlKey &&
+              !$event.metaKey &&
+              !$event.altKey
+            ) {
               open.value = false;
             }
             break;
@@ -215,6 +227,7 @@ export default defineComponent({
 
     return {
       dropdown,
+      searchInput,
       open,
       highlightedKey,
       filter,

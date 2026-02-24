@@ -43,6 +43,7 @@
       flex-direction: row;
       user-select: none;
       cursor: pointer;
+      outline: none;
 
       &--separator-before {
         border-top: var(--neon-border-width-separator-before) var(--neon-border-style) var(--neon-border-color-dropdown);

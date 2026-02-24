@@ -1,4 +1,4 @@
-import { computed, defineComponent, ref, useAttrs } from 'vue';
+import { computed, defineComponent, defineExpose, ref, useAttrs } from 'vue';
 import { NeonInputType } from '@/common/enums/NeonInputType';
 import { NeonState } from '@/common/enums/NeonState';
 import { NeonSize } from '@/common/enums/NeonSize';
@@ -244,6 +244,8 @@ export default defineComponent({
         }
       }
     });
+
+    defineExpose({ neonInput });
 
     return {
       neonInput,
