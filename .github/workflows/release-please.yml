@@ -11,6 +11,7 @@ permissions:
 
 jobs:
   release-please:
+    if: "!contains(github.event.head_commit.message, 'chore(main): release')"
     runs-on: ubuntu-latest
     steps:
       - uses: googleapis/release-please-action@v4
