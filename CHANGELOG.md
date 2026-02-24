@@ -1,5 +1,13 @@
 # Changelog
 
+## [18.2.12](https://github.com/aotearoan/neon/compare/v18.2.11...v18.2.12) (2026-02-24)
+
+
+### Bug Fixes
+
+* import fixes ([#272](https://github.com/aotearoan/neon/issues/272)) ([6ede9e4](https://github.com/aotearoan/neon/commit/6ede9e45eff350770c252e57732fecac24d3bc6b))
+* prevent form submit on component button click ([#270](https://github.com/aotearoan/neon/issues/270)) ([d083dfe](https://github.com/aotearoan/neon/commit/d083dfe7ce714467c0aae7925df874046fe33667))
+
 ## [18.2.11](https://github.com/aotearoan/neon/compare/v18.2.10...v18.2.11) (2026-02-24)
 
 
