@@ -50,6 +50,7 @@
             />
           </template>
           <neon-input
+            :color="color"
             :disabled="disabled"
             :modelValue="filter"
             :placeholder="placeholder"
