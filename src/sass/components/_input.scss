@@ -136,7 +136,7 @@
       padding: var(--neon-space-4) var(--neon-space-10);
       line-height: var(--neon-line-height-one);
       outline: none;
-      font-family: var(--neon-body-font-family);
+      font-family: var(--neon-font-family-body);
       width: 100%;
       border-color: var(--neon-border-color-input);
       color: var(--neon-color-text);
@@ -144,7 +144,7 @@
       box-shadow: var(--neon-inset-shadow);
 
       &::placeholder {
-        font-family: var(--neon-body-font-family);
+        font-family: var(--neon-font-family-body);
         letter-spacing: var(--neon-letter-spacing-s);
         color: var(--neon-color-placeholder);
       }

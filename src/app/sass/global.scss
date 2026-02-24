@@ -8,7 +8,7 @@ body {
 
   .title {
     margin-left: var(--neon-space-32);
-    font-family: var(--neon-body-font-family);
+    font-family: var(--neon-font-family-body);
     font-weight: lighter;
   }
 }
@@ -28,7 +28,7 @@ header {
 
   .tagline {
     margin-left: var(--neon-space-16);
-    font-family: var(--neon-heading-font-family);
+    font-family: var(--neon-font-family-heading);
     font-size: var(--neon-font-size-l);
     font-weight: var(--neon-font-weight-light);
     opacity: 0.9;

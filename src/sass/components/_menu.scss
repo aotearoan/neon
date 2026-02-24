@@ -123,7 +123,7 @@
     }
 
     &__responsive-menu {
-      font-family: var(--neon-heading-font-family);
+      font-family: var(---neon-font-family-heading);
 
       &.neon-menu__responsive-menu:not(:first-child) {
         margin-left: var(--neon-space-20);
@@ -154,7 +154,7 @@
         &__label {
           display: flex;
           align-items: center;
-          font-family: var(--neon-heading-font-family);
+          font-family: var(---neon-font-family-heading);
         }
       }
 
@@ -166,7 +166,7 @@
       }
 
       .neon-dropdown .neon-dropdown__button {
-        font-family: var(--neon-heading-font-family);
+        font-family: var(---neon-font-family-heading);
         font-weight: var(--neon-font-weight-normal);
         letter-spacing: var(--neon-letter-spacing-m);
       }
