@@ -1,5 +1,16 @@
 # Changelog
 
+## [19.0.0](https://github.com/aotearoan/neon/compare/v18.2.13...v19.0.0) (2026-02-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* change default color of user input components ([#275](https://github.com/aotearoan/neon/issues/275))
+
+### Code Refactoring
+
+* change default color of user input components ([#275](https://github.com/aotearoan/neon/issues/275)) ([8117019](https://github.com/aotearoan/neon/commit/811701988cbd425d18fc8ab8f4af96e0f8b43a5f))
+
 ## [18.2.13](https://github.com/aotearoan/neon/compare/v18.2.12...v18.2.13) (2026-02-24)
 
 
