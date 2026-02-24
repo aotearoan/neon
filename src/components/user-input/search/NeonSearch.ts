@@ -8,6 +8,7 @@ import NeonInput from '@/components/user-input/input/NeonInput.vue';
 import NeonChip from '@/components/user-input/chip/NeonChip.vue';
 import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
 import { NeonScrollUtils } from '@/common/utils/NeonScrollUtils';
+import { NeonInputMode } from '@/common/enums/NeonInputMode';
 
 /**
  * <p>
@@ -55,6 +56,16 @@ export default defineComponent({
      * The color of the search.
      */
     color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Primary },
+    /**
+     * The HTML autocomplete mode as specified <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#values">here</a>.
+     * NOTE: No enum is provided in Neon as some values can be used in combination, please refer to the full list of values in the preceding link.
+     */
+    autocomplete: { type: String, default: 'on' },
+    /**
+     * The HTML input mode as specified <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode">here</a>.
+     * This can be used to simplify populating the filter field, e.g. providing the user's country from their address.
+     */
+    inputmode: { type: String as () => NeonInputMode, default: NeonInputMode.Text },
     /**
      * Placement of the dropdown contents.
      */

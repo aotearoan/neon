@@ -134,6 +134,18 @@ describe('NeonInput', () => {
     expect(container.querySelector('.neon-input--info')).toBeDefined();
   });
 
+  it('renders default autocomplete mode', () => {
+    const { container } = harness;
+    expect((container.querySelector('.neon-input__text') as HTMLInputElement).autocomplete).toEqual('on');
+  });
+
+  it('renders autocomplete mode', async () => {
+    const autocomplete = 'tel';
+    const { container, rerender } = harness;
+    await rerender({ autocomplete: 'tel' });
+    expect((container.querySelector('.neon-input__text') as HTMLInputElement).autocomplete).toEqual(autocomplete);
+  });
+
   it('renders default state', () => {
     const { container } = harness;
     expect(container.querySelector('.neon-input--state-ready')).toBeDefined();

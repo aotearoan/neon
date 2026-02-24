@@ -51,6 +51,7 @@
           </template>
           <neon-input
             ref="searchInput"
+            :autocomplete="autocomplete"
             :color="color"
             :disabled="disabled"
             :modelValue="filter"

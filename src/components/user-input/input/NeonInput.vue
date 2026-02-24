@@ -20,6 +20,7 @@
       :id="id"
       ref="neonInput"
       :aria-placeholder="computedPlaceholder"
+      :autocomplete="autocomplete"
       :disabled="disabled"
       :inputmode="inputmode"
       :placeholder="computedPlaceholder"
@@ -36,6 +37,7 @@
       v-else
       :id="id"
       :aria-placeholder="computedPlaceholder"
+      :autocomplete="autocomplete"
       :disabled="disabled"
       :inputmode="inputmode"
       :placeholder="computedPlaceholder"
