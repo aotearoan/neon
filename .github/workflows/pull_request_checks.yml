@@ -4,7 +4,8 @@ on:
   pull_request:
     branches:
       - main
-
+    branches-ignore:
+      - 'release-please**'
 jobs:
   lint_test:
     name: Lint and Unit test
