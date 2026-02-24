@@ -1,7 +1,7 @@
 // global SASS overrides
-@use 'src/sass/includes/responsive';
-@use 'src/sass/includes/layout';
-@use 'src/sass/includes/hidden';
+@use '../../sass/includes/responsive';
+@use '../../sass/includes/layout';
+@use '../../sass/includes/hidden';
 
 body {
   font-size: var(--neon-base-font-size);

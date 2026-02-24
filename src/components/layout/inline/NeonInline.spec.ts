@@ -1,7 +1,8 @@
 import type { RenderResult } from '@testing-library/vue';
 import { render } from '@testing-library/vue';
 import NeonInline from './NeonInline.vue';
-import { NeonResponsive, NeonSize } from '@/neon';
+import { NeonResponsive } from '@/common/enums/NeonResponsive';
+import { NeonSize } from '@/common/enums/NeonSize';
 
 describe('NeonInline', () => {
   let harness: RenderResult;

@@ -1,8 +1,8 @@
 // This structure allows you to not only use the theme and light/dark modes,
 // but to also use the defined variables, mixins and functions in your own components and pages.
-@use 'src/sass/includes/responsive';
-@use 'src/sass/includes/svg';
-@use 'src/sass/theme';
+@use '../sass/includes/responsive';
+@use '../sass/includes/svg';
+@use '../sass/theme';
 @use './sass/fonts';
 @use './sass/global';
 @use './sass/variables';
