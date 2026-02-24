@@ -10,7 +10,13 @@
     ]"
     class="neon-date-picker"
   >
-    <neon-dropdown ref="dropdown" v-model="calendarOpen" :placement="placement" @update:modelValue="resetToCalendar()">
+    <neon-dropdown
+      ref="dropdown"
+      v-model="calendarOpen"
+      :color="color"
+      :placement="placement"
+      @update:modelValue="resetToCalendar()"
+    >
       <template #dropdown-button>
         <neon-input
           :color="color"
@@ -252,7 +258,7 @@
               :label="clearLabel"
               button-style="text"
               class="neon-date-picker__calendar-clear-button"
-              color="high-contrast"
+              color="low-contrast"
               size="s"
               @click.stop.prevent.capture="clear()"
               @keydown.enter.stop.prevent.capture="clear()"
@@ -271,6 +277,7 @@
       </template>
     </neon-dropdown>
     <neon-input
+      :color="color"
       :disabled="disabled"
       :hide-icon="true"
       :max="max"

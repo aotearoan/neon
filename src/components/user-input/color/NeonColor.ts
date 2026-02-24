@@ -32,7 +32,7 @@ export default defineComponent({
     /**
      * Color of the input
      */
-    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Primary },
     /**
      * This is the placeholder for the text input when no value is provided.
      */

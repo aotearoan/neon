@@ -34,7 +34,7 @@ export default defineComponent({
     /**
      * The button color
      */
-    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Primary },
     /**
      * Display the button as high-contrast with inverted colors. This is useful for placing a button on a colored background.
      * NOTE: Supports Solid & Outline button styles only (gradient & text buttons are not supported)

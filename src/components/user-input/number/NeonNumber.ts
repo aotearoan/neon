@@ -42,7 +42,7 @@ export default defineComponent({
     /**
      * The component color.
      */
-    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Primary },
     /**
      * The component size.
      */

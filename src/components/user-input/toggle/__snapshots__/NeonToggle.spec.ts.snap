@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NeonToggle renders radio buttons with label override 1`] = `
-<div class="neon-toggle--radio-buttons neon-toggle--neutral neon-toggle--vertical neon-toggle--m neon-toggle" role="radiogroup"><label aria-checked="true" class="neon-toggle__label--checked neon-toggle__label--with-slot-override neon-toggle__label--with-text neon-toggle__label no-style" tabindex="0" role="radio"><input checked="" name="xd" tabindex="-1" class="neon-toggle__input" type="radio" value="option-1">
+<div class="neon-toggle--radio-buttons neon-toggle--primary neon-toggle--vertical neon-toggle--m neon-toggle" role="radiogroup"><label aria-checked="true" class="neon-toggle__label--checked neon-toggle__label--with-slot-override neon-toggle__label--with-text neon-toggle__label no-style" tabindex="0" role="radio"><input checked="" name="xd" tabindex="-1" class="neon-toggle__input" type="radio" value="option-1">
     <div class="neon-toggle__radio-button">
       <div class="neon-toggle__radio-button-indicator"></div>
     </div><!-- @slot This slot is for overriding the option rendering, it is passed two arguments, <em>option</em> - the option model & <em>index</em> --><span>0 = description 0</span>

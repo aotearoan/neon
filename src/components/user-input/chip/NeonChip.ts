@@ -33,7 +33,7 @@ export default defineComponent({
     /**
      * The chip color.
      */
-    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Primary },
     /**
      * The action when clicking on a chip. Can be click or remove.
      */

@@ -30,7 +30,7 @@ describe('NeonStepper.vue', () => {
 
   test('renders in default color', () => {
     const { container } = harness;
-    expect(container.querySelector('.neon-stepper--brand')).toBeDefined();
+    expect(container.querySelector('.neon-stepper--primary')).toBeDefined();
   });
 
   test('renders alternative color', async () => {

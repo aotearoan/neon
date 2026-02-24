@@ -115,16 +115,16 @@ describe('NeonToggle', () => {
     // given
     const { html } = harness;
     // when / then
-    expect(html()).toMatch('neon-toggle--neutral');
+    expect(html()).toMatch('neon-toggle--primary');
   });
 
   it('renders color', async () => {
     // given
     const { html, rerender } = harness;
     // when
-    await rerender({ ...props, color: NeonFunctionalColor.Primary });
+    await rerender({ ...props, color: NeonFunctionalColor.Brand });
     // then
-    expect(html()).toMatch('neon-toggle--primary');
+    expect(html()).toMatch('neon-toggle--brand');
   });
 
   it('renders default disabled', () => {

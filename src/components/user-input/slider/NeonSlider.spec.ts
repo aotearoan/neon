@@ -19,15 +19,15 @@ describe('NeonSlider', () => {
     // given
     const { container } = harness;
     // when / then
-    expect(container.querySelector('.neon-slider--low-contrast')).toBeDefined();
+    expect(container.querySelector('.neon-slider--primary')).toBeDefined();
   });
 
   it('renders color', async () => {
     // given
     const { container, rerender } = harness;
-    await rerender({ color: NeonFunctionalColor.Primary });
+    await rerender({ color: NeonFunctionalColor.Brand });
     // when / then
-    expect(container.querySelector('.neon-slider--primary')).toBeDefined();
+    expect(container.querySelector('.neon-slider--brand')).toBeDefined();
   });
 
   it('renders legend', () => {
