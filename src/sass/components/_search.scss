@@ -102,7 +102,7 @@
           max-height: calc(var(--neon-size-s) - 2 * var(--neon-border-width));
 
           .neon-icon {
-            top: var(--neon-space-2);
+            top: calc(0.5 * var(--neon-base-space));
             right: var(--neon-space-8);
           }
         }
@@ -121,7 +121,7 @@
 
           .neon-icon {
             top: 0;
-            right: var(--neon-space-8);
+            right: calc(2 * var(--neon-base-space));
           }
         }
       }
@@ -138,8 +138,8 @@
           max-height: calc(var(--neon-size-l) - 2 * var(--neon-border-width));
 
           .neon-icon {
-            top: calc(-1 * var(--neon-space-4));
-            right: var(--neon-space-8);
+            top: calc(-1 * var(--neon-base-space));
+            right: calc(2 * var(--neon-base-space));
           }
         }
       }
