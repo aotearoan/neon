@@ -25,7 +25,7 @@ export default defineComponent({
     /**
      * The color of the Stepper component.
      */
-    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Brand },
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Primary },
   },
   emits: [
     /**

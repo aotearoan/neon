@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NeonStepper.vue matches snapshot 1`] = `
-<div class="neon-stepper--brand neon-stepper">
+<div class="neon-stepper--primary neon-stepper">
   <div class="neon-stepper__step--has-value neon-stepper__step--display-stepper neon-stepper__step">
     <div class="neon-stepper__step-indicator-wrapper">
       <div class="neon-stepper__step-indicator">

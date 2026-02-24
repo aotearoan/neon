@@ -186,9 +186,9 @@ describe('NeonSelect', () => {
       // given
       const { container } = harness;
       // when / then
-      expect(container.querySelector('.neon-select--low-contrast')).toBeDefined();
-      expect(container.querySelector('.neon-dropdown--low-contrast')).toBeDefined();
-      expect(container.querySelectorAll('.neon-switch--low-contrast').length).toEqual(options.length);
+      expect(container.querySelector('.neon-select--primary')).toBeDefined();
+      expect(container.querySelector('.neon-dropdown--primary')).toBeDefined();
+      expect(container.querySelectorAll('.neon-switch--primary').length).toEqual(options.length);
     });
 
     it('renders color', async () => {

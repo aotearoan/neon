@@ -41,7 +41,7 @@ export default defineComponent({
     /**
      * Color of the input
      */
-    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Primary },
     /**
      * The HTML input mode as specified <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode">here</a>.
      */

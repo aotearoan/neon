@@ -42,7 +42,7 @@ export default defineComponent({
     /**
      * The color of the toggle.
      */
-    color: { type: String as () => NeonFunctionalColor, default: () => NeonFunctionalColor.Neutral },
+    color: { type: String as () => NeonFunctionalColor, default: () => NeonFunctionalColor.Primary },
     /**
      * Whether the toggle is disabled.
      */

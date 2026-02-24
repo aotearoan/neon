@@ -39,20 +39,20 @@ describe('NeonNumber', () => {
     // given
     const { container } = harness;
     // when / then
-    expect(container.querySelector('.neon-number--low-contrast')).toBeDefined();
-    expect(container.querySelector('.neon-input--low-contrast')).toBeDefined();
-    expect(container.querySelectorAll('.neon-button--low-contrast').length).toEqual(2);
+    expect(container.querySelector('.neon-number--primary')).toBeDefined();
+    expect(container.querySelector('.neon-input--primary')).toBeDefined();
+    expect(container.querySelectorAll('.neon-button--primary').length).toEqual(2);
   });
 
   it('renders color', async () => {
     // given
     const { container, rerender } = harness;
     // when
-    await rerender({ color: NeonFunctionalColor.Primary });
+    await rerender({ color: NeonFunctionalColor.Brand });
     // then
-    expect(container.querySelector('.neon-number--primary')).toBeDefined();
-    expect(container.querySelector('.neon-input--primary')).toBeDefined();
-    expect(container.querySelectorAll('.neon-button--primary').length).toEqual(2);
+    expect(container.querySelector('.neon-number--brand')).toBeDefined();
+    expect(container.querySelector('.neon-input--brand')).toBeDefined();
+    expect(container.querySelectorAll('.neon-button--brand').length).toEqual(2);
   });
 
   it('renders enabled', () => {

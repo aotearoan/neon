@@ -2,7 +2,7 @@
 
 exports[`NeonDatePicker renders change decade replacement strings 1`] = `
 <div class="neon-date-picker--m neon-date-picker--primary neon-date-picker--open neon-date-picker">
-  <div class="neon-dropdown--with-indicator neon-dropdown--open neon-dropdown--m neon-dropdown--low-contrast neon-dropdown">
+  <div class="neon-dropdown--with-indicator neon-dropdown--open neon-dropdown--m neon-dropdown--primary neon-dropdown">
     <div>
       <!-- @slot optionally replace the dropdown button with a custom control -->
       <div class="neon-input--with-icon neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__button"><input aria-placeholder="" inputmode="text" placeholder="" tabindex="-1" type="text" class="neon-input__textfield neon-input__text neon-date-picker__button" value="">
@@ -68,7 +68,7 @@ exports[`NeonDatePicker renders change decade replacement strings 1`] = `
             <!--v-if-->
           </button></div>
         <hr>
-        <div class="neon-button-group"><button class="neon-button--s neon-button--high-contrast neon-button--text neon-button--state-ready neon-button neon-date-picker__calendar-clear-button neon-date-picker__calendar-clear-button" tabindex="0">
+        <div class="neon-button-group"><button class="neon-button--s neon-button--low-contrast neon-button--text neon-button--state-ready neon-button neon-date-picker__calendar-clear-button neon-date-picker__calendar-clear-button" tabindex="0">
             <!--v-if--><span class="neon-button__label">Clear</span>
             <!--v-if-->
           </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button neon-date-picker__calendar-done-button neon-date-picker__calendar-done-button" tabindex="0">
@@ -78,7 +78,7 @@ exports[`NeonDatePicker renders change decade replacement strings 1`] = `
       </div>
     </div>
   </div>
-  <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--low-contrast neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" inputmode="text" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input">
+  <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" inputmode="text" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input">
     <!--v-if-->
     <!--v-if-->
   </div>
@@ -87,7 +87,7 @@ exports[`NeonDatePicker renders change decade replacement strings 1`] = `
 
 exports[`NeonDatePicker renders change month replacement strings 1`] = `
 <div class="neon-date-picker--m neon-date-picker--primary neon-date-picker">
-  <div class="neon-dropdown--with-indicator neon-dropdown--m neon-dropdown--low-contrast neon-dropdown">
+  <div class="neon-dropdown--with-indicator neon-dropdown--m neon-dropdown--primary neon-dropdown">
     <div>
       <!-- @slot optionally replace the dropdown button with a custom control -->
       <div class="neon-input--with-icon neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__button"><input aria-placeholder="" inputmode="text" placeholder="" tabindex="-1" type="text" class="neon-input__textfield neon-input__text neon-date-picker__button" value="">
@@ -241,7 +241,7 @@ exports[`NeonDatePicker renders change month replacement strings 1`] = `
           <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div>
         </div>
         <hr>
-        <div class="neon-button-group"><button class="neon-button--s neon-button--high-contrast neon-button--text neon-button--state-ready neon-button neon-date-picker__calendar-clear-button neon-date-picker__calendar-clear-button" tabindex="0">
+        <div class="neon-button-group"><button class="neon-button--s neon-button--low-contrast neon-button--text neon-button--state-ready neon-button neon-date-picker__calendar-clear-button neon-date-picker__calendar-clear-button" tabindex="0">
             <!--v-if--><span class="neon-button__label">string 3</span>
             <!--v-if-->
           </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button neon-date-picker__calendar-done-button neon-date-picker__calendar-done-button" tabindex="0">
@@ -251,7 +251,7 @@ exports[`NeonDatePicker renders change month replacement strings 1`] = `
       </div>
     </div>
   </div>
-  <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--low-contrast neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" inputmode="text" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input">
+  <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" inputmode="text" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input">
     <!--v-if-->
     <!--v-if-->
   </div>
@@ -260,7 +260,7 @@ exports[`NeonDatePicker renders change month replacement strings 1`] = `
 
 exports[`NeonDatePicker renders change year replacement strings 1`] = `
 <div class="neon-date-picker--m neon-date-picker--primary neon-date-picker--open neon-date-picker">
-  <div class="neon-dropdown--with-indicator neon-dropdown--open neon-dropdown--m neon-dropdown--low-contrast neon-dropdown">
+  <div class="neon-dropdown--with-indicator neon-dropdown--open neon-dropdown--m neon-dropdown--primary neon-dropdown">
     <div>
       <!-- @slot optionally replace the dropdown button with a custom control -->
       <div class="neon-input--with-icon neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__button"><input aria-placeholder="" inputmode="text" placeholder="" tabindex="-1" type="text" class="neon-input__textfield neon-input__text neon-date-picker__button" value="">
@@ -338,7 +338,7 @@ exports[`NeonDatePicker renders change year replacement strings 1`] = `
             <!--v-if-->
           </button></div>
         <hr>
-        <div class="neon-button-group"><button class="neon-button--s neon-button--high-contrast neon-button--text neon-button--state-ready neon-button neon-date-picker__calendar-clear-button neon-date-picker__calendar-clear-button" tabindex="0">
+        <div class="neon-button-group"><button class="neon-button--s neon-button--low-contrast neon-button--text neon-button--state-ready neon-button neon-date-picker__calendar-clear-button neon-date-picker__calendar-clear-button" tabindex="0">
             <!--v-if--><span class="neon-button__label">Clear</span>
             <!--v-if-->
           </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button neon-date-picker__calendar-done-button neon-date-picker__calendar-done-button" tabindex="0">
@@ -348,7 +348,7 @@ exports[`NeonDatePicker renders change year replacement strings 1`] = `
       </div>
     </div>
   </div>
-  <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--low-contrast neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" inputmode="text" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input">
+  <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" inputmode="text" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input">
     <!--v-if-->
     <!--v-if-->
   </div>
@@ -357,7 +357,7 @@ exports[`NeonDatePicker renders change year replacement strings 1`] = `
 
 exports[`NeonDatePicker renders closed 1`] = `
 <div class="neon-date-picker--m neon-date-picker--primary neon-date-picker">
-  <div class="neon-dropdown--with-indicator neon-dropdown--m neon-dropdown--low-contrast neon-dropdown">
+  <div class="neon-dropdown--with-indicator neon-dropdown--m neon-dropdown--primary neon-dropdown">
     <div>
       <!-- @slot optionally replace the dropdown button with a custom control -->
       <div class="neon-input--with-icon neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__button"><input aria-placeholder="" inputmode="text" placeholder="" tabindex="-1" type="text" class="neon-input__textfield neon-input__text neon-date-picker__button" value="16 Apr 2023">
@@ -508,7 +508,7 @@ exports[`NeonDatePicker renders closed 1`] = `
             <!--v-if-->
           </button></div>
         <hr>
-        <div class="neon-button-group"><button class="neon-button--s neon-button--high-contrast neon-button--text neon-button--state-ready neon-button neon-date-picker__calendar-clear-button neon-date-picker__calendar-clear-button" tabindex="0">
+        <div class="neon-button-group"><button class="neon-button--s neon-button--low-contrast neon-button--text neon-button--state-ready neon-button neon-date-picker__calendar-clear-button neon-date-picker__calendar-clear-button" tabindex="0">
             <!--v-if--><span class="neon-button__label">Clear</span>
             <!--v-if-->
           </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button neon-date-picker__calendar-done-button neon-date-picker__calendar-done-button" tabindex="0">
@@ -518,7 +518,7 @@ exports[`NeonDatePicker renders closed 1`] = `
       </div>
     </div>
   </div>
-  <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--low-contrast neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" inputmode="text" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input" value="2023-04-16">
+  <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" inputmode="text" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input" value="2023-04-16">
     <!--v-if-->
     <!--v-if-->
   </div>
@@ -527,7 +527,7 @@ exports[`NeonDatePicker renders closed 1`] = `
 
 exports[`NeonDatePicker renders open 1`] = `
 <div class="neon-date-picker--m neon-date-picker--primary neon-date-picker--open neon-date-picker">
-  <div class="neon-dropdown--with-indicator neon-dropdown--open neon-dropdown--m neon-dropdown--low-contrast neon-dropdown">
+  <div class="neon-dropdown--with-indicator neon-dropdown--open neon-dropdown--m neon-dropdown--primary neon-dropdown">
     <div>
       <!-- @slot optionally replace the dropdown button with a custom control -->
       <div class="neon-input--with-icon neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__button"><input aria-placeholder="" inputmode="text" placeholder="" tabindex="-1" type="text" class="neon-input__textfield neon-input__text neon-date-picker__button" value="16 Apr 2023">
@@ -678,7 +678,7 @@ exports[`NeonDatePicker renders open 1`] = `
             <!--v-if-->
           </button></div>
         <hr>
-        <div class="neon-button-group"><button class="neon-button--s neon-button--high-contrast neon-button--text neon-button--state-ready neon-button neon-date-picker__calendar-clear-button neon-date-picker__calendar-clear-button" tabindex="0">
+        <div class="neon-button-group"><button class="neon-button--s neon-button--low-contrast neon-button--text neon-button--state-ready neon-button neon-date-picker__calendar-clear-button neon-date-picker__calendar-clear-button" tabindex="0">
             <!--v-if--><span class="neon-button__label">Clear</span>
             <!--v-if-->
           </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button neon-date-picker__calendar-done-button neon-date-picker__calendar-done-button" tabindex="0">
@@ -688,7 +688,7 @@ exports[`NeonDatePicker renders open 1`] = `
       </div>
     </div>
   </div>
-  <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--low-contrast neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" inputmode="text" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input" value="2023-04-16">
+  <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" inputmode="text" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input" value="2023-04-16">
     <!--v-if-->
     <!--v-if-->
   </div>
@@ -697,7 +697,7 @@ exports[`NeonDatePicker renders open 1`] = `
 
 exports[`NeonDatePicker renders with defaults of today 1`] = `
 <div class="neon-date-picker--m neon-date-picker--primary neon-date-picker--open neon-date-picker">
-  <div class="neon-dropdown--with-indicator neon-dropdown--open neon-dropdown--m neon-dropdown--low-contrast neon-dropdown">
+  <div class="neon-dropdown--with-indicator neon-dropdown--open neon-dropdown--m neon-dropdown--primary neon-dropdown">
     <div>
       <!-- @slot optionally replace the dropdown button with a custom control -->
       <div class="neon-input--with-icon neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__button"><input aria-placeholder="" inputmode="text" placeholder="" tabindex="-1" type="text" class="neon-input__textfield neon-input__text neon-date-picker__button" value="">
@@ -851,7 +851,7 @@ exports[`NeonDatePicker renders with defaults of today 1`] = `
           <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div>
         </div>
         <hr>
-        <div class="neon-button-group"><button class="neon-button--s neon-button--high-contrast neon-button--text neon-button--state-ready neon-button neon-date-picker__calendar-clear-button neon-date-picker__calendar-clear-button" tabindex="0">
+        <div class="neon-button-group"><button class="neon-button--s neon-button--low-contrast neon-button--text neon-button--state-ready neon-button neon-date-picker__calendar-clear-button neon-date-picker__calendar-clear-button" tabindex="0">
             <!--v-if--><span class="neon-button__label">Clear</span>
             <!--v-if-->
           </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button neon-date-picker__calendar-done-button neon-date-picker__calendar-done-button" tabindex="0">
@@ -861,7 +861,7 @@ exports[`NeonDatePicker renders with defaults of today 1`] = `
       </div>
     </div>
   </div>
-  <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--low-contrast neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" inputmode="text" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input">
+  <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" inputmode="text" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input">
     <!--v-if-->
     <!--v-if-->
   </div>
@@ -870,7 +870,7 @@ exports[`NeonDatePicker renders with defaults of today 1`] = `
 
 exports[`NeonDatePicker renders with locale 1`] = `
 <div class="neon-date-picker--m neon-date-picker--primary neon-date-picker--open neon-date-picker">
-  <div class="neon-dropdown--with-indicator neon-dropdown--open neon-dropdown--m neon-dropdown--low-contrast neon-dropdown">
+  <div class="neon-dropdown--with-indicator neon-dropdown--open neon-dropdown--m neon-dropdown--primary neon-dropdown">
     <div>
       <!-- @slot optionally replace the dropdown button with a custom control -->
       <div class="neon-input--with-icon neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__button"><input aria-placeholder="" inputmode="text" placeholder="" tabindex="-1" type="text" class="neon-input__textfield neon-input__text neon-date-picker__button" value="16 Apr 2023">
@@ -1021,7 +1021,7 @@ exports[`NeonDatePicker renders with locale 1`] = `
             <!--v-if-->
           </button></div>
         <hr>
-        <div class="neon-button-group"><button class="neon-button--s neon-button--high-contrast neon-button--text neon-button--state-ready neon-button neon-date-picker__calendar-clear-button neon-date-picker__calendar-clear-button" tabindex="0">
+        <div class="neon-button-group"><button class="neon-button--s neon-button--low-contrast neon-button--text neon-button--state-ready neon-button neon-date-picker__calendar-clear-button neon-date-picker__calendar-clear-button" tabindex="0">
             <!--v-if--><span class="neon-button__label">Clear</span>
             <!--v-if-->
           </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button neon-date-picker__calendar-done-button neon-date-picker__calendar-done-button" tabindex="0">
@@ -1031,7 +1031,7 @@ exports[`NeonDatePicker renders with locale 1`] = `
       </div>
     </div>
   </div>
-  <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--low-contrast neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" inputmode="text" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input" value="2023-04-16">
+  <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" inputmode="text" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input" value="2023-04-16">
     <!--v-if-->
     <!--v-if-->
   </div>

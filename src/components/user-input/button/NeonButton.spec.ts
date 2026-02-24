@@ -95,19 +95,19 @@ describe('NeonButton', () => {
 
   it('renders default color', () => {
     const { html } = harness;
-    expect(html()).toMatch('neon-button--low-contrast');
+    expect(html()).toMatch('neon-button--primary');
   });
 
   it('renders color', async () => {
     const { html, rerender } = harness;
-    await rerender({ icon, color: NeonFunctionalColor.Primary });
-    expect(html()).toMatch('neon-button--primary');
+    await rerender({ icon, color: NeonFunctionalColor.Brand });
+    expect(html()).toMatch('neon-button--brand');
   });
 
   it('renders alternate color', async () => {
     const { html, rerender } = harness;
-    await rerender({ icon, alternateColor: NeonFunctionalColor.Primary });
-    expect(html()).toMatch('neon-button--alternate-color-primary');
+    await rerender({ icon, alternateColor: NeonFunctionalColor.Brand });
+    expect(html()).toMatch('neon-button--alternate-color-brand');
   });
 
   it('renders default style', () => {

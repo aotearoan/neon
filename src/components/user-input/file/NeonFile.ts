@@ -51,7 +51,7 @@ export default defineComponent({
     /**
      * The file component color
      */
-    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Primary },
     /**
      * The label of the file component button
      */

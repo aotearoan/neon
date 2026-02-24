@@ -24,7 +24,7 @@ export default defineComponent({
     /**
      * Slider color.
      */
-    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Primary },
     /**
      * Disable output display if set to false
      */

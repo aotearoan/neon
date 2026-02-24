@@ -40,19 +40,19 @@ describe('NeonSearch', () => {
     // given
     const { container } = harness;
     // when / then
-    expect(container.querySelector('.neon-search--low-contrast')).toBeDefined();
-    expect(container.querySelector('.neon-dropdown--low-contrast')).toBeDefined();
-    expect(container.querySelector('.neon-search__container--low-contrast')).toBeDefined();
+    expect(container.querySelector('.neon-search--primary')).toBeDefined();
+    expect(container.querySelector('.neon-dropdown--primary')).toBeDefined();
+    expect(container.querySelector('.neon-search__container--primary')).toBeDefined();
   });
 
   it('renders color', async () => {
     // given
     const { container, rerender } = harness;
-    await rerender({ color: NeonFunctionalColor.Primary });
+    await rerender({ color: NeonFunctionalColor.Brand });
     // when / then
-    expect(container.querySelector('.neon-search--primary')).toBeDefined();
-    expect(container.querySelector('.neon-dropdown--primary')).toBeDefined();
-    expect(container.querySelector('.neon-search__container--primary')).toBeDefined();
+    expect(container.querySelector('.neon-search--brand')).toBeDefined();
+    expect(container.querySelector('.neon-dropdown--brand')).toBeDefined();
+    expect(container.querySelector('.neon-search__container--brand')).toBeDefined();
   });
 
   it('renders single', async () => {

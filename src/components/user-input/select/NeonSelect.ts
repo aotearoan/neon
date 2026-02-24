@@ -71,7 +71,7 @@ export default defineComponent({
     /**
      * The color of the select.
      */
-    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Primary },
     /**
      * Placement of the dropdown contents.
      */

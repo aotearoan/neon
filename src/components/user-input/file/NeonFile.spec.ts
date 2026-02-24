@@ -14,7 +14,7 @@ describe('NeonFile', () => {
 
   it('renders default color', () => {
     const { container } = harness;
-    expect(container.querySelector('.neon-file--low-contrast')).toBeDefined();
+    expect(container.querySelector('.neon-file--primary')).toBeDefined();
   });
 
   it('renders color', async () => {

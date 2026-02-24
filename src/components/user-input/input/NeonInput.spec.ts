@@ -125,7 +125,7 @@ describe('NeonInput', () => {
 
   it('renders default color', () => {
     const { container } = harness;
-    expect(container.querySelector('.neon-input--low-contrast')).toBeDefined();
+    expect(container.querySelector('.neon-input--primary')).toBeDefined();
   });
 
   it('renders color', async () => {

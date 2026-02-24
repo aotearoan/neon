@@ -48,24 +48,24 @@ describe('NeonChip', () => {
     // given
     const { container } = harness;
     // when / then
-    expect(container.querySelector('.neon-chip--low-contrast')).toBeDefined();
+    expect(container.querySelector('.neon-chip--primary')).toBeDefined();
   });
 
   it('renders color', async () => {
     // given
     const { container, rerender } = harness;
-    await rerender({ color: NeonFunctionalColor.Primary });
+    await rerender({ color: NeonFunctionalColor.Brand });
     // when / then
-    expect(container.querySelector('.neon-chip--primary')).toBeDefined();
+    expect(container.querySelector('.neon-chip--brand')).toBeDefined();
   });
 
   it('renders icon with color', async () => {
     // given
     const { container, rerender } = harness;
-    await rerender({ icon: 'check', color: NeonFunctionalColor.Primary });
+    await rerender({ icon: 'check', color: NeonFunctionalColor.Brand });
     // when / then
     expect(container.querySelector('.neon-chip__icon')).toBeDefined();
-    expect(container.querySelector('.neon-icon--primary')).toBeDefined();
+    expect(container.querySelector('.neon-icon--brand')).toBeDefined();
   });
 
   it('renders default action', () => {
