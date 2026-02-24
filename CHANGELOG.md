@@ -1,5 +1,12 @@
 # Changelog
 
+## [18.2.13](https://github.com/aotearoan/neon/compare/v18.2.12...v18.2.13) (2026-02-24)
+
+
+### Bug Fixes
+
+* font vars ([#273](https://github.com/aotearoan/neon/issues/273)) ([7ab8878](https://github.com/aotearoan/neon/commit/7ab8878e13d48fc20d095d54a5d93b65861911a5))
+
 ## [18.2.12](https://github.com/aotearoan/neon/compare/v18.2.11...v18.2.12) (2026-02-24)
 
 
