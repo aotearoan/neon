@@ -35,6 +35,12 @@ describe('NeonImageCarousel', () => {
     expect(html()).toMatchSnapshot();
   });
 
+  it(`renders carousel without label`, async () => {
+    const { html, rerender } = harness;
+    await rerender({ hideLabel: true });
+    expect(html()).toMatchSnapshot();
+  });
+
   it(`renders previous disabled when first element`, () => {
     const { getByTitle } = harness;
     expect((getByTitle('Previous') as HTMLButtonElement).disabled).toEqual(true);

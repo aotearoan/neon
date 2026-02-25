@@ -65,7 +65,7 @@
         </div>
       </neon-link>
     </div>
-    <span class="neon-image-carousel__label" tabindex="-1">
+    <span v-if="!hideLabel" class="neon-image-carousel__label" tabindex="-1">
       {{ imageCountLabel || `${images.length} ${images.length === 1 ? 'image' : 'images'}` }}
     </span>
   </div>
