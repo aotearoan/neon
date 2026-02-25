@@ -5,6 +5,7 @@ import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import { nextTick } from 'vue';
 import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
+import { flushPromises } from '@vue/test-utils';
 
 describe('NeonSelect', () => {
   const placeholder = '';
@@ -333,17 +334,17 @@ describe('NeonSelect', () => {
       expect(container.querySelector('.neon-dropdown__button')?.textContent).toEqual('2 items selected');
     });
 
-    it('focus highlights first option', async () => {
+    it('open highlights first option', async () => {
       // given
       const { container } = harness;
       // when
       const el = container.querySelector('.neon-select') as HTMLDivElement;
       await fireEvent.click(el);
       await nextTick();
+      await flushPromises();
       // then
-      expect(
-        container.querySelectorAll('.neon-select__option')[0].classList.contains('neon-select__option--highlighted'),
-      ).toBeDefined();
+      const firstOption = container.querySelectorAll('.neon-select__option')[0];
+      expect(firstOption.classList.contains('neon-select__option--highlighted')).toBeDefined();
     });
 
     it('arrow key highlights different option', async () => {
@@ -355,6 +356,7 @@ describe('NeonSelect', () => {
       await fireEvent.click(el);
       expect(container.querySelector('.neon-dropdown--open')).not.toBeNull();
       await nextTick();
+      await flushPromises();
       await fireEvent.keyDown(el, { key: 'ArrowDown', code: 'ArrowDown' });
       await nextTick();
       // then

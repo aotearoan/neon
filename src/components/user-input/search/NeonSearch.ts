@@ -8,6 +8,7 @@ import NeonInput from '@/components/user-input/input/NeonInput.vue';
 import NeonChip from '@/components/user-input/chip/NeonChip.vue';
 import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
 import { NeonScrollUtils } from '@/common/utils/NeonScrollUtils';
+import { NeonInputMode } from '@/common/enums/NeonInputMode';
 
 /**
  * <p>
@@ -56,6 +57,16 @@ export default defineComponent({
      */
     color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Primary },
     /**
+     * The HTML autocomplete mode as specified <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#values">here</a>.
+     * NOTE: No enum is provided in Neon as some values can be used in combination, please refer to the full list of values in the preceding link.
+     */
+    autocomplete: { type: String, default: 'on' },
+    /**
+     * The HTML input mode as specified <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode">here</a>.
+     * This can be used to simplify populating the filter field, e.g. providing the user's country from their address.
+     */
+    inputmode: { type: String as () => NeonInputMode, default: NeonInputMode.Text },
+    /**
      * Placement of the dropdown contents.
      */
     placement: { type: String as () => NeonDropdownPlacement, default: NeonDropdownPlacement.BottomLeft },
@@ -76,7 +87,8 @@ export default defineComponent({
   setup(props, { emit }) {
     const attrs = useAttrs();
 
-    const dropdown = ref<HTMLElement | null>(null);
+    const dropdown = ref<InstanceType<typeof NeonDropdown> | null>(null);
+    const searchInput = ref<InstanceType<typeof NeonInput> | null>(null);
     const dropdownPlacement = ref<NeonDropdownPlacement | undefined>(props.placement);
 
     const open = ref(false);
@@ -106,9 +118,15 @@ export default defineComponent({
       return false;
     };
 
-    const scrollOnNavigate = () => {
-      const element = dropdown.value?.querySelector('.neon-search__option--highlighted') as HTMLElement;
-      NeonScrollUtils.scrollIntoView(element);
+    const onNavigate = () => {
+      const element: HTMLElement | null = dropdown.value?.dropdownContent?.querySelector(
+        '.neon-search__option--highlighted',
+      ) as HTMLElement;
+
+      if (element) {
+        element.focus();
+        NeonScrollUtils.scrollIntoView(element);
+      }
     };
 
     const navigateBy = (offset: number, $event: KeyboardEvent) => {
@@ -117,7 +135,7 @@ export default defineComponent({
         highlightedIndex.value = newIndex;
         highlightedKey.value = props.options[highlightedIndex.value].key;
         $event.preventDefault();
-        setTimeout(scrollOnNavigate);
+        setTimeout(onNavigate);
       }
     };
 
@@ -126,7 +144,7 @@ export default defineComponent({
     };
 
     const onFilterChange = (_filter: string) => {
-      if (!props.multiple) {
+      if (!props.multiple && props.modelValue !== '') {
         emitInputEvent('');
       }
 
@@ -173,7 +191,12 @@ export default defineComponent({
             }
             break;
           case 'Tab':
-            if (!$event.ctrlKey && !$event.metaKey && !$event.altKey) {
+            if (
+              document.activeElement !== searchInput.value?.neonInput &&
+              !$event.ctrlKey &&
+              !$event.metaKey &&
+              !$event.altKey
+            ) {
               open.value = false;
             }
             break;
@@ -215,6 +238,7 @@ export default defineComponent({
 
     return {
       dropdown,
+      searchInput,
       open,
       highlightedKey,
       filter,

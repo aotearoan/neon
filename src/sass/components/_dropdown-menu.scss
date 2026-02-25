@@ -26,6 +26,7 @@
       user-select: none;
       cursor: pointer;
       transition: none;
+      outline: none;
 
       &--separator-before {
         border-top: var(--neon-border-width-separator-before) var(--neon-border-style) var(--neon-border-color-dropdown);

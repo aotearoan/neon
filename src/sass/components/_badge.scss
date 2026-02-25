@@ -7,11 +7,9 @@
       @each $color in palettes.$neon-functional-colors {
         &.neon-badge--#{$color}:not(.neon-badge--disabled) {
           $neon-badge-color: var(--neon-color-#{$color});
+          color: var(--neon-color-inverse);
           @if ($color == high-contrast) {
-            color: var(--neon-color-inverse);
             $neon-badge-color: var(--neon-color-text);
-          } @else {
-            color: var(--neon-background-color-card);
           }
 
           background: $neon-badge-color;

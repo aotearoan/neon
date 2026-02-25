@@ -71,17 +71,8 @@
         &.neon-input--focused {
           .neon-input__text,
           .neon-input__textarea {
-            @if (not index(palettes.$neon-neutral-colors, $color)) {
-              border-color: rgb($input-rgb);
-              background-color: rgba(var(--neon-rgb-#{$color}), 0.03125);
-
-              &::placeholder {
-                color: rgba(var(--neon-rgb-#{$color}), 0.5);
-              }
-            } @else {
-              border-color: rgb($input-rgb);
-              background-color: var(--neon-background-color-input-active);
-            }
+            border-color: rgb($input-rgb);
+            background-color: rgba(var(--neon-rgb-#{$color}), var(--neon-opacity-input-background-active));
           }
         }
 

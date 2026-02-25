@@ -50,6 +50,9 @@
             />
           </template>
           <neon-input
+            ref="searchInput"
+            :autocomplete="autocomplete"
+            :color="color"
             :disabled="disabled"
             :modelValue="filter"
             :placeholder="placeholder"
@@ -79,6 +82,7 @@
             aria-selected="false"
             class="neon-search__option"
             role="option"
+            tabindex="0"
             @mouseover="changeHighlighted(option.key)"
             @click.stop.prevent.capture="clickOption(option)"
             @space.stop.prevent.capture="clickOption(option)"

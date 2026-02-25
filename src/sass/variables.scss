@@ -205,6 +205,9 @@
   --neon-border-radius-button: var(--neon-border-radius);
   --neon-border-radius-button-xl: var(--neon-border-radius);
   --neon-border-width-outline-button: 1rem;
+  --neon-text-transform-button: none;
+  --neon-font-weight-button: var(--neon-font-weight-normal);
+  --neon-letter-spacing-button: var(--neon-letter-spacing-m);
 
   /* tabs */
   --neon-border-width-tabs: 4rem;
@@ -276,6 +279,7 @@
 
   /* input */
   --neon-border-radius-input: var(--neon-border-radius);
+  --neon-opacity-input-background-active: 0.03125;
 
   /* skeleton loader */
   --neon-border-radius-skeleton-loader: 12rem;
@@ -502,10 +506,12 @@
     --neon-color-radio-button-bg-active: rgba(var(--neon-rgb-neutral-l3), 0.375);
     --neon-color-radio-button-label: var(--neon-color-neutral-d3);
 
+    /* drawer */
+    --neon-background-color-drawer: var(--neon-background-color-card);
+
     /* input */
     --neon-border-color-input: var(--neon-color-neutral-d2);
     --neon-background-color-input: rgba(var(--neon-rgb-neutral-d5), 0.5);
-    --neon-background-color-input-active: var(--neon-color-neutral-d5);
     --neon-color-placeholder: var(--neon-color-low-contrast-d3);
 
     /* drop zone */
@@ -533,6 +539,7 @@
     /* dropdown / dropdown menu / select */
     --neon-border-color-dropdown: var(--neon-color-neutral-d3);
     --neon-box-shadow-dropdown: calc(0.5 * var(--neon-base-space)) calc(0.5 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) var(--neon-color-neutral-d5);
+    --neon-background-color-dropdown-content: var(--neon-background-color-card);
 
     /* tooltip */
     --neon-box-shadow-tooltip: calc(0.5 * var(--neon-base-space)) calc(0.5 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) var(--neon-color-neutral-d5);
@@ -799,6 +806,9 @@
     --neon-opacity-toggle-checked: 0;
     --neon-opacity-toggle-hover: 0.05;
 
+    /* drawer */
+    --neon-background-color-drawer: var(--neon-background-color-card);
+
     /* radio buttons */
     --neon-background-radio-button: none;
     --neon-border-radio-button: var(--neon-border-width) var(--neon-border-style) var(--neon-color-neutral-l3);
@@ -808,7 +818,6 @@
     /* input */
     --neon-border-color-input: var(--neon-color-neutral-l3);
     --neon-background-color-input: var(--neon-color-high-contrast-l5);
-    --neon-background-color-input-active: rgba(var(--neon-rgb-high-contrast-l4), 0.5);
     --neon-color-placeholder: var(--neon-color-low-contrast-l3);
 
     /* drop zone */
@@ -836,6 +845,7 @@
     /* dropdown / dropdown menu / select */
     --neon-border-color-dropdown: var(--neon-color-neutral-l4);
     --neon-box-shadow-dropdown: calc(0.5 * var(--neon-base-space)) calc(0.5 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) rgba(var(--neon-rgb-neutral-d1), 0.5);
+    --neon-background-color-dropdown-content: var(--neon-background-color-card);
 
     /* tooltip */
     --neon-box-shadow-tooltip: calc(0.5 * var(--neon-base-space)) calc(0.5 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) rgba(var(--neon-rgb-neutral-d1), 0.5);

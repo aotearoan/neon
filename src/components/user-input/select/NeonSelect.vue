@@ -47,6 +47,7 @@
             ]"
             class="neon-select__option"
             role="option"
+            tabindex="0"
             @mouseover="changeHighlighted(option.key)"
             @click.stop.prevent.capture="!option.disabled && clickOption(option)"
             @enter.stop.prevent="!option.disabled && clickOption(option)"

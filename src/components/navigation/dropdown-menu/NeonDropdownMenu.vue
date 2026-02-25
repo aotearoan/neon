@@ -31,6 +31,7 @@
           `neon-dropdown-menu__item--${size}`,
         ]"
         class="neon-dropdown-menu__item"
+        tabindex="0"
         @mouseover="changeHighlighted(item.key)"
       >
         <div v-if="item.isGroup" class="neon-dropdown-menu__item-container">

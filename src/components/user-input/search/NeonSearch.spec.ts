@@ -55,6 +55,22 @@ describe('NeonSearch', () => {
     expect(container.querySelector('.neon-search__container--brand')).toBeDefined();
   });
 
+  it('renders default autocomplete mode', () => {
+    // given
+    const { container } = harness;
+    // when / then
+    expect((container.querySelector('.neon-input__text') as HTMLInputElement).autocomplete).toEqual('on');
+  });
+
+  it('renders autocomplete mode', async () => {
+    // given
+    const autocomplete = 'email';
+    const { container, rerender } = harness;
+    await rerender({ autocomplete });
+    // when / then
+    expect((container.querySelector('.neon-input__text') as HTMLInputElement).autocomplete).toEqual(autocomplete);
+  });
+
   it('renders single', async () => {
     // given
     const modelValue = 'xdd';
