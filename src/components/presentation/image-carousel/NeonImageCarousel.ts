@@ -28,6 +28,10 @@ export default defineComponent({
      */
     imageCountLabel: { type: String, default: undefined },
     /**
+     * Hide the label under the dot navigation.
+     */
+    hideLabel: { type: Boolean, default: false },
+    /**
      * Provide an alternative label for the Previous button.
      */
     previousLabel: { type: String, default: 'Previous' },
