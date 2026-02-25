@@ -144,7 +144,7 @@ export default defineComponent({
     };
 
     const onFilterChange = (_filter: string) => {
-      if (!props.multiple) {
+      if (!props.multiple && props.modelValue !== '') {
         emitInputEvent('');
       }
 
