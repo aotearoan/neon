@@ -1,5 +1,16 @@
 # Changelog
 
+## [20.0.0](https://github.com/aotearoan/neon/compare/v19.0.2...v20.0.0) (2026-02-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* font weight & color variable alignment ([#281](https://github.com/aotearoan/neon/issues/281))
+
+### Code Refactoring
+
+* font weight & color variable alignment ([#281](https://github.com/aotearoan/neon/issues/281)) ([28ddf39](https://github.com/aotearoan/neon/commit/28ddf397b26d25abf03c1fca51df88bcb0809e94))
+
 ## [19.0.2](https://github.com/aotearoan/neon/compare/v19.0.1...v19.0.2) (2026-02-25)
 
 
