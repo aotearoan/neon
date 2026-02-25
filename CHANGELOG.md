@@ -1,5 +1,12 @@
 # Changelog
 
+## [19.0.2](https://github.com/aotearoan/neon/compare/v19.0.1...v19.0.2) (2026-02-25)
+
+
+### Bug Fixes
+
+* minor component fixes ([#279](https://github.com/aotearoan/neon/issues/279)) ([c02a788](https://github.com/aotearoan/neon/commit/c02a7886c2a9e535035031fd0d538736b74cc206))
+
 ## [19.0.1](https://github.com/aotearoan/neon/compare/v19.0.0...v19.0.1) (2026-02-25)
 
 
