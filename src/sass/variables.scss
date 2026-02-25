@@ -570,9 +570,9 @@
     --neon-border-top-footer: none;
 
     /* skeleton loader */
-    --neon-color-loading-1: var(--neon-color-neutral-d3);
-    --neon-color-loading-2: var(--neon-color-neutral-d2);
-    --neon-color-loading-3: rgba(var(--neon-rgb-neutral-d2), 0.5);
+    --neon-color-loading-1: rgb(64, 64, 64);
+    --neon-color-loading-2: rgb(82, 82, 82);
+    --neon-color-loading-3: rgba(82, 82, 82, 0.5);
 
     /* scrollbars */
     --neon-color-scrollbar: rgba(255, 255, 255, 0.05);
@@ -876,9 +876,9 @@
     --neon-border-top-footer: none;
 
     /* skeleton loader */
-    --neon-color-loading-1: var(--neon-color-high-contrast-l3);
-    --neon-color-loading-2: rgba(var(--neon-rgb-high-contrast-l2), 0.5);
-    --neon-color-loading-3: var(--neon-color-high-contrast-l2);
+    --neon-color-loading-1: rgb(226, 226, 226);
+    --neon-color-loading-2: rgb(212, 212, 212);
+    --neon-color-loading-3: rgba(212, 212, 212, 0.5);
 
     /* toggle */
     --neon-margin-toggle-option: 1rem;
