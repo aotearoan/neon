@@ -32,7 +32,7 @@ export default defineComponent({
   <template #card="{ cardModel, index }">
     <neon-stack gap="s">
       <h6>{{ cardModel.title }}</h6>
-      <span class="neon-color-text-low-contrast">{{ cardModel.description }}</span>
+      <span class="neon-color-low-contrast">{{ cardModel.description }}</span>
     </neon-stack>
   </template>
 </neon-card-list>`;

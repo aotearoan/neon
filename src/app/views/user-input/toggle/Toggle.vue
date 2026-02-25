@@ -66,7 +66,7 @@
               <template #option="{ option, index }">
                 <neon-stack gap="s">
                   <span v-if="option.label">{{ option.label }}</span>
-                  <span v-if="option.description" class="neon-color-text-low-contrast">
+                  <span v-if="option.description" class="neon-color-low-contrast">
                     {{ option.description }}
                   </span>
                 </neon-stack>

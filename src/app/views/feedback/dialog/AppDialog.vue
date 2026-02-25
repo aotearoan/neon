@@ -10,7 +10,7 @@
       <neon-card-body>
         <h2 class="neon-h3">Dialog example</h2>
         <neon-stack gap="m">
-          <neon-button label="Open dialog" @click="toggleOpen(true)"></neon-button>
+          <neon-button color="low-contrast" label="Open dialog" @click="toggleOpen(true)"></neon-button>
           <neon-dialog
             :open="open"
             cancel-label="Reject"

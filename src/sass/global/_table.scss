@@ -2,7 +2,7 @@
   table {
     border-spacing: 0;
     border-collapse: collapse;
-    border-bottom: var(--neon-border-width-table) var(--neon-border-style) var(--neon-label-color);
+    border-bottom: var(--neon-border-width-table) var(--neon-border-style) var(--neon-color-label);
 
     thead {
       tr {
@@ -10,13 +10,13 @@
           height: var(--neon-size-m);
           vertical-align: bottom;
           font-size: var(--neon-font-size-s);
-          font-weight: var(--neon-font-weight-semi-bold);
+          font-weight: var(--neon-font-weight-medium);
           text-transform: uppercase;
           text-align: left;
           padding: 0 var(--neon-space-24) 0 0;
           letter-spacing: var(--neon-letter-spacing-m);
-          border-bottom: var(--neon-border-width-table) var(--neon-border-style) var(--neon-label-color);
-          color: var(--neon-label-color);
+          border-bottom: var(--neon-border-width-table) var(--neon-border-style) var(--neon-color-label);
+          color: var(--neon-color-label);
 
           &.neon--number {
             text-align: right;

@@ -42,8 +42,8 @@
           $toggle-color: var(--neon-color-#{$color}) !default;
 
           @if ($color == high-contrast) {
-            $toggle-rgb: var(--neon-rgb-text);
-            $toggle-color: var(--neon-color-text);
+            $toggle-rgb: var(--neon-rgb-text-secondary);
+            $toggle-color: var(--neon-color-text-secondary);
           }
 
           @include svg.color-with-svg(rgba($toggle-rgb, var(--neon-opacity-toggle-color)));
@@ -103,7 +103,7 @@
             }
 
             &.neon-toggle__label--checked {
-              color: var(--neon-color-text);
+              color: var(--neon-color-text-secondary);
 
               .neon-toggle__radio-button {
                 border: var(--neon-border-width-radio-button) var(--neon-border-style) var(--neon-color-#{$color});

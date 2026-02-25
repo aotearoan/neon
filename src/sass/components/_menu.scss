@@ -78,7 +78,7 @@
 
             & > .neon-link:not(.router-link-active),
             .neon-button:not(.router-link-active) {
-              @include svg.color-with-svg(var(--neon-color-text));
+              @include svg.color-with-svg(var(--neon-color-text-secondary));
             }
           }
         }

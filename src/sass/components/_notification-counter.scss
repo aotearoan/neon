@@ -15,13 +15,13 @@
     top: -10rem;
     right: -10rem;
     user-select: none;
-    font-weight: var(--neon-font-weight-semi-bold);
+    font-weight: var(--neon-font-weight-medium);
 
     @each $color in palettes.$neon-functional-colors {
       &--#{$color} {
         color: var(--neon-color-inverse);
         @if ($color == high-contrast) {
-          background-color: var(--neon-color-text);
+          background-color: var(--neon-color-text-secondary);
         } @else {
           background-color: var(--neon-color-#{$color});
         }

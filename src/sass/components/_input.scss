@@ -130,7 +130,7 @@
       font-family: var(--neon-font-family-body);
       width: 100%;
       border-color: var(--neon-border-color-input);
-      color: var(--neon-color-text);
+      olor: var(--neon-color-text-secondary);
       background-color: var(--neon-background-color-input);
       box-shadow: var(--neon-inset-shadow);
 
@@ -153,7 +153,7 @@
 
     &:not(.neon-input--placeholder-visible) {
       input[type='password'] {
-        font-weight: bold;
+        font-weight: var(--neon-font-weight-semi-bold);
         letter-spacing: calc(2 * var(--neon-letter-spacing-m));
       }
     }

@@ -17,7 +17,7 @@
       <slot></slot>
       <span
         v-if="message !== null"
-        :class="`neon-color-text-${messageColor}`"
+        :class="`neon-color-${messageColor}`"
         class="neon-field__message"
         @click.prevent.stop=""
       >

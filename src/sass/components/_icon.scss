@@ -13,7 +13,7 @@
 
   @each $neon-icon-type in $neon-icon-types {
     .#{$neon-icon-type} {
-      @include svg.svg-colors(var(--neon-color-text));
+      @include svg.svg-colors(var(--neon-color-text-secondary));
 
       @each $color in palettes.$neon-functional-colors {
         &--#{$color}:not(.#{$neon-icon-type}--disabled):not(.#{$neon-icon-type}--inverse) {

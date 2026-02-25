@@ -29,7 +29,7 @@
             <neon-field-group>
               <neon-input-indicator label="$" size="l" />
               <neon-input v-model="indexFilter" placeholder="Enter amount" size="l" type="text" />
-              <neon-button label="Submit" size="l" />
+              <neon-button color="low-contrast" label="Submit" size="l" />
             </neon-field-group>
           </neon-stack>
           <editor v-model="inputIndicatorExamples" />

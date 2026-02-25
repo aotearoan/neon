@@ -9,7 +9,7 @@
 
     &:after {
       content: '';
-      font-weight: bold;
+      font-weight: var(--neon-font-weight-semi-bold);
       position: absolute;
       left: 0;
       bottom: var(--neon-border-bottom-offset-link);

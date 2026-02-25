@@ -172,7 +172,7 @@
       }
 
       .neon-link {
-        color: var(--neon-color-text);
+        color: var(--neon-color-text-secondary);
       }
 
       &-container {
@@ -191,7 +191,7 @@
         flex: 1 0 auto;
         user-select: none;
         align-items: center;
-        font-weight: var(--neon-font-weight-bold);
+        font-weight: var(--neon-font-weight-semi-bold);
         font-size: var(--neon-font-size-xs);
         text-transform: uppercase;
         padding: var(--neon-space-12) var(--neon-space-16) var(--neon-space-4);

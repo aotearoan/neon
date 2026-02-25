@@ -3,15 +3,12 @@
   This is why there are 2 color definitions the raw 'rgb' definition and the actual 'color' one
 */
 .neon {
-  // TODO: rename to primary & secondary text
-  --neon-rgb-text-dark: 48, 48, 48;
-  --neon-rgb-text-strong-dark: 36, 36, 36;
-  --neon-rgb-text-light: 221, 221, 221;
-  --neon-rgb-text-strong-light: 248, 248, 248;
-  // tertiary text values
-  --neon-rgb-text-tertiary-dark: 114, 114, 114;
-  --neon-rgb-text-tertiary-light: 144, 144, 144;
-
+  --neon-rgb-text-primary-light: 20, 20, 20;
+  --neon-rgb-text-secondary-light: 51, 51, 51;
+  --neon-rgb-text-tertiary-light: 114, 114, 114;
+  --neon-rgb-text-primary-dark: 248, 248, 248;
+  --neon-rgb-text-secondary-dark: 221, 221, 221;
+  --neon-rgb-text-tertiary-dark: 166, 166, 166;
   --neon-rgb-disabled-background-dark: 55, 55, 55;
   --neon-rgb-disabled-border-dark: 65, 65, 65;
   --neon-rgb-disabled-text-dark: 80, 80, 80;

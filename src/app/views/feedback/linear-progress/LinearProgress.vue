@@ -14,17 +14,17 @@
             <h4 class="neon-h5">Percentage</h4>
             <neon-inline>
               <neon-linear-progress :model-value="progressPercentage" />
-              <neon-button label="Complete" size="s" @click="progressPercentage = 1.0" />
+              <neon-button color="low-contrast" label="Complete" size="s" @click="progressPercentage = 1.0" />
             </neon-inline>
             <h4 class="neon-h5">Counter</h4>
             <neon-inline>
               <neon-linear-progress :model-value="progressCounter" :total="55" />
-              <neon-button label="Complete" size="s" @click="progressCounter = 55" />
+              <neon-button color="low-contrast" label="Complete" size="s" @click="progressCounter = 55" />
             </neon-inline>
             <h4 class="neon-h5">No output</h4>
             <neon-inline>
               <neon-linear-progress :model-value="progressNoOutput" :output="false" :total="55" />
-              <neon-button label="Complete" size="s" @click="progressNoOutput = 55" />
+              <neon-button color="low-contrast" label="Complete" size="s" @click="progressNoOutput = 55" />
             </neon-inline>
             <h4 class="neon-h5">With label</h4>
             <neon-inline>

@@ -50,7 +50,7 @@
               <p>Place card actions inside the <strong>NeonCardFooter</strong> below:</p>
             </neon-card-body>
             <neon-card-footer>
-              <neon-button label="Cancel" />
+              <neon-button color="low-contrast" label="Cancel" />
               <neon-button color="primary" label="Accept" />
             </neon-card-footer>
           </neon-card>
@@ -70,7 +70,7 @@
               </p>
             </neon-card-body>
             <neon-card-footer>
-              <neon-button label="Cancel" size="s" />
+              <neon-button color="low-contrast" label="Cancel" size="s" />
               <neon-button color="primary" label="Accept" size="s" />
             </neon-card-footer>
           </neon-card>

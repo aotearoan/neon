@@ -28,7 +28,7 @@
       align-items: center;
       cursor: pointer;
       letter-spacing: var(--neon-letter-spacing-s);
-      font-weight: var(--neon-font-weight-light);
+      font-weight: var(--neon-font-weight-extra-light);
       @include layout.padding-horizontal(0.75, 0.75);
       padding-top: 0;
       padding-bottom: 0;
@@ -148,7 +148,7 @@
     }
 
     .neon-expansion-indicator {
-      margin-right: -3rem;
+      margin-right: -2rem;
     }
 
     &--full-width {

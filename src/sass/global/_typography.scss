@@ -18,6 +18,7 @@
 
   em {
     font-weight: var(--neon-font-weight-em);
+    margin-right: 1rem; // to account for the slanting text
   }
 
   strong {
@@ -140,6 +141,6 @@
   h6,
   .neon-h6,
   .neon-color-heading {
-    color: var(--neon-color-heading);
+    color: var(--neon-color-text-primary);
   }
 }

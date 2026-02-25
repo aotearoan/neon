@@ -54,7 +54,7 @@
 
       .neon-link {
         text-decoration: none;
-        color: var(--neon-color-text);
+        color: var(--neon-color-text-secondary);
       }
 
       .neon-link,
@@ -81,7 +81,7 @@
 
       &--group-title {
         .neon-dropdown-menu__item-container {
-          font-weight: var(--neon-font-weight-semi-bold);
+          font-weight: var(--neon-font-weight-medium);
           letter-spacing: var(--neon-letter-spacing-s);
           cursor: default;
 

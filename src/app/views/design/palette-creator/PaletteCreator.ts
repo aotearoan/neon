@@ -33,10 +33,12 @@ export default defineComponent({
   },
   setup() {
     const keys = [
-      '--neon-rgb-text-dark',
-      '--neon-rgb-text-strong-dark',
-      '--neon-rgb-text-light',
-      '--neon-rgb-text-strong-light',
+      '--neon-rgb-text-primary-light',
+      '--neon-rgb-text-secondary-light',
+      '--neon-rgb-text-tertiary-light',
+      '--neon-rgb-text-primary-dark',
+      '--neon-rgb-text-secondary-dark',
+      '--neon-rgb-text-tertiary-dark',
       '--neon-rgb-disabled-background-dark',
       '--neon-rgb-disabled-border-dark',
       '--neon-rgb-disabled-text-dark',
@@ -160,8 +162,8 @@ export default defineComponent({
     };
 
     const generatePalette = (colorPaletteKey: string, color: string) => {
-      const darkText = palette.value['--neon-rgb-text-dark'];
-      const lightText = palette.value['--neon-rgb-text-light'];
+      const darkText = palette.value['--neon-rgb-text-secondary-light'];
+      const lightText = palette.value['--neon-rgb-text-secondary-dark'];
       const newPalette = NeonColorUtils.generatePalette(color, darkText, lightText);
       Object.entries(newPalette).forEach(([key, value]) => {
         const colorKey = `--neon-rgb-${colorPaletteKey}-${key}`;
@@ -179,13 +181,13 @@ export default defineComponent({
         if (key.indexOf('text') === -1) {
           const isDark = key[key.length - 2] === 'd';
           const accessibleNormal = NeonColorUtils.isAccessible(
-            palette.value[isDark ? '--neon-rgb-text-light' : '--neon-rgb-text-dark'],
+            palette.value[isDark ? '--neon-rgb-text-secondary-dark' : '--neon-rgb-text-secondary-light'],
             value,
           );
           const { normalAA, normalAAA } = accessibleNormal;
 
           const accessibleLarge = NeonColorUtils.isAccessible(
-            palette.value[isDark ? '--neon-rgb-text-strong-light' : '--neon-rgb-text-strong-dark'],
+            palette.value[isDark ? '--neon-rgb-text-primary-dark' : '--neon-rgb-text-primary-light'],
             value,
           );
           const { largeAA, largeAAA } = accessibleLarge;

@@ -43,7 +43,7 @@
 
         .neon-note__title {
           @if ($color == low-contrast or $color == high-contrast or $color == neutral) {
-            color: var(--neon-color-text-strong);
+            color: var(--neon-color-text-primary);
           } @else {
             color: var(--neon-color-#{$color});
           }

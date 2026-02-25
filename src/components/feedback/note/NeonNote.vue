@@ -24,6 +24,7 @@
       :transparent="true"
       button-style="text"
       class="neon-note__close"
+      color="low-contrast"
       icon="times"
       size="s"
       tabindex="0"

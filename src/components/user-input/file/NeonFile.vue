@@ -34,6 +34,7 @@
         :disabled="disabled || files.length === 0"
         :size="size"
         button-style="text"
+        color="low-contrast"
         label="Clear all"
         @click="clearAll()"
       />

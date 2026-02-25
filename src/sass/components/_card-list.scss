@@ -52,14 +52,14 @@
       white-space: nowrap;
       user-select: none;
       font-size: var(--neon-font-size-l);
-      font-weight: var(--neon-font-weight-semi-bold);
+      font-weight: var(--neon-font-weight-medium);
       width: 30%;
       text-align: right;
       margin-left: auto;
     }
 
     &__card {
-      color: var(--neon-color-text);
+      color: var(--neon-color-text-secondary);
       --neon-border-radius-card: var(--neon-border-radius-card-list);
       user-select: none;
       box-shadow: var(--neon-box-shadow-card-list);

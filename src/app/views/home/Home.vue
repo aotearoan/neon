@@ -124,7 +124,7 @@
           />
         </div>
       </div>
-      <span class="powered-by neon-color-text-neutral">
+      <span class="powered-by neon-color-neutral">
         This site was developed using
         <neon-link href="https://vuejs.org/" target="_blank">Vue</neon-link> and Neon o‿o
       </span>
