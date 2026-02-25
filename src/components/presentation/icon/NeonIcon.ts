@@ -9,7 +9,7 @@ import type { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
  * components. But you may also find it useful for rendering SVG images, e.g. illustrations.</p>
  *
  * <p>There is an icon registry where strings containing SVGs can be registered with a name and that name can be used
- * with the NeonIcon component to render the image. Use the classes <em>neon-svg-fill</em> and <em>neon-svg--stroke</em>
+ * with the NeonIcon component to render the image. Use the classes <em>neon-svg--fill</em> and <em>neon-svg--stroke</em>
  * in the SVG elements to automatically apply the functional colors.</p>
  *
  * <p>This provides the advantage of only registering the icons you actually need, dynamically switching colors in

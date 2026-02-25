@@ -29,7 +29,7 @@
               </p>
               <p>
                 There is an icon registry where strings containing SVGs can be registered with a name and that name can
-                be used with the NeonIcon component to render the image. Use the classes <em>neon-svg-fill</em> and
+                be used with the NeonIcon component to render the image. Use the classes <em>neon-svg--fill</em> and
                 <em>neon-svg--stroke</em> in the SVG elements to automatically apply the functional colors.
               </p>
               <p>

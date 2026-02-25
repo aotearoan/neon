@@ -14,7 +14,7 @@
         <h2 class="neon-h3">Splash loader example</h2>
         <neon-stack>
           <neon-stack>
-            <neon-button label="Show loader" @click="openLoader()" />
+            <neon-button color="low-contrast" label="Show loader" @click="openLoader()" />
             <neon-splash-loader v-if="open" :fullscreen="true" :overlay="true" color="brand" size="xl" />
           </neon-stack>
           <editor v-model="template" />

@@ -1,9 +1,11 @@
 .neon {
-  --neon-color-text-dark: rgb(var(--neon-rgb-text-dark));
-  --neon-color-text-strong-dark: rgb(var(--neon-rgb-text-strong-dark));
+  --neon-color-text-primary-light: rgb(var(--neon-rgb-text-primary-light));
+  --neon-color-text-secondary-light: rgb(var(--neon-rgb-text-secondary-light));
+  --neon-color-text-tertiary-light: rgb(var(--neon-rgb-text-tertiary-light));
 
-  --neon-color-text-light: rgb(var(--neon-rgb-text-light));
-  --neon-color-text-strong-light: rgb(var(--neon-rgb-text-strong-light));
+  --neon-color-text-primary-dark: rgb(var(--neon-rgb-text-primary-dark));
+  --neon-color-text-secondary-dark: rgb(var(--neon-rgb-text-secondary-dark));
+  --neon-color-text-tertiary-dark: rgb(var(--neon-rgb-text-tertiary-dark));
 
   --neon-color-disabled-background-dark: rgb(var(--neon-rgb-disabled-background-dark));
   --neon-color-disabled-border-dark: rgb(var(--neon-rgb-disabled-border-dark));

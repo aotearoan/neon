@@ -65,8 +65,8 @@
       font-size: var(--neon-font-size-xs);
       text-transform: none;
       line-height: var(--neon-line-height-ratio);
-      font-weight: var(--neon-font-weight-semi-bold);
-      background: var(--neon-color-text);
+      font-weight: var(--neon-font-weight-medium);
+      background: var(--neon-color-text-secondary);
       color: var(--neon-color-inverse);
       border: var(--neon-border-width-tooltip) solid var(--neon-border-color);
       box-shadow: var(--neon-box-shadow-tooltip);
@@ -97,7 +97,7 @@
       .neon-tooltip__arrow {
         top: calc(100% + var(--neon-space-4));
         margin-top: -6rem;
-        border-top: 6rem solid var(--neon-color-text);
+        border-top: 6rem solid var(--neon-color-text-secondary);
         z-index: var(--neon-z-index-above-2);
       }
     }
@@ -110,7 +110,7 @@
       .neon-tooltip__arrow {
         bottom: calc(100% + var(--neon-space-4));
         margin-bottom: -6rem;
-        border-bottom: 6rem solid var(--neon-color-text);
+        border-bottom: 6rem solid var(--neon-color-text-secondary);
         z-index: var(--neon-z-index-above-2);
       }
     }
@@ -144,7 +144,7 @@
       .neon-tooltip__arrow {
         left: calc(100% + var(--neon-space-4));
         margin-left: -6rem;
-        border-left: 6rem solid var(--neon-color-text);
+        border-left: 6rem solid var(--neon-color-text-secondary);
         z-index: var(--neon-z-index-above-2);
       }
     }
@@ -161,7 +161,7 @@
       .neon-tooltip__arrow {
         right: calc(100% + var(--neon-space-4));
         margin-right: -6rem;
-        border-right: 6rem solid var(--neon-color-text);
+        border-right: 6rem solid var(--neon-color-text-secondary);
         z-index: var(--neon-z-index-above-2);
       }
     }
@@ -199,7 +199,7 @@
           line-height: var(--neon-line-height-ratio);
           font-weight: var(--neon-font-weight-normal);
           background: var(--neon-color-inverse);
-          color: var(--neon-color-text);
+          color: var(--neon-color-text-secondary);
         }
 
         &__content-wrapper {

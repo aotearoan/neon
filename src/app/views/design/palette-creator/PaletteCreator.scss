@@ -12,8 +12,12 @@
       height: 50rem;
       top: -13rem;
       position: absolute;
-      left: 78rem;
+      left: 98rem;
       border: none;
+    }
+
+    input.neon-input__text:focus {
+      background-color: var(--neon-background-color);
     }
 
     .neon-color__input {
@@ -34,9 +38,9 @@
       & > span {
         position: absolute;
         top: -6rem;
-        left: 90rem;
+        left: 110rem;
         text-transform: uppercase;
-        font-weight: var(--neon-font-weight-semi-bold);
+        font-weight: var(--neon-font-weight-medium);
         pointer-events: none;
         touch-action: none;
       }
@@ -48,40 +52,40 @@
     .palette-creator__color--large-aaa,
     .palette-creator__color--large-aa {
       font-size: 18.66rem;
-      font-weight: bold;
-      left: 124rem;
+      font-weight: var(--neon-font-weight-semi-bold);
+      left: 144rem;
       top: 12rem;
     }
 
     .palette-creator__color--normal-aaa,
     .palette-creator__color--normal-aa {
       font-size: 16rem;
-      font-weight: normal;
-      left: 124rem;
+      font-weight: var(--neon-font-weight-normal);
+      left: 144rem;
     }
   }
 
   .palette-creator__dark-palette {
     .palette-creator__color--large-aaa,
     .palette-creator__color--large-aa {
-      color: var(--neon-color-text-strong-light);
+      color: var(--neon-color-text-primary-dark);
     }
 
     .palette-creator__color--normal-aaa,
     .palette-creator__color--normal-aa {
-      color: var(--neon-color-text-light);
+      color: var(--neon-color-text-secondary-dark);
     }
   }
 
   .palette-creator__light-palette {
     .palette-creator__color--large-aaa,
     .palette-creator__color--large-aa {
-      color: var(--neon-color-text-strong-dark);
+      color: var(--neon-color-text-primary-light);
     }
 
     .palette-creator__color--normal-aaa,
     .palette-creator__color--normal-aa {
-      color: var(--neon-color-text-dark);
+      color: var(--neon-color-text-secondary-light);
     }
   }
 
@@ -106,12 +110,12 @@
     padding-bottom: 1rem;
     margin-bottom: 0 !important;
     background-color: black;
-    color: var(--neon-color-text-strong-dark);
+    color: var(--neon-color-text-primary-light);
   }
 
   .palette-creator__dark-palette {
     padding-top: 5rem;
     background-color: white;
-    color: var(--neon-color-text-strong-light);
+    color: var(--neon-color-text-primary-dark);
   }
 }

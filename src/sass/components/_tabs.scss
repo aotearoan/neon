@@ -41,7 +41,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      font-weight: var(--neon-font-weight-semi-bold);
+      font-weight: var(--neon-font-weight-medium);
     }
 
     .neon-tabs__menu-item {
@@ -66,14 +66,14 @@
         outline: none;
         height: 100%;
         align-items: center;
-        color: var(--neon-color-text-strong);
+        color: var(--neon-color-text-primary);
 
         .neon-svg--stroke {
-          stroke: var(--neon-color-text-strong);
+          stroke: var(--neon-color-text-primary);
         }
 
         .neon-svg--fill {
-          fill: var(--neon-color-text-strong);
+          fill: var(--neon-color-text-primary);
         }
 
         &:before {
@@ -178,7 +178,7 @@
           width: 100%;
           padding-top: calc(3 * var(--neon-base-space));
           padding-bottom: calc(2 * var(--neon-base-space));
-          font-weight: var(--neon-font-weight-semi-bold);
+          font-weight: var(--neon-font-weight-medium);
           font-size: var(--neon-font-size-xs);
           line-height: 1.26;
 

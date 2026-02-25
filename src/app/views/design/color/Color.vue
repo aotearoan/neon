@@ -287,15 +287,15 @@
             <div>
               <div class="neon-color-text">This is the default text color</div>
               <div class="color-example-inverse-bg neon-color-inverse">This is the inverse text color</div>
-              <div class="neon-color-text-brand">This is the brand text color</div>
-              <div class="neon-color-text-primary">This is the primary text color</div>
-              <div class="neon-color-text-info">This is the info text color</div>
-              <div class="neon-color-text-success">This is the success text color</div>
-              <div class="neon-color-text-warn">This is the warn text color</div>
-              <div class="neon-color-text-error">This is the error text color</div>
-              <div class="neon-color-text-neutral">This is the neutral text color</div>
-              <div class="neon-color-text-high-contrast">This is the high-contrast text color</div>
-              <div class="neon-color-text-low-contrast">This is the low-contrast text color</div>
+              <div class="neon-color-brand">This is the brand text color</div>
+              <div class="neon-color-primary">This is the primary text color</div>
+              <div class="neon-color-info">This is the info text color</div>
+              <div class="neon-color-success">This is the success text color</div>
+              <div class="neon-color-warn">This is the warn text color</div>
+              <div class="neon-color-error">This is the error text color</div>
+              <div class="neon-color-neutral">This is the neutral text color</div>
+              <div class="neon-color-high-contrast">This is the high-contrast text color</div>
+              <div class="neon-color-low-contrast">This is the low-contrast text color</div>
             </div>
             <editor v-model="example" />
           </neon-stack>

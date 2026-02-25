@@ -54,7 +54,7 @@ describe('NeonField', () => {
     const message = 'Bacon ipsum dolor amet venison';
     const { container, getByText } = render(NeonField, { props: { label, optional: true, message } });
     getByText(message);
-    expect(container.querySelector('.neon-field__message .neon-color-text-low-contrast')).toBeDefined();
+    expect(container.querySelector('.neon-field__message .neon-color-low-contrast')).toBeDefined();
   });
 
   it('renders error message', () => {
@@ -68,6 +68,6 @@ describe('NeonField', () => {
       },
     });
     getByText(message);
-    expect(container.querySelector('.neon-field__message .neon-color-text-error')).toBeDefined();
+    expect(container.querySelector('.neon-field__message .neon-color-error')).toBeDefined();
   });
 });

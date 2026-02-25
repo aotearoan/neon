@@ -14,26 +14,31 @@
         <neon-stack>
           <neon-inline gap="m">
             <!-- Left -->
-            <neon-button label="Open left" @click="onOpenLeft(true)"></neon-button>
+            <neon-button color="low-contrast" label="Open left" @click="onOpenLeft(true)"></neon-button>
             <neon-drawer :open="openLeft" position="left" @close="onOpenLeft(false)">
               <div v-html="contents"></div>
             </neon-drawer>
             <!-- Right -->
-            <neon-button label="Open right" @click="onOpenRight(true)"></neon-button>
+            <neon-button color="low-contrast" label="Open right" @click="onOpenRight(true)"></neon-button>
             <neon-drawer :open="openRight" position="right" @close="onOpenRight(false)">
               <div v-html="contents"></div>
             </neon-drawer>
             <!-- Top (overlay = false) -->
-            <neon-button label="Open top" @click="onOpenTop(true)"></neon-button>
+            <neon-button color="low-contrast" label="Open top" @click="onOpenTop(true)"></neon-button>
             <neon-drawer :open="openTop" :overlay="false" position="top" @close="onOpenTop(false)">
               <div v-html="contents"></div>
             </neon-drawer>
             <!-- Bottom -->
-            <neon-button label="Open bottom" @click="onOpenBottom(true)"></neon-button>
+            <neon-button color="low-contrast" label="Open bottom" @click="onOpenBottom(true)"></neon-button>
             <neon-drawer :dismissible="false" :open="openBottom" position="bottom">
               <div v-html="contents"></div>
               <br />
-              <neon-button label="Close" style="align-self: flex-end" @click="onOpenBottom(false)" />
+              <neon-button
+                color="low-contrast"
+                label="Close"
+                style="align-self: flex-end"
+                @click="onOpenBottom(false)"
+              />
             </neon-drawer>
           </neon-inline>
           <editor v-model="template" />

@@ -57,7 +57,7 @@
   &:hover:not(:disabled),
   &:active:not(:disabled) {
     @if ($color == 'inverse') {
-      @include svg.color-with-svg(var(--neon-color-text));
+      @include svg.color-with-svg(var(--neon-color-text-secondary));
     } @else {
       @include svg.color-with-svg(var(--neon-color-inverse));
     }

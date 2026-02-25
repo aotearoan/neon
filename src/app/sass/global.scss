@@ -9,7 +9,7 @@ body {
   .title {
     margin-left: var(--neon-space-32);
     font-family: var(--neon-font-family-body);
-    font-weight: lighter;
+    font-weight: var(--neon-font-weight-extra-light);
   }
 }
 
@@ -30,7 +30,7 @@ header {
     margin-left: var(--neon-space-16);
     font-family: var(--neon-font-family-heading);
     font-size: var(--neon-font-size-l);
-    font-weight: var(--neon-font-weight-light);
+    font-weight: var(--neon-font-weight-extra-light);
     opacity: 0.9;
     letter-spacing: var(--neon-letter-spacing-s);
     line-height: var(--neon-line-height-one);
@@ -91,7 +91,7 @@ a[href]:not(.neon-link--no-style):not(.neon-link) {
 
   &:after {
     content: '';
-    font-weight: bold;
+    font-weight: var(--neon-font-weight-semi-bold);
     position: absolute;
     left: 0;
     bottom: 0;
@@ -108,7 +108,7 @@ a[href]:not(.neon-link--no-style):not(.neon-link) {
     color: var(--neon-color-link);
 
     &:after {
-      background-color: var(--neon-color-link);
+      font-weight: var(--neon-font-weight-semi-bold);
     }
   }
 
@@ -122,7 +122,7 @@ a[href]:not(.neon-link--no-style):not(.neon-link) {
 }
 
 .example-inverse-bg {
-  background-color: var(--neon-color-primary);
+  background-color: var(--neon-color-text-primary);
   border-radius: var(--neon-border-radius);
   padding: var(--neon-space-8);
 }

@@ -21,10 +21,10 @@
         </neon-card-header>
         <neon-card-body>
           <neon-inline>
-            <neon-button label="Top left" @click="infoAlert(NeonAlertPlacement.TopLeft)" />
-            <neon-button label="Top right" @click="infoAlert(NeonAlertPlacement.TopRight)" />
-            <neon-button label="Bottom left" @click="infoAlert(NeonAlertPlacement.BottomLeft)" />
-            <neon-button label="Bottom right" @click="infoAlert(NeonAlertPlacement.BottomRight)" />
+            <neon-button color="low-contrast" label="Top left" @click="infoAlert(NeonAlertPlacement.TopLeft)" />
+            <neon-button color="low-contrast" label="Top right" @click="infoAlert(NeonAlertPlacement.TopRight)" />
+            <neon-button color="low-contrast" label="Bottom left" @click="infoAlert(NeonAlertPlacement.BottomLeft)" />
+            <neon-button color="low-contrast" label="Bottom right" @click="infoAlert(NeonAlertPlacement.BottomRight)" />
           </neon-inline>
         </neon-card-body>
         <neon-card-body>
@@ -35,8 +35,8 @@
         </neon-card-header>
         <neon-card-body>
           <neon-inline>
-            <neon-button label="Single action" @click="alertSingleAction()" />
-            <neon-button label="Both actions" @click="alertBothActions()" />
+            <neon-button color="low-contrast" label="Single action" @click="alertSingleAction()" />
+            <neon-button color="low-contrast" label="Both actions" @click="alertBothActions()" />
           </neon-inline>
         </neon-card-body>
         <neon-card-body>
@@ -48,8 +48,8 @@
         <neon-card-body>
           <neon-stack>
             <neon-inline>
-              <neon-button label="Toast top" @click="toastInfo()" />
-              <neon-button label="Toast bottom" @click="toastInfo(NeonVerticalPosition.Bottom)" />
+              <neon-button color="low-contrast" label="Toast top" @click="toastInfo()" />
+              <neon-button color="low-contrast" label="Toast bottom" @click="toastInfo(NeonVerticalPosition.Bottom)" />
             </neon-inline>
             <neon-inline breakpoint="tablet">
               <neon-button color="info" label="Toast info" @click="toastInfo()" />

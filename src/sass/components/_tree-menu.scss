@@ -24,7 +24,7 @@
         &,
         &:hover,
         &:active {
-          color: var(--neon-color-text);
+          color: var(--neon-color-text-secondary);
         }
 
         &.neon-link--exact-active {
@@ -53,15 +53,15 @@
 
     .neon-tree-menu__section-link {
       font-size: var(--neon-font-size-l);
-      font-weight: var(--neon-font-weight-bold);
+      font-weight: var(--neon-font-weight-semi-bold);
 
       &:visited {
-        color: var(--neon-color-text);
+        color: var(--neon-color-text-secondary);
       }
     }
 
     .neon-tree-menu__section {
-      color: var(--neon-color-text);
+      color: var(--neon-color-text-secondary);
 
       & > .neon-tree-menu__link {
         font-size: var(--neon-font-size-m);
@@ -90,7 +90,7 @@
         font-weight: var(--neon-font-weight-normal);
         font-size: var(--neon-font-size-s);
         margin-bottom: var(--neon-space-2);
-        color: var(--neon-color-text);
+        color: var(--neon-color-text-secondary);
       }
 
       .neon-tree-menu__anchor {
@@ -98,7 +98,7 @@
         margin-bottom: var(--neon-space-2);
         padding-left: var(--neon-space-16);
         font-size: var(--neon-font-size-s);
-        color: var(--neon-color-text);
+        color: var(--neon-color-text-secondary);
       }
     }
 

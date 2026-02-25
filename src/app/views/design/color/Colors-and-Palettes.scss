@@ -48,10 +48,10 @@
 }
 
 .color-example-inverse-bg {
-  background-color: var(--neon-color-primary);
-  border-radius: var(--neon-border-radius);
-  margin-left: calc(-1 * var(--neon-space-4));
-  padding-left: var(--neon-space-4);
-  padding-right: var(--neon-space-4);
+  background-color: var(--neon-color-text-primary);
+  border-radius: 0;
+  margin-left: calc(-2 * var(--neon-base-space));
+  padding-left: calc(2 * var(--neon-base-space));
+  padding-right: calc(2 * var(--neon-base-space));
   width: fit-content;
 }

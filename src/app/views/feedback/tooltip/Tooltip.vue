@@ -1,5 +1,5 @@
 <template>
-  <component-documentation v-if="menuModel" :model="menuModel" :headline="headline">
+  <component-documentation v-if="menuModel" :headline="headline" :model="menuModel">
     <neon-card>
       <neon-card-body>
         <neon-stack>
@@ -33,7 +33,7 @@
                   <strong>me</strong>
                 </template>
                 <template #content>
-                  <span class="neon-h6" role="heading" aria-level="6">Popover content</span>
+                  <span aria-level="6" class="neon-h6" role="heading">Popover content</span>
                   <p>
                     Spicy jalapeno bacon ipsum dolor amet biltong porchetta cupim sausage pork loin. Ham porchetta
                     brisket, kielbasa ham hock sirloin ground round strip steak jowl jerky short ribs pork loin
@@ -44,12 +44,12 @@
               to see the popover style.
             </p>
             <br />
-            <neon-tooltip tooltip-style="popover" outline-style="border" outline-color="low-contrast">
+            <neon-tooltip outline-color="low-contrast" outline-style="border" tooltip-style="popover">
               <template #target>
-                <neon-button size="s" label="Hover me" />
+                <neon-button color="low-contrast" label="Hover me" size="s" />
               </template>
               <template #content>
-                <span class="neon-h6" role="heading" aria-level="6">Popover content</span>
+                <span aria-level="6" class="neon-h6" role="heading">Popover content</span>
                 <p>
                   Spicy jalapeno bacon ipsum dolor amet biltong porchetta cupim sausage pork loin. Ham porchetta
                   brisket, kielbasa ham hock sirloin ground round strip steak jowl jerky short ribs pork loin
@@ -74,8 +74,9 @@
                 </template>
                 <template #content>
                   <span>Tooltip content</span>
-                </template> </neon-tooltip
-              >.
+                </template>
+              </neon-tooltip>
+              .
             </p>
             <!-- left -->
             <p>
@@ -86,8 +87,9 @@
                 </template>
                 <template #content>
                   <span>Tooltip content</span>
-                </template> </neon-tooltip
-              >.
+                </template>
+              </neon-tooltip>
+              .
             </p>
             <!-- bottom -->
             <p>
@@ -98,8 +100,9 @@
                 </template>
                 <template #content>
                   <span>Tooltip content</span>
-                </template> </neon-tooltip
-              >.
+                </template>
+              </neon-tooltip>
+              .
             </p>
             <!-- right -->
             <p>
@@ -110,8 +113,9 @@
                 </template>
                 <template #content>
                   <span>Tooltip content</span>
-                </template> </neon-tooltip
-              >.
+                </template>
+              </neon-tooltip>
+              .
             </p>
           </div>
           <editor v-model="placementTemplate" />

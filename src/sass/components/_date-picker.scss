@@ -114,7 +114,7 @@
         border-radius: 50%;
         font-size: var(--neon-font-size-s);
         cursor: pointer;
-        color: var(--neon-color-text-strong);
+        color: var(--neon-color-text-primary);
         background-color: transparent;
 
         &--empty {
@@ -140,7 +140,7 @@
         max-width: 88rem;
         font-size: var(--neon-font-size-s);
         cursor: pointer;
-        color: var(--neon-color-text-strong);
+        color: var(--neon-color-text-primary);
         background-color: transparent;
 
         &.neon-date-picker__calendar-option--disabled {
@@ -152,7 +152,7 @@
 
     .neon-date-picker__calendar-title-readonly {
       align-self: center;
-      font-weight: var(--neon-font-weight-semi-bold);
+      font-weight: var(--neon-font-weight-medium);
     }
 
     @each $color in palettes.$neon-functional-colors {
@@ -161,7 +161,7 @@
         .neon-date-picker__calendar-options .neon-date-picker__calendar-option--today {
           color: var(--neon-color-#{$color});
           background-color: rgba(var(--neon-rgb-#{$color}), 0.125);
-          font-weight: var(--neon-font-weight-bold);
+          font-weight: var(--neon-font-weight-semi-bold);
         }
 
         .neon-date-picker__calendar-date--selected:not(:disabled) {
@@ -171,7 +171,7 @@
           &.neon-date-picker__calendar-date--selected:hover {
             color: var(--neon-color-inverse);
             background-color: var(--neon-color-#{$color});
-            font-weight: var(--neon-font-weight-bold);
+            font-weight: var(--neon-font-weight-semi-bold);
           }
         }
 
@@ -182,7 +182,7 @@
           &.neon-date-picker__calendar-option--selected:hover {
             color: var(--neon-color-inverse);
             background-color: var(--neon-color-#{$color});
-            font-weight: var(--neon-font-weight-bold);
+            font-weight: var(--neon-font-weight-semi-bold);
           }
         }
 
@@ -202,7 +202,7 @@
           &:active {
             color: var(--neon-color-#{$color});
             background-color: rgba(var(--neon-rgb-#{$color}), 0.25);
-            font-weight: var(--neon-font-weight-bold);
+            font-weight: var(--neon-font-weight-semi-bold);
           }
         }
 

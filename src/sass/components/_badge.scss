@@ -9,7 +9,7 @@
           $neon-badge-color: var(--neon-color-#{$color});
           color: var(--neon-color-inverse);
           @if ($color == high-contrast) {
-            $neon-badge-color: var(--neon-color-text);
+            $neon-badge-color: var(--neon-color-text-secondary);
           }
 
           background: $neon-badge-color;
@@ -79,7 +79,7 @@
     }
 
     text-transform: uppercase;
-    font-weight: var(--neon-font-weight-semi-bold);
+    font-weight: var(--neon-font-weight-medium);
     letter-spacing: var(--neon-letter-spacing-m);
     display: flex;
     justify-content: center;

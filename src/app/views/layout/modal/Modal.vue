@@ -11,7 +11,7 @@
         <h2 class="neon-h3">Modal example</h2>
         <neon-stack>
           <neon-inline>
-            <neon-button label="Open modal" @click="toggleOpen(true)"></neon-button>
+            <neon-button color="low-contrast" label="Open modal" @click="toggleOpen(true)"></neon-button>
             <neon-modal :open="open" @close="toggleOpen(false)">
               <neon-card size="m">
                 <neon-card-header>
@@ -27,7 +27,7 @@
                   </p>
                 </neon-card-body>
                 <neon-card-footer>
-                  <neon-button button-style="text" label="Cancel" @click="toggleOpen(false)" />
+                  <neon-button button-style="text" color="low-contrast" label="Cancel" @click="toggleOpen(false)" />
                   <neon-button color="primary" label="Accept" @click="toggleOpen(false)" />
                 </neon-card-footer>
               </neon-card>
