@@ -5,8 +5,7 @@ import Editor from '@/app/components/editor/Editor.vue';
 import { Menu, type MenuModel } from '@/app/Menu';
 
 export default defineComponent({
-  // eslint-disable-next-line vue/multi-word-component-names,vue/no-reserved-component-names
-  name: 'Menu',
+  name: 'MobileMenu',
   components: {
     NeonCard,
     NeonCardBody,

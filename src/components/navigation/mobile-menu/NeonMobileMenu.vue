@@ -11,7 +11,7 @@
       >
         <neon-link
           :key="`${item.key}Link`"
-          :class="{ 'router-link-active': routeMatches(item.href) }"
+          :class="{ 'router-link-active': item.href && routeMatches(item.href) }"
           :href="!item.disabled ? item.href : null"
           :no-style="true"
           :tabindex="item.disabled ? -1 : 0"

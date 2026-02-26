@@ -231,7 +231,7 @@ export default defineComponent({
       return props.placeholder;
     });
 
-    const labelIsPlaceholder = computed(() => props.modelValue.length === 0 ?? !props.modelValue);
+    const labelIsPlaceholder = computed(() => !props.modelValue || props.modelValue.length === 0);
 
     const computedIcon = computed(() => {
       if (props.modelValue) {
