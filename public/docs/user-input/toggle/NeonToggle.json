@@ -69,7 +69,7 @@
       },
       "defaultValue": {
         "func": true,
-        "value": "() => NeonFunctionalColor.Neutral"
+        "value": "() => NeonFunctionalColor.Primary"
       }
     },
     {

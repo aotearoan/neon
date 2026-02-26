@@ -95,6 +95,14 @@
   }
 }
 
+@mixin input-button($color) {
+  &:active:not(:disabled),
+  &:focus:not(:disabled) {
+    background-color: rgba(var(--neon-rgb-#{$color}), var(--neon-opacity-input-background-active));
+    border: var(--neon-border-width-input) var(--neon-border-style) var(--neon-color-#{$color});
+  }
+}
+
 @mixin button-small {
   height: var(--neon-size-s);
   font-size: var(--neon-font-size-s);
@@ -309,6 +317,10 @@
         &.neon-button--text {
           @include text-button($color);
         }
+
+        &.neon-button--input {
+          @include input-button($color);
+        }
       }
     }
 
@@ -347,6 +359,18 @@
         }
 
         color: var(--neon-color-disabled-text);
+      }
+    }
+
+    &.neon-button--input {
+      border-radius: var(--neon-border-radius-input);
+      border: var(--neon-border-width-input) var(--neon-border-style) var(--neon-border-color-input);
+      background-color: var(--neon-background-color-input);
+      color: var(--neon-color-input);
+
+      &.neon-button--disabled {
+        color: var(--neon-color-disabled-text);
+        border: var(--neon-border-width-input) var(--neon-border-style) var(--neon-color-disabled-border);
       }
     }
 

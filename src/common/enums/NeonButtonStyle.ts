@@ -14,4 +14,9 @@ export enum NeonButtonStyle {
    * actions.
    */
   Text = 'text',
+  /**
+   * USED INTERNALLY: an <em>input</em> field style button. This is used as the button trigger for NeonSelect &
+   * NeonDatePicker for consistency with other form fields.
+   */
+  Input = 'input',
 }

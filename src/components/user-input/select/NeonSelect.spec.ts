@@ -5,6 +5,7 @@ import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import { nextTick } from 'vue';
 import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
+import { NeonDropdownStyle } from '@/common/enums/NeonDropdownStyle';
 import { flushPromises } from '@vue/test-utils';
 
 describe('NeonSelect', () => {
@@ -219,6 +220,21 @@ describe('NeonSelect', () => {
       expect(container.querySelector('.neon-dropdown--l')).toBeDefined();
       expect(container.querySelectorAll('.neon-select__option--l').length).toEqual(options.length);
       expect(container.querySelectorAll('.neon-switch--m').length).toEqual(options.length);
+    });
+
+    it('renders default button style', () => {
+      // given
+      const { container } = harness;
+      // when / then
+      expect(container.querySelector('.neon-button--input')).toBeDefined();
+    });
+
+    it('renders size', async () => {
+      // given
+      const { container, rerender } = harness;
+      await rerender({ buttonStyle: NeonDropdownStyle.SolidButton });
+      // when / then
+      expect(container.querySelector('.neon-button--solid')).toBeDefined();
     });
 
     it('renders ungrouped', async () => {

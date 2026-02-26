@@ -16,15 +16,12 @@
     <div ref="dropdownButton">
       <!-- @slot optionally replace the dropdown button with a custom control -->
       <slot name="dropdown-button">
-        <div
-          v-if="dropdownStyle === 'text-button' || dropdownStyle === 'solid-button'"
-          class="neon-dropdown__button-wrapper"
-        >
+        <div v-if="isButtonStyle" class="neon-dropdown__button-wrapper">
           <neon-button
             :id="id"
             :alternate-color="alternateColor"
             :aria-expanded="modelValue"
-            :button-style="dropdownStyle === 'text-button' ? 'text' : 'solid'"
+            :button-style="dropdownStyle"
             :color="color"
             :disabled="disabled"
             :icon="icon"

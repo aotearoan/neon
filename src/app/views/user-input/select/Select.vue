@@ -55,6 +55,27 @@
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
+        <h2 class="neon-h3">Select solid style</h2>
+        <neon-stack>
+          <neon-stack gap="m">
+            <neon-select
+              v-model="selectSolid"
+              :options="modelWithIcons"
+              button-style="solid"
+              placeholder="Select item"
+            />
+            <neon-select
+              v-model="selectSolidBrand"
+              :options="modelWithIcons"
+              button-style="solid"
+              color="brand"
+              placeholder="Select item"
+            />
+          </neon-stack>
+          <editor v-model="solidTemplate" />
+        </neon-stack>
+      </neon-card-body>
+      <neon-card-body>
         <h2 class="neon-h3">Multiple selection</h2>
         <neon-stack>
           <neon-stack>

@@ -24,6 +24,17 @@
       }
     },
     {
+      "name": "hideLabel",
+      "description": "Hide the label under the dot navigation.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
       "name": "previousLabel",
       "description": "Provide an alternative label for the Previous button.",
       "type": {

@@ -69,7 +69,29 @@
       },
       "defaultValue": {
         "func": false,
-        "value": "NeonFunctionalColor.LowContrast"
+        "value": "NeonFunctionalColor.Primary"
+      }
+    },
+    {
+      "name": "autocomplete",
+      "description": "The HTML autocomplete mode as specified <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#values\">here</a>.\nNOTE: No enum is provided in Neon as some values can be used in combination, please refer to the full list of values in the preceding link.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'on'"
+      }
+    },
+    {
+      "name": "inputmode",
+      "description": "The HTML input mode as specified <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode\">here</a>.\nThis can be used to simplify populating the filter field, e.g. providing the user's country from their address.",
+      "type": {
+        "name": "String as () => NeonInputMode"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonInputMode.Text"
       }
     },
     {

@@ -21,6 +21,20 @@
             background-color: rgba(var(--neon-rgb-#{$color}), 0.05);
           }
         }
+
+        &:not(.neon-select--disabled):focus-within {
+          .neon-dropdown__button.neon-button--input {
+            border: var(--neon-border-width-input) var(--neon-border-style) var(--neon-color-#{$color});
+          }
+        }
+      }
+    }
+
+    &--with-placeholder {
+      .neon-dropdown__button {
+        color: var(--neon-color-placeholder);
+        font-style: var(--neon-font-style-placeholder);
+        font-weight: var(--neon-font-weight-placeholder);
       }
     }
 

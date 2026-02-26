@@ -123,14 +123,14 @@
     &__text,
     &__textarea {
       border-radius: var(--neon-border-radius-input);
-      border: var(--neon-border-width) var(--neon-border-style);
+      border: var(--neon-border-width-input) var(--neon-border-style);
       padding: var(--neon-space-4) var(--neon-space-10);
       line-height: var(--neon-line-height-one);
       outline: none;
       font-family: var(--neon-font-family-body);
       width: 100%;
       border-color: var(--neon-border-color-input);
-      olor: var(--neon-color-text-secondary);
+      color: var(--neon-color-input);
       background-color: var(--neon-background-color-input);
       box-shadow: var(--neon-inset-shadow);
 

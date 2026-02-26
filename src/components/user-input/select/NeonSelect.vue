@@ -6,9 +6,17 @@
       v-model="open"
       :aria-activedescendant="multiple ? modelValue[0] : modelValue"
       :aria-multiselectable="multiple"
-      :class="[`neon-select--${color}`, { 'neon-select--grouped': groupedOptions, 'neon-select--multiple': multiple }]"
+      :class="[
+        `neon-select--${color}`,
+        {
+          'neon-select--grouped': groupedOptions,
+          'neon-select--multiple': multiple,
+          'neon-select--with-placeholder': labelIsPlaceholder,
+        },
+      ]"
       :color="color"
       :disabled="disabled"
+      :dropdown-style="buttonStyle"
       :icon="computedIcon"
       :label="computedLabel"
       :size="size"

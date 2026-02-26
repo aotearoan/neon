@@ -280,6 +280,7 @@
 
   /* input */
   --neon-border-radius-input: var(--neon-border-radius);
+  --neon-border-width-input: var(--neon-border-width);
   --neon-opacity-input-background-active: 0.03125;
 
   /* skeleton loader */
@@ -504,6 +505,7 @@
     --neon-background-color-drawer: var(--neon-background-color-card);
 
     /* input */
+    --neon-color-input: var(--neon-color-text);
     --neon-border-color-input: var(--neon-color-neutral-d2);
     --neon-background-color-input: rgba(var(--neon-rgb-neutral-d5), 0.5);
     --neon-color-placeholder: var(--neon-color-low-contrast-d3);
@@ -803,6 +805,7 @@
     --neon-color-radio-button-label: var(--neon-color-neutral-d3);
 
     /* input */
+    --neon-color-input: var(--neon-color-text);
     --neon-border-color-input: var(--neon-color-neutral-l3);
     --neon-background-color-input: var(--neon-color-high-contrast-l5);
     --neon-color-placeholder: var(--neon-color-low-contrast-l3);

@@ -8,9 +8,12 @@
  */
 export enum NeonDropdownStyle {
   /** A <a href="/user-input/button">NeonButton</a> in the solid color style */
-  SolidButton = 'solid-button',
+  SolidButton = 'solid',
+  /** A style similar to <a href="/user-input/input">NeonInput</a> which is used as the default for a
+   * <a href="/user-input/select">NeonSelect</a> */
+  Input = 'input',
   /** A <a href="/user-input/button">NeonButton</a> in the text style */
-  Text = 'text-button',
+  Text = 'text',
   /** A square <a href="/presentation/badge">NeonBadge</a> */
   SquareBadge = 'square-badge',
   /** A circular <a href="/presentation/badge">NeonBadge</a> */

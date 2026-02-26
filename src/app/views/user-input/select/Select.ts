@@ -32,6 +32,8 @@ export default defineComponent({
     const selectSuccess = ref('');
     const selectWarning = ref('');
     const selectError = ref('');
+    const selectSolid = ref('');
+    const selectSolidBrand = ref('');
 
     const model = ref([
       {
@@ -230,6 +232,20 @@ export default defineComponent({
              placeholder="Select item(s)"
 />`;
 
+    const solidTemplate = `<neon-select
+  v-model="selectSolid"
+  :options="modelWithIcons"
+  button-style="solid"
+  placeholder="Select item"
+/>
+<neon-select
+  v-model="selectSolidBrand"
+  :options="modelWithIcons"
+  button-style="solid"
+  color="brand"
+  placeholder="Select item"
+/>`;
+
     const multiSelectTemplate = `<neon-select v-model="selectMulti" :multiple="true" :options="modelWithIcons" placeholder="Select item(s)" />`;
     const groupedTemplate = `<neon-select v-model="selectGrouped" :grouped-options="groupedModel" placeholder="Select item" />
 <neon-select v-model="selectGroupedMulti" :grouped-options="groupedModel" :multiple="true" placeholder="Select item(s)" />`;
@@ -250,11 +266,14 @@ export default defineComponent({
       selectSuccess,
       selectWarning,
       selectError,
+      selectSolid,
+      selectSolidBrand,
       model,
       modelWithIcons,
       groupedModel,
       sizesTemplate,
       colorsTemplate,
+      solidTemplate,
       multiSelectTemplate,
       groupedTemplate,
     };

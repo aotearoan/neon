@@ -67,7 +67,7 @@
       },
       "defaultValue": {
         "func": false,
-        "value": "NeonFunctionalColor.LowContrast"
+        "value": "NeonFunctionalColor.Primary"
       }
     },
     {
@@ -79,6 +79,17 @@
       "defaultValue": {
         "func": false,
         "value": "NeonInputMode.Text"
+      }
+    },
+    {
+      "name": "autocomplete",
+      "description": "The HTML autocomplete mode as specified <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#values\">here</a>.\nNOTE: No enum is provided in Neon as some values can be used in combination, please refer to the full list of values in the preceding link.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'on'"
       }
     },
     {

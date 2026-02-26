@@ -8,6 +8,7 @@ import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import NeonSwitch from '@/components/user-input/switch/NeonSwitch.vue';
 import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
 import { NeonScrollUtils } from '@/common/utils/NeonScrollUtils';
+import { NeonDropdownStyle } from '@/common/enums/NeonDropdownStyle';
 
 /**
  * <p>The <strong>NeonSelect</strong> is the equivalent of an HTML &lt;select&gt; form control. On touch devices
@@ -72,6 +73,10 @@ export default defineComponent({
      * The color of the select.
      */
     color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Primary },
+    /**
+     * The button style of the select.
+     */
+    buttonStyle: { type: String as () => NeonDropdownStyle, default: NeonDropdownStyle.Input },
     /**
      * Placement of the dropdown contents.
      */
@@ -226,6 +231,8 @@ export default defineComponent({
       return props.placeholder;
     });
 
+    const labelIsPlaceholder = computed(() => props.modelValue.length === 0 ?? !props.modelValue);
+
     const computedIcon = computed(() => {
       if (props.modelValue) {
         const selected = flattenedOptions.value.find((option) => option.key === props.modelValue);
@@ -285,6 +292,7 @@ export default defineComponent({
       sanitizedAttributes,
       computedOptions,
       computedIcon,
+      labelIsPlaceholder,
       clickOption,
       nativeSelectChange,
       changeHighlighted,
