@@ -24,18 +24,7 @@
               <p>{{ tabContent }}</p>
             </neon-tab>
           </neon-tabs>
-          <editor v-model="templateWeb" />
-        </neon-stack>
-      </neon-card-body>
-      <neon-card-body>
-        <h2 class="neon-h3">App style tabs</h2>
-        <neon-stack>
-          <neon-tab v-for="(tab, index) in tabs" :key="tab.key" :selected="selected === tab.key" :tab="tab">
-            <h6>Tab {{ index + 1 }}</h6>
-            <p>{{ tabContent }}</p>
-          </neon-tab>
-          <neon-tabs v-model="selected" :tabs="tabs" tabs-style="app" />
-          <editor v-model="templateApp" />
+          <editor v-model="template" />
         </neon-stack>
       </neon-card-body>
     </neon-card>

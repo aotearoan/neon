@@ -4,8 +4,8 @@
 export interface NeonMenuItem {
   /** Unique identifier for this menu item. */
   key: string;
-  /** Display label for this menu item. */
-  label: string;
+  /** Display label for this menu item. Must either provide a label, icon or both. */
+  label?: string;
   /** URL of a link to open when the menu item is triggered. */
   href?: string;
   /** Name of an icon to display before the label. */
