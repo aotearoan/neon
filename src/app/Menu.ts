@@ -350,6 +350,7 @@ export class Menu {
                 path: 'badge',
                 page: 'Badge',
                 component: 'NeonBadge',
+                keywords: 'avatar profile picture',
               },
               {
                 path: 'dropdown',
