@@ -1,5 +1,12 @@
 # Changelog
 
+## [21.0.1](https://github.com/aotearoan/neon/compare/v21.0.0...v21.0.1) (2026-02-26)
+
+
+### Bug Fixes
+
+* date pickers & badge updates ([#286](https://github.com/aotearoan/neon/issues/286)) ([d9d8dc7](https://github.com/aotearoan/neon/commit/d9d8dc7509314dd1cbd44228930895c0a42cea95))
+
 ## [21.0.0](https://github.com/aotearoan/neon/compare/v20.0.0...v21.0.0) (2026-02-26)
 
 
