@@ -7,9 +7,11 @@
       @each $color in palettes.$neon-functional-colors {
         &.neon-badge--#{$color}:not(.neon-badge--disabled) {
           $neon-badge-color: var(--neon-color-#{$color});
-          color: var(--neon-color-inverse);
           @if ($color == high-contrast) {
+            color: var(--neon-color-inverse);
             $neon-badge-color: var(--neon-color-text-secondary);
+          } @else {
+            color: var(--neon-color-inverse);
           }
 
           background: $neon-badge-color;
@@ -33,48 +35,22 @@
       cursor: not-allowed;
     }
 
-    &--s {
-      font-size: var(--neon-font-size-s);
+    $neon-badge-sizes: (s, m, l, xl, xxl);
 
-      &,
-      .neon-badge__image {
-        width: var(--neon-size-s);
-        height: var(--neon-size-s);
-      }
+    @each $badge-size in $neon-badge-sizes {
+      &--#{$badge-size} {
+        font-size: var(--neon-font-size-#{$badge-size});
 
-      .neon-icon {
-        width: calc(var(--neon-icon-size-multiplier-badge) * var(--neon-size-s));
-        height: calc(var(--neon-icon-size-multiplier-badge) * var(--neon-size-s));
-      }
-    }
+        &,
+        .neon-badge__image {
+          width: var(--neon-size-#{$badge-size}-badge);
+          height: var(--neon-size-#{$badge-size}-badge);
+        }
 
-    &--m {
-      font-size: var(--neon-font-size-m);
-
-      &,
-      .neon-badge__image {
-        width: var(--neon-size-m);
-        height: var(--neon-size-m);
-      }
-
-      .neon-icon {
-        width: calc(var(--neon-icon-size-multiplier-badge) * var(--neon-size-m));
-        height: calc(var(--neon-icon-size-multiplier-badge) * var(--neon-size-m));
-      }
-    }
-
-    &--l {
-      font-size: var(--neon-font-size-l);
-
-      &,
-      .neon-badge__image {
-        width: var(--neon-size-l);
-        height: var(--neon-size-l);
-      }
-
-      .neon-icon {
-        width: calc(var(--neon-icon-size-multiplier-badge) * var(--neon-size-l));
-        height: calc(var(--neon-icon-size-multiplier-badge) * var(--neon-size-l));
+        .neon-icon {
+          width: calc(var(--neon-icon-size-multiplier-badge) * var(--neon-size-#{$badge-size}-badge));
+          height: calc(var(--neon-icon-size-multiplier-badge) * var(--neon-size-#{$badge-size}-badge));
+        }
       }
     }
 
@@ -97,7 +73,6 @@
       &,
       .neon-badge__image {
         border-radius: var(--neon-border-radius);
-        overflow: hidden;
       }
     }
 
@@ -105,7 +80,6 @@
       &,
       .neon-badge__image {
         border-radius: 50%;
-        overflow: hidden;
       }
     }
   }

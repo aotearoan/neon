@@ -1,4 +1,4 @@
-import { computed, defineComponent, defineExpose, onMounted, onUnmounted, ref, watch } from 'vue';
+import { computed, defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
 import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
 import { NeonDropdownPlacementUtils } from '@/common/utils/NeonDropdownPlacementUtils';
 import { NeonClosableUtils } from '@/common/utils/NeonClosableUtils';
@@ -50,6 +50,10 @@ export default defineComponent({
      * An icon to display on the dropdown button. This will be to the left of any label, but can also be used on its own.
      */
     icon: { type: String, default: null },
+    /**
+     * aria label of the button icon
+     */
+    iconAriaLabel: { type: String },
     /**
      * Show the dropdown button's indicator (chevron).
      */
@@ -114,7 +118,7 @@ export default defineComponent({
      */
     'button-ref',
   ],
-  setup(props, { emit }) {
+  setup(props, { emit, expose }) {
     const dropdownButton = ref<HTMLElement | null>(null);
     const dropdownContent = ref<HTMLDivElement | null>(null);
 
@@ -192,7 +196,7 @@ export default defineComponent({
       { immediate: true },
     );
 
-    defineExpose({ dropdownContent });
+    expose({ dropdownContent });
 
     return {
       dropdownButton,

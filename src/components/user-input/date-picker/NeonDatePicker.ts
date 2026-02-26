@@ -28,6 +28,10 @@ export default defineComponent({
   },
   props: {
     /**
+     * Id for the date picker button.
+     */
+    id: { type: String },
+    /**
      * The selected date. A date string in the
      * <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> format.
      */
@@ -133,7 +137,7 @@ export default defineComponent({
         }
       }
 
-      return '';
+      return props.placeholder || '';
     });
 
     const isoDate = (day: number, month: number, year: number) => NeonDateUtils.dmyToIso(day, month, year);
@@ -172,10 +176,9 @@ export default defineComponent({
       return NeonDateUtils.dmyToIso(day, month, year);
     });
 
-    const openCalendar = () => {
+    const toggleCalendar = () => {
       if (!props.disabled) {
         resetCalendarPages();
-        calendarOpen.value = true;
         if (calendarRef.value) {
           const selected = calendarRef.value.querySelector('.neon-date-picker__calendar-date--selected') as HTMLElement;
           if (selected) {
@@ -333,7 +336,7 @@ export default defineComponent({
       isoDate,
       isMonthDisabled,
       isYearDisabled,
-      openCalendar,
+      toggleCalendar,
       onNext,
       onNextDecade,
       onNextYear,

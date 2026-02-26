@@ -76,16 +76,17 @@ export class NeonDateUtils {
    * Returns the days of the week starting at Monday day name translated using the locale received as a first element.
    *
    * @param locale The locale for which to convert the date for display purposes, defaults to browser locale.
+   * @param format The format of the returned values
    *
    * @returns an array with the days of the week named according to the locale received.
    */
-  public static dowNames(locale?: string): Array<string> {
+  public static dowNames(locale?: string, format: 'long' | 'short' | 'narrow' = 'short'): Array<string> {
     const loc = locale || navigator.language;
     const date = new Date();
 
     const weekdays = [];
     while (!weekdays[date.getDay()]) {
-      weekdays[date.getDay()] = date.toLocaleString(loc, { weekday: 'short' });
+      weekdays[date.getDay()] = date.toLocaleString(loc, { weekday: format });
       date.setDate(date.getDate() + 1);
     }
 
@@ -101,15 +102,19 @@ export class NeonDateUtils {
    * Returns the months of the year starting at January month name translated using the locale received as a first element.
    *
    * @param locale The locale for which to convert the date for display purposes, defaults to browser locale.
+   * @param format The format of the month names to return
    *
    * @returns an array with the month names of the year, all named according to the locale received.
    */
-  public static monthNames(locale?: string): Array<string> {
+  public static monthNames(
+    locale?: string,
+    format: 'numeric' | '2-digit' | 'long' | 'short' | 'narrow' = 'short',
+  ): Array<string> {
     const loc = locale || navigator.language;
 
     return Array.from(Array(12).keys()).map((key) => {
       const date = new Date(2023, key, 15);
-      return date.toLocaleString(loc, { month: 'short' });
+      return date.toLocaleString(loc, { month: format });
     });
   }
 
@@ -188,9 +193,11 @@ export class NeonDateUtils {
       pageYear,
       pageDecadeStart,
       dowNames: NeonDateUtils.dowNames(loc),
+      dowLongNames: NeonDateUtils.dowNames(loc, 'long'),
       dates,
       lastDayOfMonth,
       months: NeonDateUtils.monthNames(loc),
+      monthLongNames: NeonDateUtils.monthNames(loc, 'long'),
     };
   }
 }

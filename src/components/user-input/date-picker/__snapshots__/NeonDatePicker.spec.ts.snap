@@ -2,17 +2,16 @@
 
 exports[`NeonDatePicker renders change decade replacement strings 1`] = `
 <div class="neon-date-picker--m neon-date-picker--primary neon-date-picker--open neon-date-picker">
-  <div class="neon-dropdown--with-indicator neon-dropdown--open neon-dropdown--m neon-dropdown--primary neon-dropdown">
+  <div class="neon-dropdown--open neon-dropdown--icon-only neon-dropdown--m neon-dropdown--primary neon-dropdown">
     <div>
       <!-- @slot optionally replace the dropdown button with a custom control -->
-      <div class="neon-input--with-icon neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__button"><input aria-placeholder="" autocomplete="on" inputmode="text" placeholder="" tabindex="-1" type="text" class="neon-input__textfield neon-input__text neon-date-picker__button" value="">
-        <div class="neon-icon--name-calendar neon-icon--low-contrast neon-icon neon-input__icon--read-only neon-input__icon neon-input__icon--read-only neon-input__icon" role="false" tabindex="false" transparent="true"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
-            <path class="neon-svg--fill" d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20 V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"></path>
-          </svg>
-        </div>
-        <!--v-if-->
-      </div>
-      <div aria-label="Open calendar" tabindex="0" class="neon-date-picker__button-click-capture" role="button"></div>
+      <div class="neon-dropdown__button-wrapper"><button class="neon-button--m neon-button--low-contrast neon-button--input neon-button--state-ready neon-button--with-icon neon-button--icon-right neon-button neon-dropdown__button neon-dropdown__button" tabindex="0" aria-expanded="true" aria-haspopup="true">
+          <div class="neon-icon--name-calendar neon-icon--low-contrast neon-icon" aria-label="Open calendar"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
+              <path class="neon-svg--fill" d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20 V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"></path>
+            </svg>
+          </div><span class="neon-button__label"></span>
+          <!--v-if-->
+        </button></div>
     </div>
     <div class="neon-dropdown__click-blocker"></div>
     <div class="neon-dropdown__content--bottom-left neon-dropdown__content" style="">
@@ -20,17 +19,11 @@ exports[`NeonDatePicker renders change decade replacement strings 1`] = `
       <div class="neon-date-picker__calendar">
         <div class="neon-date-picker__calendar-header"><span class="neon-date-picker__calendar-title-readonly">2020–2029</span>
           <div class="neon-date-picker__calendar-header-actions"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__previous-button neon-date-picker__previous-button" tabindex="0" aria-label="string 10">
-              <div class="neon-icon--name-chevron-left neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-                  <path class="neon-svg--fill" d="M15.28 5.22a.75.75 0 0 1 0 1.06L9.56 12l5.72 5.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.25-6.25a.75.75 0 0 1 0-1.06l6.25-6.25a.75.75 0 0 1 1.06 0Z"></path>
-                </svg>
-              </div>
+              <!--v-if-->
               <!--v-if-->
               <!--v-if-->
             </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__next-button neon-date-picker__next-button" tabindex="0" aria-label="string 11">
-              <div class="neon-icon--name-chevron-right neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-                  <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
-                </svg>
-              </div>
+              <!--v-if-->
               <!--v-if-->
               <!--v-if-->
             </button></div>
@@ -87,54 +80,36 @@ exports[`NeonDatePicker renders change decade replacement strings 1`] = `
 
 exports[`NeonDatePicker renders change month replacement strings 1`] = `
 <div class="neon-date-picker--m neon-date-picker--primary neon-date-picker">
-  <div class="neon-dropdown--with-indicator neon-dropdown--m neon-dropdown--primary neon-dropdown">
+  <div class="neon-dropdown--icon-only neon-dropdown--m neon-dropdown--primary neon-dropdown">
     <div>
       <!-- @slot optionally replace the dropdown button with a custom control -->
-      <div class="neon-input--with-icon neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__button"><input aria-placeholder="" autocomplete="on" inputmode="text" placeholder="" tabindex="-1" type="text" class="neon-input__textfield neon-input__text neon-date-picker__button" value="">
-        <div class="neon-icon--name-calendar neon-icon--low-contrast neon-icon neon-input__icon--read-only neon-input__icon neon-input__icon--read-only neon-input__icon" role="false" tabindex="false" transparent="true"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
-            <path class="neon-svg--fill" d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20 V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"></path>
-          </svg>
-        </div>
-        <!--v-if-->
-      </div>
-      <div aria-label="string 1" tabindex="0" class="neon-date-picker__button-click-capture" role="button"></div>
+      <div class="neon-dropdown__button-wrapper"><button class="neon-button--m neon-button--low-contrast neon-button--input neon-button--state-ready neon-button--with-icon neon-button--icon-right neon-button neon-dropdown__button neon-dropdown__button" tabindex="0" aria-expanded="false" aria-haspopup="true">
+          <div class="neon-icon--name-calendar neon-icon--low-contrast neon-icon" aria-label="string 1"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
+              <path class="neon-svg--fill" d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20 V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"></path>
+            </svg>
+          </div><span class="neon-button__label"></span>
+          <!--v-if-->
+        </button></div>
     </div>
     <div class="neon-dropdown__click-blocker"></div>
     <div class="neon-dropdown__content--bottom-left neon-dropdown__content" style="display: none;">
       <!-- @slot The content of the open dropdown -->
       <div class="neon-date-picker__calendar">
         <div class="neon-date-picker__calendar-header"><button class="neon-button--m neon-button--high-contrast neon-button--text neon-button--state-ready neon-button--with-icon neon-button--icon-right neon-button neon-date-picker__calendar-header-title neon-date-picker__calendar-header-title" tabindex="0" aria-label="string 4">
-            <div class="neon-icon--name-switch neon-icon--high-contrast neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-                <path class="neon-svg--fill" fill-rule="evenodd" d="M7.72 21.78a.75.75 0 0 0 1.06-1.06L5.56 17.5h14.69a.75.75 0 0 0 0-1.5H5.56l3.22-3.22a.75.75 0 1 0-1.06-1.06l-4.5 4.5a.75.75 0 0 0 0 1.06l4.5 4.5Zm8.56-9.5a.75.75 0 1 1-1.06-1.06L18.44 8H3.75a.75.75 0 0 1 0-1.5h14.69l-3.22-3.22a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5Z"></path>
-              </svg>
-            </div><span class="neon-button__label">March 2023</span>
+            <!--v-if--><span class="neon-button__label">March 2023</span>
             <!--v-if-->
           </button>
           <div class="neon-date-picker__calendar-header-actions"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__previous-button neon-date-picker__previous-button" tabindex="0" aria-label="string 5">
-              <div class="neon-icon--name-chevron-left neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-                  <path class="neon-svg--fill" d="M15.28 5.22a.75.75 0 0 1 0 1.06L9.56 12l5.72 5.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.25-6.25a.75.75 0 0 1 0-1.06l6.25-6.25a.75.75 0 0 1 1.06 0Z"></path>
-                </svg>
-              </div>
+              <!--v-if-->
               <!--v-if-->
               <!--v-if-->
             </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__next-button neon-date-picker__next-button" tabindex="0" aria-label="string 6">
-              <div class="neon-icon--name-chevron-right neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-                  <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
-                </svg>
-              </div>
+              <!--v-if-->
               <!--v-if-->
               <!--v-if-->
             </button></div>
         </div>
-        <div class="neon-date-picker__calendar-dows">
-          <div class="neon-date-picker__calendar-dow">Mon</div>
-          <div class="neon-date-picker__calendar-dow">Tue</div>
-          <div class="neon-date-picker__calendar-dow">Wed</div>
-          <div class="neon-date-picker__calendar-dow">Thu</div>
-          <div class="neon-date-picker__calendar-dow">Fri</div>
-          <div class="neon-date-picker__calendar-dow">Sat</div>
-          <div class="neon-date-picker__calendar-dow">Sun</div>
-        </div>
+        <div class="neon-date-picker__calendar-dows"><abbr title="Monday" class="neon-date-picker__calendar-dow">Mon</abbr><abbr title="Tuesday" class="neon-date-picker__calendar-dow">Tue</abbr><abbr title="Wednesday" class="neon-date-picker__calendar-dow">Wed</abbr><abbr title="Thursday" class="neon-date-picker__calendar-dow">Thu</abbr><abbr title="Friday" class="neon-date-picker__calendar-dow">Fri</abbr><abbr title="Saturday" class="neon-date-picker__calendar-dow">Sat</abbr><abbr title="Sunday" class="neon-date-picker__calendar-dow">Sun</abbr></div>
         <hr>
         <div class="neon-date-picker__calendar-dates">
           <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div>
@@ -260,80 +235,70 @@ exports[`NeonDatePicker renders change month replacement strings 1`] = `
 
 exports[`NeonDatePicker renders change year replacement strings 1`] = `
 <div class="neon-date-picker--m neon-date-picker--primary neon-date-picker--open neon-date-picker">
-  <div class="neon-dropdown--with-indicator neon-dropdown--open neon-dropdown--m neon-dropdown--primary neon-dropdown">
+  <div class="neon-dropdown--open neon-dropdown--icon-only neon-dropdown--m neon-dropdown--primary neon-dropdown">
     <div>
       <!-- @slot optionally replace the dropdown button with a custom control -->
-      <div class="neon-input--with-icon neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__button"><input aria-placeholder="" autocomplete="on" inputmode="text" placeholder="" tabindex="-1" type="text" class="neon-input__textfield neon-input__text neon-date-picker__button" value="">
-        <div class="neon-icon--name-calendar neon-icon--low-contrast neon-icon neon-input__icon--read-only neon-input__icon neon-input__icon--read-only neon-input__icon" role="false" tabindex="false" transparent="true"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
-            <path class="neon-svg--fill" d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20 V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"></path>
-          </svg>
-        </div>
-        <!--v-if-->
-      </div>
-      <div aria-label="Open calendar" tabindex="0" class="neon-date-picker__button-click-capture" role="button"></div>
+      <div class="neon-dropdown__button-wrapper"><button class="neon-button--m neon-button--low-contrast neon-button--input neon-button--state-ready neon-button--with-icon neon-button--icon-right neon-button neon-dropdown__button neon-dropdown__button" tabindex="0" aria-expanded="true" aria-haspopup="true">
+          <div class="neon-icon--name-calendar neon-icon--low-contrast neon-icon" aria-label="Open calendar"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
+              <path class="neon-svg--fill" d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20 V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"></path>
+            </svg>
+          </div><span class="neon-button__label"></span>
+          <!--v-if-->
+        </button></div>
     </div>
     <div class="neon-dropdown__click-blocker"></div>
     <div class="neon-dropdown__content--bottom-left neon-dropdown__content" style="">
       <!-- @slot The content of the open dropdown -->
       <div class="neon-date-picker__calendar">
         <div class="neon-date-picker__calendar-header"><button class="neon-button--m neon-button--high-contrast neon-button--text neon-button--state-ready neon-button--with-icon neon-button--icon-right neon-button neon-date-picker__calendar-header-title neon-date-picker__calendar-header-title" tabindex="0" aria-label="string 7">
-            <div class="neon-icon--name-switch neon-icon--high-contrast neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-                <path class="neon-svg--fill" fill-rule="evenodd" d="M7.72 21.78a.75.75 0 0 0 1.06-1.06L5.56 17.5h14.69a.75.75 0 0 0 0-1.5H5.56l3.22-3.22a.75.75 0 1 0-1.06-1.06l-4.5 4.5a.75.75 0 0 0 0 1.06l4.5 4.5Zm8.56-9.5a.75.75 0 1 1-1.06-1.06L18.44 8H3.75a.75.75 0 0 1 0-1.5h14.69l-3.22-3.22a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5Z"></path>
-              </svg>
-            </div><span class="neon-button__label">2023</span>
+            <!--v-if--><span class="neon-button__label">2023</span>
             <!--v-if-->
           </button>
           <div class="neon-date-picker__calendar-header-actions"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__previous-button neon-date-picker__previous-button" tabindex="0" aria-label="string 8">
-              <div class="neon-icon--name-chevron-left neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-                  <path class="neon-svg--fill" d="M15.28 5.22a.75.75 0 0 1 0 1.06L9.56 12l5.72 5.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.25-6.25a.75.75 0 0 1 0-1.06l6.25-6.25a.75.75 0 0 1 1.06 0Z"></path>
-                </svg>
-              </div>
+              <!--v-if-->
               <!--v-if-->
               <!--v-if-->
             </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__next-button neon-date-picker__next-button" tabindex="0" aria-label="string 9">
-              <div class="neon-icon--name-chevron-right neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-                  <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
-                </svg>
-              </div>
+              <!--v-if-->
               <!--v-if-->
               <!--v-if-->
             </button></div>
         </div>
         <hr>
-        <div class="neon-date-picker__calendar-options"><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option neon-date-picker__calendar-option" tabindex="0">
+        <div class="neon-date-picker__calendar-options"><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option neon-date-picker__calendar-option" tabindex="0" title="January">
             <!--v-if--><span class="neon-button__label">Jan</span>
             <!--v-if-->
-          </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option neon-date-picker__calendar-option" tabindex="0">
+          </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option neon-date-picker__calendar-option" tabindex="0" title="February">
             <!--v-if--><span class="neon-button__label">Feb</span>
             <!--v-if-->
-          </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option--selected neon-date-picker__calendar-option--today neon-date-picker__calendar-option neon-date-picker__calendar-option--selected neon-date-picker__calendar-option--today neon-date-picker__calendar-option" tabindex="0">
+          </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option--selected neon-date-picker__calendar-option--today neon-date-picker__calendar-option neon-date-picker__calendar-option--selected neon-date-picker__calendar-option--today neon-date-picker__calendar-option" tabindex="0" title="March">
             <!--v-if--><span class="neon-button__label">Mar</span>
             <!--v-if-->
-          </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option neon-date-picker__calendar-option" tabindex="0">
+          </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option neon-date-picker__calendar-option" tabindex="0" title="April">
             <!--v-if--><span class="neon-button__label">Apr</span>
             <!--v-if-->
-          </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option neon-date-picker__calendar-option" tabindex="0">
+          </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option neon-date-picker__calendar-option" tabindex="0" title="May">
             <!--v-if--><span class="neon-button__label">May</span>
             <!--v-if-->
-          </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option neon-date-picker__calendar-option" tabindex="0">
+          </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option neon-date-picker__calendar-option" tabindex="0" title="June">
             <!--v-if--><span class="neon-button__label">Jun</span>
             <!--v-if-->
-          </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option neon-date-picker__calendar-option" tabindex="0">
+          </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option neon-date-picker__calendar-option" tabindex="0" title="July">
             <!--v-if--><span class="neon-button__label">Jul</span>
             <!--v-if-->
-          </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option neon-date-picker__calendar-option" tabindex="0">
+          </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option neon-date-picker__calendar-option" tabindex="0" title="August">
             <!--v-if--><span class="neon-button__label">Aug</span>
             <!--v-if-->
-          </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option neon-date-picker__calendar-option" tabindex="0">
+          </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option neon-date-picker__calendar-option" tabindex="0" title="September">
             <!--v-if--><span class="neon-button__label">Sep</span>
             <!--v-if-->
-          </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option neon-date-picker__calendar-option" tabindex="0">
+          </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option neon-date-picker__calendar-option" tabindex="0" title="October">
             <!--v-if--><span class="neon-button__label">Oct</span>
             <!--v-if-->
-          </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option neon-date-picker__calendar-option" tabindex="0">
+          </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option neon-date-picker__calendar-option" tabindex="0" title="November">
             <!--v-if--><span class="neon-button__label">Nov</span>
             <!--v-if-->
-          </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option neon-date-picker__calendar-option" tabindex="0">
+          </button><button class="neon-button--s neon-button--primary neon-button--text neon-button--state-ready neon-button--full-width neon-button neon-date-picker__calendar-option neon-date-picker__calendar-option" tabindex="0" title="December">
             <!--v-if--><span class="neon-button__label">Dec</span>
             <!--v-if-->
           </button></div>
@@ -357,54 +322,36 @@ exports[`NeonDatePicker renders change year replacement strings 1`] = `
 
 exports[`NeonDatePicker renders closed 1`] = `
 <div class="neon-date-picker--m neon-date-picker--primary neon-date-picker">
-  <div class="neon-dropdown--with-indicator neon-dropdown--m neon-dropdown--primary neon-dropdown">
+  <div class="neon-dropdown--m neon-dropdown--primary neon-dropdown">
     <div>
       <!-- @slot optionally replace the dropdown button with a custom control -->
-      <div class="neon-input--with-icon neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__button"><input aria-placeholder="" autocomplete="on" inputmode="text" placeholder="" tabindex="-1" type="text" class="neon-input__textfield neon-input__text neon-date-picker__button" value="16 Apr 2023">
-        <div class="neon-icon--name-calendar neon-icon--low-contrast neon-icon neon-input__icon--read-only neon-input__icon neon-input__icon--read-only neon-input__icon" role="false" tabindex="false" transparent="true"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
-            <path class="neon-svg--fill" d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20 V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"></path>
-          </svg>
-        </div>
-        <!--v-if-->
-      </div>
-      <div aria-label="Open calendar" tabindex="0" class="neon-date-picker__button-click-capture" role="button"></div>
+      <div class="neon-dropdown__button-wrapper"><button class="neon-button--m neon-button--low-contrast neon-button--input neon-button--state-ready neon-button--with-icon neon-button--icon-right neon-button neon-dropdown__button neon-dropdown__button" tabindex="0" aria-expanded="false" aria-haspopup="true">
+          <div class="neon-icon--name-calendar neon-icon--low-contrast neon-icon" aria-label="Open calendar"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
+              <path class="neon-svg--fill" d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20 V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"></path>
+            </svg>
+          </div><span class="neon-button__label">16 Apr 2023</span>
+          <!--v-if-->
+        </button></div>
     </div>
     <div class="neon-dropdown__click-blocker"></div>
     <div class="neon-dropdown__content--bottom-left neon-dropdown__content" style="display: none;">
       <!-- @slot The content of the open dropdown -->
       <div class="neon-date-picker__calendar">
         <div class="neon-date-picker__calendar-header"><button class="neon-button--m neon-button--high-contrast neon-button--text neon-button--state-ready neon-button--with-icon neon-button--icon-right neon-button neon-date-picker__calendar-header-title neon-date-picker__calendar-header-title" tabindex="0" aria-label="Change month">
-            <div class="neon-icon--name-switch neon-icon--high-contrast neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-                <path class="neon-svg--fill" fill-rule="evenodd" d="M7.72 21.78a.75.75 0 0 0 1.06-1.06L5.56 17.5h14.69a.75.75 0 0 0 0-1.5H5.56l3.22-3.22a.75.75 0 1 0-1.06-1.06l-4.5 4.5a.75.75 0 0 0 0 1.06l4.5 4.5Zm8.56-9.5a.75.75 0 1 1-1.06-1.06L18.44 8H3.75a.75.75 0 0 1 0-1.5h14.69l-3.22-3.22a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5Z"></path>
-              </svg>
-            </div><span class="neon-button__label">April 2023</span>
+            <!--v-if--><span class="neon-button__label">April 2023</span>
             <!--v-if-->
           </button>
           <div class="neon-date-picker__calendar-header-actions"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__previous-button neon-date-picker__previous-button" tabindex="0" aria-label="Previous month">
-              <div class="neon-icon--name-chevron-left neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-                  <path class="neon-svg--fill" d="M15.28 5.22a.75.75 0 0 1 0 1.06L9.56 12l5.72 5.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.25-6.25a.75.75 0 0 1 0-1.06l6.25-6.25a.75.75 0 0 1 1.06 0Z"></path>
-                </svg>
-              </div>
+              <!--v-if-->
               <!--v-if-->
               <!--v-if-->
             </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__next-button neon-date-picker__next-button" tabindex="0" aria-label="Next month">
-              <div class="neon-icon--name-chevron-right neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-                  <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
-                </svg>
-              </div>
+              <!--v-if-->
               <!--v-if-->
               <!--v-if-->
             </button></div>
         </div>
-        <div class="neon-date-picker__calendar-dows">
-          <div class="neon-date-picker__calendar-dow">Mon</div>
-          <div class="neon-date-picker__calendar-dow">Tue</div>
-          <div class="neon-date-picker__calendar-dow">Wed</div>
-          <div class="neon-date-picker__calendar-dow">Thu</div>
-          <div class="neon-date-picker__calendar-dow">Fri</div>
-          <div class="neon-date-picker__calendar-dow">Sat</div>
-          <div class="neon-date-picker__calendar-dow">Sun</div>
-        </div>
+        <div class="neon-date-picker__calendar-dows"><abbr title="Monday" class="neon-date-picker__calendar-dow">Mon</abbr><abbr title="Tuesday" class="neon-date-picker__calendar-dow">Tue</abbr><abbr title="Wednesday" class="neon-date-picker__calendar-dow">Wed</abbr><abbr title="Thursday" class="neon-date-picker__calendar-dow">Thu</abbr><abbr title="Friday" class="neon-date-picker__calendar-dow">Fri</abbr><abbr title="Saturday" class="neon-date-picker__calendar-dow">Sat</abbr><abbr title="Sunday" class="neon-date-picker__calendar-dow">Sun</abbr></div>
         <hr>
         <div class="neon-date-picker__calendar-dates">
           <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div>
@@ -527,54 +474,36 @@ exports[`NeonDatePicker renders closed 1`] = `
 
 exports[`NeonDatePicker renders open 1`] = `
 <div class="neon-date-picker--m neon-date-picker--primary neon-date-picker--open neon-date-picker">
-  <div class="neon-dropdown--with-indicator neon-dropdown--open neon-dropdown--m neon-dropdown--primary neon-dropdown">
+  <div class="neon-dropdown--open neon-dropdown--m neon-dropdown--primary neon-dropdown">
     <div>
       <!-- @slot optionally replace the dropdown button with a custom control -->
-      <div class="neon-input--with-icon neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__button"><input aria-placeholder="" autocomplete="on" inputmode="text" placeholder="" tabindex="-1" type="text" class="neon-input__textfield neon-input__text neon-date-picker__button" value="16 Apr 2023">
-        <div class="neon-icon--name-calendar neon-icon--low-contrast neon-icon neon-input__icon--read-only neon-input__icon neon-input__icon--read-only neon-input__icon" role="false" tabindex="false" transparent="true"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
-            <path class="neon-svg--fill" d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20 V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"></path>
-          </svg>
-        </div>
-        <!--v-if-->
-      </div>
-      <div aria-label="Open calendar" tabindex="0" class="neon-date-picker__button-click-capture" role="button"></div>
+      <div class="neon-dropdown__button-wrapper"><button class="neon-button--m neon-button--low-contrast neon-button--input neon-button--state-ready neon-button--with-icon neon-button--icon-right neon-button neon-dropdown__button neon-dropdown__button" tabindex="0" aria-expanded="true" aria-haspopup="true">
+          <div class="neon-icon--name-calendar neon-icon--low-contrast neon-icon" aria-label="Open calendar"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
+              <path class="neon-svg--fill" d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20 V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"></path>
+            </svg>
+          </div><span class="neon-button__label">16 Apr 2023</span>
+          <!--v-if-->
+        </button></div>
     </div>
     <div class="neon-dropdown__click-blocker"></div>
     <div class="neon-dropdown__content--bottom-left neon-dropdown__content" style="">
       <!-- @slot The content of the open dropdown -->
       <div class="neon-date-picker__calendar">
         <div class="neon-date-picker__calendar-header"><button class="neon-button--m neon-button--high-contrast neon-button--text neon-button--state-ready neon-button--with-icon neon-button--icon-right neon-button neon-date-picker__calendar-header-title neon-date-picker__calendar-header-title" tabindex="0" aria-label="Change month">
-            <div class="neon-icon--name-switch neon-icon--high-contrast neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-                <path class="neon-svg--fill" fill-rule="evenodd" d="M7.72 21.78a.75.75 0 0 0 1.06-1.06L5.56 17.5h14.69a.75.75 0 0 0 0-1.5H5.56l3.22-3.22a.75.75 0 1 0-1.06-1.06l-4.5 4.5a.75.75 0 0 0 0 1.06l4.5 4.5Zm8.56-9.5a.75.75 0 1 1-1.06-1.06L18.44 8H3.75a.75.75 0 0 1 0-1.5h14.69l-3.22-3.22a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5Z"></path>
-              </svg>
-            </div><span class="neon-button__label">April 2023</span>
+            <!--v-if--><span class="neon-button__label">April 2023</span>
             <!--v-if-->
           </button>
           <div class="neon-date-picker__calendar-header-actions"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__previous-button neon-date-picker__previous-button" tabindex="0" aria-label="Previous month">
-              <div class="neon-icon--name-chevron-left neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-                  <path class="neon-svg--fill" d="M15.28 5.22a.75.75 0 0 1 0 1.06L9.56 12l5.72 5.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.25-6.25a.75.75 0 0 1 0-1.06l6.25-6.25a.75.75 0 0 1 1.06 0Z"></path>
-                </svg>
-              </div>
+              <!--v-if-->
               <!--v-if-->
               <!--v-if-->
             </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__next-button neon-date-picker__next-button" tabindex="0" aria-label="Next month">
-              <div class="neon-icon--name-chevron-right neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-                  <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
-                </svg>
-              </div>
+              <!--v-if-->
               <!--v-if-->
               <!--v-if-->
             </button></div>
         </div>
-        <div class="neon-date-picker__calendar-dows">
-          <div class="neon-date-picker__calendar-dow">Mon</div>
-          <div class="neon-date-picker__calendar-dow">Tue</div>
-          <div class="neon-date-picker__calendar-dow">Wed</div>
-          <div class="neon-date-picker__calendar-dow">Thu</div>
-          <div class="neon-date-picker__calendar-dow">Fri</div>
-          <div class="neon-date-picker__calendar-dow">Sat</div>
-          <div class="neon-date-picker__calendar-dow">Sun</div>
-        </div>
+        <div class="neon-date-picker__calendar-dows"><abbr title="Monday" class="neon-date-picker__calendar-dow">Mon</abbr><abbr title="Tuesday" class="neon-date-picker__calendar-dow">Tue</abbr><abbr title="Wednesday" class="neon-date-picker__calendar-dow">Wed</abbr><abbr title="Thursday" class="neon-date-picker__calendar-dow">Thu</abbr><abbr title="Friday" class="neon-date-picker__calendar-dow">Fri</abbr><abbr title="Saturday" class="neon-date-picker__calendar-dow">Sat</abbr><abbr title="Sunday" class="neon-date-picker__calendar-dow">Sun</abbr></div>
         <hr>
         <div class="neon-date-picker__calendar-dates">
           <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div>
@@ -697,54 +626,36 @@ exports[`NeonDatePicker renders open 1`] = `
 
 exports[`NeonDatePicker renders with defaults of today 1`] = `
 <div class="neon-date-picker--m neon-date-picker--primary neon-date-picker--open neon-date-picker">
-  <div class="neon-dropdown--with-indicator neon-dropdown--open neon-dropdown--m neon-dropdown--primary neon-dropdown">
+  <div class="neon-dropdown--open neon-dropdown--icon-only neon-dropdown--m neon-dropdown--primary neon-dropdown">
     <div>
       <!-- @slot optionally replace the dropdown button with a custom control -->
-      <div class="neon-input--with-icon neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__button"><input aria-placeholder="" autocomplete="on" inputmode="text" placeholder="" tabindex="-1" type="text" class="neon-input__textfield neon-input__text neon-date-picker__button" value="">
-        <div class="neon-icon--name-calendar neon-icon--low-contrast neon-icon neon-input__icon--read-only neon-input__icon neon-input__icon--read-only neon-input__icon" role="false" tabindex="false" transparent="true"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
-            <path class="neon-svg--fill" d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20 V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"></path>
-          </svg>
-        </div>
-        <!--v-if-->
-      </div>
-      <div aria-label="Open calendar" tabindex="0" class="neon-date-picker__button-click-capture" role="button"></div>
+      <div class="neon-dropdown__button-wrapper"><button class="neon-button--m neon-button--low-contrast neon-button--input neon-button--state-ready neon-button--with-icon neon-button--icon-right neon-button neon-dropdown__button neon-dropdown__button" tabindex="0" aria-expanded="true" aria-haspopup="true">
+          <div class="neon-icon--name-calendar neon-icon--low-contrast neon-icon" aria-label="Open calendar"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
+              <path class="neon-svg--fill" d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20 V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"></path>
+            </svg>
+          </div><span class="neon-button__label"></span>
+          <!--v-if-->
+        </button></div>
     </div>
     <div class="neon-dropdown__click-blocker"></div>
     <div class="neon-dropdown__content--bottom-left neon-dropdown__content" style="">
       <!-- @slot The content of the open dropdown -->
       <div class="neon-date-picker__calendar">
         <div class="neon-date-picker__calendar-header"><button class="neon-button--m neon-button--high-contrast neon-button--text neon-button--state-ready neon-button--with-icon neon-button--icon-right neon-button neon-date-picker__calendar-header-title neon-date-picker__calendar-header-title" tabindex="0" aria-label="Change month">
-            <div class="neon-icon--name-switch neon-icon--high-contrast neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-                <path class="neon-svg--fill" fill-rule="evenodd" d="M7.72 21.78a.75.75 0 0 0 1.06-1.06L5.56 17.5h14.69a.75.75 0 0 0 0-1.5H5.56l3.22-3.22a.75.75 0 1 0-1.06-1.06l-4.5 4.5a.75.75 0 0 0 0 1.06l4.5 4.5Zm8.56-9.5a.75.75 0 1 1-1.06-1.06L18.44 8H3.75a.75.75 0 0 1 0-1.5h14.69l-3.22-3.22a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5Z"></path>
-              </svg>
-            </div><span class="neon-button__label">March 2023</span>
+            <!--v-if--><span class="neon-button__label">March 2023</span>
             <!--v-if-->
           </button>
           <div class="neon-date-picker__calendar-header-actions"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__previous-button neon-date-picker__previous-button" tabindex="0" aria-label="Previous month">
-              <div class="neon-icon--name-chevron-left neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-                  <path class="neon-svg--fill" d="M15.28 5.22a.75.75 0 0 1 0 1.06L9.56 12l5.72 5.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.25-6.25a.75.75 0 0 1 0-1.06l6.25-6.25a.75.75 0 0 1 1.06 0Z"></path>
-                </svg>
-              </div>
+              <!--v-if-->
               <!--v-if-->
               <!--v-if-->
             </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__next-button neon-date-picker__next-button" tabindex="0" aria-label="Next month">
-              <div class="neon-icon--name-chevron-right neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-                  <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
-                </svg>
-              </div>
+              <!--v-if-->
               <!--v-if-->
               <!--v-if-->
             </button></div>
         </div>
-        <div class="neon-date-picker__calendar-dows">
-          <div class="neon-date-picker__calendar-dow">Mon</div>
-          <div class="neon-date-picker__calendar-dow">Tue</div>
-          <div class="neon-date-picker__calendar-dow">Wed</div>
-          <div class="neon-date-picker__calendar-dow">Thu</div>
-          <div class="neon-date-picker__calendar-dow">Fri</div>
-          <div class="neon-date-picker__calendar-dow">Sat</div>
-          <div class="neon-date-picker__calendar-dow">Sun</div>
-        </div>
+        <div class="neon-date-picker__calendar-dows"><abbr title="Monday" class="neon-date-picker__calendar-dow">Mon</abbr><abbr title="Tuesday" class="neon-date-picker__calendar-dow">Tue</abbr><abbr title="Wednesday" class="neon-date-picker__calendar-dow">Wed</abbr><abbr title="Thursday" class="neon-date-picker__calendar-dow">Thu</abbr><abbr title="Friday" class="neon-date-picker__calendar-dow">Fri</abbr><abbr title="Saturday" class="neon-date-picker__calendar-dow">Sat</abbr><abbr title="Sunday" class="neon-date-picker__calendar-dow">Sun</abbr></div>
         <hr>
         <div class="neon-date-picker__calendar-dates">
           <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div>
@@ -870,54 +781,36 @@ exports[`NeonDatePicker renders with defaults of today 1`] = `
 
 exports[`NeonDatePicker renders with locale 1`] = `
 <div class="neon-date-picker--m neon-date-picker--primary neon-date-picker--open neon-date-picker">
-  <div class="neon-dropdown--with-indicator neon-dropdown--open neon-dropdown--m neon-dropdown--primary neon-dropdown">
+  <div class="neon-dropdown--open neon-dropdown--m neon-dropdown--primary neon-dropdown">
     <div>
       <!-- @slot optionally replace the dropdown button with a custom control -->
-      <div class="neon-input--with-icon neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__button"><input aria-placeholder="" autocomplete="on" inputmode="text" placeholder="" tabindex="-1" type="text" class="neon-input__textfield neon-input__text neon-date-picker__button" value="16 Apr 2023">
-        <div class="neon-icon--name-calendar neon-icon--low-contrast neon-icon neon-input__icon--read-only neon-input__icon neon-input__icon--read-only neon-input__icon" role="false" tabindex="false" transparent="true"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
-            <path class="neon-svg--fill" d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20 V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"></path>
-          </svg>
-        </div>
-        <!--v-if-->
-      </div>
-      <div aria-label="Open calendar" tabindex="0" class="neon-date-picker__button-click-capture" role="button"></div>
+      <div class="neon-dropdown__button-wrapper"><button class="neon-button--m neon-button--low-contrast neon-button--input neon-button--state-ready neon-button--with-icon neon-button--icon-right neon-button neon-dropdown__button neon-dropdown__button" tabindex="0" aria-expanded="true" aria-haspopup="true">
+          <div class="neon-icon--name-calendar neon-icon--low-contrast neon-icon" aria-label="Open calendar"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
+              <path class="neon-svg--fill" d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20 V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"></path>
+            </svg>
+          </div><span class="neon-button__label">16 Apr 2023</span>
+          <!--v-if-->
+        </button></div>
     </div>
     <div class="neon-dropdown__click-blocker"></div>
     <div class="neon-dropdown__content--bottom-left neon-dropdown__content" style="">
       <!-- @slot The content of the open dropdown -->
       <div class="neon-date-picker__calendar">
         <div class="neon-date-picker__calendar-header"><button class="neon-button--m neon-button--high-contrast neon-button--text neon-button--state-ready neon-button--with-icon neon-button--icon-right neon-button neon-date-picker__calendar-header-title neon-date-picker__calendar-header-title" tabindex="0" aria-label="Change month">
-            <div class="neon-icon--name-switch neon-icon--high-contrast neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-                <path class="neon-svg--fill" fill-rule="evenodd" d="M7.72 21.78a.75.75 0 0 0 1.06-1.06L5.56 17.5h14.69a.75.75 0 0 0 0-1.5H5.56l3.22-3.22a.75.75 0 1 0-1.06-1.06l-4.5 4.5a.75.75 0 0 0 0 1.06l4.5 4.5Zm8.56-9.5a.75.75 0 1 1-1.06-1.06L18.44 8H3.75a.75.75 0 0 1 0-1.5h14.69l-3.22-3.22a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5Z"></path>
-              </svg>
-            </div><span class="neon-button__label">April 2023</span>
+            <!--v-if--><span class="neon-button__label">April 2023</span>
             <!--v-if-->
           </button>
           <div class="neon-date-picker__calendar-header-actions"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__previous-button neon-date-picker__previous-button" tabindex="0" aria-label="Previous month">
-              <div class="neon-icon--name-chevron-left neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-                  <path class="neon-svg--fill" d="M15.28 5.22a.75.75 0 0 1 0 1.06L9.56 12l5.72 5.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.25-6.25a.75.75 0 0 1 0-1.06l6.25-6.25a.75.75 0 0 1 1.06 0Z"></path>
-                </svg>
-              </div>
+              <!--v-if-->
               <!--v-if-->
               <!--v-if-->
             </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__next-button neon-date-picker__next-button" tabindex="0" aria-label="Next month">
-              <div class="neon-icon--name-chevron-right neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-                  <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
-                </svg>
-              </div>
+              <!--v-if-->
               <!--v-if-->
               <!--v-if-->
             </button></div>
         </div>
-        <div class="neon-date-picker__calendar-dows">
-          <div class="neon-date-picker__calendar-dow">Mo</div>
-          <div class="neon-date-picker__calendar-dow">Di</div>
-          <div class="neon-date-picker__calendar-dow">Mi</div>
-          <div class="neon-date-picker__calendar-dow">Do</div>
-          <div class="neon-date-picker__calendar-dow">Fr</div>
-          <div class="neon-date-picker__calendar-dow">Sa</div>
-          <div class="neon-date-picker__calendar-dow">So</div>
-        </div>
+        <div class="neon-date-picker__calendar-dows"><abbr title="Montag" class="neon-date-picker__calendar-dow">Mo</abbr><abbr title="Dienstag" class="neon-date-picker__calendar-dow">Di</abbr><abbr title="Mittwoch" class="neon-date-picker__calendar-dow">Mi</abbr><abbr title="Donnerstag" class="neon-date-picker__calendar-dow">Do</abbr><abbr title="Freitag" class="neon-date-picker__calendar-dow">Fr</abbr><abbr title="Samstag" class="neon-date-picker__calendar-dow">Sa</abbr><abbr title="Sonntag" class="neon-date-picker__calendar-dow">So</abbr></div>
         <hr>
         <div class="neon-date-picker__calendar-dates">
           <div class="neon-date-picker__calendar-date neon-date-picker__calendar-date--empty"></div>

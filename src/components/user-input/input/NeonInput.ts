@@ -1,4 +1,4 @@
-import { computed, defineComponent, defineExpose, ref, useAttrs } from 'vue';
+import { computed, defineComponent, ref, useAttrs } from 'vue';
 import { NeonInputType } from '@/common/enums/NeonInputType';
 import { NeonState } from '@/common/enums/NeonState';
 import { NeonSize } from '@/common/enums/NeonSize';
@@ -121,7 +121,7 @@ export default defineComponent({
      */
     'update:modelValue',
   ],
-  setup(props, { emit }) {
+  setup(props, { emit, expose }) {
     const attrs = useAttrs();
     const neonInput = ref<HTMLElement | null>(null);
     const focused = ref(false);
@@ -251,7 +251,7 @@ export default defineComponent({
       }
     });
 
-    defineExpose({ neonInput });
+    expose({ neonInput });
 
     return {
       neonInput,

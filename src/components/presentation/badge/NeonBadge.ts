@@ -1,9 +1,9 @@
 import { computed, defineComponent } from 'vue';
-import { NeonSize } from '@/common/enums/NeonSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import { NeonJazziconUtils } from '@/common/utils/NeonJazziconUtils';
 import { NeonColorUtils } from '@/common/utils/NeonColorUtils';
+import { NeonBadgeSize } from '@/common/enums/NeonBadgeSize';
 
 /**
  * A badge is a small square or circular component for representing user avatars. These can be in the form of an image, an icon or a two character string (e.g. the user's initials).
@@ -31,9 +31,9 @@ export default defineComponent({
      */
     circular: { type: Boolean, default: false },
     /**
-     * The size of the badge - Small, Medium or Large.
+     * The size of the badge - s, m, l, xl, xxl.
      */
-    size: { type: String as () => NeonSize, default: NeonSize.Medium },
+    size: { type: String as () => NeonBadgeSize, default: NeonBadgeSize.Medium },
     /**
      * The color of the badge. This is one of the provided NeonFunctionalColors.
      */
@@ -83,7 +83,7 @@ export default defineComponent({
         ? NeonJazziconUtils.genSvg(
             palette.value,
             props.jazziconId,
-            props.size === NeonSize.Small ? 32 : props.size === NeonSize.Medium ? 40 : 48,
+            props.size === NeonBadgeSize.Small ? 32 : props.size === NeonBadgeSize.Medium ? 40 : 48,
           )
         : null,
     );

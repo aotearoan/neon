@@ -32,12 +32,15 @@
   >
     <neon-icon
       v-if="icon || state !== 'ready'"
+      :aria-label="iconAriaLabel"
       :color="buttonStyle !== 'solid' ? color : undefined"
       :disabled="disabled"
       :inverse="buttonStyle === 'solid' || inverse"
       :name="iconName"
     />
-    <span v-if="label" class="neon-button__label">{{ label }}</span>
+    <span v-if="label || buttonStyle === 'input'" class="neon-button__label">
+      {{ label || (buttonStyle === 'input' && '') }}
+    </span>
     <neon-expansion-indicator
       v-if="indicator"
       :color="buttonStyle === 'text' ? color : 'low-contrast'"

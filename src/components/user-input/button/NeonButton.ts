@@ -49,6 +49,10 @@ export default defineComponent({
      */
     icon: { type: String, default: null },
     /**
+     * The aria label of the icon button
+     */
+    iconAriaLabel: { type: String },
+    /**
      * Position of the icon if combined with text
      */
     iconPosition: { type: String as () => NeonHorizontalPosition, default: NeonHorizontalPosition.Left },
@@ -128,9 +132,13 @@ export default defineComponent({
           'neon-button--circular': props.circular,
           'neon-button--no-outline': !props.outline,
           'neon-button--full-width': props.fullWidth,
-          'neon-button--with-icon neon-button--icon-only': !props.label && props.icon && !props.indicator,
+          'neon-button--with-icon neon-button--icon-only':
+            props.buttonStyle !== NeonButtonStyle.Input && !props.label && props.icon && !props.indicator,
           'neon-button--with-icon neon-button--icon-left': props.label && props.icon && props.iconPosition === 'left',
-          'neon-button--with-icon neon-button--icon-right': props.label && props.icon && props.iconPosition === 'right',
+          'neon-button--with-icon neon-button--icon-right':
+            (props.label || props.buttonStyle === NeonButtonStyle.Input) &&
+            props.icon &&
+            props.iconPosition === 'right',
           [`neon-button--alternate-color-${props.alternateColor}`]: props.alternateColor,
         },
       ];

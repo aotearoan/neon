@@ -26,6 +26,11 @@ export interface NeonCalendarConfig {
    */
   dowNames: Array<string>;
   /**
+   * Long names for the days of the week from Monday-Sunday. These values are in the provided locale, if no locale is
+   * provided the browser default is used.
+   */
+  dowLongNames: Array<string>;
+  /**
    * A two-dimensional array of calendar dates for the currently selected month. These are offset to match the days of
    * the week with Monday representing the first column. Nulls are placed in any empty positions.
    * <br /><br />
@@ -48,4 +53,9 @@ export interface NeonCalendarConfig {
    * is used.
    */
   months: Array<string>;
+  /**
+   * Long names for the months. These values are in the provided locale, if no locale is provided the browser default
+   * is used.
+   */
+  monthLongNames: Array<string>;
 }

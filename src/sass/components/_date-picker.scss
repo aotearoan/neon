@@ -5,6 +5,25 @@
 @mixin date-picker {
   .neon-date-picker {
     position: relative;
+    width: 100%;
+
+    @each $color in palettes.$neon-functional-colors {
+      &--#{$color} {
+        &:not(.neon-select--disabled):focus-within {
+          .neon-dropdown__button.neon-button--input {
+            border: var(--neon-border-width-input) var(--neon-border-style) var(--neon-color-#{$color});
+          }
+        }
+      }
+    }
+
+    .neon-dropdown {
+      width: 100%;
+
+      &__button .neon-button__label {
+        font-variant: tabular-nums;
+      }
+    }
 
     .neon-dropdown__content {
       min-width: fit-content;
@@ -102,6 +121,7 @@
         font-size: var(--neon-font-size-xs);
         letter-spacing: var(--neon-letter-spacing-m);
         color: var(--neon-color-low-contrast);
+        text-decoration: none;
       }
 
       .neon-date-picker__calendar-date {

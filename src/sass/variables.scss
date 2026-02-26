@@ -163,8 +163,9 @@
   --neon-size-s: var(--neon-space-32);
   --neon-size-m: var(--neon-space-40);
   --neon-size-l: var(--neon-space-48);
-  /* buttons only */
+  /* buttons & badges only */
   --neon-size-xl: var(--neon-space-64);
+  --neon-size-xxl: calc(20 * var(--neon-base-space));
 
   /* box shadows */
   --neon-box-shadow: 0 0 0 0 rgba(#000, 0);
@@ -308,6 +309,11 @@
   /* badge */
   --neon-background-gradient-angle-badge: 45deg;
   --neon-icon-size-multiplier-badge: 0.667;
+  --neon-size-s-badge: var(--neon-size-s);
+  --neon-size-m-badge: var(--neon-size-m);
+  --neon-size-l-badge: var(--neon-size-l);
+  --neon-size-xl-badge: var(--neon-size-xl);
+  --neon-size-xxl-badge: var(--neon-size-xxl);
 
   /* color input */
   --neon-border-radius-input-color: 50%;
