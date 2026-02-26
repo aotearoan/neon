@@ -4,6 +4,7 @@
     "env.d.ts",
     "**/*.d.ts",
     "src/**/*",
+    "src/*.ts",
     "src/**/*.vue",
     "test/**/*"
   ],

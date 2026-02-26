@@ -1,0 +1,24 @@
+<svg viewBox="-0.75 -0.75 24 24" xmlns="http://www.w3.org/2000/svg" height="100%" width="100%">
+    <path d="M7.03125 11.25a4.21875 4.21875 0 1 0 8.4375 0 4.21875 4.21875 0 1 0 -8.4375 0Z" fill="none"
+          class="neon-svg--stroke" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+    <path d="m11.25 0.703125 0 3.515625" fill="none" class="neon-svg--stroke" stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.5"></path>
+    <path d="m11.25 18.28125 0 3.515625" fill="none" class="neon-svg--stroke" stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.5"></path>
+    <path d="m21.796875 11.25 -3.515625 0" fill="none" class="neon-svg--stroke" stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.5"></path>
+    <path d="M4.21875 11.25 0.703125 11.25" fill="none" class="neon-svg--stroke" stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.5"></path>
+    <path d="m18.984375 3.515625 -2.8125 2.8125" fill="none" class="neon-svg--stroke" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="1.5"></path>
+    <path d="m6.328125 16.171875 -2.8125 2.8125" fill="none" class="neon-svg--stroke" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="1.5"></path>
+    <path d="m18.984375 18.984375 -2.8125 -2.8125" fill="none" class="neon-svg--stroke" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="1.5"></path>
+    <path d="m6.328125 6.328125 -2.8125 -2.8125" fill="none" class="neon-svg--stroke" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>

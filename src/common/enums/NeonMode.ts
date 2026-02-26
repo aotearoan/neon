@@ -6,4 +6,6 @@ export enum NeonMode {
   Light = 'light',
   /** Dark mode */
   Dark = 'dark',
+  /** Match the user's selected system mode */
+  System = 'system',
 }

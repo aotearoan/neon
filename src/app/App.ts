@@ -58,7 +58,9 @@ export default defineComponent({
     const router = useRouter();
     const route = useRoute();
 
-    const selectedMode = ref(NeonMode.Dark);
+    const modes = Object.values(NeonMode);
+    const modeIcons = ['light-mode-sunny', 'astrology-moon', 'contrast'];
+    const selectedModeIndex = ref(2);
     const indexModel = ref<Array<AppMenuGroup>>([]);
     const indexFilter = ref('');
     const menuOpen = ref(false);
@@ -133,16 +135,14 @@ export default defineComponent({
 
     const versionString = `v${version}`;
 
-    const setMode = (mode: NeonMode) => {
-      document.documentElement.classList.remove(`neon-mode--${selectedMode.value}`);
-      document.documentElement.classList.add(`neon-mode--${mode}`);
-      selectedMode.value = mode;
-      localStorage.setItem('mode', selectedMode.value);
+    const toggleMode = () => {
+      selectedModeIndex.value = (selectedModeIndex.value + 1) % modes.length;
+      const mode = modes[selectedModeIndex.value];
+      localStorage.setItem('mode', mode);
+      NeonModeUtils.switchMode(mode);
     };
 
-    const switchMode = () => {
-      setMode(selectedMode.value === NeonMode.Dark ? NeonMode.Light : NeonMode.Dark);
-    };
+    const selectedModeIcon = computed(() => modeIcons[selectedModeIndex.value]);
 
     const onSideNavMenuClick = (key: string) => {
       toggleExpand(key);
@@ -171,9 +171,9 @@ export default defineComponent({
         await router.push({ path: path.replace('neon', '') });
       }
 
-      const savedMode = (localStorage.getItem('mode') as NeonMode) || undefined;
-      NeonModeUtils.init(savedMode);
-      NeonModeUtils.addListener('app-mode-listener', setMode);
+      const savedMode = localStorage.getItem('mode') as NeonMode;
+      selectedModeIndex.value = modes.indexOf(savedMode ?? NeonMode.System);
+      NeonModeUtils.init(savedMode ?? NeonMode.System);
       window.addEventListener('resize', handleResize, { passive: true });
       handleResize();
 
@@ -200,7 +200,7 @@ export default defineComponent({
     });
 
     onUnmounted(() => {
-      NeonModeUtils.removeListener('app-mode-listener');
+      NeonModeUtils.destroy();
       window.removeEventListener('resize', handleResize);
     });
 
@@ -243,7 +243,8 @@ export default defineComponent({
     );
 
     return {
-      selectedMode,
+      selectedModeIndex,
+      selectedModeIcon,
       indexModel,
       indexFilter,
       menuOpen,
@@ -253,7 +254,7 @@ export default defineComponent({
       versionString,
       filteredModel,
       expandAll,
-      switchMode,
+      toggleMode,
       toggleExpand,
       onSideNavMenuClick,
     };
