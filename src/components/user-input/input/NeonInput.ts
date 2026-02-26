@@ -208,6 +208,7 @@ export default defineComponent({
           emit('icon-click');
         } else {
           emitModelValue('');
+          setTimeout(focus);
         }
         $event.preventDefault();
         $event.stopPropagation();
