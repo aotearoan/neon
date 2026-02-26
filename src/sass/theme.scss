@@ -262,4 +262,8 @@ $neon-components: null !default;
   @if index($neon-flattened-components, NeonSwiper) {
     @include components.swiper;
   }
+
+  @if index($neon-flattened-components, NeonMobileMenu) {
+    @include components.mobile-menu;
+  }
 }

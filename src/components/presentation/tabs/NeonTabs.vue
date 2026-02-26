@@ -1,9 +1,5 @@
 <template>
-  <div
-    :class="[`neon-tabs--${size}`, `neon-tabs--${color}`, `neon-tabs--${tabsStyle}`]"
-    class="neon-tabs"
-    role="tablist"
-  >
+  <div :class="[`neon-tabs--${size}`, `neon-tabs--${color}`]" class="neon-tabs" role="tablist">
     <div :class="{ 'neon-tabs__menu-items--underlined': underline }" class="neon-tabs__menu-items">
       <div
         v-for="(tab, index) in tabs"

@@ -40,7 +40,7 @@
     <span v-if="label" class="neon-button__label">{{ label }}</span>
     <neon-expansion-indicator
       v-if="indicator"
-      :color="color"
+      :color="buttonStyle === 'text' ? color : 'low-contrast'"
       :disabled="disabled"
       :expanded="indicatorExpanded"
       :inverse="buttonStyle === 'solid' || inverse"

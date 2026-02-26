@@ -1,4 +1,4 @@
-import { defineComponent, defineExpose, onMounted, onUnmounted, ref, watch } from 'vue';
+import { computed, defineComponent, defineExpose, onMounted, onUnmounted, ref, watch } from 'vue';
 import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
 import { NeonDropdownPlacementUtils } from '@/common/utils/NeonDropdownPlacementUtils';
 import { NeonClosableUtils } from '@/common/utils/NeonClosableUtils';
@@ -154,6 +154,8 @@ export default defineComponent({
       }
     };
 
+    const isButtonStyle = computed<boolean>(() => props.dropdownStyle?.indexOf('badge') === -1);
+
     const onBlur = () => {
       emit('blur');
     };
@@ -197,6 +199,7 @@ export default defineComponent({
       dropdownContent,
       dropdownPlacement,
       closableUtils,
+      isButtonStyle,
       onClose,
       close,
       toggleOpen,

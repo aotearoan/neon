@@ -2,92 +2,137 @@ import { NeonModeUtils } from './NeonModeUtils';
 import { NeonMode } from '@/common/enums/NeonMode';
 
 describe('NeonModeUtils', () => {
-  it('adds & removes listeners, default mode', () => {
-    Object.defineProperty(window, 'matchMedia', {
-      value: () => ({ addEventListener: jest.fn(), removeEventListener: jest.fn() }),
-      writable: true,
-    });
+  describe('basic tests', () => {
+    let addEventListener: jest.Mock;
+    let removeEventListener: jest.Mock;
 
-    const listener = jest.fn();
-    NeonModeUtils.addListener('l1', listener);
-    expect(Object.keys(NeonModeUtils.getCallbacks()).length).toEqual(1);
-    NeonModeUtils.removeListener('l1');
-    expect(Object.keys(NeonModeUtils.getCallbacks()).length).toEqual(0);
-  });
+    class MediaQueryListEvent extends Event {
+      public matches;
+      public media;
 
-  class MediaQueryListEvent extends Event {
-    public matches = true;
-
-    constructor() {
-      super('');
+      constructor(matches: boolean) {
+        super('');
+        this.matches = matches;
+        this.media = '';
+      }
     }
-  }
 
-  it('calls callbacks', () => {
-    Object.defineProperty(window, 'matchMedia', {
-      value: () => ({
-        addEventListener: (key: string, cb: (e: MediaQueryListEvent) => void) => cb(new MediaQueryListEvent()),
-        removeEventListener: jest.fn(),
-      }),
-      writable: true,
+    beforeEach(() => {
+      addEventListener = jest.fn();
+      removeEventListener = jest.fn();
+
+      const matchMedia = () => ({
+        addEventListener,
+        removeEventListener,
+      });
+
+      Object.defineProperty(window, 'matchMedia', {
+        value: matchMedia,
+        writable: true,
+      });
     });
 
-    const listener = jest.fn();
-    const spyDark = jest.spyOn(NeonModeUtils, 'onDarkChange');
-    const spyLight = jest.spyOn(NeonModeUtils, 'onLightChange');
-    const spyNoPref = jest.spyOn(NeonModeUtils, 'onNoPreferenceChange');
-    NeonModeUtils.addListener('l1', listener);
-    expect(spyDark).toHaveBeenCalled();
-    expect(spyLight).toHaveBeenCalled();
-    expect(spyNoPref).toHaveBeenCalled();
-  });
-
-  it('gets mode without default, dark mode', () => {
-    Object.defineProperty(window, 'matchMedia', {
-      value: (key: string) => ({ matches: key === '(prefers-color-scheme: dark)' }),
-      writable: true,
+    afterEach(() => {
+      jest.clearAllMocks();
     });
 
-    NeonModeUtils.init();
-    expect(NeonModeUtils.getMode()).toEqual(NeonMode.Dark);
-  });
-
-  it('gets mode without default, light mode', () => {
-    Object.defineProperty(window, 'matchMedia', {
-      value: (key: string) => ({ matches: key === '(prefers-color-scheme: light)' }),
-      writable: true,
+    it('gets mode, no default', () => {
+      NeonModeUtils.init();
+      expect(NeonModeUtils.getMode()).toEqual(NeonMode.Light);
+      expect(addEventListener).toHaveBeenCalledTimes(2);
     });
 
-    NeonModeUtils.init();
-    expect(NeonModeUtils.getMode()).toEqual(NeonMode.Light);
-  });
-
-  it('gets mode without default, neither', () => {
-    Object.defineProperty(window, 'matchMedia', {
-      value: () => ({ matches: false }),
-      writable: true,
+    it('gets mode, with default', () => {
+      NeonModeUtils.init(NeonMode.System);
+      expect(NeonModeUtils.getMode()).toEqual(NeonMode.System);
     });
 
-    NeonModeUtils.init();
-    expect(NeonModeUtils.getMode()).toEqual(NeonMode.Dark);
-  });
-
-  it('gets mode with default', () => {
-    NeonModeUtils.init(NeonMode.Dark);
-    expect(NeonModeUtils.getMode()).toEqual(NeonMode.Dark);
-  });
-
-  it('adds & removes listeners', () => {
-    Object.defineProperty(window, 'matchMedia', {
-      value: () => ({ addEventListener: jest.fn(), removeEventListener: jest.fn() }),
-      writable: true,
+    it('triggers callback on dark change', () => {
+      const callback = jest.fn();
+      NeonModeUtils.init(NeonMode.System, callback);
+      NeonModeUtils.onDarkChange(new MediaQueryListEvent(true));
+      expect(callback).toHaveBeenCalledWith(true);
     });
 
-    NeonModeUtils.init(NeonMode.Dark);
-    const listener = jest.fn();
-    NeonModeUtils.addListener('l1', listener);
-    expect(Object.keys(NeonModeUtils.getCallbacks()).length).toEqual(1);
-    NeonModeUtils.removeListener('l1');
-    expect(Object.keys(NeonModeUtils.getCallbacks()).length).toEqual(0);
+    it('does not trigger callback on dark change when false', () => {
+      const callback = jest.fn();
+      NeonModeUtils.init(NeonMode.System, callback);
+      NeonModeUtils.onDarkChange(new MediaQueryListEvent(false));
+      expect(callback).toHaveBeenCalledWith(false);
+    });
+
+    it('triggers callback on light change', () => {
+      const callback = jest.fn();
+      NeonModeUtils.init(NeonMode.System, callback);
+      NeonModeUtils.onLightChange(new MediaQueryListEvent(true));
+      expect(callback).toHaveBeenCalledWith(false);
+    });
+
+    it('does not trigger callback on light change when false', () => {
+      const callback = jest.fn();
+      NeonModeUtils.init(NeonMode.System, callback);
+      NeonModeUtils.onLightChange(new MediaQueryListEvent(false));
+      expect(callback).toHaveBeenCalledWith(false);
+    });
+
+    it('destroys listeners', () => {
+      NeonModeUtils.init();
+      NeonModeUtils.destroy();
+      expect(removeEventListener).toHaveBeenCalledTimes(2);
+    });
+
+    it('switches to dark mode', () => {
+      NeonModeUtils.init(NeonMode.Light);
+      NeonModeUtils.switchMode(NeonMode.Dark);
+      expect(NeonModeUtils.getMode()).toEqual(NeonMode.Dark);
+    });
+  });
+
+  describe('System mode complex tests', () => {
+    it('initially switches to dark mode', () => {
+      const addEventListener = jest.fn();
+      const removeEventListener = jest.fn();
+      const callback = jest.fn();
+
+      const matchMedia = (query: string) => ({
+        addEventListener,
+        removeEventListener,
+        matches: query === '(prefers-color-scheme: dark)',
+      });
+
+      Object.defineProperty(window, 'matchMedia', {
+        value: matchMedia,
+        writable: true,
+      });
+
+      NeonModeUtils.init(NeonMode.System, callback);
+      expect(NeonModeUtils.getMode()).toEqual(NeonMode.System);
+      expect(callback).toHaveBeenCalledWith(true);
+
+      jest.resetAllMocks();
+    });
+
+    it('initially switches to light mode', () => {
+      const addEventListener = jest.fn();
+      const removeEventListener = jest.fn();
+      const callback = jest.fn();
+
+      const matchMedia = (query: string) => ({
+        addEventListener,
+        removeEventListener,
+        matches: query === '(prefers-color-scheme: light)',
+      });
+
+      Object.defineProperty(window, 'matchMedia', {
+        value: matchMedia,
+        writable: true,
+      });
+
+      NeonModeUtils.init(NeonMode.System, callback);
+      expect(NeonModeUtils.getMode()).toEqual(NeonMode.System);
+      expect(callback).toHaveBeenCalledWith(false);
+
+      jest.resetAllMocks();
+    });
   });
 });

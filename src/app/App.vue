@@ -52,14 +52,14 @@
             />
             <neon-button
               :circular="true"
+              :icon="selectedModeIcon"
               :size="isMobile ? 's' : 'l'"
               :transparent="true"
               aria-label="light/dark toggle"
               button-style="text"
               color="high-contrast"
-              icon="contrast"
               name="dark-mode-toggle"
-              @click="switchMode()"
+              @click="toggleMode()"
             />
           </span>
         </neon-top-nav>
@@ -84,13 +84,13 @@
                 />
                 <neon-button
                   :circular="true"
+                  :icon="selectedModeIcon"
                   :transparent="true"
                   aria-label="Light/dark toggle"
                   button-style="text"
                   color="high-contrast"
-                  icon="contrast"
                   name="dark-mode-toggle"
-                  @click="switchMode()"
+                  @click="toggleMode()"
                 />
               </span>
             </div>

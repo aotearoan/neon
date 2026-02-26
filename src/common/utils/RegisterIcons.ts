@@ -27,6 +27,7 @@ import heartOutline from '@/common/icons/heart-outline.svg';
 import htmlLogo from '@/common/icons/html-logo.svg';
 import images from '@/common/icons/images.svg';
 import infoCircle from '@/common/icons/info-circle.svg';
+import lightModeSunny from '@/common/icons/light-mode-sunny.svg';
 import linkExternal from '@/common/icons/link-external.svg';
 import loading from '@/common/icons/loading.svg';
 import lock from '@/common/icons/lock.svg';
@@ -86,6 +87,7 @@ export class RegisterIcons {
     NeonIconRegistry.addIcon('html-logo', htmlLogo);
     NeonIconRegistry.addIcon('images', images);
     NeonIconRegistry.addIcon('info-circle', infoCircle);
+    NeonIconRegistry.addIcon('light-mode-sunny', lightModeSunny);
     NeonIconRegistry.addIcon('link-external', linkExternal);
     NeonIconRegistry.addIcon('loading', loading);
     NeonIconRegistry.addIcon('lock', lock);

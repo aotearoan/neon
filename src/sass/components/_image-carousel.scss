@@ -28,7 +28,7 @@
       max-height: 100%;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
-      overscroll-behavior: contain;
+      overscroll-behavior-x: contain;
 
       @include scrollbars.hide-scrollbars();
 
@@ -40,6 +40,7 @@
     .neon-image-carousel__item {
       display: flex;
       min-width: 100%;
+      padding: var(--neon-space-2);
       scroll-snap-align: start;
       scroll-snap-stop: always;
       opacity: 0;

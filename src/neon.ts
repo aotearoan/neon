@@ -37,6 +37,7 @@ export { default as NeonLinearProgress } from './components/feedback/linear-prog
 export { default as NeonLink } from './components/navigation/link/NeonLink.vue';
 export { default as NeonList } from './components/user-input/list/NeonList.vue';
 export { default as NeonMenu } from './components/navigation/menu/NeonMenu.vue';
+export { default as NeonMobileMenu } from './components/navigation/mobile-menu/NeonMobileMenu.vue';
 export { default as NeonModal } from './components/layout/modal/NeonModal.vue';
 export { default as NeonNote } from './components/feedback/note/NeonNote.vue';
 export { default as NeonNotificationCounter } from './components/feedback/notification-counter/NeonNotificationCounter.vue';
@@ -86,7 +87,6 @@ export { NeonSize } from './common/enums/NeonSize';
 export { NeonSplashLoaderSize } from './common/enums/NeonSplashLoaderSize';
 export { NeonState } from './common/enums/NeonState';
 export { NeonSwitchStyle } from './common/enums/NeonSwitchStyle';
-export { NeonTabsStyle } from './common/enums/NeonTabsStyle';
 export { NeonToggleChipSize } from './common/enums/NeonToggleChipSize';
 export { NeonToggleStyle } from './common/enums/NeonToggleStyle';
 export { NeonTooltipStyle } from './common/enums/NeonTooltipStyle';

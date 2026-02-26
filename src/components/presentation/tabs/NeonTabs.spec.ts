@@ -3,7 +3,6 @@ import { fireEvent, render } from '@testing-library/vue';
 import NeonTabs from './NeonTabs.vue';
 import { NeonSize } from '@/common/enums/NeonSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonTabsStyle } from '@/common/enums/NeonTabsStyle';
 import { NeonTabModel } from '@/common/models/NeonTabModel';
 
 describe('NeonTabs', () => {
@@ -57,17 +56,6 @@ describe('NeonTabs', () => {
     const { html, rerender } = harness;
     await rerender({ size: NeonSize.Large });
     expect(html()).toMatch('neon-tabs--l');
-  });
-
-  it('renders default style', () => {
-    const { html } = harness;
-    expect(html()).toMatch('neon-tabs--web');
-  });
-
-  it('renders style', async () => {
-    const { html, rerender } = harness;
-    await rerender({ tabsStyle: NeonTabsStyle.App });
-    expect(html()).toMatch('neon-tabs--app');
   });
 
   it('renders default color', () => {

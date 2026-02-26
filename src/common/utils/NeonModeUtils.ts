@@ -1,13 +1,81 @@
 import { NeonMode } from '../enums/NeonMode';
 
 /**
- * Utility for managing Neon's light & dark modes & defaulting to the user's preference. See
- * <a href="/design/theming#dark-mode">Dark mode</a>.
+ * Utility for managing Neon's light/dark mode & defaulting to the user's preference. See
+ * <a href="https://neon.development.arcual.art/design/theming#dark-mode">Dark mode</a>.
  */
 export class NeonModeUtils {
-  private static callbacks: Record<string, (value: NeonMode) => void> = {};
-  private static defaultMode: NeonMode = NeonMode.Dark;
-  private static mode: NeonMode | null = null;
+  private static defaultMode = NeonMode.Light;
+  private static mode = NeonMode.Light;
+  private static callback: ((isDark: boolean) => void) | null = null;
+
+  /**
+   * Set the initial mode.
+   *
+   * @param defaultMode The initial mode to set
+   * @param callback An optional callback to be triggered when using NeonMode.System indicating changes in the current
+   * light/dark mode set internally by this class.
+   */
+  public static init(defaultMode?: NeonMode, callback?: (isDark: boolean) => void) {
+    if (defaultMode) {
+      NeonModeUtils.defaultMode = defaultMode;
+      NeonModeUtils.mode = defaultMode;
+    }
+
+    if (callback) {
+      NeonModeUtils.callback = callback;
+    }
+
+    NeonModeUtils.switchMode(NeonModeUtils.mode);
+
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', NeonModeUtils.onDarkChange);
+      window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', NeonModeUtils.onLightChange);
+    }
+  }
+
+  /**
+   * Remove system listeners
+   *
+   */
+  public static destroy() {
+    window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', NeonModeUtils.onDarkChange);
+    window.matchMedia('(prefers-color-scheme: light)').removeEventListener('change', NeonModeUtils.onLightChange);
+  }
+
+  /**
+   * Switch the current mode.
+   * @param mode the mode to switch to.
+   */
+  public static switchMode(mode: NeonMode) {
+    NeonModeUtils.mode = mode;
+    switch (mode) {
+      case NeonMode.Light:
+        NeonModeUtils.updateClasses(false);
+        break;
+      case NeonMode.Dark:
+        NeonModeUtils.updateClasses(true);
+        break;
+      case NeonMode.System:
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          NeonModeUtils.updateClasses(true);
+          if (NeonModeUtils.callback) {
+            NeonModeUtils.callback(true);
+          }
+        } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+          NeonModeUtils.updateClasses(false);
+          if (NeonModeUtils.callback) {
+            NeonModeUtils.callback(false);
+          }
+        } else {
+          NeonModeUtils.updateClasses(NeonModeUtils.defaultMode === NeonMode.Dark);
+          if (NeonModeUtils.callback) {
+            NeonModeUtils.callback(NeonModeUtils.defaultMode === NeonMode.Dark);
+          }
+        }
+        break;
+    }
+  }
 
   /**
    * Get the current mode.
@@ -18,89 +86,26 @@ export class NeonModeUtils {
     return NeonModeUtils.mode;
   }
 
-  /**
-   * Set the initial mode.
-   *
-   * @param defaultMode The mode to set. If no mode is passed in the user preferences are used.
-   */
-  public static init(defaultMode?: NeonMode) {
-    if (defaultMode) {
-      NeonModeUtils.defaultMode = defaultMode;
-      NeonModeUtils.mode = NeonModeUtils.defaultMode;
-    } else {
-      const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches;
-
-      if (isDarkMode) {
-        NeonModeUtils.mode = NeonMode.Dark;
-      } else if (isLightMode) {
-        NeonModeUtils.mode = NeonMode.Light;
-      } else {
-        NeonModeUtils.mode = NeonModeUtils.defaultMode;
-      }
-    }
-  }
-
-  /**
-   * Add a callback to listen to mode changes made by the user.
-   *
-   * @param key The unique key for the listener.
-   * @param callback The callback function.
-   */
-  public static addListener(key: string, callback: (value: NeonMode) => void) {
-    if (window.matchMedia) {
-      if (Object.keys(NeonModeUtils.callbacks).length === 0) {
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', NeonModeUtils.onDarkChange);
-        window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', NeonModeUtils.onLightChange);
-        window
-          .matchMedia('(prefers-color-scheme: no-preference)')
-          .addEventListener('change', NeonModeUtils.onNoPreferenceChange);
-      }
-
-      NeonModeUtils.callbacks[key] = callback;
-      callback(NeonModeUtils.mode || NeonModeUtils.defaultMode);
-    }
-  }
-
-  /**
-   * Remove a callback listener.
-   *
-   * @param key The unique key for the listener.
-   */
-  public static removeListener(key: string) {
-    delete NeonModeUtils.callbacks[key];
-    if (Object.keys(NeonModeUtils.callbacks).length === 0 && window.matchMedia) {
-      window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', NeonModeUtils.onDarkChange);
-      window.matchMedia('(prefers-color-scheme: light)').removeEventListener('change', NeonModeUtils.onLightChange);
-      window
-        .matchMedia('(prefers-color-scheme: no-preference)')
-        .removeEventListener('change', NeonModeUtils.onNoPreferenceChange);
-    }
-  }
-
-  static getCallbacks() {
-    return NeonModeUtils.callbacks;
-  }
-
   static onDarkChange(e: MediaQueryListEvent) {
-    NeonModeUtils.onChange(e, NeonMode.Dark);
+    if (NeonModeUtils.mode === NeonMode.System && e.matches) {
+      NeonModeUtils.updateClasses(true);
+      if (NeonModeUtils.callback) {
+        NeonModeUtils.callback(true);
+      }
+    }
   }
 
   static onLightChange(e: MediaQueryListEvent) {
-    NeonModeUtils.onChange(e, NeonMode.Light);
-  }
-
-  static onNoPreferenceChange(e: MediaQueryListEvent) {
-    NeonModeUtils.onChange(e, NeonModeUtils.defaultMode);
-  }
-
-  private static onChange(e: MediaQueryListEvent, value: NeonMode) {
-    if (e.matches) {
-      NeonModeUtils.handleChange(value);
+    if (NeonModeUtils.mode === NeonMode.System && e.matches) {
+      NeonModeUtils.updateClasses(false);
+      if (NeonModeUtils.callback) {
+        NeonModeUtils.callback(false);
+      }
     }
   }
 
-  private static handleChange(value: NeonMode) {
-    Object.values(NeonModeUtils.callbacks).forEach((cb) => cb(value));
+  private static updateClasses(isDark: boolean) {
+    document.documentElement.classList.remove(`neon-mode--${isDark ? NeonMode.Light : NeonMode.Dark}`);
+    document.documentElement.classList.add(`neon-mode--${isDark ? NeonMode.Dark : NeonMode.Light}`);
   }
 }

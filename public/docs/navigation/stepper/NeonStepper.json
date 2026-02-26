@@ -42,7 +42,7 @@
       },
       "defaultValue": {
         "func": false,
-        "value": "NeonFunctionalColor.Brand"
+        "value": "NeonFunctionalColor.Primary"
       }
     }
   ],

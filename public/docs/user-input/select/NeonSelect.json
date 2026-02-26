@@ -111,7 +111,18 @@
       },
       "defaultValue": {
         "func": false,
-        "value": "NeonFunctionalColor.LowContrast"
+        "value": "NeonFunctionalColor.Primary"
+      }
+    },
+    {
+      "name": "buttonStyle",
+      "description": "The button style of the select.",
+      "type": {
+        "name": "String as () => NeonDropdownStyle"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonDropdownStyle.Input"
       }
     },
     {

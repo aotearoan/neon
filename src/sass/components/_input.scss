@@ -38,9 +38,9 @@
 
         &.neon-icon--name-close {
           @if ($size == 'l') {
-            padding: calc(2.75 * var(--neon-space-4));
+            padding: calc(2.25 * var(--neon-space-4));
           } @else {
-            padding: calc(1.75 * var(--neon-space-4));
+            padding: calc(1.5 * var(--neon-space-4));
           }
         }
       }
@@ -71,16 +71,16 @@
         &.neon-input--focused {
           .neon-input__text,
           .neon-input__textarea {
-            border-color: rgb($input-rgb);
+            border-color: var(--neon-color-#{$color});
             background-color: rgba(var(--neon-rgb-#{$color}), var(--neon-opacity-input-background-active));
           }
         }
-
-        .neon-icon:focus {
-          background-color: rgba($input-rgb, 0.125);
-          box-shadow: 0 0 0 2rem rgba($input-rgb, 0.125);
-        }
       }
+    }
+
+    .neon-icon:focus {
+      background-color: rgba(var(--neon-rgb-low-contrast), 0.125);
+      box-shadow: 0 0 0 2rem rgba(var(--neon-rgb-low-contrast), 0.125);
     }
 
     &.neon-input--with-state-highlight.neon-input--state-success {
@@ -123,14 +123,14 @@
     &__text,
     &__textarea {
       border-radius: var(--neon-border-radius-input);
-      border: var(--neon-border-width) var(--neon-border-style);
+      border: var(--neon-border-width-input) var(--neon-border-style);
       padding: var(--neon-space-4) var(--neon-space-10);
       line-height: var(--neon-line-height-one);
       outline: none;
       font-family: var(--neon-font-family-body);
       width: 100%;
       border-color: var(--neon-border-color-input);
-      olor: var(--neon-color-text-secondary);
+      color: var(--neon-color-input);
       background-color: var(--neon-background-color-input);
       box-shadow: var(--neon-inset-shadow);
 
