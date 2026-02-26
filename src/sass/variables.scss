@@ -199,6 +199,16 @@
   --neon-border-opacity-alert-action: 0.25;
   --neon-width-toast: 250rem;
 
+  /* mobile menu */
+  --neon-font-family-mobile-menu: var(--neon-font-family-body);
+  --neon-font-size-mobile-menu: var(--neon-font-size-s);
+  --neon-line-height-mobile-menu: var(--neon-line-height-ratio);
+  --neon-font-weight-mobile-menu: var(--neon-font-weight-bold);
+  --neon-height-mobile-menu-indicator: 4rem;
+  --neon-opacity-mobile-menu-inactive: 0.75;
+  --neon-opacity-mobile-menu-focus: 0.125;
+  --neon-height-mobile-menu: 66rem;
+
   /* dropdown */
   --neon-max-height-dropdown: 280rem;
 
@@ -478,6 +488,10 @@
 
     /* action menu */
     --neon-color-action-menu-hover: var(--neon-color-neutral-d3);
+
+    /* mobile menu */
+    --neon-border-top-mobile-menu: var(--neon-border);
+    --neon-background-color-mobile-menu: var(--neon-background-color-card);
 
     /* selection */
     --neon-background-rgb-selection: var(--neon-rgb-info-l1);
@@ -778,6 +792,10 @@
 
     /* action menu */
     --neon-color-action-menu-hover: var(--neon-color-neutral-l4);
+
+    /* mobile menu */
+    --neon-border-top-mobile-menu: var(--neon-border);
+    --neon-background-color-mobile-menu: var(--neon-background-color-card);
 
     /* selection */
     --neon-background-rgb-selection: var(--neon-rgb-info-d1);

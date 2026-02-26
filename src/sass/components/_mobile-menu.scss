@@ -1,0 +1,110 @@
+@use '../includes/palettes';
+@use '../includes/svg';
+
+@mixin mobile-menu {
+  .neon-mobile-menu {
+    user-select: none;
+    flex-direction: row;
+    width: 100%;
+    background-color: var(--neon-background-color-mobile-menu);
+    border-top: var(--neon-border-top-mobile-menu);
+
+    &__item {
+      width: 100%;
+
+      .neon-link {
+        .neon-mobile-menu__link-container {
+          padding-top: var(--neon-space-12);
+          padding-bottom: var(--neon-space-8);
+          width: 100%;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          position: relative;
+          gap: var(--neon-space-4);
+          font-family: var(--neon-font-family-mobile-menu);
+          font-size: var(--neon-font-size-mobile-menu);
+          line-height: var(--neon-line-height-mobile-menu);
+          font-weight: var(--neon-font-weight-mobile-menu);
+          opacity: var(--neon-opacity-mobile-menu-inactive);
+          transition: opacity ease-in-out var(--neon-animation-speed-slow);
+          @include svg.color-with-svg(var(--neon-color-text-primary));
+
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            height: var(--neon-height-mobile-menu-indicator);
+            transition: opacity ease-in-out var(--neon-animation-speed-slow);
+          }
+        }
+
+        &:hover {
+          .neon-mobile-menu__link-container {
+            opacity: 1;
+
+            &:before {
+              opacity: 1;
+            }
+          }
+        }
+
+        &:focus {
+          .neon-mobile-menu__link-container {
+            opacity: 1;
+          }
+        }
+
+        &.router-link-active {
+          .neon-mobile-menu__link-container {
+            opacity: 1;
+
+            &:before {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      .neon-icon {
+        width: 24rem;
+        height: 24rem;
+      }
+
+      .neon-link {
+        width: 100%;
+        text-decoration: none;
+        height: var(--neon-height-mobile-menu);
+      }
+
+      &--disabled {
+        .neon-link {
+          .neon-mobile-menu__link-container {
+            opacity: 1;
+            cursor: not-allowed;
+            @include svg.color-with-svg(var(--neon-color-disabled-text));
+          }
+        }
+      }
+    }
+
+    @each $color in palettes.$neon-functional-colors {
+      &.neon-mobile-menu--#{$color} {
+        .neon-mobile-menu__item:not(.neon-mobile-menu__item--disabled) {
+          .neon-link {
+            .neon-mobile-menu__link-container:before {
+              background-color: var(--neon-color-#{$color});
+            }
+
+            &:focus {
+              background-color: rgba(var(--neon-rgb-#{$color}), var(--neon-opacity-mobile-menu-focus));
+            }
+          }
+        }
+      }
+    }
+  }
+}
