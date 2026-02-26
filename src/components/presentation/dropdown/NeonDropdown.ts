@@ -51,6 +51,10 @@ export default defineComponent({
      */
     icon: { type: String, default: null },
     /**
+     * aria label of the button icon
+     */
+    iconAriaLabel: { type: String },
+    /**
      * Show the dropdown button's indicator (chevron).
      */
     indicator: { type: Boolean, default: true },

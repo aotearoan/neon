@@ -64,6 +64,18 @@ describe('NeonDateUtils', () => {
     expect(NeonDateUtils.dowNames('es-AR')).toEqual(['lun', 'mar', 'mié', 'jue', 'vie', 'sáb', 'dom']);
   });
 
+  it('generates long dowNames', () => {
+    expect(NeonDateUtils.dowNames('es-AR', 'long')).toEqual([
+      'lunes',
+      'martes',
+      'miércoles',
+      'jueves',
+      'viernes',
+      'sábado',
+      'domingo',
+    ]);
+  });
+
   it('generates dowNames missing locale', () => {
     expect(NeonDateUtils.dowNames()).toEqual(['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']);
   });
@@ -82,6 +94,23 @@ describe('NeonDateUtils', () => {
       'oct',
       'nov',
       'dic',
+    ]);
+  });
+
+  it('generates long monthNames', () => {
+    expect(NeonDateUtils.monthNames('es-AR', 'long')).toEqual([
+      'enero',
+      'febrero',
+      'marzo',
+      'abril',
+      'mayo',
+      'junio',
+      'julio',
+      'agosto',
+      'septiembre',
+      'octubre',
+      'noviembre',
+      'diciembre',
     ]);
   });
 
@@ -112,8 +141,23 @@ describe('NeonDateUtils', () => {
         [27, 28, 29, 30, 31, null, null],
       ],
       dowNames: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      dowLongNames: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
       lastDayOfMonth: 31,
       months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      monthLongNames: [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+      ],
       pageDecadeStart: 2020,
       pageMonth: 3,
       pageMonthName: 'March',
@@ -140,8 +184,23 @@ describe('NeonDateUtils', () => {
         [27, 28, 29, 30, 31, null, null],
       ],
       dowNames: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      dowLongNames: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
       lastDayOfMonth: 31,
       months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      monthLongNames: [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+      ],
       pageDecadeStart: 2020,
       pageMonth: 3,
       pageMonthName: 'March',
