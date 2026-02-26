@@ -1,5 +1,16 @@
 # Changelog
 
+## [21.0.0](https://github.com/aotearoan/neon/compare/v20.0.0...v21.0.0) (2026-02-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* tabs, mobile menu, input dark mode changes ([#283](https://github.com/aotearoan/neon/issues/283))
+
+### Code Refactoring
+
+* tabs, mobile menu, input dark mode changes ([#283](https://github.com/aotearoan/neon/issues/283)) ([3ac068c](https://github.com/aotearoan/neon/commit/3ac068c8cffd6b1cd00d6e201742ea08ad02bf0c))
+
 ## [20.0.0](https://github.com/aotearoan/neon/compare/v19.0.2...v20.0.0) (2026-02-25)
 
 
