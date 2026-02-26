@@ -21,9 +21,11 @@ export default defineComponent({
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('User avatar badges');
 
-    const sizesTemplate = `<neon-badge size="s" label="SM" />
-<neon-badge size="m" label="MD" />
-<neon-badge size="l" label="LG" />`;
+    const sizesTemplate = `<neon-badge label="SM" size="s" />
+<neon-badge label="MD" size="m" />
+<neon-badge label="LG" size="l" />
+<neon-badge label="XL" size="xl"/>
+<neon-badge label="XX" size="xxl"/>`;
 
     const shapesTemplate = `<neon-badge label="SQ" />
 <neon-badge :circular="true" label="CI" />`;

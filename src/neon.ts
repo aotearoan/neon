@@ -68,6 +68,7 @@ export { default as NeonTreeMenu } from './components/navigation/tree-menu/NeonT
 /* enums */
 export { NeonAlertLevel } from './common/enums/NeonAlertLevel';
 export { NeonAlertPlacement } from './common/enums/NeonAlertPlacement';
+export { NeonBadgeSize } from './common/enums/NeonBadgeSize';
 export { NeonButtonSize } from './common/enums/NeonButtonSize';
 export { NeonButtonStyle } from './common/enums/NeonButtonStyle';
 export { NeonChipAction } from './common/enums/NeonChipAction';

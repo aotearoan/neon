@@ -1,7 +1,7 @@
 import NeonBadge from './NeonBadge.vue';
-import { NeonSize } from '@/common/enums/NeonSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import { render } from '@testing-library/vue';
+import { NeonBadgeSize } from '@/common/enums/NeonBadgeSize';
 
 describe('NeonBadge', () => {
   it('renders label', () => {
@@ -67,8 +67,8 @@ describe('NeonBadge', () => {
 
   it('renders size', () => {
     const icon = 'check';
-    const { container } = render(NeonBadge, { props: { icon, size: NeonSize.Small } });
-    expect(container.getElementsByClassName('neon-badge--s')[0]).toBeDefined();
+    const { container } = render(NeonBadge, { props: { icon, size: NeonBadgeSize.ExtraLarge } });
+    expect(container.getElementsByClassName('neon-badge--xl')[0]).toBeDefined();
   });
 
   it('renders default color', () => {

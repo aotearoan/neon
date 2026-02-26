@@ -17,6 +17,8 @@
             <neon-badge label="SM" size="s" />
             <neon-badge label="MD" size="m" />
             <neon-badge label="LG" size="l" />
+            <neon-badge label="XL" size="xl" />
+            <neon-badge label="XX" size="xxl" />
           </neon-inline>
           <editor v-model="sizesTemplate" />
         </neon-stack>
