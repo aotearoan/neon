@@ -216,105 +216,96 @@ describe('NeonToggle', () => {
     expect(emitted()['update:modelValue']).toEqual([[model[2].key]]);
   });
 
-  // it('emits nothing when clicking disabled option', () => {
-  //   // given
-  //   const wrapper = shallowMount(NeonToggle, {
-  //     propsData: { name, model, modelValue },
-  //   });
-  //   // when
-  //   const label = wrapper.find('.neon-toggle__label--disabled');
-  //   label.trigger('click');
-  //   // then
-  //   expect(wrapper.emitted()['update:modelValue']).toBeUndefined();
-  // });
-  //
-  // it('emits nothing when toggle disabled', () => {
-  //   // given
-  //   const wrapper = shallowMount(NeonToggle, {
-  //     propsData: { name, model, modelValue, disabled: true },
-  //   });
-  //   // when
-  //   const label = wrapper.findAll('.neon-toggle__label').at(0);
-  //   label.trigger('click');
-  //   // then
-  //   expect(wrapper.emitted()['update:modelValue']).toBeUndefined();
-  // });
-  //
-  // it('emits nothing when clicking checked option', () => {
-  //   // given
-  //   const wrapper = shallowMount(NeonToggle, {
-  //     propsData: { name, model, modelValue },
-  //   });
-  //   // when
-  //   const label = wrapper.find('.neon-toggle__label--checked');
-  //   label.trigger('click');
-  //   // then
-  //   expect(wrapper.emitted()['update:modelValue']).toBeUndefined();
-  // });
-  //
-  // it('toggles option when space pressed', () => {
-  //   // given
-  //   const wrapper = shallowMount(NeonToggle, {
-  //     propsData: { name, model, modelValue },
-  //   });
-  //   // when
-  //   wrapper.findAll('.neon-toggle__label').at(0).trigger('keydown.space');
-  //   // then
-  //   expect(wrapper.emitted()['update:modelValue'][0]).toEqual([model[0].key]);
-  // });
-  //
-  // it('does not toggle option when space pressed and option disabled', () => {
-  //   // given
-  //   const wrapper = shallowMount(NeonToggle, {
-  //     propsData: { name, model, modelValue },
-  //   });
-  //   // when
-  //   wrapper.findAll('.neon-toggle__label').at(1).trigger('keydown.space');
-  //   // then
-  //   expect(wrapper.emitted()['update:modelValue']).toBeUndefined();
-  // });
-  //
-  // it('does not toggle option when space pressed and toggle disabled', () => {
-  //   // given
-  //   const wrapper = shallowMount(NeonToggle, {
-  //     propsData: { name, model, modelValue, disabled: true },
-  //   });
-  //   // when
-  //   wrapper.findAll('.neon-toggle__label').at(0).trigger('keydown.space');
-  //   // then
-  //   expect(wrapper.emitted()['update:modelValue']).toBeUndefined();
-  // });
-  //
-  // it('toggles option when enter pressed', () => {
-  //   // given
-  //   const wrapper = shallowMount(NeonToggle, {
-  //     propsData: { name, model, modelValue },
-  //   });
-  //   // when
-  //   wrapper.findAll('.neon-toggle__label').at(0).trigger('keydown.enter');
-  //   // then
-  //   expect(wrapper.emitted()['update:modelValue'][0]).toEqual([model[0].key]);
-  // });
-  //
-  // it('does not toggle option when enter pressed and option disabled', () => {
-  //   // given
-  //   const wrapper = shallowMount(NeonToggle, {
-  //     propsData: { name, model, modelValue },
-  //   });
-  //   // when
-  //   wrapper.findAll('.neon-toggle__label').at(1).trigger('keydown.enter');
-  //   // then
-  //   expect(wrapper.emitted()['update:modelValue']).toBeUndefined();
-  // });
-  //
-  // it('does not toggle option when enter pressed and toggle disabled', () => {
-  //   // given
-  //   const wrapper = shallowMount(NeonToggle, {
-  //     propsData: { name, model, modelValue, disabled: true },
-  //   });
-  //   // when
-  //   wrapper.findAll('.neon-toggle__label').at(0).trigger('keydown.enter');
-  //   // then
-  //   expect(wrapper.emitted()['update:modelValue']).toBeUndefined();
-  // });
+  it('emits nothing when clicking disabled option', async () => {
+    // given
+    const { container, emitted } = harness;
+    // when
+    const label = container.querySelector('.neon-toggle__label--disabled') as HTMLLabelElement;
+    await fireEvent.click(label);
+    // then
+    expect(emitted()['update:modelValue']).toBeUndefined();
+  });
+
+  it('emits nothing when toggle disabled', async () => {
+    // given
+    const { container, emitted, rerender } = harness;
+    await rerender({ disabled: true });
+    // when
+    const label = container.querySelectorAll('.neon-toggle__label')[0] as HTMLLabelElement;
+    await fireEvent.click(label);
+    // then
+    expect(emitted()['update:modelValue']).toBeUndefined();
+  });
+
+  it('emits nothing when clicking checked option', async () => {
+    // given
+    const { container, emitted } = harness;
+    // when
+    const label = container.querySelector('.neon-toggle__label--checked') as HTMLLabelElement;
+    await fireEvent.click(label);
+    // then
+    expect(emitted()['update:modelValue']).toBeUndefined();
+  });
+
+  it('toggles option when space pressed', async () => {
+    // given
+    const { container, emitted } = harness;
+    const option = container.querySelectorAll('.neon-toggle__input')[2];
+    // when
+    await fireEvent.keyDown(option, { key: 'Space', code: 'Space' });
+    // then
+    expect(emitted()['update:modelValue']).toEqual([[model[2].key]]);
+  });
+
+  it('emits nothing when toggle disabled & space pressed', async () => {
+    // given
+    const { container, emitted, rerender } = harness;
+    await rerender({ disabled: true });
+    // when
+    const label = container.querySelectorAll('.neon-toggle__label')[0] as HTMLLabelElement;
+    await fireEvent.keyDown(label, { key: 'Space', code: 'Space' });
+    // then
+    expect(emitted()['update:modelValue']).toBeUndefined();
+  });
+
+  it('emits nothing when option disabled & space pressed', async () => {
+    // given
+    const { container, emitted } = harness;
+    // when
+    const label = container.querySelector('.neon-toggle__label--disabled') as HTMLLabelElement;
+    await fireEvent.keyDown(label, { key: 'Space', code: 'Space' });
+    // then
+    expect(emitted()['update:modelValue']).toBeUndefined();
+  });
+
+  it('toggles option when enter pressed', async () => {
+    // given
+    const { container, emitted } = harness;
+    const option = container.querySelectorAll('.neon-toggle__input')[2];
+    // when
+    await fireEvent.keyDown(option, { key: 'Enter', code: 'Enter' });
+    // then
+    expect(emitted()['update:modelValue']).toEqual([[model[2].key]]);
+  });
+
+  it('emits nothing when toggle disabled & enter pressed', async () => {
+    // given
+    const { container, emitted, rerender } = harness;
+    await rerender({ disabled: true });
+    // when
+    const label = container.querySelectorAll('.neon-toggle__label')[0] as HTMLLabelElement;
+    await fireEvent.keyDown(label, { key: 'Enter', code: 'Enter' });
+    // then
+    expect(emitted()['update:modelValue']).toBeUndefined();
+  });
+
+  it('emits nothing when option disabled & enter pressed', async () => {
+    // given
+    const { container, emitted } = harness;
+    // when
+    const label = container.querySelector('.neon-toggle__label--disabled') as HTMLLabelElement;
+    await fireEvent.keyDown(label, { key: 'Enter', code: 'Enter' });
+    // then
+    expect(emitted()['update:modelValue']).toBeUndefined();
+  });
 });

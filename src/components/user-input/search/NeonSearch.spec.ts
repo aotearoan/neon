@@ -9,7 +9,7 @@ import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
 import { NeonDropdownPlacementUtils } from '@/common/utils/NeonDropdownPlacementUtils';
 
 describe('NeonSearch', () => {
-  const modelValue = '';
+  const modelValue = null;
   const placeholder = '';
   const options: NeonSearchOption[] = [
     {
@@ -45,6 +45,17 @@ describe('NeonSearch', () => {
     expect(container.querySelector('.neon-search__container--primary')).toBeDefined();
   });
 
+  it('renders with initial value set', async () => {
+    // given
+    const { container, rerender } = harness;
+    // when
+    await rerender({ modelValue: options[1] });
+    // then
+    expect(container.querySelector<HTMLInputElement>('.neon-search__input .neon-input__text')?.value).toEqual(
+      options[1].label,
+    );
+  });
+
   it('renders color', async () => {
     // given
     const { container, rerender } = harness;
@@ -73,13 +84,13 @@ describe('NeonSearch', () => {
 
   it('renders single', async () => {
     // given
-    const modelValue = 'xdd';
+    const modelValue = { key: 'xdd', label: 'XDD' };
     const { container, rerender } = harness;
     await rerender({ modelValue });
     // when / then
     expect(container.querySelector('.neon-search--multiple')).toBeNull();
     expect(container.querySelector('.neon-search')?.getAttribute('aria-multiselectable')).toEqual('false');
-    expect(container.querySelector('.neon-search')?.getAttribute('aria-activedescendant')).toEqual(modelValue);
+    expect(container.querySelector('.neon-search')?.getAttribute('aria-activedescendant')).toEqual(modelValue.key);
   });
 
   it('renders multiple', async () => {
@@ -166,7 +177,7 @@ describe('NeonSearch', () => {
     // when
     await fireEvent.click(container.querySelector('.neon-search__option') as HTMLElement);
     // then
-    expect(emitted()['update:modelValue'][0]).toEqual([options[0].key]);
+    expect(emitted()['update:modelValue'][0]).toEqual([options[0]]);
   });
 
   it('click option emits input multiple, in modelValues', async () => {

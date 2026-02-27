@@ -45,6 +45,7 @@
         .neon-badge__image {
           width: var(--neon-size-#{$badge-size}-badge);
           height: var(--neon-size-#{$badge-size}-badge);
+          object-fit: cover;
         }
 
         .neon-icon {

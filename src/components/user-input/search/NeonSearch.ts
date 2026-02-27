@@ -28,10 +28,11 @@ export default defineComponent({
   },
   props: {
     /**
-     * Either a string indicating the key of the selected option ('' if there is no selection) or an array of selected
-     * NeonSearchOption in the case when multiple = true (necessary to display them as chips).
+     * The selected model value(s). In the case of single select this should be set to a single NeonSearchOption or null.
+     * In the case of multiple selection (multiple=true) pass an Array of selected NeonSearchOptions or an empty array
+     * if nothing is selected.
      */
-    modelValue: { type: [String, Array as () => Array<NeonSearchOption>], required: true },
+    modelValue: { type: [Object as () => NeonSearchOption, Array as () => Array<NeonSearchOption>] },
     /**
      * Placeholder to display in search input when there is no search string entered.
      */
@@ -73,9 +74,9 @@ export default defineComponent({
   },
   emits: [
     /**
-     * emitted when the user changes the selection.
-     * @type {string | NeonSearchOption[]} either the selected option's key (single select) or an array of the
-     * selected options (multi-select).
+     * @type {NeonSearchOption | NeonSearchOption[] | null} either the selected option (single select) or an array of
+     * the selected options (multi-select). In the case nothing is selected in single select mode <null> is returned &
+     * for multiple selection an empty array is returned.
      */
     'update:modelValue',
     /**
@@ -94,7 +95,8 @@ export default defineComponent({
     const open = ref(false);
     const highlightedKey = ref<string | null>(null);
     const highlightedIndex = ref(-1);
-    const filter = ref('');
+
+    const filter = ref<string>((!props.multiple && (props.modelValue as NeonSearchOption | null)?.label) || '');
 
     watch(
       () => open.value,
@@ -102,6 +104,15 @@ export default defineComponent({
         if (open && props.options.length > 0) {
           highlightedKey.value = props.options[0].key;
           highlightedIndex.value = 0;
+        }
+      },
+    );
+
+    watch(
+      () => props.modelValue,
+      (modelValue) => {
+        if (!props.multiple) {
+          filter.value = (modelValue as NeonSearchOption | null)?.label || '';
         }
       },
     );
@@ -139,13 +150,13 @@ export default defineComponent({
       }
     };
 
-    const emitInputEvent = (value: string | NeonSearchOption[]) => {
+    const emitInputEvent = (value: NeonSearchOption | NeonSearchOption[] | null) => {
       emit('update:modelValue', value);
     };
 
     const onFilterChange = (_filter: string) => {
-      if (!props.multiple && props.modelValue !== '') {
-        emitInputEvent('');
+      if (!props.multiple && props.modelValue) {
+        emitInputEvent(null);
       }
 
       filter.value = _filter;
@@ -163,7 +174,7 @@ export default defineComponent({
         }
         emitInputEvent(values);
       } else {
-        emitInputEvent(option.key);
+        emitInputEvent(option);
       }
 
       onFilterChange(props.multiple ? '' : option.label.toString());
@@ -236,6 +247,12 @@ export default defineComponent({
       return props.multiple ? props.options : props.options.filter((opt) => opt.label !== filter.value);
     });
 
+    const activeDescendant = computed(() =>
+      props.multiple && Array.isArray(props.modelValue)
+        ? props.modelValue[0] && props.modelValue[0].key
+        : (props.modelValue as NeonSearchOption)?.key || null,
+    );
+
     return {
       dropdown,
       searchInput,
@@ -251,6 +268,7 @@ export default defineComponent({
       changeHighlighted,
       showOptions,
       removeSelected,
+      activeDescendant,
     };
   },
 });

@@ -3,7 +3,7 @@
     <neon-dropdown
       ref="dropdown"
       v-model="open"
-      :aria-activedescendant="multiple && Array.isArray(modelValue) ? modelValue[0] && modelValue[0].key : modelValue"
+      :aria-activedescendant="activeDescendant"
       :aria-multiselectable="multiple"
       :class="[
         `neon-search--${color}`,
@@ -54,7 +54,7 @@
             :autocomplete="autocomplete"
             :color="color"
             :disabled="disabled"
-            :modelValue="filter"
+            :model-Value="filter"
             :placeholder="placeholder"
             :size="size"
             class="neon-search__input"

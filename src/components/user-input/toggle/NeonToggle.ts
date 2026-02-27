@@ -61,9 +61,9 @@ export default defineComponent({
       emit('update:modelValue', key);
     };
 
-    const onInput = (key: string) => {
-      if (!props.disabled) {
-        emitInput(key);
+    const onInput = (option: NeonToggleModel) => {
+      if (!props.disabled && !option.disabled && props.modelValue !== option.key) {
+        emitInput(option.key);
       }
     };
 
