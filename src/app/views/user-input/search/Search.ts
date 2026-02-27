@@ -22,27 +22,25 @@ export default defineComponent({
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('A search input field');
 
-    const searchSmall = ref('');
-    const searchMedium = ref('');
-    const searchLarge = ref('');
-    const searchMulti = ref([]);
+    const searchSmall = ref(null);
+    const searchLarge = ref(null);
     const searchColored = ref([]);
-    const searchBrand = ref('');
-    const searchInfo = ref('');
-    const searchSuccess = ref('');
-    const searchWarning = ref('');
+    const searchBrand = ref(null);
+    const searchInfo = ref(null);
+    const searchSuccess = ref(null);
+    const searchWarning = ref(null);
 
-    const filterSmall = ref('');
-    const filterMedium = ref('');
-    const filterLarge = ref('');
-    const filterMulti = ref('');
-    const filterColored = ref('');
-    const filterBrand = ref('');
-    const filterInfo = ref('');
-    const filterSuccess = ref('');
-    const filterWarning = ref('');
+    const filterSmall = ref(null);
+    const filterMedium = ref(null);
+    const filterLarge = ref(null);
+    const filterMulti = ref(null);
+    const filterColored = ref(null);
+    const filterBrand = ref(null);
+    const filterInfo = ref(null);
+    const filterSuccess = ref(null);
+    const filterWarning = ref(null);
 
-    const filters: Record<string, Ref<string | undefined>> = {
+    const filters: Record<string, Ref<string | null>> = {
       filterSmall,
       filterMedium,
       filterLarge,
@@ -54,7 +52,7 @@ export default defineComponent({
       filterWarning,
     };
 
-    const updateFilter = (key: string, value: string | undefined) => {
+    const updateFilter = (key: string, value: string | null) => {
       if (filters[key]) {
         filters[key].value = value;
       }
@@ -171,20 +169,26 @@ export default defineComponent({
       },
     ]);
 
+    const searchMedium = ref(model.value[1]);
+    const searchMulti = ref([modelWithIcons.value[0], modelWithIcons.value[2]]);
+
     const filterOptions = (
       model: NeonSearchOption[],
-      selected: string | NeonSearchOption[],
-      filter: string,
+      selected: NeonSearchOption | NeonSearchOption[] | null,
+      filter: string | null,
       multiple = false,
     ) => {
-      const fltr = filter.toLowerCase();
       if (multiple) {
+        const fltr = filter?.toLowerCase() || '';
         return model
           .filter((m) => !(selected as NeonSearchOption[]).find((s) => s.key === m.key))
           .filter((item) => item.label.toString().toLowerCase().indexOf(fltr) >= 0);
+      } else if (!filter) {
+        return model;
       } else {
+        const fltr = filter.toLowerCase();
         return model
-          .filter((m) => m.key !== selected)
+          .filter((m) => selected === null || m.key !== (selected as NeonSearchOption).key)
           .filter((item) => item.label.toString().toLowerCase().indexOf(fltr) >= 0);
       }
     };
