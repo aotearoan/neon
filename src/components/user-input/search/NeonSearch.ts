@@ -32,7 +32,7 @@ export default defineComponent({
      * In the case of multiple selection (multiple=true) pass an Array of selected NeonSearchOptions or an empty array
      * if nothing is selected.
      */
-    modelValue: { type: [Object as () => NeonSearchOption, Array as () => Array<NeonSearchOption>], default: null },
+    modelValue: { type: [Object as () => NeonSearchOption, Array as () => Array<NeonSearchOption>] },
     /**
      * Placeholder to display in search input when there is no search string entered.
      */
@@ -110,7 +110,7 @@ export default defineComponent({
 
     watch(
       () => props.modelValue,
-      (modelValue: NeonSearchOption | Array<NeonSearchOption> | null) => {
+      (modelValue) => {
         if (!props.multiple) {
           filter.value = (modelValue as NeonSearchOption | null)?.label || '';
         }
@@ -247,6 +247,12 @@ export default defineComponent({
       return props.multiple ? props.options : props.options.filter((opt) => opt.label !== filter.value);
     });
 
+    const activeDescendant = computed(() =>
+      props.multiple && Array.isArray(props.modelValue)
+        ? props.modelValue[0] && props.modelValue[0].key
+        : (props.modelValue as NeonSearchOption)?.key || null,
+    );
+
     return {
       dropdown,
       searchInput,
@@ -262,6 +268,7 @@ export default defineComponent({
       changeHighlighted,
       showOptions,
       removeSelected,
+      activeDescendant,
     };
   },
 });

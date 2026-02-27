@@ -3,7 +3,7 @@
     <neon-dropdown
       ref="dropdown"
       v-model="open"
-      :aria-activedescendant="multiple ? modelValue[0] && modelValue[0].key : (modelValue && modelValue.key) || null"
+      :aria-activedescendant="activeDescendant"
       :aria-multiselectable="multiple"
       :class="[
         `neon-search--${color}`,
