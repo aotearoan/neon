@@ -1,5 +1,16 @@
 # Changelog
 
+## [22.0.0](https://github.com/aotearoan/neon/compare/v21.0.3...v22.0.0) (2026-02-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* search, radio button, card & skeleton fixes ([#292](https://github.com/aotearoan/neon/issues/292))
+
+### Code Refactoring
+
+* search, radio button, card & skeleton fixes ([#292](https://github.com/aotearoan/neon/issues/292)) ([5992943](https://github.com/aotearoan/neon/commit/599294313f9d766e910111b5383a53ecd50dc3d0))
+
 ## [21.0.3](https://github.com/aotearoan/neon/compare/v21.0.2...v21.0.3) (2026-02-27)
 
 
