@@ -22,7 +22,7 @@
       :tab="tabs[descriptionIndex]"
       :toggleOnIf="true"
     >
-      <h2 v-if="$slots.default" class="neon-h3">Description</h2>
+      <h2 v-if="slots.default" class="neon-h3">Description</h2>
       <slot name="description"></slot>
     </neon-tab>
     <neon-tab v-if="apiIndex >= 0" :selected="selected === tabs[apiIndex].key" :tab="tabs[apiIndex]" :toggleOnIf="true">

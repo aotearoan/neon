@@ -23,7 +23,7 @@ export default defineComponent({
     headline: { type: String, required: true },
     showApiDocs: { type: Boolean, default: true },
   },
-  setup(props) {
+  setup(props, { slots }) {
     const router = useRouter();
     const route = useRoute();
 
@@ -114,6 +114,7 @@ export default defineComponent({
       subApiModels,
       tabs,
       selected,
+      slots,
     };
   },
 });
