@@ -39,6 +39,10 @@ export default defineComponent({
      */
     disabled: { type: Boolean, default: false },
     /**
+     * Placement of the dropdown contents.
+     */
+    placement: { type: String as () => NeonDropdownPlacement, default: NeonDropdownPlacement.BottomLeft },
+    /**
      * Instead of opening on click (default), open on hover.
      */
     openOnHover: { type: Boolean, default: false },
@@ -49,11 +53,6 @@ export default defineComponent({
      * @type {NeonDropdownMenuItem} the menu item the user clicked on.
      */
     'click',
-    /**
-     * emitted on initialisation
-     * @type {HTMLElement} the reference to the HTMLElement for the dropdown menu button.
-     */
-    'button-ref',
   ],
   setup(props, { emit }) {
     const attrs = useAttrs();

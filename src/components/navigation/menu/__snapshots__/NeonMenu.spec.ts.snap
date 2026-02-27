@@ -62,7 +62,7 @@ exports[`NeonMenu renders menu 1`] = `
       </div>
     </li>
   </ul>
-  <div class="neon-dropdown--open-on-hover neon-dropdown--icon-only neon-dropdown--l neon-dropdown--brand neon-dropdown neon-dropdown-menu--brand neon-dropdown-menu neon-menu__responsive-menu--hidden neon-menu__responsive-menu neon-menu__responsive-menu--hidden neon-menu__responsive-menu">
+  <div class="neon-dropdown--open-on-hover neon-dropdown--icon-only neon-dropdown--l neon-dropdown--brand neon-dropdown neon-dropdown-menu--brand neon-dropdown-menu neon-menu__responsive-menu--hidden neon-menu__responsive-menu neon-menu__responsive-menu--hidden neon-menu__responsive-menu" hidden="">
     <div>
       <!-- @slot optionally replace the dropdown button with a custom control -->
       <div class="neon-dropdown__button-wrapper"><button class="neon-button--l neon-button--brand neon-button--text neon-button--state-ready neon-button--with-icon neon-button--icon-only neon-button neon-dropdown__button neon-dropdown__button" tabindex="0" aria-expanded="false" aria-haspopup="true">

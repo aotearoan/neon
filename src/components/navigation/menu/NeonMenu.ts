@@ -54,7 +54,6 @@ export default defineComponent({
     const route = useRoute();
     const menuWrapper = ref<HTMLElement | null>(null);
     const menuItem = ref<Array<HTMLElement> | null>(null);
-    const responsiveButton = ref<HTMLElement | null>(null);
 
     const menuItems = ref<Array<NeonPriorityMenuItem>>([]);
     const responsiveMenuItems = ref<Array<NeonMenuModel>>([]);
@@ -125,7 +124,10 @@ export default defineComponent({
     const refreshVisibleMenu = async () => {
       await nextTick();
       const menuWidth = (menuWrapper.value && getWidth(menuWrapper.value)) || 0;
-      const responsiveMenuWidth = (responsiveButton.value && getWidth(responsiveButton.value)) || 0;
+      const responsiveDropdown = menuWrapper.value?.getElementsByClassName(
+        'neon-menu__responsive-menu',
+      )[0] as HTMLElement;
+      const responsiveMenuWidth = (responsiveDropdown && getWidth(responsiveDropdown)) || 0;
       visible.value = determineVisibleMenuItems(menuWidth, responsiveMenuWidth, menuItems.value);
 
       responsiveMenuItems.value = props.menu
@@ -139,8 +141,8 @@ export default defineComponent({
         item.element.hidden = visible.value.indexOf(item.key) < 0;
       });
 
-      if (responsiveButton.value) {
-        responsiveButton.value.hidden = menuItems.value.length === visible.value.length;
+      if (responsiveDropdown) {
+        responsiveDropdown.hidden = menuItems.value.length === visible.value.length;
       }
     };
 
@@ -163,7 +165,6 @@ export default defineComponent({
       menuWrapper,
       menuItem,
       menuItems,
-      responsiveButton,
       responsiveMenuItems,
       visible,
       onClick,
