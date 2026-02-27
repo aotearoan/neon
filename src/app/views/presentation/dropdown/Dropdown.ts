@@ -55,7 +55,7 @@ export default defineComponent({
 </neon-dropdown>`;
 
     const buttonStyleExamples = `<neon-dropdown v-model="solidButtonOpen"
-               dropdown-style="solid-button"
+               dropdown-style="solid"
                label="Solid"
 >
   <neon-card-body>
@@ -63,7 +63,7 @@ export default defineComponent({
   </neon-card-body>
 </neon-dropdown>
 <neon-dropdown v-model="textOpen"
-               dropdown-style="text-button"
+               dropdown-style="text"
                label="Text"
 >
   <neon-card-body>
@@ -128,7 +128,7 @@ export default defineComponent({
 </neon-dropdown>
 <neon-dropdown v-model="warnTextOpen"
                color="warn"
-               dropdown-style="text-button"
+               dropdown-style="text"
                label="Warning"
 >
   <neon-card-body>
@@ -152,7 +152,7 @@ export default defineComponent({
 
     const openOnHoverExample = `<neon-dropdown v-model="hoverOpen"
                :open-on-hover="true"
-               dropdown-style="text-button"
+               dropdown-style="text"
                label="Open on hover"
 >
   <neon-card-body>

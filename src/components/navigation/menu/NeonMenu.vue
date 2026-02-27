@@ -19,7 +19,7 @@
           :model="item.children"
           :openOnHover="!item.disabled"
           :size="size"
-          dropdown-style="text-button"
+          dropdown-style="text"
         />
         <neon-link
           v-else
@@ -53,7 +53,7 @@
       :openOnHover="true"
       :size="size"
       class="neon-menu__responsive-menu"
-      dropdown-style="text-button"
+      dropdown-style="text"
       icon="ellipsis"
       placement="bottom-right"
       @button-ref="responsiveButton = $event"
