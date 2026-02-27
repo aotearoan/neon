@@ -1,4 +1,4 @@
-import { computed, defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
+import { computed, defineComponent, onMounted, onUnmounted, ref } from 'vue';
 import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
 import { NeonDropdownPlacementUtils } from '@/common/utils/NeonDropdownPlacementUtils';
 import { NeonClosableUtils } from '@/common/utils/NeonClosableUtils';
@@ -112,11 +112,6 @@ export default defineComponent({
      * @type {void}
      */
     'focus',
-    /**
-     * emitted on initialisation
-     * @type {HTMLElement} the reference to the HTMLElement for the dropdown menu button.
-     */
-    'button-ref',
   ],
   setup(props, { emit, expose }) {
     const dropdownButton = ref<HTMLElement | null>(null);
@@ -189,12 +184,6 @@ export default defineComponent({
         props.placementContainer.removeEventListener('scroll', recalculatePlacement);
       }
     });
-
-    watch(
-      () => dropdownButton.value,
-      (value) => emit('button-ref', value),
-      { immediate: true },
-    );
 
     expose({ dropdownContent });
 

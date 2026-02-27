@@ -56,7 +56,6 @@
       dropdown-style="text"
       icon="ellipsis"
       placement="bottom-right"
-      @button-ref="responsiveButton = $event"
     />
   </nav>
 </template>

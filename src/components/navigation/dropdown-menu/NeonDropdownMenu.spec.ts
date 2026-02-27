@@ -324,4 +324,28 @@ describe('NeonDropdownMenu', () => {
     // then
     expect(emitted().click).toBeUndefined();
   });
+
+  it('navigates menu using arrow keys', async () => {
+    // given
+    const { container } = render(NeonDropdownMenu, {
+      props: {
+        model,
+        placement: NeonDropdownPlacement.TopRight,
+      },
+      global: { plugins: [router] },
+    });
+    // when
+    const dd = container.querySelector('.neon-dropdown__button') as HTMLElement;
+    await fireEvent.click(dd);
+    const el = container.querySelector('.neon-dropdown-menu__item:nth-child(2) .neon-link') as HTMLAnchorElement;
+    el.focus();
+    await fireEvent.keyDown(el, { key: 'ArrowUp', code: 'ArrowUp' });
+    expect(
+      container.querySelector('.neon-dropdown-menu__item:nth-child(1).neon-dropdown-menu__item--highlighted'),
+    ).toBeDefined();
+    await fireEvent.keyDown(el, { key: 'ArrowDown', code: 'ArrowDown' });
+    expect(
+      container.querySelector('.neon-dropdown-menu__item:nth-child(2).neon-dropdown-menu__item--highlighted'),
+    ).toBeDefined();
+  });
 });

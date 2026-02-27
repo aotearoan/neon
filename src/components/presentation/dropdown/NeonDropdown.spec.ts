@@ -434,13 +434,4 @@ describe('NeonDropdown', () => {
     // then
     expect(emitted()['update:modelValue']).toBeUndefined();
   });
-
-  it('emits button reference', () => {
-    // given
-    const { emitted } = render(NeonDropdown, {
-      props: { modelValue: false, label },
-    });
-    // when / then
-    expect(emitted()['button-ref']).toBeDefined();
-  });
 });
