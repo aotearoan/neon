@@ -37,7 +37,7 @@
         class="neon-toggle__input"
         type="radio"
         v-bind="sanitizedAttributes"
-        @click="onInput(option.key)"
+        @click="onInput(option)"
       />
       <div v-if="toggleStyle === 'radio-buttons'" class="neon-toggle__radio-button">
         <div v-if="option.key === modelValue" class="neon-toggle__radio-button-indicator"></div>

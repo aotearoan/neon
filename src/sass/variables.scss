@@ -518,8 +518,8 @@
     /* radio buttons */
     --neon-background-radio-button: none;
     --neon-border-radio-button: var(--neon-border-width) var(--neon-border-style) var(--neon-color-neutral-d2);
-    --neon-color-radio-button-bg-active: rgba(var(--neon-rgb-neutral-l3), 0.375);
-    --neon-color-radio-button-label: var(--neon-color-neutral-d3);
+    --neon-color-radio-button-bg-active: rgba(var(--neon-rgb-neutral-l3), 0.125);
+    --neon-color-radio-button-label: var(--neon-color-label);
 
     /* drawer */
     --neon-background-color-drawer: var(--neon-background-color-card);
@@ -825,8 +825,8 @@
     /* radio buttons */
     --neon-background-radio-button: none;
     --neon-border-radio-button: var(--neon-border-width) var(--neon-border-style) var(--neon-color-neutral-l3);
-    --neon-color-radio-button-bg-active: rgba(var(--neon-rgb-neutral-l3), 0.375);
-    --neon-color-radio-button-label: var(--neon-color-neutral-d3);
+    --neon-color-radio-button-bg-active: rgba(var(--neon-rgb-neutral-l3), 0.25);
+    --neon-color-radio-button-label: var(--neon-color-label);
 
     /* input */
     --neon-color-input: var(--neon-color-text);
