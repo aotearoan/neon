@@ -249,7 +249,6 @@
 
     .neon-button__label {
       white-space: nowrap;
-      flex: 1 1 auto;
       text-align: left;
     }
 
@@ -395,11 +394,6 @@
 
     &__indicator:not(:first-child) {
       margin-left: var(--neon-space-8);
-    }
-
-    .neon-link__label {
-      display: flex;
-      justify-content: center;
     }
 
     &--disabled {

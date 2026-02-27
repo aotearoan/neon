@@ -12,6 +12,8 @@
       font-size: var(--neon-font-size-s);
       font-weight: var(--neon-font-weight-normal);
       user-select: none;
+      max-width: none;
+      justify-content: space-between;
 
       &:not(.neon-action-menu__link--selected):not(.neon-action-menu__link--disabled) {
         &:hover,
@@ -51,13 +53,6 @@
       &-count {
         font-variant: tabular-nums;
         font-weight: var(--neon-font-weight-semi-bold);
-      }
-
-      .neon-link__label {
-        max-width: none;
-        display: flex;
-        flex: 1 0 auto;
-        justify-content: space-between;
       }
     }
   }

@@ -23,6 +23,7 @@
 
       .neon-link {
         width: 100%;
+        min-width: 100%;
 
         &::after {
           display: none;
@@ -33,12 +34,6 @@
           &::after {
             display: none;
           }
-        }
-
-        .neon-link__label {
-          display: flex;
-          width: 100%;
-          min-width: 100%;
         }
       }
     }
