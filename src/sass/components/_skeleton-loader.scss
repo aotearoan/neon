@@ -9,14 +9,13 @@
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
+    gap: var(--neon-gap-skeleton-loader);
 
     &__item {
       display: flex;
       flex: 1 1 auto;
-      width: 100%;
-      min-height: var(--neon-font-size-m);
-      margin-top: var(--neon-space-4);
-      margin-bottom: var(--neon-space-4);
+      width: var(--neon-width-skeleton-loader);
+      min-height: var(--neon-height-skeleton-loader);
       border-radius: var(--neon-border-radius-skeleton-loader);
       position: relative;
       overflow: hidden;

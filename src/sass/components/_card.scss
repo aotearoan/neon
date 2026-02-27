@@ -35,7 +35,7 @@
   .neon-card-body,
   .neon-card-footer {
     &:not(:last-child) {
-      border-right: var(--neon-border);
+      border-right: var(--neon-border-card);
     }
   }
 }
@@ -45,7 +45,7 @@
     position: relative;
     border-radius: var(--neon-border-radius-card);
     border: var(--neon-border-card);
-    box-shadow: var(--neon-card-box-shadow);
+    box-shadow: var(--neon-box-shadow-card);
 
     &--s {
       & > .neon-card-header,
@@ -164,11 +164,11 @@
 
     .neon-card-body--full-width {
       padding: 0;
-      width: calc(100% + var(--neon-border-width));
+      width: calc(100% + var(--neon-border-width-card));
 
       img {
-        margin-left: calc(-1 * var(--neon-border-width));
-        margin-right: calc(-1 * var(--neon-border-width));
+        margin-left: calc(-1 * var(--neon-border-width-card));
+        margin-right: calc(-1 * var(--neon-border-width-card));
       }
 
       &:not(:first-child) {
@@ -178,8 +178,8 @@
       }
 
       & > * {
-        max-width: calc(100% + var(--neon-border-width));
-        width: calc(100% + var(--neon-border-width));
+        max-width: calc(100% + var(--neon-border-width-card));
+        width: calc(100% + var(--neon-border-width-card));
       }
 
       &:first-child {

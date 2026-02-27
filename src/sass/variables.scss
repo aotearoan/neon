@@ -186,8 +186,8 @@
   --neon-side-nav-width: calc(80 * var(--neon-space-4));
 
   /* card */
-  --neon-border-radius-card: 12rem;
-  --neon-card-box-shadow: none;
+  --neon-border-width-card: 0;
+  --neon-box-shadow-card: none;
 
   /* checkbox */
   --neon-border-width-checkbox: 1rem;
@@ -295,7 +295,10 @@
   --neon-opacity-input-background-active: 0.03125;
 
   /* skeleton loader */
-  --neon-border-radius-skeleton-loader: 12rem;
+  --neon-border-radius-skeleton-loader: 0rem;
+  --neon-height-skeleton-loader: var(--neon-size-m);
+  --neon-width-skeleton-loader: 100%;
+  --neon-gap-skeleton-loader: 5rem;
 
   /* expansion panel */
   --neon-border-width-expansion-panel: 1rem;
