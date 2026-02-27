@@ -1,5 +1,12 @@
 # Changelog
 
+## [22.0.1](https://github.com/aotearoan/neon/compare/v22.0.0...v22.0.1) (2026-02-27)
+
+
+### Bug Fixes
+
+* use slots instead of ([#294](https://github.com/aotearoan/neon/issues/294)) ([1ce9ed0](https://github.com/aotearoan/neon/commit/1ce9ed0b1f7e2cf5c2d5c1ca1191eb53ddbd56b7))
+
 ## [22.0.0](https://github.com/aotearoan/neon/compare/v21.0.3...v22.0.0) (2026-02-27)
 
 
