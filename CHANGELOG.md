@@ -1,5 +1,12 @@
 # Changelog
 
+## [21.0.2](https://github.com/aotearoan/neon/compare/v21.0.1...v21.0.2) (2026-02-27)
+
+
+### Bug Fixes
+
+* remove link label wrapper, button & chip style fixes ([#288](https://github.com/aotearoan/neon/issues/288)) ([f771100](https://github.com/aotearoan/neon/commit/f77110045cb5868ed740734be8fc4b85e4086068))
+
 ## [21.0.1](https://github.com/aotearoan/neon/compare/v21.0.0...v21.0.1) (2026-02-26)
 
 
