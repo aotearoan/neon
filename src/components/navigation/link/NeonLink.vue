@@ -13,10 +13,8 @@
     @keydown.enter="onClick"
     @keydown.space.prevent="onSpace"
   >
-    <span class="neon-link__label">
-      <!-- @slot the content of the link -->
-      <slot></slot>
-    </span>
+    <!-- @slot the content of the link -->
+    <slot></slot>
   </router-link>
   <a
     v-else-if="href"
@@ -38,16 +36,14 @@
     @keydown.enter="onClick"
     @keydown.space.prevent="onSpace"
   >
-    <span class="neon-link__label">
-      <!-- @slot the content of the link -->
-      <slot></slot>
-      <neon-icon
-        v-if="externalIndicator"
-        class="neon-link__external-indicator"
-        color="low-contrast"
-        name="link-external"
-      />
-    </span>
+    <!-- @slot the content of the link -->
+    <slot></slot>
+    <neon-icon
+      v-if="externalIndicator"
+      class="neon-link__external-indicator"
+      color="low-contrast"
+      name="share-external-link-1"
+    />
   </a>
   <a
     v-else
@@ -59,10 +55,8 @@
     @keydown.enter="onClick"
     @keydown.space.prevent="onSpace"
   >
-    <span class="neon-link__label">
-      <!-- @slot the content of the link -->
-      <slot></slot>
-    </span>
+    <!-- @slot the content of the link -->
+    <slot></slot>
   </a>
 </template>
 

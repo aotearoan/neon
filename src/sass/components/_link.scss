@@ -36,12 +36,10 @@ a[href]:not(.neon-link--no-style) {
   .neon-link {
     position: relative;
     display: inline-flex;
-    @include outline.focus-outline-styles(var(--neon-rgb-link));
+    cursor: pointer;
+    align-items: center;
 
-    .neon-link__label {
-      display: inline-flex;
-      align-items: center;
-    }
+    @include outline.focus-outline-styles(var(--neon-rgb-link));
 
     &:not(.neon-link--no-style) {
       @extend %neon-link-no-style;

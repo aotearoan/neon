@@ -50,7 +50,7 @@
                 <p>Dropdown contents</p>
               </neon-card-body>
             </neon-dropdown>
-            <neon-dropdown v-model="warnTextOpen" color="warn" dropdown-style="text-button" label="Warning">
+            <neon-dropdown v-model="warnTextOpen" color="warn" dropdown-style="text" label="Warning">
               <neon-card-body>
                 <p>Dropdown contents</p>
               </neon-card-body>
@@ -91,12 +91,12 @@
         <h2 class="neon-h3">Dropdown button styles</h2>
         <neon-stack>
           <neon-inline>
-            <neon-dropdown v-model="solidButtonOpen" dropdown-style="solid-button" label="Solid">
+            <neon-dropdown v-model="solidButtonOpen" dropdown-style="solid" label="Solid">
               <neon-card-body>
                 <p>Dropdown contents</p>
               </neon-card-body>
             </neon-dropdown>
-            <neon-dropdown v-model="textOpen" dropdown-style="text-button" label="Text">
+            <neon-dropdown v-model="textOpen" dropdown-style="text" label="Text">
               <neon-card-body>
                 <p>Dropdown contents</p>
               </neon-card-body>
@@ -145,7 +145,7 @@
         <h2 class="neon-h3">Dropdown open on hover</h2>
         <neon-stack>
           <neon-inline>
-            <neon-dropdown v-model="hoverOpen" :open-on-hover="true" dropdown-style="text-button" label="Open on hover">
+            <neon-dropdown v-model="hoverOpen" :open-on-hover="true" dropdown-style="text" label="Open on hover">
               <neon-card-body>
                 <p>Bacon ipsum dolor amet t-bone ribeye</p>
               </neon-card-body>

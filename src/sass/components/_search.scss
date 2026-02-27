@@ -110,6 +110,10 @@
             right: var(--neon-space-8);
           }
         }
+
+        .neon-chip--s {
+          height: calc(var(--neon-size-s) - 3 * var(--neon-base-space));
+        }
       }
 
       &--m {
@@ -128,6 +132,10 @@
             right: calc(2 * var(--neon-base-space));
           }
         }
+
+        .neon-chip--m {
+          height: calc(var(--neon-size-m) - 3 * var(--neon-base-space));
+        }
       }
 
       &--l {
@@ -145,6 +153,10 @@
             top: calc(-1 * var(--neon-base-space));
             right: calc(2 * var(--neon-base-space));
           }
+        }
+
+        .neon-chip--l {
+          height: calc(var(--neon-size-l) - 3 * var(--neon-base-space));
         }
       }
     }

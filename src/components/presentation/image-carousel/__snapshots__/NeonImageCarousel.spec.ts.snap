@@ -22,7 +22,17 @@ exports[`NeonImageCarousel renders carousel 1`] = `
       <!--v-if-->
     </button>
   </div>
-  <div class="neon-image-carousel__nav" tabindex="-1"><a class="neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 1" role="button"><span class="neon-link__label"><!-- @slot the content of the link --><div class="neon-image-carousel__nav-item--active neon-image-carousel__nav-item" tabindex="-1"><div class="neon-image-carousel__nav-item-indicator"></div></div></span></a><a class="neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 2" role="button"><span class="neon-link__label"><!-- @slot the content of the link --><div class="neon-image-carousel__nav-item" tabindex="-1"><div class="neon-image-carousel__nav-item-indicator"></div></div></span></a></div><span class="neon-image-carousel__label" tabindex="-1">2 images</span>
+  <div class="neon-image-carousel__nav" tabindex="-1"><a class="neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 1" role="button">
+      <!-- @slot the content of the link -->
+      <div class="neon-image-carousel__nav-item--active neon-image-carousel__nav-item" tabindex="-1">
+        <div class="neon-image-carousel__nav-item-indicator"></div>
+      </div>
+    </a><a class="neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 2" role="button">
+      <!-- @slot the content of the link -->
+      <div class="neon-image-carousel__nav-item" tabindex="-1">
+        <div class="neon-image-carousel__nav-item-indicator"></div>
+      </div>
+    </a></div><span class="neon-image-carousel__label" tabindex="-1">2 images</span>
 </div>
 `;
 
@@ -48,7 +58,17 @@ exports[`NeonImageCarousel renders carousel without label 1`] = `
       <!--v-if-->
     </button>
   </div>
-  <div class="neon-image-carousel__nav" tabindex="-1"><a class="neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 1" role="button"><span class="neon-link__label"><!-- @slot the content of the link --><div class="neon-image-carousel__nav-item--active neon-image-carousel__nav-item" tabindex="-1"><div class="neon-image-carousel__nav-item-indicator"></div></div></span></a><a class="neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 2" role="button"><span class="neon-link__label"><!-- @slot the content of the link --><div class="neon-image-carousel__nav-item" tabindex="-1"><div class="neon-image-carousel__nav-item-indicator"></div></div></span></a></div>
+  <div class="neon-image-carousel__nav" tabindex="-1"><a class="neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 1" role="button">
+      <!-- @slot the content of the link -->
+      <div class="neon-image-carousel__nav-item--active neon-image-carousel__nav-item" tabindex="-1">
+        <div class="neon-image-carousel__nav-item-indicator"></div>
+      </div>
+    </a><a class="neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 2" role="button">
+      <!-- @slot the content of the link -->
+      <div class="neon-image-carousel__nav-item" tabindex="-1">
+        <div class="neon-image-carousel__nav-item-indicator"></div>
+      </div>
+    </a></div>
   <!--v-if-->
 </div>
 `;
