@@ -14,4 +14,7 @@ export default defineComponent({
      */
     fullWidth: { type: Boolean, default: false },
   },
+  setup(_props, { slots }) {
+    return { slots };
+  },
 });

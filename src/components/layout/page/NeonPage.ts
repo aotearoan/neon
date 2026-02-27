@@ -6,7 +6,7 @@ import { defineComponent, onMounted, onUnmounted } from 'vue';
  */
 export default defineComponent({
   name: 'NeonPage',
-  setup() {
+  setup(_props, { slots }) {
     const handleResize = () => {
       const vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}rem`);
@@ -22,5 +22,7 @@ export default defineComponent({
     onUnmounted(() => {
       window.removeEventListener('resize', handleResize);
     });
+
+    return { slots };
   },
 });

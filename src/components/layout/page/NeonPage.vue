@@ -1,7 +1,7 @@
 <template>
   <div
+    :class="{ 'neon-page--with-top-nav': slots['top-nav'], 'neon-page--with-side-nav': slots['side-nav'] }"
     class="neon-page"
-    :class="{ 'neon-page--with-top-nav': $slots['top-nav'], 'neon-page--with-side-nav': $slots['side-nav'] }"
   >
     <!-- @slot The <strong>NeonTopNav</strong> slot. This slot is required to ensure the correct responsive page layout. -->
     <slot name="top-nav"></slot>
