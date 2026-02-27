@@ -1,5 +1,12 @@
 # Changelog
 
+## [21.0.3](https://github.com/aotearoan/neon/compare/v21.0.2...v21.0.3) (2026-02-27)
+
+
+### Bug Fixes
+
+* replace button-ref with query ([#290](https://github.com/aotearoan/neon/issues/290)) ([d0a5b26](https://github.com/aotearoan/neon/commit/d0a5b262f10493842444b7f17aa6ef23477f7d81))
+
 ## [21.0.2](https://github.com/aotearoan/neon/compare/v21.0.1...v21.0.2) (2026-02-27)
 
 
