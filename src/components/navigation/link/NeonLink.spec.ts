@@ -51,6 +51,13 @@ describe('NeonLink', () => {
     expect(result).toMatch('neon-link--with-external-indicator');
   });
 
+  it('renders mailto link', async () => {
+    const { html, rerender } = harness;
+    await rerender({ ...props, href: 'mailto:test@arcual.art' });
+    const result = html();
+    expect(result).toMatch('neon-link--external-link');
+  });
+
   it('renders external link without indicator', () => {
     const { html } = harness;
     const result = html();

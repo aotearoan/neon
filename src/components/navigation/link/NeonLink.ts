@@ -41,7 +41,7 @@ export default defineComponent({
     const attrs = useAttrs();
     const router = useRouter();
     const route = useRoute();
-    const routerUrl = computed(() => (props.href?.indexOf('//') === -1 ? props.href : undefined));
+    const routerUrl = computed(() => (props.href?.indexOf('/') === 0 ? props.href : undefined));
 
     const activeRoute = computed(() => props.href && props.href.indexOf(route.fullPath) === 0);
     const exactRoute = computed(() => activeRoute.value && props.href === route.fullPath);
