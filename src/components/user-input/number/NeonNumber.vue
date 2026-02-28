@@ -10,6 +10,7 @@
       },
     ]"
     class="neon-number"
+    indicator-style="external"
   >
     <neon-button
       v-if="spinButtons"

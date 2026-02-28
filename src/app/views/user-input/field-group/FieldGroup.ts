@@ -4,6 +4,7 @@ import {
   NeonCard,
   NeonCardBody,
   NeonCardHeader,
+  NeonField,
   NeonFieldGroup,
   NeonInput,
   NeonInputIndicator,
@@ -26,6 +27,7 @@ export default defineComponent({
     NeonCardHeader,
     NeonInput,
     NeonInputIndicator,
+    NeonField,
     NeonFieldGroup,
     NeonSelect,
     NeonStack,
@@ -64,19 +66,48 @@ export default defineComponent({
       },
     ]);
 
-    const inputIndicatorExamples = `<neon-field-group>
-  <neon-input-indicator size="s" label="Salary" />
-  <neon-input size="s" type="text" color="primary" v-model="indexFilter" placeholder="Enter amount" />
-  <neon-select size="s" color="primary" v-model="currency" :options="currencies" placeholder="Currency" />
+    const inputIndicatorInternalExamples = `<neon-field-group>
+  <neon-input-indicator label="Salary" size="s"/>
+  <neon-input v-model="indexFilter" color="primary" placeholder="Enter amount" size="s" type="text"/>
+  <neon-input-indicator label="USD" size="s"/>
 </neon-field-group>
 <neon-field-group>
-  <neon-input type="text" color="primary" v-model="indexFilter" placeholder="Enter rate" />
-  <neon-input-indicator label="%" />
+  <neon-input v-model="indexFilter" color="primary" placeholder="Enter rate" type="text"/>
+  <neon-input-indicator label="%"/>
 </neon-field-group>
-<neon-field-group>
-  <neon-input-indicator size="l" label="$" />
-  <neon-input size="l" type="text" v-model="indexFilter" placeholder="Enter amount" />
-  <neon-button size="l" label="Submit" />
+<neon-field for="largeField" label="Large field">
+  <neon-field-group>
+    <neon-input-indicator for="largeField" label="USD" size="l"/>
+    <neon-input id="largeField" v-model="indexFilter" placeholder="Enter amount" size="l" type="text"/>
+  </neon-field-group>
+</neon-field>
+<neon-field for="largeDisabledField" label="Disabled field">
+  <neon-field-group :disabled="true">
+    <neon-input-indicator for="largeDisabledField" label="USD" size="l" :disabled="true"/>
+    <neon-input
+      id="largeDisabledField"
+      v-model="indexFilter"
+      placeholder="Enter amount"
+      size="l"
+      type="text"
+      :disabled="true"
+    />
+  </neon-field-group>
+</neon-field>`;
+
+    const inputIndicatorExternalExamples = `<neon-field-group indicator-style="external">
+  <neon-input-indicator label="Salary" size="s"/>
+  <neon-input v-model="indexFilter" color="primary" placeholder="Enter amount" size="s" type="text"/>
+  <neon-select v-model="currency" :options="currencies" color="primary" placeholder="Currency" size="s"/>
+</neon-field-group>
+<neon-field-group indicator-style="external">
+  <neon-input v-model="indexFilter" color="primary" placeholder="Enter rate" type="text"/>
+  <neon-input-indicator label="%"/>
+</neon-field-group>
+<neon-field-group indicator-style="external">
+  <neon-input-indicator label="$" size="l"/>
+  <neon-input v-model="indexFilter" placeholder="Enter amount" size="l" type="text"/>
+  <neon-button color="low-contrast" label="Submit" size="l"/>
 </neon-field-group>`;
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonFieldGroup')));
@@ -84,7 +115,8 @@ export default defineComponent({
     return {
       menuModel,
       headline,
-      inputIndicatorExamples,
+      inputIndicatorInternalExamples,
+      inputIndicatorExternalExamples,
       indexFilter,
       currency,
       currencies,

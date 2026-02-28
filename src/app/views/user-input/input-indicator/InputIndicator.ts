@@ -34,18 +34,32 @@ export default defineComponent({
     const field2 = ref('');
     const field3 = ref('');
 
-    const inputIndicatorExamples = `<neon-field-group>
+    const internalInputIndicatorExamples = `<neon-field-group>
   <neon-input v-model="field1" placeholder="Rate" size="s" type="text" />
   <neon-input-indicator label="%" size="s" />
 </neon-field-group>
 <neon-field-group>
-  <neon-input-indicator aria-label="Username" for="userField" icon="user" />
+  <neon-input-indicator aria-label="Username" for="userField" icon="single-neutral" />
   <neon-input id="userField" v-model="field2" placeholder="Username" type="text" />
 </neon-field-group>
 <neon-field-group>
-  <neon-input-indicator icon="mail" size="l" />
+  <neon-input-indicator icon="envelope" size="l" />
   <neon-input v-model="field3" placeholder="Username" size="l" type="text" />
   <neon-input-indicator label="@aol.com" size="l" />
+</neon-field-group>`;
+
+    const externalInputIndicatorExamples = `<neon-field-group indicator-style="external">
+  <neon-input v-model="field1" placeholder="Rate" size="s" type="text"/>
+  <neon-input-indicator label="%" size="s"/>
+</neon-field-group>
+<neon-field-group indicator-style="external">
+  <neon-input-indicator aria-label="Username" for="userField" icon="single-neutral"/>
+  <neon-input id="userField" v-model="field2" placeholder="Username" type="text"/>
+</neon-field-group>
+<neon-field-group indicator-style="external">
+  <neon-input-indicator icon="envelope" size="l"/>
+  <neon-input v-model="field3" placeholder="Username" size="l" type="text"/>
+  <neon-input-indicator label="@aol.com" size="l"/>
 </neon-field-group>`;
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonInputIndicator')));
@@ -53,7 +67,8 @@ export default defineComponent({
     return {
       menuModel,
       headline,
-      inputIndicatorExamples,
+      internalInputIndicatorExamples,
+      externalInputIndicatorExamples,
       field1,
       field2,
       field3,

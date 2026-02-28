@@ -3,6 +3,41 @@
   "description": "Used to compose a group of inputs, buttons and input indicators into a single component.",
   "tags": {},
   "exportName": "default",
+  "props": [
+    {
+      "name": "indicatorStyle",
+      "description": "The style of input indicators to use, either <em>internal</em> where the indicator is inside the adjoined input\nfield or <em>external</em> where the indicator is external to the adjoining field separated by a border & not\nhighlighted as part of the field.",
+      "type": {
+        "name": "String as () => NeonInputIndicatorStyle"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonInputIndicatorStyle.Internal"
+      }
+    },
+    {
+      "name": "color",
+      "description": "The border highlight color when the indicator style is <em>internal</em>.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Primary"
+      }
+    },
+    {
+      "name": "disabled",
+      "description": "Use the disabled color styles when the indicator style is <em>internal</em>.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    }
+  ],
   "slots": [
     {
       "name": "default",

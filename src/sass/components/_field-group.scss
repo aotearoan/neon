@@ -1,60 +1,147 @@
+@use '../includes/palettes';
+
 @mixin field-group {
   .neon-field-group {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
 
-    & > *,
-    & > .neon-input,
-    & > .neon-select {
-      &,
-      & > input,
-      & .neon-button {
-        border-radius: 0;
-        min-height: 100%;
-      }
-
-      &:first-child {
+    &.neon-field-group--external {
+      & > *,
+      & > .neon-input,
+      & > .neon-select {
         &,
         & > input,
         & .neon-button {
-          border-top-left-radius: var(--neon-border-radius);
-          border-bottom-left-radius: var(--neon-border-radius);
+          border-radius: 0;
+          min-height: 100%;
         }
-      }
 
-      &:not(:first-child) {
-        &,
-        & > input,
-        & .neon-button {
-          &:not(:focus) {
-            border-left: none;
+        &:first-child {
+          &,
+          & > input,
+          & .neon-button {
+            border-top-left-radius: var(--neon-border-radius-input);
+            border-bottom-left-radius: var(--neon-border-radius-input);
           }
         }
 
-        & > input,
-        & .neon-button {
-          &:focus {
-            margin-left: calc(-1 * var(--neon-border-width));
-            margin-right: calc(-1 * var(--neon-border-width));
-            width: calc(100% + 2 * var(--neon-border-width));
+        &:not(:first-child) {
+          &,
+          & > input,
+          & .neon-button {
+            &:not(:focus) {
+              border-left: none;
+            }
+          }
+
+          & > input,
+          & .neon-button {
+            &:focus {
+              margin-left: calc(-1 * var(--neon-border-width));
+              margin-right: calc(-1 * var(--neon-border-width));
+              width: calc(100% + 2 * var(--neon-border-width));
+            }
+          }
+        }
+
+        &:last-child {
+          &,
+          & > input,
+          & .neon-button {
+            border-top-right-radius: var(--neon-border-radius-input);
+            border-bottom-right-radius: var(--neon-border-radius-input);
           }
         }
       }
 
-      &:last-child {
-        &,
-        & > input,
-        & .neon-button {
-          border-top-right-radius: var(--neon-border-radius);
-          border-bottom-right-radius: var(--neon-border-radius);
+      & > .neon-input {
+        & > input:focus {
+          max-width: 100%;
         }
       }
     }
 
-    & > .neon-input {
-      & > input:focus {
-        max-width: 100%;
+    &.neon-field-group--internal {
+      border: var(--neon-border-width-input) var(--neon-border-style) var(--neon-border-color-input);
+      border-radius: var(--neon-border-radius-input);
+
+      .neon-input-indicator {
+        background-color: var(--neon-background-color-input);
+
+        &:not(:last-child) {
+          .neon-input-indicator__label {
+            padding-right: 0;
+          }
+
+          .neon-input-indicator__icon {
+            min-width: 16rem;
+            margin-left: var(--neon-space-12);
+            width: 16rem;
+
+            svg {
+              width: 16rem;
+              min-width: 16rem;
+            }
+          }
+        }
+      }
+
+      @each $color in palettes.$neon-functional-colors {
+        &.neon-field-group--#{$color} {
+          &:focus-within {
+            border-color: var(--neon-color-#{$color});
+
+            .neon-input-indicator {
+              background-color: rgba(var(--neon-rgb-#{$color}), var(--neon-opacity-input-background-active));
+            }
+          }
+        }
+      }
+
+      &.neon-field-group--disabled {
+        border-color: var(--neon-color-disabled-border);
+
+        .neon-input-indicator {
+          background-color: var(--neon-color-disabled-background);
+
+        }
+      }
+
+      & > *,
+      & > .neon-input-indicator,
+      & > .neon-input {
+        &,
+        & > input {
+          border-radius: 0;
+          border: none;
+          min-height: 100%;
+        }
+      }
+
+      & > .neon-input {
+        & > input:focus {
+          max-width: 100%;
+        }
+      }
+
+      & > *,
+      & > .neon-input {
+        &:first-child {
+          &,
+          & > input {
+            border-top-left-radius: var(--neon-border-radius-input);
+            border-bottom-left-radius: var(--neon-border-radius-input);
+          }
+        }
+
+        &:last-child {
+          &,
+          & > input {
+            border-top-right-radius: var(--neon-border-radius-input);
+            border-bottom-right-radius: var(--neon-border-radius-input);
+          }
+        }
       }
     }
   }

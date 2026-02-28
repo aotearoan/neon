@@ -46,7 +46,7 @@
 									"fileName": "NeonAlertLevel.ts",
 									"line": 13,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonAlertLevel.ts#L13"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonAlertLevel.ts#L13"
 								}
 							],
 							"type": {
@@ -73,7 +73,7 @@
 									"fileName": "NeonAlertLevel.ts",
 									"line": 7,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonAlertLevel.ts#L7"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonAlertLevel.ts#L7"
 								}
 							],
 							"type": {
@@ -100,7 +100,7 @@
 									"fileName": "NeonAlertLevel.ts",
 									"line": 9,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonAlertLevel.ts#L9"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonAlertLevel.ts#L9"
 								}
 							],
 							"type": {
@@ -127,7 +127,7 @@
 									"fileName": "NeonAlertLevel.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonAlertLevel.ts#L11"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonAlertLevel.ts#L11"
 								}
 							],
 							"type": {
@@ -152,7 +152,7 @@
 							"fileName": "NeonAlertLevel.ts",
 							"line": 5,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonAlertLevel.ts#L5"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonAlertLevel.ts#L5"
 						}
 					]
 				}
@@ -170,7 +170,7 @@
 					"fileName": "NeonAlertLevel.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonAlertLevel.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonAlertLevel.ts#L1"
 				}
 			]
 		},
@@ -215,7 +215,7 @@
 									"fileName": "NeonAlertPlacement.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonAlertPlacement.ts#L11"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonAlertPlacement.ts#L11"
 								}
 							],
 							"type": {
@@ -242,7 +242,7 @@
 									"fileName": "NeonAlertPlacement.ts",
 									"line": 13,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonAlertPlacement.ts#L13"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonAlertPlacement.ts#L13"
 								}
 							],
 							"type": {
@@ -269,7 +269,7 @@
 									"fileName": "NeonAlertPlacement.ts",
 									"line": 7,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonAlertPlacement.ts#L7"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonAlertPlacement.ts#L7"
 								}
 							],
 							"type": {
@@ -296,7 +296,7 @@
 									"fileName": "NeonAlertPlacement.ts",
 									"line": 9,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonAlertPlacement.ts#L9"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonAlertPlacement.ts#L9"
 								}
 							],
 							"type": {
@@ -321,7 +321,7 @@
 							"fileName": "NeonAlertPlacement.ts",
 							"line": 5,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonAlertPlacement.ts#L5"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonAlertPlacement.ts#L5"
 						}
 					]
 				}
@@ -339,7 +339,7 @@
 					"fileName": "NeonAlertPlacement.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonAlertPlacement.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonAlertPlacement.ts#L1"
 				}
 			]
 		},
@@ -384,7 +384,7 @@
 									"fileName": "NeonBadgeSize.ts",
 									"line": 14,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonBadgeSize.ts#L14"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonBadgeSize.ts#L14"
 								}
 							],
 							"type": {
@@ -411,7 +411,7 @@
 									"fileName": "NeonBadgeSize.ts",
 									"line": 12,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonBadgeSize.ts#L12"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonBadgeSize.ts#L12"
 								}
 							],
 							"type": {
@@ -438,7 +438,7 @@
 									"fileName": "NeonBadgeSize.ts",
 									"line": 10,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonBadgeSize.ts#L10"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonBadgeSize.ts#L10"
 								}
 							],
 							"type": {
@@ -465,7 +465,7 @@
 									"fileName": "NeonBadgeSize.ts",
 									"line": 8,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonBadgeSize.ts#L8"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonBadgeSize.ts#L8"
 								}
 							],
 							"type": {
@@ -492,7 +492,7 @@
 									"fileName": "NeonBadgeSize.ts",
 									"line": 6,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonBadgeSize.ts#L6"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonBadgeSize.ts#L6"
 								}
 							],
 							"type": {
@@ -518,7 +518,7 @@
 							"fileName": "NeonBadgeSize.ts",
 							"line": 4,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonBadgeSize.ts#L4"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonBadgeSize.ts#L4"
 						}
 					]
 				}
@@ -536,7 +536,7 @@
 					"fileName": "NeonBadgeSize.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonBadgeSize.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonBadgeSize.ts#L1"
 				}
 			]
 		},
@@ -581,7 +581,7 @@
 									"fileName": "NeonButtonSize.ts",
 									"line": 12,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonButtonSize.ts#L12"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonButtonSize.ts#L12"
 								}
 							],
 							"type": {
@@ -608,7 +608,7 @@
 									"fileName": "NeonButtonSize.ts",
 									"line": 10,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonButtonSize.ts#L10"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonButtonSize.ts#L10"
 								}
 							],
 							"type": {
@@ -635,7 +635,7 @@
 									"fileName": "NeonButtonSize.ts",
 									"line": 8,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonButtonSize.ts#L8"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonButtonSize.ts#L8"
 								}
 							],
 							"type": {
@@ -662,7 +662,7 @@
 									"fileName": "NeonButtonSize.ts",
 									"line": 6,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonButtonSize.ts#L6"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonButtonSize.ts#L6"
 								}
 							],
 							"type": {
@@ -687,7 +687,7 @@
 							"fileName": "NeonButtonSize.ts",
 							"line": 4,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonButtonSize.ts#L4"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonButtonSize.ts#L4"
 						}
 					]
 				}
@@ -705,7 +705,7 @@
 					"fileName": "NeonButtonSize.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonButtonSize.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonButtonSize.ts#L1"
 				}
 			]
 		},
@@ -750,7 +750,7 @@
 									"fileName": "NeonButtonStyle.ts",
 									"line": 21,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonButtonStyle.ts#L21"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonButtonStyle.ts#L21"
 								}
 							],
 							"type": {
@@ -777,7 +777,7 @@
 									"fileName": "NeonButtonStyle.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonButtonStyle.ts#L11"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonButtonStyle.ts#L11"
 								}
 							],
 							"type": {
@@ -804,7 +804,7 @@
 									"fileName": "NeonButtonStyle.ts",
 									"line": 6,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonButtonStyle.ts#L6"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonButtonStyle.ts#L6"
 								}
 							],
 							"type": {
@@ -831,7 +831,7 @@
 									"fileName": "NeonButtonStyle.ts",
 									"line": 16,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonButtonStyle.ts#L16"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonButtonStyle.ts#L16"
 								}
 							],
 							"type": {
@@ -856,7 +856,7 @@
 							"fileName": "NeonButtonStyle.ts",
 							"line": 4,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonButtonStyle.ts#L4"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonButtonStyle.ts#L4"
 						}
 					]
 				}
@@ -874,7 +874,7 @@
 					"fileName": "NeonButtonStyle.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonButtonStyle.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonButtonStyle.ts#L1"
 				}
 			]
 		},
@@ -903,7 +903,7 @@
 									"fileName": "NeonButtonType.ts",
 									"line": 2,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonButtonType.ts#L2"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonButtonType.ts#L2"
 								}
 							],
 							"type": {
@@ -922,7 +922,7 @@
 									"fileName": "NeonButtonType.ts",
 									"line": 4,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonButtonType.ts#L4"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonButtonType.ts#L4"
 								}
 							],
 							"type": {
@@ -941,7 +941,7 @@
 									"fileName": "NeonButtonType.ts",
 									"line": 3,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonButtonType.ts#L3"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonButtonType.ts#L3"
 								}
 							],
 							"type": {
@@ -965,7 +965,7 @@
 							"fileName": "NeonButtonType.ts",
 							"line": 1,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonButtonType.ts#L1"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonButtonType.ts#L1"
 						}
 					]
 				}
@@ -983,7 +983,7 @@
 					"fileName": "NeonButtonType.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonButtonType.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonButtonType.ts#L1"
 				}
 			]
 		},
@@ -1028,7 +1028,7 @@
 									"fileName": "NeonChipAction.ts",
 									"line": 7,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonChipAction.ts#L7"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonChipAction.ts#L7"
 								}
 							],
 							"type": {
@@ -1055,7 +1055,7 @@
 									"fileName": "NeonChipAction.ts",
 									"line": 9,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonChipAction.ts#L9"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonChipAction.ts#L9"
 								}
 							],
 							"type": {
@@ -1078,7 +1078,7 @@
 							"fileName": "NeonChipAction.ts",
 							"line": 5,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonChipAction.ts#L5"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonChipAction.ts#L5"
 						}
 					]
 				}
@@ -1096,7 +1096,7 @@
 					"fileName": "NeonChipAction.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonChipAction.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonChipAction.ts#L1"
 				}
 			]
 		},
@@ -1141,7 +1141,7 @@
 									"fileName": "NeonDropdownPlacement.ts",
 									"line": 25,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonDropdownPlacement.ts#L25"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonDropdownPlacement.ts#L25"
 								}
 							],
 							"type": {
@@ -1168,7 +1168,7 @@
 									"fileName": "NeonDropdownPlacement.ts",
 									"line": 27,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonDropdownPlacement.ts#L27"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonDropdownPlacement.ts#L27"
 								}
 							],
 							"type": {
@@ -1195,7 +1195,7 @@
 									"fileName": "NeonDropdownPlacement.ts",
 									"line": 31,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonDropdownPlacement.ts#L31"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonDropdownPlacement.ts#L31"
 								}
 							],
 							"type": {
@@ -1222,7 +1222,7 @@
 									"fileName": "NeonDropdownPlacement.ts",
 									"line": 29,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonDropdownPlacement.ts#L29"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonDropdownPlacement.ts#L29"
 								}
 							],
 							"type": {
@@ -1249,7 +1249,7 @@
 									"fileName": "NeonDropdownPlacement.ts",
 									"line": 35,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonDropdownPlacement.ts#L35"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonDropdownPlacement.ts#L35"
 								}
 							],
 							"type": {
@@ -1276,7 +1276,7 @@
 									"fileName": "NeonDropdownPlacement.ts",
 									"line": 33,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonDropdownPlacement.ts#L33"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonDropdownPlacement.ts#L33"
 								}
 							],
 							"type": {
@@ -1303,7 +1303,7 @@
 									"fileName": "NeonDropdownPlacement.ts",
 									"line": 21,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonDropdownPlacement.ts#L21"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonDropdownPlacement.ts#L21"
 								}
 							],
 							"type": {
@@ -1330,7 +1330,7 @@
 									"fileName": "NeonDropdownPlacement.ts",
 									"line": 23,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonDropdownPlacement.ts#L23"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonDropdownPlacement.ts#L23"
 								}
 							],
 							"type": {
@@ -1359,7 +1359,7 @@
 							"fileName": "NeonDropdownPlacement.ts",
 							"line": 19,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonDropdownPlacement.ts#L19"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonDropdownPlacement.ts#L19"
 						}
 					]
 				}
@@ -1377,7 +1377,7 @@
 					"fileName": "NeonDropdownPlacement.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonDropdownPlacement.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonDropdownPlacement.ts#L1"
 				}
 			]
 		},
@@ -1422,7 +1422,7 @@
 									"fileName": "NeonDropdownStyle.ts",
 									"line": 20,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonDropdownStyle.ts#L20"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonDropdownStyle.ts#L20"
 								}
 							],
 							"type": {
@@ -1449,7 +1449,7 @@
 									"fileName": "NeonDropdownStyle.ts",
 									"line": 14,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonDropdownStyle.ts#L14"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonDropdownStyle.ts#L14"
 								}
 							],
 							"type": {
@@ -1476,7 +1476,7 @@
 									"fileName": "NeonDropdownStyle.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonDropdownStyle.ts#L11"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonDropdownStyle.ts#L11"
 								}
 							],
 							"type": {
@@ -1503,7 +1503,7 @@
 									"fileName": "NeonDropdownStyle.ts",
 									"line": 18,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonDropdownStyle.ts#L18"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonDropdownStyle.ts#L18"
 								}
 							],
 							"type": {
@@ -1530,7 +1530,7 @@
 									"fileName": "NeonDropdownStyle.ts",
 									"line": 16,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonDropdownStyle.ts#L16"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonDropdownStyle.ts#L16"
 								}
 							],
 							"type": {
@@ -1556,7 +1556,7 @@
 							"fileName": "NeonDropdownStyle.ts",
 							"line": 9,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonDropdownStyle.ts#L9"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonDropdownStyle.ts#L9"
 						}
 					]
 				}
@@ -1574,7 +1574,7 @@
 					"fileName": "NeonDropdownStyle.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonDropdownStyle.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonDropdownStyle.ts#L1"
 				}
 			]
 		},
@@ -1619,7 +1619,7 @@
 									"fileName": "NeonFunctionalColor.ts",
 									"line": 16,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonFunctionalColor.ts#L16"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonFunctionalColor.ts#L16"
 								}
 							],
 							"type": {
@@ -1646,7 +1646,7 @@
 									"fileName": "NeonFunctionalColor.ts",
 									"line": 26,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonFunctionalColor.ts#L26"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonFunctionalColor.ts#L26"
 								}
 							],
 							"type": {
@@ -1673,7 +1673,7 @@
 									"fileName": "NeonFunctionalColor.ts",
 									"line": 14,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonFunctionalColor.ts#L14"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonFunctionalColor.ts#L14"
 								}
 							],
 							"type": {
@@ -1700,7 +1700,7 @@
 									"fileName": "NeonFunctionalColor.ts",
 									"line": 20,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonFunctionalColor.ts#L20"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonFunctionalColor.ts#L20"
 								}
 							],
 							"type": {
@@ -1727,7 +1727,7 @@
 									"fileName": "NeonFunctionalColor.ts",
 									"line": 7,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonFunctionalColor.ts#L7"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonFunctionalColor.ts#L7"
 								}
 							],
 							"type": {
@@ -1754,7 +1754,7 @@
 									"fileName": "NeonFunctionalColor.ts",
 									"line": 9,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonFunctionalColor.ts#L9"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonFunctionalColor.ts#L9"
 								}
 							],
 							"type": {
@@ -1781,7 +1781,7 @@
 									"fileName": "NeonFunctionalColor.ts",
 									"line": 18,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonFunctionalColor.ts#L18"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonFunctionalColor.ts#L18"
 								}
 							],
 							"type": {
@@ -1808,7 +1808,7 @@
 									"fileName": "NeonFunctionalColor.ts",
 									"line": 22,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonFunctionalColor.ts#L22"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonFunctionalColor.ts#L22"
 								}
 							],
 							"type": {
@@ -1835,7 +1835,7 @@
 									"fileName": "NeonFunctionalColor.ts",
 									"line": 24,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonFunctionalColor.ts#L24"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonFunctionalColor.ts#L24"
 								}
 							],
 							"type": {
@@ -1865,7 +1865,7 @@
 							"fileName": "NeonFunctionalColor.ts",
 							"line": 5,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonFunctionalColor.ts#L5"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonFunctionalColor.ts#L5"
 						}
 					]
 				}
@@ -1883,7 +1883,7 @@
 					"fileName": "NeonFunctionalColor.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonFunctionalColor.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonFunctionalColor.ts#L1"
 				}
 			]
 		},
@@ -1928,7 +1928,7 @@
 									"fileName": "NeonHorizontalPosition.ts",
 									"line": 7,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonHorizontalPosition.ts#L7"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonHorizontalPosition.ts#L7"
 								}
 							],
 							"type": {
@@ -1955,7 +1955,7 @@
 									"fileName": "NeonHorizontalPosition.ts",
 									"line": 9,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonHorizontalPosition.ts#L9"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonHorizontalPosition.ts#L9"
 								}
 							],
 							"type": {
@@ -1978,7 +1978,7 @@
 							"fileName": "NeonHorizontalPosition.ts",
 							"line": 5,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonHorizontalPosition.ts#L5"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonHorizontalPosition.ts#L5"
 						}
 					]
 				}
@@ -1996,19 +1996,124 @@
 					"fileName": "NeonHorizontalPosition.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonHorizontalPosition.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonHorizontalPosition.ts#L1"
 				}
 			]
 		},
 		{
 			"id": 73,
-			"name": "NeonInputMode",
+			"name": "NeonInputIndicatorStyle",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
 					"id": 74,
+					"name": "NeonInputIndicatorStyle",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"children": [
+						{
+							"id": 76,
+							"name": "External",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Display input indicator OUTSIDE the adjacent input."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonInputIndicatorStyle.ts",
+									"line": 9,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputIndicatorStyle.ts#L9"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "external"
+							}
+						},
+						{
+							"id": 75,
+							"name": "Internal",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Display input indicator INSIDE the adjacent input."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonInputIndicatorStyle.ts",
+									"line": 5,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputIndicatorStyle.ts#L5"
+								}
+							],
+							"type": {
+								"type": "literal",
+								"value": "internal"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration Members",
+							"children": [
+								76,
+								75
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NeonInputIndicatorStyle.ts",
+							"line": 1,
+							"character": 12,
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputIndicatorStyle.ts#L1"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"children": [
+						74
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NeonInputIndicatorStyle.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputIndicatorStyle.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 77,
+			"name": "NeonInputMode",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 78,
 					"name": "NeonInputMode",
 					"variant": "declaration",
 					"kind": 8,
@@ -2023,7 +2128,7 @@
 					},
 					"children": [
 						{
-							"id": 77,
+							"id": 81,
 							"name": "Decimal",
 							"variant": "declaration",
 							"kind": 16,
@@ -2041,7 +2146,7 @@
 									"fileName": "NeonInputMode.ts",
 									"line": 13,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputMode.ts#L13"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputMode.ts#L13"
 								}
 							],
 							"type": {
@@ -2050,7 +2155,7 @@
 							}
 						},
 						{
-							"id": 81,
+							"id": 85,
 							"name": "Email",
 							"variant": "declaration",
 							"kind": 16,
@@ -2068,7 +2173,7 @@
 									"fileName": "NeonInputMode.ts",
 									"line": 24,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputMode.ts#L24"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputMode.ts#L24"
 								}
 							],
 							"type": {
@@ -2077,7 +2182,7 @@
 							}
 						},
 						{
-							"id": 75,
+							"id": 79,
 							"name": "None",
 							"variant": "declaration",
 							"kind": 16,
@@ -2095,7 +2200,7 @@
 									"fileName": "NeonInputMode.ts",
 									"line": 9,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputMode.ts#L9"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputMode.ts#L9"
 								}
 							],
 							"type": {
@@ -2104,7 +2209,7 @@
 							}
 						},
 						{
-							"id": 78,
+							"id": 82,
 							"name": "Numeric",
 							"variant": "declaration",
 							"kind": 16,
@@ -2122,7 +2227,7 @@
 									"fileName": "NeonInputMode.ts",
 									"line": 15,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputMode.ts#L15"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputMode.ts#L15"
 								}
 							],
 							"type": {
@@ -2131,7 +2236,7 @@
 							}
 						},
 						{
-							"id": 80,
+							"id": 84,
 							"name": "Search",
 							"variant": "declaration",
 							"kind": 16,
@@ -2149,7 +2254,7 @@
 									"fileName": "NeonInputMode.ts",
 									"line": 19,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputMode.ts#L19"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputMode.ts#L19"
 								}
 							],
 							"type": {
@@ -2158,7 +2263,7 @@
 							}
 						},
 						{
-							"id": 79,
+							"id": 83,
 							"name": "Tel",
 							"variant": "declaration",
 							"kind": 16,
@@ -2176,7 +2281,7 @@
 									"fileName": "NeonInputMode.ts",
 									"line": 17,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputMode.ts#L17"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputMode.ts#L17"
 								}
 							],
 							"type": {
@@ -2185,7 +2290,7 @@
 							}
 						},
 						{
-							"id": 76,
+							"id": 80,
 							"name": "Text",
 							"variant": "declaration",
 							"kind": 16,
@@ -2203,7 +2308,7 @@
 									"fileName": "NeonInputMode.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputMode.ts#L11"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputMode.ts#L11"
 								}
 							],
 							"type": {
@@ -2212,7 +2317,7 @@
 							}
 						},
 						{
-							"id": 82,
+							"id": 86,
 							"name": "Url",
 							"variant": "declaration",
 							"kind": 16,
@@ -2230,7 +2335,7 @@
 									"fileName": "NeonInputMode.ts",
 									"line": 28,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputMode.ts#L28"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputMode.ts#L28"
 								}
 							],
 							"type": {
@@ -2243,14 +2348,14 @@
 						{
 							"title": "Enumeration Members",
 							"children": [
-								77,
 								81,
-								75,
-								78,
-								80,
+								85,
 								79,
-								76,
-								82
+								82,
+								84,
+								83,
+								80,
+								86
 							]
 						}
 					],
@@ -2259,7 +2364,7 @@
 							"fileName": "NeonInputMode.ts",
 							"line": 7,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputMode.ts#L7"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputMode.ts#L7"
 						}
 					]
 				}
@@ -2268,7 +2373,7 @@
 				{
 					"title": "Enumerations",
 					"children": [
-						74
+						78
 					]
 				}
 			],
@@ -2277,19 +2382,19 @@
 					"fileName": "NeonInputMode.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputMode.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputMode.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 83,
+			"id": 87,
 			"name": "NeonInputType",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 84,
+					"id": 88,
 					"name": "NeonInputType",
 					"variant": "declaration",
 					"kind": 8,
@@ -2304,7 +2409,7 @@
 					},
 					"children": [
 						{
-							"id": 85,
+							"id": 89,
 							"name": "Date",
 							"variant": "declaration",
 							"kind": 16,
@@ -2322,7 +2427,7 @@
 									"fileName": "NeonInputType.ts",
 									"line": 9,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputType.ts#L9"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputType.ts#L9"
 								}
 							],
 							"type": {
@@ -2331,7 +2436,7 @@
 							}
 						},
 						{
-							"id": 86,
+							"id": 90,
 							"name": "DateTime",
 							"variant": "declaration",
 							"kind": 16,
@@ -2349,7 +2454,7 @@
 									"fileName": "NeonInputType.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputType.ts#L11"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputType.ts#L11"
 								}
 							],
 							"type": {
@@ -2358,7 +2463,7 @@
 							}
 						},
 						{
-							"id": 87,
+							"id": 91,
 							"name": "Email",
 							"variant": "declaration",
 							"kind": 16,
@@ -2376,7 +2481,7 @@
 									"fileName": "NeonInputType.ts",
 									"line": 13,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputType.ts#L13"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputType.ts#L13"
 								}
 							],
 							"type": {
@@ -2385,7 +2490,7 @@
 							}
 						},
 						{
-							"id": 88,
+							"id": 92,
 							"name": "File",
 							"variant": "declaration",
 							"kind": 16,
@@ -2403,7 +2508,7 @@
 									"fileName": "NeonInputType.ts",
 									"line": 18,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputType.ts#L18"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputType.ts#L18"
 								}
 							],
 							"type": {
@@ -2412,7 +2517,7 @@
 							}
 						},
 						{
-							"id": 89,
+							"id": 93,
 							"name": "Number",
 							"variant": "declaration",
 							"kind": 16,
@@ -2430,7 +2535,7 @@
 									"fileName": "NeonInputType.ts",
 									"line": 20,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputType.ts#L20"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputType.ts#L20"
 								}
 							],
 							"type": {
@@ -2439,7 +2544,7 @@
 							}
 						},
 						{
-							"id": 90,
+							"id": 94,
 							"name": "Password",
 							"variant": "declaration",
 							"kind": 16,
@@ -2457,7 +2562,7 @@
 									"fileName": "NeonInputType.ts",
 									"line": 22,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputType.ts#L22"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputType.ts#L22"
 								}
 							],
 							"type": {
@@ -2466,7 +2571,7 @@
 							}
 						},
 						{
-							"id": 91,
+							"id": 95,
 							"name": "Range",
 							"variant": "declaration",
 							"kind": 16,
@@ -2484,7 +2589,7 @@
 									"fileName": "NeonInputType.ts",
 									"line": 27,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputType.ts#L27"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputType.ts#L27"
 								}
 							],
 							"type": {
@@ -2493,7 +2598,7 @@
 							}
 						},
 						{
-							"id": 92,
+							"id": 96,
 							"name": "Search",
 							"variant": "declaration",
 							"kind": 16,
@@ -2511,7 +2616,7 @@
 									"fileName": "NeonInputType.ts",
 									"line": 29,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputType.ts#L29"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputType.ts#L29"
 								}
 							],
 							"type": {
@@ -2520,7 +2625,7 @@
 							}
 						},
 						{
-							"id": 93,
+							"id": 97,
 							"name": "Tel",
 							"variant": "declaration",
 							"kind": 16,
@@ -2538,7 +2643,7 @@
 									"fileName": "NeonInputType.ts",
 									"line": 31,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputType.ts#L31"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputType.ts#L31"
 								}
 							],
 							"type": {
@@ -2547,7 +2652,7 @@
 							}
 						},
 						{
-							"id": 94,
+							"id": 98,
 							"name": "Text",
 							"variant": "declaration",
 							"kind": 16,
@@ -2565,7 +2670,7 @@
 									"fileName": "NeonInputType.ts",
 									"line": 33,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputType.ts#L33"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputType.ts#L33"
 								}
 							],
 							"type": {
@@ -2574,7 +2679,7 @@
 							}
 						},
 						{
-							"id": 95,
+							"id": 99,
 							"name": "Time",
 							"variant": "declaration",
 							"kind": 16,
@@ -2592,7 +2697,7 @@
 									"fileName": "NeonInputType.ts",
 									"line": 35,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputType.ts#L35"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputType.ts#L35"
 								}
 							],
 							"type": {
@@ -2601,7 +2706,7 @@
 							}
 						},
 						{
-							"id": 96,
+							"id": 100,
 							"name": "Url",
 							"variant": "declaration",
 							"kind": 16,
@@ -2619,7 +2724,7 @@
 									"fileName": "NeonInputType.ts",
 									"line": 37,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputType.ts#L37"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputType.ts#L37"
 								}
 							],
 							"type": {
@@ -2632,10 +2737,6 @@
 						{
 							"title": "Enumeration Members",
 							"children": [
-								85,
-								86,
-								87,
-								88,
 								89,
 								90,
 								91,
@@ -2643,7 +2744,11 @@
 								93,
 								94,
 								95,
-								96
+								96,
+								97,
+								98,
+								99,
+								100
 							]
 						}
 					],
@@ -2652,7 +2757,7 @@
 							"fileName": "NeonInputType.ts",
 							"line": 7,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputType.ts#L7"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputType.ts#L7"
 						}
 					]
 				}
@@ -2661,7 +2766,7 @@
 				{
 					"title": "Enumerations",
 					"children": [
-						84
+						88
 					]
 				}
 			],
@@ -2670,19 +2775,19 @@
 					"fileName": "NeonInputType.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonInputType.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonInputType.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 97,
+			"id": 101,
 			"name": "NeonLabelSize",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 98,
+					"id": 102,
 					"name": "NeonLabelSize",
 					"variant": "declaration",
 					"kind": 8,
@@ -2697,7 +2802,7 @@
 					},
 					"children": [
 						{
-							"id": 99,
+							"id": 103,
 							"name": "ExtraExtraSmall",
 							"variant": "declaration",
 							"kind": 16,
@@ -2715,7 +2820,7 @@
 									"fileName": "NeonLabelSize.ts",
 									"line": 6,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonLabelSize.ts#L6"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonLabelSize.ts#L6"
 								}
 							],
 							"type": {
@@ -2724,7 +2829,7 @@
 							}
 						},
 						{
-							"id": 100,
+							"id": 104,
 							"name": "ExtraSmall",
 							"variant": "declaration",
 							"kind": 16,
@@ -2742,7 +2847,7 @@
 									"fileName": "NeonLabelSize.ts",
 									"line": 8,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonLabelSize.ts#L8"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonLabelSize.ts#L8"
 								}
 							],
 							"type": {
@@ -2751,7 +2856,7 @@
 							}
 						},
 						{
-							"id": 103,
+							"id": 107,
 							"name": "Large",
 							"variant": "declaration",
 							"kind": 16,
@@ -2769,7 +2874,7 @@
 									"fileName": "NeonLabelSize.ts",
 									"line": 14,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonLabelSize.ts#L14"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonLabelSize.ts#L14"
 								}
 							],
 							"type": {
@@ -2778,7 +2883,7 @@
 							}
 						},
 						{
-							"id": 102,
+							"id": 106,
 							"name": "Medium",
 							"variant": "declaration",
 							"kind": 16,
@@ -2796,7 +2901,7 @@
 									"fileName": "NeonLabelSize.ts",
 									"line": 12,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonLabelSize.ts#L12"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonLabelSize.ts#L12"
 								}
 							],
 							"type": {
@@ -2805,7 +2910,7 @@
 							}
 						},
 						{
-							"id": 101,
+							"id": 105,
 							"name": "Small",
 							"variant": "declaration",
 							"kind": 16,
@@ -2823,7 +2928,7 @@
 									"fileName": "NeonLabelSize.ts",
 									"line": 10,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonLabelSize.ts#L10"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonLabelSize.ts#L10"
 								}
 							],
 							"type": {
@@ -2836,11 +2941,11 @@
 						{
 							"title": "Enumeration Members",
 							"children": [
-								99,
-								100,
 								103,
-								102,
-								101
+								104,
+								107,
+								106,
+								105
 							]
 						}
 					],
@@ -2849,7 +2954,7 @@
 							"fileName": "NeonLabelSize.ts",
 							"line": 4,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonLabelSize.ts#L4"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonLabelSize.ts#L4"
 						}
 					]
 				}
@@ -2858,7 +2963,7 @@
 				{
 					"title": "Enumerations",
 					"children": [
-						98
+						102
 					]
 				}
 			],
@@ -2867,19 +2972,19 @@
 					"fileName": "NeonLabelSize.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonLabelSize.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonLabelSize.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 104,
+			"id": 108,
 			"name": "NeonMode",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 105,
+					"id": 109,
 					"name": "NeonMode",
 					"variant": "declaration",
 					"kind": 8,
@@ -2894,7 +2999,7 @@
 					},
 					"children": [
 						{
-							"id": 107,
+							"id": 111,
 							"name": "Dark",
 							"variant": "declaration",
 							"kind": 16,
@@ -2912,7 +3017,7 @@
 									"fileName": "NeonMode.ts",
 									"line": 8,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonMode.ts#L8"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonMode.ts#L8"
 								}
 							],
 							"type": {
@@ -2921,7 +3026,7 @@
 							}
 						},
 						{
-							"id": 106,
+							"id": 110,
 							"name": "Light",
 							"variant": "declaration",
 							"kind": 16,
@@ -2939,7 +3044,7 @@
 									"fileName": "NeonMode.ts",
 									"line": 6,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonMode.ts#L6"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonMode.ts#L6"
 								}
 							],
 							"type": {
@@ -2948,7 +3053,7 @@
 							}
 						},
 						{
-							"id": 108,
+							"id": 112,
 							"name": "System",
 							"variant": "declaration",
 							"kind": 16,
@@ -2966,7 +3071,7 @@
 									"fileName": "NeonMode.ts",
 									"line": 10,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonMode.ts#L10"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonMode.ts#L10"
 								}
 							],
 							"type": {
@@ -2979,9 +3084,9 @@
 						{
 							"title": "Enumeration Members",
 							"children": [
-								107,
-								106,
-								108
+								111,
+								110,
+								112
 							]
 						}
 					],
@@ -2990,7 +3095,7 @@
 							"fileName": "NeonMode.ts",
 							"line": 4,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonMode.ts#L4"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonMode.ts#L4"
 						}
 					]
 				}
@@ -2999,7 +3104,7 @@
 				{
 					"title": "Enumerations",
 					"children": [
-						105
+						109
 					]
 				}
 			],
@@ -3008,19 +3113,19 @@
 					"fileName": "NeonMode.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonMode.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonMode.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 109,
+			"id": 113,
 			"name": "NeonOrientation",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 110,
+					"id": 114,
 					"name": "NeonOrientation",
 					"variant": "declaration",
 					"kind": 8,
@@ -3035,7 +3140,7 @@
 					},
 					"children": [
 						{
-							"id": 112,
+							"id": 116,
 							"name": "Horizontal",
 							"variant": "declaration",
 							"kind": 16,
@@ -3053,7 +3158,7 @@
 									"fileName": "NeonOrientation.ts",
 									"line": 9,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonOrientation.ts#L9"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonOrientation.ts#L9"
 								}
 							],
 							"type": {
@@ -3062,7 +3167,7 @@
 							}
 						},
 						{
-							"id": 111,
+							"id": 115,
 							"name": "Vertical",
 							"variant": "declaration",
 							"kind": 16,
@@ -3080,7 +3185,7 @@
 									"fileName": "NeonOrientation.ts",
 									"line": 7,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonOrientation.ts#L7"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonOrientation.ts#L7"
 								}
 							],
 							"type": {
@@ -3093,8 +3198,8 @@
 						{
 							"title": "Enumeration Members",
 							"children": [
-								112,
-								111
+								116,
+								115
 							]
 						}
 					],
@@ -3103,7 +3208,7 @@
 							"fileName": "NeonOrientation.ts",
 							"line": 5,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonOrientation.ts#L5"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonOrientation.ts#L5"
 						}
 					]
 				}
@@ -3112,7 +3217,7 @@
 				{
 					"title": "Enumerations",
 					"children": [
-						110
+						114
 					]
 				}
 			],
@@ -3121,19 +3226,19 @@
 					"fileName": "NeonOrientation.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonOrientation.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonOrientation.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 113,
+			"id": 117,
 			"name": "NeonOutlineStyle",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 114,
+					"id": 118,
 					"name": "NeonOutlineStyle",
 					"variant": "declaration",
 					"kind": 8,
@@ -3148,7 +3253,7 @@
 					},
 					"children": [
 						{
-							"id": 118,
+							"id": 122,
 							"name": "Background",
 							"variant": "declaration",
 							"kind": 16,
@@ -3166,7 +3271,7 @@
 									"fileName": "NeonOutlineStyle.ts",
 									"line": 15,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonOutlineStyle.ts#L15"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonOutlineStyle.ts#L15"
 								}
 							],
 							"type": {
@@ -3175,7 +3280,7 @@
 							}
 						},
 						{
-							"id": 117,
+							"id": 121,
 							"name": "Border",
 							"variant": "declaration",
 							"kind": 16,
@@ -3193,7 +3298,7 @@
 									"fileName": "NeonOutlineStyle.ts",
 									"line": 13,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonOutlineStyle.ts#L13"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonOutlineStyle.ts#L13"
 								}
 							],
 							"type": {
@@ -3202,7 +3307,7 @@
 							}
 						},
 						{
-							"id": 119,
+							"id": 123,
 							"name": "Bullet",
 							"variant": "declaration",
 							"kind": 16,
@@ -3220,7 +3325,7 @@
 									"fileName": "NeonOutlineStyle.ts",
 									"line": 17,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonOutlineStyle.ts#L17"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonOutlineStyle.ts#L17"
 								}
 							],
 							"type": {
@@ -3229,7 +3334,7 @@
 							}
 						},
 						{
-							"id": 115,
+							"id": 119,
 							"name": "None",
 							"variant": "declaration",
 							"kind": 16,
@@ -3247,7 +3352,7 @@
 									"fileName": "NeonOutlineStyle.ts",
 									"line": 9,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonOutlineStyle.ts#L9"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonOutlineStyle.ts#L9"
 								}
 							],
 							"type": {
@@ -3256,7 +3361,7 @@
 							}
 						},
 						{
-							"id": 116,
+							"id": 120,
 							"name": "Text",
 							"variant": "declaration",
 							"kind": 16,
@@ -3274,7 +3379,7 @@
 									"fileName": "NeonOutlineStyle.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonOutlineStyle.ts#L11"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonOutlineStyle.ts#L11"
 								}
 							],
 							"type": {
@@ -3287,11 +3392,11 @@
 						{
 							"title": "Enumeration Members",
 							"children": [
-								118,
-								117,
+								122,
+								121,
+								123,
 								119,
-								115,
-								116
+								120
 							]
 						}
 					],
@@ -3300,7 +3405,7 @@
 							"fileName": "NeonOutlineStyle.ts",
 							"line": 7,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonOutlineStyle.ts#L7"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonOutlineStyle.ts#L7"
 						}
 					]
 				}
@@ -3309,7 +3414,7 @@
 				{
 					"title": "Enumerations",
 					"children": [
-						114
+						118
 					]
 				}
 			],
@@ -3318,26 +3423,26 @@
 					"fileName": "NeonOutlineStyle.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonOutlineStyle.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonOutlineStyle.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 120,
+			"id": 124,
 			"name": "NeonPageAlignment",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 121,
+					"id": 125,
 					"name": "NeonPageAlignment",
 					"variant": "declaration",
 					"kind": 8,
 					"flags": {},
 					"children": [
 						{
-							"id": 122,
+							"id": 126,
 							"name": "CENTER",
 							"variant": "declaration",
 							"kind": 16,
@@ -3347,7 +3452,7 @@
 									"fileName": "NeonPageAlignment.ts",
 									"line": 2,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonPageAlignment.ts#L2"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonPageAlignment.ts#L2"
 								}
 							],
 							"type": {
@@ -3356,7 +3461,7 @@
 							}
 						},
 						{
-							"id": 123,
+							"id": 127,
 							"name": "LEFT",
 							"variant": "declaration",
 							"kind": 16,
@@ -3366,7 +3471,7 @@
 									"fileName": "NeonPageAlignment.ts",
 									"line": 3,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonPageAlignment.ts#L3"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonPageAlignment.ts#L3"
 								}
 							],
 							"type": {
@@ -3379,8 +3484,8 @@
 						{
 							"title": "Enumeration Members",
 							"children": [
-								122,
-								123
+								126,
+								127
 							]
 						}
 					],
@@ -3389,7 +3494,7 @@
 							"fileName": "NeonPageAlignment.ts",
 							"line": 1,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonPageAlignment.ts#L1"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonPageAlignment.ts#L1"
 						}
 					]
 				}
@@ -3398,7 +3503,7 @@
 				{
 					"title": "Enumerations",
 					"children": [
-						121
+						125
 					]
 				}
 			],
@@ -3407,19 +3512,19 @@
 					"fileName": "NeonPageAlignment.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonPageAlignment.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonPageAlignment.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 124,
+			"id": 128,
 			"name": "NeonPosition",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 125,
+					"id": 129,
 					"name": "NeonPosition",
 					"variant": "declaration",
 					"kind": 8,
@@ -3434,7 +3539,7 @@
 					},
 					"children": [
 						{
-							"id": 128,
+							"id": 132,
 							"name": "Bottom",
 							"variant": "declaration",
 							"kind": 16,
@@ -3452,7 +3557,7 @@
 									"fileName": "NeonPosition.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonPosition.ts#L11"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonPosition.ts#L11"
 								}
 							],
 							"type": {
@@ -3461,7 +3566,7 @@
 							}
 						},
 						{
-							"id": 127,
+							"id": 131,
 							"name": "Left",
 							"variant": "declaration",
 							"kind": 16,
@@ -3479,7 +3584,7 @@
 									"fileName": "NeonPosition.ts",
 									"line": 9,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonPosition.ts#L9"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonPosition.ts#L9"
 								}
 							],
 							"type": {
@@ -3488,7 +3593,7 @@
 							}
 						},
 						{
-							"id": 129,
+							"id": 133,
 							"name": "Right",
 							"variant": "declaration",
 							"kind": 16,
@@ -3506,7 +3611,7 @@
 									"fileName": "NeonPosition.ts",
 									"line": 13,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonPosition.ts#L13"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonPosition.ts#L13"
 								}
 							],
 							"type": {
@@ -3515,7 +3620,7 @@
 							}
 						},
 						{
-							"id": 126,
+							"id": 130,
 							"name": "Top",
 							"variant": "declaration",
 							"kind": 16,
@@ -3533,7 +3638,7 @@
 									"fileName": "NeonPosition.ts",
 									"line": 7,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonPosition.ts#L7"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonPosition.ts#L7"
 								}
 							],
 							"type": {
@@ -3546,10 +3651,10 @@
 						{
 							"title": "Enumeration Members",
 							"children": [
-								128,
-								127,
-								129,
-								126
+								132,
+								131,
+								133,
+								130
 							]
 						}
 					],
@@ -3558,7 +3663,7 @@
 							"fileName": "NeonPosition.ts",
 							"line": 5,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonPosition.ts#L5"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonPosition.ts#L5"
 						}
 					]
 				}
@@ -3567,7 +3672,7 @@
 				{
 					"title": "Enumerations",
 					"children": [
-						125
+						129
 					]
 				}
 			],
@@ -3576,19 +3681,19 @@
 					"fileName": "NeonPosition.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonPosition.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonPosition.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 130,
+			"id": 134,
 			"name": "NeonResponsive",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 131,
+					"id": 135,
 					"name": "NeonResponsive",
 					"variant": "declaration",
 					"kind": 8,
@@ -3603,7 +3708,7 @@
 					},
 					"children": [
 						{
-							"id": 132,
+							"id": 136,
 							"name": "All",
 							"variant": "declaration",
 							"kind": 16,
@@ -3621,7 +3726,7 @@
 									"fileName": "NeonResponsive.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonResponsive.ts#L11"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonResponsive.ts#L11"
 								}
 							],
 							"type": {
@@ -3630,7 +3735,7 @@
 							}
 						},
 						{
-							"id": 133,
+							"id": 137,
 							"name": "Desktop",
 							"variant": "declaration",
 							"kind": 16,
@@ -3648,7 +3753,7 @@
 									"fileName": "NeonResponsive.ts",
 									"line": 13,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonResponsive.ts#L13"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonResponsive.ts#L13"
 								}
 							],
 							"type": {
@@ -3657,7 +3762,7 @@
 							}
 						},
 						{
-							"id": 134,
+							"id": 138,
 							"name": "DesktopLarge",
 							"variant": "declaration",
 							"kind": 16,
@@ -3675,7 +3780,7 @@
 									"fileName": "NeonResponsive.ts",
 									"line": 15,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonResponsive.ts#L15"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonResponsive.ts#L15"
 								}
 							],
 							"type": {
@@ -3684,7 +3789,7 @@
 							}
 						},
 						{
-							"id": 139,
+							"id": 143,
 							"name": "LargerThanMobile",
 							"variant": "declaration",
 							"kind": 16,
@@ -3702,7 +3807,7 @@
 									"fileName": "NeonResponsive.ts",
 									"line": 25,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonResponsive.ts#L25"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonResponsive.ts#L25"
 								}
 							],
 							"type": {
@@ -3711,7 +3816,7 @@
 							}
 						},
 						{
-							"id": 137,
+							"id": 141,
 							"name": "LargerThanMobileLarge",
 							"variant": "declaration",
 							"kind": 16,
@@ -3729,7 +3834,7 @@
 									"fileName": "NeonResponsive.ts",
 									"line": 21,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonResponsive.ts#L21"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonResponsive.ts#L21"
 								}
 							],
 							"type": {
@@ -3738,7 +3843,7 @@
 							}
 						},
 						{
-							"id": 135,
+							"id": 139,
 							"name": "LargerThanTablet",
 							"variant": "declaration",
 							"kind": 16,
@@ -3756,7 +3861,7 @@
 									"fileName": "NeonResponsive.ts",
 									"line": 17,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonResponsive.ts#L17"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonResponsive.ts#L17"
 								}
 							],
 							"type": {
@@ -3765,7 +3870,7 @@
 							}
 						},
 						{
-							"id": 140,
+							"id": 144,
 							"name": "Mobile",
 							"variant": "declaration",
 							"kind": 16,
@@ -3783,7 +3888,7 @@
 									"fileName": "NeonResponsive.ts",
 									"line": 27,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonResponsive.ts#L27"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonResponsive.ts#L27"
 								}
 							],
 							"type": {
@@ -3792,7 +3897,7 @@
 							}
 						},
 						{
-							"id": 138,
+							"id": 142,
 							"name": "MobileLarge",
 							"variant": "declaration",
 							"kind": 16,
@@ -3810,7 +3915,7 @@
 									"fileName": "NeonResponsive.ts",
 									"line": 23,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonResponsive.ts#L23"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonResponsive.ts#L23"
 								}
 							],
 							"type": {
@@ -3819,7 +3924,7 @@
 							}
 						},
 						{
-							"id": 136,
+							"id": 140,
 							"name": "Tablet",
 							"variant": "declaration",
 							"kind": 16,
@@ -3837,7 +3942,7 @@
 									"fileName": "NeonResponsive.ts",
 									"line": 19,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonResponsive.ts#L19"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonResponsive.ts#L19"
 								}
 							],
 							"type": {
@@ -3850,15 +3955,15 @@
 						{
 							"title": "Enumeration Members",
 							"children": [
-								132,
-								133,
-								134,
-								139,
+								136,
 								137,
-								135,
-								140,
 								138,
-								136
+								143,
+								141,
+								139,
+								144,
+								142,
+								140
 							]
 						}
 					],
@@ -3867,7 +3972,7 @@
 							"fileName": "NeonResponsive.ts",
 							"line": 6,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonResponsive.ts#L6"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonResponsive.ts#L6"
 						}
 					]
 				}
@@ -3876,7 +3981,7 @@
 				{
 					"title": "Enumerations",
 					"children": [
-						131
+						135
 					]
 				}
 			],
@@ -3885,19 +3990,19 @@
 					"fileName": "NeonResponsive.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonResponsive.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonResponsive.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 141,
+			"id": 145,
 			"name": "NeonSize",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 142,
+					"id": 146,
 					"name": "NeonSize",
 					"variant": "declaration",
 					"kind": 8,
@@ -3912,7 +4017,7 @@
 					},
 					"children": [
 						{
-							"id": 145,
+							"id": 149,
 							"name": "Large",
 							"variant": "declaration",
 							"kind": 16,
@@ -3930,7 +4035,7 @@
 									"fileName": "NeonSize.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonSize.ts#L11"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonSize.ts#L11"
 								}
 							],
 							"type": {
@@ -3939,7 +4044,7 @@
 							}
 						},
 						{
-							"id": 144,
+							"id": 148,
 							"name": "Medium",
 							"variant": "declaration",
 							"kind": 16,
@@ -3957,7 +4062,7 @@
 									"fileName": "NeonSize.ts",
 									"line": 9,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonSize.ts#L9"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonSize.ts#L9"
 								}
 							],
 							"type": {
@@ -3966,7 +4071,7 @@
 							}
 						},
 						{
-							"id": 143,
+							"id": 147,
 							"name": "Small",
 							"variant": "declaration",
 							"kind": 16,
@@ -3984,7 +4089,7 @@
 									"fileName": "NeonSize.ts",
 									"line": 7,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonSize.ts#L7"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonSize.ts#L7"
 								}
 							],
 							"type": {
@@ -3997,9 +4102,9 @@
 						{
 							"title": "Enumeration Members",
 							"children": [
-								145,
-								144,
-								143
+								149,
+								148,
+								147
 							]
 						}
 					],
@@ -4008,7 +4113,7 @@
 							"fileName": "NeonSize.ts",
 							"line": 5,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonSize.ts#L5"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonSize.ts#L5"
 						}
 					]
 				}
@@ -4017,7 +4122,7 @@
 				{
 					"title": "Enumerations",
 					"children": [
-						142
+						146
 					]
 				}
 			],
@@ -4026,19 +4131,19 @@
 					"fileName": "NeonSize.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonSize.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonSize.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 146,
+			"id": 150,
 			"name": "NeonSplashLoaderSize",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 147,
+					"id": 151,
 					"name": "NeonSplashLoaderSize",
 					"variant": "declaration",
 					"kind": 8,
@@ -4053,7 +4158,7 @@
 					},
 					"children": [
 						{
-							"id": 151,
+							"id": 155,
 							"name": "ExtraLarge",
 							"variant": "declaration",
 							"kind": 16,
@@ -4071,7 +4176,7 @@
 									"fileName": "NeonSplashLoaderSize.ts",
 									"line": 12,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonSplashLoaderSize.ts#L12"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonSplashLoaderSize.ts#L12"
 								}
 							],
 							"type": {
@@ -4080,7 +4185,7 @@
 							}
 						},
 						{
-							"id": 150,
+							"id": 154,
 							"name": "Large",
 							"variant": "declaration",
 							"kind": 16,
@@ -4098,7 +4203,7 @@
 									"fileName": "NeonSplashLoaderSize.ts",
 									"line": 10,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonSplashLoaderSize.ts#L10"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonSplashLoaderSize.ts#L10"
 								}
 							],
 							"type": {
@@ -4107,7 +4212,7 @@
 							}
 						},
 						{
-							"id": 149,
+							"id": 153,
 							"name": "Medium",
 							"variant": "declaration",
 							"kind": 16,
@@ -4125,7 +4230,7 @@
 									"fileName": "NeonSplashLoaderSize.ts",
 									"line": 8,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonSplashLoaderSize.ts#L8"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonSplashLoaderSize.ts#L8"
 								}
 							],
 							"type": {
@@ -4134,7 +4239,7 @@
 							}
 						},
 						{
-							"id": 148,
+							"id": 152,
 							"name": "Small",
 							"variant": "declaration",
 							"kind": 16,
@@ -4152,7 +4257,7 @@
 									"fileName": "NeonSplashLoaderSize.ts",
 									"line": 6,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonSplashLoaderSize.ts#L6"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonSplashLoaderSize.ts#L6"
 								}
 							],
 							"type": {
@@ -4165,10 +4270,10 @@
 						{
 							"title": "Enumeration Members",
 							"children": [
-								151,
-								150,
-								149,
-								148
+								155,
+								154,
+								153,
+								152
 							]
 						}
 					],
@@ -4177,7 +4282,7 @@
 							"fileName": "NeonSplashLoaderSize.ts",
 							"line": 4,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonSplashLoaderSize.ts#L4"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonSplashLoaderSize.ts#L4"
 						}
 					]
 				}
@@ -4186,7 +4291,7 @@
 				{
 					"title": "Enumerations",
 					"children": [
-						147
+						151
 					]
 				}
 			],
@@ -4195,19 +4300,19 @@
 					"fileName": "NeonSplashLoaderSize.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonSplashLoaderSize.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonSplashLoaderSize.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 152,
+			"id": 156,
 			"name": "NeonState",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 153,
+					"id": 157,
 					"name": "NeonState",
 					"variant": "declaration",
 					"kind": 8,
@@ -4222,7 +4327,7 @@
 					},
 					"children": [
 						{
-							"id": 157,
+							"id": 161,
 							"name": "Error",
 							"variant": "declaration",
 							"kind": 16,
@@ -4240,7 +4345,7 @@
 									"fileName": "NeonState.ts",
 									"line": 21,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonState.ts#L21"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonState.ts#L21"
 								}
 							],
 							"type": {
@@ -4249,7 +4354,7 @@
 							}
 						},
 						{
-							"id": 155,
+							"id": 159,
 							"name": "Loading",
 							"variant": "declaration",
 							"kind": 16,
@@ -4267,7 +4372,7 @@
 									"fileName": "NeonState.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonState.ts#L11"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonState.ts#L11"
 								}
 							],
 							"type": {
@@ -4276,7 +4381,7 @@
 							}
 						},
 						{
-							"id": 154,
+							"id": 158,
 							"name": "Ready",
 							"variant": "declaration",
 							"kind": 16,
@@ -4294,7 +4399,7 @@
 									"fileName": "NeonState.ts",
 									"line": 6,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonState.ts#L6"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonState.ts#L6"
 								}
 							],
 							"type": {
@@ -4303,7 +4408,7 @@
 							}
 						},
 						{
-							"id": 156,
+							"id": 160,
 							"name": "Success",
 							"variant": "declaration",
 							"kind": 16,
@@ -4321,7 +4426,7 @@
 									"fileName": "NeonState.ts",
 									"line": 16,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonState.ts#L16"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonState.ts#L16"
 								}
 							],
 							"type": {
@@ -4334,10 +4439,10 @@
 						{
 							"title": "Enumeration Members",
 							"children": [
-								157,
-								155,
-								154,
-								156
+								161,
+								159,
+								158,
+								160
 							]
 						}
 					],
@@ -4346,7 +4451,7 @@
 							"fileName": "NeonState.ts",
 							"line": 4,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonState.ts#L4"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonState.ts#L4"
 						}
 					]
 				}
@@ -4355,7 +4460,7 @@
 				{
 					"title": "Enumerations",
 					"children": [
-						153
+						157
 					]
 				}
 			],
@@ -4364,19 +4469,19 @@
 					"fileName": "NeonState.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonState.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonState.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 158,
+			"id": 162,
 			"name": "NeonSwitchStyle",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 159,
+					"id": 163,
 					"name": "NeonSwitchStyle",
 					"variant": "declaration",
 					"kind": 8,
@@ -4391,7 +4496,7 @@
 					},
 					"children": [
 						{
-							"id": 161,
+							"id": 165,
 							"name": "Checkbox",
 							"variant": "declaration",
 							"kind": 16,
@@ -4409,7 +4514,7 @@
 									"fileName": "NeonSwitchStyle.ts",
 									"line": 8,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonSwitchStyle.ts#L8"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonSwitchStyle.ts#L8"
 								}
 							],
 							"type": {
@@ -4418,7 +4523,7 @@
 							}
 						},
 						{
-							"id": 160,
+							"id": 164,
 							"name": "Switch",
 							"variant": "declaration",
 							"kind": 16,
@@ -4436,7 +4541,7 @@
 									"fileName": "NeonSwitchStyle.ts",
 									"line": 6,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonSwitchStyle.ts#L6"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonSwitchStyle.ts#L6"
 								}
 							],
 							"type": {
@@ -4449,8 +4554,8 @@
 						{
 							"title": "Enumeration Members",
 							"children": [
-								161,
-								160
+								165,
+								164
 							]
 						}
 					],
@@ -4459,7 +4564,7 @@
 							"fileName": "NeonSwitchStyle.ts",
 							"line": 4,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonSwitchStyle.ts#L4"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonSwitchStyle.ts#L4"
 						}
 					]
 				}
@@ -4468,7 +4573,7 @@
 				{
 					"title": "Enumerations",
 					"children": [
-						159
+						163
 					]
 				}
 			],
@@ -4477,19 +4582,19 @@
 					"fileName": "NeonSwitchStyle.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonSwitchStyle.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonSwitchStyle.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 162,
+			"id": 166,
 			"name": "NeonToggleChipSize",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 163,
+					"id": 167,
 					"name": "NeonToggleChipSize",
 					"variant": "declaration",
 					"kind": 8,
@@ -4504,7 +4609,7 @@
 					},
 					"children": [
 						{
-							"id": 164,
+							"id": 168,
 							"name": "ExtraSmall",
 							"variant": "declaration",
 							"kind": 16,
@@ -4522,7 +4627,7 @@
 									"fileName": "NeonToggleChipSize.ts",
 									"line": 6,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonToggleChipSize.ts#L6"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonToggleChipSize.ts#L6"
 								}
 							],
 							"type": {
@@ -4531,7 +4636,7 @@
 							}
 						},
 						{
-							"id": 167,
+							"id": 171,
 							"name": "Large",
 							"variant": "declaration",
 							"kind": 16,
@@ -4549,7 +4654,7 @@
 									"fileName": "NeonToggleChipSize.ts",
 									"line": 12,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonToggleChipSize.ts#L12"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonToggleChipSize.ts#L12"
 								}
 							],
 							"type": {
@@ -4558,7 +4663,7 @@
 							}
 						},
 						{
-							"id": 166,
+							"id": 170,
 							"name": "Medium",
 							"variant": "declaration",
 							"kind": 16,
@@ -4576,7 +4681,7 @@
 									"fileName": "NeonToggleChipSize.ts",
 									"line": 10,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonToggleChipSize.ts#L10"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonToggleChipSize.ts#L10"
 								}
 							],
 							"type": {
@@ -4585,7 +4690,7 @@
 							}
 						},
 						{
-							"id": 165,
+							"id": 169,
 							"name": "Small",
 							"variant": "declaration",
 							"kind": 16,
@@ -4603,7 +4708,7 @@
 									"fileName": "NeonToggleChipSize.ts",
 									"line": 8,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonToggleChipSize.ts#L8"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonToggleChipSize.ts#L8"
 								}
 							],
 							"type": {
@@ -4616,10 +4721,10 @@
 						{
 							"title": "Enumeration Members",
 							"children": [
-								164,
-								167,
-								166,
-								165
+								168,
+								171,
+								170,
+								169
 							]
 						}
 					],
@@ -4628,7 +4733,7 @@
 							"fileName": "NeonToggleChipSize.ts",
 							"line": 4,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonToggleChipSize.ts#L4"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonToggleChipSize.ts#L4"
 						}
 					]
 				}
@@ -4637,7 +4742,7 @@
 				{
 					"title": "Enumerations",
 					"children": [
-						163
+						167
 					]
 				}
 			],
@@ -4646,19 +4751,19 @@
 					"fileName": "NeonToggleChipSize.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonToggleChipSize.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonToggleChipSize.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 168,
+			"id": 172,
 			"name": "NeonToggleStyle",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 169,
+					"id": 173,
 					"name": "NeonToggleStyle",
 					"variant": "declaration",
 					"kind": 8,
@@ -4673,7 +4778,7 @@
 					},
 					"children": [
 						{
-							"id": 172,
+							"id": 176,
 							"name": "Card",
 							"variant": "declaration",
 							"kind": 16,
@@ -4691,7 +4796,7 @@
 									"fileName": "NeonToggleStyle.ts",
 									"line": 10,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonToggleStyle.ts#L10"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonToggleStyle.ts#L10"
 								}
 							],
 							"type": {
@@ -4700,7 +4805,7 @@
 							}
 						},
 						{
-							"id": 171,
+							"id": 175,
 							"name": "RadioButtons",
 							"variant": "declaration",
 							"kind": 16,
@@ -4718,7 +4823,7 @@
 									"fileName": "NeonToggleStyle.ts",
 									"line": 8,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonToggleStyle.ts#L8"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonToggleStyle.ts#L8"
 								}
 							],
 							"type": {
@@ -4727,7 +4832,7 @@
 							}
 						},
 						{
-							"id": 170,
+							"id": 174,
 							"name": "Toggle",
 							"variant": "declaration",
 							"kind": 16,
@@ -4745,7 +4850,7 @@
 									"fileName": "NeonToggleStyle.ts",
 									"line": 6,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonToggleStyle.ts#L6"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonToggleStyle.ts#L6"
 								}
 							],
 							"type": {
@@ -4758,9 +4863,9 @@
 						{
 							"title": "Enumeration Members",
 							"children": [
-								172,
-								171,
-								170
+								176,
+								175,
+								174
 							]
 						}
 					],
@@ -4769,7 +4874,7 @@
 							"fileName": "NeonToggleStyle.ts",
 							"line": 4,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonToggleStyle.ts#L4"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonToggleStyle.ts#L4"
 						}
 					]
 				}
@@ -4778,7 +4883,7 @@
 				{
 					"title": "Enumerations",
 					"children": [
-						169
+						173
 					]
 				}
 			],
@@ -4787,19 +4892,19 @@
 					"fileName": "NeonToggleStyle.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonToggleStyle.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonToggleStyle.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 173,
+			"id": 177,
 			"name": "NeonTooltipStyle",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 174,
+					"id": 178,
 					"name": "NeonTooltipStyle",
 					"variant": "declaration",
 					"kind": 8,
@@ -4814,7 +4919,7 @@
 					},
 					"children": [
 						{
-							"id": 176,
+							"id": 180,
 							"name": "Popover",
 							"variant": "declaration",
 							"kind": 16,
@@ -4832,7 +4937,7 @@
 									"fileName": "NeonTooltipStyle.ts",
 									"line": 8,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonTooltipStyle.ts#L8"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonTooltipStyle.ts#L8"
 								}
 							],
 							"type": {
@@ -4841,7 +4946,7 @@
 							}
 						},
 						{
-							"id": 175,
+							"id": 179,
 							"name": "Tooltip",
 							"variant": "declaration",
 							"kind": 16,
@@ -4859,7 +4964,7 @@
 									"fileName": "NeonTooltipStyle.ts",
 									"line": 6,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonTooltipStyle.ts#L6"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonTooltipStyle.ts#L6"
 								}
 							],
 							"type": {
@@ -4872,8 +4977,8 @@
 						{
 							"title": "Enumeration Members",
 							"children": [
-								176,
-								175
+								180,
+								179
 							]
 						}
 					],
@@ -4882,7 +4987,7 @@
 							"fileName": "NeonTooltipStyle.ts",
 							"line": 4,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonTooltipStyle.ts#L4"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonTooltipStyle.ts#L4"
 						}
 					]
 				}
@@ -4891,7 +4996,7 @@
 				{
 					"title": "Enumerations",
 					"children": [
-						174
+						178
 					]
 				}
 			],
@@ -4900,19 +5005,19 @@
 					"fileName": "NeonTooltipStyle.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonTooltipStyle.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonTooltipStyle.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 177,
+			"id": 181,
 			"name": "NeonVerticalPosition",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 178,
+					"id": 182,
 					"name": "NeonVerticalPosition",
 					"variant": "declaration",
 					"kind": 8,
@@ -4927,7 +5032,7 @@
 					},
 					"children": [
 						{
-							"id": 180,
+							"id": 184,
 							"name": "Bottom",
 							"variant": "declaration",
 							"kind": 16,
@@ -4945,7 +5050,7 @@
 									"fileName": "NeonVerticalPosition.ts",
 									"line": 8,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonVerticalPosition.ts#L8"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonVerticalPosition.ts#L8"
 								}
 							],
 							"type": {
@@ -4954,7 +5059,7 @@
 							}
 						},
 						{
-							"id": 179,
+							"id": 183,
 							"name": "Top",
 							"variant": "declaration",
 							"kind": 16,
@@ -4972,7 +5077,7 @@
 									"fileName": "NeonVerticalPosition.ts",
 									"line": 6,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonVerticalPosition.ts#L6"
+									"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonVerticalPosition.ts#L6"
 								}
 							],
 							"type": {
@@ -4985,8 +5090,8 @@
 						{
 							"title": "Enumeration Members",
 							"children": [
-								180,
-								179
+								184,
+								183
 							]
 						}
 					],
@@ -4995,7 +5100,7 @@
 							"fileName": "NeonVerticalPosition.ts",
 							"line": 4,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonVerticalPosition.ts#L4"
+							"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonVerticalPosition.ts#L4"
 						}
 					]
 				}
@@ -5004,7 +5109,7 @@
 				{
 					"title": "Enumerations",
 					"children": [
-						178
+						182
 					]
 				}
 			],
@@ -5013,7 +5118,7 @@
 					"fileName": "NeonVerticalPosition.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/fa3b6fb/src/common/enums/NeonVerticalPosition.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/39feebc/src/common/enums/NeonVerticalPosition.ts#L1"
 				}
 			]
 		}
@@ -5034,22 +5139,23 @@
 				58,
 				69,
 				73,
-				83,
-				97,
-				104,
-				109,
+				77,
+				87,
+				101,
+				108,
 				113,
-				120,
+				117,
 				124,
-				130,
-				141,
-				146,
-				152,
-				158,
+				128,
+				134,
+				145,
+				150,
+				156,
 				162,
-				168,
-				173,
-				177
+				166,
+				172,
+				177,
+				181
 			]
 		}
 	],
@@ -5350,434 +5456,450 @@
 			"qualifiedName": "NeonHorizontalPosition.Right"
 		},
 		"73": {
-			"sourceFileName": "src/common/enums/NeonInputMode.ts",
+			"sourceFileName": "src/common/enums/NeonInputIndicatorStyle.ts",
 			"qualifiedName": ""
 		},
 		"74": {
-			"sourceFileName": "src/common/enums/NeonInputMode.ts",
-			"qualifiedName": "NeonInputMode"
+			"sourceFileName": "src/common/enums/NeonInputIndicatorStyle.ts",
+			"qualifiedName": "NeonInputIndicatorStyle"
 		},
 		"75": {
-			"sourceFileName": "src/common/enums/NeonInputMode.ts",
-			"qualifiedName": "NeonInputMode.None"
+			"sourceFileName": "src/common/enums/NeonInputIndicatorStyle.ts",
+			"qualifiedName": "NeonInputIndicatorStyle.Internal"
 		},
 		"76": {
-			"sourceFileName": "src/common/enums/NeonInputMode.ts",
-			"qualifiedName": "NeonInputMode.Text"
+			"sourceFileName": "src/common/enums/NeonInputIndicatorStyle.ts",
+			"qualifiedName": "NeonInputIndicatorStyle.External"
 		},
 		"77": {
 			"sourceFileName": "src/common/enums/NeonInputMode.ts",
-			"qualifiedName": "NeonInputMode.Decimal"
+			"qualifiedName": ""
 		},
 		"78": {
 			"sourceFileName": "src/common/enums/NeonInputMode.ts",
-			"qualifiedName": "NeonInputMode.Numeric"
+			"qualifiedName": "NeonInputMode"
 		},
 		"79": {
 			"sourceFileName": "src/common/enums/NeonInputMode.ts",
-			"qualifiedName": "NeonInputMode.Tel"
+			"qualifiedName": "NeonInputMode.None"
 		},
 		"80": {
 			"sourceFileName": "src/common/enums/NeonInputMode.ts",
-			"qualifiedName": "NeonInputMode.Search"
+			"qualifiedName": "NeonInputMode.Text"
 		},
 		"81": {
 			"sourceFileName": "src/common/enums/NeonInputMode.ts",
-			"qualifiedName": "NeonInputMode.Email"
+			"qualifiedName": "NeonInputMode.Decimal"
 		},
 		"82": {
 			"sourceFileName": "src/common/enums/NeonInputMode.ts",
-			"qualifiedName": "NeonInputMode.Url"
+			"qualifiedName": "NeonInputMode.Numeric"
 		},
 		"83": {
-			"sourceFileName": "src/common/enums/NeonInputType.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/enums/NeonInputMode.ts",
+			"qualifiedName": "NeonInputMode.Tel"
 		},
 		"84": {
-			"sourceFileName": "src/common/enums/NeonInputType.ts",
-			"qualifiedName": "NeonInputType"
+			"sourceFileName": "src/common/enums/NeonInputMode.ts",
+			"qualifiedName": "NeonInputMode.Search"
 		},
 		"85": {
-			"sourceFileName": "src/common/enums/NeonInputType.ts",
-			"qualifiedName": "NeonInputType.Date"
+			"sourceFileName": "src/common/enums/NeonInputMode.ts",
+			"qualifiedName": "NeonInputMode.Email"
 		},
 		"86": {
-			"sourceFileName": "src/common/enums/NeonInputType.ts",
-			"qualifiedName": "NeonInputType.DateTime"
+			"sourceFileName": "src/common/enums/NeonInputMode.ts",
+			"qualifiedName": "NeonInputMode.Url"
 		},
 		"87": {
 			"sourceFileName": "src/common/enums/NeonInputType.ts",
-			"qualifiedName": "NeonInputType.Email"
+			"qualifiedName": ""
 		},
 		"88": {
 			"sourceFileName": "src/common/enums/NeonInputType.ts",
-			"qualifiedName": "NeonInputType.File"
+			"qualifiedName": "NeonInputType"
 		},
 		"89": {
 			"sourceFileName": "src/common/enums/NeonInputType.ts",
-			"qualifiedName": "NeonInputType.Number"
+			"qualifiedName": "NeonInputType.Date"
 		},
 		"90": {
 			"sourceFileName": "src/common/enums/NeonInputType.ts",
-			"qualifiedName": "NeonInputType.Password"
+			"qualifiedName": "NeonInputType.DateTime"
 		},
 		"91": {
 			"sourceFileName": "src/common/enums/NeonInputType.ts",
-			"qualifiedName": "NeonInputType.Range"
+			"qualifiedName": "NeonInputType.Email"
 		},
 		"92": {
 			"sourceFileName": "src/common/enums/NeonInputType.ts",
-			"qualifiedName": "NeonInputType.Search"
+			"qualifiedName": "NeonInputType.File"
 		},
 		"93": {
 			"sourceFileName": "src/common/enums/NeonInputType.ts",
-			"qualifiedName": "NeonInputType.Tel"
+			"qualifiedName": "NeonInputType.Number"
 		},
 		"94": {
 			"sourceFileName": "src/common/enums/NeonInputType.ts",
-			"qualifiedName": "NeonInputType.Text"
+			"qualifiedName": "NeonInputType.Password"
 		},
 		"95": {
 			"sourceFileName": "src/common/enums/NeonInputType.ts",
-			"qualifiedName": "NeonInputType.Time"
+			"qualifiedName": "NeonInputType.Range"
 		},
 		"96": {
 			"sourceFileName": "src/common/enums/NeonInputType.ts",
-			"qualifiedName": "NeonInputType.Url"
+			"qualifiedName": "NeonInputType.Search"
 		},
 		"97": {
-			"sourceFileName": "src/common/enums/NeonLabelSize.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/enums/NeonInputType.ts",
+			"qualifiedName": "NeonInputType.Tel"
 		},
 		"98": {
-			"sourceFileName": "src/common/enums/NeonLabelSize.ts",
-			"qualifiedName": "NeonLabelSize"
+			"sourceFileName": "src/common/enums/NeonInputType.ts",
+			"qualifiedName": "NeonInputType.Text"
 		},
 		"99": {
-			"sourceFileName": "src/common/enums/NeonLabelSize.ts",
-			"qualifiedName": "NeonLabelSize.ExtraExtraSmall"
+			"sourceFileName": "src/common/enums/NeonInputType.ts",
+			"qualifiedName": "NeonInputType.Time"
 		},
 		"100": {
-			"sourceFileName": "src/common/enums/NeonLabelSize.ts",
-			"qualifiedName": "NeonLabelSize.ExtraSmall"
+			"sourceFileName": "src/common/enums/NeonInputType.ts",
+			"qualifiedName": "NeonInputType.Url"
 		},
 		"101": {
 			"sourceFileName": "src/common/enums/NeonLabelSize.ts",
-			"qualifiedName": "NeonLabelSize.Small"
+			"qualifiedName": ""
 		},
 		"102": {
 			"sourceFileName": "src/common/enums/NeonLabelSize.ts",
-			"qualifiedName": "NeonLabelSize.Medium"
+			"qualifiedName": "NeonLabelSize"
 		},
 		"103": {
 			"sourceFileName": "src/common/enums/NeonLabelSize.ts",
-			"qualifiedName": "NeonLabelSize.Large"
+			"qualifiedName": "NeonLabelSize.ExtraExtraSmall"
 		},
 		"104": {
-			"sourceFileName": "src/common/enums/NeonMode.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/enums/NeonLabelSize.ts",
+			"qualifiedName": "NeonLabelSize.ExtraSmall"
 		},
 		"105": {
-			"sourceFileName": "src/common/enums/NeonMode.ts",
-			"qualifiedName": "NeonMode"
+			"sourceFileName": "src/common/enums/NeonLabelSize.ts",
+			"qualifiedName": "NeonLabelSize.Small"
 		},
 		"106": {
-			"sourceFileName": "src/common/enums/NeonMode.ts",
-			"qualifiedName": "NeonMode.Light"
+			"sourceFileName": "src/common/enums/NeonLabelSize.ts",
+			"qualifiedName": "NeonLabelSize.Medium"
 		},
 		"107": {
-			"sourceFileName": "src/common/enums/NeonMode.ts",
-			"qualifiedName": "NeonMode.Dark"
+			"sourceFileName": "src/common/enums/NeonLabelSize.ts",
+			"qualifiedName": "NeonLabelSize.Large"
 		},
 		"108": {
 			"sourceFileName": "src/common/enums/NeonMode.ts",
-			"qualifiedName": "NeonMode.System"
-		},
-		"109": {
-			"sourceFileName": "src/common/enums/NeonOrientation.ts",
 			"qualifiedName": ""
 		},
+		"109": {
+			"sourceFileName": "src/common/enums/NeonMode.ts",
+			"qualifiedName": "NeonMode"
+		},
 		"110": {
-			"sourceFileName": "src/common/enums/NeonOrientation.ts",
-			"qualifiedName": "NeonOrientation"
+			"sourceFileName": "src/common/enums/NeonMode.ts",
+			"qualifiedName": "NeonMode.Light"
 		},
 		"111": {
-			"sourceFileName": "src/common/enums/NeonOrientation.ts",
-			"qualifiedName": "NeonOrientation.Vertical"
+			"sourceFileName": "src/common/enums/NeonMode.ts",
+			"qualifiedName": "NeonMode.Dark"
 		},
 		"112": {
-			"sourceFileName": "src/common/enums/NeonOrientation.ts",
-			"qualifiedName": "NeonOrientation.Horizontal"
+			"sourceFileName": "src/common/enums/NeonMode.ts",
+			"qualifiedName": "NeonMode.System"
 		},
 		"113": {
-			"sourceFileName": "src/common/enums/NeonOutlineStyle.ts",
+			"sourceFileName": "src/common/enums/NeonOrientation.ts",
 			"qualifiedName": ""
 		},
 		"114": {
-			"sourceFileName": "src/common/enums/NeonOutlineStyle.ts",
-			"qualifiedName": "NeonOutlineStyle"
+			"sourceFileName": "src/common/enums/NeonOrientation.ts",
+			"qualifiedName": "NeonOrientation"
 		},
 		"115": {
-			"sourceFileName": "src/common/enums/NeonOutlineStyle.ts",
-			"qualifiedName": "NeonOutlineStyle.None"
+			"sourceFileName": "src/common/enums/NeonOrientation.ts",
+			"qualifiedName": "NeonOrientation.Vertical"
 		},
 		"116": {
-			"sourceFileName": "src/common/enums/NeonOutlineStyle.ts",
-			"qualifiedName": "NeonOutlineStyle.Text"
+			"sourceFileName": "src/common/enums/NeonOrientation.ts",
+			"qualifiedName": "NeonOrientation.Horizontal"
 		},
 		"117": {
 			"sourceFileName": "src/common/enums/NeonOutlineStyle.ts",
-			"qualifiedName": "NeonOutlineStyle.Border"
+			"qualifiedName": ""
 		},
 		"118": {
 			"sourceFileName": "src/common/enums/NeonOutlineStyle.ts",
-			"qualifiedName": "NeonOutlineStyle.Background"
+			"qualifiedName": "NeonOutlineStyle"
 		},
 		"119": {
 			"sourceFileName": "src/common/enums/NeonOutlineStyle.ts",
-			"qualifiedName": "NeonOutlineStyle.Bullet"
+			"qualifiedName": "NeonOutlineStyle.None"
 		},
 		"120": {
-			"sourceFileName": "src/common/enums/NeonPageAlignment.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/enums/NeonOutlineStyle.ts",
+			"qualifiedName": "NeonOutlineStyle.Text"
 		},
 		"121": {
-			"sourceFileName": "src/common/enums/NeonPageAlignment.ts",
-			"qualifiedName": "NeonPageAlignment"
+			"sourceFileName": "src/common/enums/NeonOutlineStyle.ts",
+			"qualifiedName": "NeonOutlineStyle.Border"
 		},
 		"122": {
-			"sourceFileName": "src/common/enums/NeonPageAlignment.ts",
-			"qualifiedName": "NeonPageAlignment.CENTER"
+			"sourceFileName": "src/common/enums/NeonOutlineStyle.ts",
+			"qualifiedName": "NeonOutlineStyle.Background"
 		},
 		"123": {
-			"sourceFileName": "src/common/enums/NeonPageAlignment.ts",
-			"qualifiedName": "NeonPageAlignment.LEFT"
+			"sourceFileName": "src/common/enums/NeonOutlineStyle.ts",
+			"qualifiedName": "NeonOutlineStyle.Bullet"
 		},
 		"124": {
-			"sourceFileName": "src/common/enums/NeonPosition.ts",
+			"sourceFileName": "src/common/enums/NeonPageAlignment.ts",
 			"qualifiedName": ""
 		},
 		"125": {
-			"sourceFileName": "src/common/enums/NeonPosition.ts",
-			"qualifiedName": "NeonPosition"
+			"sourceFileName": "src/common/enums/NeonPageAlignment.ts",
+			"qualifiedName": "NeonPageAlignment"
 		},
 		"126": {
-			"sourceFileName": "src/common/enums/NeonPosition.ts",
-			"qualifiedName": "NeonPosition.Top"
+			"sourceFileName": "src/common/enums/NeonPageAlignment.ts",
+			"qualifiedName": "NeonPageAlignment.CENTER"
 		},
 		"127": {
-			"sourceFileName": "src/common/enums/NeonPosition.ts",
-			"qualifiedName": "NeonPosition.Left"
+			"sourceFileName": "src/common/enums/NeonPageAlignment.ts",
+			"qualifiedName": "NeonPageAlignment.LEFT"
 		},
 		"128": {
 			"sourceFileName": "src/common/enums/NeonPosition.ts",
-			"qualifiedName": "NeonPosition.Bottom"
+			"qualifiedName": ""
 		},
 		"129": {
 			"sourceFileName": "src/common/enums/NeonPosition.ts",
-			"qualifiedName": "NeonPosition.Right"
+			"qualifiedName": "NeonPosition"
 		},
 		"130": {
-			"sourceFileName": "src/common/enums/NeonResponsive.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/enums/NeonPosition.ts",
+			"qualifiedName": "NeonPosition.Top"
 		},
 		"131": {
-			"sourceFileName": "src/common/enums/NeonResponsive.ts",
-			"qualifiedName": "NeonResponsive"
+			"sourceFileName": "src/common/enums/NeonPosition.ts",
+			"qualifiedName": "NeonPosition.Left"
 		},
 		"132": {
-			"sourceFileName": "src/common/enums/NeonResponsive.ts",
-			"qualifiedName": "NeonResponsive.All"
+			"sourceFileName": "src/common/enums/NeonPosition.ts",
+			"qualifiedName": "NeonPosition.Bottom"
 		},
 		"133": {
-			"sourceFileName": "src/common/enums/NeonResponsive.ts",
-			"qualifiedName": "NeonResponsive.Desktop"
+			"sourceFileName": "src/common/enums/NeonPosition.ts",
+			"qualifiedName": "NeonPosition.Right"
 		},
 		"134": {
 			"sourceFileName": "src/common/enums/NeonResponsive.ts",
-			"qualifiedName": "NeonResponsive.DesktopLarge"
+			"qualifiedName": ""
 		},
 		"135": {
 			"sourceFileName": "src/common/enums/NeonResponsive.ts",
-			"qualifiedName": "NeonResponsive.LargerThanTablet"
+			"qualifiedName": "NeonResponsive"
 		},
 		"136": {
 			"sourceFileName": "src/common/enums/NeonResponsive.ts",
-			"qualifiedName": "NeonResponsive.Tablet"
+			"qualifiedName": "NeonResponsive.All"
 		},
 		"137": {
 			"sourceFileName": "src/common/enums/NeonResponsive.ts",
-			"qualifiedName": "NeonResponsive.LargerThanMobileLarge"
+			"qualifiedName": "NeonResponsive.Desktop"
 		},
 		"138": {
 			"sourceFileName": "src/common/enums/NeonResponsive.ts",
-			"qualifiedName": "NeonResponsive.MobileLarge"
+			"qualifiedName": "NeonResponsive.DesktopLarge"
 		},
 		"139": {
 			"sourceFileName": "src/common/enums/NeonResponsive.ts",
-			"qualifiedName": "NeonResponsive.LargerThanMobile"
+			"qualifiedName": "NeonResponsive.LargerThanTablet"
 		},
 		"140": {
 			"sourceFileName": "src/common/enums/NeonResponsive.ts",
-			"qualifiedName": "NeonResponsive.Mobile"
+			"qualifiedName": "NeonResponsive.Tablet"
 		},
 		"141": {
-			"sourceFileName": "src/common/enums/NeonSize.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/enums/NeonResponsive.ts",
+			"qualifiedName": "NeonResponsive.LargerThanMobileLarge"
 		},
 		"142": {
-			"sourceFileName": "src/common/enums/NeonSize.ts",
-			"qualifiedName": "NeonSize"
+			"sourceFileName": "src/common/enums/NeonResponsive.ts",
+			"qualifiedName": "NeonResponsive.MobileLarge"
 		},
 		"143": {
-			"sourceFileName": "src/common/enums/NeonSize.ts",
-			"qualifiedName": "NeonSize.Small"
+			"sourceFileName": "src/common/enums/NeonResponsive.ts",
+			"qualifiedName": "NeonResponsive.LargerThanMobile"
 		},
 		"144": {
-			"sourceFileName": "src/common/enums/NeonSize.ts",
-			"qualifiedName": "NeonSize.Medium"
+			"sourceFileName": "src/common/enums/NeonResponsive.ts",
+			"qualifiedName": "NeonResponsive.Mobile"
 		},
 		"145": {
 			"sourceFileName": "src/common/enums/NeonSize.ts",
-			"qualifiedName": "NeonSize.Large"
-		},
-		"146": {
-			"sourceFileName": "src/common/enums/NeonSplashLoaderSize.ts",
 			"qualifiedName": ""
 		},
+		"146": {
+			"sourceFileName": "src/common/enums/NeonSize.ts",
+			"qualifiedName": "NeonSize"
+		},
 		"147": {
-			"sourceFileName": "src/common/enums/NeonSplashLoaderSize.ts",
-			"qualifiedName": "NeonSplashLoaderSize"
+			"sourceFileName": "src/common/enums/NeonSize.ts",
+			"qualifiedName": "NeonSize.Small"
 		},
 		"148": {
-			"sourceFileName": "src/common/enums/NeonSplashLoaderSize.ts",
-			"qualifiedName": "NeonSplashLoaderSize.Small"
+			"sourceFileName": "src/common/enums/NeonSize.ts",
+			"qualifiedName": "NeonSize.Medium"
 		},
 		"149": {
-			"sourceFileName": "src/common/enums/NeonSplashLoaderSize.ts",
-			"qualifiedName": "NeonSplashLoaderSize.Medium"
+			"sourceFileName": "src/common/enums/NeonSize.ts",
+			"qualifiedName": "NeonSize.Large"
 		},
 		"150": {
 			"sourceFileName": "src/common/enums/NeonSplashLoaderSize.ts",
-			"qualifiedName": "NeonSplashLoaderSize.Large"
+			"qualifiedName": ""
 		},
 		"151": {
 			"sourceFileName": "src/common/enums/NeonSplashLoaderSize.ts",
-			"qualifiedName": "NeonSplashLoaderSize.ExtraLarge"
+			"qualifiedName": "NeonSplashLoaderSize"
 		},
 		"152": {
-			"sourceFileName": "src/common/enums/NeonState.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/enums/NeonSplashLoaderSize.ts",
+			"qualifiedName": "NeonSplashLoaderSize.Small"
 		},
 		"153": {
-			"sourceFileName": "src/common/enums/NeonState.ts",
-			"qualifiedName": "NeonState"
+			"sourceFileName": "src/common/enums/NeonSplashLoaderSize.ts",
+			"qualifiedName": "NeonSplashLoaderSize.Medium"
 		},
 		"154": {
-			"sourceFileName": "src/common/enums/NeonState.ts",
-			"qualifiedName": "NeonState.Ready"
+			"sourceFileName": "src/common/enums/NeonSplashLoaderSize.ts",
+			"qualifiedName": "NeonSplashLoaderSize.Large"
 		},
 		"155": {
-			"sourceFileName": "src/common/enums/NeonState.ts",
-			"qualifiedName": "NeonState.Loading"
+			"sourceFileName": "src/common/enums/NeonSplashLoaderSize.ts",
+			"qualifiedName": "NeonSplashLoaderSize.ExtraLarge"
 		},
 		"156": {
 			"sourceFileName": "src/common/enums/NeonState.ts",
-			"qualifiedName": "NeonState.Success"
+			"qualifiedName": ""
 		},
 		"157": {
 			"sourceFileName": "src/common/enums/NeonState.ts",
-			"qualifiedName": "NeonState.Error"
+			"qualifiedName": "NeonState"
 		},
 		"158": {
-			"sourceFileName": "src/common/enums/NeonSwitchStyle.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/enums/NeonState.ts",
+			"qualifiedName": "NeonState.Ready"
 		},
 		"159": {
-			"sourceFileName": "src/common/enums/NeonSwitchStyle.ts",
-			"qualifiedName": "NeonSwitchStyle"
+			"sourceFileName": "src/common/enums/NeonState.ts",
+			"qualifiedName": "NeonState.Loading"
 		},
 		"160": {
-			"sourceFileName": "src/common/enums/NeonSwitchStyle.ts",
-			"qualifiedName": "NeonSwitchStyle.Switch"
+			"sourceFileName": "src/common/enums/NeonState.ts",
+			"qualifiedName": "NeonState.Success"
 		},
 		"161": {
-			"sourceFileName": "src/common/enums/NeonSwitchStyle.ts",
-			"qualifiedName": "NeonSwitchStyle.Checkbox"
+			"sourceFileName": "src/common/enums/NeonState.ts",
+			"qualifiedName": "NeonState.Error"
 		},
 		"162": {
-			"sourceFileName": "src/common/enums/NeonToggleChipSize.ts",
+			"sourceFileName": "src/common/enums/NeonSwitchStyle.ts",
 			"qualifiedName": ""
 		},
 		"163": {
-			"sourceFileName": "src/common/enums/NeonToggleChipSize.ts",
-			"qualifiedName": "NeonToggleChipSize"
+			"sourceFileName": "src/common/enums/NeonSwitchStyle.ts",
+			"qualifiedName": "NeonSwitchStyle"
 		},
 		"164": {
-			"sourceFileName": "src/common/enums/NeonToggleChipSize.ts",
-			"qualifiedName": "NeonToggleChipSize.ExtraSmall"
+			"sourceFileName": "src/common/enums/NeonSwitchStyle.ts",
+			"qualifiedName": "NeonSwitchStyle.Switch"
 		},
 		"165": {
-			"sourceFileName": "src/common/enums/NeonToggleChipSize.ts",
-			"qualifiedName": "NeonToggleChipSize.Small"
+			"sourceFileName": "src/common/enums/NeonSwitchStyle.ts",
+			"qualifiedName": "NeonSwitchStyle.Checkbox"
 		},
 		"166": {
 			"sourceFileName": "src/common/enums/NeonToggleChipSize.ts",
-			"qualifiedName": "NeonToggleChipSize.Medium"
+			"qualifiedName": ""
 		},
 		"167": {
 			"sourceFileName": "src/common/enums/NeonToggleChipSize.ts",
-			"qualifiedName": "NeonToggleChipSize.Large"
+			"qualifiedName": "NeonToggleChipSize"
 		},
 		"168": {
-			"sourceFileName": "src/common/enums/NeonToggleStyle.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/enums/NeonToggleChipSize.ts",
+			"qualifiedName": "NeonToggleChipSize.ExtraSmall"
 		},
 		"169": {
-			"sourceFileName": "src/common/enums/NeonToggleStyle.ts",
-			"qualifiedName": "NeonToggleStyle"
+			"sourceFileName": "src/common/enums/NeonToggleChipSize.ts",
+			"qualifiedName": "NeonToggleChipSize.Small"
 		},
 		"170": {
-			"sourceFileName": "src/common/enums/NeonToggleStyle.ts",
-			"qualifiedName": "NeonToggleStyle.Toggle"
+			"sourceFileName": "src/common/enums/NeonToggleChipSize.ts",
+			"qualifiedName": "NeonToggleChipSize.Medium"
 		},
 		"171": {
-			"sourceFileName": "src/common/enums/NeonToggleStyle.ts",
-			"qualifiedName": "NeonToggleStyle.RadioButtons"
+			"sourceFileName": "src/common/enums/NeonToggleChipSize.ts",
+			"qualifiedName": "NeonToggleChipSize.Large"
 		},
 		"172": {
 			"sourceFileName": "src/common/enums/NeonToggleStyle.ts",
-			"qualifiedName": "NeonToggleStyle.Card"
-		},
-		"173": {
-			"sourceFileName": "src/common/enums/NeonTooltipStyle.ts",
 			"qualifiedName": ""
 		},
+		"173": {
+			"sourceFileName": "src/common/enums/NeonToggleStyle.ts",
+			"qualifiedName": "NeonToggleStyle"
+		},
 		"174": {
-			"sourceFileName": "src/common/enums/NeonTooltipStyle.ts",
-			"qualifiedName": "NeonTooltipStyle"
+			"sourceFileName": "src/common/enums/NeonToggleStyle.ts",
+			"qualifiedName": "NeonToggleStyle.Toggle"
 		},
 		"175": {
-			"sourceFileName": "src/common/enums/NeonTooltipStyle.ts",
-			"qualifiedName": "NeonTooltipStyle.Tooltip"
+			"sourceFileName": "src/common/enums/NeonToggleStyle.ts",
+			"qualifiedName": "NeonToggleStyle.RadioButtons"
 		},
 		"176": {
-			"sourceFileName": "src/common/enums/NeonTooltipStyle.ts",
-			"qualifiedName": "NeonTooltipStyle.Popover"
+			"sourceFileName": "src/common/enums/NeonToggleStyle.ts",
+			"qualifiedName": "NeonToggleStyle.Card"
 		},
 		"177": {
-			"sourceFileName": "src/common/enums/NeonVerticalPosition.ts",
+			"sourceFileName": "src/common/enums/NeonTooltipStyle.ts",
 			"qualifiedName": ""
 		},
 		"178": {
+			"sourceFileName": "src/common/enums/NeonTooltipStyle.ts",
+			"qualifiedName": "NeonTooltipStyle"
+		},
+		"179": {
+			"sourceFileName": "src/common/enums/NeonTooltipStyle.ts",
+			"qualifiedName": "NeonTooltipStyle.Tooltip"
+		},
+		"180": {
+			"sourceFileName": "src/common/enums/NeonTooltipStyle.ts",
+			"qualifiedName": "NeonTooltipStyle.Popover"
+		},
+		"181": {
+			"sourceFileName": "src/common/enums/NeonVerticalPosition.ts",
+			"qualifiedName": ""
+		},
+		"182": {
 			"sourceFileName": "src/common/enums/NeonVerticalPosition.ts",
 			"qualifiedName": "NeonVerticalPosition"
 		},
-		"179": {
+		"183": {
 			"sourceFileName": "src/common/enums/NeonVerticalPosition.ts",
 			"qualifiedName": "NeonVerticalPosition.Top"
 		},
-		"180": {
+		"184": {
 			"sourceFileName": "src/common/enums/NeonVerticalPosition.ts",
 			"qualifiedName": "NeonVerticalPosition.Bottom"
 		}

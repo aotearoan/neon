@@ -52,6 +52,17 @@
         "func": false,
         "value": "true"
       }
+    },
+    {
+      "name": "fullWidthMobile",
+      "description": "Display tab buttons full screen width at the mobile-large breakpoint.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "true"
+      }
     }
   ],
   "events": [

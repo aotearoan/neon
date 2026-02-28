@@ -70,7 +70,7 @@
               placeholder="Placeholder..."
             />
           </neon-field>
-          <neon-field-group>
+          <neon-field-group indicator-style="external">
             <neon-input-indicator :disabled="disabled" aria-label="Username" for="userField" icon="user" />
             <neon-input
               id="userField"

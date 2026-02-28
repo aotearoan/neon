@@ -77,6 +77,7 @@ export { NeonDropdownPlacement } from './common/enums/NeonDropdownPlacement';
 export { NeonDropdownStyle } from './common/enums/NeonDropdownStyle';
 export { NeonFunctionalColor } from './common/enums/NeonFunctionalColor';
 export { NeonHorizontalPosition } from './common/enums/NeonHorizontalPosition';
+export { NeonInputIndicatorStyle } from './common/enums/NeonInputIndicatorStyle';
 export { NeonInputMode } from './common/enums/NeonInputMode';
 export { NeonInputType } from './common/enums/NeonInputType';
 export { NeonLabelSize } from './common/enums/NeonLabelSize';
