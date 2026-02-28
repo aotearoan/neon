@@ -1,5 +1,12 @@
 # Changelog
 
+## [22.1.2](https://github.com/aotearoan/neon/compare/v22.1.1...v22.1.2) (2026-02-28)
+
+
+### Bug Fixes
+
+* add button type support ([#300](https://github.com/aotearoan/neon/issues/300)) ([6bf4a4b](https://github.com/aotearoan/neon/commit/6bf4a4b4faa919aaabdb9588379308df08a1461e))
+
 ## [22.1.1](https://github.com/aotearoan/neon/compare/v22.1.0...v22.1.1) (2026-02-28)
 
 
