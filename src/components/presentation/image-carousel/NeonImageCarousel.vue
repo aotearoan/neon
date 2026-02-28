@@ -3,17 +3,17 @@
     <div
       :class="{
         'neon-image-carousel--initialised': initialised,
-        'neon-image-carousel--expanded': expanded,
+        'neon-image-carousel--expanded': isExpanded,
       }"
       class="neon-image-carousel"
       tabindex="0"
       @keydown.stop.prevent.left="previous"
       @keydown.stop.prevent.right="next"
-      @keydown.esc="expanded = false"
+      @keydown.esc="isExpanded && toggleExpanded()"
     >
-      <div class="neon-image-carousel__container" tabindex="-1" @click.stop="expanded = false">
+      <div class="neon-image-carousel__container" tabindex="-1">
         <neon-button
-          v-if="expanded"
+          v-if="isExpanded"
           :title="closeLabel"
           button-style="text"
           class="neon-image-carousel__close"
@@ -21,7 +21,7 @@
           icon="close"
           size="l"
           transparent
-          @click="expanded = false"
+          @click="isExpanded && toggleExpanded()"
         />
         <neon-button
           :disabled="currentImage === 0"
@@ -46,9 +46,9 @@
               :alt="image.alt"
               :src="image.src"
               class="neon-image-carousel__image"
-              @click.stop="expanded = !expanded"
+              @click.stop="!isExpanded && toggleExpanded()"
             />
-            <p v-if="expanded" class="neon-image-carousel__item-title">{{ image.alt }}</p>
+            <p v-if="isExpanded" class="neon-image-carousel__item-title">{{ image.alt }}</p>
           </li>
         </ul>
         <neon-button
@@ -63,7 +63,7 @@
           @click.capture.stop="next"
         />
       </div>
-      <neon-stack class="neon-image-carousel__nav-container" gap="s" @click.stop="expanded = false">
+      <neon-stack class="neon-image-carousel__nav-container" gap="s">
         <div class="neon-image-carousel__nav" tabindex="-1">
           <neon-link
             v-for="(_image, index) in images"

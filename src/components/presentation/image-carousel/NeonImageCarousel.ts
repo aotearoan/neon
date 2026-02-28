@@ -21,6 +21,10 @@ export default defineComponent({
   },
   props: {
     /**
+     * The expanded state of the image carousel.
+     */
+    expanded: { type: Boolean, default: false },
+    /**
      * The images to be displayed in the carousel.
      */
     images: { type: Array as () => Array<NeonCarouselImage>, required: true },
@@ -53,6 +57,12 @@ export default defineComponent({
      * @type {number}
      */
     'current-image',
+    /**
+     * The current expanded state of the image carousel.
+     *
+     * @type {boolean}
+     */
+    'update:expanded',
   ],
   setup(props, { emit }) {
     const initialised = ref<boolean>(false);
@@ -60,7 +70,7 @@ export default defineComponent({
     const carouselItems = ref<HTMLUListElement | null>(null);
     const carouselItem = ref<Array<HTMLLIElement>>([]);
     const observers = ref<Array<IntersectionObserver>>([]);
-    const expanded = ref<boolean>(false);
+    const isExpanded = ref<boolean>(false);
 
     const changeImage = (index: number) => {
       if (index !== currentImage.value) {
@@ -122,8 +132,13 @@ export default defineComponent({
       observers.value.forEach((observer) => observer.disconnect());
     });
 
+    const toggleExpanded = () => {
+      isExpanded.value = !isExpanded.value;
+      emit('update:expanded', isExpanded.value);
+    };
+
     watch(
-      () => expanded.value,
+      () => isExpanded.value,
       (value: boolean) => {
         if (value) {
           document.body.classList.add('neon-closable--open');
@@ -131,6 +146,17 @@ export default defineComponent({
           document.body.classList.remove('neon-closable--open');
         }
       },
+      { immediate: true },
+    );
+
+    watch(
+      () => props.expanded,
+      (value: boolean) => {
+        if (isExpanded.value !== value) {
+          isExpanded.value = value;
+        }
+      },
+      { immediate: true },
     );
 
     return {
@@ -139,10 +165,11 @@ export default defineComponent({
       carouselItem,
       carouselItems,
       initialised,
-      expanded,
+      isExpanded,
       next,
       previous,
       scrollTo,
+      toggleExpanded,
     };
   },
 });
