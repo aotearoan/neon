@@ -111,6 +111,12 @@
       .neon-input__textfield:focus {
         max-width: calc(100% + var(--neon-border-width));
       }
+
+      .neon-input {
+        .neon-icon {
+          display: none;
+        }
+      }
     }
 
     .neon-input .neon-input__textfield {
@@ -128,12 +134,6 @@
       &::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
-      }
-    }
-
-    .neon-input {
-      .neon-icon {
-        display: none;
       }
     }
   }

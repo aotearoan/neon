@@ -1,5 +1,13 @@
 import { defineComponent, onMounted, ref } from 'vue';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonNumber, NeonStack } from '@/neon';
+import {
+  NeonCard,
+  NeonCardBody,
+  NeonCardHeader,
+  NeonFieldGroup,
+  NeonInputIndicator,
+  NeonNumber,
+  NeonStack,
+} from '@/neon';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
@@ -14,6 +22,8 @@ export default defineComponent({
     NeonCard,
     NeonCardBody,
     NeonCardHeader,
+    NeonFieldGroup,
+    NeonInputIndicator,
     NeonNumber,
     NeonStack,
   },
@@ -34,6 +44,7 @@ export default defineComponent({
     const noButtonsNumber = ref(10);
     const percentageNumber = ref(0.42);
     const customNumber = ref(10.35);
+    const indicatorNumber = ref(10.35);
     const disabledNumber = ref(10);
 
     const numberSizeExamples = `<neon-number v-model="smallNumber" placeholder="Value" size="s" />
@@ -66,6 +77,15 @@ export default defineComponent({
   placeholder="Value"
   value-template="\${value}"
 />
+<neon-field-group>
+  <neon-input-indicator label="USD"/>
+  <neon-number
+    v-model="indicatorNumber"
+    :decimals="2"
+    :step="0.05"
+    placeholder="Value"
+  />
+</neon-field-group>
 <neon-number v-model="disabledNumber" disabled="disabled" placeholder="Value" />
 <neon-number v-model="disabledNumber" :spin-buttons="true" disabled="disabled" placeholder="Value" />`;
 
@@ -87,6 +107,7 @@ export default defineComponent({
       noButtonsNumber,
       percentageNumber,
       customNumber,
+      indicatorNumber,
       disabledNumber,
       numberSizeExamples,
       numberValueExamples,

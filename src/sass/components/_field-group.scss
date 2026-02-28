@@ -144,10 +144,21 @@
         }
       }
     }
-  }
 
-  .neon-button {
-    margin-left: calc(-1 * var(--neon-border-width));
-    z-index: var(--neon-z-index-above);
+    .neon-button {
+      margin-left: calc(-1 * var(--neon-border-width));
+      z-index: var(--neon-z-index-above);
+    }
+
+    .neon-number {
+      width: 100%;
+
+      input.neon-number__input.neon-input__textfield {
+        &,
+        &:focus {
+          border: none;
+        }
+      }
+    }
   }
 }
