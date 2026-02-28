@@ -204,6 +204,12 @@
   --neon-border-opacity-alert-action: 0.25;
   --neon-width-toast: 250rem;
 
+  /* menu */
+  --neon-font-family-menu: var(--neon-font-family-body);
+  --neon-font-weight-menu: var(--neon-font-weight-bold);
+  --neon-opacity-menu-inactive: 0.75;
+  --neon-height-menu-indicator: 4rem;
+
   /* mobile menu */
   --neon-font-family-mobile-menu: var(--neon-font-family-body);
   --neon-font-size-mobile-menu: var(--neon-font-size-s);

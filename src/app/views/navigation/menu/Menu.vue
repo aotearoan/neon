@@ -6,16 +6,22 @@
           <strong>NeonMenu</strong> is a responsive aware menu that progressively collapses options into the mobile menu
           as the screen size gets smaller. This is a more flexible option than moving directly to a hamburger menu at
           tablet and below. It is a best effort approach to keep displaying the most important menu items for as long as
-          possible, giving the user a better experience.
+          possible, giving the user a better experience. Use NeonMenu inside NeonTopNav for primary navigation.
         </p>
       </neon-card-body>
       <neon-card-body>
-        <h2 class="neon-h3">Menu sizes</h2>
+        <h2 class="neon-h3">Menu sizes - small, medium, large</h2>
         <neon-stack>
           <neon-stack>
-            <neon-menu :menu="menu" size="s" @click="onClick" />
-            <neon-menu :menu="menu" size="m" @click="onClick" />
-            <neon-menu :menu="menu" size="l" @click="onClick" />
+            <div class="menu__sample-wrapper">
+              <neon-menu :menu="menu" size="s" @click="onClick" />
+            </div>
+            <div class="menu__sample-wrapper">
+              <neon-menu :menu="menu" size="m" @click="onClick" />
+            </div>
+            <div class="menu__sample-wrapper">
+              <neon-menu :menu="menu" size="l" @click="onClick" />
+            </div>
           </neon-stack>
           <editor v-model="sizesTemplate" />
         </neon-stack>

@@ -5,27 +5,37 @@ exports[`NeonMenu renders menu 1`] = `
   <ul class="neon-menu--brand neon-menu--l neon-menu no-style" role="menubar">
     <li class="neon-menu__item"><a href="/test" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link" tabindex="0" role="menuitem">
         <!-- @slot the content of the link -->
-        <!--v-if--><span class="neon-menu__item-label">Action Menu</span>
+        <div class="neon-menu__link-container" tabindex="-1">
+          <!--v-if--><span class="neon-menu__item-label">Action Menu</span>
+        </div>
       </a></li>
     <li class="neon-menu__item"><a href="/test" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link" tabindex="0" role="menuitem">
         <!-- @slot the content of the link -->
-        <!--v-if--><span class="neon-menu__item-label">Link</span>
+        <div class="neon-menu__link-container" tabindex="-1">
+          <!--v-if--><span class="neon-menu__item-label">Link</span>
+        </div>
       </a></li>
     <li class="neon-menu__item"><a href="/test" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link" tabindex="0" role="menuitem">
         <!-- @slot the content of the link -->
-        <!--v-if--><span class="neon-menu__item-label">Menu</span>
+        <div class="neon-menu__link-container" tabindex="-1">
+          <!--v-if--><span class="neon-menu__item-label">Menu</span>
+        </div>
       </a></li>
     <li class="neon-menu__item"><a class="neon-link--no-style neon-link--outline-none neon-link" tabindex="0" role="menuitem">
         <!-- @slot the content of the link -->
-        <div class="neon-icon--name-contrast neon-icon--neutral neon-icon neon-menu__item-icon neon-menu__item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 512 512">
-            <circle class="neon-svg--stroke" cx="256" cy="256" r="208" style="fill:none;stroke-linejoin:round;stroke-width:32px"></circle>
-            <path class="neon-svg--fill" d="M256,464C141.12,464,48,370.88,48,256S141.12,48,256,48Z"></path>
-          </svg>
-        </div><span class="neon-menu__item-label">Click link</span>
+        <div class="neon-menu__link-container" tabindex="-1">
+          <div class="neon-icon--name-contrast neon-icon--neutral neon-icon neon-menu__item-icon neon-menu__item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 512 512">
+              <circle class="neon-svg--stroke" cx="256" cy="256" r="208" style="fill:none;stroke-linejoin:round;stroke-width:32px"></circle>
+              <path class="neon-svg--fill" d="M256,464C141.12,464,48,370.88,48,256S141.12,48,256,48Z"></path>
+            </svg>
+          </div><span class="neon-menu__item-label">Click link</span>
+        </div>
       </a></li>
     <li class="neon-menu__item--disabled neon-menu__item"><a class="neon-link--no-style neon-link--outline-none neon-link" tabindex="-1" role="menuitem">
         <!-- @slot the content of the link -->
-        <!--v-if--><span class="neon-menu__item-label">Disabled</span>
+        <div class="neon-menu__link-container" tabindex="-1">
+          <!--v-if--><span class="neon-menu__item-label">Disabled</span>
+        </div>
       </a></li>
     <li class="neon-menu__item">
       <div class="neon-dropdown--with-indicator neon-dropdown--open-on-hover neon-dropdown--l neon-dropdown--brand neon-dropdown neon-dropdown-menu--brand neon-dropdown-menu">
