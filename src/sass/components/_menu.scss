@@ -3,14 +3,83 @@
 
 @mixin neon-menu-size($size) {
   .neon-menu__item {
-    height: var(--neon-size-#{$size});
+    height: 100%;
     font-size: var(--neon-font-size-#{$size});
-    padding-left: var(--neon-space-20);
-    padding-right: var(--neon-space-20);
-    border-radius: var(--neon-border-radius);
+    align-items: center;
+    display: flex;
 
-    .neon-link {
-      height: var(--neon-size-#{$size});
+    & > .neon-link {
+      height: 100%;
+
+      .neon-menu__link-container {
+        width: 100%;
+        height: 100%;
+        padding-left: calc(5 * var(--neon-base-space));
+        padding-right: calc(5 * var(--neon-base-space));
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        position: relative;
+        gap: var(--neon-space-12);
+        font-family: var(--neon-font-family-menu);
+        font-weight: var(--neon-font-weight-menu);
+        @include svg.color-with-svg(var(--neon-color-text-primary));
+        opacity: var(--neon-opacity-menu-inactive);
+        transition: opacity ease-in-out var(--neon-animation-speed-slow);
+
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          opacity: 0;
+          height: var(--neon-height-menu-indicator);
+          transition: opacity ease-in-out var(--neon-animation-speed-slow);
+        }
+      }
+
+      &:hover {
+        .neon-menu__link-container {
+          opacity: 1;
+
+          &:before {
+            opacity: 1;
+          }
+        }
+
+      }
+
+      &:focus {
+        .neon-menu__link-container {
+          opacity: 1;
+        }
+      }
+
+      &.router-link-active {
+        .neon-menu__link-container {
+          opacity: 1;
+
+          &:before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .neon-button__label {
+      font-family: var(--neon-font-family-menu);
+      font-weight: var(--neon-font-weight-menu);
+    }
+
+    &--disabled {
+      .neon-link {
+        .neon-menu__link-container {
+          opacity: 1;
+          cursor: not-allowed;
+          @include svg.color-with-svg(var(--neon-color-disabled-text));
+        }
+      }
     }
 
     &:first-child {
@@ -28,9 +97,8 @@
 
     &-icon,
     .neon-dropdown .neon-dropdown__button .neon-icon {
-      width: var(--neon-font-size-#{$size});
-      height: var(--neon-font-size-#{$size});
-      margin-right: var(--neon-space-8);
+      width: calc(1.5 * var(--neon-font-size-#{$size}));
+      height: calc(1.5 * var(--neon-font-size-#{$size}));
       padding-right: 0;
     }
   }
@@ -59,38 +127,20 @@
     display: flex;
     flex-direction: row;
     user-select: none;
+    align-items: center;
+    height: 100%;
 
     @each $color in palettes.$neon-functional-colors {
       &.neon-menu--#{$color},
       &__responsive-menu.neon-dropdown-menu--#{$color} {
         .neon-menu__item:not(.neon-menu__item--disabled) {
-          &:hover:not(.router-link-active),
-          &:focus:not(.router-link-active),
-          &:active:not(.router-link-active) {
-            & > .neon-link,
-            .neon-dropdown__button {
-              @include svg.color-with-svg(rgba(var(--neon-rgb-#{$color}), 0.85));
-            }
-          }
-
-          &:focus-within {
+          .neon-link:focus {
             background-color: rgba(var(--neon-rgb-#{$color}), 0.125);
-
-            & > .neon-link:not(.router-link-active),
-            .neon-button:not(.router-link-active) {
-              @include svg.color-with-svg(var(--neon-color-text-secondary));
-            }
-          }
-        }
-
-        .neon-menu__item > .router-link-active {
-          color: var(--neon-color-#{$color});
-
-          .neon-dropdown__button {
-            color: var(--neon-color-#{$color});
           }
 
-          @include svg.svg-colors(rgba(var(--neon-rgb-#{$color}), 0.85));
+          .neon-menu__link-container:before {
+            background-color: var(--neon-color-#{$color});
+          }
         }
       }
     }
@@ -99,6 +149,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
+      height: 100%;
 
       .neon-dropdown:not(.neon-dropdown--disabled) {
         .neon-dropdown__button {

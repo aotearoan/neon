@@ -116,7 +116,7 @@ describe('NeonMenu', () => {
     // given
     const { container, emitted } = harness;
     // when
-    const item = container.querySelector('.neon-menu__item:nth-child(4) .neon-link') as HTMLElement;
+    const item = container.querySelector('.neon-menu__item:nth-child(4) .neon-menu__link-container') as HTMLElement;
     fireEvent.click(item);
     // then
     expect(emitted().click[0]).toEqual([menu[3].key]);

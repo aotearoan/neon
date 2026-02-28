@@ -19,10 +19,10 @@
             <ul>
               <li>mobile (max-width: 414px)</li>
               <li>larger-than-mobile (min-width: 415px)</li>
-              <li>mobile-large (max-width: 599px)</li>
-              <li>larger-than-mobile-large (min-width: 600px)</li>
-              <li>tablet (max-width: 1024px)</li>
-              <li>larger-than-tablet (min-width: 1025px)</li>
+              <li>mobile-large (max-width: 767px)</li>
+              <li>larger-than-mobile-large (min-width: 768px)</li>
+              <li>tablet (max-width: 1023px)</li>
+              <li>larger-than-tablet (min-width: 1024px)</li>
               <li>desktop (max-width: 1439px)</li>
               <li>desktop-large (min-width: 1440px)</li>
             </ul>

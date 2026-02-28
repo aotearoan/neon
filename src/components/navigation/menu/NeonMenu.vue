@@ -30,18 +30,18 @@
           :tabindex="item.disabled ? -1 : 0"
           outline-style="none"
           role="menuitem"
-          @click="!item.disabled && onClick(item.key)"
           @keydown.enter="!item.disabled && onClick(item.key)"
-          @keydown.space.prevent="!item.disabled && onClick(item.key)"
         >
-          <neon-icon
-            v-if="item.icon"
-            :key="`${item.key}LinkIcon`"
-            :name="item.icon"
-            class="neon-menu__item-icon"
-            color="neutral"
-          />
-          <span class="neon-menu__item-label">{{ item.label }}</span>
+          <div class="neon-menu__link-container" tabindex="-1" @click="!item.disabled && onClick(item.key)">
+            <neon-icon
+              v-if="item.icon"
+              :key="`${item.key}LinkIcon`"
+              :name="item.icon"
+              class="neon-menu__item-icon"
+              color="neutral"
+            />
+            <span class="neon-menu__item-label">{{ item.label }}</span>
+          </div>
         </neon-link>
       </li>
     </ul>
