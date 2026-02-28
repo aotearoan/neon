@@ -245,8 +245,12 @@
   --neon-letter-spacing-button: var(--neon-letter-spacing-m);
 
   /* tabs */
-  --neon-border-width-tabs: 4rem;
+  --neon-height-tabs: 48rem;
+  --neon-border-width-tabs: 2rem;
   --neon-border-radius-tabs: 0;
+  --neon-font-weight-tabs: var(--neon-font-weight-normal);
+  --neon-font-weight-tabs-selected: var(--neon-font-weight-bold);
+  --neon-opacity-tab-focus: 0.125;
 
   /* chips */
   --neon-border-radius-chip: var(--neon-border-radius);
@@ -592,7 +596,7 @@
     --neon-box-shadow-tooltip: calc(0.5 * var(--neon-base-space)) calc(0.5 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) var(--neon-color-neutral-d5);
 
     /* tabs */
-    --neon-border-color-tabs-underline: transparent;
+    --neon-border-color-tabs-underline: var(--neon-border-color);
     --neon-color-tab-selected-low-contrast: var(--neon-color-low-contrast-l1);
     --neon-color-tab-selected-neutral: var(--neon-color-neutral-l1);
     --neon-color-tab-selected-high-contrast: var(--neon-color-high-contrast-l1);
@@ -902,7 +906,7 @@
     --neon-box-shadow-tooltip: calc(0.5 * var(--neon-base-space)) calc(0.5 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) rgba(var(--neon-rgb-neutral-d1), 0.5);
 
     /* tabs */
-    --neon-border-color-tabs-underline: transparent;
+    --neon-border-color-tabs-underline: var(--neon-border-color);
     --neon-color-tab-selected-low-contrast: var(--neon-color-low-contrast-d2);
     --neon-color-tab-selected-neutral: var(--neon-color-neutral-d2);
     --neon-color-tab-selected-high-contrast: var(--neon-color-high-contrast-d2);

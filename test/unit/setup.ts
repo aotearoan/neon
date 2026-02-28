@@ -16,3 +16,5 @@ global.IntersectionObserver = jest.fn(() => ({
   rootMargin: '0px',
   takeRecords: jest.fn(),
 }));
+
+HTMLElement.prototype.scrollIntoView = () => {};

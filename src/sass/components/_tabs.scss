@@ -11,7 +11,7 @@
         $tab-hover-color: var(--neon-color-tab-hover-#{$color});
 
         .neon-tabs__menu-item {
-          &--selected {
+          &.neon-tabs__menu-item {
             .neon-tabs__menu-item-container:before {
               background-color: $tab-selected-color;
             }
@@ -24,13 +24,17 @@
             }
           }
 
+          .neon-tabs__menu-item-container:focus {
+            background-color: rgba(var(--neon-rgb-#{$color}), var(--neon-opacity-tab-focus));
+          }
+
           &-container:focus:before {
             background-color: $tab-hover-color;
           }
         }
 
         .neon-tab {
-          &:focus:before {
+          &:focus-visible:before {
             background-color: $tab-hover-color;
           }
         }
@@ -38,13 +42,17 @@
     }
 
     .neon-tabs__menu-items {
+      height: var(--neon-height-tabs);
       display: flex;
       flex-direction: row;
       align-items: center;
-      font-weight: var(--neon-font-weight-medium);
     }
 
     .neon-tabs__menu-item {
+      --neon-border-width-link: 0rem;
+      --neon-border-width-link-hover: 0rem;
+
+      text-decoration: none;
       position: relative;
       display: flex;
       flex-direction: row;
@@ -55,6 +63,12 @@
       cursor: pointer;
       transition: color ease-in-out var(--neon-animation-speed-fast);
       @include svg.color-with-svg(var(--neon-color-low-contrast));
+
+      font-weight: var(--neon-font-weight-tabs);
+
+      &--selected {
+        font-weight: var(--neon-font-weight-tabs-selected);
+      }
 
       &:focus {
         outline: none;
@@ -84,6 +98,7 @@
           position: absolute;
           height: var(--neon-border-width-tabs);
           bottom: 0;
+          left: 0;
           border-radius: var(--neon-border-radius-tabs);
           transition: all ease-in-out var(--neon-animation-speed-fast);
         }
@@ -92,7 +107,6 @@
 
     &.neon-tabs--s {
       .neon-tabs__menu-items {
-        height: var(--neon-size-s);
         font-size: var(--neon-font-size-m);
 
         svg {
@@ -105,7 +119,6 @@
 
     &.neon-tabs--m {
       .neon-tabs__menu-items {
-        height: var(--neon-size-m);
         font-size: var(--neon-font-size-l);
 
         svg {
@@ -118,7 +131,6 @@
 
     &.neon-tabs--l {
       .neon-tabs__menu-items {
-        height: var(--neon-size-l);
         font-size: var(--neon-font-size-l);
 
         svg {
@@ -129,29 +141,48 @@
       }
     }
 
+    .neon-tabs__menu-items--full-width-mobile {
+      @include responsive.responsive(mobile-large) {
+        margin: 0 calc(-1 * var(--neon-gutter-mobile));
+        max-width: calc(100% + 2 * var(--neon-gutter-mobile));
+        width: calc(100% + 2 * var(--neon-gutter-mobile));
+      }
+    }
+
     .neon-tabs__menu-items--underlined {
-      border-bottom: var(--neon-border-width-tabs) var(--neon-border-style) var(--neon-border-color-tabs-underline);
+      .neon-swiper__container {
+        position: relative;
+
+        &:after {
+          content: '';
+          position: absolute;
+          display: flex;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: var(--neon-border-width-tabs);
+          background-color: var(--neon-border-color-tabs-underline);
+        }
+
+        .neon-tabs__menu-item-container:before {
+          background-color: var(--neon-border-color-tabs-underline);
+        }
+      }
 
       .neon-tabs__menu-item-container:before {
-        bottom: calc(-1 * var(--neon-border-width-tabs));
+        bottom: 0;
+        z-index: var(--neon-z-index-above);
       }
     }
 
     .neon-tabs__menu-item {
-      & + .neon-tabs__menu-item {
-        margin-left: calc(6 * var(--neon-base-space));
-      }
-
       &-container {
+        padding: 0 calc(8 * var(--neon-base-space));
         flex-direction: row;
       }
 
-      .neon-tabs__menu-item-container:focus {
-        &:before {
-          margin-left: var(--neon-base-space);
-          margin-right: var(--neon-base-space);
-          width: calc(100% - 2 * var(--neon-base-space));
-        }
+      .neon-tabs__menu-label {
+        white-space: nowrap;
       }
     }
   }
@@ -178,23 +209,12 @@
       transition: all var(--neon-animation-speed-fast) ease-in-out;
     }
 
-    &:focus {
+    &:focus-visible {
       outline: none;
 
       &:before {
         background-color: var(--neon-color-low-contrast);
       }
-    }
-  }
-
-  @include responsive.responsive(mobile-large) {
-    .neon-tabs__menu-items {
-      display: none;
-    }
-
-    .neon-tab {
-      display: flex;
-      padding-bottom: 0;
     }
   }
 

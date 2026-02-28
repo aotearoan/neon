@@ -4,6 +4,7 @@ import NeonTabs from './NeonTabs.vue';
 import { NeonSize } from '@/common/enums/NeonSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import { NeonTabModel } from '@/common/models/NeonTabModel';
+import { router } from '@/../test/unit/test-router';
 
 describe('NeonTabs', () => {
   const tabs: Array<NeonTabModel> = [
@@ -38,6 +39,9 @@ describe('NeonTabs', () => {
       props: { tabs, modelValue },
       slots: {
         default: '<p>test</p>',
+      },
+      global: {
+        plugins: [router],
       },
     });
   });
@@ -99,7 +103,7 @@ describe('NeonTabs', () => {
   it('renders tabindex selected', () => {
     const { html } = harness;
     expect(html()).toMatch(
-      '<div id="tab2Button" aria-controls="tab2" aria-selected="true" class="neon-tabs__menu-item--selected neon-tabs__menu-item" role="tab" tabindex="-1">',
+      '<a class="neon-link--no-style neon-link--outline-text neon-link neon-tabs__menu-item--selected neon-tabs__menu-item neon-tabs__menu-item--selected neon-tabs__menu-item" tabindex="-1" id="tab2Button" aria-controls="tab2" aria-selected="true" role="tab">',
     );
     expect(html()).toMatch('<div id="tab2ButtonContainer" tabindex="0" class="neon-tabs__menu-item-container">');
   });
@@ -107,7 +111,7 @@ describe('NeonTabs', () => {
   it('renders tabindex unselected', () => {
     const { html } = harness;
     expect(html()).toMatch(
-      '<div id="tab1Button" aria-controls="tab1" aria-selected="false" class="neon-tabs__menu-item" role="tab" tabindex="-1">',
+      '<a class="neon-link--no-style neon-link--outline-text neon-link neon-tabs__menu-item neon-tabs__menu-item" tabindex="-1" id="tab1Button" aria-controls="tab1" aria-selected="false" role="tab">',
     );
     expect(html()).toMatch('<div id="tab1ButtonContainer" tabindex="-1" class="neon-tabs__menu-item-container">');
   });
@@ -125,7 +129,7 @@ describe('NeonTabs', () => {
   it('renders tab icon selected', () => {
     const { html } = harness;
     expect(html()).toMatch(
-      '<div id="tab2Button" aria-controls="tab2" aria-selected="true" class="neon-tabs__menu-item--selected neon-tabs__menu-item" role="tab" tabindex="-1">',
+      '<a class="neon-link--no-style neon-link--outline-text neon-link neon-tabs__menu-item--selected neon-tabs__menu-item neon-tabs__menu-item--selected neon-tabs__menu-item" tabindex="-1" id="tab2Button" aria-controls="tab2" aria-selected="true" role="tab">',
     );
   });
 
@@ -163,5 +167,16 @@ describe('NeonTabs', () => {
     const { emitted, getByText } = harness;
     await fireEvent.keyDown(getByText(tabs[2].label), { key: 'Right', code: 'Right' });
     expect(emitted()['update:modelValue']).toEqual([[tabs[0].key]]);
+  });
+
+  it('renders full width mobile by default', () => {
+    const { container } = harness;
+    expect(container.querySelector('.neon-tabs__menu-items--full-width-mobile')).toBeDefined();
+  });
+
+  it('renders non full width mobile', async () => {
+    const { container, rerender } = harness;
+    await rerender({ fullWidthMobile: false });
+    expect(container.querySelector('.neon-tabs__menu-items--full-width-mobile')).toBeNull();
   });
 });
