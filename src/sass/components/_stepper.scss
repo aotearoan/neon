@@ -1,4 +1,5 @@
 @use '../includes/palettes';
+@use '../includes/outline';
 
 @mixin stepper {
   .neon-stepper {
@@ -60,12 +61,11 @@
           height: var(--neon-space-10);
 
           svg {
-            path,
-            circle {
+            .neon-svg--fill {
               fill: var(--neon-color-stepper-indicator);
             }
 
-            circle {
+            .neon-svg--stroke {
               stroke: var(--neon-color-stepper-indicator);
             }
           }
@@ -113,6 +113,11 @@
         .neon-stepper__step--has-value {
           .neon-stepper__step-indicator {
             background: var(--neon-color-#{$color});
+
+            &:focus {
+              outline: none;
+              @include outline.box-shadow-outline(var(--neon-rgb-#{$color}));
+            }
           }
         }
 
