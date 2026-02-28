@@ -12,6 +12,8 @@
           :key="`${cardModel.key || index}-link`"
           :href="cardModel.href"
           :target="cardModel.targetBlank ? '_blank' : null"
+          no-style
+          outline-style="background"
         >
           <neon-card-list-card :color="color" :disabled="cardModel.disabled">
             <!-- @slot slot for rendering card contents, two parameters are available: cardModel (the model item to be rendered) & index -->

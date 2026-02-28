@@ -12,7 +12,7 @@
       font-weight: var(--neon-font-weight-semi-bold);
       position: absolute;
       left: 0;
-      bottom: var(--neon-border-bottom-offset-link);
+      bottom: var(--neon-text-underline-offset-link);
       width: 100%;
       height: var(--neon-border-width-outline);
       display: flex;
@@ -21,7 +21,7 @@
       transition: background-color var(--neon-animation-speed-slow) ease-in-out, color var(--neon-animation-speed-slow) ease-in-out;
     }
 
-    &:focus {
+    &:focus-visible {
       color: rgb($outline-rgb);
 
       &:after {
@@ -33,7 +33,7 @@
 
 @mixin focus-border-outline($outline-rgb) {
   &--outline-border {
-    &:focus {
+    &:focus-visible {
       @include box-shadow-outline($outline-rgb);
     }
   }
@@ -57,7 +57,7 @@
       background-color: transparent;
     }
 
-    &:focus {
+    &:focus-visible {
       &:before {
         width: var(--neon-space-8);
         height: var(--neon-space-8);
@@ -72,14 +72,14 @@
   &--outline-background {
     transition: all var(--neon-animation-speed-fast) ease-in-out;
 
-    &:focus {
+    &:focus-visible {
       background-color: rgba($outline-rgb, 0.125);
     }
   }
 }
 
 @mixin focus-outline-styles($outline-rgb) {
-  &:focus {
+  &:focus-visible {
     outline: none;
   }
 

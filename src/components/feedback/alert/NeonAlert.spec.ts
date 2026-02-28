@@ -7,7 +7,7 @@ describe('NeonAlert', () => {
 
   beforeEach(() => {
     harness = render(NeonAlert, {
-      props: { dismissable: true, duration: 1000 },
+      props: { dismissible: true, duration: 1000 },
     });
   });
 

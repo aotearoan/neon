@@ -41,7 +41,7 @@
         name="times"
       />
     </div>
-    <neon-link v-if="displayShowAllToggle" class="neon-filter-list__show-toggle" @click="toggleShowAll()">
+    <neon-link v-if="displayShowAllToggle" class="neon-filter-list__show-toggle" no-style @click="toggleShowAll()">
       {{ toggleShowAllLabel }}
     </neon-link>
   </div>

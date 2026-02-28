@@ -85,7 +85,7 @@
       "name": "autocomplete",
       "description": "The HTML autocomplete mode as specified <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#values\">here</a>.\nNOTE: No enum is provided in Neon as some values can be used in combination, please refer to the full list of values in the preceding link.",
       "type": {
-        "name": "string"
+        "name": "String as () => NeonInputMode"
       },
       "defaultValue": {
         "func": false,
@@ -203,8 +203,19 @@
       }
     },
     {
+      "name": "maxlengthLabel",
+      "description": "The label template for the character limit. This is a string in the vue-i18n Pluralization format with a\n<em>{count}</em> placeholder.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'No characters left | 1 character left | {count} characters left'"
+      }
+    },
+    {
       "name": "debounce",
-      "description": "Debounce time in ms, if no value is provided the default value set in NeonDebounceUtils is used (=300ms).\nSet to 0 to disable debounce.",
+      "description": "Debounce time in ms. If no value is provided, the default value set in NeonDebounceUtils is used (=0ms).",
       "type": {
         "name": "number"
       },

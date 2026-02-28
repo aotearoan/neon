@@ -2,7 +2,6 @@
 @use '../includes/layout';
 @use '../includes/responsive';
 @use '../includes/scrollbars';
-@use '../includes/outline';
 @use '../includes/svg';
 
 @mixin alert-container {
@@ -13,7 +12,7 @@
     pointer-events: none;
     touch-action: none;
     width: var(--neon-width-alert);
-    max-width: var(--neon-width-alert);
+    max-width: min(var(--neon-width-alert), 100%);
 
     @include layout.max-height(100);
 
@@ -60,17 +59,20 @@
     }
 
     &__message {
+      --neon-rgb-link: var(--neon-rgb-inverse);
       pointer-events: visible;
       touch-action: auto;
       height: 100%;
       min-height: var(--neon-space-80);
       margin: var(--neon-space-4);
+      padding: var(--neon-padding-alert);
       border-radius: var(--neon-border-radius-alert);
       display: flex;
       flex-direction: row;
-      justify-content: flex-start;
+      gap: var(--neon-gap-alert);
+      justify-content: center;
+      align-items: center;
       position: relative;
-      font-size: var(--neon-font-size-m);
       box-shadow: var(--neon-box-shadow-alert);
       overflow: hidden;
 
@@ -79,99 +81,94 @@
 
         &.neon-alert__message--#{$color} {
           background-color: var(--neon-background-color-alert-#{$color});
-          @include svg.color-with-svg(rgb($alert-rgb));
+          @include svg.color-with-svg(var(--neon-color-alert-#{$color}));
           color: var(--neon-color-inverse);
 
-          &:focus-within:not(.neon-alert__message--with-actions) {
-            @include outline.box-shadow-outline($alert-rgb);
-          }
-
           .neon-alert__title {
-            color: rgb(var(--neon-rgb-alert-#{$color}));
+            color: var(--neon-color-alert-#{$color});
           }
 
           .neon-alert__actions {
-            border-left: var(--neon-border-width-alert) var(--neon-border-style) rgba($alert-rgb, var(--neon-border-opacity-alert-action));
-
             .neon-alert__action {
               transition: all var(--neon-animation-speed-fast) ease-in-out;
-              color: rgba($alert-rgb, 0.5);
+              color: var(--neon-color-alert-#{$color});
 
               &:focus,
               &:hover {
-                color: rgb($alert-rgb);
+                color: var(--neon-color-alert-#{$color});
                 text-decoration: none;
-                background-color: rgba($alert-rgb, 0.125);
+                background-color: var(--neon-background-color-alert-#{$color});
               }
             }
-          }
-
-          .neon-alert__action + .neon-alert__action {
-            border-top: var(--neon-border-width-alert) var(--neon-border-style) rgba($alert-rgb, var(--neon-border-opacity-alert-action));
           }
         }
       }
 
-      &--dismissable:not(.neon-alert__message--with-actions) {
+      &--dismissible:not(.neon-alert__message--with-actions) {
         cursor: pointer;
       }
 
-      .neon-icon {
-        min-width: var(--neon-space-32);
-        width: var(--neon-space-32);
-        min-height: var(--neon-space-32);
-        height: var(--neon-space-32);
-        margin: var(--neon-space-8) var(--neon-space-8) var(--neon-space-8) var(--neon-space-12);
+      &-icon {
+        min-width: var(--neon-size-alert-icon);
+        width: var(--neon-size-alert-icon);
+        min-height: var(--neon-size-alert-icon);
+        height: var(--neon-size-alert-icon);
         align-self: center;
       }
     }
 
     &__title {
-      line-height: var(--neon-line-height-one);
-      font-size: var(--neon-font-size-m);
-      font-weight: var(--neon-font-weight-semi-bold);
-      font-family: var(--neon-font-family-heading);
-      letter-spacing: var(--neon-letter-spacing-m);
+      line-height: var(--neon-line-height-alert-title);
+      font-size: var(--neon-font-size-alert-title);
+      font-weight: var(--neon-font-weight-alert-title);
+      font-family: var(--neon-font-family-alert-title);
+      letter-spacing: var(--neon-letter-spacing-alert-title);
+    }
+
+    &__close {
+      min-width: var(--neon-size-alert-close-icon);
+      width: var(--neon-size-alert-close-icon);
+      min-height: var(--neon-size-alert-close-icon);
+      height: var(--neon-size-alert-close-icon);
+      outline: none;
+      cursor: pointer;
     }
 
     &__body {
-      font-size: var(--neon-font-size-s);
+      line-height: var(--neon-line-height-alert-body);
+      font-size: var(--neon-font-size-alert-body);
+      font-weight: var(--neon-font-weight-alert-body);
+      font-family: var(--neon-font-family-alert-body);
+      letter-spacing: var(--neon-letter-spacing-alert-body);
     }
 
     .neon-alert__actions {
-      margin-left: var(--neon-space-8);
+      flex-direction: row;
 
       .neon-alert__action {
         padding: var(--neon-space-8);
-        font-size: var(--neon-font-size-xs);
+        font-size: var(--neon-font-size-alert-action);
         text-transform: uppercase;
-        letter-spacing: var(--neon-letter-spacing-m);
+        letter-spacing: var(--neon-letter-spacing-alert-action);
         height: 100%;
         display: flex;
         align-items: center;
-        width: var(--neon-width-alert-action);
         justify-content: center;
-        font-weight: var(--neon-font-weight-semi-bold);
+        font-weight: var(--neon-font-weight-alert-action);
 
-        &:focus {
-          border-radius: 0;
-
-          &:first-child {
-            border-top-right-radius: calc(2 * var(--neon-border-radius));
-          }
-
-          &:last-child {
-            border-bottom-right-radius: calc(2 * var(--neon-border-radius));
+        &:focus-visible {
+          .neon-alert__action-label {
+            outline: none;
+            text-decoration: underline;
           }
         }
       }
     }
 
     &__content {
-      padding-top: var(--neon-space-8);
-      padding-bottom: var(--neon-space-8);
       justify-content: center;
       flex: 1 1 auto;
+      gap: var(--neon-space-4);
       outline: none;
     }
   }

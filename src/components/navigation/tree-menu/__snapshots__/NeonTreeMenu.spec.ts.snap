@@ -11,13 +11,13 @@ exports[`NeonTreeMenu matches snapshot 1`] = `
             <!-- @slot the content of the link --><span class="neon-tree-menu__link-label neon-tree-menu__link-label--outline-text" role="link" tabindex="0">Alert</span>
           </a>
           <ul class="no-style neon-tree-menu__anchors">
-            <li><a href="/test#description" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
+            <li><a href="/test#description" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
                 <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Description</span>
               </a></li>
-            <li><a href="/test#api" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
+            <li><a href="/test#api" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
                 <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">API</span>
               </a></li>
-            <li><a href="/test#examples" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
+            <li><a href="/test#examples" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
                 <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Examples</span>
               </a></li>
           </ul>
@@ -26,13 +26,13 @@ exports[`NeonTreeMenu matches snapshot 1`] = `
             <!-- @slot the content of the link --><span class="neon-tree-menu__link-label neon-tree-menu__link-label--outline-text" role="link" tabindex="0">Note</span>
           </a>
           <ul class="no-style neon-tree-menu__anchors">
-            <li><a href="/test#description" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
+            <li><a href="/test#description" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
                 <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Description</span>
               </a></li>
-            <li><a href="/test#api" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
+            <li><a href="/test#api" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
                 <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">API</span>
               </a></li>
-            <li><a href="/test#examples" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
+            <li><a href="/test#examples" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
                 <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Examples</span>
               </a></li>
           </ul>
@@ -41,13 +41,13 @@ exports[`NeonTreeMenu matches snapshot 1`] = `
             <!-- @slot the content of the link --><span class="neon-tree-menu__link-label neon-tree-menu__link-label--outline-text" role="link" tabindex="0">Notification Counter</span>
           </a>
           <ul class="no-style neon-tree-menu__anchors">
-            <li><a href="/test#description" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
+            <li><a href="/test#description" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
                 <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Description</span>
               </a></li>
-            <li><a href="/test#api" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
+            <li><a href="/test#api" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
                 <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">API</span>
               </a></li>
-            <li><a href="/test#examples" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
+            <li><a href="/test#examples" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
                 <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Examples</span>
               </a></li>
           </ul>
@@ -62,13 +62,13 @@ exports[`NeonTreeMenu matches snapshot 1`] = `
             <!-- @slot the content of the link --><span class="neon-tree-menu__link-label neon-tree-menu__link-label--outline-text" role="link" tabindex="0">Action Menu</span>
           </a>
           <ul class="no-style neon-tree-menu__anchors">
-            <li><a href="/test#description" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
+            <li><a href="/test#description" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
                 <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Description</span>
               </a></li>
-            <li><a href="/test#api" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
+            <li><a href="/test#api" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
                 <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">API</span>
               </a></li>
-            <li><a href="/test#examples" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
+            <li><a href="/test#examples" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
                 <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Examples</span>
               </a></li>
           </ul>
@@ -77,13 +77,13 @@ exports[`NeonTreeMenu matches snapshot 1`] = `
             <!-- @slot the content of the link --><span class="neon-tree-menu__link-label neon-tree-menu__link-label--outline-text" role="link" tabindex="0">Dropdown Menu</span>
           </a>
           <ul class="no-style neon-tree-menu__anchors">
-            <li><a href="/test#description" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
+            <li><a href="/test#description" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
                 <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Description</span>
               </a></li>
-            <li><a href="/test#api" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
+            <li><a href="/test#api" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
                 <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">API</span>
               </a></li>
-            <li><a href="/test#examples" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
+            <li><a href="/test#examples" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
                 <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Examples</span>
               </a></li>
           </ul>
@@ -92,13 +92,13 @@ exports[`NeonTreeMenu matches snapshot 1`] = `
             <!-- @slot the content of the link --><span class="neon-tree-menu__link-label neon-tree-menu__link-label--outline-text" role="link" tabindex="0">Link</span>
           </a>
           <ul class="no-style neon-tree-menu__anchors">
-            <li><a href="/test#description" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
+            <li><a href="/test#description" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
                 <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Description</span>
               </a></li>
-            <li><a href="/test#api" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
+            <li><a href="/test#api" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
                 <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">API</span>
               </a></li>
-            <li><a href="/test#examples" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
+            <li><a href="/test#examples" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
                 <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Examples</span>
               </a></li>
           </ul>
@@ -107,13 +107,13 @@ exports[`NeonTreeMenu matches snapshot 1`] = `
             <!-- @slot the content of the link --><span class="neon-tree-menu__link-label neon-tree-menu__link-label--outline-text" role="link" tabindex="0">Tree Menu</span>
           </a>
           <ul class="no-style neon-tree-menu__anchors">
-            <li><a href="/test#description" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
+            <li><a href="/test#description" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
                 <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Description</span>
               </a></li>
-            <li><a href="/test#api" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
+            <li><a href="/test#api" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
                 <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">API</span>
               </a></li>
-            <li><a href="/test#examples" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
+            <li><a href="/test#examples" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
                 <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Examples</span>
               </a></li>
           </ul>

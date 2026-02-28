@@ -24,12 +24,12 @@ exports[`NeonImageCarousel renders carousel 1`] = `
     </div>
     <div class="neon-stack--gap-s neon-stack neon-image-carousel__nav-container">
       <!-- @slot stack contents -->
-      <div class="neon-image-carousel__nav" tabindex="-1"><a class="neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 1" role="button">
+      <div class="neon-image-carousel__nav" tabindex="-1"><a class="neon-link--no-style neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 1" role="button">
           <!-- @slot the content of the link -->
           <div class="neon-image-carousel__nav-item--active neon-image-carousel__nav-item" tabindex="-1">
             <div class="neon-image-carousel__nav-item-indicator"></div>
           </div>
-        </a><a class="neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 2" role="button">
+        </a><a class="neon-link--no-style neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 2" role="button">
           <!-- @slot the content of the link -->
           <div class="neon-image-carousel__nav-item" tabindex="-1">
             <div class="neon-image-carousel__nav-item-indicator"></div>
@@ -64,12 +64,12 @@ exports[`NeonImageCarousel renders carousel without label 1`] = `
     </div>
     <div class="neon-stack--gap-s neon-stack neon-image-carousel__nav-container">
       <!-- @slot stack contents -->
-      <div class="neon-image-carousel__nav" tabindex="-1"><a class="neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 1" role="button">
+      <div class="neon-image-carousel__nav" tabindex="-1"><a class="neon-link--no-style neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 1" role="button">
           <!-- @slot the content of the link -->
           <div class="neon-image-carousel__nav-item--active neon-image-carousel__nav-item" tabindex="-1">
             <div class="neon-image-carousel__nav-item-indicator"></div>
           </div>
-        </a><a class="neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 2" role="button">
+        </a><a class="neon-link--no-style neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 2" role="button">
           <!-- @slot the content of the link -->
           <div class="neon-image-carousel__nav-item" tabindex="-1">
             <div class="neon-image-carousel__nav-item-indicator"></div>

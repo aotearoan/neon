@@ -190,6 +190,7 @@
     margin-left: 0;
     margin-right: 0;
     cursor: pointer;
+    text-decoration: none;
     font-family: var(--neon-font-family-body);
 
     &--s {
@@ -290,13 +291,19 @@
       &--#{$color} {
         &.neon-button--solid:not(.neon-button--disabled) {
           @if ($color == 'inverse') {
-            color: var(--neon-color-solid-button-inverse);
+            .neon-button__label {
+              color: var(--neon-color-solid-button-inverse);
+            }
             @include svg.color-with-svg(var(--neon-color-solid-button-inverse));
           } @else if ($color == 'low-contrast') {
-            color: var(--neon-color-solid-button-inverse);
+            .neon-button__label {
+              color: var(--neon-color-solid-button-inverse);
+            }
             @include svg.color-with-svg(var(--neon-color-solid-button-inverse));
           } @else {
-            color: var(--neon-color-solid-button);
+            .neon-button__label {
+              color: var(--neon-color-solid-button);
+            }
             @include svg.color-with-svg(var(--neon-color-solid-button));
           }
 

@@ -11,13 +11,19 @@
           {
             'neon-alert__message--dismissible': message.dismissible,
             'neon-alert__message--with-actions': message.primaryAction,
+            'neon-alert__message--with-icon': message.showIcon,
           },
         ]"
         :role="message.primaryAction ? 'dialog' : message.duration && message.duration > 0 ? 'alert' : 'alertdialog'"
         class="neon-alert__message"
         @click="!message.primaryAction && message.dismissible && closeMessage(message.id)"
       >
-        <neon-icon :color="message.level" :name="icon(message.level)" />
+        <neon-icon
+          v-if="message.showIcon"
+          :color="message.level"
+          :name="icon(message.level)"
+          class="neon-alert__message-icon"
+        />
         <div
           :role="!message.primaryAction ? 'button' : undefined"
           :tabindex="message.primaryAction ? -1 : 0"
@@ -32,9 +38,8 @@
           <neon-link
             v-if="message.primaryAction"
             class="neon-alert__action"
-            outline-style="none"
+            no-style
             role="button"
-            tabindex="0"
             @click="
               message.primaryAction.callback();
               closeMessage(message.id);
@@ -49,9 +54,8 @@
           <neon-link
             v-if="message.secondaryAction"
             class="neon-alert__action"
-            outline-style="none"
+            no-style
             role="button"
-            tabindex="0"
             @click="
               message.secondaryAction.callback();
               closeMessage(message.id);

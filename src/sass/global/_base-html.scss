@@ -34,41 +34,13 @@
 
   ol {
     padding: 0;
-    list-style: none;
-    counter-reset: li;
     display: flex;
     flex-direction: column;
+    gap: var(--neon-space-16);
 
     > li {
-      counter-increment: li;
       max-width: var(--neon-max-paragraph-width);
-      margin-left: var(--neon-space-32);
-
-      &::before {
-        display: inline-flex;
-        content: counter(li);
-        margin-right: var(--neon-space-16);
-        width: var(--neon-space-24);
-        justify-content: flex-start;
-        font-variant: tabular-nums;
-        color: var(--neon-color-neutral);
-        position: absolute;
-        left: var(--neon-space-24);
-      }
-    }
-
-    > li:nth-child(1),
-    > li:nth-child(2),
-    > li:nth-child(3),
-    > li:nth-child(4),
-    > li:nth-child(5),
-    > li:nth-child(6),
-    > li:nth-child(7),
-    > li:nth-child(8),
-    > li:nth-child(9) {
-      &::before {
-        content: "0" counter(li);
-      }
+      margin-left: var(--neon-space-16);
     }
   }
 

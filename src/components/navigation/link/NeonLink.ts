@@ -21,10 +21,10 @@ export default defineComponent({
      */
     noStyle: { type: Boolean, default: false },
     /**
-     * Style of the outline to use when the link has focus, use <em>text</em> for wrapping text content and
-     * <em>border</em> for tooltips wrapping "block" elements, e.g. buttons.
+     * Style of the outline to use when the link has focus, use this in combination with the <em>no-style</em> flag to
+     * style the outline of non-text links.
      */
-    outlineStyle: { type: String as () => NeonOutlineStyle, default: NeonOutlineStyle.Text },
+    outlineStyle: { type: String as () => NeonOutlineStyle, default: NeonOutlineStyle.None },
     /**
      * Display an external link icon to the right of the link indicating clicking it will take the user to another site.
      */

@@ -28,7 +28,7 @@
     },
     {
       "name": "outlineStyle",
-      "description": "Style of the outline to use when the link has focus, use <em>text</em> for wrapping text content and\n<em>border</em> for tooltips wrapping \"block\" elements, e.g. buttons.",
+      "description": "Style of the outline to use when the link has focus, use this in combination with the <em>no-style</em> flag to\nstyle the outline of non-text links.",
       "type": {
         "name": "String as () => NeonOutlineStyle"
       },

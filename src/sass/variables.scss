@@ -217,11 +217,41 @@
   --neon-border-radius-checkbox: 2rem;
 
   /* alerts */
-  --neon-width-alert: 400rem;
-  --neon-width-alert-action: 80rem;
-  --neon-border-radius-alert: calc(2 * var(--neon-border-radius));
-  --neon-border-opacity-alert-action: 0.25;
+  --neon-width-alert: 415rem;
+  --neon-padding-alert: var(--neon-space-20);
+  --neon-gap-alert: var(--neon-space-16);
+  --neon-border-radius-alert: 0;
+  --neon-size-alert-icon: 24rem;
+  --neon-size-alert-close-icon: 24rem;
+
+  --neon-line-height-alert-title: var(--neon-line-height-one);
+  --neon-font-size-alert-title: var(--neon-font-size-m);
+  --neon-font-weight-alert-title: var(--neon-font-weight-normal);
+  --neon-font-family-alert-title: var(--neon-font-family-body);
+  --neon-letter-spacing-alert-title: var(--neon-letter-spacing-s);
+
+  --neon-line-height-alert-body: var(--neon-line-height-one);
+  --neon-font-size-alert-body: var(--neon-font-size-s);
+  --neon-font-weight-alert-body: var(--neon-font-weight-normal);
+  --neon-font-family-alert-body: var(--neon-font-family-body);
+  --neon-letter-spacing-alert-body: var(--neon-letter-spacing-s);
+
+  --neon-font-size-alert-action: var(--neon-font-size-m);
+  --neon-font-weight-alert-action: var(--neon-font-weight-bold);
+  --neon-letter-spacing-alert-action: var(--neon-letter-spacing-m);
+
+  /* toast */
   --neon-width-toast: 250rem;
+  --neon-padding-toast: var(--neon-space-16);
+  --neon-gap-toast: var(--neon-space-8);
+  --neon-border-radius-toast: 0;
+  --neon-size-toast-close-icon: 24rem;
+
+  --neon-line-height-toast: var(--neon-line-height-one);
+  --neon-font-size-toast: var(--neon-font-size-m);
+  --neon-font-weight-toast: var(--neon-font-weight-normal);
+  --neon-font-family-toast: var(--neon-font-family-body);
+  --neon-letter-spacing-toast: var(--neon-letter-spacing-s);
 
   /* menu */
   --neon-font-family-menu: var(--neon-font-family-body);
@@ -306,12 +336,12 @@
   --neon-max-width-note: 100%;
 
   /* outline */
-  --neon-border-width-outline: 1rem;
+  --neon-border-width-outline: 1.5rem;
 
   /* link */
-  --neon-border-width-link: 1rem;
-  --neon-border-width-link-hover: 1rem;
-  --neon-border-bottom-offset-link: 2rem;
+  --neon-text-decoration-thickness-link: 1rem;
+  --neon-text-decoration-thickness-link-hover: 1rem;
+  --neon-text-underline-offset-link: 2rem;
 
   /* slider & range slider */
   --neon-height-slider-track: 8rem;
@@ -592,20 +622,25 @@
     /* alerts */
     --neon-box-shadow-alert: calc(0.5 * var(--neon-base-space)) calc(0.5 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) var(--neon-color-neutral-d5);
 
-    --neon-color-toast-info: var(--neon-color-info-d4);
-    --neon-color-toast-success: var(--neon-color-success-d4);
-    --neon-color-toast-warn: var(--neon-color-warn-d4);
-    --neon-color-toast-error: var(--neon-color-error-d4);
+    --neon-background-color-alert-info: var(--neon-color-info);
+    --neon-background-color-alert-success: var(--neon-color-success);
+    --neon-background-color-alert-warn: var(--neon-color-warn);
+    --neon-background-color-alert-error: var(--neon-color-error);
 
-    --neon-background-color-alert-info: var(--neon-color-info-l5);
-    --neon-background-color-alert-success: var(--neon-color-success-l5);
-    --neon-background-color-alert-warn: var(--neon-color-warn-l5);
-    --neon-background-color-alert-error: var(--neon-color-error-l5);
+    --neon-color-alert-info: var(--neon-color-inverse);
+    --neon-color-alert-success: var(--neon-color-inverse);
+    --neon-color-alert-warn: var(--neon-color-inverse);
+    --neon-color-alert-error: var(--neon-color-inverse);
 
-    --neon-rgb-alert-info: var(--neon-rgb-info-d1);
-    --neon-rgb-alert-success: var(--neon-rgb-success-d1);
-    --neon-rgb-alert-warn: var(--neon-rgb-warn-d1);
-    --neon-rgb-alert-error: var(--neon-rgb-error-d1);
+    --neon-background-color-toast-info: var(--neon-color-info);
+    --neon-background-color-toast-success: var(--neon-color-success);
+    --neon-background-color-toast-warn: var(--neon-color-warn);
+    --neon-background-color-toast-error: var(--neon-color-error);
+
+    --neon-color-toast-info: var(--neon-color-inverse);
+    --neon-color-toast-success: var(--neon-color-inverse);
+    --neon-color-toast-warn: var(--neon-color-inverse);
+    --neon-color-toast-error: var(--neon-color-inverse);
 
     /* dropdown / dropdown menu / select */
     --neon-border-color-dropdown: var(--neon-color-neutral-d3);
@@ -904,20 +939,25 @@
     /* alerts */
     --neon-box-shadow-alert: calc(0.5 * var(--neon-base-space)) calc(0.5 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) rgba(var(--neon-rgb-neutral-d1), 0.5);
 
-    --neon-color-toast-info: var(--neon-color-info-l5);
-    --neon-color-toast-success: var(--neon-color-success-l5);
-    --neon-color-toast-warn: var(--neon-color-warn-l5);
-    --neon-color-toast-error: var(--neon-color-error-l5);
+    --neon-background-color-alert-info: var(--neon-color-info);
+    --neon-background-color-alert-success: var(--neon-color-success);
+    --neon-background-color-alert-warn: var(--neon-color-warn);
+    --neon-background-color-alert-error: var(--neon-color-error);
 
-    --neon-background-color-alert-info: var(--neon-color-info-d5);
-    --neon-background-color-alert-success: var(--neon-color-success-d5);
-    --neon-background-color-alert-warn: var(--neon-color-warn-d5);
-    --neon-background-color-alert-error: var(--neon-color-error-d5);
+    --neon-color-alert-info: var(--neon-color-inverse);
+    --neon-color-alert-success: var(--neon-color-inverse);
+    --neon-color-alert-warn: var(--neon-color-inverse);
+    --neon-color-alert-error: var(--neon-color-inverse);
 
-    --neon-rgb-alert-info: var(--neon-rgb-info-l1);
-    --neon-rgb-alert-success: var(--neon-rgb-success-l1);
-    --neon-rgb-alert-warn: var(--neon-rgb-warn-l1);
-    --neon-rgb-alert-error: var(--neon-rgb-error-l1);
+    --neon-background-color-toast-info: var(--neon-color-info);
+    --neon-background-color-toast-success: var(--neon-color-success);
+    --neon-background-color-toast-warn: var(--neon-color-warn);
+    --neon-background-color-toast-error: var(--neon-color-error);
+
+    --neon-color-toast-info: var(--neon-color-inverse);
+    --neon-color-toast-success: var(--neon-color-inverse);
+    --neon-color-toast-warn: var(--neon-color-inverse);
+    --neon-color-toast-error: var(--neon-color-inverse);
 
     /* dropdown / dropdown menu / select */
     --neon-border-color-dropdown: var(--neon-color-neutral-l4);

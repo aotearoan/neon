@@ -33,6 +33,7 @@ export default defineComponent({
   <neon-link href="http://www.getskeleton.com" :external-indicator="true" target="_blank">External link
   </neon-link>
   <neon-link aria-label="Link title" @click="toast()">Link with click handler</neon-link>
+  <neon-link :no-style="true" aria-label="Link title" @click="toast()">Unstyled link</neon-link>
 </div>`;
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonLink')));

@@ -70,6 +70,7 @@
             :key="index"
             :aria-label="`Display image ${index + 1}`"
             class="neon-image-carousel__nav-item-link"
+            no-style
             outline-style="none"
             role="button"
             tabindex="0"

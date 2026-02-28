@@ -74,8 +74,8 @@ export default defineComponent({
 
     const alertBothActions = () => {
       NeonAlertService.info({
-        title: 'Alert with single action',
-        message: 'This is an example of an alert with a single action.',
+        title: 'Alert with two action',
+        message: 'This is an example of an alert with two actions.',
         primaryAction: {
           label: 'Action',
           callback: () => {
