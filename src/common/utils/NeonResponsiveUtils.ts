@@ -12,10 +12,10 @@ export class NeonResponsiveUtils {
     [NeonResponsive.All]: '', // only use all on its own, never in combination with other breakpoints
     [NeonResponsive.DesktopLarge]: '(min-width: 1440px)',
     [NeonResponsive.Desktop]: '(max-width: 1339px)',
-    [NeonResponsive.LargerThanTablet]: '(min-width: 1025px)',
-    [NeonResponsive.Tablet]: '(max-width: 1024px)',
-    [NeonResponsive.LargerThanMobileLarge]: '(min-width: 600px)',
-    [NeonResponsive.MobileLarge]: '(max-width: 599px)',
+    [NeonResponsive.LargerThanTablet]: '(min-width: 1024px)',
+    [NeonResponsive.Tablet]: '(max-width: 1023px)',
+    [NeonResponsive.LargerThanMobileLarge]: '(min-width: 768px)',
+    [NeonResponsive.MobileLarge]: '(max-width: 767px)',
     [NeonResponsive.LargerThanMobile]: '(min-width: 415px)',
     [NeonResponsive.Mobile]: '(max-width: 414px)',
   });

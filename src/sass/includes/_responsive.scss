@@ -3,10 +3,10 @@
 $breakpoints: (
         mobile: 'screen and (max-width: 414px)',
         larger-than-mobile: 'screen and (min-width: 415px)',
-        mobile-large: 'screen and (max-width: 599px)',
-        larger-than-mobile-large: 'screen and (min-width: 600px)',
-        tablet: 'screen and (max-width: 1024px)',
-        larger-than-tablet: 'screen and (min-width: 1025px)',
+        mobile-large: 'screen and (max-width: 767px)',
+        larger-than-mobile-large: 'screen and (min-width: 768px)',
+        tablet: 'screen and (max-width: 1023px)',
+        larger-than-tablet: 'screen and (min-width: 1024px)',
         desktop: 'screen and (max-width: 1439px)',
         desktop-large: 'screen and (min-width: 1440px)',
 ) !default;

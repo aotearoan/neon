@@ -13,13 +13,13 @@ export enum NeonResponsive {
   Desktop = 'desktop',
   /** Defines a larger than desktop breakpoint of <strong>min-width: 1440px</strong>. */
   DesktopLarge = 'desktop-large',
-  /** Defines a larger than tablet breakpoint of <strong>min-width: 1025px</strong>. */
+  /** Defines a larger than tablet breakpoint of <strong>min-width: 1024px</strong>. */
   LargerThanTablet = 'larger-than-tablet',
-  /** Defines a tablet breakpoint of <strong>max-width: 1024px</strong>. */
+  /** Defines a tablet breakpoint of <strong>max-width: 1023px</strong>. */
   Tablet = 'tablet',
-  /** Defines a larger than mobile large breakpoint of <strong>min-width: 600px</strong>. */
+  /** Defines a larger than mobile large breakpoint of <strong>min-width: 768px</strong>. */
   LargerThanMobileLarge = 'larger-than-mobile-l',
-  /** Defines a large mobile breakpoint of <strong>max-width: 599px</strong>. */
+  /** Defines a large mobile breakpoint of <strong>max-width: 767px</strong>. */
   MobileLarge = 'mobile-large',
   /** Defines a larger than mobile breakpoint of <strong>min-width: 415px</strong>. */
   LargerThanMobile = 'larger-than-mobile',
