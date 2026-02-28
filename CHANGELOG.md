@@ -1,5 +1,12 @@
 # Changelog
 
+## [22.1.0](https://github.com/aotearoan/neon/compare/v22.0.1...v22.1.0) (2026-02-28)
+
+
+### Features
+
+* centered NeonPage option ([#296](https://github.com/aotearoan/neon/issues/296)) ([0082a08](https://github.com/aotearoan/neon/commit/0082a0843d454f1402764f88626525538f692485))
+
 ## [22.0.1](https://github.com/aotearoan/neon/compare/v22.0.0...v22.0.1) (2026-02-27)
 
 
