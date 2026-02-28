@@ -1,12 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`NeonBadge renders editable 1`] = `
+<div class="neon-badge--primary neon-badge--m neon-badge--with-image neon-badge--editable neon-badge--square neon-badge"><img alt="Badge" src="/test.jpg" class="neon-badge__image">
+  <div aria-disabled="false" class="neon-file--primary neon-file--m neon-file--single neon-file--direct-upload neon-file neon-badge__upload">
+    <!--v-if-->
+    <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-file__input" accept="image/*" multiple="false"><input aria-placeholder="" autocomplete="on" inputmode="text" placeholder="" tabindex="-1" type="file" class="neon-input__textfield neon-input__text neon-file__input" accept="image/*" value="">
+      <!--v-if-->
+      <!--v-if-->
+    </div>
+    <div class="neon-button-group neon-file__actions">
+      <!--v-if--><button class="neon-button--m neon-button--primary neon-button--solid neon-button--state-ready neon-button--with-icon neon-button--icon-only neon-button" tabindex="0" type="button" title="Edit">
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`NeonBadge renders jazzicon 1`] = `
-<div class="neon-badge--low-contrast neon-badge--m neon-badge--square neon-badge">
+<div class="neon-badge--primary neon-badge--m neon-badge--square neon-badge">
   <div class="neon-badge__image"><svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="40" height="40">
       <rect x="0" y="0" width="40" height="40" transform="translate(0 0) rotate(0.0 20 20)" fill="#000000"></rect>
       <rect x="0" y="0" width="40" height="40" transform="translate(2.650148400696 8.247754092555605) rotate(190.1 20 20)" fill="#000000"></rect>
       <rect x="0" y="0" width="40" height="40" transform="translate(-14.763630954718767 9.149803696525677) rotate(248.4 20 20)" fill="#000000"></rect>
       <rect x="0" y="0" width="40" height="40" transform="translate(25.82597178845803 -20.278135901172035) rotate(402.3 20 20)" fill="#000000"></rect>
     </svg></div>
+  <!--v-if-->
 </div>
 `;

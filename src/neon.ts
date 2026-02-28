@@ -132,6 +132,7 @@ export { NeonDateUtils } from './common/utils/NeonDateUtils';
 export { NeonDebounceUtils } from './common/utils/NeonDebounceUtils';
 export { NeonDropdownPlacementUtils } from './common/utils/NeonDropdownPlacementUtils';
 export { NeonEventBus } from './common/utils/NeonEventBus';
+export { fileToDataURL } from './common/utils/NeonFileUtils';
 export { NeonIconRegistry } from './common/utils/NeonIconRegistry';
 export { NeonJazziconUtils } from './common/utils/NeonJazziconUtils';
 export { NeonModeUtils } from './common/utils/NeonModeUtils';

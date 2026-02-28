@@ -1,7 +1,8 @@
 import NeonBadge from './NeonBadge.vue';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { render } from '@testing-library/vue';
+import { fireEvent, render } from '@testing-library/vue';
 import { NeonBadgeSize } from '@/common/enums/NeonBadgeSize';
+import user from '@testing-library/user-event';
 
 describe('NeonBadge', () => {
   it('renders label', () => {
@@ -39,6 +40,35 @@ describe('NeonBadge', () => {
     expect(img.getAttribute('alt')).toEqual('xdd');
   });
 
+  it('does not render editable by default', () => {
+    // given
+    const image = '/test.jpg';
+    const { container } = render(NeonBadge, { props: { image } });
+    // then
+    expect(container.querySelector<HTMLElement>('.neon-badge__upload')).toBeNull();
+  });
+
+  it('renders editable', () => {
+    // given
+    const image = '/test.jpg';
+    const { container, html } = render(NeonBadge, { props: { image, editable: true } });
+    // then
+    expect(container.querySelector<HTMLElement>('.neon-badge__upload')).toBeDefined();
+    expect(html()).toMatchSnapshot();
+  });
+
+  it('emits change-image', async () => {
+    // given
+    const image = '/test.jpg';
+    const file = new File(['hello'], 'hello.png', { type: 'image/png' });
+    const { container, emitted, getByTitle } = render(NeonBadge, { props: { image, editable: true } });
+    // when
+    await fireEvent.click(getByTitle('Edit'));
+    await user.upload(container.querySelector('input[type=file]') as HTMLInputElement, file);
+    // then
+    expect(emitted()['change-image'][0]).toEqual([file]);
+  });
+
   it('renders icon', () => {
     // given
     const icon = 'check';
@@ -59,6 +89,18 @@ describe('NeonBadge', () => {
     expect(container.getElementsByClassName('neon-badge--circular')[0]).toBeDefined();
   });
 
+  it('renders default accept when editable', () => {
+    const icon = 'check-1';
+    const { container } = render(NeonBadge, { props: { icon, editable: true } });
+    expect((container.querySelector('input[type=file]') as HTMLInputElement).accept).toEqual('image/*');
+  });
+
+  it('renders accept when editable', () => {
+    const icon = 'check-1';
+    const { container } = render(NeonBadge, { props: { icon, editable: true, accept: 'image/jpeg' } });
+    expect((container.querySelector('input[type=file]') as HTMLInputElement).accept).toEqual('image/jpeg');
+  });
+
   it('renders default size', () => {
     const icon = 'check';
     const { container } = render(NeonBadge, { props: { icon } });
@@ -74,7 +116,7 @@ describe('NeonBadge', () => {
   it('renders default color', () => {
     const icon = 'check';
     const { container } = render(NeonBadge, { props: { icon } });
-    expect(container.getElementsByClassName('neon-badge--low-contrast')[0]).toBeDefined();
+    expect(container.getElementsByClassName('neon-badge--primary')[0]).toBeDefined();
   });
 
   it('renders color', () => {

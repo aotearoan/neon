@@ -23,6 +23,32 @@ describe('NeonFile', () => {
     expect(container.querySelector('.neon-file--info')).toBeDefined();
   });
 
+  it('renders square', () => {
+    const { html } = harness;
+    expect(html()).not.toMatch('neon-button--circular');
+  });
+
+  it('renders circular', async () => {
+    const { html, rerender } = harness;
+    await rerender({ circular: true });
+    expect(html()).toMatch('neon-button--circular');
+  });
+
+  it('renders default title', async () => {
+    const label = 'Test label';
+    const { getByText, rerender } = harness;
+    await rerender({ label });
+    expect((getByText(label).parentElement as HTMLButtonElement).title).toEqual('Upload');
+  });
+
+  it('renders title', async () => {
+    const label = 'Test label';
+    const title = 'Test title';
+    const { getByText, rerender } = harness;
+    await rerender({ label, title });
+    expect((getByText(label).parentElement as HTMLButtonElement).title).toEqual(title);
+  });
+
   it('renders default size', () => {
     const { container } = harness;
     expect(container.querySelector('.neon-file--m')).toBeDefined();

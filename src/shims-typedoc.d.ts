@@ -10,6 +10,7 @@ declare module 'typedoc' {
     signatures?: SignatureReflection[];
     defaultValue?: any;
     parameters?: DeclarationReflection[];
+    variant?: string;
   };
 
   export type Comment = {

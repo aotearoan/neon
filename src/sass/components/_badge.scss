@@ -2,6 +2,8 @@
 
 @mixin badge {
   .neon-badge {
+    position: relative;
+
     &--with-icon,
     &--with-label {
       @each $color in palettes.$neon-functional-colors {
@@ -29,10 +31,85 @@
       }
     }
 
+    &--editable {
+      .neon-badge__upload {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .neon-button-group {
+          width: 100%;
+          height: 100%;
+        }
+
+        .neon-button {
+          width: 100%;
+          height: 100%;
+
+          &--circular {
+            border-radius: 50%;
+          }
+        }
+      }
+
+      .neon-badge__clear {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      &.neon-badge--xxl {
+        .neon-button {
+          svg {
+            width: 50%;
+            height: 50%;
+          }
+        }
+      }
+
+      @each $color in palettes.$neon-functional-colors {
+        &.neon-badge--#{$color}:not(.neon-badge--disabled) {
+          .neon-badge__upload {
+            .neon-button {
+              background: rgba(var(--neon-rgb-#{$color}), var(--neon-opacity-badge-editable-button));
+              transition: background-color ease-in-out var(--neon-animation-speed-slow);
+
+              &:focus,
+              &:hover {
+                background: rgba(var(--neon-rgb-#{$color}), var(--neon-opacity-badge-editable-button-hover));
+              }
+            }
+          }
+        }
+      }
+
+      &:not(.neon-badge--disabled) {
+        &.neon-badge--with-icon,
+        &.neon-badge--with-label {
+          .neon-badge__label,
+          .neon-badge__icon {
+            opacity: var(--neon-opacity-badge-editable-content);
+          }
+        }
+      }
+    }
+
     &--disabled {
       color: var(--neon-color-disabled-text);
       background: var(--neon-color-disabled-background);
       cursor: not-allowed;
+
+      &.neon-badge--editable {
+        .neon-button {
+          background: rgba(var(--neon-rgb-disabled-background), 0.75);
+
+          svg {
+            display: none;
+          }
+        }
+      }
     }
 
     $neon-badge-sizes: (s, m, l, xl, xxl);

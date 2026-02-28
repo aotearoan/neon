@@ -67,7 +67,7 @@
       },
       "defaultValue": {
         "func": false,
-        "value": "NeonFunctionalColor.LowContrast"
+        "value": "NeonFunctionalColor.Primary"
       }
     },
     {
@@ -79,6 +79,28 @@
       "defaultValue": {
         "func": false,
         "value": "null"
+      }
+    },
+    {
+      "name": "editable",
+      "description": "Allow editing of the image. This will place an image file lookup button on top of the image allowing the user to\nchoose a new image to upload.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "accept",
+      "description": "Accept string for the filetype to support selecting.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'image/*'"
       }
     },
     {
@@ -112,6 +134,28 @@
       "defaultValue": {
         "func": false,
         "value": "'Badge'"
+      }
+    },
+    {
+      "name": "editButtonTitle",
+      "description": "Title for the file upload button in edit mode.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Edit'"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "change-image",
+      "description": "emitted when the user selects or clears their image in edit mode.\nNOTE: This emit event DOES NOT set the badge image, it is the responsibility of the parent component to pass an\nimage URL back into the component's image property to set it, e.g. a data URI.",
+      "type": {
+        "names": [
+          "File"
+        ]
       }
     }
   ]
