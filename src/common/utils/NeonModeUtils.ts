@@ -2,7 +2,7 @@ import { NeonMode } from '../enums/NeonMode';
 
 /**
  * Utility for managing Neon's light/dark mode & defaulting to the user's preference. See
- * <a href="https://neon.development.arcual.art/design/theming#dark-mode">Dark mode</a>.
+ * <a href="https://aotearoan.github.io/neon/design/theming#dark-mode">Dark mode</a>.
  */
 export class NeonModeUtils {
   private static defaultMode = NeonMode.Light;

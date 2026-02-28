@@ -3,8 +3,9 @@
     <neon-card>
       <neon-card-body>
         <p>
-          The page footer component. Place directly inside the <strong>NeonPage</strong> component to have it rendered
-          at the bottom of the page even when the content is shorter than the page.
+          The page footer component. Place directly inside the <strong>NeonPage</strong> component
+          <strong>#footer</strong> slot to have it rendered at the bottom of the page even when the content is shorter
+          than the page.
         </p>
       </neon-card-body>
       <neon-card-body>

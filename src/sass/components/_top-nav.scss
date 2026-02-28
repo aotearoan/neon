@@ -13,12 +13,21 @@
     border-bottom: var(--neon-border-width) var(--neon-border-style) var(--neon-border-color-top-nav);
 
     &__container {
-      @include layout.padding-horizontal(1, 1);
-      // account for side nav
-      @include layout.spacing-horizontal('padding-left', larger-than-tablet, 0.75);
+      @include responsive.responsive(larger-than-tablet) {
+        padding: 0 var(--neon-gutter-desktop);
+        max-width: var(--neon-max-width-page);
+      }
+
+      @include responsive.responsive(tablet) {
+        padding: 0 var(--neon-gutter-tablet);
+        max-width: 100vw;
+      }
+
+      @include responsive.responsive(mobile-large) {
+        padding: 0 var(--neon-gutter-mobile);
+      }
 
       width: 100%;
-      max-width: var(--neon-max-page-width);
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -34,6 +43,13 @@
 
     @include responsive.responsive(mobile-large) {
       height: var(--neon-top-nav-height-mobile);
+    }
+  }
+
+  .neon-page--center {
+    .neon-top-nav__container {
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 }

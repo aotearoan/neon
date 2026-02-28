@@ -19,6 +19,11 @@
     flex-direction: row;
   }
 
+  .layout-example__with-footer {
+    flex-direction: column;
+    width: 100%;
+  }
+
   .layout-example__side-nav {
     width: 25%;
 
@@ -29,6 +34,5 @@
 
   .layout-example__grid-wrapper {
     flex: 1 1 auto;
-    width: 75%;
   }
 }
