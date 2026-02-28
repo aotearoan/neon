@@ -14,6 +14,39 @@
         "func": false,
         "value": "true"
       }
+    },
+    {
+      "name": "orientation",
+      "description": "Swiper orientation, i.e. whether to manage overflow horizontally or vertically.",
+      "type": {
+        "name": "String as () => NeonOrientation"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonOrientation.Horizontal"
+      }
+    },
+    {
+      "name": "hideFadeStart",
+      "description": "Hide the starting fade (left or top depending on the orientation).",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "hideFadeEnd",
+      "description": "Hide the ending fade (right or bottom depending on the orientation).",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
     }
   ],
   "slots": [

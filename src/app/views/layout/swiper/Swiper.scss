@@ -1,0 +1,10 @@
+.vertical-swiper-example.neon-swiper {
+  max-width: 300rem;
+  max-height: 400rem;
+  border: var(--neon-border);
+  overflow: auto;
+
+  p {
+    padding: var(--neon-space-16);
+  }
+}

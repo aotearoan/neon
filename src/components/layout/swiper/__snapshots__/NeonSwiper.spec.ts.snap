@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NeonSwiper renders slot contents 1`] = `
-<div class="neon-swiper--fade neon-swiper--start neon-swiper--end neon-swiper">
+<div class="neon-swiper--horizontal neon-swiper--fade neon-swiper--start neon-swiper--end neon-swiper">
   <div class="neon-swiper__container">
     <!-- @slot contents of swiper with which to apply overflow scrolling. -->
     <p>test</p>

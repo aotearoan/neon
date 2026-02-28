@@ -66,12 +66,30 @@ export default defineComponent({
   </neon-swiper>
 </neon-inline>`;
 
+    const templateVertical = `<neon-swiper orientation="vertical">
+  <p>I'm baby lo-fi small batch mlkshk before they sold out ennui single-origin coffee pitchfork asymmetrical.
+    Vice fingerstache put a bird on it keytar. Brunch pour-over umami edison bulb next level seitan scenester.
+    Lo-fi vaporware subway tile locavore austin gatekeep, sustainable vape mustache selvage iPhone yuccie master
+    cleanse everyday carry hashtag. Affogato hexagon enamel pin organic readymade.</p>
+  <p>Tilde chartreuse direct trade, hella brunch etsy deep v. Letterpress meh ugh readymade single-origin
+    coffee. Etsy wolf air plant swag yes plz man braid praxis skateboard narwhal salvia hot chicken bicycle
+    rights messenger bag four loko. Hammock pinterest hot chicken, kombucha disrupt cold-pressed mlkshk
+    try-hard. Kitsch pug pork belly hella Brooklyn, hot chicken shaman squid craft beer slow-carb health goth.
+    Pug taxidermy lumbersexual man bun mustache jianbing single-origin coffee fanny pack glossier lomo marxism
+    mixtape.</p>
+  <p>Tumblr flexitarian listicle organic. Tbh echo park scenester, biodiesel tumeric activated charcoal
+    blackbird spyplane af iPhone tonx ascot typewriter. Scenester subway tile prism chillwave cupping cred
+    pinterest vibecession salvia next level vegan hell of shabby chic. Tattooed tilde semiotics roof party.
+    Small batch ethical intelligentsia kombucha microdosing iPhone pinterest grailed butcher.</p>
+</neon-swiper>`;
+
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonSwiper')));
 
     return {
       menuModel,
       headline,
       template,
+      templateVertical,
       filterAccepted,
       filterPending,
       filterRejected,
