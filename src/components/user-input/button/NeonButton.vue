@@ -6,6 +6,7 @@
     :href="href"
     :tabindex="!disabled ? 0 : -1"
     class="neon-button"
+    no-style
     outline-style="none"
     role="button"
     v-bind="sanitizedAttributes"

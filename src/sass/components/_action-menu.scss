@@ -13,6 +13,7 @@
       font-weight: var(--neon-font-weight-normal);
       user-select: none;
       max-width: none;
+      width: 100%;
       justify-content: space-between;
 
       &:not(.neon-action-menu__link--selected):not(.neon-action-menu__link--disabled) {

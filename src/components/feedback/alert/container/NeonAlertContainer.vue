@@ -32,7 +32,7 @@
           <neon-link
             v-if="message.primaryAction"
             class="neon-alert__action"
-            outline-style="none"
+            no-style
             role="button"
             tabindex="0"
             @click="
@@ -49,7 +49,7 @@
           <neon-link
             v-if="message.secondaryAction"
             class="neon-alert__action"
-            outline-style="none"
+            no-style
             role="button"
             tabindex="0"
             @click="

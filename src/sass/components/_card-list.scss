@@ -24,17 +24,6 @@
       .neon-link {
         width: 100%;
         min-width: 100%;
-
-        &::after {
-          display: none;
-        }
-
-        &:hover,
-        &:focus {
-          &::after {
-            display: none;
-          }
-        }
       }
     }
 

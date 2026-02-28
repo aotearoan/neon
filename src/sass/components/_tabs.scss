@@ -32,12 +32,6 @@
             background-color: $tab-hover-color;
           }
         }
-
-        .neon-tab {
-          &:focus-visible:before {
-            background-color: $tab-hover-color;
-          }
-        }
       }
     }
 
@@ -49,8 +43,8 @@
     }
 
     .neon-tabs__menu-item {
-      --neon-border-width-link: 0rem;
-      --neon-border-width-link-hover: 0rem;
+      --neon-text-decoration-thickness-link: 0rem;
+      --neon-text-decoration-thickness-link-hover: 0rem;
 
       text-decoration: none;
       position: relative;
@@ -197,24 +191,8 @@
       display: flex;
     }
 
-    &:before {
-      content: '';
-      position: absolute;
-      top: var(--neon-base-space);
-      right: 0;
-      width: calc(2 * var(--neon-base-space));
-      height: calc(2 * var(--neon-base-space));
-      border-radius: var(--neon-border-radius);
-      display: flex;
-      transition: all var(--neon-animation-speed-fast) ease-in-out;
-    }
-
     &:focus-visible {
       outline: none;
-
-      &:before {
-        background-color: var(--neon-color-low-contrast);
-      }
     }
   }
 

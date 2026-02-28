@@ -58,6 +58,7 @@
                 <neon-link
                   :href="`${link.href}#${fragment(anchor)}`"
                   class="neon-link--no-style neon-tree-menu__anchor"
+                  no-style
                   outline-style="none"
                   tabindex="-1"
                 >
