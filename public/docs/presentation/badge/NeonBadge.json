@@ -50,13 +50,13 @@
     },
     {
       "name": "size",
-      "description": "The size of the badge - Small, Medium or Large.",
+      "description": "The size of the badge - s, m, l, xl, xxl.",
       "type": {
-        "name": "String as () => NeonSize"
+        "name": "String as () => NeonBadgeSize"
       },
       "defaultValue": {
         "func": false,
-        "value": "NeonSize.Medium"
+        "value": "NeonBadgeSize.Medium"
       }
     },
     {

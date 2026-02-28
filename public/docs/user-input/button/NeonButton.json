@@ -1,6 +1,6 @@
 {
   "displayName": "NeonButton",
-  "description": "A button component. Renders an HTML button or, if an href is provided, renders using NeonLink in the style of a button. NeonButton supports all events and attributes of HTML buttons, e.g, @click.",
+  "description": "A button component. Renders an HTML button or, if an href is provided, renders using NeonLink in the style of a\nbutton. NeonButton supports all events and attributes of HTML buttons, e.g, @click.",
   "tags": {},
   "exportName": "default",
   "props": [
@@ -82,6 +82,13 @@
       }
     },
     {
+      "name": "iconAriaLabel",
+      "description": "The aria label of the icon button",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
       "name": "iconPosition",
       "description": "Position of the icon if combined with text",
       "type": {
@@ -104,8 +111,19 @@
       }
     },
     {
+      "name": "buttonType",
+      "description": "The type of button, see <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button\">button</a>.",
+      "type": {
+        "name": "String as () => NeonButtonType"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonButtonType.Button"
+      }
+    },
+    {
       "name": "state",
-      "description": "Provide button states of <em>ready, loading, success or error</em> which change the display of the button (with icons) to reflect the state.",
+      "description": "Provide button states of <em>ready, loading, success or error</em> which change the display of the button (with\nicons) to reflect the state.",
       "type": {
         "name": "String as () => NeonState"
       },
