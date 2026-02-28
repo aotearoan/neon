@@ -1,5 +1,12 @@
 # Changelog
 
+## [22.5.0](https://github.com/aotearoan/neon/compare/v22.4.1...v22.5.0) (2026-02-28)
+
+
+### Features
+
+* input indicator styles ([#311](https://github.com/aotearoan/neon/issues/311)) ([34b116e](https://github.com/aotearoan/neon/commit/34b116e19e9b313749ac5e9061e4b9ceef77b725))
+
 ## [22.4.1](https://github.com/aotearoan/neon/compare/v22.4.0...v22.4.1) (2026-02-28)
 
 
