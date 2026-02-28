@@ -1,5 +1,12 @@
 # Changelog
 
+## [22.5.1](https://github.com/aotearoan/neon/compare/v22.5.0...v22.5.1) (2026-02-28)
+
+
+### Bug Fixes
+
+* bugfixing ([#313](https://github.com/aotearoan/neon/issues/313)) ([440578b](https://github.com/aotearoan/neon/commit/440578b5de2c6e80974045317e7abb911912a698))
+
 ## [22.5.0](https://github.com/aotearoan/neon/compare/v22.4.1...v22.5.0) (2026-02-28)
 
 
