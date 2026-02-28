@@ -1,6 +1,7 @@
 <template>
   <router-link
     v-if="routerUrl"
+    ref="neonLink"
     :class="[
       { 'neon-link--no-style': noStyle, 'neon-link--active': activeRoute, 'neon-link--exact-active': exactRoute },
       `neon-link--outline-${outlineStyle}`,
@@ -18,6 +19,7 @@
   </router-link>
   <a
     v-else-if="href"
+    ref="neonLink"
     :class="[
       {
         'neon-link--no-style': noStyle,
@@ -47,6 +49,7 @@
   </a>
   <a
     v-else
+    ref="neonLink"
     :class="[{ 'neon-link--no-style': noStyle }, `neon-link--outline-${outlineStyle}`]"
     class="neon-link"
     tabindex="0"

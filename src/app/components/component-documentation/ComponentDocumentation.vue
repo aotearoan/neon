@@ -4,7 +4,7 @@
       <div class="component-documentation__header-container">
         <h1 class="component-documentation__title">{{ componentTitle }}</h1>
         <span v-if="headline" class="component-documentation__headline neon-color-neutral">{{ headline }}</span>
-        <neon-tabs v-model="selected" :tabs="tabs" />
+        <neon-tabs v-model="selected" :tabs="tabs" :underline="false" />
       </div>
     </div>
     <neon-tab

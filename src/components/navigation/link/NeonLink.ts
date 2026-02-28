@@ -1,4 +1,4 @@
-import { computed, defineComponent, useAttrs } from 'vue';
+import { computed, defineComponent, ref, useAttrs } from 'vue';
 import { NeonOutlineStyle } from '@/common/enums/NeonOutlineStyle';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import { useRoute, useRouter } from 'vue-router';
@@ -37,7 +37,8 @@ export default defineComponent({
      */
     'click',
   ],
-  setup(props, { emit }) {
+  setup(props, { emit, expose }) {
+    const neonLink = ref<HTMLAnchorElement | null>(null);
     const attrs = useAttrs();
     const router = useRouter();
     const route = useRoute();
@@ -66,7 +67,10 @@ export default defineComponent({
       }
     };
 
+    expose({ neonLink });
+
     return {
+      neonLink,
       routerUrl,
       sanitizedAttributes,
       activeRoute,

@@ -12,6 +12,8 @@ export interface NeonTabModel {
    * <a href="http://localhost:8083/presentation/tabs#api">NeonTab API</a>.
    */
   key: string;
+  /** URL of the tab. */
+  href?: string;
   /** Icon to display with the tab label. */
   icon?: string;
 }

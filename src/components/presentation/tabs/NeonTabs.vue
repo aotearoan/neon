@@ -1,14 +1,23 @@
 <template>
   <div :class="[`neon-tabs--${size}`, `neon-tabs--${color}`]" class="neon-tabs" role="tablist">
-    <div :class="{ 'neon-tabs__menu-items--underlined': underline }" class="neon-tabs__menu-items">
-      <div
+    <neon-swiper
+      :class="{
+        'neon-tabs__menu-items--underlined': underline,
+        'neon-tabs__menu-items--full-width-mobile': fullWidthMobile,
+      }"
+      class="neon-tabs__menu-items"
+    >
+      <neon-link
         v-for="(tab, index) in tabs"
         :id="`${tab.key}Button`"
         :key="tab.key"
+        ref="menuItem"
         :aria-controls="tab.key"
         :aria-selected="tab.key === modelValue"
         :class="{ 'neon-tabs__menu-item--selected': tab.key === modelValue }"
+        :href="tab.href"
         class="neon-tabs__menu-item"
+        no-style
         role="tab"
         tabindex="-1"
         @click="tab.key !== modelValue && onClick(tab.key)"
@@ -23,8 +32,8 @@
           <neon-icon v-if="tab.icon" :name="tab.icon" class="neon-tabs__menu-icon" />
           <span v-if="tab.label" class="neon-tabs__menu-label">{{ tab.label }}</span>
         </div>
-      </div>
-    </div>
+      </neon-link>
+    </neon-swiper>
     <!-- @slot Add tabs here (NeonTab). NOTE: Tabs can also be added outside the component if preferred -->
     <slot></slot>
   </div>

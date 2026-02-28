@@ -15,7 +15,7 @@
           </p>
         </neon-stack>
       </neon-card-body>
-      <neon-card-body>
+      <neon-card-body class="tabs-example">
         <h2 class="neon-h3">Tabbed content</h2>
         <neon-stack>
           <neon-tabs v-model="selected" :tabs="tabs">
