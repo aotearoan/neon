@@ -1,74 +1,82 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NeonImageCarousel renders carousel 1`] = `
-<div class="neon-image-carousel" tabindex="0">
-  <div class="neon-image-carousel__container" tabindex="-1"><button class="neon-button--l neon-button--neutral neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--disabled neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-image-carousel__previous neon-image-carousel__previous" disabled="" tabindex="-1" type="button" title="Previous">
-      <div class="neon-icon--name-chevron-left neon-icon--neutral neon-icon--disabled neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-          <path class="neon-svg--fill" d="M15.28 5.22a.75.75 0 0 1 0 1.06L9.56 12l5.72 5.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.25-6.25a.75.75 0 0 1 0-1.06l6.25-6.25a.75.75 0 0 1 1.06 0Z"></path>
-        </svg>
-      </div>
-      <!--v-if-->
-      <!--v-if-->
-    </button>
-    <ul class="no-style neon-image-carousel__items">
-      <li class="neon-image-carousel__item--active neon-image-carousel__item"><img alt="Pic 1" src="/images/image-carousel/pic-01.jpg" class="neon-image-carousel__image"></li>
-      <li class="neon-image-carousel__item"><img alt="Pic 2" src="/images/image-carousel/pic-02.jpg" class="neon-image-carousel__image"></li>
-    </ul><button class="neon-button--l neon-button--neutral neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-image-carousel__next neon-image-carousel__next" tabindex="0" type="button" title="Next">
-      <div class="neon-icon--name-chevron-right neon-icon--neutral neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-          <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
-        </svg>
-      </div>
-      <!--v-if-->
-      <!--v-if-->
-    </button>
+<div class="neon-image-carousel-wrapper">
+  <div class="neon-image-carousel" tabindex="0">
+    <div class="neon-image-carousel__container" tabindex="-1">
+      <!--v-if--><button class="neon-button--l neon-button--neutral neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--disabled neon-button--with-icon neon-button--icon-only neon-button neon-image-carousel__previous neon-image-carousel__previous" disabled="" tabindex="-1" type="button" title="Previous">
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+      </button>
+      <ul class="no-style neon-image-carousel__items">
+        <li class="neon-image-carousel__item--active neon-image-carousel__item"><img alt="Pic 1" src="/images/image-carousel/pic-01.jpg" class="neon-image-carousel__image">
+          <!--v-if-->
+        </li>
+        <li class="neon-image-carousel__item"><img alt="Pic 2" src="/images/image-carousel/pic-02.jpg" class="neon-image-carousel__image">
+          <!--v-if-->
+        </li>
+      </ul><button class="neon-button--l neon-button--neutral neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--with-icon neon-button--icon-only neon-button neon-image-carousel__next neon-image-carousel__next" tabindex="0" type="button" title="Next">
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+      </button>
+    </div>
+    <div class="neon-stack--gap-s neon-stack neon-image-carousel__nav-container">
+      <!-- @slot stack contents -->
+      <div class="neon-image-carousel__nav" tabindex="-1"><a class="neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 1" role="button">
+          <!-- @slot the content of the link -->
+          <div class="neon-image-carousel__nav-item--active neon-image-carousel__nav-item" tabindex="-1">
+            <div class="neon-image-carousel__nav-item-indicator"></div>
+          </div>
+        </a><a class="neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 2" role="button">
+          <!-- @slot the content of the link -->
+          <div class="neon-image-carousel__nav-item" tabindex="-1">
+            <div class="neon-image-carousel__nav-item-indicator"></div>
+          </div>
+        </a></div><span class="neon-image-carousel__label" tabindex="-1">2 images</span>
+    </div>
   </div>
-  <div class="neon-image-carousel__nav" tabindex="-1"><a class="neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 1" role="button">
-      <!-- @slot the content of the link -->
-      <div class="neon-image-carousel__nav-item--active neon-image-carousel__nav-item" tabindex="-1">
-        <div class="neon-image-carousel__nav-item-indicator"></div>
-      </div>
-    </a><a class="neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 2" role="button">
-      <!-- @slot the content of the link -->
-      <div class="neon-image-carousel__nav-item" tabindex="-1">
-        <div class="neon-image-carousel__nav-item-indicator"></div>
-      </div>
-    </a></div><span class="neon-image-carousel__label" tabindex="-1">2 images</span>
 </div>
 `;
 
 exports[`NeonImageCarousel renders carousel without label 1`] = `
-<div class="neon-image-carousel" tabindex="0">
-  <div class="neon-image-carousel__container" tabindex="-1"><button class="neon-button--l neon-button--neutral neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--disabled neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-image-carousel__previous neon-image-carousel__previous" disabled="" tabindex="-1" type="button" title="Previous">
-      <div class="neon-icon--name-chevron-left neon-icon--neutral neon-icon--disabled neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-          <path class="neon-svg--fill" d="M15.28 5.22a.75.75 0 0 1 0 1.06L9.56 12l5.72 5.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.25-6.25a.75.75 0 0 1 0-1.06l6.25-6.25a.75.75 0 0 1 1.06 0Z"></path>
-        </svg>
-      </div>
+<div class="neon-image-carousel-wrapper">
+  <div class="neon-image-carousel" tabindex="0">
+    <div class="neon-image-carousel__container" tabindex="-1">
+      <!--v-if--><button class="neon-button--l neon-button--neutral neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--disabled neon-button--with-icon neon-button--icon-only neon-button neon-image-carousel__previous neon-image-carousel__previous" disabled="" tabindex="-1" type="button" title="Previous">
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+      </button>
+      <ul class="no-style neon-image-carousel__items">
+        <li class="neon-image-carousel__item--active neon-image-carousel__item"><img alt="Pic 1" src="/images/image-carousel/pic-01.jpg" class="neon-image-carousel__image">
+          <!--v-if-->
+        </li>
+        <li class="neon-image-carousel__item"><img alt="Pic 2" src="/images/image-carousel/pic-02.jpg" class="neon-image-carousel__image">
+          <!--v-if-->
+        </li>
+      </ul><button class="neon-button--l neon-button--neutral neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--with-icon neon-button--icon-only neon-button neon-image-carousel__next neon-image-carousel__next" tabindex="0" type="button" title="Next">
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+      </button>
+    </div>
+    <div class="neon-stack--gap-s neon-stack neon-image-carousel__nav-container">
+      <!-- @slot stack contents -->
+      <div class="neon-image-carousel__nav" tabindex="-1"><a class="neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 1" role="button">
+          <!-- @slot the content of the link -->
+          <div class="neon-image-carousel__nav-item--active neon-image-carousel__nav-item" tabindex="-1">
+            <div class="neon-image-carousel__nav-item-indicator"></div>
+          </div>
+        </a><a class="neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 2" role="button">
+          <!-- @slot the content of the link -->
+          <div class="neon-image-carousel__nav-item" tabindex="-1">
+            <div class="neon-image-carousel__nav-item-indicator"></div>
+          </div>
+        </a></div>
       <!--v-if-->
-      <!--v-if-->
-    </button>
-    <ul class="no-style neon-image-carousel__items">
-      <li class="neon-image-carousel__item--active neon-image-carousel__item"><img alt="Pic 1" src="/images/image-carousel/pic-01.jpg" class="neon-image-carousel__image"></li>
-      <li class="neon-image-carousel__item"><img alt="Pic 2" src="/images/image-carousel/pic-02.jpg" class="neon-image-carousel__image"></li>
-    </ul><button class="neon-button--l neon-button--neutral neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-image-carousel__next neon-image-carousel__next" tabindex="0" type="button" title="Next">
-      <div class="neon-icon--name-chevron-right neon-icon--neutral neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-          <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
-        </svg>
-      </div>
-      <!--v-if-->
-      <!--v-if-->
-    </button>
+    </div>
   </div>
-  <div class="neon-image-carousel__nav" tabindex="-1"><a class="neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 1" role="button">
-      <!-- @slot the content of the link -->
-      <div class="neon-image-carousel__nav-item--active neon-image-carousel__nav-item" tabindex="-1">
-        <div class="neon-image-carousel__nav-item-indicator"></div>
-      </div>
-    </a><a class="neon-link--outline-none neon-link neon-image-carousel__nav-item-link neon-image-carousel__nav-item-link" tabindex="0" aria-label="Display image 2" role="button">
-      <!-- @slot the content of the link -->
-      <div class="neon-image-carousel__nav-item" tabindex="-1">
-        <div class="neon-image-carousel__nav-item-indicator"></div>
-      </div>
-    </a></div>
-  <!--v-if-->
 </div>
 `;

@@ -151,4 +151,33 @@ describe('NeonImageCarousel', () => {
     await fireEvent.click(getByTitle('Next'));
     expect(emitted()['current-image']).toEqual([[1]]);
   });
+
+  it('expanded when clicking on the image', async () => {
+    const { container } = harness;
+    await fireEvent.click(container.querySelectorAll<HTMLImageElement>('.neon-image-carousel__image')[0]);
+    expect(container.querySelector('.neon-image-carousel--expanded'));
+  });
+
+  it('closes when clicking the close button', async () => {
+    const { container, getByTitle } = harness;
+    await fireEvent.click(container.querySelectorAll<HTMLImageElement>('.neon-image-carousel__image')[0]);
+    await fireEvent.click(getByTitle('Close'));
+    expect(container.querySelector('.neon-image-carousel--expanded')).toBeNull();
+  });
+
+  it('overrides close button title', async () => {
+    const { container, getByTitle, rerender } = harness;
+    await rerender({ closeLabel: 'Close me' });
+    await fireEvent.click(container.querySelectorAll<HTMLImageElement>('.neon-image-carousel__image')[0]);
+    await fireEvent.click(getByTitle('Close me'));
+    expect(container.querySelector('.neon-image-carousel--expanded')).toBeNull();
+  });
+
+  it('closes when clicking the backdrop', async () => {
+    const { container } = harness;
+    await fireEvent.click(container.querySelectorAll<HTMLImageElement>('.neon-image-carousel__image')[0]);
+    const backdrop = container.querySelector<HTMLDivElement>('.neon-image-carousel__container') as HTMLDivElement;
+    await fireEvent.click(backdrop);
+    expect(container.querySelector('.neon-image-carousel--expanded')).toBeNull();
+  });
 });

@@ -35,6 +35,17 @@
       }
     },
     {
+      "name": "closeLabel",
+      "description": "Provide an alternative label for the Previous button.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Close'"
+      }
+    },
+    {
       "name": "previousLabel",
       "description": "Provide an alternative label for the Previous button.",
       "type": {

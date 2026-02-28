@@ -1,3 +1,4 @@
+@use './includes/responsive';
 @import './palette';
 @import './color-variables';
 
@@ -17,6 +18,18 @@
   --neon-gutter-desktop: 32rem;
   --neon-gutter-tablet: 24rem;
   --neon-gutter-mobile: 16rem;
+
+  @include responsive.responsive(larger-than-tablet) {
+    --neon-gutter: var(--neon-gutter-desktop);
+  }
+
+  @include responsive.responsive(tablet) {
+    --neon-gutter: var(--neon-gutter-tablet);
+  }
+
+  @include responsive.responsive(mobile-large) {
+    --neon-gutter: var(--neon-gutter-mobile);
+  }
 
   /* spacings */
   --neon-space-1: calc(0.25 * var(--neon-base-space));
@@ -349,6 +362,9 @@
   /* card list */
   --neon-border-radius-card-list: calc(1.5 * var(--neon-base-space));
 
+  /* image carousel */
+  --neon-blur-radius-image-carousel: 5px;
+
   /**********************
   * DARK THEME VARIABLES
   **********************/
@@ -652,6 +668,13 @@
     /* swiper */
     --neon-background-color-swiper: var(--neon-background-color-card);
   }
+
+  /* image carousel */
+  --neon-color-image-carousel-expanded-button: var(--neon-color-text-primary);
+  --neon-color-image-carousel-expanded-button-disabled: var(--neon-color-low-contrast-d4);
+  --neon-background-color-image-carousel-expanded-button: var(--neon-color-low-contrast-d5);
+  --neon-color-image-carousel-expanded-label: var(--neon-color-text-tertiary);
+  --neon-text-shadow-image-carousel-expanded: 1px 1px 2px var(--neon-color-inverse);
 
   /*********************
   * LIGHT THEME VARIABLES
@@ -959,5 +982,12 @@
 
     /* swiper */
     --neon-background-color-swiper: var(--neon-background-color-card);
+
+    /* image carousel */
+    --neon-color-image-carousel-expanded-button: var(--neon-color-inverse);
+    --neon-color-image-carousel-expanded-button-disabled: var(--neon-color-low-contrast-d2);
+    --neon-background-color-image-carousel-expanded-button: var(--neon-color-low-contrast-d3);
+    --neon-color-image-carousel-expanded-label: var(--neon-color-text-tertiary-dark);
+    --neon-text-shadow-image-carousel-expanded: 1px 1px 2px var(--neon-color-text-primary);
   }
 }

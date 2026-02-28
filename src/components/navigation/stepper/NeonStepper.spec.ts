@@ -21,10 +21,20 @@ describe('NeonStepper.vue', () => {
     expect(html()).toMatchSnapshot();
   });
 
-  test('emits input when clicking on previous step', async () => {
+  test('emits update when clicking on previous step', async () => {
     const { emitted, getByText } = harness;
 
     await fireEvent.click(getByText('Artwork'));
+    expect(emitted()['update:modelValue']).toEqual([[1]]);
+  });
+
+  test('emits update when keydown on previous step', async () => {
+    const { emitted, container } = harness;
+
+    await fireEvent.keyDown(container.querySelectorAll<HTMLDivElement>('.neon-stepper__step-indicator')[1], {
+      key: 'Enter',
+      code: 'Enter',
+    });
     expect(emitted()['update:modelValue']).toEqual([[1]]);
   });
 
