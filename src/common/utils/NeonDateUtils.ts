@@ -22,7 +22,7 @@ export class NeonDateUtils {
     let time;
     if (date.length > 10) {
       time = dateObj.toLocaleString(
-        loc,
+        'en-GB', // use en-GB for 0-23 hr offset
         date.length <= 16
           ? { hour12: false, hour: '2-digit', minute: '2-digit' }
           : { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' },
@@ -41,6 +41,13 @@ export class NeonDateUtils {
 
     if (time) {
       result.time = time;
+      // use en-GB for 0-23 hr offset
+      result.timeShort = dateObj.toLocaleString('en-GB', {
+        hour12: false,
+        hourCycle: 'h23',
+        hour: '2-digit',
+        minute: '2-digit',
+      });
     }
 
     return result;

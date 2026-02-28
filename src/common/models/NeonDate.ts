@@ -19,4 +19,6 @@ export interface NeonDate {
   dayFormatted: string;
   /** Time string in the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO-8601 format</a>. */
   time?: string;
+  /** Time string in the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO-8601 format</a> without seconds. */
+  timeShort?: string;
 }

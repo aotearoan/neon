@@ -2,7 +2,7 @@ import { NeonDateUtils } from '@/common/utils/NeonDateUtils';
 
 describe('NeonDateUtils', () => {
   beforeEach(() => {
-    jest.useFakeTimers().setSystemTime(new Date('2023-03-16T12:12:12Z'));
+    jest.useFakeTimers().setSystemTime(new Date('2023-03-16T12:13:14Z'));
   });
 
   afterEach(() => {
@@ -10,13 +10,14 @@ describe('NeonDateUtils', () => {
   });
 
   it('converts a string to a NeonDate', () => {
-    expect(NeonDateUtils.stringToNeonDate('2023-01-01T12:12:12Z')).toEqual({
+    expect(NeonDateUtils.stringToNeonDate('2023-01-01T00:13:05Z')).toEqual({
       day: 1,
       dayFormatted: '01',
       month: 1,
       monthLongName: 'January',
       monthShortName: 'Jan',
-      time: '12:12:12',
+      time: '00:13:05',
+      timeShort: '00:13',
       year: 2023,
       yearFormatted: '2023',
     });
@@ -35,13 +36,14 @@ describe('NeonDateUtils', () => {
   });
 
   it('converts a string to a NeonDate, no seconds', () => {
-    expect(NeonDateUtils.stringToNeonDate('2023-01-01T12:12')).toEqual({
+    expect(NeonDateUtils.stringToNeonDate('2023-01-01T12:13')).toEqual({
       day: 1,
       dayFormatted: '01',
       month: 1,
       monthLongName: 'January',
       monthShortName: 'Jan',
-      time: '12:12',
+      time: '12:13',
+      timeShort: '12:13',
       year: 2023,
       yearFormatted: '2023',
     });
