@@ -256,22 +256,7 @@ export default defineComponent({
       }
     };
 
-    const computedPlaceholder = computed(() => {
-      if (props.placeholder) {
-        return props.placeholder;
-      } else {
-        switch (props.type) {
-          case NeonInputType.Email:
-            return 'gbelson@hooli.com';
-          case NeonInputType.Tel:
-            return '+41785551234';
-          case NeonInputType.Url:
-            return 'http://www.getskeleton.com';
-          default:
-            return '';
-        }
-      }
-    });
+    const computedPlaceholder = computed(() => props.placeholder || '');
 
     expose({ neonInput });
 

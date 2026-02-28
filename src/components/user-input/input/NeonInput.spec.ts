@@ -31,27 +31,6 @@ describe('NeonInput', () => {
     getByPlaceholderText(placeholder);
   });
 
-  it('renders telephone placeholder', async () => {
-    const modelValue = '';
-    const { getByPlaceholderText, rerender } = harness;
-    await rerender({ modelValue, type: NeonInputType.Tel });
-    getByPlaceholderText('+41785551234');
-  });
-
-  it('renders url placeholder', async () => {
-    const modelValue = '';
-    const { getByPlaceholderText, rerender } = harness;
-    await rerender({ modelValue, type: NeonInputType.Url });
-    getByPlaceholderText('http://www.getskeleton.com');
-  });
-
-  it('renders email placeholder', async () => {
-    const modelValue = '';
-    const { getByPlaceholderText, rerender } = harness;
-    await rerender({ modelValue, type: NeonInputType.Email });
-    getByPlaceholderText('gbelson@hooli.com');
-  });
-
   it('renders placeholder visible class', async () => {
     const modelValue = '';
     const placeholder = 'test label';
