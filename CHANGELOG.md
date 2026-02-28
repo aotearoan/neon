@@ -1,5 +1,12 @@
 # Changelog
 
+## [22.1.1](https://github.com/aotearoan/neon/compare/v22.1.0...v22.1.1) (2026-02-28)
+
+
+### Bug Fixes
+
+* responsive breakpoint changes, design fixes ([#298](https://github.com/aotearoan/neon/issues/298)) ([a63e005](https://github.com/aotearoan/neon/commit/a63e005dc0204c1347c42c87765ea8e895e0d3be))
+
 ## [22.1.0](https://github.com/aotearoan/neon/compare/v22.0.1...v22.1.0) (2026-02-28)
 
 
