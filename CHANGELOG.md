@@ -1,5 +1,12 @@
 # Changelog
 
+## [22.5.2](https://github.com/aotearoan/neon/compare/v22.5.1...v22.5.2) (2026-02-28)
+
+
+### Bug Fixes
+
+* input / text area style adjustments ([#315](https://github.com/aotearoan/neon/issues/315)) ([d1a3fa7](https://github.com/aotearoan/neon/commit/d1a3fa7f7330d6ddfacb4110e96d0bac57f91f3d))
+
 ## [22.5.1](https://github.com/aotearoan/neon/compare/v22.5.0...v22.5.1) (2026-02-28)
 
 
