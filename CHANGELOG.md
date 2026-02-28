@@ -1,5 +1,12 @@
 # Changelog
 
+## [22.2.0](https://github.com/aotearoan/neon/compare/v22.1.2...v22.2.0) (2026-02-28)
+
+
+### Features
+
+* edit badge picture ([#302](https://github.com/aotearoan/neon/issues/302)) ([504b436](https://github.com/aotearoan/neon/commit/504b436125fb85846c26934cd914a3770f930bb1))
+
 ## [22.1.2](https://github.com/aotearoan/neon/compare/v22.1.1...v22.1.2) (2026-02-28)
 
 
