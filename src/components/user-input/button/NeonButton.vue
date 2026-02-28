@@ -26,6 +26,7 @@
     :class="classes"
     :disabled="disabled || state !== 'ready'"
     :tabindex="!disabled ? 0 : -1"
+    :type="buttonType"
     class="neon-button"
     v-bind="sanitizedAttributes"
     @click="clickButton"

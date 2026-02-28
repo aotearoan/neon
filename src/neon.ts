@@ -71,6 +71,7 @@ export { NeonAlertPlacement } from './common/enums/NeonAlertPlacement';
 export { NeonBadgeSize } from './common/enums/NeonBadgeSize';
 export { NeonButtonSize } from './common/enums/NeonButtonSize';
 export { NeonButtonStyle } from './common/enums/NeonButtonStyle';
+export { NeonButtonType } from './common/enums/NeonButtonType';
 export { NeonChipAction } from './common/enums/NeonChipAction';
 export { NeonDropdownPlacement } from './common/enums/NeonDropdownPlacement';
 export { NeonDropdownStyle } from './common/enums/NeonDropdownStyle';
