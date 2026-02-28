@@ -16,24 +16,45 @@
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
-        <h2 class="neon-h3">Input Indicator Examples</h2>
+        <h2 class="neon-h3">Internal input indicator examples</h2>
         <neon-stack>
-          <neon-stack>
+          <neon-stack gap="m">
             <neon-field-group>
               <neon-input v-model="field1" placeholder="Rate" size="s" type="text" />
               <neon-input-indicator label="%" size="s" />
             </neon-field-group>
             <neon-field-group>
-              <neon-input-indicator aria-label="Username" for="userField" icon="user" />
+              <neon-input-indicator aria-label="Username" for="userField" icon="single-neutral" />
               <neon-input id="userField" v-model="field2" placeholder="Username" type="text" />
             </neon-field-group>
             <neon-field-group>
-              <neon-input-indicator icon="mail" size="l" />
+              <neon-input-indicator icon="envelope" size="l" />
               <neon-input v-model="field3" placeholder="Username" size="l" type="text" />
               <neon-input-indicator label="@aol.com" size="l" />
             </neon-field-group>
           </neon-stack>
-          <editor v-model="inputIndicatorExamples" />
+          <editor v-model="internalInputIndicatorExamples" />
+        </neon-stack>
+      </neon-card-body>
+      <neon-card-body>
+        <h2 class="neon-h3">External input indicator examples</h2>
+        <neon-stack>
+          <neon-stack gap="m">
+            <neon-field-group indicator-style="external">
+              <neon-input v-model="field1" placeholder="Rate" size="s" type="text" />
+              <neon-input-indicator label="%" size="s" />
+            </neon-field-group>
+            <neon-field-group indicator-style="external">
+              <neon-input-indicator aria-label="Username" for="userField" icon="single-neutral" />
+              <neon-input id="userField" v-model="field2" placeholder="Username" type="text" />
+            </neon-field-group>
+            <neon-field-group indicator-style="external">
+              <neon-input-indicator icon="envelope" size="l" />
+              <neon-input v-model="field3" placeholder="Username" size="l" type="text" />
+              <neon-input-indicator label="@aol.com" size="l" />
+            </neon-field-group>
+          </neon-stack>
+          <editor v-model="externalInputIndicatorExamples" />
         </neon-stack>
       </neon-card-body>
     </neon-card>

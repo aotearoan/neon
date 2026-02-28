@@ -1,9 +1,9 @@
 @use '../includes/palettes';
 
-@mixin input-size($size, $font-size) {
+@mixin input-size($size) {
   .neon-input__text,
   .neon-input__textarea {
-    font-size: var(--neon-font-size-#{$font-size});
+    font-size: var(--neon-font-size-input-#{$size});
   }
 
   .neon-input__text {
@@ -19,31 +19,32 @@
       position: absolute;
 
       @if ($size == 's') {
-        width: calc(var(--neon-size-#{$size}) - var(--neon-space-10));
-        height: calc(var(--neon-size-#{$size}) - var(--neon-space-10));
-        top: calc(1.25 * var(--neon-space-4));
-        right: calc(1.25 * var(--neon-space-4));
+        width: calc(var(--neon-size-#{$size}) - 2.5 * var(--neon-base-space));
+        height: calc(var(--neon-size-#{$size}) - 2.5 * var(--neon-base-space));
+        top: calc(1.25 * var(--neon-base-space));
+        right: calc(1.25 * var(--neon-base-space));
 
-        padding: var(--neon-space-2);
+        padding: calc(0.5 * var(--neon-base-space));
         &.neon-icon--name-close {
-          padding: var(--neon-space-4);
+          padding: var(--neon-base-space);
         }
       } @else {
-        width: calc(var(--neon-size-#{$size}) - var(--neon-space-12));
-        height: calc(var(--neon-size-#{$size}) - var(--neon-space-12));
-        top: var(--neon-space-6);
-        right: var(--neon-space-6);
+        width: calc(var(--neon-size-#{$size}) - 3 * var(--neon-base-space));
+        height: calc(var(--neon-size-#{$size}) - 3 * var(--neon-base-space));
+        top: calc(1.5 * var(--neon-base-space));
+        right: calc(1.5 * var(--neon-base-space));
 
-        padding: var(--neon-space-4);
+        padding: calc(1 * var(--neon-base-space));
 
         &.neon-icon--name-close {
           @if ($size == 'l') {
-            padding: calc(2.25 * var(--neon-space-4));
+            padding: calc(2.25 * var(--neon-base-space));
           } @else {
-            padding: calc(1.5 * var(--neon-space-4));
+            padding: calc(1.5 * var(--neon-base-space));
           }
         }
       }
+
       cursor: default;
       border-radius: 50%;
 
@@ -63,10 +64,14 @@
 @mixin input {
   .neon-input {
     width: 100%;
-    position: relative;
+
+    &,
+    &__textarea,
+    &__textarea-wrapper {
+      position: relative;
+    }
 
     @each $color in palettes.$neon-functional-colors {
-      $input-rgb: var(--neon-rgb-#{$color});
       &.neon-input--#{$color} {
         &.neon-input--focused {
           .neon-input__text,
@@ -109,23 +114,23 @@
     }
 
     &--s {
-      @include input-size('s', 's');
+      @include input-size('s');
     }
 
     &--m {
-      @include input-size('m', 'm');
+      @include input-size('m');
     }
 
     &--l {
-      @include input-size('l', 'm');
+      @include input-size('l');
     }
 
     &__text,
     &__textarea {
       border-radius: var(--neon-border-radius-input);
       border: var(--neon-border-width-input) var(--neon-border-style);
-      padding: var(--neon-space-4) var(--neon-space-10);
-      line-height: var(--neon-line-height-one);
+      padding: var(--neon-base-space) calc(2 * var(--neon-base-space));
+      line-height: var(--neon-line-height-input);
       outline: none;
       font-family: var(--neon-font-family-body);
       width: 100%;
@@ -133,21 +138,24 @@
       color: var(--neon-color-input);
       background-color: var(--neon-background-color-input);
       box-shadow: var(--neon-inset-shadow);
+      font-weight: var(--neon-font-weight-input);
 
       &::placeholder {
         font-family: var(--neon-font-family-body);
-        letter-spacing: var(--neon-letter-spacing-s);
+        font-size: var(--neon-font-size-placeholder);
+        font-style: var(--neon-font-style-placeholder);
+        font-weight: var(--neon-font-weight-placeholder);
         color: var(--neon-color-placeholder);
       }
 
       &-counter {
-        position: absolute;
-        bottom: var(--neon-space-8);
-        right: var(--neon-space-8);
+        align-self: flex-end;
         user-select: none;
-        font-size: var(--neon-font-size-s);
+        font-size: var(--neon-font-size-xs);
+        font-weight: var(--neon-font-weight-normal);
         letter-spacing: var(--neon-letter-spacing-s);
-        color: var(--neon-color-placeholder);
+        color: var(--neon-color-text-tertiary);
+        margin-bottom: var(--neon-space-4);
       }
     }
 

@@ -319,7 +319,22 @@
   /* input */
   --neon-border-radius-input: var(--neon-border-radius);
   --neon-border-width-input: var(--neon-border-width);
+  --neon-font-size-placeholder: var(--neon-font-size-s);
+  --neon-font-style-placeholder: italic;
+  --neon-font-weight-placeholder: var(--neon-font-weight-normal);
+  --neon-font-weight-input: var(--neon-font-weight-normal);
+  --neon-line-height-input: var(--neon-line-height-ratio-large);
   --neon-opacity-input-background-active: 0.03125;
+
+  --neon-font-size-input-s: var(--neon-font-size-s);
+  --neon-font-size-input-m: var(--neon-font-size-m);
+  --neon-font-size-input-l: var(--neon-font-size-m);
+
+  /* input indicator */
+  --neon-font-size-input-indicator-s: var(--neon-font-size-s);
+  --neon-font-size-input-indicator-m: var(--neon-font-size-m);
+  --neon-font-size-input-indicator-l: var(--neon-font-size-m);
+  --neon-font-weight-input-indicator: var(--neon-font-weight-normal);
 
   /* skeleton loader */
   --neon-border-radius-skeleton-loader: 0rem;
@@ -655,7 +670,7 @@
 
     /* input indicators */
     --neon-background-color-input-indicator: var(--neon-background-color-input);
-    --neon-color-input-indicator: var(--neon-color-neutral);
+    --neon-color-input-indicator: var(--neon-color-text-tertiary);
 
     /* stepper */
     --neon-color-stepper-indicator: var(--neon-color-inverse);
@@ -969,7 +984,7 @@
 
     /* input indicators */
     --neon-background-color-input-indicator: var(--neon-background-color-input);
-    --neon-color-input-indicator: var(--neon-color-neutral);
+    --neon-color-input-indicator: var(--neon-color-text-tertiary);
 
     /* stepper */
     --neon-color-stepper-indicator: var(--neon-color-high-contrast-l5);
