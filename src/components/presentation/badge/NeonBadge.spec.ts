@@ -90,13 +90,13 @@ describe('NeonBadge', () => {
   });
 
   it('renders default accept when editable', () => {
-    const icon = 'check-1';
+    const icon = 'check';
     const { container } = render(NeonBadge, { props: { icon, editable: true } });
     expect((container.querySelector('input[type=file]') as HTMLInputElement).accept).toEqual('image/*');
   });
 
   it('renders accept when editable', () => {
-    const icon = 'check-1';
+    const icon = 'check';
     const { container } = render(NeonBadge, { props: { icon, editable: true, accept: 'image/jpeg' } });
     expect((container.querySelector('input[type=file]') as HTMLInputElement).accept).toEqual('image/jpeg');
   });

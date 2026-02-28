@@ -6,7 +6,6 @@ exports[`NeonBadge renders editable 1`] = `
     <!--v-if-->
     <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-file__input" accept="image/*" multiple="false"><input aria-placeholder="" autocomplete="on" inputmode="text" placeholder="" tabindex="-1" type="file" class="neon-input__textfield neon-input__text neon-file__input" accept="image/*" value="">
       <!--v-if-->
-      <!--v-if-->
     </div>
     <div class="neon-button-group neon-file__actions">
       <!--v-if--><button class="neon-button--m neon-button--primary neon-button--solid neon-button--state-ready neon-button--with-icon neon-button--icon-only neon-button" tabindex="0" type="button" title="Edit">

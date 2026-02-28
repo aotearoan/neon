@@ -167,6 +167,10 @@
   --neon-font-family-paragraph: var(--neon-font-family-body);
   --neon-font-family-monospaced: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', Courier, monospace;
 
+  /* HTML labels */
+  --neon-font-size-label: var(--neon-font-size-s);
+  --neon-font-weight-label: var(--neon-font-weight-normal);
+
   /* gradient config */
   --neon-background-gradient-angle: 90deg;
   /* % offset where background gradient switches to alternate-color */

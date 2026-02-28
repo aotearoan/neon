@@ -1,5 +1,4 @@
 import { defineComponent } from 'vue';
-import NeonLabel from '@/components/presentation/label/NeonLabel.vue';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 /**
@@ -8,9 +7,6 @@ import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
  */
 export default defineComponent({
   name: 'NeonField',
-  components: {
-    NeonLabel,
-  },
   props: {
     /**
      * The label text to render.

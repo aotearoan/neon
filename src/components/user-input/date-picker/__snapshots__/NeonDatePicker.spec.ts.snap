@@ -73,7 +73,6 @@ exports[`NeonDatePicker renders change decade replacement strings 1`] = `
   </div>
   <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" autocomplete="on" inputmode="text" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input">
     <!--v-if-->
-    <!--v-if-->
   </div>
 </div>
 `;
@@ -228,7 +227,6 @@ exports[`NeonDatePicker renders change month replacement strings 1`] = `
   </div>
   <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" autocomplete="on" inputmode="text" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input">
     <!--v-if-->
-    <!--v-if-->
   </div>
 </div>
 `;
@@ -314,7 +312,6 @@ exports[`NeonDatePicker renders change year replacement strings 1`] = `
     </div>
   </div>
   <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" autocomplete="on" inputmode="text" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input">
-    <!--v-if-->
     <!--v-if-->
   </div>
 </div>
@@ -467,7 +464,6 @@ exports[`NeonDatePicker renders closed 1`] = `
   </div>
   <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" autocomplete="on" inputmode="text" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input" value="2023-04-16">
     <!--v-if-->
-    <!--v-if-->
   </div>
 </div>
 `;
@@ -618,7 +614,6 @@ exports[`NeonDatePicker renders open 1`] = `
     </div>
   </div>
   <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" autocomplete="on" inputmode="text" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input" value="2023-04-16">
-    <!--v-if-->
     <!--v-if-->
   </div>
 </div>
@@ -774,7 +769,6 @@ exports[`NeonDatePicker renders with defaults of today 1`] = `
   </div>
   <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" autocomplete="on" inputmode="text" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input">
     <!--v-if-->
-    <!--v-if-->
   </div>
 </div>
 `;
@@ -925,7 +919,6 @@ exports[`NeonDatePicker renders with locale 1`] = `
     </div>
   </div>
   <div class="neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--primary neon-input--state-ready neon-input neon-date-picker__native-input"><input aria-placeholder="" autocomplete="on" inputmode="text" placeholder="" tabindex="-1" type="date" class="neon-input__textfield neon-input__text neon-date-picker__native-input" value="2023-04-16">
-    <!--v-if-->
     <!--v-if-->
   </div>
 </div>
