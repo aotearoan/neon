@@ -50,7 +50,7 @@ export default defineComponent({
      * The HTML autocomplete mode as specified <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#values">here</a>.
      * NOTE: No enum is provided in Neon as some values can be used in combination, please refer to the full list of values in the preceding link.
      */
-    autocomplete: { type: String as () => NeonInputMode, default: 'on' },
+    autocomplete: { type: String, default: 'on' },
     /**
      * The state of the input
      */
