@@ -19,7 +19,7 @@
       justify-content: center;
       white-space: nowrap;
 
-      &:focus {
+      &:focus-visible {
         outline: none;
       }
 
@@ -75,6 +75,7 @@
       }
     }
 
+    &--card,
     &--radio-buttons {
       align-items: flex-start;
 
@@ -89,22 +90,22 @@
 
           .neon-toggle__label:not(.neon-toggle__label--disabled) {
             .neon-toggle__radio-button {
-              border: var(--neon-border-radio-button);
+              border: var(--neon-border-width) var(--neon-border-style) var(--neon-color-#{$color});
               background: var(--neon-background-radio-button);
             }
 
             color: var(--neon-color-radio-button-label);
 
             &:hover,
-            &:focus {
+            &:focus-visible {
               &:not(.neon-toggle__label--checked) {
                 .neon-toggle__radio-button {
-                  background: var(--neon-color-radio-button-bg-active);
+                  background: rgba(var(--neon-rgb-#{$color}), 0.125);
                 }
               }
             }
 
-            &:focus {
+            &:focus-visible {
               border-bottom-color: var(--neon-color-#{$color});
             }
 
@@ -120,6 +121,16 @@
                 }
               }
             }
+          }
+        }
+      }
+
+      &.neon-toggle--card {
+        .neon-toggle__label {
+          &.neon-toggle__label--checked,
+          &.neon-toggle__label:hover,
+          &.neon-toggle__label:focus-visible {
+            border-color: var(--neon-color-#{$color});
           }
         }
       }
@@ -140,12 +151,24 @@
       }
     }
 
+    &--card {
+      gap: var(--neon-space-16);
+
+      .neon-toggle__label {
+        padding: var(--neon-space-16);
+        border: var(--neon-border-width-input) var(--neon-border-style) var(--neon-border-color-input);
+        width: 100%;
+        border-radius: var(--neon-border-radius-input);
+      }
+    }
+
     &--horizontal {
       flex-direction: row;
       gap: var(--neon-space-24);
     }
 
-    &--disabled {
+    &--disabled,
+    &--disabled .neon-toggle__label {
       cursor: not-allowed;
     }
   }

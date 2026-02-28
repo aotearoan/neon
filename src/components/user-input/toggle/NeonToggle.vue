@@ -39,7 +39,7 @@
         v-bind="sanitizedAttributes"
         @click="onInput(option)"
       />
-      <div v-if="toggleStyle === 'radio-buttons'" class="neon-toggle__radio-button">
+      <div v-if="toggleStyle !== NeonToggleStyle.Toggle" class="neon-toggle__radio-button">
         <div v-if="option.key === modelValue" class="neon-toggle__radio-button-indicator"></div>
       </div>
       <!-- @slot This slot is for overriding the option rendering, it is passed two arguments, <em>option</em> - the option model & <em>index</em> -->
