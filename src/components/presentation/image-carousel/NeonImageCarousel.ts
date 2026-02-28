@@ -1,7 +1,8 @@
-import { defineComponent, onMounted, onUnmounted, ref } from 'vue';
+import { defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
 import type { NeonCarouselImage } from '@/common/models/NeonCarouselImage';
 import NeonLink from '@/components/navigation/link/NeonLink.vue';
 import NeonButton from '@/components/user-input/button/NeonButton.vue';
+import NeonStack from '@/components/layout/stack/NeonStack.vue';
 
 /**
  * <p>
@@ -16,6 +17,7 @@ export default defineComponent({
   components: {
     NeonButton,
     NeonLink,
+    NeonStack,
   },
   props: {
     /**
@@ -31,6 +33,10 @@ export default defineComponent({
      * Hide the label under the dot navigation.
      */
     hideLabel: { type: Boolean, default: false },
+    /**
+     * Provide an alternative label for the Previous button.
+     */
+    closeLabel: { type: String, default: 'Close' },
     /**
      * Provide an alternative label for the Previous button.
      */
@@ -54,6 +60,7 @@ export default defineComponent({
     const carouselItems = ref<HTMLUListElement | null>(null);
     const carouselItem = ref<Array<HTMLLIElement>>([]);
     const observers = ref<Array<IntersectionObserver>>([]);
+    const expanded = ref<boolean>(false);
 
     const changeImage = (index: number) => {
       if (index !== currentImage.value) {
@@ -115,12 +122,24 @@ export default defineComponent({
       observers.value.forEach((observer) => observer.disconnect());
     });
 
+    watch(
+      () => expanded.value,
+      (value: boolean) => {
+        if (value) {
+          document.body.classList.add('neon-closable--open');
+        } else {
+          document.body.classList.remove('neon-closable--open');
+        }
+      },
+    );
+
     return {
       emit,
       currentImage,
       carouselItem,
       carouselItems,
       initialised,
+      expanded,
       next,
       previous,
       scrollTo,

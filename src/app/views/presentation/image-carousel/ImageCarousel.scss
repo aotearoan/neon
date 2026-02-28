@@ -2,9 +2,8 @@
 
 .image-carousel {
   .image-carousel__wrapper {
-    width: 400rem;
-    height: 400rem;
-    max-width: 100%;
+    width: 500rem;
+    height: 500rem;
 
     @include responsive.responsive(mobile-large) {
       margin: auto;

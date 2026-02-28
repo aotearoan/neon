@@ -29,35 +29,39 @@ export default defineComponent({
     const images = [
       {
         src: baseUrl + 'images/image-carousel/pic-01.png',
-        alt: 'Pic 1',
+        alt: 'Mona Lisa - Leonardo da Vinci',
       },
       {
         src: baseUrl + 'images/image-carousel/pic-02.png',
-        alt: 'Pic 2',
+        alt: 'Starry night - Vincent van Gogh',
       },
       {
         src: baseUrl + 'images/image-carousel/pic-03.png',
-        alt: 'Pic 3',
+        alt: 'Sunset on the Seine at Lavacourt - Claude Monet',
       },
       {
         src: baseUrl + 'images/image-carousel/pic-04.png',
-        alt: 'Pic 4',
+        alt: 'Water Lilies - Claude Monet',
       },
       {
         src: baseUrl + 'images/image-carousel/pic-05.png',
-        alt: 'Pic 5',
+        alt: 'The Kiss - Gustav Klimt',
       },
       {
         src: baseUrl + 'images/image-carousel/pic-06.png',
-        alt: 'Pic 6',
+        alt: 'Nighthawks - Edward Hopper',
       },
       {
         src: baseUrl + 'images/image-carousel/pic-07.png',
-        alt: 'Pic 7',
+        alt: 'Study for A Sunday on La Grande Jatte - Georges Seurat',
       },
       {
         src: baseUrl + 'images/image-carousel/pic-08.png',
-        alt: 'Pic 8',
+        alt: 'Impression, Sunrise [close up] -  Claude Monet',
+      },
+      {
+        src: '/images/image-carousel/pic-09.png',
+        alt: 'Gala Contemplating the Mediterranean Sea which at Twenty Meters Becomes the Portrait of Abraham Lincoln-Homage to Rothko - Salvador Dalí',
       },
     ];
 
