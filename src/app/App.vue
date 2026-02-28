@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="neon-app neon-app--standard-page">
-    <neon-page>
+    <neon-page page-align="left">
       <template v-if="isTablet" #top-nav>
         <neon-top-nav class="app-top-nav">
           <span class="logo-wrapper top-nav-logo-wrapper">
@@ -123,11 +123,15 @@
             </router-view>
           </neon-grid-area>
         </neon-grid>
+      </template>
+      <template #footer>
         <neon-footer class="app-footer">
-          <span>
-            {{ versionString !== '0' ? versionString : '' }} &copy; copyright aotearoan
-            {{ new Date().getFullYear() }}
-          </span>
+          <div class="app-footer__contents">
+            <span>
+              {{ versionString !== '0' ? versionString : '' }} &copy; copyright aotearoan
+              {{ new Date().getFullYear() }}
+            </span>
+          </div>
         </neon-footer>
       </template>
     </neon-page>

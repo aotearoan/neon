@@ -87,9 +87,7 @@
     }
 
     .app-footer {
-      max-width: calc(var(--neon-max-page-width) - var(--neon-side-nav-width));
-
-      .neon-footer__container {
+      &__contents {
         align-items: center;
       }
     }

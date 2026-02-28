@@ -1,6 +1,13 @@
 <template>
   <div
-    :class="{ 'neon-page--with-top-nav': slots['top-nav'], 'neon-page--with-side-nav': slots['side-nav'] }"
+    :class="[
+      {
+        'neon-page--with-top-nav': slots['top-nav'],
+        'neon-page--with-side-nav': slots['side-nav'],
+        'neon-page--with-footer': slots['footer'],
+      },
+      `neon-page--${pageAlign}`,
+    ]"
     class="neon-page"
   >
     <!-- @slot The <strong>NeonTopNav</strong> slot. This slot is required to ensure the correct responsive page layout. -->
@@ -11,6 +18,8 @@
       <!-- @slot The main page content -->
       <slot name="content"></slot>
     </div>
+    <!-- @slot The <strong>NeonFooter</strong> slot. This slot is required to ensure the correct responsive page layout. -->
+    <slot name="footer"></slot>
   </div>
 </template>
 

@@ -54,28 +54,32 @@
                     <span class="layout-example__label">#scrolling</span>
                   </div>
                 </div>
-                <div class="layout-example layout-example__grid-wrapper">
-                  <span class="layout-example__label">#content</span>
-                  <div class="layout-example">
-                    <neon-link class="layout-example__label" href="/layout/grid">NeonGrid</neon-link>
+                <div class="layout-example__with-footer">
+                  <div class="layout-example layout-example__grid-wrapper">
+                    <span class="layout-example__label">#content</span>
                     <div class="layout-example">
-                      <span class="layout-example__label"
-                        >Grid section 1 (<neon-link class="layout-example__link" href="/layout/grid#api"
-                          >NeonGridArea</neon-link
-                        >)</span
-                      >
-                    </div>
-                    <div class="layout-example__label">...</div>
-                    <div class="layout-example">
-                      <span class="layout-example__label"
-                        >Grid section n (<neon-link class="layout-example__link" href="/layout/grid#api"
-                          >NeonGridArea</neon-link
-                        >)</span
-                      >
+                      <neon-link class="layout-example__label" href="/layout/grid">NeonGrid</neon-link>
+                      <div class="layout-example">
+                        <span class="layout-example__label">
+                          Grid section 1 (<neon-link class="layout-example__link" href="/layout/grid#api"
+                            >NeonGridArea</neon-link
+                          >)
+                        </span>
+                      </div>
+                      <div class="layout-example__label">...</div>
+                      <div class="layout-example">
+                        <span class="layout-example__label">
+                          Grid section n (<neon-link class="layout-example__link" href="/layout/grid#api"
+                            >NeonGridArea</neon-link
+                          >)
+                        </span>
+                      </div>
                     </div>
                   </div>
-                  <div class="layout-example">
-                    <neon-link class="layout-example__label" href="/layout/footer">NeonFooter</neon-link>
+                  <div class="layout-example layout-example__grid-wrapper">
+                    <span class="layout-example__label">
+                      #footer (<neon-link class="layout-example__label" href="/layout/footer">NeonFooter</neon-link>)
+                    </span>
                   </div>
                 </div>
               </div>
@@ -124,10 +128,12 @@
                     >
                   </div>
                 </div>
-                <div class="layout-example">
-                  <neon-link class="layout-example__label" href="/layout/footer">NeonFooter</neon-link>
-                </div>
               </div>
+            </div>
+            <div class="layout-example">
+              <span class="layout-example__label">
+                #footer (<neon-link class="layout-example__link" href="/layout/footer">NeonFooter</neon-link>)
+              </span>
             </div>
           </div>
         </neon-stack>

@@ -23,5 +23,42 @@
         @include layout.min-height(100, 'var(--neon-top-nav-height-mobile)');
       }
     }
+
+    .neon-page__container {
+      @include responsive.responsive(larger-than-tablet) {
+        padding-left: var(--neon-gutter-desktop);
+        padding-right: var(--neon-gutter-desktop);
+        max-width: var(--neon-max-width-page);
+        width: 100%;
+      }
+
+      @include responsive.responsive(tablet) {
+        max-width: 100%;
+        width: 100%;
+        padding-left: var(--neon-gutter-tablet);
+        padding-right: var(--neon-gutter-tablet);
+      }
+
+      @include responsive.responsive(mobile-large) {
+        padding-left: var(--neon-gutter-mobile);
+        padding-right: var(--neon-gutter-mobile);
+      }
+    }
+
+    &--left {
+      &.neon-page--with-side-nav {
+        .neon-page__container {
+          @include responsive.responsive(larger-than-tablet) {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+
+    &--center {
+      .neon-page__container {
+        margin: auto;
+      }
+    }
   }
 }

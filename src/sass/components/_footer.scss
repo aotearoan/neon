@@ -8,35 +8,37 @@
     background-color: var(--neon-background-color-footer);
     border-top: var(--neon-border-top-footer);
     color: var(--neon-color-neutral);
+    width: 100vw;
 
     &__container {
       display: flex;
       justify-content: center;
       width: 100%;
-      max-width: calc(var(--neon-max-page-width) + var(--neon-space-16));
+      max-width: calc(var(--neon-max-width-page) - 2 * var(--neon-gutter-desktop));
       line-height: var(--neon-line-height-one);
 
       @include responsive.responsive(larger-than-tablet) {
         font-size: var(--neon-font-size-m);
         height: var(--neon-footer-height-desktop);
-        padding: 0 var(--neon-spacing-vertical-desktop);
       }
 
       @include responsive.responsive(tablet) {
         font-size: var(--neon-font-size-s);
         height: var(--neon-footer-height-tablet);
-        padding: 0 var(--neon-spacing-vertical-tablet);
       }
 
       @include responsive.responsive(mobile-large) {
         font-size: var(--neon-font-size-s);
         height: var(--neon-footer-height-mobile);
-        padding: 0 var(--neon-spacing-vertical-mobile);
       }
     }
   }
 
   .neon-page--with-side-nav .neon-footer {
     @include layout.side-nav-offset;
+
+    .neon-footer__container {
+      max-width: calc(var(--neon-max-width-page) - var(--neon-side-nav-width) - 2 * var(--neon-gutter-desktop));
+    }
   }
 }

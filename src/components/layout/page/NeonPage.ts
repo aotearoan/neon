@@ -1,4 +1,5 @@
 import { defineComponent, onMounted, onUnmounted } from 'vue';
+import { NeonPageAlignment } from '@/common/enums/NeonPageAlignment';
 
 /**
  * A "page" component, this is defined as a wrapper around the contents (NeonGrid, etc) and footer which provides the
@@ -6,6 +7,12 @@ import { defineComponent, onMounted, onUnmounted } from 'vue';
  */
 export default defineComponent({
   name: 'NeonPage',
+  props: {
+    /**
+     * Page alignment: either left aligned or center aligned.
+     */
+    pageAlign: { type: String as () => NeonPageAlignment, default: NeonPageAlignment.CENTER },
+  },
   setup(_props, { slots }) {
     const handleResize = () => {
       const vh = window.innerHeight * 0.01;

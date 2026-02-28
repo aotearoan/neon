@@ -7,18 +7,18 @@ $neon-height-component-header-mobile: 77rem;
 $fixed-content-height: 348rem;
 
 .component-documentation {
-  margin-top: calc(#{$neon-height-component-header-desktop} - 0.5 * var(--neon-spacing-vertical-desktop));
+  margin-top: calc(#{$neon-height-component-header-desktop} - 0.5 * var(--neon-gutter-desktop));
 
   &__description-heading {
     display: none;
   }
 
   @include responsive.responsive(tablet) {
-    margin-top: calc(#{$neon-height-component-header-desktop} - var(--neon-spacing-vertical-tablet));
+    margin-top: calc(#{$neon-height-component-header-desktop} - var(--neon-gutter-tablet));
   }
 
   @include responsive.responsive(mobile-large) {
-    margin-top: calc(#{$neon-height-component-header-mobile} - 0.5 * var(--neon-spacing-vertical-mobile));
+    margin-top: calc(#{$neon-height-component-header-mobile} - 0.5 * var(--neon-gutter-mobile));
 
     &__description-heading {
       display: flex;
@@ -34,7 +34,7 @@ $fixed-content-height: 348rem;
     z-index: var(--neon-z-index-above-2);
     @include layout.padding(1, true);
     padding-bottom: 0 !important;
-    max-width: calc(var(--neon-max-page-width) - var(--neon-side-nav-width));
+    max-width: calc(var(--neon-max-width-page) - var(--neon-side-nav-width));
     top: 0;
     left: var(--neon-side-nav-width);
     width: calc(100vw - var(--neon-side-nav-width));

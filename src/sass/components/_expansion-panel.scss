@@ -55,14 +55,14 @@
 
     &__content {
       @include layout.padding-horizontal(0.75, 0.75);
-      padding-bottom: calc(0.75 * var(--neon-spacing-vertical-desktop));
+      padding-bottom: calc(0.75 * var(--neon-gutter-desktop));
 
       @include responsive.responsive(tablet) {
-        padding-bottom: calc(0.75 * var(--neon-spacing-vertical-tablet));
+        padding-bottom: calc(0.75 * var(--neon-gutter-tablet));
       }
 
       @include responsive.responsive(mobile-large) {
-        padding-bottom: calc(0.75 * var(--neon-spacing-vertical-mobile));
+        padding-bottom: calc(0.75 * var(--neon-gutter-mobile));
       }
     }
 

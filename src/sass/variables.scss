@@ -9,7 +9,14 @@
   /* layout */
   --neon-base-space: 4rem;
   --neon-max-paragraph-width: 70ch;
-  --neon-max-page-width: 1920rem;
+
+  /* page */
+  --neon-max-width-page: 1920rem;
+
+  /* gutters, all spacings are keyed off these values */
+  --neon-gutter-desktop: 32rem;
+  --neon-gutter-tablet: 24rem;
+  --neon-gutter-mobile: 16rem;
 
   /* spacings */
   --neon-space-1: calc(0.25 * var(--neon-base-space));
@@ -37,7 +44,7 @@
   --neon-space-144: calc(36 * var(--neon-base-space));
   --neon-space-192: calc(48 * var(--neon-base-space));
 
-  /* stack/inline */
+  /* stack & inline gaps */
   --neon-gap-desktop-s: var(--neon-space-4);
   --neon-gap-tablet-s: var(--neon-space-4);
   --neon-gap-mobile-s: var(--neon-space-4);
@@ -52,20 +59,17 @@
 
   /* ratio of horizontal to vertical spacing, e.g. 1 = square padding */
   --neon-spacing-horizontal-multiplier: 1;
-  /* ratio of tablet to mobile spacing */
-  --neon-spacing-multiplier-tablet: 1.5;
-  /* ratio of desktop to mobile spacing */
-  --neon-spacing-multiplier-desktop: 2;
 
+  /* TODO: refactor to remove the usage of these spacings in src/sass/includes/_layout.scss, replace with gutter vars  */
   /* mobile spacing */
-  --neon-spacing-vertical-mobile: var(--neon-space-16);
-  --neon-spacing-horizontal-mobile: calc(var(--neon-spacing-vertical-mobile) * var(--neon-spacing-horizontal-multiplier));
+  --neon-spacing-vertical-mobile: var(--neon-gutter-mobile);
+  --neon-spacing-horizontal-mobile: calc(var(--neon-gutter-mobile) * var(--neon-spacing-horizontal-multiplier));
   /* tablet spacing */
-  --neon-spacing-vertical-tablet: calc(var(--neon-spacing-vertical-mobile) * var(--neon-spacing-multiplier-tablet));
-  --neon-spacing-horizontal-tablet: calc(var(--neon-spacing-horizontal-mobile) * var(--neon-spacing-multiplier-tablet));
+  --neon-spacing-vertical-tablet: var(--neon-gutter-tablet);
+  --neon-spacing-horizontal-tablet: calc(var(--neon-gutter-tablet) * var(--neon-spacing-horizontal-multiplier));
   /* desktop spacing */
-  --neon-spacing-vertical-desktop: calc(var(--neon-spacing-vertical-mobile) * var(--neon-spacing-multiplier-desktop));
-  --neon-spacing-horizontal-desktop: calc(var(--neon-spacing-horizontal-mobile) * var(--neon-spacing-multiplier-desktop));
+  --neon-spacing-vertical-desktop: var(--neon-gutter-desktop);
+  --neon-spacing-horizontal-desktop: calc(var(--neon-gutter-desktop) * var(--neon-spacing-horizontal-multiplier));
 
   /* animation */
   --neon-animation-speed-slow: 0.3s;

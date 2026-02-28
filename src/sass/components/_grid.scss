@@ -3,20 +3,32 @@
 
 @mixin grid {
   .neon-grid {
-    width: 100vw;
-    max-width: var(--neon-max-page-width);
+    width: 100%;
+    max-width: 100%;
     @include layout.min-height(100, 'var(--neon-footer-height-desktop)');
-    @include layout.padding(0.5, true);
     display: grid;
 
+    @include responsive.responsive(larger-than-tablet) {
+      padding: var(--neon-gutter-desktop) 0;
+      gap: var(--neon-gutter-desktop);
+    }
+
+    @include responsive.responsive(tablet) {
+      padding: var(--neon-gutter-tablet) 0;
+      gap: var(--neon-gutter-tablet);
+    }
+
     @include responsive.responsive(mobile-large) {
+      padding: var(--neon-gutter-mobile) 0;
+      gap: var(--neon-gutter-mobile);
       display: flex;
       flex-direction: column;
     }
 
     .neon-grid-area {
-      @include layout.margin(0.5, true);
       display: flex;
+      width: 100%;
+      max-width: 100%;
 
       & > .neon-card {
         flex: 1 0 auto;
@@ -39,7 +51,6 @@
 
   .neon-page--with-side-nav .neon-grid {
     @include layout.side-nav-offset;
-    max-width: calc(var(--neon-max-page-width) - var(--neon-side-nav-width));
   }
 
   .neon-page--with-top-nav .neon-page__container {
@@ -54,30 +65,6 @@
 
       @include responsive.responsive(mobile-large) {
         @include layout.min-height(100, 'var(--neon-top-nav-height-mobile) + var(--neon-footer-height-mobile)');
-      }
-    }
-  }
-
-  .neon-grid {
-    .neon-grid-area {
-      @include responsive.responsive(larger-than-tablet) {
-        max-width: calc(100vw - 2 * var(--neon-spacing-vertical-desktop));
-      }
-
-      @include responsive.responsive(tablet) {
-        max-width: calc(100vw - 2 * var(--neon-spacing-vertical-tablet));
-      }
-
-      @include responsive.responsive(mobile-large) {
-        max-width: calc(100vw - 2 * var(--neon-spacing-vertical-mobile));
-      }
-    }
-  }
-
-  .neon-page--with-side-nav .neon-grid {
-    .neon-grid-area {
-      @include responsive.responsive(larger-than-tablet) {
-        max-width: calc(100vw - var(--neon-side-nav-width) + 2 * var(--neon-spacing-vertical-desktop));
       }
     }
   }

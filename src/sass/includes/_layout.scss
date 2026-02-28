@@ -161,7 +161,6 @@ $spacings: (
 
 @mixin side-nav-offset {
   @include responsive.responsive(larger-than-tablet) {
-    margin-left: var(--neon-side-nav-width);
-    width: calc(100vw - var(--neon-side-nav-width));
+    padding-left: calc(var(--neon-side-nav-width) + var(--neon-gutter-desktop));
   }
 }

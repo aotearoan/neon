@@ -82,6 +82,7 @@ export { NeonLabelSize } from './common/enums/NeonLabelSize';
 export { NeonMode } from './common/enums/NeonMode';
 export { NeonOrientation } from './common/enums/NeonOrientation';
 export { NeonOutlineStyle } from './common/enums/NeonOutlineStyle';
+export { NeonPageAlignment } from './common/enums/NeonPageAlignment';
 export { NeonPosition } from './common/enums/NeonPosition';
 export { NeonResponsive } from './common/enums/NeonResponsive';
 export { NeonSize } from './common/enums/NeonSize';

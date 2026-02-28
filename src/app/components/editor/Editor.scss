@@ -12,8 +12,8 @@
     font-variation-settings: var(--monospaced-font-variation-settings);
     font-size: var(--neon-font-size-m);
     line-height: var(--neon-line-height-ratio);
-    min-width: 100%;
-    width: var(--neon-max-paragraph-width);
+    width: 100%;
+    max-width: var(--neon-max-paragraph-width);
     height: 100%;
     overflow: visible;
 
