@@ -7,6 +7,7 @@ import { NeonHorizontalPosition } from '@/common/enums/NeonHorizontalPosition';
 import { NeonButtonStyle } from '@/common/enums/NeonButtonStyle';
 import { NeonState } from '@/common/enums/NeonState';
 import { router } from '@/../test/unit/test-router';
+import { NeonButtonType } from '@/common/enums/NeonButtonType';
 
 describe('NeonButton', () => {
   const label = 'test label';
@@ -45,6 +46,17 @@ describe('NeonButton', () => {
     const { html, rerender } = harness;
     await rerender({ ...props, outline: false });
     expect(html()).toMatch('neon-button--no-outline');
+  });
+
+  it('renders ready default button type', () => {
+    const { getByText } = harness;
+    expect((getByText(label).parentElement as HTMLButtonElement).type).toEqual(NeonButtonType.Button);
+  });
+
+  it('renders button type', async () => {
+    const { getByText, rerender } = harness;
+    await rerender({ buttonType: NeonButtonType.Submit });
+    expect((getByText(label).parentElement as HTMLButtonElement).type).toEqual(NeonButtonType.Submit);
   });
 
   it('renders ready state by default', async () => {

@@ -7,9 +7,11 @@ import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import NeonLink from '@/components/navigation/link/NeonLink.vue';
 import NeonExpansionIndicator from '@/components/presentation/expansion-indicator/NeonExpansionIndicator.vue';
 import { NeonState } from '@/common/enums/NeonState';
+import { NeonButtonType } from '@/common/enums/NeonButtonType';
 
 /**
- * A button component. Renders an HTML button or, if an href is provided, renders using NeonLink in the style of a button. NeonButton supports all events and attributes of HTML buttons, e.g, @click.
+ * A button component. Renders an HTML button or, if an href is provided, renders using NeonLink in the style of a
+ * button. NeonButton supports all events and attributes of HTML buttons, e.g, @click.
  */
 export default defineComponent({
   name: 'NeonButton',
@@ -61,7 +63,12 @@ export default defineComponent({
      */
     buttonStyle: { type: String as () => NeonButtonStyle, default: NeonButtonStyle.Solid },
     /**
-     * Provide button states of <em>ready, loading, success or error</em> which change the display of the button (with icons) to reflect the state.
+     * The type of button, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button">button</a>.
+     */
+    buttonType: { type: String as () => NeonButtonType, default: NeonButtonType.Button },
+    /**
+     * Provide button states of <em>ready, loading, success or error</em> which change the display of the button (with
+     * icons) to reflect the state.
      */
     state: { type: String as () => NeonState, default: NeonState.Ready },
     /**

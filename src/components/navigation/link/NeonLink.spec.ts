@@ -53,7 +53,7 @@ describe('NeonLink', () => {
 
   it('renders mailto link', async () => {
     const { html, rerender } = harness;
-    await rerender({ ...props, href: 'mailto:test@arcual.art' });
+    await rerender({ ...props, href: 'mailto:test@aotearoan.com' });
     const result = html();
     expect(result).toMatch('neon-link--external-link');
   });
