@@ -58,7 +58,7 @@
     .neon-tooltip__content {
       max-width: var(--neon-tooltip-max-width);
       max-height: var(--neon-tooltip-max-height);
-      margin: auto;
+      margin: 0 auto;
       position: relative;
       border-radius: var(--neon-border-radius);
       padding: var(--neon-space-4) var(--neon-space-8);

@@ -6,7 +6,7 @@
     height: 500rem;
 
     @include responsive.responsive(mobile-large) {
-      margin: auto;
+      margin: 0 auto;
       width: 300rem;
       height: 300rem;
     }

@@ -53,7 +53,7 @@ export default defineComponent({
         console.error(`icon ${props.name} doesn't exist! Register icon with NeonIconRegistry.addIcon(name, svg);`);
       }
 
-      if (props.id) {
+      if (props.id && _icon) {
         _icon = _icon.replace(/url\(#/g, `url(#${props.id}`);
         _icon = _icon.replace(/id="/g, `id="${props.id}`);
         _icon = _icon.replace('<svg ', `<svg id="${props.id}" `);

@@ -133,7 +133,7 @@
       transition: opacity ease-in-out var(--neon-animation-speed-fast);
     }
 
-    &-enter,
+    &-enter-from,
     &-leave-to {
       opacity: 0;
     }

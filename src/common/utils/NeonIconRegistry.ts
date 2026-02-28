@@ -38,11 +38,11 @@ export class NeonIconRegistry {
   /**
    * Get an icon SVG by name.
    *
-   * @param name The name of the icon to remove.
+   * @param name The name of the icon.
    *
-   * @returns The icon SVG as a string.
+   * @returns The icon SVG as a string or undefined if the icon doesn't exist
    */
-  public static getIcon(name: string) {
+  public static getIcon(name: string): string | undefined {
     return NeonIconRegistry.icons[name];
   }
 
