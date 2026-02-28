@@ -3,19 +3,19 @@
 exports[`NeonMobileMenu renders mobile menu 1`] = `
 <nav class="neon-mobile-menu__wrapper">
   <ul class="neon-mobile-menu--brand neon-mobile-menu no-style" role="menubar">
-    <li class="neon-mobile-menu__item" tabindex="-1"><a href="/navigation/mobile-menu" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link" tabindex="0" role="menuitem">
+    <li class="neon-mobile-menu__item" role="menuitem" tabindex="-1"><a href="/navigation/mobile-menu" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link" tabindex="0">
         <!-- @slot the content of the link -->
         <div class="neon-mobile-menu__link-container" tabindex="-1">
           <!--v-if--><span class="neon-mobile-menu__item-label">Payments</span>
         </div>
       </a></li>
-    <li class="neon-mobile-menu__item" tabindex="-1"><a href="/navigation/link" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link" tabindex="0" role="menuitem">
+    <li class="neon-mobile-menu__item" role="menuitem" tabindex="-1"><a href="/navigation/link" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link" tabindex="0">
         <!-- @slot the content of the link -->
         <div class="neon-mobile-menu__link-container" tabindex="-1">
           <!--v-if--><span class="neon-mobile-menu__item-label">Transfers</span>
         </div>
       </a></li>
-    <li class="neon-mobile-menu__item--disabled neon-mobile-menu__item" tabindex="-1"><a class="neon-link--no-style neon-link--outline-none neon-link" tabindex="-1" role="menuitem">
+    <li class="neon-mobile-menu__item--disabled neon-mobile-menu__item" role="menuitem" tabindex="-1"><a class="neon-link--no-style neon-link--outline-none neon-link" tabindex="-1">
         <!-- @slot the content of the link -->
         <div class="neon-mobile-menu__link-container" tabindex="-1">
           <!--v-if--><span class="neon-mobile-menu__item-label">Mail</span>

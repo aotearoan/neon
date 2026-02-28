@@ -7,6 +7,7 @@
         ref="menuItem"
         :class="{ 'neon-mobile-menu__item--disabled': item.disabled }"
         class="neon-mobile-menu__item"
+        role="menuitem"
         tabindex="-1"
       >
         <neon-link
@@ -16,7 +17,6 @@
           :no-style="true"
           :tabindex="item.disabled ? -1 : 0"
           outline-style="none"
-          role="menuitem"
           @keydown.enter="!item.disabled && onClick(item.key)"
         >
           <div class="neon-mobile-menu__link-container" tabindex="-1" @click="!item.disabled && onClick(item.key)">

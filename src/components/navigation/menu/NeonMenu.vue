@@ -7,6 +7,7 @@
         ref="menuItem"
         :class="{ 'neon-menu__item--disabled': item.disabled }"
         class="neon-menu__item"
+        role="menuitem"
       >
         <neon-dropdown-menu
           v-if="item.children"
@@ -29,7 +30,6 @@
           :no-style="true"
           :tabindex="item.disabled ? -1 : 0"
           outline-style="none"
-          role="menuitem"
           @keydown.enter="!item.disabled && onClick(item.key)"
         >
           <div class="neon-menu__link-container" tabindex="-1" @click="!item.disabled && onClick(item.key)">
