@@ -7,7 +7,7 @@
       { 'neon-icon--inverse': inverse, 'neon-icon--disabled': disabled },
     ]"
     class="neon-icon"
-    v-bind="attrs"
+    v-bind="sanitizedAttributes"
     v-html="icon"
   ></div>
 </template>

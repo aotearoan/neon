@@ -26,6 +26,11 @@ export default defineComponent({
      */
     name: { type: String, required: true },
     /**
+     * An id to inject into the icon. This is necessary for rendering clipPaths correctly if the same icon is used
+     * multiple times on a page as the ids need to be unique.
+     */
+    id: { type: String, default: null },
+    /**
      * The color to render the icon. By default, it will be the current text color (light text in dark mode or dark text in light mode).
      */
     color: { type: String as () => NeonFunctionalColor, default: null },
@@ -40,16 +45,31 @@ export default defineComponent({
   },
   setup(props) {
     const attrs = useAttrs();
+
     const icon = computed(() => {
-      const _icon = NeonIconRegistry.getIcon(props.name);
+      let _icon = NeonIconRegistry.getIcon(props.name);
+
       if (!_icon) {
         console.error(`icon ${props.name} doesn't exist! Register icon with NeonIconRegistry.addIcon(name, svg);`);
       }
+
+      if (props.id) {
+        _icon = _icon.replace(/url\(#/g, `url(#${props.id}`);
+        _icon = _icon.replace(/id="/g, `id="${props.id}`);
+        _icon = _icon.replace('<svg ', `<svg id="${props.id}" `);
+      }
+
       return _icon;
     });
 
+    const sanitizedAttributes = computed(() => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { id, ...sanitized } = attrs;
+      return sanitized;
+    });
+
     return {
-      attrs,
+      sanitizedAttributes,
       icon,
     };
   },

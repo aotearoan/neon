@@ -6,6 +6,7 @@
     position: relative;
     left: 0;
     width: 100vw;
+    @include layout.min-height(100);
 
     &--with-top-nav .neon-page__container {
       @include responsive.responsive(larger-than-tablet) {

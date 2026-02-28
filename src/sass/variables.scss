@@ -199,6 +199,7 @@
   --neon-footer-height-mobile: calc(var(--neon-font-size-s) + var(--neon-space-32));
   --neon-footer-height-tablet: calc(var(--neon-font-size-s) + var(--neon-space-32));
   --neon-footer-height-desktop: calc(var(--neon-base-font-size) + var(--neon-space-48));
+  --neon-border-width-footer: 1rem;
 
   /* side nav */
   --neon-side-nav-width: calc(80 * var(--neon-space-4));
@@ -633,7 +634,7 @@
 
     /* footer */
     --neon-background-color-footer: var(--neon-background-color);
-    --neon-border-top-footer: none;
+    --neon-border-top-footer: var(--neon-border-width-footer) var(--neon-border-color) var(--neon-border-style);
 
     /* skeleton loader */
     --neon-color-loading-1: rgb(64, 64, 64);
@@ -945,7 +946,7 @@
 
     /* footer */
     --neon-background-color-footer: var(--neon-background-color);
-    --neon-border-top-footer: none;
+    --neon-border-top-footer: var(--neon-border-width-footer) var(--neon-border-color) var(--neon-border-style);
 
     /* skeleton loader */
     --neon-color-loading-1: rgb(226, 226, 226);
