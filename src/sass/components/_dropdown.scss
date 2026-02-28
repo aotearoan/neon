@@ -158,6 +158,7 @@
     &__button {
       flex: 1 0 auto;
       width: inherit;
+      gap: var(--neon-space-8);
     }
 
     &__badge {
