@@ -149,13 +149,13 @@
       }
 
       &-counter {
-        align-self: flex-end;
+        align-self: flex-start;
         user-select: none;
-        font-size: var(--neon-font-size-xs);
+        font-size: var(--neon-font-size-s);
         font-weight: var(--neon-font-weight-normal);
         letter-spacing: var(--neon-letter-spacing-s);
         color: var(--neon-color-text-tertiary);
-        margin-bottom: var(--neon-space-4);
+        margin-top: var(--neon-space-4);
       }
     }
 

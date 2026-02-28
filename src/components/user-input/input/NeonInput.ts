@@ -50,7 +50,7 @@ export default defineComponent({
      * The HTML autocomplete mode as specified <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#values">here</a>.
      * NOTE: No enum is provided in Neon as some values can be used in combination, please refer to the full list of values in the preceding link.
      */
-    autocomplete: { type: String, default: 'on' },
+    autocomplete: { type: String as () => NeonInputMode, default: 'on' },
     /**
      * The state of the input
      */
@@ -94,8 +94,12 @@ export default defineComponent({
      */
     maxlength: { type: Number, default: null },
     /**
-     * Debounce time in ms, if no value is provided the default value set in NeonDebounceUtils is used (=300ms).
-     * Set to 0 to disable debounce.
+     * The label template for the character limit. This is a string in the vue-i18n Pluralization format with a
+     * <em>{count}</em> placeholder.
+     */
+    maxlengthLabel: { type: String, default: 'No characters left | 1 character left | {count} characters left' },
+    /**
+     * Debounce time in ms. If no value is provided, the default value set in NeonDebounceUtils is used (=0ms).
      */
     debounce: { type: Number, default: undefined },
   },
@@ -184,6 +188,22 @@ export default defineComponent({
       }
     });
 
+    const counterLabel = computed<string | null>(() => {
+      if (props.maxlength && props.maxlength > 0) {
+        const templates = props.maxlengthLabel.split(' | ');
+        const remainingChars = props.maxlength - props.modelValue.length;
+        switch (remainingChars) {
+          case 0:
+            return templates[0];
+          case 1:
+            return templates[1];
+          default:
+            return templates[2].replace('{count}', `${remainingChars}`);
+        }
+      }
+      return null;
+    });
+
     const focus = () => {
       neonInput.value?.focus();
     };
@@ -215,7 +235,7 @@ export default defineComponent({
       }
     };
 
-    const changeValue = (event: Event) => {
+    const changeValue = (event: InputEvent) => {
       const val = (event.target as HTMLInputElement).value;
       const v = props.maxlength && val.length > props.maxlength ? val.substring(0, props.maxlength) : val;
       if (props.modelValue !== v) {
@@ -261,6 +281,7 @@ export default defineComponent({
       iconName,
       iconColor,
       computedPlaceholder,
+      counterLabel,
       focus,
       click,
       onFocus,

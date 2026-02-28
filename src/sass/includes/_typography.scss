@@ -49,8 +49,9 @@
 
 @mixin label {
   color: var(--neon-color-label);
-  font-size: var(--neon-font-size-xs);
-  font-weight: var(--neon-font-weight-semi-bold);
+  font-size: var(--neon-font-size-label);
+  line-height: var(--neon-line-height-ratio);
+  font-weight: var(--neon-font-weight-label);
   letter-spacing: var(--neon-letter-spacing-s);
   user-select: none;
   white-space: nowrap;

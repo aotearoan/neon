@@ -10,7 +10,7 @@
   >
     <span class="neon-field__label-wrapper">
       <span class="neon-field__label">{{ label }}</span>
-      <neon-label v-if="optional" :disabled="disabled" :label="optionalLabel" class="neon-field__optional" size="xxs" />
+      <span v-if="optional" class="neon-field__optional">{{ optionalLabel }}</span>
     </span>
     <div class="neon-field__contents">
       <!-- @slot optionally wrap the field with the label -->
