@@ -66,10 +66,10 @@ export default defineComponent({
       const selectedIndex = props.tabs.findIndex((tab) => tab.key === props.modelValue);
 
       if (selectedIndex >= 0) {
-        const selectedElement = menuItem.value[selectedIndex]?.neonLink;
+        const selectedMenuItem = document.getElementById(`${props.tabs[selectedIndex].key}Button`);
 
-        if (selectedElement) {
-          selectedElement.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+        if (selectedMenuItem) {
+          selectedMenuItem.scrollIntoView({ block: 'nearest', inline: 'nearest' });
         }
       }
     });

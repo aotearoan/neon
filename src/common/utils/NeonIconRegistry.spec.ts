@@ -10,6 +10,14 @@ describe('NeonIconRegistry', () => {
     expect(NeonIconRegistry.getIcon(name)).toEqual(icon);
   });
 
+  it('get missing icon', () => {
+    // given
+    const name = 'xd';
+    // when / then
+    NeonIconRegistry.removeIcon(name);
+    expect(NeonIconRegistry.getIcon(name)).toBeUndefined();
+  });
+
   it("doesn't overwrite icon", () => {
     // given
     const name = 'xd';

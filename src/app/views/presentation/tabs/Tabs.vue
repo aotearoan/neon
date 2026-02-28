@@ -19,7 +19,13 @@
         <h2 class="neon-h3">Tabbed content</h2>
         <neon-stack>
           <neon-tabs v-model="selected" :tabs="tabs">
-            <neon-tab v-for="(tab, index) in tabs" :key="tab.key" :selected="selected === tab.key" :tab="tab">
+            <neon-tab
+              v-for="(tab, index) in tabs"
+              :key="tab.key"
+              :selected="selected === tab.key"
+              :tab="tab"
+              :transition="false"
+            >
               <h6>Tab {{ index + 1 }}</h6>
               <p>{{ tabContent }}</p>
             </neon-tab>

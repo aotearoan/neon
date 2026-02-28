@@ -86,23 +86,24 @@
     }
 
     .neon-image-carousel__nav-item {
-      width: 16rem;
-      height: 16rem;
+      width: 12rem;
+      height: 12rem;
       justify-content: center;
       align-items: center;
       cursor: pointer;
 
       &-indicator {
-        width: 8rem;
-        height: 8rem;
+        width: 10rem;
+        height: 10rem;
         border-radius: 50%;
         border: var(--neon-border);
-        border-color: var(--neon-color-high-contrast);
+        border-color: var(--neon-color-image-carousel-nav-indicator);
       }
 
-      &--active {
+      &--active,
+      &:hover {
         .neon-image-carousel__nav-item-indicator {
-          background-color: var(--neon-color-high-contrast);
+          background-color: var(--neon-color-image-carousel-nav-indicator);
         }
 
         margin-left: var(--neon-image-carousel-swipe-distance);
@@ -204,12 +205,13 @@
         &-indicator {
           width: 12rem;
           height: 12rem;
-          border-color: var(--neon-color-image-carousel-expanded-button);
+          border-color: var(--neon-color-image-carousel-expanded-nav-indicator);
         }
 
-        &--active {
+        &--active,
+        &:hover {
           .neon-image-carousel__nav-item-indicator {
-            background-color: var(--neon-color-image-carousel-expanded-button);
+            background-color: var(--neon-color-image-carousel-expanded-nav-indicator);
           }
         }
       }

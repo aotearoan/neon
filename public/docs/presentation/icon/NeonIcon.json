@@ -13,6 +13,17 @@
       "required": true
     },
     {
+      "name": "id",
+      "description": "An id to inject into the icon. This is necessary for rendering clipPaths correctly if the same icon is used\nmultiple times on a page as the ids need to be unique.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
       "name": "color",
       "description": "The color to render the icon. By default, it will be the current text color (light text in dark mode or dark text in light mode).",
       "type": {

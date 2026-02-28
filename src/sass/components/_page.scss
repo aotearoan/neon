@@ -6,21 +6,22 @@
     position: relative;
     left: 0;
     width: 100vw;
+    @include layout.min-height(100);
 
     &--with-top-nav .neon-page__container {
       @include responsive.responsive(larger-than-tablet) {
         padding-top: var(--neon-top-nav-height-desktop);
-        @include layout.min-height(100, 'var(--neon-top-nav-height-desktop)');
+        @include layout.min-height(100, 'var(--neon-footer-height-desktop) + var(--neon-border-width-footer)');
       }
 
       @include responsive.responsive(tablet) {
         padding-top: var(--neon-top-nav-height-tablet);
-        @include layout.min-height(100, 'var(--neon-top-nav-height-tablet)');
+        @include layout.min-height(100, 'var(--neon-footer-height-tablet) + var(--neon-border-width-footer)');
       }
 
       @include responsive.responsive(mobile-large) {
         padding-top: var(--neon-top-nav-height-mobile);
-        @include layout.min-height(100, 'var(--neon-top-nav-height-mobile)');
+        @include layout.min-height(100, 'var(--neon-footer-height-mobile) + var(--neon-border-width-footer)');
       }
     }
 
@@ -57,7 +58,7 @@
 
     &--center {
       .neon-page__container {
-        margin: auto;
+        margin: 0 auto;
       }
     }
   }

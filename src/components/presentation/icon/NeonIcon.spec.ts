@@ -18,6 +18,11 @@ describe('NeonIcon', () => {
     expect(html()).toMatch(`neon-icon--${color}`);
   });
 
+  it('renders with id replacement', () => {
+    const { html } = render(NeonIcon, { props: { name: 'check', id: 'test' } });
+    expect(html()).toMatchSnapshot();
+  });
+
   it('renders inverse', async () => {
     const { html, rerender } = harness;
 

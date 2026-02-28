@@ -24,14 +24,14 @@
       }
     },
     {
-      "name": "toggleOnIf",
-      "description": "By default, use CSS display property to show/hide tab contents. This flag will enable using v-if instead.",
+      "name": "transition",
+      "description": "Use fade transition when switching tabs. This is useful to prevent a reflow.",
       "type": {
         "name": "boolean"
       },
       "defaultValue": {
         "func": false,
-        "value": "false"
+        "value": "true"
       }
     }
   ],

@@ -173,11 +173,11 @@ describe('NeonImageCarousel', () => {
     expect(container.querySelector('.neon-image-carousel--expanded')).toBeNull();
   });
 
-  it('closes when clicking the backdrop', async () => {
-    const { container } = harness;
+  it('emits update:expanded events', async () => {
+    const { container, emitted, getByTitle } = harness;
     await fireEvent.click(container.querySelectorAll<HTMLImageElement>('.neon-image-carousel__image')[0]);
-    const backdrop = container.querySelector<HTMLDivElement>('.neon-image-carousel__container') as HTMLDivElement;
-    await fireEvent.click(backdrop);
-    expect(container.querySelector('.neon-image-carousel--expanded')).toBeNull();
+    await fireEvent.click(getByTitle('Close'));
+
+    expect(emitted()['update:expanded']).toEqual([[true], [false]]);
   });
 });

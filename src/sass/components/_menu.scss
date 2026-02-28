@@ -23,14 +23,18 @@
         gap: var(--neon-space-12);
         font-family: var(--neon-font-family-menu);
         font-weight: var(--neon-font-weight-menu);
-        @include svg.color-with-svg(var(--neon-color-text-primary));
-        opacity: var(--neon-opacity-menu-inactive);
-        transition: opacity ease-in-out var(--neon-animation-speed-slow);
+        @include svg.color-with-svg(var(--neon-color-text-tertiary));
+
+        &,
+        .neon-svg--stroke,
+        .neon-svg--fill {
+          transition: color ease-in-out var(--neon-animation-speed-slow);
+        }
 
         &:before {
           content: '';
           position: absolute;
-          bottom: 0;
+          bottom: calc(-1 * var(--neon-border-width-top-nav));
           left: 0;
           width: 100%;
           opacity: 0;
@@ -38,30 +42,34 @@
           transition: opacity ease-in-out var(--neon-animation-speed-slow);
         }
       }
+    }
 
-      &:hover {
-        .neon-menu__link-container {
-          opacity: 1;
+    &:not(.neon-menu__item--disabled) {
+      .neon-link {
+        &:hover {
+          .neon-menu__link-container {
+            @include svg.color-with-svg(var(--neon-color-text-primary));
 
-          &:before {
-            opacity: 1;
+            &:before {
+              opacity: 1;
+            }
+          }
+
+        }
+
+        &:focus {
+          .neon-menu__link-container {
+            @include svg.color-with-svg(var(--neon-color-text-primary));
           }
         }
 
-      }
+        &.router-link-active {
+          .neon-menu__link-container {
+            @include svg.color-with-svg(var(--neon-color-text-primary));
 
-      &:focus {
-        .neon-menu__link-container {
-          opacity: 1;
-        }
-      }
-
-      &.router-link-active {
-        .neon-menu__link-container {
-          opacity: 1;
-
-          &:before {
-            opacity: 1;
+            &:before {
+              opacity: 1;
+            }
           }
         }
       }
@@ -174,10 +182,10 @@
     }
 
     &__responsive-menu {
-      font-family: var(---neon-font-family-heading);
+      font-family: var(--neon-font-family-heading);
 
       &.neon-menu__responsive-menu:not(:first-child) {
-        margin-left: var(--neon-space-20);
+        margin-left: calc(5 * var(--neon-base-space));
       }
 
       &.neon-menu__responsive-menu--hidden {
@@ -205,7 +213,7 @@
         &__label {
           display: flex;
           align-items: center;
-          font-family: var(---neon-font-family-heading);
+          font-family: var(--neon-font-family-heading);
         }
       }
 
@@ -217,7 +225,7 @@
       }
 
       .neon-dropdown .neon-dropdown__button {
-        font-family: var(---neon-font-family-heading);
+        font-family: var(--neon-font-family-heading);
         font-weight: var(--neon-font-weight-normal);
         letter-spacing: var(--neon-letter-spacing-m);
       }

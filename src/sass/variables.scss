@@ -193,11 +193,13 @@
   --neon-top-nav-height-mobile: calc(var(--neon-size-s) + var(--neon-space-16));
   --neon-top-nav-height-tablet: calc(var(--neon-size-m) + var(--neon-space-24));
   --neon-top-nav-height-desktop: calc(var(--neon-size-l) + var(--neon-space-32));
+  --neon-border-width-top-nav: 1rem;
 
   /* footer */
   --neon-footer-height-mobile: calc(var(--neon-font-size-s) + var(--neon-space-32));
   --neon-footer-height-tablet: calc(var(--neon-font-size-s) + var(--neon-space-32));
   --neon-footer-height-desktop: calc(var(--neon-base-font-size) + var(--neon-space-48));
+  --neon-border-width-footer: 1rem;
 
   /* side nav */
   --neon-side-nav-width: calc(80 * var(--neon-space-4));
@@ -220,7 +222,6 @@
   /* menu */
   --neon-font-family-menu: var(--neon-font-family-body);
   --neon-font-weight-menu: var(--neon-font-weight-bold);
-  --neon-opacity-menu-inactive: 0.75;
   --neon-height-menu-indicator: 4rem;
 
   /* mobile menu */
@@ -229,7 +230,6 @@
   --neon-line-height-mobile-menu: var(--neon-line-height-ratio);
   --neon-font-weight-mobile-menu: var(--neon-font-weight-bold);
   --neon-height-mobile-menu-indicator: 4rem;
-  --neon-opacity-mobile-menu-inactive: 0.75;
   --neon-opacity-mobile-menu-focus: 0.125;
   --neon-height-mobile-menu: 66rem;
 
@@ -287,6 +287,7 @@
   --neon-border-radius-switch-indicator: 50%;
 
   /* note */
+  --neon-padding-note: var(--neon-space-12);
   --neon-border-width-note: 8rem;
 
   --neon-font-size-note-title: var(--neon-font-size-xl);
@@ -547,7 +548,7 @@
     --neon-color-action-menu-hover: var(--neon-color-neutral-d3);
 
     /* mobile menu */
-    --neon-border-top-mobile-menu: var(--neon-border);
+    --neon-border-top-mobile-menu: var(--neon-height-mobile-menu-indicator) var(--neon-border-style) var(--neon-border-color);
     --neon-background-color-mobile-menu: var(--neon-background-color-card);
 
     /* selection */
@@ -633,7 +634,7 @@
 
     /* footer */
     --neon-background-color-footer: var(--neon-background-color);
-    --neon-border-top-footer: none;
+    --neon-border-top-footer: var(--neon-border-width-footer) var(--neon-border-color) var(--neon-border-style);
 
     /* skeleton loader */
     --neon-color-loading-1: rgb(64, 64, 64);
@@ -688,6 +689,8 @@
   }
 
   /* image carousel */
+  --neon-color-image-carousel-nav-indicator: var(--neon-color-text-primary);
+  --neon-color-image-carousel-expanded-nav-indicator: var(--neon-color-text-primary);
   --neon-color-image-carousel-expanded-button: var(--neon-color-text-primary);
   --neon-color-image-carousel-expanded-button-disabled: var(--neon-color-low-contrast-d4);
   --neon-background-color-image-carousel-expanded-button: var(--neon-color-low-contrast-d5);
@@ -857,7 +860,7 @@
     --neon-color-action-menu-hover: var(--neon-color-neutral-l4);
 
     /* mobile menu */
-    --neon-border-top-mobile-menu: var(--neon-border);
+    --neon-border-top-mobile-menu: var(--neon-height-mobile-menu-indicator) var(--neon-border-style) var(--neon-border-color);
     --neon-background-color-mobile-menu: var(--neon-background-color-card);
 
     /* selection */
@@ -943,7 +946,7 @@
 
     /* footer */
     --neon-background-color-footer: var(--neon-background-color);
-    --neon-border-top-footer: none;
+    --neon-border-top-footer: var(--neon-border-width-footer) var(--neon-border-color) var(--neon-border-style);
 
     /* skeleton loader */
     --neon-color-loading-1: rgb(226, 226, 226);
@@ -1001,6 +1004,8 @@
     --neon-background-color-swiper: var(--neon-background-color-card);
 
     /* image carousel */
+    --neon-color-image-carousel-nav-indicator: var(--neon-color-primary);
+    --neon-color-image-carousel-expanded-nav-indicator: var(--neon-color-inverse);
     --neon-color-image-carousel-expanded-button: var(--neon-color-inverse);
     --neon-color-image-carousel-expanded-button-disabled: var(--neon-color-low-contrast-d2);
     --neon-background-color-image-carousel-expanded-button: var(--neon-color-low-contrast-d3);
