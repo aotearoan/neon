@@ -84,6 +84,7 @@ export default defineComponent({
       onInput,
       sanitizedAttributes,
       slots,
+      NeonToggleStyle,
     };
   },
 });

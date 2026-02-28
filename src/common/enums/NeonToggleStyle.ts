@@ -6,4 +6,6 @@ export enum NeonToggleStyle {
   Toggle = 'toggle',
   /** Traditional HTML radio button input style. */
   RadioButtons = 'radio-buttons',
+  /** Card style radio buttons for more detailed content */
+  Card = 'card',
 }

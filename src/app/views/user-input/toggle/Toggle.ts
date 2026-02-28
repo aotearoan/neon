@@ -50,6 +50,14 @@ export default defineComponent({
       })),
     );
 
+    const modelCard = ref(
+      model.value.map((option, index) => ({
+        ...option,
+        description: `description ${index}`,
+        disabled: false,
+      })),
+    );
+
     const iconModel = ref([
       {
         key: 'left',
@@ -75,6 +83,7 @@ export default defineComponent({
     const selected8 = ref('key-2');
     const selected9 = ref('key-2');
     const selected10 = ref('key-2');
+    const selected11 = ref('key-1');
     const iconSelected = ref('centered');
     const colors = ref(Object.values(NeonFunctionalColor));
     const sizes = ref(Object.values(NeonSize));
@@ -112,6 +121,21 @@ export default defineComponent({
   </template>
 </neon-toggle>`;
 
+    const cardRadioButtons = `<neon-toggle v-model="selected11"
+             :model="modelCard"
+             name="toggle-11"
+             toggle-style="card"
+>
+  <template #option="{ option, index }">
+    <neon-stack gap="s">
+      <span v-if="option.label">{{ option.label }}</span>
+      <span v-if="option.description" class="neon-color-low-contrast">
+        {{ option.description }}
+      </span>
+    </neon-stack>
+  </template>
+</neon-toggle>`;
+
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonToggle')));
 
     return {
@@ -119,6 +143,7 @@ export default defineComponent({
       headline,
       model,
       modelWithDescriptions,
+      modelCard,
       iconModel,
       selected1,
       selected2,
@@ -130,6 +155,7 @@ export default defineComponent({
       selected8,
       selected9,
       selected10,
+      selected11,
       iconSelected,
       colors,
       sizes,
@@ -138,6 +164,7 @@ export default defineComponent({
       toggleIcons,
       radioButtons,
       radioButtonsWithDescriptions,
+      cardRadioButtons,
     };
   },
 });
