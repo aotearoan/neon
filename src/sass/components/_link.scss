@@ -26,7 +26,7 @@
       text-decoration-thickness: var(--neon-text-decoration-thickness-link-hover);
     }
 
-    &:focus {
+    &:focus-visible {
       &:not(.neon-link--no-style) {
         outline: none;
         text-decoration: none;
@@ -80,7 +80,7 @@ a[href] {
       }
 
       &:hover,
-      &:focus {
+      &:focus-visible {
         &:after {
           width: calc(100% - 4.5 * var(--neon-space-4));
         }

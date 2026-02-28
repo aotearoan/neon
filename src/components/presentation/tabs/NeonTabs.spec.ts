@@ -103,7 +103,7 @@ describe('NeonTabs', () => {
   it('renders tabindex selected', () => {
     const { html } = harness;
     expect(html()).toMatch(
-      '<a class="neon-link--no-style neon-link--outline-text neon-link neon-tabs__menu-item--selected neon-tabs__menu-item neon-tabs__menu-item--selected neon-tabs__menu-item" tabindex="-1" id="tab2Button" aria-controls="tab2" aria-selected="true" role="tab">',
+      '<a class="neon-link--no-style neon-link--outline-none neon-link neon-tabs__menu-item--selected neon-tabs__menu-item neon-tabs__menu-item--selected neon-tabs__menu-item" tabindex="-1" id="tab2Button" aria-controls="tab2" aria-selected="true" role="tab">',
     );
     expect(html()).toMatch('<div id="tab2ButtonContainer" tabindex="0" class="neon-tabs__menu-item-container">');
   });
@@ -111,7 +111,7 @@ describe('NeonTabs', () => {
   it('renders tabindex unselected', () => {
     const { html } = harness;
     expect(html()).toMatch(
-      '<a class="neon-link--no-style neon-link--outline-text neon-link neon-tabs__menu-item neon-tabs__menu-item" tabindex="-1" id="tab1Button" aria-controls="tab1" aria-selected="false" role="tab">',
+      '<a class="neon-link--no-style neon-link--outline-none neon-link neon-tabs__menu-item neon-tabs__menu-item" tabindex="-1" id="tab1Button" aria-controls="tab1" aria-selected="false" role="tab">',
     );
     expect(html()).toMatch('<div id="tab1ButtonContainer" tabindex="-1" class="neon-tabs__menu-item-container">');
   });
@@ -129,7 +129,7 @@ describe('NeonTabs', () => {
   it('renders tab icon selected', () => {
     const { html } = harness;
     expect(html()).toMatch(
-      '<a class="neon-link--no-style neon-link--outline-text neon-link neon-tabs__menu-item--selected neon-tabs__menu-item neon-tabs__menu-item--selected neon-tabs__menu-item" tabindex="-1" id="tab2Button" aria-controls="tab2" aria-selected="true" role="tab">',
+      '<a class="neon-link--no-style neon-link--outline-none neon-link neon-tabs__menu-item--selected neon-tabs__menu-item neon-tabs__menu-item--selected neon-tabs__menu-item" tabindex="-1" id="tab2Button" aria-controls="tab2" aria-selected="true" role="tab">',
     );
   });
 

@@ -82,7 +82,7 @@ describe('NeonLink', () => {
   it('renders default outline style', () => {
     const { html } = harness;
     const result = html();
-    expect(result).toMatch('neon-link--outline-text');
+    expect(result).toMatch('neon-link--outline-none');
   });
 
   it('renders provided outline style', async () => {

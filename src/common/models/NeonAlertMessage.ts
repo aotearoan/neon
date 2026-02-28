@@ -16,6 +16,11 @@ export interface NeonAlertMessage {
   message?: string;
 
   /**
+   * Optional display icon. Display the icon corresponding to the message severity. Defaults to false.
+   */
+  showIcon?: boolean;
+
+  /**
    * Placement of the message. Default is top-right.
    */
   placement?: NeonAlertPlacement;

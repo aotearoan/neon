@@ -2,8 +2,9 @@
 @use '../../../sass/includes/responsive';
 @use '../../../sass/includes/scrollbars';
 
-$neon-height-component-header-desktop: 160rem;
-$neon-height-component-header-mobile: 77rem;
+$neon-height-component-header-desktop: 180rem;
+$neon-height-component-header-tablet: 180rem;
+$neon-height-component-header-mobile: 124rem;
 $fixed-content-height: 348rem;
 
 .component-documentation {
@@ -14,7 +15,7 @@ $fixed-content-height: 348rem;
   }
 
   @include responsive.responsive(tablet) {
-    margin-top: calc(#{$neon-height-component-header-desktop} - var(--neon-gutter-tablet));
+    margin-top: calc(#{$neon-height-component-header-tablet} - var(--neon-gutter-tablet));
   }
 
   @include responsive.responsive(mobile-large) {

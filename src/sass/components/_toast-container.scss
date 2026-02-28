@@ -22,57 +22,49 @@
     .neon-toast__message {
       pointer-events: visible;
       touch-action: auto;
-      height: var(--neon-size-l);
       min-width: var(--neon-width-toast);
       margin: var(--neon-space-4);
       overflow: hidden;
-      border-radius: calc(2 * var(--neon-border-radius));
+      border-radius: var(--neon-border-radius-toast);
       display: flex;
       flex-direction: row;
+      gap: var(--neon-gap-toast);
       align-items: center;
       justify-content: space-between;
       position: relative;
-      padding: var(--neon-space-12) calc(3.5 * var(--neon-space-4));
+      padding: var(--neon-padding-toast);
       box-shadow: var(--neon-box-shadow-alert);
 
       @each $color in palettes.$alert-colors {
-        $alert-background-rgb: var(--neon-rgb-#{$color});
-
         &.neon-toast__message--#{$color} {
-          background-color: rgb($alert-background-rgb);
+          background-color: var(--neon-background-color-toast-#{$color});
           @include svg.color-with-svg(var(--neon-color-toast-#{$color}));
 
           &:focus-within {
-            @include outline.box-shadow-outline($alert-background-rgb);
+            @include outline.box-shadow-outline(var(--neon-rgb-#{$color}));
           }
         }
       }
 
-      &--dismissable {
+      &--dismissible {
         cursor: pointer;
       }
 
       .neon-toast__close {
-        min-width: var(--neon-font-size-l);
-        width: var(--neon-font-size-l);
-        min-height: var(--neon-font-size-l);
-        height: var(--neon-font-size-l);
-        margin-left: calc(3.5 * var(--neon-space-4));
-        opacity: 0.5;
+        min-width: var(--neon-size-toast-close-icon);
+        width: var(--neon-size-toast-close-icon);
+        min-height: var(--neon-size-toast-close-icon);
+        height: var(--neon-size-toast-close-icon);
         outline: none;
-      }
-
-      &:hover {
-        .neon-toast__close {
-          opacity: 1;
-        }
       }
     }
 
     .neon-toast__title {
-      line-height: var(--neon-line-height-one);
-      font-size: var(--neon-font-size-m);
-      font-weight: var(--neon-font-weight-normal);
+      line-height: var(--neon-line-height-toast);
+      font-size: var(--neon-font-size-toast);
+      font-weight: var(--neon-font-weight-toast);
+      font-family: var(--neon-font-family-toast);
+      letter-spacing: var(--neon-letter-spacing-toast);
     }
   }
 }
