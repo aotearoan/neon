@@ -1,5 +1,12 @@
 # Changelog
 
+## [22.4.1](https://github.com/aotearoan/neon/compare/v22.4.0...v22.4.1) (2026-02-28)
+
+
+### Bug Fixes
+
+* tab enhancements ([#309](https://github.com/aotearoan/neon/issues/309)) ([3051896](https://github.com/aotearoan/neon/commit/305189677daa828ce1db76683a77fecd0a83d047))
+
 ## [22.4.0](https://github.com/aotearoan/neon/compare/v22.3.0...v22.4.0) (2026-02-28)
 
 
