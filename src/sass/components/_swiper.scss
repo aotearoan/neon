@@ -6,18 +6,14 @@
     flex-direction: row;
     max-width: 100%;
     width: 100%;
-    overflow-x: hidden;
 
     .neon-swiper__container {
       position: relative;
       top: 0;
       left: 0;
-      overflow-x: auto;
       overscroll-behavior: contain;
       width: 100%;
       height: 100%;
-
-      @include scrollbars.hide-scrollbars();
     }
 
     .neon-swiper__fade-out {
@@ -29,39 +25,107 @@
       z-index: var(--neon-z-index-above);
       width: 100%;
       height: 100%;
+    }
 
-      &:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        background: linear-gradient(to left, transparent, var(--neon-background-color-swiper));
-        height: 100%;
-        width: 0;
-        transition: width ease-in-out var(--neon-animation-speed-fast);
+    &--horizontal {
+      overflow-x: hidden;
+
+      .neon-swiper__container {
+        overflow-x: auto;
+        flex-direction: row;
+        @include scrollbars.hide-scrollbars();
       }
 
-      &:after {
-        content: '';
-        position: absolute;
-        right: 0;
-        background: linear-gradient(to right, transparent, var(--neon-background-color-swiper));
-        height: 100%;
-        width: 0;
-        transition: width ease-in-out var(--neon-animation-speed-fastest);
+      .neon-swiper__fade-out {
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          background: linear-gradient(to left, transparent, var(--neon-background-color-swiper));
+          height: 100%;
+          width: 0;
+          transition: width ease-in-out var(--neon-animation-speed-fast);
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          right: 0;
+          background: linear-gradient(to right, transparent, var(--neon-background-color-swiper));
+          height: 100%;
+          width: 0;
+          transition: width ease-in-out var(--neon-animation-speed-fastest);
+        }
+      }
+
+      &.neon-swiper--overflowing.neon-swiper--fade {
+        &:not(.neon-swiper--start) {
+          .neon-swiper__fade-out:before {
+            width: var(--neon-space-24);
+          }
+        }
+
+        &:not(.neon-swiper--end) {
+          .neon-swiper__fade-out:after {
+            width: var(--neon-space-24);
+          }
+        }
       }
     }
 
-    &--overflowing.neon-swiper--fade {
-      &:not(.neon-swiper--start) {
-        .neon-swiper__fade-out:before {
-          width: var(--neon-space-24);
+    &--vertical {
+      overflow-y: hidden;
+
+      .neon-swiper__container {
+        overflow-y: auto;
+      }
+
+      .neon-swiper__fade-out {
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          background: linear-gradient(to top, transparent, var(--neon-background-color-swiper));
+          width: 100%;
+          height: 0;
+          transition: width ease-in-out var(--neon-animation-speed-fastest);
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          background: linear-gradient(to bottom, transparent, var(--neon-background-color-swiper));
+          width: 100%;
+          height: 0;
+          transition: width ease-in-out var(--neon-animation-speed-fastest);
         }
       }
 
-      &:not(.neon-swiper--end) {
-        .neon-swiper__fade-out:after {
-          width: var(--neon-space-24);
+      &.neon-swiper--overflowing.neon-swiper--fade {
+        &:not(.neon-swiper--start) {
+          .neon-swiper__fade-out:before {
+            height: var(--neon-space-24);
+          }
         }
+
+        &:not(.neon-swiper--end) {
+          .neon-swiper__fade-out:after {
+            height: var(--neon-space-24);
+          }
+        }
+      }
+    }
+
+    &.neon-swiper--hide-fade-start {
+      .neon-swiper__fade-out:before {
+        display: none;
+      }
+    }
+
+    &.neon-swiper--hide-fade-end {
+      .neon-swiper__fade-out:after {
+        display: none;
       }
     }
   }

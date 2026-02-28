@@ -1,11 +1,16 @@
 <template>
   <div
-    :class="{
-      'neon-swiper--fade': fade,
-      'neon-swiper--overflowing': isOverflowing,
-      'neon-swiper--start': isScrollStart,
-      'neon-swiper--end': isScrollEnd,
-    }"
+    :class="[
+      `neon-swiper--${orientation}`,
+      {
+        'neon-swiper--fade': fade,
+        'neon-swiper--overflowing': isOverflowing,
+        'neon-swiper--start': isScrollStart,
+        'neon-swiper--end': isScrollEnd,
+        'neon-swiper--hide-fade-start': hideFadeStart,
+        'neon-swiper--hide-fade-end': hideFadeEnd,
+      },
+    ]"
     class="neon-swiper"
   >
     <div ref="scrollable" class="neon-swiper__container">
