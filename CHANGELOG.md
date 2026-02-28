@@ -1,5 +1,16 @@
 # Changelog
 
+## [23.0.0](https://github.com/aotearoan/neon/compare/v22.5.2...v23.0.0) (2026-02-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* neon link & alert adjustments ([#317](https://github.com/aotearoan/neon/issues/317))
+
+### Code Refactoring
+
+* neon link & alert adjustments ([#317](https://github.com/aotearoan/neon/issues/317)) ([f56d3be](https://github.com/aotearoan/neon/commit/f56d3bef4b79076d2151ad32a7aa27f6018deb05))
+
 ## [22.5.2](https://github.com/aotearoan/neon/compare/v22.5.1...v22.5.2) (2026-02-28)
 
 
