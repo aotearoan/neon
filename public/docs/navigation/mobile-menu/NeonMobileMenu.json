@@ -1,0 +1,38 @@
+{
+  "displayName": "NeonMobileMenu",
+  "description": "<p>\n  <strong>NeonMobileMenu</strong> is a menu designed for mobile navigation. It is designed to be placed at the bottom\n  of the screen to maximise mobile usability.\n</p>",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "menu",
+      "description": "The menu configuration. The highlighted 'active' menu is determined by the current Vue route.",
+      "type": {
+        "name": "Array as () => Array<NeonMenuItem>"
+      },
+      "required": true
+    },
+    {
+      "name": "color",
+      "description": "The menu color.",
+      "type": {
+        "name": "String as () => NeonFunctionalColor"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonFunctionalColor.Brand"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "click",
+      "description": "Emitted when a user clicks on a menu item.",
+      "type": {
+        "names": [
+          "string"
+        ]
+      }
+    }
+  ]
+}

@@ -53,6 +53,10 @@ export default defineComponent({
      */
     color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Primary },
     /**
+     * Make the button circular. NOTE: This is only for icon only buttons.
+     */
+    circular: { type: Boolean, default: null },
+    /**
      * The label of the file component button
      */
     label: { type: String, default: null },
@@ -60,6 +64,10 @@ export default defineComponent({
      * The icon of the file component button
      */
     icon: { type: String, default: null },
+    /**
+     * Title for the file upload button.
+     */
+    title: { type: String, default: 'Upload' },
   },
   emits: [
     /**
@@ -69,7 +77,7 @@ export default defineComponent({
     'update:modelValue',
   ],
   setup(props, { emit }) {
-    const fileInput = ref<HTMLInputElement | null>(null);
+    const fileInput = ref<InstanceType<typeof NeonInput> | null>(null);
     const files = ref<Array<File>>([]);
     const fileInputModel = ref('');
 
@@ -99,7 +107,7 @@ export default defineComponent({
     };
 
     const openFileDialog = () => {
-      fileInput.value?.click();
+      fileInput.value?.neonInput?.click();
     };
 
     const onInput = (event: Event) => {

@@ -3,6 +3,19 @@
   "description": "A \"page\" component, this is defined as a wrapper around the contents (NeonGrid, etc) and footer which provides the\ncorrect responsive layout accounting for NeonTopNav and NeonSideNav components being used.",
   "tags": {},
   "exportName": "default",
+  "props": [
+    {
+      "name": "pageAlign",
+      "description": "Page alignment: either left aligned or center aligned.",
+      "type": {
+        "name": "String as () => NeonPageAlignment"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonPageAlignment.CENTER"
+      }
+    }
+  ],
   "slots": [
     {
       "name": "top-nav",
@@ -15,6 +28,10 @@
     {
       "name": "content",
       "description": "The main page content"
+    },
+    {
+      "name": "footer",
+      "description": "The <strong>NeonFooter</strong> slot. This slot is required to ensure the correct responsive page layout."
     }
   ]
 }

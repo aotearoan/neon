@@ -5,6 +5,13 @@
   "exportName": "default",
   "props": [
     {
+      "name": "id",
+      "description": "Id for the date picker button.",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
       "name": "modelValue",
       "description": "The selected date. A date string in the\n<a href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601</a> format.",
       "type": {

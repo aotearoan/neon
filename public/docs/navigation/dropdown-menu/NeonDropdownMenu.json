@@ -46,6 +46,17 @@
       }
     },
     {
+      "name": "placement",
+      "description": "Placement of the dropdown contents.",
+      "type": {
+        "name": "String as () => NeonDropdownPlacement"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonDropdownPlacement.BottomLeft"
+      }
+    },
+    {
       "name": "openOnHover",
       "description": "Instead of opening on click (default), open on hover.",
       "type": {
@@ -64,15 +75,6 @@
       "type": {
         "names": [
           "NeonDropdownMenuItem"
-        ]
-      }
-    },
-    {
-      "name": "button-ref",
-      "description": "emitted on initialisation",
-      "type": {
-        "names": [
-          "HTMLElement"
         ]
       }
     }

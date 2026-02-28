@@ -72,9 +72,14 @@
     </neon-card-body>
 
     <neon-card-body v-if="isUtility">
-      <h2 class="neon-h4">API</h2>
-      <template v-for="member in classDocs.children?.[0]?.children || []">
-        <neon-stack v-if="displayMember(member)" :key="member.name" class="source-page__property" gap="m">
+      <h2 class="neon-h4">{{ apiType === 'class' ? 'Class Member API' : 'Exported Functions API' }}</h2>
+      <template v-for="member in classMembers">
+        <neon-stack
+          v-if="apiType === 'functions' || displayMember(member)"
+          :key="member.name"
+          class="source-page__property"
+          gap="m"
+        >
           <neon-stack gap="s">
             <neon-inline v-if="member.flags" gap="s">
               <neon-label v-if="member.flags.isStatic" label="static" size="xs" />

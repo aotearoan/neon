@@ -6,11 +6,10 @@
   "props": [
     {
       "name": "modelValue",
-      "description": "Either a string indicating the key of the selected option ('' if there is no selection) or an array of selected\nNeonSearchOption in the case when multiple = true (necessary to display them as chips).",
+      "description": "The selected model value(s). In the case of single select this should be set to a single NeonSearchOption or null.\nIn the case of multiple selection (multiple=true) pass an Array of selected NeonSearchOptions or an empty array\nif nothing is selected.",
       "type": {
-        "name": "string|Array as () => Array<NeonSearchOption>"
-      },
-      "required": true
+        "name": "Object as () => NeonSearchOption|Array as () => Array<NeonSearchOption>"
+      }
     },
     {
       "name": "placeholder",
@@ -109,10 +108,9 @@
   "events": [
     {
       "name": "update:modelValue",
-      "description": "emitted when the user changes the selection.",
       "type": {
         "names": [
-          "string | NeonSearchOption[]"
+          "NeonSearchOption | NeonSearchOption[] | null"
         ]
       }
     },

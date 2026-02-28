@@ -48,7 +48,7 @@
 									"fileName": "NeonActionMenuModel.ts",
 									"line": 13,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonActionMenuModel.ts#L13"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonActionMenuModel.ts#L13"
 								}
 							],
 							"type": {
@@ -77,7 +77,7 @@
 									"fileName": "NeonActionMenuModel.ts",
 									"line": 17,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonActionMenuModel.ts#L17"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonActionMenuModel.ts#L17"
 								}
 							],
 							"type": {
@@ -104,7 +104,7 @@
 									"fileName": "NeonActionMenuModel.ts",
 									"line": 8,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonActionMenuModel.ts#L8"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonActionMenuModel.ts#L8"
 								}
 							],
 							"type": {
@@ -131,7 +131,7 @@
 									"fileName": "NeonActionMenuModel.ts",
 									"line": 6,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonActionMenuModel.ts#L6"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonActionMenuModel.ts#L6"
 								}
 							],
 							"type": {
@@ -160,7 +160,7 @@
 									"fileName": "NeonActionMenuModel.ts",
 									"line": 15,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonActionMenuModel.ts#L15"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonActionMenuModel.ts#L15"
 								}
 							],
 							"type": {
@@ -186,7 +186,7 @@
 							"fileName": "NeonActionMenuModel.ts",
 							"line": 4,
 							"character": 17,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonActionMenuModel.ts#L4"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonActionMenuModel.ts#L4"
 						}
 					]
 				}
@@ -204,7 +204,7 @@
 					"fileName": "NeonActionMenuModel.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonActionMenuModel.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonActionMenuModel.ts#L1"
 				}
 			]
 		},
@@ -241,7 +241,7 @@
 									"fileName": "NeonAlertAction.ts",
 									"line": 14,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonAlertAction.ts#L14"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonAlertAction.ts#L14"
 								}
 							],
 							"type": {
@@ -257,7 +257,7 @@
 											"fileName": "NeonAlertAction.ts",
 											"line": 14,
 											"character": 12,
-											"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonAlertAction.ts#L14"
+											"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonAlertAction.ts#L14"
 										}
 									],
 									"signatures": [
@@ -280,7 +280,7 @@
 													"fileName": "NeonAlertAction.ts",
 													"line": 14,
 													"character": 12,
-													"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonAlertAction.ts#L14"
+													"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonAlertAction.ts#L14"
 												}
 											],
 											"type": {
@@ -311,7 +311,7 @@
 									"fileName": "NeonAlertAction.ts",
 									"line": 9,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonAlertAction.ts#L9"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonAlertAction.ts#L9"
 								}
 							],
 							"type": {
@@ -334,7 +334,7 @@
 							"fileName": "NeonAlertAction.ts",
 							"line": 5,
 							"character": 17,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonAlertAction.ts#L5"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonAlertAction.ts#L5"
 						}
 					]
 				}
@@ -352,7 +352,7 @@
 					"fileName": "NeonAlertAction.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonAlertAction.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonAlertAction.ts#L1"
 				}
 			]
 		},
@@ -399,7 +399,7 @@
 									"fileName": "NeonAlertMessage.ts",
 									"line": 32,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonAlertMessage.ts#L32"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonAlertMessage.ts#L32"
 								}
 							],
 							"type": {
@@ -428,7 +428,7 @@
 									"fileName": "NeonAlertMessage.ts",
 									"line": 27,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonAlertMessage.ts#L27"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonAlertMessage.ts#L27"
 								}
 							],
 							"type": {
@@ -457,7 +457,7 @@
 									"fileName": "NeonAlertMessage.ts",
 									"line": 16,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonAlertMessage.ts#L16"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonAlertMessage.ts#L16"
 								}
 							],
 							"type": {
@@ -486,7 +486,7 @@
 									"fileName": "NeonAlertMessage.ts",
 									"line": 21,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonAlertMessage.ts#L21"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonAlertMessage.ts#L21"
 								}
 							],
 							"type": {
@@ -520,7 +520,7 @@
 									"fileName": "NeonAlertMessage.ts",
 									"line": 39,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonAlertMessage.ts#L39"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonAlertMessage.ts#L39"
 								}
 							],
 							"type": {
@@ -551,7 +551,7 @@
 									"fileName": "NeonAlertMessage.ts",
 									"line": 44,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonAlertMessage.ts#L44"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonAlertMessage.ts#L44"
 								}
 							],
 							"type": {
@@ -582,7 +582,7 @@
 									"fileName": "NeonAlertMessage.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonAlertMessage.ts#L11"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonAlertMessage.ts#L11"
 								}
 							],
 							"type": {
@@ -610,7 +610,7 @@
 							"fileName": "NeonAlertMessage.ts",
 							"line": 7,
 							"character": 17,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonAlertMessage.ts#L7"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonAlertMessage.ts#L7"
 						}
 					]
 				}
@@ -628,7 +628,7 @@
 					"fileName": "NeonAlertMessage.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonAlertMessage.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonAlertMessage.ts#L1"
 				}
 			]
 		},
@@ -658,7 +658,7 @@
 							"fileName": "NeonAvailableSpace.ts",
 							"line": 7,
 							"character": 12,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonAvailableSpace.ts#L7"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonAvailableSpace.ts#L7"
 						}
 					],
 					"type": {
@@ -709,7 +709,7 @@
 													"fileName": "NeonAvailableSpace.ts",
 													"line": 11,
 													"character": 2,
-													"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonAvailableSpace.ts#L11"
+													"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonAvailableSpace.ts#L11"
 												}
 											],
 											"type": {
@@ -736,7 +736,7 @@
 													"fileName": "NeonAvailableSpace.ts",
 													"line": 13,
 													"character": 2,
-													"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonAvailableSpace.ts#L13"
+													"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonAvailableSpace.ts#L13"
 												}
 											],
 											"type": {
@@ -763,7 +763,7 @@
 													"fileName": "NeonAvailableSpace.ts",
 													"line": 15,
 													"character": 2,
-													"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonAvailableSpace.ts#L15"
+													"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonAvailableSpace.ts#L15"
 												}
 											],
 											"type": {
@@ -790,7 +790,7 @@
 													"fileName": "NeonAvailableSpace.ts",
 													"line": 9,
 													"character": 2,
-													"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonAvailableSpace.ts#L9"
+													"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonAvailableSpace.ts#L9"
 												}
 											],
 											"type": {
@@ -815,7 +815,7 @@
 											"fileName": "NeonAvailableSpace.ts",
 											"line": 7,
 											"character": 69,
-											"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonAvailableSpace.ts#L7"
+											"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonAvailableSpace.ts#L7"
 										}
 									]
 								}
@@ -837,7 +837,7 @@
 					"fileName": "NeonAvailableSpace.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonAvailableSpace.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonAvailableSpace.ts#L1"
 				}
 			]
 		},
@@ -864,7 +864,7 @@
 					},
 					"children": [
 						{
-							"id": 39,
+							"id": 40,
 							"name": "dates",
 							"variant": "declaration",
 							"kind": 1024,
@@ -880,9 +880,9 @@
 							"sources": [
 								{
 									"fileName": "NeonCalendarConfig.ts",
-									"line": 43,
+									"line": 48,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonCalendarConfig.ts#L43"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCalendarConfig.ts#L48"
 								}
 							],
 							"type": {
@@ -906,6 +906,36 @@
 							}
 						},
 						{
+							"id": 39,
+							"name": "dowLongNames",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Long names for the days of the week from Monday-Sunday. These values are in the provided locale, if no locale is\nprovided the browser default is used."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonCalendarConfig.ts",
+									"line": 32,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCalendarConfig.ts#L32"
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							}
+						},
+						{
 							"id": 38,
 							"name": "dowNames",
 							"variant": "declaration",
@@ -924,7 +954,7 @@
 									"fileName": "NeonCalendarConfig.ts",
 									"line": 27,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonCalendarConfig.ts#L27"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCalendarConfig.ts#L27"
 								}
 							],
 							"type": {
@@ -936,7 +966,7 @@
 							}
 						},
 						{
-							"id": 40,
+							"id": 41,
 							"name": "lastDayOfMonth",
 							"variant": "declaration",
 							"kind": 1024,
@@ -952,9 +982,9 @@
 							"sources": [
 								{
 									"fileName": "NeonCalendarConfig.ts",
-									"line": 45,
+									"line": 50,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonCalendarConfig.ts#L45"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCalendarConfig.ts#L50"
 								}
 							],
 							"type": {
@@ -963,7 +993,37 @@
 							}
 						},
 						{
-							"id": 41,
+							"id": 43,
+							"name": "monthLongNames",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Long names for the months. These values are in the provided locale, if no locale is provided the browser default\nis used."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "NeonCalendarConfig.ts",
+									"line": 60,
+									"character": 2,
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCalendarConfig.ts#L60"
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							}
+						},
+						{
+							"id": 42,
 							"name": "months",
 							"variant": "declaration",
 							"kind": 1024,
@@ -979,9 +1039,9 @@
 							"sources": [
 								{
 									"fileName": "NeonCalendarConfig.ts",
-									"line": 50,
+									"line": 55,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonCalendarConfig.ts#L50"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCalendarConfig.ts#L55"
 								}
 							],
 							"type": {
@@ -1011,7 +1071,7 @@
 									"fileName": "NeonCalendarConfig.ts",
 									"line": 22,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonCalendarConfig.ts#L22"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCalendarConfig.ts#L22"
 								}
 							],
 							"type": {
@@ -1038,7 +1098,7 @@
 									"fileName": "NeonCalendarConfig.ts",
 									"line": 13,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonCalendarConfig.ts#L13"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCalendarConfig.ts#L13"
 								}
 							],
 							"type": {
@@ -1065,7 +1125,7 @@
 									"fileName": "NeonCalendarConfig.ts",
 									"line": 18,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonCalendarConfig.ts#L18"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCalendarConfig.ts#L18"
 								}
 							],
 							"type": {
@@ -1092,7 +1152,7 @@
 									"fileName": "NeonCalendarConfig.ts",
 									"line": 20,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonCalendarConfig.ts#L20"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCalendarConfig.ts#L20"
 								}
 							],
 							"type": {
@@ -1121,12 +1181,12 @@
 									"fileName": "NeonCalendarConfig.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonCalendarConfig.ts#L11"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCalendarConfig.ts#L11"
 								}
 							],
 							"type": {
 								"type": "reference",
-								"target": 60,
+								"target": 62,
 								"name": "NeonDate",
 								"package": "@aotearoan/neon"
 							}
@@ -1150,12 +1210,12 @@
 									"fileName": "NeonCalendarConfig.ts",
 									"line": 9,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonCalendarConfig.ts#L9"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCalendarConfig.ts#L9"
 								}
 							],
 							"type": {
 								"type": "reference",
-								"target": 60,
+								"target": 62,
 								"name": "NeonDate",
 								"package": "@aotearoan/neon"
 							}
@@ -1165,10 +1225,12 @@
 						{
 							"title": "Properties",
 							"children": [
+								40,
 								39,
 								38,
-								40,
 								41,
+								43,
+								42,
 								37,
 								34,
 								35,
@@ -1183,7 +1245,7 @@
 							"fileName": "NeonCalendarConfig.ts",
 							"line": 7,
 							"character": 17,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonCalendarConfig.ts#L7"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCalendarConfig.ts#L7"
 						}
 					]
 				}
@@ -1201,19 +1263,19 @@
 					"fileName": "NeonCalendarConfig.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonCalendarConfig.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCalendarConfig.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 42,
+			"id": 44,
 			"name": "NeonCardListModel",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 43,
+					"id": 45,
 					"name": "NeonCardListModel",
 					"variant": "declaration",
 					"kind": 256,
@@ -1228,7 +1290,7 @@
 					},
 					"children": [
 						{
-							"id": 47,
+							"id": 49,
 							"name": "disabled",
 							"variant": "declaration",
 							"kind": 1024,
@@ -1248,7 +1310,7 @@
 									"fileName": "NeonCardListModel.ts",
 									"line": 21,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonCardListModel.ts#L21"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCardListModel.ts#L21"
 								}
 							],
 							"type": {
@@ -1257,7 +1319,7 @@
 							}
 						},
 						{
-							"id": 45,
+							"id": 47,
 							"name": "href",
 							"variant": "declaration",
 							"kind": 1024,
@@ -1277,7 +1339,7 @@
 									"fileName": "NeonCardListModel.ts",
 									"line": 13,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonCardListModel.ts#L13"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCardListModel.ts#L13"
 								}
 							],
 							"type": {
@@ -1286,7 +1348,7 @@
 							}
 						},
 						{
-							"id": 44,
+							"id": 46,
 							"name": "key",
 							"variant": "declaration",
 							"kind": 1024,
@@ -1306,7 +1368,7 @@
 									"fileName": "NeonCardListModel.ts",
 									"line": 9,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonCardListModel.ts#L9"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCardListModel.ts#L9"
 								}
 							],
 							"type": {
@@ -1315,7 +1377,7 @@
 							}
 						},
 						{
-							"id": 46,
+							"id": 48,
 							"name": "targetBlank",
 							"variant": "declaration",
 							"kind": 1024,
@@ -1335,7 +1397,7 @@
 									"fileName": "NeonCardListModel.ts",
 									"line": 17,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonCardListModel.ts#L17"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCardListModel.ts#L17"
 								}
 							],
 							"type": {
@@ -1348,10 +1410,10 @@
 						{
 							"title": "Properties",
 							"children": [
+								49,
 								47,
-								45,
-								44,
-								46
+								46,
+								48
 							]
 						}
 					],
@@ -1360,7 +1422,7 @@
 							"fileName": "NeonCardListModel.ts",
 							"line": 5,
 							"character": 17,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonCardListModel.ts#L5"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCardListModel.ts#L5"
 						}
 					]
 				}
@@ -1369,7 +1431,7 @@
 				{
 					"title": "Interfaces",
 					"children": [
-						43
+						45
 					]
 				}
 			],
@@ -1378,19 +1440,19 @@
 					"fileName": "NeonCardListModel.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonCardListModel.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCardListModel.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 48,
+			"id": 50,
 			"name": "NeonCarouselImage",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 49,
+					"id": 51,
 					"name": "NeonCarouselImage",
 					"variant": "declaration",
 					"kind": 256,
@@ -1405,7 +1467,7 @@
 					},
 					"children": [
 						{
-							"id": 51,
+							"id": 53,
 							"name": "alt",
 							"variant": "declaration",
 							"kind": 1024,
@@ -1425,7 +1487,7 @@
 									"fileName": "NeonCarouselImage.ts",
 									"line": 13,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonCarouselImage.ts#L13"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCarouselImage.ts#L13"
 								}
 							],
 							"type": {
@@ -1434,7 +1496,7 @@
 							}
 						},
 						{
-							"id": 50,
+							"id": 52,
 							"name": "src",
 							"variant": "declaration",
 							"kind": 1024,
@@ -1452,7 +1514,7 @@
 									"fileName": "NeonCarouselImage.ts",
 									"line": 9,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonCarouselImage.ts#L9"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCarouselImage.ts#L9"
 								}
 							],
 							"type": {
@@ -1465,8 +1527,8 @@
 						{
 							"title": "Properties",
 							"children": [
-								51,
-								50
+								53,
+								52
 							]
 						}
 					],
@@ -1475,7 +1537,7 @@
 							"fileName": "NeonCarouselImage.ts",
 							"line": 5,
 							"character": 17,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonCarouselImage.ts#L5"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCarouselImage.ts#L5"
 						}
 					]
 				}
@@ -1484,7 +1546,7 @@
 				{
 					"title": "Interfaces",
 					"children": [
-						49
+						51
 					]
 				}
 			],
@@ -1493,19 +1555,19 @@
 					"fileName": "NeonCarouselImage.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonCarouselImage.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonCarouselImage.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 52,
+			"id": 54,
 			"name": "NeonContrastAccessibility",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 53,
+					"id": 55,
 					"name": "NeonContrastAccessibility",
 					"variant": "declaration",
 					"kind": 256,
@@ -1520,7 +1582,7 @@
 					},
 					"children": [
 						{
-							"id": 56,
+							"id": 58,
 							"name": "largeAA",
 							"variant": "declaration",
 							"kind": 1024,
@@ -1538,7 +1600,7 @@
 									"fileName": "NeonContrastAccessibility.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonContrastAccessibility.ts#L11"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonContrastAccessibility.ts#L11"
 								}
 							],
 							"type": {
@@ -1547,7 +1609,7 @@
 							}
 						},
 						{
-							"id": 57,
+							"id": 59,
 							"name": "largeAAA",
 							"variant": "declaration",
 							"kind": 1024,
@@ -1565,7 +1627,7 @@
 									"fileName": "NeonContrastAccessibility.ts",
 									"line": 13,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonContrastAccessibility.ts#L13"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonContrastAccessibility.ts#L13"
 								}
 							],
 							"type": {
@@ -1574,7 +1636,7 @@
 							}
 						},
 						{
-							"id": 54,
+							"id": 56,
 							"name": "normalAA",
 							"variant": "declaration",
 							"kind": 1024,
@@ -1592,7 +1654,7 @@
 									"fileName": "NeonContrastAccessibility.ts",
 									"line": 7,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonContrastAccessibility.ts#L7"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonContrastAccessibility.ts#L7"
 								}
 							],
 							"type": {
@@ -1601,7 +1663,7 @@
 							}
 						},
 						{
-							"id": 55,
+							"id": 57,
 							"name": "normalAAA",
 							"variant": "declaration",
 							"kind": 1024,
@@ -1619,7 +1681,7 @@
 									"fileName": "NeonContrastAccessibility.ts",
 									"line": 9,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonContrastAccessibility.ts#L9"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonContrastAccessibility.ts#L9"
 								}
 							],
 							"type": {
@@ -1628,7 +1690,7 @@
 							}
 						},
 						{
-							"id": 58,
+							"id": 60,
 							"name": "ratio",
 							"variant": "declaration",
 							"kind": 1024,
@@ -1646,7 +1708,7 @@
 									"fileName": "NeonContrastAccessibility.ts",
 									"line": 17,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonContrastAccessibility.ts#L17"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonContrastAccessibility.ts#L17"
 								}
 							],
 							"type": {
@@ -1659,11 +1721,11 @@
 						{
 							"title": "Properties",
 							"children": [
+								58,
+								59,
 								56,
 								57,
-								54,
-								55,
-								58
+								60
 							]
 						}
 					],
@@ -1672,7 +1734,7 @@
 							"fileName": "NeonContrastAccessibility.ts",
 							"line": 5,
 							"character": 17,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonContrastAccessibility.ts#L5"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonContrastAccessibility.ts#L5"
 						}
 					]
 				}
@@ -1681,7 +1743,7 @@
 				{
 					"title": "Interfaces",
 					"children": [
-						53
+						55
 					]
 				}
 			],
@@ -1690,19 +1752,19 @@
 					"fileName": "NeonContrastAccessibility.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonContrastAccessibility.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonContrastAccessibility.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 59,
+			"id": 61,
 			"name": "NeonDate",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 60,
+					"id": 62,
 					"name": "NeonDate",
 					"variant": "declaration",
 					"kind": 256,
@@ -1717,7 +1779,7 @@
 					},
 					"children": [
 						{
-							"id": 66,
+							"id": 68,
 							"name": "day",
 							"variant": "declaration",
 							"kind": 1024,
@@ -1735,7 +1797,7 @@
 									"fileName": "NeonDate.ts",
 									"line": 17,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonDate.ts#L17"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonDate.ts#L17"
 								}
 							],
 							"type": {
@@ -1744,7 +1806,7 @@
 							}
 						},
 						{
-							"id": 67,
+							"id": 69,
 							"name": "dayFormatted",
 							"variant": "declaration",
 							"kind": 1024,
@@ -1762,7 +1824,7 @@
 									"fileName": "NeonDate.ts",
 									"line": 19,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonDate.ts#L19"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonDate.ts#L19"
 								}
 							],
 							"type": {
@@ -1771,7 +1833,7 @@
 							}
 						},
 						{
-							"id": 63,
+							"id": 65,
 							"name": "month",
 							"variant": "declaration",
 							"kind": 1024,
@@ -1789,7 +1851,7 @@
 									"fileName": "NeonDate.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonDate.ts#L11"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonDate.ts#L11"
 								}
 							],
 							"type": {
@@ -1798,7 +1860,7 @@
 							}
 						},
 						{
-							"id": 65,
+							"id": 67,
 							"name": "monthLongName",
 							"variant": "declaration",
 							"kind": 1024,
@@ -1816,7 +1878,7 @@
 									"fileName": "NeonDate.ts",
 									"line": 15,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonDate.ts#L15"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonDate.ts#L15"
 								}
 							],
 							"type": {
@@ -1825,7 +1887,7 @@
 							}
 						},
 						{
-							"id": 64,
+							"id": 66,
 							"name": "monthShortName",
 							"variant": "declaration",
 							"kind": 1024,
@@ -1843,7 +1905,7 @@
 									"fileName": "NeonDate.ts",
 									"line": 13,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonDate.ts#L13"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonDate.ts#L13"
 								}
 							],
 							"type": {
@@ -1852,7 +1914,7 @@
 							}
 						},
 						{
-							"id": 68,
+							"id": 70,
 							"name": "time",
 							"variant": "declaration",
 							"kind": 1024,
@@ -1872,7 +1934,7 @@
 									"fileName": "NeonDate.ts",
 									"line": 21,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonDate.ts#L21"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonDate.ts#L21"
 								}
 							],
 							"type": {
@@ -1881,7 +1943,7 @@
 							}
 						},
 						{
-							"id": 61,
+							"id": 63,
 							"name": "year",
 							"variant": "declaration",
 							"kind": 1024,
@@ -1899,7 +1961,7 @@
 									"fileName": "NeonDate.ts",
 									"line": 7,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonDate.ts#L7"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonDate.ts#L7"
 								}
 							],
 							"type": {
@@ -1908,7 +1970,7 @@
 							}
 						},
 						{
-							"id": 62,
+							"id": 64,
 							"name": "yearFormatted",
 							"variant": "declaration",
 							"kind": 1024,
@@ -1926,7 +1988,7 @@
 									"fileName": "NeonDate.ts",
 									"line": 9,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonDate.ts#L9"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonDate.ts#L9"
 								}
 							],
 							"type": {
@@ -1939,14 +2001,14 @@
 						{
 							"title": "Properties",
 							"children": [
-								66,
-								67,
-								63,
-								65,
-								64,
 								68,
-								61,
-								62
+								69,
+								65,
+								67,
+								66,
+								70,
+								63,
+								64
 							]
 						}
 					],
@@ -1955,7 +2017,7 @@
 							"fileName": "NeonDate.ts",
 							"line": 5,
 							"character": 17,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonDate.ts#L5"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonDate.ts#L5"
 						}
 					]
 				}
@@ -1964,7 +2026,7 @@
 				{
 					"title": "Interfaces",
 					"children": [
-						60
+						62
 					]
 				}
 			],
@@ -1973,19 +2035,19 @@
 					"fileName": "NeonDate.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonDate.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonDate.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 69,
+			"id": 71,
 			"name": "NeonDropdownMenuItem",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 70,
+					"id": 72,
 					"name": "NeonDropdownMenuItem",
 					"variant": "declaration",
 					"kind": 256,
@@ -2000,7 +2062,7 @@
 					},
 					"children": [
 						{
-							"id": 76,
+							"id": 78,
 							"name": "disabled",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2020,7 +2082,7 @@
 									"fileName": "NeonDropdownMenuItem.ts",
 									"line": 16,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonDropdownMenuItem.ts#L16"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonDropdownMenuItem.ts#L16"
 								}
 							],
 							"type": {
@@ -2029,7 +2091,7 @@
 							}
 						},
 						{
-							"id": 78,
+							"id": 80,
 							"name": "grouped",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2049,7 +2111,7 @@
 									"fileName": "NeonDropdownMenuItem.ts",
 									"line": 23,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonDropdownMenuItem.ts#L23"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonDropdownMenuItem.ts#L23"
 								}
 							],
 							"type": {
@@ -2058,7 +2120,7 @@
 							}
 						},
 						{
-							"id": 73,
+							"id": 75,
 							"name": "href",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2078,7 +2140,7 @@
 									"fileName": "NeonDropdownMenuItem.ts",
 									"line": 10,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonDropdownMenuItem.ts#L10"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonDropdownMenuItem.ts#L10"
 								}
 							],
 							"type": {
@@ -2087,7 +2149,7 @@
 							}
 						},
 						{
-							"id": 74,
+							"id": 76,
 							"name": "icon",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2107,7 +2169,7 @@
 									"fileName": "NeonDropdownMenuItem.ts",
 									"line": 12,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonDropdownMenuItem.ts#L12"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonDropdownMenuItem.ts#L12"
 								}
 							],
 							"type": {
@@ -2116,7 +2178,7 @@
 							}
 						},
 						{
-							"id": 77,
+							"id": 79,
 							"name": "isGroup",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2136,7 +2198,7 @@
 									"fileName": "NeonDropdownMenuItem.ts",
 									"line": 21,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonDropdownMenuItem.ts#L21"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonDropdownMenuItem.ts#L21"
 								}
 							],
 							"type": {
@@ -2145,7 +2207,7 @@
 							}
 						},
 						{
-							"id": 71,
+							"id": 73,
 							"name": "key",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2163,7 +2225,7 @@
 									"fileName": "NeonDropdownMenuItem.ts",
 									"line": 6,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonDropdownMenuItem.ts#L6"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonDropdownMenuItem.ts#L6"
 								}
 							],
 							"type": {
@@ -2172,7 +2234,7 @@
 							}
 						},
 						{
-							"id": 72,
+							"id": 74,
 							"name": "label",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2190,7 +2252,7 @@
 									"fileName": "NeonDropdownMenuItem.ts",
 									"line": 8,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonDropdownMenuItem.ts#L8"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonDropdownMenuItem.ts#L8"
 								}
 							],
 							"type": {
@@ -2199,7 +2261,7 @@
 							}
 						},
 						{
-							"id": 75,
+							"id": 77,
 							"name": "separatorBefore",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2219,7 +2281,7 @@
 									"fileName": "NeonDropdownMenuItem.ts",
 									"line": 14,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonDropdownMenuItem.ts#L14"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonDropdownMenuItem.ts#L14"
 								}
 							],
 							"type": {
@@ -2232,14 +2294,14 @@
 						{
 							"title": "Properties",
 							"children": [
-								76,
 								78,
+								80,
+								75,
+								76,
+								79,
 								73,
 								74,
-								77,
-								71,
-								72,
-								75
+								77
 							]
 						}
 					],
@@ -2248,7 +2310,7 @@
 							"fileName": "NeonDropdownMenuItem.ts",
 							"line": 4,
 							"character": 17,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonDropdownMenuItem.ts#L4"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonDropdownMenuItem.ts#L4"
 						}
 					]
 				}
@@ -2257,7 +2319,7 @@
 				{
 					"title": "Interfaces",
 					"children": [
-						70
+						72
 					]
 				}
 			],
@@ -2266,12 +2328,12 @@
 					"fileName": "NeonDropdownMenuItem.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonDropdownMenuItem.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonDropdownMenuItem.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 79,
+			"id": 81,
 			"name": "NeonDropdownPlacementObject",
 			"variant": "declaration",
 			"kind": 2,
@@ -2281,19 +2343,19 @@
 					"fileName": "NeonDropdownPlacementObject.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonDropdownPlacementObject.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonDropdownPlacementObject.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 139,
+			"id": 141,
 			"name": "NeonFilterListItem",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 140,
+					"id": 142,
 					"name": "NeonFilterListItem",
 					"variant": "declaration",
 					"kind": 256,
@@ -2308,7 +2370,7 @@
 					},
 					"children": [
 						{
-							"id": 143,
+							"id": 145,
 							"name": "count",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2326,7 +2388,7 @@
 									"fileName": "NeonFilterListItem.ts",
 									"line": 10,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonFilterListItem.ts#L10"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonFilterListItem.ts#L10"
 								}
 							],
 							"type": {
@@ -2335,7 +2397,7 @@
 							}
 						},
 						{
-							"id": 144,
+							"id": 146,
 							"name": "disabled",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2355,7 +2417,7 @@
 									"fileName": "NeonFilterListItem.ts",
 									"line": 12,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonFilterListItem.ts#L12"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonFilterListItem.ts#L12"
 								}
 							],
 							"type": {
@@ -2364,7 +2426,7 @@
 							}
 						},
 						{
-							"id": 141,
+							"id": 143,
 							"name": "key",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2382,7 +2444,7 @@
 									"fileName": "NeonFilterListItem.ts",
 									"line": 6,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonFilterListItem.ts#L6"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonFilterListItem.ts#L6"
 								}
 							],
 							"type": {
@@ -2391,7 +2453,7 @@
 							}
 						},
 						{
-							"id": 142,
+							"id": 144,
 							"name": "label",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2409,7 +2471,7 @@
 									"fileName": "NeonFilterListItem.ts",
 									"line": 8,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonFilterListItem.ts#L8"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonFilterListItem.ts#L8"
 								}
 							],
 							"type": {
@@ -2422,10 +2484,10 @@
 						{
 							"title": "Properties",
 							"children": [
+								145,
+								146,
 								143,
-								144,
-								141,
-								142
+								144
 							]
 						}
 					],
@@ -2434,7 +2496,7 @@
 							"fileName": "NeonFilterListItem.ts",
 							"line": 4,
 							"character": 17,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonFilterListItem.ts#L4"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonFilterListItem.ts#L4"
 						}
 					]
 				}
@@ -2443,7 +2505,7 @@
 				{
 					"title": "Interfaces",
 					"children": [
-						140
+						142
 					]
 				}
 			],
@@ -2452,19 +2514,19 @@
 					"fileName": "NeonFilterListItem.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonFilterListItem.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonFilterListItem.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 145,
+			"id": 147,
 			"name": "NeonGridModel",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 146,
+					"id": 148,
 					"name": "NeonGridModel",
 					"variant": "declaration",
 					"kind": 256,
@@ -2479,7 +2541,7 @@
 					},
 					"children": [
 						{
-							"id": 147,
+							"id": 149,
 							"name": "breakpoint",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2497,7 +2559,7 @@
 									"fileName": "NeonGridModel.ts",
 									"line": 10,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonGridModel.ts#L10"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonGridModel.ts#L10"
 								}
 							],
 							"type": {
@@ -2511,7 +2573,7 @@
 							}
 						},
 						{
-							"id": 148,
+							"id": 150,
 							"name": "grid",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2529,7 +2591,7 @@
 									"fileName": "NeonGridModel.ts",
 									"line": 26,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonGridModel.ts#L26"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonGridModel.ts#L26"
 								}
 							],
 							"type": {
@@ -2548,8 +2610,8 @@
 						{
 							"title": "Properties",
 							"children": [
-								147,
-								148
+								149,
+								150
 							]
 						}
 					],
@@ -2558,7 +2620,7 @@
 							"fileName": "NeonGridModel.ts",
 							"line": 6,
 							"character": 17,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonGridModel.ts#L6"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonGridModel.ts#L6"
 						}
 					]
 				}
@@ -2567,7 +2629,7 @@
 				{
 					"title": "Interfaces",
 					"children": [
-						146
+						148
 					]
 				}
 			],
@@ -2576,19 +2638,19 @@
 					"fileName": "NeonGridModel.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonGridModel.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonGridModel.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 149,
+			"id": 151,
 			"name": "NeonListItem",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 150,
+					"id": 152,
 					"name": "NeonListItem",
 					"variant": "declaration",
 					"kind": 256,
@@ -2603,7 +2665,7 @@
 					},
 					"children": [
 						{
-							"id": 151,
+							"id": 153,
 							"name": "key",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2621,7 +2683,7 @@
 									"fileName": "NeonListItem.ts",
 									"line": 6,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonListItem.ts#L6"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonListItem.ts#L6"
 								}
 							],
 							"type": {
@@ -2630,7 +2692,7 @@
 							}
 						},
 						{
-							"id": 152,
+							"id": 154,
 							"name": "label",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2648,7 +2710,7 @@
 									"fileName": "NeonListItem.ts",
 									"line": 8,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonListItem.ts#L8"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonListItem.ts#L8"
 								}
 							],
 							"type": {
@@ -2661,8 +2723,8 @@
 						{
 							"title": "Properties",
 							"children": [
-								151,
-								152
+								153,
+								154
 							]
 						}
 					],
@@ -2671,7 +2733,7 @@
 							"fileName": "NeonListItem.ts",
 							"line": 4,
 							"character": 17,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonListItem.ts#L4"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonListItem.ts#L4"
 						}
 					]
 				}
@@ -2680,7 +2742,7 @@
 				{
 					"title": "Interfaces",
 					"children": [
-						150
+						152
 					]
 				}
 			],
@@ -2689,19 +2751,19 @@
 					"fileName": "NeonListItem.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonListItem.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonListItem.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 153,
+			"id": 155,
 			"name": "NeonMenuItem",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 154,
+					"id": 156,
 					"name": "NeonMenuItem",
 					"variant": "declaration",
 					"kind": 256,
@@ -2716,7 +2778,7 @@
 					},
 					"children": [
 						{
-							"id": 159,
+							"id": 161,
 							"name": "disabled",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2736,7 +2798,7 @@
 									"fileName": "NeonMenuItem.ts",
 									"line": 14,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonMenuItem.ts#L14"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonMenuItem.ts#L14"
 								}
 							],
 							"type": {
@@ -2745,7 +2807,7 @@
 							}
 						},
 						{
-							"id": 157,
+							"id": 159,
 							"name": "href",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2765,7 +2827,7 @@
 									"fileName": "NeonMenuItem.ts",
 									"line": 10,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonMenuItem.ts#L10"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonMenuItem.ts#L10"
 								}
 							],
 							"type": {
@@ -2774,7 +2836,7 @@
 							}
 						},
 						{
-							"id": 158,
+							"id": 160,
 							"name": "icon",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2794,7 +2856,7 @@
 									"fileName": "NeonMenuItem.ts",
 									"line": 12,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonMenuItem.ts#L12"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonMenuItem.ts#L12"
 								}
 							],
 							"type": {
@@ -2803,7 +2865,7 @@
 							}
 						},
 						{
-							"id": 155,
+							"id": 157,
 							"name": "key",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2821,7 +2883,7 @@
 									"fileName": "NeonMenuItem.ts",
 									"line": 6,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonMenuItem.ts#L6"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonMenuItem.ts#L6"
 								}
 							],
 							"type": {
@@ -2830,16 +2892,18 @@
 							}
 						},
 						{
-							"id": 156,
+							"id": 158,
 							"name": "label",
 							"variant": "declaration",
 							"kind": 1024,
-							"flags": {},
+							"flags": {
+								"isOptional": true
+							},
 							"comment": {
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Display label for this menu item."
+										"text": "Display label for this menu item. Must either provide a label, icon or both."
 									}
 								]
 							},
@@ -2848,7 +2912,7 @@
 									"fileName": "NeonMenuItem.ts",
 									"line": 8,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonMenuItem.ts#L8"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonMenuItem.ts#L8"
 								}
 							],
 							"type": {
@@ -2861,11 +2925,11 @@
 						{
 							"title": "Properties",
 							"children": [
+								161,
 								159,
+								160,
 								157,
-								158,
-								155,
-								156
+								158
 							]
 						}
 					],
@@ -2874,13 +2938,13 @@
 							"fileName": "NeonMenuItem.ts",
 							"line": 4,
 							"character": 17,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonMenuItem.ts#L4"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonMenuItem.ts#L4"
 						}
 					],
 					"extendedBy": [
 						{
 							"type": "reference",
-							"target": 161,
+							"target": 163,
 							"name": "NeonMenuModel"
 						}
 					]
@@ -2890,7 +2954,7 @@
 				{
 					"title": "Interfaces",
 					"children": [
-						154
+						156
 					]
 				}
 			],
@@ -2899,19 +2963,19 @@
 					"fileName": "NeonMenuItem.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonMenuItem.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonMenuItem.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 160,
+			"id": 162,
 			"name": "NeonMenuModel",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 161,
+					"id": 163,
 					"name": "NeonMenuModel",
 					"variant": "declaration",
 					"kind": 256,
@@ -2926,7 +2990,7 @@
 					},
 					"children": [
 						{
-							"id": 162,
+							"id": 164,
 							"name": "children",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2946,21 +3010,21 @@
 									"fileName": "NeonMenuModel.ts",
 									"line": 8,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonMenuModel.ts#L8"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonMenuModel.ts#L8"
 								}
 							],
 							"type": {
 								"type": "array",
 								"elementType": {
 									"type": "reference",
-									"target": 154,
+									"target": 156,
 									"name": "NeonMenuItem",
 									"package": "@aotearoan/neon"
 								}
 							}
 						},
 						{
-							"id": 167,
+							"id": 169,
 							"name": "disabled",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2980,7 +3044,7 @@
 									"fileName": "NeonMenuItem.ts",
 									"line": 14,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonMenuItem.ts#L14"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonMenuItem.ts#L14"
 								}
 							],
 							"type": {
@@ -2989,12 +3053,12 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"target": 159,
+								"target": 161,
 								"name": "NeonMenuItem.disabled"
 							}
 						},
 						{
-							"id": 165,
+							"id": 167,
 							"name": "href",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3014,7 +3078,7 @@
 									"fileName": "NeonMenuItem.ts",
 									"line": 10,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonMenuItem.ts#L10"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonMenuItem.ts#L10"
 								}
 							],
 							"type": {
@@ -3023,12 +3087,12 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"target": 157,
+								"target": 159,
 								"name": "NeonMenuItem.href"
 							}
 						},
 						{
-							"id": 166,
+							"id": 168,
 							"name": "icon",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3048,7 +3112,7 @@
 									"fileName": "NeonMenuItem.ts",
 									"line": 12,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonMenuItem.ts#L12"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonMenuItem.ts#L12"
 								}
 							],
 							"type": {
@@ -3057,12 +3121,12 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"target": 158,
+								"target": 160,
 								"name": "NeonMenuItem.icon"
 							}
 						},
 						{
-							"id": 163,
+							"id": 165,
 							"name": "key",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3080,7 +3144,7 @@
 									"fileName": "NeonMenuItem.ts",
 									"line": 6,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonMenuItem.ts#L6"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonMenuItem.ts#L6"
 								}
 							],
 							"type": {
@@ -3089,21 +3153,23 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"target": 155,
+								"target": 157,
 								"name": "NeonMenuItem.key"
 							}
 						},
 						{
-							"id": 164,
+							"id": 166,
 							"name": "label",
 							"variant": "declaration",
 							"kind": 1024,
-							"flags": {},
+							"flags": {
+								"isOptional": true
+							},
 							"comment": {
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Display label for this menu item."
+										"text": "Display label for this menu item. Must either provide a label, icon or both."
 									}
 								]
 							},
@@ -3112,7 +3178,7 @@
 									"fileName": "NeonMenuItem.ts",
 									"line": 8,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonMenuItem.ts#L8"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonMenuItem.ts#L8"
 								}
 							],
 							"type": {
@@ -3121,7 +3187,7 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"target": 156,
+								"target": 158,
 								"name": "NeonMenuItem.label"
 							}
 						}
@@ -3130,12 +3196,12 @@
 						{
 							"title": "Properties",
 							"children": [
-								162,
+								164,
+								169,
 								167,
+								168,
 								165,
-								166,
-								163,
-								164
+								166
 							]
 						}
 					],
@@ -3144,13 +3210,13 @@
 							"fileName": "NeonMenuModel.ts",
 							"line": 6,
 							"character": 17,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonMenuModel.ts#L6"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonMenuModel.ts#L6"
 						}
 					],
 					"extendedTypes": [
 						{
 							"type": "reference",
-							"target": 154,
+							"target": 156,
 							"name": "NeonMenuItem",
 							"package": "@aotearoan/neon"
 						}
@@ -3161,7 +3227,7 @@
 				{
 					"title": "Interfaces",
 					"children": [
-						161
+						163
 					]
 				}
 			],
@@ -3170,19 +3236,19 @@
 					"fileName": "NeonMenuModel.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonMenuModel.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonMenuModel.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 168,
+			"id": 170,
 			"name": "NeonNumberFormatOptions",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 169,
+					"id": 171,
 					"name": "NeonNumberFormatOptions",
 					"variant": "declaration",
 					"kind": 256,
@@ -3197,7 +3263,7 @@
 					},
 					"children": [
 						{
-							"id": 175,
+							"id": 177,
 							"name": "currency",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3217,7 +3283,7 @@
 									"fileName": "NeonNumberFormatOptions.ts",
 									"line": 22,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonNumberFormatOptions.ts#L22"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonNumberFormatOptions.ts#L22"
 								}
 							],
 							"type": {
@@ -3226,7 +3292,7 @@
 							}
 						},
 						{
-							"id": 170,
+							"id": 172,
 							"name": "decimals",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3246,7 +3312,7 @@
 									"fileName": "NeonNumberFormatOptions.ts",
 									"line": 7,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonNumberFormatOptions.ts#L7"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonNumberFormatOptions.ts#L7"
 								}
 							],
 							"type": {
@@ -3255,7 +3321,7 @@
 							}
 						},
 						{
-							"id": 171,
+							"id": 173,
 							"name": "format",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3275,7 +3341,7 @@
 									"fileName": "NeonNumberFormatOptions.ts",
 									"line": 12,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonNumberFormatOptions.ts#L12"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonNumberFormatOptions.ts#L12"
 								}
 							],
 							"type": {
@@ -3284,7 +3350,7 @@
 							}
 						},
 						{
-							"id": 173,
+							"id": 175,
 							"name": "minimumFractionDigits",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3304,7 +3370,7 @@
 									"fileName": "NeonNumberFormatOptions.ts",
 									"line": 16,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonNumberFormatOptions.ts#L16"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonNumberFormatOptions.ts#L16"
 								}
 							],
 							"type": {
@@ -3313,7 +3379,7 @@
 							}
 						},
 						{
-							"id": 172,
+							"id": 174,
 							"name": "percentage",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3333,7 +3399,7 @@
 									"fileName": "NeonNumberFormatOptions.ts",
 									"line": 14,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonNumberFormatOptions.ts#L14"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonNumberFormatOptions.ts#L14"
 								}
 							],
 							"type": {
@@ -3342,7 +3408,7 @@
 							}
 						},
 						{
-							"id": 174,
+							"id": 176,
 							"name": "style",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3362,7 +3428,7 @@
 									"fileName": "NeonNumberFormatOptions.ts",
 									"line": 20,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonNumberFormatOptions.ts#L20"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonNumberFormatOptions.ts#L20"
 								}
 							],
 							"type": {
@@ -3375,12 +3441,12 @@
 						{
 							"title": "Properties",
 							"children": [
-								175,
-								170,
-								171,
-								173,
+								177,
 								172,
-								174
+								173,
+								175,
+								174,
+								176
 							]
 						}
 					],
@@ -3389,7 +3455,7 @@
 							"fileName": "NeonNumberFormatOptions.ts",
 							"line": 5,
 							"character": 17,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonNumberFormatOptions.ts#L5"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonNumberFormatOptions.ts#L5"
 						}
 					]
 				}
@@ -3398,7 +3464,7 @@
 				{
 					"title": "Interfaces",
 					"children": [
-						169
+						171
 					]
 				}
 			],
@@ -3407,19 +3473,19 @@
 					"fileName": "NeonNumberFormatOptions.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonNumberFormatOptions.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonNumberFormatOptions.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 176,
+			"id": 178,
 			"name": "NeonSearchOption",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 177,
+					"id": 179,
 					"name": "NeonSearchOption",
 					"variant": "declaration",
 					"kind": 256,
@@ -3434,7 +3500,7 @@
 					},
 					"children": [
 						{
-							"id": 180,
+							"id": 182,
 							"name": "chipColor",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3454,7 +3520,7 @@
 									"fileName": "NeonSearchOption.ts",
 									"line": 17,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonSearchOption.ts#L17"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonSearchOption.ts#L17"
 								}
 							],
 							"type": {
@@ -3468,7 +3534,7 @@
 							}
 						},
 						{
-							"id": 181,
+							"id": 183,
 							"name": "icon",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3488,7 +3554,7 @@
 									"fileName": "NeonSearchOption.ts",
 									"line": 19,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonSearchOption.ts#L19"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonSearchOption.ts#L19"
 								}
 							],
 							"type": {
@@ -3497,7 +3563,7 @@
 							}
 						},
 						{
-							"id": 178,
+							"id": 180,
 							"name": "key",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3515,7 +3581,7 @@
 									"fileName": "NeonSearchOption.ts",
 									"line": 13,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonSearchOption.ts#L13"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonSearchOption.ts#L13"
 								}
 							],
 							"type": {
@@ -3524,7 +3590,7 @@
 							}
 						},
 						{
-							"id": 179,
+							"id": 181,
 							"name": "label",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3542,7 +3608,7 @@
 									"fileName": "NeonSearchOption.ts",
 									"line": 15,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonSearchOption.ts#L15"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonSearchOption.ts#L15"
 								}
 							],
 							"type": {
@@ -3551,7 +3617,7 @@
 							}
 						},
 						{
-							"id": 182,
+							"id": 184,
 							"name": "separatorBefore",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3571,7 +3637,7 @@
 									"fileName": "NeonSearchOption.ts",
 									"line": 21,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonSearchOption.ts#L21"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonSearchOption.ts#L21"
 								}
 							],
 							"type": {
@@ -3584,11 +3650,11 @@
 						{
 							"title": "Properties",
 							"children": [
+								182,
+								183,
 								180,
 								181,
-								178,
-								179,
-								182
+								184
 							]
 						}
 					],
@@ -3597,7 +3663,7 @@
 							"fileName": "NeonSearchOption.ts",
 							"line": 6,
 							"character": 17,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonSearchOption.ts#L6"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonSearchOption.ts#L6"
 						}
 					]
 				}
@@ -3606,7 +3672,7 @@
 				{
 					"title": "Interfaces",
 					"children": [
-						177
+						179
 					]
 				}
 			],
@@ -3615,19 +3681,19 @@
 					"fileName": "NeonSearchOption.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonSearchOption.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonSearchOption.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 183,
+			"id": 185,
 			"name": "NeonSelectGroup",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 184,
+					"id": 186,
 					"name": "NeonSelectGroup",
 					"variant": "declaration",
 					"kind": 256,
@@ -3642,7 +3708,7 @@
 					},
 					"children": [
 						{
-							"id": 185,
+							"id": 187,
 							"name": "group",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3660,7 +3726,7 @@
 									"fileName": "NeonSelectGroup.ts",
 									"line": 8,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonSelectGroup.ts#L8"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonSelectGroup.ts#L8"
 								}
 							],
 							"type": {
@@ -3669,7 +3735,7 @@
 							}
 						},
 						{
-							"id": 186,
+							"id": 188,
 							"name": "options",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3687,14 +3753,14 @@
 									"fileName": "NeonSelectGroup.ts",
 									"line": 10,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonSelectGroup.ts#L10"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonSelectGroup.ts#L10"
 								}
 							],
 							"type": {
 								"type": "array",
 								"elementType": {
 									"type": "reference",
-									"target": 188,
+									"target": 190,
 									"name": "NeonSelectOption",
 									"package": "@aotearoan/neon"
 								}
@@ -3705,8 +3771,8 @@
 						{
 							"title": "Properties",
 							"children": [
-								185,
-								186
+								187,
+								188
 							]
 						}
 					],
@@ -3715,7 +3781,7 @@
 							"fileName": "NeonSelectGroup.ts",
 							"line": 6,
 							"character": 17,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonSelectGroup.ts#L6"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonSelectGroup.ts#L6"
 						}
 					]
 				}
@@ -3724,7 +3790,7 @@
 				{
 					"title": "Interfaces",
 					"children": [
-						184
+						186
 					]
 				}
 			],
@@ -3733,19 +3799,19 @@
 					"fileName": "NeonSelectGroup.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonSelectGroup.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonSelectGroup.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 187,
+			"id": 189,
 			"name": "NeonSelectOption",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 188,
+					"id": 190,
 					"name": "NeonSelectOption",
 					"variant": "declaration",
 					"kind": 256,
@@ -3760,7 +3826,7 @@
 					},
 					"children": [
 						{
-							"id": 193,
+							"id": 195,
 							"name": "disabled",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3780,7 +3846,7 @@
 									"fileName": "NeonSelectOption.ts",
 									"line": 19,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonSelectOption.ts#L19"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonSelectOption.ts#L19"
 								}
 							],
 							"type": {
@@ -3789,7 +3855,7 @@
 							}
 						},
 						{
-							"id": 191,
+							"id": 193,
 							"name": "icon",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3809,7 +3875,7 @@
 									"fileName": "NeonSelectOption.ts",
 									"line": 15,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonSelectOption.ts#L15"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonSelectOption.ts#L15"
 								}
 							],
 							"type": {
@@ -3818,7 +3884,7 @@
 							}
 						},
 						{
-							"id": 189,
+							"id": 191,
 							"name": "key",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3836,7 +3902,7 @@
 									"fileName": "NeonSelectOption.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonSelectOption.ts#L11"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonSelectOption.ts#L11"
 								}
 							],
 							"type": {
@@ -3845,7 +3911,7 @@
 							}
 						},
 						{
-							"id": 190,
+							"id": 192,
 							"name": "label",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3863,7 +3929,7 @@
 									"fileName": "NeonSelectOption.ts",
 									"line": 13,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonSelectOption.ts#L13"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonSelectOption.ts#L13"
 								}
 							],
 							"type": {
@@ -3872,7 +3938,7 @@
 							}
 						},
 						{
-							"id": 192,
+							"id": 194,
 							"name": "separatorBefore",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3892,7 +3958,7 @@
 									"fileName": "NeonSelectOption.ts",
 									"line": 17,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonSelectOption.ts#L17"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonSelectOption.ts#L17"
 								}
 							],
 							"type": {
@@ -3905,11 +3971,11 @@
 						{
 							"title": "Properties",
 							"children": [
+								195,
 								193,
 								191,
-								189,
-								190,
-								192
+								192,
+								194
 							]
 						}
 					],
@@ -3918,7 +3984,7 @@
 							"fileName": "NeonSelectOption.ts",
 							"line": 4,
 							"character": 17,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonSelectOption.ts#L4"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonSelectOption.ts#L4"
 						}
 					]
 				}
@@ -3927,7 +3993,7 @@
 				{
 					"title": "Interfaces",
 					"children": [
-						188
+						190
 					]
 				}
 			],
@@ -3936,19 +4002,19 @@
 					"fileName": "NeonSelectOption.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonSelectOption.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonSelectOption.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 194,
+			"id": 196,
 			"name": "NeonTabModel",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 195,
+					"id": 197,
 					"name": "NeonTabModel",
 					"variant": "declaration",
 					"kind": 256,
@@ -3963,7 +4029,7 @@
 					},
 					"children": [
 						{
-							"id": 198,
+							"id": 200,
 							"name": "icon",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3983,7 +4049,7 @@
 									"fileName": "NeonTabModel.ts",
 									"line": 16,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonTabModel.ts#L16"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonTabModel.ts#L16"
 								}
 							],
 							"type": {
@@ -3992,7 +4058,7 @@
 							}
 						},
 						{
-							"id": 197,
+							"id": 199,
 							"name": "key",
 							"variant": "declaration",
 							"kind": 1024,
@@ -4010,7 +4076,7 @@
 									"fileName": "NeonTabModel.ts",
 									"line": 14,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonTabModel.ts#L14"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonTabModel.ts#L14"
 								}
 							],
 							"type": {
@@ -4019,7 +4085,7 @@
 							}
 						},
 						{
-							"id": 196,
+							"id": 198,
 							"name": "label",
 							"variant": "declaration",
 							"kind": 1024,
@@ -4037,7 +4103,7 @@
 									"fileName": "NeonTabModel.ts",
 									"line": 6,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonTabModel.ts#L6"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonTabModel.ts#L6"
 								}
 							],
 							"type": {
@@ -4050,9 +4116,9 @@
 						{
 							"title": "Properties",
 							"children": [
-								198,
-								197,
-								196
+								200,
+								199,
+								198
 							]
 						}
 					],
@@ -4061,7 +4127,7 @@
 							"fileName": "NeonTabModel.ts",
 							"line": 4,
 							"character": 17,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonTabModel.ts#L4"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonTabModel.ts#L4"
 						}
 					]
 				}
@@ -4070,7 +4136,7 @@
 				{
 					"title": "Interfaces",
 					"children": [
-						195
+						197
 					]
 				}
 			],
@@ -4079,19 +4145,19 @@
 					"fileName": "NeonTabModel.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonTabModel.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonTabModel.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 199,
+			"id": 201,
 			"name": "NeonToastMessage",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 200,
+					"id": 202,
 					"name": "NeonToastMessage",
 					"variant": "declaration",
 					"kind": 256,
@@ -4106,7 +4172,7 @@
 					},
 					"children": [
 						{
-							"id": 204,
+							"id": 206,
 							"name": "dismissible",
 							"variant": "declaration",
 							"kind": 1024,
@@ -4126,7 +4192,7 @@
 									"fileName": "NeonToastMessage.ts",
 									"line": 26,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonToastMessage.ts#L26"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonToastMessage.ts#L26"
 								}
 							],
 							"type": {
@@ -4135,7 +4201,7 @@
 							}
 						},
 						{
-							"id": 203,
+							"id": 205,
 							"name": "duration",
 							"variant": "declaration",
 							"kind": 1024,
@@ -4155,7 +4221,7 @@
 									"fileName": "NeonToastMessage.ts",
 									"line": 21,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonToastMessage.ts#L21"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonToastMessage.ts#L21"
 								}
 							],
 							"type": {
@@ -4164,7 +4230,7 @@
 							}
 						},
 						{
-							"id": 202,
+							"id": 204,
 							"name": "placement",
 							"variant": "declaration",
 							"kind": 1024,
@@ -4184,7 +4250,7 @@
 									"fileName": "NeonToastMessage.ts",
 									"line": 15,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonToastMessage.ts#L15"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonToastMessage.ts#L15"
 								}
 							],
 							"type": {
@@ -4198,7 +4264,7 @@
 							}
 						},
 						{
-							"id": 201,
+							"id": 203,
 							"name": "title",
 							"variant": "declaration",
 							"kind": 1024,
@@ -4216,7 +4282,7 @@
 									"fileName": "NeonToastMessage.ts",
 									"line": 10,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonToastMessage.ts#L10"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonToastMessage.ts#L10"
 								}
 							],
 							"type": {
@@ -4229,10 +4295,10 @@
 						{
 							"title": "Properties",
 							"children": [
+								206,
+								205,
 								204,
-								203,
-								202,
-								201
+								203
 							]
 						}
 					],
@@ -4241,7 +4307,7 @@
 							"fileName": "NeonToastMessage.ts",
 							"line": 6,
 							"character": 17,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonToastMessage.ts#L6"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonToastMessage.ts#L6"
 						}
 					]
 				}
@@ -4250,7 +4316,7 @@
 				{
 					"title": "Interfaces",
 					"children": [
-						200
+						202
 					]
 				}
 			],
@@ -4259,19 +4325,19 @@
 					"fileName": "NeonToastMessage.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonToastMessage.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonToastMessage.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 205,
+			"id": 207,
 			"name": "NeonToggleModel",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 206,
+					"id": 208,
 					"name": "NeonToggleModel",
 					"variant": "declaration",
 					"kind": 256,
@@ -4286,7 +4352,7 @@
 					},
 					"children": [
 						{
-							"id": 210,
+							"id": 212,
 							"name": "disabled",
 							"variant": "declaration",
 							"kind": 1024,
@@ -4306,7 +4372,7 @@
 									"fileName": "NeonToggleModel.ts",
 									"line": 12,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonToggleModel.ts#L12"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonToggleModel.ts#L12"
 								}
 							],
 							"type": {
@@ -4315,7 +4381,7 @@
 							}
 						},
 						{
-							"id": 209,
+							"id": 211,
 							"name": "icon",
 							"variant": "declaration",
 							"kind": 1024,
@@ -4335,7 +4401,7 @@
 									"fileName": "NeonToggleModel.ts",
 									"line": 10,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonToggleModel.ts#L10"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonToggleModel.ts#L10"
 								}
 							],
 							"type": {
@@ -4344,7 +4410,7 @@
 							}
 						},
 						{
-							"id": 207,
+							"id": 209,
 							"name": "key",
 							"variant": "declaration",
 							"kind": 1024,
@@ -4362,7 +4428,7 @@
 									"fileName": "NeonToggleModel.ts",
 									"line": 6,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonToggleModel.ts#L6"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonToggleModel.ts#L6"
 								}
 							],
 							"type": {
@@ -4371,7 +4437,7 @@
 							}
 						},
 						{
-							"id": 208,
+							"id": 210,
 							"name": "label",
 							"variant": "declaration",
 							"kind": 1024,
@@ -4391,7 +4457,7 @@
 									"fileName": "NeonToggleModel.ts",
 									"line": 8,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonToggleModel.ts#L8"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonToggleModel.ts#L8"
 								}
 							],
 							"type": {
@@ -4404,10 +4470,10 @@
 						{
 							"title": "Properties",
 							"children": [
-								210,
+								212,
+								211,
 								209,
-								207,
-								208
+								210
 							]
 						}
 					],
@@ -4416,7 +4482,7 @@
 							"fileName": "NeonToggleModel.ts",
 							"line": 4,
 							"character": 17,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonToggleModel.ts#L4"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonToggleModel.ts#L4"
 						}
 					]
 				}
@@ -4425,7 +4491,7 @@
 				{
 					"title": "Interfaces",
 					"children": [
-						206
+						208
 					]
 				}
 			],
@@ -4434,19 +4500,19 @@
 					"fileName": "NeonToggleModel.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonToggleModel.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonToggleModel.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 211,
+			"id": 213,
 			"name": "NeonTreeMenuLinkModel",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 212,
+					"id": 214,
 					"name": "NeonTreeMenuLinkModel",
 					"variant": "declaration",
 					"kind": 256,
@@ -4461,7 +4527,7 @@
 					},
 					"children": [
 						{
-							"id": 216,
+							"id": 218,
 							"name": "anchors",
 							"variant": "declaration",
 							"kind": 1024,
@@ -4481,7 +4547,7 @@
 									"fileName": "NeonTreeMenuLinkModel.ts",
 									"line": 12,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonTreeMenuLinkModel.ts#L12"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonTreeMenuLinkModel.ts#L12"
 								}
 							],
 							"type": {
@@ -4493,7 +4559,7 @@
 							}
 						},
 						{
-							"id": 215,
+							"id": 217,
 							"name": "href",
 							"variant": "declaration",
 							"kind": 1024,
@@ -4513,7 +4579,7 @@
 									"fileName": "NeonTreeMenuLinkModel.ts",
 									"line": 10,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonTreeMenuLinkModel.ts#L10"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonTreeMenuLinkModel.ts#L10"
 								}
 							],
 							"type": {
@@ -4522,7 +4588,7 @@
 							}
 						},
 						{
-							"id": 214,
+							"id": 216,
 							"name": "key",
 							"variant": "declaration",
 							"kind": 1024,
@@ -4540,7 +4606,7 @@
 									"fileName": "NeonTreeMenuLinkModel.ts",
 									"line": 8,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonTreeMenuLinkModel.ts#L8"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonTreeMenuLinkModel.ts#L8"
 								}
 							],
 							"type": {
@@ -4549,7 +4615,7 @@
 							}
 						},
 						{
-							"id": 213,
+							"id": 215,
 							"name": "label",
 							"variant": "declaration",
 							"kind": 1024,
@@ -4567,7 +4633,7 @@
 									"fileName": "NeonTreeMenuLinkModel.ts",
 									"line": 6,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonTreeMenuLinkModel.ts#L6"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonTreeMenuLinkModel.ts#L6"
 								}
 							],
 							"type": {
@@ -4580,10 +4646,10 @@
 						{
 							"title": "Properties",
 							"children": [
+								218,
+								217,
 								216,
-								215,
-								214,
-								213
+								215
 							]
 						}
 					],
@@ -4592,7 +4658,7 @@
 							"fileName": "NeonTreeMenuLinkModel.ts",
 							"line": 4,
 							"character": 17,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonTreeMenuLinkModel.ts#L4"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonTreeMenuLinkModel.ts#L4"
 						}
 					]
 				}
@@ -4601,7 +4667,7 @@
 				{
 					"title": "Interfaces",
 					"children": [
-						212
+						214
 					]
 				}
 			],
@@ -4610,19 +4676,19 @@
 					"fileName": "NeonTreeMenuLinkModel.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonTreeMenuLinkModel.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonTreeMenuLinkModel.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 217,
+			"id": 219,
 			"name": "NeonTreeMenuSectionModel",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 218,
+					"id": 220,
 					"name": "NeonTreeMenuSectionModel",
 					"variant": "declaration",
 					"kind": 256,
@@ -4637,7 +4703,7 @@
 					},
 					"children": [
 						{
-							"id": 222,
+							"id": 224,
 							"name": "children",
 							"variant": "declaration",
 							"kind": 1024,
@@ -4657,21 +4723,21 @@
 									"fileName": "NeonTreeMenuSectionModel.ts",
 									"line": 14,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonTreeMenuSectionModel.ts#L14"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonTreeMenuSectionModel.ts#L14"
 								}
 							],
 							"type": {
 								"type": "array",
 								"elementType": {
 									"type": "reference",
-									"target": 212,
+									"target": 214,
 									"name": "NeonTreeMenuLinkModel",
 									"package": "@aotearoan/neon"
 								}
 							}
 						},
 						{
-							"id": 224,
+							"id": 226,
 							"name": "disabled",
 							"variant": "declaration",
 							"kind": 1024,
@@ -4691,7 +4757,7 @@
 									"fileName": "NeonTreeMenuSectionModel.ts",
 									"line": 18,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonTreeMenuSectionModel.ts#L18"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonTreeMenuSectionModel.ts#L18"
 								}
 							],
 							"type": {
@@ -4700,7 +4766,7 @@
 							}
 						},
 						{
-							"id": 223,
+							"id": 225,
 							"name": "expanded",
 							"variant": "declaration",
 							"kind": 1024,
@@ -4720,7 +4786,7 @@
 									"fileName": "NeonTreeMenuSectionModel.ts",
 									"line": 16,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonTreeMenuSectionModel.ts#L16"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonTreeMenuSectionModel.ts#L16"
 								}
 							],
 							"type": {
@@ -4729,7 +4795,7 @@
 							}
 						},
 						{
-							"id": 221,
+							"id": 223,
 							"name": "href",
 							"variant": "declaration",
 							"kind": 1024,
@@ -4749,7 +4815,7 @@
 									"fileName": "NeonTreeMenuSectionModel.ts",
 									"line": 12,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonTreeMenuSectionModel.ts#L12"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonTreeMenuSectionModel.ts#L12"
 								}
 							],
 							"type": {
@@ -4758,7 +4824,7 @@
 							}
 						},
 						{
-							"id": 220,
+							"id": 222,
 							"name": "key",
 							"variant": "declaration",
 							"kind": 1024,
@@ -4776,7 +4842,7 @@
 									"fileName": "NeonTreeMenuSectionModel.ts",
 									"line": 10,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonTreeMenuSectionModel.ts#L10"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonTreeMenuSectionModel.ts#L10"
 								}
 							],
 							"type": {
@@ -4785,7 +4851,7 @@
 							}
 						},
 						{
-							"id": 219,
+							"id": 221,
 							"name": "label",
 							"variant": "declaration",
 							"kind": 1024,
@@ -4803,7 +4869,7 @@
 									"fileName": "NeonTreeMenuSectionModel.ts",
 									"line": 8,
 									"character": 2,
-									"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonTreeMenuSectionModel.ts#L8"
+									"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonTreeMenuSectionModel.ts#L8"
 								}
 							],
 							"type": {
@@ -4816,12 +4882,12 @@
 						{
 							"title": "Properties",
 							"children": [
-								222,
 								224,
+								226,
+								225,
 								223,
-								221,
-								220,
-								219
+								222,
+								221
 							]
 						}
 					],
@@ -4830,7 +4896,7 @@
 							"fileName": "NeonTreeMenuSectionModel.ts",
 							"line": 6,
 							"character": 17,
-							"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonTreeMenuSectionModel.ts#L6"
+							"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonTreeMenuSectionModel.ts#L6"
 						}
 					]
 				}
@@ -4839,7 +4905,7 @@
 				{
 					"title": "Interfaces",
 					"children": [
-						218
+						220
 					]
 				}
 			],
@@ -4848,7 +4914,7 @@
 					"fileName": "NeonTreeMenuSectionModel.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/aotearoan/neon/blob/be1573f/src/common/models/NeonTreeMenuSectionModel.ts#L1"
+					"url": "https://github.com/aotearoan/neon/blob/74fa93c/src/common/models/NeonTreeMenuSectionModel.ts#L1"
 				}
 			]
 		}
@@ -4862,26 +4928,26 @@
 				14,
 				23,
 				30,
-				42,
-				48,
-				52,
-				59,
-				69,
-				79,
-				139,
-				145,
-				149,
-				153,
-				160,
-				168,
-				176,
-				183,
-				187,
-				194,
-				199,
-				205,
-				211,
-				217
+				44,
+				50,
+				54,
+				61,
+				71,
+				81,
+				141,
+				147,
+				151,
+				155,
+				162,
+				170,
+				178,
+				185,
+				189,
+				196,
+				201,
+				207,
+				213,
+				219
 			]
 		}
 	],
@@ -5047,509 +5113,517 @@
 		},
 		"39": {
 			"sourceFileName": "src/common/models/NeonCalendarConfig.ts",
-			"qualifiedName": "NeonCalendarConfig.dates"
+			"qualifiedName": "NeonCalendarConfig.dowLongNames"
 		},
 		"40": {
 			"sourceFileName": "src/common/models/NeonCalendarConfig.ts",
-			"qualifiedName": "NeonCalendarConfig.lastDayOfMonth"
+			"qualifiedName": "NeonCalendarConfig.dates"
 		},
 		"41": {
 			"sourceFileName": "src/common/models/NeonCalendarConfig.ts",
-			"qualifiedName": "NeonCalendarConfig.months"
+			"qualifiedName": "NeonCalendarConfig.lastDayOfMonth"
 		},
 		"42": {
-			"sourceFileName": "src/common/models/NeonCardListModel.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/models/NeonCalendarConfig.ts",
+			"qualifiedName": "NeonCalendarConfig.months"
 		},
 		"43": {
-			"sourceFileName": "src/common/models/NeonCardListModel.ts",
-			"qualifiedName": "NeonCardListModel"
+			"sourceFileName": "src/common/models/NeonCalendarConfig.ts",
+			"qualifiedName": "NeonCalendarConfig.monthLongNames"
 		},
 		"44": {
 			"sourceFileName": "src/common/models/NeonCardListModel.ts",
-			"qualifiedName": "NeonCardListModel.key"
+			"qualifiedName": ""
 		},
 		"45": {
 			"sourceFileName": "src/common/models/NeonCardListModel.ts",
-			"qualifiedName": "NeonCardListModel.href"
+			"qualifiedName": "NeonCardListModel"
 		},
 		"46": {
 			"sourceFileName": "src/common/models/NeonCardListModel.ts",
-			"qualifiedName": "NeonCardListModel.targetBlank"
+			"qualifiedName": "NeonCardListModel.key"
 		},
 		"47": {
 			"sourceFileName": "src/common/models/NeonCardListModel.ts",
-			"qualifiedName": "NeonCardListModel.disabled"
+			"qualifiedName": "NeonCardListModel.href"
 		},
 		"48": {
-			"sourceFileName": "src/common/models/NeonCarouselImage.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/models/NeonCardListModel.ts",
+			"qualifiedName": "NeonCardListModel.targetBlank"
 		},
 		"49": {
-			"sourceFileName": "src/common/models/NeonCarouselImage.ts",
-			"qualifiedName": "NeonCarouselImage"
+			"sourceFileName": "src/common/models/NeonCardListModel.ts",
+			"qualifiedName": "NeonCardListModel.disabled"
 		},
 		"50": {
 			"sourceFileName": "src/common/models/NeonCarouselImage.ts",
-			"qualifiedName": "NeonCarouselImage.src"
+			"qualifiedName": ""
 		},
 		"51": {
 			"sourceFileName": "src/common/models/NeonCarouselImage.ts",
-			"qualifiedName": "NeonCarouselImage.alt"
+			"qualifiedName": "NeonCarouselImage"
 		},
 		"52": {
-			"sourceFileName": "src/common/models/NeonContrastAccessibility.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/models/NeonCarouselImage.ts",
+			"qualifiedName": "NeonCarouselImage.src"
 		},
 		"53": {
-			"sourceFileName": "src/common/models/NeonContrastAccessibility.ts",
-			"qualifiedName": "NeonContrastAccessibility"
+			"sourceFileName": "src/common/models/NeonCarouselImage.ts",
+			"qualifiedName": "NeonCarouselImage.alt"
 		},
 		"54": {
 			"sourceFileName": "src/common/models/NeonContrastAccessibility.ts",
-			"qualifiedName": "NeonContrastAccessibility.normalAA"
+			"qualifiedName": ""
 		},
 		"55": {
 			"sourceFileName": "src/common/models/NeonContrastAccessibility.ts",
-			"qualifiedName": "NeonContrastAccessibility.normalAAA"
+			"qualifiedName": "NeonContrastAccessibility"
 		},
 		"56": {
 			"sourceFileName": "src/common/models/NeonContrastAccessibility.ts",
-			"qualifiedName": "NeonContrastAccessibility.largeAA"
+			"qualifiedName": "NeonContrastAccessibility.normalAA"
 		},
 		"57": {
 			"sourceFileName": "src/common/models/NeonContrastAccessibility.ts",
-			"qualifiedName": "NeonContrastAccessibility.largeAAA"
+			"qualifiedName": "NeonContrastAccessibility.normalAAA"
 		},
 		"58": {
 			"sourceFileName": "src/common/models/NeonContrastAccessibility.ts",
-			"qualifiedName": "NeonContrastAccessibility.ratio"
+			"qualifiedName": "NeonContrastAccessibility.largeAA"
 		},
 		"59": {
-			"sourceFileName": "src/common/models/NeonDate.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/models/NeonContrastAccessibility.ts",
+			"qualifiedName": "NeonContrastAccessibility.largeAAA"
 		},
 		"60": {
-			"sourceFileName": "src/common/models/NeonDate.ts",
-			"qualifiedName": "NeonDate"
+			"sourceFileName": "src/common/models/NeonContrastAccessibility.ts",
+			"qualifiedName": "NeonContrastAccessibility.ratio"
 		},
 		"61": {
 			"sourceFileName": "src/common/models/NeonDate.ts",
-			"qualifiedName": "NeonDate.year"
+			"qualifiedName": ""
 		},
 		"62": {
 			"sourceFileName": "src/common/models/NeonDate.ts",
-			"qualifiedName": "NeonDate.yearFormatted"
+			"qualifiedName": "NeonDate"
 		},
 		"63": {
 			"sourceFileName": "src/common/models/NeonDate.ts",
-			"qualifiedName": "NeonDate.month"
+			"qualifiedName": "NeonDate.year"
 		},
 		"64": {
 			"sourceFileName": "src/common/models/NeonDate.ts",
-			"qualifiedName": "NeonDate.monthShortName"
+			"qualifiedName": "NeonDate.yearFormatted"
 		},
 		"65": {
 			"sourceFileName": "src/common/models/NeonDate.ts",
-			"qualifiedName": "NeonDate.monthLongName"
+			"qualifiedName": "NeonDate.month"
 		},
 		"66": {
 			"sourceFileName": "src/common/models/NeonDate.ts",
-			"qualifiedName": "NeonDate.day"
+			"qualifiedName": "NeonDate.monthShortName"
 		},
 		"67": {
 			"sourceFileName": "src/common/models/NeonDate.ts",
-			"qualifiedName": "NeonDate.dayFormatted"
+			"qualifiedName": "NeonDate.monthLongName"
 		},
 		"68": {
 			"sourceFileName": "src/common/models/NeonDate.ts",
-			"qualifiedName": "NeonDate.time"
+			"qualifiedName": "NeonDate.day"
 		},
 		"69": {
-			"sourceFileName": "src/common/models/NeonDropdownMenuItem.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/models/NeonDate.ts",
+			"qualifiedName": "NeonDate.dayFormatted"
 		},
 		"70": {
-			"sourceFileName": "src/common/models/NeonDropdownMenuItem.ts",
-			"qualifiedName": "NeonDropdownMenuItem"
+			"sourceFileName": "src/common/models/NeonDate.ts",
+			"qualifiedName": "NeonDate.time"
 		},
 		"71": {
 			"sourceFileName": "src/common/models/NeonDropdownMenuItem.ts",
-			"qualifiedName": "NeonDropdownMenuItem.key"
+			"qualifiedName": ""
 		},
 		"72": {
 			"sourceFileName": "src/common/models/NeonDropdownMenuItem.ts",
-			"qualifiedName": "NeonDropdownMenuItem.label"
+			"qualifiedName": "NeonDropdownMenuItem"
 		},
 		"73": {
 			"sourceFileName": "src/common/models/NeonDropdownMenuItem.ts",
-			"qualifiedName": "NeonDropdownMenuItem.href"
+			"qualifiedName": "NeonDropdownMenuItem.key"
 		},
 		"74": {
 			"sourceFileName": "src/common/models/NeonDropdownMenuItem.ts",
-			"qualifiedName": "NeonDropdownMenuItem.icon"
+			"qualifiedName": "NeonDropdownMenuItem.label"
 		},
 		"75": {
 			"sourceFileName": "src/common/models/NeonDropdownMenuItem.ts",
-			"qualifiedName": "NeonDropdownMenuItem.separatorBefore"
+			"qualifiedName": "NeonDropdownMenuItem.href"
 		},
 		"76": {
 			"sourceFileName": "src/common/models/NeonDropdownMenuItem.ts",
-			"qualifiedName": "NeonDropdownMenuItem.disabled"
+			"qualifiedName": "NeonDropdownMenuItem.icon"
 		},
 		"77": {
 			"sourceFileName": "src/common/models/NeonDropdownMenuItem.ts",
-			"qualifiedName": "NeonDropdownMenuItem.isGroup"
+			"qualifiedName": "NeonDropdownMenuItem.separatorBefore"
 		},
 		"78": {
 			"sourceFileName": "src/common/models/NeonDropdownMenuItem.ts",
-			"qualifiedName": "NeonDropdownMenuItem.grouped"
+			"qualifiedName": "NeonDropdownMenuItem.disabled"
 		},
 		"79": {
+			"sourceFileName": "src/common/models/NeonDropdownMenuItem.ts",
+			"qualifiedName": "NeonDropdownMenuItem.isGroup"
+		},
+		"80": {
+			"sourceFileName": "src/common/models/NeonDropdownMenuItem.ts",
+			"qualifiedName": "NeonDropdownMenuItem.grouped"
+		},
+		"81": {
 			"sourceFileName": "src/common/models/NeonDropdownPlacementObject.ts",
 			"qualifiedName": ""
 		},
-		"139": {
-			"sourceFileName": "src/common/models/NeonFilterListItem.ts",
-			"qualifiedName": ""
-		},
-		"140": {
-			"sourceFileName": "src/common/models/NeonFilterListItem.ts",
-			"qualifiedName": "NeonFilterListItem"
-		},
 		"141": {
 			"sourceFileName": "src/common/models/NeonFilterListItem.ts",
-			"qualifiedName": "NeonFilterListItem.key"
+			"qualifiedName": ""
 		},
 		"142": {
 			"sourceFileName": "src/common/models/NeonFilterListItem.ts",
-			"qualifiedName": "NeonFilterListItem.label"
+			"qualifiedName": "NeonFilterListItem"
 		},
 		"143": {
 			"sourceFileName": "src/common/models/NeonFilterListItem.ts",
-			"qualifiedName": "NeonFilterListItem.count"
+			"qualifiedName": "NeonFilterListItem.key"
 		},
 		"144": {
 			"sourceFileName": "src/common/models/NeonFilterListItem.ts",
-			"qualifiedName": "NeonFilterListItem.disabled"
+			"qualifiedName": "NeonFilterListItem.label"
 		},
 		"145": {
-			"sourceFileName": "src/common/models/NeonGridModel.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/models/NeonFilterListItem.ts",
+			"qualifiedName": "NeonFilterListItem.count"
 		},
 		"146": {
-			"sourceFileName": "src/common/models/NeonGridModel.ts",
-			"qualifiedName": "NeonGridModel"
+			"sourceFileName": "src/common/models/NeonFilterListItem.ts",
+			"qualifiedName": "NeonFilterListItem.disabled"
 		},
 		"147": {
 			"sourceFileName": "src/common/models/NeonGridModel.ts",
-			"qualifiedName": "NeonGridModel.breakpoint"
+			"qualifiedName": ""
 		},
 		"148": {
 			"sourceFileName": "src/common/models/NeonGridModel.ts",
-			"qualifiedName": "NeonGridModel.grid"
+			"qualifiedName": "NeonGridModel"
 		},
 		"149": {
-			"sourceFileName": "src/common/models/NeonListItem.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/models/NeonGridModel.ts",
+			"qualifiedName": "NeonGridModel.breakpoint"
 		},
 		"150": {
-			"sourceFileName": "src/common/models/NeonListItem.ts",
-			"qualifiedName": "NeonListItem"
+			"sourceFileName": "src/common/models/NeonGridModel.ts",
+			"qualifiedName": "NeonGridModel.grid"
 		},
 		"151": {
 			"sourceFileName": "src/common/models/NeonListItem.ts",
-			"qualifiedName": "NeonListItem.key"
+			"qualifiedName": ""
 		},
 		"152": {
 			"sourceFileName": "src/common/models/NeonListItem.ts",
-			"qualifiedName": "NeonListItem.label"
+			"qualifiedName": "NeonListItem"
 		},
 		"153": {
-			"sourceFileName": "src/common/models/NeonMenuItem.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/models/NeonListItem.ts",
+			"qualifiedName": "NeonListItem.key"
 		},
 		"154": {
-			"sourceFileName": "src/common/models/NeonMenuItem.ts",
-			"qualifiedName": "NeonMenuItem"
+			"sourceFileName": "src/common/models/NeonListItem.ts",
+			"qualifiedName": "NeonListItem.label"
 		},
 		"155": {
 			"sourceFileName": "src/common/models/NeonMenuItem.ts",
-			"qualifiedName": "NeonMenuItem.key"
+			"qualifiedName": ""
 		},
 		"156": {
 			"sourceFileName": "src/common/models/NeonMenuItem.ts",
-			"qualifiedName": "NeonMenuItem.label"
+			"qualifiedName": "NeonMenuItem"
 		},
 		"157": {
 			"sourceFileName": "src/common/models/NeonMenuItem.ts",
-			"qualifiedName": "NeonMenuItem.href"
+			"qualifiedName": "NeonMenuItem.key"
 		},
 		"158": {
 			"sourceFileName": "src/common/models/NeonMenuItem.ts",
-			"qualifiedName": "NeonMenuItem.icon"
+			"qualifiedName": "NeonMenuItem.label"
 		},
 		"159": {
 			"sourceFileName": "src/common/models/NeonMenuItem.ts",
-			"qualifiedName": "NeonMenuItem.disabled"
-		},
-		"160": {
-			"sourceFileName": "src/common/models/NeonMenuModel.ts",
-			"qualifiedName": ""
-		},
-		"161": {
-			"sourceFileName": "src/common/models/NeonMenuModel.ts",
-			"qualifiedName": "NeonMenuModel"
-		},
-		"162": {
-			"sourceFileName": "src/common/models/NeonMenuModel.ts",
-			"qualifiedName": "NeonMenuModel.children"
-		},
-		"163": {
-			"sourceFileName": "src/common/models/NeonMenuItem.ts",
-			"qualifiedName": "NeonMenuItem.key"
-		},
-		"164": {
-			"sourceFileName": "src/common/models/NeonMenuItem.ts",
-			"qualifiedName": "NeonMenuItem.label"
-		},
-		"165": {
-			"sourceFileName": "src/common/models/NeonMenuItem.ts",
 			"qualifiedName": "NeonMenuItem.href"
 		},
-		"166": {
+		"160": {
 			"sourceFileName": "src/common/models/NeonMenuItem.ts",
 			"qualifiedName": "NeonMenuItem.icon"
 		},
-		"167": {
+		"161": {
 			"sourceFileName": "src/common/models/NeonMenuItem.ts",
 			"qualifiedName": "NeonMenuItem.disabled"
 		},
-		"168": {
-			"sourceFileName": "src/common/models/NeonNumberFormatOptions.ts",
+		"162": {
+			"sourceFileName": "src/common/models/NeonMenuModel.ts",
 			"qualifiedName": ""
 		},
+		"163": {
+			"sourceFileName": "src/common/models/NeonMenuModel.ts",
+			"qualifiedName": "NeonMenuModel"
+		},
+		"164": {
+			"sourceFileName": "src/common/models/NeonMenuModel.ts",
+			"qualifiedName": "NeonMenuModel.children"
+		},
+		"165": {
+			"sourceFileName": "src/common/models/NeonMenuItem.ts",
+			"qualifiedName": "NeonMenuItem.key"
+		},
+		"166": {
+			"sourceFileName": "src/common/models/NeonMenuItem.ts",
+			"qualifiedName": "NeonMenuItem.label"
+		},
+		"167": {
+			"sourceFileName": "src/common/models/NeonMenuItem.ts",
+			"qualifiedName": "NeonMenuItem.href"
+		},
+		"168": {
+			"sourceFileName": "src/common/models/NeonMenuItem.ts",
+			"qualifiedName": "NeonMenuItem.icon"
+		},
 		"169": {
-			"sourceFileName": "src/common/models/NeonNumberFormatOptions.ts",
-			"qualifiedName": "NeonNumberFormatOptions"
+			"sourceFileName": "src/common/models/NeonMenuItem.ts",
+			"qualifiedName": "NeonMenuItem.disabled"
 		},
 		"170": {
 			"sourceFileName": "src/common/models/NeonNumberFormatOptions.ts",
-			"qualifiedName": "NeonNumberFormatOptions.decimals"
+			"qualifiedName": ""
 		},
 		"171": {
 			"sourceFileName": "src/common/models/NeonNumberFormatOptions.ts",
-			"qualifiedName": "NeonNumberFormatOptions.format"
+			"qualifiedName": "NeonNumberFormatOptions"
 		},
 		"172": {
 			"sourceFileName": "src/common/models/NeonNumberFormatOptions.ts",
-			"qualifiedName": "NeonNumberFormatOptions.percentage"
+			"qualifiedName": "NeonNumberFormatOptions.decimals"
 		},
 		"173": {
 			"sourceFileName": "src/common/models/NeonNumberFormatOptions.ts",
-			"qualifiedName": "NeonNumberFormatOptions.minimumFractionDigits"
+			"qualifiedName": "NeonNumberFormatOptions.format"
 		},
 		"174": {
 			"sourceFileName": "src/common/models/NeonNumberFormatOptions.ts",
-			"qualifiedName": "NeonNumberFormatOptions.style"
+			"qualifiedName": "NeonNumberFormatOptions.percentage"
 		},
 		"175": {
 			"sourceFileName": "src/common/models/NeonNumberFormatOptions.ts",
-			"qualifiedName": "NeonNumberFormatOptions.currency"
+			"qualifiedName": "NeonNumberFormatOptions.minimumFractionDigits"
 		},
 		"176": {
-			"sourceFileName": "src/common/models/NeonSearchOption.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/models/NeonNumberFormatOptions.ts",
+			"qualifiedName": "NeonNumberFormatOptions.style"
 		},
 		"177": {
-			"sourceFileName": "src/common/models/NeonSearchOption.ts",
-			"qualifiedName": "NeonSearchOption"
+			"sourceFileName": "src/common/models/NeonNumberFormatOptions.ts",
+			"qualifiedName": "NeonNumberFormatOptions.currency"
 		},
 		"178": {
 			"sourceFileName": "src/common/models/NeonSearchOption.ts",
-			"qualifiedName": "NeonSearchOption.key"
+			"qualifiedName": ""
 		},
 		"179": {
 			"sourceFileName": "src/common/models/NeonSearchOption.ts",
-			"qualifiedName": "NeonSearchOption.label"
+			"qualifiedName": "NeonSearchOption"
 		},
 		"180": {
 			"sourceFileName": "src/common/models/NeonSearchOption.ts",
-			"qualifiedName": "NeonSearchOption.chipColor"
+			"qualifiedName": "NeonSearchOption.key"
 		},
 		"181": {
 			"sourceFileName": "src/common/models/NeonSearchOption.ts",
-			"qualifiedName": "NeonSearchOption.icon"
+			"qualifiedName": "NeonSearchOption.label"
 		},
 		"182": {
 			"sourceFileName": "src/common/models/NeonSearchOption.ts",
-			"qualifiedName": "NeonSearchOption.separatorBefore"
+			"qualifiedName": "NeonSearchOption.chipColor"
 		},
 		"183": {
-			"sourceFileName": "src/common/models/NeonSelectGroup.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/models/NeonSearchOption.ts",
+			"qualifiedName": "NeonSearchOption.icon"
 		},
 		"184": {
-			"sourceFileName": "src/common/models/NeonSelectGroup.ts",
-			"qualifiedName": "NeonSelectGroup"
+			"sourceFileName": "src/common/models/NeonSearchOption.ts",
+			"qualifiedName": "NeonSearchOption.separatorBefore"
 		},
 		"185": {
 			"sourceFileName": "src/common/models/NeonSelectGroup.ts",
-			"qualifiedName": "NeonSelectGroup.group"
+			"qualifiedName": ""
 		},
 		"186": {
 			"sourceFileName": "src/common/models/NeonSelectGroup.ts",
-			"qualifiedName": "NeonSelectGroup.options"
+			"qualifiedName": "NeonSelectGroup"
 		},
 		"187": {
-			"sourceFileName": "src/common/models/NeonSelectOption.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/models/NeonSelectGroup.ts",
+			"qualifiedName": "NeonSelectGroup.group"
 		},
 		"188": {
-			"sourceFileName": "src/common/models/NeonSelectOption.ts",
-			"qualifiedName": "NeonSelectOption"
+			"sourceFileName": "src/common/models/NeonSelectGroup.ts",
+			"qualifiedName": "NeonSelectGroup.options"
 		},
 		"189": {
 			"sourceFileName": "src/common/models/NeonSelectOption.ts",
-			"qualifiedName": "NeonSelectOption.key"
+			"qualifiedName": ""
 		},
 		"190": {
 			"sourceFileName": "src/common/models/NeonSelectOption.ts",
-			"qualifiedName": "NeonSelectOption.label"
+			"qualifiedName": "NeonSelectOption"
 		},
 		"191": {
 			"sourceFileName": "src/common/models/NeonSelectOption.ts",
-			"qualifiedName": "NeonSelectOption.icon"
+			"qualifiedName": "NeonSelectOption.key"
 		},
 		"192": {
 			"sourceFileName": "src/common/models/NeonSelectOption.ts",
-			"qualifiedName": "NeonSelectOption.separatorBefore"
+			"qualifiedName": "NeonSelectOption.label"
 		},
 		"193": {
 			"sourceFileName": "src/common/models/NeonSelectOption.ts",
-			"qualifiedName": "NeonSelectOption.disabled"
+			"qualifiedName": "NeonSelectOption.icon"
 		},
 		"194": {
-			"sourceFileName": "src/common/models/NeonTabModel.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/models/NeonSelectOption.ts",
+			"qualifiedName": "NeonSelectOption.separatorBefore"
 		},
 		"195": {
-			"sourceFileName": "src/common/models/NeonTabModel.ts",
-			"qualifiedName": "NeonTabModel"
+			"sourceFileName": "src/common/models/NeonSelectOption.ts",
+			"qualifiedName": "NeonSelectOption.disabled"
 		},
 		"196": {
 			"sourceFileName": "src/common/models/NeonTabModel.ts",
-			"qualifiedName": "NeonTabModel.label"
+			"qualifiedName": ""
 		},
 		"197": {
 			"sourceFileName": "src/common/models/NeonTabModel.ts",
-			"qualifiedName": "NeonTabModel.key"
+			"qualifiedName": "NeonTabModel"
 		},
 		"198": {
 			"sourceFileName": "src/common/models/NeonTabModel.ts",
-			"qualifiedName": "NeonTabModel.icon"
+			"qualifiedName": "NeonTabModel.label"
 		},
 		"199": {
-			"sourceFileName": "src/common/models/NeonToastMessage.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/models/NeonTabModel.ts",
+			"qualifiedName": "NeonTabModel.key"
 		},
 		"200": {
-			"sourceFileName": "src/common/models/NeonToastMessage.ts",
-			"qualifiedName": "NeonToastMessage"
+			"sourceFileName": "src/common/models/NeonTabModel.ts",
+			"qualifiedName": "NeonTabModel.icon"
 		},
 		"201": {
 			"sourceFileName": "src/common/models/NeonToastMessage.ts",
-			"qualifiedName": "NeonToastMessage.title"
+			"qualifiedName": ""
 		},
 		"202": {
 			"sourceFileName": "src/common/models/NeonToastMessage.ts",
-			"qualifiedName": "NeonToastMessage.placement"
+			"qualifiedName": "NeonToastMessage"
 		},
 		"203": {
 			"sourceFileName": "src/common/models/NeonToastMessage.ts",
-			"qualifiedName": "NeonToastMessage.duration"
+			"qualifiedName": "NeonToastMessage.title"
 		},
 		"204": {
 			"sourceFileName": "src/common/models/NeonToastMessage.ts",
-			"qualifiedName": "NeonToastMessage.dismissible"
+			"qualifiedName": "NeonToastMessage.placement"
 		},
 		"205": {
-			"sourceFileName": "src/common/models/NeonToggleModel.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/models/NeonToastMessage.ts",
+			"qualifiedName": "NeonToastMessage.duration"
 		},
 		"206": {
-			"sourceFileName": "src/common/models/NeonToggleModel.ts",
-			"qualifiedName": "NeonToggleModel"
+			"sourceFileName": "src/common/models/NeonToastMessage.ts",
+			"qualifiedName": "NeonToastMessage.dismissible"
 		},
 		"207": {
 			"sourceFileName": "src/common/models/NeonToggleModel.ts",
-			"qualifiedName": "NeonToggleModel.key"
+			"qualifiedName": ""
 		},
 		"208": {
 			"sourceFileName": "src/common/models/NeonToggleModel.ts",
-			"qualifiedName": "NeonToggleModel.label"
+			"qualifiedName": "NeonToggleModel"
 		},
 		"209": {
 			"sourceFileName": "src/common/models/NeonToggleModel.ts",
-			"qualifiedName": "NeonToggleModel.icon"
+			"qualifiedName": "NeonToggleModel.key"
 		},
 		"210": {
 			"sourceFileName": "src/common/models/NeonToggleModel.ts",
-			"qualifiedName": "NeonToggleModel.disabled"
+			"qualifiedName": "NeonToggleModel.label"
 		},
 		"211": {
-			"sourceFileName": "src/common/models/NeonTreeMenuLinkModel.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/models/NeonToggleModel.ts",
+			"qualifiedName": "NeonToggleModel.icon"
 		},
 		"212": {
-			"sourceFileName": "src/common/models/NeonTreeMenuLinkModel.ts",
-			"qualifiedName": "NeonTreeMenuLinkModel"
+			"sourceFileName": "src/common/models/NeonToggleModel.ts",
+			"qualifiedName": "NeonToggleModel.disabled"
 		},
 		"213": {
 			"sourceFileName": "src/common/models/NeonTreeMenuLinkModel.ts",
-			"qualifiedName": "NeonTreeMenuLinkModel.label"
+			"qualifiedName": ""
 		},
 		"214": {
 			"sourceFileName": "src/common/models/NeonTreeMenuLinkModel.ts",
-			"qualifiedName": "NeonTreeMenuLinkModel.key"
+			"qualifiedName": "NeonTreeMenuLinkModel"
 		},
 		"215": {
 			"sourceFileName": "src/common/models/NeonTreeMenuLinkModel.ts",
-			"qualifiedName": "NeonTreeMenuLinkModel.href"
+			"qualifiedName": "NeonTreeMenuLinkModel.label"
 		},
 		"216": {
 			"sourceFileName": "src/common/models/NeonTreeMenuLinkModel.ts",
-			"qualifiedName": "NeonTreeMenuLinkModel.anchors"
+			"qualifiedName": "NeonTreeMenuLinkModel.key"
 		},
 		"217": {
-			"sourceFileName": "src/common/models/NeonTreeMenuSectionModel.ts",
-			"qualifiedName": ""
+			"sourceFileName": "src/common/models/NeonTreeMenuLinkModel.ts",
+			"qualifiedName": "NeonTreeMenuLinkModel.href"
 		},
 		"218": {
-			"sourceFileName": "src/common/models/NeonTreeMenuSectionModel.ts",
-			"qualifiedName": "NeonTreeMenuSectionModel"
+			"sourceFileName": "src/common/models/NeonTreeMenuLinkModel.ts",
+			"qualifiedName": "NeonTreeMenuLinkModel.anchors"
 		},
 		"219": {
 			"sourceFileName": "src/common/models/NeonTreeMenuSectionModel.ts",
-			"qualifiedName": "NeonTreeMenuSectionModel.label"
+			"qualifiedName": ""
 		},
 		"220": {
 			"sourceFileName": "src/common/models/NeonTreeMenuSectionModel.ts",
-			"qualifiedName": "NeonTreeMenuSectionModel.key"
+			"qualifiedName": "NeonTreeMenuSectionModel"
 		},
 		"221": {
 			"sourceFileName": "src/common/models/NeonTreeMenuSectionModel.ts",
-			"qualifiedName": "NeonTreeMenuSectionModel.href"
+			"qualifiedName": "NeonTreeMenuSectionModel.label"
 		},
 		"222": {
 			"sourceFileName": "src/common/models/NeonTreeMenuSectionModel.ts",
-			"qualifiedName": "NeonTreeMenuSectionModel.children"
+			"qualifiedName": "NeonTreeMenuSectionModel.key"
 		},
 		"223": {
 			"sourceFileName": "src/common/models/NeonTreeMenuSectionModel.ts",
-			"qualifiedName": "NeonTreeMenuSectionModel.expanded"
+			"qualifiedName": "NeonTreeMenuSectionModel.href"
 		},
 		"224": {
+			"sourceFileName": "src/common/models/NeonTreeMenuSectionModel.ts",
+			"qualifiedName": "NeonTreeMenuSectionModel.children"
+		},
+		"225": {
+			"sourceFileName": "src/common/models/NeonTreeMenuSectionModel.ts",
+			"qualifiedName": "NeonTreeMenuSectionModel.expanded"
+		},
+		"226": {
 			"sourceFileName": "src/common/models/NeonTreeMenuSectionModel.ts",
 			"qualifiedName": "NeonTreeMenuSectionModel.disabled"
 		}

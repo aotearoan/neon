@@ -1,6 +1,6 @@
 {
   "displayName": "NeonFooter",
-  "description": "The page footer component. Place directly inside the NeonPage component to have it rendered at the bottom of the page even when the content is shorter than the page.",
+  "description": "The page footer component. Place directly inside the NeonPage component <strong>#footer</strong> slot to have it\nrendered at the bottom of the page even when the content is shorter than the page.",
   "tags": {},
   "exportName": "default",
   "slots": [

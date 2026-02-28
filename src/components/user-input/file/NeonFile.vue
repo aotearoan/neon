@@ -40,12 +40,14 @@
       />
       <neon-button
         :aria-controls="id ? id : undefined"
+        :circular="circular"
         :color="color"
         :disabled="disabled"
         :icon="icon"
         :label="label"
         :size="size"
         :state="state"
+        :title="title"
         @click="openFileDialog"
       />
     </div>

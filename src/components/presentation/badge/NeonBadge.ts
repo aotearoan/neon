@@ -1,5 +1,6 @@
 import { computed, defineComponent } from 'vue';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import NeonFile from '@/components/user-input/file/NeonFile.vue';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import { NeonJazziconUtils } from '@/common/utils/NeonJazziconUtils';
 import { NeonColorUtils } from '@/common/utils/NeonColorUtils';
@@ -11,8 +12,18 @@ import { NeonBadgeSize } from '@/common/enums/NeonBadgeSize';
 export default defineComponent({
   name: 'NeonBadge',
   components: {
+    NeonFile,
     NeonIcon,
   },
+  emits: [
+    /**
+     * emitted when the user selects or clears their image in edit mode.
+     * NOTE: This emit event DOES NOT set the badge image, it is the responsibility of the parent component to pass an
+     * image URL back into the component's image property to set it, e.g. a data URI.
+     * @type {File}
+     */
+    'change-image',
+  ],
   props: {
     /**
      * The two character <em>initials</em> to display on the badge.
@@ -37,11 +48,20 @@ export default defineComponent({
     /**
      * The color of the badge. This is one of the provided NeonFunctionalColors.
      */
-    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.LowContrast },
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Primary },
     /**
      * Alternate color for creating gradient badges. NOTE: can also be the same color as 'color'.
      */
     alternateColor: { type: String as () => NeonFunctionalColor, default: null },
+    /**
+     * Allow editing of the image. This will place an image file lookup button on top of the image allowing the user to
+     * choose a new image to upload.
+     */
+    editable: { type: Boolean, default: false },
+    /**
+     * Accept string for the filetype to support selecting.
+     */
+    accept: { type: String, default: 'image/*' },
     /**
      * Display the badge in the disable style
      */
@@ -54,8 +74,12 @@ export default defineComponent({
      * Badge image alt text.
      */
     imageAlt: { type: String, default: 'Badge' },
+    /**
+     * Title for the file upload button in edit mode.
+     */
+    editButtonTitle: { type: String, default: 'Edit' },
   },
-  setup(props) {
+  setup(props, { emit }) {
     const getColor = (key: NeonFunctionalColor) => {
       let colorString = getComputedStyle(document.documentElement).getPropertyValue(`--neon-rgb-${key}-l1`);
       if (colorString.length === 0) {
@@ -89,6 +113,7 @@ export default defineComponent({
     );
 
     return {
+      emit,
       svg,
     };
   },

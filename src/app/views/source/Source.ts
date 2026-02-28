@@ -1,4 +1,4 @@
-import { defineComponent, ref, watch } from 'vue';
+import { computed, defineComponent, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { NeonButton, NeonCard, NeonCardBody, NeonCardHeader, NeonInline, NeonLabel, NeonStack } from '@/neon';
 import Editor from '@/app/components/editor/Editor.vue';
@@ -197,13 +197,33 @@ export default defineComponent({
       return member.signatures?.[0]?.parameters;
     };
 
+    const apiType = computed<string>(() => {
+      if (classDocs.value?.children?.[0]?.variant === 'declaration' && !classDocs.value?.children?.[0]?.children) {
+        return 'functions';
+      }
+
+      return 'class';
+    });
+
+    const classMembers = computed<Array<DeclarationReflection>>(() => {
+      if (classDocs.value?.children?.[0]?.children) {
+        return classDocs.value?.children?.[0]?.children;
+      } else if (classDocs.value?.children?.[0]?.variant === 'declaration') {
+        return classDocs.value?.children;
+      }
+
+      return [];
+    });
+
     return {
+      classMembers,
       classType,
       classDocs,
       isEnum,
       isModel,
       isUtility,
       ghLink,
+      apiType,
       modelSummaries,
       enumSignature,
       modelSignature,

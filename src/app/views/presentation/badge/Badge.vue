@@ -46,6 +46,22 @@
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
+        <h2 class="neon-h3">Editable badge</h2>
+        <neon-stack>
+          <neon-inline>
+            <neon-badge
+              :circular="true"
+              :editable="true"
+              :image="editedImage"
+              color="high-contrast"
+              size="xxl"
+              @change-image="updateImage"
+            />
+          </neon-inline>
+          <editor v-model="editableTemplate" />
+        </neon-stack>
+      </neon-card-body>
+      <neon-card-body>
         <h2 class="neon-h3">Badge colors</h2>
         <neon-stack>
           <neon-inline>

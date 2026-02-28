@@ -1,5 +1,5 @@
 import { defineComponent, onMounted, ref } from 'vue';
-import { NeonBadge, NeonCard, NeonCardBody, NeonInline, NeonStack } from '@/neon';
+import { fileToDataURL, NeonBadge, NeonCard, NeonCardBody, NeonInline, NeonStack } from '@/neon';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
@@ -35,11 +35,26 @@ export default defineComponent({
 <neon-badge :image="baseUrl + 'images/doge.jpg'" />
 <neon-badge :circular="true" jazzicon-id="Test user" />`;
 
+    const editableTemplate = `<neon-badge
+  :circular="true"
+    :editable="true"
+    :image="editedImage"
+    color="high-contrast"
+    size="xxl"
+    @change-image="updateImage"
+/>`;
+
     const colorsTemplate = `<neon-badge label="LB" color="brand" />
 <neon-badge icon="user" color="success" />`;
 
     const gradientsTemplate = `<neon-badge icon="user" color="brand" alternate-color="warn" />
 <neon-badge label="LB" color="info" alternate-color="brand" />`;
+
+    const editedImage = ref<string>(import.meta.env.VITE_BASE_URL + 'images/doge.jpg');
+
+    const updateImage = async (file: File) => {
+      editedImage.value = await fileToDataURL(file);
+    };
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonBadge')));
 
@@ -50,8 +65,11 @@ export default defineComponent({
       sizesTemplate,
       shapesTemplate,
       stylesTemplate,
+      editableTemplate,
       colorsTemplate,
       gradientsTemplate,
+      editedImage,
+      updateImage,
     };
   },
 });

@@ -93,6 +93,17 @@
       }
     },
     {
+      "name": "circular",
+      "description": "Make the button circular. NOTE: This is only for icon only buttons.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "null"
+      }
+    },
+    {
       "name": "label",
       "description": "The label of the file component button",
       "type": {
@@ -112,6 +123,17 @@
       "defaultValue": {
         "func": false,
         "value": "null"
+      }
+    },
+    {
+      "name": "title",
+      "description": "Title for the file upload button.",
+      "type": {
+        "name": "string"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "'Upload'"
       }
     }
   ],

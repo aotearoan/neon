@@ -64,6 +64,13 @@
       }
     },
     {
+      "name": "iconAriaLabel",
+      "description": "aria label of the button icon",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
       "name": "indicator",
       "description": "Show the dropdown button's indicator (chevron).",
       "type": {
@@ -197,15 +204,6 @@
       "type": {
         "names": [
           "void"
-        ]
-      }
-    },
-    {
-      "name": "button-ref",
-      "description": "emitted on initialisation",
-      "type": {
-        "names": [
-          "HTMLElement"
         ]
       }
     }
