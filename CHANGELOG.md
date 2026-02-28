@@ -1,5 +1,12 @@
 # Changelog
 
+## [22.4.0](https://github.com/aotearoan/neon/compare/v22.3.0...v22.4.0) (2026-02-28)
+
+
+### Features
+
+* vertical neon swiper ([#307](https://github.com/aotearoan/neon/issues/307)) ([ade3e91](https://github.com/aotearoan/neon/commit/ade3e9169529ac3650d3505ec3c067d722526798))
+
 ## [22.3.0](https://github.com/aotearoan/neon/compare/v22.2.0...v22.3.0) (2026-02-28)
 
 
