@@ -1,5 +1,4 @@
 @use '../includes/palettes';
-@use '../includes/layout';
 @use '../includes/responsive';
 
 @mixin note {
@@ -75,7 +74,7 @@
     }
 
     &__container {
-      padding: var(--neon-space-12) var(--neon-space-16) var(--neon-space-12) var(--neon-space-20);
+      padding: var(--neon-padding-note);
       width: 100%;
       justify-items: flex-start;
       align-items: flex-start;
@@ -114,7 +113,7 @@
     max-width: var(--neon-max-width-note);
     margin: 0;
     border-radius: 0 var(--neon-border-radius) var(--neon-border-radius) 0;
-    padding: var(--neon-space-12) var(--neon-space-16) var(--neon-space-12) var(--neon-space-20);
+    padding: var(--neon-padding-note);
     color: var(--neon-color-note);
     background-color: var(--neon-background-color-note);
     border-left: var(--neon-border-width-note) var(--neon-border-style) var(--neon-color-primary);
