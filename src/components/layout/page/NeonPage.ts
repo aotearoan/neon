@@ -1,5 +1,7 @@
 import { defineComponent, onMounted, onUnmounted } from 'vue';
 import { NeonPageAlignment } from '@/common/enums/NeonPageAlignment';
+import NeonAlert from '@/components/feedback/alert/NeonAlert.vue';
+import NeonBanner from '@/components/feedback/banner/NeonBanner.vue';
 
 /**
  * A "page" component, this is defined as a wrapper around the contents (NeonGrid, etc) and footer which provides the
@@ -7,6 +9,10 @@ import { NeonPageAlignment } from '@/common/enums/NeonPageAlignment';
  */
 export default defineComponent({
   name: 'NeonPage',
+  components: {
+    NeonAlert,
+    NeonBanner,
+  },
   props: {
     /**
      * Page alignment: either left aligned or center aligned.

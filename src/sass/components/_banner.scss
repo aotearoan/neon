@@ -1,0 +1,26 @@
+@use '../includes/responsive';
+
+@mixin banner {
+  .neon-banner {
+    z-index: var(--neon-z-index-top);
+
+    &__action {
+      margin-left: auto;
+    }
+
+    &__message {
+      --neon-font-weight-strong: var(--neon-font-weight-semi-bold);
+    }
+
+    .neon-note__content {
+      width: 100%;
+      max-width: calc(var(--neon-max-width-page));
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+      gap: var(--neon-space-24);
+      padding: 0 var(--neon-gutter);
+    }
+  }
+}

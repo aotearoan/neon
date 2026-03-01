@@ -11,18 +11,22 @@
     &--with-top-nav .neon-page__container {
       @include responsive.responsive(larger-than-tablet) {
         padding-top: var(--neon-top-nav-height-desktop);
-        @include layout.min-height(100, 'var(--neon-footer-height-desktop) + var(--neon-border-width-footer)');
+        @include layout.min-height(100, 'var(--neon-top-nav-height) + var(--neon-border-width-top-nav) + var(--neon-footer-height) + var(--neon-border-width-footer)');
       }
 
       @include responsive.responsive(tablet) {
         padding-top: var(--neon-top-nav-height-tablet);
-        @include layout.min-height(100, 'var(--neon-footer-height-tablet) + var(--neon-border-width-footer)');
+        @include layout.min-height(100, 'var(--neon-top-nav-height) + var(--neon-border-width-top-nav) + var(--neon-footer-height) + var(--neon-border-width-footer)');
       }
 
       @include responsive.responsive(mobile-large) {
         padding-top: var(--neon-top-nav-height-mobile);
-        @include layout.min-height(100, 'var(--neon-footer-height-mobile) + var(--neon-border-width-footer)');
+        @include layout.min-height(100, 'var(--neon-top-nav-height) + var(--neon-border-width-top-nav) + var(--neon-footer-height) + var(--neon-border-width-footer)');
       }
+    }
+
+    .neon-page__content-wrapper {
+      flex-direction: row;
     }
 
     .neon-page__container {
@@ -48,9 +52,31 @@
 
     &--left {
       &.neon-page--with-side-nav {
-        .neon-page__container {
-          @include responsive.responsive(larger-than-tablet) {
+        @include responsive.responsive(larger-than-tablet) {
+          .neon-page__container {
             padding-left: 0;
+            padding-right: 0;
+          }
+
+          .neon-footer {
+            margin: 0;
+            position: relative;
+            border-top: none;
+
+            &__container {
+              z-index: var(--neon-z-index-above);
+            }
+
+            &:before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: var(--neon-footer-height);
+              width: calc(100vw - var(--neon-side-nav-width));
+              border-top: var(--neon-border-color) var(--neon-border-style) var(--neon-border-width-footer);
+              background-color: var(--neon-background-color-footer);
+            }
           }
         }
       }

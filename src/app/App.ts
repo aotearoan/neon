@@ -2,7 +2,6 @@ import { computed, defineComponent, onMounted, onUnmounted, ref, watch } from 'v
 import { Menu } from './Menu';
 import type { NeonTreeMenuLinkModel, NeonTreeMenuSectionModel } from '@/neon';
 import {
-  NeonAlert,
   NeonButton,
   NeonDrawer,
   NeonExpansionPanel,
@@ -38,7 +37,6 @@ export interface AppMenuLinkModel extends NeonTreeMenuLinkModel {
 export default defineComponent({
   name: 'App',
   components: {
-    NeonAlert,
     NeonButton,
     NeonTopNav,
     NeonIcon,

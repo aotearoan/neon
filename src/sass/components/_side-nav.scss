@@ -4,14 +4,14 @@
 
 @mixin side-nav {
   .neon-side-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    position: sticky;
+    top: 0;
     background-color: var(--neon-background-color-side-nav);
     border-right: var(--neon-border);
 
     @include responsive.responsive(larger-than-tablet) {
       width: var(--neon-side-nav-width);
+      min-width: var(--neon-side-nav-width);
       @include layout.min-height(100);
       @include layout.height(100);
     }

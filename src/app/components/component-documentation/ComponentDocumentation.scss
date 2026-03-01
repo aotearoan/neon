@@ -8,19 +8,11 @@ $neon-height-component-header-mobile: 124rem;
 $fixed-content-height: 348rem;
 
 .component-documentation {
-  margin-top: calc(#{$neon-height-component-header-desktop} - 0.5 * var(--neon-gutter-desktop));
-
   &__description-heading {
     display: none;
   }
 
-  @include responsive.responsive(tablet) {
-    margin-top: calc(#{$neon-height-component-header-tablet} - var(--neon-gutter-tablet));
-  }
-
   @include responsive.responsive(mobile-large) {
-    margin-top: calc(#{$neon-height-component-header-mobile} - 0.5 * var(--neon-gutter-mobile));
-
     &__description-heading {
       display: flex;
     }
@@ -31,44 +23,25 @@ $fixed-content-height: 348rem;
   }
 
   &__header {
-    position: fixed;
+    position: sticky;
     z-index: var(--neon-z-index-above-2);
-    @include layout.padding(1, true);
-    padding-bottom: 0 !important;
-    max-width: calc(var(--neon-max-width-page) - var(--neon-side-nav-width));
-    top: 0;
-    left: var(--neon-side-nav-width);
-    width: calc(100vw - var(--neon-side-nav-width));
-
-    @include responsive.responsive(tablet) {
-      top: var(--neon-top-nav-height-tablet);
-      left: 0;
-      width: 100vw;
-    }
-
-    @include responsive.responsive(mobile-large) {
-      top: var(--neon-top-nav-height-mobile);
-    }
+    width: 100%;
+    margin-top: calc(-1 * var(--neon-gutter));
+    padding-top: var(--neon-gutter);
+    top: var(--neon-top-nav-height);
+    left: 0;
+    background-color: var(--neon-background-color-footer);
 
     .neon-tabs {
       position: relative;
     }
 
-    &,
-    &:before {
-      background-color: var(--neon-background-color-footer);
+    .neon-swiper__container {
       border-bottom: var(--neon-border);
     }
 
-    &:before {
-      content: '';
-      width: 100vw;
-      height: 100%;
-      position: absolute;
+    @include responsive.responsive(larger-than-tablet) {
       top: 0;
-      left: 0;
-      overflow: hidden;
-      z-index: var(--neon-z-index-below);
     }
   }
 

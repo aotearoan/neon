@@ -137,9 +137,9 @@
 
     .neon-tabs__menu-items--full-width-mobile {
       @include responsive.responsive(mobile-large) {
-        margin: 0 calc(-1 * var(--neon-gutter-mobile));
-        max-width: calc(100% + 2 * var(--neon-gutter-mobile));
-        width: calc(100% + 2 * var(--neon-gutter-mobile));
+        margin: 0 calc(-2 * var(--neon-gutter-mobile));
+        max-width: calc(100% + 4 * var(--neon-gutter-mobile));
+        width: calc(100% + 4 * var(--neon-gutter-mobile));
       }
     }
 

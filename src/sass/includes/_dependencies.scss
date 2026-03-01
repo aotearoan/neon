@@ -5,11 +5,7 @@
   $neon-component-dependencies: (
           NeonActionMenu: [NeonLink,
           NeonIcon],
-          NeonAlert: [NeonIcon,
-          NeonLink,
-          NeonToastContainer,
-          NeonIcon,
-          NeonLink],
+          NeonAlert: [NeonToastContainer, NeonIcon, NeonLink],
           NeonAnchor: [],
           NeonBadge: [NeonIcon, NeonFile, NeonButton, NeonInput, NeonList, NeonExpansionIndicator, NeonIcon, NeonLink],
           NeonButton: [NeonExpansionIndicator,
@@ -77,7 +73,6 @@
           NeonNote: [NeonButton,
   NeonIcon,
   NeonExpansionIndicator,
-  NeonIcon,
   NeonLink, NeonInline, NeonStack],
           NeonNotificationCounter: [],
           NeonNumber: [NeonButton,
@@ -87,7 +82,7 @@
   NeonIcon,
   NeonLink],
           NeonLinearProgress: [NeonIcon],
-          NeonPage: [],
+          NeonPage: [NeonBanner, NeonButton, NeonNote, NeonIcon, NeonLink, NeonExpansionIndicator, NeonAlert],
           NeonPassword: [NeonInput,
           NeonIcon],
           NeonRangeSlider: [NeonSlider],
@@ -130,6 +125,7 @@
           NeonSwiper: [],
           NeonMobileMenu: [NeonIcon, NeonLink],
           NeonPageContainer: [NeonIcon],
+          NeonBanner: [NeonButton, NeonNote, NeonIcon, NeonLink, NeonExpansionIndicator],
   );
 
   $neon-flattened-components: [];
