@@ -6,11 +6,26 @@ import { NeonSize } from '@/common/enums/NeonSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import { NeonState } from '@/common/enums/NeonState';
 import { NeonInputMode } from '@/common/enums/NeonInputMode';
+import NeonInputTestWrapper from '@/components/user-input/input/NeonInputTestWrapper.vue';
 
 describe('NeonInput', () => {
   const modelValue = '';
   const id = 'test id';
   let harness: RenderResult;
+
+  describe('mounted tests', () => {
+    beforeEach(() => {
+      harness = render(NeonInputTestWrapper);
+    });
+
+    it('renders id on input and not on container', () => {
+      const wrapper = harness.getAllByTestId('neonInputWrapperTestId')[0];
+      expect(wrapper.getAttribute('id')).toBeNull();
+      expect(harness.container.querySelector('input.neon-input__textfield')?.getAttribute('id')).toEqual(
+        'inputWrapperId',
+      );
+    });
+  });
 
   beforeEach(() => {
     harness = render(NeonInput, {

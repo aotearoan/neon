@@ -24,6 +24,10 @@ export default defineComponent({
   },
   props: {
     /**
+     * The id the input
+     */
+    id: { type: String, default: null },
+    /**
      * The value of the number input. Either a valid number or null.
      */
     modelValue: { type: Number, default: null },

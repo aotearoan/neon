@@ -4,10 +4,25 @@ import { fireEvent, render } from '@testing-library/vue';
 import { NeonSize } from '@/common/enums/NeonSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import { NeonInputMode } from '@/common/enums/NeonInputMode';
+import NeonNumberTestWrapper from './NeonNumberTestWrapper.vue';
 
 describe('NeonNumber', () => {
   const modelValue = 42;
   let harness: RenderResult;
+
+  describe('mounted tests', () => {
+    beforeEach(() => {
+      harness = render(NeonNumberTestWrapper);
+    });
+
+    it('renders id on input and not on container', () => {
+      const wrapper = harness.getAllByTestId('numberWrapperTestId')[0];
+      expect(wrapper.getAttribute('id')).toBeNull();
+      expect(harness.container.querySelector('input.neon-number__input')?.getAttribute('id')).toEqual(
+        'numberWrapperId',
+      );
+    });
+  });
 
   beforeEach(() => {
     harness = render(NeonNumber, {

@@ -24,6 +24,7 @@
       @click="decrement()"
     />
     <neon-input
+      :id="id"
       :aria-valuemax="max"
       :aria-valuemin="min"
       :aria-valuenow="modelValue"
