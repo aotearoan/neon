@@ -1,5 +1,12 @@
 # Changelog
 
+## [23.2.1](https://github.com/aotearoan/neon/compare/v23.2.0...v23.2.1) (2026-03-01)
+
+
+### Bug Fixes
+
+* give menu icons unique ids ([#327](https://github.com/aotearoan/neon/issues/327)) ([6ba3fb2](https://github.com/aotearoan/neon/commit/6ba3fb2bd5106cce81b02148b8389db8098b7d1e))
+
 ## [23.2.0](https://github.com/aotearoan/neon/compare/v23.1.0...v23.2.0) (2026-03-01)
 
 
