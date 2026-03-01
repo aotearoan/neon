@@ -1,5 +1,12 @@
 # Changelog
 
+## [23.3.1](https://github.com/aotearoan/neon/compare/v23.3.0...v23.3.1) (2026-03-01)
+
+
+### Bug Fixes
+
+* carousel, field group, modal fixes ([#339](https://github.com/aotearoan/neon/issues/339)) ([fea0575](https://github.com/aotearoan/neon/commit/fea0575dd0588783ae906cb7b1fc503220711b5a))
+
 ## [23.3.0](https://github.com/aotearoan/neon/compare/v23.2.5...v23.3.0) (2026-03-01)
 
 
