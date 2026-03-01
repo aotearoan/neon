@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" fill="none" stroke-linecap="round" height="100%"
+     width="100%">
+    <path d="M12.75 13.799999999999999L6.45 7.5L12.75 1.2" stroke="currentColor" class="neon-svg--stroke"></path>
+    <path d="M2.25 1.2V13.799999999999999" stroke="currentColor" class="neon-svg--stroke"></path>
+</svg>

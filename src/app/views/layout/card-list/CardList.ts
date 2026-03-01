@@ -3,12 +3,20 @@ import ComponentDocumentation from '@/app/components/component-documentation/Com
 import Editor from '@/app/components/editor/Editor.vue';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
-import { NeonButton, NeonCard, NeonCardBody, NeonCardList, NeonInline, NeonInput, NeonStack } from '@/neon';
+import {
+  NeonButton,
+  NeonCard,
+  NeonCardBody,
+  NeonCardList,
+  type NeonCardListModel,
+  NeonInline,
+  NeonInput,
+  NeonStack,
+} from '@/neon';
 import type { CardListModel } from '@/fixtures/CardListModelFixture';
-import { cardListModelFixture } from '@/fixtures/CardListModelFixture';
+import { CardListModelFixture } from '@/fixtures/CardListModelFixture';
 
 export default defineComponent({
-  // eslint-disable-next-line vue/multi-word-component-names
   name: 'CardList',
   components: {
     NeonButton,
@@ -25,72 +33,86 @@ export default defineComponent({
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('Display a list of cards');
 
-    const template = `<neon-card-list :model="model" :total="total" color="brand" @show-more="onShowMore">
+    const onDemandTemplate = `<neon-card-list
+  :items="onDemandFilteredModel"
+  :load-on-demand="onDemandConfig"
+  color="brand"
+  @show-more="onDemandShowMore"
+>
   <template #header>
-    <neon-input v-model="filter" placeholder="Filter results…" size="s" />
+    <neon-input v-model="onDemandFilter" placeholder="Filter results…" size="s" />
   </template>
-  <template #card="{ cardModel, index }">
-    <neon-stack gap="s">
-      <h6>{{ cardModel.title }}</h6>
-      <span class="neon-color-low-contrast">{{ cardModel.description }}</span>
-    </neon-stack>
-  </template>
-</neon-card-list>`;
-
-    const linkTemplate = `<neon-card-list :model="linkFilteredModel" :clickable="true" :total="linkTotal" color="brand" @show-more="onLinkShowMore">
-  <template #header>
-    <neon-input v-model="linkFilter" placeholder="Filter results…" size="s" />
-  </template>
-  <template #card="{ cardModel, index }">
+  <template #card="{ model, index }">
     <div class="card-contents">
-      <span class="card-title">{{ cardModel.title }}</span>
-      <span class="card-description">{{ cardModel.description }}</span>
+      <span class="card-title">{{ model.title }}</span>
+      <span class="card-description">{{ model.description }}</span>
     </div>
   </template>
 </neon-card-list>`;
 
-    const model = ref<Array<CardListModel>>(cardListModelFixture(5));
-    const filteredModel = computed<Array<CardListModel>>(() =>
-      filter.value === ''
-        ? model.value
-        : model.value.filter((item) => (item.title + item.description).indexOf(filter.value) >= 0),
+    const onDemandModel = ref<Array<NeonCardListModel<CardListModel>>>(
+      CardListModelFixture(5, 'http://getskeleton.com'),
     );
-    const filter = ref<string>('');
-    const total = computed<number>(() => (filter.value === '' ? 10 : filteredModel.value.length));
-
-    const onShowMore = () => {
-      model.value = [...model.value, ...cardListModelFixture(5, undefined, 5)];
+    const onDemandFilteredModel = computed<Array<NeonCardListModel<CardListModel>>>(() =>
+      onDemandFilter.value === ''
+        ? onDemandModel.value
+        : onDemandModel.value.filter(
+            (item) => (item.model.title + item.model.description).indexOf(onDemandFilter.value) >= 0,
+          ),
+    );
+    const onDemandFilter = ref<string>('');
+    const onDemandConfig = computed(() => ({
+      total: onDemandFilter.value === '' ? 10 : onDemandFilteredModel.value.length,
+    }));
+    const onDemandShowMore = () => {
+      onDemandModel.value = [...onDemandModel.value, ...CardListModelFixture(5, 'http://getskeleton.com', 5)];
     };
 
-    const linkModel = ref<Array<CardListModel>>(cardListModelFixture(5, 'http://getskeleton.com'));
-    const linkFilteredModel = computed<Array<CardListModel>>(() =>
-      linkFilter.value === ''
-        ? linkModel.value
-        : linkModel.value.filter((item) => (item.title + item.description).indexOf(linkFilter.value) >= 0),
-    );
-    const linkFilter = ref<string>('');
-    const linkTotal = computed<number>(() => (linkFilter.value === '' ? 10 : linkFilteredModel.value.length));
+    const paginationTemplate = `<neon-card-list :items="paginationFilteredModel" :pagination="paginationConfig" color="brand">
+  <template #header>
+    <neon-input v-model="paginationFilter" placeholder="Filter results…" size="s" />
+  </template>
+  <template #card="{ model, index }">
+    <div class="card-contents">
+      <span class="card-title">{{ model.title }}</span>
+      <span class="card-description">{{ model.description }}</span>
+    </div>
+  </template>
+</neon-card-list>`;
 
-    const onLinkShowMore = () => {
-      linkModel.value = [...linkModel.value, ...cardListModelFixture(5, 'http://getskeleton.com', 5)];
-    };
+    const paginationModel = ref<Array<NeonCardListModel<CardListModel>>>(
+      CardListModelFixture(5, 'http://getskeleton.com'),
+    );
+    const paginationFilteredModel = computed<Array<NeonCardListModel<CardListModel>>>(() =>
+      paginationFilter.value === ''
+        ? paginationModel.value
+        : paginationModel.value.filter(
+            (item) => (item.model.title + item.model.description).indexOf(paginationFilter.value) >= 0,
+          ),
+    );
+    const paginationFilter = ref<string>('');
+    const paginationConfig = computed(() => ({
+      page: 1,
+      urlTemplate: 'entity/?page={page}',
+      pageSize: 2,
+      total: 100,
+    }));
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonCardList')));
 
     return {
       menuModel,
       headline,
-      template,
-      filteredModel,
-      total,
-      filter,
-      onShowMore,
-      linkModel,
-      linkFilteredModel,
-      linkFilter,
-      linkTotal,
-      onLinkShowMore,
-      linkTemplate,
+      onDemandModel,
+      onDemandFilteredModel,
+      onDemandFilter,
+      onDemandConfig,
+      onDemandShowMore,
+      onDemandTemplate,
+      paginationFilteredModel,
+      paginationFilter,
+      paginationConfig,
+      paginationTemplate,
     };
   },
 });

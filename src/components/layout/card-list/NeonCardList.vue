@@ -3,47 +3,59 @@
     <neon-inline breakpoint="" class="neon-card-list__header">
       <!-- @slot slot for providing filters or titles for the card list aligned next to the result count -->
       <slot name="header"></slot>
-      <span v-if="total" class="neon-card-list__total">{{ n(model.length) }} {{ ofLabel }} {{ n(total) }}</span>
+      <span v-if="loadOnDemand" class="neon-card-list__total">{{ n(items.length) }} {{ ofLabel }} {{ n(total) }}</span>
     </neon-inline>
-    <neon-stack class="neon-card-list__cards">
-      <template v-for="(cardModel, index) in model">
+    <neon-stack class="neon-card-list__cards" gap="z">
+      <template v-for="(item, index) in items">
         <neon-link
-          v-if="cardModel.href && !cardModel.disabled"
-          :key="`${cardModel.key || index}-link`"
-          :href="cardModel.href"
-          :target="cardModel.targetBlank ? '_blank' : null"
+          v-if="item.href && !item.disabled"
+          :key="`${item.model.id ?? index}-link`"
+          :class="color && `neon-card-list__link--${color}`"
+          :href="item.href"
+          class="neon-card-list__link"
           no-style
           outline-style="background"
         >
-          <neon-card-list-card :color="color" :disabled="cardModel.disabled">
-            <!-- @slot slot for rendering card contents, two parameters are available: cardModel (the model item to be rendered) & index -->
-            <!-- eslint-disable-next-line vue/no-unused-vars -->
-            <slot name="card" v-bind="{ cardModel, index: index }"></slot>
-          </neon-card-list-card>
+          <div class="neon-card-list__card">
+            <!-- @slot slot for rendering card contents, two parameters are available:
+@binding {T} model - the model item to be rendered
+@binding {number} index - the index of the item in the list -->
+            <slot name="card" v-bind="{ model: item.model, index: index }"></slot>
+          </div>
         </neon-link>
-        <neon-card-list-card
+        <div
           v-else
-          :key="`${cardModel.key || index}-card`"
-          :clickable="clickable && !cardModel.disabled"
-          :color="color"
-          :disabled="cardModel.disabled"
-          @click="!cardModel.disabled && emit('click', index)"
+          :key="`${item.model.id ?? index}-readonly`"
+          :class="{ 'neon-card-list__card--disabled': item.disabled }"
+          class="neon-card-list__card"
         >
-          <!-- @slot slot for rendering card contents, two parameters are available: cardModel (the model item to be rendered) & index -->
-          <!-- eslint-disable-next-line vue/no-unused-vars -->
-          <slot name="card" v-bind="{ cardModel, index: index }"></slot>
-        </neon-card-list-card>
+          <!-- @slot slot for rendering card contents, two parameters are available:
+  @binding {T} model - the model item to be rendered
+  @binding {number} index - the index of the item in the list -->
+          <slot name="card" v-bind="{ model: item.model, index: index }"></slot>
+        </div>
       </template>
     </neon-stack>
-    <span v-if="model.length === total" class="neon-card-list__results-end">{{ endOfResultsLabel }}</span>
-    <neon-button
-      v-else
-      :button-style="NeonButtonStyle.Text"
-      :color="NeonFunctionalColor.Neutral"
-      :label="showMoreLabel"
-      :size="NeonSize.Small"
-      class="neon-card-list__show-more"
-      @click="emit('show-more', $event)"
+    <template v-if="loadOnDemand">
+      <span v-if="items.length === total" class="neon-card-list__results-end">{{ endOfResultsLabel }}</span>
+      <neon-button
+        v-else
+        :button-style="NeonButtonStyle.Text"
+        :color="NeonFunctionalColor.Neutral"
+        :label="showMoreLabel"
+        :size="NeonSize.Small"
+        class="neon-card-list__show-more"
+        @click="emit('show-more', $event)"
+      />
+    </template>
+    <neon-pagination
+      v-else-if="pagination"
+      :color="color"
+      :display-first-and-last="pagination.displayFirstAndLast"
+      :page="pagination.page"
+      :page-size="pagination.pageSize"
+      :total="pagination.total"
+      :url-template="pagination.urlTemplate"
     />
   </div>
 </template>

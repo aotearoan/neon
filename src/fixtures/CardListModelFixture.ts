@@ -1,19 +1,26 @@
+import type { NeonIdentifiable } from '@/common/models/NeonIdentifiable';
 import type { NeonCardListModel } from '@/common/models/NeonCardListModel';
 
-export interface CardListModel extends NeonCardListModel {
+export interface CardListModel extends NeonIdentifiable {
   title: string;
   description: string;
 }
 
-export const cardListModelFixture = (count: number, href?: string, offset = 0): Array<CardListModel> => {
+export const CardListModelFixture = (
+  count: number,
+  href?: string,
+  offset = 0,
+): Array<NeonCardListModel<CardListModel>> => {
   const result = [];
 
   for (let i = offset; i < count + offset; i++) {
     result.push({
-      title: `Title ${i + 1}`,
-      description: `Description ${i + 1}`,
+      model: {
+        id: `${i + 1}`,
+        title: `Title ${i + 1}`,
+        description: `Description ${i + 1}`,
+      },
       href,
-      targetBlank: !!href,
       disabled: i === count + offset - 1,
     });
   }
