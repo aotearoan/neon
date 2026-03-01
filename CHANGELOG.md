@@ -1,5 +1,12 @@
 # Changelog
 
+## [23.2.0](https://github.com/aotearoan/neon/compare/v23.1.0...v23.2.0) (2026-03-01)
+
+
+### Features
+
+* remove banner/alert/toast messages ([#325](https://github.com/aotearoan/neon/issues/325)) ([a989dcb](https://github.com/aotearoan/neon/commit/a989dcb1d44134c205e952baedc9c36884506f5a))
+
 ## [23.1.0](https://github.com/aotearoan/neon/compare/v23.0.2...v23.1.0) (2026-03-01)
 
 
