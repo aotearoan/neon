@@ -1,5 +1,16 @@
 # Changelog
 
+## [24.0.0](https://github.com/aotearoan/neon/compare/v23.3.1...v24.0.0) (2026-03-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* tree menu component adjustments ([#341](https://github.com/aotearoan/neon/issues/341))
+
+### Code Refactoring
+
+* tree menu component adjustments ([#341](https://github.com/aotearoan/neon/issues/341)) ([efda12d](https://github.com/aotearoan/neon/commit/efda12de126dded01ae44a8ad6a3c9d902b9f00d))
+
 ## [23.3.1](https://github.com/aotearoan/neon/compare/v23.3.0...v23.3.1) (2026-03-01)
 
 
