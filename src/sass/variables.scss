@@ -199,11 +199,35 @@
   --neon-top-nav-height-desktop: calc(var(--neon-size-l) + var(--neon-space-32));
   --neon-border-width-top-nav: 1rem;
 
+  @include responsive.responsive(larger-than-tablet) {
+    --neon-top-nav-height: var(--neon-top-nav-height-desktop);
+  }
+
+  @include responsive.responsive(tablet) {
+    --neon-top-nav-height: var(--neon-top-nav-height-tablet);
+  }
+
+  @include responsive.responsive(mobile-large) {
+    --neon-top-nav-height: var(--neon-top-nav-height-mobile);
+  }
+
   /* footer */
   --neon-footer-height-mobile: calc(var(--neon-font-size-s) + var(--neon-space-32));
   --neon-footer-height-tablet: calc(var(--neon-font-size-s) + var(--neon-space-32));
   --neon-footer-height-desktop: calc(var(--neon-base-font-size) + var(--neon-space-48));
   --neon-border-width-footer: 1rem;
+
+  @include responsive.responsive(larger-than-tablet) {
+    --neon-footer-height: var(--neon-footer-height-desktop);
+  }
+
+  @include responsive.responsive(tablet) {
+    --neon-footer-height: var(--neon-footer-height-tablet);
+  }
+
+  @include responsive.responsive(mobile-large) {
+    --neon-footer-height: var(--neon-footer-height-mobile);
+  }
 
   /* side nav */
   --neon-side-nav-width: calc(80 * var(--neon-space-4));
@@ -312,7 +336,7 @@
   --neon-border-width-drawer: 0;
   --neon-border-radius-drawer: 16rem;
   --neon-height-drawer: auto;
-  --neon-width-drawer: --neon-side-nav-width;
+  --neon-width-drawer: var(--neon-side-nav-width);
 
   /* radio buttons */
   --neon-border-radius-radio-button: 50%;
@@ -615,7 +639,7 @@
     --neon-background-color-drawer: var(--neon-background-color-card);
 
     /* input */
-    --neon-color-input: var(--neon-color-text);
+    --neon-color-input: var(--neon-color-text-secondary);
     --neon-border-color-input: var(--neon-color-neutral-d2);
     --neon-background-color-input: rgba(var(--neon-rgb-neutral-d5), 0.5);
     --neon-color-placeholder: var(--neon-color-low-contrast-d3);
@@ -932,7 +956,7 @@
     --neon-color-radio-button-label: var(--neon-color-label);
 
     /* input */
-    --neon-color-input: var(--neon-color-text);
+    --neon-color-input: var(--neon-color-text-secondary);
     --neon-border-color-input: var(--neon-color-neutral-l3);
     --neon-background-color-input: var(--neon-color-high-contrast-l5);
     --neon-color-placeholder: var(--neon-color-low-contrast-l3);

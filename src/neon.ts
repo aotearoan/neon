@@ -4,6 +4,7 @@ export { default as NeonAlert } from './components/feedback/alert/NeonAlert.vue'
 export { default as NeonAlertContainer } from './components/feedback/alert/container/NeonAlertContainer.vue';
 export { default as NeonAnchor } from './components/navigation/anchor/NeonAnchor.vue';
 export { default as NeonBadge } from './components/presentation/badge/NeonBadge.vue';
+export { default as NeonBanner } from './components/feedback/banner/NeonBanner.vue';
 export { default as NeonButton } from './components/user-input/button/NeonButton.vue';
 export { default as NeonCard } from './components/layout/card/NeonCard.vue';
 export { default as NeonCardBody } from './components/layout/card/body/NeonCardBody.vue';
@@ -103,6 +104,8 @@ export type { NeonAlertAction } from './common/models/NeonAlertAction';
 export type { NeonAlertMessage } from './common/models/NeonAlertMessage';
 export type { NeonAlertModel } from './components/feedback/alert/NeonAlertModel';
 export type { NeonAvailableSpace } from './common/models/NeonAvailableSpace';
+export type { NeonBannerMessage } from './common/models/NeonBannerMessage';
+export type { NeonBannerModel } from './components/feedback/banner/NeonBannerModel';
 export type { NeonCardListModel } from './common/models/NeonCardListModel';
 export type { NeonCarouselImage } from './common/models/NeonCarouselImage';
 export type { NeonContrastAccessibility } from './common/models/NeonContrastAccessibility';
@@ -128,6 +131,7 @@ export type { NeonTreeMenuSectionModel } from './common/models/NeonTreeMenuSecti
 
 /* utils */
 export { NeonAlertService } from './common/utils/NeonAlertService';
+export { NeonBannerService } from './common/utils/NeonBannerService';
 export { NeonClipboardService, NeonClipboardSupport } from './common/utils/NeonClipboardService';
 export { NeonClosableUtils } from './common/utils/NeonClosableUtils';
 export { NeonDateUtils } from './common/utils/NeonDateUtils';

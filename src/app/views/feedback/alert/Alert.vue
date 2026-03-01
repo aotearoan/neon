@@ -70,9 +70,9 @@
           <neon-stack>
             <neon-stack gap="s">
               <p>
-                The <strong>NeonAlert</strong> component can be used to display temporary notifications to the user. To
-                use, include the <strong>NeonAlert</strong> component once on your page (usually just outside your main
-                <em>&lt;router-view /&gt;</em>).
+                The <strong>NeonAlert</strong> component can be used to display temporary notifications to the user. The
+                <strong>NeonAlert</strong> component is included inside <strong>NeonPage</strong> by default. To use
+                outside of this include the <strong>NeonAlert</strong> component in an application template.
               </p>
               <editor language="html" modelValue="&lt;neon-alert&gt;&lt;/neon-alert&gt;" />
             </neon-stack>

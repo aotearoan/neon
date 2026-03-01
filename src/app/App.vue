@@ -135,7 +135,6 @@
         </neon-footer>
       </template>
     </neon-page>
-    <neon-alert />
   </div>
 </template>
 

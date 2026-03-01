@@ -5,22 +5,12 @@
   .neon-grid {
     width: 100%;
     max-width: 100%;
-    @include layout.min-height(100, 'var(--neon-footer-height-desktop)');
+    @include layout.min-height(100, 'var(--neon-footer-height) + var(--neon-border-width-footer)');
     display: grid;
-
-    @include responsive.responsive(larger-than-tablet) {
-      padding: var(--neon-gutter-desktop) 0;
-      gap: var(--neon-gutter-desktop);
-    }
-
-    @include responsive.responsive(tablet) {
-      padding: var(--neon-gutter-tablet) 0;
-      gap: var(--neon-gutter-tablet);
-    }
+    padding: var(--neon-gutter);
+    gap: var(--neon-gutter);
 
     @include responsive.responsive(mobile-large) {
-      padding: var(--neon-gutter-mobile) 0;
-      gap: var(--neon-gutter-mobile);
       display: flex;
       flex-direction: column;
     }
@@ -49,22 +39,18 @@
     }
   }
 
-  .neon-page--with-side-nav .neon-grid {
-    @include layout.side-nav-offset;
-  }
-
   .neon-page--with-top-nav .neon-page__container {
     .neon-grid {
       @include responsive.responsive(larger-than-tablet) {
-        @include layout.min-height(100, 'var(--neon-top-nav-height-desktop) + var(--neon-footer-height-desktop)');
+        @include layout.min-height(100, 'var(--neon-top-nav-height) + var(--neon-border-width-top-nav) + var(--neon-footer-height)');
       }
 
       @include responsive.responsive(tablet) {
-        @include layout.min-height(100, 'var(--neon-top-nav-height-tablet) + var(--neon-footer-height-tablet)');
+        @include layout.min-height(100, 'var(--neon-top-nav-height) + var(--neon-border-width-top-nav) + var(--neon-footer-height)');
       }
 
       @include responsive.responsive(mobile-large) {
-        @include layout.min-height(100, 'var(--neon-top-nav-height-mobile) + var(--neon-footer-height-mobile)');
+        @include layout.min-height(100, 'var(--neon-top-nav-height) + var(--neon-border-width-top-nav) + var(--neon-footer-height)');
       }
     }
   }
