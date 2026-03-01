@@ -8,28 +8,13 @@
     width: 100vw;
     @include layout.min-height(100);
 
-    &--with-top-nav .neon-page__container {
-      @include responsive.responsive(larger-than-tablet) {
-        padding-top: var(--neon-top-nav-height-desktop);
-        @include layout.min-height(100, 'var(--neon-top-nav-height) + var(--neon-border-width-top-nav) + var(--neon-footer-height) + var(--neon-border-width-footer)');
-      }
-
-      @include responsive.responsive(tablet) {
-        padding-top: var(--neon-top-nav-height-tablet);
-        @include layout.min-height(100, 'var(--neon-top-nav-height) + var(--neon-border-width-top-nav) + var(--neon-footer-height) + var(--neon-border-width-footer)');
-      }
-
-      @include responsive.responsive(mobile-large) {
-        padding-top: var(--neon-top-nav-height-mobile);
-        @include layout.min-height(100, 'var(--neon-top-nav-height) + var(--neon-border-width-top-nav) + var(--neon-footer-height) + var(--neon-border-width-footer)');
-      }
-    }
-
     .neon-page__content-wrapper {
       flex-direction: row;
     }
 
     .neon-page__container {
+      @include layout.min-height(100);
+
       @include responsive.responsive(larger-than-tablet) {
         padding-left: var(--neon-gutter-desktop);
         padding-right: var(--neon-gutter-desktop);
@@ -48,6 +33,10 @@
         padding-left: var(--neon-gutter-mobile);
         padding-right: var(--neon-gutter-mobile);
       }
+    }
+
+    &--with-top-nav .neon-page__container {
+      @include layout.min-height(100, 'var(--neon-top-nav-height)');
     }
 
     &--left {

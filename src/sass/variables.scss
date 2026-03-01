@@ -138,13 +138,13 @@
   --neon-font-weight-semi-bold: 600;
   --neon-font-weight-bold: 700;
 
-  --neon-h6-weight: var(--neon-font-weight-normal);
+  --neon-h6-weight: var(--neon-font-weight-medium);
   --neon-h5-weight: var(--neon-font-weight-medium);
   --neon-h4-weight: var(--neon-font-weight-medium);
   --neon-h3-weight: var(--neon-font-weight-semi-bold);
   --neon-h2-weight: var(--neon-font-weight-semi-bold);
-  --neon-h1-weight: var(--neon-font-weight-bold);
-  --neon-h0-weight: var(--neon-font-weight-bold);
+  --neon-h1-weight: var(--neon-font-weight-semi-bold);
+  --neon-h0-weight: var(--neon-font-weight-semi-bold);
 
   --neon-font-weight-em: var(--neon-font-weight-extra-light);
   --neon-font-weight-strong: var(--neon-font-weight-medium);
@@ -299,7 +299,7 @@
   --neon-border-radius-button-xl: var(--neon-border-radius);
   --neon-border-width-outline-button: 1rem;
   --neon-text-transform-button: none;
-  --neon-font-weight-button: var(--neon-font-weight-normal);
+  --neon-font-weight-button: var(--neon-font-weight-medium);
   --neon-letter-spacing-button: var(--neon-letter-spacing-m);
 
   /* tabs */
@@ -496,7 +496,7 @@
     --neon-background-color-warn: var(--neon-color-warn-d1);
     --neon-background-color-error: var(--neon-color-error-d1);
 
-    --neon-border-color: var(--neon-color-neutral-d3);
+    --neon-border-color: var(--neon-color-low-contrast-d5);
     --neon-border: var(--neon-border-width) var(--neon-border-style) var(--neon-border-color);
     --neon-border-hr: 1rem var(--neon-border-style) var(--neon-border-color);
     --neon-color-hr: var(--neon-border-color);
@@ -640,9 +640,11 @@
 
     /* input */
     --neon-color-input: var(--neon-color-text-secondary);
-    --neon-border-color-input: var(--neon-color-neutral-d2);
+    --neon-border-color-input: var(--neon-border-color);
     --neon-background-color-input: rgba(var(--neon-rgb-neutral-d5), 0.5);
     --neon-color-placeholder: var(--neon-color-low-contrast-d3);
+    --neon-background-color-autofill: var(--neon-color-primary-d5);
+    --neon-color-autofill: var(--neon-color-text-secondary);
 
     /* drop zone */
     --neon-rgb-drop-zone-background: var(--neon-rgb-neutral-d5);
@@ -813,7 +815,7 @@
     --neon-background-color-warn: var(--neon-color-warn-l1);
     --neon-background-color-error: var(--neon-color-error-l1);
 
-    --neon-border-color: var(--neon-color-neutral-l4);
+    --neon-border-color: var(--neon-color-low-contrast-l4);
     --neon-border: var(--neon-border-width) var(--neon-border-style) var(--neon-border-color);
     --neon-border-hr: 1rem var(--neon-border-style) var(--neon-border-color);
     --neon-color-hr: var(--neon-border-color);
@@ -957,9 +959,11 @@
 
     /* input */
     --neon-color-input: var(--neon-color-text-secondary);
-    --neon-border-color-input: var(--neon-color-neutral-l3);
+    --neon-border-color-input: var(--neon-border-color);
     --neon-background-color-input: var(--neon-color-high-contrast-l5);
     --neon-color-placeholder: var(--neon-color-low-contrast-l3);
+    --neon-background-color-autofill: var(--neon-color-primary-l5);
+    --neon-color-autofill: var(--neon-color-text-secondary);
 
     /* drop zone */
     --neon-rgb-drop-zone-background: var(--neon-rgb-high-contrast-l4);

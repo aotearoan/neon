@@ -7,34 +7,6 @@
     padding-bottom: calc(var(--neon-space-20) + var(--neon-height-mobile-menu) + var(--neon-border-width));
     gap: var(--neon-gutter);
 
-    @include layout.min-height(
-                    100,
-                    'var(--neon-top-nav-height-desktop) + var(--neon-border-width-top-nav) + var(--neon-footer-height-desktop) + var(--neon-border-width-footer)'
-    );
-
-    @include responsive.responsive(tablet) {
-      @include layout.min-height(
-                      100,
-                      'var(--neon-top-nav-height-tablet) + var(--neon-border-width-top-nav) + var(--neon-footer-height-tablet) + var(--neon-border-width-footer)'
-      );
-    }
-
-    @include responsive.responsive(mobile-large) {
-      @include layout.min-height(100);
-    }
-
-    &.neon-page-container--hide-nav {
-      @include layout.min-height(100, 'var(--neon-footer-height-desktop) + var(--neon-border-width-footer)');
-
-      @include responsive.responsive(tablet) {
-        @include layout.min-height(100, 'var(--neon-footer-height-tablet) + var(--neon-border-width-footer)');
-      }
-
-      @include responsive.responsive(mobile-large) {
-        @include layout.min-height(100);
-      }
-    }
-
     &.neon-page-container--with-sticky-buttons {
       padding-bottom: calc(
               var(--neon-height-page-container-sticky-buttons) + var(--neon-space-20) + var(--neon-height-mobile-menu) +
@@ -44,12 +16,31 @@
 
     h1,
     .neon-page-container__title {
-      padding-top: var(--neon-gutter);
+      padding-top: calc(1.5 * var(--neon-gutter));
       margin-bottom: 0;
     }
 
     @include responsive.responsive(larger-than-mobile-large) {
       padding-bottom: var(--neon-space-96);
+    }
+  }
+
+  /* All min-height logic */
+  @include responsive.responsive(larger-than-mobile-large) {
+    .neon-page--with-footer {
+      .neon-page-container {
+        min-height: calc(100% - (var(--neon-footer-height) + var(--neon-border-width-footer)));
+      }
+    }
+  }
+
+  @include responsive.responsive(mobile-large) {
+    .neon-page-container {
+      &--hide-nav {
+        min-height: 100%;
+        --neon-height-mobile-menu: 0rem;
+        --neon-height-mobile-menu-indicator: 0rem;
+      }
     }
   }
 }
