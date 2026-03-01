@@ -23,6 +23,8 @@
       font-weight: var(--neon-font-weight-input-indicator);
       padding-left: var(--neon-space-12);
       padding-right: var(--neon-space-12);
+      white-space: nowrap;
+      line-height: 1;
     }
 
     &--s {

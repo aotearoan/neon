@@ -60,6 +60,10 @@
           max-width: 100%;
         }
       }
+
+      .neon-button + .neon-button {
+        border-left: var(--neon-border-width) var(--neon-border-style) var(--neon-color-inverse);
+      }
     }
 
     &.neon-field-group--internal {
@@ -146,8 +150,11 @@
     }
 
     .neon-button {
-      margin-left: calc(-1 * var(--neon-border-width));
       z-index: var(--neon-z-index-above);
+
+      &:not(:first-child) {
+        margin-left: calc(-1 * var(--neon-border-width));
+      }
     }
 
     .neon-number {

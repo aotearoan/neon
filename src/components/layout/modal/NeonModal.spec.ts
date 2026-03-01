@@ -1,6 +1,7 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonModal from './NeonModal.vue';
+import { NeonResponsive } from '@/common/enums/NeonResponsive';
 
 describe('NeonModal', () => {
   const props = { open: true };
@@ -50,6 +51,22 @@ describe('NeonModal', () => {
     const { html } = harness;
     // when / then
     expect(html()).not.toMatch('neon-modal__overlay--opaque');
+  });
+
+  it('renders default breakpoint', () => {
+    // given
+    const { container } = harness;
+    // when / then
+    expect(container.querySelector('.neon-modal--breakpoint-mobile')).toBeDefined();
+  });
+
+  it('renders breakpoint', async () => {
+    // given
+    const { container, rerender } = harness;
+    // when
+    await rerender({ breakpoint: NeonResponsive.MobileLarge });
+    // then
+    expect(container.querySelector('.neon-modal--breakpoint-mobile-large')).toBeDefined();
   });
 
   it('renders top nav visible', async () => {
