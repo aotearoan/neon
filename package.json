@@ -20,7 +20,7 @@
     "gen:component-docs": "node doc-gen.js",
     "gen:docs": "npm run gen:enum-docs && npm run gen:model-docs && npm run gen:util-docs && npm run gen:component-docs",
     "gen:version": "genversion --es6 --semi ./version.ts",
-    "dev": "npm run gen:docs && npm run gen:version && vite",
+    "dev": "npm run gen:docs && npm run gen:version && vite --mode development",
     "build": "npm run gen:version && vite build && vue-tsc --emitDeclarationOnly",
     "build:app": "npm run gen:version && vite --config vite.config.app.ts build",
     "test": "npm run gen:version && jest --no-cache --maxWorkers=2",
@@ -29,6 +29,7 @@
     "type-check": "vue-tsc --noEmit",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
     "lint:scss": "stylelint ./src/**/*.scss",
+    "build:local": "./deploy-local.sh",
     "gh-pages-deploy": "node gh-pages-deploy.js"
   },
   "sideEffects": false,

@@ -1,0 +1,57 @@
+@use '../includes/layout';
+
+@mixin elements {
+  hr {
+    display: flex;
+    width: 100%;
+    border-radius: var(--neon-border-radius);
+    border: none;
+    border-top: var(--neon-border-hr);
+    @include layout.margin-vertical();
+  }
+
+  ol {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--neon-space-16);
+
+    > li {
+      max-width: var(--neon-max-paragraph-width);
+      margin-left: var(--neon-space-16);
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+
+    > li {
+      list-style-type: none;
+      margin: 0;
+
+      &:before {
+        color: var(--neon-color-low-contrast);
+      }
+    }
+
+    &:not(.no-style) > li {
+      display: inline-flex;
+      max-width: var(--neon-max-paragraph-width);
+      padding-left: calc(7 * var(--neon-base-space));
+
+      &:before {
+        content: '•';
+        padding-right: var(--neon-space-8);
+        margin-left: calc(-7 * var(--neon-base-space));
+        margin-top: calc(-1 * var(--neon-space-2));
+        display: inline-flex;
+        align-items: flex-start;
+        font-size: var(--neon-font-size-l);
+        line-height: var(--neon-line-height-ratio);
+      }
+    }
+  }
+}

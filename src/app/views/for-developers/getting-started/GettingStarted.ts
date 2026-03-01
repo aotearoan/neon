@@ -15,6 +15,7 @@ export default defineComponent({
   },
   setup() {
     const darkModeExample = ref('<html class="app neon neon-mode--dark">');
+    const appClassExample = ref('<div id="app" class="neon-app">');
 
     const importComponents = ref(`import { NeonButton } from '@aotearoan/neon';
 
@@ -40,6 +41,7 @@ export default defineComponent({
 
     return {
       darkModeExample,
+      appClassExample,
       importComponents,
       allTheSass,
     };

@@ -181,7 +181,7 @@
           <neon-tabs v-model="selectedTab" :color="selectedPalette" :tabs="tabs"></neon-tabs>
           <neon-action-menu v-model="selectedActionMenu" :color="selectedPalette" :model="actionMenuModel" />
           <neon-menu :color="selectedPalette" :menu="testMenu" />
-          <neon-tree-menu :model="testTreeMenu" />
+          <neon-tree-menu v-model="testTreeMenu" />
           <neon-selectable-card v-model="testSelectableCard" :color="selectedPalette" :disabled="disabled">
             <neon-card-body>
               <span>Pig doner tri-tip tongue pork, shank kevin pork belly shoulder</span>

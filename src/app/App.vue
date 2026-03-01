@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="neon-app neon-app--standard-page">
+  <div class="neon-app--standard-page">
     <neon-page page-align="left">
       <template v-if="isTablet" #top-nav>
         <neon-top-nav class="app-top-nav">
@@ -28,7 +28,7 @@
                     :label="section.group"
                     class="menu-expansion-panel"
                   >
-                    <neon-tree-menu :expand-all="expandAll" :model="section.children" @click="onSideNavMenuClick" />
+                    <neon-tree-menu v-model="section.children" :expand-all="expandAll" />
                   </neon-expansion-panel>
                 </div>
               </div>
@@ -108,7 +108,7 @@
               class="menu-expansion-panel"
               size="l"
             >
-              <neon-tree-menu :expand-all="expandAll" :model="section.children" @click="onSideNavMenuClick" />
+              <neon-tree-menu v-model="section.children" :expand-all="expandAll" />
             </neon-expansion-panel>
           </template>
         </neon-side-nav>

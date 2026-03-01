@@ -62,3 +62,8 @@ default:
 For more information on dynamically changing the mode
 see [Dark mode](https://aotearoan.github.io/neon/design/theming#dark-mode).
 
+### Building and using the library locally
+
+1. build the project (`npm build`),
+2. run `npm pack` to create a tarball of the project
+3. install from the tarball with  `npm i -S /$PATH-TO-THIS-PROJECT/arcual-lib-app-neon-21.2.8.tgz`

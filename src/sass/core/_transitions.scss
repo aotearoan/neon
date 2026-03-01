@@ -1,0 +1,13 @@
+@mixin transitions {
+  .neon-fade-transition {
+    &-enter-active,
+    &-leave-active {
+      transition: opacity ease-in-out var(--neon-animation-speed-fast);
+    }
+
+    &-enter-from,
+    &-leave-to {
+      opacity: 0;
+    }
+  }
+}

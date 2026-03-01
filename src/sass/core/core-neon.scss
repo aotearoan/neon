@@ -1,0 +1,29 @@
+@use '../includes/layout';
+@use './colors';
+@use './elements';
+@use './table';
+@use './transitions';
+@use './typography';
+
+
+@mixin core-neon {
+  // TODO: remove this rule & define explicitly per component https://app.clickup.com/t/14392315/ARC-4858
+  * {
+    @include layout.zero-spacing;
+  }
+
+  // TODO: remove this rule & define explicitly per component https://app.clickup.com/t/14392315/ARC-4858
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  flex-direction: column;
+  width: 100%;
+
+  @include elements.elements;
+  @include typography.typography;
+  @include colors.color-classes;
+  @include table.table;
+  @include transitions.transitions;
+}

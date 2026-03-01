@@ -1,129 +1,150 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NeonTreeMenu matches snapshot 1`] = `
-<nav class="neon-tree-menu">
+<nav id="testTreeManu" class="neon-tree-menu--brand neon-tree-menu">
   <ul class="no-style">
     <li class="neon-tree-menu__section"><a class="neon-link--no-style neon-link--outline-none neon-link neon-tree-menu__section-link neon-tree-menu__section-link" tabindex="-1">
-        <!-- @slot the content of the link --><span class="neon-tree-menu__section-link-label neon-tree-menu__section-link-label--outline-text" role="link" tabindex="0">Feedback</span>
+        <!-- @slot the content of the link -->
+        <div class="neon-icon--name-send neon-icon neon-tree-menu__section-link-icon neon-tree-menu__section-link-icon"><svg id="testTreeManu_feedback" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+            <path class="neon-svg--fill" fill-rule="evenodd" d="M1.513 1.96a1.374 1.374 0 011.499-.21l19.335 9.215a1.146 1.146 0 010 2.07L3.012 22.25a1.374 1.374 0 01-1.947-1.46L2.49 12 1.065 3.21a1.374 1.374 0 01.448-1.25zm2.375 10.79l-1.304 8.042L21.031 12 2.584 3.208l1.304 8.042h7.362a.75.75 0 010 1.5H3.888z"></path>
+          </svg>
+        </div><span tabindex="0" class="neon-tree-menu__section-link-label neon-tree-menu__section-link-label--outline-text" role="link">Feedback</span>
+        <div class="neon-icon--name-chevron-right neon-icon neon-tree-menu__section-link-expansion-icon neon-tree-menu__section-link-expansion-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+            <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
+          </svg>
+        </div>
       </a>
-      <ul class="no-style neon-tree-menu__links">
-        <li class="neon-tree-menu__link-item"><a href="/test" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-tree-menu__link neon-tree-menu__link" tabindex="-1">
-            <!-- @slot the content of the link --><span class="neon-tree-menu__link-label neon-tree-menu__link-label--outline-text" role="link" tabindex="0">Alert</span>
+      <ul class="no-style neon-tree-menu__items">
+        <li class="neon-tree-menu__item"><a class="neon-link--no-style neon-link--outline-none neon-link neon-tree-menu__item-link neon-tree-menu__item-link" tabindex="-1">
+            <!-- @slot the content of the link --><span class="neon-tree-menu__item-link-label neon-tree-menu__item-link-label--outline-text" role="link" tabindex="0">Alert</span>
           </a>
-          <ul class="no-style neon-tree-menu__anchors">
-            <li><a href="/test#description" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
-                <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Description</span>
+          <ul class="neon-tree-menu__sub-menu--expanded no-style neon-tree-menu__sub-menu">
+            <li class="neon-tree-menu__sub-menu-item"><a href="/test#description" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__sub-menu-item-link neon-link--no-style neon-tree-menu__sub-menu-item-link" tabindex="-1">
+                <!-- @slot the content of the link --><span class="neon-tree-menu__sub-menu-item-link-label neon-tree-menu__sub-menu-item-link-label--outline-text" role="link" tabindex="0">Description</span>
               </a></li>
-            <li><a href="/test#api" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
-                <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">API</span>
+            <li class="neon-tree-menu__sub-menu-item"><a href="/test#api" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__sub-menu-item-link neon-link--no-style neon-tree-menu__sub-menu-item-link" tabindex="-1">
+                <!-- @slot the content of the link --><span class="neon-tree-menu__sub-menu-item-link-label neon-tree-menu__sub-menu-item-link-label--outline-text" role="link" tabindex="0">API</span>
               </a></li>
-            <li><a href="/test#examples" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
-                <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Examples</span>
+            <li class="neon-tree-menu__sub-menu-item"><a href="/test#examples" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__sub-menu-item-link neon-link--no-style neon-tree-menu__sub-menu-item-link" tabindex="-1">
+                <!-- @slot the content of the link --><span class="neon-tree-menu__sub-menu-item-link-label neon-tree-menu__sub-menu-item-link-label--outline-text" role="link" tabindex="0">Examples</span>
               </a></li>
           </ul>
         </li>
-        <li class="neon-tree-menu__link-item"><a href="/test" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-tree-menu__link neon-tree-menu__link" tabindex="-1">
-            <!-- @slot the content of the link --><span class="neon-tree-menu__link-label neon-tree-menu__link-label--outline-text" role="link" tabindex="0">Note</span>
+        <li class="neon-tree-menu__item"><a class="neon-link--no-style neon-link--outline-none neon-link neon-tree-menu__item-link neon-tree-menu__item-link" tabindex="-1">
+            <!-- @slot the content of the link --><span class="neon-tree-menu__item-link-label neon-tree-menu__item-link-label--outline-text" role="link" tabindex="0">Note</span>
           </a>
-          <ul class="no-style neon-tree-menu__anchors">
-            <li><a href="/test#description" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
-                <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Description</span>
+          <ul class="no-style neon-tree-menu__sub-menu">
+            <li class="neon-tree-menu__sub-menu-item"><a href="/test#description" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__sub-menu-item-link neon-link--no-style neon-tree-menu__sub-menu-item-link" tabindex="-1">
+                <!-- @slot the content of the link --><span class="neon-tree-menu__sub-menu-item-link-label neon-tree-menu__sub-menu-item-link-label--outline-text" role="link" tabindex="0">Description</span>
               </a></li>
-            <li><a href="/test#api" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
-                <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">API</span>
+            <li class="neon-tree-menu__sub-menu-item"><a href="/test#api" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__sub-menu-item-link neon-link--no-style neon-tree-menu__sub-menu-item-link" tabindex="-1">
+                <!-- @slot the content of the link --><span class="neon-tree-menu__sub-menu-item-link-label neon-tree-menu__sub-menu-item-link-label--outline-text" role="link" tabindex="0">API</span>
               </a></li>
-            <li><a href="/test#examples" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
-                <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Examples</span>
+            <li class="neon-tree-menu__sub-menu-item"><a href="/test#examples" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__sub-menu-item-link neon-link--no-style neon-tree-menu__sub-menu-item-link" tabindex="-1">
+                <!-- @slot the content of the link --><span class="neon-tree-menu__sub-menu-item-link-label neon-tree-menu__sub-menu-item-link-label--outline-text" role="link" tabindex="0">Examples</span>
               </a></li>
           </ul>
         </li>
-        <li class="neon-tree-menu__link-item"><a href="/test" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-tree-menu__link neon-tree-menu__link" tabindex="-1">
-            <!-- @slot the content of the link --><span class="neon-tree-menu__link-label neon-tree-menu__link-label--outline-text" role="link" tabindex="0">Notification Counter</span>
+        <li class="neon-tree-menu__item"><a class="neon-link--no-style neon-link--outline-none neon-link neon-tree-menu__item-link neon-tree-menu__item-link" tabindex="-1">
+            <!-- @slot the content of the link --><span class="neon-tree-menu__item-link-label neon-tree-menu__item-link-label--outline-text" role="link" tabindex="0">Notification Counter</span>
           </a>
-          <ul class="no-style neon-tree-menu__anchors">
-            <li><a href="/test#description" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
-                <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Description</span>
+          <ul class="no-style neon-tree-menu__sub-menu">
+            <li class="neon-tree-menu__sub-menu-item"><a href="/test#description" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__sub-menu-item-link neon-link--no-style neon-tree-menu__sub-menu-item-link" tabindex="-1">
+                <!-- @slot the content of the link --><span class="neon-tree-menu__sub-menu-item-link-label neon-tree-menu__sub-menu-item-link-label--outline-text" role="link" tabindex="0">Description</span>
               </a></li>
-            <li><a href="/test#api" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
-                <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">API</span>
+            <li class="neon-tree-menu__sub-menu-item"><a href="/test#api" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__sub-menu-item-link neon-link--no-style neon-tree-menu__sub-menu-item-link" tabindex="-1">
+                <!-- @slot the content of the link --><span class="neon-tree-menu__sub-menu-item-link-label neon-tree-menu__sub-menu-item-link-label--outline-text" role="link" tabindex="0">API</span>
               </a></li>
-            <li><a href="/test#examples" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
-                <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Examples</span>
+            <li class="neon-tree-menu__sub-menu-item"><a href="/test#examples" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__sub-menu-item-link neon-link--no-style neon-tree-menu__sub-menu-item-link" tabindex="-1">
+                <!-- @slot the content of the link --><span class="neon-tree-menu__sub-menu-item-link-label neon-tree-menu__sub-menu-item-link-label--outline-text" role="link" tabindex="0">Examples</span>
               </a></li>
           </ul>
         </li>
       </ul>
     </li>
-    <li class="neon-tree-menu__section--expanded neon-tree-menu__section"><a class="neon-link--no-style neon-link--outline-none neon-link neon-tree-menu__section-link neon-tree-menu__section-link" tabindex="-1">
-        <!-- @slot the content of the link --><span class="neon-tree-menu__section-link-label neon-tree-menu__section-link-label--outline-text" role="link" tabindex="0">Navigation</span>
+    <li class="neon-tree-menu__section"><a class="neon-link--no-style neon-link--outline-none neon-link neon-tree-menu__section-link neon-tree-menu__section-link" tabindex="-1">
+        <!-- @slot the content of the link -->
+        <!--v-if--><span tabindex="0" class="neon-tree-menu__section-link-label neon-tree-menu__section-link-label--outline-text" role="link">Navigation</span>
+        <div class="neon-icon--name-chevron-right neon-icon neon-tree-menu__section-link-expansion-icon neon-tree-menu__section-link-expansion-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+            <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
+          </svg>
+        </div>
       </a>
-      <ul class="no-style neon-tree-menu__links">
-        <li class="neon-tree-menu__link-item"><a href="/test" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-tree-menu__link neon-tree-menu__link" tabindex="-1">
-            <!-- @slot the content of the link --><span class="neon-tree-menu__link-label neon-tree-menu__link-label--outline-text" role="link" tabindex="0">Action Menu</span>
+      <ul class="no-style neon-tree-menu__items">
+        <li class="neon-tree-menu__item"><a class="neon-link--no-style neon-link--outline-none neon-link neon-tree-menu__item-link neon-tree-menu__item-link" tabindex="-1">
+            <!-- @slot the content of the link --><span class="neon-tree-menu__item-link-label neon-tree-menu__item-link-label--outline-text" role="link" tabindex="0">Action Menu</span>
           </a>
-          <ul class="no-style neon-tree-menu__anchors">
-            <li><a href="/test#description" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
-                <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Description</span>
+          <ul class="no-style neon-tree-menu__sub-menu">
+            <li class="neon-tree-menu__sub-menu-item"><a href="/test#description" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__sub-menu-item-link neon-link--no-style neon-tree-menu__sub-menu-item-link" tabindex="-1">
+                <!-- @slot the content of the link --><span class="neon-tree-menu__sub-menu-item-link-label neon-tree-menu__sub-menu-item-link-label--outline-text" role="link" tabindex="0">Description</span>
               </a></li>
-            <li><a href="/test#api" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
-                <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">API</span>
+            <li class="neon-tree-menu__sub-menu-item"><a href="/test#api" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__sub-menu-item-link neon-link--no-style neon-tree-menu__sub-menu-item-link" tabindex="-1">
+                <!-- @slot the content of the link --><span class="neon-tree-menu__sub-menu-item-link-label neon-tree-menu__sub-menu-item-link-label--outline-text" role="link" tabindex="0">API</span>
               </a></li>
-            <li><a href="/test#examples" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
-                <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Examples</span>
+            <li class="neon-tree-menu__sub-menu-item"><a href="/test#examples" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__sub-menu-item-link neon-link--no-style neon-tree-menu__sub-menu-item-link" tabindex="-1">
+                <!-- @slot the content of the link --><span class="neon-tree-menu__sub-menu-item-link-label neon-tree-menu__sub-menu-item-link-label--outline-text" role="link" tabindex="0">Examples</span>
               </a></li>
           </ul>
         </li>
-        <li class="neon-tree-menu__link-item"><a href="/test" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-tree-menu__link neon-tree-menu__link" tabindex="-1">
-            <!-- @slot the content of the link --><span class="neon-tree-menu__link-label neon-tree-menu__link-label--outline-text" role="link" tabindex="0">Dropdown Menu</span>
+        <li class="neon-tree-menu__item"><a class="neon-link--no-style neon-link--outline-none neon-link neon-tree-menu__item-link neon-tree-menu__item-link" tabindex="-1">
+            <!-- @slot the content of the link --><span class="neon-tree-menu__item-link-label neon-tree-menu__item-link-label--outline-text" role="link" tabindex="0">Dropdown Menu</span>
           </a>
-          <ul class="no-style neon-tree-menu__anchors">
-            <li><a href="/test#description" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
-                <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Description</span>
+          <ul class="no-style neon-tree-menu__sub-menu">
+            <li class="neon-tree-menu__sub-menu-item"><a href="/test#description" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__sub-menu-item-link neon-link--no-style neon-tree-menu__sub-menu-item-link" tabindex="-1">
+                <!-- @slot the content of the link --><span class="neon-tree-menu__sub-menu-item-link-label neon-tree-menu__sub-menu-item-link-label--outline-text" role="link" tabindex="0">Description</span>
               </a></li>
-            <li><a href="/test#api" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
-                <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">API</span>
+            <li class="neon-tree-menu__sub-menu-item"><a href="/test#api" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__sub-menu-item-link neon-link--no-style neon-tree-menu__sub-menu-item-link" tabindex="-1">
+                <!-- @slot the content of the link --><span class="neon-tree-menu__sub-menu-item-link-label neon-tree-menu__sub-menu-item-link-label--outline-text" role="link" tabindex="0">API</span>
               </a></li>
-            <li><a href="/test#examples" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
-                <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Examples</span>
+            <li class="neon-tree-menu__sub-menu-item"><a href="/test#examples" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__sub-menu-item-link neon-link--no-style neon-tree-menu__sub-menu-item-link" tabindex="-1">
+                <!-- @slot the content of the link --><span class="neon-tree-menu__sub-menu-item-link-label neon-tree-menu__sub-menu-item-link-label--outline-text" role="link" tabindex="0">Examples</span>
               </a></li>
           </ul>
         </li>
-        <li class="neon-tree-menu__link-item"><a href="/test" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-tree-menu__link neon-tree-menu__link" tabindex="-1">
-            <!-- @slot the content of the link --><span class="neon-tree-menu__link-label neon-tree-menu__link-label--outline-text" role="link" tabindex="0">Link</span>
+        <li class="neon-tree-menu__item"><a href="/test" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-tree-menu__item-link neon-tree-menu__item-link" tabindex="-1">
+            <!-- @slot the content of the link --><span class="neon-tree-menu__item-link-label neon-tree-menu__item-link-label--outline-text" role="link" tabindex="0">Link</span>
           </a>
-          <ul class="no-style neon-tree-menu__anchors">
-            <li><a href="/test#description" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
-                <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Description</span>
-              </a></li>
-            <li><a href="/test#api" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
-                <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">API</span>
-              </a></li>
-            <li><a href="/test#examples" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
-                <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Examples</span>
-              </a></li>
-          </ul>
+          <!--v-if-->
         </li>
-        <li class="neon-tree-menu__link-item"><a href="/test" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-tree-menu__link neon-tree-menu__link" tabindex="-1">
-            <!-- @slot the content of the link --><span class="neon-tree-menu__link-label neon-tree-menu__link-label--outline-text" role="link" tabindex="0">Tree Menu</span>
+        <li class="neon-tree-menu__item"><a class="neon-link--no-style neon-link--outline-none neon-link neon-tree-menu__item-link neon-tree-menu__item-link" tabindex="-1">
+            <!-- @slot the content of the link --><span class="neon-tree-menu__item-link-label neon-tree-menu__item-link-label--outline-text" role="link" tabindex="0">Tree Menu</span>
           </a>
-          <ul class="no-style neon-tree-menu__anchors">
-            <li><a href="/test#description" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
-                <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Description</span>
+          <ul class="no-style neon-tree-menu__sub-menu">
+            <li class="neon-tree-menu__sub-menu-item"><a href="/test#description" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__sub-menu-item-link neon-link--no-style neon-tree-menu__sub-menu-item-link" tabindex="-1">
+                <!-- @slot the content of the link --><span class="neon-tree-menu__sub-menu-item-link-label neon-tree-menu__sub-menu-item-link-label--outline-text" role="link" tabindex="0">Description</span>
               </a></li>
-            <li><a href="/test#api" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
-                <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">API</span>
+            <li class="neon-tree-menu__sub-menu-item"><a href="/test#api" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__sub-menu-item-link neon-link--no-style neon-tree-menu__sub-menu-item-link" tabindex="-1">
+                <!-- @slot the content of the link --><span class="neon-tree-menu__sub-menu-item-link-label neon-tree-menu__sub-menu-item-link-label--outline-text" role="link" tabindex="0">API</span>
               </a></li>
-            <li><a href="/test#examples" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__anchor neon-link--no-style neon-tree-menu__anchor" tabindex="-1">
-                <!-- @slot the content of the link --><span class="neon-tree-menu__anchor-label neon-tree-menu__anchor-label--outline-text" role="link" tabindex="0">Examples</span>
+            <li class="neon-tree-menu__sub-menu-item"><a href="/test#examples" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-link--no-style neon-tree-menu__sub-menu-item-link neon-link--no-style neon-tree-menu__sub-menu-item-link" tabindex="-1">
+                <!-- @slot the content of the link --><span class="neon-tree-menu__sub-menu-item-link-label neon-tree-menu__sub-menu-item-link-label--outline-text" role="link" tabindex="0">Examples</span>
               </a></li>
           </ul>
         </li>
       </ul>
     </li>
-    <li class="neon-tree-menu__section--expanded neon-tree-menu__section--disabled neon-tree-menu__section"><a class="neon-link--no-style neon-link--outline-none neon-link neon-tree-menu__section-link neon-tree-menu__section-link" tabindex="-1">
-        <!-- @slot the content of the link --><span class="neon-tree-menu__section-link-label neon-tree-menu__section-link-label--outline-text" role="link" tabindex="0">Disabled Section</span>
+    <li class="neon-tree-menu__section--expanded neon-tree-menu__section"><a href="/some-url" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-tree-menu__section-link neon-tree-menu__section-link" tabindex="-1">
+        <!-- @slot the content of the link -->
+        <!--v-if--><span tabindex="0" class="neon-tree-menu__section-link-label neon-tree-menu__section-link-label--outline-text" role="link">Link Section</span>
+        <!--v-if-->
       </a>
-      <ul class="no-style neon-tree-menu__links"></ul>
+      <ul class="no-style neon-tree-menu__items"></ul>
+    </li>
+    <li class="neon-tree-menu__section--disabled neon-tree-menu__section"><a class="neon-link--no-style neon-link--outline-none neon-link neon-tree-menu__section-link neon-tree-menu__section-link" tabindex="-1">
+        <!-- @slot the content of the link -->
+        <!--v-if--><span tabindex="-1" class="neon-tree-menu__section-link-label neon-tree-menu__section-link-label--outline-text" role="link">Disabled Section</span>
+        <div class="neon-icon--name-chevron-right neon-icon neon-tree-menu__section-link-expansion-icon neon-tree-menu__section-link-expansion-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+            <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
+          </svg>
+        </div>
+      </a>
+      <ul class="no-style neon-tree-menu__items">
+        <li class="neon-tree-menu__item"><a href="/disabled-url" class="neon-link--no-style neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-tree-menu__item-link neon-tree-menu__item-link" tabindex="-1">
+            <!-- @slot the content of the link --><span class="neon-tree-menu__item-link-label neon-tree-menu__item-link-label--outline-text" role="link" tabindex="0">Disabled Menu</span>
+          </a>
+          <!--v-if-->
+        </li>
+      </ul>
     </li>
   </ul>
 </nav>

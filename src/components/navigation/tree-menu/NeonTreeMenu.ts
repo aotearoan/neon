@@ -1,7 +1,9 @@
 import { defineComponent, ref, watch } from 'vue';
 import type { NeonTreeMenuSectionModel } from '@/common/models/NeonTreeMenuSectionModel';
+import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 import NeonLink from '../link/NeonLink.vue';
 import { useRoute } from 'vue-router';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 
 /**
  * Three level tree menu. This is useful for displaying a hierarchical navigation in NeonSideNav.The top level of the
@@ -11,13 +13,24 @@ import { useRoute } from 'vue-router';
 export default defineComponent({
   name: 'NeonTreeMenu',
   components: {
+    NeonIcon,
     NeonLink,
   },
   props: {
     /**
+     * Id for the tree menu. This is used specifically to namespace the menu icons so that icon paths are unique. A
+     * typical scenario is the tree menu is used in a side nav and also a drawer which means icon ids will be duplicated
+     * unless they're namespaced.
+     */
+    id: { type: String, required: true },
+    /**
      * The tree model defining the menu.
      */
-    model: { type: Array as () => Array<NeonTreeMenuSectionModel>, required: true },
+    modelValue: { type: Array as () => Array<NeonTreeMenuSectionModel>, required: true },
+    /**
+     * The menu highlight color (excludes low-contrast and neutral).
+     */
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Brand },
     /**
      * Expand all nodes in the tree, this is useful for providing filtering (e.g. the Neon showcase side navigation menu).
      */
@@ -25,10 +38,10 @@ export default defineComponent({
   },
   emits: [
     /**
-     * Emitted when the user clicks on a menu item
-     * @type {string} the key of the clicked on menu item.
+     * Emitted when the user toggles expansion of a section or item
+     * @type {Array<NeonTreeMenuSectionModel>} the updated model with the section or item expanded/collapsed.
      */
-    'click',
+    'update:modelValue',
   ],
   setup(props, { emit }) {
     const route = useRoute();
@@ -41,12 +54,32 @@ export default defineComponent({
       }
     };
 
-    const onClick = (key: string) => {
-      emit('click', key);
+    const onSectionClick = (key: string) => {
+      const newModel = props.modelValue.map((section) => {
+        return {
+          ...section,
+          children: section.children?.map((child) => ({ ...child })),
+          expanded: section.key === key ? !section.expanded : section.expanded,
+        };
+      });
+
+      emit('update:modelValue', newModel);
     };
 
-    const fragment = (anchor: string) => {
-      return anchor.toLowerCase().replace(/\s/g, '-');
+    const onItemClick = (key: string) => {
+      const newModel = props.modelValue.map((section) => {
+        return {
+          ...section,
+          children: section.children?.map((child) => {
+            return {
+              ...child,
+              expanded: child.key === key ? !child.expanded : child.expanded,
+            };
+          }),
+        };
+      });
+
+      emit('update:modelValue', newModel);
     };
 
     watch(
@@ -58,8 +91,8 @@ export default defineComponent({
     return {
       url,
       click,
-      onClick,
-      fragment,
+      onSectionClick,
+      onItemClick,
     };
   },
 });

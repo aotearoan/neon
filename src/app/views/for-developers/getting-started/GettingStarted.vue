@@ -54,6 +54,8 @@
               e.g. to set dark mode by default:
             </p>
             <editor v-model="darkModeExample" language="html" />
+            <p>Add the <em>neon-app</em> class to the Vue app binding div:</p>
+            <editor v-model="appClassExample" language="html" />
           </neon-stack>
           <p>
             For more information on dynamically changing the mode see
