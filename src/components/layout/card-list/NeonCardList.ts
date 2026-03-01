@@ -1,14 +1,17 @@
-import { defineComponent } from 'vue';
+import { computed, defineComponent } from 'vue';
 import NeonButton from '@/components/user-input/button/NeonButton.vue';
-import NeonCardListCard from './card/NeonCardListCard.vue';
 import NeonInline from '@/components/layout/inline/NeonInline.vue';
 import NeonLink from '@/components/navigation/link/NeonLink.vue';
+import NeonPagination from '@/components/navigation/pagination/NeonPagination.vue';
 import NeonStack from '@/components/layout/stack/NeonStack.vue';
 import { NeonButtonStyle } from '@/common/enums/NeonButtonStyle';
 import { NeonSize } from '@/common/enums/NeonSize';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import type { NeonCardListModel } from '@/common/models/NeonCardListModel';
 import { NeonNumberUtils } from '@/common/utils/NeonNumberUtils';
+import type { NeonLoadOnDemandModel } from '@/common/models/NeonLoadOnDemandModel';
+import type { NeonPaginationModel } from '@/common/models/NeonPaginationModel';
+import type { NeonIdentifiable } from '@/common/models/NeonIdentifiable';
 
 /**
  * Represent lists of objects as cards. This is intended to be a more responsive replacement for tables. This component
@@ -19,65 +22,74 @@ import { NeonNumberUtils } from '@/common/utils/NeonNumberUtils';
 export default defineComponent({
   name: 'NeonCardList',
   components: {
+    NeonPagination,
     NeonButton,
-    NeonCardListCard,
     NeonInline,
     NeonLink,
     NeonStack,
   },
   props: {
     /**
-     * Model for a card in the list. This is passed through to the #card slot allowing the parent component to provide
-     * the card layout.
+     * Items to display as cards. Each item should be a NeonCardListModel.
      */
-    model: { type: Array as () => Array<NeonCardListModel>, required: true },
-    /**
-     * For pagination - the total count of records including those not displayed.
-     */
-    total: { type: Number, default: null },
+    items: { type: Array as () => Array<NeonCardListModel<NeonIdentifiable>>, required: true },
     /**
      * Specify a hover color for the cards.
      */
     color: { type: String as () => NeonFunctionalColor, default: null },
     /**
-     * Specify cards are clickable. This will return click events when cards are clicked on. NOTE: use the href in the
-     * card model instead of clickable=true if cards are links.
+     * Model for configuring the on demand loading layout.
      */
-    clickable: { type: Boolean, default: false },
+    loadOnDemand: { type: Object as () => NeonLoadOnDemandModel },
     /**
-     * override the default 'x of y' text.
+     * Model for configuring pagination, either pagination or loadOnDemand should be provided.
      */
-    ofLabel: { type: String, default: 'of' },
-    /**
-     * override the 'Show more' text.
-     */
-    showMoreLabel: { type: String, default: 'Show more' },
-    /**
-     * override the 'End of results' text.
-     */
-    endOfResultsLabel: { type: String, default: 'End of results' },
+    pagination: { type: Object as () => NeonPaginationModel },
   },
   emits: [
     /**
-     * Emitted when the 'Show more' button is clicked.
+     * Emitted when the 'Show more' button is clicked in "on demand" mode.
      * @type {void}
      */
     'show-more',
-    /**
-     * Emitted when a cards are clickable & a card is clicked & not disabled.
-     * @type index {number}
-     */
-    'click',
   ],
-  setup(_props, { emit }) {
-    const n = (value: number) => NeonNumberUtils.formatNumber(value);
+  setup(props, { emit }) {
+    const ofLabel = computed(() => {
+      if (!props.pagination) {
+        return props.loadOnDemand?.ofLabel ?? 'of';
+      }
+
+      return undefined;
+    });
+
+    const showMoreLabel = computed(() => {
+      if (!props.pagination) {
+        return props.loadOnDemand?.showMoreLabel ?? 'Show more';
+      }
+
+      return undefined;
+    });
+
+    const endOfResultsLabel = computed(() => {
+      if (!props.pagination) {
+        return props.loadOnDemand?.endOfResultsLabel ?? 'End of results';
+      }
+
+      return undefined;
+    });
+
+    const total = computed(() => props.loadOnDemand?.total ?? props.pagination?.total ?? 0);
 
     return {
       emit,
-      n,
+      n: NeonNumberUtils.formatNumber,
       NeonButtonStyle,
       NeonFunctionalColor,
       NeonSize,
+      ofLabel,
+      showMoreLabel,
+      endOfResultsLabel,
+      total,
     };
   },
 });

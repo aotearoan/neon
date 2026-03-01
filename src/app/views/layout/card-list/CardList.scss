@@ -11,6 +11,7 @@
 }
 
 .neon-card-list__card--disabled {
+  .card-title,
   .card-description {
     color: var(--neon-color-disabled-text);
   }

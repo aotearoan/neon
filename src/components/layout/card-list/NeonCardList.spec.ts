@@ -1,19 +1,27 @@
 import { fireEvent, render } from '@testing-library/vue';
 import NeonCardList from './NeonCardList.vue';
-import { cardListModelFixture } from '@/fixtures/CardListModelFixture';
+import { type CardListModel, CardListModelFixture } from '@/fixtures/CardListModelFixture';
 import { router } from '../../../../test/unit/test-router';
 import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { PaginationFixture } from '@/fixtures/PaginationFixture';
+import { LoadOnDemandWithLabelsFixture } from '@/fixtures/LoadOnDemandFixture';
+import type { NeonCardListModel } from '@/common/models/NeonCardListModel';
 
 describe('NeonCardList', () => {
-  const modelWithLinks = cardListModelFixture(5, 'http://getskeleton.com', 0);
-  const modelNoLinks = cardListModelFixture(5, undefined, 0);
+  let modelWithLinks: Array<NeonCardListModel<CardListModel>>;
+  let modelNoLinks: Array<NeonCardListModel<CardListModel>>;
+
+  beforeEach(() => {
+    modelWithLinks = CardListModelFixture(5, 'http://getskeleton.com', 0);
+    modelNoLinks = CardListModelFixture(5, undefined, 0);
+  });
 
   it('renders header slot contents', () => {
     // given
     const { html } = render(NeonCardList, {
       props: {
-        model: modelWithLinks,
-        total: modelWithLinks.length,
+        items: modelWithLinks,
+        loadOnDemand: { total: modelWithLinks.length },
       },
       slots: { header: '<p>test</p>' },
       global: { plugins: [router] },
@@ -26,8 +34,8 @@ describe('NeonCardList', () => {
     // given
     const { html } = render(NeonCardList, {
       props: {
-        model: modelWithLinks,
-        total: modelWithLinks.length,
+        items: modelWithLinks,
+        loadOnDemand: { total: modelWithLinks.length },
       },
       slots: { card: '<p>test</p>' },
       global: { plugins: [router] },
@@ -36,85 +44,87 @@ describe('NeonCardList', () => {
     expect(html()).toMatch('<p>test</p>');
   });
 
-  it('renders ofLabel override', () => {
+  it('renders default labels', () => {
     // given
     const { html } = render(NeonCardList, {
       props: {
-        model: modelWithLinks,
-        total: modelWithLinks.length,
-        ofLabel: 'von',
+        items: modelWithLinks,
+        loadOnDemand: { total: modelWithLinks.length },
       },
       slots: { card: '<p>test</p>' },
       global: { plugins: [router] },
     });
     // when / then
-    expect(html()).toMatch(`${modelWithLinks.length} von ${modelWithLinks.length}`);
+    const result = html();
+    expect(result).toMatch(`${modelWithLinks.length} of ${modelWithLinks.length}`);
+    expect(result).toMatch('End of results');
+  });
+
+  it('renders default show more label', () => {
+    // given
+    const { html } = render(NeonCardList, {
+      props: {
+        items: modelWithLinks,
+        loadOnDemand: { total: modelWithLinks.length - 1 },
+      },
+      slots: { card: '<p>test</p>' },
+      global: { plugins: [router] },
+    });
+    // when / then
+    const result = html();
+    expect(result).toMatch('Show more');
+  });
+
+  it('renders label overrides', () => {
+    // given
+    const loadOnDemand = LoadOnDemandWithLabelsFixture(modelWithLinks.length);
+    const { html } = render(NeonCardList, {
+      props: {
+        items: modelWithLinks,
+        loadOnDemand,
+      },
+      slots: { card: '<p>test</p>' },
+      global: { plugins: [router] },
+    });
+    // when / then
+    expect(html()).toMatch(`${modelWithLinks.length} ${loadOnDemand.ofLabel} ${modelWithLinks.length}`);
   });
 
   it('renders showMoreLabel override', () => {
     // given
+    const loadOnDemand = LoadOnDemandWithLabelsFixture(modelWithLinks.length - 1);
     const { html } = render(NeonCardList, {
       props: {
-        model: modelWithLinks,
-        total: modelWithLinks.length - 1,
-        showMoreLabel: 'Mehr laden',
+        items: modelWithLinks,
+        loadOnDemand,
       },
       slots: { card: '<p>test</p>' },
       global: { plugins: [router] },
     });
     // when / then
-    expect(html()).toMatch('Mehr laden');
+    expect(html()).toMatch(loadOnDemand.showMoreLabel ?? '');
   });
 
-  it('renders showMoreLabel override', () => {
+  it('renders endOfResultsLabel override', () => {
     // given
+    const loadOnDemand = LoadOnDemandWithLabelsFixture(modelWithLinks.length);
     const { html } = render(NeonCardList, {
       props: {
-        model: modelWithLinks,
-        total: modelWithLinks.length,
-        endOfResultsLabel: 'Keine Daten mehr',
+        items: modelWithLinks,
+        loadOnDemand,
       },
       slots: { card: '<p>test</p>' },
       global: { plugins: [router] },
     });
     // when / then
-    expect(html()).toMatch('Keine Daten mehr');
-  });
-
-  it('renders cards non clickable by default', () => {
-    // given
-    const { container } = render(NeonCardList, {
-      props: {
-        model: modelNoLinks,
-        total: modelNoLinks.length,
-      },
-      slots: { card: '<p>test</p>' },
-      global: { plugins: [router] },
-    });
-    // when / then
-    expect(container.querySelectorAll('.neon-card-list__card--clickable').length).toEqual(0);
-  });
-
-  it('renders cards clickable', () => {
-    // given
-    const { container } = render(NeonCardList, {
-      props: {
-        model: modelNoLinks,
-        total: modelNoLinks.length,
-        clickable: true,
-      },
-      slots: { card: '<p>test</p>' },
-      global: { plugins: [router] },
-    });
-    // when / then
-    expect(container.querySelectorAll('.neon-card-list__card--clickable').length).toEqual(modelNoLinks.length - 1);
+    expect(html()).toMatch(loadOnDemand.endOfResultsLabel ?? '');
   });
 
   it('renders disabled card', () => {
     // given
     const { container } = render(NeonCardList, {
       props: {
-        model: modelNoLinks,
+        items: modelNoLinks,
         total: modelNoLinks.length,
         clickable: true,
       },
@@ -125,28 +135,29 @@ describe('NeonCardList', () => {
     expect(container.querySelectorAll('.neon-card-list__card--disabled').length).toEqual(1);
   });
 
-  it('renders color', () => {
+  it('renders with pagination & color', () => {
     // given
     const { container } = render(NeonCardList, {
       props: {
-        model: modelNoLinks,
-        total: modelNoLinks.length,
-        color: NeonFunctionalColor.Brand,
+        items: modelWithLinks,
+        pagination: PaginationFixture(modelWithLinks.length),
+        color: NeonFunctionalColor.Info,
       },
       slots: { card: '<p>test</p>' },
       global: { plugins: [router] },
     });
     // when / then
-    expect(container.querySelectorAll('.neon-card-list__card--brand').length).toEqual(modelNoLinks.length);
+    expect(container.querySelectorAll('.neon-card-list__link--info').length).toEqual(modelWithLinks.length - 1);
+    expect(container.querySelector('.neon-pagination')).toBeDefined();
+    expect(container.querySelector('.neon-pagination--info')).toBeDefined();
   });
 
   it('emits show more event', async () => {
     // given
     const { container, emitted } = render(NeonCardList, {
       props: {
-        model: modelNoLinks,
-        total: modelNoLinks.length - 1,
-        color: NeonFunctionalColor.Brand,
+        items: modelNoLinks,
+        loadOnDemand: { total: modelNoLinks.length - 1 },
       },
       slots: { card: '<p>test</p>' },
       global: { plugins: [router] },
@@ -155,22 +166,5 @@ describe('NeonCardList', () => {
     await fireEvent.click(container.querySelector('.neon-card-list__show-more') as HTMLButtonElement);
     // then
     expect(emitted()['show-more'].length).toEqual(1);
-  });
-
-  it('emits card click event', async () => {
-    // given
-    const { container, emitted } = render(NeonCardList, {
-      props: {
-        model: modelNoLinks,
-        total: modelNoLinks.length - 1,
-        clickable: true,
-      },
-      slots: { card: '<p>test</p>' },
-      global: { plugins: [router] },
-    });
-    // when
-    await fireEvent.click(container.querySelectorAll('.neon-card-list__card').item(0) as HTMLButtonElement);
-    // then
-    expect(emitted().click[0]).toEqual([0]);
   });
 });

@@ -126,6 +126,7 @@
           NeonMobileMenu: [NeonIcon, NeonLink],
           NeonPageContainer: [NeonIcon],
           NeonBanner: [NeonButton, NeonNote, NeonIcon, NeonLink, NeonExpansionIndicator],
+          NeonPagination: [NeonButton, NeonLink, NeonIcon],
   );
 
   $neon-flattened-components: [];

@@ -7,6 +7,25 @@ import type { NeonDate } from '@/common/models/NeonDate';
  */
 export class NeonDateUtils {
   /**
+   * Format a Date object as a locale formatted date with a three letter month and a 2 digit day.
+   * @param value The date to format.
+   */
+  public static formatDate(value: Date) {
+    const { day, monthShortName } = NeonDateUtils.stringToNeonDate(value.toISOString());
+    return `${monthShortName} ${day}`;
+  }
+
+  /**
+   * Format an ISO 8601 string to a locale formatted date with a three letter month and a 2 digit day and the time.
+   * @param value ISO date string
+   * @param seconds boolean indicating whether to display seconds
+   */
+  public static formatISOStringToDateAndTime(value: string, seconds = false) {
+    const { day, monthShortName, year, time, timeShort } = NeonDateUtils.stringToNeonDate(value);
+    return seconds ? `${day} ${monthShortName} ${year}, ${time}` : `${day} ${monthShortName} ${year}, ${timeShort}`;
+  }
+
+  /**
    * Convert an ISO 8601 formatted string to a locale formatted date with a three letter month, a 2 digit day and a locale formatted time.
    *
    * @param date The date/time as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string.

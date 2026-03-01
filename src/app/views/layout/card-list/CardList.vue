@@ -4,49 +4,49 @@
       <neon-card-body>
         <p>
           Represent lists of objects as cards. This is intended to be a more responsive replacement for tables. This
-          component will display a list of items as cards with a count (x of y) and a <em>Show more</em> button to load
-          more results. There is also a slot for adding filtering or other content above the list. A slot is provided
-          with card model & index parameters for customising how to display the model for each card.
+          component will display a list of items as responsive cards. The implementation supports either pagination OR
+          display of a count (x of y) and a <em>Show more</em> button to load more results. There is also a header slot
+          for adding filtering or other content above the list. A slot is provided with card <em>model</em> &
+          <em>index</em> parameters for customising how to display the model for each card.
         </p>
       </neon-card-body>
       <neon-card-body>
         <neon-stack>
-          <h2 class="neon-h3">Basic example</h2>
-          <neon-card-list :clickable="true" :model="filteredModel" :total="total" color="brand" @show-more="onShowMore">
+          <h2 class="neon-h3">Pagination example</h2>
+          <neon-card-list :items="paginationFilteredModel" :pagination="paginationConfig" color="brand">
             <template #header>
-              <neon-input v-model="filter" placeholder="Filter results…" size="s" />
+              <neon-input v-model="paginationFilter" placeholder="Filter results…" size="s" />
             </template>
-            <template #card="{ cardModel, index }">
+            <template #card="{ model, index }">
               <div class="card-contents">
-                <span class="card-title">{{ cardModel.title }}</span>
-                <span class="card-description">{{ cardModel.description }}</span>
+                <span class="card-title">{{ model.title }}</span>
+                <span class="card-description">{{ model.description }}</span>
               </div>
             </template>
           </neon-card-list>
-          <editor v-model="template" />
+          <editor v-model="paginationTemplate" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
         <neon-stack>
-          <h2 class="neon-h3">Links example</h2>
+          <h2 class="neon-h3">On demand loading example</h2>
           <neon-card-list
-            :clickable="true"
-            :model="linkFilteredModel"
-            :total="linkTotal"
+            :items="onDemandFilteredModel"
+            :load-on-demand="onDemandConfig"
             color="brand"
-            @show-more="onLinkShowMore"
+            @show-more="onDemandShowMore"
           >
             <template #header>
-              <neon-input v-model="linkFilter" placeholder="Filter results…" size="s" />
+              <neon-input v-model="onDemandFilter" placeholder="Filter results…" size="s" />
             </template>
-            <template #card="{ cardModel, index }">
+            <template #card="{ model, index }">
               <div class="card-contents">
-                <span class="card-title">{{ cardModel.title }}</span>
-                <span class="card-description">{{ cardModel.description }}</span>
+                <span class="card-title">{{ model.title }}</span>
+                <span class="card-description">{{ model.description }}</span>
               </div>
             </template>
           </neon-card-list>
-          <editor v-model="linkTemplate" />
+          <editor v-model="onDemandTemplate" />
         </neon-stack>
       </neon-card-body>
     </neon-card>

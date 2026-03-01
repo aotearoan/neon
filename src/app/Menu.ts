@@ -341,6 +341,12 @@ export class Menu {
                 component: 'NeonMobileMenu',
               },
               {
+                path: 'pagination',
+                page: 'Pagination',
+                keywords: 'page table list',
+                component: 'NeonPagination',
+              },
+              {
                 path: 'stepper',
                 page: 'Stepper',
                 component: 'NeonStepper',

@@ -45,6 +45,7 @@ export { default as NeonNotificationCounter } from './components/feedback/notifi
 export { default as NeonNumber } from './components/user-input/number/NeonNumber.vue';
 export { default as NeonPage } from './components/layout/page/NeonPage.vue';
 export { default as NeonPageContainer } from './components/layout/page-container/NeonPageContainer.vue';
+export { default as NeonPagination } from './components/navigation/pagination/NeonPagination.vue';
 export { default as NeonPassword } from './components/user-input/password/NeonPassword.vue';
 export { default as NeonRangeSlider } from './components/user-input/range-slider/NeonRangeSlider.vue';
 export { default as NeonSideNav } from './components/layout/side-nav/NeonSideNav.vue';
@@ -115,10 +116,13 @@ export type { NeonDropdownMenuItem } from './common/models/NeonDropdownMenuItem'
 export type { NeonDropdownPlacementObject } from './common/models/NeonDropdownPlacementObject';
 export type { NeonFilterListItem } from './common/models/NeonFilterListItem';
 export type { NeonGridModel } from './common/models/NeonGridModel';
+export type { NeonIdentifiable } from './common/models/NeonIdentifiable';
 export type { NeonListItem } from './common/models/NeonListItem';
+export type { NeonLoadOnDemandModel } from './common/models/NeonLoadOnDemandModel';
 export type { NeonMenuItem } from './common/models/NeonMenuItem';
 export type { NeonMenuModel } from './common/models/NeonMenuModel';
 export type { NeonNumberFormatOptions } from './common/models/NeonNumberFormatOptions';
+export type { NeonPaginationModel } from './common/models/NeonPaginationModel';
 export type { NeonPriorityMenuItem } from './components/navigation/menu/NeonPriorityMenuItem';
 export type { NeonSearchOption } from './common/models/NeonSearchOption';
 export type { NeonSelectGroup } from './common/models/NeonSelectGroup';

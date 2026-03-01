@@ -280,4 +280,8 @@ $neon-components: null !default;
   @if index($neon-flattened-components, NeonBanner) {
     @include components.banner;
   }
+
+  @if index($neon-flattened-components, NeonPagination) {
+    @include components.pagination;
+  }
 }

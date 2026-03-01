@@ -1,0 +1,102 @@
+@use '../includes/palettes';
+@use 'src/sass/includes/responsive';
+
+@mixin pagination {
+  .neon-pagination {
+    user-select: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--neon-space-8);
+    width: 100%;
+    margin: var(--neon-space-16) 0;
+
+    &__page-links {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: var(--neon-space-1);
+    }
+
+    &__link,
+    &__link--selected {
+      padding: 0 var(--neon-space-2);
+      min-width: var(--neon-size-m);
+    }
+
+    &__link--selected {
+      height: var(--neon-size-m);
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      font-size: var(--neon-font-size-s);
+      font-weight: var(--neon-font-weight-bold);
+      line-height: var(--neon-line-height-one);
+      border: var(--neon-border);
+      border-radius: var(--neon-border-radius-button);
+    }
+
+    &__less,
+    &__more {
+      width: var(--neon-size-m);
+      height: var(--neon-size-m);
+      padding: var(--neon-space-10) var(--neon-space-4) var(--neon-space-4);
+    }
+
+    &--empty {
+      display: none;
+    }
+
+    @each $color in palettes.$neon-functional-colors {
+      &.neon-pagination--#{$color} {
+        .neon-pagination__link--selected {
+          border-color: var(--neon-color-#{$color});
+          color: var(--neon-color-#{$color});
+        }
+
+        .neon-pagination__nav-link {
+          &:active:not(:disabled),
+          &:hover:not(:disabled) {
+            border-color: var(--neon-color-#{$color});
+            background-color: var(--neon-color-#{$color});
+          }
+        }
+      }
+    }
+
+    @include responsive.responsive(mobile-large) {
+      .neon-pagination__first,
+      .neon-pagination__last {
+        display: none;
+      }
+
+      .neon-pagination {
+        &__nav-link,
+        &__link {
+          min-width: var(--neon-size-s);
+          width: var(--neon-size-s);
+          min-height: var(--neon-size-s);
+          height: var(--neon-size-s);
+          font-size: var(--neon-font-size-xs);
+        }
+
+        &__nav-link {
+          padding: var(--neon-space-8);
+        }
+
+        &__link--selected {
+          min-width: var(--neon-size-s);
+          height: var(--neon-size-s);
+          font-size: var(--neon-font-size-xs);
+        }
+
+        &__less,
+        &__more {
+          width: var(--neon-size-s);
+          height: var(--neon-size-s);
+          padding: var(--neon-space-10) var(--neon-space-2) var(--neon-space-2);
+        }
+      }
+    }
+  }
+}

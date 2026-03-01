@@ -18,15 +18,6 @@
       color: var(--neon-color-low-contrast);
     }
 
-    .neon-card-list__cards {
-      gap: var(--neon-space-1);
-
-      .neon-link {
-        width: 100%;
-        min-width: 100%;
-      }
-    }
-
     &__header {
       align-items: center;
       margin-bottom: var(--neon-space-16);
@@ -43,41 +34,31 @@
     }
 
     &__card {
-      color: var(--neon-color-text-secondary);
-      --neon-border-radius-card: var(--neon-border-radius-card-list);
+      padding-top: var(--neon-space-32);
+      padding-bottom: var(--neon-space-16);
       user-select: none;
-      box-shadow: var(--neon-box-shadow-card-list);
-      transition: all var(--neon-animation-speed-fast) ease-in-out;
-      outline: none;
       width: 100%;
+      border: none;
+      border-bottom: var(--neon-border);
 
-      & > .neon-card-header,
-      & > .neon-card-body,
-      & > .neon-card-footer {
-        background-color: var(--neon-background-color-card-list);
+      &--disabled {
+        cursor: not-allowed;
       }
+    }
 
+    .neon-card-list__link {
+      width: 100%;
+      min-width: 100%;
       @each $color in palettes.$neon-functional-colors {
         &--#{$color} {
-          &:not(.neon-card-list__card--disabled) {
-            &:hover > .neon-card-header,
-            &:hover > .neon-card-body,
-            &:hover > .neon-card-footer {
+          .neon-card-list__card:not(.neon-card-list__card--disabled) {
+            &:hover,
+            &:hover,
+            &:hover {
               background-color: rgba(var(--neon-rgb-#{$color}), 0.03125);
             }
           }
         }
-      }
-
-      &--clickable {
-        cursor: pointer;
-      }
-
-      &--disabled {
-        cursor: not-allowed;
-        background-color: var(--neon-color-disabled-background);
-        color: var(--neon-color-disabled-text);
-        border-color: var(--neon-color-disabled-border);
       }
     }
   }
