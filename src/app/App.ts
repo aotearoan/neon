@@ -23,6 +23,7 @@ import {
 } from '@/neon';
 import { useRoute, useRouter } from 'vue-router';
 import { version } from '@/../version';
+import { SupportingClassesDocs } from '@/app/SupportingClassesDocs';
 
 export interface AppMenuGroup {
   group: string;
@@ -148,6 +149,8 @@ export default defineComponent({
     };
 
     onMounted(async () => {
+      await SupportingClassesDocs.init();
+
       const path = localStorage.getItem('path');
       if (path) {
         localStorage.removeItem('path');

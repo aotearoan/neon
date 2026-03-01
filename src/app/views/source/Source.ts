@@ -2,7 +2,7 @@ import { computed, defineComponent, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { NeonButton, NeonCard, NeonCardBody, NeonCardHeader, NeonInline, NeonLabel, NeonStack } from '@/neon';
 import Editor from '@/app/components/editor/Editor.vue';
-import { enumList, getClassDocs, modelList } from '@/app/SupportingClasses';
+import { SupportingClassesDocs } from '@/app/SupportingClassesDocs';
 import type { BlockTag, DeclarationReflection, SomeType } from 'typedoc';
 
 export default defineComponent({
@@ -56,7 +56,7 @@ export default defineComponent({
         const className = rest.pop() || null;
 
         if (classType.value && className) {
-          classDocs.value = getClassDocs(ct, className);
+          classDocs.value = SupportingClassesDocs.getClassDocs(ct, className);
           ghLink.value = `https://github.com/venture-artbeat/lib-app-neon/tree/main/src/common${to}.ts`;
         }
       },
@@ -74,9 +74,9 @@ export default defineComponent({
     const typeAsLink = (modelValue: SomeType) => {
       let url;
 
-      if (enumList.includes(modelValue.name)) {
+      if (SupportingClassesDocs.enumList().includes(modelValue.name)) {
         url = `/enums/${modelValue.name}`;
-      } else if (modelList.includes(modelValue.name)) {
+      } else if (SupportingClassesDocs.modelList().includes(modelValue.name)) {
         url = `/models/${modelValue.name}`;
       }
 

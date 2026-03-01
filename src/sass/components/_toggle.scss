@@ -123,14 +123,14 @@
             }
           }
         }
-      }
 
-      &.neon-toggle--card {
-        .neon-toggle__label {
-          &.neon-toggle__label--checked,
-          &.neon-toggle__label:hover,
-          &.neon-toggle__label:focus-visible {
-            border-color: var(--neon-color-#{$color});
+        &.neon-toggle--card {
+          .neon-toggle__label {
+            &.neon-toggle__label--checked,
+            &.neon-toggle__label:hover,
+            &.neon-toggle__label:focus-visible {
+              border-color: var(--neon-color-#{$color});
+            }
           }
         }
       }

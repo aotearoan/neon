@@ -1,7 +1,7 @@
 import { computed, defineComponent } from 'vue';
 import { NeonCard, NeonCardBody, NeonCardHeader, NeonLabel, NeonLink, NeonNote } from '@/neon';
 import type { DocumentationModel, EventModel, PropertyModel, PropTypeModel } from '../ApiModel';
-import { enumList, modelList } from '@/app/SupportingClasses';
+import { SupportingClassesDocs } from '@/app/SupportingClassesDocs';
 
 export default defineComponent({
   name: 'ApiDocs',
@@ -56,8 +56,8 @@ export default defineComponent({
         const matches = typeName.match(/.*(Neon[a-zA-Z]+)/);
         if (matches && matches[1]) {
           const neonType = matches[1];
-          const isEnum = enumList.indexOf(neonType) >= 0;
-          const isModel = modelList.indexOf(neonType) >= 0;
+          const isEnum = SupportingClassesDocs.enumList().indexOf(neonType) >= 0;
+          const isModel = SupportingClassesDocs.modelList().indexOf(neonType) >= 0;
 
           return isEnum ? `/enums/${neonType}` : isModel ? `/models/${neonType}` : undefined;
         }

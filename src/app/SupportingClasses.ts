@@ -1,35 +1,35 @@
-import enums from './config/enums.json';
-import models from './config/models.json';
-import utils from './config/utils.json';
 import type { DeclarationReflection } from 'typedoc';
 
-export const getClassDocs = (classType: string, className: string): DeclarationReflection | null => {
-  switch (classType) {
-    case 'enums':
-      return enums.children.find(
-        (enumConfig) => enumConfig.name === className || enumConfig.name.endsWith(`/${className}`),
-      ) as unknown as DeclarationReflection;
-    case 'models':
-      return models.children.find(
-        (modelConfig) => modelConfig.name === className || modelConfig.name.endsWith(`/${className}`),
-      ) as unknown as DeclarationReflection;
-    case 'utils':
-      return utils.children.find(
-        (utilConfig) => utilConfig.name === className || utilConfig.name.endsWith(`/${className}`),
-      ) as unknown as DeclarationReflection;
+/**
+ * Load and store the classes documentation from the JSON file.
+ */
+export class SupportingClasses {
+  private classesDoc: DeclarationReflection | null = null;
+  private classList: string[] | null = null;
+
+  public async init(jsonPath: string) {
+    if (!this.classesDoc) {
+      this.classesDoc = await this.fetchJson<DeclarationReflection>(jsonPath);
+      this.classList = this.toList(this.classesDoc);
+    }
   }
 
-  return null;
-};
+  public getClassList(): string[] {
+    return this.classList || [];
+  }
 
-export const enumList: string[] = enums.children
-  .filter((enumConfig) => enumConfig.children)
-  .map((enumConfig) => enumConfig.name);
+  public getClassDoc(className: string) {
+    return this.classesDoc?.children?.find(
+      (declaration) => declaration.name === className || declaration.name.endsWith(`/${className}`),
+    ) as unknown as DeclarationReflection;
+  }
 
-export const modelList: string[] = models.children
-  .filter((modelConfig) => modelConfig.children)
-  .map((modelConfig) => modelConfig.name);
+  private async fetchJson<T>(jsonPath: string): Promise<T> {
+    const url = `${import.meta.env.VITE_RESOURCE_URL}${jsonPath}`;
+    return fetch(url).then((response) => response.json() as Promise<T>);
+  }
 
-export const utilsList: string[] = utils.children
-  .filter((utilConfig) => utilConfig.children)
-  .map((utilConfig) => utilConfig.name);
+  private toList(declaration: DeclarationReflection) {
+    return declaration.children?.filter((child) => child.children).map((child) => child.name) || null;
+  }
+}

@@ -1,4 +1,4 @@
-import { enumList, modelList, utilsList } from './SupportingClasses';
+import { SupportingClassesDocs } from '@/app/SupportingClassesDocs';
 
 export interface SubComponent {
   path: string;
@@ -576,17 +576,17 @@ export class Menu {
           {
             path: 'enums',
             name: 'Enums',
-            children: enumList.map((e) => ({ path: e })),
+            children: SupportingClassesDocs.enumList().map((e) => ({ path: e })),
           },
           {
             path: 'models',
             name: 'Models',
-            children: modelList.map((e) => ({ path: e })),
+            children: SupportingClassesDocs.modelList().map((e) => ({ path: e })),
           },
           {
             path: 'utils',
             name: 'Utilities',
-            children: utilsList.map((pathString) => {
+            children: SupportingClassesDocs.utilList().map((pathString) => {
               const parts = pathString.split('/');
               return {
                 path: pathString,
