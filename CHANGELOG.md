@@ -1,5 +1,12 @@
 # Changelog
 
+## [25.1.0](https://github.com/aotearoan/neon/compare/v25.0.2...v25.1.0) (2026-03-01)
+
+
+### Features
+
+* pagination component ([#352](https://github.com/aotearoan/neon/issues/352)) ([2adbb8d](https://github.com/aotearoan/neon/commit/2adbb8d6ececd2e1800eb6c306c34062fec63f64))
+
 ## [25.0.2](https://github.com/aotearoan/neon/compare/v25.0.1...v25.0.2) (2026-03-01)
 
 
