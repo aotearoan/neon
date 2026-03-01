@@ -22,6 +22,7 @@
           <div class="neon-mobile-menu__link-container" tabindex="-1" @click="!item.disabled && onClick(item.key)">
             <neon-icon
               v-if="item.icon"
+              :id="`${item.key}MobileMenuIcon`"
               :key="`${item.key}LinkIcon`"
               :disabled="item.disabled"
               :name="item.icon"
