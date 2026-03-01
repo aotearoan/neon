@@ -1,5 +1,12 @@
 # Changelog
 
+## [23.1.0](https://github.com/aotearoan/neon/compare/v23.0.2...v23.1.0) (2026-03-01)
+
+
+### Features
+
+* NeonBanner component ([#323](https://github.com/aotearoan/neon/issues/323)) ([2f0be12](https://github.com/aotearoan/neon/commit/2f0be126e1a7a0c10ec6d94d231ea615b1b64bbb))
+
 ## [23.0.2](https://github.com/aotearoan/neon/compare/v23.0.1...v23.0.2) (2026-03-01)
 
 
