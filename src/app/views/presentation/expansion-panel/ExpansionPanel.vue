@@ -45,6 +45,12 @@
             <neon-expansion-panel v-model="expanded8" label="From bottom" position="bottom">
               <p>{{ content }}</p>
             </neon-expansion-panel>
+            <neon-expansion-panel v-model="expanded9" indicator-position="left" label="Indicator Left">
+              <p>{{ content }}</p>
+            </neon-expansion-panel>
+            <neon-expansion-panel v-model="expanded10" full-width>
+              <p>{{ content }}</p>
+            </neon-expansion-panel>
           </neon-stack>
           <editor v-model="moreTemplate" />
         </neon-stack>

@@ -1,9 +1,10 @@
-import { defineComponent } from 'vue';
-import { NeonVerticalPosition } from '@/common/enums/NeonVerticalPosition';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonHorizontalPosition } from '@/common/enums/NeonHorizontalPosition';
 import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonVerticalPosition } from '@/common/enums/NeonVerticalPosition';
 import NeonExpansionIndicator from '@/components/presentation/expansion-indicator/NeonExpansionIndicator.vue';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { defineComponent } from 'vue';
 
 /**
  * <p>Expansion panels are used to show and hide content that may be less important or too large to display on screen
@@ -25,7 +26,7 @@ export default defineComponent({
     /**
      * The label of the expansion button
      */
-    label: { type: String, required: true },
+    label: { type: String },
     /**
      * Provide an id to support aria-controls. The id will be placed on the expansion panel content wrapper and the
      * aria-controls on the header (triggering the expansion).
@@ -39,6 +40,10 @@ export default defineComponent({
      * The position of the expansion button. This can be located above the content to expand or below it.
      */
     position: { type: String as () => NeonVerticalPosition, default: NeonVerticalPosition.Top },
+    /**
+     * The position of the expansion button. This can be located above the content to expand or below it.
+     */
+    indicatorPosition: { type: String as () => NeonHorizontalPosition, default: NeonHorizontalPosition.Right },
     /**
      * The size of the expansion panel button.
      */
@@ -63,7 +68,12 @@ export default defineComponent({
      */
     'update:modelValue',
   ],
-  setup(props, { emit }) {
+  setup(props, { emit, slots }) {
+    // not sure how to test this, open to idea. Tried seeing if the console.warn was called but doesn't seem to trigger
+    if (!props.label && !slots.header) {
+      console.error(`A label or a header slot most be provided to the NeonExpansionPanel component`);
+    }
+
     const toggleExpanded = () => {
       if (!props.disabled) {
         emit('update:modelValue', !props.modelValue);

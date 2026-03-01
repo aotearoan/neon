@@ -37,6 +37,20 @@
       &:focus {
         outline: none;
       }
+
+      &--left {
+        justify-content: flex-start;
+        gap: var(--neon-space-16);
+        flex: auto 0 1;
+
+        .neon-expansion-indicator {
+          order: 0;
+        }
+
+        .neon-expansion-panel__label-container {
+          order: 1;
+        }
+      }
     }
 
     &__label-container {

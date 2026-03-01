@@ -14,15 +14,23 @@
     ]"
     class="neon-expansion-panel"
   >
-    <div :aria-controls="id" class="neon-expansion-panel__header" tabindex="-1" @click="toggleExpanded">
+    <div
+      :aria-controls="id"
+      :class="[`neon-expansion-panel__header--${indicatorPosition}`]"
+      class="neon-expansion-panel__header"
+      tabindex="-1"
+      @click="toggleExpanded"
+    >
       <div
         class="neon-expansion-panel__label-container neon-expansion-panel__label-container--outline-text"
         tabindex="0"
         @keydown.enter="toggleExpanded"
         @keydown.space.prevent="toggleExpanded"
       >
-        <neon-icon v-if="icon" :color="color" :disabled="disabled" :name="icon" />
-        <span class="neon-expansion-panel__label">{{ label }}</span>
+        <slot :expanded="modelValue" name="header">
+          <neon-icon v-if="icon" :color="color" :disabled="disabled" :name="icon" />
+          <span class="neon-expansion-panel__label">{{ label }}</span>
+        </slot>
       </div>
       <neon-expansion-indicator :color="color" :disabled="disabled" :expanded="modelValue" />
     </div>
