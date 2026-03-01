@@ -3,7 +3,7 @@
     :class="{
       'neon-field--optional': optional,
       'neon-field--disabled': disabled,
-      'neon-field--with-message': message !== null,
+      'neon-field--with-message': !noMessage,
     }"
     class="neon-field"
   >

@@ -7,6 +7,22 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
+    .neon-svg--fill-inverse {
+      fill: var(--neon-color-inverse);
+    }
+
+    .neon-svg--stroke-inverse {
+      stroke: var(--neon-color-inverse);
+    }
+
+    .neon-svg--fill-text {
+      fill: var(--neon-color-text-primary);
+    }
+
+    .neon-svg--stroke-text {
+      stroke: var(--neon-color-text-primary);
+    }
   }
 
   $neon-icon-types: (neon-expansion-indicator, neon-icon);

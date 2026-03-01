@@ -58,14 +58,14 @@ describe('NeonField', () => {
   it('does not render message when no-message = true', () => {
     const message = 'Bacon ipsum dolor amet venison';
     const { container } = render(NeonField, { props: { label, optional: true, message, noMessage: true } });
-    expect(container.querySelector('.neon-field__message .neon-color-low-contrast')).toBeNull();
+    expect(container.querySelector('.neon-field--with-message')).toBeNull();
   });
 
   it('renders message', () => {
     const message = 'Bacon ipsum dolor amet venison';
     const { container, getByText } = render(NeonField, { props: { label, optional: true, message } });
     getByText(message);
-    expect(container.querySelector('.neon-field__message .neon-color-low-contrast')).toBeDefined();
+    expect(container.querySelector('.neon-field--with-message')).toBeDefined();
   });
 
   it('renders error message', () => {

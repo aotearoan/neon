@@ -12,6 +12,10 @@
       --neon-font-weight-strong: var(--neon-font-weight-semi-bold);
     }
 
+    .neon-note__container {
+      padding: var(--neon-padding-note) 0;
+    }
+
     .neon-note__content {
       width: 100%;
       max-width: calc(var(--neon-max-width-page));
@@ -21,6 +25,7 @@
       align-items: center;
       gap: var(--neon-space-24);
       padding: 0 var(--neon-gutter);
+      margin: auto;
     }
   }
 }
