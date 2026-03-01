@@ -38,6 +38,13 @@ export default defineComponent({
       messages.value.unshift(msg);
     };
 
+    const onRemoveBanner = (key: string) => {
+      const msgIndex = messages.value.findIndex((m) => m.key === key);
+      if (msgIndex >= 0) {
+        messages.value.splice(msgIndex, 1);
+      }
+    };
+
     const onInfoMessage = (message: NeonBannerMessage) => {
       enqueueMessage(NeonAlertLevel.Info, message);
     };
@@ -68,6 +75,7 @@ export default defineComponent({
       NeonEventBus.on(NeonBannerService.generateEventKey(NeonAlertLevel.Success), onSuccessMessage);
       NeonEventBus.on(NeonBannerService.generateEventKey(NeonAlertLevel.Warn), onWarnMessage);
       NeonEventBus.on(NeonBannerService.generateEventKey(NeonAlertLevel.Error), onErrorMessage);
+      NeonEventBus.on(NeonBannerService.removeEventKey, onRemoveBanner);
     });
 
     onUnmounted(() => {
@@ -75,6 +83,7 @@ export default defineComponent({
       NeonEventBus.off(NeonBannerService.generateEventKey(NeonAlertLevel.Success), onSuccessMessage);
       NeonEventBus.off(NeonBannerService.generateEventKey(NeonAlertLevel.Warn), onWarnMessage);
       NeonEventBus.off(NeonBannerService.generateEventKey(NeonAlertLevel.Error), onErrorMessage);
+      NeonEventBus.off(NeonBannerService.removeEventKey, onRemoveBanner);
     });
 
     return {

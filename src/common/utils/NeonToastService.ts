@@ -7,6 +7,8 @@ import { NeonAlertLevel } from '../enums/NeonAlertLevel';
  * user.
  */
 export class NeonToastService {
+  public static readonly removeEventKey = `${NeonEventBus.messagePrefix}-toast-remove`;
+
   /**
    * Send an info message.
    *
@@ -41,6 +43,15 @@ export class NeonToastService {
    */
   public static error(toast: NeonToastMessage) {
     NeonToastService.emit(NeonAlertLevel.Error, toast);
+  }
+
+  /**
+   * Remove a message.
+   *
+   * @param key Key of the message to delete.
+   */
+  public static remove(key: string) {
+    NeonEventBus.emit(NeonToastService.removeEventKey, key);
   }
 
   /**

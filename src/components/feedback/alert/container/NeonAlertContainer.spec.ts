@@ -2,6 +2,8 @@ import { fireEvent, render } from '@testing-library/vue';
 import NeonAlertContainer from './NeonAlertContainer.vue';
 import { NeonAlertLevel } from '@/common/enums/NeonAlertLevel';
 import { NeonAlertPlacement } from '@/common/enums/NeonAlertPlacement';
+import { NeonAlertService } from '@/common/utils/NeonAlertService';
+import { nextTick } from 'vue';
 
 describe('NeonAlertContainer', () => {
   it('removes alert on close info', async () => {
@@ -83,5 +85,19 @@ describe('NeonAlertContainer', () => {
     // when / then
     expect(container.querySelector('.neon-alert__message--with-icon')).toBeDefined();
     expect(container.querySelector('.neon-icon--name-multiplication-math-symbol-circle')).toBeDefined();
+  });
+
+  it('removes message programmatically', async () => {
+    // given
+    NeonAlertService.info({ key: 'test', title: 'test', dismissible: false });
+    await nextTick();
+    NeonAlertService.remove('test');
+    await nextTick();
+
+    const { html } = render(NeonAlertContainer, {
+      props: { modelValue: [], placement: NeonAlertPlacement.TopLeft },
+    });
+    // then
+    expect(html()).toMatchSnapshot();
   });
 });

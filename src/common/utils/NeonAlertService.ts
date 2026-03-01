@@ -6,6 +6,8 @@ import { NeonAlertLevel } from '../enums/NeonAlertLevel';
  * NeonAlertService is a service for sending alerts to the <strong>NeonAlert</strong> component for display to the user.
  */
 export class NeonAlertService {
+  public static readonly removeEventKey = `${NeonEventBus.messagePrefix}-alert-remove`;
+
   /**
    * Send an info message.
    *
@@ -40,6 +42,15 @@ export class NeonAlertService {
    */
   public static error(alert: NeonAlertMessage) {
     NeonAlertService.emit(NeonAlertLevel.Error, alert);
+  }
+
+  /**
+   * Remove a message.
+   *
+   * @param key Key of the message to delete.
+   */
+  public static remove(key: string) {
+    NeonEventBus.emit(NeonAlertService.removeEventKey, key);
   }
 
   /**

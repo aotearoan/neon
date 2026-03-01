@@ -36,7 +36,12 @@ export default defineComponent({
     const headline = ref('Display temporary notifications to the user');
 
     const infoAlert = (placement?: NeonAlertPlacement) => {
-      NeonAlertService.info({ title: 'Info alert', message: 'This is an example of an info alert.', placement });
+      NeonAlertService.info({
+        key: 'test-key',
+        title: 'Info alert',
+        message: 'This is an example of an info alert.',
+        placement,
+      });
     };
 
     const successAlert = (placement?: NeonAlertPlacement) => {
@@ -91,8 +96,12 @@ export default defineComponent({
       });
     };
 
+    const removeAlert = () => {
+      NeonAlertService.remove('test-key');
+    };
+
     const toastInfo = (placement?: NeonVerticalPosition) => {
-      NeonToastService.info({ title: 'This is an info toast', placement });
+      NeonToastService.info({ key: 'test-key', title: 'This is an info toast', placement });
     };
     const toastSuccess = (placement?: NeonVerticalPosition) => {
       NeonToastService.success({ title: 'This is a success toast', placement });
@@ -102,6 +111,10 @@ export default defineComponent({
     };
     const toastError = (placement?: NeonVerticalPosition) => {
       NeonToastService.error({ title: 'This is an error toast', placement });
+    };
+
+    const removeToast = () => {
+      NeonToastService.remove('test-key');
     };
 
     const typesTemplate = `<neon-button color="info" label="Info" @click="infoAlert()" />
@@ -164,6 +177,9 @@ NeonToastService.warn(toastMessage);`,
 NeonToastService.error(toastMessage);`,
     );
 
+    const removeAlertExample = computed(() => `NeonAlertService.remove('test-key');`);
+    const removeToastExample = computed(() => `NeonToastService.remove('test-key');`);
+
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonAlert')));
 
     return {
@@ -173,6 +189,7 @@ NeonToastService.error(toastMessage);`,
       successExample,
       warnExample,
       errorExample,
+      removeToastExample,
       infoToast,
       successToast,
       warnToast,
@@ -185,12 +202,15 @@ NeonToastService.error(toastMessage);`,
       toastSuccess,
       toastWarn,
       toastError,
+      removeToast,
       infoAlert,
       successAlert,
       warnAlert,
       errorAlert,
+      removeAlert,
       alertSingleAction,
       alertBothActions,
+      removeAlertExample,
       NeonAlertPlacement,
       NeonVerticalPosition,
     };

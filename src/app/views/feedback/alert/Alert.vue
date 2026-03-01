@@ -11,6 +11,7 @@
             <neon-button color="success" label="Success" @click="successAlert()" />
             <neon-button color="warn" label="Warning" @click="warnAlert()" />
             <neon-button color="error" label="Error" @click="errorAlert()" />
+            <neon-button color="high-contrast" label="Remove info" @click="removeAlert()" />
           </neon-inline>
         </neon-card-body>
         <neon-card-body>
@@ -56,6 +57,7 @@
               <neon-button color="success" label="Toast success" @click="toastSuccess()" />
               <neon-button color="warn" label="Toast warning" @click="toastWarn()" />
               <neon-button color="error" label="Toast error" @click="toastError()" />
+              <neon-button color="high-contrast" label="Remove info" @click="removeToast()" />
             </neon-inline>
           </neon-stack>
         </neon-card-body>
@@ -95,13 +97,20 @@
               For a full range of alert message options see
               <neon-link href="/models/NeonAlertMessage">NeonAlertMessage</neon-link>
             </p>
+            <h2 class="neon-h3">Removing alerts</h2>
+            <neon-stack gap="s">
+              <p>
+                Use the following static method on <strong>NeonAlertService</strong> to remove an alert style messages:
+              </p>
+            </neon-stack>
+            <editor v-model="removeAlert" language="typescript" />
             <h2 class="neon-h3">Displaying toasts</h2>
             <neon-stack gap="s">
               <p>
                 Use the following static methods on <strong>NeonToastService</strong> to display toast style messages:
               </p>
-              <editor v-model="infoToast" language="typescript" />
             </neon-stack>
+            <editor v-model="infoToast" language="typescript" />
             <editor v-model="successToast" language="typescript" />
             <editor v-model="warnToast" language="typescript" />
             <editor v-model="errorToast" language="typescript" />
@@ -114,6 +123,13 @@
               For a full range of message options see
               <neon-link href="/models/NeonToastMessage">NeonToastMessage</neon-link>
             </p>
+            <h2 class="neon-h3">Removing toasts</h2>
+            <neon-stack gap="s">
+              <p>
+                Use the following static method on <strong>NeonToastService</strong> to remove a toast style messages:
+              </p>
+            </neon-stack>
+            <editor v-model="removeToast" language="typescript" />
           </neon-stack>
         </neon-card-body>
       </neon-card>

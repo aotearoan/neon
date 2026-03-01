@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NeonAlertContainer removes message programmatically 1`] = `
+<div class="neon-alert--top-left neon-alert">
+  <transition-group-stub name="neon-alert-transition" appear="false" persisted="false" css="true"></transition-group-stub>
+</div>
+`;

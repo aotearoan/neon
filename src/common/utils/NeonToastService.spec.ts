@@ -62,6 +62,12 @@ describe('NeonToastService', () => {
     expect(eventBusSpy).toHaveBeenCalledWith('neon--toast-error', infoMessage);
   });
 
+  it('emits remove toast', () => {
+    const key = 'test-key';
+    NeonToastService.remove(key);
+    expect(eventBusSpy).toHaveBeenCalledWith('neon--toast-remove', key);
+  });
+
   it('generates event key', () => {
     expect(NeonToastService.generateEventKey(NeonAlertLevel.Error)).toEqual('neon--toast-error');
   });

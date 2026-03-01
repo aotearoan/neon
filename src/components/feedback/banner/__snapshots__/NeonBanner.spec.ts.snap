@@ -18,3 +18,5 @@ exports[`NeonBanner matches snapshot 1`] = `
   </div>
 </div>
 `;
+
+exports[`NeonBanner removes message 1`] = `<div class="neon-banner__wrapper"></div>`;

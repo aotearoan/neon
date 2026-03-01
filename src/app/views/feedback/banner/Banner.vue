@@ -11,6 +11,7 @@
             <neon-button color="success" label="Success" @click="successMessage()" />
             <neon-button color="warn" label="Warning" @click="warnMessage()" />
             <neon-button color="error" label="Error" @click="errorMessage()" />
+            <neon-button color="high-contrast" label="Remove info" @click="removeMessage()" />
           </neon-inline>
         </neon-card-body>
         <neon-card-body>
@@ -43,6 +44,13 @@
               For a full range of banner message options see
               <neon-link href="/models/NeonBannerMessage">NeonBannerMessage</neon-link>
             </p>
+            <h2 class="neon-h3">Removing banners</h2>
+            <neon-stack gap="s">
+              <p>
+                Use the following static method on <strong>NeonBannerService</strong> to remove a banner style messages:
+              </p>
+            </neon-stack>
+            <editor v-model="removeExample" language="typescript" />
           </neon-stack>
         </neon-card-body>
       </neon-card>

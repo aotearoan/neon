@@ -6,6 +6,11 @@ import type { NeonAlertAction } from './NeonAlertAction';
  */
 export interface NeonAlertMessage {
   /**
+   * Optional key of the alert. This can be used to remove a message programmatically later.
+   */
+  key?: string;
+
+  /**
    * Optional title of the alert. NOTE: Either title or message needs to be provided.
    */
   title?: string;

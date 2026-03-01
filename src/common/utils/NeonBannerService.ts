@@ -6,6 +6,8 @@ import { NeonAlertLevel } from '../enums/NeonAlertLevel';
  * NeonBannerService is a service for sending status banner notifications to the <strong>NeonBanner</strong> component for display to the user.
  */
 export class NeonBannerService {
+  public static readonly removeEventKey = `${NeonEventBus.messagePrefix}-banner-remove`;
+
   /**
    * Send an info message.
    *
@@ -40,6 +42,15 @@ export class NeonBannerService {
    */
   public static error(message: NeonBannerMessage) {
     NeonBannerService.emit(NeonAlertLevel.Error, message);
+  }
+
+  /**
+   * Remove a message.
+   *
+   * @param key Key of the message to delete.
+   */
+  public static remove(key: string) {
+    NeonEventBus.emit(NeonBannerService.removeEventKey, key);
   }
 
   /**
