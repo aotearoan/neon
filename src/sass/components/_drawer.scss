@@ -24,7 +24,7 @@
     &--right {
       .neon-drawer__container {
         top: 0;
-        width: var(--neon-side-nav-width);
+        width: var(--neon-width-drawer);
         @include layout.min-height(100);
         @include layout.height(100);
       }
@@ -61,6 +61,7 @@
       .neon-drawer__container {
         left: 0;
         @include layout.width(100);
+        height: var(--neon-height-drawer);
       }
     }
 

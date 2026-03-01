@@ -50,7 +50,7 @@ export default defineComponent({
      * The HTML autocomplete mode as specified <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#values">here</a>.
      * NOTE: No enum is provided in Neon as some values can be used in combination, please refer to the full list of values in the preceding link.
      */
-    autocomplete: { type: String as () => NeonInputMode, default: 'on' },
+    autocomplete: { type: String, default: 'on' },
     /**
      * The state of the input
      */
@@ -159,7 +159,7 @@ export default defineComponent({
         default:
           if (props.icon) {
             return props.icon;
-          } else if (props.modelValue && props.modelValue.length > 0) {
+          } else if (props.modelValue && (props.modelValue?.length || 0) > 0) {
             return 'times';
           }
 
@@ -171,7 +171,9 @@ export default defineComponent({
       return (
         iconName.value &&
         !props.hideIcon &&
-        (props.state !== 'ready' || props.icon || (props.modelValue && !props.disabled && props.modelValue.length > 0))
+        (props.state !== 'ready' ||
+          props.icon ||
+          (props.modelValue && !props.disabled && (props.modelValue?.length || 0) > 0))
       );
     });
 
@@ -191,7 +193,7 @@ export default defineComponent({
     const counterLabel = computed<string | null>(() => {
       if (props.maxlength && props.maxlength > 0) {
         const templates = props.maxlengthLabel.split(' | ');
-        const remainingChars = props.maxlength - props.modelValue.length;
+        const remainingChars = props.maxlength - (props.modelValue?.length || 0);
         switch (remainingChars) {
           case 0:
             return templates[0];
@@ -248,28 +250,13 @@ export default defineComponent({
         event.key !== 'Backspace' &&
         props.maxlength &&
         props.modelValue &&
-        props.modelValue.length >= props.maxlength
+        (props.modelValue?.length || 0) >= props.maxlength
       ) {
         event.preventDefault();
       }
     };
 
-    const computedPlaceholder = computed(() => {
-      if (props.placeholder) {
-        return props.placeholder;
-      } else {
-        switch (props.type) {
-          case NeonInputType.Email:
-            return 'gbelson@hooli.com';
-          case NeonInputType.Tel:
-            return '+41785551234';
-          case NeonInputType.Url:
-            return 'http://www.getskeleton.com';
-          default:
-            return '';
-        }
-      }
-    });
+    const computedPlaceholder = computed(() => props.placeholder || '');
 
     expose({ neonInput });
 

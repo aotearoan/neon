@@ -61,6 +61,11 @@
               placeholder="Value"
               value-template="${value}"
             />
+            <h3 class="neon-h6">With input indicator</h3>
+            <neon-field-group>
+              <neon-input-indicator label="USD" />
+              <neon-number v-model="indicatorNumber" :decimals="2" :step="0.05" placeholder="Value" />
+            </neon-field-group>
             <h3 class="neon-h6">Disabled</h3>
             <neon-number v-model="disabledNumber" disabled="disabled" placeholder="Value" />
             <neon-number v-model="disabledNumber" :spin-buttons="true" disabled="disabled" placeholder="Value" />
