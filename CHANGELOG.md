@@ -1,5 +1,12 @@
 # Changelog
 
+## [25.0.1](https://github.com/aotearoan/neon/compare/v25.0.0...v25.0.1) (2026-03-01)
+
+
+### Bug Fixes
+
+* border design fixes ([#348](https://github.com/aotearoan/neon/issues/348)) ([17fa8e2](https://github.com/aotearoan/neon/commit/17fa8e23a0c5013ed1e50b94b15bf8b85a56b5fd))
+
 ## [25.0.0](https://github.com/aotearoan/neon/compare/v24.1.0...v25.0.0) (2026-03-01)
 
 
