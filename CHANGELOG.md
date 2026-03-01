@@ -1,5 +1,12 @@
 # Changelog
 
+## [23.2.4](https://github.com/aotearoan/neon/compare/v23.2.3...v23.2.4) (2026-03-01)
+
+
+### Bug Fixes
+
+* dropzone & minor style fixes ([#333](https://github.com/aotearoan/neon/issues/333)) ([44a4293](https://github.com/aotearoan/neon/commit/44a429343fef8b9ef949f862a766cf70cb8b1de8))
+
 ## [23.2.3](https://github.com/aotearoan/neon/compare/v23.2.2...v23.2.3) (2026-03-01)
 
 
