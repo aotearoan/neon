@@ -1,125 +1,153 @@
 @use '../includes/outline';
+@use '../includes/palettes';
+@use '../includes/svg';
 
 @mixin tree-menu {
   .neon-tree-menu {
     &__section-link,
-    &__link,
-    &__anchor {
+    &__item-link,
+    &__sub-menu-item-link {
       display: flex;
       width: 100%;
       letter-spacing: var(--neon-letter-spacing-s);
-      border-radius: var(--neon-border-radius);
-      padding-top: var(--neon-space-2);
-      padding-bottom: var(--neon-space-2);
       margin: 0;
       text-decoration: none;
       user-select: none;
       cursor: pointer;
+
+      &-label {
+        pointer-events: none;
+        touch-action: none;
+        outline: none;
+      }
+
+      &.neon-link--exact-active > span {
+        font-weight: var(--neon-font-weight-tree-menu-selected);
+      }
     }
 
-    a.neon-tree-menu__section-link [href]:not([href='']),
-    a.neon-tree-menu__link,
-    a.neon-tree-menu__anchor {
+    a.neon-tree-menu__section-link {
+      font-size: var(--neon-font-size-tree-menu-section);
+      font-weight: var(--neon-font-weight-tree-menu-section);
+      padding: var(--neon-space-8) 0;
+      width: 100%;
+
+      &:visited,
       &.neon-link {
-        &,
-        &:hover,
-        &:active {
-          color: var(--neon-color-text-secondary);
-        }
+        color: var(--neon-color-tree-menu-section);
+      }
 
-        &.neon-link--exact-active {
-          &,
-          &:active {
-            color: var(--neon-color-link);
-            opacity: 1;
-          }
-        }
+      .neon-tree-menu__section-link-icon {
+        width: var(--neon-space-16);
+        height: var(--neon-space-16);
+        margin-right: var(--neon-space-12);
+      }
 
-        &:not(.neon-tree-menu__link--no-click):hover {
-          color: var(--neon-color-link);
-          opacity: 0.75;
-        }
+      .neon-tree-menu__section-link-expansion-icon {
+        width: var(--neon-space-8);
+        height: var(--neon-space-8);
+        margin-left: auto;
+        transition: transform var(--neon-animation-speed-fast) ease-in-out;
       }
     }
 
-    .neon-tree-menu__section-link-label,
-    .neon-tree-menu__link-label,
-    .neon-tree-menu__anchor-label {
-      pointer-events: none;
-      touch-action: none;
-      outline: none;
-      @include outline.focus-text-outline(var(--neon-rgb-primary));
-    }
+    a.neon-tree-menu__item-link {
+      font-size: var(--neon-font-size-tree-menu-item);
+      font-weight: var(--neon-font-weight-tree-menu-item);
+      padding: var(--neon-space-4) 0;
+      width: 100%;
 
-    .neon-tree-menu__section-link {
-      font-size: var(--neon-font-size-l);
-      font-weight: var(--neon-font-weight-semi-bold);
-
-      &:visited {
-        color: var(--neon-color-text-secondary);
+      &:visited,
+      &.neon-link {
+        color: var(--neon-color-tree-menu-item);
       }
     }
 
-    .neon-tree-menu__section-link,
+    a.neon-tree-menu__sub-menu-item-link {
+      font-size: var(--neon-font-size-tree-menu-sub-menu-item);
+      font-weight: var(--neon-font-weight-tree-menu-sub-menu-item);
+      padding: var(--neon-space-2) 0 var(--neon-space-2) var(--neon-space-16);
+      width: 100%;
+
+      &:visited,
+      &.neon-link {
+        color: var(--neon-color-tree-menu-sub-menu-item);
+      }
+    }
+
     .neon-tree-menu__section {
-      color: var(--neon-color-text-secondary);
-
-      & > .neon-tree-menu__link {
-        font-size: var(--neon-font-size-m);
-      }
-
-      .neon-tree-menu__links {
+      .neon-tree-menu__items {
         display: none;
       }
 
       &--expanded {
-        .neon-tree-menu__links {
+        padding-bottom: var(--neon-space-8);
+
+        .neon-tree-menu__section-link {
+          padding-bottom: var(--neon-space-4);
+        }
+
+        .neon-tree-menu__section-link-expansion-icon {
+          transform: rotate(90deg);
+        }
+
+        .neon-tree-menu__items {
           display: flex;
-          padding-bottom: var(--neon-space-8);
+          gap: var(--neon-space-4);
+          padding-left: var(--neon-padding-left-tree-menu-items);
         }
-      }
-
-      &--disabled {
-        & > .neon-tree-menu__section-link {
-          cursor: default;
-        }
-      }
-    }
-
-    .neon-tree-menu__link-item {
-      .neon-tree-menu__link {
-        font-weight: var(--neon-font-weight-normal);
-        font-size: var(--neon-font-size-s);
-        margin-bottom: var(--neon-space-2);
-        color: var(--neon-color-text-secondary);
-      }
-
-      .neon-tree-menu__anchor {
-        font-weight: var(--neon-font-weight-normal);
-        margin-bottom: var(--neon-space-2);
-        padding-left: var(--neon-space-16);
-        font-size: var(--neon-font-size-s);
-        color: var(--neon-color-text-secondary);
       }
     }
 
     &.neon-tree-menu--expand-all {
       .neon-tree-menu__section {
-        .neon-tree-menu__links {
+        .neon-tree-menu__items {
           display: flex;
         }
       }
     }
 
-    & > ul > li:first-child a {
-      padding-top: 0;
-    }
-
-    &__anchors {
+    &__sub-menu {
       display: none;
+      gap: var(--neon-space-2);
 
       &--expanded {
         display: flex;
+      }
+    }
+
+    @each $color in palettes.$neon-functional-colors {
+      &--#{$color} {
+        .neon-tree-menu__section .neon-tree-menu__section-link,
+        .neon-tree-menu__item .neon-tree-menu__item-link,
+        .neon-tree-menu__sub-menu-item .neon-tree-menu__sub-menu-item-link {
+          &.neon-link--exact-active {
+            @include svg.color-with-svg(var(--neon-color-#{$color}));
+          }
+
+          &:active,
+          &:hover {
+            @include svg.color-with-svg(var(--neon-color-#{$color}));
+          }
+
+          &-label {
+            pointer-events: none;
+            touch-action: none;
+            outline: none;
+            @include outline.focus-text-outline(var(--neon-rgb-#{$color}));
+          }
+        }
+      }
+    }
+
+    .neon-tree-menu__section--disabled a.neon-tree-menu__section-link {
+      cursor: default;
+
+      &,
+      &:visited,
+      &:hover,
+      &:active {
+        @include svg.color-with-svg(var(--neon-color-disabled-text));
       }
     }
   }

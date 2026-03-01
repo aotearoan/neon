@@ -1,4 +1,4 @@
-import type { NeonTreeMenuLinkModel } from './NeonTreeMenuLinkModel';
+import type { NeonTreeMenuItemModel } from './NeonTreeMenuItemModel';
 
 /**
  * Model defining a <a href="/navigation/tree-menu">NeonTreeMenu</a> section.
@@ -8,10 +8,12 @@ export interface NeonTreeMenuSectionModel {
   label: string;
   /** Unique key for the menu section. */
   key: string;
+  /** optional icon to display alongside the section label. */
+  icon?: string;
   /** URL for the menu section's page. */
   href?: string;
-  /** Child links of the menu section. */
-  children?: NeonTreeMenuLinkModel[];
+  /** Child items of the menu section. */
+  children?: NeonTreeMenuItemModel[];
   /** Boolean describing if the menu section is expanded. */
   expanded?: boolean;
   /** Boolean describing if the menu section is disabled. */

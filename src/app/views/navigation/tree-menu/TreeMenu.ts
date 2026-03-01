@@ -19,10 +19,11 @@ export default defineComponent({
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('A multi-level menu for the side nav');
 
-    const model = ref([
+    const modelValue = ref([
       {
         key: 'feedback',
         label: 'Feedback',
+        icon: 'send',
         expanded: false,
         children: [
           {
@@ -77,27 +78,30 @@ export default defineComponent({
       {
         key: 'presentation',
         label: 'Presentation',
-        href: '/navigation/tree-menu',
-        expanded: true,
+        href: '/presentation',
+      },
+      {
+        key: 'disabled-section',
+        label: 'Disabled Section',
+        disabled: true,
         children: [
           {
-            key: 'tree-menu',
-            label: 'Tree Menu',
-            href: '/navigation/tree-menu',
-            anchors: ['Examples', 'API'],
+            key: 'disabled-menu',
+            label: 'Disabled Menu',
+            href: '/disabled-url',
           },
         ],
       },
     ]);
 
-    const template = '<neon-tree-menu :model="model" />';
+    const template = '<neon-tree-menu v-model="modelValue" />';
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonTreeMenu')));
 
     return {
       menuModel,
       headline,
-      model,
+      modelValue,
       template,
     };
   },

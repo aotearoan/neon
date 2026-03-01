@@ -11,7 +11,7 @@
       <neon-card-body>
         <h2 class="neon-h3">Example</h2>
         <neon-stack>
-          <neon-tree-menu :model="model" />
+          <neon-tree-menu v-model="modelValue" class="tree-menu__example" />
           <editor v-model="template" />
         </neon-stack>
       </neon-card-body>

@@ -31,4 +31,33 @@
       }
     }
   }
+
+  .neon-page--with-side-nav .neon-footer .neon-footer__container {
+    @include responsive.responsive(larger-than-tablet) {
+      max-width: calc(var(--neon-max-width-page) - var(--neon-side-nav-width));
+    }
+  }
+
+  .neon-page--left.neon-page--with-side-nav {
+    .neon-footer {
+      margin: 0;
+      position: relative;
+      border-top: none;
+
+      &__container {
+        z-index: var(--neon-z-index-above);
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: var(--neon-footer-height);
+        width: calc(100vw - var(--neon-side-nav-width));
+        border-top: var(--neon-border-color) var(--neon-border-style) var(--neon-border-width-footer);
+        background-color: var(--neon-background-color-footer);
+      }
+    }
+  }
 }

@@ -2,70 +2,162 @@ import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonTreeMenu from './NeonTreeMenu.vue';
 import { router } from '@/../test/unit/test-router';
+import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import type { NeonTreeMenuSectionModel } from '@/common/models/NeonTreeMenuSectionModel';
 
 describe('NeonTreeMenu', () => {
-  const model = [
+  const id = 'testTreeManu';
+  const modelValue = [
     {
       key: 'feedback',
       label: 'Feedback',
+      icon: 'send',
       expanded: false,
       children: [
         {
           key: 'alert',
           label: 'Alert',
-          href: '/test',
-          anchors: ['Description', 'API', 'Examples'],
+          expanded: true,
+          subMenu: [
+            {
+              label: 'Description',
+              href: '/test#description',
+            },
+            {
+              label: 'API',
+              href: '/test#api',
+            },
+            {
+              label: 'Examples',
+              href: '/test#examples',
+            },
+          ],
         },
         {
           key: 'note',
           label: 'Note',
-          href: '/test',
-          anchors: ['Description', 'API', 'Examples'],
+          expanded: false,
+          subMenu: [
+            {
+              label: 'Description',
+              href: '/test#description',
+            },
+            {
+              label: 'API',
+              href: '/test#api',
+            },
+            {
+              label: 'Examples',
+              href: '/test#examples',
+            },
+          ],
         },
         {
           key: 'notification-counter',
           label: 'Notification Counter',
-          href: '/test',
-          anchors: ['Description', 'API', 'Examples'],
+          expanded: false,
+          subMenu: [
+            {
+              label: 'Description',
+              href: '/test#description',
+            },
+            {
+              label: 'API',
+              href: '/test#api',
+            },
+            {
+              label: 'Examples',
+              href: '/test#examples',
+            },
+          ],
         },
       ],
     },
     {
       key: 'navigation',
       label: 'Navigation',
-      expanded: true,
+      expanded: false,
       children: [
         {
           key: 'action-menu',
           label: 'Action Menu',
-          href: '/test',
-          anchors: ['Description', 'API', 'Examples'],
+          subMenu: [
+            {
+              label: 'Description',
+              href: '/test#description',
+            },
+            {
+              label: 'API',
+              href: '/test#api',
+            },
+            {
+              label: 'Examples',
+              href: '/test#examples',
+            },
+          ],
         },
         {
           key: 'dropdown-menu',
           label: 'Dropdown Menu',
-          href: '/test',
-          anchors: ['Description', 'API', 'Examples'],
+          expanded: false,
+          subMenu: [
+            {
+              label: 'Description',
+              href: '/test#description',
+            },
+            {
+              label: 'API',
+              href: '/test#api',
+            },
+            {
+              label: 'Examples',
+              href: '/test#examples',
+            },
+          ],
         },
         {
           key: 'link',
           label: 'Link',
           href: '/test',
-          anchors: ['Description', 'API', 'Examples'],
         },
         {
           key: 'tree-menu',
           label: 'Tree Menu',
-          href: '/test',
-          anchors: ['Description', 'API', 'Examples'],
+          expanded: false,
+          subMenu: [
+            {
+              label: 'Description',
+              href: '/test#description',
+            },
+            {
+              label: 'API',
+              href: '/test#api',
+            },
+            {
+              label: 'Examples',
+              href: '/test#examples',
+            },
+          ],
         },
       ],
     },
     {
+      key: 'link-section',
+      label: 'Link Section',
+      href: '/some-url',
+      expanded: true,
+    },
+    {
       key: 'disabled-section',
       label: 'Disabled Section',
-      expanded: true,
       disabled: true,
+      children: [
+        {
+          key: 'disabled-menu',
+          label: 'Disabled Menu',
+          href: '/disabled-url',
+        },
+      ],
     },
   ];
 
@@ -74,7 +166,8 @@ describe('NeonTreeMenu', () => {
   beforeEach(() => {
     harness = render(NeonTreeMenu, {
       props: {
-        model,
+        id,
+        modelValue,
       },
       global: { plugins: [router] },
     });
@@ -87,13 +180,28 @@ describe('NeonTreeMenu', () => {
     expect(html()).toMatchSnapshot();
   });
 
+  it('renders default color', () => {
+    // given
+    const { html } = harness;
+    // when / then
+    expect(html()).toMatch('neon-tree-menu--brand');
+  });
+
+  it('renders provided color', async () => {
+    // given
+    const { html, rerender } = harness;
+    await rerender({ color: NeonFunctionalColor.Primary });
+    // when / then
+    expect(html()).toMatch('neon-tree-menu--primary');
+  });
+
   it('expands all', async () => {
     // given
     const { container, rerender } = harness;
     await rerender({ expandAll: true });
     // when / then
     expect(container.querySelector('.neon-tree-menu--expand-all')).toBeDefined();
-    expect(container.querySelectorAll('.neon-tree-menu__anchors--expanded').length).toEqual(7);
+    expect(container.querySelectorAll('.neon-tree-menu__sub-menu--expanded').length).toEqual(6);
   });
 
   it('disables sections', async () => {
@@ -108,7 +216,7 @@ describe('NeonTreeMenu', () => {
     ) as HTMLElement;
     await fireEvent.click(disabledElLink);
     // then
-    expect(emitted().click).not.toBeDefined();
+    expect(emitted()['update:modelValue']).not.toBeDefined();
   });
 
   it('emits click event on click section link', async () => {
@@ -118,7 +226,11 @@ describe('NeonTreeMenu', () => {
     const item = container.querySelectorAll('.neon-tree-menu__section-link').item(0) as HTMLElement;
     await fireEvent.click(item);
     // then
-    expect(emitted().click[0]).toEqual(['feedback']);
+    const result = (
+      emitted()['update:modelValue'][0] as Array<Array<NeonTreeMenuSectionModel>>
+    )[0] as Array<NeonTreeMenuSectionModel>;
+    expect(result).toBeDefined();
+    expect(result[0].expanded).toEqual(true);
   });
 
   it('emits click event on space keydown section link', async () => {
@@ -130,7 +242,11 @@ describe('NeonTreeMenu', () => {
       .item(0) as HTMLElement;
     await fireEvent.keyDown(item, { key: 'Space', code: 'Space' });
     // then
-    expect(emitted().click[0]).toEqual(['feedback']);
+    const result = (
+      emitted()['update:modelValue'][0] as Array<Array<NeonTreeMenuSectionModel>>
+    )[0] as Array<NeonTreeMenuSectionModel>;
+    expect(result).toBeDefined();
+    expect(result[0].expanded).toEqual(true);
   });
 
   it('emits click event on space keydown link label', async () => {
@@ -140,6 +256,24 @@ describe('NeonTreeMenu', () => {
     const link = getByText('Alert');
     await fireEvent.keyDown(link, { key: 'Space', code: 'Space' });
     // then
-    expect(emitted().click[0]).toEqual(['alert']);
+    const result = (
+      emitted()['update:modelValue'][0] as Array<Array<NeonTreeMenuSectionModel>>
+    )[0] as Array<NeonTreeMenuSectionModel>;
+    expect(result).toBeDefined();
+    expect(result[0].children?.[0].expanded).toEqual(false);
+  });
+
+  it('emits click event on enter keydown link label', async () => {
+    // given
+    const { getByText, emitted } = harness;
+    // when
+    const link = getByText('Alert');
+    await fireEvent.keyDown(link, { key: 'Enter', code: 'Enter' });
+    // then
+    const result = (
+      emitted()['update:modelValue'][0] as Array<Array<NeonTreeMenuSectionModel>>
+    )[0] as Array<NeonTreeMenuSectionModel>;
+    expect(result).toBeDefined();
+    expect(result[0].children?.[0].expanded).toEqual(false);
   });
 });

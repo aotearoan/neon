@@ -457,6 +457,16 @@
   /* page container */
   --neon-height-page-container-sticky-buttons: 72rem;
 
+  /* tree menu */
+  --neon-font-size-tree-menu-section: var(--neon-font-size-m);
+  --neon-font-weight-tree-menu-section: var(--neon-font-weight-bold);
+  --neon-font-size-tree-menu-item: var(--neon-font-size-m);
+  --neon-font-weight-tree-menu-item: var(--neon-font-weight-normal);
+  --neon-font-size-tree-menu-sub-menu-item: var(--neon-font-size-s);
+  --neon-font-weight-tree-menu-sub-menu-item: var(--neon-font-weight-normal);
+  --neon-font-weight-tree-menu-selected: var(--neon-font-weight-bold);
+  --neon-padding-left-tree-menu-items: 0;
+
   /**********************
   * DARK THEME VARIABLES
   **********************/
@@ -578,36 +588,47 @@
     --neon-background-solid-button-dark-error: var(--neon-color-error-l1);
 
     /* outline buttons */
+    --neon-border-color-outline-button-inactive-high-contrast: var(--neon-border-color);
     --neon-background-outline-button-hover-high-contrast: var(--neon-color-high-contrast-l2);
     --neon-background-outline-button-active-high-contrast: var(--neon-color-high-contrast-l1);
 
+    --neon-border-color-outline-button-inactive-inverse: var(--neon-border-color);
     --neon-background-outline-button-hover-inverse: var(--neon-color-high-contrast-d5);
     --neon-background-outline-button-active-inverse: var(--neon-color-high-contrast-d4);
 
+    --neon-border-color-outline-button-inactive-low-contrast: var(--neon-border-color);
     --neon-background-outline-button-hover-low-contrast: var(--neon-color-low-contrast-l2);
     --neon-background-outline-button-active-low-contrast: var(--neon-color-low-contrast-l1);
 
+    --neon-border-color-outline-button-inactive-neutral: var(--neon-border-color);
     --neon-background-outline-button-hover-neutral: var(--neon-color-low-contrast-l2);
     --neon-background-outline-button-active-neutral: var(--neon-color-low-contrast-l1);
 
+    --neon-border-color-outline-button-inactive-brand: var(--neon-border-color);
     --neon-background-outline-button-hover-brand: var(--neon-color-brand-l2);
     --neon-background-outline-button-active-brand: var(--neon-color-brand-l1);
 
+    --neon-border-color-outline-button-inactive-accent: var(--neon-border-color);
     --neon-background-outline-button-hover-accent: var(--neon-color-accent-l2);
     --neon-background-outline-button-active-accent: var(--neon-color-accent-l1);
 
+    --neon-border-color-outline-button-inactive-primary: var(--neon-border-color);
     --neon-background-outline-button-hover-primary: var(--neon-color-primary-l2);
     --neon-background-outline-button-active-primary: var(--neon-color-primary-l1);
 
+    --neon-border-color-outline-button-inactive-info: var(--neon-border-color);
     --neon-background-outline-button-hover-info: var(--neon-color-info-l2);
     --neon-background-outline-button-active-info: var(--neon-color-info-l1);
 
+    --neon-border-color-outline-button-inactive-success: var(--neon-border-color);
     --neon-background-outline-button-hover-success: var(--neon-color-success-l2);
     --neon-background-outline-button-active-success: var(--neon-color-success-l1);
 
+    --neon-border-color-outline-button-inactive-warn: var(--neon-border-color);
     --neon-background-outline-button-hover-warn: var(--neon-color-warn-l2);
     --neon-background-outline-button-active-warn: var(--neon-color-warn-l1);
 
+    --neon-border-color-outline-button-inactive-error: var(--neon-border-color);
     --neon-background-outline-button-hover-error: var(--neon-color-error-l2);
     --neon-background-outline-button-active-error: var(--neon-color-error-l1);
 
@@ -786,16 +807,21 @@
 
     /* swiper */
     --neon-background-color-swiper: var(--neon-background-color-card);
-  }
 
-  /* image carousel */
-  --neon-color-image-carousel-nav-indicator: var(--neon-color-text-primary);
-  --neon-color-image-carousel-expanded-nav-indicator: var(--neon-color-text-primary);
-  --neon-color-image-carousel-expanded-button: var(--neon-color-text-primary);
-  --neon-color-image-carousel-expanded-button-disabled: var(--neon-color-low-contrast-d4);
-  --neon-background-color-image-carousel-expanded-button: var(--neon-color-low-contrast-d5);
-  --neon-color-image-carousel-expanded-label: var(--neon-color-text-tertiary);
-  --neon-text-shadow-image-carousel-expanded: 1px 1px 2px var(--neon-color-inverse);
+    /* image carousel */
+    --neon-color-image-carousel-nav-indicator: var(--neon-color-text-primary);
+    --neon-color-image-carousel-expanded-nav-indicator: var(--neon-color-text-primary);
+    --neon-color-image-carousel-expanded-button: var(--neon-color-text-primary);
+    --neon-color-image-carousel-expanded-button-disabled: var(--neon-color-low-contrast-d4);
+    --neon-background-color-image-carousel-expanded-button: var(--neon-color-low-contrast-d5);
+    --neon-color-image-carousel-expanded-label: var(--neon-color-text-tertiary);
+    --neon-text-shadow-image-carousel-expanded: 1px 1px 2px var(--neon-color-inverse);
+
+    /* tree menu */
+    --neon-color-tree-menu-section: var(--neon-color-text-primary);
+    --neon-color-tree-menu-item: var(--neon-color-text-secondary);
+    --neon-color-tree-menu-sub-menu-item: var(--neon-color-text-secondary);
+  }
 
   /*********************
   * LIGHT THEME VARIABLES
@@ -918,36 +944,47 @@
     --neon-background-solid-button-dark-error: var(--neon-color-error-d2);
 
     /* outline buttons */
+    --neon-border-color-outline-button-inactive-high-contrast: var(--neon-border-color);
     --neon-background-outline-button-hover-high-contrast: var(--neon-color-high-contrast-d1);
     --neon-background-outline-button-active-high-contrast: var(--neon-color-high-contrast-d2);
 
+    --neon-border-color-outline-button-inactive-inverse: var(--neon-border-color);
     --neon-background-outline-button-hover-inverse: var(--neon-color-high-contrast-l5);
     --neon-background-outline-button-active-inverse: var(--neon-color-high-contrast-l4);
 
+    --neon-border-color-outline-button-inactive-low-contrast: var(--neon-border-color);
     --neon-background-outline-button-hover-low-contrast: var(--neon-color-low-contrast-d1);
     --neon-background-outline-button-active-low-contrast: var(--neon-color-low-contrast-d2);
 
+    --neon-border-color-outline-button-inactive-neutral: var(--neon-border-color);
     --neon-background-outline-button-hover-neutral: var(--neon-color-low-contrast-d1);
     --neon-background-outline-button-active-neutral: var(--neon-color-low-contrast-d2);
 
+    --neon-border-color-outline-button-inactive-brand: var(--neon-border-color);
     --neon-background-outline-button-hover-brand: var(--neon-color-brand-d1);
     --neon-background-outline-button-active-brand: var(--neon-color-brand-d2);
 
+    --neon-border-color-outline-button-inactive-accent: var(--neon-border-color);
     --neon-background-outline-button-hover-accent: var(--neon-color-accent-d1);
     --neon-background-outline-button-active-accent: var(--neon-color-accent-d2);
 
+    --neon-border-color-outline-button-inactive-primary: var(--neon-border-color);
     --neon-background-outline-button-hover-primary: var(--neon-color-primary-d1);
     --neon-background-outline-button-active-primary: var(--neon-color-primary-d2);
 
+    --neon-border-color-outline-button-inactive-info: var(--neon-border-color);
     --neon-background-outline-button-hover-info: var(--neon-color-info-d1);
     --neon-background-outline-button-active-info: var(--neon-color-info-d2);
 
+    --neon-border-color-outline-button-inactive-success: var(--neon-border-color);
     --neon-background-outline-button-hover-success: var(--neon-color-success-d1);
     --neon-background-outline-button-active-success: var(--neon-color-success-d2);
 
+    --neon-border-color-outline-button-inactive-warn: var(--neon-border-color);
     --neon-background-outline-button-hover-warn: var(--neon-color-warn-d1);
     --neon-background-outline-button-active-warn: var(--neon-color-warn-d2);
 
+    --neon-border-color-outline-button-inactive-error: var(--neon-border-color);
     --neon-background-outline-button-hover-error: var(--neon-color-error-d1);
     --neon-background-outline-button-active-error: var(--neon-color-error-d2);
 
@@ -1139,5 +1176,10 @@
     --neon-background-color-image-carousel-expanded-button: var(--neon-color-low-contrast-d3);
     --neon-color-image-carousel-expanded-label: var(--neon-color-text-tertiary-dark);
     --neon-text-shadow-image-carousel-expanded: 1px 1px 2px var(--neon-color-text-primary);
+
+    /* tree menu */
+    --neon-color-tree-menu-section: var(--neon-color-text-primary);
+    --neon-color-tree-menu-item: var(--neon-color-text-primary);
+    --neon-color-tree-menu-sub-menu-item: var(--neon-color-text-primary);
   }
 }

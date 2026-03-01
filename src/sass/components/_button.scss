@@ -48,7 +48,7 @@
 }
 
 @mixin outline-button($color) {
-  border: var(--neon-border-width-outline-button) var(--neon-border-style) var(--neon-background-outline-button-active-#{$color});
+  border: var(--neon-border-width-outline-button) var(--neon-border-style) var(--neon-border-color-outline-button-inactive-#{$color});
   &:not(.neon-button--disabled) {
     color: var(--neon-background-outline-button-active-#{$color});
     @include svg.svg-colors(var(--neon-background-outline-button-active-#{$color}));

@@ -45,4 +45,13 @@
       }
     }
   }
+
+  .neon-page--left.neon-page--with-side-nav {
+    @include responsive.responsive(larger-than-tablet) {
+      .neon-page-container {
+        margin-left: var(--neon-gutter);
+        margin-right: var(--neon-gutter);
+      }
+    }
+  }
 }

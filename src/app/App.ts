@@ -1,6 +1,6 @@
 import { computed, defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
 import { Menu } from './Menu';
-import type { NeonTreeMenuLinkModel, NeonTreeMenuSectionModel } from '@/neon';
+import type { NeonTreeMenuItemModel, NeonTreeMenuSectionModel } from '@/neon';
 import {
   NeonButton,
   NeonDrawer,
@@ -30,7 +30,7 @@ export interface AppMenuGroup {
   children: NeonTreeMenuSectionModel[];
 }
 
-export interface AppMenuLinkModel extends NeonTreeMenuLinkModel {
+export interface AppMenuLinkModel extends NeonTreeMenuItemModel {
   keywords?: string;
 }
 
@@ -69,16 +69,16 @@ export default defineComponent({
 
     const lowercaseFilter = computed(() => (indexFilter.value || '').toLowerCase());
 
-    const filterLink = (item: AppMenuLinkModel): NeonTreeMenuLinkModel | undefined => {
+    const filterLink = (item: AppMenuLinkModel): NeonTreeMenuItemModel | undefined => {
       const searchString =
         item.label.toString() +
         (item.keywords ? item.keywords.toString() : '') +
-        (item.anchors ? item.anchors.join(' ') : '');
+        (item.subMenu ? item.subMenu.map((sm) => sm.label).join(' ') : '');
       return searchString.toLowerCase().indexOf(lowercaseFilter.value) >= 0 ? item : undefined;
     };
 
     const filterSection = (item: NeonTreeMenuSectionModel): NeonTreeMenuSectionModel | undefined => {
-      const children: NeonTreeMenuLinkModel[] = [];
+      const children: NeonTreeMenuItemModel[] = [];
       if (item.children) {
         item.children.forEach((child) => {
           const filteredChild = filterLink(child);
@@ -142,24 +142,9 @@ export default defineComponent({
 
     const selectedModeIcon = computed(() => modeIcons[selectedModeIndex.value]);
 
-    const onSideNavMenuClick = (key: string) => {
-      toggleExpand(key);
-    };
-
     const handleResize = () => {
       isMobile.value = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.MobileLarge]).matches;
       isTablet.value = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.Tablet]).matches;
-    };
-
-    const toggleExpand = (key: string) => {
-      indexModel.value.forEach((group) => {
-        group.children.forEach((item) => {
-          if (item.key === key) {
-            item.expanded = !item.expanded;
-          }
-        });
-        group.children = [...group.children];
-      });
     };
 
     onMounted(async () => {
@@ -181,18 +166,19 @@ export default defineComponent({
         children: group.children.map((item) => ({
           label: item.name || item.page || item.path,
           key: item.path,
-          children: item.children
-            ? item.children.map((child) => ({
-                label: child.name || child.page || child.path,
-                key: child.path,
-                keywords:
-                  (child.keywords || '') +
-                  (child.component ? ` ${child.component.toLowerCase()}` : '') +
-                  (child.subComponents ? '' + child.subComponents.map((sc) => sc.name.toLowerCase()).join(' ') : ''),
-                href: `/${item.path}/${child.path}`,
-                anchors: child.anchors,
-              }))
-            : [],
+          children: item.children?.map((child) => ({
+            label: child.name || child.page || child.path,
+            key: child.path,
+            keywords:
+              (child.keywords || '') +
+              (child.component ? ` ${child.component.toLowerCase()}` : '') +
+              (child.subComponents ? '' + child.subComponents.map((sc) => sc.name.toLowerCase()).join(' ') : ''),
+            href: `/${item.path}/${child.path}`,
+            subMenu: child.anchors?.map((anchor) => ({
+              label: anchor,
+              href: `/${item.path}/${child.path}#${anchor.toLowerCase().replace(/\\s/g, '-')}`,
+            })),
+          })),
         })),
       }));
     });
@@ -206,17 +192,22 @@ export default defineComponent({
       () => route.path,
       (to: string) => {
         menuOpen.value = false;
-        const key = to.split('/')[1];
+        const [_to, key, childKey] = to.split('/');
         indexModel.value
-          .filter((group) => group.children.find((item) => item.key === key))
+          .filter((group) => group.children.find((section) => section.key === key))
           .forEach((group) => {
             group.expanded = true;
             group.children
-              .filter((item) => item.key === key)
-              .forEach((item) => {
-                item.expanded = true;
+              .filter((section) => section.key === key)
+              .forEach((section) => {
+                section.expanded = true;
               });
-            group.children = [...group.children];
+            group.children = [
+              ...group.children.map((item) => ({
+                ...item,
+                children: item.children?.map((item) => ({ ...item, expanded: item.key === childKey })),
+              })),
+            ];
           });
         indexModel.value = [...indexModel.value];
       },
@@ -253,8 +244,6 @@ export default defineComponent({
       filteredModel,
       expandAll,
       toggleMode,
-      toggleExpand,
-      onSideNavMenuClick,
     };
   },
 });
