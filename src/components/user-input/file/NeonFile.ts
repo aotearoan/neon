@@ -5,6 +5,7 @@ import { NeonState } from '@/common/enums/NeonState';
 import NeonButton from '@/components/user-input/button/NeonButton.vue';
 import NeonInput from '@/components/user-input/input/NeonInput.vue';
 import NeonList from '@/components/user-input/list/NeonList.vue';
+import { NeonButtonStyle } from '@/common/enums/NeonButtonStyle';
 
 /**
  * A file upload component. This is a wrapper around an HTML file input. It can display multiple files as well as
@@ -52,6 +53,10 @@ export default defineComponent({
      * The file component color
      */
     color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Primary },
+    /**
+     * The style of button to use for the upload
+     */
+    buttonStyle: { type: String as () => NeonButtonStyle, default: NeonButtonStyle.Solid },
     /**
      * Make the button circular. NOTE: This is only for icon only buttons.
      */

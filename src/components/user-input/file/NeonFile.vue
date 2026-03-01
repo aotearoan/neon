@@ -40,6 +40,7 @@
       />
       <neon-button
         :aria-controls="id ? id : undefined"
+        :button-style="buttonStyle"
         :circular="circular"
         :color="color"
         :disabled="disabled"

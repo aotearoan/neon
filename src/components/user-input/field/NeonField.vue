@@ -15,7 +15,7 @@
       <!-- @slot optionally wrap the field with the label -->
       <slot></slot>
       <span v-if="!noMessage" :class="`neon-color-${messageColor}`" class="neon-field__message" @click.prevent.stop="">
-        {{ message || '' }}
+        {{ message }}
       </span>
     </div>
   </div>

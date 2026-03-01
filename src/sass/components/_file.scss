@@ -45,6 +45,14 @@
       }
     }
 
+    &--direct-upload {
+      width: fit-content;
+
+      .neon-file__actions {
+        width: fit-content;
+      }
+    }
+
     gap: var(--neon-space-16);
   }
 }

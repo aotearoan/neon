@@ -1,6 +1,8 @@
 @use '../../../../sass/includes/responsive';
 
 .drop-zone-examples {
+  margin-bottom: var(--neon-space-16);
+
   .neon-drop-zone {
     align-items: center;
     justify-content: center;

@@ -57,6 +57,17 @@
       }
     },
     {
+      "name": "noMessage",
+      "description": "Remove empty message space below input. By default, a blank message will be displayed below each input which\nhelps simplify form layouts.",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
       "name": "message",
       "description": "Message to display below the input field.",
       "type": {
@@ -64,7 +75,7 @@
       },
       "defaultValue": {
         "func": false,
-        "value": "null"
+        "value": "''"
       }
     },
     {

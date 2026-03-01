@@ -93,6 +93,17 @@
       }
     },
     {
+      "name": "buttonStyle",
+      "description": "The style of button to use for the upload",
+      "type": {
+        "name": "String as () => NeonButtonStyle"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "NeonButtonStyle.Solid"
+      }
+    },
+    {
       "name": "circular",
       "description": "Make the button circular. NOTE: This is only for icon only buttons.",
       "type": {
