@@ -1,5 +1,12 @@
 # Changelog
 
+## [23.2.5](https://github.com/aotearoan/neon/compare/v23.2.4...v23.2.5) (2026-03-01)
+
+
+### Bug Fixes
+
+* bugfixing ([#335](https://github.com/aotearoan/neon/issues/335)) ([4212e55](https://github.com/aotearoan/neon/commit/4212e5598d588b9d898595a2f86a1048731fdbbf))
+
 ## [23.2.4](https://github.com/aotearoan/neon/compare/v23.2.3...v23.2.4) (2026-03-01)
 
 
