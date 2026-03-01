@@ -11,4 +11,8 @@ export interface NeonCarouselImage {
    * Alt text to be displayed with the image for accessibility.
    */
   alt?: string;
+  /**
+   * Image title to be displayed with the image.
+   */
+  title?: string;
 }

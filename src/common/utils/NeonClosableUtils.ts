@@ -35,6 +35,7 @@ export class NeonClosableUtils {
    * Destroy the listeners. Call this in the parent component's onUnmounted method.
    */
   public destroy() {
+    this.close();
     document.removeEventListener('keydown', this.escapeKeyListener.bind(this));
     document.removeEventListener('mousedown', this.handleOutsideClick.bind(this));
     document.removeEventListener('touchstart', this.handleOutsideClick.bind(this));

@@ -7,11 +7,13 @@ describe('NeonImageCarousel', () => {
   const images = [
     {
       src: '/images/image-carousel/pic-01.jpg',
-      alt: 'Pic 1',
+      alt: 'Pic 1 alt',
+      title: 'Pic 1 title',
     },
     {
       src: '/images/image-carousel/pic-02.jpg',
-      alt: 'Pic 2',
+      alt: 'Pic 2 alt',
+      title: 'Pic 2 title',
     },
   ];
 

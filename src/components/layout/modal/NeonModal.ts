@@ -1,6 +1,7 @@
 import { defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
 import { NeonClosableUtils } from '@/common/utils/NeonClosableUtils';
 import NeonButton from '@/components/user-input/button/NeonButton.vue';
+import { NeonResponsive } from '@/common/enums/NeonResponsive';
 
 /**
  * A modal dialog component. This will be rendered above the content of the main window and can either be dismissed by the user or configured to require user interaction before dismissal.
@@ -27,6 +28,11 @@ export default defineComponent({
      * Keep the top nav visible when the modal is open
      */
     showTopNav: { type: Boolean, default: false },
+    /**
+     * Responsive breakpoint below which point the modal becomes fullscreen.
+     * Supports NeonResponsive.Mobile & NeonResponsive.MobileLarge.
+     */
+    breakpoint: { type: String as () => NeonResponsive, default: NeonResponsive.Mobile },
   },
   emits: [
     /**
@@ -64,6 +70,8 @@ export default defineComponent({
       (value) => {
         if (value) {
           closableUtils.value?.open();
+        } else {
+          closableUtils.value?.close();
         }
       },
       { immediate: true },

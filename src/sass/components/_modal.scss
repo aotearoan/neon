@@ -1,6 +1,57 @@
 @use '../includes/layout';
 @use '../includes/responsive';
 
+@mixin modal-responsive() {
+  &.neon-modal--open {
+    &:not(.neon-dialog),
+    &:not(.neon-dialog) .neon-modal__container {
+      @include layout.width(100);
+      @include layout.min-height(100);
+      @include layout.max-height(100);
+
+      .neon-card {
+        @include layout.min-height(100);
+      }
+    }
+
+    &,
+    .neon-modal__container {
+      .neon-card {
+        .neon-card-body {
+          flex: 1 1 auto;
+        }
+      }
+    }
+  }
+}
+
+@mixin modal-responsive-larger-than() {
+  &,
+  .neon-modal__overlay {
+    transition: all ease-in-out var(--neon-animation-speed-fast);
+  }
+
+  .neon-modal__container {
+    margin-top: -30vh;
+    transition: all ease-in-out var(--neon-animation-speed-slow);
+
+    & > .neon-card {
+      margin-left: calc(2 * var(--neon-base-space));
+      margin-right: calc(2 * var(--neon-base-space));
+    }
+  }
+
+  &.neon-modal--open {
+    .neon-modal__container {
+      margin-top: -20vh;
+    }
+  }
+
+  .neon-modal__close {
+    right: var(--neon-space-12);
+  }
+}
+
 @mixin modal {
   .neon-modal {
     align-items: center;
@@ -26,14 +77,6 @@
       z-index: var(--neon-z-index-below);
       pointer-events: none;
       transition: opacity ease-in-out var(--neon-animation-speed-fast);
-
-      @include responsive.responsive(larger-than-mobile-large) {
-        transition: all ease-in-out var(--neon-animation-speed-fast);
-        .neon-card {
-          margin-top: -30vh;
-          transition: all ease-in-out var(--neon-animation-speed-slow);
-        }
-      }
     }
 
     &,
@@ -45,29 +88,13 @@
       @include layout.height(100);
 
       &--show-top-nav {
-        @include layout.min-height(100, 'var(--neon-top-nav-height-desktop)');
-        @include layout.height(100, 'var(--neon-top-nav-height-desktop)');
-
-        @include responsive.responsive(tablet) {
-          @include layout.min-height(100, 'var(--neon-top-nav-height-tablet)');
-          @include layout.height(100, 'var(--neon-top-nav-height-tablet)');
-        }
-
-        @include responsive.responsive(mobile) {
-          @include layout.min-height(100, 'var(--neon-top-nav-height-mobile)');
-          @include layout.height(100, 'var(--neon-top-nav-height-mobile)');
-        }
+        @include layout.min-height(100, 'var(--neon-top-nav-height)');
+        @include layout.height(100, 'var(--neon-top-nav-height)');
       }
     }
 
     &.neon-modal--open {
       opacity: 1;
-
-      @include responsive.responsive(larger-than-mobile-large) {
-        .neon-card {
-          margin-top: -20vh;
-        }
-      }
 
       .neon-modal__container,
       .neon-modal__overlay {
@@ -75,36 +102,9 @@
         pointer-events: auto;
       }
 
-      &:not(.neon-dialog),
-      &:not(.neon-dialog) .neon-modal__container {
-        @include responsive.responsive(mobile-large) {
-          @include layout.width(100);
-          @include layout.min-height(100);
-
-          .neon-card {
-            @include layout.min-height(100);
-          }
-        }
-      }
-
       &,
       .neon-modal__container {
         z-index: var(--neon-z-index-top);
-
-        @include responsive.responsive(mobile-large) {
-          .neon-card {
-            .neon-card-body {
-              flex: 1 1 auto;
-            }
-          }
-        }
-      }
-    }
-
-    &__container {
-      @include responsive.responsive(larger-than-mobile-large) {
-        padding-left: var(--neon-space-8);
-        padding-right: var(--neon-space-8);
       }
     }
 
@@ -142,6 +142,26 @@
         @include responsive.responsive(mobile-large) {
           display: none;
         }
+      }
+    }
+
+    &.neon-modal--breakpoint-mobile {
+      @include responsive.responsive(larger-than-mobile) {
+        @include modal-responsive-larger-than();
+      }
+
+      @include responsive.responsive(mobile) {
+        @include modal-responsive();
+      }
+    }
+
+    &.neon-modal--breakpoint-mobile-large {
+      @include responsive.responsive(larger-than-mobile-large) {
+        @include modal-responsive-larger-than();
+      }
+
+      @include responsive.responsive(mobile-large) {
+        @include modal-responsive();
       }
     }
   }
