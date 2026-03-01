@@ -67,7 +67,7 @@
     }
 
     &.neon-field-group--internal {
-      border: var(--neon-border-width-input) var(--neon-border-style) var(--neon-border-color-input);
+      border: var(--neon-border-input);
       border-radius: var(--neon-border-radius-input);
 
       .neon-input-indicator {
