@@ -61,6 +61,30 @@
             </div>
           </div>
         </div>
+        <h3 class="neon-h5">accent</h3>
+        <p>The palette for an alternative brand accent color.</p>
+        <div class="color-list">
+          <div class="color-list-section">
+            <div
+              v-for="i in 5"
+              :key="`l${i}`"
+              :ref="`accentl${6 - i}`"
+              :class="`neon-accent-bg-color-l${6 - i}`"
+              class="color-item neon-dark-text"
+            >
+              {{ `l${6 - i}` }}
+            </div>
+            <div
+              v-for="i in 5"
+              :key="`d${i}`"
+              :ref="`accentd${i}`"
+              :class="`neon-accent-bg-color-d${i}`"
+              class="color-item neon-light-text"
+            >
+              {{ `d${i}` }}
+            </div>
+          </div>
+        </div>
         <h3 class="neon-h5">primary</h3>
         <p>The palette for the primary color used in an application.</p>
         <div class="color-list">
@@ -288,6 +312,7 @@
               <div class="neon-color-text">This is the default text color</div>
               <div class="color-example-inverse-bg neon-color-inverse">This is the inverse text color</div>
               <div class="neon-color-brand">This is the brand text color</div>
+              <div class="neon-color-accent">This is the accent text color</div>
               <div class="neon-color-primary">This is the primary text color</div>
               <div class="neon-color-info">This is the info text color</div>
               <div class="neon-color-success">This is the success text color</div>

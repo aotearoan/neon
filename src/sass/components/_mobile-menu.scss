@@ -26,12 +26,12 @@
           font-size: var(--neon-font-size-mobile-menu);
           line-height: var(--neon-line-height-mobile-menu);
           font-weight: var(--neon-font-weight-mobile-menu);
-          @include svg.color-with-svg(var(--neon-color-text-tertiary));
+          @include svg.color-with-svg(var(--neon-color-mobile-menu));
 
           &,
           .neon-svg--stroke,
           .neon-svg--fill {
-            transition: color ease-in-out var(--neon-animation-speed-slow);
+            transition: color ease-in-out var(--neon-animation-speed-fastest);
           }
 
           &:before {
@@ -42,7 +42,7 @@
             width: 100%;
             opacity: 0;
             height: var(--neon-height-mobile-menu-indicator);
-            transition: opacity ease-in-out var(--neon-animation-speed-slow);
+            transition: color ease-in-out var(--neon-animation-speed-fastest);
           }
         }
       }
@@ -51,7 +51,7 @@
         .neon-link {
           &:hover {
             .neon-mobile-menu__link-container {
-              @include svg.color-with-svg(var(--neon-color-text-primary));
+              @include svg.color-with-svg(var(--neon-color-mobile-menu-active));
 
               &:before {
                 opacity: 1;
@@ -61,13 +61,13 @@
 
           &:focus {
             .neon-mobile-menu__link-container {
-              @include svg.color-with-svg(var(--neon-color-text-primary));
+              @include svg.color-with-svg(var(--neon-color-mobile-menu-active));
             }
           }
 
           &.router-link-active {
             .neon-mobile-menu__link-container {
-              @include svg.color-with-svg(var(--neon-color-text-primary));
+              @include svg.color-with-svg(var(--neon-color-mobile-menu-active));
 
               &:before {
                 opacity: 1;
