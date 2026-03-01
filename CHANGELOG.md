@@ -1,5 +1,12 @@
 # Changelog
 
+## [23.0.2](https://github.com/aotearoan/neon/compare/v23.0.1...v23.0.2) (2026-03-01)
+
+
+### Bug Fixes
+
+* NeonPageContainer component ([#321](https://github.com/aotearoan/neon/issues/321)) ([dbb6ed2](https://github.com/aotearoan/neon/commit/dbb6ed263208feabd7779b81473c9b82a2407abc))
+
 ## [23.0.1](https://github.com/aotearoan/neon/compare/v23.0.0...v23.0.1) (2026-03-01)
 
 
