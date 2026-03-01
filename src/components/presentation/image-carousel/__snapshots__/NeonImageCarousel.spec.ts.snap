@@ -10,10 +10,10 @@ exports[`NeonImageCarousel renders carousel 1`] = `
         <!--v-if-->
       </button>
       <ul class="no-style neon-image-carousel__items">
-        <li class="neon-image-carousel__item--active neon-image-carousel__item"><img alt="Pic 1" src="/images/image-carousel/pic-01.jpg" class="neon-image-carousel__image">
+        <li class="neon-image-carousel__item--active neon-image-carousel__item"><img alt="Pic 1 alt" src="/images/image-carousel/pic-01.jpg" class="neon-image-carousel__image">
           <!--v-if-->
         </li>
-        <li class="neon-image-carousel__item"><img alt="Pic 2" src="/images/image-carousel/pic-02.jpg" class="neon-image-carousel__image">
+        <li class="neon-image-carousel__item"><img alt="Pic 2 alt" src="/images/image-carousel/pic-02.jpg" class="neon-image-carousel__image">
           <!--v-if-->
         </li>
       </ul><button class="neon-button--l neon-button--neutral neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--with-icon neon-button--icon-only neon-button neon-image-carousel__next neon-image-carousel__next" tabindex="0" type="button" title="Next">
@@ -50,10 +50,10 @@ exports[`NeonImageCarousel renders carousel without label 1`] = `
         <!--v-if-->
       </button>
       <ul class="no-style neon-image-carousel__items">
-        <li class="neon-image-carousel__item--active neon-image-carousel__item"><img alt="Pic 1" src="/images/image-carousel/pic-01.jpg" class="neon-image-carousel__image">
+        <li class="neon-image-carousel__item--active neon-image-carousel__item"><img alt="Pic 1 alt" src="/images/image-carousel/pic-01.jpg" class="neon-image-carousel__image">
           <!--v-if-->
         </li>
-        <li class="neon-image-carousel__item"><img alt="Pic 2" src="/images/image-carousel/pic-02.jpg" class="neon-image-carousel__image">
+        <li class="neon-image-carousel__item"><img alt="Pic 2 alt" src="/images/image-carousel/pic-02.jpg" class="neon-image-carousel__image">
           <!--v-if-->
         </li>
       </ul><button class="neon-button--l neon-button--neutral neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--with-icon neon-button--icon-only neon-button neon-image-carousel__next neon-image-carousel__next" tabindex="0" type="button" title="Next">
