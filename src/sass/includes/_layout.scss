@@ -164,3 +164,45 @@ $spacings: (
     padding-left: calc(var(--neon-side-nav-width) + var(--neon-gutter-desktop));
   }
 }
+
+@mixin layout-gaps {
+  &--gap-z {
+    gap: 0;
+  }
+
+  &--gap-s {
+    gap: var(--neon-gap-desktop-s);
+
+    @include responsive.responsive(tablet) {
+      gap: var(--neon-gap-tablet-s);
+    }
+
+    @include responsive.responsive(mobile-large) {
+      gap: var(--neon-gap-mobile-s);
+    }
+  }
+
+  &--gap-m {
+    gap: var(--neon-gap-desktop-m);
+
+    @include responsive.responsive(tablet) {
+      gap: var(--neon-gap-tablet-m);
+    }
+
+    @include responsive.responsive(mobile-large) {
+      gap: var(--neon-gap-mobile-m);
+    }
+  }
+
+  &--gap-l {
+    gap: var(--neon-gap-desktop-l);
+
+    @include responsive.responsive(tablet) {
+      gap: var(--neon-gap-tablet-l);
+    }
+
+    @include responsive.responsive(mobile-large) {
+      gap: var(--neon-gap-mobile-l);
+    }
+  }
+}

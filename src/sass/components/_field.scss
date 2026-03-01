@@ -5,6 +5,10 @@
   .neon-field {
     width: 100%;
 
+    label.neon-field__label {
+      margin-bottom: 0;
+    }
+
     &__label-wrapper {
       display: inline-flex;
       align-items: center;

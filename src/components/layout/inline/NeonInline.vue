@@ -1,6 +1,6 @@
 <template>
-  <div :class="[`neon-inline--gap-${gap}`, `neon-inline--breakpoint-${breakpoint}`]" class="neon-inline">
-    <!-- @slot stack contents -->
+  <div :class="[`neon-inline--gap-${gap}`, breakpoint && `neon-inline--breakpoint-${breakpoint}`]" class="neon-inline">
+    <!-- @slot inline contents -->
     <slot></slot>
   </div>
 </template>

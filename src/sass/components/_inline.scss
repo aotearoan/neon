@@ -1,4 +1,5 @@
 @use '../includes/responsive';
+@use '../includes/layout';
 
 @mixin inline {
   .neon-inline {
@@ -8,41 +9,7 @@
     width: 100%;
     max-width: 100%;
 
-    &--gap-s {
-      gap: var(--neon-gap-desktop-s);
-
-      @include responsive.responsive(tablet) {
-        gap: var(--neon-gap-tablet-s);
-      }
-
-      @include responsive.responsive(mobile-large) {
-        gap: var(--neon-gap-mobile-s);
-      }
-    }
-
-    &--gap-m {
-      gap: var(--neon-gap-desktop-m);
-
-      @include responsive.responsive(tablet) {
-        gap: var(--neon-gap-tablet-m);
-      }
-
-      @include responsive.responsive(mobile-large) {
-        gap: var(--neon-gap-mobile-m);
-      }
-    }
-
-    &--gap-l {
-      gap: var(--neon-gap-desktop-l);
-
-      @include responsive.responsive(tablet) {
-        gap: var(--neon-gap-tablet-l);
-      }
-
-      @include responsive.responsive(mobile-large) {
-        gap: var(--neon-gap-mobile-l);
-      }
-    }
+    @include layout.layout-gaps;
 
     &--breakpoint-mobile {
       @include responsive.responsive(mobile) {

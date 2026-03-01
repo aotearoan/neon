@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue';
-import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonLayoutSize } from '@/common/enums/NeonLayoutSize';
 
 /**
  * A vertical layout component. NeonStack provides a way of laying out it's contents with standard gaps at each
@@ -10,6 +10,6 @@ export default defineComponent({
   name: 'NeonStack',
   props: {
     /** Size of the gap between items */
-    gap: { type: String as () => NeonSize, default: () => NeonSize.Large },
+    gap: { type: String as () => NeonLayoutSize, default: () => NeonLayoutSize.Large },
   },
 });
