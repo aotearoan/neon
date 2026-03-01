@@ -35,6 +35,7 @@
           <div class="neon-menu__link-container" tabindex="-1" @click="!item.disabled && onClick(item.key)">
             <neon-icon
               v-if="item.icon"
+              :id="`${item.key}MenuIcon`"
               :key="`${item.key}LinkIcon`"
               :name="item.icon"
               class="neon-menu__item-icon"
