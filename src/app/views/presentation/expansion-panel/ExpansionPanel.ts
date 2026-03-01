@@ -1,9 +1,9 @@
-import { defineComponent, onMounted, ref } from 'vue';
-import { NeonCard, NeonCardBody, NeonExpansionPanel, NeonStack } from '@/neon';
 import ComponentDocumentation from '@/app/components/component-documentation/ComponentDocumentation.vue';
 import Editor from '@/app/components/editor/Editor.vue';
 import type { MenuModel } from '@/app/Menu';
 import { Menu } from '@/app/Menu';
+import { NeonCard, NeonCardBody, NeonExpansionPanel, NeonStack } from '@/neon';
+import { defineComponent, onMounted, ref } from 'vue';
 
 export default defineComponent({
   name: 'ExpansionPanel',
@@ -27,6 +27,8 @@ export default defineComponent({
     const expanded6 = ref(false);
     const expanded7 = ref(false);
     const expanded8 = ref(false);
+    const expanded9 = ref(false);
+    const expanded10 = ref(false);
 
     const content = `Spicy jalapeno bacon ipsum dolor amet biltong porchetta cupim sausage pork loin. Ham porchetta
 brisket, kielbasa ham hock sirloin ground round strip steak jowl jerky short ribs pork loin frankfurter.`;
@@ -80,7 +82,21 @@ brisket, kielbasa ham hock sirloin ground round strip steak jowl jerky short rib
                       position="bottom"
 >
   <p>{{ content }}</p>
-</neon-expansion-panel>`;
+</neon-expansion-panel>
+<neon-expansion-panel v-model="expanded9"
+                      label="Indicator Left"
+                      indicator-position="left"
+>
+  <p>{{ content }}</p>
+</neon-expansion-panel>
+
+<neon-expansion-panel v-model="expanded10" full-width>
+  <template #header="{ expanded }">
+    <p>{{ expanded ? 'I am expanded' : 'I am not expanded' }}</p>
+  </template>
+  <p>{{ content }}</p>
+</neon-expansion-panel>
+`;
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonExpansionPanel')));
 
@@ -98,6 +114,8 @@ brisket, kielbasa ham hock sirloin ground round strip steak jowl jerky short rib
       expanded6,
       expanded7,
       expanded8,
+      expanded9,
+      expanded10,
     };
   },
 });

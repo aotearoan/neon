@@ -8,7 +8,7 @@ if [ -z "$APP_VERSION" ]; then
   echo "Version not found in package.json"
   exit 1
 fi
-BUILD_PATH="${PWD}/arcual-lib-app-neon-${APP_VERSION}.tgz"
+BUILD_PATH="${PWD}/aotearoan-neon-${APP_VERSION}.tgz"
 echo "build path is: ${BUILD_PATH}"
 rm -r ./dist
 npm run build
