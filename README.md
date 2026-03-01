@@ -66,4 +66,4 @@ see [Dark mode](https://aotearoan.github.io/neon/design/theming#dark-mode).
 
 1. build the project (`npm build`),
 2. run `npm pack` to create a tarball of the project
-3. install from the tarball with  `npm i -S /$PATH-TO-THIS-PROJECT/arcual-lib-app-neon-21.2.8.tgz`
+3. install from the tarball with  `npm i -S /$PATH-TO-THIS-PROJECT/aotearoan-neon-21.2.8.tgz`
