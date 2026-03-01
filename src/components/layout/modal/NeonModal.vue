@@ -1,5 +1,9 @@
 <template>
-  <div :class="[{ 'neon-modal--open': open }, `neon-modal--breakpoint-${breakpoint}`]" class="neon-modal" role="dialog">
+  <div
+    :class="[{ 'neon-modal--open': open, 'neon-modal--no-offset': noOffset }, `neon-modal--breakpoint-${breakpoint}`]"
+    class="neon-modal"
+    role="dialog"
+  >
     <div ref="modal" class="neon-modal__container">
       <!-- @slot modal contents -->
       <slot></slot>

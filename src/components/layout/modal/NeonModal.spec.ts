@@ -31,6 +31,22 @@ describe('NeonModal', () => {
     expect(html()).not.toMatch('neon-modal--open');
   });
 
+  it('renders with offset by default', () => {
+    // given
+    const { html } = harness;
+    // when / then
+    expect(html()).not.toMatch('neon-modal--no-offset');
+  });
+
+  it('renders no offset', async () => {
+    // given
+    const { html, rerender } = harness;
+    // when
+    await rerender({ noOffset: true });
+    // then
+    expect(html()).toMatch('neon-modal--no-offset');
+  });
+
   it('renders open', () => {
     // given
     const { html } = harness;
