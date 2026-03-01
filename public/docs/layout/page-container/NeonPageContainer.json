@@ -1,0 +1,43 @@
+{
+  "displayName": "NeonPageContainer",
+  "description": "NeonPageContainer is a component for the layout of basic (non-card based) page content. It is designed to be placed\ndirectly inside the NeonPage <em>contents</em> slot.\n<br />\n<br />\nFeatures include support for sticky button placement and hiding the nav bar.",
+  "tags": {},
+  "exportName": "default",
+  "props": [
+    {
+      "name": "title",
+      "description": "The page title",
+      "type": {
+        "name": "string"
+      }
+    },
+    {
+      "name": "hideNav",
+      "description": "Hide the navbar",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    },
+    {
+      "name": "stickyButtons",
+      "description": "Sticky button support on mobile",
+      "type": {
+        "name": "boolean"
+      },
+      "defaultValue": {
+        "func": false,
+        "value": "false"
+      }
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "description": "the page contents"
+    }
+  ]
+}

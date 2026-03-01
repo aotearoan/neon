@@ -266,4 +266,8 @@ $neon-components: null !default;
   @if index($neon-flattened-components, NeonMobileMenu) {
     @include components.mobile-menu;
   }
+
+  @if index($neon-flattened-components, NeonPageContainer) {
+    @include components.page-container;
+  }
 }

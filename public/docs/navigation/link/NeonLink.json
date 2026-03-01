@@ -34,7 +34,7 @@
       },
       "defaultValue": {
         "func": false,
-        "value": "NeonOutlineStyle.Text"
+        "value": "NeonOutlineStyle.None"
       }
     },
     {

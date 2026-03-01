@@ -43,6 +43,7 @@ export { default as NeonNote } from './components/feedback/note/NeonNote.vue';
 export { default as NeonNotificationCounter } from './components/feedback/notification-counter/NeonNotificationCounter.vue';
 export { default as NeonNumber } from './components/user-input/number/NeonNumber.vue';
 export { default as NeonPage } from './components/layout/page/NeonPage.vue';
+export { default as NeonPageContainer } from './components/layout/page-container/NeonPageContainer.vue';
 export { default as NeonPassword } from './components/user-input/password/NeonPassword.vue';
 export { default as NeonRangeSlider } from './components/user-input/range-slider/NeonRangeSlider.vue';
 export { default as NeonSideNav } from './components/layout/side-nav/NeonSideNav.vue';
