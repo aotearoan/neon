@@ -1,0 +1,43 @@
+@use '../includes/scrollbars';
+@use '../includes/layout';
+@use '../includes/responsive';
+
+// base HTML & body styles required for initialising Neon. These are styles that are used outside the .neon-app
+// scope (the mount point of the Vue app).
+@mixin base-html {
+  background-color: var(--neon-background-color);
+  font-size: 1px;
+
+  body {
+    text-rendering: optimizeLegibility;
+    background-color: var(--neon-background-color);
+    color: var(--neon-color-text-secondary);
+    display: flex;
+    margin: 0;
+    overscroll-behavior: none;
+    font-family: var(--neon-font-family-body);
+    font-weight: var(--neon-font-weight-body);
+    font-size: 15px;
+    line-height: var(--neon-line-height-ratio);
+
+    @include layout.min-height(100);
+
+    @include responsive.responsive(mobile-large) {
+      font-size: 17px; // don't use rems here - body font must be defined in pixels
+    }
+  }
+
+  .neon-closable--open {
+    overflow: hidden;
+  }
+
+  &.neon-mode--dark *,
+  &.neon-mode--light * {
+    box-sizing: border-box;
+
+    &::selection {
+      background-color: rgba(var(--neon-background-rgb-selection), 0.99);
+      color: var(--neon-color-selection);
+    }
+  }
+}

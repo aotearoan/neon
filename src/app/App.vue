@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="neon-app neon-app--standard-page">
+  <div class="neon-app--standard-page">
     <neon-page page-align="left">
       <template v-if="isTablet" #top-nav>
         <neon-top-nav class="app-top-nav">

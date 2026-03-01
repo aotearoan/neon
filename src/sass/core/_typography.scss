@@ -1,16 +1,29 @@
+@use '../includes/layout';
 @use '../includes/responsive';
+@use '../includes/scrollbars';
 @use '../includes/typography';
 
 @mixin typography {
-  body {
-    font-family: var(--neon-font-family-body);
-    font-weight: var(--neon-font-weight-body);
-    font-size: 16px;
-    line-height: var(--neon-line-height-ratio);
+  pre.neon--preformatted {
+    color: var(--neon-color-text-secondary-dark);
+    background-color: var(--neon-background-color-pre);
 
-    @include responsive.responsive(mobile-large) {
-      font-size: 17px; // don't use rems here - body font must be defined in pixels
+    &:not(.prism-editor__editor) {
+      @include scrollbars.scrollbars;
+      @include layout.padding();
+      border-radius: var(--neon-border-radius);
+      overflow-x: auto;
+      white-space: pre-line;
     }
+  }
+
+  .neon-monospaced {
+    font-family: var(--neon-font-family-monospaced);
+    font-variant-ligatures: discretionary-ligatures;
+  }
+
+  textarea {
+    font-family: var(--neon-font-family-body);
   }
 
   p {

@@ -1,0 +1,85 @@
+@mixin color-classes {
+  .neon-color-text-primary {
+    color: var(--neon-color-text-primary);
+  }
+
+  .neon-color-text-secondary {
+    color: var(--neon-color-text-secondary);
+  }
+
+  .neon-color-text-tertiary {
+    color: var(--neon-color-text-tertiary);
+  }
+
+  .neon-color-inverse {
+    color: var(--neon-color-inverse);
+  }
+
+  .neon-dark-text {
+    color: var(--neon-color-text-secondary-light);
+  }
+
+  .neon-light-text {
+    color: var(--neon-color-text-secondary-dark);
+  }
+
+  .neon-color-low-contrast {
+    color: var(--neon-color-low-contrast);
+  }
+
+  .neon-color-neutral {
+    color: var(--neon-color-neutral);
+  }
+
+  .neon-color-high-contrast {
+    color: var(--neon-color-high-contrast);
+  }
+
+  .neon-color-brand {
+    color: var(--neon-color-brand);
+  }
+
+  .neon-color-accent {
+    color: var(--neon-color-accent);
+  }
+
+  .neon-color-primary {
+    color: var(--neon-color-primary);
+  }
+
+  .neon-color-info {
+    color: var(--neon-color-info);
+  }
+
+  .neon-color-success {
+    color: var(--neon-color-success);
+  }
+
+  .neon-color-warn {
+    color: var(--neon-color-warn);
+  }
+
+  .neon-color-error {
+    color: var(--neon-color-error);
+  }
+
+  .neon-background-color-disabled-background {
+    background-color: var(--neon-color-disabled-background);
+  }
+
+  .neon-color-disabled-background {
+    color: var(--neon-color-disabled-background);
+  }
+
+  .neon-border-color-disabled-border {
+    border-color: var(--neon-color-disabled-border);
+  }
+
+  .neon-color-disabled-border {
+    color: var(--neon-color-disabled-border);
+  }
+
+  .neon-color-disabled-text {
+    color: var(--neon-color-disabled-text);
+  }
+}

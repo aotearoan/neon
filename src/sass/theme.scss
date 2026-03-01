@@ -1,7 +1,9 @@
 @use './includes/color-mixins';
 @use './includes/dependencies';
+@use './includes/layout';
 @use './includes/typography';
-@use './global/global';
+@use './core/core-neon';
+@use './global/base-html';
 @use './components/components';
 
 @import './variables';
@@ -22,14 +24,17 @@ $neon-components: null !default;
 @include color-mixins.generate-color-classes('warn');
 @include color-mixins.generate-color-classes('error');
 
+// use app scope to encapsulate global styles so they do not interfere with divs attached directly to the body, e.g.
+// hot jar and cookie banner
+.neon-app {
+  @include core-neon.core-neon;
+}
+
 .neon {
   /***********************
-  * Theme common
+  * Base HTML styles
   ************************/
-  @include global.base-html;
-  @include global.typography;
-  @include global.layout;
-  @include global.table;
+  @include base-html.base-html;
 
   /***********************
   * Theme components
