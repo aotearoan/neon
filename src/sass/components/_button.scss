@@ -105,6 +105,7 @@
 
 @mixin button-small {
   height: var(--neon-size-s);
+  min-height: var(--neon-size-s);
   font-size: var(--neon-font-size-s);
   line-height: var(--neon-line-height-one);
   padding: 0 calc(0.75 * (var(--neon-size-s) - var(--neon-font-size-s)));
@@ -131,6 +132,7 @@
 
 @mixin button-medium {
   height: var(--neon-size-m);
+  min-height: var(--neon-size-m);
   font-size: var(--neon-font-size-m);
   line-height: var(--neon-line-height-one);
   padding: 0 calc(0.75 * (var(--neon-size-m) - var(--neon-font-size-m)));
@@ -157,6 +159,7 @@
 
 @mixin button-large {
   height: var(--neon-size-l);
+  min-height: var(--neon-size-l);
   font-size: var(--neon-font-size-m);
   line-height: var(--neon-line-height-one);
   padding: 0 calc(0.75 * (var(--neon-size-l) - var(--neon-font-size-m)));
