@@ -6,8 +6,8 @@ exports[`NeonBanner matches snapshot 1`] = `
     <div class="neon-note__container">
       <div class="neon-stack--gap-s neon-stack">
         <!-- @slot stack contents -->
-        <div class="neon-inline--gap-s neon-inline--breakpoint-mobile-large neon-inline">
-          <!-- @slot stack contents -->
+        <div class="neon-inline--gap-s neon-inline">
+          <!-- @slot inline contents -->
         </div><!-- @slot the contents of the note description --><span class="neon-banner__message">test message</span><button class="neon-button--s neon-button--high-contrast neon-button--outline neon-button--state-ready neon-button neon-banner__action neon-banner__action" tabindex="0" type="button">
           <!--v-if--><span class="neon-button__label">dismiss</span>
           <!--v-if-->

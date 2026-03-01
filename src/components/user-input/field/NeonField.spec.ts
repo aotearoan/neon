@@ -24,7 +24,7 @@ describe('NeonField', () => {
     const labelFor = 'xdd';
     const { container } = render(NeonField, { props: { label, labelFor } });
     // when / then
-    expect((container.querySelector('.neon-field') as HTMLLabelElement)?.getAttribute('for')).toEqual(labelFor);
+    expect((container.querySelector('.neon-field__label') as HTMLLabelElement)?.getAttribute('for')).toEqual(labelFor);
   });
 
   it('renders optional', () => {
@@ -48,6 +48,17 @@ describe('NeonField', () => {
     const { container } = render(NeonField, { props: { label, optional: true, optionalLabel } });
     // when / then
     expect(container.querySelector('.neon-field__optional')?.textContent).toEqual(optionalLabel);
+  });
+
+  it('renders empty message', () => {
+    const { container } = render(NeonField, { props: { label, optional: true } });
+    expect(container.querySelector('.neon-field__message')).toBeDefined();
+  });
+
+  it('does not render message when no-message = true', () => {
+    const message = 'Bacon ipsum dolor amet venison';
+    const { container } = render(NeonField, { props: { label, optional: true, message, noMessage: true } });
+    expect(container.querySelector('.neon-field__message .neon-color-low-contrast')).toBeNull();
   });
 
   it('renders message', () => {

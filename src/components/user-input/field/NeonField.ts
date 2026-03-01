@@ -29,6 +29,11 @@ export default defineComponent({
      */
     optionalLabel: { type: String, default: 'Optional' },
     /**
+     * Remove empty message space below input. By default, a blank message will be displayed below each input which
+     * helps simplify form layouts.
+     */
+    noMessage: { type: Boolean, default: false },
+    /**
      * Message to display below the input field.
      */
     message: { type: String, default: null },

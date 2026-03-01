@@ -83,6 +83,7 @@ export { NeonInputIndicatorStyle } from './common/enums/NeonInputIndicatorStyle'
 export { NeonInputMode } from './common/enums/NeonInputMode';
 export { NeonInputType } from './common/enums/NeonInputType';
 export { NeonLabelSize } from './common/enums/NeonLabelSize';
+export { NeonLayoutSize } from './common/enums/NeonLayoutSize';
 export { NeonMode } from './common/enums/NeonMode';
 export { NeonOrientation } from './common/enums/NeonOrientation';
 export { NeonOutlineStyle } from './common/enums/NeonOutlineStyle';

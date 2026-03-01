@@ -36,11 +36,11 @@ describe('NeonInline', () => {
     expect(html()).toMatch('neon-inline--gap-s');
   });
 
-  it('renders default breakpoint', () => {
+  it('renders no default breakpoint', () => {
     // given
     const { html } = harness;
     // when / then
-    expect(html()).toMatch('neon-inline--breakpoint-mobile-large');
+    expect(html()).not.toMatch('neon-inline--breakpoint');
   });
 
   it('renders breakpoint', async () => {

@@ -1,6 +1,6 @@
 import { defineComponent } from 'vue';
-import { NeonSize } from '@/common/enums/NeonSize';
-import { NeonResponsive } from '@/common/enums/NeonResponsive';
+import type { NeonResponsive } from '@/common/enums/NeonResponsive';
+import { NeonLayoutSize } from '@/common/enums/NeonLayoutSize';
 
 /**
  * A horizontal layout component. NeonInline provides a way of laying out it's contents with standard gaps. At the
@@ -12,11 +12,11 @@ export default defineComponent({
     /**
      * Size of the gap between items
      */
-    gap: { type: String as () => NeonSize, default: () => NeonSize.Large },
+    gap: { type: String as () => NeonLayoutSize, default: () => NeonLayoutSize.Large },
     /**
-     * Breakpoint at which to layout switches to vertical. TIP: Pass <em>breakpoint=""</em> to override the default
-     * breakpoint & prevent switching to a vertical layout.
+     * Breakpoint at which to layout switches to vertical column layout. If no breakpoint is provided there is no
+     * responsive switch.
      */
-    breakpoint: { type: String as () => NeonSize, default: () => NeonResponsive.MobileLarge },
+    breakpoint: { type: String as () => NeonResponsive },
   },
 });
