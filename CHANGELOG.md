@@ -1,5 +1,12 @@
 # Changelog
 
+## [23.3.0](https://github.com/aotearoan/neon/compare/v23.2.5...v23.3.0) (2026-03-01)
+
+
+### Features
+
+* add accent color palette ([#337](https://github.com/aotearoan/neon/issues/337)) ([553728c](https://github.com/aotearoan/neon/commit/553728c393ae8479b5f072e68fdede812a2d8d24))
+
 ## [23.2.5](https://github.com/aotearoan/neon/compare/v23.2.4...v23.2.5) (2026-03-01)
 
 
