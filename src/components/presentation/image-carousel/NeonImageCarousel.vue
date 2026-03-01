@@ -48,7 +48,7 @@
               class="neon-image-carousel__image"
               @click.stop="!isExpanded && toggleExpanded()"
             />
-            <p v-if="isExpanded" class="neon-image-carousel__item-title">{{ image.alt }}</p>
+            <p v-if="isExpanded && image.title" class="neon-image-carousel__item-title">{{ image.title }}</p>
           </li>
         </ul>
         <neon-button
