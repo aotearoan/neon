@@ -15,6 +15,7 @@ $neon-components: null !default;
 @include color-mixins.generate-color-classes('low-contrast');
 @include color-mixins.generate-color-classes('high-contrast');
 @include color-mixins.generate-color-classes('brand');
+@include color-mixins.generate-color-classes('accent');
 @include color-mixins.generate-color-classes('primary');
 @include color-mixins.generate-color-classes('info');
 @include color-mixins.generate-color-classes('success');

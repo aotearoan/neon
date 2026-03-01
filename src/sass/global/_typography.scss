@@ -7,6 +7,10 @@
     font-weight: var(--neon-font-weight-body);
     font-size: 16px;
     line-height: var(--neon-line-height-ratio);
+
+    @include responsive.responsive(mobile-large) {
+      font-size: 17px; // don't use rems here - body font must be defined in pixels
+    }
   }
 
   p {

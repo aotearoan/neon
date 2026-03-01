@@ -4,7 +4,7 @@
 @mixin neon-menu-size($size) {
   .neon-menu__item {
     height: 100%;
-    font-size: var(--neon-font-size-#{$size});
+    font-size: var(--neon-font-size-menu);
     align-items: center;
     display: flex;
 
@@ -22,13 +22,14 @@
         position: relative;
         gap: var(--neon-space-12);
         font-family: var(--neon-font-family-menu);
+        text-transform: var(--neon-text-transform-menu);
         font-weight: var(--neon-font-weight-menu);
-        @include svg.color-with-svg(var(--neon-color-text-tertiary));
+        @include svg.color-with-svg(var(--neon-color-menu));
 
         &,
         .neon-svg--stroke,
         .neon-svg--fill {
-          transition: color ease-in-out var(--neon-animation-speed-slow);
+          transition: color ease-in-out var(--neon-animation-speed-fastest);
         }
 
         &:before {
@@ -39,7 +40,7 @@
           width: 100%;
           opacity: 0;
           height: var(--neon-height-menu-indicator);
-          transition: opacity ease-in-out var(--neon-animation-speed-slow);
+          transition: opacity ease-in-out var(--neon-animation-speed-fastest);
         }
       }
     }
@@ -48,7 +49,7 @@
       .neon-link {
         &:hover {
           .neon-menu__link-container {
-            @include svg.color-with-svg(var(--neon-color-text-primary));
+            @include svg.color-with-svg(var(--neon-color-menu-active));
 
             &:before {
               opacity: 1;
@@ -59,13 +60,13 @@
 
         &:focus {
           .neon-menu__link-container {
-            @include svg.color-with-svg(var(--neon-color-text-primary));
+            @include svg.color-with-svg(var(--neon-color-menu-active));
           }
         }
 
         &.router-link-active {
           .neon-menu__link-container {
-            @include svg.color-with-svg(var(--neon-color-text-primary));
+            @include svg.color-with-svg(var(--neon-color-menu-active));
 
             &:before {
               opacity: 1;
@@ -182,7 +183,8 @@
     }
 
     &__responsive-menu {
-      font-family: var(--neon-font-family-heading);
+      font-family: var(--neon-font-family-menu);
+      text-transform: var(--neon-text-transform-menu);
 
       &.neon-menu__responsive-menu:not(:first-child) {
         margin-left: calc(5 * var(--neon-base-space));
@@ -213,7 +215,8 @@
         &__label {
           display: flex;
           align-items: center;
-          font-family: var(--neon-font-family-heading);
+          font-family: var(--neon-font-family-menu);
+          text-transform: var(--neon-text-transform-menu);
         }
       }
 
@@ -225,21 +228,25 @@
       }
 
       .neon-dropdown .neon-dropdown__button {
-        font-family: var(--neon-font-family-heading);
+        font-family: var(--neon-font-family-menu);
+        text-transform: var(--neon-text-transform-menu);
         font-weight: var(--neon-font-weight-normal);
         letter-spacing: var(--neon-letter-spacing-m);
       }
     }
 
     &.neon-menu--s {
+      --neon-font-size-menu: var(--neon-font-size-menu-s);
       @include neon-menu-size('s');
     }
 
     &.neon-menu--m {
+      --neon-font-size-menu: var(--neon-font-size-menu-m);
       @include neon-menu-size('m');
     }
 
     &.neon-menu--l {
+      --neon-font-size-menu: var(--neon-font-size-menu-l);
       @include neon-menu-size('l');
     }
   }

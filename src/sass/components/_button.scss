@@ -194,7 +194,7 @@
     margin-right: 0;
     cursor: pointer;
     text-decoration: none;
-    font-family: var(--neon-font-family-body);
+    font-family: var(--neon-font-family-button);
 
     &--s {
       @include button-small;

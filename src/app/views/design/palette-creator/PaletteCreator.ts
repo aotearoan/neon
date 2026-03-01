@@ -85,6 +85,16 @@ export default defineComponent({
       '--neon-rgb-brand-d3',
       '--neon-rgb-brand-d4',
       '--neon-rgb-brand-d5',
+      '--neon-rgb-accent-l5',
+      '--neon-rgb-accent-l4',
+      '--neon-rgb-accent-l3',
+      '--neon-rgb-accent-l2',
+      '--neon-rgb-accent-l1',
+      '--neon-rgb-accent-d1',
+      '--neon-rgb-accent-d2',
+      '--neon-rgb-accent-d3',
+      '--neon-rgb-accent-d4',
+      '--neon-rgb-accent-d5',
       '--neon-rgb-primary-l5',
       '--neon-rgb-primary-l4',
       '--neon-rgb-primary-l3',
@@ -138,7 +148,7 @@ export default defineComponent({
     ];
 
     const neutralPalettes = ['low-contrast', 'neutral', 'high-contrast'];
-    const brandPalettes = ['brand', 'primary'];
+    const brandPalettes = ['brand', 'accent', 'primary'];
     const functionalPalettes = ['info', 'success', 'warn', 'error'];
     const stepsLight = ['l5', 'l4', 'l3', 'l2', 'l1'];
     const stepsDark = ['d1', 'd2', 'd3', 'd4', 'd5'];

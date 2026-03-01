@@ -121,13 +121,6 @@
           }
         }
 
-        .neon-stepper__step--active, {
-          .neon-stepper__step-title {
-            font-weight: var(--neon-font-weight-semi-bold);
-            color: var(--neon-color-#{$color});
-          }
-        }
-
         .neon-stepper__step--display-stepper {
           &:not(:first-child) {
             &:before {

@@ -14,6 +14,8 @@ export enum NeonFunctionalColor {
   HighContrast = 'high-contrast',
   /** Brand is the main brand color palette, this is useful for branded CTAs, text & controls. */
   Brand = 'brand',
+  /** Accent is an alternative brand accent palette used when multiple brand colors are required */
+  Accent = 'accent',
   /** Primary is the main application color palette. For most applications this will be used by default. */
   Primary = 'primary',
   /** Info can be used to convey informational context, e.g. notes & alerts */

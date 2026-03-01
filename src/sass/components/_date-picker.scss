@@ -21,6 +21,8 @@
       width: 100%;
 
       &__button .neon-button__label {
+        --neon-text-transform-button: none;
+        --neon-font-family-button: var(--neon-font-family-body);
         font-variant: tabular-nums;
       }
     }

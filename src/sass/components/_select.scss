@@ -11,6 +11,8 @@
     }
 
     .neon-dropdown__button {
+      --neon-text-transform-button: none;
+      --neon-font-family-button: var(--neon-font-family-body);
       padding-left: var(--neon-space-8);
       font-weight: var(--neon-font-weight-input);
 
