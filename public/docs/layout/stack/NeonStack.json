@@ -8,11 +8,11 @@
       "name": "gap",
       "description": "Size of the gap between items",
       "type": {
-        "name": "String as () => NeonSize"
+        "name": "String as () => NeonLayoutSize"
       },
       "defaultValue": {
         "func": true,
-        "value": "() => NeonSize.Large"
+        "value": "() => NeonLayoutSize.Large"
       }
     }
   ],

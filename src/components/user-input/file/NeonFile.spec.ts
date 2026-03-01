@@ -4,6 +4,7 @@ import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
 import { NeonSize } from '@/common/enums/NeonSize';
 import { NeonState } from '@/common/enums/NeonState';
 import NeonFile from './NeonFile.vue';
+import { NeonButtonStyle } from '@/common/enums/NeonButtonStyle';
 
 describe('NeonFile', () => {
   let harness: RenderResult;
@@ -21,6 +22,17 @@ describe('NeonFile', () => {
     const { container, rerender } = harness;
     await rerender({ color: NeonFunctionalColor.Info });
     expect(container.querySelector('.neon-file--info')).toBeDefined();
+  });
+
+  it('renders default button style', () => {
+    const { container } = harness;
+    expect(container.querySelector('.neon-button--solid')).toBeDefined();
+  });
+
+  it('renders button style', async () => {
+    const { container, rerender } = harness;
+    await rerender({ buttonStyle: NeonButtonStyle.Text });
+    expect(container.querySelector('.neon-button--text')).toBeDefined();
   });
 
   it('renders square', () => {

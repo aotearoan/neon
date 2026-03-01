@@ -10,6 +10,23 @@
       margin-left: auto;
     }
 
+    .neon-dropdown__button {
+      padding-left: var(--neon-space-8);
+      font-weight: var(--neon-font-weight-input);
+
+      &.neon-button--s {
+        font-size: var(--neon-font-size-input-s);
+      }
+
+      &.neon-button--m {
+        font-size: var(--neon-font-size-input-m);
+      }
+
+      &.neon-button--l {
+        font-size: var(--neon-font-size-input-l);
+      }
+    }
+
     @each $color in palettes.$neon-functional-colors {
       &--#{$color} {
         .neon-select__option {
@@ -32,7 +49,7 @@
 
     &--with-placeholder {
       .neon-dropdown__button {
-        color: var(--neon-color-placeholder);
+        color: rgba(var(--neon-rgb-placeholder), 0.6);
         font-style: var(--neon-font-style-placeholder);
         font-weight: var(--neon-font-weight-placeholder);
       }

@@ -2,6 +2,12 @@
 @import './palette';
 @import './color-variables';
 
+@include responsive.responsive(mobile-large) {
+  body {
+    font-size: 17px; // don't use rems here - body font must be defined in pixels
+  }
+}
+
 .neon {
   /*********************
   * Global Variables
@@ -109,8 +115,12 @@
   --neon-base-font-size: 16rem;
   --neon-typography-margin-unit: var(--neon-space-8); // base typography bottom margin unit
 
-
   --neon-font-size-m: var(--neon-base-font-size);
+
+  @include responsive.responsive(mobile-large) {
+    --neon-font-size-m: 17rem;
+  }
+
   --neon-font-size-s: calc(var(--neon-font-size-m) / var(--neon-typography-scale));
   --neon-font-size-xs: calc(var(--neon-font-size-s) / var(--neon-typography-scale));
   --neon-font-size-xxs: calc(var(--neon-font-size-xs) / var(--neon-typography-scale));
@@ -380,19 +390,19 @@
   /* input */
   --neon-border-radius-input: var(--neon-border-radius);
   --neon-border-width-input: var(--neon-border-width);
-  --neon-font-size-placeholder: var(--neon-font-size-s);
+  --neon-font-size-placeholder: var(--neon-font-size-m);
   --neon-font-style-placeholder: italic;
   --neon-font-weight-placeholder: var(--neon-font-weight-normal);
   --neon-font-weight-input: var(--neon-font-weight-normal);
   --neon-line-height-input: var(--neon-line-height-ratio-large);
   --neon-opacity-input-background-active: 0.03125;
 
-  --neon-font-size-input-s: var(--neon-font-size-s);
+  --neon-font-size-input-s: var(--neon-font-size-m);
   --neon-font-size-input-m: var(--neon-font-size-m);
   --neon-font-size-input-l: var(--neon-font-size-m);
 
   /* input indicator */
-  --neon-font-size-input-indicator-s: var(--neon-font-size-s);
+  --neon-font-size-input-indicator-s: var(--neon-font-size-m);
   --neon-font-size-input-indicator-m: var(--neon-font-size-m);
   --neon-font-size-input-indicator-l: var(--neon-font-size-m);
   --neon-font-weight-input-indicator: var(--neon-font-weight-normal);
@@ -642,13 +652,16 @@
     --neon-color-input: var(--neon-color-text-secondary);
     --neon-border-color-input: var(--neon-border-color);
     --neon-background-color-input: rgba(var(--neon-rgb-neutral-d5), 0.5);
-    --neon-color-placeholder: var(--neon-color-low-contrast-d3);
+    --neon-rgb-placeholder: var(--neon-rgb-neutral-d1);
+    --neon-color-placeholder: var(--neon-color-neutral-d1);
+
     --neon-background-color-autofill: var(--neon-color-primary-d5);
     --neon-color-autofill: var(--neon-color-text-secondary);
 
     /* drop zone */
-    --neon-rgb-drop-zone-background: var(--neon-rgb-neutral-d5);
-    --neon-rgb-drop-zone: var(--neon-rgb-neutral-l1);
+    --neon-background-color-drop-zone: var(--neon-background-color-card);
+    --neon-color-drop-zone: var(--neon-color-text-secondary);
+    --neon-border-drop-zone: 1rem dashed var(--neon-border-color);
 
     /* alerts */
     --neon-box-shadow-alert: calc(0.5 * var(--neon-base-space)) calc(0.5 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) var(--neon-color-neutral-d5);
@@ -961,13 +974,16 @@
     --neon-color-input: var(--neon-color-text-secondary);
     --neon-border-color-input: var(--neon-border-color);
     --neon-background-color-input: var(--neon-color-high-contrast-l5);
-    --neon-color-placeholder: var(--neon-color-low-contrast-l3);
+    --neon-rgb-placeholder: var(--neon-rgb-neutral-l1);
+    --neon-color-placeholder: var(--neon-color-neutral-l1);
+
     --neon-background-color-autofill: var(--neon-color-primary-l5);
     --neon-color-autofill: var(--neon-color-text-secondary);
 
     /* drop zone */
-    --neon-rgb-drop-zone-background: var(--neon-rgb-high-contrast-l4);
-    --neon-rgb-drop-zone: var(--neon-rgb-text-secondary);
+    --neon-background-color-drop-zone: var(--neon-background-color-card);
+    --neon-color-drop-zone: var(--neon-color-text-secondary);
+    --neon-border-drop-zone: 1rem dashed var(--neon-border-color);
 
     /* alerts */
     --neon-box-shadow-alert: calc(0.5 * var(--neon-base-space)) calc(0.5 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) rgba(var(--neon-rgb-neutral-d1), 0.5);

@@ -8,29 +8,25 @@
       "name": "gap",
       "description": "Size of the gap between items",
       "type": {
-        "name": "String as () => NeonSize"
+        "name": "String as () => NeonLayoutSize"
       },
       "defaultValue": {
         "func": true,
-        "value": "() => NeonSize.Large"
+        "value": "() => NeonLayoutSize.Large"
       }
     },
     {
       "name": "breakpoint",
-      "description": "Breakpoint at which to layout switches to vertical. TIP: Pass <em>breakpoint=\"\"</em> to override the default\nbreakpoint & prevent switching to a vertical layout.",
+      "description": "Breakpoint at which to layout switches to vertical column layout. If no breakpoint is provided there is no\nresponsive switch.",
       "type": {
-        "name": "String as () => NeonSize"
-      },
-      "defaultValue": {
-        "func": true,
-        "value": "() => NeonResponsive.MobileLarge"
+        "name": "String as () => NeonResponsive"
       }
     }
   ],
   "slots": [
     {
       "name": "default",
-      "description": "stack contents"
+      "description": "inline contents"
     }
   ]
 }

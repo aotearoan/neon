@@ -36,7 +36,7 @@ export default defineComponent({
     /**
      * Message to display below the input field.
      */
-    message: { type: String, default: null },
+    message: { type: String, default: '' },
     /**
      * The color of message displayed under input. Can be any functional color.
      */

@@ -2,22 +2,16 @@
 
 @mixin drop-zone {
   .neon-drop-zone {
-    border: var(--neon-space-2) dashed rgba(var(--neon-rgb-drop-zone), 0.5);
+    border: var(--neon-border-drop-zone);
     border-radius: var(--neon-border-radius);
     @include layout.padding(1, true);
     cursor: copy;
-    background-color: rgba(var(--neon-rgb-drop-zone-background), 0.5);
-    color: rgba(var(--neon-rgb-drop-zone), 0.5);
+    background-color: var(--neon-background-color-drop-zone);
+    color: var(--neon-color-drop-zone);
     transition: background-color ease-in-out var(--neon-animation-speed-fast), color ease-in-out var(--neon-animation-speed-fast),
     border-left-color ease-in-out var(--neon-animation-speed-fast), border-top-color ease-in-out var(--neon-animation-speed-fast),
     border-bottom-color ease-in-out var(--neon-animation-speed-fast),
     border-right-color ease-in-out var(--neon-animation-speed-fast);
-
-    &--active:not(.neon-drop-zone--disabled),
-    &:hover:not(.neon-drop-zone--disabled) {
-      border-color: rgb(var(--neon-rgb-drop-zone));
-      color: rgb(var(--neon-rgb-drop-zone));
-    }
 
     &--circular {
       border-radius: 50%;
@@ -37,6 +31,7 @@
     &__container {
       justify-content: center;
       align-items: center;
+      text-align: center;
     }
   }
 }

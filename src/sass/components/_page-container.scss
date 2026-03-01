@@ -36,6 +36,8 @@
 
   @include responsive.responsive(mobile-large) {
     .neon-page-container {
+      min-height: 100%;
+
       &--hide-nav {
         min-height: 100%;
         --neon-height-mobile-menu: 0rem;
