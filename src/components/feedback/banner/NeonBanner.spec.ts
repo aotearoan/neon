@@ -21,4 +21,20 @@ describe('NeonBanner', () => {
     // then
     expect(html()).toMatchSnapshot();
   });
+
+  it('removes message', async () => {
+    // given
+    NeonBannerService.info({
+      key: 'test',
+      message: 'test message',
+      action: { label: 'dismiss', callback: callbackMock },
+    });
+    await nextTick();
+    NeonBannerService.remove('test');
+    await nextTick();
+
+    const { html } = harness;
+    // then
+    expect(html()).toMatchSnapshot();
+  });
 });

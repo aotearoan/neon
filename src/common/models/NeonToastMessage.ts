@@ -5,6 +5,11 @@ import type { NeonVerticalPosition } from '../enums/NeonVerticalPosition';
  */
 export interface NeonToastMessage {
   /**
+   * Optional key of the alert. This can be used to remove a message programmatically later.
+   */
+  key?: string;
+
+  /**
    *  Toast title.
    */
   title: string;

@@ -186,4 +186,24 @@
   .neon-color-error {
     color: var(--neon-color-error);
   }
+
+  .neon-background-color-disabled-background {
+    background-color: var(--neon-color-disabled-background);
+  }
+
+  .neon-color-disabled-background {
+    color: var(--neon-color-disabled-background);
+  }
+
+  .neon-border-color-disabled-border {
+    border-color: var(--neon-color-disabled-border);
+  }
+
+  .neon-color-disabled-border {
+    color: var(--neon-color-disabled-border);
+  }
+
+  .neon-color-disabled-text {
+    color: var(--neon-color-disabled-text);
+  }
 }

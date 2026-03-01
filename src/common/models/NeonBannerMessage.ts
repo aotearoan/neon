@@ -5,6 +5,11 @@ import type { NeonAlertAction } from './NeonAlertAction';
  */
 export interface NeonBannerMessage {
   /**
+   * Optional key of the alert. This can be used to remove a message programmatically later.
+   */
+  key?: string;
+
+  /**
    * Banner message to display to the user.
    */
   message: string;

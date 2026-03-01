@@ -54,6 +54,12 @@ describe('NeonBannerService', () => {
     expect(eventBusSpy).toHaveBeenCalledWith('neon--banner-error', infoMessage);
   });
 
+  it('emits remove banner', () => {
+    const key = 'test-key';
+    NeonBannerService.remove(key);
+    expect(eventBusSpy).toHaveBeenCalledWith('neon--banner-remove', key);
+  });
+
   it('generates event key', () => {
     expect(NeonBannerService.generateEventKey(NeonAlertLevel.Error)).toEqual('neon--banner-error');
   });

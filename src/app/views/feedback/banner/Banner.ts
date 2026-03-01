@@ -35,6 +35,7 @@ export default defineComponent({
 
     const infoMessage = () => {
       NeonBannerService.info({
+        key: 'test-info',
         message:
           '<strong>Account verification pending.</strong> You haven’t started the onboarding or it’s in progress',
         action: {
@@ -80,6 +81,10 @@ export default defineComponent({
           },
         },
       });
+    };
+
+    const removeMessage = () => {
+      NeonBannerService.remove('test-info');
     };
 
     const typesTemplate = `<neon-button color="info" label="Info" @click="infoMessage()" />
@@ -135,6 +140,8 @@ export default defineComponent({
 });`,
     );
 
+    const removeExample = computed(() => `NeonBannerService.remove('test-key');`);
+
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonBanner')));
 
     return {
@@ -148,6 +155,8 @@ export default defineComponent({
       successMessage,
       warnMessage,
       errorMessage,
+      removeMessage,
+      removeExample,
       typesTemplate,
       NeonVerticalPosition,
     };

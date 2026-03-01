@@ -79,6 +79,12 @@ describe('NeonAlertService', () => {
     expect(eventBusSpy).toHaveBeenCalledWith('neon--alert-error', infoMessage);
   });
 
+  it('emits remove alert', () => {
+    const key = 'test-key';
+    NeonAlertService.remove(key);
+    expect(eventBusSpy).toHaveBeenCalledWith('neon--alert-remove', key);
+  });
+
   it('generates event key', () => {
     expect(NeonAlertService.generateEventKey(NeonAlertLevel.Error)).toEqual('neon--alert-error');
   });

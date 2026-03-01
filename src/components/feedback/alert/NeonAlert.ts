@@ -161,17 +161,37 @@ export default defineComponent({
       enqueueToast(NeonAlertLevel.Error, toast);
     };
 
+    const onRemoveToast = (key: string) => {
+      [top.value, bottom.value].forEach((list) => {
+        const msgIndex = list.findIndex((m) => m.key === key);
+        if (msgIndex >= 0) {
+          list.splice(msgIndex, 1);
+        }
+      });
+    };
+
+    const onRemoveAlert = (key: string) => {
+      [topRight.value, bottomRight.value, topLeft.value, bottomLeft.value].forEach((list) => {
+        const msgIndex = list.findIndex((m) => m.key === key);
+        if (msgIndex >= 0) {
+          list.splice(msgIndex, 1);
+        }
+      });
+    };
+
     onMounted(() => {
       // alerts
       NeonEventBus.on(NeonAlertService.generateEventKey(NeonAlertLevel.Info), onInfoAlert);
       NeonEventBus.on(NeonAlertService.generateEventKey(NeonAlertLevel.Success), onSuccessAlert);
       NeonEventBus.on(NeonAlertService.generateEventKey(NeonAlertLevel.Warn), onWarnAlert);
       NeonEventBus.on(NeonAlertService.generateEventKey(NeonAlertLevel.Error), onErrorAlert);
+      NeonEventBus.on(NeonAlertService.removeEventKey, onRemoveAlert);
       // toast
       NeonEventBus.on(NeonToastService.generateEventKey(NeonAlertLevel.Info), onInfoToast);
       NeonEventBus.on(NeonToastService.generateEventKey(NeonAlertLevel.Success), onSuccessToast);
       NeonEventBus.on(NeonToastService.generateEventKey(NeonAlertLevel.Warn), onWarnToast);
       NeonEventBus.on(NeonToastService.generateEventKey(NeonAlertLevel.Error), onErrorToast);
+      NeonEventBus.on(NeonToastService.removeEventKey, onRemoveToast);
     });
 
     onUnmounted(() => {
@@ -180,11 +200,13 @@ export default defineComponent({
       NeonEventBus.off(NeonAlertService.generateEventKey(NeonAlertLevel.Success), onSuccessAlert);
       NeonEventBus.off(NeonAlertService.generateEventKey(NeonAlertLevel.Warn), onWarnAlert);
       NeonEventBus.off(NeonAlertService.generateEventKey(NeonAlertLevel.Error), onErrorAlert);
+      NeonEventBus.off(NeonAlertService.removeEventKey, onRemoveAlert);
       // toast
       NeonEventBus.off(NeonToastService.generateEventKey(NeonAlertLevel.Info), onInfoToast);
       NeonEventBus.off(NeonToastService.generateEventKey(NeonAlertLevel.Success), onSuccessToast);
       NeonEventBus.off(NeonToastService.generateEventKey(NeonAlertLevel.Warn), onWarnToast);
       NeonEventBus.off(NeonToastService.generateEventKey(NeonAlertLevel.Error), onErrorToast);
+      NeonEventBus.off(NeonToastService.removeEventKey, onRemoveToast);
     });
 
     return {
