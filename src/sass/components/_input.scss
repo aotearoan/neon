@@ -128,13 +128,12 @@
     &__text,
     &__textarea {
       border-radius: var(--neon-border-radius-input);
-      border: var(--neon-border-width-input) var(--neon-border-style);
+      border: var(--neon-border-input);
       padding: var(--neon-base-space) calc(2 * var(--neon-base-space));
       line-height: var(--neon-line-height-input);
       outline: none;
       font-family: var(--neon-font-family-body);
       width: 100%;
-      border-color: var(--neon-border-color-input);
       color: var(--neon-color-input);
       background-color: var(--neon-background-color-input);
       box-shadow: var(--neon-inset-shadow);

@@ -373,13 +373,13 @@
 
     &.neon-button--input {
       border-radius: var(--neon-border-radius-input);
-      border: var(--neon-border-width-input) var(--neon-border-style) var(--neon-border-color-input);
+      border: var(--neon-border-input);
       background-color: var(--neon-background-color-input);
       color: var(--neon-color-input);
 
       &.neon-button--disabled {
         color: var(--neon-color-disabled-text);
-        border: var(--neon-border-width-input) var(--neon-border-style) var(--neon-color-disabled-border);
+        border: var(--neon-border-input-disabled);
       }
     }
 

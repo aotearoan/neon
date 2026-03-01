@@ -67,7 +67,7 @@
       @include neon-label-size('l', 1, 'l');
     }
 
-    text-transform: uppercase;
+    text-transform: var(--neon-text-transform-label);
     border-radius: var(--neon-border-radius-label);
     letter-spacing: var(--neon-letter-spacing-s);
     display: flex;

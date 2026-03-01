@@ -95,6 +95,10 @@
   --neon-border-width-separator-before: 1rem;
   --neon-border-style: solid;
 
+  /* background colors */
+  --neon-background-color-light: var(--neon-color-high-contrast-l4);
+  --neon-background-color-dark: var(--neon-color-neutral-d5);
+
   /* z-index */
   --neon-z-index-below: -1;
   --neon-z-index-default: 0;
@@ -420,6 +424,7 @@
 
   /* label */
   --neon-border-radius-label: 2rem;
+  --neon-text-transform-label: none;
 
   /* badge */
   --neon-background-gradient-angle-badge: 45deg;
@@ -473,7 +478,7 @@
   &.neon-mode--dark {
     --neon-background-color-card: var(--neon-color-neutral-d4);
     --neon-border-card: var(--neon-border);
-    --neon-background-color: var(--neon-color-neutral-d5);
+    --neon-background-color: var(--neon-background-color-dark);
 
     --neon-rgb-text-primary: var(--neon-rgb-text-primary-dark);
     --neon-color-text-primary: var(--neon-color-text-primary-dark);
@@ -687,6 +692,8 @@
     /* input */
     --neon-color-input: var(--neon-color-text-secondary);
     --neon-border-color-input: var(--neon-border-color);
+    --neon-border-input: var(--neon-border-width-input) var(--neon-border-style) var(--neon-border-color-input);
+    --neon-border-input-disabled: var(--neon-border-width-input) var(--neon-border-style) var(--neon-color-disabled-border);
     --neon-background-color-input: rgba(var(--neon-rgb-neutral-d5), 0.5);
     --neon-rgb-placeholder: var(--neon-rgb-neutral-d1);
     --neon-color-placeholder: var(--neon-color-neutral-d1);
@@ -829,7 +836,7 @@
   &.neon-mode--light {
     --neon-background-color-card: var(--neon-color-high-contrast-l5);
     --neon-border-card: var(--neon-border);
-    --neon-background-color: var(--neon-color-high-contrast-l4);
+    --neon-background-color: var(--neon-background-color-light);
 
     --neon-rgb-text-primary: var(--neon-rgb-text-primary-light);
     --neon-color-text-primary: var(--neon-color-text-primary-light);
@@ -1043,6 +1050,8 @@
     /* input */
     --neon-color-input: var(--neon-color-text-secondary);
     --neon-border-color-input: var(--neon-border-color);
+    --neon-border-input: var(--neon-border-width-input) var(--neon-border-style) var(--neon-border-color-input);
+    --neon-border-input-disabled: var(--neon-border-width-input) var(--neon-border-style) var(--neon-color-disabled-border);
     --neon-background-color-input: var(--neon-color-high-contrast-l5);
     --neon-rgb-placeholder: var(--neon-rgb-neutral-l1);
     --neon-color-placeholder: var(--neon-color-neutral-l1);
