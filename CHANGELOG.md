@@ -1,5 +1,12 @@
 # Changelog
 
+## [24.1.0](https://github.com/aotearoan/neon/compare/v24.0.0...v24.1.0) (2026-03-01)
+
+
+### Features
+
+* add slots and indicator position to expansion panel ([#344](https://github.com/aotearoan/neon/issues/344)) ([aac473b](https://github.com/aotearoan/neon/commit/aac473ba7a7cad8a0b4cd3fb72eb06065cd0c039))
+
 ## [24.0.0](https://github.com/aotearoan/neon/compare/v23.3.1...v24.0.0) (2026-03-01)
 
 
