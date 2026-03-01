@@ -1,5 +1,16 @@
 # Changelog
 
+## [25.0.0](https://github.com/aotearoan/neon/compare/v24.1.0...v25.0.0) (2026-03-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* generate app docs dynamically ([#346](https://github.com/aotearoan/neon/issues/346))
+
+### Code Refactoring
+
+* generate app docs dynamically ([#346](https://github.com/aotearoan/neon/issues/346)) ([44cc789](https://github.com/aotearoan/neon/commit/44cc7890342e7aac7306cac1a3dc8f9c8d08678e))
+
 ## [24.1.0](https://github.com/aotearoan/neon/compare/v24.0.0...v24.1.0) (2026-03-01)
 
 
