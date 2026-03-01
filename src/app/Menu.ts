@@ -259,6 +259,12 @@ export class Menu {
                 component: 'NeonPage',
               },
               {
+                path: 'page-container',
+                page: 'PageContainer',
+                name: 'Page Container',
+                component: 'NeonPageContainer',
+              },
+              {
                 path: 'side-nav',
                 page: 'SideNav',
                 name: 'Side Nav',
