@@ -148,6 +148,11 @@
         color: var(--neon-color-placeholder);
       }
 
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 50rem var(--neon-background-color-autofill) inset;
+        -webkit-text-fill-color: var(--neon-color-autofill);
+      }
+
       &-counter {
         align-self: flex-start;
         user-select: none;

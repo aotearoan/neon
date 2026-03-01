@@ -1,8 +1,6 @@
 @use '../includes/responsive';
 @use '../includes/typography';
 
-$message-height: calc(var(--neon-font-size-s) * var(--neon-line-height-ratio));
-
 @mixin field {
   .neon-field {
     width: 100%;
@@ -36,7 +34,7 @@ $message-height: calc(var(--neon-font-size-s) * var(--neon-line-height-ratio));
       .neon-field__message {
         bottom: 0;
         font-size: var(--neon-font-size-s);
-        min-height: $message-height;
+        min-height: calc(var(--neon-font-size-s) * var(--neon-line-height-ratio));
         text-transform: none;
         letter-spacing: initial;
         font-weight: var(--neon-font-weight-normal);
