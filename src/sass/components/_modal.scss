@@ -32,7 +32,7 @@
   }
 
   .neon-modal__container {
-    margin-top: -30vh;
+    margin-top: var(--neon-margin-top-modal-closed);
     transition: all ease-in-out var(--neon-animation-speed-slow);
 
     & > .neon-card {
@@ -43,7 +43,7 @@
 
   &.neon-modal--open {
     .neon-modal__container {
-      margin-top: -20vh;
+      margin-top: var(--neon-margin-top-modal-open);
     }
   }
 
@@ -127,14 +127,14 @@
         transition: all ease-in-out var(--neon-animation-speed-fast);
 
         .neon-card {
-          margin-top: -30vh;
+          margin-top: var(--neon-margin-top-modal-closed);
           transition: all ease-in-out var(--neon-animation-speed-slow);
         }
       }
 
       &.neon-modal--open {
         .neon-card {
-          margin-top: -20vh;
+          margin-top: var(--neon-margin-top-modal-open);
         }
       }
 
@@ -163,6 +163,11 @@
       @include responsive.responsive(mobile-large) {
         @include modal-responsive();
       }
+    }
+
+    &--no-offset {
+      --neon-margin-top-modal-closed: 0;
+      --neon-margin-top-modal-open: 0;
     }
   }
 }

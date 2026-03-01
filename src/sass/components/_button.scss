@@ -350,7 +350,7 @@
     }
 
     &--outline {
-      background: transparent;
+      background: var(--neon-background-color-outline-button);
 
       &.neon-button--disabled {
         color: var(--neon-color-disabled-text);

@@ -85,6 +85,7 @@
   --neon-spacing-horizontal-desktop: calc(var(--neon-gutter-desktop) * var(--neon-spacing-horizontal-multiplier));
 
   /* animation */
+  --neon-animation-speed-slowest: 0.5s;
   --neon-animation-speed-slow: 0.3s;
   --neon-animation-speed-fast: 0.225s;
   --neon-animation-speed-fastest: 0.05s;
@@ -154,7 +155,7 @@
   --neon-h1-weight: var(--neon-font-weight-semi-bold);
   --neon-h0-weight: var(--neon-font-weight-semi-bold);
 
-  --neon-font-weight-em: var(--neon-font-weight-extra-light);
+  --neon-font-weight-em: inherit;
   --neon-font-weight-strong: var(--neon-font-weight-medium);
 
   --neon-letter-spacing-headings: 0;
@@ -302,6 +303,10 @@
   --neon-height-mobile-menu-indicator: 4rem;
   --neon-opacity-mobile-menu-focus: 0.125;
   --neon-height-mobile-menu: 66rem;
+
+  /* modal */
+  --neon-margin-top-modal-closed: -30vh;
+  --neon-margin-top-modal-open: -20vh;
 
   /* dropdown */
   --neon-max-height-dropdown: 280rem;
@@ -593,6 +598,8 @@
     --neon-background-solid-button-dark-error: var(--neon-color-error-l1);
 
     /* outline buttons */
+    --neon-background-color-outline-button: transparent;
+
     --neon-border-color-outline-button-inactive-high-contrast: var(--neon-border-color);
     --neon-background-outline-button-hover-high-contrast: var(--neon-color-high-contrast-l2);
     --neon-background-outline-button-active-high-contrast: var(--neon-color-high-contrast-l1);
@@ -951,6 +958,8 @@
     --neon-background-solid-button-dark-error: var(--neon-color-error-d2);
 
     /* outline buttons */
+    --neon-background-color-outline-button: transparent;
+
     --neon-border-color-outline-button-inactive-high-contrast: var(--neon-border-color);
     --neon-background-outline-button-hover-high-contrast: var(--neon-color-high-contrast-d1);
     --neon-background-outline-button-active-high-contrast: var(--neon-color-high-contrast-d2);

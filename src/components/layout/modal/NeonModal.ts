@@ -33,6 +33,10 @@ export default defineComponent({
      * Supports NeonResponsive.Mobile & NeonResponsive.MobileLarge.
      */
     breakpoint: { type: String as () => NeonResponsive, default: NeonResponsive.Mobile },
+    /**
+     * Remove the offset from the top of the modal.
+     */
+    noOffset: { type: Boolean },
   },
   emits: [
     /**

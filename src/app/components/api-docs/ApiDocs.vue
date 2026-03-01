@@ -60,13 +60,20 @@
             <div v-for="slot in apiModel.slots" :key="slot.name" class="api-docs__slot">
               <div class="api-docs__attribute api-docs__name">
                 <span>{{ slot.name }}</span>
-                <neon-label v-if="slot.scoped" color="brand" label="scoped" size="xs" />
+                <neon-label v-if="slot.scoped" color="brand" label="scoped" size="xxs" />
               </div>
               <div
                 v-if="slot.description"
                 class="api-docs__attribute api-docs__description"
                 v-html="slot.description"
               />
+              <div>
+                <br />
+                <span><strong>Bindings</strong></span>
+                <div v-for="binding in slot.bindings" :key="binding.name">
+                  {{ binding.name }} ({{ binding.type.name }}) - {{ binding.description }}
+                </div>
+              </div>
             </div>
           </section>
         </div>

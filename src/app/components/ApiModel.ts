@@ -26,10 +26,21 @@ export interface PropDefaultModel {
   value?: string;
 }
 
+export interface BindingTypeModel {
+  name: string;
+}
+
+export interface BindingModel {
+  name: string;
+  description: string;
+  type: BindingTypeModel;
+}
+
 export interface SlotModel {
   name: string;
   description: string;
   scoped: boolean;
+  bindings?: BindingModel[];
 }
 
 export interface PropertyModel {
