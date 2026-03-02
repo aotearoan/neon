@@ -1,5 +1,16 @@
 # Changelog
 
+## [26.0.0](https://github.com/aotearoan/neon/compare/v25.2.0...v26.0.0) (2026-03-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* reorganize supporting classes ([#357](https://github.com/aotearoan/neon/issues/357))
+
+### Code Refactoring
+
+* reorganize supporting classes ([#357](https://github.com/aotearoan/neon/issues/357)) ([f271fec](https://github.com/aotearoan/neon/commit/f271fec0df2a783e8ae6a58beb43fb57ff779314))
+
 ## [25.2.0](https://github.com/aotearoan/neon/compare/v25.1.0...v25.2.0) (2026-03-02)
 
 
