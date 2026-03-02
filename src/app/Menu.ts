@@ -272,6 +272,18 @@ export class Menu {
                 component: 'NeonPageContainer',
               },
               {
+                path: 'page-header',
+                page: 'PageHeader',
+                name: 'Page Header',
+                component: 'NeonPageHeader',
+              },
+              {
+                path: 'page-section',
+                page: 'PageSection',
+                name: 'Page Section',
+                component: 'NeonPageSection',
+              },
+              {
                 path: 'side-nav',
                 page: 'SideNav',
                 name: 'Side Nav',
@@ -282,6 +294,13 @@ export class Menu {
                 page: 'Stack',
                 keywords: 'layout vertical',
                 component: 'NeonStack',
+              },
+              {
+                path: 'sticky-buttons',
+                page: 'StickyButtons',
+                name: 'Sticky Buttons',
+                keywords: 'mobile navigation',
+                component: 'NeonStickyButtons',
               },
               {
                 path: 'swiper',
@@ -410,6 +429,12 @@ export class Menu {
                 path: 'label',
                 page: 'Label',
                 component: 'NeonLabel',
+              },
+              {
+                path: 'labelled-content',
+                page: 'LabelledContent',
+                name: 'Labelled Content',
+                component: 'NeonLabelledContent',
               },
               {
                 path: 'table',

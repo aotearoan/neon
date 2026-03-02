@@ -284,4 +284,20 @@ $neon-components: null !default;
   @if index($neon-flattened-components, NeonPagination) {
     @include components.pagination;
   }
+
+  @if index($neon-flattened-components, NeonLabelledContent) {
+    @include components.labelled-content;
+  }
+
+  @if index($neon-flattened-components, NeonPageSection) {
+    @include components.page-section;
+  }
+
+  @if index($neon-flattened-components, NeonPageHeader) {
+    @include components.page-header;
+  }
+
+  @if index($neon-flattened-components, NeonStickyButtons) {
+    @include components.sticky-buttons;
+  }
 }

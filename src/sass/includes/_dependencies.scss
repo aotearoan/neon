@@ -127,6 +127,10 @@
           NeonPageContainer: [NeonIcon],
           NeonBanner: [NeonButton, NeonNote, NeonIcon, NeonLink, NeonExpansionIndicator],
           NeonPagination: [NeonButton, NeonLink, NeonIcon],
+          NeonLabelledContent: [],
+          NeonPageSection: [],
+          NeonPageHeader: [NeonNote, NeonInline, NeonButton, NeonIcon, NeonExpansionIndicator, NeonLink],
+          NeonStickyButtons: [],
   );
 
   $neon-flattened-components: [];

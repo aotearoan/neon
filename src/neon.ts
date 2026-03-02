@@ -34,6 +34,7 @@ export { default as NeonInline } from './components/layout/inline/NeonInline.vue
 export { default as NeonInput } from './components/user-input/input/NeonInput.vue';
 export { default as NeonInputIndicator } from './components/user-input/input-indicator/NeonInputIndicator.vue';
 export { default as NeonLabel } from './components/presentation/label/NeonLabel.vue';
+export { default as NeonLabelledContent } from './components/presentation/labelled-content/NeonLabelledContent.vue';
 export { default as NeonLinearProgress } from './components/feedback/linear-progress/NeonLinearProgress.vue';
 export { default as NeonLink } from './components/navigation/link/NeonLink.vue';
 export { default as NeonList } from './components/user-input/list/NeonList.vue';
@@ -45,6 +46,8 @@ export { default as NeonNotificationCounter } from './components/feedback/notifi
 export { default as NeonNumber } from './components/user-input/number/NeonNumber.vue';
 export { default as NeonPage } from './components/layout/page/NeonPage.vue';
 export { default as NeonPageContainer } from './components/layout/page-container/NeonPageContainer.vue';
+export { default as NeonPageHeader } from './components/layout/page-header/NeonPageHeader.vue';
+export { default as NeonPageSection } from './components/layout/page-section/NeonPageSection.vue';
 export { default as NeonPagination } from './components/navigation/pagination/NeonPagination.vue';
 export { default as NeonPassword } from './components/user-input/password/NeonPassword.vue';
 export { default as NeonRangeSlider } from './components/user-input/range-slider/NeonRangeSlider.vue';
@@ -57,6 +60,7 @@ export { default as NeonSlider } from './components/user-input/slider/NeonSlider
 export { default as NeonSplashLoader } from './components/feedback/splash-loader/NeonSplashLoader.vue';
 export { default as NeonStack } from './components/layout/stack/NeonStack.vue';
 export { default as NeonStepper } from './components/navigation/stepper/NeonStepper.vue';
+export { default as NeonStickyButtons } from './components/layout/sticky-buttons/NeonStickyButtons.vue';
 export { default as NeonSwiper } from './components/layout/swiper/NeonSwiper.vue';
 export { default as NeonSwitch } from './components/user-input/switch/NeonSwitch.vue';
 export { default as NeonTab } from './components/presentation/tabs/tab/NeonTab.vue';
@@ -121,6 +125,7 @@ export type { NeonListItem } from './common/models/NeonListItem';
 export type { NeonLoadOnDemandModel } from './common/models/NeonLoadOnDemandModel';
 export type { NeonMenuItem } from './common/models/NeonMenuItem';
 export type { NeonMenuModel } from './common/models/NeonMenuModel';
+export type { NeonNoteModel } from './common/models/NeonNoteModel';
 export type { NeonNumberFormatOptions } from './common/models/NeonNumberFormatOptions';
 export type { NeonPaginationModel } from './common/models/NeonPaginationModel';
 export type { NeonPriorityMenuItem } from './components/navigation/menu/NeonPriorityMenuItem';

@@ -474,6 +474,9 @@
   --neon-font-weight-tree-menu-selected: var(--neon-font-weight-bold);
   --neon-padding-left-tree-menu-items: 0;
 
+  /* sticky buttons */
+  --neon-min-height-sticky-buttons: 72rem;
+
   /**********************
   * DARK THEME VARIABLES
   **********************/
@@ -828,6 +831,9 @@
     --neon-color-tree-menu-section: var(--neon-color-text-primary);
     --neon-color-tree-menu-item: var(--neon-color-text-secondary);
     --neon-color-tree-menu-sub-menu-item: var(--neon-color-text-secondary);
+
+    /* sticky buttons */
+    --neon-background-color-sticky-buttons: var(--neon-color-high-contrast-d5);
   }
 
   /*********************
@@ -1188,5 +1194,8 @@
     --neon-color-tree-menu-section: var(--neon-color-text-primary);
     --neon-color-tree-menu-item: var(--neon-color-text-primary);
     --neon-color-tree-menu-sub-menu-item: var(--neon-color-text-primary);
+
+    /* sticky buttons */
+    --neon-background-color-sticky-buttons: var(--neon-color-high-contrast-l5);
   }
 }

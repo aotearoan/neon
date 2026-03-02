@@ -1,0 +1,36 @@
+@use 'src/sass/includes/responsive';
+
+@mixin page-header {
+  .neon-page-header {
+    &__content {
+      flex-direction: row;
+      justify-content: space-between;
+      margin: var(--neon-space-32) 0;
+    }
+
+    &__actions {
+      flex-direction: row;
+      gap: var(--neon-space-8);
+      align-items: flex-start;
+
+      @include responsive.responsive(mobile-large) {
+        display: none;
+      }
+    }
+
+    &__title {
+      margin-bottom: var(--neon-space-12);
+    }
+
+    &__subtitle {
+      font-size: var(--neon-font-size-xs);
+      color: var(--neon-color-text-tertiary);
+
+      @include responsive.responsive(tablet) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--neon-space-4);
+      }
+    }
+  }
+}
