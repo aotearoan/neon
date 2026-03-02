@@ -1,5 +1,5 @@
 @use '../includes/palettes';
-@use 'src/sass/includes/responsive';
+@use '../includes/responsive';
 
 @mixin pagination {
   .neon-pagination {

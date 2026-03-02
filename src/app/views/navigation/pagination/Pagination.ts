@@ -20,48 +20,48 @@ export default defineComponent({
     const menuModel = ref<MenuModel | null>(null);
     const headline = ref('Display pagination controls for a list of items');
 
-    const template = `<neon-pagination :total="77" :page-size="20" :page="1" url-template="https://arcual.com?page={page}" />
-<neon-pagination :total="100" :page-size="20" :page="1" url-template="https://arcual.com?page={page}" />
-<neon-pagination :total="120" :page-size="20" :page="1" url-template="https://arcual.com?page={page}" />
-<neon-pagination :total="4936" :page-size="20" :page="2" url-template="https://arcual.com?page={page}" />
-<neon-pagination :total="4936" :page-size="20" :page="3" url-template="https://arcual.com?page={page}" />
-<neon-pagination :total="4936" :page-size="20" :page="4" url-template="https://arcual.com?page={page}" />
-<neon-pagination :total="4936" :page-size="20" :page="5" url-template="https://arcual.com?page={page}" />
+    const template = `<neon-pagination :total="77" :page-size="20" :page="1" url-template="https://aotearoan.com?page={page}" />
+<neon-pagination :total="100" :page-size="20" :page="1" url-template="https://aotearoan.com?page={page}" />
+<neon-pagination :total="120" :page-size="20" :page="1" url-template="https://aotearoan.com?page={page}" />
+<neon-pagination :total="4936" :page-size="20" :page="2" url-template="https://aotearoan.com?page={page}" />
+<neon-pagination :total="4936" :page-size="20" :page="3" url-template="https://aotearoan.com?page={page}" />
+<neon-pagination :total="4936" :page-size="20" :page="4" url-template="https://aotearoan.com?page={page}" />
+<neon-pagination :total="4936" :page-size="20" :page="5" url-template="https://aotearoan.com?page={page}" />
 <neon-pagination
   :total="4936"
   :page-size="20"
   :page="243"
-  url-template="https://arcual.com?page={page}"
+  url-template="https://aotearoan.com?page={page}"
 />
 <neon-pagination
   :total="4936"
   :page-size="20"
   :page="244"
-  url-template="https://arcual.com?page={page}"
+  url-template="https://aotearoan.com?page={page}"
 />
 <neon-pagination
   :total="4936"
   :page-size="20"
   :page="245"
-  url-template="https://arcual.com?page={page}"
+  url-template="https://aotearoan.com?page={page}"
 />
 <neon-pagination
   :total="4936"
   :page-size="20"
   :page="246"
-  url-template="https://arcual.com?page={page}"
+  url-template="https://aotearoan.com?page={page}"
 />
 <neon-pagination
   :total="4936"
   :page-size="20"
   :page="247"
-  url-template="https://arcual.com?page={page}"
+  url-template="https://aotearoan.com?page={page}"
 />
 <neon-pagination
   :total="4936"
   :page-size="20"
   :page="9"
-  url-template="https://arcual.com?page={page}"
+  url-template="https://aotearoan.com?page={page}"
   display-first-and-last
 />`;
 
