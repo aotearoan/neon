@@ -57,6 +57,11 @@
         width: calc(100vw - var(--neon-side-nav-width));
         border-top: var(--neon-border-color) var(--neon-border-style) var(--neon-border-width-footer);
         background-color: var(--neon-background-color-footer);
+
+        @include responsive.responsive(tablet) {
+          margin: 0 calc(-1 * var(--neon-gutter));
+          width: calc(100% + 2 * var(--neon-gutter));
+        }
       }
     }
   }

@@ -1,0 +1,43 @@
+@use 'src/sass/includes/responsive';
+
+@mixin sticky-buttons {
+  .neon-sticky-buttons {
+    width: 100%;
+
+    &__container {
+      flex-direction: row;
+      gap: var(--neon-space-16);
+    }
+
+    @include responsive.responsive(mobile-large) {
+      min-height: var(--neon-min-height-sticky-buttons);
+
+      .neon-sticky-buttons__container {
+        background-color: var(--neon-background-color-sticky-buttons);
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        padding: var(--neon-space-16);
+        flex-direction: column-reverse;
+        gap: var(--neon-space-8);
+        z-index: var(--neon-z-index-below-top);
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: calc(-1 * var(--neon-space-16));
+          background: linear-gradient(to bottom, transparent, var(--neon-background-color));
+          width: 100%;
+          height: var(--neon-space-16);
+          touch-action: none;
+          pointer-events: none;
+        }
+
+        .neon-button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

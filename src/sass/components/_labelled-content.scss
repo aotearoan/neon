@@ -1,0 +1,25 @@
+@mixin labelled-content {
+  .neon-labelled-content {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: var(--neon-space-4);
+    font-weight: var(--neon-font-weight-semi-bold);
+    --neon-color-link: var(--neon-color-text-secondary);
+    --neon-color-link-hover: var(--neon-color-text-secondary);
+    --neon-color-link-visited: var(--neon-color-text-secondary);
+
+    &__label {
+      color: var(--neon-color-text-tertiary);
+      font-size: var(--neon-font-size-s);
+      font-weight: var(--neon-font-weight-normal);
+      margin: var(--neon-space-8) 0;
+
+      &--important {
+        color: var(--neon-color-text-primary);
+      }
+    }
+  }
+}

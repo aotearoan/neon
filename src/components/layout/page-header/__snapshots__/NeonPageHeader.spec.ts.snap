@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NeonPageHeader renders NeonPageHeader 1`] = `
+<div class="neon-page-header">
+  <div class="neon-page-header__content">
+    <div>
+      <h1 class="neon-h2 neon-page-header__title">Title</h1>
+      <div class="neon-inline--gap-l neon-inline neon-page-header__subtitle">
+        <!-- @slot inline contents -->
+        <!-- @slot slot for defining content to be displayed as a subtitle below the page title --><span>Subtitle</span>
+      </div>
+    </div>
+    <div class="neon-page-header__actions">
+      <!-- @slot slot for defining actions to be displayed in the page header --><span>Do something</span>
+    </div>
+  </div>
+  <div class="neon-note--brand neon-note--with-title neon-note neon-page-header__note" role="note">
+    <div class="neon-note__container">
+      <div class="neon-stack--gap-s neon-stack">
+        <!-- @slot stack contents -->
+        <div class="neon-inline--gap-s neon-inline">
+          <!-- @slot inline contents -->
+          <!--v-if--><span class="neon-note__title">Note</span>
+        </div><!-- @slot the contents of the note description --><span>Description</span>
+      </div>
+    </div>
+    <!--v-if-->
+  </div>
+</div>
+`;

@@ -1,0 +1,13 @@
+@mixin page-section {
+  .neon-page-section {
+    width: 100%;
+
+    &__title {
+      padding: var(--neon-space-24) 0;
+    }
+
+    hr {
+      margin: var(--neon-space-24) 0;
+    }
+  }
+}

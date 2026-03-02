@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NeonStickyButtons renders NeonStickyButtons 1`] = `
+<div class="neon-sticky-buttons">
+  <div class="neon-sticky-buttons__container">
+    <!-- @slot slot for adding buttons -->
+    <p>Test</p>
+  </div>
+</div>
+`;
