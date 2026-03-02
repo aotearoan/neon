@@ -2,8 +2,8 @@ import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonTreeMenu from './NeonTreeMenu.vue';
 import { router } from '@/../test/unit/test-router';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import type { NeonTreeMenuSectionModel } from '@/common/models/NeonTreeMenuSectionModel';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import type { NeonTreeMenuSectionModel } from '@/model/navigation/tree-menu/NeonTreeMenuSectionModel';
 
 describe('NeonTreeMenu', () => {
   const id = 'testTreeManu';

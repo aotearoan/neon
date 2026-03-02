@@ -1,6 +1,6 @@
 import { computed, defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
-import { Menu } from './Menu';
-import type { NeonTreeMenuItemModel, NeonTreeMenuSectionModel } from '@/neon';
+import { Menu, type MenuModel } from './Menu';
+import type { NeonTreeMenuItemModel, NeonTreeMenuSectionModel, NeonTreeMenuSubMenuModel } from '@/neon';
 import {
   NeonButton,
   NeonDrawer,
@@ -148,6 +148,22 @@ export default defineComponent({
       isTablet.value = window.matchMedia(NeonResponsiveUtils.breakpoints[NeonResponsive.Tablet]).matches;
     };
 
+    const getSubMenu = (child: MenuModel, path: string): NeonTreeMenuSubMenuModel[] => {
+      if (child.anchors) {
+        return child.anchors.map((anchor) => ({
+          label: anchor || '',
+          href: `/${path}/${child.path}#${anchor.toLowerCase().replace(/\\s/g, '-')}`,
+        }));
+      } else if (child.children) {
+        return child.children.map((subMenuItem) => ({
+          label: subMenuItem.name || '',
+          href: `/${path}/${child.path}/${subMenuItem.path}`,
+        }));
+      }
+
+      return [];
+    };
+
     onMounted(async () => {
       await SupportingClassesDocs.init();
 
@@ -177,10 +193,7 @@ export default defineComponent({
               (child.component ? ` ${child.component.toLowerCase()}` : '') +
               (child.subComponents ? '' + child.subComponents.map((sc) => sc.name.toLowerCase()).join(' ') : ''),
             href: `/${item.path}/${child.path}`,
-            subMenu: child.anchors?.map((anchor) => ({
-              label: anchor,
-              href: `/${item.path}/${child.path}#${anchor.toLowerCase().replace(/\\s/g, '-')}`,
-            })),
+            subMenu: getSubMenu(child, item.path),
           })),
         })),
       }));

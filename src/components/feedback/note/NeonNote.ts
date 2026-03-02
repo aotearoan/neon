@@ -1,5 +1,5 @@
 import { computed, defineComponent } from 'vue';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import NeonButton from '@/components/user-input/button/NeonButton.vue';
 import NeonInline from '@/components/layout/inline/NeonInline.vue';

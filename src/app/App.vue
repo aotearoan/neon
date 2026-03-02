@@ -28,7 +28,11 @@
                     :label="section.group"
                     class="menu-expansion-panel"
                   >
-                    <neon-tree-menu v-model="section.children" :expand-all="expandAll" />
+                    <neon-tree-menu
+                      :id="`sideNavMenu${section.group}`"
+                      v-model="section.children"
+                      :expand-all="expandAll"
+                    />
                   </neon-expansion-panel>
                 </div>
               </div>
@@ -108,7 +112,7 @@
               class="menu-expansion-panel"
               size="l"
             >
-              <neon-tree-menu v-model="section.children" :expand-all="expandAll" />
+              <neon-tree-menu :id="`drawerMenu${section.group}`" v-model="section.children" :expand-all="expandAll" />
             </neon-expansion-panel>
           </template>
         </neon-side-nav>

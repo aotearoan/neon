@@ -1,7 +1,7 @@
 import NeonButton from '@/components/user-input/button/NeonButton.vue';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import { computed, defineComponent } from 'vue';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 
 /**
  * A pagination component that displays a list of page numbers and allows the user to navigate between pages. Typically,

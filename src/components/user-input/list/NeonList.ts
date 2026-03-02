@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue';
-import { NeonSize } from '@/common/enums/NeonSize';
-import type { NeonListItem } from '@/common/models/NeonListItem';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonSize } from '@/model/common/size/NeonSize';
+import type { NeonListItem } from '@/model/user-input/list/NeonListItem';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 
 /**

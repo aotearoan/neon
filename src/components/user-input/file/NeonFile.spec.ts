@@ -1,10 +1,10 @@
 import type { RenderResult } from '@testing-library/vue';
 import { render } from '@testing-library/vue';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonSize } from '@/common/enums/NeonSize';
-import { NeonState } from '@/common/enums/NeonState';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonSize } from '@/model/common/size/NeonSize';
+import { NeonState } from '@/model/common/state/NeonState';
 import NeonFile from './NeonFile.vue';
-import { NeonButtonStyle } from '@/common/enums/NeonButtonStyle';
+import { NeonButtonStyle } from '@/model/user-input/button/NeonButtonStyle';
 
 describe('NeonFile', () => {
   let harness: RenderResult;

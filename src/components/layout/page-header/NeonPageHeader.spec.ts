@@ -1,6 +1,6 @@
 import NeonPageHeader from './NeonPageHeader.vue';
 import { render } from '@testing-library/vue';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 
 describe('NeonPageHeader', () => {
   it('renders NeonPageHeader', () => {

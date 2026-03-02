@@ -1,6 +1,6 @@
 import { computed, defineComponent, ref, useAttrs } from 'vue';
-import { NeonToggleChipSize } from '@/common/enums/NeonToggleChipSize';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonToggleChipSize } from '@/model/user-input/toggle/NeonToggleChipSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 
 /**

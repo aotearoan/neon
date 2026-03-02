@@ -25,7 +25,7 @@
           </p>
           <p>
             Use
-            <neon-link href="/utils/NeonModeUtils">NeonModeUtils</neon-link>
+            <neon-link href="/utils/common/color/NeonModeUtils">NeonModeUtils</neon-link>
             to listen to native color scheme switching.
           </p>
         </neon-stack>

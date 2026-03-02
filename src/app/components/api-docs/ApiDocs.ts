@@ -56,10 +56,9 @@ export default defineComponent({
         const matches = typeName.match(/.*(Neon[a-zA-Z]+)/);
         if (matches && matches[1]) {
           const neonType = matches[1];
-          const isEnum = SupportingClassesDocs.enumList().indexOf(neonType) >= 0;
-          const isModel = SupportingClassesDocs.modelList().indexOf(neonType) >= 0;
+          const model = SupportingClassesDocs.modelList().find((model) => model.indexOf(neonType) >= 0);
 
-          return isEnum ? `/enums/${neonType}` : isModel ? `/models/${neonType}` : undefined;
+          return model ? `/model/${model}` : undefined;
         }
       }
       return undefined;

@@ -1,16 +1,16 @@
 import { defineComponent, onMounted, onUnmounted, ref } from 'vue';
-import { NeonEventBus } from '@/common/utils/NeonEventBus';
-import type { NeonAlertMessage } from '@/common/models/NeonAlertMessage';
-import { NeonAlertLevel } from '@/common/enums/NeonAlertLevel';
-import { NeonAlertService } from '@/common/utils/NeonAlertService';
+import { NeonEventBus } from '@/utils/common/event/NeonEventBus';
+import type { NeonAlertMessage } from '@/model/feedback/alert/NeonAlertMessage';
+import { NeonAlertLevel } from '@/model/feedback/alert/NeonAlertLevel';
+import { NeonAlertService } from '@/utils/feedback/alert/NeonAlertService';
 import NeonAlertContainer from './container/NeonAlertContainer.vue';
 import NeonToastContainer from './container/NeonToastContainer.vue';
-import type { NeonAlertModel } from './NeonAlertModel';
-import type { NeonToastModel } from './NeonToastModel';
-import type { NeonToastMessage } from '@/common/models/NeonToastMessage';
-import { NeonToastService } from '@/common/utils/NeonToastService';
-import { NeonAlertPlacement } from '@/common/enums/NeonAlertPlacement';
-import { NeonVerticalPosition } from '@/common/enums/NeonVerticalPosition';
+import type { NeonAlertModel } from '@/model/feedback/alert/NeonAlertModel';
+import type { NeonToastModel } from '@/model/feedback/toast/NeonToastModel';
+import type { NeonToastMessage } from '@/model/feedback/toast/NeonToastMessage';
+import { NeonToastService } from '@/utils/feedback/toast/NeonToastService';
+import { NeonAlertPlacement } from '@/model/feedback/alert/NeonAlertPlacement';
+import { NeonVerticalPosition } from '@/model/common/position/NeonVerticalPosition';
 
 /**
  * NeonAlert is a component for presenting temporary notifications to the user. Place the component once inside your app

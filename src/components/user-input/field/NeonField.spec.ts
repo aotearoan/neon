@@ -1,6 +1,6 @@
 import { render } from '@testing-library/vue';
 import NeonField from './NeonField.vue';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 
 describe('NeonField', () => {
   const label = 'test label';

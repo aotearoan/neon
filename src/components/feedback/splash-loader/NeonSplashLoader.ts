@@ -1,6 +1,6 @@
 import { defineComponent, onMounted, ref } from 'vue';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonSplashLoaderSize } from '@/common/enums/NeonSplashLoaderSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonSplashLoaderSize } from '@/model/feedback/splash-loader/NeonSplashLoaderSize';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 
 /**

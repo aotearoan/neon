@@ -1,5 +1,5 @@
 import { render } from '@testing-library/vue';
-import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonSize } from '@/model/common/size/NeonSize';
 import NeonInputIndicator from './NeonInputIndicator.vue';
 
 describe('NeonInputIndicator', () => {

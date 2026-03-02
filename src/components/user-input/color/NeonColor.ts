@@ -1,6 +1,6 @@
 import { computed, defineComponent, useAttrs } from 'vue';
-import { NeonSize } from '@/common/enums/NeonSize';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonSize } from '@/model/common/size/NeonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 import NeonInput from '@/components/user-input/input/NeonInput.vue';
 
 export default defineComponent({

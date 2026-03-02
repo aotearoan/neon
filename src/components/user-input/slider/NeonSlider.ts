@@ -1,6 +1,6 @@
 import { computed, defineComponent, useAttrs } from 'vue';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonNumberUtils } from '@/common/utils/NeonNumberUtils';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonNumberUtils } from '@/utils/common/number/NeonNumberUtils';
 
 /**
  * <p>

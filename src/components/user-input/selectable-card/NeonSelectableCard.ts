@@ -1,10 +1,10 @@
 import { defineComponent, ref } from 'vue';
-import { NeonSize } from '@/common/enums/NeonSize';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonSize } from '@/model/common/size/NeonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 import NeonCard from '@/components/layout/card/NeonCard.vue';
 import NeonCardHeader from '@/components/layout/card/header/NeonCardHeader.vue';
 import NeonSwitch from '@/components/user-input/switch/NeonSwitch.vue';
-import { NeonResponsive } from '@/common/enums/NeonResponsive';
+import { NeonResponsive } from '@/model/common/responsive/NeonResponsive';
 
 /**
  * <p>

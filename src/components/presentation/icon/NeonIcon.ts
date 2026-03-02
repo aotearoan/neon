@@ -1,6 +1,6 @@
 import { computed, defineComponent, useAttrs } from 'vue';
-import { NeonIconRegistry } from '@/common/utils/NeonIconRegistry';
-import type { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonIconRegistry } from '@/utils/common/icons/NeonIconRegistry';
+import type { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 
 /**
  * <p>A component for rendering SVG images. These images are generally, but not limited to, <em>icons</em>. This

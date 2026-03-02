@@ -1,9 +1,9 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonChip from './NeonChip.vue';
-import { NeonSize } from '@/common/enums/NeonSize';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonChipAction } from '@/common/enums/NeonChipAction';
+import { NeonSize } from '@/model/common/size/NeonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonChipAction } from '@/model/user-input/chip/NeonChipAction';
 
 describe('NeonChip', () => {
   const label = 'xdd';

@@ -1,6 +1,6 @@
 import { defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
-import type { NeonGridModel } from '@/common/models/NeonGridModel';
-import { NeonResponsiveUtils } from '@/common/utils/NeonResponsiveUtils';
+import type { NeonGridModel } from '@/model/layout/grid/NeonGridModel';
+import { NeonResponsiveUtils } from '@/utils/common/responsive/NeonResponsiveUtils';
 
 const styleIdPrefix = 'neon-grid-styles-';
 

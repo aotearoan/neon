@@ -1,7 +1,7 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonLink from './NeonLink.vue';
-import { NeonOutlineStyle } from '@/common/enums/NeonOutlineStyle';
+import { NeonOutlineStyle } from '@/model/common/accessibility/NeonOutlineStyle';
 import { router } from '@/../test/unit/test-router';
 
 describe('NeonLink', () => {

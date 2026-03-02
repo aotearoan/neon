@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue';
 import NeonInline from '@/components/layout/inline/NeonInline.vue';
 import NeonNote from '@/components/feedback/note/NeonNote.vue';
-import type { NeonNoteModel } from '@/common/models/NeonNoteModel';
+import type { NeonNoteModel } from '@/model/feedback/note/NeonNoteModel';
 
 /**
  * A component for rendering a page header with slots for a subtitle and actions and the possibility to render an on

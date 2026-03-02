@@ -1,11 +1,11 @@
 import { computed, defineComponent, ref, useAttrs } from 'vue';
-import { NeonSize } from '@/common/enums/NeonSize';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonSize } from '@/model/common/size/NeonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 import NeonDropdown from '@/components/presentation/dropdown/NeonDropdown.vue';
 import NeonButton from '@/components/user-input/button/NeonButton.vue';
 import NeonInput from '@/components/user-input/input/NeonInput.vue';
-import { NeonDateUtils } from '@/common/utils/NeonDateUtils';
-import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
+import { NeonDateUtils } from '@/utils/common/date/NeonDateUtils';
+import { NeonDropdownPlacement } from '@/model/presentation/dropdown/NeonDropdownPlacement';
 
 /**
  * <strong>NeonDatePicker</strong> is the equivalent of the native

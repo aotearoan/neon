@@ -1,5 +1,5 @@
 import { defineComponent, ref, watch } from 'vue';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 import NeonButton from '@/components/user-input/button/NeonButton.vue';
 import NeonCard from '@/components/layout/card/NeonCard.vue';
 import NeonCardBody from '@/components/layout/card/body/NeonCardBody.vue';

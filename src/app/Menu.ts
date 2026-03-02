@@ -602,30 +602,12 @@ export class Menu {
         ],
       },
       {
-        group: 'API',
-        children: [
-          {
-            path: 'enums',
-            name: 'Enums',
-            children: SupportingClassesDocs.enumList().map((e) => ({ path: e })),
-          },
-          {
-            path: 'models',
-            name: 'Models',
-            children: SupportingClassesDocs.modelList().map((e) => ({ path: e })),
-          },
-          {
-            path: 'utils',
-            name: 'Utilities',
-            children: SupportingClassesDocs.utilList().map((pathString) => {
-              const parts = pathString.split('/');
-              return {
-                path: pathString,
-                name: parts[parts.length - 1],
-              };
-            }) as MenuModel[],
-          },
-        ],
+        group: 'Model',
+        children: SupportingClassesDocs.modelMenu(),
+      },
+      {
+        group: 'Utilities',
+        children: SupportingClassesDocs.utilMenu(),
       },
     ];
 

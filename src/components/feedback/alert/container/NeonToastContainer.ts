@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
-import type { NeonToastModel } from '../NeonToastModel';
-import type { NeonVerticalPosition } from '@/common/enums/NeonVerticalPosition';
+import type { NeonToastModel } from '@/model/feedback/toast/NeonToastModel';
+import type { NeonVerticalPosition } from '@/model/common/position/NeonVerticalPosition';
 
 /**
  * This is an internal component for rendering alerts.

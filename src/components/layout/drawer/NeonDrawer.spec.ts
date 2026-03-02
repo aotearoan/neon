@@ -1,7 +1,7 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonDrawer from './NeonDrawer.vue';
-import { NeonPosition } from '@/common/enums/NeonPosition';
+import { NeonPosition } from '@/model/common/position/NeonPosition';
 
 describe('NeonDrawer', () => {
   let harness: RenderResult;

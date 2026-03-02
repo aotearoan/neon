@@ -1,4 +1,4 @@
-import type { NeonPaginationModel } from '@/common/models/NeonPaginationModel';
+import type { NeonPaginationModel } from '@/model/navigation/pagination/NeonPaginationModel';
 
 export const PaginationFixture = (total: number): NeonPaginationModel => ({
   page: 1,

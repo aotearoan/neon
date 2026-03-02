@@ -1,8 +1,8 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonToggleChip from './NeonToggleChip.vue';
-import { NeonToggleChipSize } from '@/common/enums/NeonToggleChipSize';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonToggleChipSize } from '@/model/user-input/toggle/NeonToggleChipSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 
 describe('NeonToggleChip', () => {
   const label = 'xd';

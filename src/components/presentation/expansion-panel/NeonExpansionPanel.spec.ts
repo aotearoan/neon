@@ -1,7 +1,7 @@
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonHorizontalPosition } from '@/common/enums/NeonHorizontalPosition';
-import { NeonSize } from '@/common/enums/NeonSize';
-import { NeonVerticalPosition } from '@/common/enums/NeonVerticalPosition';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonHorizontalPosition } from '@/model/common/position/NeonHorizontalPosition';
+import { NeonSize } from '@/model/common/size/NeonSize';
+import { NeonVerticalPosition } from '@/model/common/position/NeonVerticalPosition';
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonExpansionPanel from './NeonExpansionPanel.vue';

@@ -1,5 +1,5 @@
 import { computed, defineComponent, ref, useAttrs } from 'vue';
-import { NeonOutlineStyle } from '@/common/enums/NeonOutlineStyle';
+import { NeonOutlineStyle } from '@/model/common/accessibility/NeonOutlineStyle';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import { useRoute, useRouter } from 'vue-router';
 

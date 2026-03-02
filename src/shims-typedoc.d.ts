@@ -6,11 +6,16 @@ declare module 'typedoc' {
     children?: DeclarationReflection[];
     comment?: Comment;
     flags: ReflectionFlags;
+    groups: Group[];
     type?: SomeType;
     signatures?: SignatureReflection[];
     defaultValue?: any;
     parameters?: DeclarationReflection[];
     variant?: string;
+  };
+
+  export type Group = {
+    title: string;
   };
 
   export type Comment = {

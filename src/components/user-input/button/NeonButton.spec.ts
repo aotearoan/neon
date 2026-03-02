@@ -1,13 +1,13 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonButton from './NeonButton.vue';
-import { NeonButtonSize } from '@/common/enums/NeonButtonSize';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonHorizontalPosition } from '@/common/enums/NeonHorizontalPosition';
-import { NeonButtonStyle } from '@/common/enums/NeonButtonStyle';
-import { NeonState } from '@/common/enums/NeonState';
+import { NeonButtonSize } from '@/model/user-input/button/NeonButtonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonHorizontalPosition } from '@/model/common/position/NeonHorizontalPosition';
+import { NeonButtonStyle } from '@/model/user-input/button/NeonButtonStyle';
+import { NeonState } from '@/model/common/state/NeonState';
 import { router } from '@/../test/unit/test-router';
-import { NeonButtonType } from '@/common/enums/NeonButtonType';
+import { NeonButtonType } from '@/model/user-input/button/NeonButtonType';
 
 describe('NeonButton', () => {
   const label = 'test label';

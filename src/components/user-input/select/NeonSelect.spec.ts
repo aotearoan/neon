@@ -1,11 +1,11 @@
 import NeonSelect from './NeonSelect.vue';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonSize } from '@/model/common/size/NeonSize';
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import { nextTick } from 'vue';
-import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
-import { NeonDropdownStyle } from '@/common/enums/NeonDropdownStyle';
+import { NeonDropdownPlacement } from '@/model/presentation/dropdown/NeonDropdownPlacement';
+import { NeonDropdownStyle } from '@/model/presentation/dropdown/NeonDropdownStyle';
 import { flushPromises } from '@vue/test-utils';
 
 describe('NeonSelect', () => {

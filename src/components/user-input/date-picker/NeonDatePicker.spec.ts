@@ -1,9 +1,9 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonDatePicker from './NeonDatePicker.vue';
-import { NeonDateUtils } from '@/common/utils/NeonDateUtils';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonDateUtils } from '@/utils/common/date/NeonDateUtils';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonSize } from '@/model/common/size/NeonSize';
 
 describe('NeonDatePicker', () => {
   const date = new Date(2023, 3, 16);

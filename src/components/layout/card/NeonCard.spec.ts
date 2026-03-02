@@ -1,8 +1,8 @@
 import type { RenderResult } from '@testing-library/vue';
 import { render } from '@testing-library/vue';
 import NeonCard from './NeonCard.vue';
-import { NeonOrientation } from '@/common/enums/NeonOrientation';
-import { NeonResponsive } from '@/common/enums/NeonResponsive';
+import { NeonOrientation } from '@/model/common/layout/NeonOrientation';
+import { NeonResponsive } from '@/model/common/responsive/NeonResponsive';
 
 describe('NeonCard', () => {
   let harness: RenderResult;

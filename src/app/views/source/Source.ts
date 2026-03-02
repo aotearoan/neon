@@ -27,29 +27,26 @@ export default defineComponent({
     const isUtility = ref<boolean>(false);
     const ghLink = ref<string | null>(null);
 
+    const isClassEnum = (doc: DeclarationReflection | null) =>
+      doc?.groups?.find((group) => group.title === 'Enumerations');
+
     watch(
       () => route.path,
       (to) => {
         const [_blank, ct, ...rest] = to.split('/');
 
         switch (ct) {
-          case 'enums':
-            classType.value = 'Enumeration';
-            isEnum.value = true;
-            isModel.value = false;
-            isUtility.value = false;
-            break;
-          case 'models':
+          case 'model':
             classType.value = 'Model';
-            isEnum.value = false;
-            isModel.value = true;
             isUtility.value = false;
+            isModel.value = true;
+            isEnum.value = false;
             break;
           case 'utils':
             classType.value = 'Utility';
-            isEnum.value = false;
-            isModel.value = false;
             isUtility.value = true;
+            isModel.value = false;
+            isEnum.value = false;
             break;
         }
 
@@ -57,7 +54,14 @@ export default defineComponent({
 
         if (classType.value && className) {
           classDocs.value = SupportingClassesDocs.getClassDocs(ct, className);
-          ghLink.value = `https://github.com/venture-artbeat/lib-app-neon/tree/main/src/common${to}.ts`;
+
+          if (isModel.value && isClassEnum(classDocs.value)) {
+            classType.value = 'Enum';
+            isEnum.value = true;
+            isModel.value = false;
+          }
+
+          ghLink.value = `https://github.com/venture-artbeat/lib-app-neon/tree/main/src${to}.ts`;
         }
       },
       { immediate: true },
@@ -72,15 +76,8 @@ export default defineComponent({
     };
 
     const typeAsLink = (modelValue: SomeType) => {
-      let url;
-
-      if (SupportingClassesDocs.enumList().includes(modelValue.name)) {
-        url = `/enums/${modelValue.name}`;
-      } else if (SupportingClassesDocs.modelList().includes(modelValue.name)) {
-        url = `/models/${modelValue.name}`;
-      }
-
-      if (url) {
+      if (SupportingClassesDocs.modelList().includes(modelValue.name)) {
+        const url = `/model/${modelValue.name}`;
         return `<a href="${url}">${modelValue.name}</a>`;
       }
 

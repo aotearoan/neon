@@ -1,7 +1,7 @@
 import { render } from '@testing-library/vue';
 import NeonFieldGroup from './NeonFieldGroup.vue';
-import { NeonInputIndicatorStyle } from '@/common/enums/NeonInputIndicatorStyle';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonInputIndicatorStyle } from '@/model/user-input/input-indicator/NeonInputIndicatorStyle';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 
 describe('NeonFieldGroup', () => {
   it('renders default slot', () => {

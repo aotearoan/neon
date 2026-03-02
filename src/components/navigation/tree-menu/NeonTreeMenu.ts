@@ -1,9 +1,9 @@
 import { defineComponent, ref, watch } from 'vue';
-import type { NeonTreeMenuSectionModel } from '@/common/models/NeonTreeMenuSectionModel';
+import type { NeonTreeMenuSectionModel } from '@/model/navigation/tree-menu/NeonTreeMenuSectionModel';
 import NeonIcon from '../../presentation/icon/NeonIcon.vue';
 import NeonLink from '../link/NeonLink.vue';
 import { useRoute } from 'vue-router';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 
 /**
  * Three level tree menu. This is useful for displaying a hierarchical navigation in NeonSideNav.The top level of the

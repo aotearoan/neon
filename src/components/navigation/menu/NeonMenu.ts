@@ -1,10 +1,10 @@
 import { defineComponent, nextTick, onMounted, onUnmounted, ref } from 'vue';
-import type { NeonMenuModel } from '@/common/models/NeonMenuModel';
+import type { NeonMenuModel } from '@/model/navigation/menu/NeonMenuModel';
 import NeonLink from '@/components/navigation/link/NeonLink.vue';
 import NeonDropdownMenu from '@/components/navigation/dropdown-menu/NeonDropdownMenu.vue';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonSize } from '@/common/enums/NeonSize';
-import type { NeonPriorityMenuItem } from './NeonPriorityMenuItem';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonSize } from '@/model/common/size/NeonSize';
+import type { NeonPriorityMenuItem } from '@/model/navigation/menu/NeonPriorityMenuItem';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import { useRoute } from 'vue-router';
 

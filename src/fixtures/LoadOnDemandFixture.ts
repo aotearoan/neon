@@ -1,4 +1,4 @@
-import type { NeonLoadOnDemandModel } from '@/common/models/NeonLoadOnDemandModel';
+import type { NeonLoadOnDemandModel } from '@/model/layout/card-list/NeonLoadOnDemandModel';
 
 export const LoadOnDemandWithLabelsFixture = (total: number): NeonLoadOnDemandModel => ({
   total,

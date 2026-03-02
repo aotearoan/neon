@@ -1,9 +1,9 @@
 import { defineComponent, ref } from 'vue';
-import { NeonPosition } from '@/common/enums/NeonPosition';
-import { NeonTooltipStyle } from '@/common/enums/NeonTooltipStyle';
-import { NeonTooltipPlacementUtils } from '@/common/utils/NeonTooltipPlacementUtils';
-import { NeonOutlineStyle } from '@/common/enums/NeonOutlineStyle';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonPosition } from '@/model/common/position/NeonPosition';
+import { NeonTooltipStyle } from '@/model/feedback/tooltip/NeonTooltipStyle';
+import { NeonTooltipPlacementUtils } from '@/utils/feedback/tooltip/NeonTooltipPlacementUtils';
+import { NeonOutlineStyle } from '@/model/common/accessibility/NeonOutlineStyle';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 
 /**
  * <p>

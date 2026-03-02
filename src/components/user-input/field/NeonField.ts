@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 
 /**
  * An HTML label implementation supporting optional labels. Use in the same way as an HTML label either wrapping the input

@@ -42,7 +42,7 @@
         <h2 class="neon-h4">Typescript</h2>
         <neon-stack>
           <p>
-            <neon-link href="/utils/NeonResponsiveUtils">NeonResponsiveUtils</neon-link>
+            <neon-link href="/utils/common/responsive/NeonResponsiveUtils">NeonResponsiveUtils</neon-link>
             also defines the same breakpoints for use in Typescript/Javascript.
           </p>
           <neon-stack gap="s">

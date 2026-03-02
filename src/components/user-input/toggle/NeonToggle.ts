@@ -1,9 +1,9 @@
 import { computed, defineComponent, useAttrs } from 'vue';
-import type { NeonToggleModel } from '@/common/models/NeonToggleModel';
-import { NeonSize } from '@/common/enums/NeonSize';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonToggleStyle } from '@/common/enums/NeonToggleStyle';
-import { NeonOrientation } from '@/common/enums/NeonOrientation';
+import type { NeonToggleModel } from '@/model/user-input/toggle/NeonToggleModel';
+import { NeonSize } from '@/model/common/size/NeonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonToggleStyle } from '@/model/user-input/toggle/NeonToggleStyle';
+import { NeonOrientation } from '@/model/common/layout/NeonOrientation';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 
 /**

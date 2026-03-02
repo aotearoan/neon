@@ -1,10 +1,10 @@
 import { computed, defineComponent, onMounted, onUnmounted, ref } from 'vue';
-import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
-import { NeonDropdownPlacementUtils } from '@/common/utils/NeonDropdownPlacementUtils';
-import { NeonClosableUtils } from '@/common/utils/NeonClosableUtils';
-import { NeonSize } from '@/common/enums/NeonSize';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonDropdownStyle } from '@/common/enums/NeonDropdownStyle';
+import { NeonDropdownPlacement } from '@/model/presentation/dropdown/NeonDropdownPlacement';
+import { NeonDropdownPlacementUtils } from '@/utils/presentation/dropdown/NeonDropdownPlacementUtils';
+import { NeonClosableUtils } from '@/utils/common/closable/NeonClosableUtils';
+import { NeonSize } from '@/model/common/size/NeonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonDropdownStyle } from '@/model/presentation/dropdown/NeonDropdownStyle';
 import NeonBadge from '@/components/presentation/badge/NeonBadge.vue';
 import NeonButton from '@/components/user-input/button/NeonButton.vue';
 import NeonExpansionIndicator from '@/components/presentation/expansion-indicator/NeonExpansionIndicator.vue';

@@ -1,8 +1,8 @@
 import { defineComponent } from 'vue';
-import type { NeonMenuItem } from '@/common/models/NeonMenuItem';
+import type { NeonMenuItem } from '@/model/navigation/menu/NeonMenuItem';
 import NeonLink from '@/components/navigation/link/NeonLink.vue';
 import NeonDropdownMenu from '@/components/navigation/dropdown-menu/NeonDropdownMenu.vue';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import { useRoute } from 'vue-router';
 

@@ -1,6 +1,6 @@
 import { defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
-import { NeonPosition } from '@/common/enums/NeonPosition';
-import { NeonClosableUtils } from '@/common/utils/NeonClosableUtils';
+import { NeonPosition } from '@/model/common/position/NeonPosition';
+import { NeonClosableUtils } from '@/utils/common/closable/NeonClosableUtils';
 
 /**
  * A drawer is a slide out panel for representing data which may be secondary or not fit on the main screen. Examples

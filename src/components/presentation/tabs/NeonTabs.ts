@@ -1,7 +1,7 @@
 import { defineComponent, onMounted, ref } from 'vue';
-import type { NeonTabModel } from '@/common/models/NeonTabModel';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonSize } from '@/common/enums/NeonSize';
+import type { NeonTabModel } from '@/model/presentation/tabs/NeonTabModel';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonSize } from '@/model/common/size/NeonSize';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import NeonLink from '@/components/navigation/link/NeonLink.vue';
 import NeonSwiper from '@/components/layout/swiper/NeonSwiper.vue';
