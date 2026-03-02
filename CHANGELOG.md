@@ -1,5 +1,12 @@
 # Changelog
 
+## [25.2.0](https://github.com/aotearoan/neon/compare/v25.1.0...v25.2.0) (2026-03-02)
+
+
+### Features
+
+* page layout components ([#354](https://github.com/aotearoan/neon/issues/354)) ([dba7fbb](https://github.com/aotearoan/neon/commit/dba7fbb29d83bdf378823af56d4320e83beb9c27))
+
 ## [25.1.0](https://github.com/aotearoan/neon/compare/v25.0.2...v25.1.0) (2026-03-01)
 
 
