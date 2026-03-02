@@ -18,6 +18,7 @@
         <neon-link
           :href="section.href"
           :no-style="!section.href"
+          :target="section.external ? '_blank' : undefined"
           class="neon-tree-menu__section-link"
           outline-style="none"
           tabindex="-1"

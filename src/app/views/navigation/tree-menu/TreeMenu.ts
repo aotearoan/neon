@@ -92,6 +92,12 @@ export default defineComponent({
           },
         ],
       },
+      {
+        key: 'help-center',
+        label: 'Help Center',
+        href: 'https://support.aotearoan.com/',
+        external: true,
+      },
     ]);
 
     const template = '<neon-tree-menu v-model="modelValue" />';

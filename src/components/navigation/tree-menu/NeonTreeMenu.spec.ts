@@ -159,6 +159,12 @@ describe('NeonTreeMenu', () => {
         },
       ],
     },
+    {
+      key: 'help-center',
+      label: 'Help Center',
+      href: 'https://support.aotearoan.com/',
+      external: true,
+    },
   ];
 
   let harness: RenderResult;

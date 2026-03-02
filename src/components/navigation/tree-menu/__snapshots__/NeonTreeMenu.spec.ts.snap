@@ -146,6 +146,14 @@ exports[`NeonTreeMenu matches snapshot 1`] = `
         </li>
       </ul>
     </li>
+    <li class="neon-tree-menu__section"><a class="neon-link--outline-none neon-link neon-link--external-link neon-tree-menu__section-link neon-tree-menu__section-link" href="https://support.aotearoan.com/" rel="noopener" tabindex="-1" target="_blank">
+        <!-- @slot the content of the link -->
+        <!--v-if--><span tabindex="0" class="neon-tree-menu__section-link-label neon-tree-menu__section-link-label--outline-text" role="link">Help Center</span>
+        <!--v-if-->
+        <!--v-if-->
+      </a>
+      <ul class="no-style neon-tree-menu__items"></ul>
+    </li>
   </ul>
 </nav>
 `;

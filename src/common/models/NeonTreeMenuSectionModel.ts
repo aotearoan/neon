@@ -18,4 +18,6 @@ export interface NeonTreeMenuSectionModel {
   expanded?: boolean;
   /** Boolean describing if the menu section is disabled. */
   disabled?: boolean;
+  /** Open the provided href in a new tab/window */
+  external?: boolean;
 }

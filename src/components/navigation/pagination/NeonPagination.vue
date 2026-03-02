@@ -35,12 +35,7 @@
         label="1"
         transparent
       />
-      <neon-icon
-        v-if="showFirstPageWithEllipsis"
-        class="neon-pagination__less"
-        color="low-contrast"
-        name="ellipsis-h"
-      />
+      <neon-icon v-if="showFirstPageWithEllipsis" class="neon-pagination__less" color="low-contrast" name="ellipsis" />
       <!-- eslint-disable-next-line -->
       <template v-for="pageInRange in pageRange" :key="pageInRange">
         <span v-if="page === pageInRange" class="neon-pagination__link--selected">
@@ -56,7 +51,7 @@
           transparent
         />
       </template>
-      <neon-icon v-if="showLastPageWithEllipsis" class="neon-pagination__more" color="low-contrast" name="ellipsis-h" />
+      <neon-icon v-if="showLastPageWithEllipsis" class="neon-pagination__more" color="low-contrast" name="ellipsis" />
       <neon-button
         v-if="showLastPageWithEllipsis"
         :href="url(pageCount)"
