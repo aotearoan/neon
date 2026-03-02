@@ -1,5 +1,5 @@
 import { defineComponent, onMounted, onUnmounted } from 'vue';
-import { NeonPageAlignment } from '@/common/enums/NeonPageAlignment';
+import { NeonPageAlignment } from '@/model/layout/page/NeonPageAlignment';
 import NeonAlert from '@/components/feedback/alert/NeonAlert.vue';
 import NeonBanner from '@/components/feedback/banner/NeonBanner.vue';
 

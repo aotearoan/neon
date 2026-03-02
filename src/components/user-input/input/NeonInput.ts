@@ -1,11 +1,11 @@
 import { computed, defineComponent, ref, useAttrs } from 'vue';
-import { NeonInputType } from '@/common/enums/NeonInputType';
-import { NeonState } from '@/common/enums/NeonState';
-import { NeonSize } from '@/common/enums/NeonSize';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonInputType } from '@/model/user-input/input/NeonInputType';
+import { NeonState } from '@/model/common/state/NeonState';
+import { NeonSize } from '@/model/common/size/NeonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
-import { NeonDebounceUtils } from '@/common/utils/NeonDebounceUtils';
-import { NeonInputMode } from '@/common/enums/NeonInputMode';
+import { NeonDebounceUtils } from '@/utils/common/debounce/NeonDebounceUtils';
+import { NeonInputMode } from '@/model/user-input/input/NeonInputMode';
 
 /**
  * Equivalent of, and wrapper around, an HTML input. Also supports <strong>textarea</strong>.

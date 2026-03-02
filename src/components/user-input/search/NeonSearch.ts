@@ -1,14 +1,14 @@
 import { computed, defineComponent, onMounted, onUnmounted, ref, useAttrs, watch } from 'vue';
-import { NeonSize } from '@/common/enums/NeonSize';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonSize } from '@/model/common/size/NeonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 import NeonDropdown from '@/components/presentation/dropdown/NeonDropdown.vue';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
-import type { NeonSearchOption } from '@/common/models/NeonSearchOption';
+import type { NeonSearchOption } from '@/model/user-input/search/NeonSearchOption';
 import NeonInput from '@/components/user-input/input/NeonInput.vue';
 import NeonChip from '@/components/user-input/chip/NeonChip.vue';
-import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
-import { NeonScrollUtils } from '@/common/utils/NeonScrollUtils';
-import { NeonInputMode } from '@/common/enums/NeonInputMode';
+import { NeonDropdownPlacement } from '@/model/presentation/dropdown/NeonDropdownPlacement';
+import { NeonScrollUtils } from '@/utils/common/dom/NeonScrollUtils';
+import { NeonInputMode } from '@/model/user-input/input/NeonInputMode';
 
 /**
  * <p>

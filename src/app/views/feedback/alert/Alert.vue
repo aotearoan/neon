@@ -95,7 +95,7 @@
             </p>
             <p>
               For a full range of alert message options see
-              <neon-link href="/models/NeonAlertMessage">NeonAlertMessage</neon-link>
+              <neon-link href="/model/feedback/alert/NeonAlertMessage">NeonAlertMessage</neon-link>
             </p>
             <h2 class="neon-h3">Removing alerts</h2>
             <neon-stack gap="s">
@@ -121,7 +121,7 @@
             </p>
             <p>
               For a full range of message options see
-              <neon-link href="/models/NeonToastMessage">NeonToastMessage</neon-link>
+              <neon-link href="/model/feedback/toast/NeonToastMessage">NeonToastMessage</neon-link>
             </p>
             <h2 class="neon-h3">Removing toasts</h2>
             <neon-stack gap="s">

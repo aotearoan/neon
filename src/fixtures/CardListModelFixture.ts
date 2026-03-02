@@ -1,5 +1,5 @@
-import type { NeonIdentifiable } from '@/common/models/NeonIdentifiable';
-import type { NeonCardListModel } from '@/common/models/NeonCardListModel';
+import type { NeonIdentifiable } from '@/model/common/entity/NeonIdentifiable';
+import type { NeonCardListModel } from '@/model/layout/card-list/NeonCardListModel';
 
 export interface CardListModel extends NeonIdentifiable {
   title: string;

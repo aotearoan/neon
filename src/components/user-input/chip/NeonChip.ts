@@ -1,8 +1,8 @@
 import { computed, defineComponent, ref, useAttrs } from 'vue';
-import { NeonSize } from '@/common/enums/NeonSize';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonSize } from '@/model/common/size/NeonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
-import { NeonChipAction } from '@/common/enums/NeonChipAction';
+import { NeonChipAction } from '@/model/user-input/chip/NeonChipAction';
 
 /**
  * <p>

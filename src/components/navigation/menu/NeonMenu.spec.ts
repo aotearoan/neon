@@ -1,8 +1,8 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonMenu from './NeonMenu.vue';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonSize } from '@/model/common/size/NeonSize';
 import { router } from '@/../test/unit/test-router';
 
 describe('NeonMenu', () => {

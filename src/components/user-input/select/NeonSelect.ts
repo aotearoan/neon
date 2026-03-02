@@ -1,14 +1,14 @@
 import { computed, defineComponent, onMounted, onUnmounted, ref, useAttrs, watch } from 'vue';
-import { NeonSize } from '@/common/enums/NeonSize';
-import type { NeonSelectGroup } from '@/common/models/NeonSelectGroup';
-import type { NeonSelectOption } from '@/common/models/NeonSelectOption';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonSize } from '@/model/common/size/NeonSize';
+import type { NeonSelectGroup } from '@/model/user-input/select/NeonSelectGroup';
+import type { NeonSelectOption } from '@/model/user-input/select/NeonSelectOption';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 import NeonDropdown from '@/components/presentation/dropdown/NeonDropdown.vue';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import NeonSwitch from '@/components/user-input/switch/NeonSwitch.vue';
-import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
-import { NeonScrollUtils } from '@/common/utils/NeonScrollUtils';
-import { NeonDropdownStyle } from '@/common/enums/NeonDropdownStyle';
+import { NeonDropdownPlacement } from '@/model/presentation/dropdown/NeonDropdownPlacement';
+import { NeonScrollUtils } from '@/utils/common/dom/NeonScrollUtils';
+import { NeonDropdownStyle } from '@/model/presentation/dropdown/NeonDropdownStyle';
 
 /**
  * <p>The <strong>NeonSelect</strong> is the equivalent of an HTML &lt;select&gt; form control. On touch devices

@@ -1,8 +1,8 @@
 import { computed, defineComponent, ref, useAttrs, watch } from 'vue';
-import { NeonSize } from '@/common/enums/NeonSize';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonSwitchStyle } from '@/common/enums/NeonSwitchStyle';
-import { NeonHorizontalPosition } from '@/common/enums/NeonHorizontalPosition';
+import { NeonSize } from '@/model/common/size/NeonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonSwitchStyle } from '@/model/user-input/switch/NeonSwitchStyle';
+import { NeonHorizontalPosition } from '@/model/common/position/NeonHorizontalPosition';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 
 /**

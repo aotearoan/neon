@@ -1,7 +1,7 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonModal from './NeonModal.vue';
-import { NeonResponsive } from '@/common/enums/NeonResponsive';
+import { NeonResponsive } from '@/model/common/responsive/NeonResponsive';
 
 describe('NeonModal', () => {
   const props = { open: true };

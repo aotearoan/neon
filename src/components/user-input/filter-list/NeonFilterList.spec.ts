@@ -1,6 +1,6 @@
 import NeonFilterList from './NeonFilterList.vue';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonSize } from '@/model/common/size/NeonSize';
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import { router } from '@/../test/unit/test-router';

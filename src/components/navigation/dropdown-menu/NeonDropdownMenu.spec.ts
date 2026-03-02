@@ -1,11 +1,11 @@
 import { fireEvent, render } from '@testing-library/vue';
 import NeonDropdownMenu from './NeonDropdownMenu.vue';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonSize } from '@/model/common/size/NeonSize';
 import { router } from '@/../test/unit/test-router';
 import { nextTick } from 'vue';
-import { NeonDropdownPlacementUtils } from '@/common/utils/NeonDropdownPlacementUtils';
-import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
+import { NeonDropdownPlacementUtils } from '@/utils/presentation/dropdown/NeonDropdownPlacementUtils';
+import { NeonDropdownPlacement } from '@/model/presentation/dropdown/NeonDropdownPlacement';
 
 describe('NeonDropdownMenu', () => {
   const model = [

@@ -1,10 +1,10 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonToastContainer from './NeonToastContainer.vue';
-import { NeonAlertPlacement } from '@/common/enums/NeonAlertPlacement';
-import { NeonAlertLevel } from '@/common/enums/NeonAlertLevel';
+import { NeonAlertPlacement } from '@/model/feedback/alert/NeonAlertPlacement';
+import { NeonAlertLevel } from '@/model/feedback/alert/NeonAlertLevel';
 import { nextTick } from 'vue';
-import { NeonToastService } from '@/common/utils/NeonToastService';
+import { NeonToastService } from '@/utils/feedback/toast/NeonToastService';
 
 describe('NeonToastContainer', () => {
   const msg = { id: 42, level: NeonAlertLevel.Info, title: 'test', dismissible: true };

@@ -1,11 +1,11 @@
 import { defineComponent, onMounted, onUnmounted, ref } from 'vue';
 import NeonNote from '@/components/feedback/note/NeonNote.vue';
 import NeonButton from '@/components/user-input/button/NeonButton.vue';
-import type { NeonBannerModel } from '@/components/feedback/banner/NeonBannerModel';
-import { NeonAlertLevel } from '@/common/enums/NeonAlertLevel';
-import type { NeonBannerMessage } from '@/common/models/NeonBannerMessage';
-import { NeonEventBus } from '@/common/utils/NeonEventBus';
-import { NeonBannerService } from '@/common/utils/NeonBannerService';
+import type { NeonBannerModel } from '@/model/feedback/banner/NeonBannerModel';
+import { NeonAlertLevel } from '@/model/feedback/alert/NeonAlertLevel';
+import type { NeonBannerMessage } from '@/model/feedback/banner/NeonBannerMessage';
+import { NeonEventBus } from '@/utils/common/event/NeonEventBus';
+import { NeonBannerService } from '@/utils/feedback/banner/NeonBannerService';
 
 /**
  * NeonBanner is a component for displaying important information to the user above the page content.

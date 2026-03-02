@@ -1,8 +1,8 @@
 import { fireEvent, render } from '@testing-library/vue';
 import NeonAlertContainer from './NeonAlertContainer.vue';
-import { NeonAlertLevel } from '@/common/enums/NeonAlertLevel';
-import { NeonAlertPlacement } from '@/common/enums/NeonAlertPlacement';
-import { NeonAlertService } from '@/common/utils/NeonAlertService';
+import { NeonAlertLevel } from '@/model/feedback/alert/NeonAlertLevel';
+import { NeonAlertPlacement } from '@/model/feedback/alert/NeonAlertPlacement';
+import { NeonAlertService } from '@/utils/feedback/alert/NeonAlertService';
 import { nextTick } from 'vue';
 
 describe('NeonAlertContainer', () => {

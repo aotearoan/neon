@@ -2,10 +2,10 @@ import { fireEvent, render } from '@testing-library/vue';
 import NeonCardList from './NeonCardList.vue';
 import { type CardListModel, CardListModelFixture } from '@/fixtures/CardListModelFixture';
 import { router } from '../../../../test/unit/test-router';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 import { PaginationFixture } from '@/fixtures/PaginationFixture';
 import { LoadOnDemandWithLabelsFixture } from '@/fixtures/LoadOnDemandFixture';
-import type { NeonCardListModel } from '@/common/models/NeonCardListModel';
+import type { NeonCardListModel } from '@/model/layout/card-list/NeonCardListModel';
 
 describe('NeonCardList', () => {
   let modelWithLinks: Array<NeonCardListModel<CardListModel>>;

@@ -1,6 +1,6 @@
 import { defineComponent } from 'vue';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonInputIndicatorStyle } from '@/common/enums/NeonInputIndicatorStyle';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonInputIndicatorStyle } from '@/model/user-input/input-indicator/NeonInputIndicatorStyle';
 
 /**
  * Used to compose a group of inputs, buttons and input indicators into a single component.

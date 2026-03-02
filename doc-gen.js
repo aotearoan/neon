@@ -3,6 +3,12 @@ const path = require('path');
 const fs = require('fs');
 const glob = require('glob');
 
+/**
+ * Generate JSON file for a Vue component and place it in the public/docs folder for use in the Neon app documentation
+ * site.
+ * @param filePath Path to the component to generate documentation.
+ * @param fileName File name of the component to generate documentation for.
+ */
 async function docgen(filePath, fileName) {
   const componentInfo = await vueDocs.parse(path.join('.', 'src', 'components', filePath, fileName), {
     alias: { '@': path.resolve(__dirname, path.join('.', 'src')) },

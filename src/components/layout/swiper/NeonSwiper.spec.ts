@@ -1,7 +1,7 @@
 import type { RenderResult } from '@testing-library/vue';
 import { render } from '@testing-library/vue';
 import NeonSwiper from './NeonSwiper.vue';
-import { NeonOrientation } from '@/common/enums/NeonOrientation';
+import { NeonOrientation } from '@/model/common/layout/NeonOrientation';
 
 describe('NeonSwiper', () => {
   let harness: RenderResult;

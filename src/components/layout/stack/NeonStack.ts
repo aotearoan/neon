@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue';
-import { NeonLayoutSize } from '@/common/enums/NeonLayoutSize';
+import { NeonLayoutSize } from '@/model/common/layout/NeonLayoutSize';
 
 /**
  * A vertical layout component. NeonStack provides a way of laying out it's contents with standard gaps at each

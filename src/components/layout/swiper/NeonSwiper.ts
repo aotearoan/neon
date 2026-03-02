@@ -1,5 +1,5 @@
 import { defineComponent, onMounted, onUnmounted, ref } from 'vue';
-import { NeonOrientation } from '@/common/enums/NeonOrientation';
+import { NeonOrientation } from '@/model/common/layout/NeonOrientation';
 
 /**
  * Automatically handle horizontally overflowing content by placing it in a NeonSwiper component allowing for smooth

@@ -1,7 +1,7 @@
 import { render } from '@testing-library/vue';
 import NeonLinearProgress from './NeonLinearProgress.vue';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonSize } from '@/model/common/size/NeonSize';
 
 describe('NeonLinearProgress', () => {
   it('renders output with total', (done) => {

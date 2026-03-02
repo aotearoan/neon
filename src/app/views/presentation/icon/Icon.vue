@@ -52,10 +52,10 @@
           <neon-card-body>
             <p>
               Use the utility class
-              <neon-link href="/utils/NeonIconRegistry">NeonIconRegistry</neon-link>
+              <neon-link href="/utils/common/icons/NeonIconRegistry">NeonIconRegistry</neon-link>
               to register new icons or overwrite the provided icons. For examples of usage (including adding the
               neon-svg--* classes) please see
-              <neon-link href="/utils/RegisterIcons">RegisterIcons</neon-link>
+              <neon-link href="/utils/common/icons/RegisterIcons">RegisterIcons</neon-link>
               .
             </p>
           </neon-card-body>

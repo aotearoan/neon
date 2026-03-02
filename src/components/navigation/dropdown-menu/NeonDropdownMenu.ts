@@ -1,10 +1,10 @@
 import { defineComponent, onMounted, onUnmounted, ref, useAttrs, watch } from 'vue';
-import type { NeonDropdownMenuItem } from '@/common/models/NeonDropdownMenuItem';
-import { NeonSize } from '@/common/enums/NeonSize';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import type { NeonDropdownMenuItem } from '@/model/presentation/dropdown/NeonDropdownMenuItem';
+import { NeonSize } from '@/model/common/size/NeonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 import NeonDropdown from '@/components/presentation/dropdown/NeonDropdown.vue';
-import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
-import { NeonScrollUtils } from '@/common/utils/NeonScrollUtils';
+import { NeonDropdownPlacement } from '@/model/presentation/dropdown/NeonDropdownPlacement';
+import { NeonScrollUtils } from '@/utils/common/dom/NeonScrollUtils';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import NeonLink from '@/components/navigation/link/NeonLink.vue';
 

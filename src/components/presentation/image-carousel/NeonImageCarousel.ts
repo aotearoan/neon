@@ -1,5 +1,5 @@
 import { defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
-import type { NeonCarouselImage } from '@/common/models/NeonCarouselImage';
+import type { NeonCarouselImage } from '@/model/presentation/image-carousel/NeonCarouselImage';
 import NeonLink from '@/components/navigation/link/NeonLink.vue';
 import NeonButton from '@/components/user-input/button/NeonButton.vue';
 import NeonStack from '@/components/layout/stack/NeonStack.vue';

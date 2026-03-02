@@ -1,0 +1,91 @@
+import { NeonEventBus } from '@/utils/common/event/NeonEventBus';
+import { NeonAlertService } from '@/utils/feedback/alert/NeonAlertService';
+import { NeonAlertPlacement } from '@/model/feedback/alert/NeonAlertPlacement';
+import type { NeonAlertAction } from '@/model/feedback/alert/NeonAlertAction';
+import { NeonAlertLevel } from '@/model/feedback/alert/NeonAlertLevel';
+
+describe('NeonAlertService', () => {
+  let eventBusSpy: NeonEventBus | null = null;
+  const primaryAction: NeonAlertAction = {
+    label: 'action 1',
+    callback: jest.fn(),
+  };
+  const secondaryAction: NeonAlertAction = {
+    label: 'action 2',
+    callback: jest.fn(),
+  };
+
+  beforeEach(() => {
+    eventBusSpy = jest.spyOn(NeonEventBus, 'emit');
+  });
+
+  afterEach(() => {
+    jest.resetAllMocks();
+  });
+
+  it('emits info alert', () => {
+    const infoMessage = {
+      title: 'Info title',
+      message: 'Info message',
+      placement: NeonAlertPlacement.TopLeft,
+      duration: 42,
+      dismissible: true,
+      primaryAction,
+      secondaryAction,
+    };
+    NeonAlertService.info(infoMessage);
+    expect(eventBusSpy).toHaveBeenCalledWith('neon--alert-info', infoMessage);
+  });
+
+  it('emits success alert', () => {
+    const infoMessage = {
+      title: 'Success title',
+      message: 'Success message',
+      placement: NeonAlertPlacement.TopLeft,
+      duration: 42,
+      dismissible: true,
+      primaryAction,
+      secondaryAction,
+    };
+    NeonAlertService.success(infoMessage);
+    expect(eventBusSpy).toHaveBeenCalledWith('neon--alert-success', infoMessage);
+  });
+
+  it('emits warn alert', () => {
+    const infoMessage = {
+      title: 'Warn title',
+      message: 'Warn message',
+      placement: NeonAlertPlacement.TopLeft,
+      duration: 42,
+      dismissible: true,
+      primaryAction,
+      secondaryAction,
+    };
+    NeonAlertService.warn(infoMessage);
+    expect(eventBusSpy).toHaveBeenCalledWith('neon--alert-warn', infoMessage);
+  });
+
+  it('emits error alert', () => {
+    const infoMessage = {
+      title: 'Error title',
+      message: 'Error message',
+      placement: NeonAlertPlacement.TopLeft,
+      duration: 42,
+      dismissible: true,
+      primaryAction,
+      secondaryAction,
+    };
+    NeonAlertService.error(infoMessage);
+    expect(eventBusSpy).toHaveBeenCalledWith('neon--alert-error', infoMessage);
+  });
+
+  it('emits remove alert', () => {
+    const key = 'test-key';
+    NeonAlertService.remove(key);
+    expect(eventBusSpy).toHaveBeenCalledWith('neon--alert-remove', key);
+  });
+
+  it('generates event key', () => {
+    expect(NeonAlertService.generateEventKey(NeonAlertLevel.Error)).toEqual('neon--alert-error');
+  });
+});

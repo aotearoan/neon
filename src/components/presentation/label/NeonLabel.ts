@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue';
-import { NeonLabelSize } from '@/common/enums/NeonLabelSize';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonHorizontalPosition } from '@/common/enums/NeonHorizontalPosition';
+import { NeonLabelSize } from '@/model/presentation/label/NeonLabelSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonHorizontalPosition } from '@/model/common/position/NeonHorizontalPosition';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 
 /**

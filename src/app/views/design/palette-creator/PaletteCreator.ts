@@ -13,7 +13,7 @@ import {
   NeonSwitch,
   NeonTooltip,
 } from '@/neon';
-import { NeonColorUtils } from '@/common/utils/NeonColorUtils';
+import { NeonColorUtils } from '@/utils/common/color/NeonColorUtils';
 
 export default defineComponent({
   name: 'PaletteCreator',

@@ -42,7 +42,7 @@
             <editor v-model="errorExample" language="typescript" />
             <p>
               For a full range of banner message options see
-              <neon-link href="/models/NeonBannerMessage">NeonBannerMessage</neon-link>
+              <neon-link href="/model/NeonBannerMessage">NeonBannerMessage</neon-link>
             </p>
             <h2 class="neon-h3">Removing banners</h2>
             <neon-stack gap="s">

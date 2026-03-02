@@ -1,7 +1,7 @@
 import { defineComponent, onMounted, onUnmounted, ref, watch } from 'vue';
-import { NeonClosableUtils } from '@/common/utils/NeonClosableUtils';
+import { NeonClosableUtils } from '@/utils/common/closable/NeonClosableUtils';
 import NeonButton from '@/components/user-input/button/NeonButton.vue';
-import { NeonResponsive } from '@/common/enums/NeonResponsive';
+import { NeonResponsive } from '@/model/common/responsive/NeonResponsive';
 
 /**
  * A modal dialog component. This will be rendered above the content of the main window and can either be dismissed by the user or configured to require user interaction before dismissal.

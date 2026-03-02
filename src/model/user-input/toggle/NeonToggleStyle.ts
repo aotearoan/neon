@@ -1,0 +1,12 @@
+/**
+ * Describes the available <a href="/user-input/toggle">NeonToggle</a> styles.
+ * @enum
+ */
+export enum NeonToggleStyle {
+  /** Toggle style which is a horizontal group of connected buttons with one active member. */
+  Toggle = 'toggle',
+  /** Traditional HTML radio button input style. */
+  RadioButtons = 'radio-buttons',
+  /** Card style radio buttons for more detailed content */
+  Card = 'card',
+}

@@ -1,8 +1,8 @@
 import { computed, defineComponent, ref, watch } from 'vue';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonSize } from '@/model/common/size/NeonSize';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
-import { NeonNumberUtils } from '@/common/utils/NeonNumberUtils';
+import { NeonNumberUtils } from '@/utils/common/number/NeonNumberUtils';
 
 /**
  * A component for displaying linear progress. The progress can be displayed as a percentage (default) or

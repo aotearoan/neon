@@ -1,13 +1,13 @@
 import { computed, defineComponent, ref, useAttrs } from 'vue';
-import { NeonButtonSize } from '@/common/enums/NeonButtonSize';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonButtonStyle } from '@/common/enums/NeonButtonStyle';
-import { NeonHorizontalPosition } from '@/common/enums/NeonHorizontalPosition';
+import { NeonButtonSize } from '@/model/user-input/button/NeonButtonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonButtonStyle } from '@/model/user-input/button/NeonButtonStyle';
+import { NeonHorizontalPosition } from '@/model/common/position/NeonHorizontalPosition';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import NeonLink from '@/components/navigation/link/NeonLink.vue';
 import NeonExpansionIndicator from '@/components/presentation/expansion-indicator/NeonExpansionIndicator.vue';
-import { NeonState } from '@/common/enums/NeonState';
-import { NeonButtonType } from '@/common/enums/NeonButtonType';
+import { NeonState } from '@/model/common/state/NeonState';
+import { NeonButtonType } from '@/model/user-input/button/NeonButtonType';
 
 /**
  * A button component. Renders an HTML button or, if an href is provided, renders using NeonLink in the style of a

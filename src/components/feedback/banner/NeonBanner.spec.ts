@@ -1,7 +1,7 @@
 import type { RenderResult } from '@testing-library/vue';
 import { render } from '@testing-library/vue';
 import NeonBanner from './NeonBanner.vue';
-import { NeonBannerService } from '@/common/utils/NeonBannerService';
+import { NeonBannerService } from '@/utils/feedback/banner/NeonBannerService';
 import { nextTick } from 'vue';
 
 describe('NeonBanner', () => {

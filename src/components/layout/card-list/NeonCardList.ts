@@ -4,14 +4,14 @@ import NeonInline from '@/components/layout/inline/NeonInline.vue';
 import NeonLink from '@/components/navigation/link/NeonLink.vue';
 import NeonPagination from '@/components/navigation/pagination/NeonPagination.vue';
 import NeonStack from '@/components/layout/stack/NeonStack.vue';
-import { NeonButtonStyle } from '@/common/enums/NeonButtonStyle';
-import { NeonSize } from '@/common/enums/NeonSize';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import type { NeonCardListModel } from '@/common/models/NeonCardListModel';
-import { NeonNumberUtils } from '@/common/utils/NeonNumberUtils';
-import type { NeonLoadOnDemandModel } from '@/common/models/NeonLoadOnDemandModel';
-import type { NeonPaginationModel } from '@/common/models/NeonPaginationModel';
-import type { NeonIdentifiable } from '@/common/models/NeonIdentifiable';
+import { NeonButtonStyle } from '@/model/user-input/button/NeonButtonStyle';
+import { NeonSize } from '@/model/common/size/NeonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import type { NeonCardListModel } from '@/model/layout/card-list/NeonCardListModel';
+import { NeonNumberUtils } from '@/utils/common/number/NeonNumberUtils';
+import type { NeonLoadOnDemandModel } from '@/model/layout/card-list/NeonLoadOnDemandModel';
+import type { NeonPaginationModel } from '@/model/navigation/pagination/NeonPaginationModel';
+import type { NeonIdentifiable } from '@/model/common/entity/NeonIdentifiable';
 
 /**
  * Represent lists of objects as cards. This is intended to be a more responsive replacement for tables. This component

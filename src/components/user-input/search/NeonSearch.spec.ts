@@ -1,12 +1,12 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonSearch from './NeonSearch.vue';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import type { NeonSearchOption } from '@/common/models/NeonSearchOption';
-import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import type { NeonSearchOption } from '@/model/user-input/search/NeonSearchOption';
+import { NeonSize } from '@/model/common/size/NeonSize';
 import { nextTick } from 'vue';
-import { NeonDropdownPlacement } from '@/common/enums/NeonDropdownPlacement';
-import { NeonDropdownPlacementUtils } from '@/common/utils/NeonDropdownPlacementUtils';
+import { NeonDropdownPlacement } from '@/model/presentation/dropdown/NeonDropdownPlacement';
+import { NeonDropdownPlacementUtils } from '@/utils/presentation/dropdown/NeonDropdownPlacementUtils';
 
 describe('NeonSearch', () => {
   const modelValue = null;

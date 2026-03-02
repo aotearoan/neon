@@ -1,11 +1,11 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonInput from './NeonInput.vue';
-import { NeonInputType } from '@/common/enums/NeonInputType';
-import { NeonSize } from '@/common/enums/NeonSize';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonState } from '@/common/enums/NeonState';
-import { NeonInputMode } from '@/common/enums/NeonInputMode';
+import { NeonInputType } from '@/model/user-input/input/NeonInputType';
+import { NeonSize } from '@/model/common/size/NeonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonState } from '@/model/common/state/NeonState';
+import { NeonInputMode } from '@/model/user-input/input/NeonInputMode';
 
 describe('NeonInput', () => {
   const modelValue = '';

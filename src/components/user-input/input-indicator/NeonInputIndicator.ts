@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue';
-import { NeonSize } from '@/common/enums/NeonSize';
+import { NeonSize } from '@/model/common/size/NeonSize';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 
 /**

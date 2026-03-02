@@ -1,9 +1,9 @@
 import { defineComponent } from 'vue';
-import { NeonAlertLevel } from '@/common/enums/NeonAlertLevel';
-import type { NeonAlertPlacement } from '@/common/enums/NeonAlertPlacement';
+import { NeonAlertLevel } from '@/model/feedback/alert/NeonAlertLevel';
+import type { NeonAlertPlacement } from '@/model/feedback/alert/NeonAlertPlacement';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import NeonLink from '@/components/navigation/link/NeonLink.vue';
-import type { NeonAlertModel } from '../NeonAlertModel';
+import type { NeonAlertModel } from '@/model/feedback/alert/NeonAlertModel';
 
 /**
  * This is an internal component for rendering alerts.

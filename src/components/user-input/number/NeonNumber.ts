@@ -1,11 +1,11 @@
 import { computed, defineComponent, ref, useAttrs } from 'vue';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonSize } from '@/common/enums/NeonSize';
-import { NeonInputMode } from '@/common/enums/NeonInputMode';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonSize } from '@/model/common/size/NeonSize';
+import { NeonInputMode } from '@/model/user-input/input/NeonInputMode';
 import NeonButton from '@/components/user-input/button/NeonButton.vue';
 import NeonFieldGroup from '@/components/user-input/field-group/NeonFieldGroup.vue';
 import NeonInput from '@/components/user-input/input/NeonInput.vue';
-import { NeonNumberUtils } from '@/common/utils/NeonNumberUtils';
+import { NeonNumberUtils } from '@/utils/common/number/NeonNumberUtils';
 
 /**
  * <p>

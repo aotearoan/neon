@@ -1,9 +1,9 @@
 import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonTabs from './NeonTabs.vue';
-import { NeonSize } from '@/common/enums/NeonSize';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
-import { NeonTabModel } from '@/common/models/NeonTabModel';
+import { NeonSize } from '@/model/common/size/NeonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonTabModel } from '@/model/presentation/tabs/NeonTabModel';
 import { router } from '@/../test/unit/test-router';
 
 describe('NeonTabs', () => {

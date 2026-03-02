@@ -1,7 +1,7 @@
-import { RegisterIcons } from '@/common/utils/RegisterIcons';
-import { NeonDebounceUtils } from '@/common/utils/NeonDebounceUtils';
+import { RegisterIcons } from '@/utils/common/icons/RegisterIcons';
 
-NeonDebounceUtils.setGlobalDebounceTimeout(0);
+console.error = () => {};
+
 RegisterIcons.register();
 
 global.PACKAGE_VERSION = '0.0.0';

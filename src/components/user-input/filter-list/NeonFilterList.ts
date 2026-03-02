@@ -1,8 +1,8 @@
 import { computed, defineComponent, ref } from 'vue';
-import { NeonSize } from '@/common/enums/NeonSize';
-import { NeonFunctionalColor } from '@/common/enums/NeonFunctionalColor';
+import { NeonSize } from '@/model/common/size/NeonSize';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
-import type { NeonFilterListItem } from '@/common/models/NeonFilterListItem';
+import type { NeonFilterListItem } from '@/model/user-input/filter-list/NeonFilterListItem';
 import NeonLink from '@/components/navigation/link/NeonLink.vue';
 
 /**

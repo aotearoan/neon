@@ -23,12 +23,7 @@ const routes = [
     ),
   ),
   {
-    path: '/enums/:enum',
-    name: 'Enums',
-    component: () => import(/* webpackChunkName: "source" */ './views/source/Source.vue'),
-  },
-  {
-    path: '/models/:model',
+    path: '/model/:model+',
     name: 'Models',
     component: () => import(/* webpackChunkName: "source" */ './views/source/Source.vue'),
   },
@@ -55,9 +50,7 @@ const router = createRouter({
 
 router.afterEach((to: RouteLocationNormalized) => {
   setTimeout(() => {
-    document.title = `Neon: ${
-      to.params.enum || to.params.model || to.params.util || to.meta.title || 'A VueJS Component Library'
-    }`;
+    document.title = `Neon: ${to.params.model || to.params.util || to.meta.title || 'A VueJS Component Library'}`;
   });
 });
 
