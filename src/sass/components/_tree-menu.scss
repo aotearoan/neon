@@ -21,7 +21,7 @@
         outline: none;
       }
 
-      &.neon-link--exact-active > span {
+      &.neon-link--active > span {
         font-weight: var(--neon-font-weight-tree-menu-selected);
       }
     }
@@ -121,7 +121,7 @@
         .neon-tree-menu__section .neon-tree-menu__section-link,
         .neon-tree-menu__item .neon-tree-menu__item-link,
         .neon-tree-menu__sub-menu-item .neon-tree-menu__sub-menu-item-link {
-          &.neon-link--exact-active {
+          &.neon-link--active {
             @include svg.color-with-svg(var(--neon-color-#{$color}));
           }
 

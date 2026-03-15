@@ -12,15 +12,24 @@
 
         .neon-tabs__menu-item {
           &.neon-tabs__menu-item {
-            .neon-tabs__menu-item-container:before {
-              background-color: $tab-selected-color;
+            .neon-tabs__menu-item-container {
+              @include svg.color-with-svg($tab-selected-color);
+              transition: all ease-in-out var(--neon-animation-speed-fast);
+
+              &:before {
+                background-color: $tab-selected-color;
+              }
             }
           }
 
           &:hover,
           &:active {
-            .neon-tabs__menu-item-container:before {
-              background-color: $tab-hover-color;
+            .neon-tabs__menu-item-container {
+              @include svg.color-with-svg($tab-hover-color);
+
+              &:before {
+                background-color: $tab-hover-color;
+              }
             }
           }
 
@@ -56,7 +65,7 @@
       user-select: none;
       cursor: pointer;
       transition: color ease-in-out var(--neon-animation-speed-fast);
-      @include svg.color-with-svg(var(--neon-color-low-contrast));
+      @include svg.color-with-svg(var(--neon-color-tab));
 
       font-weight: var(--neon-font-weight-tabs);
 
@@ -74,15 +83,15 @@
         outline: none;
         height: 100%;
         align-items: center;
-        color: var(--neon-color-text-primary);
+        color: var(--neon-color-tab);
 
         .neon-svg--stroke {
-          stroke: var(--neon-color-text-primary);
+          stroke: var(--neon-color-tab);
           transition: stroke ease-in-out var(--neon-animation-speed-fast);
         }
 
         .neon-svg--fill {
-          fill: var(--neon-color-text-primary);
+          fill: var(--neon-color-tab);
           transition: fill ease-in-out var(--neon-animation-speed-fast);
         }
 
@@ -140,8 +149,8 @@
     .neon-tabs__menu-items--full-width-mobile {
       @include responsive.responsive(mobile-large) {
         margin: 0 calc(-1 * var(--neon-gutter-mobile));
-        max-width: calc(100% + 2 * var(--neon-gutter-mobile));
-        width: calc(100% + 2 * var(--neon-gutter-mobile));
+        max-width: 100vw;
+        width: 100vw;
       }
     }
 

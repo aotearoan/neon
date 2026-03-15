@@ -1017,6 +1017,11 @@
   --neon-border-color-tabs-underline: var(--neon-border-color);
   /**
    * @component NeonTabs
+   * unselected tab text color.
+   */
+  --neon-color-tab: var(--neon-color-text-tertiary);
+  /**
+   * @component NeonTabs
    * low-contrast tab selected color.
    */
   --neon-color-tab-selected-low-contrast: var(--neon-color-low-contrast-d2);

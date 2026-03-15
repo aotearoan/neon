@@ -8,15 +8,9 @@
     flex: 1 0 auto;
     max-height: fit-content;
 
-    @each $color in palettes.$neon-functional-colors {
-      &--#{$color}:not(.neon-expansion-panel--disabled) {
-        $expansion-panel-rgb: var(--neon-rgb-#{$color});
-
-        .neon-expansion-panel__label-container {
-          color: rgb($expansion-panel-rgb);
-          @include outline.focus-text-outline($expansion-panel-rgb);
-        }
-      }
+    .neon-expansion-panel__label-container {
+      color: var(--neon-color-text-primary);
+      @include outline.focus-text-outline(var(--neon-rgb-text-primary));
     }
 
     &__header {
@@ -28,7 +22,7 @@
       align-items: center;
       cursor: pointer;
       letter-spacing: var(--neon-letter-spacing-s);
-      font-weight: var(--neon-font-weight-extra-light);
+      font-weight: var(--neon-font-weight-semi-bold);
       @include layout.padding-horizontal(0.75, 0.75);
       padding-top: 0;
       padding-bottom: 0;
@@ -118,18 +112,18 @@
 
     &--l {
       &:not(.neon-expansion-panel--expanded) {
-        height: var(--neon-size-l);
-        max-height: var(--neon-size-l);
+        height: 60rem;
+        max-height: 60rem;
       }
 
       .neon-expansion-panel__header {
-        height: var(--neon-size-l);
-        max-height: var(--neon-size-l);
-        font-size: var(--neon-font-size-l);
+        height: 60rem;
+        max-height: 60rem;
+        font-size: var(--neon-font-size-xl);
 
         .neon-icon {
-          width: var(--neon-font-size-l);
-          height: var(--neon-font-size-l);
+          width: var(--neon-font-size-xl);
+          height: var(--neon-font-size-xl);
         }
       }
     }
@@ -137,12 +131,16 @@
     &--disabled {
       .neon-expansion-panel__header {
         cursor: not-allowed;
-        color: var(--neon-color-disabled-text);
+        color: var(--neon-color-primary);
       }
     }
 
     &--top {
-      border-bottom: var(--neon-border-width-expansion-panel) var(--neon-border-style) var(--neon-border-color);
+      border-top: var(--neon-border-width-expansion-panel) var(--neon-border-style) var(--neon-border-color);
+
+      &:last-of-type {
+        border-bottom: var(--neon-border-width-expansion-panel) var(--neon-border-style) var(--neon-border-color);
+      }
     }
 
     &--bottom {
@@ -158,6 +156,12 @@
 
       .neon-expansion-panel__content {
         @include layout.padding-vertical(0.75, 0.75);
+      }
+    }
+
+    &--indented {
+      .neon-expansion-panel__content {
+        padding-left: var(--neon-space-40);
       }
     }
 

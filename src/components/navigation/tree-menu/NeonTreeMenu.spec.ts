@@ -239,6 +239,17 @@ describe('NeonTreeMenu', () => {
     expect(result[0].expanded).toEqual(true);
   });
 
+  it('emits click event on clicking a link', async () => {
+    // given
+    const { container, emitted } = harness;
+    // when
+    const item = container.querySelectorAll('.neon-tree-menu__section-link').item(2) as HTMLElement;
+    await fireEvent.click(item);
+    // then
+    const result = (emitted().click[0] as Array<Array<NeonTreeMenuSectionModel>>)[0] as Array<NeonTreeMenuSectionModel>;
+    expect(result).toBeDefined();
+  });
+
   it('emits click event on space keydown section link', async () => {
     // given
     const { container, emitted } = harness;

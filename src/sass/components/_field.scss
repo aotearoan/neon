@@ -43,6 +43,7 @@
         text-transform: none;
         letter-spacing: initial;
         font-weight: var(--neon-font-weight-normal);
+        max-width: var(--neon-max-paragraph-width);
       }
     }
   }
