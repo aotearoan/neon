@@ -17,6 +17,7 @@ npm pack
 if [ -z "$PROJECT" ]; then
   echo "No project path provided, navigate to application directory and run the following command to install the build"
   echo "npm i -S $BUILD_PATH"
+  echo $(date)
   exit 1
 fi
 cd $PROJECT || exit

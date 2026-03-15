@@ -10,7 +10,7 @@ module.exports = {
     customExportConditions: ['node', 'node-addons'],
   },
   transform: {
-    '^.+\\.vue$': '@vue/vue3-jest',
+    '^.+\\.vue$': '<rootDir>/test/unit/vue-preprocessor.cjs',
     '^.+\\.(t|j)s?$': [
       'ts-jest',
       {
