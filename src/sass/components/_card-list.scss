@@ -1,4 +1,5 @@
 @use '../includes/palettes';
+@use '../includes/responsive';
 
 @mixin card-list {
   .neon-card-list {
@@ -33,9 +34,12 @@
       margin-left: auto;
     }
 
+    &__cards {
+      border-top: var(--neon-border);
+    }
+
     &__card {
-      padding-top: var(--neon-space-32);
-      padding-bottom: var(--neon-space-16);
+      padding: var(--neon-space-32) var(--neon-space-16) var(--neon-space-16);
       user-select: none;
       width: 100%;
       border: none;
@@ -43,6 +47,11 @@
 
       &--disabled {
         cursor: not-allowed;
+      }
+
+      @include responsive.responsive(mobile-large) {
+        padding-left: 0;
+        padding-right: 0;
       }
     }
 
