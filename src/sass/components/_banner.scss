@@ -29,6 +29,10 @@
     }
   }
 
+  .neon-button--outline {
+    --neon-background-color-outline-button: var(--neon-background-color);
+  }
+
   @include responsive.responsive(desktop-large) {
     .neon-page--left .neon-banner__wrapper .neon-note .neon-note__content {
       margin-left: 0;
