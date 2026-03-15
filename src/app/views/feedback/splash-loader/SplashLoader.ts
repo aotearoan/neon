@@ -30,7 +30,7 @@ export default defineComponent({
     };
 
     const template = `<neon-button label="Show loader" @click="openLoader()" />
-<neon-splash-loader v-if="open" :fullscreen="true" :overlay="true" size="xl" color="brand" />`;
+<neon-splash-loader v-if="open" :fullscreen="true" :overlay="true" size="xl" />`;
 
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonSplashLoader')));
 

@@ -15,7 +15,7 @@
         <neon-stack>
           <neon-stack>
             <neon-button color="low-contrast" label="Show loader" @click="openLoader()" />
-            <neon-splash-loader v-if="open" :fullscreen="true" :overlay="true" color="brand" size="xl" />
+            <neon-splash-loader v-if="open" :fullscreen="true" :overlay="true" size="xl" />
           </neon-stack>
           <editor v-model="template" />
         </neon-stack>
