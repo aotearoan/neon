@@ -12,8 +12,11 @@ import { NeonNumberUtils } from '@/utils/common/number/NeonNumberUtils';
 import type { NeonLoadOnDemandModel } from '@/model/layout/card-list/NeonLoadOnDemandModel';
 import type { NeonPaginationModel } from '@/model/navigation/pagination/NeonPaginationModel';
 import type { NeonIdentifiable } from '@/model/common/entity/NeonIdentifiable';
+import type { NeonSelectable } from '@/model/common/entity/NeonSelectable';
+import NeonSelectableCard from './selectable-card/NeonSelectableCard.vue';
 
 /**
+ * TODO: consider refactoring since it's no longer just a layout component when selectable.
  * Represent lists of objects as cards. This is intended to be a more responsive replacement for tables. This component
  * will display a list of items as cards with a count (x of y) and a <em>Show more</em> button to load more results.
  * There is also a slot for adding filtering or other content above the list. A slot is provided with card model & index
@@ -22,6 +25,7 @@ import type { NeonIdentifiable } from '@/model/common/entity/NeonIdentifiable';
 export default defineComponent({
   name: 'NeonCardList',
   components: {
+    NeonSelectableCard,
     NeonPagination,
     NeonButton,
     NeonInline,
@@ -32,13 +36,20 @@ export default defineComponent({
     /**
      * Items to display as cards. Each item should be a NeonCardListModel.
      */
-    items: { type: Array as () => Array<NeonCardListModel<NeonIdentifiable>>, required: true },
+    items: {
+      type: Array as () => Array<NeonCardListModel<NeonIdentifiable | (NeonIdentifiable & NeonSelectable)>>,
+      required: true,
+    },
     /**
-     * Specify a hover color for the cards.
+     * Specify a selection/hover color for the cards.
      */
     color: { type: String as () => NeonFunctionalColor, default: null },
     /**
-     * Model for configuring the on demand loading layout.
+     * Make cards selectable.
+     */
+    selectable: { type: Boolean, default: false },
+    /**
+     * Model for configuring the on-demand loading layout.
      */
     loadOnDemand: { type: Object as () => NeonLoadOnDemandModel },
     /**
@@ -52,11 +63,16 @@ export default defineComponent({
      * @type {void}
      */
     'show-more',
+    /**
+     * Emitted when in selectable mode and the selected state of a card is toggled.
+     * @type {string, boolean} - the id of the card which is toggled & the new selected state.
+     */
+    'toggleSelected',
   ],
-  setup(props, { emit }) {
+  setup(props, { emit, slots }) {
     const ofLabel = computed(() => {
-      if (!props.pagination) {
-        return props.loadOnDemand?.ofLabel ?? 'of';
+      if (!props.pagination && props.loadOnDemand) {
+        return props.loadOnDemand.ofLabel ?? 'of';
       }
 
       return undefined;
@@ -90,6 +106,7 @@ export default defineComponent({
       showMoreLabel,
       endOfResultsLabel,
       total,
+      slots,
     };
   },
 });

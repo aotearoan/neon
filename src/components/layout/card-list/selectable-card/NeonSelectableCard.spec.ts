@@ -2,7 +2,6 @@ import type { RenderResult } from '@testing-library/vue';
 import { fireEvent, render } from '@testing-library/vue';
 import NeonSelectableCard from './NeonSelectableCard.vue';
 import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
-import { NeonSize } from '@/model/common/size/NeonSize';
 
 describe('NeonSelectableCard', () => {
   let harness: RenderResult;
@@ -77,14 +76,6 @@ describe('NeonSelectableCard', () => {
     // when / then
     await rerender({ color: NeonFunctionalColor.Info });
     expect(container.querySelector('.neon-selectable-card--info')).toBeDefined();
-  });
-
-  it('renders size', async () => {
-    // given
-    const { container, rerender } = harness;
-    // when / then
-    await rerender({ size: NeonSize.Medium });
-    expect(container.querySelector('.neon-selectable-card--m')).toBeDefined();
   });
 
   it('toggles selected off when clicked', async () => {

@@ -98,6 +98,45 @@ export default defineComponent({
       total: 100,
     }));
 
+    const selectableTemplate = `<neon-card-list
+  :items="selectableFilteredModel"
+  :load-on-demand="selectableConfig"
+  color="brand"
+  :selectable="true"
+  @toggle-selected="toggleSelected"
+>
+  <template #header>
+    <neon-input v-model="selectableFilter" placeholder="Filter results…" size="s" />
+  </template>
+  <template #card="{ model, index }">
+    <div class="card-contents">
+      <span class="card-title">{{ model.title }}</span>
+      <span class="card-description">{{ model.description }}</span>
+    </div>
+  </template>
+</neon-card-list>`;
+
+    const selectableModel = ref<Array<NeonCardListModel<CardListModel>>>(CardListModelFixture(5, undefined, 0, true));
+    const selectableFilteredModel = computed<Array<NeonCardListModel<CardListModel>>>(() =>
+      selectableFilter.value === ''
+        ? selectableModel.value
+        : selectableModel.value.filter(
+            (item) => (item.model.title + item.model.description).indexOf(selectableFilter.value) >= 0,
+          ),
+    );
+    const selectableFilter = ref<string>('');
+    const selectableConfig = computed(() => ({
+      page: 1,
+      urlTemplate: 'entity/?page={page}',
+      pageSize: 2,
+      total: 100,
+    }));
+
+    const toggleSelected = (id: string, selected: boolean) => {
+      selectableModel.value.filter((item) => item.model.id === id).map((item) => (item.selected = selected));
+      selectableModel.value = [...selectableModel.value];
+    };
+
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonCardList')));
 
     return {
@@ -113,6 +152,11 @@ export default defineComponent({
       paginationFilter,
       paginationConfig,
       paginationTemplate,
+      selectableFilteredModel,
+      selectableFilter,
+      selectableConfig,
+      selectableTemplate,
+      toggleSelected,
     };
   },
 });

@@ -9,7 +9,7 @@
       @include layout.min-height(100);
       @include layout.max-height(100);
 
-      .neon-card {
+      & > .neon-card {
         @include layout.min-height(100);
       }
     }
@@ -34,10 +34,13 @@
   .neon-modal__container {
     margin-top: var(--neon-margin-top-modal-closed);
     transition: all ease-in-out var(--neon-animation-speed-slow);
+    padding-left: var(--neon-space-8);
+    padding-right: var(--neon-space-8);
 
     & > .neon-card {
-      margin-left: calc(2 * var(--neon-base-space));
-      margin-right: calc(2 * var(--neon-base-space));
+      position: relative;
+      top: 0;
+      left: 0;
     }
   }
 

@@ -10,10 +10,12 @@ import type { NeonCardListModel } from '@/model/layout/card-list/NeonCardListMod
 describe('NeonCardList', () => {
   let modelWithLinks: Array<NeonCardListModel<CardListModel>>;
   let modelNoLinks: Array<NeonCardListModel<CardListModel>>;
+  let modelSelectable: Array<NeonCardListModel<CardListModel>>;
 
   beforeEach(() => {
     modelWithLinks = CardListModelFixture(5, 'http://getskeleton.com', 0);
     modelNoLinks = CardListModelFixture(5, undefined, 0);
+    modelSelectable = CardListModelFixture(5, undefined, 0, true);
   });
 
   it('renders header slot contents', () => {
@@ -42,6 +44,36 @@ describe('NeonCardList', () => {
     });
     // when / then
     expect(html()).toMatch('<p>test</p>');
+  });
+
+  it('renders selectable cards', () => {
+    // given
+    const { html } = render(NeonCardList, {
+      props: {
+        items: modelSelectable,
+        selectable: true,
+      },
+      slots: { card: '<p>test</p>' },
+      global: { plugins: [router] },
+    });
+    // when / then
+    expect(html()).toMatchSnapshot();
+  });
+
+  it('emits toggle-selection event when card is clicked', async () => {
+    // given
+    const { container, emitted } = render(NeonCardList, {
+      props: {
+        items: modelSelectable,
+        selectable: true,
+      },
+      slots: { card: '<p>test</p>' },
+      global: { plugins: [router] },
+    });
+    // when
+    await fireEvent.click(container.querySelectorAll('.neon-selectable-card')[0] as HTMLDivElement);
+    // then
+    expect(emitted().toggleSelected[0]).toEqual([modelSelectable[0].model.id, !modelSelectable[0].selected]);
   });
 
   it('renders default labels', () => {
