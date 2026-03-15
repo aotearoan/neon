@@ -1,5 +1,12 @@
 # Changelog
 
+## [27.0.3](https://github.com/aotearoan/neon/compare/v27.0.2...v27.0.3) (2026-03-15)
+
+
+### Bug Fixes
+
+* minor UX/style updates ([#382](https://github.com/aotearoan/neon/issues/382)) ([dfb1035](https://github.com/aotearoan/neon/commit/dfb10355fcde85e2f4e224bcf6d59170a0eeafc8))
+
 ## [27.0.2](https://github.com/aotearoan/neon/compare/v27.0.1...v27.0.2) (2026-03-15)
 
 
