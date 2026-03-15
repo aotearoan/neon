@@ -76,6 +76,16 @@
               </div>
             </div>
           </section>
+          <section v-if="cssVariables" class="api-docs__section">
+            <br />
+            <h3 class="neon-h4 api-docs__title">CSS Variables</h3>
+            <!-- eslint-disable-next-line -->
+            <neon-card-list :items="cssVariables" class="api-docs__css-variables">
+              <template #card="{ model, index }">
+                <css-variable-card :variable="model" />
+              </template>
+            </neon-card-list>
+          </section>
         </div>
       </neon-card-body>
     </neon-card>
