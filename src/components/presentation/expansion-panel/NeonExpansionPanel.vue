@@ -8,6 +8,7 @@
         'neon-expansion-panel--full-width': fullWidth,
         'neon-expansion-panel--indented': indent,
         'neon-expansion-panel--disabled': disabled,
+        'neon-expansion-panel--custom-header': slots.header,
       },
       `neon-expansion-panel--${position}`,
       `neon-expansion-panel--${size}`,

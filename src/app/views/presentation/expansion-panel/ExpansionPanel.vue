@@ -49,6 +49,9 @@
               <p>{{ content }}</p>
             </neon-expansion-panel>
             <neon-expansion-panel v-model="expanded10" full-width>
+              <template #header="{ expanded }">
+                <p>{{ expanded ? 'I am expanded' : 'I am not expanded' }}</p>
+              </template>
               <p>{{ content }}</p>
             </neon-expansion-panel>
           </neon-stack>

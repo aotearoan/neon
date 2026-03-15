@@ -52,11 +52,11 @@
       flex-direction: row;
       flex-wrap: nowrap;
       align-items: center;
-      pointer-events: none;
-      touch-action: none;
+      width: 100%;
+      pointer-events: all;
       outline: none;
 
-      .neon-icon {
+      & > .neon-icon {
         margin-right: var(--neon-space-8);
       }
     }
@@ -125,6 +125,16 @@
           width: var(--neon-font-size-xl);
           height: var(--neon-font-size-xl);
         }
+      }
+    }
+
+    &.neon-expansion-panel--custom-header {
+      height: auto;
+      max-height: unset;
+
+      .neon-expansion-panel__header {
+        height: auto;
+        max-height: unset;
       }
     }
 
