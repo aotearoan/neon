@@ -1,5 +1,12 @@
 # Changelog
 
+## [26.0.4](https://github.com/aotearoan/neon/compare/v26.0.3...v26.0.4) (2026-03-15)
+
+
+### Bug Fixes
+
+* design adjustments ([#365](https://github.com/aotearoan/neon/issues/365)) ([937fd6a](https://github.com/aotearoan/neon/commit/937fd6ab72abfe9c7637708f2625aafac7e2592c))
+
 ## [26.0.3](https://github.com/aotearoan/neon/compare/v26.0.2...v26.0.3) (2026-03-15)
 
 
