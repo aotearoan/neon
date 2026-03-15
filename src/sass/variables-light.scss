@@ -1,0 +1,1348 @@
+/*********************
+* LIGHT THEME VARIABLES
+*********************/
+.neon.neon-mode--light {
+  /**
+   * @component NeonCard
+   * Background color of the card.
+   */
+  --neon-background-color-card: var(--neon-color-high-contrast-l5);
+  /**
+   * @component NeonCard
+   * Card border.
+   */
+  --neon-border-card: var(--neon-border);
+  /**
+   * Default background color. This is generally the background color of the page.
+   */
+  --neon-background-color: var(--neon-background-color-light);
+
+
+  /**
+   * primary text color RGB values
+   */
+  --neon-rgb-text-primary: var(--neon-rgb-text-primary-light);
+  /**
+   * primary text color variable
+   */
+  --neon-color-text-primary: var(--neon-color-text-primary-light);
+  /**
+     * secondary text color RGB values
+     */
+  --neon-rgb-text-secondary: var(--neon-rgb-text-secondary-light);
+  /**
+   * secondary text color variable
+   */
+  --neon-color-text-secondary: var(--neon-color-text-secondary-light);
+  /**
+   * tertiary text color RGB values
+   */
+  --neon-rgb-text-tertiary: var(--neon-rgb-text-tertiary-light);
+  /**
+   * tertiary text color variable
+   */
+  --neon-color-text-tertiary: var(--neon-color-text-tertiary-light);
+  /**
+   * inverse text color RGB values
+   */
+  --neon-rgb-inverse: var(--neon-rgb-text-primary-dark);
+  /**
+   * inverse text color variable
+   */
+  --neon-color-inverse: var(--neon-color-text-primary-dark);
+
+
+  /**
+   * base low contrast color RGB values
+   */
+  --neon-rgb-low-contrast: var(--neon-rgb-low-contrast-d1);
+  /**
+   * base neutral color RGB values
+   */
+  --neon-rgb-neutral: var(--neon-rgb-neutral-d1);
+  /**
+   * base high contrast color RGB values
+   */
+  --neon-rgb-high-contrast: var(--neon-rgb-high-contrast-d1);
+  /**
+   * base brand color RGB values
+   */
+  --neon-rgb-brand: var(--neon-rgb-brand-d1);
+  /**
+   * base brand accent color RGB values
+   */
+  --neon-rgb-accent: var(--neon-rgb-accent-d1);
+  /**
+   * base primary color RGB values
+   */
+  --neon-rgb-primary: var(--neon-rgb-primary-d1);
+  /**
+   * base info color RGB values
+   */
+  --neon-rgb-info: var(--neon-rgb-info-d1);
+  /**
+   * base success color RGB values
+   */
+  --neon-rgb-success: var(--neon-rgb-success-d1);
+  /**
+   * base warning color RGB values
+   */
+  --neon-rgb-warn: var(--neon-rgb-warn-d1);
+  /**
+   * base error color RGB values
+   */
+  --neon-rgb-error: var(--neon-rgb-error-d1);
+
+
+  /**
+   * base low contrast color variable
+   */
+  --neon-color-low-contrast: var(--neon-color-low-contrast-d1);
+  /**
+   * base neutral color variable
+   */
+  --neon-color-neutral: var(--neon-color-neutral-d1);
+  /**
+   * base high contrast color variable
+   */
+  --neon-color-high-contrast: var(--neon-color-high-contrast-d1);
+  /**
+   * base brand color variable
+   */
+  --neon-color-brand: var(--neon-color-brand-d1);
+  /**
+   * base accent color variable
+   */
+  --neon-color-accent: var(--neon-color-accent-d1);
+  /**
+   * base primary color variable
+   */
+  --neon-color-primary: var(--neon-color-primary-d1);
+  /**
+   * base info color variable
+   */
+  --neon-color-info: var(--neon-color-info-d1);
+  /**
+   * base success color variable
+   */
+  --neon-color-success: var(--neon-color-success-d1);
+  /**
+   * base warning color variable
+   */
+  --neon-color-warn: var(--neon-color-warn-d1);
+  /**
+   * base error color variable
+   */
+  --neon-color-error: var(--neon-color-error-d1);
+
+
+  /**
+   * background low contrast color RGB values
+   */
+  --neon-background-rgb-low-contrast: var(--neon-rgb-low-contrast-l1);
+  /**
+   * background low contrast color variable
+   */
+  --neon-background-color-low-contrast: var(--neon-color-low-contrast-l1);
+  /**
+   * background neutral color variable
+   */
+  --neon-background-color-neutral: var(--neon-color-neutral-l1);
+  /**
+   * background high contrast color variable
+   */
+  --neon-background-color-high-contrast: var(--neon-color-high-contrast-l1);
+  /**
+   * background brand color variable
+   */
+  --neon-background-color-brand: var(--neon-color-brand-l1);
+  /**
+   * background accent color variable
+   */
+  --neon-background-color-accent: var(--neon-color-accent-l1);
+  /**
+   * background primary color variable
+   */
+  --neon-background-color-primary: var(--neon-color-primary-l1);
+  /**
+   * background info color variable
+   */
+  --neon-background-color-info: var(--neon-color-info-l1);
+  /**
+   * background success color variable
+   */
+  --neon-background-color-success: var(--neon-color-success-l1);
+  /**
+   * background warning color variable
+   */
+  --neon-background-color-warn: var(--neon-color-warn-l1);
+  /**
+   * background error color variable
+   */
+  --neon-background-color-error: var(--neon-color-error-l1);
+
+
+  /**
+   * default border color
+   */
+  --neon-border-color: var(--neon-color-low-contrast-l4);
+  /**
+   * default border
+   */
+  --neon-border: var(--neon-border-width) var(--neon-border-style) var(--neon-border-color);
+  /**
+   * default HR element border
+   */
+  --neon-border-hr: 1rem var(--neon-border-style) var(--neon-border-color);
+
+
+  /**
+   * HTML label element color
+   */
+  --neon-color-label: var(--neon-color-text-secondary);
+
+
+  /**
+   * Disabled text RGB values
+   */
+  --neon-rgb-disabled-text: var(--neon-rgb-disabled-text-light);
+  /**
+   * Disabled border RGB values
+   */
+  --neon-rgb-disabled-border: var(--neon-rgb-disabled-border-light);
+  /**
+   * Disabled background RGB values
+   */
+  --neon-rgb-disabled-background: var(--neon-rgb-disabled-background-light);
+  /**
+   * Disabled text color variable
+   */
+  --neon-color-disabled-text: var(--neon-color-disabled-text-light);
+  /**
+   * Disabled border color variable
+   */
+  --neon-color-disabled-border: var(--neon-color-disabled-border-light);
+  /**
+   * Disabled background color variable
+   */
+  --neon-color-disabled-background: var(--neon-color-disabled-background-light);
+
+
+  /* switch */
+  /**
+   * @component NeonSwitch
+   * Switch color RGB values in off state.
+   */
+  --neon-rgb-switch-off: var(--neon-rgb-neutral-l3);
+  /**
+   * @component NeonSwitch
+   * Switch color variable in off state.
+   */
+  --neon-color-switch-off: var(--neon-color-neutral-l3);
+  /**
+   * @component NeonSwitch
+   * Switch indicator color
+   */
+  --neon-color-switch-indicator: var(--neon-color-high-contrast-l5);
+  /**
+   * @component NeonSwitch
+   * Switch inset shadow
+   */
+  --neon-inset-shadow-switch: inset 0 2rem 2rem rgba(0, 0, 0, 0.014), inset 0 4rem 4rem rgba(0, 0, 0, 0.028),
+  inset 0 12rem 12rem rgba(0, 0, 0, 0.03);
+
+
+  /* solid buttons */
+  /**
+   * @component NeonButton
+   * Solid button text color
+   */
+  --neon-color-solid-button: var(--neon-color-inverse);
+  /**
+   * @component NeonButton
+   * Inverse button text color
+   */
+  --neon-color-solid-button-inverse: var(--neon-color-text-primary);
+
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the high-contrast button top color.
+   */
+  --neon-background-solid-button-light-high-contrast: var(--neon-color-text-secondary);
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the high-contrast button bottom RGB color variable.
+   */
+  --neon-background-rgb-solid-button-dark-high-contrast: var(--neon-rgb-text-secondary);
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the high-contrast button bottom color.
+   */
+  --neon-background-solid-button-dark-high-contrast: var(--neon-color-text-secondary);
+
+
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the inverse button top color.
+   */
+  --neon-background-solid-button-light-inverse: var(--neon-color-inverse);
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the inverse button bottom RGB color variable.
+   */
+  --neon-background-rgb-solid-button-dark-inverse: var(--neon-rgb-inverse);
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the inverse button bottom color value.
+   */
+  --neon-background-solid-button-dark-inverse: var(--neon-color-inverse);
+
+
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the low-contrast button top color.
+   */
+  --neon-background-solid-button-light-low-contrast: var(--neon-color-low-contrast-l5);
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the low-contrast button bottom RGB color variable.
+   */
+  --neon-background-rgb-solid-button-dark-low-contrast: var(--neon-rgb-low-contrast-l4);
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the low-contrast button bottom color value.
+   */
+  --neon-background-solid-button-dark-low-contrast: var(--neon-color-low-contrast-l4);
+
+
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the neutral button top color.
+   */
+  --neon-background-solid-button-light-neutral: var(--neon-color-low-contrast-d1);
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the neutral button bottom RGB color variable.
+   */
+  --neon-background-rgb-solid-button-dark-neutral: var(--neon-rgb-low-contrast-d2);
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the neutral button bottom color value.
+   */
+  --neon-background-solid-button-dark-neutral: var(--neon-color-low-contrast-d2);
+
+
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the brand button top color.
+   */
+  --neon-background-solid-button-light-brand: var(--neon-color-brand-d1);
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the brand button bottom RGB color variable.
+   */
+  --neon-background-rgb-solid-button-dark-brand: var(--neon-rgb-brand-d2);
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the brand button bottom color value.
+   */
+  --neon-background-solid-button-dark-brand: var(--neon-color-brand-d2);
+
+
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the accent button top color.
+   */
+  --neon-background-solid-button-light-accent: var(--neon-color-accent-d1);
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the accent button bottom RGB color variable.
+   */
+  --neon-background-rgb-solid-button-dark-accent: var(--neon-rgb-accent-d2);
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the accent button bottom color value.
+   */
+  --neon-background-solid-button-dark-accent: var(--neon-color-accent-d2);
+
+
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the primary button top color.
+   */
+  --neon-background-solid-button-light-primary: var(--neon-color-primary-d1);
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the primary button bottom RGB color variable.
+   */
+  --neon-background-rgb-solid-button-dark-primary: var(--neon-rgb-primary-d2);
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the primary button bottom color value.
+   */
+  --neon-background-solid-button-dark-primary: var(--neon-color-primary-d2);
+
+
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the info button top color.
+   */
+  --neon-background-solid-button-light-info: var(--neon-color-info-d1);
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the info button bottom RGB color variable.
+   */
+  --neon-background-rgb-solid-button-dark-info: var(--neon-rgb-info-d2);
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the info button bottom color value.
+   */
+  --neon-background-solid-button-dark-info: var(--neon-color-info-d2);
+
+
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the success button top color.
+   */
+  --neon-background-solid-button-light-success: var(--neon-color-success-d1);
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the success button bottom RGB color variable.
+   */
+  --neon-background-rgb-solid-button-dark-success: var(--neon-rgb-success-d2);
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the success button bottom color value.
+   */
+  --neon-background-solid-button-dark-success: var(--neon-color-success-d2);
+
+
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the warn button top color.
+   */
+  --neon-background-solid-button-light-warn: var(--neon-color-warn-d1);
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the warn button bottom RGB color variable.
+   */
+  --neon-background-rgb-solid-button-dark-warn: var(--neon-rgb-warn-d2);
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the warn button bottom color value.
+   */
+  --neon-background-solid-button-dark-warn: var(--neon-color-warn-d2);
+
+
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the error button top color.
+   */
+  --neon-background-solid-button-light-error: var(--neon-color-error-d1);
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the error button bottom RGB color variable.
+   */
+  --neon-background-rgb-solid-button-dark-error: var(--neon-rgb-error-d2);
+  /**
+   * @component NeonButton
+   * Solid buttons support a gradient from top to bottom. This is the error button bottom color value.
+   */
+  --neon-background-solid-button-dark-error: var(--neon-color-error-d2);
+
+
+  /* outline buttons */
+  /**
+   * @component NeonButton
+   * Outline button background color. Generally this is transparent so it works on all backgrounds. But this variable is here if an override is ever needed.
+   */
+  --neon-background-color-outline-button: transparent;
+
+
+  /**
+   * @component NeonButton
+   * high-contrast outline button border color.
+   */
+  --neon-border-color-outline-button-inactive-high-contrast: var(--neon-border-color);
+  /**
+   * @component NeonButton
+   * high-contrast outline button background color in hover state.
+   */
+  --neon-background-outline-button-hover-high-contrast: var(--neon-color-high-contrast-d1);
+  /**
+   * @component NeonButton
+   * high-contrast outline button background color in active state.
+   */
+  --neon-background-outline-button-active-high-contrast: var(--neon-color-high-contrast-d2);
+
+
+  /**
+   * @component NeonButton
+   * inverse outline button border color.
+   */
+  --neon-border-color-outline-button-inactive-inverse: var(--neon-border-color);
+  /**
+   * @component NeonButton
+   * inverse outline button background color in hover state.
+   */
+  --neon-background-outline-button-hover-inverse: var(--neon-color-high-contrast-l5);
+  /**
+   * @component NeonButton
+   * inverse outline button background color in active state.
+   */
+  --neon-background-outline-button-active-inverse: var(--neon-color-high-contrast-l4);
+
+
+  /**
+   * @component NeonButton
+   * low-contrast outline button border color.
+   */
+  --neon-border-color-outline-button-inactive-low-contrast: var(--neon-border-color);
+  /**
+   * @component NeonButton
+   * low-contrast outline button background color in hover state.
+   */
+  --neon-background-outline-button-hover-low-contrast: var(--neon-color-low-contrast-d1);
+  /**
+   * @component NeonButton
+   * low-contrast outline button background color in active state.
+   */
+  --neon-background-outline-button-active-low-contrast: var(--neon-color-low-contrast-d2);
+
+
+  /**
+   * @component NeonButton
+   * neutral outline button border color.
+   */
+  --neon-border-color-outline-button-inactive-neutral: var(--neon-border-color);
+  /**
+   * @component NeonButton
+   * neutral outline button background color in hover state.
+   */
+  --neon-background-outline-button-hover-neutral: var(--neon-color-low-contrast-d1);
+  /**
+   * @component NeonButton
+   * neutral outline button background color in active state.
+   */
+  --neon-background-outline-button-active-neutral: var(--neon-color-low-contrast-d2);
+
+
+  /**
+   * @component NeonButton
+   * brand outline button border color.
+   */
+  --neon-border-color-outline-button-inactive-brand: var(--neon-border-color);
+  /**
+   * @component NeonButton
+   * brand outline button background color in hover state.
+   */
+  --neon-background-outline-button-hover-brand: var(--neon-color-brand-d1);
+  /**
+   * @component NeonButton
+   * brand outline button background color in active state.
+   */
+  --neon-background-outline-button-active-brand: var(--neon-color-brand-d2);
+
+  /**
+   * @component NeonButton
+   * accent outline button border color.
+   */
+  --neon-border-color-outline-button-inactive-accent: var(--neon-border-color);
+  /**
+   * @component NeonButton
+   * accent outline button background color in hover state.
+   */
+  --neon-background-outline-button-hover-accent: var(--neon-color-accent-d1);
+  /**
+   * @component NeonButton
+   * accent outline button background color in active state.
+   */
+  --neon-background-outline-button-active-accent: var(--neon-color-accent-d2);
+
+  /**
+   * @component NeonButton
+   * primary outline button border color.
+   */
+  --neon-border-color-outline-button-inactive-primary: var(--neon-border-color);
+  /**
+   * @component NeonButton
+   * primary outline button background color in hover state.
+   */
+  --neon-background-outline-button-hover-primary: var(--neon-color-primary-d1);
+  /**
+   * @component NeonButton
+   * primary outline button background color in active state.
+   */
+  --neon-background-outline-button-active-primary: var(--neon-color-primary-d2);
+
+  /**
+   * @component NeonButton
+   * info outline button border color.
+   */
+  --neon-border-color-outline-button-inactive-info: var(--neon-border-color);
+  /**
+   * @component NeonButton
+   * info outline button background color in hover state.
+   */
+  --neon-background-outline-button-hover-info: var(--neon-color-info-d1);
+  /**
+   * @component NeonButton
+   * info outline button background color in active state.
+   */
+  --neon-background-outline-button-active-info: var(--neon-color-info-d2);
+
+  /**
+   * @component NeonButton
+   * success outline button border color.
+   */
+  --neon-border-color-outline-button-inactive-success: var(--neon-border-color);
+  /**
+   * @component NeonButton
+   * success outline button background color in hover state.
+   */
+  --neon-background-outline-button-hover-success: var(--neon-color-success-d1);
+  /**
+   * @component NeonButton
+   * success outline button background color in active state.
+   */
+  --neon-background-outline-button-active-success: var(--neon-color-success-d2);
+
+  /**
+   * @component NeonButton
+   * warn outline button border color.
+   */
+  --neon-border-color-outline-button-inactive-warn: var(--neon-border-color);
+  /**
+   * @component NeonButton
+   * warn outline button background color in hover state.
+   */
+  --neon-background-outline-button-hover-warn: var(--neon-color-warn-d1);
+  /**
+   * @component NeonButton
+   * warn outline button background color in active state.
+   */
+  --neon-background-outline-button-active-warn: var(--neon-color-warn-d2);
+
+  /**
+   * @component NeonButton
+   * error outline button border color.
+   */
+  --neon-border-color-outline-button-inactive-error: var(--neon-border-color);
+  /**
+   * @component NeonButton
+   * error outline button background color in hover state.
+   */
+  --neon-background-outline-button-hover-error: var(--neon-color-error-d1);
+  /**
+   * @component NeonButton
+   * error outline button background color in active state.
+   */
+  --neon-background-outline-button-active-error: var(--neon-color-error-d2);
+
+
+  /* text button */
+  /**
+   * @component NeonButton
+   * Text style button background color.
+   */
+  --neon-background-color-text-button: rgba(var(--neon-rgb-neutral-l4), 0.2);
+  /**
+   * @component NeonButton
+   * Text style button background color in hover state.
+   */
+  --neon-background-color-text-button-hover: rgba(var(--neon-rgb-neutral-l4), 0.5);
+  /**
+   * @component NeonButton
+   * Text style button background color in active state.
+   */
+  --neon-background-color-text-button-active: rgba(var(--neon-rgb-neutral-l4), 0.75);
+
+
+  /* note */
+  /**
+   * @component NeonNote
+   * Opacity applied to the note background color.
+   */
+  --neon-background-color-note: rgba(var(--neon-rgb-high-contrast-l3), 0.5);
+  /**
+   * @component NeonNote
+   * Note text color.
+   */
+  --neon-color-note: var(--neon-color-text-secondary);
+
+
+  /* link */
+  /**
+   * @component NeonLink
+   * Text link color (e.g. HTML anchor tag).
+   */
+  --neon-color-link: var(--neon-color-primary-d1);
+  /**
+   * @component NeonLink
+   * Text link RGB color variable. Should match the --neon-color-link color
+   */
+  --neon-rgb-link: var(--neon-rgb-primary-d1); // should match the --neon-color-link color
+  /**
+   * @component NeonLink
+   * Text link color in hover & active states.
+   */
+  --neon-color-link-hover: var(--neon-color-primary-d2);
+  /**
+   * @component NeonLink
+   * Text link color in visited state.
+   */
+  --neon-color-link-visited: rgba(var(--neon-rgb-primary-d1), 0.6);
+
+
+  /* action menu */
+  /**
+   * @component NeonActionMenu
+   * Action menu hover color.
+   */
+  --neon-color-action-menu-hover: var(--neon-color-neutral-l4);
+
+
+  /* menu */
+  /**
+   * @component NeonMenu
+   * Default menu item color.
+   */
+  --neon-color-menu: var(--neon-color-text-tertiary);
+  /**
+   * @component NeonMenu
+   * Selected menu item color.
+   */
+  --neon-color-menu-active: var(--neon-color-text-primary);
+
+
+  /* mobile menu */
+  /**
+   * @component NeonMobileMenu
+   * Mobile menu top border.
+   */
+  --neon-border-top-mobile-menu: var(--neon-height-mobile-menu-indicator) var(--neon-border-style) var(--neon-border-color);
+  /**
+   * @component NeonMobileMenu
+   * Mobile menu background color.
+   */
+  --neon-background-color-mobile-menu: var(--neon-background-color-card);
+  /**
+   * @component NeonMobileMenu
+   * Mobile menu item color
+   */
+  --neon-color-mobile-menu: var(--neon-color-text-tertiary);
+  /**
+   * @component NeonMobileMenu
+   * Mobile menu selected item color.
+   */
+  --neon-color-mobile-menu-active: var(--neon-color-text-primary);
+
+
+  /* selection */
+  /**
+   * Page text selection background RGB color variable.
+   */
+  --neon-background-rgb-selection: var(--neon-rgb-info-d1);
+  /**
+   * Page text selection text color.
+   */
+  --neon-color-selection: white;
+
+
+  /* pre */
+  /**
+   * HTML pre element text color.
+   */
+  --neon-color-pre: var(--neon-color-primary-d3);
+  /**
+   * HTML pre element background color.
+   */
+  --neon-background-color-pre: var(--neon-color-neutral-d5);
+
+
+  /* toggle */
+  /**
+   * @component NeonToggle
+   * Toggle (style=toggle) border.
+   */
+  --neon-border-toggle: var(--neon-border-width) var(--neon-border-style) transparent;
+  /**
+   * @component NeonToggle
+   * Toggle (style=toggle) border in the checked state.
+   */
+  --neon-border-toggle-checked: var(--neon-border-width) var(--neon-border-style) var(--neon-border-color);
+  /**
+   * @component NeonToggle
+   * Toggle (style=toggle) background opacity.
+   */
+  --neon-opacity-toggle-background: 0;
+  /**
+   * @component NeonToggle
+   * Toggle (style=toggle) content opacity.
+   */
+  --neon-opacity-toggle-color: 0.5;
+  /**
+   * @component NeonToggle
+   * Toggle (style=toggle) checked opacity.
+   */
+  --neon-opacity-toggle-checked: 0;
+  /**
+   * @component NeonToggle
+   * Toggle (style=toggle) hover state opacity.
+   */
+  --neon-opacity-toggle-hover: 0.05;
+
+
+  /* drawer */
+  /**
+   * @component NeonDrawer
+   * Drawer background color.
+   */
+  --neon-background-color-drawer: var(--neon-background-color-card);
+
+
+  /* radio buttons */
+  /**
+   * @component NeonToggle
+   * Background color of the toggle component in the radio button style.
+   */
+  --neon-background-radio-button: none;
+  /**
+   * @component NeonToggle
+   * Background color of the toggle component in the radio button style when active.
+   */
+  --neon-color-radio-button-bg-active: rgba(var(--neon-rgb-neutral-l3), 0.25);
+  /**
+   * @component NeonToggle
+   * Color of the radio button labels of the toggle component in the radio button style.
+   */
+  --neon-color-radio-button-label: var(--neon-color-label);
+
+
+  /* input */
+  /**
+   * @component NeonInput
+   * Text color of input.
+   */
+  --neon-color-input: var(--neon-color-text-secondary);
+  /**
+   * @component NeonInput
+   * Border color of input when not active.
+   */
+  --neon-border-color-input: var(--neon-border-color);
+  /**
+   * @component NeonInput
+   * Border of the input.
+   */
+  --neon-border-input: var(--neon-border-width-input) var(--neon-border-style) var(--neon-border-color-input);
+  /**
+   * @component NeonInput
+   * Border of the input when it's in the disabled state.
+   */
+  --neon-border-input-disabled: var(--neon-border-width-input) var(--neon-border-style) var(--neon-color-disabled-border);
+  /**
+   * @component NeonInput
+   * Background color of the input.
+   */
+  --neon-background-color-input: var(--neon-color-high-contrast-l5);
+  /**
+   * @component NeonInput
+   * Input placeholder RGB color variable.
+   */
+  --neon-rgb-placeholder: var(--neon-rgb-neutral-l1);
+  /**
+   * @component NeonInput
+   * Input placeholder color value.
+   */
+  --neon-color-placeholder: var(--neon-color-neutral-l1);
+
+
+  /**
+   * @component NeonInput
+   * Input background color when autofill is active.
+   */
+  --neon-background-color-autofill: var(--neon-color-primary-l5);
+  /**
+   * @component NeonInput
+   * Input color when autofill is active.
+   */
+  --neon-color-autofill: var(--neon-color-text-secondary);
+
+
+  /* drop zone */
+  /**
+   * @component NeonDropZone
+   * Drop zone background color.
+   */
+  --neon-background-color-drop-zone: var(--neon-background-color-card);
+  /**
+   * @component NeonDropZone
+   * Drop zone color.
+   */
+  --neon-color-drop-zone: var(--neon-color-text-secondary);
+  /**
+   * @component NeonDropZone
+   * Drop zone border.
+   */
+  --neon-border-drop-zone: 1rem dashed var(--neon-border-color);
+
+
+  /* alerts */
+  /**
+   * @component NeonAlert
+   * Alert and toast box shadow.
+   */
+  --neon-box-shadow-alert: calc(0.5 * var(--neon-base-space)) calc(0.5 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) rgba(var(--neon-rgb-neutral-d1), 0.5);
+
+
+  /**
+   * @component NeonAlert
+   * info alert background color.
+   */
+  --neon-background-color-alert-info: var(--neon-color-info);
+  /**
+   * @component NeonAlert
+   * success alert background color.
+   */
+  --neon-background-color-alert-success: var(--neon-color-success);
+  /**
+   * @component NeonAlert
+   * warn alert background color.
+   */
+  --neon-background-color-alert-warn: var(--neon-color-warn);
+  /**
+   * @component NeonAlert
+   * error alert background color.
+   */
+  --neon-background-color-alert-error: var(--neon-color-error);
+
+
+  /**
+   * @component NeonAlert
+   * info alert color.
+   */
+  --neon-color-alert-info: var(--neon-color-inverse);
+  /**
+   * @component NeonAlert
+   * success alert color.
+   */
+  --neon-color-alert-success: var(--neon-color-inverse);
+  /**
+   * @component NeonAlert
+   * warn alert color.
+   */
+  --neon-color-alert-warn: var(--neon-color-inverse);
+  /**
+   * @component NeonAlert
+   * error alert color.
+   */
+  --neon-color-alert-error: var(--neon-color-inverse);
+
+
+  /**
+   * @component NeonAlert
+   * info toast background color.
+   */
+  --neon-background-color-toast-info: var(--neon-color-info);
+  /**
+   * @component NeonAlert
+   * success toast background color.
+   */
+  --neon-background-color-toast-success: var(--neon-color-success);
+  /**
+   * @component NeonAlert
+   * warn toast background color.
+   */
+  --neon-background-color-toast-warn: var(--neon-color-warn);
+  /**
+   * @component NeonAlert
+   * error toast background color.
+   */
+  --neon-background-color-toast-error: var(--neon-color-error);
+
+
+  /**
+   * @component NeonAlert
+   * info toast color.
+   */
+  --neon-color-toast-info: var(--neon-color-inverse);
+  /**
+   * @component NeonAlert
+   * success toast color.
+   */
+  --neon-color-toast-success: var(--neon-color-inverse);
+  /**
+   * @component NeonAlert
+   * warn toast color.
+   */
+  --neon-color-toast-warn: var(--neon-color-inverse);
+  /**
+   * @component NeonAlert
+   * error toast color.
+   */
+  --neon-color-toast-error: var(--neon-color-inverse);
+
+
+  /* dropdown / dropdown menu / select */
+  /**
+   * @component NeonDropdown,NeonDropdownMenu,NeonSelect
+   * Border color of the dropdown component used for the separator.
+   */
+  --neon-border-color-dropdown: var(--neon-color-neutral-l4);
+  /**
+   * @component NeonDropdown,NeonDropdownMenu,NeonSelect
+   * Shadow of the dropdown component content when open.
+   */
+  --neon-box-shadow-dropdown: calc(0.5 * var(--neon-base-space)) calc(0.5 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) rgba(var(--neon-rgb-neutral-d1), 0.5);
+  /**
+   * @component NeonDropdown,NeonDropdownMenu,NeonSelect
+   * Background color of the dropdown component content.
+   */
+  --neon-background-color-dropdown-content: var(--neon-background-color-card);
+
+
+  /* tooltip */
+  /**
+   * @component NeonTooltip
+   * Box shadow of the tooltip.
+   */
+  --neon-box-shadow-tooltip: calc(0.5 * var(--neon-base-space)) calc(0.5 * var(--neon-base-space)) calc(2 * var(--neon-base-space)) rgba(var(--neon-rgb-neutral-d1), 0.5);
+
+
+  /* tabs */
+  /**
+   * @component NeonTabs
+   * Border color of the underline beneath the tabs.
+   */
+  --neon-border-color-tabs-underline: var(--neon-border-color);
+  /**
+   * @component NeonTabs
+   * low-contrast tab selected color.
+   */
+  --neon-color-tab-selected-low-contrast: var(--neon-color-low-contrast-d2);
+  /**
+   * @component NeonTabs
+   * neutral tab selected color.
+   */
+  --neon-color-tab-selected-neutral: var(--neon-color-neutral-d2);
+  /**
+   * @component NeonTabs
+   * high-contrast tab selected color.
+   */
+  --neon-color-tab-selected-high-contrast: var(--neon-color-high-contrast-d2);
+  /**
+   * @component NeonTabs
+   * brand tab selected color.
+   */
+  --neon-color-tab-selected-brand: var(--neon-color-brand-d2);
+  /**
+   * @component NeonTabs
+   * accent tab selected color.
+   */
+  --neon-color-tab-selected-accent: var(--neon-color-accent-d2);
+  /**
+   * @component NeonTabs
+   * primary tab selected color.
+   */
+  --neon-color-tab-selected-primary: var(--neon-color-primary-d2);
+  /**
+   * @component NeonTabs
+   * info tab selected color.
+   */
+  --neon-color-tab-selected-info: var(--neon-color-info-d2);
+  /**
+   * @component NeonTabs
+   * success tab selected color.
+   */
+  --neon-color-tab-selected-success: var(--neon-color-success-d2);
+  /**
+   * @component NeonTabs
+   * warn tab selected color.
+   */
+  --neon-color-tab-selected-warn: var(--neon-color-warn-d2);
+  /**
+   * @component NeonTabs
+   * error tab selected color.
+   */
+  --neon-color-tab-selected-error: var(--neon-color-error-d2);
+
+  /**
+   * @component NeonTabs
+   * low-contrast tab color in the hover state.
+   */
+  --neon-color-tab-hover-low-contrast: var(--neon-color-low-contrast-d1);
+  /**
+   * @component NeonTabs
+   * neutral tab color in the hover state.
+   */
+  --neon-color-tab-hover-neutral: var(--neon-color-neutral-d1);
+  /**
+   * @component NeonTabs
+   * high-contrast tab color in the hover state.
+   */
+  --neon-color-tab-hover-high-contrast: var(--neon-color-high-contrast-d1);
+  /**
+   * @component NeonTabs
+   * brand tab color in the hover state.
+   */
+  --neon-color-tab-hover-brand: var(--neon-color-brand-d1);
+  /**
+   * @component NeonTabs
+   * accent tab color in the hover state.
+   */
+  --neon-color-tab-hover-accent: var(--neon-color-accent-d1);
+  /**
+   * @component NeonTabs
+   * primary tab color in the hover state.
+   */
+  --neon-color-tab-hover-primary: var(--neon-color-primary-d1);
+  /**
+   * @component NeonTabs
+   * info tab color in the hover state.
+   */
+  --neon-color-tab-hover-info: var(--neon-color-info-d1);
+  /**
+   * @component NeonTabs
+   * success tab color in the hover state.
+   */
+  --neon-color-tab-hover-success: var(--neon-color-success-d1);
+  /**
+   * @component NeonTabs
+   * warn tab color in the hover state.
+   */
+  --neon-color-tab-hover-warn: var(--neon-color-warn-d1);
+  /**
+   * @component NeonTabs
+   * error tab color in the hover state.
+   */
+  --neon-color-tab-hover-error: var(--neon-color-error-d1);
+
+
+  /* footer */
+  /**
+   * @component NeonFooter
+   * Footer background color.
+   */
+  --neon-background-color-footer: var(--neon-background-color);
+  /**
+   * @component NeonFooter
+   * Border above the footer.
+   */
+  --neon-border-top-footer: var(--neon-border-width-footer) var(--neon-border-color) var(--neon-border-style);
+
+
+  /* skeleton loader */
+  /**
+   * @component NeonSkeletonLoader
+   * 1st loading color.
+   */
+  --neon-color-loading-1: rgb(226, 226, 226);
+  /**
+   * @component NeonSkeletonLoader
+   * 2nd loading color.
+   */
+  --neon-color-loading-2: rgb(212, 212, 212);
+  /**
+   * @component NeonSkeletonLoader
+   * 3rd loading color.
+   */
+  --neon-color-loading-3: rgba(212, 212, 212, 0.5);
+
+
+  /* scrollbars */
+  /**
+   * scrollbar color.
+   */
+  --neon-color-scrollbar: rgba(0, 0, 0, 0.125);
+
+
+  /* overlays */
+  /**
+   * @component NeonDrawer,NeonModal,NeonDialog
+   * Overlay background color when focussed content is open.
+   */
+  --neon-background-color-overlay: rgba(var(--neon-rgb-neutral-d5), 0.75);
+  /**
+   * @component NeonDrawer,NeonModal,NeonDialog
+   * Opaque overlay background color when focussed content is open.
+   */
+  --neon-background-color-overlay-opaque: var(--neon-color-neutral-l5);
+
+
+  /* toggle chips */
+  /**
+   * @component NeonToggleChip
+   * Toggle chip border width.
+   */
+  --neon-color-toggle-chip-text: var(--neon-color-text);
+  /**
+   * @component NeonToggleChip
+   * Toggle chip text color.
+   */
+  --neon-border-rgb-toggle-chip: var(--neon-rgb-neutral-l3);
+  /**
+   * @component NeonToggleChip
+   * Toggle chip border color.
+   */
+  --neon-border-color-toggle-chip: var(--neon-color-neutral-l3);
+  /**
+   * @component NeonToggleChip
+   * Toggle chip background color.
+   */
+  --neon-background-color-toggle-chip: transparent;
+  /**
+   * @component NeonToggleChip
+   * Toggle chip text color in the checked state.
+   */
+  --neon-color-toggle-chip-text-checked: var(--neon-color-inverse);
+
+
+  /* slider & range slider */
+  /**
+   * @component NeonSlider,NeonRangeSlider
+   * Slider track color.
+   */
+  --neon-color-slider-track: var(--neon-color-neutral-l4);
+  /**
+   * @component NeonSlider,NeonRangeSlider
+   * Slider thumb color.
+   */
+  --neon-slider-thumb-color: var(--neon-background-color-card);
+  /**
+   * @component NeonSlider,NeonRangeSlider
+   * Slider box shadow.
+   */
+  --neon-box-shadow-slider: 0 -2rem 4rem 0 rgba(140, 140, 140, 0.2), 0 2rem 4rem 0 rgba(140, 140, 140, 0.3);
+  /**
+   * @component NeonSlider,NeonRangeSlider
+   * Slider thumb border.
+   */
+  --neon-border-slider-thumb: none;
+
+
+  /* top nav */
+  /**
+   * @component NeonTopNav
+   * Background color of the top nav.
+   */
+  --neon-background-color-top-nav: var(--neon-background-color-card);
+  /**
+   * @component NeonTopNav
+   * Border color of the top nav.
+   */
+  --neon-border-color-top-nav: var(--neon-border-color);
+
+
+  /* side nav */
+  /**
+   * @component NeonSideNav
+   * Background color of the side nav.
+   */
+  --neon-background-color-side-nav: var(--neon-background-color-card);
+
+
+  /* input indicators */
+  /**
+   * @component NeonInputIndicator
+   * Background color of the input indicator.
+   */
+  --neon-background-color-input-indicator: var(--neon-background-color-input);
+  /**
+   * @component NeonInputIndicator
+   * Color of the input indicator.
+   */
+  --neon-color-input-indicator: var(--neon-color-text-tertiary);
+
+
+  /* stepper */
+  /**
+   * @component NeonStepper
+   * Color of the stepper indicator
+   */
+  --neon-color-stepper-indicator: var(--neon-color-high-contrast-l5);
+
+
+  /* selectable card */
+  /**
+   * @component NeonSelectableCard
+   * Background color of the card.
+   */
+  --neon-background-color-selectable-card: rgba(var(--neon-rgb-high-contrast-l4), 0.5);
+  /**
+   * @component NeonSelectableCard
+   * Box shadow of the card.
+   */
+  --neon-box-shadow-selectable-card: 0 -2rem 4rem 0 rgba(var(--neon-rgb-neutral-l3), 0.1), 0 2rem 4rem 0 rgba(var(--neon-rgb-neutral-l3), 0.15);
+
+
+  /* swiper */
+  /**
+   * @component NeonSwiper
+   * Background color of the swiper.
+   */
+  --neon-background-color-swiper: var(--neon-background-color-card);
+
+
+  /* image carousel */
+  /**
+   * @component NeonImageCarousel
+   * Color of the carousel navigation indicator.
+   */
+  --neon-color-image-carousel-nav-indicator: var(--neon-color-primary);
+  /**
+   * @component NeonImageCarousel
+   * Color of the carousel navigation indicator when in expanded mode.
+   */
+  --neon-color-image-carousel-expanded-nav-indicator: var(--neon-color-inverse);
+  /**
+   * @component NeonImageCarousel
+   * Color of the buttons in expanded mode.
+   */
+  --neon-color-image-carousel-expanded-button: var(--neon-color-inverse);
+  /**
+   * @component NeonImageCarousel
+   * Color of the disabled buttons in expanded mode.
+   */
+  --neon-color-image-carousel-expanded-button-disabled: var(--neon-color-low-contrast-d2);
+  /**
+   * @component NeonImageCarousel
+   * Background color of the buttons in expanded mode.
+   */
+  --neon-background-color-image-carousel-expanded-button: var(--neon-color-low-contrast-d3);
+  /**
+   * @component NeonImageCarousel
+   * Color of the image label in expanded mode.
+   */
+  --neon-color-image-carousel-expanded-label: var(--neon-color-text-tertiary-dark);
+  /**
+   * @component NeonImageCarousel
+   * Text shadow in expanded mode. This is necessary to make the text readable on top of the image in all cases.
+   */
+  --neon-text-shadow-image-carousel-expanded: 1px 1px 2px var(--neon-color-text-primary);
+
+
+  /* tree menu */
+  /**
+   * @component NeonTreeMenu
+   * Color of the tree menu section text.
+   */
+  --neon-color-tree-menu-section: var(--neon-color-text-primary);
+  /**
+   * @component NeonTreeMenu
+   * Color of the tree menu item text.
+   */
+  --neon-color-tree-menu-item: var(--neon-color-text-primary);
+  /**
+   * @component NeonTreeMenu
+   * Color of the tree menu sub item text.
+   */
+  --neon-color-tree-menu-sub-menu-item: var(--neon-color-text-primary);
+
+
+  /* sticky buttons */
+  /**
+   * @component NeonStickyButtons
+   * Background color of the sticky button container.
+   */
+  --neon-background-color-sticky-buttons: var(--neon-color-high-contrast-l5);
+}

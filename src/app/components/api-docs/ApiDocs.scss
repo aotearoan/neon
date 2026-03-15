@@ -100,4 +100,8 @@
       }
     }
   }
+
+  .api-docs__css-variables .neon-card-list__card:last-child {
+    border-bottom: none;
+  }
 }

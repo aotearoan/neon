@@ -1,14 +1,28 @@
-import { computed, defineComponent } from 'vue';
-import { NeonCard, NeonCardBody, NeonCardHeader, NeonLabel, NeonLink, NeonNote } from '@/neon';
+import { computed, defineComponent, onMounted, ref } from 'vue';
+import {
+  NeonCard,
+  NeonCardBody,
+  NeonCardHeader,
+  NeonCardList,
+  type NeonCardListModel,
+  NeonLabel,
+  NeonLink,
+  NeonNote,
+} from '@/neon';
 import type { DocumentationModel, EventModel, PropertyModel, PropTypeModel } from '../ApiModel';
 import { SupportingClassesDocs } from '@/app/SupportingClassesDocs';
+import CssVariableCard from '@/app/components/css-variable-card/CssVariableCard.vue';
+import { CssVariablesService } from '@/app/service/CssVariablesService';
+import type { CssVariable } from '@/app/model/css';
 
 export default defineComponent({
   name: 'ApiDocs',
   components: {
+    CssVariableCard,
     NeonCard,
     NeonCardHeader,
     NeonCardBody,
+    NeonCardList,
     NeonLabel,
     NeonLink,
     NeonNote,
@@ -53,7 +67,7 @@ export default defineComponent({
 
     const lookupLink = (typeName?: string) => {
       if (typeName) {
-        const matches = typeName.match(/.*(Neon[a-zA-Z]+)/);
+        const matches = typeName.match(/.*((Arcual|Neon)[a-zA-Z]+)/);
         if (matches && matches[1]) {
           const neonType = matches[1];
           const model = SupportingClassesDocs.modelList().find((model) => model.indexOf(neonType) >= 0);
@@ -70,11 +84,22 @@ export default defineComponent({
 
     const eventTypeLink = (event: EventModel) => lookupLink(eventTypeName(event));
 
+    const cssVariables = ref<Array<NeonCardListModel<CssVariable>> | undefined>(undefined);
+
+    onMounted(async () => {
+      const cssVars = await CssVariablesService.getComponentVariables(props.componentName);
+
+      if (cssVars) {
+        cssVariables.value = cssVars.map((cssVar) => ({ id: cssVar.name, model: cssVar }));
+      }
+    });
+
     return {
       hasProps,
       hasEvents,
       hasSlots,
       hasDocs,
+      cssVariables,
       isArray,
       typeName,
       typeLink,

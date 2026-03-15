@@ -57,6 +57,12 @@ export class Menu {
                 anchors: ['Text Strings', 'Dates & Numbers'],
               },
               {
+                path: 'css-variables',
+                page: 'CssVariables',
+                name: 'CSS Variables',
+                keywords: 'sass scss styles theming themes',
+              },
+              {
                 path: 'technical-requirements',
                 page: 'TechnicalRequirements',
                 name: 'Technical Requirements',

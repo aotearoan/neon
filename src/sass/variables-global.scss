@@ -1,0 +1,1395 @@
+@use './includes/responsive';
+
+.neon {
+  /*********************
+  * Global Variables
+  *********************/
+
+  /** layout **/
+  /** The base space unit all spacings in neon are calculated from */
+  --neon-base-space: 4rem;
+  /** The maximum paragraph width applied to <em>p</em> elements and list items */
+  --neon-max-paragraph-width: 70ch;
+
+  /** page **/
+  /**
+   * @component NeonPage,NeonTopNav,NeonFooter
+   * The maximum page width - topnav, footer and page content will be limited to this width for better layout and
+   * usability (does not include side nav).
+   */
+  --neon-max-width-page: 1920rem;
+
+  /** standardized spacings 1rem = 1px **/
+  /** 1rem spacing **/
+  --neon-space-1: calc(0.25 * var(--neon-base-space));
+  /** 2rem spacing **/
+  --neon-space-2: calc(0.5 * var(--neon-base-space));
+  /** 4rem spacing (=base spacing) **/
+  --neon-space-4: var(--neon-base-space);
+  /** 6rem spacing **/
+  --neon-space-6: calc(1.5 * var(--neon-base-space));
+  /** 8rem spacing **/
+  --neon-space-8: calc(2 * var(--neon-base-space));
+  /** 10rem spacing **/
+  --neon-space-10: calc(2.5 * var(--neon-base-space));
+  /** 12rem spacing **/
+  --neon-space-12: calc(3 * var(--neon-base-space));
+  /** 16rem spacing **/
+  --neon-space-16: calc(4 * var(--neon-base-space));
+  /** 20rem spacing **/
+  --neon-space-20: calc(5 * var(--neon-base-space));
+  /** 24rem spacing **/
+  --neon-space-24: calc(6 * var(--neon-base-space));
+  /** 32rem spacing **/
+  --neon-space-32: calc(8 * var(--neon-base-space));
+  /** 40rem spacing **/
+  --neon-space-40: calc(10 * var(--neon-base-space));
+  /** 48rem spacing **/
+  --neon-space-48: calc(12 * var(--neon-base-space));
+  /** 52rem spacing **/
+  --neon-space-52: calc(13 * var(--neon-base-space));
+  /** 56rem spacing **/
+  --neon-space-56: calc(14 * var(--neon-base-space));
+  /** 64rem spacing **/
+  --neon-space-64: calc(16 * var(--neon-base-space));
+  /** 72rem spacing **/
+  --neon-space-72: calc(18 * var(--neon-base-space));
+  /** 80rem spacing **/
+  --neon-space-80: calc(20 * var(--neon-base-space));
+  /** 84rem spacing **/
+  --neon-space-84: calc(21 * var(--neon-base-space));
+  /** 96rem spacing **/
+  --neon-space-96: calc(24 * var(--neon-base-space));
+  /** 120rem spacing **/
+  --neon-space-120: calc(30 * var(--neon-base-space));
+  /** 128rem spacing **/
+  --neon-space-128: calc(32 * var(--neon-base-space));
+  /** 144rem spacing **/
+  --neon-space-144: calc(36 * var(--neon-base-space));
+  /** 192rem spacing **/
+  --neon-space-192: calc(48 * var(--neon-base-space));
+
+  /**
+   * Desktop gutter spacing, used as the basis for layout component spacings.
+   */
+  --neon-gutter-desktop: var(--neon-space-32);
+  /**
+   * Tablet gutter spacing, used as the basis for layout component spacings.
+   */
+  --neon-gutter-tablet: var(--neon-space-24);
+  /**
+   * Mobile gutter spacing, used as the basis for layout component spacings.
+   */
+  --neon-gutter-mobile: var(--neon-space-16);
+  /**
+   * Responsive gutter spacing variable (automatically adjusts to responsive gutter sizes).
+   */
+  --neon-gutter: var(--neon-gutter-desktop);
+
+  @include responsive.responsive(tablet) {
+    --neon-gutter: var(--neon-gutter-tablet);
+  }
+
+  @include responsive.responsive(mobile-large) {
+    --neon-gutter: var(--neon-gutter-mobile);
+  }
+
+  /** stack & inline gaps **/
+
+  /**
+   * @component NeonStack,NeonInline
+   * Desktop stack & inline component (gap size = small)
+   */
+  --neon-gap-desktop-s: var(--neon-base-space);
+  /**
+   * @component NeonStack,NeonInline
+   * Tablet stack & inline component (gap size = small)
+   */
+  --neon-gap-tablet-s: var(--neon-base-space);
+  /**
+   * @component NeonStack,NeonInline
+   * Mobile stack & inline component (gap size = small)
+   */
+  --neon-gap-mobile-s: var(--neon-base-space);
+
+  /**
+   * @component NeonStack,NeonInline
+   * Desktop stack & inline component (gap size = medium)
+   */
+  --neon-gap-desktop-m: calc(4 * var(--neon-base-space));
+  /**
+   * @component NeonStack,NeonInline
+   * Desktop stack & inline component (gap size = medium)
+   */
+  --neon-gap-tablet-m: calc(3 * var(--neon-base-space));
+  /**
+   * @component NeonStack,NeonInline
+   * Desktop stack & inline component (gap size = medium)
+   */
+  --neon-gap-mobile-m: calc(2 * var(--neon-base-space));
+
+  /**
+   * @component NeonStack,NeonInline
+   * Desktop stack & inline component (gap size = large)
+   */
+  --neon-gap-desktop-l: calc(6 * var(--neon-base-space));
+  /**
+   * @component NeonStack,NeonInline
+   * Desktop stack & inline component (gap size = large)
+   */
+  --neon-gap-tablet-l: calc(5 * var(--neon-base-space));
+  /**
+   * @component NeonStack,NeonInline
+   * Desktop stack & inline component (gap size = large)
+   */
+  --neon-gap-mobile-l: calc(4 * var(--neon-base-space));
+
+  /* TODO: refactor spacing vars to remove the usage of these spacings in src/sass/includes/_layout.scss, replace with gutter vars  */
+
+  --neon-spacing-horizontal-multiplier: 1;
+
+  --neon-spacing-vertical-mobile: var(--neon-gutter-mobile);
+  --neon-spacing-horizontal-mobile: calc(var(--neon-gutter-mobile) * var(--neon-spacing-horizontal-multiplier));
+
+  --neon-spacing-vertical-tablet: var(--neon-gutter-tablet);
+  --neon-spacing-horizontal-tablet: calc(var(--neon-gutter-tablet) * var(--neon-spacing-horizontal-multiplier));
+
+  --neon-spacing-vertical-desktop: var(--neon-gutter-desktop);
+  --neon-spacing-horizontal-desktop: calc(var(--neon-gutter-desktop) * var(--neon-spacing-horizontal-multiplier));
+
+  /** animation variables **/
+
+  /**
+   * Slowest animation speed used with animations and transitions.
+   */
+  --neon-animation-speed-slowest: 0.5s;
+  /**
+   * Slow animation speed used with animations and transitions.
+   */
+  --neon-animation-speed-slow: 0.3s;
+  /**
+   * Fast animation speed used with animations and transitions.
+   */
+  --neon-animation-speed-fast: 0.225s;
+  /**
+   * Fastest animation speed used with animations and transitions.
+   */
+  --neon-animation-speed-fastest: 0.05s;
+
+  /** borders **/
+  /**
+   * The default border radius used in the majority of components.
+   */
+  --neon-border-radius: 2rem;
+  /**
+   * The default border width.
+   */
+  --neon-border-width: 1rem;
+  /**
+   * @component NeonSelect,NeonDropdownMenu,NeonSearch
+   * The size of the border width for separating a list of options in select, search & dropdown menu components.
+   */
+  --neon-border-width-separator-before: 1rem;
+  /**
+   * The default border style.
+   */
+  --neon-border-style: solid;
+
+  /** background colors **/
+  /**
+   * The background color for light mode, prefer <em>--neon-background-color</em> unless this is required for a
+   * specific use case on dark mode.
+   */
+  --neon-background-color-light: var(--neon-color-high-contrast-l4);
+  /**
+   * The background color for dark mode, prefer <em>--neon-background-color</em> unless this is required for a
+   * specific use case on light mode.
+   */
+  --neon-background-color-dark: var(--neon-color-neutral-d5);
+
+  /** z-index **/
+  /** z-index below the default */
+  --neon-z-index-below: -1;
+  /** The default z-index */
+  --neon-z-index-default: 0;
+  /** One step above the default z-index */
+  --neon-z-index-above: 1;
+  /** Two steps above the default z-index */
+  --neon-z-index-above-2: 2;
+  /** Three steps above the default z-index */
+  --neon-z-index-above-3: 3;
+  /** The z-index just below the very top */
+  --neon-z-index-below-top: 9998;
+  /** The very top z-index */
+  --neon-z-index-top: 9999;
+
+  /**
+ * The default font size for the page, this is responsive & scales up to 17rem at the mobile large breakpoint.
+ */
+  --neon-base-font-size: 16rem;
+  /**
+     * Typography scale multiplier (See <a href="https://type-scale.com/">Major second</a>)
+     */
+  --neon-typography-scale: 1.225;
+  /**
+   * The base typography bottom margin unit used in the typography scale (H*)
+   */
+  --neon-typography-margin-unit: calc(2 * var(--neon-base-space));
+
+  /**
+   * The extra extra small (smallest) font size
+   */
+  --neon-font-size-xxs: calc(var(--neon-font-size-xs) / var(--neon-typography-scale));
+  /**
+   * The extra small font size
+   */
+  --neon-font-size-xs: calc(var(--neon-font-size-s) / var(--neon-typography-scale));
+  /**
+   * The small font size
+   */
+  --neon-font-size-s: calc(var(--neon-font-size-m) / var(--neon-typography-scale));
+  /**
+   * The medium font size
+   */
+  --neon-font-size-m: var(--neon-base-font-size);
+
+  @include responsive.responsive(mobile-large) {
+    --neon-font-size-m: 17rem;
+    --neon-base-font-size: 17rem;
+  }
+
+  /**
+   * The large font size
+   */
+  --neon-font-size-l: calc(var(--neon-font-size-m) * var(--neon-typography-scale));
+  /**
+   * The extra large font size
+   */
+  --neon-font-size-xl: calc(var(--neon-font-size-l) * var(--neon-typography-scale));
+  /**
+   * The extra extra large font size
+   */
+  --neon-font-size-xxl: calc(var(--neon-font-size-xl) * var(--neon-typography-scale));
+
+  /**
+   * The small letter spacing
+   */
+  --neon-letter-spacing-s: 0.25rem;
+  /**
+   * The medium letter spacing
+   */
+  --neon-letter-spacing-m: 0.5rem;
+  /**
+   * The large letter spacing
+   */
+  --neon-letter-spacing-l: 1rem;
+
+  /**
+   * The H6 font size
+   */
+  --neon-h6-size: var(--neon-font-size-m);
+  /**
+   * The H5 font size
+   */
+  --neon-h5-size: var(--neon-font-size-l);
+  /**
+   * The H4 font size
+   */
+  --neon-h4-size: var(--neon-font-size-xl);
+  /**
+   * The H3 font size
+   */
+  --neon-h3-size: var(--neon-font-size-xxl);
+  /**
+   * The H2 font size
+   */
+  --neon-h2-size: 27rem;
+  /**
+   * The H1 font size
+   */
+  --neon-h1-size: 30rem;
+  /** The H0 font size AKA over-sized branding font size, used for landing page & banners etc... */
+  --neon-h0-size: 64rem;
+
+  /** The extra light font weight */
+  --neon-font-weight-extra-light: 200;
+  /** The normal (default) font weight */
+  --neon-font-weight-normal: 400;
+  /** The medium font weight */
+  --neon-font-weight-medium: 500;
+  /** The semi bold font weight */
+  --neon-font-weight-semi-bold: 600;
+  /** The bold font weight */
+  --neon-font-weight-bold: 700;
+
+  /** The H6 font weight */
+  --neon-h6-weight: var(--neon-font-weight-medium);
+  /** The H5 font weight */
+  --neon-h5-weight: var(--neon-font-weight-medium);
+  /** The H4 font weight */
+  --neon-h4-weight: var(--neon-font-weight-medium);
+  /** The H3 font weight */
+  --neon-h3-weight: var(--neon-font-weight-semi-bold);
+  /** The H2 font weight */
+  --neon-h2-weight: var(--neon-font-weight-semi-bold);
+  /** The H1 font weight */
+  --neon-h1-weight: var(--neon-font-weight-semi-bold);
+  /** The H0 font weight */
+  --neon-h0-weight: var(--neon-font-weight-semi-bold);
+
+  /** The font weight for <em>em</em> elements */
+  --neon-font-weight-em: inherit;
+  /** The font weight for <em>strong</em> elements */
+  --neon-font-weight-strong: var(--neon-font-weight-medium);
+
+  /** The letter spacing for headings */
+  --neon-letter-spacing-headings: 0;
+
+  /** The line height ratio for headings */
+  --neon-line-height-headings-ratio: 1.25;
+  /** The standard line height ratio */
+  --neon-line-height-ratio: 1.4;
+  /**
+   * The <em>1</em> line height ratio - depending on the font, a strict line-height: 1 can result in cropping of content
+   * below the baseline e.g. 'g'
+   */
+  --neon-line-height-one: 1.25;
+
+  /**
+   * The system font stack, this is a list of OS wide system fonts what allows users to experience a familiar font that
+   * renders well in their specific browser.
+   */
+  --neon-system-font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+  /** The font family to use in headings */
+  --neon-font-family-heading: var(--neon-font-family-body);
+  /** The default body font family */
+  --neon-font-family-body: var(--neon-system-font-stack);
+  /** The (default) body font weight */
+  --neon-font-weight-body: var(--neon-font-weight-normal);
+
+  /** The font style for headings */
+  --neon-font-style-headings: normal;
+
+  /** The paragraph (<em>p</em>) font family, typically this would be the body font family */
+  --neon-font-family-paragraph: var(--neon-font-family-body);
+  /**
+   * The monospaced font family used for monospaced content. NOTE: Don;t use this for numeric content, prefer the
+   * <em>neon-number</em> class which supports the tabular-nums styling.
+   */
+  --neon-font-family-monospaced: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', Courier, monospace;
+
+  /** HTML label font size */
+  --neon-font-size-label: var(--neon-font-size-s);
+  /* HTML label font weight */
+  --neon-font-weight-label: var(--neon-font-weight-normal);
+
+  /**
+   * @component NeonButton,NeonBadge
+   * Button and badge components support gradient styling, this variable controls the angle of the gradient.
+   */
+  --neon-background-gradient-angle: 90deg;
+  /**
+   * @component NeonButton,NeonBadge
+   * Button and badge components support gradient styling, this variable controls the % offset where background
+   * gradient switches to the alternate-color.
+   */
+  --neon-background-gradient-offset: 33%;
+  /**
+   * @component NeonButton
+   * Button and badge components support gradient styling, this variable controls the % offset where background
+   * gradient switches to the alternate-color on hover.
+   */
+  --neon-background-gradient-offset-hover: 50%;
+
+  /* Standard Neon component sizes used across many components */
+  /**
+   * XXS (smallest) component size used for labels only.
+   */
+  --neon-size-xxs: calc(4 * var(--neon-base-space));
+  /**
+   * XS component size used for labels only.
+   */
+  --neon-size-xs: calc(6 * var(--neon-base-space));
+  /**
+   * Small component size.
+   */
+  --neon-size-s: calc(8 * var(--neon-base-space));
+  /**
+   * Medium component size (usually the default).
+   */
+  --neon-size-m: calc(10 * var(--neon-base-space));
+  /**
+   * Large component size.
+   */
+  --neon-size-l: calc(12 * var(--neon-base-space));
+  /**
+   * XL component size (buttons & badges only)
+   */
+  --neon-size-xl: calc(16 * var(--neon-base-space));
+  /**
+   * XXL component size (buttons & badges only)
+   */
+  --neon-size-xxl: calc(20 * var(--neon-base-space));
+
+  /* box shadows */
+  /** Default box shadow */
+  --neon-box-shadow: 0 0 0 0 rgba(#000, 0);
+  /** Strong box shadow */
+  --neon-box-shadow-strong: 0 0 0 0 rgba(#000, 0);
+  /** Inset box shadow */
+  --neon-inset-shadow: inset 0 0 0 0 rgba(#000, 0);
+
+  /* top-nav */
+  /**
+   * @component NeonTopNav
+   * The height of the top-nav on mobile.
+   */
+  --neon-top-nav-height-mobile: calc(var(--neon-size-s) + var(--neon-space-16));
+  /**
+   * @component NeonTopNav
+   * The height of the top-nav on tablet.
+   */
+  --neon-top-nav-height-tablet: calc(var(--neon-size-m) + var(--neon-space-24));
+  /**
+   * @component NeonTopNav
+   * The height of the top-nav on desktop.
+   */
+  --neon-top-nav-height-desktop: calc(var(--neon-size-l) + var(--neon-space-32));
+
+  /**
+   * @component NeonTopNav
+   * The height of the top-nav across all device sizes taking into account responsiveness.
+   */
+  --neon-top-nav-height: var(--neon-top-nav-height-desktop);
+
+  @include responsive.responsive(tablet) {
+    --neon-top-nav-height: var(--neon-top-nav-height-tablet);
+  }
+
+  @include responsive.responsive(mobile-large) {
+    --neon-top-nav-height: var(--neon-top-nav-height-mobile);
+  }
+
+  /**
+   * @component NeonTopNav
+   * The border width of the top-nav.
+   */
+  --neon-border-width-top-nav: 1rem;
+
+  /* footer */
+  /**
+   * @component NeonFooter
+   * Footer height mobile
+   */
+  --neon-footer-height-mobile: calc(var(--neon-font-size-s) + var(--neon-space-32));
+  /**
+   * @component NeonFooter
+   * Footer height tablet
+   */
+  --neon-footer-height-tablet: calc(var(--neon-font-size-s) + var(--neon-space-32));
+  /**
+   * @component NeonFooter
+   * Footer height desktop
+   */
+  --neon-footer-height-desktop: calc(var(--neon-base-font-size) + var(--neon-space-48));
+  /**
+   * @component NeonFooter
+   * Footer height across all device sizes taking into account responsiveness.
+   */
+  --neon-footer-height: var(--neon-footer-height-desktop);
+
+  @include responsive.responsive(tablet) {
+    --neon-footer-height: var(--neon-footer-height-tablet);
+  }
+
+  @include responsive.responsive(mobile-large) {
+    --neon-footer-height: var(--neon-footer-height-mobile);
+  }
+
+  /**
+   * @component NeonFooter
+   * Footer border width
+   */
+  --neon-border-width-footer: 1rem;
+
+  /* side nav */
+  /**
+   * @component NeonSideNav
+   * Side nav width
+   */
+  --neon-side-nav-width: calc(80 * var(--neon-base-space));
+
+  /* card */
+  /**
+   * @component NeonCard
+   * Card border radius
+   */
+  --neon-border-radius-card: 2rem;
+  /**
+   * @component NeonCard
+   * Card border width
+   */
+  --neon-border-width-card: 0;
+  /**
+   * @component NeonCard
+   * Card box shadow
+   */
+  --neon-box-shadow-card: none;
+
+  /* checkbox */
+  /**
+   * @component NeonSwitch
+   * Border width of the switch component in the checkbox style
+   */
+  --neon-border-width-checkbox: 1rem;
+  /**
+   * @component NeonSwitch
+   * Border radius of the switch component in the checkbox style
+   */
+  --neon-border-radius-checkbox: 2rem;
+
+  /* alerts */
+  /**
+   * @component NeonAlert
+   * Alert width
+   */
+  --neon-width-alert: 415rem;
+  /**
+   * @component NeonAlert
+   * Alert padding
+   */
+  --neon-padding-alert: var(--neon-space-20);
+  /**
+   * @component NeonAlert
+   * Alert gap
+   */
+  --neon-gap-alert: var(--neon-space-16);
+  /**
+   * @component NeonAlert
+   * Alert border radius
+   */
+  --neon-border-radius-alert: 0;
+  /**
+   * @component NeonAlert
+   * Alert icon size
+   */
+  --neon-size-alert-icon: 24rem;
+  /**
+   * @component NeonAlert
+   * Alert close icon size
+   */
+  --neon-size-alert-close-icon: 24rem;
+
+  /**
+   * @component NeonAlert
+   * Alert title line height
+   */
+  --neon-line-height-alert-title: var(--neon-line-height-one);
+  /**
+   * @component NeonAlert
+   * Alert title font size
+   */
+  --neon-font-size-alert-title: var(--neon-font-size-m);
+  /**
+  * @component NeonAlert
+  * Alert title font weight
+  */
+  --neon-font-weight-alert-title: var(--neon-font-weight-normal);
+  /**
+   * @component NeonAlert
+   * Alert title font family
+   */
+  --neon-font-family-alert-title: var(--neon-font-family-body);
+  /**
+   * @component NeonAlert
+   * Alert title letter spacing
+   */
+  --neon-letter-spacing-alert-title: var(--neon-letter-spacing-s);
+
+  /**
+   * @component NeonAlert
+   * Alert body line height
+   */
+  --neon-line-height-alert-body: var(--neon-line-height-one);
+  /**
+   * @component NeonAlert
+   * Alert body font size
+   */
+  --neon-font-size-alert-body: var(--neon-font-size-s);
+  /**
+   * @component NeonAlert
+   * Alert body font weight
+   */
+  --neon-font-weight-alert-body: var(--neon-font-weight-normal);
+  /**
+   * @component NeonAlert
+   * Alert body font family
+   */
+  --neon-font-family-alert-body: var(--neon-font-family-body);
+  /**
+   * @component NeonAlert
+   * Alert body letter spacing
+   */
+  --neon-letter-spacing-alert-body: var(--neon-letter-spacing-s);
+
+  /**
+   * @component NeonAlert
+   * Alert action font size
+   */
+  --neon-font-size-alert-action: var(--neon-font-size-m);
+  /**
+   * @component NeonAlert
+   * Alert action font weight
+   */
+  --neon-font-weight-alert-action: var(--neon-font-weight-bold);
+  /**
+   * @component NeonAlert
+   * Alert action letter spacing
+   */
+  --neon-letter-spacing-alert-action: var(--neon-letter-spacing-m);
+
+  /* toast */
+  /**
+   * @component NeonAlert
+   * Toast display width
+   */
+  --neon-width-toast: 250rem;
+  /**
+   * @component NeonAlert
+   * Toast padding
+   */
+  --neon-padding-toast: var(--neon-space-16);
+  /**
+   * @component NeonAlert
+   * Toast gap
+   */
+  --neon-gap-toast: var(--neon-space-8);
+  /**
+   * @component NeonAlert
+   * Toast border radius
+   */
+  --neon-border-radius-toast: 0;
+  /**
+   * @component NeonAlert
+   * Toast close icon size
+   */
+  --neon-size-toast-close-icon: 24rem;
+
+  /**
+   * @component NeonAlert
+   * Toast line height
+   */
+  --neon-line-height-toast: var(--neon-line-height-one);
+  /**
+   * @component NeonAlert
+   * Toast font size
+   */
+  --neon-font-size-toast: var(--neon-font-size-m);
+  /**
+   * @component NeonAlert
+   * Toast font weight
+   */
+  --neon-font-weight-toast: var(--neon-font-weight-normal);
+  /**
+   * @component NeonAlert
+   * Toast font family
+   */
+  --neon-font-family-toast: var(--neon-font-family-body);
+  /**
+   * @component NeonAlert
+   * Toast letter spacing
+   */
+  --neon-letter-spacing-toast: var(--neon-letter-spacing-s);
+
+  /* menu */
+  /**
+   * @component NeonMenu
+   * Menu font family
+   */
+  --neon-font-family-menu: var(--neon-font-family-body);
+  /**
+   * @component NeonMenu
+   * Menu font weight
+   */
+  --neon-font-weight-menu: var(--neon-font-weight-bold);
+  /**
+   * @component NeonMenu
+   * Menu text transformation
+   */
+  --neon-text-transform-menu: none;
+  /**
+   * @component NeonMenu
+   * Height of menu indicator. This is the line that appears under the active menu item.
+   */
+  --neon-height-menu-indicator: 4rem;
+  /**
+   * @component NeonMenu
+   * Font size of the size=small menu
+   */
+  --neon-font-size-menu-s: var(--neon-font-size-s);
+  /**
+   * @component NeonMenu
+   * Font size of the size=medium menu
+   */
+  --neon-font-size-menu-m: var(--neon-font-size-m);
+  /**
+   * @component NeonMenu
+   * Font size of the size=large menu
+   */
+  --neon-font-size-menu-l: var(--neon-font-size-l);
+
+  /* mobile menu */
+  /**
+   * @component NeonMobileMenu
+   * Font family of the mobile menu
+   */
+  --neon-font-family-mobile-menu: var(--neon-font-family-body);
+  /**
+   * @component NeonMobileMenu
+   * Font size of the mobile menu
+   */
+  --neon-font-size-mobile-menu: var(--neon-font-size-s);
+  /**
+   * @component NeonMobileMenu
+   * Line height of the mobile menu
+   */
+  --neon-line-height-mobile-menu: var(--neon-line-height-ratio);
+  /**
+   * @component NeonMobileMenu
+   * Font weight of the mobile menu
+   */
+  --neon-font-weight-mobile-menu: var(--neon-font-weight-bold);
+  /**
+   * @component NeonMobileMenu
+   * Height of the mobile menu indicator. This is the line that appears above the active menu item.
+   */
+  --neon-height-mobile-menu-indicator: 4rem;
+  /**
+   * @component NeonMobileMenu
+   * Opacity of the mobile menu focus state.
+   */
+  --neon-opacity-mobile-menu-focus: 0.125;
+  /**
+   * @component NeonMobileMenu
+   * Height of the mobile menu.
+   */
+  --neon-height-mobile-menu: 66rem;
+
+  /**
+   * @component NeonModal
+   * Offset of the modal from the center of the screen when closed.
+   */
+  --neon-margin-top-modal-closed: -30vh;
+  /**
+   * @component NeonModal
+   * Offset of the modal from the center of the screen when open. This ensures that modals open closer to the natural
+   * line of sight on desktop devices.
+   */
+  --neon-margin-top-modal-open: -20vh;
+
+  /* dropdown */
+  /**
+   * @component NeonDropdown,NeonSelect,NeonSearch,NeonDropdownMenu
+   * Max height of the dropdown container when open.
+   */
+  --neon-max-height-dropdown: 280rem;
+
+  /* buttons */
+  /**
+   * @component NeonButton
+   * Default button border radius
+   */
+  --neon-border-radius-button: var(--neon-border-radius);
+  /**
+   * @component NeonButton
+   * Button border radius for XL buttons
+   */
+  --neon-border-radius-button-xl: var(--neon-border-radius);
+  /**
+   * @component NeonButton
+   * Outline style button border width
+   */
+  --neon-border-width-outline-button: 1rem;
+  /**
+   * @component NeonButton
+   * Button text transformation
+   */
+  --neon-text-transform-button: none;
+  /**
+   * @component NeonButton
+   * Button font family
+   */
+  --neon-font-family-button: var(--neon-font-family-body);
+  /**
+   * @component NeonButton
+   * Button font weight
+   */
+  --neon-font-weight-button: var(--neon-font-weight-medium);
+  /**
+   * @component NeonButton
+   * Button letter spacing
+   */
+  --neon-letter-spacing-button: var(--neon-letter-spacing-m);
+
+  /* tabs */
+  /**
+   * @component NeonTabs
+   * Tab height
+   */
+  --neon-height-tabs: 48rem;
+  /**
+   * @component NeonTabs
+   * Border width of the tabs
+   */
+  --neon-border-width-tabs: 2rem;
+  /**
+   * @component NeonTabs
+   * Border radius of the tabs
+   */
+  --neon-border-radius-tabs: 0;
+  /**
+   * @component NeonTabs
+   * Font weight of the tabs
+   */
+  --neon-font-weight-tabs: var(--neon-font-weight-normal);
+  /**
+   * @component NeonTabs
+   * Font weight of a tab when selected. NOTE: This causes reflow of the text if it is different to the default font
+   * weight.
+   */
+  --neon-font-weight-tabs-selected: var(--neon-font-weight-bold);
+  /**
+   * @component NeonTabs
+   * Opacity of a tab when focussed style is applied.
+   */
+  --neon-opacity-tab-focus: 0.125;
+
+  /* chips */
+  /**
+   * @component NeonChip
+   * Chip border radius.
+   */
+  --neon-border-radius-chip: var(--neon-border-radius);
+  /**
+   * @component NeonChip
+   * Chip opacity.
+   */
+  --neon-opacity-chip: 0.23;
+
+  /* toggle chips */
+  /**
+   * @component NeonToggleChip
+   * Font weight of the toggle chip.
+   */
+  --neon-font-weight-toggle-chip: var(--neon-font-weight-semi-bold);
+  /**
+   * @component NeonToggleChip
+   * Border width of the toggle chip.
+   */
+  --neon-border-width-toggle-chip: 1rem;
+  /**
+   * @component NeonToggleChip
+   * Border radius of the toggle chip.
+   */
+  --neon-border-radius-toggle-chip: 2rem;
+  /**
+   * @component NeonToggleChip
+   * Opacity of the toggle chip in the hover state.
+   */
+  --neon-opacity-toggle-chip-hover: 0.125;
+  /**
+   * @component NeonToggleChip
+   * Opacity of the toggle chip in the hover state when checked.
+   */
+  --neon-opacity-toggle-chip-hover-checked: 0.85;
+
+  /* scrollbars */
+  /**
+   * Scrollbar width
+   */
+  --neon-width-scrollbar: 8rem;
+  /**
+   * Scrollbar thumb border radius
+   */
+  --neon-border-radius-scrollbar: 8rem;
+
+  /* tooltips */
+  /**
+   * @component NeonTooltip
+   * Tooltip max width tooltip style
+   */
+  --neon-tooltip-max-width: 144rem;
+  /**
+   * @component NeonTooltip
+   * Tooltip max height tooltip style
+   */
+  --neon-tooltip-max-height: calc(3 * var(--neon-tooltip-max-width));
+  /**
+   * @component NeonTooltip
+   * Tooltip max width popover style
+   */
+  --neon-popover-max-width: 480rem;
+  /**
+   * @component NeonTooltip
+   * Tooltip max height popover style
+   */
+  --neon-popover-max-height: calc(3 * var(--neon-tooltip-max-width));
+  /**
+   * @component NeonTooltip
+   * Tooltip border width
+   */
+  --neon-border-width-tooltip: 0;
+
+  /* drawer */
+  /**
+   * @component NeonDrawer
+   * Drawer border width
+   */
+  --neon-border-width-drawer: 0;
+  /**
+   * @component NeonDrawer
+   * Drawer border radius
+   */
+  --neon-border-radius-drawer: 16rem;
+  /**
+   * @component NeonDrawer
+   * Drawer height
+   */
+  --neon-height-drawer: auto;
+  /**
+   * @component NeonDrawer
+   * Drawer width
+   */
+  --neon-width-drawer: var(--neon-side-nav-width);
+
+  /* toggle */
+  /**
+   * @component NeonToggle
+   * Toggle option margin
+   */
+  --neon-margin-toggle-option: 1rem;
+  /**
+   * @component NeonToggle
+   * Toggle border radius
+   */
+  --neon-border-radius-toggle: 0;
+  /**
+   * @component NeonToggle
+   * Toggle option border radius
+   */
+  --neon-border-radius-toggle-option: 2rem;
+
+  /* radio buttons */
+  /**
+   * @component NeonToggle
+   * Border radius in the radio button style
+   */
+  --neon-border-radius-radio-button: 50%;
+  /**
+   * @component NeonToggle
+   * Border width in the radio button style
+   */
+  --neon-border-width-radio-button: 1rem;
+
+  /* switch */
+  /**
+   * @component NeonSwitch
+   * Border radius of the switch component
+   */
+  --neon-border-radius-switch: calc(4 * var(--neon-base-space));
+  /**
+   * @component NeonSwitch
+   * Border radius of the switch indicator
+   */
+  --neon-border-radius-switch-indicator: 50%;
+
+  /* note */
+  /**
+   * @component NeonNote
+   * Note padding
+   */
+  --neon-padding-note: var(--neon-space-12);
+  /**
+   * @component NeonNote
+   * Width of the note border for a full note border
+   */
+  --neon-border-width-note: 8rem;
+
+  /**
+   * @component NeonNote
+   * Font size of the note text
+   */
+  --neon-font-size-note-text: var(--neon-font-size-s);
+  /**
+   * @component NeonNote
+   * Font weight of the note text
+   */
+  --neon-font-weight-note-text: var(--neon-font-weight-medium);
+  /**
+   * @component NeonNote
+   * Font size of the note title
+   */
+  --neon-font-size-note-title: var(--neon-font-size-xl);
+  /**
+   * @component NeonNote
+   * Font weight of the note title
+   */
+  --neon-font-weight-note-title: var(--neon-font-weight-semi-bold);
+  /**
+   * @component NeonNote
+   * Font size of the note text on mobile
+   */
+  --neon-font-size-note-text-mobile: var(--neon-font-size-m);
+  /**
+   * @component NeonNote
+   * Font size of the note title on mobile
+   */
+  --neon-font-size-note-title-mobile: var(--neon-font-size-xl);
+  /**
+   * @component NeonNote
+   * Max width of the note
+   */
+  --neon-max-width-note: 100%;
+
+  /* outline */
+  /**
+   * Border width of the outline focus style for text elements (i.e. the underline)
+   */
+  --neon-border-width-outline: 1.5rem;
+
+  /* link */
+  /**
+   * @component NeonLink
+   * Default underline thickness of the link
+   */
+  --neon-text-decoration-thickness-link: 1rem;
+  /**
+   * @component NeonLink
+   * Default underline thickness of the link when hovered
+   */
+  --neon-text-decoration-thickness-link-hover: 1rem;
+  /**
+   * @component NeonLink
+   * Offset of the link underline from the text
+   */
+  --neon-text-underline-offset-link: 2rem;
+
+  /* slider & range slider */
+  /**
+   * @component NeonSlider,NeonRangeSlider
+   * Slider track height
+   */
+  --neon-height-slider-track: 8rem;
+  /**
+   * @component NeonSlider,NeonRangeSlider
+   * Slider thumb height
+   */
+  --neon-height-slider-thumb: calc(3 * var(--neon-height-slider-track));
+  /**
+   * @component NeonSlider,NeonRangeSlider
+   * Slider thumb width
+   */
+  --neon-width-slider-thumb: var(--neon-height-slider-thumb);
+  /**
+   * @component NeonSlider,NeonRangeSlider
+   * Slider thumb border radius
+   */
+  --neon-border-radius-slider-thumb: 50%;
+  /**
+   * @component NeonSlider,NeonRangeSlider
+   * Slider track border radius
+   */
+  --neon-border-radius-slider-track: var(--neon-height-slider-track);
+  /**
+   * @component NeonSlider,NeonRangeSlider
+   * Slider tooltip border radius
+   */
+  --neon-border-radius-slider-tooltip: var(--neon-border-radius);
+
+  /* input */
+  /**
+   * @component NeonInput,NeonTextarea,NeonNumber,NeonPassword
+   * Input border radius
+   */
+  --neon-border-radius-input: var(--neon-border-radius);
+  /**
+   * @component NeonInput,NeonTextarea,NeonNumber,NeonPassword
+   * Input border width
+   */
+  --neon-border-width-input: var(--neon-border-width);
+  /**
+   * @component NeonInput,NeonTextarea,NeonNumber,NeonPassword
+   * Placeholder font size
+   */
+  --neon-font-size-placeholder: var(--neon-font-size-m);
+  /**
+   * @component NeonInput,NeonTextarea,NeonNumber,NeonPassword
+   * Placeholder font style
+   */
+  --neon-font-style-placeholder: italic;
+  /**
+   * @component NeonInput,NeonTextarea,NeonNumber,NeonPassword
+   * Placeholder font weight
+   */
+  --neon-font-weight-placeholder: var(--neon-font-weight-normal);
+  /**
+   * @component NeonInput,NeonTextarea,NeonNumber,NeonPassword
+   * Input text font weight
+   */
+  --neon-font-weight-input: var(--neon-font-weight-normal);
+  /**
+   * @component NeonInput,NeonTextarea,NeonNumber,NeonPassword
+   * Input text line height
+   */
+  --neon-line-height-input: var(--neon-line-height-ratio-large);
+  /**
+   * @component NeonInput,NeonTextarea,NeonNumber,NeonPassword
+   * Background color opacity when input is active
+   */
+  --neon-opacity-input-background-active: 0.03125;
+
+  /**
+   * @component NeonInput,NeonTextarea,NeonNumber,NeonPassword
+   * Input font size for component size=small
+   */
+  --neon-font-size-input-s: var(--neon-font-size-m);
+  /**
+   * @component NeonInput,NeonTextarea,NeonNumber,NeonPassword
+   * Input font size for component size=medium
+   */
+  --neon-font-size-input-m: var(--neon-font-size-m);
+  /**
+   * @component NeonInput,NeonTextarea,NeonNumber,NeonPassword
+   * Input font size for component size=large
+   */
+  --neon-font-size-input-l: var(--neon-font-size-m);
+
+  /* input indicator */
+  /**
+   * @component NeonInputIndicator
+   * Input indicator font size for component size=small
+   */
+  --neon-font-size-input-indicator-s: var(--neon-font-size-m);
+  /**
+   * @component NeonInputIndicator
+   * Input indicator font size for component size=medium
+   */
+  --neon-font-size-input-indicator-m: var(--neon-font-size-m);
+  /**
+   * @component NeonInputIndicator
+   * Input indicator font size for component size=large
+   */
+  --neon-font-size-input-indicator-l: var(--neon-font-size-m);
+  /**
+   * @component NeonInputIndicator
+   * Input indicator font weight
+   */
+  --neon-font-weight-input-indicator: var(--neon-font-weight-normal);
+
+  /* skeleton loader */
+  /**
+   * @component NeonSkeletonLoader
+   * Skeleton loader border radius
+   */
+  --neon-border-radius-skeleton-loader: 0rem;
+  /**
+   * @component NeonSkeletonLoader
+   * Skeleton loader width
+   */
+  --neon-width-skeleton-loader: 100%;
+  /**
+   * @component NeonSkeletonLoader
+   * Skeleton loader item height
+   */
+  --neon-height-skeleton-loader: var(--neon-size-m);
+  /**
+   * @component NeonSkeletonLoader
+   * Skeleton loader gap between items
+   */
+  --neon-gap-skeleton-loader: 5rem;
+
+  /* expansion panel */
+  /**
+   * @component NeonExpansionPanel
+   * Expansion panel border width
+   */
+  --neon-border-width-expansion-panel: 1rem;
+
+  /* table */
+  /**
+   * HTML table border width
+   */
+  --neon-border-width-table: 1rem;
+
+  /* label */
+  /**
+   * @component NeonLabel
+   * Label component border radius
+   */
+  --neon-border-radius-label: 2rem;
+  /**
+   * @component NeonLabel
+   * Label component text transformation
+   */
+  --neon-text-transform-label: none;
+
+  /* badge */
+  /**
+   * @component NeonBadge
+   * Background gradient angle for a multicolored badge
+   */
+  --neon-background-gradient-angle-badge: 45deg;
+  /**
+   * @component NeonBadge
+   * Badge icon size multiplier. This is relative to the size of the badge.
+   */
+  --neon-icon-size-multiplier-badge: 0.667;
+  /**
+   * @component NeonBadge
+   * Size (height) of a small Badge
+   */
+  --neon-size-s-badge: var(--neon-size-s);
+  /**
+   * @component NeonBadge
+   * Size (height) of a medium Badge
+   */
+  --neon-size-m-badge: var(--neon-size-m);
+  /**
+   * @component NeonBadge
+   * Size (height) of a large Badge
+   */
+  --neon-size-l-badge: var(--neon-size-l);
+  /**
+   * @component NeonBadge
+   * Size (height) of an XL Badge
+   */
+  --neon-size-xl-badge: var(--neon-size-xl);
+  /**
+   * @component NeonBadge
+   * Size (height) of an XXL Badge
+   */
+  --neon-size-xxl-badge: var(--neon-size-xxl);
+  /**
+   * @component NeonBadge
+   * Default opacity of an editable badge button
+   */
+  --neon-opacity-badge-editable-button: 0.33;
+  /**
+   * @component NeonBadge
+   * Opacity of an editable badge button on hover
+   */
+  --neon-opacity-badge-editable-button-hover: 0.66;
+  /**
+   * @component NeonBadge
+   * Opacity of an editable badge content, i.e. the text or icon
+   */
+  --neon-opacity-badge-editable-content: 0.33;
+
+  /* color input */
+  /**
+   * @component NeonColor
+   * Color input border radius
+   */
+  --neon-border-radius-input-color: 50%;
+
+  /* dialog */
+  /**
+   * @component NeonDialog
+   * Dialog max width
+   */
+  --neon-max-width-dialog: 250rem;
+  /**
+   * @component NeonDialog
+   * Dialog min height
+   */
+  --neon-min-height-dialog: 275rem;
+  /**
+   * @component NeonDialog
+   * Dialog font style
+   */
+  --neon-font-style-dialog: italic;
+
+  /* progress linear */
+  /**
+   * @component NeonLinearProgress
+   * Opacity of the linear progress background
+   */
+  --neon-opacity-background-progress: 0.0625;
+  /**
+   * @component NeonLinearProgress
+   * Border radius of the linear progress indicator
+   */
+  --neon-border-radius-progress-indicator: calc(2 * var(--neon-base-space));
+
+  /* selectable card */
+  /**
+   * @component NeonSelectableCard
+   * Border radius of the selectable card
+   */
+  --neon-border-radius-selectable-card: calc(1.5 * var(--neon-base-space));
+
+  /* image carousel */
+  /**
+   * @component NeonImageDevice
+   * Image carousel background blur radius when opened full screen
+   */
+  --neon-blur-radius-image-carousel: 5px;
+
+  /* page container */
+  /**
+   * @component NeonPageContainer
+   * Page container fixed height for sticky buttons
+   */
+  --neon-height-page-container-sticky-buttons: 72rem;
+
+  /* tree menu */
+  /**
+   * @component NeonTreeMenu
+   * Tree menu section font size (top level)
+   */
+  --neon-font-size-tree-menu-section: var(--neon-font-size-m);
+  /**
+   * @component NeonTreeMenu
+   * Tree menu section font weight (top level)
+   */
+  --neon-font-weight-tree-menu-section: var(--neon-font-weight-bold);
+  /**
+   * @component NeonTreeMenu
+   * Tree menu item font size (2nd level)
+   */
+  --neon-font-size-tree-menu-item: var(--neon-font-size-m);
+  /**
+   * @component NeonTreeMenu
+   * Tree menu item font weight (2nd level)
+   */
+  --neon-font-weight-tree-menu-item: var(--neon-font-weight-normal);
+  /**
+   * @component NeonTreeMenu
+   * Tree menu sub menu item font size (3nd level)
+   */
+  --neon-font-size-tree-menu-sub-menu-item: var(--neon-font-size-s);
+  /**
+   * @component NeonTreeMenu
+   * Tree menu sub menu item font weight (3nd level)
+   */
+  --neon-font-weight-tree-menu-sub-menu-item: var(--neon-font-weight-normal);
+  /**
+   * @component NeonTreeMenu
+   * Tree menu font weight selected
+   */
+  --neon-font-weight-tree-menu-selected: var(--neon-font-weight-bold);
+  /**
+   * @component NeonTreeMenu
+   * Tree menu padding left for items (indent)
+   */
+  --neon-padding-left-tree-menu-items: 0;
+
+  /* sticky buttons */
+  /**
+   * @component NeonStickyButtons
+   * Min height of the sticky buttons container
+   */
+  --neon-min-height-sticky-buttons: 72rem;
+}
