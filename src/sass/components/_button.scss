@@ -32,6 +32,7 @@
 }
 
 @mixin solid-button($color) {
+  transition: all ease-in-out var(--neon-animation-speed-fast);
   background: linear-gradient(var(--neon-background-solid-button-light-#{$color}), var(--neon-background-solid-button-dark-#{$color}));
 
   &:hover:not(:disabled) {
@@ -48,6 +49,7 @@
 }
 
 @mixin outline-button($color) {
+  transition: all ease-in-out var(--neon-animation-speed-fast);
   border: var(--neon-border-width-outline-button) var(--neon-border-style) var(--neon-border-color-outline-button-inactive-#{$color});
   &:not(.neon-button--disabled) {
     color: var(--neon-background-outline-button-active-#{$color});
@@ -79,6 +81,7 @@
 }
 
 @mixin text-button($color) {
+  transition: all ease-in-out var(--neon-animation-speed-fast);
   color: var(--neon-color-#{$color});
 
   &:not(.neon-button--text-transparent) {
