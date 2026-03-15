@@ -60,6 +60,10 @@ export default defineComponent({
      * The disabled state of the expansion panel
      */
     disabled: { type: Boolean, default: false },
+    /**
+     * Indent the expansion panel content
+     */
+    indent: { type: Boolean, default: false },
   },
   emits: [
     /**

@@ -178,7 +178,7 @@
             :steps="['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5 with the long name']"
           />
           <neon-linear-progress :color="selectedPalette" :model-value="testProgress" />
-          <neon-tabs v-model="selectedTab" :color="selectedPalette" :tabs="tabs"></neon-tabs>
+          <neon-tabs v-model="selectedTab" :color="selectedPalette" :tabs="tabs" />
           <neon-action-menu v-model="selectedActionMenu" :color="selectedPalette" :model="actionMenuModel" />
           <neon-menu :color="selectedPalette" :menu="testMenu" />
           <neon-tree-menu v-model="testTreeMenu" />

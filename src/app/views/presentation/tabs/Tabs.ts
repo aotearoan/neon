@@ -46,7 +46,7 @@ loin meatloaf turducken strip steak.`;
 
     const selected = ref('tab1');
 
-    const template = `<neon-tabs v-model="selected" :tabs="tabs">
+    const template = `<neon-tabs v-model="selected" :tabs="tabs" color="brand">
   <neon-tab v-for="(tab, index) in tabs" :key="tab.key" :selected="selected === tab.key" :tab="tab">
     <h6>Tab {{ index + 1 }}</h6>
     <p>{{ tabContent }}</p>

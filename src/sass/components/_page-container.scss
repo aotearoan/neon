@@ -6,6 +6,8 @@
   .neon-page-container {
     padding-bottom: calc(var(--neon-space-20) + var(--neon-height-mobile-menu) + var(--neon-border-width));
     gap: var(--neon-gutter);
+    width: 100%;
+    max-width: calc(100% - 2 * var(--neon-gutter));
 
     &.neon-page-container--with-sticky-buttons {
       padding-bottom: calc(
@@ -14,9 +16,15 @@
       );
     }
 
-    h1,
-    .neon-page-container__title {
-      padding-top: calc(1.5 * var(--neon-gutter));
+    &__header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: calc(1.25 * var(--neon-gutter));
+    }
+
+    h1 {
       margin-bottom: 0;
     }
 
@@ -31,6 +39,12 @@
       .neon-page-container {
         min-height: calc(100% - (var(--neon-footer-height) + var(--neon-border-width-footer)));
       }
+    }
+  }
+
+  @include responsive.responsive(tablet) {
+    .neon-page-container {
+      max-width: 100%;
     }
   }
 

@@ -6,6 +6,7 @@
       {
         'neon-expansion-panel--expanded': modelValue,
         'neon-expansion-panel--full-width': fullWidth,
+        'neon-expansion-panel--indented': indent,
         'neon-expansion-panel--disabled': disabled,
       },
       `neon-expansion-panel--${position}`,

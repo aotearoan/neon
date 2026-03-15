@@ -92,6 +92,21 @@ describe('NeonExpansionPanel', () => {
       expect(container.querySelector('.neon-expansion-panel__label-container .neon-icon')).toBeDefined();
     });
 
+    it('renders default no indent', () => {
+      // given
+      const { container } = harness;
+      // when / then
+      expect(container.querySelector('.neon-expansion-panel--indented')).toBeNull();
+    });
+
+    it('renders indented', async () => {
+      // given
+      const { container, rerender } = harness;
+      await rerender({ indent: true });
+      // when / then
+      expect(container.querySelector('.neon-expansion-panel--indented')).toBeDefined();
+    });
+
     it('renders default position', () => {
       // given
       const { container } = harness;

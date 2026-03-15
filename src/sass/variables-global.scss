@@ -323,11 +323,11 @@
   --neon-font-weight-bold: 700;
 
   /** The H6 font weight */
-  --neon-h6-weight: var(--neon-font-weight-medium);
+  --neon-h6-weight: var(--neon-font-weight-semi-bold);
   /** The H5 font weight */
-  --neon-h5-weight: var(--neon-font-weight-medium);
+  --neon-h5-weight: var(--neon-font-weight-semi-bold);
   /** The H4 font weight */
-  --neon-h4-weight: var(--neon-font-weight-medium);
+  --neon-h4-weight: var(--neon-font-weight-semi-bold);
   /** The H3 font weight */
   --neon-h3-weight: var(--neon-font-weight-semi-bold);
   /** The H2 font weight */
@@ -853,13 +853,13 @@
    * @component NeonTabs
    * Font weight of the tabs
    */
-  --neon-font-weight-tabs: var(--neon-font-weight-normal);
+  --neon-font-weight-tabs: var(--neon-font-weight-semi-bold);
   /**
    * @component NeonTabs
    * Font weight of a tab when selected. NOTE: This causes reflow of the text if it is different to the default font
    * weight.
    */
-  --neon-font-weight-tabs-selected: var(--neon-font-weight-bold);
+  --neon-font-weight-tabs-selected: var(--neon-font-weight-semi-bold);
   /**
    * @component NeonTabs
    * Opacity of a tab when focussed style is applied.

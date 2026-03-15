@@ -23,7 +23,10 @@
           class="neon-tree-menu__section-link"
           outline-style="none"
           tabindex="-1"
-          @click="!section.disabled && onSectionClick(section.key)"
+          @click="
+            !section.disabled &&
+              ((section.children?.length || 0) > 0 ? onSectionClick(section.key) : emit('click', section.href))
+          "
         >
           <neon-icon
             v-if="section.icon"
@@ -55,7 +58,7 @@
               class="neon-tree-menu__item-link"
               outline-style="none"
               tabindex="-1"
-              @click="onItemClick(link.key)"
+              @click="(link.subMenu?.length || 0) > 0 ? onItemClick(link.key) : emit('click', link.href)"
             >
               <span
                 class="neon-tree-menu__item-link-label neon-tree-menu__item-link-label--outline-text"
@@ -82,6 +85,7 @@
                   no-style
                   outline-style="none"
                   tabindex="-1"
+                  @click="emit('click', subMenu.href)"
                 >
                   <span
                     class="neon-tree-menu__sub-menu-item-link-label neon-tree-menu__sub-menu-item-link-label--outline-text"

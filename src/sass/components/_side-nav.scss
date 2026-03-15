@@ -45,6 +45,8 @@
   }
 
   .neon-page--with-top-nav .neon-side-nav {
+    top: var(--neon-top-nav-height);
+
     @include responsive.responsive(larger-than-tablet) {
       @include layout.min-height(100, 'var(--neon-top-nav-height-desktop)');
       @include layout.height(100, 'var(--neon-top-nav-height-desktop)');

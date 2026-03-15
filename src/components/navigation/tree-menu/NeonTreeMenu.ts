@@ -42,6 +42,12 @@ export default defineComponent({
      * @type {Array<NeonTreeMenuSectionModel>} the updated model with the section or item expanded/collapsed.
      */
     'update:modelValue',
+    /**
+     * Emitted when the user clicks on a link to navigate to another page. This is useful to e.g. close a side-nav
+     * drawer containing the menu when there is a navigation event.
+     * @type {string} the link the user clicked on.
+     */
+    'click',
   ],
   setup(props, { emit }) {
     const route = useRoute();
@@ -90,6 +96,7 @@ export default defineComponent({
 
     return {
       url,
+      emit,
       click,
       onSectionClick,
       onItemClick,
