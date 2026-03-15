@@ -3,7 +3,8 @@
     v-if="href"
     ref="button"
     :class="classes"
-    :href="href"
+    :disabled="disabled || state !== 'ready'"
+    :href="disabled ? void 0 : href"
     :tabindex="!disabled ? 0 : -1"
     class="neon-button"
     no-style

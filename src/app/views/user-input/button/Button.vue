@@ -139,6 +139,8 @@
               </span>
             </neon-note>
             <neon-button :disabled="true" button-style="solid" label="Disabled solid" />
+            <neon-button :disabled="true" button-style="solid" href="https://example.com" label="Disabled Link" />
+            <neon-button button-style="solid" href="https://example.com" label="Enabled Link" />
             <neon-button :disabled="true" button-style="outline" label="Disabled outline" />
             <neon-button :disabled="true" button-style="text" label="Disabled text" />
             <neon-button color="primary" label="Loading" state="loading" />

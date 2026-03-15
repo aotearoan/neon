@@ -3,10 +3,7 @@
 @use '../includes/outline';
 @use '../includes/svg';
 
-@mixin gradient-button(
-  $from-color,
-  $to-color,
-) {
+@mixin gradient-button($from-color, $to-color) {
   --neon-gradient-button-c1: var(--neon-color-#{$from-color});
   --neon-gradient-button-c2: var(--neon-background-color-#{$to-color});
 
@@ -33,10 +30,16 @@
 
 @mixin solid-button($color) {
   transition: all ease-in-out var(--neon-animation-speed-fast);
-  background: linear-gradient(var(--neon-background-solid-button-light-#{$color}), var(--neon-background-solid-button-dark-#{$color}));
+  background: linear-gradient(
+                  var(--neon-background-solid-button-light-#{$color}),
+                  var(--neon-background-solid-button-dark-#{$color})
+  );
 
   &:hover:not(:disabled) {
-    background: linear-gradient(var(--neon-background-solid-button-light-#{$color}), var(--neon-background-solid-button-light-#{$color}));
+    background: linear-gradient(
+                    var(--neon-background-solid-button-light-#{$color}),
+                    var(--neon-background-solid-button-light-#{$color})
+    );
   }
 
   &:active:not(:disabled) {
@@ -411,6 +414,10 @@
 
     &--disabled {
       cursor: not-allowed;
+
+      &:is(.neon-link) {
+        cursor: not-allowed;
+      }
     }
   }
 

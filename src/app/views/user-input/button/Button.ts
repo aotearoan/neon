@@ -73,6 +73,8 @@ export default defineComponent({
 <neon-button :circular="true" icon="plus" />`;
 
     const stateExamples = `<neon-button :disabled="true" label="Disabled solid" button-style="solid" />
+<neon-button :disabled="true" button-style="solid" href="https://example.com" label="Disabled Link" />
+<neon-button button-style="solid" href="https://example.com" label="Enabled Link" />
 <neon-button :disabled="true" label="Disabled outline" button-style="outline" />
 <neon-button :disabled="true" label="Disabled text" button-style="text" />
 <neon-button state="loading" color="primary" label="Loading" />
