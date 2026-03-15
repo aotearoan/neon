@@ -2,26 +2,23 @@
 
 @mixin selectable-card {
   .neon-selectable-card {
-    --neon-border-radius-card: var(--neon-border-radius-selectable-card);
+    --neon-border-radius-card: 0;
     cursor: pointer;
     user-select: none;
-    box-shadow: var(--neon-box-shadow-selectable-card);
     transition: all var(--neon-animation-speed-fast) ease-in-out;
     outline: none;
+    width: 100%;
+    background-color: var(--neon-background-color-card);
 
     & > .neon-card-header,
     & > .neon-card-body,
     & > .neon-card-footer {
-      background-color: var(--neon-background-color-selectable-card);
+      background-color: transparent;
     }
 
     &__checkbox {
       cursor: pointer;
-      margin-left: var(--neon-space-8);
-    }
-
-    &:not(.neon-selectable-card--disabled):active {
-      transform: scale(0.99);
+      margin-right: var(--neon-space-24);
     }
 
     @each $color in palettes.$neon-functional-colors {
@@ -31,30 +28,19 @@
         }
 
         &:not(.neon-selectable-card--disabled) {
-          &:hover > .neon-card-header,
-          &:hover > .neon-card-body,
-          &:hover > .neon-card-footer {
+          &:hover {
             background-color: rgba(var(--neon-rgb-#{$color}), 0.03125);
           }
 
-          &.neon-selectable-card--selected > div {
+          &.neon-selectable-card--selected {
             background-color: rgba(var(--neon-rgb-#{$color}), 0.0625);
           }
         }
       }
     }
 
-    & + .neon-selectable-card {
-      margin-top: var(--neon-space-1);
-    }
-
     &--disabled {
       color: var(--neon-color-disabled-background);
-      box-shadow: none;
-
-      .neon-card {
-        border-color: var(--neon-color-disabled-border);
-      }
 
       &,
       .neon-switch {

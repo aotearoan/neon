@@ -1323,13 +1323,6 @@
    */
   --neon-border-radius-progress-indicator: calc(2 * var(--neon-base-space));
 
-  /* selectable card */
-  /**
-   * @component NeonSelectableCard
-   * Border radius of the selectable card
-   */
-  --neon-border-radius-selectable-card: calc(1.5 * var(--neon-base-space));
-
   /* image carousel */
   /**
    * @component NeonImageDevice

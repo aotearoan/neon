@@ -1,7 +1,7 @@
-import type { NeonIdentifiable } from '@/model/common/entity/NeonIdentifiable';
+import type { NeonIdentifiable, NeonSelectable } from '@/neon';
 import type { NeonCardListModel } from '@/model/layout/card-list/NeonCardListModel';
 
-export interface CardListModel extends NeonIdentifiable {
+export interface CardListModel extends NeonIdentifiable, NeonSelectable {
   title: string;
   description: string;
 }
@@ -10,6 +10,7 @@ export const CardListModelFixture = (
   count: number,
   href?: string,
   offset = 0,
+  selectable = false,
 ): Array<NeonCardListModel<CardListModel>> => {
   const result = [];
 
@@ -22,6 +23,7 @@ export const CardListModelFixture = (
       },
       href,
       disabled: i === count + offset - 1,
+      selected: selectable && i < 2,
     });
   }
 

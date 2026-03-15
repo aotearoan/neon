@@ -54,7 +54,7 @@ export { default as NeonRangeSlider } from './components/user-input/range-slider
 export { default as NeonSideNav } from './components/layout/side-nav/NeonSideNav.vue';
 export { default as NeonSearch } from './components/user-input/search/NeonSearch.vue';
 export { default as NeonSelect } from './components/user-input/select/NeonSelect.vue';
-export { default as NeonSelectableCard } from './components/user-input/selectable-card/NeonSelectableCard.vue';
+export { default as NeonSelectableCard } from './components/layout/card-list/selectable-card/NeonSelectableCard.vue';
 export { default as NeonSkeletonLoader } from './components/feedback/skeleton-loader/NeonSkeletonLoader.vue';
 export { default as NeonSlider } from './components/user-input/slider/NeonSlider.vue';
 export { default as NeonSplashLoader } from './components/feedback/splash-loader/NeonSplashLoader.vue';
@@ -120,6 +120,7 @@ export { NeonPosition } from '@/model/common/position/NeonPosition';
 export type { NeonPriorityMenuItem } from '@/model/navigation/menu/NeonPriorityMenuItem';
 export { NeonResponsive } from '@/model/common/responsive/NeonResponsive';
 export type { NeonSearchOption } from '@/model/user-input/search/NeonSearchOption';
+export type { NeonSelectable } from './model/common/entity/NeonSelectable';
 export type { NeonSelectGroup } from '@/model/user-input/select/NeonSelectGroup';
 export type { NeonSelectOption } from '@/model/user-input/select/NeonSelectOption';
 export { NeonSize } from '@/model/common/size/NeonSize';

@@ -226,8 +226,8 @@ export class Menu {
                 component: 'NeonCardList',
                 subComponents: [
                   {
-                    path: 'card',
-                    name: 'NeonCardListCard',
+                    path: 'selectable-card',
+                    name: 'NeonSelectableCard',
                   },
                 ],
               },
@@ -571,13 +571,6 @@ export class Menu {
                 page: 'Select',
                 keywords: 'dropdown',
                 component: 'NeonSelect',
-              },
-              {
-                path: 'selectable-card',
-                page: 'SelectableCard',
-                name: 'Selectable Card',
-                keywords: 'selectable card checklist checkbox list',
-                component: 'NeonSelectableCard',
               },
               {
                 path: 'slider',

@@ -38,12 +38,24 @@
       border-top: var(--neon-border);
     }
 
-    &__card {
+    .neon-card-list__card {
       padding: var(--neon-space-16);
       user-select: none;
       width: 100%;
-      border: none;
-      border-bottom: var(--neon-border);
+
+      &:not(:focus-visible) {
+        border: none;
+        border-bottom: var(--neon-border);
+      }
+
+      &.neon-card-list__card--selectable {
+        padding-left: var(--neon-space-12);
+        box-shadow: none;
+
+        .neon-card-header {
+          padding: 0;
+        }
+      }
 
       &--disabled {
         cursor: not-allowed;

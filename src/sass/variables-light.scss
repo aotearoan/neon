@@ -1267,19 +1267,6 @@
   --neon-color-stepper-indicator: var(--neon-color-high-contrast-l5);
 
 
-  /* selectable card */
-  /**
-   * @component NeonSelectableCard
-   * Background color of the card.
-   */
-  --neon-background-color-selectable-card: rgba(var(--neon-rgb-high-contrast-l4), 0.5);
-  /**
-   * @component NeonSelectableCard
-   * Box shadow of the card.
-   */
-  --neon-box-shadow-selectable-card: 0 -2rem 4rem 0 rgba(var(--neon-rgb-neutral-l3), 0.1), 0 2rem 4rem 0 rgba(var(--neon-rgb-neutral-l3), 0.15);
-
-
   /* swiper */
   /**
    * @component NeonSwiper

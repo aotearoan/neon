@@ -1,40 +1,59 @@
 <template>
   <div class="neon-card-list">
-    <neon-inline breakpoint="" class="neon-card-list__header">
+    <neon-inline v-if="slots.header || loadOnDemand" class="neon-card-list__header">
       <!-- @slot slot for providing filters or titles for the card list aligned next to the result count -->
       <slot name="header"></slot>
       <span v-if="loadOnDemand" class="neon-card-list__total">{{ n(items.length) }} {{ ofLabel }} {{ n(total) }}</span>
     </neon-inline>
     <neon-stack class="neon-card-list__cards" gap="z">
-      <template v-for="(item, index) in items">
-        <neon-link
-          v-if="item.href && !item.disabled"
-          :key="`${item.model.id ?? index}-link`"
-          :class="color && `neon-card-list__link--${color}`"
-          :href="item.href"
-          class="neon-card-list__link"
-          no-style
-          outline-style="background"
-        >
-          <div class="neon-card-list__card">
+      <transition-group mode="out-in" name="neon-fade-transition" tag="div">
+        <template v-for="(item, index) in items">
+          <neon-link
+            v-if="item.href && !item.disabled"
+            :key="`${item.model.id ?? index}-link`"
+            :class="color && `neon-card-list__link--${color}`"
+            :href="item.href"
+            class="neon-card-list__link"
+            no-style
+            outline-style="background"
+          >
+            <div class="neon-card-list__card">
+              <!-- @slot slot for rendering card contents, two parameters are available:
+    @binding {T} model - the model item to be rendered
+    @binding {number} index - the index of the item in the list -->
+              <slot name="card" v-bind="{ model: item.model, index: index }"></slot>
+            </div>
+          </neon-link>
+          <neon-selectable-card
+            v-else-if="selectable"
+            :key="`${item.model.id ?? index}-selectable`"
+            :class="{
+              'neon-card-list__card--disabled': item.disabled,
+              'neon-card-list__card--selected': item.selected,
+            }"
+            :disabled="item.disabled"
+            :model-value="!!item.selected"
+            class="neon-card-list__card neon-card-list__card--selectable"
+            @update:model-value="emit('toggleSelected', item.model.id, $event)"
+          >
             <!-- @slot slot for rendering card contents, two parameters are available:
-@binding {T} model - the model item to be rendered
-@binding {number} index - the index of the item in the list -->
+    @binding {T} model - the model item to be rendered
+    @binding {number} index - the index of the item in the list -->
+            <slot name="card" v-bind="{ model: item.model, index: index }"></slot>
+          </neon-selectable-card>
+          <div
+            v-else
+            :key="`${item.model.id ?? index}-link`"
+            :class="{ 'neon-card-list__card--disabled': item.disabled }"
+            class="neon-card-list__card"
+          >
+            <!-- @slot slot for rendering card contents, two parameters are available:
+    @binding {T} model - the model item to be rendered
+    @binding {number} index - the index of the item in the list -->
             <slot name="card" v-bind="{ model: item.model, index: index }"></slot>
           </div>
-        </neon-link>
-        <div
-          v-else
-          :key="`${item.model.id ?? index}-readonly`"
-          :class="{ 'neon-card-list__card--disabled': item.disabled }"
-          class="neon-card-list__card"
-        >
-          <!-- @slot slot for rendering card contents, two parameters are available:
-  @binding {T} model - the model item to be rendered
-  @binding {number} index - the index of the item in the list -->
-          <slot name="card" v-bind="{ model: item.model, index: index }"></slot>
-        </div>
-      </template>
+        </template>
+      </transition-group>
     </neon-stack>
     <template v-if="loadOnDemand">
       <span v-if="items.length === total" class="neon-card-list__results-end">{{ endOfResultsLabel }}</span>

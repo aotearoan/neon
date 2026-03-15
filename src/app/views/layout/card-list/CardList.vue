@@ -49,6 +49,29 @@
           <editor v-model="onDemandTemplate" />
         </neon-stack>
       </neon-card-body>
+      <neon-card-body>
+        <neon-stack>
+          <h2 class="neon-h3">Selectable card list example</h2>
+          <neon-card-list
+            :items="selectableFilteredModel"
+            :load-on-demand="selectableConfig"
+            :selectable="true"
+            color="brand"
+            @toggle-selected="toggleSelected"
+          >
+            <template #header>
+              <neon-input v-model="selectableFilter" placeholder="Filter results…" size="s" />
+            </template>
+            <template #card="{ model, index }">
+              <div class="card-contents">
+                <span class="card-title">{{ model.title }}</span>
+                <span class="card-description">{{ model.description }}</span>
+              </div>
+            </template>
+          </neon-card-list>
+          <editor v-model="selectableTemplate" />
+        </neon-stack>
+      </neon-card-body>
     </neon-card>
   </component-documentation>
 </template>
