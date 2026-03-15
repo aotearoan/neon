@@ -86,6 +86,7 @@ export default defineComponent({
 
     return {
       toggleExpanded,
+      slots,
     };
   },
 });

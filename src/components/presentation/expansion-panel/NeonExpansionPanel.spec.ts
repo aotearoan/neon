@@ -20,6 +20,14 @@ describe('NeonExpansionPanel', () => {
       });
       expect(spy).toHaveBeenCalled();
     });
+
+    it('should render a custom header', () => {
+      const { container } = render(NeonExpansionPanel, {
+        props: { modelValue: false },
+        slots: { header: `<p>${content}</p>` },
+      });
+      expect(container.querySelector('.neon-expansion-panel--custom-header')).toBeDefined();
+    });
   });
 
   describe('valid cases', () => {
