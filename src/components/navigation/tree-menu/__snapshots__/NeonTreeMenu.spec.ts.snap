@@ -123,7 +123,7 @@ exports[`NeonTreeMenu matches snapshot 1`] = `
         </li>
       </ul>
     </li>
-    <li class="neon-tree-menu__section--expanded neon-tree-menu__section"><a href="/some-url" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-tree-menu__section-link neon-tree-menu__section-link" tabindex="-1">
+    <li class="neon-tree-menu__section"><a href="/some-url" class="neon-link--active neon-link--outline-none neon-link neon-link--router-link neon-tree-menu__section-link neon-tree-menu__section-link" tabindex="-1">
         <!-- @slot the content of the link -->
         <!--v-if--><span tabindex="0" class="neon-tree-menu__section-link-label neon-tree-menu__section-link-label--outline-text" role="link">Link Section</span>
         <!--v-if-->

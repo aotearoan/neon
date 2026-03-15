@@ -78,10 +78,12 @@
 
         .neon-svg--stroke {
           stroke: var(--neon-color-text-primary);
+          transition: stroke ease-in-out var(--neon-animation-speed-fast);
         }
 
         .neon-svg--fill {
           fill: var(--neon-color-text-primary);
+          transition: fill ease-in-out var(--neon-animation-speed-fast);
         }
 
         &:before {

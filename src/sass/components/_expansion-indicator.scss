@@ -23,7 +23,7 @@
       transform: rotate(35deg);
 
       &.neon-svg--stroke {
-        transition: transform ease-in-out var(--neon-animation-speed-fast) !important;
+        transition: all ease-in-out var(--neon-animation-speed-fast) !important;
       }
     }
 
@@ -31,7 +31,7 @@
       transform: rotate(-35deg);
 
       &.neon-svg--stroke {
-        transition: transform ease-in-out var(--neon-animation-speed-fast) !important;
+        transition: all ease-in-out var(--neon-animation-speed-fast) !important;
       }
     }
 
