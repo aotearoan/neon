@@ -61,7 +61,7 @@
       :disabled="disabled"
       :name="iconName"
       :role="!iconReadonly && 'button'"
-      :tabindex="disabled || iconReadonly ? false : 0"
+      :tabindex="-1"
       :transparent="true"
       class="neon-input__icon"
       @click="!iconReadonly && iconClicked($event)"
