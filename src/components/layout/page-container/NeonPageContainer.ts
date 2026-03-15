@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue';
+import { computed, defineComponent, useSlots } from 'vue';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 
 /**
@@ -20,5 +20,16 @@ export default defineComponent({
     hideNav: { type: Boolean, default: false },
     /** Sticky button support on mobile */
     stickyButtons: { type: Boolean, default: false },
+  },
+  setup(props) {
+    const slots = useSlots();
+
+    const hasHeader = computed(() => {
+      return props.title || slots.header || slots.actions;
+    });
+
+    return {
+      hasHeader,
+    };
   },
 });

@@ -38,4 +38,36 @@ describe('NeonPageContainer', () => {
     });
     expect(container.querySelector('.page-container--with-hide-nav')).toBeDefined();
   });
+
+  it('renders with a header when a title is passed as prop', () => {
+    const { container } = render(NeonPageContainer, {
+      props: {
+        title: 'test title',
+      },
+    });
+    expect(container.querySelector('.neon-page-container__header')).toBeDefined();
+  });
+
+  it('renders with a header when the named header slot is used', () => {
+    const { container } = render(NeonPageContainer, {
+      slots: {
+        header: '<p>test title</p>',
+      },
+    });
+    expect(container.querySelector('.neon-page-container__header')).toBeDefined();
+  });
+
+  it('renders with a header when the named actions slot is used', () => {
+    const { container } = render(NeonPageContainer, {
+      slots: {
+        actions: '<p>test title</p>',
+      },
+    });
+    expect(container.querySelector('.neon-page-container__header')).toBeDefined();
+  });
+
+  it('does not render with a header when the named header slot, title and actions are missing', () => {
+    const { container } = render(NeonPageContainer);
+    expect(container.querySelector('.neon-page-container__header')).toBeFalsy();
+  });
 });
