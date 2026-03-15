@@ -1,5 +1,12 @@
 # Changelog
 
+## [26.1.0](https://github.com/aotearoan/neon/compare/v26.0.4...v26.1.0) (2026-03-15)
+
+
+### Features
+
+* conditional headers & other bug fixes ([#367](https://github.com/aotearoan/neon/issues/367)) ([c92e3c3](https://github.com/aotearoan/neon/commit/c92e3c358abf8ba917b686d3a241ed8d79a06605))
+
 ## [26.0.4](https://github.com/aotearoan/neon/compare/v26.0.3...v26.0.4) (2026-03-15)
 
 
