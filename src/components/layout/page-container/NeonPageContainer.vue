@@ -6,7 +6,7 @@
     }"
     class="neon-page-container"
   >
-    <div class="neon-page-container__header">
+    <div v-if="hasHeader" class="neon-page-container__header">
       <!-- @slot header - override default title for richer content -->
       <slot name="header">
         <h1 v-if="title" class="neon-page-container__title">{{ title }}</h1>

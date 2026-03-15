@@ -9,17 +9,17 @@ describe('NeonSplashLoader', () => {
     const { html } = render(NeonSplashLoader, { props: {} });
     // when / then
     setTimeout(() => {
-      expect(html()).toMatch('neon-icon--primary');
+      expect(html()).toMatch('neon-icon--brand');
       done();
     });
   });
 
   it('renders color', (done) => {
     // given
-    const { html } = render(NeonSplashLoader, { props: { color: NeonFunctionalColor.Brand } });
+    const { html } = render(NeonSplashLoader, { props: { color: NeonFunctionalColor.Primary } });
     // when / then
     setTimeout(() => {
-      expect(html()).toMatch('neon-icon--brand');
+      expect(html()).toMatch('neon-icon--primary');
       done();
     });
   });

@@ -21,7 +21,7 @@
     "gen:docs": "npm run gen:model-docs && npm run gen:util-docs && npm run gen:component-docs && npm run gen:sass-docs",
     "gen:version": "genversion --es6 --semi ./version.ts",
     "gen:all": "npm run gen:version && npm run gen:docs",
-    "dev": "npm run gen:all && vite --mode development",
+    "dev": "npm run gen:all && vite --mode dev",
     "build": "npm run gen:all && vite build && vue-tsc --emitDeclarationOnly",
     "build:app": "npm run gen:all && vite --config vite.config.app.ts build",
     "test": "npm run gen:version && jest --no-cache --maxWorkers=2",

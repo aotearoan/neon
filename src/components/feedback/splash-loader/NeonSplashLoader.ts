@@ -17,7 +17,7 @@ export default defineComponent({
     /**
      * Color of the loading icon
      */
-    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Primary },
+    color: { type: String as () => NeonFunctionalColor, default: NeonFunctionalColor.Brand },
     /**
      * Loading icon size
      */
