@@ -8,6 +8,7 @@
     gap: var(--neon-gutter);
     width: 100%;
     max-width: calc(100% - 2 * var(--neon-gutter));
+    flex: 1 0 auto;
 
     &.neon-page-container--with-sticky-buttons {
       padding-bottom: calc(
