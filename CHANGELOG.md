@@ -1,5 +1,12 @@
 # Changelog
 
+## [27.0.2](https://github.com/aotearoan/neon/compare/v27.0.1...v27.0.2) (2026-03-15)
+
+
+### Bug Fixes
+
+* correct page width on center-aligned pages ([#380](https://github.com/aotearoan/neon/issues/380)) ([a9ce0b8](https://github.com/aotearoan/neon/commit/a9ce0b8d510ed1260b4d989aebd9ba939bb45fc6))
+
 ## [27.0.1](https://github.com/aotearoan/neon/compare/v27.0.0...v27.0.1) (2026-03-15)
 
 
