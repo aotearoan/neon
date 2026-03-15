@@ -18,9 +18,9 @@
       max-width: 100%;
       line-height: var(--neon-line-height-one);
       height: var(--neon-footer-height);
-      padding: 0 var(--neon-gutter);
 
       @include responsive.responsive(larger-than-tablet) {
+        padding: 0 var(--neon-gutter);
         font-size: var(--neon-font-size-m);
         max-width: var(--neon-max-width-page);
       }
