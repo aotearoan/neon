@@ -1,5 +1,119 @@
 # Changelog
 
+## [27.0.0](https://github.com/aotearoan/neon/compare/v16.0.0...v27.0.0) (2026-03-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* reorganize supporting classes ([#357](https://github.com/aotearoan/neon/issues/357))
+* generate app docs dynamically ([#346](https://github.com/aotearoan/neon/issues/346))
+* tree menu component adjustments ([#341](https://github.com/aotearoan/neon/issues/341))
+* neon link & alert adjustments ([#317](https://github.com/aotearoan/neon/issues/317))
+* search, radio button, card & skeleton fixes ([#292](https://github.com/aotearoan/neon/issues/292))
+* tabs, mobile menu, input dark mode changes ([#283](https://github.com/aotearoan/neon/issues/283))
+* font weight & color variable alignment ([#281](https://github.com/aotearoan/neon/issues/281))
+* change default color of user input components ([#275](https://github.com/aotearoan/neon/issues/275))
+* interface changes & js docs ([#219](https://github.com/aotearoan/neon/issues/219))
+* toggle chip size enum ([#217](https://github.com/aotearoan/neon/issues/217))
+
+### Features
+
+* add accent color palette ([#337](https://github.com/aotearoan/neon/issues/337)) ([553728c](https://github.com/aotearoan/neon/commit/553728c393ae8479b5f072e68fdede812a2d8d24))
+* add slots and indicator position to expansion panel ([#344](https://github.com/aotearoan/neon/issues/344)) ([aac473b](https://github.com/aotearoan/neon/commit/aac473ba7a7cad8a0b4cd3fb72eb06065cd0c039))
+* ap style mobile tabs ([#211](https://github.com/aotearoan/neon/issues/211)) ([1fe5f03](https://github.com/aotearoan/neon/commit/1fe5f030198df597037eb1015458ecf657d1f2df))
+* card style radio buttons ([#305](https://github.com/aotearoan/neon/issues/305)) ([78b7db3](https://github.com/aotearoan/neon/commit/78b7db3bd07eefe86fb095a47c28f3a003804176))
+* centered NeonPage option ([#296](https://github.com/aotearoan/neon/issues/296)) ([0082a08](https://github.com/aotearoan/neon/commit/0082a0843d454f1402764f88626525538f692485))
+* conditional headers & other bug fixes ([#367](https://github.com/aotearoan/neon/issues/367)) ([c92e3c3](https://github.com/aotearoan/neon/commit/c92e3c358abf8ba917b686d3a241ed8d79a06605))
+* edit badge picture ([#302](https://github.com/aotearoan/neon/issues/302)) ([504b436](https://github.com/aotearoan/neon/commit/504b436125fb85846c26934cd914a3770f930bb1))
+* image carousel component ([#230](https://github.com/aotearoan/neon/issues/230)) ([0233833](https://github.com/aotearoan/neon/commit/023383338713098673c033afa538d0dd55ceb633))
+* input indicator styles ([#311](https://github.com/aotearoan/neon/issues/311)) ([34b116e](https://github.com/aotearoan/neon/commit/34b116e19e9b313749ac5e9061e4b9ceef77b725))
+* NeonBanner component ([#323](https://github.com/aotearoan/neon/issues/323)) ([2f0be12](https://github.com/aotearoan/neon/commit/2f0be126e1a7a0c10ec6d94d231ea615b1b64bbb))
+* page layout components ([#354](https://github.com/aotearoan/neon/issues/354)) ([dba7fbb](https://github.com/aotearoan/neon/commit/dba7fbb29d83bdf378823af56d4320e83beb9c27))
+* pagination component ([#352](https://github.com/aotearoan/neon/issues/352)) ([2adbb8d](https://github.com/aotearoan/neon/commit/2adbb8d6ececd2e1800eb6c306c34062fec63f64))
+* remove banner/alert/toast messages ([#325](https://github.com/aotearoan/neon/issues/325)) ([a989dcb](https://github.com/aotearoan/neon/commit/a989dcb1d44134c205e952baedc9c36884506f5a))
+* swiper component ([#234](https://github.com/aotearoan/neon/issues/234)) ([17d5fb3](https://github.com/aotearoan/neon/commit/17d5fb3cf8ca65a7c4e0c89f4d9114c9feb9f49e))
+* vertical neon swiper ([#307](https://github.com/aotearoan/neon/issues/307)) ([ade3e91](https://github.com/aotearoan/neon/commit/ade3e9169529ac3650d3505ec3c067d722526798))
+
+
+### Bug Fixes
+
+* add button type support ([#300](https://github.com/aotearoan/neon/issues/300)) ([6bf4a4b](https://github.com/aotearoan/neon/commit/6bf4a4b4faa919aaabdb9588379308df08a1461e))
+* add card border var ([#207](https://github.com/aotearoan/neon/issues/207)) ([debbcbb](https://github.com/aotearoan/neon/commit/debbcbbbcd06f3e2bbf58efba3f49ab85973802f))
+* add inputmode to neon-input ([#236](https://github.com/aotearoan/neon/issues/236)) ([4ff6e8c](https://github.com/aotearoan/neon/commit/4ff6e8cda2c9965af1985260f1ed5724c045efce))
+* add radio button description slot ([#251](https://github.com/aotearoan/neon/issues/251)) ([8c37fcf](https://github.com/aotearoan/neon/commit/8c37fcf711eb2e36713098e026a265cd0b426fca))
+* add space css vars ([#209](https://github.com/aotearoan/neon/issues/209)) ([2f39e31](https://github.com/aotearoan/neon/commit/2f39e31e910cd6031cfab5eed0db74432eccc049))
+* add typography CSS vars ([#243](https://github.com/aotearoan/neon/issues/243)) ([7c2723e](https://github.com/aotearoan/neon/commit/7c2723e2f8ec397d4e3ec9eb1a8723440fba9b38))
+* blur button after click ([#224](https://github.com/aotearoan/neon/issues/224)) ([7380b00](https://github.com/aotearoan/neon/commit/7380b001a8ef6ec4d076c6cc20c0bdb0c4bf5fa5))
+* border design fixes ([#348](https://github.com/aotearoan/neon/issues/348)) ([17fa8e2](https://github.com/aotearoan/neon/commit/17fa8e23a0c5013ed1e50b94b15bf8b85a56b5fd))
+* bugfixing ([#313](https://github.com/aotearoan/neon/issues/313)) ([440578b](https://github.com/aotearoan/neon/commit/440578b5de2c6e80974045317e7abb911912a698))
+* bugfixing ([#335](https://github.com/aotearoan/neon/issues/335)) ([4212e55](https://github.com/aotearoan/neon/commit/4212e5598d588b9d898595a2f86a1048731fdbbf))
+* button fixes ([#249](https://github.com/aotearoan/neon/issues/249)) ([57880bb](https://github.com/aotearoan/neon/commit/57880bba10fd621738e6f9c2ff09dbba854f17b7))
+* card & date fixes ([#202](https://github.com/aotearoan/neon/issues/202)) ([3cdad27](https://github.com/aotearoan/neon/commit/3cdad27669b740610af945513d7505f909ea8a16))
+* card list padding fix ([#363](https://github.com/aotearoan/neon/issues/363)) ([3e03b43](https://github.com/aotearoan/neon/commit/3e03b4371bde2b6f4c778a594291a4b81aee16c4))
+* carousel, field group, modal fixes ([#339](https://github.com/aotearoan/neon/issues/339)) ([fea0575](https://github.com/aotearoan/neon/commit/fea0575dd0588783ae906cb7b1fc503220711b5a))
+* css var docs ([#359](https://github.com/aotearoan/neon/issues/359)) ([b6b5707](https://github.com/aotearoan/neon/commit/b6b57076f088f069b18a5c4e08220145d6fd1e7c))
+* date pickers & badge updates ([#286](https://github.com/aotearoan/neon/issues/286)) ([d9d8dc7](https://github.com/aotearoan/neon/commit/d9d8dc7509314dd1cbd44228930895c0a42cea95))
+* design & dx improvements ([#331](https://github.com/aotearoan/neon/issues/331)) ([97f9efa](https://github.com/aotearoan/neon/commit/97f9efabf8017622649597a9ba961cdbbd558c78))
+* design adjustments ([#365](https://github.com/aotearoan/neon/issues/365)) ([937fd6a](https://github.com/aotearoan/neon/commit/937fd6ab72abfe9c7637708f2625aafac7e2592c))
+* design tweaks ([#329](https://github.com/aotearoan/neon/issues/329)) ([058df54](https://github.com/aotearoan/neon/commit/058df545302a2de749bedcc6062e6b152a04cc4f))
+* doc-gen & models ([#195](https://github.com/aotearoan/neon/issues/195)) ([3725940](https://github.com/aotearoan/neon/commit/372594023bd8a4dba1d29c1f99a22aa10f158ea4))
+* dropzone & minor style fixes ([#333](https://github.com/aotearoan/neon/issues/333)) ([44a4293](https://github.com/aotearoan/neon/commit/44a429343fef8b9ef949f862a766cf70cb8b1de8))
+* expansion panel design fixes ([#372](https://github.com/aotearoan/neon/issues/372)) ([03f61a7](https://github.com/aotearoan/neon/commit/03f61a79ec5f440ca312a8426c98e8851c8f1544))
+* expansion panel design fixes ([#374](https://github.com/aotearoan/neon/issues/374)) ([18d270a](https://github.com/aotearoan/neon/commit/18d270a2a6455bbc67ef94b07db466715be1dee5))
+* font vars ([#273](https://github.com/aotearoan/neon/issues/273)) ([7ab8878](https://github.com/aotearoan/neon/commit/7ab8878e13d48fc20d095d54a5d93b65861911a5))
+* generated files ([#222](https://github.com/aotearoan/neon/issues/222)) ([9d09d1a](https://github.com/aotearoan/neon/commit/9d09d1aa943b2026c6614ff28fdb70c9375ce92e))
+* gh page deploy ([#197](https://github.com/aotearoan/neon/issues/197)) ([a91ca41](https://github.com/aotearoan/neon/commit/a91ca41083575bd9bb70bcada245ca41f06eca38))
+* gh-pages deploy ([#232](https://github.com/aotearoan/neon/issues/232)) ([900991c](https://github.com/aotearoan/neon/commit/900991c9adbd08e665d22a63790455f19a45636c))
+* give menu icons unique ids ([#327](https://github.com/aotearoan/neon/issues/327)) ([6ba3fb2](https://github.com/aotearoan/neon/commit/6ba3fb2bd5106cce81b02148b8389db8098b7d1e))
+* hide-scrollbars mixin ([#226](https://github.com/aotearoan/neon/issues/226)) ([efcd8f1](https://github.com/aotearoan/neon/commit/efcd8f1ba953472d2f679dc2a103eccd8ca198ea))
+* import fixes ([#272](https://github.com/aotearoan/neon/issues/272)) ([6ede9e4](https://github.com/aotearoan/neon/commit/6ede9e45eff350770c252e57732fecac24d3bc6b))
+* input / text area style adjustments ([#315](https://github.com/aotearoan/neon/issues/315)) ([d1a3fa7](https://github.com/aotearoan/neon/commit/d1a3fa7f7330d6ddfacb4110e96d0bac57f91f3d))
+* label font & card padding fixes ([#204](https://github.com/aotearoan/neon/issues/204)) ([ab14697](https://github.com/aotearoan/neon/commit/ab14697366d6dbd96e7dc631e18ef09691f63b65))
+* link styles ([#238](https://github.com/aotearoan/neon/issues/238)) ([2fb66d7](https://github.com/aotearoan/neon/commit/2fb66d7c515547020fcdcb64c07a291cb9973ffd))
+* minor component fixes ([#277](https://github.com/aotearoan/neon/issues/277)) ([2073527](https://github.com/aotearoan/neon/commit/207352761d4508a7be30dc3807e32737c0a7648a))
+* minor component fixes ([#279](https://github.com/aotearoan/neon/issues/279)) ([c02a788](https://github.com/aotearoan/neon/commit/c02a7886c2a9e535035031fd0d538736b74cc206))
+* minor fixes ([#319](https://github.com/aotearoan/neon/issues/319)) ([e7b2e01](https://github.com/aotearoan/neon/commit/e7b2e018559e740c42dbbd61526a1194da0cbbf8))
+* neon-stack adjustments ([#201](https://github.com/aotearoan/neon/issues/201)) ([ae4c556](https://github.com/aotearoan/neon/commit/ae4c556795a09e8dc8740964a853a002059b48c4))
+* NeonPageContainer component ([#321](https://github.com/aotearoan/neon/issues/321)) ([dbb6ed2](https://github.com/aotearoan/neon/commit/dbb6ed263208feabd7779b81473c9b82a2407abc))
+* note style adjustment ([#240](https://github.com/aotearoan/neon/issues/240)) ([d704f76](https://github.com/aotearoan/neon/commit/d704f76a08e8a39c49a6e797bd9f37738a46a0ff))
+* only apply expanded style when menu contains children ([#361](https://github.com/aotearoan/neon/issues/361)) ([95c2201](https://github.com/aotearoan/neon/commit/95c2201a81073ee2601c3c193295c322f00ec3a5))
+* prevent form submit on component button click ([#267](https://github.com/aotearoan/neon/issues/267)) ([d1aa29c](https://github.com/aotearoan/neon/commit/d1aa29c38f31584cd7080b5005c3f31fb0f46f7d))
+* prevent form submit on component button click ([#270](https://github.com/aotearoan/neon/issues/270)) ([d083dfe](https://github.com/aotearoan/neon/commit/d083dfe7ce714467c0aae7925df874046fe33667))
+* refactor keydown.space.prevent ([#228](https://github.com/aotearoan/neon/issues/228)) ([9eaea07](https://github.com/aotearoan/neon/commit/9eaea07b0871d591b2637101b9c6ff7a4babda99))
+* remove link label wrapper, button & chip style fixes ([#288](https://github.com/aotearoan/neon/issues/288)) ([f771100](https://github.com/aotearoan/neon/commit/f77110045cb5868ed740734be8fc4b85e4086068))
+* remove span max width ([#255](https://github.com/aotearoan/neon/issues/255)) ([6ad0ae1](https://github.com/aotearoan/neon/commit/6ad0ae16357da628117d26dfff6a7694e1e9aca7))
+* replace button-ref with query ([#290](https://github.com/aotearoan/neon/issues/290)) ([d0a5b26](https://github.com/aotearoan/neon/commit/d0a5b262f10493842444b7f17aa6ef23477f7d81))
+* replace position with placement enum ([#215](https://github.com/aotearoan/neon/issues/215)) ([fd13846](https://github.com/aotearoan/neon/commit/fd13846e4347b08922315ec46965901ce8c2def3))
+* responsive breakpoint changes, design fixes ([#298](https://github.com/aotearoan/neon/issues/298)) ([a63e005](https://github.com/aotearoan/neon/commit/a63e005dc0204c1347c42c87765ea8e895e0d3be))
+* style fixes ([#213](https://github.com/aotearoan/neon/issues/213)) ([b8cf95a](https://github.com/aotearoan/neon/commit/b8cf95a8322cff7c820fc8b3a840e00046578731))
+* style updates ([#350](https://github.com/aotearoan/neon/issues/350)) ([52f4136](https://github.com/aotearoan/neon/commit/52f4136aaf3d378d9204da9c8a873587baea3e89))
+* support selectable cards in card list ([#369](https://github.com/aotearoan/neon/issues/369)) ([578ac7b](https://github.com/aotearoan/neon/commit/578ac7bb7306b8198f1bcdbd45395c10e7e3e239))
+* tab enhancements ([#309](https://github.com/aotearoan/neon/issues/309)) ([3051896](https://github.com/aotearoan/neon/commit/305189677daa828ce1db76683a77fecd0a83d047))
+* tests & config ([#265](https://github.com/aotearoan/neon/issues/265)) ([3adb4ef](https://github.com/aotearoan/neon/commit/3adb4ef9578b6038064dbda625326068bb6c6e8d))
+* toggle chip style refresh ([#247](https://github.com/aotearoan/neon/issues/247)) ([d9bc7b4](https://github.com/aotearoan/neon/commit/d9bc7b4eeb2842021b0818f3ce4cf1624506ef4b))
+* toggle style ([#244](https://github.com/aotearoan/neon/issues/244)) ([5c50c6e](https://github.com/aotearoan/neon/commit/5c50c6e72b6236ec9cd5c0bd3b88af4184b8bc14))
+* tree menu bugfixes ([#199](https://github.com/aotearoan/neon/issues/199)) ([af107b0](https://github.com/aotearoan/neon/commit/af107b0cec98042277e78d710f072d7a67cfccc2))
+* use slots instead of ([#294](https://github.com/aotearoan/neon/issues/294)) ([1ce9ed0](https://github.com/aotearoan/neon/commit/1ce9ed0b1f7e2cf5c2d5c1ca1191eb53ddbd56b7))
+
+
+### Miscellaneous Chores
+
+* release 27.0.0 ([#376](https://github.com/aotearoan/neon/issues/376)) ([ef8ae11](https://github.com/aotearoan/neon/commit/ef8ae1148e0e96399e45a779b7e4ee48fd279022))
+
+
+### Code Refactoring
+
+* change default color of user input components ([#275](https://github.com/aotearoan/neon/issues/275)) ([8117019](https://github.com/aotearoan/neon/commit/811701988cbd425d18fc8ab8f4af96e0f8b43a5f))
+* font weight & color variable alignment ([#281](https://github.com/aotearoan/neon/issues/281)) ([28ddf39](https://github.com/aotearoan/neon/commit/28ddf397b26d25abf03c1fca51df88bcb0809e94))
+* generate app docs dynamically ([#346](https://github.com/aotearoan/neon/issues/346)) ([44cc789](https://github.com/aotearoan/neon/commit/44cc7890342e7aac7306cac1a3dc8f9c8d08678e))
+* interface changes & js docs ([#219](https://github.com/aotearoan/neon/issues/219)) ([698a995](https://github.com/aotearoan/neon/commit/698a9957d23889648b09b717f1c871fccf850e6b))
+* neon link & alert adjustments ([#317](https://github.com/aotearoan/neon/issues/317)) ([f56d3be](https://github.com/aotearoan/neon/commit/f56d3bef4b79076d2151ad32a7aa27f6018deb05))
+* reorganize supporting classes ([#357](https://github.com/aotearoan/neon/issues/357)) ([f271fec](https://github.com/aotearoan/neon/commit/f271fec0df2a783e8ae6a58beb43fb57ff779314))
+* search, radio button, card & skeleton fixes ([#292](https://github.com/aotearoan/neon/issues/292)) ([5992943](https://github.com/aotearoan/neon/commit/599294313f9d766e910111b5383a53ecd50dc3d0))
+* tabs, mobile menu, input dark mode changes ([#283](https://github.com/aotearoan/neon/issues/283)) ([3ac068c](https://github.com/aotearoan/neon/commit/3ac068c8cffd6b1cd00d6e201742ea08ad02bf0c))
+* toggle chip size enum ([#217](https://github.com/aotearoan/neon/issues/217)) ([c15c09f](https://github.com/aotearoan/neon/commit/c15c09fffdec3a857df3083451f4cc098de93de6))
+* tree menu component adjustments ([#341](https://github.com/aotearoan/neon/issues/341)) ([efda12d](https://github.com/aotearoan/neon/commit/efda12de126dded01ae44a8ad6a3c9d902b9f00d))
+
 ## [26.1.1](https://github.com/aotearoan/neon/compare/v26.1.0...v26.1.1) (2026-03-15)
 
 
