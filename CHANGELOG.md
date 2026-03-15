@@ -1,5 +1,12 @@
 # Changelog
 
+## [26.0.2](https://github.com/aotearoan/neon/compare/v26.0.1...v26.0.2) (2026-03-15)
+
+
+### Bug Fixes
+
+* only apply expanded style when menu contains children ([#361](https://github.com/aotearoan/neon/issues/361)) ([95c2201](https://github.com/aotearoan/neon/commit/95c2201a81073ee2601c3c193295c322f00ec3a5))
+
 ## [26.0.1](https://github.com/aotearoan/neon/compare/v26.0.0...v26.0.1) (2026-03-15)
 
 
