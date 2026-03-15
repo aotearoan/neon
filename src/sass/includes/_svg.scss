@@ -6,9 +6,11 @@
 @mixin svg-colors($color) {
   .neon-svg--fill {
     fill: $color;
+    transition: fill ease-in-out var(--neon-animation-speed-fast);
   }
 
   .neon-svg--stroke {
     stroke: $color;
+    transition: stroke ease-in-out var(--neon-animation-speed-fast);
   }
 }

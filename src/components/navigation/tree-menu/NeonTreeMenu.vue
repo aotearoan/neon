@@ -10,7 +10,8 @@
         v-for="section in modelValue"
         :key="section.key"
         :class="{
-          'neon-tree-menu__section--expanded': section.expanded || expandAll,
+          'neon-tree-menu__section--expanded':
+            (section.expanded || expandAll) && section.children && section.children?.length !== 0,
           'neon-tree-menu__section--disabled': section.disabled,
         }"
         class="neon-tree-menu__section"
@@ -68,7 +69,10 @@
             </neon-link>
             <ul
               v-if="link.subMenu && link.subMenu.length > 0"
-              :class="{ 'neon-tree-menu__sub-menu--expanded': expandAll || link.expanded }"
+              :class="{
+                'neon-tree-menu__sub-menu--expanded':
+                  (expandAll || link.expanded) && link.subMenu && link.subMenu.length !== 0,
+              }"
               class="no-style neon-tree-menu__sub-menu"
             >
               <li v-for="subMenu in link.subMenu" :key="subMenu.href" class="neon-tree-menu__sub-menu-item">

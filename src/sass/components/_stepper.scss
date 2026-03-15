@@ -63,10 +63,12 @@
           svg {
             .neon-svg--fill {
               fill: var(--neon-color-stepper-indicator);
+              transition: fill ease-in-out var(--neon-animation-speed-fast);
             }
 
             .neon-svg--stroke {
               stroke: var(--neon-color-stepper-indicator);
+              transition: stroke ease-in-out var(--neon-animation-speed-fast);
             }
           }
         }

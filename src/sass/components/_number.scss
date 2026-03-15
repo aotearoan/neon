@@ -67,6 +67,7 @@
 
         .neon-svg--fill {
           fill: var(--neon-color-disabled-text);
+          transition: fill ease-in-out var(--neon-animation-speed-fast);
         }
 
         border: none;

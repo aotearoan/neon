@@ -10,18 +10,22 @@
 
     .neon-svg--fill-inverse {
       fill: var(--neon-color-inverse);
+      transition: fill ease-in-out var(--neon-animation-speed-fast);
     }
 
     .neon-svg--stroke-inverse {
       stroke: var(--neon-color-inverse);
+      transition: stroke ease-in-out var(--neon-animation-speed-fast);
     }
 
     .neon-svg--fill-text {
       fill: var(--neon-color-text-primary);
+      transition: fill ease-in-out var(--neon-animation-speed-fast);
     }
 
     .neon-svg--stroke-text {
       stroke: var(--neon-color-text-primary);
+      transition: stroke ease-in-out var(--neon-animation-speed-fast);
     }
   }
 
@@ -44,10 +48,12 @@
       &--disabled {
         .neon-svg--fill {
           fill: var(--neon-color-disabled-text);
+          transition: fill ease-in-out var(--neon-animation-speed-fast);
         }
 
         .neon-svg--stroke {
           stroke: var(--neon-color-disabled-text);
+          transition: stroke ease-in-out var(--neon-animation-speed-fast);
         }
       }
     }

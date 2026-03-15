@@ -29,7 +29,7 @@
         &,
         .neon-svg--stroke,
         .neon-svg--fill {
-          transition: color ease-in-out var(--neon-animation-speed-fastest);
+          transition: all var(--neon-animation-speed-fastest);
         }
 
         &:before {
