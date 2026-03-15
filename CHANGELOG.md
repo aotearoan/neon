@@ -1,5 +1,12 @@
 # Changelog
 
+## [26.0.1](https://github.com/aotearoan/neon/compare/v26.0.0...v26.0.1) (2026-03-15)
+
+
+### Bug Fixes
+
+* css var docs ([#359](https://github.com/aotearoan/neon/issues/359)) ([b6b5707](https://github.com/aotearoan/neon/commit/b6b57076f088f069b18a5c4e08220145d6fd1e7c))
+
 ## [26.0.0](https://github.com/aotearoan/neon/compare/v25.2.0...v26.0.0) (2026-03-02)
 
 
