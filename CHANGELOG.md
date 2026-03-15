@@ -1,5 +1,12 @@
 # Changelog
 
+## [26.1.1](https://github.com/aotearoan/neon/compare/v26.1.0...v26.1.1) (2026-03-15)
+
+
+### Bug Fixes
+
+* support selectable cards in card list ([#369](https://github.com/aotearoan/neon/issues/369)) ([578ac7b](https://github.com/aotearoan/neon/commit/578ac7bb7306b8198f1bcdbd45395c10e7e3e239))
+
 ## [26.1.0](https://github.com/aotearoan/neon/compare/v26.0.4...v26.1.0) (2026-03-15)
 
 
