@@ -38,7 +38,7 @@
   @include responsive.responsive(larger-than-mobile-large) {
     .neon-page--with-footer {
       .neon-page-container {
-        min-height: calc(100% - (var(--neon-footer-height) + var(--neon-border-width-footer)));
+        min-height: calc(100% - (var(--neon-footer-height) + var(--neon-border-width-footer) + var(--neon-top-nav-height)));
       }
     }
   }
