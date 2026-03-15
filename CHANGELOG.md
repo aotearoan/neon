@@ -1,5 +1,12 @@
 # Changelog
 
+## [26.0.3](https://github.com/aotearoan/neon/compare/v26.0.2...v26.0.3) (2026-03-15)
+
+
+### Bug Fixes
+
+* card list padding fix ([#363](https://github.com/aotearoan/neon/issues/363)) ([3e03b43](https://github.com/aotearoan/neon/commit/3e03b4371bde2b6f4c778a594291a4b81aee16c4))
+
 ## [26.0.2](https://github.com/aotearoan/neon/compare/v26.0.1...v26.0.2) (2026-03-15)
 
 
