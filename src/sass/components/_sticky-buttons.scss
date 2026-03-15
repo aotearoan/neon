@@ -16,7 +16,7 @@
         background-color: var(--neon-background-color-sticky-buttons);
         position: fixed;
         width: 100%;
-        bottom: 0;
+        bottom: calc(var(--neon-height-mobile-menu) + var(--neon-height-mobile-menu-indicator));
         left: 0;
         padding: var(--neon-space-16);
         flex-direction: column-reverse;
