@@ -7,7 +7,7 @@
     padding-bottom: calc(var(--neon-space-20) + var(--neon-height-mobile-menu) + var(--neon-border-width));
     gap: var(--neon-gutter);
     width: 100%;
-    max-width: calc(100% - 2 * var(--neon-gutter));
+    max-width: 100%;
     flex: 1 0 auto;
 
     &.neon-page-container--with-sticky-buttons {
@@ -64,6 +64,7 @@
   .neon-page--left.neon-page--with-side-nav {
     @include responsive.responsive(larger-than-tablet) {
       .neon-page-container {
+        max-width: calc(100% - 2 * var(--neon-gutter));
         margin-left: var(--neon-gutter);
         margin-right: var(--neon-gutter);
       }
