@@ -11,8 +11,8 @@ export class NeonDateUtils {
    * @param value The date to format.
    */
   public static formatDate(value: Date) {
-    const { day, monthShortName } = NeonDateUtils.stringToNeonDate(value.toISOString());
-    return `${monthShortName} ${day}`;
+    const { dayFormatted, monthShortName } = NeonDateUtils.stringToNeonDate(value.toISOString());
+    return `${monthShortName} ${dayFormatted}`;
   }
 
   /**
@@ -21,8 +21,10 @@ export class NeonDateUtils {
    * @param seconds boolean indicating whether to display seconds
    */
   public static formatISOStringToDateAndTime(value: string, seconds = false) {
-    const { day, monthShortName, year, time, timeShort } = NeonDateUtils.stringToNeonDate(value);
-    return seconds ? `${day} ${monthShortName} ${year}, ${time}` : `${day} ${monthShortName} ${year}, ${timeShort}`;
+    const { dayFormatted, monthShortName, year, time, timeShort } = NeonDateUtils.stringToNeonDate(value);
+    return seconds
+      ? `${dayFormatted} ${monthShortName} ${year}, ${time}`
+      : `${dayFormatted} ${monthShortName} ${year}, ${timeShort}`;
   }
 
   /**
@@ -37,25 +39,30 @@ export class NeonDateUtils {
   public static stringToNeonDate(date: string, locale?: string, strict = false): NeonDate {
     const loc = locale || navigator.language;
     const now = new Date();
-    const dateObj = new Date(!strict && date.length === 10 ? `${date}T${now.toISOString().split('T')[1]}` : date);
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const isUTC = !(date.match(/(.*)Z/) || date.match(/(.*)[+-]\d{2}:\d{2}/));
+    const dateObj = new Date(
+      !strict && date.length === 10 ? `${date}T${now.toISOString().split('T')[1]}` : date + (isUTC ? 'Z' : ''),
+    );
+
     let time;
     if (date.length > 10) {
       time = dateObj.toLocaleString(
         'en-GB', // use en-GB for 0-23 hr offset
         date.length <= 16
-          ? { hour12: false, hour: '2-digit', minute: '2-digit' }
-          : { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' },
+          ? { hour12: false, hour: '2-digit', minute: '2-digit', timeZone }
+          : { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone },
       );
     }
 
     const result: NeonDate = {
-      year: +dateObj.toLocaleString('en-US', { year: 'numeric' }),
-      yearFormatted: dateObj.toLocaleString(loc, { year: 'numeric' }),
-      month: +dateObj.toLocaleString('en-US', { month: 'numeric' }),
-      monthShortName: dateObj.toLocaleString(loc, { month: 'short' }),
-      monthLongName: dateObj.toLocaleString(loc, { month: 'long' }),
-      day: +dateObj.toLocaleString('en-US', { day: 'numeric' }),
-      dayFormatted: dateObj.toLocaleString(loc, { day: '2-digit' }),
+      year: +dateObj.toLocaleString('en-US', { year: 'numeric', timeZone }),
+      yearFormatted: dateObj.toLocaleString(loc, { year: 'numeric', timeZone }),
+      month: +dateObj.toLocaleString('en-US', { month: 'numeric', timeZone }),
+      monthShortName: dateObj.toLocaleString(loc, { month: 'short', timeZone }),
+      monthLongName: dateObj.toLocaleString(loc, { month: 'long', timeZone }),
+      day: +dateObj.toLocaleString('en-US', { day: 'numeric', timeZone }),
+      dayFormatted: dateObj.toLocaleString(loc, { day: '2-digit', timeZone }),
     };
 
     if (time) {
@@ -66,6 +73,7 @@ export class NeonDateUtils {
         hourCycle: 'h23',
         hour: '2-digit',
         minute: '2-digit',
+        timeZone,
       });
     }
 

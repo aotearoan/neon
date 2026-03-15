@@ -11,25 +11,25 @@ describe('NeonDateUtils', () => {
 
   it('formats a date', () => {
     jest.spyOn(NeonDateUtils, 'stringToNeonDate');
-    const inputDate = new Date('2023-08-16T00:00:00.000Z');
+    const inputDate = new Date('2023-08-05T00:00:00.000Z');
     const result = NeonDateUtils.formatDate(inputDate);
-    expect(result).toBe('Aug 16');
+    expect(result).toBe('Aug 05');
     expect(NeonDateUtils.stringToNeonDate).toHaveBeenCalledWith(inputDate.toISOString());
   });
 
   it('formats a date with the time', () => {
     jest.spyOn(NeonDateUtils, 'stringToNeonDate');
-    const inputDate = '2023-08-16T14:05:00.000Z';
+    const inputDate = '2023-08-05T14:05:00.000Z';
     const result = NeonDateUtils.formatISOStringToDateAndTime(inputDate);
-    expect(result).toBe('16 Aug 2023, 14:05');
+    expect(result).toBe('05 Aug 2023, 14:05');
     expect(NeonDateUtils.stringToNeonDate).toHaveBeenCalledWith(inputDate);
   });
 
   it('formats a date with the time including seconds', () => {
     jest.spyOn(NeonDateUtils, 'stringToNeonDate');
-    const inputDate = '2023-08-16T14:05:00.000Z';
+    const inputDate = '2023-08-05T14:05:00.000Z';
     const result = NeonDateUtils.formatISOStringToDateAndTime(inputDate, true);
-    expect(result).toBe('16 Aug 2023, 14:05:00');
+    expect(result).toBe('05 Aug 2023, 14:05:00');
     expect(NeonDateUtils.stringToNeonDate).toHaveBeenCalledWith(inputDate);
   });
 
@@ -44,6 +44,20 @@ describe('NeonDateUtils', () => {
       timeShort: '00:13',
       year: 2023,
       yearFormatted: '2023',
+    });
+  });
+
+  it('converts a string to a NeonDate with timezone', () => {
+    expect(NeonDateUtils.stringToNeonDate('2023-01-01T00:13:05+03:00')).toEqual({
+      day: 31,
+      dayFormatted: '31',
+      month: 12,
+      monthLongName: 'December',
+      monthShortName: 'Dec',
+      time: '21:13:05',
+      timeShort: '21:13',
+      year: 2022,
+      yearFormatted: '2022',
     });
   });
 
