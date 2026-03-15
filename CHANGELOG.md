@@ -1,5 +1,12 @@
 # Changelog
 
+## [27.0.1](https://github.com/aotearoan/neon/compare/v27.0.0...v27.0.1) (2026-03-15)
+
+
+### Bug Fixes
+
+* format dates for user timezone ([#378](https://github.com/aotearoan/neon/issues/378)) ([cbc4fd1](https://github.com/aotearoan/neon/commit/cbc4fd128105b36a771242258ce42d1a42c27b6b))
+
 ## [27.0.0](https://github.com/aotearoan/neon/compare/v16.0.0...v27.0.0) (2026-03-15)
 
 
