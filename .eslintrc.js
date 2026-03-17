@@ -18,6 +18,7 @@ module.exports = {
     "vue/multi-word-component-names": "off",
     "vue/attributes-order": "warn",
     "vue/no-unused-vars": "off",
+    "vue/no-v-for-template-key": "off",
     "space-before-function-paren": [
       "error",
       {

@@ -131,6 +131,7 @@
           NeonPageSection: [],
           NeonPageHeader: [NeonNote, NeonInline, NeonButton, NeonIcon, NeonExpansionIndicator, NeonLink],
           NeonStickyButtons: [],
+          NeonBreadcrumbs: [NeonIcon, NeonLink, NeonSwiper],
   );
 
   $neon-flattened-components: [];
