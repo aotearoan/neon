@@ -5,6 +5,7 @@ export { default as NeonAlertContainer } from './components/feedback/alert/conta
 export { default as NeonAnchor } from './components/navigation/anchor/NeonAnchor.vue';
 export { default as NeonBadge } from './components/presentation/badge/NeonBadge.vue';
 export { default as NeonBanner } from './components/feedback/banner/NeonBanner.vue';
+export { default as NeonBreadcrumbs } from './components/navigation/breadcrumbs/NeonBreadcrumbs.vue';
 export { default as NeonButton } from './components/user-input/button/NeonButton.vue';
 export { default as NeonCard } from './components/layout/card/NeonCard.vue';
 export { default as NeonCardBody } from './components/layout/card/body/NeonCardBody.vue';
@@ -83,6 +84,7 @@ export type { NeonAvailableSpace } from '@/model/common/dom/NeonAvailableSpace';
 export { NeonBadgeSize } from '@/model/presentation/badge/NeonBadgeSize';
 export type { NeonBannerMessage } from '@/model/feedback/banner/NeonBannerMessage';
 export type { NeonBannerModel } from '@/model/feedback/banner/NeonBannerModel';
+export type { NeonBreadcrumbLink } from './model/navigation/breadcrumbs/NeonBreadcrumbLink';
 export { NeonButtonSize } from '@/model/user-input/button/NeonButtonSize';
 export { NeonButtonStyle } from '@/model/user-input/button/NeonButtonStyle';
 export { NeonButtonType } from '@/model/user-input/button/NeonButtonType';

@@ -340,6 +340,11 @@ export class Menu {
                 keywords: 'link navigation',
               },
               {
+                path: 'breadcrumbs',
+                page: 'Breadcrumbs',
+                component: 'NeonBreadcrumbs',
+              },
+              {
                 path: 'dropdown-menu',
                 page: 'DropdownMenu',
                 name: 'Dropdown Menu',

@@ -300,4 +300,8 @@ $neon-components: null !default;
   @if index($neon-flattened-components, NeonStickyButtons) {
     @include components.sticky-buttons;
   }
+
+  @if index($neon-flattened-components, NeonBreadcrumbs) {
+    @include components.breadcrumbs;
+  }
 }
