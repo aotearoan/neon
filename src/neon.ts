@@ -29,6 +29,7 @@ export { default as NeonFilterList } from './components/user-input/filter-list/N
 export { default as NeonFooter } from './components/layout/footer/NeonFooter.vue';
 export { default as NeonGrid } from './components/layout/grid/NeonGrid.vue';
 export { default as NeonGridArea } from './components/layout/grid/grid-area/NeonGridArea.vue';
+export { default as NeonHeader } from './components/presentation/header/NeonHeader.vue';
 export { default as NeonIcon } from './components/presentation/icon/NeonIcon.vue';
 export { default as NeonImageCarousel } from './components/presentation/image-carousel/NeonImageCarousel.vue';
 export { default as NeonInline } from './components/layout/inline/NeonInline.vue';
@@ -47,8 +48,6 @@ export { default as NeonNotificationCounter } from './components/feedback/notifi
 export { default as NeonNumber } from './components/user-input/number/NeonNumber.vue';
 export { default as NeonPage } from './components/layout/page/NeonPage.vue';
 export { default as NeonPageContainer } from './components/layout/page-container/NeonPageContainer.vue';
-export { default as NeonPageHeader } from './components/layout/page-header/NeonPageHeader.vue';
-export { default as NeonPageSection } from './components/layout/page-section/NeonPageSection.vue';
 export { default as NeonPagination } from './components/navigation/pagination/NeonPagination.vue';
 export { default as NeonPassword } from './components/user-input/password/NeonPassword.vue';
 export { default as NeonRangeSlider } from './components/user-input/range-slider/NeonRangeSlider.vue';
@@ -100,6 +99,7 @@ export { NeonDropdownStyle } from '@/model/presentation/dropdown/NeonDropdownSty
 export type { NeonFilterListItem } from '@/model/user-input/filter-list/NeonFilterListItem';
 export { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 export type { NeonGridModel } from '@/model/layout/grid/NeonGridModel';
+export { NeonHeaderLevel } from './model/presentation/header/NeonHeaderLevel';
 export { NeonHorizontalPosition } from '@/model/common/position/NeonHorizontalPosition';
 export type { NeonIdentifiable } from '@/model/common/entity/NeonIdentifiable';
 export { NeonInputIndicatorStyle } from '@/model/user-input/input-indicator/NeonInputIndicatorStyle';

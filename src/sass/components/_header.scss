@@ -1,0 +1,81 @@
+@use '../includes/responsive';
+@use '../includes/typography';
+
+@mixin header {
+  .neon-header {
+    gap: var(--neon-space-24);
+
+    &__content {
+      justify-content: space-between;
+    }
+
+    &__content-copy {
+      gap: var(--neon-space-8);
+    }
+
+    &__title-wrapper {
+      align-items: center;
+    }
+
+    &__actions {
+      justify-content: flex-end;
+      gap: var(--neon-space-8);
+    }
+
+    &__title {
+      white-space: nowrap;
+    }
+
+    &__subtitle {
+      font-size: 15rem; // TODO: discuss with design team as this is not consistent with the typography scale}
+      white-space: nowrap;
+    }
+
+    &--section {
+      .neon-header__title {
+        @include typography.neon-h3;
+        margin-bottom: 0;
+      }
+    }
+
+    &--sub-section {
+      .neon-header__title-wrapper {
+        gap: var(--neon-space-10);
+      }
+
+      .neon-header__title {
+        font-size: 16rem; // TODO: discuss with design team as this is not consistent with the typography scale}
+      }
+
+      .neon-header__subtitle {
+        font-size: var(--neon-font-size-xs);
+      }
+    }
+
+    @include responsive.responsive(mobile-large) {
+      &__content {
+        flex-direction: column;
+      }
+
+      &__content-copy {
+        gap: var(--neon-space-4);
+      }
+
+      &__actions {
+        justify-content: flex-start;
+      }
+
+      .neon-header__title-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--neon-space-4);
+      }
+
+      &__labels {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: var(--neon-space-4);
+      }
+    }
+  }
+}
