@@ -1,5 +1,16 @@
 # Changelog
 
+## [28.0.0](https://github.com/aotearoan/neon/compare/v27.1.0...v28.0.0) (2026-03-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* header component ([#386](https://github.com/aotearoan/neon/issues/386))
+
+### Code Refactoring
+
+* header component ([#386](https://github.com/aotearoan/neon/issues/386)) ([41646b5](https://github.com/aotearoan/neon/commit/41646b565c63d07237bad6206ecddf71b9bd6418))
+
 ## [27.1.0](https://github.com/aotearoan/neon/compare/v27.0.3...v27.1.0) (2026-03-17)
 
 
