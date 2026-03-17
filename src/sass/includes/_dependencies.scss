@@ -128,10 +128,9 @@
           NeonBanner: [NeonButton, NeonNote, NeonIcon, NeonLink, NeonExpansionIndicator],
           NeonPagination: [NeonButton, NeonLink, NeonIcon],
           NeonLabelledContent: [],
-          NeonPageSection: [],
-          NeonPageHeader: [NeonNote, NeonInline, NeonButton, NeonIcon, NeonExpansionIndicator, NeonLink],
           NeonStickyButtons: [],
           NeonBreadcrumbs: [NeonIcon, NeonLink, NeonSwiper],
+          NeonHeader: [NeonBreadcrumbs, NeonButton, NeonExpansionIndicator, NeonIcon, NeonInline, NeonLink, NeonNote, NeonSwiper, NeonStack],
   );
 
   $neon-flattened-components: [];

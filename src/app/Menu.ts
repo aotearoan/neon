@@ -422,6 +422,13 @@ export class Menu {
                 component: 'NeonExpansionPanel',
               },
               {
+                path: 'header',
+                page: 'AppHeader',
+                name: 'Header',
+                keywords: 'page title section',
+                component: 'NeonHeader',
+              },
+              {
                 path: 'icon',
                 page: 'Icon',
                 name: 'Icons',

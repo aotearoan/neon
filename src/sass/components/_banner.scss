@@ -27,10 +27,10 @@
       padding: 0 var(--neon-gutter);
       margin: auto;
     }
-  }
 
-  .neon-button--outline {
-    --neon-background-color-outline-button: var(--neon-background-color);
+    .neon-button--outline {
+      --neon-background-color-outline-button: var(--neon-background-color);
+    }
   }
 
   @include responsive.responsive(desktop-large) {

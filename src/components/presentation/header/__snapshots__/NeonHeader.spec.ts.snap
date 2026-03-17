@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NeonHeader renders breadcrumb 1`] = `
+<div class="neon-stack--gap-l neon-stack neon-header--page neon-header">
+  <!-- @slot stack contents -->
+  <div class="neon-swiper--horizontal neon-swiper--fade neon-swiper neon-breadcrumbs">
+    <div class="neon-swiper__container">
+      <!-- @slot contents of swiper with which to apply overflow scrolling. -->
+      <div class="neon-breadcrumbs__container"><a class="neon-link--no-style neon-link--outline-none neon-link neon-breadcrumbs__back neon-breadcrumbs__back" tabindex="0">
+          <!-- @slot the content of the link -->
+          <!--v-if--> Zurück
+        </a>
+        <div class="neon-breadcrumbs__links">
+          <!--v-if--><a class="neon-link--no-style neon-link--outline-none neon-link neon-breadcrumbs__link neon-breadcrumbs__link" tabindex="0" to="/level-1">
+            <!-- @slot the content of the link -->Level 1
+          </a>
+          <!--v-if--><a class="neon-link--no-style neon-link--outline-none neon-link neon-breadcrumbs__link neon-breadcrumbs__link" tabindex="0" to="/level-1/level-2">
+            <!-- @slot the content of the link -->Level 2
+          </a>
+          <!--v-if--><a class="neon-link--no-style neon-link--outline-none neon-link neon-breadcrumbs__link neon-breadcrumbs__link" tabindex="0" to="/level-1/level-2/1234-5678-90">
+            <!-- @slot the content of the link -->1234-5678-90
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="neon-swiper__fade-out"></div>
+  </div>
+  <div class="neon-inline--gap-l neon-inline neon-header__content">
+    <!-- @slot inline contents -->
+    <div class="neon-stack--gap-s neon-stack neon-header__content-copy">
+      <!-- @slot stack contents -->
+      <div class="neon-inline--gap-m neon-inline neon-header__title-wrapper">
+        <!-- @slot inline contents -->
+        <h1 class="neon-header__title">Page title</h1>
+        <!--v-if-->
+      </div>
+      <!--v-if-->
+    </div>
+    <!--v-if-->
+  </div>
+</div>
+`;
+
+exports[`NeonHeader renders page header 1`] = `
+<div class="neon-stack--gap-l neon-stack neon-header--page neon-header">
+  <!-- @slot stack contents -->
+  <!--v-if-->
+  <div class="neon-inline--gap-l neon-inline neon-header__content">
+    <!-- @slot inline contents -->
+    <div class="neon-stack--gap-s neon-stack neon-header__content-copy">
+      <!-- @slot stack contents -->
+      <div class="neon-inline--gap-m neon-inline neon-header__title-wrapper">
+        <!-- @slot inline contents -->
+        <h1 class="neon-header__title">Page title</h1>
+        <!--v-if-->
+      </div><span class="neon-header__subtitle">Page subtitle</span>
+    </div>
+    <!--v-if-->
+  </div>
+</div>
+`;
+
+exports[`NeonHeader renders page header by default 1`] = `
+<div class="neon-stack--gap-l neon-stack neon-header--page neon-header">
+  <!-- @slot stack contents -->
+  <!--v-if-->
+  <div class="neon-inline--gap-l neon-inline neon-header__content">
+    <!-- @slot inline contents -->
+    <div class="neon-stack--gap-s neon-stack neon-header__content-copy">
+      <!-- @slot stack contents -->
+      <div class="neon-inline--gap-m neon-inline neon-header__title-wrapper">
+        <!-- @slot inline contents -->
+        <h1 class="neon-header__title">Page title</h1>
+        <!--v-if-->
+      </div><span class="neon-header__subtitle">Page subtitle</span>
+    </div>
+    <!--v-if-->
+  </div>
+</div>
+`;
+
+exports[`NeonHeader renders section header 1`] = `
+<div class="neon-stack--gap-l neon-stack neon-header--section neon-header">
+  <!-- @slot stack contents -->
+  <!--v-if-->
+  <div class="neon-inline--gap-l neon-inline neon-header__content">
+    <!-- @slot inline contents -->
+    <div class="neon-stack--gap-s neon-stack neon-header__content-copy">
+      <!-- @slot stack contents -->
+      <div class="neon-inline--gap-m neon-inline neon-header__title-wrapper">
+        <!-- @slot inline contents -->
+        <h2 class="neon-header__title">Page title</h2>
+        <!--v-if-->
+      </div><span class="neon-header__subtitle">Page subtitle</span>
+    </div>
+    <!--v-if-->
+  </div>
+</div>
+`;
+
+exports[`NeonHeader renders sub section header 1`] = `
+<div class="neon-stack--gap-l neon-stack neon-header--sub-section neon-header">
+  <!-- @slot stack contents -->
+  <!--v-if-->
+  <div class="neon-inline--gap-l neon-inline neon-header__content">
+    <!-- @slot inline contents -->
+    <div class="neon-stack--gap-s neon-stack neon-header__content-copy">
+      <!-- @slot stack contents -->
+      <div class="neon-inline--gap-m neon-inline neon-header__title-wrapper">
+        <!-- @slot inline contents -->
+        <h3 class="neon-header__title">Page title</h3>
+        <!--v-if-->
+      </div><span class="neon-header__subtitle">Page subtitle</span>
+    </div>
+    <!--v-if-->
+  </div>
+</div>
+`;

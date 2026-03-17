@@ -289,19 +289,15 @@ $neon-components: null !default;
     @include components.labelled-content;
   }
 
-  @if index($neon-flattened-components, NeonPageSection) {
-    @include components.page-section;
-  }
-
-  @if index($neon-flattened-components, NeonPageHeader) {
-    @include components.page-header;
-  }
-
   @if index($neon-flattened-components, NeonStickyButtons) {
     @include components.sticky-buttons;
   }
 
   @if index($neon-flattened-components, NeonBreadcrumbs) {
     @include components.breadcrumbs;
+  }
+
+  @if index($neon-flattened-components, NeonHeader) {
+    @include components.header;
   }
 }
