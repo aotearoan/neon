@@ -1,5 +1,12 @@
 # Changelog
 
+## [27.1.0](https://github.com/aotearoan/neon/compare/v27.0.3...v27.1.0) (2026-03-17)
+
+
+### Features
+
+* breadcrumbs component ([#384](https://github.com/aotearoan/neon/issues/384)) ([85366cc](https://github.com/aotearoan/neon/commit/85366cce75034a879222b776f366b3f2660b8316))
+
 ## [27.0.3](https://github.com/aotearoan/neon/compare/v27.0.2...v27.0.3) (2026-03-15)
 
 
