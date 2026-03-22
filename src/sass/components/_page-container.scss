@@ -4,6 +4,7 @@
 
 @mixin page-container {
   .neon-page-container {
+    position: relative;
     padding-bottom: calc(var(--neon-space-20) + var(--neon-height-mobile-menu) + var(--neon-border-width));
     gap: var(--neon-gutter);
     width: 100%;

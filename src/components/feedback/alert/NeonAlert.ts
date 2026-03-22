@@ -11,7 +11,7 @@ import type { NeonToastMessage } from '@/model/feedback/toast/NeonToastMessage';
 import { NeonToastService } from '@/utils/feedback/toast/NeonToastService';
 import { NeonAlertPlacement } from '@/model/feedback/alert/NeonAlertPlacement';
 import { NeonVerticalPosition } from '@/model/common/position/NeonVerticalPosition';
-import NeonDialogContainer from '@/components/feedback/alert/container/NeonDialogContainer';
+import NeonDialogContainer from '@/components/feedback/alert/container/NeonDialogContainer.vue';
 import { NeonDialogService } from '@/utils/feedback/dialog/NeonDialogService';
 import type { NeonDialogMessage } from '@/model/feedback/dialog/NeonDialogMessage';
 

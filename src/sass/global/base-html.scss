@@ -21,10 +21,6 @@
     line-height: var(--neon-line-height-ratio);
 
     @include layout.min-height(100);
-
-    @include responsive.responsive(mobile-large) {
-      font-size: 17px; // don't use rems here - body font must be defined in pixels
-    }
   }
 
   .neon-closable--open {

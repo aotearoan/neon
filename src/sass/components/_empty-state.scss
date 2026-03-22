@@ -1,0 +1,47 @@
+@use '../includes/responsive';
+
+@mixin empty-state {
+  .neon-empty-state {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: var(--neon-space-32);
+    width: 100%;
+    height: 100%;
+    max-width: var(--neon-max-width-empty-state);
+    text-align: center;
+
+    .neon-empty-state__title {
+      padding-top: 0;
+    }
+
+    .neon-empty-state__illustration {
+      width: 100%;
+    }
+
+    .neon-empty-state__ctas {
+      justify-content: center;
+    }
+
+    .neon-empty-state__cta {
+      margin-bottom: var(--neon-space-8);
+    }
+
+    &.neon-empty-state--error {
+      .neon-empty-state__title {
+        color: var(--neon-color-disabled-text);
+      }
+
+      .neon-empty-state__subtitle {
+        font-size: var(--neon-h1-size);
+      }
+    }
+
+    @include responsive.responsive(larger-than-mobile-large) {
+      align-items: center;
+
+      .neon-empty-state__title {
+        align-content: center;
+      }
+    }
+  }
+}

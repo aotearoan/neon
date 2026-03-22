@@ -1,0 +1,37 @@
+@use '../includes/responsive';
+
+@mixin list-layout {
+  .neon-list-layout {
+    position: relative;
+    padding-bottom: calc(var(--neon-space-20) + var(--neon-height-mobile-menu) + var(--neon-border-width));
+    gap: 0;
+    width: 100%;
+    max-width: 100%;
+    flex: 1 0 auto;
+  }
+
+  /* All min-height logic */
+  @include responsive.responsive(larger-than-mobile-large) {
+    .neon-page--with-footer {
+      .neon-list-layout {
+        min-height: calc(100% - (var(--neon-footer-height) + var(--neon-border-width-footer) + var(--neon-top-nav-height)));
+      }
+    }
+  }
+
+  @include responsive.responsive(tablet) {
+    .neon-list-layout {
+      max-width: 100%;
+    }
+  }
+
+  .neon-page--left.neon-page--with-side-nav {
+    @include responsive.responsive(larger-than-tablet) {
+      .neon-list-layout {
+        max-width: calc(100% - 2 * var(--neon-gutter));
+        margin-left: var(--neon-gutter);
+        margin-right: var(--neon-gutter);
+      }
+    }
+  }
+}

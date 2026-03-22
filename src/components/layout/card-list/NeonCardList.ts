@@ -14,6 +14,7 @@ import type { NeonPaginationModel } from '@/model/navigation/pagination/NeonPagi
 import type { NeonIdentifiable } from '@/model/common/entity/NeonIdentifiable';
 import type { NeonSelectable } from '@/model/common/entity/NeonSelectable';
 import NeonSelectableCard from './selectable-card/NeonSelectableCard.vue';
+import NeonSplashLoader from '@/components/feedback/splash-loader/NeonSplashLoader.vue';
 
 /**
  * TODO: consider refactoring since it's no longer just a layout component when selectable.
@@ -30,6 +31,7 @@ export default defineComponent({
     NeonButton,
     NeonInline,
     NeonLink,
+    NeonSplashLoader,
     NeonStack,
   },
   props: {
@@ -41,7 +43,7 @@ export default defineComponent({
       required: true,
     },
     /**
-     * Specify a selection/hover color for the cards.
+     * * Specify a selection, hover & pagination accent color for the cards.
      */
     color: { type: String as () => NeonFunctionalColor, default: null },
     /**
@@ -56,6 +58,10 @@ export default defineComponent({
      * Model for configuring pagination, either pagination or loadOnDemand should be provided.
      */
     pagination: { type: Object as () => NeonPaginationModel },
+    /**
+     * Show splash loader when loading new items.
+     */
+    loading: { type: Boolean },
   },
   emits: [
     /**
@@ -67,7 +73,7 @@ export default defineComponent({
      * Emitted when in selectable mode and the selected state of a card is toggled.
      * @type {string, boolean} - the id of the card which is toggled & the new selected state.
      */
-    'toggleSelected',
+    'toggle-selected',
   ],
   setup(props, { emit, slots }) {
     const ofLabel = computed(() => {

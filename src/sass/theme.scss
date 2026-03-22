@@ -312,4 +312,12 @@ $neon-components: null !default;
   @if index($neon-flattened-components, NeonFilterBar) {
     @include components.filter-bar;
   }
+
+  @if index($neon-flattened-components, NeonEmptyState) {
+    @include components.empty-state;
+  }
+
+  @if index($neon-flattened-components, NeonListLayout) {
+    @include components.list-layout;
+  }
 }

@@ -21,7 +21,14 @@
 
     &__header {
       align-items: center;
+      user-select: none;
       margin-bottom: var(--neon-space-16);
+      font-size: var(--neon-font-size-xs);
+      color: var(--neon-color-text-primary);
+
+      @include responsive.responsive(mobile-large) {
+        display: none;
+      }
     }
 
     &__total {
@@ -36,6 +43,18 @@
 
     &__cards {
       border-top: var(--neon-border);
+      position: relative;
+
+      .neon-splash-loader {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: var(--neon-z-index-above);
+      }
     }
 
     .neon-card-list__card {
