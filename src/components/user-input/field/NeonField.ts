@@ -11,7 +11,7 @@ export default defineComponent({
     /**
      * The label text to render.
      */
-    label: { type: String, required: true },
+    label: { type: String },
     /**
      * The equivalent of the <em>for</em> attribute on an HTML label.
      */

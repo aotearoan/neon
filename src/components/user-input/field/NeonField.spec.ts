@@ -12,6 +12,13 @@ describe('NeonField', () => {
     expect(container.querySelector('.neon-field__label')?.textContent).toEqual(label);
   });
 
+  it('renders without label', () => {
+    // given
+    const { container } = render(NeonField, { props: {} });
+    // when / then
+    expect(container.querySelector('.neon-field__label')).toBeNull();
+  });
+
   it('renders default slot contents', () => {
     // given
     const { html } = render(NeonField, { props: { label }, slots: { default: '<p>test</p>' } });

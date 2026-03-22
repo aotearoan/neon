@@ -27,7 +27,7 @@
     }
 
     &__subtitle {
-      font-size: 15rem; // TODO: discuss with design team as this is not consistent with the typography scale}
+      font-size: var(--neon-font-size-m);
       white-space: nowrap;
     }
 

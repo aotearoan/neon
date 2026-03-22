@@ -34,7 +34,11 @@
         top: calc(1.5 * var(--neon-base-space));
         right: calc(1.5 * var(--neon-base-space));
 
-        padding: calc(1 * var(--neon-base-space));
+        @if ($size == 'l') {
+          padding: calc(2.25 * var(--neon-base-space));
+        } @else {
+          padding: calc(1 * var(--neon-base-space));
+        }
 
         &.neon-icon--name-close {
           @if ($size == 'l') {
