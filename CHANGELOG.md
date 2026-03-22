@@ -1,5 +1,12 @@
 # Changelog
 
+## [28.1.2](https://github.com/aotearoan/neon/compare/v28.1.1...v28.1.2) (2026-03-22)
+
+
+### Bug Fixes
+
+* minor fixes ([#398](https://github.com/aotearoan/neon/issues/398)) ([b39050d](https://github.com/aotearoan/neon/commit/b39050d81f6514f7417aacaec4163239226f9389))
+
 ## [28.1.1](https://github.com/aotearoan/neon/compare/v28.1.0...v28.1.1) (2026-03-22)
 
 
