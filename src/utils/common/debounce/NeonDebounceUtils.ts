@@ -1,9 +1,9 @@
 /**
  * Debounce utility used for debouncing user input. This has the benefit of also providing a global default which can
- * also be set to 0 for improving test code (no need to wait for input). The default debounce timeout is set to 300ms.
+ * also be set to 0 for improving test code (no need to wait for input). The default debounce timeout is set to 0ms.
  */
 export class NeonDebounceUtils {
-  private static debounceTimeout = 300;
+  private static debounceTimeout = 0;
 
   /**
    * Set a global debounce timeout value. NOTE: Set this to 0 to disable debounce & receive all input events immediately.

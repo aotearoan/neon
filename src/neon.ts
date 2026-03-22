@@ -26,6 +26,8 @@ export { default as NeonExpansionPanel } from './components/presentation/expansi
 export { default as NeonFieldGroup } from './components/user-input/field-group/NeonFieldGroup.vue';
 export { default as NeonField } from './components/user-input/field/NeonField.vue';
 export { default as NeonFile } from './components/user-input/file/NeonFile.vue';
+export { default as NeonFilter } from './components/user-input/filter/NeonFilter.vue';
+export { default as NeonFilterBar } from './components/layout/filter-bar/NeonFilterBar.vue';
 export { default as NeonFilterList } from './components/user-input/filter-list/NeonFilterList.vue';
 export { default as NeonFooter } from './components/layout/footer/NeonFooter.vue';
 export { default as NeonGrid } from './components/layout/grid/NeonGrid.vue';
@@ -54,6 +56,7 @@ export { default as NeonPassword } from './components/user-input/password/NeonPa
 export { default as NeonRangeSlider } from './components/user-input/range-slider/NeonRangeSlider.vue';
 export { default as NeonSideNav } from './components/layout/side-nav/NeonSideNav.vue';
 export { default as NeonSearch } from './components/user-input/search/NeonSearch.vue';
+export { default as NeonSearchFilter } from './components/user-input/search-filter/NeonSearchFilter.vue';
 export { default as NeonSelect } from './components/user-input/select/NeonSelect.vue';
 export { default as NeonSelectableCard } from './components/layout/card-list/selectable-card/NeonSelectableCard.vue';
 export { default as NeonSkeletonLoader } from './components/feedback/skeleton-loader/NeonSkeletonLoader.vue';
@@ -98,6 +101,7 @@ export type { NeonDropdownMenuItem } from '@/model/presentation/dropdown/NeonDro
 export { NeonDropdownPlacement } from '@/model/presentation/dropdown/NeonDropdownPlacement';
 export type { NeonDropdownPlacementObject } from '@/model/presentation/dropdown/NeonDropdownPlacementObject';
 export { NeonDropdownStyle } from '@/model/presentation/dropdown/NeonDropdownStyle';
+export type { NeonFilterItem } from './model/user-input/filter/NeonFilterItem';
 export type { NeonFilterListItem } from '@/model/user-input/filter-list/NeonFilterListItem';
 export { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 export type { NeonGridModel } from '@/model/layout/grid/NeonGridModel';

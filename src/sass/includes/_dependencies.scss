@@ -138,6 +138,9 @@
           NeonStickyButtons: [],
           NeonBreadcrumbs: [NeonIcon, NeonLink, NeonSwiper],
           NeonHeader: [NeonBreadcrumbs, NeonButton, NeonExpansionIndicator, NeonIcon, NeonInline, NeonLink, NeonNote, NeonSwiper, NeonStack],
+          NeonFilter: [NeonButton, NeonInput, NeonLink, NeonStack, NeonSwitch, NeonExpansionIndicator, NeonIcon, NeonLink, NeonFieldGroup, NeonDropdown, NeonBadge],
+          NeonSearchFilter: [NeonButton, NeonInput, NeonLink, NeonStack, NeonSwitch, NeonExpansionIndicator, NeonIcon, NeonLink, NeonFieldGroup, NeonDropdown, NeonBadge],
+          NeonFilterBar: [NeonInline, NeonSwiper],
   );
 
   $neon-flattened-components: [];

@@ -1,0 +1,55 @@
+@use '../includes/responsive';
+
+@mixin filter-bar {
+  .neon-filter-bar {
+    .neon-swiper {
+      // display dropdowns as modals when overflowing as the overflow horizontal scrolling prevents the dropdown from
+      // being displayed. See https://github.com/w3c/csswg-drafts/issues/4092
+      @include responsive.responsive(mobile-large) {
+        .neon-dropdown__content {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        .neon-dropdown__click-blocker {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background-color: var(--neon-background-color-overlay);
+          z-index: var(--neon-z-index-below-top);
+        }
+      }
+
+      @include responsive.responsive(larger-than-mobile-large) {
+        &,
+        .neon-swiper__container {
+          overflow: visible;
+        }
+      }
+    }
+
+    .neon-filter-bar__filters {
+      gap: var(--neon-space-8);
+    }
+
+    .neon-filter-bar__sort {
+      flex-direction: row;
+      margin-left: auto;
+
+      .neon-select {
+        .neon-dropdown__button.neon-button {
+          &,
+          &:focus-within {
+            border: none;
+          }
+
+          font-weight: var(--neon-font-weight-bold);
+        }
+      }
+    }
+  }
+}

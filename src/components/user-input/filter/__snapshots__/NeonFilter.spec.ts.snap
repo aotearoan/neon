@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NeonFilter filters list 1`] = `
+<div class="neon-dropdown--with-indicator neon-dropdown--open neon-dropdown--m neon-dropdown--low-contrast neon-dropdown neon-filter">
+  <div>
+    <!-- @slot optionally replace the dropdown button with a custom control -->
+    <div class="neon-field-group--external neon-field-group--primary neon-field-group">
+      <!-- @slot The slot for the inputs, buttons and input indicators to compose into a single component --><button class="neon-button--s neon-button--high-contrast neon-button--solid neon-button--state-ready neon-button" tabindex="0" type="button" title="Edit">
+        <!--v-if--><span class="neon-button__label">Item 5</span>
+        <!--v-if-->
+      </button><button class="neon-button--s neon-button--high-contrast neon-button--solid neon-button--state-ready neon-button--with-icon neon-button--icon-only neon-button" tabindex="0" type="button" title="Clear">
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+      </button>
+    </div>
+  </div>
+  <div class="neon-dropdown__click-blocker"></div>
+  <div class="neon-dropdown__content--bottom-left neon-dropdown__content" style="">
+    <!-- @slot The content of the open dropdown -->
+    <div class="neon-stack--gap-l neon-stack neon-filter__content">
+      <!-- @slot stack contents -->
+      <div class="neon-stack--gap-m neon-stack">
+        <!-- @slot stack contents --><span class="neon-filter__title">Artists</span><a class="neon-link--outline-none neon-link neon-filter__reset-link neon-filter__reset-link" tabindex="0">
+          <!-- @slot the content of the link -->Reset filter
+        </a>
+        <div class="neon-input--with-icon neon-input--with-state-highlight neon-input--with-state-icon neon-input--m neon-input--high-contrast neon-input--state-ready neon-input"><input aria-placeholder="Search" autocomplete="on" inputmode="text" placeholder="Search" tabindex="0" type="text" class="neon-input__textfield neon-input__text" value="5">
+          <!--v-if-->
+        </div>
+      </div>
+      <div class="neon-stack--gap-s neon-stack neon-filter__items">
+        <!-- @slot stack contents -->
+        <div class="neon-filter__item"><label aria-checked="true" aria-disabled="false" class="neon-switch--checkbox neon-switch--m neon-switch--brand neon-switch--right neon-switch--checked neon-switch no-style" role="checkbox" tabindex="-1">
+            <div class="neon-icon--name-check neon-icon--inverse neon-icon neon-switch__checkbox neon-switch__checkbox" tabindex="0"><svg width="100%" height="100%" viewBox="0 0 24 24" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                <path class="neon-svg--fill" d="M22.596,6.529c0.26,-0.278 0.404,-0.645 0.404,-1.025c0,-0.825 -0.679,-1.504 -1.505,-1.504c-0.381,0 -0.748,0.144 -1.026,0.404l-11.981,11.971l-4.957,-4.953c-0.278,-0.259 -0.645,-0.404 -1.026,-0.404c-0.826,0 -1.505,0.679 -1.505,1.504c-0,0.381 0.144,0.747 0.404,1.025l6.02,6.016c0.584,0.583 1.544,0.583 2.128,0l13.044,-13.034Z" style="fill-rule:nonzero;"></path>
+              </svg>
+            </div>
+            <!--v-if--><input checked="" class="neon-switch__input" type="checkbox"><span class="neon-switch__label">Item 5</span>
+          </label><span class="neon-number neon-filter__item-count">42</span></div>
+      </div><button class="neon-button--m neon-button--high-contrast neon-button--outline neon-button--state-ready neon-button--full-width neon-button neon-filter__cta neon-filter__cta" tabindex="0" type="button">
+        <!--v-if--><span class="neon-button__label">Close</span>
+        <!--v-if-->
+      </button>
+    </div>
+  </div>
+</div>
+`;

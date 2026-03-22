@@ -1,0 +1,25 @@
+@use '../includes/responsive';
+
+@mixin search-filter {
+  .neon-search-filter {
+    .neon-search-filter__content {
+      flex: 1;
+      padding: var(--neon-space-16);
+      width: var(--neon-width-filter-content);
+
+      @include responsive.responsive(mobile-large) {
+        flex: 1 0 auto;
+      }
+
+      .neon-search-filter__title {
+        user-select: none;
+        font-size: var(--neon-font-size-xl);
+        font-weight: var(--neon-font-weight-medium);
+      }
+
+      &__cta {
+        margin-top: auto;
+      }
+    }
+  }
+}

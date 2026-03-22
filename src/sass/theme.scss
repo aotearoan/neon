@@ -300,4 +300,16 @@ $neon-components: null !default;
   @if index($neon-flattened-components, NeonHeader) {
     @include components.header;
   }
+
+  @if index($neon-flattened-components, NeonFilter) {
+    @include components.filter;
+  }
+
+  @if index($neon-flattened-components, NeonSearchFilter) {
+    @include components.search-filter;
+  }
+
+  @if index($neon-flattened-components, NeonFilterBar) {
+    @include components.filter-bar;
+  }
 }

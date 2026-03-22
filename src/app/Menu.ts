@@ -238,6 +238,12 @@ export class Menu {
                 component: 'NeonDrawer',
               },
               {
+                path: 'filter-bar',
+                page: 'FilterBar',
+                name: 'Filter Bar',
+                component: 'NeonFilterBar',
+              },
+              {
                 path: 'footer',
                 page: 'Footer',
                 component: 'NeonFooter',
@@ -528,6 +534,12 @@ export class Menu {
                 component: 'NeonFile',
               },
               {
+                path: 'filter',
+                page: 'Filter',
+                component: 'NeonFilter',
+                keywords: 'select dropdown list',
+              },
+              {
                 path: 'filter-list',
                 page: 'FilterList',
                 name: 'Filter List',
@@ -577,6 +589,13 @@ export class Menu {
                 page: 'Search',
                 keywords: 'select autocomplete',
                 component: 'NeonSearch',
+              },
+              {
+                path: 'search-filter',
+                page: 'SearchFilter',
+                name: 'Search Filter',
+                component: 'NeonSearchFilter',
+                keywords: 'search dropdown list filter',
               },
               {
                 path: 'select',
