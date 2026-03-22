@@ -1,5 +1,12 @@
 # Changelog
 
+## [28.4.0](https://github.com/aotearoan/neon/compare/v28.3.0...v28.4.0) (2026-03-22)
+
+
+### Features
+
+* empty state & list layout components ([#404](https://github.com/aotearoan/neon/issues/404)) ([975701a](https://github.com/aotearoan/neon/commit/975701a117545c17153083ca38b09f7b9e151270))
+
 ## [28.3.0](https://github.com/aotearoan/neon/compare/v28.2.0...v28.3.0) (2026-03-22)
 
 
