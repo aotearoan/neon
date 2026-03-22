@@ -11,6 +11,9 @@ import type { NeonToastMessage } from '@/model/feedback/toast/NeonToastMessage';
 import { NeonToastService } from '@/utils/feedback/toast/NeonToastService';
 import { NeonAlertPlacement } from '@/model/feedback/alert/NeonAlertPlacement';
 import { NeonVerticalPosition } from '@/model/common/position/NeonVerticalPosition';
+import NeonDialogContainer from '@/components/feedback/alert/container/NeonDialogContainer';
+import { NeonDialogService } from '@/utils/feedback/dialog/NeonDialogService';
+import type { NeonDialogMessage } from '@/model/feedback/dialog/NeonDialogMessage';
 
 /**
  * NeonAlert is a component for presenting temporary notifications to the user. Place the component once inside your app
@@ -21,6 +24,7 @@ export default defineComponent({
   components: {
     NeonAlertContainer,
     NeonToastContainer,
+    NeonDialogContainer,
   },
   props: {
     /**
@@ -42,6 +46,13 @@ export default defineComponent({
     // toasts
     const top = ref<Array<NeonToastModel>>([]);
     const bottom = ref<Array<NeonToastModel>>([]);
+
+    // dialogs
+    const dialog = ref<NeonDialogMessage>({
+      question: '',
+      title: '',
+      open: false,
+    });
 
     const internalId = ref(1);
 
@@ -179,6 +190,13 @@ export default defineComponent({
       });
     };
 
+    const onShowDialog = (message: NeonDialogMessage) => {
+      dialog.value = {
+        ...message,
+        open: true,
+      };
+    };
+
     onMounted(() => {
       // alerts
       NeonEventBus.on(NeonAlertService.generateEventKey(NeonAlertLevel.Info), onInfoAlert);
@@ -192,6 +210,8 @@ export default defineComponent({
       NeonEventBus.on(NeonToastService.generateEventKey(NeonAlertLevel.Warn), onWarnToast);
       NeonEventBus.on(NeonToastService.generateEventKey(NeonAlertLevel.Error), onErrorToast);
       NeonEventBus.on(NeonToastService.removeEventKey, onRemoveToast);
+      // dialog
+      NeonEventBus.on(NeonDialogService.generateEventKey(), onShowDialog);
     });
 
     onUnmounted(() => {
@@ -207,6 +227,8 @@ export default defineComponent({
       NeonEventBus.off(NeonToastService.generateEventKey(NeonAlertLevel.Warn), onWarnToast);
       NeonEventBus.off(NeonToastService.generateEventKey(NeonAlertLevel.Error), onErrorToast);
       NeonEventBus.off(NeonToastService.removeEventKey, onRemoveToast);
+      // dialog
+      NeonEventBus.off(NeonDialogService.generateEventKey(), onShowDialog);
     });
 
     return {
@@ -216,6 +238,7 @@ export default defineComponent({
       bottomRight,
       top,
       bottom,
+      dialog,
     };
   },
 });

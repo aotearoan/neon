@@ -16,6 +16,7 @@ export { default as NeonChip } from './components/user-input/chip/NeonChip.vue';
 export { default as NeonColor } from './components/user-input/color/NeonColor.vue';
 export { default as NeonDatePicker } from './components/user-input/date-picker/NeonDatePicker.vue';
 export { default as NeonDialog } from './components/feedback/dialog/NeonDialog.vue';
+export { default as NeonDialogContainer } from './components/feedback/alert/container/NeonDialogContainer.vue';
 export { default as NeonDrawer } from './components/layout/drawer/NeonDrawer.vue';
 export { default as NeonDropdown } from './components/presentation/dropdown/NeonDropdown.vue';
 export { default as NeonDropdownMenu } from './components/navigation/dropdown-menu/NeonDropdownMenu.vue';
@@ -92,6 +93,7 @@ export type { NeonCarouselImage } from '@/model/presentation/image-carousel/Neon
 export { NeonChipAction } from '@/model/user-input/chip/NeonChipAction';
 export type { NeonContrastAccessibility } from '@/model/common/color/NeonContrastAccessibility';
 export type { NeonDate } from '@/model/common/date/NeonDate';
+export type { NeonDialogMessage } from './model/feedback/dialog/NeonDialogMessage';
 export type { NeonDropdownMenuItem } from '@/model/presentation/dropdown/NeonDropdownMenuItem';
 export { NeonDropdownPlacement } from '@/model/presentation/dropdown/NeonDropdownPlacement';
 export type { NeonDropdownPlacementObject } from '@/model/presentation/dropdown/NeonDropdownPlacementObject';
@@ -148,6 +150,7 @@ export { NeonClipboardService, NeonClipboardSupport } from '@/utils/common/clipb
 export { NeonClosableUtils } from '@/utils/common/closable/NeonClosableUtils';
 export { NeonDateUtils } from '@/utils/common/date/NeonDateUtils';
 export { NeonDebounceUtils } from '@/utils/common/debounce/NeonDebounceUtils';
+export { NeonDialogService } from './utils/feedback/dialog/NeonDialogService';
 export { NeonDropdownPlacementUtils } from '@/utils/presentation/dropdown/NeonDropdownPlacementUtils';
 export { NeonEventBus } from '@/utils/common/event/NeonEventBus';
 export { fileToDataURL } from '@/utils/user-input/file/NeonFileUtils';

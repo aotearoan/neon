@@ -43,6 +43,7 @@
         <neon-card-body>
           <editor v-model="withActionsTemplate" />
         </neon-card-body>
+        <!-- toasts -->
         <neon-card-header>
           <h2 class="neon-h3">Toast alerts</h2>
         </neon-card-header>
@@ -64,12 +65,28 @@
         <neon-card-body>
           <editor v-model="toastTemplate" />
         </neon-card-body>
+        <!-- dialog -->
+        <neon-card-header>
+          <h2 class="neon-h3">Dialog alerts</h2>
+        </neon-card-header>
+        <neon-card-body>
+          <neon-stack>
+            <neon-inline>
+              <neon-button color="low-contrast" label="Show Dialog" @click="showDialog" />
+              <neon-button color="low-contrast" label="Show Dialog (Opaque)" @click="showDialog(true)" />
+            </neon-inline>
+          </neon-stack>
+        </neon-card-body>
+        <neon-card-body>
+          <editor v-model="dialogTemplate" />
+        </neon-card-body>
       </neon-card>
     </template>
     <template #description>
       <neon-card>
         <neon-card-body>
           <neon-stack>
+            <!-- alerts -->
             <neon-stack gap="s">
               <p>
                 The <strong>NeonAlert</strong> component can be used to display temporary notifications to the user. The
@@ -103,7 +120,8 @@
                 Use the following static method on <strong>NeonAlertService</strong> to remove an alert style messages:
               </p>
             </neon-stack>
-            <editor v-model="removeAlert" language="typescript" />
+            <editor v-model="removeAlertExample" language="typescript" />
+            <!--  toasts -->
             <h2 class="neon-h3">Displaying toasts</h2>
             <neon-stack gap="s">
               <p>
@@ -129,7 +147,25 @@
                 Use the following static method on <strong>NeonToastService</strong> to remove a toast style messages:
               </p>
             </neon-stack>
-            <editor v-model="removeToast" language="typescript" />
+            <editor v-model="removeToastExample" language="typescript" />
+            <!-- dialog -->
+            <h2 class="neon-h3">Displaying Dialog</h2>
+            <neon-stack gap="s">
+              <p>
+                Use the following static methods on <strong>NeonDialogService</strong> to display a confirmation dialog
+                modal:
+              </p>
+            </neon-stack>
+            <editor v-model="dialogConfig" language="typescript" />
+            <p>
+              By default dialogs are asynchronous and await user input before they disappear, they can be dismissed by
+              clicking on either button or by pressing the `escape` key. They are displayed centered at the top of the
+              screen.
+            </p>
+            <p>
+              For a full range of message options see
+              <neon-link href="/model/feedback/dialog/NeonDialogMessage">NeonDialogMessage</neon-link>
+            </p>
           </neon-stack>
         </neon-card-body>
       </neon-card>

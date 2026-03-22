@@ -134,7 +134,7 @@ export class Menu {
               {
                 path: 'alert',
                 page: 'Alert',
-                name: 'Alert / Toast',
+                name: 'Alert / Toast / Dialog',
                 keywords: 'notifications info error warning success banner',
                 component: 'NeonAlert',
                 anchors: ['Examples', 'Description', 'API'],

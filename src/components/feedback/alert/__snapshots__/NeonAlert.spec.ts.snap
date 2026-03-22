@@ -20,5 +20,6 @@ exports[`NeonAlert matches snapshot 1`] = `
   <div class="neon-alert--bottom neon-alert">
     <transition-group-stub name="neon-alert-transition" appear="false" persisted="false" css="true"></transition-group-stub>
   </div>
+  <!---->
 </div>
 `;
