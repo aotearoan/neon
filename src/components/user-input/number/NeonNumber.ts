@@ -143,7 +143,7 @@ export default defineComponent({
     });
 
     const computedValue = computed(() => {
-      const newValue = props.modelValue !== null ? +props.modelValue : props.min || 0;
+      const newValue = props.modelValue !== null ? +props.modelValue : props.min ?? 0;
       return computedRawDecimals.value !== undefined ? Number(newValue.toFixed(computedRawDecimals.value)) : newValue;
     });
 
@@ -163,11 +163,15 @@ export default defineComponent({
     });
 
     const rawValue = computed(() => {
-      return computedRawDecimals.value ? props.modelValue?.toFixed(computedRawDecimals.value) : props.modelValue;
+      return computedRawDecimals.value !== undefined && props.modelValue !== null
+        ? props.modelValue.toFixed(computedRawDecimals.value)
+        : props.modelValue === null
+        ? ''
+        : `${props.modelValue}`;
     });
 
     const displayValue = computed(() => {
-      return focus.value ? (rawValue.value ? `${rawValue.value}` : '') : formattedValue.value;
+      return focus.value ? (rawValue.value !== undefined ? `${rawValue.value}` : '') : formattedValue.value;
     });
 
     const computedStep = computed(() => {
