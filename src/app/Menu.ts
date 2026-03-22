@@ -267,6 +267,13 @@ export class Menu {
                 component: 'NeonInline',
               },
               {
+                path: 'list-layout',
+                page: 'ListLayout',
+                name: 'List Layout',
+                keywords: 'page',
+                component: 'NeonListLayout',
+              },
+              {
                 path: 'modal',
                 page: 'Modal',
                 keywords: 'dialog',
@@ -412,6 +419,13 @@ export class Menu {
                 page: 'Dropdown',
                 keywords: 'popup',
                 component: 'NeonDropdown',
+              },
+              {
+                path: 'empty-state',
+                page: 'EmptyState',
+                name: 'Empty State / Error',
+                keywords: 'error no results',
+                component: 'NeonEmptyState',
               },
               {
                 path: 'expansion-indicator',

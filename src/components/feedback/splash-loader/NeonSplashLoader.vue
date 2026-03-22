@@ -1,14 +1,14 @@
 <template>
-  <transition name="neon-fade-transition" mode="out-in">
+  <transition mode="out-in" name="neon-splash-transition">
     <div
       v-if="ready"
-      class="neon-splash-loader"
       :class="[
         `neon-splash-loader--${size}`,
         { 'neon-splash-loader--fullscreen': fullscreen, 'neon-splash-loader--with-overlay': overlay },
       ]"
+      class="neon-splash-loader"
     >
-      <neon-icon name="loading" :color="color" class="neon-splash-loader__loading-icon" />
+      <neon-icon :color="color" class="neon-splash-loader__loading-icon" name="loading" />
     </div>
   </transition>
 </template>

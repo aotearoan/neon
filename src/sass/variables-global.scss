@@ -1396,4 +1396,11 @@
    * Width of the filter content when open
    */
   --neon-width-filter-content: 250rem;
+
+  /* empty state */
+  /**
+   * @component NeonEmptyState
+   * Max width of the empty state content
+   */
+  --neon-max-width-empty-state: 416rem;
 }

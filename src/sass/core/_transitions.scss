@@ -10,4 +10,19 @@
       opacity: 0;
     }
   }
+
+  .neon-splash-transition {
+    &-enter-active {
+      transition: opacity ease-in-out var(--neon-animation-speed-fast);
+    }
+
+    &-leave-active {
+      transition: opacity ease-in-out var(--neon-animation-speed-slowest);
+    }
+
+    &-enter-from,
+    &-leave-to {
+      opacity: 0;
+    }
+  }
 }

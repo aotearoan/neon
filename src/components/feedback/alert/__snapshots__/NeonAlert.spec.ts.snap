@@ -20,6 +20,37 @@ exports[`NeonAlert matches snapshot 1`] = `
   <div class="neon-alert--bottom neon-alert">
     <transition-group-stub name="neon-alert-transition" appear="false" persisted="false" css="true"></transition-group-stub>
   </div>
-  <!---->
+  <div class="neon-dialog">
+    <div class="neon-modal--breakpoint-mobile neon-modal neon-dialog" role="dialog">
+      <div class="neon-modal__container">
+        <!-- @slot modal contents -->
+        <div class="neon-card--vertical neon-card--m neon-card--horizontal-breakpoint-mobile-large neon-card">
+          <!-- @slot card contents -->
+          <div class="neon-card-body">
+            <!-- @slot card body content -->
+            <div>
+              <h6 class="neon-dialog__title"></h6>
+              <div class="neon-dialog__question"></div>
+            </div>
+            <div><button class="neon-button--s neon-button--low-contrast neon-button--solid neon-button--state-ready neon-button--full-width neon-button" tabindex="0" type="button" aria-label="Cancel">
+                <!--v-if--><span class="neon-button__label">Cancel</span>
+                <!--v-if-->
+              </button><button class="neon-button--s neon-button--primary neon-button--solid neon-button--state-ready neon-button--full-width neon-button neon-dialog__confirm-button neon-dialog__confirm-button" tabindex="0" type="button" aria-label="Confirm">
+                <!--v-if--><span class="neon-button__label">Confirm</span>
+                <!--v-if-->
+              </button></div>
+          </div>
+        </div><button class="neon-button--s neon-button--low-contrast neon-button--text neon-button--state-ready neon-button--text-transparent neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-modal__close neon-modal__close" tabindex="0" type="button">
+          <div class="neon-icon--name-times neon-icon--low-contrast neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+              <path class="neon-svg--fill" fill-rule="evenodd" d="M5.72 5.72a.75.75 0 011.06 0L12 10.94l5.22-5.22a.75.75 0 111.06 1.06L13.06 12l5.22 5.22a.75.75 0 11-1.06 1.06L12 13.06l-5.22 5.22a.75.75 0 01-1.06-1.06L10.94 12 5.72 6.78a.75.75 0 010-1.06z"></path>
+            </svg>
+          </div>
+          <!--v-if-->
+          <!--v-if-->
+        </button>
+      </div>
+      <div class="neon-modal__overlay"></div>
+    </div>
+  </div>
 </div>
 `;

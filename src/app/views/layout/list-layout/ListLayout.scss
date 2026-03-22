@@ -1,0 +1,10 @@
+.list-layout-page {
+  .list-layout-page__example-images {
+    align-items: flex-start;
+
+    img {
+      border: var(--neon-border);
+      max-width: 65%;
+    }
+  }
+}

@@ -18,6 +18,19 @@ describe('NeonCardList', () => {
     modelSelectable = CardListModelFixture(5, undefined, 0, true);
   });
 
+  it('renders filters slot contents', () => {
+    // given
+    const { html } = render(NeonCardList, {
+      props: {
+        items: modelWithLinks,
+      },
+      slots: { filters: '<p>test</p>' },
+      global: { plugins: [router] },
+    });
+    // when / then
+    expect(html()).toMatch('<p>test</p>');
+  });
+
   it('renders header slot contents', () => {
     // given
     const { html } = render(NeonCardList, {
@@ -60,6 +73,19 @@ describe('NeonCardList', () => {
     expect(html()).toMatchSnapshot();
   });
 
+  it('renders loading state', () => {
+    // given
+    const { container } = render(NeonCardList, {
+      props: {
+        items: modelSelectable,
+        loading: true,
+      },
+      global: { plugins: [router] },
+    });
+    // when / then
+    expect(container.querySelector('.neon-splash-loader')).toBeDefined();
+  });
+
   it('emits toggle-selection event when card is clicked', async () => {
     // given
     const { container, emitted } = render(NeonCardList, {
@@ -73,7 +99,7 @@ describe('NeonCardList', () => {
     // when
     await fireEvent.click(container.querySelectorAll('.neon-selectable-card')[0] as HTMLDivElement);
     // then
-    expect(emitted().toggleSelected[0]).toEqual([modelSelectable[0].model.id, !modelSelectable[0].selected]);
+    expect(emitted()['toggle-selected'][0]).toEqual([modelSelectable[0].model.id, !modelSelectable[0].selected]);
   });
 
   it('renders default labels', () => {

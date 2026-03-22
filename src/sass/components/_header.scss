@@ -3,6 +3,8 @@
 
 @mixin header {
   .neon-header {
+    margin-top: var(--neon-space-24);
+    margin-bottom: var(--neon-space-40);
     gap: var(--neon-space-24);
 
     &__content {

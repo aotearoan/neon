@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NeonEmptyState renders content 1`] = `
+<div class="neon-stack--gap-l neon-stack neon-empty-state--empty-state neon-empty-state">
+  <!-- @slot stack contents -->
+  <!--v-if-->
+  <h1 class="neon-empty-state__title">Empty State</h1>
+  <!--v-if-->
+  <div class="neon-empty-state__description">
+    <!-- @slot description rendered between the empty state title & any CTAs -->
+    <p>No items found</p>
+  </div>
+  <div class="neon-inline--gap-m neon-inline neon-empty-state__ctas">
+    <!-- @slot inline contents --><a href="/go-here" class="neon-link--no-style neon-link--outline-none neon-link neon-link--router-link neon-button--m neon-button--primary neon-button--solid neon-button--state-ready neon-button neon-empty-state__cta neon-empty-state__cta neon-button--m neon-button--primary neon-button--solid neon-button--state-ready neon-button neon-empty-state__cta neon-empty-state__cta" tabindex="0" disabled="false" role="button">
+      <!-- @slot the content of the link -->
+      <!--v-if--><span class="neon-button__label">Add something</span>
+    </a>
+  </div>
+</div>
+`;
