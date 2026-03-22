@@ -206,6 +206,17 @@ describe('NeonToggle', () => {
     expect(html()).toMatch('neon-toggle__radio-button-indicator');
   });
 
+  it('renders additional content slot', () => {
+    // given
+    const { getAllByText } = render(NeonToggle, {
+      props,
+      slots: { additionalContent: `<p>Additional content slot</p>` },
+    });
+    // then
+    const slots = getAllByText('Additional content slot');
+    expect(slots.length).toEqual(props.model.length);
+  });
+
   it('emits selection when clicked', async () => {
     // given
     const { container, emitted } = harness;
