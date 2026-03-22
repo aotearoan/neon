@@ -3,21 +3,21 @@
 exports[`NeonHeader renders breadcrumb 1`] = `
 <div class="neon-stack--gap-l neon-stack neon-header--page neon-header">
   <!-- @slot stack contents -->
-  <div class="neon-swiper--horizontal neon-swiper--fade neon-swiper neon-breadcrumbs">
+  <div class="neon-swiper--horizontal neon-swiper--fade neon-swiper neon-breadcrumbs--responsive-swiper neon-breadcrumbs">
     <div class="neon-swiper__container">
       <!-- @slot contents of swiper with which to apply overflow scrolling. -->
       <div class="neon-breadcrumbs__container"><a class="neon-link--no-style neon-link--outline-none neon-link neon-breadcrumbs__back neon-breadcrumbs__back" tabindex="0">
           <!-- @slot the content of the link -->
-          <!--v-if--> Zurück
+          <!--v-if--><span class="neon-breadcrumbs__back-label">Zurück</span>
         </a>
         <div class="neon-breadcrumbs__links">
-          <!--v-if--><a class="neon-link--no-style neon-link--outline-none neon-link neon-breadcrumbs__link neon-breadcrumbs__link" tabindex="0" to="/level-1">
+          <!--v-if--><a href="/level-1" class="neon-link--no-style neon-link--outline-none neon-link neon-link--router-link neon-breadcrumbs__link neon-breadcrumbs__link" tabindex="0">
             <!-- @slot the content of the link -->Level 1
           </a>
-          <!--v-if--><a class="neon-link--no-style neon-link--outline-none neon-link neon-breadcrumbs__link neon-breadcrumbs__link" tabindex="0" to="/level-1/level-2">
+          <!--v-if--><a href="/level-1/level-2" class="neon-link--no-style neon-link--outline-none neon-link neon-link--router-link neon-breadcrumbs__link neon-breadcrumbs__link" tabindex="0">
             <!-- @slot the content of the link -->Level 2
           </a>
-          <!--v-if--><a class="neon-link--no-style neon-link--outline-none neon-link neon-breadcrumbs__link neon-breadcrumbs__link" tabindex="0" to="/level-1/level-2/1234-5678-90">
+          <!--v-if--><a href="/level-1/level-2/1234-5678-90" class="neon-link--no-style neon-link--outline-none neon-link neon-link--router-link neon-breadcrumbs__link neon-breadcrumbs__link" tabindex="0">
             <!-- @slot the content of the link -->1234-5678-90
           </a>
         </div>

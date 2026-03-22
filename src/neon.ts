@@ -88,6 +88,7 @@ export { NeonBadgeSize } from '@/model/presentation/badge/NeonBadgeSize';
 export type { NeonBannerMessage } from '@/model/feedback/banner/NeonBannerMessage';
 export type { NeonBannerModel } from '@/model/feedback/banner/NeonBannerModel';
 export type { NeonBreadcrumbLink } from './model/navigation/breadcrumbs/NeonBreadcrumbLink';
+export { NeonBreadcrumbResponsiveStyle } from './model/navigation/breadcrumbs/NeonBreadcrumbResponsiveStyle';
 export { NeonButtonSize } from '@/model/user-input/button/NeonButtonSize';
 export { NeonButtonStyle } from '@/model/user-input/button/NeonButtonStyle';
 export { NeonButtonType } from '@/model/user-input/button/NeonButtonType';
