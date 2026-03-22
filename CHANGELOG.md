@@ -1,5 +1,12 @@
 # Changelog
 
+## [28.1.1](https://github.com/aotearoan/neon/compare/v28.1.0...v28.1.1) (2026-03-22)
+
+
+### Bug Fixes
+
+* optional field labels ([#396](https://github.com/aotearoan/neon/issues/396)) ([4380448](https://github.com/aotearoan/neon/commit/438044866448feefa5384855374e97cfdd1f4184))
+
 ## [28.1.0](https://github.com/aotearoan/neon/compare/v28.0.3...v28.1.0) (2026-03-22)
 
 
