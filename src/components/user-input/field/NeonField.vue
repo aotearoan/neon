@@ -8,7 +8,7 @@
     class="neon-field"
   >
     <span class="neon-field__label-wrapper">
-      <label :for="labelFor" class="neon-field__label">{{ label }}</label>
+      <label v-if="label" :for="labelFor" class="neon-field__label">{{ label }}</label>
       <span v-if="optional" class="neon-field__optional">{{ optionalLabel }}</span>
     </span>
     <div class="neon-field__contents">

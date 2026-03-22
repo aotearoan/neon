@@ -224,12 +224,12 @@
   --neon-z-index-top: 9999;
 
   /**
- * The default font size for the page, this is responsive & scales up to 17rem at the mobile large breakpoint.
- */
+   * The default font size for the page.
+   */
   --neon-base-font-size: 16rem;
   /**
-     * Typography scale multiplier (See <a href="https://type-scale.com/">Major second</a>)
-     */
+   * Typography scale multiplier (See <a href="https://type-scale.com/">Major second</a>)
+   */
   --neon-typography-scale: 1.225;
   /**
    * The base typography bottom margin unit used in the typography scale (H*)
@@ -252,11 +252,6 @@
    * The medium font size
    */
   --neon-font-size-m: var(--neon-base-font-size);
-
-  @include responsive.responsive(mobile-large) {
-    --neon-font-size-m: 17rem;
-    --neon-base-font-size: 17rem;
-  }
 
   /**
    * The large font size
