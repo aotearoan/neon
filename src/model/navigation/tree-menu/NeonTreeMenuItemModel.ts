@@ -12,6 +12,8 @@ export interface NeonTreeMenuItemModel {
   href?: string;
   /** Expanded state of the menu item. */
   expanded?: boolean;
+  /** Denotes the link is external (open in a new tab). */
+  external?: boolean;
   /** A list of page sub menu items */
   subMenu?: NeonTreeMenuSubMenuModel[];
 }

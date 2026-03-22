@@ -67,7 +67,7 @@ export default defineComponent({
 
     const lookupLink = (typeName?: string) => {
       if (typeName) {
-        const matches = typeName.match(/.*((Arcual|Neon)[a-zA-Z]+)/);
+        const matches = typeName.match(/.*((Neon)[a-zA-Z]+)/);
         if (matches && matches[1]) {
           const neonType = matches[1];
           const model = SupportingClassesDocs.modelList().find((model) => model.indexOf(neonType) >= 0);

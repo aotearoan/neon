@@ -165,6 +165,18 @@ describe('NeonTreeMenu', () => {
       href: 'https://support.aotearoan.com/',
       external: true,
     },
+    {
+      key: 'another-section',
+      label: 'Another section',
+      children: [
+        {
+          label: 'External link',
+          key: 'external-link',
+          href: 'https://support.aotearoan.com/',
+          external: true,
+        },
+      ],
+    },
   ];
 
   let harness: RenderResult;

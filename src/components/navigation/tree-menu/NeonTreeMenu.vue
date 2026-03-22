@@ -59,6 +59,7 @@
             <neon-link
               :href="link.href"
               :no-style="true"
+              :target="link.external ? '_blank' : undefined"
               class="neon-tree-menu__item-link"
               outline-style="none"
               tabindex="-1"
