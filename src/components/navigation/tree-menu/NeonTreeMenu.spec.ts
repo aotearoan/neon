@@ -165,6 +165,18 @@ describe('NeonTreeMenu', () => {
       href: 'https://support.aotearoan.com/',
       external: true,
     },
+    {
+      key: 'another-section',
+      label: 'Another section',
+      children: [
+        {
+          label: 'External link',
+          key: 'external-link',
+          href: 'https://support.aotearoan.com/',
+          external: true,
+        },
+      ],
+    },
   ];
 
   let harness: RenderResult;
@@ -208,6 +220,21 @@ describe('NeonTreeMenu', () => {
     // when / then
     expect(container.querySelector('.neon-tree-menu--expand-all')).toBeDefined();
     expect(container.querySelectorAll('.neon-tree-menu__sub-menu--expanded').length).toEqual(6);
+  });
+
+  it('renders active highlight by default', () => {
+    // given
+    const { container } = harness;
+    // when / then
+    expect(container.querySelector('.neon-tree-menu--active')).toBeDefined();
+  });
+
+  it('renders exact highlight', async () => {
+    // given
+    const { container, rerender } = harness;
+    await rerender({ exactHighlighting: true });
+    // when / then
+    expect(container.querySelector('.neon-tree-menu--exact')).toBeDefined();
   });
 
   it('disables sections', async () => {

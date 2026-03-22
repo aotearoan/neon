@@ -44,7 +44,7 @@ export default defineComponent({
     const route = useRoute();
     const routerUrl = computed(() => (props.href?.indexOf('/') === 0 ? props.href : undefined));
 
-    const activeRoute = computed(() => props.href && props.href.indexOf(route.fullPath) === 0);
+    const activeRoute = computed(() => routerUrl.value && route.fullPath.indexOf(routerUrl.value) === 0);
     const exactRoute = computed(() => activeRoute.value && props.href === route.fullPath);
 
     const sanitizedAttributes = computed(() => {

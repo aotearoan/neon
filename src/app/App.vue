@@ -31,6 +31,7 @@
                     <neon-tree-menu
                       :id="`sideNavMenu${section.group}`"
                       v-model="section.children"
+                      :exact-highlighting="true"
                       :expand-all="expandAll"
                     />
                   </neon-expansion-panel>
@@ -112,7 +113,12 @@
               class="menu-expansion-panel"
               size="l"
             >
-              <neon-tree-menu :id="`drawerMenu${section.group}`" v-model="section.children" :expand-all="expandAll" />
+              <neon-tree-menu
+                :id="`drawerMenu${section.group}`"
+                v-model="section.children"
+                :exact-highlighting="true"
+                :expand-all="expandAll"
+              />
             </neon-expansion-panel>
           </template>
         </neon-side-nav>
