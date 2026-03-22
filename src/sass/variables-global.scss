@@ -1389,4 +1389,11 @@
    * Min height of the sticky buttons container
    */
   --neon-min-height-sticky-buttons: 72rem;
+
+  /* filter */
+  /**
+   * @component NeonFilter
+   * Width of the filter content when open
+   */
+  --neon-width-filter-content: 250rem;
 }

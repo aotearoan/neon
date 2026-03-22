@@ -96,6 +96,11 @@ $fixed-content-height: 348rem;
   .examples:not(:first-child) {
     margin-top: var(--neon-space-32);
   }
+
+  .neon-stack h4 {
+    margin-bottom: 0;
+    margin-top: var(--neon-base-space);
+  }
 }
 
 .app .example {
