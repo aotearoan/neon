@@ -1,5 +1,12 @@
 # Changelog
 
+## [28.0.3](https://github.com/aotearoan/neon/compare/v28.0.2...v28.0.3) (2026-03-22)
+
+
+### Bug Fixes
+
+* tree menu improvements ([#392](https://github.com/aotearoan/neon/issues/392)) ([2fa85f7](https://github.com/aotearoan/neon/commit/2fa85f7858711f47aa3db8018dfe878aea9f1b8d))
+
 ## [28.0.2](https://github.com/aotearoan/neon/compare/v28.0.1...v28.0.2) (2026-03-22)
 
 
