@@ -6,6 +6,7 @@ import { router } from '@/../test/unit/test-router';
 import { nextTick } from 'vue';
 import { NeonDropdownPlacementUtils } from '@/utils/presentation/dropdown/NeonDropdownPlacementUtils';
 import { NeonDropdownPlacement } from '@/model/presentation/dropdown/NeonDropdownPlacement';
+import { NeonHorizontalPosition } from '@/model/common/position/NeonHorizontalPosition';
 
 describe('NeonDropdownMenu', () => {
   const model = [
@@ -27,6 +28,7 @@ describe('NeonDropdownMenu', () => {
       label: 'Internal link',
       href: '/test',
       icon: 'images',
+      iconPosition: NeonHorizontalPosition.Right,
       separatorBefore: false,
     },
     {
@@ -257,6 +259,18 @@ describe('NeonDropdownMenu', () => {
     });
     // when / then
     expect(container.querySelectorAll('.neon-dropdown-menu__item--separator-before').length).toEqual(3);
+  });
+
+  it('renders right icon', () => {
+    // given
+    const { container } = render(NeonDropdownMenu, {
+      props: {
+        model,
+      },
+      global: { plugins: [router] },
+    });
+    // when / then
+    expect(container.querySelectorAll('.neon-dropdown-menu__item--icon-right').length).toEqual(1);
   });
 
   it('renders grouped', () => {

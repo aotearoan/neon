@@ -27,6 +27,7 @@
             'neon-dropdown-menu__item--group-title': item.isGroup,
             'neon-dropdown-menu__item--grouped': item.grouped,
             'neon-dropdown-menu__item--highlighted': item.key === highlightedKey,
+            'neon-dropdown-menu__item--icon-right': item.icon && item.iconPosition === NeonHorizontalPosition.Right,
           },
           `neon-dropdown-menu__item--${size}`,
         ]"

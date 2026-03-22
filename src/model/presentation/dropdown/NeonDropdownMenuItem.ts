@@ -1,3 +1,5 @@
+import type { NeonHorizontalPosition } from '@/model/common/position/NeonHorizontalPosition';
+
 /**
  * Model object for a dropdown menu item. See <a href="/navigation/dropdown-menu">NeonDropdownMenu</a>.
  */
@@ -8,8 +10,10 @@ export interface NeonDropdownMenuItem {
   label: string;
   /** The URL if this menu item links to another page or an external URL. */
   href?: string;
-  /** The name of an optional icon to be displayed before the label. */
+  /** The name of an optional icon to be displayed with the label. */
   icon?: string;
+  /** The position of an icon to be displayed with the label. The default is to the left. */
+  iconPosition?: NeonHorizontalPosition;
   /** Boolean to indicate the display of a separator before this menu item in the dropdown list. */
   separatorBefore?: boolean;
   /** Boolean indicating if this menu item is disabled. */

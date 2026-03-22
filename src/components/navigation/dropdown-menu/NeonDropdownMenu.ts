@@ -7,6 +7,7 @@ import { NeonDropdownPlacement } from '@/model/presentation/dropdown/NeonDropdow
 import { NeonScrollUtils } from '@/utils/common/dom/NeonScrollUtils';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import NeonLink from '@/components/navigation/link/NeonLink.vue';
+import { NeonHorizontalPosition } from '@/model/common/position/NeonHorizontalPosition';
 
 /**
  * <p>A dropdown menu consisting of a button to open the menu and a list of menu items. Clicking on a menu item will
@@ -197,6 +198,7 @@ export default defineComponent({
       clickItem,
       navigateBy,
       onPlacement,
+      NeonHorizontalPosition,
     };
   },
 });
