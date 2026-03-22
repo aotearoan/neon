@@ -45,8 +45,9 @@ export default defineComponent({
           if (linksRef.value) {
             const neonLink = linksRef.value.querySelector<HTMLAnchorElement>('.neon-link:last-child');
             neonLink?.scrollIntoView({
-              behavior: 'auto',
+              behavior: 'instant' as ScrollBehavior,
               inline: 'end',
+              block: 'nearest',
             });
           }
         });

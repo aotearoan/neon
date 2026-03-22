@@ -4,8 +4,7 @@ exports[`NeonCardList renders selectable cards 1`] = `
 <div class="neon-card-list">
   <!-- @slot slot for providing a filter bar component -->
   <!--v-if-->
-  <div class="neon-stack--gap-z neon-stack neon-card-list__cards">
-    <!-- @slot stack contents -->
+  <div class="neon-card-list__cards">
     <div class="neon-card--horizontal neon-card--s neon-card--horizontal-breakpoint-mobile-large neon-card--horizontal-breakpoint-no-break neon-card neon-selectable-card--brand neon-selectable-card--selected neon-selectable-card neon-card-list__card--selected neon-card-list__card neon-card-list__card--selectable neon-selectable-card--brand neon-selectable-card--selected neon-selectable-card neon-card-list__card--selected neon-card-list__card neon-card-list__card--selectable" tabindex="0">
       <!-- @slot card contents -->
       <div class="neon-card-header">
@@ -18,10 +17,10 @@ exports[`NeonCardList renders selectable cards 1`] = `
           <!--v-if-->
         </label>
       </div><!-- @slot the card sections to add to the card after the checkbox -->
-      <!-- @slot slot for rendering card contents, two parameters are available:
-  @binding {T} model - the model item to be rendered
-  @binding {number} index - the index of the item in the list -->
-      <p>test</p>
+      <!-- @slot override the default loading state card -->
+      <transition-stub mode="out-in" name="neon-fade-transition" appear="false" persisted="false" css="true">
+        <p>test</p>
+      </transition-stub>
     </div>
     <div class="neon-card--horizontal neon-card--s neon-card--horizontal-breakpoint-mobile-large neon-card--horizontal-breakpoint-no-break neon-card neon-selectable-card--brand neon-selectable-card--selected neon-selectable-card neon-card-list__card--selected neon-card-list__card neon-card-list__card--selectable neon-selectable-card--brand neon-selectable-card--selected neon-selectable-card neon-card-list__card--selected neon-card-list__card neon-card-list__card--selectable" tabindex="0">
       <!-- @slot card contents -->
@@ -35,10 +34,10 @@ exports[`NeonCardList renders selectable cards 1`] = `
           <!--v-if-->
         </label>
       </div><!-- @slot the card sections to add to the card after the checkbox -->
-      <!-- @slot slot for rendering card contents, two parameters are available:
-  @binding {T} model - the model item to be rendered
-  @binding {number} index - the index of the item in the list -->
-      <p>test</p>
+      <!-- @slot override the default loading state card -->
+      <transition-stub mode="out-in" name="neon-fade-transition" appear="false" persisted="false" css="true">
+        <p>test</p>
+      </transition-stub>
     </div>
     <div class="neon-card--horizontal neon-card--s neon-card--horizontal-breakpoint-mobile-large neon-card--horizontal-breakpoint-no-break neon-card neon-selectable-card--brand neon-selectable-card neon-card-list__card neon-card-list__card--selectable neon-selectable-card--brand neon-selectable-card neon-card-list__card neon-card-list__card--selectable" tabindex="0">
       <!-- @slot card contents -->
@@ -52,10 +51,10 @@ exports[`NeonCardList renders selectable cards 1`] = `
           <!--v-if-->
         </label>
       </div><!-- @slot the card sections to add to the card after the checkbox -->
-      <!-- @slot slot for rendering card contents, two parameters are available:
-  @binding {T} model - the model item to be rendered
-  @binding {number} index - the index of the item in the list -->
-      <p>test</p>
+      <!-- @slot override the default loading state card -->
+      <transition-stub mode="out-in" name="neon-fade-transition" appear="false" persisted="false" css="true">
+        <p>test</p>
+      </transition-stub>
     </div>
     <div class="neon-card--horizontal neon-card--s neon-card--horizontal-breakpoint-mobile-large neon-card--horizontal-breakpoint-no-break neon-card neon-selectable-card--brand neon-selectable-card neon-card-list__card neon-card-list__card--selectable neon-selectable-card--brand neon-selectable-card neon-card-list__card neon-card-list__card--selectable" tabindex="0">
       <!-- @slot card contents -->
@@ -69,10 +68,10 @@ exports[`NeonCardList renders selectable cards 1`] = `
           <!--v-if-->
         </label>
       </div><!-- @slot the card sections to add to the card after the checkbox -->
-      <!-- @slot slot for rendering card contents, two parameters are available:
-  @binding {T} model - the model item to be rendered
-  @binding {number} index - the index of the item in the list -->
-      <p>test</p>
+      <!-- @slot override the default loading state card -->
+      <transition-stub mode="out-in" name="neon-fade-transition" appear="false" persisted="false" css="true">
+        <p>test</p>
+      </transition-stub>
     </div>
     <div class="neon-card--horizontal neon-card--s neon-card--horizontal-breakpoint-mobile-large neon-card--horizontal-breakpoint-no-break neon-card neon-selectable-card--brand neon-selectable-card--disabled neon-selectable-card neon-card-list__card--disabled neon-card-list__card neon-card-list__card--selectable neon-selectable-card--brand neon-selectable-card--disabled neon-selectable-card neon-card-list__card--disabled neon-card-list__card neon-card-list__card--selectable" tabindex="-1">
       <!-- @slot card contents -->
@@ -86,12 +85,11 @@ exports[`NeonCardList renders selectable cards 1`] = `
           <!--v-if-->
         </label>
       </div><!-- @slot the card sections to add to the card after the checkbox -->
-      <!-- @slot slot for rendering card contents, two parameters are available:
-  @binding {T} model - the model item to be rendered
-  @binding {number} index - the index of the item in the list -->
-      <p>test</p>
+      <!-- @slot override the default loading state card -->
+      <transition-stub mode="out-in" name="neon-fade-transition" appear="false" persisted="false" css="true">
+        <p>test</p>
+      </transition-stub>
     </div>
-    <!--v-if-->
   </div>
   <!--v-if-->
 </div>

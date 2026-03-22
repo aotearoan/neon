@@ -5,8 +5,7 @@ import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 
 /**
  * Use <strong>NeonSplashLoader</strong> to indicate loading progress to the user. This can be used fullscreen for the
- * initial site loading as well as when UPDATING data, e.g. refreshing table data. For initial data loading please see
- * <a href="/feedback/skeleton-loader">NeonSkeletonLoader</a>.
+ * initial page loading as well as when updating data.
  */
 export default defineComponent({
   name: 'NeonSplashLoader',

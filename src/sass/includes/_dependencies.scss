@@ -127,7 +127,7 @@
           NeonField: [],
           NeonStack: [],
           NeonInline: [],
-          NeonCardList: [NeonSelectableCard, NeonSwitch, NeonIcon, NeonButton, NeonExpansionIndicator, NeonIcon, NeonLink, NeonCard, NeonCardHeader, NeonCardBody, NeonInline, NeonStack, NeonPagination],
+          NeonCardList: [NeonSelectableCard, NeonSwitch, NeonIcon, NeonButton, NeonExpansionIndicator, NeonIcon, NeonLink, NeonCard, NeonCardHeader, NeonCardBody, NeonInline, NeonStack, NeonPagination, NeonLoadingStateCard, NeonSkeletonLoader],
           NeonImageCarousel: [NeonButton, NeonLink],
           NeonSwiper: [],
           NeonMobileMenu: [NeonIcon, NeonLink],
@@ -142,7 +142,8 @@
           NeonSearchFilter: [NeonButton, NeonInput, NeonLink, NeonStack, NeonSwitch, NeonExpansionIndicator, NeonIcon, NeonLink, NeonFieldGroup, NeonDropdown, NeonBadge],
           NeonFilterBar: [NeonInline, NeonSwiper],
           NeonEmptyState: [NeonButton, NeonIcon, NeonInline, NeonStack, NeonExpansionIndicator, NeonLink],
-          NeonListLayout: [NeonBreadcrumbs, NeonButton, NeonCard, NeonCardBody, NeonCardHeader, NeonCardList, NeonEmptyState, NeonExpansionIndicator, NeonHeader, NeonIcon, NeonInline, NeonLink, NeonNote, NeonPagination, NeonSelectableCard, NeonStack, NeonSwiper, NeonSwitch],
+          NeonListLayout: [NeonBreadcrumbs, NeonButton, NeonCard, NeonCardBody, NeonCardHeader, NeonCardList, NeonEmptyState, NeonExpansionIndicator, NeonHeader, NeonIcon, NeonInline, NeonLink, NeonNote, NeonPagination, NeonSelectableCard, NeonSwiper, NeonSwitch],
+          NeonLoadingStateCard: [NeonInline, NeonStack, NeonSkeletonLoader],
   );
 
   $neon-flattened-components: [];

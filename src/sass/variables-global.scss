@@ -1197,7 +1197,7 @@
    * @component NeonSkeletonLoader
    * Skeleton loader border radius
    */
-  --neon-border-radius-skeleton-loader: 0rem;
+  --neon-border-radius-skeleton-loader: 2rem;
   /**
    * @component NeonSkeletonLoader
    * Skeleton loader width
@@ -1212,7 +1212,7 @@
    * @component NeonSkeletonLoader
    * Skeleton loader gap between items
    */
-  --neon-gap-skeleton-loader: 5rem;
+  --neon-gap-skeleton-loader: var(--neon-space-4);
 
   /* expansion panel */
   /**
@@ -1403,4 +1403,11 @@
    * Max width of the empty state content
    */
   --neon-max-width-empty-state: 416rem;
+
+  /* Loading state card */
+  /**
+   * @component NeonLoadingStateCard,NeonCardList
+   * Border radius on the thumbnail placeholder in the loading state card. Set to 50% for a circular thumbnail.
+   */
+  --neon-border-radius-loading-state-card-thumbnail: var(--neon-border-radius-skeleton-loader);
 }

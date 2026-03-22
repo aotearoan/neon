@@ -3,15 +3,14 @@
     <neon-card>
       <neon-card-body>
         <p>
-          Use <strong>NeonSkeletonLoader</strong> to create loading state patterns indicating data loading is in
-          progress.
+          <strong>NeonLoadingStateCard</strong> is used as a placeholder for content that is loading in NeonCardList.
         </p>
       </neon-card-body>
       <neon-card-body>
-        <h2 class="neon-h3">Skeleton loader with 5 rows</h2>
+        <h2 class="neon-h3">Example</h2>
         <neon-stack>
           <neon-stack>
-            <neon-skeleton-loader :count="5" />
+            <neon-loading-state-card />
           </neon-stack>
           <editor v-model="template" />
         </neon-stack>
@@ -20,4 +19,4 @@
   </component-documentation>
 </template>
 
-<script lang="ts" src="./SkeletonLoader.ts"></script>
+<script lang="ts" src="./LoadingStateCard.ts"></script>

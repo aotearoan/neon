@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NeonLoadingStateCard renders card 1`] = `
+<transition-stub mode="in-out" name="neon-fade-transition" appear="false" persisted="false" css="true">
+  <div class="neon-inline--gap-m neon-inline--breakpoint-mobile-large neon-inline neon-loading-state-card">
+    <!-- @slot inline contents -->
+    <div class="neon-inline--gap-s neon-inline neon-loading-state-card__main-content">
+      <!-- @slot inline contents -->
+      <div class="neon-skeleton-loader neon-loading-state-card__thumbnail">
+        <div class="neon-skeleton-loader__item"></div>
+      </div>
+      <div class="neon-skeleton-loader neon-loading-state-card__main-content-item">
+        <div class="neon-skeleton-loader__item"></div>
+        <div class="neon-skeleton-loader__item"></div>
+      </div>
+    </div>
+    <div class="neon-skeleton-loader neon-loading-state-card__additional-content">
+      <div class="neon-skeleton-loader__item"></div>
+    </div>
+  </div>
+</transition-stub>
+`;

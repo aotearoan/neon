@@ -1,9 +1,8 @@
-import { computed, defineComponent } from 'vue';
+import { computed, defineComponent, ref } from 'vue';
 import NeonButton from '@/components/user-input/button/NeonButton.vue';
 import NeonInline from '@/components/layout/inline/NeonInline.vue';
 import NeonLink from '@/components/navigation/link/NeonLink.vue';
 import NeonPagination from '@/components/navigation/pagination/NeonPagination.vue';
-import NeonStack from '@/components/layout/stack/NeonStack.vue';
 import { NeonButtonStyle } from '@/model/user-input/button/NeonButtonStyle';
 import { NeonSize } from '@/model/common/size/NeonSize';
 import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
@@ -15,6 +14,7 @@ import type { NeonIdentifiable } from '@/model/common/entity/NeonIdentifiable';
 import type { NeonSelectable } from '@/model/common/entity/NeonSelectable';
 import NeonSelectableCard from './selectable-card/NeonSelectableCard.vue';
 import NeonSplashLoader from '@/components/feedback/splash-loader/NeonSplashLoader.vue';
+import NeonLoadingStateCard from '@/components/feedback/loading-state-card/NeonLoadingStateCard.vue';
 
 /**
  * TODO: consider refactoring since it's no longer just a layout component when selectable.
@@ -31,8 +31,8 @@ export default defineComponent({
     NeonButton,
     NeonInline,
     NeonLink,
+    NeonLoadingStateCard,
     NeonSplashLoader,
-    NeonStack,
   },
   props: {
     /**
@@ -83,6 +83,8 @@ export default defineComponent({
     'toggle-selected',
   ],
   setup(props, { emit, slots }) {
+    const cards = ref<HTMLDivElement | undefined>(undefined);
+
     const ofLabel = computed(() => {
       if (!props.pagination && props.loadOnDemand) {
         return props.loadOnDemand.ofLabel ?? 'of';
@@ -109,6 +111,18 @@ export default defineComponent({
 
     const total = computed(() => props.loadOnDemand?.total ?? props.pagination?.total ?? 0);
 
+    const onPageChange = (newPage: number) => {
+      if (cards.value?.scrollTo) {
+        cards.value.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'instant' as ScrollBehavior,
+        });
+      }
+
+      emit('page-change', newPage);
+    };
+
     return {
       emit,
       n: NeonNumberUtils.formatNumber,
@@ -120,6 +134,8 @@ export default defineComponent({
       endOfResultsLabel,
       total,
       slots,
+      cards,
+      onPageChange,
     };
   },
 });

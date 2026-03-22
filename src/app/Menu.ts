@@ -161,6 +161,13 @@ export class Menu {
                 component: 'NeonLinearProgress',
               },
               {
+                path: 'loading-state-card',
+                page: 'LoadingStateCard',
+                name: 'Loading State Card',
+                keywords: 'loading progress skeleton card list',
+                component: 'NeonLoadingStateCard',
+              },
+              {
                 path: 'note',
                 page: 'Note',
                 component: 'NeonNote',

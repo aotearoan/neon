@@ -320,4 +320,8 @@ $neon-components: null !default;
   @if index($neon-flattened-components, NeonListLayout) {
     @include components.list-layout;
   }
+
+  @if index($neon-flattened-components, NeonLoadingStateCard) {
+    @include components.loading-state-card;
+  }
 }

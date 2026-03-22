@@ -7,7 +7,7 @@
       <slot name="header"></slot>
       <span v-if="loadOnDemand" class="neon-card-list__total">{{ n(items.length) }} {{ ofLabel }} {{ n(total) }}</span>
     </neon-inline>
-    <neon-stack class="neon-card-list__cards" gap="z">
+    <div ref="cards" class="neon-card-list__cards">
       <template v-for="(item, index) in items">
         <neon-link
           v-if="item.href && !item.disabled"
@@ -19,10 +19,18 @@
           outline-style="background"
         >
           <div class="neon-card-list__card">
-            <!-- @slot slot for rendering card contents, two parameters are available:
+            <!-- @slot override the default loading state card -->
+            <slot v-if="pagination && loading" name="loadingStateCard">
+              <neon-loading-state-card />
+            </slot>
+            <template v-else>
+              <transition mode="out-in" name="neon-fade-transition">
+                <!-- @slot slot for rendering card contents, two parameters are available:
     @binding {T} model - the model item to be rendered
     @binding {number} index - the index of the item in the list -->
-            <slot name="card" v-bind="{ model: item.model, index: index }"></slot>
+                <slot name="card" v-bind="{ model: item.model, index: index }"></slot>
+              </transition>
+            </template>
           </div>
         </neon-link>
         <neon-selectable-card
@@ -37,25 +45,40 @@
           class="neon-card-list__card neon-card-list__card--selectable"
           @update:model-value="emit('toggle-selected', item.model.id, $event)"
         >
-          <!-- @slot slot for rendering card contents, two parameters are available:
-  @binding {T} model - the model item to be rendered
-  @binding {number} index - the index of the item in the list -->
-          <slot name="card" v-bind="{ model: item.model, index: index }"></slot>
+          <!-- @slot override the default loading state card -->
+          <slot v-if="pagination && loading" name="loadingStateCard">
+            <neon-loading-state-card />
+          </slot>
+          <template v-else>
+            <transition mode="out-in" name="neon-fade-transition">
+              <!-- @slot slot for rendering card contents, two parameters are available:
+      @binding {T} model - the model item to be rendered
+      @binding {number} index - the index of the item in the list -->
+              <slot name="card" v-bind="{ model: item.model, index: index }"></slot>
+            </transition>
+          </template>
         </neon-selectable-card>
         <div
           v-else
-          :key="`${item.model.id ?? index}-link`"
+          :key="`${item.model.id ?? index}-card`"
           :class="{ 'neon-card-list__card--disabled': item.disabled }"
           class="neon-card-list__card"
         >
-          <!-- @slot slot for rendering card contents, two parameters are available:
-  @binding {T} model - the model item to be rendered
-  @binding {number} index - the index of the item in the list -->
-          <slot name="card" v-bind="{ model: item.model, index: index }"></slot>
+          <!-- @slot override the default loading state card -->
+          <slot v-if="pagination && loading" name="loadingStateCard">
+            <neon-loading-state-card />
+          </slot>
+          <template v-else>
+            <transition mode="out-in" name="neon-fade-transition">
+              <!-- @slot slot for rendering card contents, two parameters are available:
+      @binding {T} model - the model item to be rendered
+      @binding {number} index - the index of the item in the list -->
+              <slot name="card" v-bind="{ model: item.model, index: index }"></slot>
+            </transition>
+          </template>
         </div>
       </template>
-      <neon-splash-loader v-if="loading" :color="color" />
-    </neon-stack>
+    </div>
     <template v-if="loadOnDemand">
       <span v-if="items.length === total" class="neon-card-list__results-end">{{ endOfResultsLabel }}</span>
       <neon-button
@@ -76,7 +99,7 @@
       :page-size="pagination.pageSize"
       :total="pagination.total"
       :url-template="pagination.urlTemplate"
-      @page-change="(page: number) => emit('page-change', page)"
+      @page-change="onPageChange"
     />
   </div>
 </template>

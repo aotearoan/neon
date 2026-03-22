@@ -1,8 +1,8 @@
 import { defineComponent } from 'vue';
 
 /**
- * A component for indicating initial data is loading. Compose multiple skeleton loaders to generate a loader matching
- * the shape of the content to be loaded.
+ * A component for indicating data is loading. Compose multiple skeleton loaders to generate a loader matching the
+ * shape of the content to be loaded.
  */
 export default defineComponent({
   name: 'NeonSkeletonLoader',

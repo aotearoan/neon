@@ -2,7 +2,7 @@
   .neon-fade-transition {
     &-enter-active,
     &-leave-active {
-      transition: opacity ease-in-out var(--neon-animation-speed-fast);
+      transition: opacity ease-in-out var(--neon-animation-speed-fast) var(--neon-animation-speed-fast) allow-discrete;
     }
 
     &-enter-from,
@@ -13,11 +13,11 @@
 
   .neon-splash-transition {
     &-enter-active {
-      transition: opacity ease-in-out var(--neon-animation-speed-fast);
+      transition: opacity ease-in-out var(--neon-animation-speed-fast) var(--neon-animation-speed-fast) allow-discrete;
     }
 
     &-leave-active {
-      transition: opacity ease-in-out var(--neon-animation-speed-slowest);
+      transition: opacity ease-in-out var(--neon-animation-speed-slowest) var(--neon-animation-speed-fast) allow-discrete;
     }
 
     &-enter-from,
