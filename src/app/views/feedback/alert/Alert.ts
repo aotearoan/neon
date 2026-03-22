@@ -6,6 +6,8 @@ import {
   NeonCard,
   NeonCardBody,
   NeonCardHeader,
+  NeonDialogService,
+  NeonFunctionalColor,
   NeonInline,
   NeonLink,
   NeonStack,
@@ -117,6 +119,23 @@ export default defineComponent({
       NeonToastService.remove('test-key');
     };
 
+    const showDialog = async (opaque = false) => {
+      const choice = await NeonDialogService.show({
+        title: 'Programmatic dialog',
+        question: 'Are you sure you want to accept wait for user input?',
+        cancelLabel: 'Reject',
+        confirmLabel: 'Accept',
+        color: NeonFunctionalColor.Success,
+        opaque,
+      });
+
+      if (choice) {
+        console.log('Accepted');
+      } else {
+        console.log('Rejected');
+      }
+    };
+
     const typesTemplate = `<neon-button color="info" label="Info" @click="infoAlert()" />
 <neon-button color="success" label="Success" @click="successAlert()" />
 <neon-button color="warn" label="Warning" @click="warnAlert()" />
@@ -136,6 +155,8 @@ export default defineComponent({
 <neon-button color="success" label="Toast success" @click="toastSuccess()" />
 <neon-button color="warn" label="Toast warning" @click="toastWarn()" />
 <neon-button color="error" label="Toast error" @click="toastError()" />`;
+
+    const dialogTemplate = `<neon-button color="low-contrast" label="Show Dialog" @click="showDialog()" />`;
 
     const infoExample = computed(
       () => `const alertMessage = { title: 'message title', message: 'Message' };
@@ -177,6 +198,11 @@ NeonToastService.warn(toastMessage);`,
 NeonToastService.error(toastMessage);`,
     );
 
+    const dialogConfig = computed(
+      () => `const dialogMessage: NeonDialogMessage = { title: 'message title', question: 'Message' };
+const response = await NeonDialogService.show(dialogMessage);`,
+    );
+
     const removeAlertExample = computed(() => `NeonAlertService.remove('test-key');`);
     const removeToastExample = computed(() => `NeonToastService.remove('test-key');`);
 
@@ -198,6 +224,7 @@ NeonToastService.error(toastMessage);`,
       alertPlacementTemplate,
       withActionsTemplate,
       toastTemplate,
+      dialogTemplate,
       toastInfo,
       toastSuccess,
       toastWarn,
@@ -210,6 +237,8 @@ NeonToastService.error(toastMessage);`,
       removeAlert,
       alertSingleAction,
       alertBothActions,
+      showDialog,
+      dialogConfig,
       removeAlertExample,
       NeonAlertPlacement,
       NeonVerticalPosition,

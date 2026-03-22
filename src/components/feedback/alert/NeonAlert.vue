@@ -6,6 +6,7 @@
     <neon-alert-container v-model="bottomRight" placement="bottom-right" />
     <neon-toast-container v-model="top" placement="top" />
     <neon-toast-container v-model="bottom" placement="bottom" />
+    <neon-dialog-container v-model="dialog" />
   </div>
 </template>
 
