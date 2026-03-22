@@ -12,10 +12,16 @@ exports[`NeonBreadcrumbs renders a breadcrumb with text only, no link 1`] = `
         <!--v-if--><a href="/level-1" class="neon-link--no-style neon-link--outline-none neon-link neon-link--router-link neon-breadcrumbs__link neon-breadcrumbs__link" tabindex="0">
           <!-- @slot the content of the link -->Level 1
         </a>
-        <!--v-if--><a href="/level-1/level-2" class="neon-link--no-style neon-link--outline-none neon-link neon-link--router-link neon-breadcrumbs__link neon-breadcrumbs__link" tabindex="0">
+        <div class="neon-icon--name-chevron-right neon-icon neon-breadcrumbs__separator neon-breadcrumbs__separator"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+            <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
+          </svg>
+        </div><a href="/level-1/level-2" class="neon-link--no-style neon-link--outline-none neon-link neon-link--router-link neon-breadcrumbs__link neon-breadcrumbs__link" tabindex="0">
           <!-- @slot the content of the link -->Level 2
         </a>
-        <!--v-if--><span class="neon-breadcrumbs__link-text">1234-5678-90</span>
+        <div class="neon-icon--name-chevron-right neon-icon neon-breadcrumbs__separator neon-breadcrumbs__separator"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+            <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
+          </svg>
+        </div><span class="neon-breadcrumbs__link-text">1234-5678-90</span>
       </div>
     </div>
   </div>
@@ -35,10 +41,16 @@ exports[`NeonBreadcrumbs renders breadcrumbs and back button 1`] = `
         <!--v-if--><a href="/level-1" class="neon-link--no-style neon-link--outline-none neon-link neon-link--router-link neon-breadcrumbs__link neon-breadcrumbs__link" tabindex="0">
           <!-- @slot the content of the link -->Level 1
         </a>
-        <!--v-if--><a href="/level-1/level-2" class="neon-link--no-style neon-link--outline-none neon-link neon-link--router-link neon-breadcrumbs__link neon-breadcrumbs__link" tabindex="0">
+        <div class="neon-icon--name-chevron-right neon-icon neon-breadcrumbs__separator neon-breadcrumbs__separator"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+            <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
+          </svg>
+        </div><a href="/level-1/level-2" class="neon-link--no-style neon-link--outline-none neon-link neon-link--router-link neon-breadcrumbs__link neon-breadcrumbs__link" tabindex="0">
           <!-- @slot the content of the link -->Level 2
         </a>
-        <!--v-if--><a href="/level-1/level-2/1234-5678-90" class="neon-link--no-style neon-link--outline-none neon-link neon-link--router-link neon-breadcrumbs__link neon-breadcrumbs__link" tabindex="0">
+        <div class="neon-icon--name-chevron-right neon-icon neon-breadcrumbs__separator neon-breadcrumbs__separator"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+            <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
+          </svg>
+        </div><a href="/level-1/level-2/1234-5678-90" class="neon-link--no-style neon-link--outline-none neon-link neon-link--router-link neon-breadcrumbs__link neon-breadcrumbs__link" tabindex="0">
           <!-- @slot the content of the link -->1234-5678-90
         </a>
       </div>
@@ -58,10 +70,16 @@ exports[`NeonBreadcrumbs renders breadcrumbs only 1`] = `
         <!--v-if--><a href="/level-1" class="neon-link--no-style neon-link--outline-none neon-link neon-link--router-link neon-breadcrumbs__link neon-breadcrumbs__link" tabindex="0">
           <!-- @slot the content of the link -->Level 1
         </a>
-        <!--v-if--><a href="/level-1/level-2" class="neon-link--no-style neon-link--outline-none neon-link neon-link--router-link neon-breadcrumbs__link neon-breadcrumbs__link" tabindex="0">
+        <div class="neon-icon--name-chevron-right neon-icon neon-breadcrumbs__separator neon-breadcrumbs__separator"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+            <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
+          </svg>
+        </div><a href="/level-1/level-2" class="neon-link--no-style neon-link--outline-none neon-link neon-link--router-link neon-breadcrumbs__link neon-breadcrumbs__link" tabindex="0">
           <!-- @slot the content of the link -->Level 2
         </a>
-        <!--v-if--><a href="/level-1/level-2/1234-5678-90" class="neon-link--no-style neon-link--outline-none neon-link neon-link--router-link neon-breadcrumbs__link neon-breadcrumbs__link" tabindex="0">
+        <div class="neon-icon--name-chevron-right neon-icon neon-breadcrumbs__separator neon-breadcrumbs__separator"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+            <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
+          </svg>
+        </div><a href="/level-1/level-2/1234-5678-90" class="neon-link--no-style neon-link--outline-none neon-link neon-link--router-link neon-breadcrumbs__link neon-breadcrumbs__link" tabindex="0">
           <!-- @slot the content of the link -->1234-5678-90
         </a>
       </div>

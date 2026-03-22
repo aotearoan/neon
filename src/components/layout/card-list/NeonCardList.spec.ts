@@ -3,7 +3,7 @@ import NeonCardList from './NeonCardList.vue';
 import { type CardListModel, CardListModelFixture } from '@/fixtures/CardListModelFixture';
 import { router } from '../../../../test/unit/test-router';
 import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
-import { PaginationFixture } from '@/fixtures/PaginationFixture';
+import { PaginationFixture, PaginationFixtureNoUrl } from '@/fixtures/PaginationFixture';
 import { LoadOnDemandWithLabelsFixture } from '@/fixtures/LoadOnDemandFixture';
 import type { NeonCardListModel } from '@/model/layout/card-list/NeonCardListModel';
 
@@ -208,6 +208,22 @@ describe('NeonCardList', () => {
     expect(container.querySelectorAll('.neon-card-list__link--info').length).toEqual(modelWithLinks.length - 1);
     expect(container.querySelector('.neon-pagination')).toBeDefined();
     expect(container.querySelector('.neon-pagination--info')).toBeDefined();
+  });
+
+  it('emits page change events', async () => {
+    // given
+    const items = CardListModelFixture(50, 'http://getskeleton.com', 0);
+    const { emitted, getByText } = render(NeonCardList, {
+      props: {
+        items,
+        pagination: PaginationFixtureNoUrl(items.length),
+      },
+      slots: { card: '<p>test</p>' },
+      global: { plugins: [router] },
+    });
+    // when / then
+    await fireEvent.click(getByText(2));
+    expect(emitted()['page-change']).toEqual([[2]]);
   });
 
   it('emits show more event', async () => {

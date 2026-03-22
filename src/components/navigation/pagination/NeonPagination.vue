@@ -16,6 +16,7 @@
       class="neon-pagination__nav-link neon-pagination__first"
       color="high-contrast"
       icon="first-page"
+      @click="emit('page-change', 1)"
     />
     <neon-button
       :disabled="disabledPrevious"
@@ -23,7 +24,8 @@
       button-style="outline"
       class="neon-pagination__nav-link neon-pagination__previous"
       color="high-contrast"
-      icon="arrow-left-1"
+      icon="chevron-left"
+      @click="emit('page-change', previousPage)"
     />
     <div class="neon-pagination__page-links">
       <neon-button
@@ -34,6 +36,7 @@
         color="high-contrast"
         label="1"
         transparent
+        @click="emit('page-change', 1)"
       />
       <neon-icon v-if="showFirstPageWithEllipsis" class="neon-pagination__less" color="low-contrast" name="ellipsis" />
       <!-- eslint-disable-next-line -->
@@ -49,6 +52,7 @@
           class="neon-pagination__link"
           color="high-contrast"
           transparent
+          @click="emit('page-change', pageInRange)"
         />
       </template>
       <neon-icon v-if="showLastPageWithEllipsis" class="neon-pagination__more" color="low-contrast" name="ellipsis" />
@@ -60,6 +64,7 @@
         class="neon-pagination__link"
         color="high-contrast"
         transparent
+        @click="emit('page-change', pageCount)"
       />
     </div>
     <neon-button
@@ -68,7 +73,8 @@
       button-style="outline"
       class="neon-pagination__nav-link neon-pagination__next"
       color="high-contrast"
-      icon="arrow-right-1"
+      icon="chevron-right"
+      @click="emit('page-change', nextPage)"
     />
     <neon-button
       v-if="displayFirstAndLast"
@@ -78,6 +84,7 @@
       class="neon-pagination__nav-link neon-pagination__last"
       color="high-contrast"
       icon="last-page"
+      @click="emit('page-change', pageCount)"
     />
   </div>
 </template>

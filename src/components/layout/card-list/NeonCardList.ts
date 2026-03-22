@@ -65,6 +65,13 @@ export default defineComponent({
   },
   emits: [
     /**
+     * Emitted when pagination is enabled and the user clicks on a page link (useful for paginated lists which are not
+     * the main focus of the page, i.e. should not be deep linked).
+     *
+     * @type {number} The new page number.
+     */
+    'page-change',
+    /**
      * Emitted when the 'Show more' button is clicked in "on demand" mode.
      * @type {void}
      */

@@ -28,6 +28,7 @@
       :loading="loading"
       :pagination="pagination"
       :selectable="selectable"
+      @page-change="(page: number) => emit('page-change', page)"
       @show-more="showMore"
       @toggle-selected="toggleSelected"
     >

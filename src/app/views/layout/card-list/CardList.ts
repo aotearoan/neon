@@ -80,6 +80,23 @@ export default defineComponent({
   </template>
 </neon-card-list>`;
 
+    const paginationClickHandlerTemplate = `<neon-card-list
+  :items="paginationFilteredModel"
+  :pagination="paginationNoUrlConfig"
+  color="brand"
+  @page-change="changePage"
+>
+  <template #header>
+    <neon-input v-model="paginationFilter" placeholder="Filter results…" size="s" />
+  </template>
+  <template #card="{ model }">
+    <div class="card-contents">
+      <span class="card-title">{{ model.title }}</span>
+      <span class="card-description">{{ model.description }}</span>
+    </div>
+  </template>
+</neon-card-list>`;
+
     const paginationModel = ref<Array<NeonCardListModel<CardListModel>>>(
       CardListModelFixture(5, 'http://getskeleton.com'),
     );
@@ -97,6 +114,16 @@ export default defineComponent({
       pageSize: 2,
       total: 100,
     }));
+
+    const paginationNoUrlConfig = ref({
+      page: 1,
+      pageSize: 2,
+      total: 100,
+    });
+
+    const changePage = (page: number) => {
+      paginationNoUrlConfig.value = { ...paginationNoUrlConfig.value, page };
+    };
 
     const selectableTemplate = `<neon-card-list
   :items="selectableFilteredModel"
@@ -152,11 +179,14 @@ export default defineComponent({
       paginationFilter,
       paginationConfig,
       paginationTemplate,
+      paginationClickHandlerTemplate,
       selectableFilteredModel,
       selectableFilter,
       selectableConfig,
       selectableTemplate,
       toggleSelected,
+      paginationNoUrlConfig,
+      changePage,
     };
   },
 });

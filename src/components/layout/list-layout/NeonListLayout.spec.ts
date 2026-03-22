@@ -1,7 +1,7 @@
 import { fireEvent, render, waitFor } from '@testing-library/vue';
 import NeonListLayout from './NeonListLayout.vue';
 import { CardListModelFixture } from '@/fixtures/CardListModelFixture';
-import { PaginationFixture } from '@/fixtures/PaginationFixture';
+import { PaginationFixture, PaginationFixtureNoUrl } from '@/fixtures/PaginationFixture';
 import { router } from '@/../test/unit/test-router';
 import { breadcrumbsFixture } from '@/fixtures/navigation/breadcrumbs/BreadcrumbsFixture';
 import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
@@ -196,6 +196,25 @@ describe('NeonListLayout', () => {
     getByText('filters');
     getByText('header');
     expect(getAllByText('card').length).toEqual(items.length);
+  });
+
+  it('emits page change event', async () => {
+    const { emitted, getByText } = render(NeonListLayout, {
+      props: {
+        title,
+        items,
+        pagination: PaginationFixtureNoUrl(1000),
+      },
+      global: {
+        plugins: [router],
+      },
+      slots: {
+        card: '<p>card</p>',
+      },
+    });
+
+    await fireEvent.click(getByText('2'));
+    expect(emitted()['page-change']).toEqual([[2]]);
   });
 
   it('renders empty state', () => {

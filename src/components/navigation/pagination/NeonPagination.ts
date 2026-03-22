@@ -22,7 +22,7 @@ export default defineComponent({
      * The URL template for the pagination links. The template should contain a '{page}' placeholder that will be
      * substituted in links with the correct page number.
      */
-    urlTemplate: { type: String, required: true },
+    urlTemplate: { type: String },
     /**
      * The number of items per page.
      */
@@ -40,7 +40,16 @@ export default defineComponent({
      */
     color: { type: String as () => NeonFunctionalColor, default: () => NeonFunctionalColor.Brand },
   },
-  setup(props) {
+  emits: [
+    /**
+     * Emitted when the user clicks on a page link (useful for paginated lists which are not the main focus of the page,
+     * i.e. should not be deep linked).
+     *
+     * @type {number} The new page number.
+     */
+    'page-change',
+  ],
+  setup(props, { emit }) {
     const maxDisplayPageLinks = 5;
     const pageDisplayCount = maxDisplayPageLinks - 2;
 
@@ -102,7 +111,8 @@ export default defineComponent({
       }
     });
 
-    const url = (page: number) => props.urlTemplate.replace('{page}', page.toString());
+    const url = (page: number) =>
+      props.urlTemplate ? props.urlTemplate.replace('{page}', page.toString()) : undefined;
 
     return {
       pageCount,
@@ -115,6 +125,7 @@ export default defineComponent({
       showLastPageWithEllipsis,
       pageRange,
       url,
+      emit,
     };
   },
 });
