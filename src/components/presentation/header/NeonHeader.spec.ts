@@ -82,6 +82,23 @@ describe('NeonHeader', () => {
     getByText(slotText);
   });
 
+  it('renders subtitle override slot', () => {
+    const slotText = 'slot content';
+    const { getByText } = render(NeonHeader, {
+      props: {
+        title: 'Page title',
+      },
+      global: {
+        plugins: [router],
+      },
+      slots: {
+        subtitle: `<p>${slotText}</p>`,
+      },
+    });
+
+    getByText(slotText);
+  });
+
   it('renders actions slot content', () => {
     const slotText = 'Actions slot content';
     const { getByText } = render(NeonHeader, {

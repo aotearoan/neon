@@ -33,7 +33,7 @@ exports[`NeonHeader renders breadcrumb 1`] = `
         <!-- @slot inline contents -->
         <h1 class="neon-header__title">Page title</h1>
         <!--v-if-->
-      </div>
+      </div><!-- @slot a slot for overriding the default subtitle styling and proving richer content -->
       <!--v-if-->
     </div>
     <!--v-if-->
@@ -53,7 +53,7 @@ exports[`NeonHeader renders page header 1`] = `
         <!-- @slot inline contents -->
         <h1 class="neon-header__title">Page title</h1>
         <!--v-if-->
-      </div><span class="neon-header__subtitle">Page subtitle</span>
+      </div><!-- @slot a slot for overriding the default subtitle styling and proving richer content --><span class="neon-header__subtitle">Page subtitle</span>
     </div>
     <!--v-if-->
   </div>
@@ -72,7 +72,7 @@ exports[`NeonHeader renders page header by default 1`] = `
         <!-- @slot inline contents -->
         <h1 class="neon-header__title">Page title</h1>
         <!--v-if-->
-      </div><span class="neon-header__subtitle">Page subtitle</span>
+      </div><!-- @slot a slot for overriding the default subtitle styling and proving richer content --><span class="neon-header__subtitle">Page subtitle</span>
     </div>
     <!--v-if-->
   </div>
@@ -91,7 +91,7 @@ exports[`NeonHeader renders section header 1`] = `
         <!-- @slot inline contents -->
         <h2 class="neon-header__title">Page title</h2>
         <!--v-if-->
-      </div><span class="neon-header__subtitle">Page subtitle</span>
+      </div><!-- @slot a slot for overriding the default subtitle styling and proving richer content --><span class="neon-header__subtitle">Page subtitle</span>
     </div>
     <!--v-if-->
   </div>
@@ -110,7 +110,7 @@ exports[`NeonHeader renders sub section header 1`] = `
         <!-- @slot inline contents -->
         <h3 class="neon-header__title">Page title</h3>
         <!--v-if-->
-      </div><span class="neon-header__subtitle">Page subtitle</span>
+      </div><!-- @slot a slot for overriding the default subtitle styling and proving richer content --><span class="neon-header__subtitle">Page subtitle</span>
     </div>
     <!--v-if-->
   </div>
