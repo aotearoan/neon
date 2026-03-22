@@ -2,7 +2,11 @@
   <nav
     v-if="modelValue"
     :id="id"
-    :class="[`neon-tree-menu--${color}`, { 'neon-tree-menu--expand-all': expandAll }]"
+    :class="[
+      `neon-tree-menu--${color}`,
+      exactHighlighting ? 'neon-tree-menu--exact' : 'neon-tree-menu--active',
+      { 'neon-tree-menu--expand-all': expandAll },
+    ]"
     class="neon-tree-menu"
   >
     <ul class="no-style">

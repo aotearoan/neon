@@ -210,6 +210,21 @@ describe('NeonTreeMenu', () => {
     expect(container.querySelectorAll('.neon-tree-menu__sub-menu--expanded').length).toEqual(6);
   });
 
+  it('renders active highlight by default', () => {
+    // given
+    const { container } = harness;
+    // when / then
+    expect(container.querySelector('.neon-tree-menu--active')).toBeDefined();
+  });
+
+  it('renders exact highlight', async () => {
+    // given
+    const { container, rerender } = harness;
+    await rerender({ exactHighlighting: true });
+    // when / then
+    expect(container.querySelector('.neon-tree-menu--exact')).toBeDefined();
+  });
+
   it('disables sections', async () => {
     // given
     const { container, emitted, rerender } = harness;

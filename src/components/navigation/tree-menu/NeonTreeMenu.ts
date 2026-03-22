@@ -35,6 +35,10 @@ export default defineComponent({
      * Expand all nodes in the tree, this is useful for providing filtering (e.g. the Neon showcase side navigation menu).
      */
     expandAll: { type: Boolean, default: false },
+    /**
+     * Highlight menu items only if the route exactly matches a menu item. This is useful if every route is in the tree menu.
+     */
+    exactHighlighting: { type: Boolean, default: false },
   },
   emits: [
     /**
