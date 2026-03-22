@@ -1,5 +1,12 @@
 # Changelog
 
+## [28.5.0](https://github.com/aotearoan/neon/compare/v28.4.1...v28.5.0) (2026-03-22)
+
+
+### Features
+
+* card list loading card ([#408](https://github.com/aotearoan/neon/issues/408)) ([236e00b](https://github.com/aotearoan/neon/commit/236e00bf6f3a37d1e4e8e614d85c03628baae936))
+
 ## [28.4.1](https://github.com/aotearoan/neon/compare/v28.4.0...v28.4.1) (2026-03-22)
 
 
