@@ -1,5 +1,12 @@
 # Changelog
 
+## [28.0.1](https://github.com/aotearoan/neon/compare/v28.0.0...v28.0.1) (2026-03-22)
+
+
+### Bug Fixes
+
+* add additionalContent slot below each radio button ([#388](https://github.com/aotearoan/neon/issues/388)) ([4160274](https://github.com/aotearoan/neon/commit/416027409d758796f3fc02674eb8ecdf395c5053))
+
 ## [28.0.0](https://github.com/aotearoan/neon/compare/v27.1.0...v28.0.0) (2026-03-17)
 
 
