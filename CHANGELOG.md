@@ -1,5 +1,12 @@
 # Changelog
 
+## [28.3.0](https://github.com/aotearoan/neon/compare/v28.2.0...v28.3.0) (2026-03-22)
+
+
+### Features
+
+* breadcrumb responsive styles ([#402](https://github.com/aotearoan/neon/issues/402)) ([b4c8ecb](https://github.com/aotearoan/neon/commit/b4c8ecb29fa7756debffe1d59b11853f0f144a00))
+
 ## [28.2.0](https://github.com/aotearoan/neon/compare/v28.1.2...v28.2.0) (2026-03-22)
 
 
