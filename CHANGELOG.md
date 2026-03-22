@@ -1,5 +1,12 @@
 # Changelog
 
+## [28.4.1](https://github.com/aotearoan/neon/compare/v28.4.0...v28.4.1) (2026-03-22)
+
+
+### Bug Fixes
+
+* support pagination click handling ([#406](https://github.com/aotearoan/neon/issues/406)) ([3e59737](https://github.com/aotearoan/neon/commit/3e597378c3117074742734b6fb9e25c52182a5b1))
+
 ## [28.4.0](https://github.com/aotearoan/neon/compare/v28.3.0...v28.4.0) (2026-03-22)
 
 
