@@ -19,11 +19,17 @@ exports[`NeonDatePicker renders change decade replacement strings 1`] = `
       <div class="neon-date-picker__calendar">
         <div class="neon-date-picker__calendar-header"><span class="neon-date-picker__calendar-title-readonly">2020–2029</span>
           <div class="neon-date-picker__calendar-header-actions"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__previous-button neon-date-picker__previous-button" tabindex="0" type="button" aria-label="string 10">
-              <!--v-if-->
+              <div class="neon-icon--name-chevron-left neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+                  <path class="neon-svg--fill" d="M15.28 5.22a.75.75 0 0 1 0 1.06L9.56 12l5.72 5.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.25-6.25a.75.75 0 0 1 0-1.06l6.25-6.25a.75.75 0 0 1 1.06 0Z"></path>
+                </svg>
+              </div>
               <!--v-if-->
               <!--v-if-->
             </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__next-button neon-date-picker__next-button" tabindex="0" type="button" aria-label="string 11">
-              <!--v-if-->
+              <div class="neon-icon--name-chevron-right neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+                  <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
+                </svg>
+              </div>
               <!--v-if-->
               <!--v-if-->
             </button></div>
@@ -99,11 +105,17 @@ exports[`NeonDatePicker renders change month replacement strings 1`] = `
             <!--v-if-->
           </button>
           <div class="neon-date-picker__calendar-header-actions"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__previous-button neon-date-picker__previous-button" tabindex="0" type="button" aria-label="string 5">
-              <!--v-if-->
+              <div class="neon-icon--name-chevron-left neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+                  <path class="neon-svg--fill" d="M15.28 5.22a.75.75 0 0 1 0 1.06L9.56 12l5.72 5.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.25-6.25a.75.75 0 0 1 0-1.06l6.25-6.25a.75.75 0 0 1 1.06 0Z"></path>
+                </svg>
+              </div>
               <!--v-if-->
               <!--v-if-->
             </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__next-button neon-date-picker__next-button" tabindex="0" type="button" aria-label="string 6">
-              <!--v-if-->
+              <div class="neon-icon--name-chevron-right neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+                  <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
+                </svg>
+              </div>
               <!--v-if-->
               <!--v-if-->
             </button></div>
@@ -253,11 +265,17 @@ exports[`NeonDatePicker renders change year replacement strings 1`] = `
             <!--v-if-->
           </button>
           <div class="neon-date-picker__calendar-header-actions"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__previous-button neon-date-picker__previous-button" tabindex="0" type="button" aria-label="string 8">
-              <!--v-if-->
+              <div class="neon-icon--name-chevron-left neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+                  <path class="neon-svg--fill" d="M15.28 5.22a.75.75 0 0 1 0 1.06L9.56 12l5.72 5.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.25-6.25a.75.75 0 0 1 0-1.06l6.25-6.25a.75.75 0 0 1 1.06 0Z"></path>
+                </svg>
+              </div>
               <!--v-if-->
               <!--v-if-->
             </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__next-button neon-date-picker__next-button" tabindex="0" type="button" aria-label="string 9">
-              <!--v-if-->
+              <div class="neon-icon--name-chevron-right neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+                  <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
+                </svg>
+              </div>
               <!--v-if-->
               <!--v-if-->
             </button></div>
@@ -339,11 +357,17 @@ exports[`NeonDatePicker renders closed 1`] = `
             <!--v-if-->
           </button>
           <div class="neon-date-picker__calendar-header-actions"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__previous-button neon-date-picker__previous-button" tabindex="0" type="button" aria-label="Previous month">
-              <!--v-if-->
+              <div class="neon-icon--name-chevron-left neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+                  <path class="neon-svg--fill" d="M15.28 5.22a.75.75 0 0 1 0 1.06L9.56 12l5.72 5.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.25-6.25a.75.75 0 0 1 0-1.06l6.25-6.25a.75.75 0 0 1 1.06 0Z"></path>
+                </svg>
+              </div>
               <!--v-if-->
               <!--v-if-->
             </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__next-button neon-date-picker__next-button" tabindex="0" type="button" aria-label="Next month">
-              <!--v-if-->
+              <div class="neon-icon--name-chevron-right neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+                  <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
+                </svg>
+              </div>
               <!--v-if-->
               <!--v-if-->
             </button></div>
@@ -490,11 +514,17 @@ exports[`NeonDatePicker renders open 1`] = `
             <!--v-if-->
           </button>
           <div class="neon-date-picker__calendar-header-actions"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__previous-button neon-date-picker__previous-button" tabindex="0" type="button" aria-label="Previous month">
-              <!--v-if-->
+              <div class="neon-icon--name-chevron-left neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+                  <path class="neon-svg--fill" d="M15.28 5.22a.75.75 0 0 1 0 1.06L9.56 12l5.72 5.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.25-6.25a.75.75 0 0 1 0-1.06l6.25-6.25a.75.75 0 0 1 1.06 0Z"></path>
+                </svg>
+              </div>
               <!--v-if-->
               <!--v-if-->
             </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__next-button neon-date-picker__next-button" tabindex="0" type="button" aria-label="Next month">
-              <!--v-if-->
+              <div class="neon-icon--name-chevron-right neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+                  <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
+                </svg>
+              </div>
               <!--v-if-->
               <!--v-if-->
             </button></div>
@@ -641,11 +671,17 @@ exports[`NeonDatePicker renders with defaults of today 1`] = `
             <!--v-if-->
           </button>
           <div class="neon-date-picker__calendar-header-actions"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__previous-button neon-date-picker__previous-button" tabindex="0" type="button" aria-label="Previous month">
-              <!--v-if-->
+              <div class="neon-icon--name-chevron-left neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+                  <path class="neon-svg--fill" d="M15.28 5.22a.75.75 0 0 1 0 1.06L9.56 12l5.72 5.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.25-6.25a.75.75 0 0 1 0-1.06l6.25-6.25a.75.75 0 0 1 1.06 0Z"></path>
+                </svg>
+              </div>
               <!--v-if-->
               <!--v-if-->
             </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__next-button neon-date-picker__next-button" tabindex="0" type="button" aria-label="Next month">
-              <!--v-if-->
+              <div class="neon-icon--name-chevron-right neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+                  <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
+                </svg>
+              </div>
               <!--v-if-->
               <!--v-if-->
             </button></div>
@@ -795,11 +831,17 @@ exports[`NeonDatePicker renders with locale 1`] = `
             <!--v-if-->
           </button>
           <div class="neon-date-picker__calendar-header-actions"><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__previous-button neon-date-picker__previous-button" tabindex="0" type="button" aria-label="Previous month">
-              <!--v-if-->
+              <div class="neon-icon--name-chevron-left neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+                  <path class="neon-svg--fill" d="M15.28 5.22a.75.75 0 0 1 0 1.06L9.56 12l5.72 5.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.25-6.25a.75.75 0 0 1 0-1.06l6.25-6.25a.75.75 0 0 1 1.06 0Z"></path>
+                </svg>
+              </div>
               <!--v-if-->
               <!--v-if-->
             </button><button class="neon-button--m neon-button--primary neon-button--text neon-button--state-ready neon-button--circular neon-button--with-icon neon-button--icon-only neon-button neon-date-picker__next-button neon-date-picker__next-button" tabindex="0" type="button" aria-label="Next month">
-              <!--v-if-->
+              <div class="neon-icon--name-chevron-right neon-icon--primary neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+                  <path class="neon-svg--fill" fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path>
+                </svg>
+              </div>
               <!--v-if-->
               <!--v-if-->
             </button></div>

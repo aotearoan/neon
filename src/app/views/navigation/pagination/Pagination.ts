@@ -65,12 +65,22 @@ export default defineComponent({
   display-first-and-last
 />`;
 
+    const page = ref(1);
+    const templateClickable = '<neon-pagination :total="77" :page-size="20" :page="page" @page-change="changePage" />';
+
+    const changePage = (newPage: number) => {
+      page.value = newPage;
+    };
+
     onMounted(() => (menuModel.value = Menu.getComponentConfig('NeonPagination')));
 
     return {
       menuModel,
       headline,
       template,
+      templateClickable,
+      page,
+      changePage,
     };
   },
 });

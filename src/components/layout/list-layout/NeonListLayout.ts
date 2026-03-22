@@ -74,6 +74,13 @@ export default defineComponent({
   },
   emits: [
     /**
+     * Emitted when the user clicks on a pagination link (useful for paginated lists which are not the main focus of the page,
+     * i.e. should not be deep linked).
+     *
+     * @type {number} The new page number.
+     */
+    'page-change',
+    /**
      * Emitted when the 'Show more' button is clicked in "on demand" mode.
      * @type {void}
      */
@@ -105,6 +112,7 @@ export default defineComponent({
     );
 
     return {
+      emit,
       initializing,
       slots,
       showMore,

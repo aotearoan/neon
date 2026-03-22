@@ -14,7 +14,7 @@ export interface NeonPaginationModel {
    * The URL template for the pagination links. The template should contain a '{page}' placeholder that will be
    * substituted in links with the correct page number.
    */
-  urlTemplate: string;
+  urlTemplate?: string;
   /**
    * The number of items per page. Default is 20.
    */

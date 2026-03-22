@@ -11,7 +11,7 @@
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
-        <h2 class="neon-h3">Examples</h2>
+        <h2 class="neon-h3">Layout Examples</h2>
         <neon-stack>
           <neon-pagination :page="1" :page-size="20" :total="77" url-template="https://aotearoan.com?page={page}" />
           <neon-pagination :page="1" :page-size="20" :total="100" url-template="https://aotearoan.com?page={page}" />
@@ -33,6 +33,13 @@
             url-template="https://aotearoan.com?page={page}"
           />
           <editor v-model="template" />
+        </neon-stack>
+      </neon-card-body>
+      <neon-card-body>
+        <h2 class="neon-h3">Click handler examples</h2>
+        <neon-stack>
+          <neon-pagination :page="page" :page-size="20" :total="77" @page-change="changePage" />
+          <editor v-model="templateClickable" />
         </neon-stack>
       </neon-card-body>
     </neon-card>

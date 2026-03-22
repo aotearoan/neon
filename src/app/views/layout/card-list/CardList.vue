@@ -17,7 +17,7 @@
             <template #header>
               <neon-input v-model="paginationFilter" placeholder="Filter results…" size="s" />
             </template>
-            <template #card="{ model, index }">
+            <template #card="{ model }">
               <div class="card-contents">
                 <span class="card-title">{{ model.title }}</span>
                 <span class="card-description">{{ model.description }}</span>
@@ -25,6 +25,28 @@
             </template>
           </neon-card-list>
           <editor v-model="paginationTemplate" />
+        </neon-stack>
+      </neon-card-body>
+      <neon-card-body>
+        <neon-stack>
+          <h2 class="neon-h3">Pagination with click handler example</h2>
+          <neon-card-list
+            :items="paginationFilteredModel"
+            :pagination="paginationNoUrlConfig"
+            color="brand"
+            @page-change="changePage"
+          >
+            <template #header>
+              <neon-input v-model="paginationFilter" placeholder="Filter results…" size="s" />
+            </template>
+            <template #card="{ model }">
+              <div class="card-contents">
+                <span class="card-title">{{ model.title }}</span>
+                <span class="card-description">{{ model.description }}</span>
+              </div>
+            </template>
+          </neon-card-list>
+          <editor v-model="paginationClickHandlerTemplate" />
         </neon-stack>
       </neon-card-body>
       <neon-card-body>

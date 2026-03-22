@@ -30,7 +30,7 @@
           button-style="text"
           class="neon-image-carousel__previous"
           color="neutral"
-          icon="arrow-left-1"
+          icon="chevron-left"
           size="l"
           @click.capture.stop="previous"
         />
@@ -58,7 +58,7 @@
           button-style="text"
           class="neon-image-carousel__next"
           color="neutral"
-          icon="arrow-right-1"
+          icon="chevron-right"
           size="l"
           @click.capture.stop="next"
         />

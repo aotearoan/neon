@@ -11,7 +11,7 @@
       </neon-link>
       <div v-if="breadcrumbs.length !== 0" ref="linksRef" class="neon-breadcrumbs__links">
         <template v-for="(breadcrumb, index) in breadcrumbs" :key="index">
-          <neon-icon v-if="index !== 0" class="neon-breadcrumbs__separator" name="arrow-right-1" />
+          <neon-icon v-if="index !== 0" class="neon-breadcrumbs__separator" name="chevron-right" />
           <neon-link v-if="breadcrumb.url" :href="breadcrumb.url" class="neon-breadcrumbs__link" no-style>
             {{ breadcrumb.label }}
           </neon-link>

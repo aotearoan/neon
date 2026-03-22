@@ -1,5 +1,5 @@
 import NeonPagination from './NeonPagination.vue';
-import { render } from '@testing-library/vue';
+import { fireEvent, render } from '@testing-library/vue';
 import type { Mock } from 'jest-mock';
 import { useRoute } from 'vue-router';
 import { router } from '../../../../test/unit/test-router';
@@ -351,5 +351,21 @@ describe('NeonPagination', () => {
     expect(container.querySelector<HTMLButtonElement>('.neon-pagination__previous')?.disabled).toBeFalsy();
     expect(container.querySelector<HTMLButtonElement>('.neon-pagination__next')?.disabled).toBeTruthy();
     expect(container.querySelector<HTMLButtonElement>('.neon-pagination__last')?.disabled).toBeTruthy();
+  });
+
+  it('emits page changes when no url template', async () => {
+    // given
+    const { emitted, getByText } = render(NeonPagination, {
+      props: {
+        page: 2,
+        total: 60,
+        pageSize: 20,
+        displayFirstAndLast: true,
+      },
+      global: { plugins: [router] },
+    });
+    // then
+    await fireEvent.click(getByText('3'));
+    expect(emitted()['page-change']).toEqual([[3]]);
   });
 });

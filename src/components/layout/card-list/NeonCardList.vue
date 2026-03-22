@@ -76,6 +76,7 @@
       :page-size="pagination.pageSize"
       :total="pagination.total"
       :url-template="pagination.urlTemplate"
+      @page-change="(page: number) => emit('page-change', page)"
     />
   </div>
 </template>

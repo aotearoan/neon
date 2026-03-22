@@ -7,3 +7,10 @@ export const PaginationFixture = (total: number): NeonPaginationModel => ({
   pageSize: 10,
   displayFirstAndLast: true,
 });
+
+export const PaginationFixtureNoUrl = (total: number): NeonPaginationModel => ({
+  page: 1,
+  total,
+  pageSize: 10,
+  displayFirstAndLast: true,
+});
