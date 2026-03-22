@@ -1,5 +1,12 @@
 # Changelog
 
+## [28.0.2](https://github.com/aotearoan/neon/compare/v28.0.1...v28.0.2) (2026-03-22)
+
+
+### Bug Fixes
+
+* dropdown enhancements ([#390](https://github.com/aotearoan/neon/issues/390)) ([b84e2ac](https://github.com/aotearoan/neon/commit/b84e2ac4c02764b6da43facd2609b84ca1579ea6))
+
 ## [28.0.1](https://github.com/aotearoan/neon/compare/v28.0.0...v28.0.1) (2026-03-22)
 
 
