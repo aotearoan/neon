@@ -1,5 +1,12 @@
 # Changelog
 
+## [28.1.0](https://github.com/aotearoan/neon/compare/v28.0.3...v28.1.0) (2026-03-22)
+
+
+### Features
+
+* dialog service ([#394](https://github.com/aotearoan/neon/issues/394)) ([c8c3a9f](https://github.com/aotearoan/neon/commit/c8c3a9f01086da4a94985724723d2ca044f04b9d))
+
 ## [28.0.3](https://github.com/aotearoan/neon/compare/v28.0.2...v28.0.3) (2026-03-22)
 
 
