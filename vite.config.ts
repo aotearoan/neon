@@ -58,10 +58,5 @@ export default defineConfig({
         },
       ],
     },
-    terserOptions: {
-      parse: {
-        html5_comments: false,
-      },
-    },
   },
 });
