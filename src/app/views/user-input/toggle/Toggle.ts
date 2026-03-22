@@ -121,6 +121,25 @@ export default defineComponent({
   </template>
 </neon-toggle>`;
 
+    const radioButtonsWithAdditionalContent = `<neon-toggle v-model="selected10"
+             :model="modelWithDescriptions"
+             name="toggle-10"
+             toggle-style="radio-buttons"
+>
+  <template #option="{ option, index }">
+    <neon-stack gap="s">
+      <span v-if="option.label">{{ option.label }}</span>
+      <span v-if="option.description" class="neon-color-low-contrast">
+        {{ option.description }}
+      </span>
+    </neon-stack>
+  </template>
+  <template #additionalContent="{ option, index }">
+    <p>Option key = {{ option.key }}</p>
+    <p>Index = {{ index }}</p>
+  </template>
+</neon-toggle>`;
+
     const cardRadioButtons = `<neon-toggle v-model="selected11"
              :model="modelCard"
              name="toggle-11"
@@ -164,6 +183,7 @@ export default defineComponent({
       toggleIcons,
       radioButtons,
       radioButtonsWithDescriptions,
+      radioButtonsWithAdditionalContent,
       cardRadioButtons,
     };
   },

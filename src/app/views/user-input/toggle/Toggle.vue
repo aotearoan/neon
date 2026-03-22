@@ -77,6 +77,33 @@
         </neon-stack>
       </neon-card-body>
       <neon-card-body>
+        <h2 class="neon-h3">Radio buttons with additional content slot</h2>
+        <neon-stack>
+          <neon-stack gap="m">
+            <neon-toggle
+              v-model="selected10"
+              :model="modelWithDescriptions"
+              name="toggle-10"
+              toggle-style="radio-buttons"
+            >
+              <template #option="{ option, index }">
+                <neon-stack gap="s">
+                  <span v-if="option.label">{{ option.label }}</span>
+                  <span v-if="option.description" class="neon-color-low-contrast">
+                    {{ option.description }}
+                  </span>
+                </neon-stack>
+              </template>
+              <template #additionalContent="{ option, index }">
+                <p>Option key = {{ option.key }}</p>
+                <p>Index = {{ index }}</p>
+              </template>
+            </neon-toggle>
+          </neon-stack>
+          <editor v-model="radioButtonsWithAdditionalContent" />
+        </neon-stack>
+      </neon-card-body>
+      <neon-card-body>
         <h2 class="neon-h3">Card style radio buttons</h2>
         <neon-stack>
           <neon-stack gap="m">

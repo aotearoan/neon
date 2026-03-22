@@ -36,6 +36,10 @@
     min-height: 1.25 * $control-size;
   }
 
+  .neon-toggle__additional-content {
+    margin-left: calc(#{1.25 * $control-size} + var(--neon-space-12));
+  }
+
   .neon-toggle__label--checked {
     .neon-toggle__radio-button {
       &-indicator {
