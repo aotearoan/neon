@@ -4,10 +4,7 @@
       <neon-card-body>
         <p>
           Use <strong>NeonSplashLoader</strong> to indicate loading progress to the user. This can be used fullscreen
-          initial site loading as well as when UPDATING data, e.g. refreshing table data. For initial data loading
-          please see
-          <neon-link href="/feedback/skeleton-loader">NeonSkeletonLoader</neon-link>
-          .
+          initial site loading as well as when updating data.
         </p>
       </neon-card-body>
       <neon-card-body>

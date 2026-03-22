@@ -1141,17 +1141,17 @@
    * @component NeonSkeletonLoader
    * 1st loading color.
    */
-  --neon-color-loading-1: rgb(64, 64, 64);
+  --neon-color-loading-1: rgb(16, 16, 16);
   /**
    * @component NeonSkeletonLoader
    * 2nd loading color.
    */
-  --neon-color-loading-2: rgb(82, 82, 82);
+  --neon-color-loading-2: rgb(24, 24, 24);
   /**
    * @component NeonSkeletonLoader
    * 3rd loading color.
    */
-  --neon-color-loading-3: rgba(82, 82, 82, 0.5);
+  --neon-color-loading-3: rgba(24, 24, 24, 0.5);
 
 
   /* scrollbars */

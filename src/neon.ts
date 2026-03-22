@@ -45,6 +45,7 @@ export { default as NeonLinearProgress } from './components/feedback/linear-prog
 export { default as NeonLink } from './components/navigation/link/NeonLink.vue';
 export { default as NeonList } from './components/user-input/list/NeonList.vue';
 export { default as NeonListLayout } from './components/layout/list-layout/NeonListLayout.vue';
+export { default as NeonLoadingStateCard } from './components/feedback/loading-state-card/NeonLoadingStateCard.vue';
 export { default as NeonMenu } from './components/navigation/menu/NeonMenu.vue';
 export { default as NeonMobileMenu } from './components/navigation/mobile-menu/NeonMobileMenu.vue';
 export { default as NeonModal } from './components/layout/modal/NeonModal.vue';

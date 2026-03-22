@@ -1,0 +1,48 @@
+@use '../includes/responsive';
+
+@mixin loading-state-card {
+  .neon-loading-state-card {
+    .neon-loading-state-card__thumbnail {
+      --neon-border-radius-skeleton-loader: var(--neon-border-radius-loading-state-card-thumbnail);
+      --neon-height-skeleton-loader: 48rem;
+      min-width: 48rem;
+      width: 48rem;
+    }
+
+    .neon-loading-state-card__main-content {
+      gap: var(--neon-space-8);
+      width: 50%;
+      height: 48rem;
+    }
+
+    .neon-loading-state-card__main-content-item {
+      --neon-height-skeleton-loader: 22rem;
+      width: 50%;
+    }
+
+    .neon-loading-state-card__additional-content {
+      --neon-height-skeleton-loader: 20rem;
+      width: 25%;
+      height: 20rem;
+      justify-content: center;
+      margin-left: auto;
+    }
+
+    @include responsive.responsive(mobile-large) {
+      gap: var(--neon-space-16);
+
+      .neon-loading-state-card__main-content {
+        width: 50%;
+      }
+
+      .neon-loading-state-card__main-content-item {
+        width: 100%;
+      }
+
+      .neon-loading-state-card__additional-content {
+        margin-left: 0;
+        width: 50%;
+      }
+    }
+  }
+}

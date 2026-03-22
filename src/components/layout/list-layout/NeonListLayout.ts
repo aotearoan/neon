@@ -1,4 +1,4 @@
-import { defineComponent, ref, watch } from 'vue';
+import { defineComponent, watch } from 'vue';
 import type { NeonBreadcrumbLink } from '@/model/navigation/breadcrumbs/NeonBreadcrumbLink';
 import NeonCardList from '@/components/layout/card-list/NeonCardList.vue';
 import NeonHeader from '@/components/presentation/header/NeonHeader.vue';
@@ -52,6 +52,10 @@ export default defineComponent({
       required: true,
     },
     /**
+     * Loading state for the initial load.
+     */
+    initializing: { type: Boolean },
+    /**
      * Loading state for pagination, set when loading a new page.
      */
     loading: { type: Boolean },
@@ -92,7 +96,6 @@ export default defineComponent({
     'toggle-selected',
   ],
   setup(props, { emit, slots }) {
-    const initializing = ref<boolean>(true);
     const showMore = () => {
       emit('show-more');
     };
@@ -102,21 +105,26 @@ export default defineComponent({
     };
 
     watch(
-      () => props.items,
-      () => {
-        if (initializing.value) {
-          initializing.value = false;
+      () => props.initializing,
+      async (newValue) => {
+        if (!newValue && props.items.length > 0) {
+          window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
         }
       },
       { immediate: true },
     );
 
+    const onPageChange = (newPage: number) => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+      emit('page-change', newPage);
+    };
+
     return {
       emit,
-      initializing,
       slots,
       showMore,
       toggleSelected,
+      onPageChange,
     };
   },
 });
