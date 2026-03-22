@@ -1,5 +1,12 @@
 # Changelog
 
+## [28.2.0](https://github.com/aotearoan/neon/compare/v28.1.2...v28.2.0) (2026-03-22)
+
+
+### Features
+
+* filter components ([#400](https://github.com/aotearoan/neon/issues/400)) ([2aeb7d3](https://github.com/aotearoan/neon/commit/2aeb7d3cbbfb9af550effa85a061e4aba876fab9))
+
 ## [28.1.2](https://github.com/aotearoan/neon/compare/v28.1.1...v28.1.2) (2026-03-22)
 
 
