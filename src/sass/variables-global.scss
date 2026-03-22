@@ -799,6 +799,11 @@
    * Max height of the dropdown container when open.
    */
   --neon-max-height-dropdown: 280rem;
+  /**
+     * @component NeonDropdown,NeonSelect,NeonSearch,NeonDropdownMenu
+     * Min width of the dropdown container when open.
+     */
+  --neon-min-width-dropdown: 200rem;
 
   /* buttons */
   /**

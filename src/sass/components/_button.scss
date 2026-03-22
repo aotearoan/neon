@@ -13,6 +13,7 @@
                   var(--neon-gradient-button-c2) 100%
   );
   transition: all ease-in-out var(--neon-animation-speed-fast);
+  transition: background ease-in-out 0ms;
 
   &:active:not(:disabled),
   &:hover:not(:disabled) {
@@ -30,6 +31,7 @@
 
 @mixin solid-button($color) {
   transition: all ease-in-out var(--neon-animation-speed-fast);
+  transition: background ease-in-out 0ms;
   background: linear-gradient(
                   var(--neon-background-solid-button-light-#{$color}),
                   var(--neon-background-solid-button-dark-#{$color})
@@ -54,6 +56,7 @@
 @mixin outline-button($color) {
   transition: all ease-in-out var(--neon-animation-speed-fast);
   border: var(--neon-border-width-outline-button) var(--neon-border-style) var(--neon-border-color-outline-button-inactive-#{$color});
+
   &:not(.neon-button--disabled) {
     color: var(--neon-background-outline-button-active-#{$color});
     @include svg.svg-colors(var(--neon-background-outline-button-active-#{$color}));

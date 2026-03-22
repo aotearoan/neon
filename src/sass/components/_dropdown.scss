@@ -48,7 +48,7 @@
       z-index: var(--neon-z-index-below-top);
       border-radius: var(--neon-border-radius);
       overflow: hidden;
-      min-width: calc(100% - 2 * var(--neon-border-width));
+      min-width: var(--neon-min-width-dropdown);
       background-color: var(--neon-background-color-dropdown-content);
       box-shadow: var(--neon-box-shadow-dropdown);
 
