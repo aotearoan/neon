@@ -1,4 +1,5 @@
 @use '../includes/svg';
+@use '../includes/responsive';
 
 @mixin breadcrumbs {
   .neon-breadcrumbs {
@@ -73,6 +74,50 @@
       &:hover {
         color: var(--neon-color-text-primary);
         text-decoration: underline;
+      }
+    }
+
+    .neon-breadcrumbs__link-text {
+      display: flex;
+      align-items: center;
+      cursor: default;
+      color: var(--neon-color-text-secondary);
+      white-space: nowrap;
+      font-size: var(--neon-font-size-xs);
+      line-height: var(--neon-line-height-one);
+
+      &:not(:last-child) {
+        font-weight: var(--neon-font-weight-semi-bold);
+      }
+
+      &:last-child {
+        color: var(--neon-color-text-tertiary);
+      }
+    }
+  }
+
+  @include responsive.responsive(mobile-large) {
+    .neon-breadcrumbs--responsive-back-only {
+      .neon-breadcrumbs--breadcrumbs-only {
+        display: none;
+      }
+
+      .neon-breadcrumbs__separator,
+      .neon-breadcrumbs__back-label,
+      .neon-breadcrumbs__link-text:last-child,
+      .neon-breadcrumbs__link.neon-link {
+        display: none;
+      }
+
+      .neon-breadcrumbs__back.neon-link:not(:last-child) {
+        border-right: none;
+      }
+
+      .neon-breadcrumbs__back.neon-link {
+        .neon-breadcrumbs__back-icon {
+          width: 24rem;
+          height: 24rem;
+        }
       }
     }
   }

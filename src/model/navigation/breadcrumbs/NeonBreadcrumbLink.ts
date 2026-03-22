@@ -1,8 +1,8 @@
 export interface NeonBreadcrumbLink {
   /**
-   * The url of a breadcrumb link.
+   * * The url of a breadcrumb link. If left empty the link will be rendered as text.
    */
-  url: string;
+  url?: string;
   /**
    * The display label of a breadcrumb link.
    */

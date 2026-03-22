@@ -1,7 +1,8 @@
 import { render } from '@testing-library/vue';
 import NeonBreadcrumbs from './NeonBreadcrumbs.vue';
 import { router } from '../../../../test/unit/test-router';
-import { breadcrumbsFixture } from '@/fixtures/navigation/breadcrumbs/BreadcrumbsFixture';
+import { breadcrumbsFixture, breadcrumbsTextOnlyFixture } from '@/fixtures/navigation/breadcrumbs/BreadcrumbsFixture';
+import { NeonBreadcrumbResponsiveStyle } from '@/model/navigation/breadcrumbs/NeonBreadcrumbResponsiveStyle';
 
 describe('NeonBreadcrumbs', () => {
   it('does not render without back button or breadcrumbs', () => {
@@ -52,5 +53,49 @@ describe('NeonBreadcrumbs', () => {
     });
     expect(container.querySelectorAll('.neon-breadcrumbs__link').length).toEqual(breadcrumbs.length);
     expect(html()).toMatchSnapshot();
+  });
+
+  it('renders a breadcrumb with text only, no link', () => {
+    const breadcrumbs = breadcrumbsTextOnlyFixture();
+
+    const { container, html } = render(NeonBreadcrumbs, {
+      props: {
+        breadcrumbs,
+      },
+      global: {
+        plugins: [router],
+      },
+    });
+    expect(container.querySelectorAll('.neon-breadcrumbs__link').length).toEqual(breadcrumbs.length - 1);
+    expect(html()).toMatchSnapshot();
+  });
+
+  it('renders default responsive style', () => {
+    const breadcrumbs = breadcrumbsFixture();
+
+    const { container } = render(NeonBreadcrumbs, {
+      props: {
+        breadcrumbs,
+      },
+      global: {
+        plugins: [router],
+      },
+    });
+    expect(container.querySelector('.neon-breadcrumbs--responsive-swiper')).toBeDefined();
+  });
+
+  it('renders default responsive style', () => {
+    const breadcrumbs = breadcrumbsFixture();
+
+    const { container } = render(NeonBreadcrumbs, {
+      props: {
+        breadcrumbs,
+        responsiveStyle: NeonBreadcrumbResponsiveStyle.BackOnly,
+      },
+      global: {
+        plugins: [router],
+      },
+    });
+    expect(container.querySelector('.neon-breadcrumbs--responsive-back-only')).toBeDefined();
   });
 });
