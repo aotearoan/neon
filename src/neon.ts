@@ -5,6 +5,7 @@ export { default as NeonAlertContainer } from './components/feedback/alert/conta
 export { default as NeonAnchor } from './components/navigation/anchor/NeonAnchor.vue';
 export { default as NeonBadge } from './components/presentation/badge/NeonBadge.vue';
 export { default as NeonBanner } from './components/feedback/banner/NeonBanner.vue';
+export { default as NeonBasicLayout } from './components/layout/basic-layout/NeonBasicLayout.vue';
 export { default as NeonBreadcrumbs } from './components/navigation/breadcrumbs/NeonBreadcrumbs.vue';
 export { default as NeonButton } from './components/user-input/button/NeonButton.vue';
 export { default as NeonCard } from './components/layout/card/NeonCard.vue';
@@ -53,7 +54,6 @@ export { default as NeonNote } from './components/feedback/note/NeonNote.vue';
 export { default as NeonNotificationCounter } from './components/feedback/notification-counter/NeonNotificationCounter.vue';
 export { default as NeonNumber } from './components/user-input/number/NeonNumber.vue';
 export { default as NeonPage } from './components/layout/page/NeonPage.vue';
-export { default as NeonPageContainer } from './components/layout/page-container/NeonPageContainer.vue';
 export { default as NeonPagination } from './components/navigation/pagination/NeonPagination.vue';
 export { default as NeonPassword } from './components/user-input/password/NeonPassword.vue';
 export { default as NeonRangeSlider } from './components/user-input/range-slider/NeonRangeSlider.vue';

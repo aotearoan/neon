@@ -29,7 +29,8 @@
     }
 
     &__subtitle {
-      font-size: var(--neon-font-size-m);
+      font-size: var(--neon-font-size-header-subtitle);
+      color: var(--neon-color-header-subtitle);
       white-space: nowrap;
     }
 

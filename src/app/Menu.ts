@@ -206,6 +206,12 @@ export class Menu {
             name: 'Layout',
             children: [
               {
+                path: 'basic-layout',
+                page: 'BasicLayout',
+                name: 'Basic Layout',
+                component: 'NeonBasicLayout',
+              },
+              {
                 path: 'card',
                 page: 'Card',
                 keywords: 'section container',
@@ -290,12 +296,6 @@ export class Menu {
                 path: 'page',
                 page: 'Page',
                 component: 'NeonPage',
-              },
-              {
-                path: 'page-container',
-                page: 'PageContainer',
-                name: 'Page Container',
-                component: 'NeonPageContainer',
               },
               {
                 path: 'page-header',

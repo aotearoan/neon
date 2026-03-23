@@ -273,10 +273,6 @@ $neon-components: null !default;
     @include components.mobile-menu;
   }
 
-  @if index($neon-flattened-components, NeonPageContainer) {
-    @include components.page-container;
-  }
-
   @if index($neon-flattened-components, NeonBanner) {
     @include components.banner;
   }
@@ -323,5 +319,9 @@ $neon-components: null !default;
 
   @if index($neon-flattened-components, NeonLoadingStateCard) {
     @include components.loading-state-card;
+  }
+
+  @if index($neon-flattened-components, NeonBasicLayout) {
+    @include components.basic-layout;
   }
 }

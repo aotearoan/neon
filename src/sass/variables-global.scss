@@ -1334,13 +1334,6 @@
    */
   --neon-blur-radius-image-carousel: 5px;
 
-  /* page container */
-  /**
-   * @component NeonPageContainer
-   * Page container fixed height for sticky buttons
-   */
-  --neon-height-page-container-sticky-buttons: 72rem;
-
   /* tree menu */
   /**
    * @component NeonTreeMenu
@@ -1410,4 +1403,11 @@
    * Border radius on the thumbnail placeholder in the loading state card. Set to 50% for a circular thumbnail.
    */
   --neon-border-radius-loading-state-card-thumbnail: var(--neon-border-radius-skeleton-loader);
+
+  /* Header component */
+  /**
+   * @component NeonHeader,NeonBasicLayout
+   * Font size of the header component subtitle
+   */
+  --neon-font-size-header-subtitle: var(--neon-font-size-m);
 }

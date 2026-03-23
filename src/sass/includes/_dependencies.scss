@@ -131,7 +131,6 @@
           NeonImageCarousel: [NeonButton, NeonLink],
           NeonSwiper: [],
           NeonMobileMenu: [NeonIcon, NeonLink],
-          NeonPageContainer: [NeonIcon],
           NeonBanner: [NeonButton, NeonNote, NeonIcon, NeonLink, NeonExpansionIndicator],
           NeonPagination: [NeonButton, NeonLink, NeonIcon],
           NeonLabelledContent: [],
@@ -144,6 +143,7 @@
           NeonEmptyState: [NeonButton, NeonIcon, NeonInline, NeonStack, NeonExpansionIndicator, NeonLink],
           NeonListLayout: [NeonBreadcrumbs, NeonButton, NeonCard, NeonCardBody, NeonCardHeader, NeonCardList, NeonEmptyState, NeonExpansionIndicator, NeonHeader, NeonIcon, NeonInline, NeonLink, NeonNote, NeonPagination, NeonSelectableCard, NeonSwiper, NeonSwitch],
           NeonLoadingStateCard: [NeonInline, NeonStack, NeonSkeletonLoader],
+          NeonBasicLayout: [NeonHeader, NeonBreadcrumbs, NeonButton, NeonExpansionIndicator, NeonIcon, NeonInline, NeonLink, NeonNote, NeonSwiper, NeonStack],
   );
 
   $neon-flattened-components: [];
