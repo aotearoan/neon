@@ -36,6 +36,7 @@
 
       input {
         pointer-events: none;
+        touch-action: none;
         user-select: none;
         font-variant: tabular-nums;
       }
@@ -61,6 +62,7 @@
 
     .neon-date-picker__native-input {
       pointer-events: none;
+      touch-action: none;
       width: 100%;
       min-width: 100%;
       display: flex;

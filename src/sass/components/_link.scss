@@ -39,6 +39,7 @@
       color: var(--neon-color-disabled-text);
       cursor: not-allowed;
       pointer-events: none;
+      touch-action: none;
     }
   }
 
