@@ -27,7 +27,7 @@ exports[`NeonListLayout renders basic layout with pagination 1`] = `
             <div class="neon-inline--gap-m neon-inline neon-header__labels">
               <!-- @slot inline contents -->
             </div>
-          </div><!-- @slot a slot for overriding the default subtitle styling and proving richer content -->
+          </div>
           <!--v-if-->
         </div>
         <div class="neon-inline--gap-s neon-inline neon-header__actions">
@@ -160,7 +160,7 @@ exports[`NeonListLayout renders breadcrumbs 1`] = `
             <div class="neon-inline--gap-m neon-inline neon-header__labels">
               <!-- @slot inline contents -->
             </div>
-          </div><!-- @slot a slot for overriding the default subtitle styling and proving richer content -->
+          </div>
           <!--v-if-->
         </div>
         <div class="neon-inline--gap-s neon-inline neon-header__actions">
@@ -277,7 +277,7 @@ exports[`NeonListLayout renders load on demand pagination 1`] = `
             <div class="neon-inline--gap-m neon-inline neon-header__labels">
               <!-- @slot inline contents -->
             </div>
-          </div><!-- @slot a slot for overriding the default subtitle styling and proving richer content -->
+          </div>
           <!--v-if-->
         </div>
         <div class="neon-inline--gap-s neon-inline neon-header__actions">

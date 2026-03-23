@@ -15,10 +15,12 @@
             <slot name="labels"></slot>
           </neon-inline>
         </neon-inline>
-        <!-- @slot a slot for overriding the default subtitle styling and proving richer content -->
-        <slot name="subtitle">
-          <span v-if="subtitle" class="neon-header__subtitle">{{ subtitle }}</span>
-        </slot>
+        <span v-if="subtitle || slots.subtitle" class="neon-header__subtitle">
+          <!-- @slot a slot for overriding the default subtitle styling and proving richer content -->
+          <slot name="subtitle">
+            <span v-if="subtitle">{{ subtitle }}</span>
+          </slot>
+        </span>
       </neon-stack>
       <neon-inline v-if="slots.actions" class="neon-header__actions" gap="s">
         <!-- @slot a slot for adding contextual action buttons to the header. The wrapper is provided, just add the buttons here in order to apply the correct spacings -->
