@@ -112,7 +112,7 @@
       }
     }
 
-    $neon-badge-sizes: (s, m, l, xl, xxl);
+    $neon-badge-sizes: (s, m, l, xl, xxl, xxxl);
 
     @each $badge-size in $neon-badge-sizes {
       &--#{$badge-size} {
@@ -152,7 +152,7 @@
     &--square {
       &,
       .neon-badge__image {
-        border-radius: var(--neon-border-radius);
+        border-radius: var(--neon-border-radius-badge);
       }
     }
 

@@ -3,6 +3,7 @@ export { default as NeonActionMenu } from './components/navigation/action-menu/N
 export { default as NeonAlert } from './components/feedback/alert/NeonAlert.vue';
 export { default as NeonAlertContainer } from './components/feedback/alert/container/NeonAlertContainer.vue';
 export { default as NeonAnchor } from './components/navigation/anchor/NeonAnchor.vue';
+export { default as NeonAvatar } from './components/presentation/avatar/NeonAvatar.vue';
 export { default as NeonBadge } from './components/presentation/badge/NeonBadge.vue';
 export { default as NeonBanner } from './components/feedback/banner/NeonBanner.vue';
 export { default as NeonBasicLayout } from './components/layout/basic-layout/NeonBasicLayout.vue';

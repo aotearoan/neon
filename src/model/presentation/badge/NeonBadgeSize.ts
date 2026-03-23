@@ -13,4 +13,6 @@ export enum NeonBadgeSize {
   ExtraLarge = 'xl',
   /** An extra, extra large badge size, typically has a default of 80 rem. */
   ExtraExtraLarge = 'xxl',
+  /** An extra, extra, extra large badge size, typically has a default of 288 rem. */
+  ExtraExtraExtraLarge = 'xxxl',
 }

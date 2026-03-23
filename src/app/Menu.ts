@@ -416,6 +416,12 @@ export class Menu {
             name: 'Presentation',
             children: [
               {
+                path: 'avatar',
+                page: 'Avatar',
+                keywords: 'avatar profile picture',
+                component: 'NeonAvatar',
+              },
+              {
                 path: 'badge',
                 page: 'Badge',
                 component: 'NeonBadge',
