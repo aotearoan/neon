@@ -61,8 +61,12 @@
         }
       }
 
+      .neon-button:hover {
+        z-index: var(--neon-z-index-above-2);
+      }
+
       .neon-button + .neon-button {
-        border-left: var(--neon-border-width) var(--neon-border-style) var(--neon-color-inverse);
+        border-left: none;
       }
     }
 
