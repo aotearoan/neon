@@ -8,6 +8,7 @@ import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 import { LoadOnDemandWithLabelsFixture } from '@/fixtures/LoadOnDemandFixture';
 import { flushPromises } from '@vue/test-utils';
 import { nextTick } from 'vue';
+import { NeonCardListStyle } from '@/model/layout/card-list/NeonCardListStyle';
 
 describe('NeonListLayout', () => {
   const title = 'test title';
@@ -121,7 +122,7 @@ describe('NeonListLayout', () => {
 
   it('renders load on demand pagination', () => {
     const loadOnDemand = LoadOnDemandWithLabelsFixture(1000);
-    const { container, html } = render(NeonListLayout, {
+    const { getByText, html } = render(NeonListLayout, {
       props: {
         title,
         items,
@@ -132,8 +133,39 @@ describe('NeonListLayout', () => {
       },
     });
 
-    expect(container.querySelector('.neon-card-list__total')?.textContent).toEqual('5 von 1,000');
+    getByText('Zeigt 5 von 1,000');
     expect(html()).toMatchSnapshot();
+  });
+
+  it('renders default card list style', () => {
+    // given
+    const loadOnDemand = LoadOnDemandWithLabelsFixture(1000);
+    const { container } = render(NeonListLayout, {
+      props: {
+        title: 'test',
+        items,
+        loadOnDemand,
+      },
+      global: { plugins: [router] },
+    });
+    // when / then
+    expect(container.querySelector('.neon-card-list--list')).toBeDefined();
+  });
+
+  it('renders grid card list style', () => {
+    // given
+    const loadOnDemand = LoadOnDemandWithLabelsFixture(1000);
+    const { container } = render(NeonListLayout, {
+      props: {
+        title: 'test',
+        items,
+        loadOnDemand,
+        listStyle: NeonCardListStyle.Grid,
+      },
+      global: { plugins: [router] },
+    });
+    // when / then
+    expect(container.querySelector('.neon-card-list--grid')).toBeDefined();
   });
 
   it('emits toggle-selection event when card is clicked', async () => {
@@ -159,7 +191,7 @@ describe('NeonListLayout', () => {
     const { container, emitted } = render(NeonListLayout, {
       props: {
         items,
-        loadOnDemand: { total: items.length - 1 },
+        loadOnDemand: { total: items.length + 1 },
       },
       slots: { card: '<p>test</p>' },
       global: { plugins: [router] },

@@ -10,6 +10,7 @@ import type { NeonIdentifiable } from '@/model/common/entity/NeonIdentifiable';
 import type { NeonSelectable } from '@/model/common/entity/NeonSelectable';
 import NeonEmptyState from '@/components/presentation/empty-state/NeonEmptyState.vue';
 import NeonSplashLoader from '@/components/feedback/splash-loader/NeonSplashLoader.vue';
+import { NeonCardListStyle } from '@/model/layout/card-list/NeonCardListStyle';
 
 /**
  * A page level layout component for displaying a list with a page header, filter bar, card list, pagination & an empty
@@ -68,6 +69,10 @@ export default defineComponent({
      */
     selectable: { type: Boolean, default: false },
     /**
+     * Specify the card list layout, either a 'List' of cards with 100% width or a responsive 'Grid' of cards.
+     */
+    listStyle: { type: String as () => NeonCardListStyle, default: () => NeonCardListStyle.List },
+    /**
      * Model for configuring the on demand loading layout.
      */
     loadOnDemand: { type: Object as () => NeonLoadOnDemandModel },
@@ -85,7 +90,7 @@ export default defineComponent({
      */
     'page-change',
     /**
-     * Emitted when the 'Show more' button is clicked in "on demand" mode.
+     * Emitted when the 'Load more' button is clicked in "on demand" mode.
      * @type {void}
      */
     'show-more',

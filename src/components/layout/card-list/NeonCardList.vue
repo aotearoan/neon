@@ -1,11 +1,10 @@
 <template>
-  <div class="neon-card-list">
+  <div :class="`neon-card-list--${listStyle}`" class="neon-card-list">
     <!-- @slot slot for providing a filter bar component -->
     <slot name="filters"></slot>
-    <neon-inline v-if="slots.header || loadOnDemand" class="neon-card-list__header">
-      <!-- @slot slot for providing titles for the card list aligned next to the result count -->
+    <neon-inline v-if="slots.header" class="neon-card-list__header">
+      <!-- @slot slot for providing titles for the card list -->
       <slot name="header"></slot>
-      <span v-if="loadOnDemand" class="neon-card-list__total">{{ n(items.length) }} {{ ofLabel }} {{ n(total) }}</span>
     </neon-inline>
     <div ref="cards" class="neon-card-list__cards">
       <template v-for="(item, index) in items">
@@ -80,13 +79,12 @@
       </template>
     </div>
     <template v-if="loadOnDemand">
-      <span v-if="items.length === total" class="neon-card-list__results-end">{{ endOfResultsLabel }}</span>
+      <span v-if="resultCountLabel" class="neon-card-list__result-count-label">{{ resultCountLabel }}</span>
       <neon-button
-        v-else
-        :button-style="NeonButtonStyle.Text"
-        :color="NeonFunctionalColor.Neutral"
+        v-if="items.length < total"
         :label="showMoreLabel"
-        :size="NeonSize.Small"
+        :size="NeonSize.Large"
+        :state="loading ? NeonState.Loading : NeonState.Ready"
         class="neon-card-list__show-more"
         @click="emit('show-more', $event)"
       />

@@ -73,6 +73,29 @@
       </neon-card-body>
       <neon-card-body>
         <neon-stack>
+          <h2 class="neon-h3">Grid style example</h2>
+          <neon-card-list
+            :items="onDemandFilteredModel"
+            :load-on-demand="onDemandConfig"
+            color="brand"
+            list-style="grid"
+            @show-more="onDemandShowMore"
+          >
+            <template #header>
+              <neon-input v-model="onDemandFilter" placeholder="Filter results…" size="s" />
+            </template>
+            <template #card="{ model, index }">
+              <div class="grid-card-contents">
+                <span class="card-title">{{ model.title }}</span>
+                <span class="card-description">{{ model.description }}</span>
+              </div>
+            </template>
+          </neon-card-list>
+          <editor v-model="onDemandTemplate" />
+        </neon-stack>
+      </neon-card-body>
+      <neon-card-body>
+        <neon-stack>
           <h2 class="neon-h3">Selectable card list example</h2>
           <neon-card-list
             :items="selectableFilteredModel"

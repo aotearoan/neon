@@ -35,7 +35,7 @@ exports[`NeonListLayout renders basic layout with pagination 1`] = `
         </div>
       </div>
     </div><!-- @slot the insert a note into the page -->
-    <div class="neon-card-list">
+    <div class="neon-card-list--list neon-card-list">
       <!-- @slot slot for providing a filter bar component -->
       <div class="neon-inline--gap-l neon-inline neon-card-list__header">
         <!-- @slot inline contents -->
@@ -168,7 +168,7 @@ exports[`NeonListLayout renders breadcrumbs 1`] = `
         </div>
       </div>
     </div><!-- @slot the insert a note into the page -->
-    <div class="neon-card-list">
+    <div class="neon-card-list--list neon-card-list">
       <!-- @slot slot for providing a filter bar component -->
       <div class="neon-inline--gap-l neon-inline neon-card-list__header">
         <!-- @slot inline contents -->
@@ -285,11 +285,10 @@ exports[`NeonListLayout renders load on demand pagination 1`] = `
         </div>
       </div>
     </div><!-- @slot the insert a note into the page -->
-    <div class="neon-card-list">
+    <div class="neon-card-list--list neon-card-list">
       <!-- @slot slot for providing a filter bar component -->
       <div class="neon-inline--gap-l neon-inline neon-card-list__header">
         <!-- @slot inline contents -->
-        <!-- @slot slot for providing titles for the card list aligned next to the result count --><span class="neon-card-list__total">5 von 1,000</span>
       </div>
       <div class="neon-card-list__cards">
         <div class="neon-card-list__card">
@@ -312,7 +311,7 @@ exports[`NeonListLayout renders load on demand pagination 1`] = `
           <!-- @slot override the default loading state card -->
           <transition-stub mode="out-in" name="neon-fade-transition" appear="false" persisted="false" css="true"></transition-stub>
         </div>
-      </div><button class="neon-button--s neon-button--neutral neon-button--text neon-button--state-ready neon-button neon-card-list__show-more neon-card-list__show-more" tabindex="0" type="button">
+      </div><span class="neon-card-list__result-count-label">Zeigt 5 von 1,000</span><button class="neon-button--l neon-button--primary neon-button--solid neon-button--state-ready neon-button neon-card-list__show-more neon-card-list__show-more" tabindex="0" type="button">
         <!--v-if--><span class="neon-button__label">Mehr anzeigen</span>
         <!--v-if-->
       </button>

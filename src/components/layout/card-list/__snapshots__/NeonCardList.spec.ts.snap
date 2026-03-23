@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NeonCardList renders selectable cards 1`] = `
-<div class="neon-card-list">
+<div class="neon-card-list--list neon-card-list">
   <!-- @slot slot for providing a filter bar component -->
   <!--v-if-->
   <div class="neon-card-list__cards">

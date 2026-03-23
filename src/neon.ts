@@ -98,6 +98,7 @@ export { NeonButtonSize } from '@/model/user-input/button/NeonButtonSize';
 export { NeonButtonStyle } from '@/model/user-input/button/NeonButtonStyle';
 export { NeonButtonType } from '@/model/user-input/button/NeonButtonType';
 export type { NeonCardListModel } from '@/model/layout/card-list/NeonCardListModel';
+export { NeonCardListStyle } from './model/layout/card-list/NeonCardListStyle';
 export type { NeonCarouselImage } from '@/model/presentation/image-carousel/NeonCarouselImage';
 export { NeonChipAction } from '@/model/user-input/chip/NeonChipAction';
 export type { NeonContrastAccessibility } from '@/model/common/color/NeonContrastAccessibility';
