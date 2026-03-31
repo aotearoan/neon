@@ -30,8 +30,8 @@
           background: linear-gradient(to bottom, transparent, var(--neon-background-color));
           width: 100%;
           height: var(--neon-space-16);
-          touch-action: none;
           pointer-events: none;
+          touch-action: none;
         }
 
         .neon-button {

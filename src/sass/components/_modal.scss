@@ -79,6 +79,7 @@
       opacity: 0;
       z-index: var(--neon-z-index-below);
       pointer-events: none;
+      touch-action: none;
       transition: opacity ease-in-out var(--neon-animation-speed-fast);
     }
 

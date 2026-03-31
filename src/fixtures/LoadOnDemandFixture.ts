@@ -2,7 +2,6 @@ import type { NeonLoadOnDemandModel } from '@/model/layout/card-list/NeonLoadOnD
 
 export const LoadOnDemandWithLabelsFixture = (total: number): NeonLoadOnDemandModel => ({
   total,
-  ofLabel: 'von',
+  resultCountLabel: 'Zeigt {count} von {total}',
   showMoreLabel: 'Mehr anzeigen',
-  endOfResultsLabel: 'Keine Daten mehr',
 });

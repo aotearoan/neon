@@ -11,6 +11,12 @@
     padding-right: var(--neon-size-#{$size});
   }
 
+  &.neon-input--state-loading {
+    input {
+      cursor: progress;
+    }
+  }
+
   &.neon-input--state-loading,
   &.neon-input--state-success,
   &.neon-input--state-error,

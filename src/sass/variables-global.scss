@@ -427,6 +427,10 @@
    * XXL component size (buttons & badges only)
    */
   --neon-size-xxl: calc(20 * var(--neon-base-space));
+  /**
+   * XXXL component size (buttons & badges only)
+   */
+  --neon-size-xxxl: calc(72 * var(--neon-base-space));
 
   /* box shadows */
   /** Default box shadow */
@@ -1241,6 +1245,11 @@
 
   /* badge */
   /**
+   * @component NeonBadge,NeonAvatar
+   * Badge border radius for square badges
+   */
+  --neon-border-radius-badge: var(--neon-border-radius);
+  /**
    * @component NeonBadge
    * Background gradient angle for a multicolored badge
    */
@@ -1275,6 +1284,11 @@
    * Size (height) of an XXL Badge
    */
   --neon-size-xxl-badge: var(--neon-size-xxl);
+  /**
+   * @component NeonBadge,NeonAvatar
+   * Size (height) of an XXXL Badge
+   */
+  --neon-size-xxxl-badge: var(--neon-size-xxxl);
   /**
    * @component NeonBadge
    * Default opacity of an editable badge button
@@ -1333,13 +1347,6 @@
    * Image carousel background blur radius when opened full screen
    */
   --neon-blur-radius-image-carousel: 5px;
-
-  /* page container */
-  /**
-   * @component NeonPageContainer
-   * Page container fixed height for sticky buttons
-   */
-  --neon-height-page-container-sticky-buttons: 72rem;
 
   /* tree menu */
   /**
@@ -1410,4 +1417,11 @@
    * Border radius on the thumbnail placeholder in the loading state card. Set to 50% for a circular thumbnail.
    */
   --neon-border-radius-loading-state-card-thumbnail: var(--neon-border-radius-skeleton-loader);
+
+  /* Header component */
+  /**
+   * @component NeonHeader,NeonBasicLayout
+   * Font size of the header component subtitle
+   */
+  --neon-font-size-header-subtitle: var(--neon-font-size-m);
 }

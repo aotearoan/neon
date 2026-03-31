@@ -118,6 +118,7 @@
     .neon-slider__input,
     .neon-slider {
       pointer-events: none;
+      touch-action: none;
     }
 
     .neon-range-slider__lower,
@@ -132,14 +133,17 @@
         .neon-slider__input {
           &::-webkit-slider-thumb {
             pointer-events: none;
+            touch-action: none;
           }
 
           &::-moz-range-thumb {
             pointer-events: none;
+            touch-action: none;
           }
 
           &::-ms-thumb {
             pointer-events: none;
+            touch-action: none;
           }
         }
       }

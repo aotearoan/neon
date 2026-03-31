@@ -4,12 +4,12 @@
 
 @mixin card-list {
   .neon-card-list {
-    &__results-end {
+    &__result-count-label {
       align-self: center;
       user-select: none;
-      margin-top: var(--neon-space-16);
-      font-size: var(--neon-font-size-s);
-      color: var(--neon-color-low-contrast);
+      font-size: var(--neon-font-size-xs);
+      color: var(--neon-color-text-secondary);
+      margin-top: var(--neon-space-32);
     }
 
     &__show-more {
@@ -23,7 +23,7 @@
     &__header {
       align-items: center;
       user-select: none;
-      margin-bottom: var(--neon-space-16);
+      margin-bottom: var(--neon-space-8);
       font-size: var(--neon-font-size-xs);
       color: var(--neon-color-text-primary);
 
@@ -91,6 +91,31 @@
             }
           }
         }
+      }
+    }
+
+    &.neon-card-list--grid {
+      .neon-card-list__link {
+        width: fit-content;
+        min-width: fit-content;
+        max-width: fit-content;
+        display: inline-flex;
+        flex: 0 1 auto;
+      }
+
+      .neon-card-list__cards {
+        gap: var(--neon-space-32);
+        margin-top: var(--neon-space-32);
+        border-top: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .neon-card-list__card {
+        width: fit-content;
+        max-width: fit-content;
+        flex: 0 1 auto;
+        padding: 0 0 var(--neon-space-24) 0;
       }
     }
   }

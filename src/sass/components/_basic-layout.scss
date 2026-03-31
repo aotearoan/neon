@@ -1,70 +1,49 @@
-@use '../includes/layout';
 @use '../includes/responsive';
-@use '../includes/svg';
 
-@mixin page-container {
-  .neon-page-container {
+@mixin basic-layout {
+  .neon-basic-layout {
     position: relative;
     padding-bottom: calc(var(--neon-space-20) + var(--neon-height-mobile-menu) + var(--neon-border-width));
-    gap: var(--neon-gutter);
     width: 100%;
     max-width: 100%;
     flex: 1 0 auto;
 
-    &.neon-page-container--with-sticky-buttons {
+    .neon-basic-layout__container {
+      gap: var(--neon-gutter);
+    }
+
+    &.neon-basic-layout--with-sticky-buttons {
       padding-bottom: calc(
-              var(--neon-height-page-container-sticky-buttons) + var(--neon-space-20) + var(--neon-height-mobile-menu) +
+              var(--neon-height-basic-layout-sticky-buttons) + var(--neon-space-20) + var(--neon-height-mobile-menu) +
               var(--neon-height-mobile-menu-indicator)
       );
-    }
-
-    &__header {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: calc(1.25 * var(--neon-gutter));
-    }
-
-    h1 {
-      margin-bottom: 0;
-    }
-
-    @include responsive.responsive(larger-than-mobile-large) {
-      padding-bottom: var(--neon-space-96);
     }
   }
 
   /* All min-height logic */
   @include responsive.responsive(larger-than-mobile-large) {
     .neon-page--with-footer {
-      .neon-page-container {
+      .neon-basic-layout {
         min-height: calc(100% - (var(--neon-footer-height) + var(--neon-border-width-footer) + var(--neon-top-nav-height)));
       }
     }
   }
 
   @include responsive.responsive(tablet) {
-    .neon-page-container {
+    .neon-basic-layout {
       max-width: 100%;
     }
   }
 
   @include responsive.responsive(mobile-large) {
-    .neon-page-container {
+    .neon-basic-layout {
       min-height: 100%;
-
-      &--hide-nav {
-        min-height: 100%;
-        --neon-height-mobile-menu: 0rem;
-        --neon-height-mobile-menu-indicator: 0rem;
-      }
     }
   }
 
   .neon-page--left.neon-page--with-side-nav {
     @include responsive.responsive(larger-than-tablet) {
-      .neon-page-container {
+      .neon-basic-layout {
         max-width: calc(100% - 2 * var(--neon-gutter));
         margin-left: var(--neon-gutter);
         margin-right: var(--neon-gutter);

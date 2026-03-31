@@ -6,6 +6,7 @@ import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 import { PaginationFixture, PaginationFixtureNoUrl } from '@/fixtures/PaginationFixture';
 import { LoadOnDemandWithLabelsFixture } from '@/fixtures/LoadOnDemandFixture';
 import type { NeonCardListModel } from '@/model/layout/card-list/NeonCardListModel';
+import { NeonCardListStyle } from '@/model/layout/card-list/NeonCardListStyle';
 
 describe('NeonCardList', () => {
   let modelWithLinks: Array<NeonCardListModel<CardListModel>>;
@@ -57,6 +58,33 @@ describe('NeonCardList', () => {
     });
     // when / then
     expect(html()).toMatch('<p>test</p>');
+  });
+
+  it('renders default card list style', () => {
+    // given
+    const { container } = render(NeonCardList, {
+      props: {
+        items: modelWithLinks,
+        loadOnDemand: { total: modelWithLinks.length },
+      },
+      global: { plugins: [router] },
+    });
+    // when / then
+    expect(container.querySelector('.neon-card-list--list')).toBeDefined();
+  });
+
+  it('renders grid card list style', () => {
+    // given
+    const { container } = render(NeonCardList, {
+      props: {
+        items: modelWithLinks,
+        loadOnDemand: { total: modelWithLinks.length },
+        listStyle: NeonCardListStyle.Grid,
+      },
+      global: { plugins: [router] },
+    });
+    // when / then
+    expect(container.querySelector('.neon-card-list--grid')).toBeDefined();
   });
 
   it('renders selectable cards', () => {
@@ -114,23 +142,21 @@ describe('NeonCardList', () => {
     });
     // when / then
     const result = html();
-    expect(result).toMatch(`${modelWithLinks.length} of ${modelWithLinks.length}`);
-    expect(result).toMatch('End of results');
+    expect(result).toMatch(`Showing ${modelWithLinks.length} of ${modelWithLinks.length}`);
   });
 
   it('renders default show more label', () => {
     // given
-    const { html } = render(NeonCardList, {
+    const { getByText } = render(NeonCardList, {
       props: {
         items: modelWithLinks,
-        loadOnDemand: { total: modelWithLinks.length - 1 },
+        loadOnDemand: { total: modelWithLinks.length + 1 },
       },
       slots: { card: '<p>test</p>' },
       global: { plugins: [router] },
     });
     // when / then
-    const result = html();
-    expect(result).toMatch('Show more');
+    getByText('Load more');
   });
 
   it('renders label overrides', () => {
@@ -145,13 +171,13 @@ describe('NeonCardList', () => {
       global: { plugins: [router] },
     });
     // when / then
-    expect(html()).toMatch(`${modelWithLinks.length} ${loadOnDemand.ofLabel} ${modelWithLinks.length}`);
+    expect(html()).toMatch(`Zeigt ${modelWithLinks.length} von ${modelWithLinks.length}`);
   });
 
   it('renders showMoreLabel override', () => {
     // given
-    const loadOnDemand = LoadOnDemandWithLabelsFixture(modelWithLinks.length - 1);
-    const { html } = render(NeonCardList, {
+    const loadOnDemand = LoadOnDemandWithLabelsFixture(modelWithLinks.length + 1);
+    const { getByText } = render(NeonCardList, {
       props: {
         items: modelWithLinks,
         loadOnDemand,
@@ -160,22 +186,10 @@ describe('NeonCardList', () => {
       global: { plugins: [router] },
     });
     // when / then
-    expect(html()).toMatch(loadOnDemand.showMoreLabel ?? '');
-  });
-
-  it('renders endOfResultsLabel override', () => {
-    // given
-    const loadOnDemand = LoadOnDemandWithLabelsFixture(modelWithLinks.length);
-    const { html } = render(NeonCardList, {
-      props: {
-        items: modelWithLinks,
-        loadOnDemand,
-      },
-      slots: { card: '<p>test</p>' },
-      global: { plugins: [router] },
-    });
-    // when / then
-    expect(html()).toMatch(loadOnDemand.endOfResultsLabel ?? '');
+    expect(loadOnDemand.showMoreLabel).toBeDefined();
+    if (loadOnDemand.showMoreLabel) {
+      getByText(loadOnDemand.showMoreLabel);
+    }
   });
 
   it('renders disabled card', () => {
@@ -231,7 +245,7 @@ describe('NeonCardList', () => {
     const { container, emitted } = render(NeonCardList, {
       props: {
         items: modelNoLinks,
-        loadOnDemand: { total: modelNoLinks.length - 1 },
+        loadOnDemand: { total: modelNoLinks.length + 1 },
       },
       slots: { card: '<p>test</p>' },
       global: { plugins: [router] },

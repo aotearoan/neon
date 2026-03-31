@@ -24,6 +24,7 @@
       <neon-card-list
         :color="color"
         :items="items"
+        :list-style="listStyle"
         :load-on-demand="loadOnDemand"
         :loading="loading"
         :pagination="pagination"

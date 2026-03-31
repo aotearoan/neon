@@ -1337,4 +1337,11 @@
    * Background color of the sticky button container.
    */
   --neon-background-color-sticky-buttons: var(--neon-color-high-contrast-d5);
+
+  /* header */
+  /**
+   * @component NeonHeader,NeonBasicLayout
+   * Color of the header component subtitle
+   */
+  --neon-color-header-subtitle: var(--neon-color-text-secondary);
 }

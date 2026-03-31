@@ -15,11 +15,13 @@ import type { NeonSelectable } from '@/model/common/entity/NeonSelectable';
 import NeonSelectableCard from './selectable-card/NeonSelectableCard.vue';
 import NeonSplashLoader from '@/components/feedback/splash-loader/NeonSplashLoader.vue';
 import NeonLoadingStateCard from '@/components/feedback/loading-state-card/NeonLoadingStateCard.vue';
+import { NeonState } from '@/model/common/state/NeonState';
+import { NeonCardListStyle } from '@/model/layout/card-list/NeonCardListStyle';
 
 /**
  * TODO: consider refactoring since it's no longer just a layout component when selectable.
  * Represent lists of objects as cards. This is intended to be a more responsive replacement for tables. This component
- * will display a list of items as cards with a count (x of y) and a <em>Show more</em> button to load more results.
+ * will display a list of items as cards with a count (Showing x of y) and a <em>Load more</em> button to load more results.
  * There is also a slot for adding filtering or other content above the list. A slot is provided with card model & index
  * parameters for customising how to display the model for each card.
  */
@@ -47,6 +49,10 @@ export default defineComponent({
      */
     color: { type: String as () => NeonFunctionalColor, default: null },
     /**
+     * Specify the card list layout, either a 'List' of cards with 100% width or a responsive 'Grid' of cards.
+     */
+    listStyle: { type: String as () => NeonCardListStyle, default: () => NeonCardListStyle.List },
+    /**
      * Make cards selectable.
      */
     selectable: { type: Boolean, default: false },
@@ -59,7 +65,7 @@ export default defineComponent({
      */
     pagination: { type: Object as () => NeonPaginationModel },
     /**
-     * Show splash loader when loading new items.
+     * Show loading state when loading new items.
      */
     loading: { type: Boolean },
   },
@@ -72,7 +78,7 @@ export default defineComponent({
      */
     'page-change',
     /**
-     * Emitted when the 'Show more' button is clicked in "on demand" mode.
+     * Emitted when the 'Load more' button is clicked in "on demand" mode.
      * @type {void}
      */
     'show-more',
@@ -85,9 +91,12 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     const cards = ref<HTMLDivElement | undefined>(undefined);
 
-    const ofLabel = computed(() => {
+    const resultCountLabel = computed(() => {
       if (!props.pagination && props.loadOnDemand) {
-        return props.loadOnDemand.ofLabel ?? 'of';
+        const template = props.loadOnDemand.resultCountLabel ?? 'Showing {count} of {total}';
+        return template
+          .replace('{count}', NeonNumberUtils.formatNumber(props.items.length))
+          .replace('{total}', NeonNumberUtils.formatNumber(props.loadOnDemand.total));
       }
 
       return undefined;
@@ -95,15 +104,7 @@ export default defineComponent({
 
     const showMoreLabel = computed(() => {
       if (!props.pagination) {
-        return props.loadOnDemand?.showMoreLabel ?? 'Show more';
-      }
-
-      return undefined;
-    });
-
-    const endOfResultsLabel = computed(() => {
-      if (!props.pagination) {
-        return props.loadOnDemand?.endOfResultsLabel ?? 'End of results';
+        return props.loadOnDemand?.showMoreLabel ?? 'Load more';
       }
 
       return undefined;
@@ -129,13 +130,13 @@ export default defineComponent({
       NeonButtonStyle,
       NeonFunctionalColor,
       NeonSize,
-      ofLabel,
       showMoreLabel,
-      endOfResultsLabel,
+      resultCountLabel,
       total,
       slots,
       cards,
       onPageChange,
+      NeonState,
     };
   },
 });

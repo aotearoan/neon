@@ -10,6 +10,15 @@
   }
 }
 
+.grid-card-contents {
+  width: 288rem;
+  height: 350rem;
+  color: var(--neon-color-inverse);
+  background-color: var(--neon-color-info);
+  justify-content: center;
+  align-items: center;
+}
+
 .neon-card-list__card--disabled {
   .card-title,
   .card-description {

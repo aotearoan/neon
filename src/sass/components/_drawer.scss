@@ -97,6 +97,7 @@
       z-index: var(--neon-z-index-below);
       position: fixed;
       pointer-events: none;
+      touch-action: none;
       top: 0;
       left: 0;
       @include layout.width(100);

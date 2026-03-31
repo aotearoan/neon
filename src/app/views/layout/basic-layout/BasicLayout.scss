@@ -1,0 +1,10 @@
+.basic-layout {
+  .basic-layout__example-images {
+    align-items: flex-start;
+
+    img {
+      border: var(--neon-border);
+      max-width: 45%;
+    }
+  }
+}
