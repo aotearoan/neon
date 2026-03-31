@@ -1,5 +1,12 @@
 # Changelog
 
+## [28.6.0](https://github.com/aotearoan/neon/compare/v28.5.0...v28.6.0) (2026-03-31)
+
+
+### Features
+
+* avatar, card-list grid & basic layout components plus fixes ([#410](https://github.com/aotearoan/neon/issues/410)) ([5b8692a](https://github.com/aotearoan/neon/commit/5b8692a45123d9215a9414544d42081f1bec63b2))
+
 ## [28.5.0](https://github.com/aotearoan/neon/compare/v28.4.1...v28.5.0) (2026-03-22)
 
 
