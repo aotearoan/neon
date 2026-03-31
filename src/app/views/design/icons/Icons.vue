@@ -9,9 +9,21 @@
           Below is the set of icons provided with Neon for components or used in the showcase examples. This set is
           intentionally kept small so that it is easier to replace this set with custom icons.
         </p>
+        <br />
+        <neon-inline>
+          <neon-input v-model="filter" placeholder="Filter..." />
+
+          <neon-select
+            v-model="selectedPalette"
+            :options="paletteOptions"
+            class="icon-select"
+            placeholder="Select palette"
+            size="m"
+          />
+        </neon-inline>
       </neon-card-body>
       <neon-card-body class="icons-wrapper">
-        <div v-for="icon in icons" :key="`icon-${icon}`" class="icon-container">
+        <div v-for="icon in filteredIcons" :key="`icon-${icon}`" class="icon-container">
           <neon-icon :name="icon"></neon-icon>
           <label>{{ icon }}</label>
         </div>
