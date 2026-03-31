@@ -61,7 +61,7 @@ export default defineComponent({
             isModel.value = false;
           }
 
-          ghLink.value = `https://github.com/venture-artbeat/lib-app-neon/tree/main/src${to}.ts`;
+          ghLink.value = `https://github.com/aotearoan/neon/tree/main/src${to}.ts`;
         }
       },
       { immediate: true },

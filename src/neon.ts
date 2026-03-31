@@ -166,6 +166,7 @@ export { NeonDialogService } from './utils/feedback/dialog/NeonDialogService';
 export { NeonDropdownPlacementUtils } from '@/utils/presentation/dropdown/NeonDropdownPlacementUtils';
 export { NeonEventBus } from '@/utils/common/event/NeonEventBus';
 export { fileToDataURL } from '@/utils/user-input/file/NeonFileUtils';
+export { NeonHttpUtils } from './utils/common/http/NeonHttpUtils';
 export { NeonIconRegistry } from '@/utils/common/icons/NeonIconRegistry';
 export { NeonJazziconUtils } from '@/utils/presentation/badge/NeonJazziconUtils';
 export { NeonModeUtils } from '@/utils/common/color/NeonModeUtils';
