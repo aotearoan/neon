@@ -73,6 +73,20 @@
       </neon-card-body>
       <neon-card-body>
         <neon-stack>
+          <h2 class="neon-h3">Sortable cards example</h2>
+          <neon-card-list :items="sortableModel" :sortable="true" color="brand" @sort="onSort">
+            <template #card="{ model }">
+              <div class="card-contents">
+                <span class="card-title">{{ model.title }}</span>
+                <span class="card-description">{{ model.description }}</span>
+              </div>
+            </template>
+          </neon-card-list>
+          <editor v-model="sortableTemplate" />
+        </neon-stack>
+      </neon-card-body>
+      <neon-card-body>
+        <neon-stack>
           <h2 class="neon-h3">Grid style example</h2>
           <neon-card-list
             :items="onDemandFilteredModel"

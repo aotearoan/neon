@@ -101,6 +101,20 @@ describe('NeonCardList', () => {
     expect(html()).toMatchSnapshot();
   });
 
+  it('renders sortable cards', () => {
+    // given
+    const { html } = render(NeonCardList, {
+      props: {
+        items: modelSelectable,
+        sortable: true,
+      },
+      slots: { card: '<p>test</p>' },
+      global: { plugins: [router] },
+    });
+    // when / then
+    expect(html()).toMatchSnapshot();
+  });
+
   it('renders loading state', () => {
     // given
     const { container } = render(NeonCardList, {

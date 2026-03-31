@@ -6,10 +6,10 @@
       <!-- @slot slot for providing titles for the card list -->
       <slot name="header"></slot>
     </neon-inline>
-    <div ref="cards" class="neon-card-list__cards">
+    <transition-group ref="cards" class="neon-card-list__cards" tag="div">
       <template v-for="(item, index) in items">
         <neon-link
-          v-if="item.href && !item.disabled"
+          v-if="!item.disabled && (sortable || item.href)"
           :key="`${item.model.id ?? index}-link`"
           :class="color && `neon-card-list__link--${color}`"
           :href="item.href"
@@ -17,20 +17,30 @@
           no-style
           outline-style="background"
         >
-          <div class="neon-card-list__card">
-            <!-- @slot override the default loading state card -->
-            <slot v-if="pagination && loading" name="loadingStateCard">
-              <neon-loading-state-card />
-            </slot>
-            <template v-else>
-              <transition mode="out-in" name="neon-fade-transition">
-                <!-- @slot slot for rendering card contents, two parameters are available:
-    @binding {T} model - the model item to be rendered
-    @binding {number} index - the index of the item in the list -->
-                <slot name="card" v-bind="{ model: item.model, index: index }"></slot>
-              </transition>
-            </template>
-          </div>
+          <neon-draggable-card
+            :color="color"
+            :drag-index="dragIndex"
+            :draggable="sortable && items.length > 1"
+            :index="index"
+            :item="item"
+            @drop="onDrop"
+            @on-drag="onDrag"
+          >
+            <div class="neon-card-list__card">
+              <!-- @slot override the default loading state card -->
+              <slot v-if="pagination && loading" name="loadingStateCard">
+                <neon-loading-state-card />
+              </slot>
+              <template v-else>
+                <transition mode="out-in" name="neon-fade-transition">
+                  <!-- @slot slot for rendering card contents, two parameters are available:
+      @binding {T} model - the model item to be rendered
+      @binding {number} index - the index of the item in the list -->
+                  <slot name="card" v-bind="{ model: item.model, index: index }"></slot>
+                </transition>
+              </template>
+            </div>
+          </neon-draggable-card>
         </neon-link>
         <neon-selectable-card
           v-else-if="selectable"
@@ -77,7 +87,7 @@
           </template>
         </div>
       </template>
-    </div>
+    </transition-group>
     <template v-if="loadOnDemand">
       <span v-if="resultCountLabel" class="neon-card-list__result-count-label">{{ resultCountLabel }}</span>
       <neon-button

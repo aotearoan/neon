@@ -17,6 +17,8 @@ import NeonSplashLoader from '@/components/feedback/splash-loader/NeonSplashLoad
 import NeonLoadingStateCard from '@/components/feedback/loading-state-card/NeonLoadingStateCard.vue';
 import { NeonState } from '@/model/common/state/NeonState';
 import { NeonCardListStyle } from '@/model/layout/card-list/NeonCardListStyle';
+import { moveItem } from '@/utils/common/array/NeonArrayUtils';
+import NeonDraggableCard from '@/components/layout/card-list/draggable-card/NeonDraggableCard.vue';
 
 /**
  * TODO: consider refactoring since it's no longer just a layout component when selectable.
@@ -33,6 +35,7 @@ export default defineComponent({
     NeonButton,
     NeonInline,
     NeonLink,
+    NeonDraggableCard,
     NeonLoadingStateCard,
     NeonSplashLoader,
   },
@@ -52,6 +55,14 @@ export default defineComponent({
      * Specify the card list layout, either a 'List' of cards with 100% width or a responsive 'Grid' of cards.
      */
     listStyle: { type: String as () => NeonCardListStyle, default: () => NeonCardListStyle.List },
+    /**
+     * Make cards sortable, i.e. draggable. This will add a drag handle to the card, and when there is a change in the
+     * sort order, this triggers a 'sort' event with the new order.
+     *
+     * NOTE: Sorting is modal, i.e. if cards are sortable then the cards cannot act as links at the same time. Use a
+     * toggle switch to enable/disable sorting.
+     */
+    sortable: { type: Boolean, default: false },
     /**
      * Make cards selectable.
      */
@@ -87,9 +98,15 @@ export default defineComponent({
      * @type {string, boolean} - the id of the card which is toggled & the new selected state.
      */
     'toggle-selected',
+    /**
+     * Emitted when the sort order of cards changes.
+     * @type {Array<NeonCardListModel<T>>} - the new order of the items.
+     */
+    'sort',
   ],
   setup(props, { emit, slots }) {
     const cards = ref<HTMLDivElement | undefined>(undefined);
+    const dragIndex = ref<number | undefined>(undefined);
 
     const resultCountLabel = computed(() => {
       if (!props.pagination && props.loadOnDemand) {
@@ -103,8 +120,8 @@ export default defineComponent({
     });
 
     const showMoreLabel = computed(() => {
-      if (!props.pagination) {
-        return props.loadOnDemand?.showMoreLabel ?? 'Load more';
+      if (!props.pagination && props.loadOnDemand) {
+        return props.loadOnDemand.showMoreLabel ?? 'Load more';
       }
 
       return undefined;
@@ -124,6 +141,14 @@ export default defineComponent({
       emit('page-change', newPage);
     };
 
+    const onDrag = (index?: number) => {
+      dragIndex.value = index;
+    };
+
+    const onDrop = (startIndex: number, endIndex: number) => {
+      emit('sort', moveItem(props.items, startIndex, endIndex));
+    };
+
     return {
       emit,
       n: NeonNumberUtils.formatNumber,
@@ -137,6 +162,9 @@ export default defineComponent({
       cards,
       onPageChange,
       NeonState,
+      onDrag,
+      onDrop,
+      dragIndex,
     };
   },
 });

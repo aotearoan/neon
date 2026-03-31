@@ -1344,4 +1344,12 @@
    * Color of the header component subtitle
    */
   --neon-color-header-subtitle: var(--neon-color-text-secondary);
+
+
+  /* draggable-card */
+  /**
+   * @component NeonCardList,NeonDraggableCard
+   * Background color of the hover state of the draggable card
+   */
+  --neon-background-color-draggable-card-hover: var(--neon-color-brand-d5);
 }

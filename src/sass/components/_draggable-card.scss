@@ -1,0 +1,75 @@
+@use '../includes/palettes';
+@use '../includes/svg';
+
+@mixin draggable-card {
+  .neon-draggable-card {
+    flex-direction: row;
+    position: relative;
+    border-bottom: var(--neon-border);
+
+    & > .neon-card-list__card:not(:focus-visible) {
+      border-bottom: none;
+    }
+
+    &[draggable='true'] {
+      cursor: grab;
+      transition: var(--neon-animation-speed-fast) all ease;
+
+      @each $color in palettes.$neon-functional-colors {
+        &.neon-draggable-card--#{$color} {
+          &:hover {
+            background-color: rgba(var(--neon-rgb-#{$color}), 0.03125);
+          }
+        }
+      }
+
+      &:hover {
+        .neon-draggable-card__handle-icon {
+          @include svg.color-with-svg(var(--neon-color-high-contrast));
+        }
+      }
+
+      &.neon-draggable-card--drag-in-progress {
+        /* add transparent overlay when dragging over all items. This prevents onDragLeave firing on child elements */
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: transparent;
+        }
+
+        &.neon-draggable-card--active {
+          &:after {
+            background-color: var(--neon-background-color-draggable-card-hover);
+          }
+        }
+      }
+    }
+
+    &__handle-icon {
+      align-self: center;
+      margin-left: var(--neon-space-6);
+      margin-right: var(--neon-space-4);
+      width: 16rem;
+      height: 16rem;
+    }
+
+    .neon-drag-handle-transition {
+      &-enter-active,
+      &-leave-active {
+        transition: all ease-in-out var(--neon-animation-speed-fast) var(--neon-animation-speed-fast) allow-discrete;
+      }
+
+      &-enter-from,
+      &-leave-to {
+        opacity: 0;
+        width: 0;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+}

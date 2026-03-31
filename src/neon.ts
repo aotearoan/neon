@@ -170,6 +170,7 @@ export { NeonHttpUtils } from './utils/common/http/NeonHttpUtils';
 export { NeonIconRegistry } from '@/utils/common/icons/NeonIconRegistry';
 export { NeonJazziconUtils } from '@/utils/presentation/badge/NeonJazziconUtils';
 export { NeonModeUtils } from '@/utils/common/color/NeonModeUtils';
+export { moveItem } from './utils/common/array/NeonArrayUtils';
 export { NeonNumberUtils } from '@/utils/common/number/NeonNumberUtils';
 export { NeonPlacementUtils } from '@/utils/common/dom/NeonPlacementUtils';
 export { NeonRandomUtils } from '@/utils/common/number/NeonRandomUtils';
