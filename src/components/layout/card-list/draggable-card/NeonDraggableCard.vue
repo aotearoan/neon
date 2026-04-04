@@ -2,7 +2,7 @@
 import { computed, ref } from 'vue';
 import NeonIcon from '@/components/presentation/icon/NeonIcon.vue';
 import NeonInline from '@/components/layout/inline/NeonInline.vue';
-import type { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
+import { NeonFunctionalColor } from '@/model/common/color/NeonFunctionalColor';
 
 /**
  * Draggable card component for use with NeonCardList.
@@ -98,7 +98,12 @@ const dragInProgress = computed<boolean>(() => {
     @drop="onDrop"
   >
     <transition mode="out-in" name="neon-drag-handle-transition">
-      <neon-icon v-if="draggable" class="neon-draggable-card__handle-icon" color="low-contrast" name="drag-handle" />
+      <neon-icon
+        v-if="draggable"
+        :color="NeonFunctionalColor.LowContrast"
+        class="neon-draggable-card__handle-icon"
+        name="drag-handle"
+      />
     </transition>
     <!-- @slot Default slot for displaying the card contents -->
     <slot name="default" />
