@@ -125,6 +125,21 @@ export default defineComponent({
       paginationNoUrlConfig.value = { ...paginationNoUrlConfig.value, page };
     };
 
+    const sortableTemplate = `<neon-card-list :items="sortableModel" :sortable="true" color="brand" @sort="onSort">
+  <template #card="{ model }">
+    <div class="card-contents">
+      <span class="card-title">{{ model.title }}</span>
+      <span class="card-description">{{ model.description }}</span>
+    </div>
+  </template>
+</neon-card-list>`;
+
+    const sortableModel = ref<Array<NeonCardListModel<CardListModel>>>(CardListModelFixture(5, undefined, 0, true));
+
+    const onSort = (items: Array<NeonCardListModel<CardListModel>>) => {
+      sortableModel.value = items;
+    };
+
     const selectableTemplate = `<neon-card-list
   :items="selectableFilteredModel"
   :load-on-demand="selectableConfig"
@@ -187,6 +202,9 @@ export default defineComponent({
       toggleSelected,
       paginationNoUrlConfig,
       changePage,
+      sortableTemplate,
+      sortableModel,
+      onSort,
     };
   },
 });

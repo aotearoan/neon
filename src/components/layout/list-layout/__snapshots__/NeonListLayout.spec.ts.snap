@@ -40,7 +40,7 @@ exports[`NeonListLayout renders basic layout with pagination 1`] = `
       <div class="neon-inline--gap-l neon-inline neon-card-list__header">
         <!-- @slot inline contents -->
       </div>
-      <div class="neon-card-list__cards">
+      <transition-group-stub tag="div" appear="false" persisted="false" css="true" class="neon-card-list__cards">
         <div class="neon-card-list__card">
           <!-- @slot override the default loading state card -->
           <transition-stub mode="out-in" name="neon-fade-transition" appear="false" persisted="false" css="true"></transition-stub>
@@ -61,7 +61,7 @@ exports[`NeonListLayout renders basic layout with pagination 1`] = `
           <!-- @slot override the default loading state card -->
           <transition-stub mode="out-in" name="neon-fade-transition" appear="false" persisted="false" css="true"></transition-stub>
         </div>
-      </div>
+      </transition-group-stub>
       <div class="neon-pagination--brand neon-pagination"><button class="neon-button--m neon-button--high-contrast neon-button--outline neon-button--state-ready neon-button--disabled neon-button--with-icon neon-button--icon-only neon-button neon-pagination__nav-link neon-pagination__first neon-pagination__nav-link neon-pagination__first" disabled="" tabindex="-1" type="button">
           <div class="neon-icon--name-first-page neon-icon--high-contrast neon-icon--disabled neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" fill="none" stroke-linecap="round" height="100%" width="100%">
               <path d="M12.75 13.799999999999999L6.45 7.5L12.75 1.2" stroke="currentColor" class="neon-svg--stroke"></path>
@@ -173,7 +173,7 @@ exports[`NeonListLayout renders breadcrumbs 1`] = `
       <div class="neon-inline--gap-l neon-inline neon-card-list__header">
         <!-- @slot inline contents -->
       </div>
-      <div class="neon-card-list__cards">
+      <transition-group-stub tag="div" appear="false" persisted="false" css="true" class="neon-card-list__cards">
         <div class="neon-card-list__card">
           <!-- @slot override the default loading state card -->
           <transition-stub mode="out-in" name="neon-fade-transition" appear="false" persisted="false" css="true"></transition-stub>
@@ -194,7 +194,7 @@ exports[`NeonListLayout renders breadcrumbs 1`] = `
           <!-- @slot override the default loading state card -->
           <transition-stub mode="out-in" name="neon-fade-transition" appear="false" persisted="false" css="true"></transition-stub>
         </div>
-      </div>
+      </transition-group-stub>
       <div class="neon-pagination--brand neon-pagination"><button class="neon-button--m neon-button--high-contrast neon-button--outline neon-button--state-ready neon-button--disabled neon-button--with-icon neon-button--icon-only neon-button neon-pagination__nav-link neon-pagination__first neon-pagination__nav-link neon-pagination__first" disabled="" tabindex="-1" type="button">
           <div class="neon-icon--name-first-page neon-icon--high-contrast neon-icon--disabled neon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" fill="none" stroke-linecap="round" height="100%" width="100%">
               <path d="M12.75 13.799999999999999L6.45 7.5L12.75 1.2" stroke="currentColor" class="neon-svg--stroke"></path>
@@ -290,7 +290,7 @@ exports[`NeonListLayout renders load on demand pagination 1`] = `
       <div class="neon-inline--gap-l neon-inline neon-card-list__header">
         <!-- @slot inline contents -->
       </div>
-      <div class="neon-card-list__cards">
+      <transition-group-stub tag="div" appear="false" persisted="false" css="true" class="neon-card-list__cards">
         <div class="neon-card-list__card">
           <!-- @slot override the default loading state card -->
           <transition-stub mode="out-in" name="neon-fade-transition" appear="false" persisted="false" css="true"></transition-stub>
@@ -311,7 +311,7 @@ exports[`NeonListLayout renders load on demand pagination 1`] = `
           <!-- @slot override the default loading state card -->
           <transition-stub mode="out-in" name="neon-fade-transition" appear="false" persisted="false" css="true"></transition-stub>
         </div>
-      </div><span class="neon-card-list__result-count-label">Zeigt 5 von 1,000</span><button class="neon-button--l neon-button--primary neon-button--solid neon-button--state-ready neon-button neon-card-list__show-more neon-card-list__show-more" tabindex="0" type="button">
+      </transition-group-stub><span class="neon-card-list__result-count-label">Zeigt 5 von 1,000</span><button class="neon-button--l neon-button--primary neon-button--solid neon-button--state-ready neon-button neon-card-list__show-more neon-card-list__show-more" tabindex="0" type="button">
         <!--v-if--><span class="neon-button__label">Mehr anzeigen</span>
         <!--v-if-->
       </button>

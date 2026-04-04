@@ -17,6 +17,7 @@ import dash from '@/icons/dash.svg';
 import desktop from '@/icons/desktop.svg';
 import dot from '@/icons/dot.svg';
 import download from '@/icons/download.svg';
+import dragHandle from '@/icons/drag-handle.svg';
 import ellipsis from '@/icons/ellipsis.svg';
 import exclamationCircle from '@/icons/exclamation-circle.svg';
 import feather from '@/icons/feather.svg';
@@ -79,6 +80,7 @@ export class RegisterIcons {
     NeonIconRegistry.addIcon('desktop', desktop);
     NeonIconRegistry.addIcon('dot', dot);
     NeonIconRegistry.addIcon('download', download);
+    NeonIconRegistry.addIcon('drag-handle', dragHandle);
     NeonIconRegistry.addIcon('ellipsis', ellipsis);
     NeonIconRegistry.addIcon('exclamation-circle', exclamationCircle);
     NeonIconRegistry.addIcon('feather', feather);

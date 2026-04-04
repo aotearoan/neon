@@ -324,4 +324,8 @@ $neon-components: null !default;
   @if index($neon-flattened-components, NeonBasicLayout) {
     @include components.basic-layout;
   }
+
+  @if index($neon-flattened-components, NeonDraggableCard) {
+    @include components.draggable-card;
+  }
 }
