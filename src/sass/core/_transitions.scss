@@ -11,6 +11,21 @@
     }
   }
 
+  .neon-tab-transition {
+    &-enter-active {
+      transition: opacity ease-in-out var(--neon-animation-speed-fast) var(--neon-animation-speed-fast) allow-discrete;
+    }
+
+    &-leave-active {
+      transition: none;
+    }
+
+    &-enter-from,
+    &-leave-to {
+      opacity: 0;
+    }
+  }
+
   .neon-splash-transition {
     &-enter-active {
       transition: opacity ease-in-out var(--neon-animation-speed-fast) var(--neon-animation-speed-fast) allow-discrete;
