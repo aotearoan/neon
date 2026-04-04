@@ -5,7 +5,7 @@
 
 @mixin gradient-button($from-color, $to-color) {
   --neon-gradient-button-c1: var(--neon-color-#{$from-color});
-  --neon-gradient-button-c2: var(--neon-background-color-#{$to-color});
+  --neon-gradient-button-c2: var(--neon-color-#{$to-color});
 
   background: linear-gradient(
                   var(--neon-background-gradient-angle),

@@ -22,11 +22,11 @@
     @each $color in palettes.$neon-functional-colors {
       &--#{$color} {
         @include svg.color-with-svg(var(--neon-color-#{$color}));
-        background: rgba(var(--neon-rgb-#{$color}), 0.15);
+        background: var(--neon-background-color-#{$color});
 
         @each $alternateColor in palettes.$neon-functional-colors {
           &.neon-label--alternate-color-#{$alternateColor} {
-            background: linear-gradient(90deg, rgba(var(--neon-rgb-#{$color}), 0.15), rgba(var(--neon-rgb-#{$alternateColor}), 0.15));
+            background: linear-gradient(90deg, var(--neon-background-color-#{$color}), var(--neon-background-color-#{$alternateColor}));
 
             .neon-label__label {
               @include gradient.neon-gradient-text($color, $alternateColor);
