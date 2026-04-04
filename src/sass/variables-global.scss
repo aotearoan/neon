@@ -840,6 +840,11 @@
    * Button letter spacing
    */
   --neon-letter-spacing-button: var(--neon-letter-spacing-m);
+  /**
+   * @component NeonButton
+   * Gap between buttons when using the .neon-button-group class
+   */
+  --neon-gap-button-group: var(--neon-space-8);
 
   /* tabs */
   /**
