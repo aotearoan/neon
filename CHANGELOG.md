@@ -1,5 +1,12 @@
 # Changelog
 
+## [28.7.2](https://github.com/aotearoan/neon/compare/v28.7.1...v28.7.2) (2026-04-04)
+
+
+### Bug Fixes
+
+* card list style fixes ([#421](https://github.com/aotearoan/neon/issues/421)) ([6e5e24e](https://github.com/aotearoan/neon/commit/6e5e24edea34f81264ff3e504aa8169b1e86b4bc))
+
 ## [28.7.1](https://github.com/aotearoan/neon/compare/v28.7.0...v28.7.1) (2026-04-04)
 
 
