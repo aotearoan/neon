@@ -153,7 +153,7 @@ $neon-width-slider-tooltip: 201rem;
     outline: none;
 
     &:focus {
-      $neon-box-shadow-slider-thumb-focus: 0 0 0 4rem rgba(var(--neon-background-rgb-low-contrast), 0.3);
+      $neon-box-shadow-slider-thumb-focus: 0 0 0 4rem rgba(var(--neon-rgb-low-contrast), 0.3);
 
       &::-webkit-slider-thumb {
         box-shadow: $neon-box-shadow-slider-thumb-focus;
