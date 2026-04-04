@@ -4,6 +4,7 @@
 @mixin field {
   .neon-field {
     width: 100%;
+    margin-bottom: var(--neon-margin-bottom-field);
 
     label.neon-field__label {
       margin-bottom: 0;

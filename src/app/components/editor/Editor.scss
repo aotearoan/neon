@@ -119,7 +119,6 @@
     &__copy.neon-button {
       transition: opacity ease-in-out var(--neon-animation-speed-fast);
 
-      &,
       &:focus {
         background-color: rgba(var(--neon-rgb-neutral-d3), 0.2);
       }

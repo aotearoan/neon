@@ -6,6 +6,7 @@
     &__container {
       position: fixed;
       overflow: hidden;
+      padding: var(--neon-space-20);
       margin: 0;
       z-index: var(--neon-z-index-top);
       @include layout.padding($multiplier: 0.75);
@@ -111,6 +112,7 @@
         pointer-events: auto;
         z-index: var(--neon-z-index-top);
         transition: opacity ease-in-out calc(0.5 * var(--neon-animation-speed-fast));
+        padding: var(--neon-space-20);
       }
     }
 
