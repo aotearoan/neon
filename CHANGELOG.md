@@ -1,5 +1,12 @@
 # Changelog
 
+## [28.7.1](https://github.com/aotearoan/neon/compare/v28.7.0...v28.7.1) (2026-04-04)
+
+
+### Bug Fixes
+
+* use solid background colors for labels ([#419](https://github.com/aotearoan/neon/issues/419)) ([b949e30](https://github.com/aotearoan/neon/commit/b949e30b362cd61f833bc6d65eaece4bcdd09b1d))
+
 ## [28.7.0](https://github.com/aotearoan/neon/compare/v28.6.0...v28.7.0) (2026-04-04)
 
 
