@@ -4,10 +4,6 @@
   .neon-banner {
     z-index: var(--neon-z-index-top);
 
-    &__action {
-      margin-left: auto;
-    }
-
     &__message {
       --neon-font-weight-strong: var(--neon-font-weight-semi-bold);
     }
@@ -30,6 +26,13 @@
 
     .neon-button--outline {
       --neon-background-color-outline-button: var(--neon-background-color);
+    }
+
+    @include responsive.responsive(mobile-large) {
+      .neon-note__content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   }
 
