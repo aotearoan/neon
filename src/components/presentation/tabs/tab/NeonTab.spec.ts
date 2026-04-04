@@ -49,7 +49,7 @@ describe('NeonTab', () => {
 
   it('does not render tab toggle on if, selected false', async () => {
     const { baseElement, rerender } = harness;
-    await rerender({ selected: false, toggleOnIf: true });
+    await rerender({ selected: false, toggleOnIf: true, transition: false });
     expect(baseElement.innerHTML).not.toMatch('neon-tab');
   });
 

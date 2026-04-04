@@ -1,5 +1,5 @@
 <template>
-  <transition :name="transition ? 'neon-fade-transition' : null" mode="out-in">
+  <transition :name="transition ? 'neon-tab-transition' : null" mode="out-in">
     <div
       v-if="selected"
       :id="id"
