@@ -6,7 +6,7 @@
           <h2 class="neon-h3">Different types of banner message</h2>
         </neon-card-header>
         <neon-card-body>
-          <neon-inline>
+          <neon-inline breakpoint="mobile-large">
             <neon-button color="info" label="Info" @click="infoMessage()" />
             <neon-button color="success" label="Success" @click="successMessage()" />
             <neon-button color="warn" label="Warning" @click="warnMessage()" />
