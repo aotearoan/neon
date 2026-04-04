@@ -24,7 +24,7 @@
     );
   }
 
-  &:focus:not(.neon-button--disabled):not(.neon-button--no-outline) {
+  &:focus-visible:not(.neon-button--disabled):not(.neon-button--no-outline) {
     @include outline.box-shadow-outline(var(--neon-rgb-#{$from-color}));
   }
 }
@@ -44,11 +44,12 @@
     );
   }
 
+  &:hover:not(.neon-button--disabled),
   &:active:not(.neon-button--disabled) {
     background: var(--neon-background-solid-button-dark-#{$color});
   }
 
-  &:focus:not(.neon-button--disabled):not(.neon-button--no-outline) {
+  &:focus-visible:not(.neon-button--disabled):not(.neon-button--no-outline) {
     @include outline.box-shadow-outline(var(--neon-background-rgb-solid-button-dark-#{$color}));
   }
 }
@@ -81,7 +82,7 @@
     border-color: var(--neon-background-outline-button-active-#{$color});
   }
 
-  &:focus:not(.neon-button--disabled):not(.neon-button--no-outline) {
+  &:focus-visible:not(.neon-button--disabled):not(.neon-button--no-outline) {
     @include outline.box-shadow-outline(var(--neon-rgb-#{$color}));
   }
 }
@@ -95,7 +96,7 @@
   }
 
   &:hover:not(.neon-button--disabled),
-  &:focus:not(.neon-button--disabled) {
+  &:focus-visible:not(.neon-button--disabled) {
     background: var(--neon-background-color-text-button-hover);
   }
 
@@ -106,7 +107,7 @@
 
 @mixin input-button($color) {
   &:active:not(.neon-button--disabled),
-  &:focus:not(.neon-button--disabled) {
+  &:focus-visible:not(.neon-button--disabled) {
     background-color: rgba(var(--neon-rgb-#{$color}), var(--neon-opacity-input-background-active));
     border: var(--neon-border-width-input) var(--neon-border-style) var(--neon-color-#{$color});
   }
@@ -429,11 +430,10 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    gap: var(--neon-space-16);
+    gap: var(--neon-gap-button-group);
 
     @include responsive.responsive(mobile-large) {
       flex-direction: column-reverse;
-      gap: calc(3 * var(--neon-base-space));
 
       & > .neon-button {
         @include neon-full-width-button;
