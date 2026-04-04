@@ -10,9 +10,15 @@
 @use './views/views';
 
 .app {
-  &.neon {
-    overscroll-behavior: none;
 
+  @include responsive.responsive(tablet) {
+    .content {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &.neon {
     .app-side-nav,
     .app-top-nav {
       .homepage-logo {

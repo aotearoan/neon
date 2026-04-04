@@ -2,6 +2,7 @@
 * LIGHT THEME VARIABLES
 *********************/
 .neon.neon-mode--light {
+  -webkit-tap-highlight-color: var(--neon-color-low-contrast-l5);
   /**
    * @component NeonCard
    * Background color of the card.
@@ -11,7 +12,7 @@
    * @component NeonCard
    * Card border.
    */
-  --neon-border-card: var(--neon-border);
+  --neon-border-card: none;
   /**
    * Default background color. This is generally the background color of the page.
    */
@@ -753,7 +754,7 @@
   /**
    * HTML pre element background color.
    */
-  --neon-background-color-pre: var(--neon-color-neutral-d5);
+  --neon-background-color-pre: var(--neon-color-high-contrast-d4);
 
 
   /* toggle */
@@ -1162,7 +1163,7 @@
    * @component NeonDrawer,NeonModal,NeonDialog
    * Overlay background color when focussed content is open.
    */
-  --neon-background-color-overlay: rgba(var(--neon-rgb-neutral-d5), 0.75);
+  --neon-background-color-overlay: rgba(var(--neon-rgb-text-primary), .5);
   /**
    * @component NeonDrawer,NeonModal,NeonDialog
    * Opaque overlay background color when focussed content is open.
@@ -1276,27 +1277,27 @@
    * @component NeonImageCarousel
    * Color of the carousel navigation indicator.
    */
-  --neon-color-image-carousel-nav-indicator: var(--neon-color-primary);
+  --neon-color-image-carousel-nav-indicator: var(--neon-color-neutral-l1);
   /**
    * @component NeonImageCarousel
    * Color of the carousel navigation indicator when in expanded mode.
    */
-  --neon-color-image-carousel-expanded-nav-indicator: var(--neon-color-inverse);
+  --neon-color-image-carousel-expanded-nav-indicator: var(--neon-color-neutral-l1);
   /**
    * @component NeonImageCarousel
    * Color of the buttons in expanded mode.
    */
-  --neon-color-image-carousel-expanded-button: var(--neon-color-inverse);
+  --neon-color-image-carousel-expanded-button: var(--neon-color-text-primary);
   /**
    * @component NeonImageCarousel
    * Color of the disabled buttons in expanded mode.
    */
-  --neon-color-image-carousel-expanded-button-disabled: var(--neon-color-low-contrast-d2);
+  --neon-color-image-carousel-expanded-button-disabled: var(--neon-color-disabled-text);
   /**
    * @component NeonImageCarousel
    * Background color of the buttons in expanded mode.
    */
-  --neon-background-color-image-carousel-expanded-button: var(--neon-color-low-contrast-d3);
+  --neon-background-color-image-carousel-expanded-button: var(--neon-color-neutral-l4);
   /**
    * @component NeonImageCarousel
    * Color of the image label in expanded mode.
@@ -1306,7 +1307,7 @@
    * @component NeonImageCarousel
    * Text shadow in expanded mode. This is necessary to make the text readable on top of the image in all cases.
    */
-  --neon-text-shadow-image-carousel-expanded: 1px 1px 2px var(--neon-color-text-primary);
+  --neon-text-shadow-image-carousel-expanded: none;
 
 
   /* tree menu */

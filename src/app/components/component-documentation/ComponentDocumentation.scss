@@ -2,9 +2,6 @@
 @use '../../../sass/includes/responsive';
 @use '../../../sass/includes/scrollbars';
 
-$neon-height-component-header-desktop: 180rem;
-$neon-height-component-header-tablet: 180rem;
-$neon-height-component-header-mobile: 124rem;
 $fixed-content-height: 348rem;
 
 .component-documentation {
@@ -23,8 +20,6 @@ $fixed-content-height: 348rem;
   }
 
   &__header {
-    position: sticky;
-    z-index: var(--neon-z-index-above-2);
     width: 100%;
     margin-top: calc(-1 * var(--neon-gutter));
     padding-top: var(--neon-gutter);
@@ -83,9 +78,6 @@ $fixed-content-height: 348rem;
     font-weight: var(--neon-font-weight-extra-light);
     font-size: var(--neon-h6-size);
     letter-spacing: var(--neon-letter-spacing-m);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 
     @include responsive.responsive(mobile-large) {
       margin-bottom: var(--neon-space-8);
@@ -100,6 +92,15 @@ $fixed-content-height: 348rem;
   .neon-stack h4 {
     margin-bottom: 0;
     margin-top: var(--neon-base-space);
+  }
+
+  .neon-card {
+    .neon-card-header,
+    .neon-card-body,
+    .neon-card-footer {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }
 

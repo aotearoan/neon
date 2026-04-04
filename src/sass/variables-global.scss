@@ -17,7 +17,7 @@
    * The maximum page width - topnav, footer and page content will be limited to this width for better layout and
    * usability (does not include side nav).
    */
-  --neon-max-width-page: 1920rem;
+  --neon-max-width-page: 1536rem;
 
   /** standardized spacings 1rem = 1px **/
   /** 1rem spacing **/
@@ -200,12 +200,12 @@
    * The background color for light mode, prefer <em>--neon-background-color</em> unless this is required for a
    * specific use case on dark mode.
    */
-  --neon-background-color-light: var(--neon-color-high-contrast-l4);
+  --neon-background-color-light: var(--neon-color-high-contrast-l5);
   /**
    * The background color for dark mode, prefer <em>--neon-background-color</em> unless this is required for a
    * specific use case on light mode.
    */
-  --neon-background-color-dark: var(--neon-color-neutral-d5);
+  --neon-background-color-dark: var(--neon-color-high-contrast-d5);
 
   /** z-index **/
   /** z-index below the default */
@@ -716,7 +716,7 @@
    * @component NeonMenu
    * Menu font weight
    */
-  --neon-font-weight-menu: var(--neon-font-weight-bold);
+  --neon-font-weight-menu: var(--neon-font-weight-medium);
   /**
    * @component NeonMenu
    * Menu text transformation
@@ -1039,7 +1039,7 @@
    * @component NeonNote
    * Font weight of the note text
    */
-  --neon-font-weight-note-text: var(--neon-font-weight-medium);
+  --neon-font-weight-note-text: var(--neon-font-weight-normal);
   /**
    * @component NeonNote
    * Font size of the note title
@@ -1077,12 +1077,12 @@
    * @component NeonLink
    * Default underline thickness of the link
    */
-  --neon-text-decoration-thickness-link: 1rem;
+  --neon-text-decoration-thickness-link: 1.5rem;
   /**
    * @component NeonLink
    * Default underline thickness of the link when hovered
    */
-  --neon-text-decoration-thickness-link-hover: 1rem;
+  --neon-text-decoration-thickness-link-hover: 1.5rem;
   /**
    * @component NeonLink
    * Offset of the link underline from the text
@@ -1161,7 +1161,7 @@
    * @component NeonInput,NeonTextarea,NeonNumber,NeonPassword
    * Background color opacity when input is active
    */
-  --neon-opacity-input-background-active: 0.03125;
+  --neon-opacity-input-background-active: 0;
 
   /**
    * @component NeonInput,NeonTextarea,NeonNumber,NeonPassword
@@ -1356,7 +1356,7 @@
    * @component NeonImageDevice
    * Image carousel background blur radius when opened full screen
    */
-  --neon-blur-radius-image-carousel: 5px;
+  --neon-blur-radius-image-carousel: 0;
 
   /* tree menu */
   /**
@@ -1398,7 +1398,7 @@
    * @component NeonTreeMenu
    * Tree menu padding left for items (indent)
    */
-  --neon-padding-left-tree-menu-items: 0;
+  --neon-padding-left-tree-menu-items: calc(var(--neon-space-24) + var(--neon-space-4));
 
   /* sticky buttons */
   /**
@@ -1442,4 +1442,12 @@
    * Set the min width of the card list grid card
    */
   --neon-min-width-card-list-grid-card: 288rem;
+
+
+  /* Field component */
+  /**
+   * @component NeonField
+   * Set the margin below the field component
+   */
+  --neon-margin-bottom-field: var(--neon-space-8);
 }

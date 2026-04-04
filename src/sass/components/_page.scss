@@ -14,7 +14,7 @@
 
     .neon-page__container {
       @include layout.min-height(100);
-      overflow-x: hidden;
+      overflow: hidden;
 
       @include responsive.responsive(larger-than-tablet) {
         padding-left: var(--neon-gutter-desktop);
@@ -54,6 +54,7 @@
     &--center {
       .neon-page__container {
         margin: 0 auto;
+        min-width: 100vw;
       }
     }
 
