@@ -1,5 +1,12 @@
 # Changelog
 
+## [28.7.5](https://github.com/aotearoan/neon/compare/v28.7.4...v28.7.5) (2026-04-04)
+
+
+### Bug Fixes
+
+* fix neon tab transitions ([#427](https://github.com/aotearoan/neon/issues/427)) ([699c05a](https://github.com/aotearoan/neon/commit/699c05adbe5dc4aae560b419fbfbe081cbbdda3d))
+
 ## [28.7.4](https://github.com/aotearoan/neon/compare/v28.7.3...v28.7.4) (2026-04-04)
 
 
