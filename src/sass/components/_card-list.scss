@@ -91,26 +91,22 @@
     }
 
     &.neon-card-list--grid {
-      .neon-card-list__link {
-        width: fit-content;
-        min-width: fit-content;
-        max-width: fit-content;
-        display: inline-flex;
-        flex: 0 1 auto;
-      }
-
       .neon-card-list__cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(var(--neon-min-width-card-list-grid-card), 1fr));
         gap: var(--neon-space-32);
         margin-top: var(--neon-space-32);
         border-top: none;
-        flex-direction: row;
-        flex-wrap: wrap;
+      }
+
+      .neon-card-list__link {
+        width: 100%;
+        display: inline-flex;
+        align-items: flex-start;
       }
 
       .neon-card-list__card {
-        width: fit-content;
-        max-width: fit-content;
-        flex: 0 1 auto;
+        width: 100%;
         padding: 0 0 var(--neon-space-24) 0;
       }
     }

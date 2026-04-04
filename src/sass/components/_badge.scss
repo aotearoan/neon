@@ -124,7 +124,7 @@
           min-width: var(--neon-size-#{$badge-size}-badge);
           height: var(--neon-size-#{$badge-size}-badge);
           min-height: var(--neon-size-#{$badge-size}-badge);
-          object-fit: cover;
+          object-fit: var(--neon-object-fit-badge-image);
         }
 
         .neon-icon {

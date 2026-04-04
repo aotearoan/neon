@@ -1250,6 +1250,11 @@
    */
   --neon-border-radius-badge: var(--neon-border-radius);
   /**
+   * @component NeonBadge,NeonAvatar
+   * Badge image object fit property
+   */
+  --neon-object-fit-badge-image: cover;
+  /**
    * @component NeonBadge
    * Background gradient angle for a multicolored badge
    */
@@ -1424,4 +1429,12 @@
    * Font size of the header component subtitle
    */
   --neon-font-size-header-subtitle: var(--neon-font-size-m);
+
+
+  /* Card list component */
+  /**
+   * @component NeonCardList
+   * Set the min width of the card list grid card
+   */
+  --neon-min-width-card-list-grid-card: 288rem;
 }
