@@ -8,4 +8,7 @@ import NeonSwiper from '@/components/layout/swiper/NeonSwiper.vue';
 export default defineComponent({
   name: 'NeonFilterBar',
   components: { NeonInline, NeonSwiper },
+  setup(_props, { slots }) {
+    return { slots };
+  },
 });
