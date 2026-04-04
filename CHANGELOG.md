@@ -1,5 +1,12 @@
 # Changelog
 
+## [28.7.0](https://github.com/aotearoan/neon/compare/v28.6.0...v28.7.0) (2026-04-04)
+
+
+### Features
+
+* sortable card list ([#417](https://github.com/aotearoan/neon/issues/417)) ([a6684d0](https://github.com/aotearoan/neon/commit/a6684d0172111aa409269d83c9b62710944bfa0d))
+
 ## [28.6.0](https://github.com/aotearoan/neon/compare/v28.6.0...v28.6.0) (2026-03-31)
 
 
