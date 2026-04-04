@@ -1,5 +1,12 @@
 # Changelog
 
+## [28.7.4](https://github.com/aotearoan/neon/compare/v28.7.3...v28.7.4) (2026-04-04)
+
+
+### Bug Fixes
+
+* adjust banner mobile layout ([#425](https://github.com/aotearoan/neon/issues/425)) ([2f3ac5c](https://github.com/aotearoan/neon/commit/2f3ac5ce069fa8734dbb7d128ee4b5b237f45454))
+
 ## [28.7.3](https://github.com/aotearoan/neon/compare/v28.7.2...v28.7.3) (2026-04-04)
 
 
