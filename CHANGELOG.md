@@ -1,5 +1,12 @@
 # Changelog
 
+## [28.7.6](https://github.com/aotearoan/neon/compare/v28.7.5...v28.7.6) (2026-04-04)
+
+
+### Bug Fixes
+
+* style bugfixes ([#429](https://github.com/aotearoan/neon/issues/429)) ([efd99a1](https://github.com/aotearoan/neon/commit/efd99a1d8b2bb97de3ecff5944016bc536335d25))
+
 ## [28.7.5](https://github.com/aotearoan/neon/compare/v28.7.4...v28.7.5) (2026-04-04)
 
 
